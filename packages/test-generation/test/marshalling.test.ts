@@ -272,3 +272,32 @@ describe("The database can marshall base types", () => {
     }
   });
 });
+describe("The database can handle index operators", () => {
+  let db: Database;
+  beforeAll(async () => {
+    db = await Database.connect(
+      "postgres://postgres:postgres@localhost:5432/marshalling",
+    );
+  });
+  afterAll(async () => {
+    await db.disconnect();
+  });
+  it("that are enum equality", async () => {
+    const ret = await db.Api.Tables.QAndA.QAndAAnswer.read({
+      answer: Api.Types.Answer.Yes,
+    });
+    expect(ret[0].question).toBe("Is this a test?");
+  });
+  it("that are gin trigram match", async () => {
+    const ret = await db.Api.Tables.Timezones.TrgmIdxGin.read({
+      timeZone: "Afri",
+    });
+    expect(ret.length).toBeGreaterThan(0);
+  });
+  it("that are gist trigram match", async () => {
+    const ret = await db.Api.Tables.Timezones.TrgmIdxGist.read({
+      timeZone: "Afri",
+    });
+    expect(ret.length).toBeGreaterThan(0);
+  });
+});

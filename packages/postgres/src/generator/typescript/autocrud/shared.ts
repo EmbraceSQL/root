@@ -96,8 +96,17 @@ export function sqlPredicate(
   node: IndexNode,
   holder: typeof PARAMETERS | typeof VALUES,
 ) {
+  // looking up the operator from the index - default needs to be =
+  // but can be different for % say in pg_trgm
   return node.type.attributes
-    .map((a) => `${a.name} = ${postgresValueExpression(context, a, holder)}`)
+    .map(
+      (a, i) =>
+        `${a.name} ${node.operators[i]} ${postgresValueExpression(
+          context,
+          a,
+          holder,
+        )}`,
+    )
     .join(" AND ");
 }
 

@@ -1,4 +1,5 @@
 import { groupBy } from "../../util";
+import { operatorFor } from "../pgoperator";
 import { PGTypes } from "./pgtype";
 import { GenerationContext, IndexNode, TableNode } from "@embracesql/shared";
 import path from "path";
@@ -13,6 +14,7 @@ export type IndexRow = {
   indisunique: boolean;
   indisprimary: boolean;
   name: string;
+  operators: string[];
 };
 
 type PGIndexesContext = { typeCatalog: PGTypes };
@@ -25,15 +27,15 @@ export class PGIndexes {
     const indexRows = (await sql.file(
       path.join(__dirname, "pgindexes.sql"),
     )) as unknown as IndexRow[];
-    return new PGIndexes(context, indexRows);
+    return new PGIndexes(indexRows);
   }
 
   indexesByTableTypeOid: Record<number, PGIndex[]>;
-  private constructor(context: PGIndexesContext, indexRows: IndexRow[]) {
+  private constructor(indexRows: IndexRow[]) {
     this.indexesByTableTypeOid = groupBy(
       indexRows,
       (r) => r.tabletypeoid,
-      (r) => new PGIndex(context, r),
+      (r) => new PGIndex(r),
     );
   }
 }
@@ -44,10 +46,7 @@ export class PGIndexes {
  *
  */
 export class PGIndex {
-  constructor(
-    context: PGIndexesContext,
-    public index: IndexRow,
-  ) {}
+  constructor(public index: IndexRow) {}
 
   loadAST(context: GenerationContext, table: TableNode) {
     new IndexNode(
@@ -56,6 +55,7 @@ export class PGIndex {
       this.index.indisunique,
       this.index.indisprimary,
       context.database.resolveType(this.index.indexrelid),
+      this.index.operators.map(operatorFor),
     );
   }
 }

@@ -158,3 +158,26 @@ export type PartiallyOptional<T, U> =
  * Result sets will be a mixture of one or multiple rows.
  */
 export type OneOrMany<T> = T | T[];
+
+/**
+ * Multiple row reading operations have -- options
+ */
+export type ReadOptions = {
+  /**
+   * Pagination support, this defines the page size.
+   */
+  limitNumberOfRows: number;
+  /**
+   * Pagination support, this defines how many rows to skip
+   * before returning a page.
+   */
+  offsetNumberOfRows: number;
+};
+
+/**
+ * Sorting mode.
+ */
+export enum Sort {
+  Ascending,
+  Descending,
+}

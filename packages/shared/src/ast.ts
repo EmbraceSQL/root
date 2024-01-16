@@ -604,6 +604,7 @@ export class IndexNode extends ContainerNode {
     public unique: boolean,
     public primaryKey: boolean,
     public type: CompositeTypeNode,
+    public operators: string[],
   ) {
     super(name, ASTKind.Index, table);
     new ReadOperationNode(this);

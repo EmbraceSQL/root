@@ -13,7 +13,7 @@
         /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
         /* @typescript-eslint/no-redundant-type-constituents */
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
-        import type { PartiallyOptional } from "@embracesql/shared";
+        import type { PartiallyOptional, ReadOptions, Sort } from "@embracesql/shared";
 
     
 export namespace PgCatalog {
@@ -2945,7 +2945,7 @@ oid: Nullable<PgCatalog.Types.Oid>;
 }
 
 export type PgProcPronameArgsNspIndex = {
-proname: Nullable<PgCatalog.Types.Cstring>;
+proname: Nullable<PgCatalog.Types.Name>;
 proargtypes: PgCatalog.Types.Oidvector;
 pronamespace: Nullable<PgCatalog.Types.Oid>;
 }
@@ -2955,13 +2955,13 @@ oid: Nullable<PgCatalog.Types.Oid>;
 }
 
 export type PgTypeTypnameNspIndex = {
-typname: Nullable<PgCatalog.Types.Cstring>;
+typname: Nullable<PgCatalog.Types.Name>;
 typnamespace: Nullable<PgCatalog.Types.Oid>;
 }
 
 export type PgAttributeRelidAttnamIndex = {
 attrelid: Nullable<PgCatalog.Types.Oid>;
-attname: Nullable<PgCatalog.Types.Cstring>;
+attname: Nullable<PgCatalog.Types.Name>;
 }
 
 export type PgAttributeRelidAttnumIndex = {
@@ -2974,7 +2974,7 @@ oid: Nullable<PgCatalog.Types.Oid>;
 }
 
 export type PgClassRelnameNspIndex = {
-relname: Nullable<PgCatalog.Types.Cstring>;
+relname: Nullable<PgCatalog.Types.Name>;
 relnamespace: Nullable<PgCatalog.Types.Oid>;
 }
 
@@ -2993,14 +2993,14 @@ oid: Nullable<PgCatalog.Types.Oid>;
 }
 
 export type PgConstraintConnameNspIndex = {
-conname: Nullable<PgCatalog.Types.Cstring>;
+conname: Nullable<PgCatalog.Types.Name>;
 connamespace: Nullable<PgCatalog.Types.Oid>;
 }
 
 export type PgConstraintConrelidContypidConnameIndex = {
 conrelid: Nullable<PgCatalog.Types.Oid>;
 contypid: Nullable<PgCatalog.Types.Oid>;
-conname: Nullable<PgCatalog.Types.Cstring>;
+conname: Nullable<PgCatalog.Types.Name>;
 }
 
 export type PgConstraintContypidIndex = {
@@ -3037,7 +3037,7 @@ oid: Nullable<PgCatalog.Types.Oid>;
 }
 
 export type PgOperatorOprnameLRNIndex = {
-oprname: Nullable<PgCatalog.Types.Cstring>;
+oprname: Nullable<PgCatalog.Types.Name>;
 oprleft: Nullable<PgCatalog.Types.Oid>;
 oprright: Nullable<PgCatalog.Types.Oid>;
 oprnamespace: Nullable<PgCatalog.Types.Oid>;
@@ -3045,7 +3045,7 @@ oprnamespace: Nullable<PgCatalog.Types.Oid>;
 
 export type PgOpfamilyAmNameNspIndex = {
 opfmethod: Nullable<PgCatalog.Types.Oid>;
-opfname: Nullable<PgCatalog.Types.Cstring>;
+opfname: Nullable<PgCatalog.Types.Name>;
 opfnamespace: Nullable<PgCatalog.Types.Oid>;
 }
 
@@ -3055,7 +3055,7 @@ oid: Nullable<PgCatalog.Types.Oid>;
 
 export type PgOpclassAmNameNspIndex = {
 opcmethod: Nullable<PgCatalog.Types.Oid>;
-opcname: Nullable<PgCatalog.Types.Cstring>;
+opcname: Nullable<PgCatalog.Types.Name>;
 opcnamespace: Nullable<PgCatalog.Types.Oid>;
 }
 
@@ -3064,7 +3064,7 @@ oid: Nullable<PgCatalog.Types.Oid>;
 }
 
 export type PgAmNameIndex = {
-amname: Nullable<PgCatalog.Types.Cstring>;
+amname: Nullable<PgCatalog.Types.Name>;
 }
 
 export type PgAmOidIndex = {
@@ -3100,7 +3100,7 @@ oid: Nullable<PgCatalog.Types.Oid>;
 }
 
 export type PgLanguageNameIndex = {
-lanname: Nullable<PgCatalog.Types.Cstring>;
+lanname: Nullable<PgCatalog.Types.Name>;
 }
 
 export type PgLanguageOidIndex = {
@@ -3131,7 +3131,7 @@ oid: Nullable<PgCatalog.Types.Oid>;
 }
 
 export type PgStatisticExtNameIndex = {
-stxname: Nullable<PgCatalog.Types.Cstring>;
+stxname: Nullable<PgCatalog.Types.Name>;
 stxnamespace: Nullable<PgCatalog.Types.Oid>;
 }
 
@@ -3150,7 +3150,7 @@ oid: Nullable<PgCatalog.Types.Oid>;
 
 export type PgRewriteRelRulenameIndex = {
 evClass: Nullable<PgCatalog.Types.Oid>;
-rulename: Nullable<PgCatalog.Types.Cstring>;
+rulename: Nullable<PgCatalog.Types.Name>;
 }
 
 export type PgTriggerTgconstraintIndex = {
@@ -3159,7 +3159,7 @@ tgconstraint: Nullable<PgCatalog.Types.Oid>;
 
 export type PgTriggerTgrelidTgnameIndex = {
 tgrelid: Nullable<PgCatalog.Types.Oid>;
-tgname: Nullable<PgCatalog.Types.Cstring>;
+tgname: Nullable<PgCatalog.Types.Name>;
 }
 
 export type PgTriggerOidIndex = {
@@ -3167,7 +3167,7 @@ oid: Nullable<PgCatalog.Types.Oid>;
 }
 
 export type PgEventTriggerEvtnameIndex = {
-evtname: Nullable<PgCatalog.Types.Cstring>;
+evtname: Nullable<PgCatalog.Types.Name>;
 }
 
 export type PgEventTriggerOidIndex = {
@@ -3195,7 +3195,7 @@ oid: Nullable<PgCatalog.Types.Oid>;
 
 export type PgEnumTypidLabelIndex = {
 enumtypid: Nullable<PgCatalog.Types.Oid>;
-enumlabel: Nullable<PgCatalog.Types.Cstring>;
+enumlabel: Nullable<PgCatalog.Types.Name>;
 }
 
 export type PgEnumTypidSortorderIndex = {
@@ -3204,7 +3204,7 @@ enumsortorder: Nullable<PgCatalog.Types.Float4>;
 }
 
 export type PgNamespaceNspnameIndex = {
-nspname: Nullable<PgCatalog.Types.Cstring>;
+nspname: Nullable<PgCatalog.Types.Name>;
 }
 
 export type PgNamespaceOidIndex = {
@@ -3219,7 +3219,7 @@ oid: Nullable<PgCatalog.Types.Oid>;
 }
 
 export type PgConversionNameNspIndex = {
-conname: Nullable<PgCatalog.Types.Cstring>;
+conname: Nullable<PgCatalog.Types.Name>;
 connamespace: Nullable<PgCatalog.Types.Oid>;
 }
 
@@ -3240,7 +3240,7 @@ refobjsubid: Nullable<PgCatalog.Types.Int4>;
 }
 
 export type PgDatabaseDatnameIndex = {
-datname: Nullable<PgCatalog.Types.Cstring>;
+datname: Nullable<PgCatalog.Types.Name>;
 }
 
 export type PgDatabaseOidIndex = {
@@ -3257,11 +3257,11 @@ oid: Nullable<PgCatalog.Types.Oid>;
 }
 
 export type PgTablespaceSpcnameIndex = {
-spcname: Nullable<PgCatalog.Types.Cstring>;
+spcname: Nullable<PgCatalog.Types.Name>;
 }
 
 export type PgAuthidRolnameIndex = {
-rolname: Nullable<PgCatalog.Types.Cstring>;
+rolname: Nullable<PgCatalog.Types.Name>;
 }
 
 export type PgAuthidOidIndex = {
@@ -3306,7 +3306,7 @@ classoid: Nullable<PgCatalog.Types.Oid>;
 }
 
 export type PgTsConfigCfgnameIndex = {
-cfgname: Nullable<PgCatalog.Types.Cstring>;
+cfgname: Nullable<PgCatalog.Types.Name>;
 cfgnamespace: Nullable<PgCatalog.Types.Oid>;
 }
 
@@ -3321,7 +3321,7 @@ mapseqno: Nullable<PgCatalog.Types.Int4>;
 }
 
 export type PgTsDictDictnameIndex = {
-dictname: Nullable<PgCatalog.Types.Cstring>;
+dictname: Nullable<PgCatalog.Types.Name>;
 dictnamespace: Nullable<PgCatalog.Types.Oid>;
 }
 
@@ -3330,7 +3330,7 @@ oid: Nullable<PgCatalog.Types.Oid>;
 }
 
 export type PgTsParserPrsnameIndex = {
-prsname: Nullable<PgCatalog.Types.Cstring>;
+prsname: Nullable<PgCatalog.Types.Name>;
 prsnamespace: Nullable<PgCatalog.Types.Oid>;
 }
 
@@ -3339,7 +3339,7 @@ oid: Nullable<PgCatalog.Types.Oid>;
 }
 
 export type PgTsTemplateTmplnameIndex = {
-tmplname: Nullable<PgCatalog.Types.Cstring>;
+tmplname: Nullable<PgCatalog.Types.Name>;
 tmplnamespace: Nullable<PgCatalog.Types.Oid>;
 }
 
@@ -3352,7 +3352,7 @@ oid: Nullable<PgCatalog.Types.Oid>;
 }
 
 export type PgExtensionNameIndex = {
-extname: Nullable<PgCatalog.Types.Cstring>;
+extname: Nullable<PgCatalog.Types.Name>;
 }
 
 export type PgForeignDataWrapperOidIndex = {
@@ -3360,7 +3360,7 @@ oid: Nullable<PgCatalog.Types.Oid>;
 }
 
 export type PgForeignDataWrapperNameIndex = {
-fdwname: Nullable<PgCatalog.Types.Cstring>;
+fdwname: Nullable<PgCatalog.Types.Name>;
 }
 
 export type PgForeignServerOidIndex = {
@@ -3368,7 +3368,7 @@ oid: Nullable<PgCatalog.Types.Oid>;
 }
 
 export type PgForeignServerNameIndex = {
-srvname: Nullable<PgCatalog.Types.Cstring>;
+srvname: Nullable<PgCatalog.Types.Name>;
 }
 
 export type PgUserMappingOidIndex = {
@@ -3390,7 +3390,7 @@ oid: Nullable<PgCatalog.Types.Oid>;
 
 export type PgPolicyPolrelidPolnameIndex = {
 polrelid: Nullable<PgCatalog.Types.Oid>;
-polname: Nullable<PgCatalog.Types.Cstring>;
+polname: Nullable<PgCatalog.Types.Name>;
 }
 
 export type PgReplicationOriginRoiidentIndex = {
@@ -3431,7 +3431,7 @@ provider: Nullable<PgCatalog.Types.Text>;
 }
 
 export type PgCollationNameEncNspIndex = {
-collname: Nullable<PgCatalog.Types.Cstring>;
+collname: Nullable<PgCatalog.Types.Name>;
 collencoding: Nullable<PgCatalog.Types.Int4>;
 collnamespace: Nullable<PgCatalog.Types.Oid>;
 }
@@ -3478,7 +3478,7 @@ oid: Nullable<PgCatalog.Types.Oid>;
 }
 
 export type PgPublicationPubnameIndex = {
-pubname: Nullable<PgCatalog.Types.Cstring>;
+pubname: Nullable<PgCatalog.Types.Name>;
 }
 
 export type PgPublicationNamespaceOidIndex = {
@@ -3509,7 +3509,7 @@ oid: Nullable<PgCatalog.Types.Oid>;
 
 export type PgSubscriptionSubnameIndex = {
 subdbid: Nullable<PgCatalog.Types.Oid>;
-subname: Nullable<PgCatalog.Types.Cstring>;
+subname: Nullable<PgCatalog.Types.Name>;
 }
 
 export type PgSubscriptionRelSrrelidSrsubidIndex = {
@@ -3528,6 +3528,8 @@ export type PrimaryKey = PgCatalog.Types.PgStatisticRelidAttInhIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgStatistic,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgStatistic, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgType {
 export function emptyRow() {
@@ -3537,6 +3539,8 @@ export type PrimaryKey = PgCatalog.Types.PgTypeOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgType,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgType, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgForeignTable {
 export function emptyRow() {
@@ -3546,6 +3550,8 @@ export type PrimaryKey = PgCatalog.Types.PgForeignTableRelidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgForeignTable,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgForeignTable, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgAuthid {
 export function emptyRow() {
@@ -3555,6 +3561,8 @@ export type PrimaryKey = PgCatalog.Types.PgAuthidOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAuthid,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAuthid, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgStatisticExtData {
 export function emptyRow() {
@@ -3564,6 +3572,8 @@ export type PrimaryKey = PgCatalog.Types.PgStatisticExtDataStxoidInhIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgStatisticExtData,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgStatisticExtData, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgUserMapping {
 export function emptyRow() {
@@ -3573,6 +3583,8 @@ export type PrimaryKey = PgCatalog.Types.PgUserMappingOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgUserMapping,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgUserMapping, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgSubscription {
 export function emptyRow() {
@@ -3582,6 +3594,8 @@ export type PrimaryKey = PgCatalog.Types.PgSubscriptionOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgSubscription,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgSubscription, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgAttribute {
 export function emptyRow() {
@@ -3591,6 +3605,8 @@ export type PrimaryKey = PgCatalog.Types.PgAttributeRelidAttnumIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAttribute,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAttribute, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgProc {
 export function emptyRow() {
@@ -3600,6 +3616,8 @@ export type PrimaryKey = PgCatalog.Types.PgProcOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgProc,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgProc, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgClass {
 export function emptyRow() {
@@ -3609,6 +3627,8 @@ export type PrimaryKey = PgCatalog.Types.PgClassOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgClass,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgClass, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgAttrdef {
 export function emptyRow() {
@@ -3618,6 +3638,8 @@ export type PrimaryKey = PgCatalog.Types.PgAttrdefOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAttrdef,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAttrdef, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgConstraint {
 export function emptyRow() {
@@ -3627,6 +3649,8 @@ export type PrimaryKey = PgCatalog.Types.PgConstraintOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgConstraint,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgConstraint, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgInherits {
 export function emptyRow() {
@@ -3636,6 +3660,8 @@ export type PrimaryKey = PgCatalog.Types.PgInheritsRelidSeqnoIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgInherits,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgInherits, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgIndex {
 export function emptyRow() {
@@ -3645,6 +3671,8 @@ export type PrimaryKey = PgCatalog.Types.PgIndexIndexrelidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgIndex,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgIndex, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgOperator {
 export function emptyRow() {
@@ -3654,6 +3682,8 @@ export type PrimaryKey = PgCatalog.Types.PgOperatorOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgOperator,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgOperator, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgOpfamily {
 export function emptyRow() {
@@ -3663,6 +3693,8 @@ export type PrimaryKey = PgCatalog.Types.PgOpfamilyOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgOpfamily,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgOpfamily, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgOpclass {
 export function emptyRow() {
@@ -3672,6 +3704,8 @@ export type PrimaryKey = PgCatalog.Types.PgOpclassOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgOpclass,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgOpclass, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgAm {
 export function emptyRow() {
@@ -3681,6 +3715,8 @@ export type PrimaryKey = PgCatalog.Types.PgAmOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAm,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAm, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgAmop {
 export function emptyRow() {
@@ -3690,6 +3726,8 @@ export type PrimaryKey = PgCatalog.Types.PgAmopOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAmop,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAmop, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgAmproc {
 export function emptyRow() {
@@ -3699,6 +3737,8 @@ export type PrimaryKey = PgCatalog.Types.PgAmprocOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAmproc,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAmproc, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgLanguage {
 export function emptyRow() {
@@ -3708,6 +3748,8 @@ export type PrimaryKey = PgCatalog.Types.PgLanguageOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgLanguage,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgLanguage, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgLargeobjectMetadata {
 export function emptyRow() {
@@ -3717,6 +3759,8 @@ export type PrimaryKey = PgCatalog.Types.PgLargeobjectMetadataOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgLargeobjectMetadata,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgLargeobjectMetadata, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgAggregate {
 export function emptyRow() {
@@ -3726,6 +3770,8 @@ export type PrimaryKey = PgCatalog.Types.PgAggregateFnoidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAggregate,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAggregate, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgStatisticExt {
 export function emptyRow() {
@@ -3735,6 +3781,8 @@ export type PrimaryKey = PgCatalog.Types.PgStatisticExtOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgStatisticExt,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgStatisticExt, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgRewrite {
 export function emptyRow() {
@@ -3744,6 +3792,8 @@ export type PrimaryKey = PgCatalog.Types.PgRewriteOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgRewrite,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgRewrite, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgTrigger {
 export function emptyRow() {
@@ -3753,6 +3803,8 @@ export type PrimaryKey = PgCatalog.Types.PgTriggerOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTrigger,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTrigger, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgEventTrigger {
 export function emptyRow() {
@@ -3762,6 +3814,8 @@ export type PrimaryKey = PgCatalog.Types.PgEventTriggerOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgEventTrigger,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgEventTrigger, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgDescription {
 export function emptyRow() {
@@ -3771,6 +3825,8 @@ export type PrimaryKey = PgCatalog.Types.PgDescriptionOCOIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgDescription,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgDescription, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgCast {
 export function emptyRow() {
@@ -3780,6 +3836,8 @@ export type PrimaryKey = PgCatalog.Types.PgCastOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgCast,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgCast, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgEnum {
 export function emptyRow() {
@@ -3789,6 +3847,8 @@ export type PrimaryKey = PgCatalog.Types.PgEnumOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgEnum,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgEnum, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgNamespace {
 export function emptyRow() {
@@ -3798,6 +3858,8 @@ export type PrimaryKey = PgCatalog.Types.PgNamespaceOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgNamespace,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgNamespace, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgConversion {
 export function emptyRow() {
@@ -3807,6 +3869,8 @@ export type PrimaryKey = PgCatalog.Types.PgConversionOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgConversion,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgConversion, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgDepend {
 export function emptyRow() {
@@ -3815,6 +3879,8 @@ export function emptyRow() {
 export type PrimaryKey = never;
 export type Optional = Pick<PgCatalog.Types.PgDepend,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgDepend, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgDatabase {
 export function emptyRow() {
@@ -3824,6 +3890,8 @@ export type PrimaryKey = PgCatalog.Types.PgDatabaseOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgDatabase,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgDatabase, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgDbRoleSetting {
 export function emptyRow() {
@@ -3833,6 +3901,8 @@ export type PrimaryKey = PgCatalog.Types.PgDbRoleSettingDatabaseidRolIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgDbRoleSetting,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgDbRoleSetting, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgTablespace {
 export function emptyRow() {
@@ -3842,6 +3912,8 @@ export type PrimaryKey = PgCatalog.Types.PgTablespaceOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTablespace,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTablespace, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgAuthMembers {
 export function emptyRow() {
@@ -3851,6 +3923,8 @@ export type PrimaryKey = PgCatalog.Types.PgAuthMembersOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAuthMembers,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAuthMembers, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgShdepend {
 export function emptyRow() {
@@ -3859,6 +3933,8 @@ export function emptyRow() {
 export type PrimaryKey = never;
 export type Optional = Pick<PgCatalog.Types.PgShdepend,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgShdepend, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgShdescription {
 export function emptyRow() {
@@ -3868,6 +3944,8 @@ export type PrimaryKey = PgCatalog.Types.PgShdescriptionOCIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgShdescription,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgShdescription, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgTsConfig {
 export function emptyRow() {
@@ -3877,6 +3955,8 @@ export type PrimaryKey = PgCatalog.Types.PgTsConfigOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTsConfig,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTsConfig, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgTsConfigMap {
 export function emptyRow() {
@@ -3886,6 +3966,8 @@ export type PrimaryKey = PgCatalog.Types.PgTsConfigMapIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTsConfigMap,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTsConfigMap, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgTsDict {
 export function emptyRow() {
@@ -3895,6 +3977,8 @@ export type PrimaryKey = PgCatalog.Types.PgTsDictOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTsDict,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTsDict, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgTsParser {
 export function emptyRow() {
@@ -3904,6 +3988,8 @@ export type PrimaryKey = PgCatalog.Types.PgTsParserOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTsParser,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTsParser, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgTsTemplate {
 export function emptyRow() {
@@ -3913,6 +3999,8 @@ export type PrimaryKey = PgCatalog.Types.PgTsTemplateOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTsTemplate,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTsTemplate, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgExtension {
 export function emptyRow() {
@@ -3922,6 +4010,8 @@ export type PrimaryKey = PgCatalog.Types.PgExtensionOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgExtension,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgExtension, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgForeignDataWrapper {
 export function emptyRow() {
@@ -3931,6 +4021,8 @@ export type PrimaryKey = PgCatalog.Types.PgForeignDataWrapperOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgForeignDataWrapper,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgForeignDataWrapper, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgForeignServer {
 export function emptyRow() {
@@ -3940,6 +4032,8 @@ export type PrimaryKey = PgCatalog.Types.PgForeignServerOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgForeignServer,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgForeignServer, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgPolicy {
 export function emptyRow() {
@@ -3949,6 +4043,8 @@ export type PrimaryKey = PgCatalog.Types.PgPolicyOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgPolicy,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgPolicy, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgReplicationOrigin {
 export function emptyRow() {
@@ -3958,6 +4054,8 @@ export type PrimaryKey = PgCatalog.Types.PgReplicationOriginRoiidentIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgReplicationOrigin,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgReplicationOrigin, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgDefaultAcl {
 export function emptyRow() {
@@ -3967,6 +4065,8 @@ export type PrimaryKey = PgCatalog.Types.PgDefaultAclOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgDefaultAcl,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgDefaultAcl, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgInitPrivs {
 export function emptyRow() {
@@ -3976,6 +4076,8 @@ export type PrimaryKey = PgCatalog.Types.PgInitPrivsOCOIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgInitPrivs,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgInitPrivs, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgSeclabel {
 export function emptyRow() {
@@ -3985,6 +4087,8 @@ export type PrimaryKey = PgCatalog.Types.PgSeclabelObjectIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgSeclabel,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgSeclabel, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgShseclabel {
 export function emptyRow() {
@@ -3994,6 +4098,8 @@ export type PrimaryKey = PgCatalog.Types.PgShseclabelObjectIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgShseclabel,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgShseclabel, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgCollation {
 export function emptyRow() {
@@ -4003,6 +4109,8 @@ export type PrimaryKey = PgCatalog.Types.PgCollationOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgCollation,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgCollation, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgParameterAcl {
 export function emptyRow() {
@@ -4012,6 +4120,8 @@ export type PrimaryKey = PgCatalog.Types.PgParameterAclOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgParameterAcl,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgParameterAcl, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgPartitionedTable {
 export function emptyRow() {
@@ -4021,6 +4131,8 @@ export type PrimaryKey = PgCatalog.Types.PgPartitionedTablePartrelidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgPartitionedTable,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgPartitionedTable, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgRange {
 export function emptyRow() {
@@ -4030,6 +4142,8 @@ export type PrimaryKey = PgCatalog.Types.PgRangeRngtypidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgRange,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgRange, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgTransform {
 export function emptyRow() {
@@ -4039,6 +4153,8 @@ export type PrimaryKey = PgCatalog.Types.PgTransformOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTransform,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTransform, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgSequence {
 export function emptyRow() {
@@ -4048,6 +4164,8 @@ export type PrimaryKey = PgCatalog.Types.PgSequenceSeqrelidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgSequence,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgSequence, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgPublication {
 export function emptyRow() {
@@ -4057,6 +4175,8 @@ export type PrimaryKey = PgCatalog.Types.PgPublicationOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgPublication,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgPublication, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgPublicationNamespace {
 export function emptyRow() {
@@ -4066,6 +4186,8 @@ export type PrimaryKey = PgCatalog.Types.PgPublicationNamespaceOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgPublicationNamespace,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgPublicationNamespace, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgPublicationRel {
 export function emptyRow() {
@@ -4075,6 +4197,8 @@ export type PrimaryKey = PgCatalog.Types.PgPublicationRelOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgPublicationRel,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgPublicationRel, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgSubscriptionRel {
 export function emptyRow() {
@@ -4084,6 +4208,8 @@ export type PrimaryKey = PgCatalog.Types.PgSubscriptionRelSrrelidSrsubidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgSubscriptionRel,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgSubscriptionRel, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace PgLargeobject {
 export function emptyRow() {
@@ -4093,6 +4219,8 @@ export type PrimaryKey = PgCatalog.Types.PgLargeobjectLoidPnIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgLargeobject,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgLargeobject, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 }
 }
@@ -5299,6 +5427,8 @@ export function emptyRow() {
 export type PrimaryKey = never;
 export type Optional = Pick<InformationSchema.Types.SqlFeatures,never>
 export type Values = PartiallyOptional<InformationSchema.Types.SqlFeatures, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace SqlImplementationInfo {
 export function emptyRow() {
@@ -5307,6 +5437,8 @@ export function emptyRow() {
 export type PrimaryKey = never;
 export type Optional = Pick<InformationSchema.Types.SqlImplementationInfo,never>
 export type Values = PartiallyOptional<InformationSchema.Types.SqlImplementationInfo, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace SqlParts {
 export function emptyRow() {
@@ -5315,6 +5447,8 @@ export function emptyRow() {
 export type PrimaryKey = never;
 export type Optional = Pick<InformationSchema.Types.SqlParts,never>
 export type Values = PartiallyOptional<InformationSchema.Types.SqlParts, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace SqlSizing {
 export function emptyRow() {
@@ -5323,6 +5457,8 @@ export function emptyRow() {
 export type PrimaryKey = never;
 export type Optional = Pick<InformationSchema.Types.SqlSizing,never>
 export type Values = PartiallyOptional<InformationSchema.Types.SqlSizing, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 }
 }
@@ -5689,7 +5825,7 @@ storeId: Nullable<PgCatalog.Types.Int4>;
 }
 
 export type FilmFulltextIdx = {
-fulltext: Nullable<PgCatalog.Types.Gtsvector>;
+fulltext: Nullable<PgCatalog.Types.Tsvector>;
 }
 
 export type IdxActorLastName = {
@@ -5816,6 +5952,8 @@ export type PrimaryKey = Public.Types.FilmActorPkey;
 
 export type Optional = Pick<Public.Types.FilmActor,"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.FilmActor, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace Address {
 export function emptyRow() {
@@ -5825,6 +5963,8 @@ export type PrimaryKey = Public.Types.AddressPkey;
 
 export type Optional = Pick<Public.Types.Address,"addressId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Address, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace City {
 export function emptyRow() {
@@ -5834,6 +5974,8 @@ export type PrimaryKey = Public.Types.CityPkey;
 
 export type Optional = Pick<Public.Types.City,"cityId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.City, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace Customer {
 export function emptyRow() {
@@ -5843,6 +5985,8 @@ export type PrimaryKey = Public.Types.CustomerPkey;
 
 export type Optional = Pick<Public.Types.Customer,"customerId"|"activebool"|"createDate"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Customer, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace Actor {
 export function emptyRow() {
@@ -5852,6 +5996,8 @@ export type PrimaryKey = Public.Types.ActorPkey;
 
 export type Optional = Pick<Public.Types.Actor,"actorId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Actor, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace FilmCategory {
 export function emptyRow() {
@@ -5861,6 +6007,8 @@ export type PrimaryKey = Public.Types.FilmCategoryPkey;
 
 export type Optional = Pick<Public.Types.FilmCategory,"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.FilmCategory, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace Inventory {
 export function emptyRow() {
@@ -5870,6 +6018,8 @@ export type PrimaryKey = Public.Types.InventoryPkey;
 
 export type Optional = Pick<Public.Types.Inventory,"inventoryId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Inventory, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace Category {
 export function emptyRow() {
@@ -5879,6 +6029,8 @@ export type PrimaryKey = Public.Types.CategoryPkey;
 
 export type Optional = Pick<Public.Types.Category,"categoryId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Category, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace Country {
 export function emptyRow() {
@@ -5888,6 +6040,8 @@ export type PrimaryKey = Public.Types.CountryPkey;
 
 export type Optional = Pick<Public.Types.Country,"countryId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Country, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace Language {
 export function emptyRow() {
@@ -5897,6 +6051,8 @@ export type PrimaryKey = Public.Types.LanguagePkey;
 
 export type Optional = Pick<Public.Types.Language,"languageId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Language, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace Rental {
 export function emptyRow() {
@@ -5906,6 +6062,8 @@ export type PrimaryKey = Public.Types.RentalPkey;
 
 export type Optional = Pick<Public.Types.Rental,"rentalId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Rental, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace Staff {
 export function emptyRow() {
@@ -5915,6 +6073,8 @@ export type PrimaryKey = Public.Types.StaffPkey;
 
 export type Optional = Pick<Public.Types.Staff,"staffId"|"active"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Staff, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace Store {
 export function emptyRow() {
@@ -5924,6 +6084,8 @@ export type PrimaryKey = Public.Types.StorePkey;
 
 export type Optional = Pick<Public.Types.Store,"storeId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Store, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace Payment {
 export function emptyRow() {
@@ -5933,6 +6095,8 @@ export type PrimaryKey = Public.Types.PaymentPkey;
 
 export type Optional = Pick<Public.Types.Payment,"paymentId">
 export type Values = PartiallyOptional<Public.Types.Payment, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 export namespace Film {
 export function emptyRow() {
@@ -5942,18 +6106,20 @@ export type PrimaryKey = Public.Types.FilmPkey;
 
 export type Optional = Pick<Public.Types.Film,"filmId"|"rentalDuration"|"rentalRate"|"replacementCost"|"rating"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Film, Optional & PrimaryKey>
+export type Options = ReadOptions & {
+};
 }
 }
 }
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_32965Index = {
+export type PgToast_35153Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_33051Index = {
+export type PgToast_35239Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -13512,7 +13678,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgProcPronameArgsNspIndex.is(from)) {
   return {
-proname: PgCatalog.Types.Cstring.parse(from.proname),
+proname: PgCatalog.Types.Name.parse(from.proname),
 proargtypes: PgCatalog.Types.Oidvector.parse(from.proargtypes),
 pronamespace: PgCatalog.Types.Oid.parse(from.pronamespace),
 };
@@ -13542,7 +13708,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgTypeTypnameNspIndex.is(from)) {
   return {
-typname: PgCatalog.Types.Cstring.parse(from.typname),
+typname: PgCatalog.Types.Name.parse(from.typname),
 typnamespace: PgCatalog.Types.Oid.parse(from.typnamespace),
 };
 }
@@ -13558,7 +13724,7 @@ if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgAttributeRelidAttnamIndex.is(from)) {
   return {
 attrelid: PgCatalog.Types.Oid.parse(from.attrelid),
-attname: PgCatalog.Types.Cstring.parse(from.attname),
+attname: PgCatalog.Types.Name.parse(from.attname),
 };
 }
 throw new Error(JSON.stringify(from))
@@ -13601,7 +13767,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgClassRelnameNspIndex.is(from)) {
   return {
-relname: PgCatalog.Types.Cstring.parse(from.relname),
+relname: PgCatalog.Types.Name.parse(from.relname),
 relnamespace: PgCatalog.Types.Oid.parse(from.relnamespace),
 };
 }
@@ -13660,7 +13826,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgConstraintConnameNspIndex.is(from)) {
   return {
-conname: PgCatalog.Types.Cstring.parse(from.conname),
+conname: PgCatalog.Types.Name.parse(from.conname),
 connamespace: PgCatalog.Types.Oid.parse(from.connamespace),
 };
 }
@@ -13677,7 +13843,7 @@ if (PgCatalog.Types.PgConstraintConrelidContypidConnameIndex.is(from)) {
   return {
 conrelid: PgCatalog.Types.Oid.parse(from.conrelid),
 contypid: PgCatalog.Types.Oid.parse(from.contypid),
-conname: PgCatalog.Types.Cstring.parse(from.conname),
+conname: PgCatalog.Types.Name.parse(from.conname),
 };
 }
 throw new Error(JSON.stringify(from))
@@ -13804,7 +13970,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgOperatorOprnameLRNIndex.is(from)) {
   return {
-oprname: PgCatalog.Types.Cstring.parse(from.oprname),
+oprname: PgCatalog.Types.Name.parse(from.oprname),
 oprleft: PgCatalog.Types.Oid.parse(from.oprleft),
 oprright: PgCatalog.Types.Oid.parse(from.oprright),
 oprnamespace: PgCatalog.Types.Oid.parse(from.oprnamespace),
@@ -13822,7 +13988,7 @@ if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgOpfamilyAmNameNspIndex.is(from)) {
   return {
 opfmethod: PgCatalog.Types.Oid.parse(from.opfmethod),
-opfname: PgCatalog.Types.Cstring.parse(from.opfname),
+opfname: PgCatalog.Types.Name.parse(from.opfname),
 opfnamespace: PgCatalog.Types.Oid.parse(from.opfnamespace),
 };
 }
@@ -13852,7 +14018,7 @@ if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgOpclassAmNameNspIndex.is(from)) {
   return {
 opcmethod: PgCatalog.Types.Oid.parse(from.opcmethod),
-opcname: PgCatalog.Types.Cstring.parse(from.opcname),
+opcname: PgCatalog.Types.Name.parse(from.opcname),
 opcnamespace: PgCatalog.Types.Oid.parse(from.opcnamespace),
 };
 }
@@ -13881,7 +14047,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgAmNameIndex.is(from)) {
   return {
-amname: PgCatalog.Types.Cstring.parse(from.amname),
+amname: PgCatalog.Types.Name.parse(from.amname),
 };
 }
 throw new Error(JSON.stringify(from))
@@ -13987,7 +14153,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgLanguageNameIndex.is(from)) {
   return {
-lanname: PgCatalog.Types.Cstring.parse(from.lanname),
+lanname: PgCatalog.Types.Name.parse(from.lanname),
 };
 }
 throw new Error(JSON.stringify(from))
@@ -14088,7 +14254,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgStatisticExtNameIndex.is(from)) {
   return {
-stxname: PgCatalog.Types.Cstring.parse(from.stxname),
+stxname: PgCatalog.Types.Name.parse(from.stxname),
 stxnamespace: PgCatalog.Types.Oid.parse(from.stxnamespace),
 };
 }
@@ -14147,7 +14313,7 @@ if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgRewriteRelRulenameIndex.is(from)) {
   return {
 evClass: PgCatalog.Types.Oid.parse(from.evClass),
-rulename: PgCatalog.Types.Cstring.parse(from.rulename),
+rulename: PgCatalog.Types.Name.parse(from.rulename),
 };
 }
 throw new Error(JSON.stringify(from))
@@ -14176,7 +14342,7 @@ if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgTriggerTgrelidTgnameIndex.is(from)) {
   return {
 tgrelid: PgCatalog.Types.Oid.parse(from.tgrelid),
-tgname: PgCatalog.Types.Cstring.parse(from.tgname),
+tgname: PgCatalog.Types.Name.parse(from.tgname),
 };
 }
 throw new Error(JSON.stringify(from))
@@ -14204,7 +14370,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgEventTriggerEvtnameIndex.is(from)) {
   return {
-evtname: PgCatalog.Types.Cstring.parse(from.evtname),
+evtname: PgCatalog.Types.Name.parse(from.evtname),
 };
 }
 throw new Error(JSON.stringify(from))
@@ -14292,7 +14458,7 @@ if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgEnumTypidLabelIndex.is(from)) {
   return {
 enumtypid: PgCatalog.Types.Oid.parse(from.enumtypid),
-enumlabel: PgCatalog.Types.Cstring.parse(from.enumlabel),
+enumlabel: PgCatalog.Types.Name.parse(from.enumlabel),
 };
 }
 throw new Error(JSON.stringify(from))
@@ -14321,7 +14487,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgNamespaceNspnameIndex.is(from)) {
   return {
-nspname: PgCatalog.Types.Cstring.parse(from.nspname),
+nspname: PgCatalog.Types.Name.parse(from.nspname),
 };
 }
 throw new Error(JSON.stringify(from))
@@ -14366,7 +14532,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgConversionNameNspIndex.is(from)) {
   return {
-conname: PgCatalog.Types.Cstring.parse(from.conname),
+conname: PgCatalog.Types.Name.parse(from.conname),
 connamespace: PgCatalog.Types.Oid.parse(from.connamespace),
 };
 }
@@ -14427,7 +14593,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgDatabaseDatnameIndex.is(from)) {
   return {
-datname: PgCatalog.Types.Cstring.parse(from.datname),
+datname: PgCatalog.Types.Name.parse(from.datname),
 };
 }
 throw new Error(JSON.stringify(from))
@@ -14484,7 +14650,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgTablespaceSpcnameIndex.is(from)) {
   return {
-spcname: PgCatalog.Types.Cstring.parse(from.spcname),
+spcname: PgCatalog.Types.Name.parse(from.spcname),
 };
 }
 throw new Error(JSON.stringify(from))
@@ -14498,7 +14664,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgAuthidRolnameIndex.is(from)) {
   return {
-rolname: PgCatalog.Types.Cstring.parse(from.rolname),
+rolname: PgCatalog.Types.Name.parse(from.rolname),
 };
 }
 throw new Error(JSON.stringify(from))
@@ -14633,7 +14799,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgTsConfigCfgnameIndex.is(from)) {
   return {
-cfgname: PgCatalog.Types.Cstring.parse(from.cfgname),
+cfgname: PgCatalog.Types.Name.parse(from.cfgname),
 cfgnamespace: PgCatalog.Types.Oid.parse(from.cfgnamespace),
 };
 }
@@ -14678,7 +14844,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgTsDictDictnameIndex.is(from)) {
   return {
-dictname: PgCatalog.Types.Cstring.parse(from.dictname),
+dictname: PgCatalog.Types.Name.parse(from.dictname),
 dictnamespace: PgCatalog.Types.Oid.parse(from.dictnamespace),
 };
 }
@@ -14707,7 +14873,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgTsParserPrsnameIndex.is(from)) {
   return {
-prsname: PgCatalog.Types.Cstring.parse(from.prsname),
+prsname: PgCatalog.Types.Name.parse(from.prsname),
 prsnamespace: PgCatalog.Types.Oid.parse(from.prsnamespace),
 };
 }
@@ -14736,7 +14902,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgTsTemplateTmplnameIndex.is(from)) {
   return {
-tmplname: PgCatalog.Types.Cstring.parse(from.tmplname),
+tmplname: PgCatalog.Types.Name.parse(from.tmplname),
 tmplnamespace: PgCatalog.Types.Oid.parse(from.tmplnamespace),
 };
 }
@@ -14779,7 +14945,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgExtensionNameIndex.is(from)) {
   return {
-extname: PgCatalog.Types.Cstring.parse(from.extname),
+extname: PgCatalog.Types.Name.parse(from.extname),
 };
 }
 throw new Error(JSON.stringify(from))
@@ -14807,7 +14973,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgForeignDataWrapperNameIndex.is(from)) {
   return {
-fdwname: PgCatalog.Types.Cstring.parse(from.fdwname),
+fdwname: PgCatalog.Types.Name.parse(from.fdwname),
 };
 }
 throw new Error(JSON.stringify(from))
@@ -14835,7 +15001,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgForeignServerNameIndex.is(from)) {
   return {
-srvname: PgCatalog.Types.Cstring.parse(from.srvname),
+srvname: PgCatalog.Types.Name.parse(from.srvname),
 };
 }
 throw new Error(JSON.stringify(from))
@@ -14907,7 +15073,7 @@ if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgPolicyPolrelidPolnameIndex.is(from)) {
   return {
 polrelid: PgCatalog.Types.Oid.parse(from.polrelid),
-polname: PgCatalog.Types.Cstring.parse(from.polname),
+polname: PgCatalog.Types.Name.parse(from.polname),
 };
 }
 throw new Error(JSON.stringify(from))
@@ -15028,7 +15194,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgCollationNameEncNspIndex.is(from)) {
   return {
-collname: PgCatalog.Types.Cstring.parse(from.collname),
+collname: PgCatalog.Types.Name.parse(from.collname),
 collencoding: PgCatalog.Types.Int4.parse(from.collencoding),
 collnamespace: PgCatalog.Types.Oid.parse(from.collnamespace),
 };
@@ -15185,7 +15351,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgPublicationPubnameIndex.is(from)) {
   return {
-pubname: PgCatalog.Types.Cstring.parse(from.pubname),
+pubname: PgCatalog.Types.Name.parse(from.pubname),
 };
 }
 throw new Error(JSON.stringify(from))
@@ -15286,7 +15452,7 @@ if (from === null || from === undefined) return null;
 if (PgCatalog.Types.PgSubscriptionSubnameIndex.is(from)) {
   return {
 subdbid: PgCatalog.Types.Oid.parse(from.subdbid),
-subname: PgCatalog.Types.Cstring.parse(from.subname),
+subname: PgCatalog.Types.Name.parse(from.subname),
 };
 }
 throw new Error(JSON.stringify(from))
@@ -19142,7 +19308,7 @@ export function parse(from: unknown) {
 if (from === null || from === undefined) return null;
 if (Public.Types.FilmFulltextIdx.is(from)) {
   return {
-fulltext: PgCatalog.Types.Gtsvector.parse(from.fulltext),
+fulltext: PgCatalog.Types.Tsvector.parse(from.fulltext),
 };
 }
 throw new Error(JSON.stringify(from))
@@ -19605,11 +19771,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_32965Index {
+export namespace PgToast_35153Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_32965Index.is(from)) {
+if (PgToast.Types.PgToast_35153Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -19620,11 +19786,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_33051Index {
+export namespace PgToast_35239Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_33051Index.is(from)) {
+if (PgToast.Types.PgToast_35239Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26237,16 +26403,16 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_32965Index {
-export function is(value: any) : value is PgToast.Types.PgToast_32965Index {
+export namespace PgToast_35153Index {
+export function is(value: any) : value is PgToast.Types.PgToast_35153Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_33051Index {
-export function is(value: any) : value is PgToast.Types.PgToast_33051Index {
+export namespace PgToast_35239Index {
+export function is(value: any) : value is PgToast.Types.PgToast_35239Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -28127,165 +28293,165 @@ return false;
 ["InformationSchema.Types.UserMappings"]: Typecast
 [13823]: Typecast;
 ["InformationSchema.Types.UserMappingsArray"]: Typecast
-[32921]: Typecast;
+[35109]: Typecast;
 ["Public.Types.MpaaRating"]: Typecast
-[32920]: Typecast;
+[35108]: Typecast;
 ["Public.Types.MpaaRatingArray"]: Typecast
-[32932]: Typecast;
+[35120]: Typecast;
 ["Public.Types.Year"]: Typecast
-[32931]: Typecast;
+[35119]: Typecast;
 ["Public.Types.YearArray"]: Typecast
-[32945]: Typecast;
+[35133]: Typecast;
 ["Public.Types.Customer"]: Typecast
-[32944]: Typecast;
+[35132]: Typecast;
 ["Public.Types.CustomerArray"]: Typecast
-[32955]: Typecast;
+[35143]: Typecast;
 ["Public.Types.Actor"]: Typecast
-[32954]: Typecast;
+[35142]: Typecast;
 ["Public.Types.ActorArray"]: Typecast
-[32961]: Typecast;
+[35149]: Typecast;
 ["Public.Types.Category"]: Typecast
-[32960]: Typecast;
+[35148]: Typecast;
 ["Public.Types.CategoryArray"]: Typecast
-[32967]: Typecast;
+[35155]: Typecast;
 ["Public.Types.Film"]: Typecast
-[32966]: Typecast;
+[35154]: Typecast;
 ["Public.Types.FilmArray"]: Typecast
-[32978]: Typecast;
+[35166]: Typecast;
 ["Public.Types.FilmActor"]: Typecast
-[32977]: Typecast;
+[35165]: Typecast;
 ["Public.Types.FilmActorArray"]: Typecast
-[32982]: Typecast;
+[35170]: Typecast;
 ["Public.Types.FilmCategory"]: Typecast
-[32981]: Typecast;
+[35169]: Typecast;
 ["Public.Types.FilmCategoryArray"]: Typecast
-[32986]: Typecast;
+[35174]: Typecast;
 ["Public.Types.ActorInfo"]: Typecast
-[32985]: Typecast;
+[35173]: Typecast;
 ["Public.Types.ActorInfoArray"]: Typecast
-[32992]: Typecast;
+[35180]: Typecast;
 ["Public.Types.Address"]: Typecast
-[32991]: Typecast;
+[35179]: Typecast;
 ["Public.Types.AddressArray"]: Typecast
-[32998]: Typecast;
+[35186]: Typecast;
 ["Public.Types.City"]: Typecast
-[32997]: Typecast;
+[35185]: Typecast;
 ["Public.Types.CityArray"]: Typecast
-[33004]: Typecast;
+[35192]: Typecast;
 ["Public.Types.Country"]: Typecast
-[33003]: Typecast;
+[35191]: Typecast;
 ["Public.Types.CountryArray"]: Typecast
-[33009]: Typecast;
+[35197]: Typecast;
 ["Public.Types.CustomerList"]: Typecast
-[33008]: Typecast;
+[35196]: Typecast;
 ["Public.Types.CustomerListArray"]: Typecast
-[33014]: Typecast;
+[35202]: Typecast;
 ["Public.Types.FilmList"]: Typecast
-[33013]: Typecast;
+[35201]: Typecast;
 ["Public.Types.FilmListArray"]: Typecast
-[33020]: Typecast;
+[35208]: Typecast;
 ["Public.Types.Inventory"]: Typecast
-[33019]: Typecast;
+[35207]: Typecast;
 ["Public.Types.InventoryArray"]: Typecast
-[33026]: Typecast;
+[35214]: Typecast;
 ["Public.Types.Language"]: Typecast
-[33025]: Typecast;
+[35213]: Typecast;
 ["Public.Types.LanguageArray"]: Typecast
-[33031]: Typecast;
+[35219]: Typecast;
 ["Public.Types.NicerButSlowerFilmList"]: Typecast
-[33030]: Typecast;
+[35218]: Typecast;
 ["Public.Types.NicerButSlowerFilmListArray"]: Typecast
-[33037]: Typecast;
+[35225]: Typecast;
 ["Public.Types.Payment"]: Typecast
-[33036]: Typecast;
+[35224]: Typecast;
 ["Public.Types.PaymentArray"]: Typecast
-[33042]: Typecast;
+[35230]: Typecast;
 ["Public.Types.Rental"]: Typecast
-[33041]: Typecast;
+[35229]: Typecast;
 ["Public.Types.RentalArray"]: Typecast
-[33047]: Typecast;
+[35235]: Typecast;
 ["Public.Types.SalesByFilmCategory"]: Typecast
-[33046]: Typecast;
+[35234]: Typecast;
 ["Public.Types.SalesByFilmCategoryArray"]: Typecast
-[33053]: Typecast;
+[35241]: Typecast;
 ["Public.Types.Staff"]: Typecast
-[33052]: Typecast;
+[35240]: Typecast;
 ["Public.Types.StaffArray"]: Typecast
-[33062]: Typecast;
+[35250]: Typecast;
 ["Public.Types.Store"]: Typecast
-[33061]: Typecast;
+[35249]: Typecast;
 ["Public.Types.StoreArray"]: Typecast
-[33067]: Typecast;
+[35255]: Typecast;
 ["Public.Types.SalesByStore"]: Typecast
-[33066]: Typecast;
+[35254]: Typecast;
 ["Public.Types.SalesByStoreArray"]: Typecast
-[33072]: Typecast;
+[35260]: Typecast;
 ["Public.Types.StaffList"]: Typecast
-[33071]: Typecast;
+[35259]: Typecast;
 ["Public.Types.StaffListArray"]: Typecast
-[33075]: Typecast;
+[35263]: Typecast;
 ["Public.Types.ActorPkey"]: Typecast
-[33077]: Typecast;
+[35265]: Typecast;
 ["Public.Types.AddressPkey"]: Typecast
-[33079]: Typecast;
+[35267]: Typecast;
 ["Public.Types.CategoryPkey"]: Typecast
-[33081]: Typecast;
+[35269]: Typecast;
 ["Public.Types.CityPkey"]: Typecast
-[33083]: Typecast;
+[35271]: Typecast;
 ["Public.Types.CountryPkey"]: Typecast
-[33085]: Typecast;
+[35273]: Typecast;
 ["Public.Types.CustomerPkey"]: Typecast
-[33087]: Typecast;
+[35275]: Typecast;
 ["Public.Types.FilmActorPkey"]: Typecast
-[33089]: Typecast;
+[35277]: Typecast;
 ["Public.Types.FilmCategoryPkey"]: Typecast
-[33091]: Typecast;
+[35279]: Typecast;
 ["Public.Types.FilmPkey"]: Typecast
-[33093]: Typecast;
+[35281]: Typecast;
 ["Public.Types.InventoryPkey"]: Typecast
-[33095]: Typecast;
+[35283]: Typecast;
 ["Public.Types.LanguagePkey"]: Typecast
-[33097]: Typecast;
+[35285]: Typecast;
 ["Public.Types.PaymentPkey"]: Typecast
-[33099]: Typecast;
+[35287]: Typecast;
 ["Public.Types.RentalPkey"]: Typecast
-[33101]: Typecast;
+[35289]: Typecast;
 ["Public.Types.StaffPkey"]: Typecast
-[33103]: Typecast;
+[35291]: Typecast;
 ["Public.Types.StorePkey"]: Typecast
-[33105]: Typecast;
+[35293]: Typecast;
 ["Public.Types.FilmFulltextIdx"]: Typecast
-[33106]: Typecast;
+[35294]: Typecast;
 ["Public.Types.IdxActorLastName"]: Typecast
-[33107]: Typecast;
+[35295]: Typecast;
 ["Public.Types.IdxFkAddressId"]: Typecast
-[33108]: Typecast;
+[35296]: Typecast;
 ["Public.Types.IdxFkCityId"]: Typecast
-[33109]: Typecast;
+[35297]: Typecast;
 ["Public.Types.IdxFkCountryId"]: Typecast
-[33110]: Typecast;
+[35298]: Typecast;
 ["Public.Types.IdxFkCustomerId"]: Typecast
-[33111]: Typecast;
+[35299]: Typecast;
 ["Public.Types.IdxFkFilmId"]: Typecast
-[33112]: Typecast;
+[35300]: Typecast;
 ["Public.Types.IdxFkInventoryId"]: Typecast
-[33113]: Typecast;
+[35301]: Typecast;
 ["Public.Types.IdxFkLanguageId"]: Typecast
-[33114]: Typecast;
+[35302]: Typecast;
 ["Public.Types.IdxFkRentalId"]: Typecast
-[33115]: Typecast;
+[35303]: Typecast;
 ["Public.Types.IdxFkStaffId"]: Typecast
-[33116]: Typecast;
+[35304]: Typecast;
 ["Public.Types.IdxFkStoreId"]: Typecast
-[33117]: Typecast;
+[35305]: Typecast;
 ["Public.Types.IdxLastName"]: Typecast
-[33118]: Typecast;
+[35306]: Typecast;
 ["Public.Types.IdxStoreIdFilmId"]: Typecast
-[33119]: Typecast;
+[35307]: Typecast;
 ["Public.Types.IdxTitle"]: Typecast
-[33120]: Typecast;
+[35308]: Typecast;
 ["Public.Types.IdxUnqManagerStaffId"]: Typecast
-[33121]: Typecast;
+[35309]: Typecast;
 ["Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId"]: Typecast
 
 ["Public.Procedures.FilmInStock.Parameters"]: Typecast
@@ -28301,10 +28467,10 @@ return false;
 ["Public.Procedures.LastDay.Parameters"]: Typecast
 
 ["Public.Procedures.RewardsReport.Parameters"]: Typecast
-[32975]: Typecast;
-["PgToast.Types.PgToast_32965Index"]: Typecast
-[33058]: Typecast;
-["PgToast.Types.PgToast_33051Index"]: Typecast
+[35163]: Typecast;
+["PgToast.Types.PgToast_35153Index"]: Typecast
+[35246]: Typecast;
+["PgToast.Types.PgToast_35239Index"]: Typecast
 [2837]: Typecast;
 ["PgToast.Types.PgToast_1255Index"]: Typecast
 [4172]: Typecast;
@@ -28445,10 +28611,9 @@ get database() { return this};
             }
         
 async call(parameters : Public.Procedures.FilmInStock.Parameters) {
-  console.assert(parameters);
   
             const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[32935].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
+              return context.procTypes[35123].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
             };
           
   const sql = this.database.context.sql;
@@ -28471,10 +28636,9 @@ async call(parameters : Public.Procedures.FilmInStock.Parameters) {
             }
         
 async call(parameters : Public.Procedures.FilmNotInStock.Parameters) {
-  console.assert(parameters);
   
             const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[32936].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
+              return context.procTypes[35124].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
             };
           
   const sql = this.database.context.sql;
@@ -28497,7 +28661,6 @@ async call(parameters : Public.Procedures.FilmNotInStock.Parameters) {
             }
         
 async call(parameters : Public.Procedures.GetCustomerBalance.Parameters) {
-  console.assert(parameters);
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -28524,7 +28687,6 @@ async call(parameters : Public.Procedures.GetCustomerBalance.Parameters) {
             }
         
 async call(parameters : Public.Procedures.InventoryHeldByCustomer.Parameters) {
-  console.assert(parameters);
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -28551,7 +28713,6 @@ async call(parameters : Public.Procedures.InventoryHeldByCustomer.Parameters) {
             }
         
 async call(parameters : Public.Procedures.InventoryInStock.Parameters) {
-  console.assert(parameters);
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -28578,7 +28739,6 @@ async call(parameters : Public.Procedures.InventoryInStock.Parameters) {
             }
         
 async call(parameters : Public.Procedures.LastDay.Parameters) {
-  console.assert(parameters);
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -28605,7 +28765,6 @@ async call(parameters : Public.Procedures.LastDay.Parameters) {
             }
         
 async call(parameters : Public.Procedures.RewardsReport.Parameters) {
-  console.assert(parameters);
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -31106,7 +31265,7 @@ const response = await sql`
       --
       INSERT INTO
         public.film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
-      VALUES (${ values.title === undefined ? sql`DEFAULT` : typed[1043](values.title) },${ values.description === undefined ? sql`DEFAULT` : typed[25](values.description) },${ values.releaseYear === undefined ? sql`DEFAULT` : typed[32932](values.releaseYear) },${ values.languageId === undefined ? sql`DEFAULT` : typed[21](values.languageId) },${ values.rentalDuration === undefined ? sql`DEFAULT` : typed[21](values.rentalDuration) },${ values.rentalRate === undefined ? sql`DEFAULT` : typed[1700](values.rentalRate) },${ values.length === undefined ? sql`DEFAULT` : typed[21](values.length) },${ values.replacementCost === undefined ? sql`DEFAULT` : typed[1700](values.replacementCost) },${ values.rating === undefined ? sql`DEFAULT` : typed[32921](values.rating) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.specialFeatures === undefined ? sql`DEFAULT` : typed[1009](values.specialFeatures) },${ values.fulltext === undefined ? sql`DEFAULT` : typed[3614](values.fulltext) })
+      VALUES (${ values.title === undefined ? sql`DEFAULT` : typed[1043](values.title) },${ values.description === undefined ? sql`DEFAULT` : typed[25](values.description) },${ values.releaseYear === undefined ? sql`DEFAULT` : typed[35120](values.releaseYear) },${ values.languageId === undefined ? sql`DEFAULT` : typed[21](values.languageId) },${ values.rentalDuration === undefined ? sql`DEFAULT` : typed[21](values.rentalDuration) },${ values.rentalRate === undefined ? sql`DEFAULT` : typed[1700](values.rentalRate) },${ values.length === undefined ? sql`DEFAULT` : typed[21](values.length) },${ values.replacementCost === undefined ? sql`DEFAULT` : typed[1700](values.replacementCost) },${ values.rating === undefined ? sql`DEFAULT` : typed[35109](values.rating) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.specialFeatures === undefined ? sql`DEFAULT` : typed[1009](values.specialFeatures) },${ values.fulltext === undefined ? sql`DEFAULT` : typed[3614](values.fulltext) })
       RETURNING
         film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
     `
@@ -31115,7 +31274,7 @@ return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedI
 const response = await sql`
     INSERT INTO
       public.film (film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
-    VALUES (${ values.filmId === undefined ? sql`DEFAULT` : typed[23](values.filmId) },${ values.title === undefined ? sql`DEFAULT` : typed[1043](values.title) },${ values.description === undefined ? sql`DEFAULT` : typed[25](values.description) },${ values.releaseYear === undefined ? sql`DEFAULT` : typed[32932](values.releaseYear) },${ values.languageId === undefined ? sql`DEFAULT` : typed[21](values.languageId) },${ values.rentalDuration === undefined ? sql`DEFAULT` : typed[21](values.rentalDuration) },${ values.rentalRate === undefined ? sql`DEFAULT` : typed[1700](values.rentalRate) },${ values.length === undefined ? sql`DEFAULT` : typed[21](values.length) },${ values.replacementCost === undefined ? sql`DEFAULT` : typed[1700](values.replacementCost) },${ values.rating === undefined ? sql`DEFAULT` : typed[32921](values.rating) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.specialFeatures === undefined ? sql`DEFAULT` : typed[1009](values.specialFeatures) },${ values.fulltext === undefined ? sql`DEFAULT` : typed[3614](values.fulltext) })
+    VALUES (${ values.filmId === undefined ? sql`DEFAULT` : typed[23](values.filmId) },${ values.title === undefined ? sql`DEFAULT` : typed[1043](values.title) },${ values.description === undefined ? sql`DEFAULT` : typed[25](values.description) },${ values.releaseYear === undefined ? sql`DEFAULT` : typed[35120](values.releaseYear) },${ values.languageId === undefined ? sql`DEFAULT` : typed[21](values.languageId) },${ values.rentalDuration === undefined ? sql`DEFAULT` : typed[21](values.rentalDuration) },${ values.rentalRate === undefined ? sql`DEFAULT` : typed[1700](values.rentalRate) },${ values.length === undefined ? sql`DEFAULT` : typed[21](values.length) },${ values.replacementCost === undefined ? sql`DEFAULT` : typed[1700](values.replacementCost) },${ values.rating === undefined ? sql`DEFAULT` : typed[35109](values.rating) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.specialFeatures === undefined ? sql`DEFAULT` : typed[1009](values.specialFeatures) },${ values.fulltext === undefined ? sql`DEFAULT` : typed[3614](values.fulltext) })
     ON CONFLICT (film_id) DO UPDATE
     SET
       title = EXCLUDED.title,description = EXCLUDED.description,release_year = EXCLUDED.release_year,language_id = EXCLUDED.language_id,rental_duration = EXCLUDED.rental_duration,rental_rate = EXCLUDED.rental_rate,length = EXCLUDED.length,replacement_cost = EXCLUDED.replacement_cost,rating = EXCLUDED.rating,last_update = EXCLUDED.last_update,special_features = EXCLUDED.special_features,fulltext = EXCLUDED.fulltext
@@ -31178,7 +31337,7 @@ const response = await sql`
     UPDATE 
       public.film 
     SET
-      film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[32932](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[32921](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
+      film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[35120](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[35109](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
     WHERE
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[23](parameters.filmId) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`
@@ -31222,7 +31381,7 @@ const response = await sql`
     FROM
       public.film 
     WHERE
-      fulltext = ${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3642](parameters.fulltext) }
+      fulltext = ${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3614](parameters.fulltext) }
     `
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
@@ -31239,9 +31398,9 @@ const response = await sql`
     UPDATE 
       public.film 
     SET
-      film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[32932](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[32921](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
+      film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[35120](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[35109](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
     WHERE
-      fulltext = ${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3642](parameters.fulltext) }
+      fulltext = ${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3614](parameters.fulltext) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
@@ -31254,7 +31413,7 @@ async delete(parameters: Public.Types.FilmFulltextIdx) {
     DELETE FROM 
       public.film 
     WHERE
-      fulltext = ${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3642](parameters.fulltext) }
+      fulltext = ${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3614](parameters.fulltext) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`
  return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
@@ -31300,7 +31459,7 @@ const response = await sql`
     UPDATE 
       public.film 
     SET
-      film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[32932](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[32921](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
+      film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[35120](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[35109](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
     WHERE
       language_id = ${ parameters.languageId === undefined ? sql`DEFAULT` : typed[21](parameters.languageId) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`
@@ -31361,7 +31520,7 @@ const response = await sql`
     UPDATE 
       public.film 
     SET
-      film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[32932](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[32921](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
+      film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[35120](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[35109](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
     WHERE
       title = ${ parameters.title === undefined ? sql`DEFAULT` : typed[1043](parameters.title) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`

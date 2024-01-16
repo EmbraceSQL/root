@@ -100,34 +100,36 @@ export class PGProcs {
       // outputs
       new ResultsNode(node, resultsType);
 
-      // inputs -- which may have no attributes
-      // this type won't exist in the database catalog - we're treating
-      // all the parameters which are in a flat argument list style
-      // as a structured object single 'parameter'
-      const parametersType = new CompositeTypeNode(
-        PARAMETERS,
-        node,
-        "", // no identifier, this is not a type in the database
-      );
+      if (proc.proc.proargtypes.length > 0) {
+        // inputs -- which are not required because of no-arg functions
+        // this type won't exist in the database catalog - we're treating
+        // all the parameters which are in a flat argument list style
+        // as a structured object single 'parameter'
+        const parametersType = new CompositeTypeNode(
+          PARAMETERS,
+          node,
+          "", // no identifier, this is not a type in the database
+        );
 
-      proc.proc.proargtypes
-        .flatMap((t) => t)
-        .forEach((oid, i) => {
-          const type = context.database.resolveType(oid)!;
-          new AttributeNode(
-            parametersType,
-            proc.proc.proargnames[i]
-              ? proc.proc.proargnames[i]
-              : `argument_${i}`,
-            i,
-            type,
-            i > proc.proc.proargtypes.length - proc.proc.pronargdefaults,
-            true,
-            proc.proc.proargnames[i] !== undefined,
-          );
-        });
-      // inputs
-      new ParametersNode(node, parametersType);
+        proc.proc.proargtypes
+          .flatMap((t) => t)
+          .forEach((oid, i) => {
+            const type = context.database.resolveType(oid)!;
+            new AttributeNode(
+              parametersType,
+              proc.proc.proargnames[i]
+                ? proc.proc.proargnames[i]
+                : `argument_${i}`,
+              i,
+              type,
+              i > proc.proc.proargtypes.length - proc.proc.pronargdefaults,
+              true,
+              proc.proc.proargnames[i] !== undefined,
+            );
+          });
+        // inputs
+        new ParametersNode(node, parametersType);
+      }
     }
   }
 }

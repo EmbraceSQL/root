@@ -6,6 +6,8 @@ ALTER DATABASE marshalling OWNER TO postgres;
 
 \connect marshalling
 CREATE EXTENSION CUBE;
+CREATE EXTENSION pg_trgm;
+
 
 DROP TABLE IF EXISTS slug;
 
@@ -126,3 +128,16 @@ CREATE INDEX q_and_a_answer ON api.q_and_a USING btree (answer);
 COPY api.q_and_a (question, answer) FROM stdin WITH NULL as 'NULL';
 Is this a test?	Yes
 Is this a question?	NULL
+\.
+
+CREATE TABLE api.timezones (
+  country_code TEXT NOT NULL,
+  time_zone TEXT NOT NULL,
+  gmt_offset REAL NOT NULL,
+  dst_offset REAL NOT NULL,
+  raw_offset REAL NOT NULL
+);
+
+CREATE INDEX trgm_idx_gist ON api.timezones USING GIST (time_zone gist_trgm_ops);
+CREATE INDEX trgm_idx_gin ON api.timezones USING GIN (time_zone gin_trgm_ops);
+\copy api.timezones  FROM 'var/data/marshalling/timezones.tsv';

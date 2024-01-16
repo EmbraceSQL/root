@@ -38,7 +38,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
         /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
         /* @typescript-eslint/no-redundant-type-constituents */
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
-        import type { PartiallyOptional } from "@embracesql/shared";
+        import type { PartiallyOptional, ReadOptions, Sort } from "@embracesql/shared";
 
     `,
   ];
@@ -61,6 +61,13 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
       ...context,
       skipSchemas: [],
       handlers: {
+        [ASTKind.Database]: {
+          before: async () => {
+            return [
+              // schema wide shared
+            ].join("\n");
+          },
+        },
         [ASTKind.Schema]: NamespaceVisitor,
         [ASTKind.Types]: NamespaceVisitor,
         [ASTKind.Type]: TypeDefiner,
@@ -107,6 +114,10 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
               `export type ${pascalCase(VALUES)} = PartiallyOptional<${
                 node.type.typescriptNamespacedName
               }, Optional & PrimaryKey>`,
+              // read options exist per table
+              `export type Options = ReadOptions & {`,
+              `${node.allColumns.map((c) => `${c.name}?: Sort;`).join("\n")}`,
+              `};`,
               await NamespaceVisitor.after(context, node),
             ].join("\n");
           },

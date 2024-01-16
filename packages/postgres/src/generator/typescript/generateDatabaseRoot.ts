@@ -164,10 +164,12 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
             };
           `;
           // function call start, passing in parameters
+          const parameters = node.parametersType
+            ? `parameters : ${node.parametersType?.typescriptNamespacedName}`
+            : ``;
           return [
             await NestedNamedClassVisitor.before(context, node),
-            `async call(parameters : ${node.parametersType?.typescriptNamespacedName}) {`,
-            `  console.assert(parameters);`,
+            `async call(${parameters}) {`,
             `  ${parseResult}`,
             `  const sql = this.database.context.sql;`,
             `  const typed = sql.typed as unknown as PostgresTypecasts;`,
