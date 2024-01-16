@@ -36,6 +36,11 @@ export interface RowConstructor<R> {
 }
 
 /**
+ * Immutable rows don't have callbacks.
+ */
+export type ImmutableRow<R> = R & { rowNumberInResultset: number };
+
+/**
  * Rows wrap raw value from the database to make them usable
  * hooked rows in the UI.
  */

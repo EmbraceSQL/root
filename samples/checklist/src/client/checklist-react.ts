@@ -24406,7 +24406,7 @@ import { EmbraceSQLClient as BaseClient, EmbraceSQLClientProps, HasClient } from
         
 
           public async all(options?: Public.Tables.Checklist.Options) : Promise<Public.Types.Checklist[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Checklist[], never>({
+            const response = await this.client.invoke<never, never, Public.Types.Checklist[], Public.Tables.Checklist.Options>({
               operation: "Public.Tables.Checklist.all",
               options
             });
@@ -24481,7 +24481,7 @@ public get ByPrimaryKey(){ return this.ChecklistPkey };
         
 
           public async all(options?: Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem[]> {
-            const response = await this.client.invoke<never, never, Public.Types.ChecklistItem[], never>({
+            const response = await this.client.invoke<never, never, Public.Types.ChecklistItem[], Public.Tables.ChecklistItem.Options>({
               operation: "Public.Tables.ChecklistItem.all",
               options
             });

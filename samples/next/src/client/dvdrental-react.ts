@@ -27647,7 +27647,7 @@ return response.results?.map(r => Public.Types.Customer.parse(r)) as Public.Type
         
 
           public async all(options?: Public.Tables.FilmActor.Options) : Promise<Public.Types.FilmActor[]> {
-            const response = await this.client.invoke<never, never, Public.Types.FilmActor[], never>({
+            const response = await this.client.invoke<never, never, Public.Types.FilmActor[], Public.Tables.FilmActor.Options>({
               operation: "Public.Tables.FilmActor.all",
               options
             });
@@ -27775,7 +27775,7 @@ return (
         
 
           public async all(options?: Public.Tables.Address.Options) : Promise<Public.Types.Address[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Address[], never>({
+            const response = await this.client.invoke<never, never, Public.Types.Address[], Public.Tables.Address.Options>({
               operation: "Public.Tables.Address.all",
               options
             });
@@ -27903,7 +27903,7 @@ return (
         
 
           public async all(options?: Public.Tables.City.Options) : Promise<Public.Types.City[]> {
-            const response = await this.client.invoke<never, never, Public.Types.City[], never>({
+            const response = await this.client.invoke<never, never, Public.Types.City[], Public.Tables.City.Options>({
               operation: "Public.Tables.City.all",
               options
             });
@@ -28031,7 +28031,7 @@ return (
         
 
           public async all(options?: Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Customer[], never>({
+            const response = await this.client.invoke<never, never, Public.Types.Customer[], Public.Tables.Customer.Options>({
               operation: "Public.Tables.Customer.all",
               options
             });
@@ -28265,7 +28265,7 @@ return (
         
 
           public async all(options?: Public.Tables.Actor.Options) : Promise<Public.Types.Actor[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Actor[], never>({
+            const response = await this.client.invoke<never, never, Public.Types.Actor[], Public.Tables.Actor.Options>({
               operation: "Public.Tables.Actor.all",
               options
             });
@@ -28393,7 +28393,7 @@ return (
         
 
           public async all(options?: Public.Tables.FilmCategory.Options) : Promise<Public.Types.FilmCategory[]> {
-            const response = await this.client.invoke<never, never, Public.Types.FilmCategory[], never>({
+            const response = await this.client.invoke<never, never, Public.Types.FilmCategory[], Public.Tables.FilmCategory.Options>({
               operation: "Public.Tables.FilmCategory.all",
               options
             });
@@ -28468,7 +28468,7 @@ public get ByPrimaryKey(){ return this.FilmCategoryPkey };
         
 
           public async all(options?: Public.Tables.Inventory.Options) : Promise<Public.Types.Inventory[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Inventory[], never>({
+            const response = await this.client.invoke<never, never, Public.Types.Inventory[], Public.Tables.Inventory.Options>({
               operation: "Public.Tables.Inventory.all",
               options
             });
@@ -28596,7 +28596,7 @@ return (
         
 
           public async all(options?: Public.Tables.Category.Options) : Promise<Public.Types.Category[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Category[], never>({
+            const response = await this.client.invoke<never, never, Public.Types.Category[], Public.Tables.Category.Options>({
               operation: "Public.Tables.Category.all",
               options
             });
@@ -28671,7 +28671,7 @@ public get ByPrimaryKey(){ return this.CategoryPkey };
         
 
           public async all(options?: Public.Tables.Country.Options) : Promise<Public.Types.Country[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Country[], never>({
+            const response = await this.client.invoke<never, never, Public.Types.Country[], Public.Tables.Country.Options>({
               operation: "Public.Tables.Country.all",
               options
             });
@@ -28746,7 +28746,7 @@ public get ByPrimaryKey(){ return this.CountryPkey };
         
 
           public async all(options?: Public.Tables.Language.Options) : Promise<Public.Types.Language[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Language[], never>({
+            const response = await this.client.invoke<never, never, Public.Types.Language[], Public.Tables.Language.Options>({
               operation: "Public.Tables.Language.all",
               options
             });
@@ -28821,7 +28821,7 @@ public get ByPrimaryKey(){ return this.LanguagePkey };
         
 
           public async all(options?: Public.Tables.Rental.Options) : Promise<Public.Types.Rental[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Rental[], never>({
+            const response = await this.client.invoke<never, never, Public.Types.Rental[], Public.Tables.Rental.Options>({
               operation: "Public.Tables.Rental.all",
               options
             });
@@ -28993,7 +28993,7 @@ return (
         
 
           public async all(options?: Public.Tables.Staff.Options) : Promise<Public.Types.Staff[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Staff[], never>({
+            const response = await this.client.invoke<never, never, Public.Types.Staff[], Public.Tables.Staff.Options>({
               operation: "Public.Tables.Staff.all",
               options
             });
@@ -29068,7 +29068,7 @@ public get ByPrimaryKey(){ return this.StaffPkey };
         
 
           public async all(options?: Public.Tables.Store.Options) : Promise<Public.Types.Store[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Store[], never>({
+            const response = await this.client.invoke<never, never, Public.Types.Store[], Public.Tables.Store.Options>({
               operation: "Public.Tables.Store.all",
               options
             });
@@ -29187,7 +29187,7 @@ return (
         
 
           public async all(options?: Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Payment[], never>({
+            const response = await this.client.invoke<never, never, Public.Types.Payment[], Public.Tables.Payment.Options>({
               operation: "Public.Tables.Payment.all",
               options
             });
@@ -29421,7 +29421,7 @@ return (
         
 
           public async all(options?: Public.Tables.Film.Options) : Promise<Public.Types.Film[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Film[], never>({
+            const response = await this.client.invoke<never, never, Public.Types.Film[], Public.Tables.Film.Options>({
               operation: "Public.Tables.Film.all",
               options
             });

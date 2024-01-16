@@ -6514,6 +6514,7 @@ customerId: Nullable<PgCatalog.Types.Int2>;
 }
 export namespace Procedures {
 export namespace FilmInStock {
+export type Options = ReadOptions;
 
 export type Parameters = {
 pFilmId: Nullable<PgCatalog.Types.Int4>;
@@ -6521,6 +6522,7 @@ pStoreId: Nullable<PgCatalog.Types.Int4>;
 }
 }
 export namespace FilmNotInStock {
+export type Options = ReadOptions;
 
 export type Parameters = {
 pFilmId: Nullable<PgCatalog.Types.Int4>;
@@ -6528,6 +6530,7 @@ pStoreId: Nullable<PgCatalog.Types.Int4>;
 }
 }
 export namespace GetCustomerBalance {
+export type Options = ReadOptions;
 
 export type Parameters = {
 pCustomerId: Nullable<PgCatalog.Types.Int4>;
@@ -6535,24 +6538,39 @@ pEffectiveDate: Nullable<PgCatalog.Types.Timestamp>;
 }
 }
 export namespace InventoryHeldByCustomer {
+export type Options = ReadOptions;
 
 export type Parameters = {
 pInventoryId: Nullable<PgCatalog.Types.Int4>;
 }
 }
 export namespace InventoryInStock {
+export type Options = ReadOptions;
 
 export type Parameters = {
 pInventoryId: Nullable<PgCatalog.Types.Int4>;
 }
 }
 export namespace LastDay {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Timestamp>;
 }
 }
 export namespace RewardsReport {
+export type Options = ReadOptions & {
+customer_id?: Sort;
+store_id?: Sort;
+first_name?: Sort;
+last_name?: Sort;
+email?: Sort;
+address_id?: Sort;
+activebool?: Sort;
+create_date?: Sort;
+last_update?: Sort;
+active?: Sort;
+}
 
 export type Parameters = {
 minMonthlyPurchases: Nullable<PgCatalog.Types.Int4>;
@@ -7034,6 +7052,13 @@ export namespace Tables {
 }
 export namespace Scripts {
 export namespace MovieListing {
+export type Options = ReadOptions & {
+film_id?: Sort;
+title?: Sort;
+release_year?: Sort;
+rating?: Sort;
+actors?: Sort;
+}
 
 export type Results = {
 filmId: Nullable<PgCatalog.Types.Int4>;
@@ -7046,6 +7071,21 @@ actors: PgCatalog.Types.TextArray;
 export namespace Sample {
 export namespace Film {
 export namespace Rated {
+export type Options = ReadOptions & {
+film_id?: Sort;
+title?: Sort;
+description?: Sort;
+release_year?: Sort;
+language_id?: Sort;
+rental_duration?: Sort;
+rental_rate?: Sort;
+length?: Sort;
+replacement_cost?: Sort;
+rating?: Sort;
+last_update?: Sort;
+special_features?: Sort;
+fulltext?: Sort;
+}
 
 export type Results = {
 filmId: Nullable<PgCatalog.Types.Int4>;
@@ -7068,6 +7108,9 @@ argument_1: Public.Types.MpaaRating;
 }
 }
 export namespace Tally {
+export type Options = ReadOptions & {
+count?: Sort;
+}
 
 export type Results = {
 count: Nullable<PgCatalog.Types.Int8>;
@@ -7075,6 +7118,21 @@ count: Nullable<PgCatalog.Types.Int8>;
 }
 }
 export namespace Pick {
+export type Options = ReadOptions & {
+film_id?: Sort;
+title?: Sort;
+description?: Sort;
+release_year?: Sort;
+language_id?: Sort;
+rental_duration?: Sort;
+rental_rate?: Sort;
+length?: Sort;
+replacement_cost?: Sort;
+rating?: Sort;
+last_update?: Sort;
+special_features?: Sort;
+fulltext?: Sort;
+}
 
 export type Results = {
 filmId: Nullable<PgCatalog.Types.Int4>;
@@ -7098,6 +7156,9 @@ argument_1: PgCatalog.Types.Text;
 }
 }
 export namespace Tally {
+export type Options = ReadOptions & {
+count?: Sort;
+}
 
 export type Results = {
 count: Nullable<PgCatalog.Types.Int8>;

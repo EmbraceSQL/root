@@ -6108,12 +6108,14 @@ slugId: Nullable<PgCatalog.Types.Int4>;
 }
 export namespace Procedures {
 export namespace CubeIn {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Cstring>;
 }
 }
 export namespace Cube_9c45 {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: PgCatalog.Types.Float8Array;
@@ -6121,18 +6123,21 @@ argument_1: PgCatalog.Types.Float8Array;
 }
 }
 export namespace Cube_2e6d {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: PgCatalog.Types.Float8Array;
 }
 }
 export namespace CubeOut {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
 }
 }
 export namespace CubeEq {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6140,6 +6145,7 @@ argument_1: Nullable<Public.Types.Cube>;
 }
 }
 export namespace CubeNe {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6147,6 +6153,7 @@ argument_1: Nullable<Public.Types.Cube>;
 }
 }
 export namespace CubeLt {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6154,6 +6161,7 @@ argument_1: Nullable<Public.Types.Cube>;
 }
 }
 export namespace CubeGt {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6161,6 +6169,7 @@ argument_1: Nullable<Public.Types.Cube>;
 }
 }
 export namespace CubeLe {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6168,6 +6177,7 @@ argument_1: Nullable<Public.Types.Cube>;
 }
 }
 export namespace CubeGe {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6175,6 +6185,7 @@ argument_1: Nullable<Public.Types.Cube>;
 }
 }
 export namespace CubeCmp {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6182,6 +6193,7 @@ argument_1: Nullable<Public.Types.Cube>;
 }
 }
 export namespace CubeContains {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6189,6 +6201,7 @@ argument_1: Nullable<Public.Types.Cube>;
 }
 }
 export namespace CubeContained {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6196,6 +6209,7 @@ argument_1: Nullable<Public.Types.Cube>;
 }
 }
 export namespace CubeOverlap {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6203,6 +6217,7 @@ argument_1: Nullable<Public.Types.Cube>;
 }
 }
 export namespace CubeUnion {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6210,6 +6225,7 @@ argument_1: Nullable<Public.Types.Cube>;
 }
 }
 export namespace CubeInter {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6217,12 +6233,14 @@ argument_1: Nullable<Public.Types.Cube>;
 }
 }
 export namespace CubeSize {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
 }
 }
 export namespace CubeSubset {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6230,6 +6248,7 @@ argument_1: PgCatalog.Types.Int4Array;
 }
 }
 export namespace CubeDistance {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6237,6 +6256,7 @@ argument_1: Nullable<Public.Types.Cube>;
 }
 }
 export namespace DistanceChebyshev {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6244,6 +6264,7 @@ argument_1: Nullable<Public.Types.Cube>;
 }
 }
 export namespace DistanceTaxicab {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6251,12 +6272,14 @@ argument_1: Nullable<Public.Types.Cube>;
 }
 }
 export namespace CubeDim {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
 }
 }
 export namespace CubeLlCoord {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6264,6 +6287,7 @@ argument_1: Nullable<PgCatalog.Types.Int4>;
 }
 }
 export namespace CubeUrCoord {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6271,6 +6295,7 @@ argument_1: Nullable<PgCatalog.Types.Int4>;
 }
 }
 export namespace CubeCoord {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6278,6 +6303,7 @@ argument_1: Nullable<PgCatalog.Types.Int4>;
 }
 }
 export namespace CubeCoordLlur {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6285,12 +6311,14 @@ argument_1: Nullable<PgCatalog.Types.Int4>;
 }
 }
 export namespace CubeA5b3 {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Float8>;
 }
 }
 export namespace Cube_0aec {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Float8>;
@@ -6298,6 +6326,7 @@ argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
 export namespace CubeC8aa {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6305,6 +6334,7 @@ argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
 export namespace Cube_51ff {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6313,12 +6343,14 @@ argument_2: Nullable<PgCatalog.Types.Float8>;
 }
 }
 export namespace CubeIsPoint {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
 }
 }
 export namespace CubeEnlarge {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6327,6 +6359,7 @@ argument_2: Nullable<PgCatalog.Types.Int4>;
 }
 }
 export namespace GCubeConsistent {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Internal>;
@@ -6337,6 +6370,7 @@ argument_4: Nullable<PgCatalog.Types.Internal>;
 }
 }
 export namespace GCubePenalty {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Internal>;
@@ -6345,6 +6379,7 @@ argument_2: Nullable<PgCatalog.Types.Internal>;
 }
 }
 export namespace GCubePicksplit {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Internal>;
@@ -6352,6 +6387,7 @@ argument_1: Nullable<PgCatalog.Types.Internal>;
 }
 }
 export namespace GCubeUnion {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Internal>;
@@ -6359,6 +6395,7 @@ argument_1: Nullable<PgCatalog.Types.Internal>;
 }
 }
 export namespace GCubeSame {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
@@ -6367,6 +6404,7 @@ argument_2: Nullable<PgCatalog.Types.Internal>;
 }
 }
 export namespace GCubeDistance {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Internal>;
@@ -6377,32 +6415,38 @@ argument_4: Nullable<PgCatalog.Types.Internal>;
 }
 }
 export namespace CubeRecv {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Internal>;
 }
 }
 export namespace CubeSend {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Cube>;
 }
 }
 export namespace SetLimit {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Float4>;
 }
 }
 export namespace ShowLimit {
+export type Options = ReadOptions;
 }
 export namespace ShowTrgm {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
 }
 }
 export namespace Similarity {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
@@ -6410,6 +6454,7 @@ argument_1: Nullable<PgCatalog.Types.Text>;
 }
 }
 export namespace SimilarityOp {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
@@ -6417,6 +6462,7 @@ argument_1: Nullable<PgCatalog.Types.Text>;
 }
 }
 export namespace WordSimilarity {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
@@ -6424,6 +6470,7 @@ argument_1: Nullable<PgCatalog.Types.Text>;
 }
 }
 export namespace WordSimilarityOp {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
@@ -6431,6 +6478,7 @@ argument_1: Nullable<PgCatalog.Types.Text>;
 }
 }
 export namespace WordSimilarityCommutatorOp {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
@@ -6438,6 +6486,7 @@ argument_1: Nullable<PgCatalog.Types.Text>;
 }
 }
 export namespace SimilarityDist {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
@@ -6445,6 +6494,7 @@ argument_1: Nullable<PgCatalog.Types.Text>;
 }
 }
 export namespace WordSimilarityDistOp {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
@@ -6452,6 +6502,7 @@ argument_1: Nullable<PgCatalog.Types.Text>;
 }
 }
 export namespace WordSimilarityDistCommutatorOp {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
@@ -6459,18 +6510,21 @@ argument_1: Nullable<PgCatalog.Types.Text>;
 }
 }
 export namespace GtrgmIn {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Cstring>;
 }
 }
 export namespace GtrgmOut {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Gtrgm>;
 }
 }
 export namespace GtrgmConsistent {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Internal>;
@@ -6481,6 +6535,7 @@ argument_4: Nullable<PgCatalog.Types.Internal>;
 }
 }
 export namespace GtrgmDistance {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Internal>;
@@ -6491,18 +6546,21 @@ argument_4: Nullable<PgCatalog.Types.Internal>;
 }
 }
 export namespace GtrgmCompress {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Internal>;
 }
 }
 export namespace GtrgmDecompress {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Internal>;
 }
 }
 export namespace GtrgmPenalty {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Internal>;
@@ -6511,6 +6569,7 @@ argument_2: Nullable<PgCatalog.Types.Internal>;
 }
 }
 export namespace GtrgmPicksplit {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Internal>;
@@ -6518,6 +6577,7 @@ argument_1: Nullable<PgCatalog.Types.Internal>;
 }
 }
 export namespace GtrgmUnion {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Internal>;
@@ -6525,6 +6585,7 @@ argument_1: Nullable<PgCatalog.Types.Internal>;
 }
 }
 export namespace GtrgmSame {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Gtrgm>;
@@ -6533,6 +6594,7 @@ argument_2: Nullable<PgCatalog.Types.Internal>;
 }
 }
 export namespace GinExtractValueTrgm {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
@@ -6540,6 +6602,7 @@ argument_1: Nullable<PgCatalog.Types.Internal>;
 }
 }
 export namespace GinExtractQueryTrgm {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
@@ -6552,6 +6615,7 @@ argument_6: Nullable<PgCatalog.Types.Internal>;
 }
 }
 export namespace GinTrgmConsistent {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Internal>;
@@ -6565,6 +6629,7 @@ argument_7: Nullable<PgCatalog.Types.Internal>;
 }
 }
 export namespace GinTrgmTriconsistent {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Internal>;
@@ -6577,6 +6642,7 @@ argument_6: Nullable<PgCatalog.Types.Internal>;
 }
 }
 export namespace StrictWordSimilarity {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
@@ -6584,6 +6650,7 @@ argument_1: Nullable<PgCatalog.Types.Text>;
 }
 }
 export namespace StrictWordSimilarityOp {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
@@ -6591,6 +6658,7 @@ argument_1: Nullable<PgCatalog.Types.Text>;
 }
 }
 export namespace StrictWordSimilarityCommutatorOp {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
@@ -6598,6 +6666,7 @@ argument_1: Nullable<PgCatalog.Types.Text>;
 }
 }
 export namespace StrictWordSimilarityDistOp {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
@@ -6605,6 +6674,7 @@ argument_1: Nullable<PgCatalog.Types.Text>;
 }
 }
 export namespace StrictWordSimilarityDistCommutatorOp {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
@@ -6612,6 +6682,7 @@ argument_1: Nullable<PgCatalog.Types.Text>;
 }
 }
 export namespace GtrgmOptions {
+export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Internal>;
@@ -6702,48 +6773,67 @@ at: Nullable<PgCatalog.Types.Timestamptz>;
 }
 export namespace Procedures {
 export namespace Echo {
+export type Options = ReadOptions;
 
 export type Parameters = {
 message: Nullable<PgCatalog.Types.Text>;
 }
 }
 export namespace EchoSet {
+export type Options = ReadOptions;
 
 export type Parameters = {
 message: Nullable<PgCatalog.Types.Text>;
 }
 }
 export namespace EchoTable {
+export type Options = ReadOptions & {
+echomessage?: Sort;
+at?: Sort;
+}
 
 export type Parameters = {
 message: Nullable<PgCatalog.Types.Text>;
 }
 }
 export namespace EchoType {
+export type Options = ReadOptions & {
+echomessage?: Sort;
+at?: Sort;
+}
 
 export type Parameters = {
 message: Nullable<PgCatalog.Types.Text>;
 }
 }
 export namespace EchoTypeArray {
+export type Options = ReadOptions;
 
 export type Parameters = {
 message: Nullable<PgCatalog.Types.Text>;
 }
 }
 export namespace EchoTypeNested {
+export type Options = ReadOptions & {
+echoes?: Sort;
+}
 
 export type Parameters = {
 message: Nullable<PgCatalog.Types.Text>;
 }
 }
 export namespace EchoTypeSet {
+export type Options = ReadOptions & {
+echomessage?: Sort;
+at?: Sort;
+}
 
 export type Parameters = {
 message: Nullable<PgCatalog.Types.Text>;
 }
 }
 export namespace EchoAnswer {
+export type Options = ReadOptions;
 
 export type Parameters = {
 message: Nullable<Api.Types.Answer>;
