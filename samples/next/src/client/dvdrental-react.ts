@@ -27540,9 +27540,9 @@ import { EmbraceSQLClient as BaseClient, EmbraceSQLClientProps, HasClient } from
         
 
           public async call(parameters: Public.Procedures.FilmInStock.Parameters) : Promise<PgCatalog.Types.Int4[]> {
-            const response = await this.client.invoke<Public.Procedures.FilmInStock.Parameters, never, PgCatalog.Types.Int4[], never>({
+            const response = await this.client.invoke<Public.Procedures.FilmInStock.Parameters, never, PgCatalog.Types.Int4[], Public.Procedures.FilmInStock.Options>({
               operation: "Public.Procedures.FilmInStock.call",
-              parameters
+              parameters,
             });
         
 return response.results?.map(r => PgCatalog.Types.Int4.parse(r)) as PgCatalog.Types.Int4[] ?? [];
@@ -27553,9 +27553,9 @@ return response.results?.map(r => PgCatalog.Types.Int4.parse(r)) as PgCatalog.Ty
         
 
           public async call(parameters: Public.Procedures.FilmNotInStock.Parameters) : Promise<PgCatalog.Types.Int4[]> {
-            const response = await this.client.invoke<Public.Procedures.FilmNotInStock.Parameters, never, PgCatalog.Types.Int4[], never>({
+            const response = await this.client.invoke<Public.Procedures.FilmNotInStock.Parameters, never, PgCatalog.Types.Int4[], Public.Procedures.FilmNotInStock.Options>({
               operation: "Public.Procedures.FilmNotInStock.call",
-              parameters
+              parameters,
             });
         
 return response.results?.map(r => PgCatalog.Types.Int4.parse(r)) as PgCatalog.Types.Int4[] ?? [];
@@ -27566,9 +27566,9 @@ return response.results?.map(r => PgCatalog.Types.Int4.parse(r)) as PgCatalog.Ty
         
 
           public async call(parameters: Public.Procedures.GetCustomerBalance.Parameters) : Promise<PgCatalog.Types.Numeric | undefined> {
-            const response = await this.client.invoke<Public.Procedures.GetCustomerBalance.Parameters, never, PgCatalog.Types.Numeric | undefined, never>({
+            const response = await this.client.invoke<Public.Procedures.GetCustomerBalance.Parameters, never, PgCatalog.Types.Numeric | undefined, Public.Procedures.GetCustomerBalance.Options>({
               operation: "Public.Procedures.GetCustomerBalance.call",
-              parameters
+              parameters,
             });
         
 return response.results ? nullIsUndefined(PgCatalog.Types.Numeric.parse(response.results)) : undefined;
@@ -27579,9 +27579,9 @@ return response.results ? nullIsUndefined(PgCatalog.Types.Numeric.parse(response
         
 
           public async call(parameters: Public.Procedures.InventoryHeldByCustomer.Parameters) : Promise<PgCatalog.Types.Int4 | undefined> {
-            const response = await this.client.invoke<Public.Procedures.InventoryHeldByCustomer.Parameters, never, PgCatalog.Types.Int4 | undefined, never>({
+            const response = await this.client.invoke<Public.Procedures.InventoryHeldByCustomer.Parameters, never, PgCatalog.Types.Int4 | undefined, Public.Procedures.InventoryHeldByCustomer.Options>({
               operation: "Public.Procedures.InventoryHeldByCustomer.call",
-              parameters
+              parameters,
             });
         
 return response.results ? nullIsUndefined(PgCatalog.Types.Int4.parse(response.results)) : undefined;
@@ -27592,9 +27592,9 @@ return response.results ? nullIsUndefined(PgCatalog.Types.Int4.parse(response.re
         
 
           public async call(parameters: Public.Procedures.InventoryInStock.Parameters) : Promise<PgCatalog.Types.Bool | undefined> {
-            const response = await this.client.invoke<Public.Procedures.InventoryInStock.Parameters, never, PgCatalog.Types.Bool | undefined, never>({
+            const response = await this.client.invoke<Public.Procedures.InventoryInStock.Parameters, never, PgCatalog.Types.Bool | undefined, Public.Procedures.InventoryInStock.Options>({
               operation: "Public.Procedures.InventoryInStock.call",
-              parameters
+              parameters,
             });
         
 return response.results ? nullIsUndefined(PgCatalog.Types.Bool.parse(response.results)) : undefined;
@@ -27605,9 +27605,9 @@ return response.results ? nullIsUndefined(PgCatalog.Types.Bool.parse(response.re
         
 
           public async call(parameters: Public.Procedures.LastDay.Parameters) : Promise<PgCatalog.Types.Date | undefined> {
-            const response = await this.client.invoke<Public.Procedures.LastDay.Parameters, never, PgCatalog.Types.Date | undefined, never>({
+            const response = await this.client.invoke<Public.Procedures.LastDay.Parameters, never, PgCatalog.Types.Date | undefined, Public.Procedures.LastDay.Options>({
               operation: "Public.Procedures.LastDay.call",
-              parameters
+              parameters,
             });
         
 return response.results ? nullIsUndefined(PgCatalog.Types.Date.parse(response.results)) : undefined;
@@ -27618,9 +27618,9 @@ return response.results ? nullIsUndefined(PgCatalog.Types.Date.parse(response.re
         
 
           public async call(parameters: Public.Procedures.RewardsReport.Parameters) : Promise<Public.Types.Customer[]> {
-            const response = await this.client.invoke<Public.Procedures.RewardsReport.Parameters, never, Public.Types.Customer[], never>({
+            const response = await this.client.invoke<Public.Procedures.RewardsReport.Parameters, never, Public.Types.Customer[], Public.Procedures.RewardsReport.Options>({
               operation: "Public.Procedures.RewardsReport.call",
-              parameters
+              parameters,
             });
         
 return response.results?.map(r => Public.Types.Customer.parse(r)) as Public.Types.Customer[] ?? [];
@@ -29660,7 +29660,7 @@ return (
         
 
           public async call() : Promise<Scripts.MovieListing.Results[]> {
-            const response = await this.client.invoke<never, never, Scripts.MovieListing.Results[], never>({
+            const response = await this.client.invoke<never, never, Scripts.MovieListing.Results[], Scripts.MovieListing.Options>({
               operation: "Scripts.MovieListing.call",
             });
         
@@ -29678,9 +29678,9 @@ return response.results?.map(r => Scripts.MovieListing.Results.parse(r)) as Scri
         
 
           public async call(parameters: Scripts.Sample.Film.Rated.Parameters) : Promise<Scripts.Sample.Film.Rated.Results[]> {
-            const response = await this.client.invoke<Scripts.Sample.Film.Rated.Parameters, never, Scripts.Sample.Film.Rated.Results[], never>({
+            const response = await this.client.invoke<Scripts.Sample.Film.Rated.Parameters, never, Scripts.Sample.Film.Rated.Results[], Scripts.Sample.Film.Rated.Options>({
               operation: "Scripts.Sample.Film.Rated.call",
-              parameters
+              parameters,
             });
         
 return response.results?.map(r => Scripts.Sample.Film.Rated.Results.parse(r)) as Scripts.Sample.Film.Rated.Results[] ?? [];
@@ -29691,7 +29691,7 @@ return response.results?.map(r => Scripts.Sample.Film.Rated.Results.parse(r)) as
         
 
           public async call() : Promise<Scripts.Sample.Film.Tally.Results[]> {
-            const response = await this.client.invoke<never, never, Scripts.Sample.Film.Tally.Results[], never>({
+            const response = await this.client.invoke<never, never, Scripts.Sample.Film.Tally.Results[], Scripts.Sample.Film.Tally.Options>({
               operation: "Scripts.Sample.Film.Tally.call",
             });
         
@@ -29704,9 +29704,9 @@ return response.results?.map(r => Scripts.Sample.Film.Tally.Results.parse(r)) as
         
 
           public async call(parameters: Scripts.Sample.Pick.Parameters) : Promise<Scripts.Sample.Pick.Results[]> {
-            const response = await this.client.invoke<Scripts.Sample.Pick.Parameters, never, Scripts.Sample.Pick.Results[], never>({
+            const response = await this.client.invoke<Scripts.Sample.Pick.Parameters, never, Scripts.Sample.Pick.Results[], Scripts.Sample.Pick.Options>({
               operation: "Scripts.Sample.Pick.call",
-              parameters
+              parameters,
             });
         
 return response.results?.map(r => Scripts.Sample.Pick.Results.parse(r)) as Scripts.Sample.Pick.Results[] ?? [];
@@ -29718,7 +29718,7 @@ return response.results?.map(r => Scripts.Sample.Pick.Results.parse(r)) as Scrip
         
 
           public async call() : Promise<Scripts.Tally.Results[]> {
-            const response = await this.client.invoke<never, never, Scripts.Tally.Results[], never>({
+            const response = await this.client.invoke<never, never, Scripts.Tally.Results[], Scripts.Tally.Options>({
               operation: "Scripts.Tally.call",
             });
         

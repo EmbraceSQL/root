@@ -85,19 +85,17 @@ const FunctionalOperation = {
       if (node.parametersType) {
         const parametersType = `${node.parametersType.typescriptNamespacedName}`;
         return `
-          public async call(parameters: ${parametersType}, options?: ${node.typescriptNamespacedName}.Options) : Promise<${returnType}> {
-            const response = await this.client.invoke<${parametersType}, never, ${returnType}, ${node.typescriptNamespacedName}.Options>({
+          public async call(parameters: ${parametersType}) : Promise<${returnType}> {
+            const response = await this.client.invoke<${parametersType}, never, ${returnType}, never>({
               operation: "${node.typescriptNamespacedName}.call",
               parameters,
-              options
             });
         `;
       } else {
         return `
-          public async call(options?: ${node.typescriptNamespacedName}.Options) : Promise<${returnType}> {
-            const response = await this.client.invoke<never, never, ${returnType}, ${node.typescriptNamespacedName}.Options>({
+          public async call() : Promise<${returnType}> {
+            const response = await this.client.invoke<never, never, ${returnType}, never>({
               operation: "${node.typescriptNamespacedName}.call",
-              options
             });
         `;
       }

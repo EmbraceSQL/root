@@ -10,31 +10,9 @@ import {
   NamespaceVisitor,
   VALUES,
   cleanIdentifierForTypescript,
-  isNodeType,
 } from "@embracesql/shared";
 import { GenerationContext as GC } from "@embracesql/shared";
 import { pascalCase } from "change-case";
-
-/**
- * Turn a type into ReadOptions
- * @param context T
- * @returns
- */
-function resultTypeOptions(resultsType: AbstractTypeNode | undefined) {
-  // nothign comping back -- nothign to option on is there?
-  if (resultsType === undefined) {
-    return "export type Options = never;";
-  }
-  if (isNodeType(resultsType, ASTKind.CompositeType)) {
-    return [
-      `export type Options = ReadOptions & {`,
-      resultsType.attributes.map((a) => `${a.name}?: Sort;`).join("\n"),
-      "}",
-    ].join("\n");
-  }
-  // nice default -- plain read options
-  return `export type Options = ReadOptions;`;
-}
 
 /**
  * Generate TypeScript type definitions for all types available
@@ -154,16 +132,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
             ].join("\n"),
         },
         [ASTKind.Procedures]: NamespaceVisitor,
-        [ASTKind.Procedure]: {
-          before: async (context, node) => {
-            return [
-              await NamespaceVisitor.before(context, node),
-              // read options exist per script
-              `${resultTypeOptions(node.resultsType)}`,
-            ].join("\n");
-          },
-          after: NamespaceVisitor.after,
-        },
+        [ASTKind.Procedure]: NamespaceVisitor,
         [ASTKind.CompositeType]: {
           // composite types are a name and AttributeNode(s) will fill the body
           before: async (_, node) => {
@@ -178,16 +147,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
         [ASTKind.ArrayType]: TypeDefiner,
         [ASTKind.Scripts]: NamespaceVisitor,
         [ASTKind.ScriptFolder]: NamespaceVisitor,
-        [ASTKind.Script]: {
-          before: async (context, node) => {
-            return [
-              await NamespaceVisitor.before(context, node),
-              // read options exist per script
-              `${resultTypeOptions(node.resultsType)}`,
-            ].join("\n");
-          },
-          after: NamespaceVisitor.after,
-        },
+        [ASTKind.Script]: NamespaceVisitor,
         [ASTKind.Attribute]: {
           before: async (_, node) => {
             // arrays are not nullable, they are empty arrays []

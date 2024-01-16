@@ -6514,7 +6514,6 @@ customerId: Nullable<PgCatalog.Types.Int2>;
 }
 export namespace Procedures {
 export namespace FilmInStock {
-export type Options = ReadOptions;
 
 export type Parameters = {
 pFilmId: Nullable<PgCatalog.Types.Int4>;
@@ -6522,7 +6521,6 @@ pStoreId: Nullable<PgCatalog.Types.Int4>;
 }
 }
 export namespace FilmNotInStock {
-export type Options = ReadOptions;
 
 export type Parameters = {
 pFilmId: Nullable<PgCatalog.Types.Int4>;
@@ -6530,7 +6528,6 @@ pStoreId: Nullable<PgCatalog.Types.Int4>;
 }
 }
 export namespace GetCustomerBalance {
-export type Options = ReadOptions;
 
 export type Parameters = {
 pCustomerId: Nullable<PgCatalog.Types.Int4>;
@@ -6538,39 +6535,24 @@ pEffectiveDate: Nullable<PgCatalog.Types.Timestamp>;
 }
 }
 export namespace InventoryHeldByCustomer {
-export type Options = ReadOptions;
 
 export type Parameters = {
 pInventoryId: Nullable<PgCatalog.Types.Int4>;
 }
 }
 export namespace InventoryInStock {
-export type Options = ReadOptions;
 
 export type Parameters = {
 pInventoryId: Nullable<PgCatalog.Types.Int4>;
 }
 }
 export namespace LastDay {
-export type Options = ReadOptions;
 
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Timestamp>;
 }
 }
 export namespace RewardsReport {
-export type Options = ReadOptions & {
-customer_id?: Sort;
-store_id?: Sort;
-first_name?: Sort;
-last_name?: Sort;
-email?: Sort;
-address_id?: Sort;
-activebool?: Sort;
-create_date?: Sort;
-last_update?: Sort;
-active?: Sort;
-}
 
 export type Parameters = {
 minMonthlyPurchases: Nullable<PgCatalog.Types.Int4>;
@@ -7052,13 +7034,6 @@ export namespace Tables {
 }
 export namespace Scripts {
 export namespace MovieListing {
-export type Options = ReadOptions & {
-film_id?: Sort;
-title?: Sort;
-release_year?: Sort;
-rating?: Sort;
-actors?: Sort;
-}
 
 export type Results = {
 filmId: Nullable<PgCatalog.Types.Int4>;
@@ -7071,21 +7046,6 @@ actors: PgCatalog.Types.TextArray;
 export namespace Sample {
 export namespace Film {
 export namespace Rated {
-export type Options = ReadOptions & {
-film_id?: Sort;
-title?: Sort;
-description?: Sort;
-release_year?: Sort;
-language_id?: Sort;
-rental_duration?: Sort;
-rental_rate?: Sort;
-length?: Sort;
-replacement_cost?: Sort;
-rating?: Sort;
-last_update?: Sort;
-special_features?: Sort;
-fulltext?: Sort;
-}
 
 export type Results = {
 filmId: Nullable<PgCatalog.Types.Int4>;
@@ -7108,9 +7068,6 @@ argument_1: Public.Types.MpaaRating;
 }
 }
 export namespace Tally {
-export type Options = ReadOptions & {
-count?: Sort;
-}
 
 export type Results = {
 count: Nullable<PgCatalog.Types.Int8>;
@@ -7118,21 +7075,6 @@ count: Nullable<PgCatalog.Types.Int8>;
 }
 }
 export namespace Pick {
-export type Options = ReadOptions & {
-film_id?: Sort;
-title?: Sort;
-description?: Sort;
-release_year?: Sort;
-language_id?: Sort;
-rental_duration?: Sort;
-rental_rate?: Sort;
-length?: Sort;
-replacement_cost?: Sort;
-rating?: Sort;
-last_update?: Sort;
-special_features?: Sort;
-fulltext?: Sort;
-}
 
 export type Results = {
 filmId: Nullable<PgCatalog.Types.Int4>;
@@ -7156,9 +7098,6 @@ argument_1: PgCatalog.Types.Text;
 }
 }
 export namespace Tally {
-export type Options = ReadOptions & {
-count?: Sort;
-}
 
 export type Results = {
 count: Nullable<PgCatalog.Types.Int8>;
@@ -27600,11 +27539,10 @@ import { EmbraceSQLClient as BaseClient, EmbraceSQLClientProps, HasClient } from
           public FilmInStock = new class extends HasClient {
         
 
-          public async call(parameters: Public.Procedures.FilmInStock.Parameters, options?: Public.Procedures.FilmInStock.Options) : Promise<PgCatalog.Types.Int4[]> {
+          public async call(parameters: Public.Procedures.FilmInStock.Parameters) : Promise<PgCatalog.Types.Int4[]> {
             const response = await this.client.invoke<Public.Procedures.FilmInStock.Parameters, never, PgCatalog.Types.Int4[], Public.Procedures.FilmInStock.Options>({
               operation: "Public.Procedures.FilmInStock.call",
               parameters,
-              options
             });
         
 return response.results?.map(r => PgCatalog.Types.Int4.parse(r)) as PgCatalog.Types.Int4[] ?? [];
@@ -27614,11 +27552,10 @@ return response.results?.map(r => PgCatalog.Types.Int4.parse(r)) as PgCatalog.Ty
           public FilmNotInStock = new class extends HasClient {
         
 
-          public async call(parameters: Public.Procedures.FilmNotInStock.Parameters, options?: Public.Procedures.FilmNotInStock.Options) : Promise<PgCatalog.Types.Int4[]> {
+          public async call(parameters: Public.Procedures.FilmNotInStock.Parameters) : Promise<PgCatalog.Types.Int4[]> {
             const response = await this.client.invoke<Public.Procedures.FilmNotInStock.Parameters, never, PgCatalog.Types.Int4[], Public.Procedures.FilmNotInStock.Options>({
               operation: "Public.Procedures.FilmNotInStock.call",
               parameters,
-              options
             });
         
 return response.results?.map(r => PgCatalog.Types.Int4.parse(r)) as PgCatalog.Types.Int4[] ?? [];
@@ -27628,11 +27565,10 @@ return response.results?.map(r => PgCatalog.Types.Int4.parse(r)) as PgCatalog.Ty
           public GetCustomerBalance = new class extends HasClient {
         
 
-          public async call(parameters: Public.Procedures.GetCustomerBalance.Parameters, options?: Public.Procedures.GetCustomerBalance.Options) : Promise<PgCatalog.Types.Numeric | undefined> {
+          public async call(parameters: Public.Procedures.GetCustomerBalance.Parameters) : Promise<PgCatalog.Types.Numeric | undefined> {
             const response = await this.client.invoke<Public.Procedures.GetCustomerBalance.Parameters, never, PgCatalog.Types.Numeric | undefined, Public.Procedures.GetCustomerBalance.Options>({
               operation: "Public.Procedures.GetCustomerBalance.call",
               parameters,
-              options
             });
         
 return response.results ? nullIsUndefined(PgCatalog.Types.Numeric.parse(response.results)) : undefined;
@@ -27642,11 +27578,10 @@ return response.results ? nullIsUndefined(PgCatalog.Types.Numeric.parse(response
           public InventoryHeldByCustomer = new class extends HasClient {
         
 
-          public async call(parameters: Public.Procedures.InventoryHeldByCustomer.Parameters, options?: Public.Procedures.InventoryHeldByCustomer.Options) : Promise<PgCatalog.Types.Int4 | undefined> {
+          public async call(parameters: Public.Procedures.InventoryHeldByCustomer.Parameters) : Promise<PgCatalog.Types.Int4 | undefined> {
             const response = await this.client.invoke<Public.Procedures.InventoryHeldByCustomer.Parameters, never, PgCatalog.Types.Int4 | undefined, Public.Procedures.InventoryHeldByCustomer.Options>({
               operation: "Public.Procedures.InventoryHeldByCustomer.call",
               parameters,
-              options
             });
         
 return response.results ? nullIsUndefined(PgCatalog.Types.Int4.parse(response.results)) : undefined;
@@ -27656,11 +27591,10 @@ return response.results ? nullIsUndefined(PgCatalog.Types.Int4.parse(response.re
           public InventoryInStock = new class extends HasClient {
         
 
-          public async call(parameters: Public.Procedures.InventoryInStock.Parameters, options?: Public.Procedures.InventoryInStock.Options) : Promise<PgCatalog.Types.Bool | undefined> {
+          public async call(parameters: Public.Procedures.InventoryInStock.Parameters) : Promise<PgCatalog.Types.Bool | undefined> {
             const response = await this.client.invoke<Public.Procedures.InventoryInStock.Parameters, never, PgCatalog.Types.Bool | undefined, Public.Procedures.InventoryInStock.Options>({
               operation: "Public.Procedures.InventoryInStock.call",
               parameters,
-              options
             });
         
 return response.results ? nullIsUndefined(PgCatalog.Types.Bool.parse(response.results)) : undefined;
@@ -27670,11 +27604,10 @@ return response.results ? nullIsUndefined(PgCatalog.Types.Bool.parse(response.re
           public LastDay = new class extends HasClient {
         
 
-          public async call(parameters: Public.Procedures.LastDay.Parameters, options?: Public.Procedures.LastDay.Options) : Promise<PgCatalog.Types.Date | undefined> {
+          public async call(parameters: Public.Procedures.LastDay.Parameters) : Promise<PgCatalog.Types.Date | undefined> {
             const response = await this.client.invoke<Public.Procedures.LastDay.Parameters, never, PgCatalog.Types.Date | undefined, Public.Procedures.LastDay.Options>({
               operation: "Public.Procedures.LastDay.call",
               parameters,
-              options
             });
         
 return response.results ? nullIsUndefined(PgCatalog.Types.Date.parse(response.results)) : undefined;
@@ -27684,11 +27617,10 @@ return response.results ? nullIsUndefined(PgCatalog.Types.Date.parse(response.re
           public RewardsReport = new class extends HasClient {
         
 
-          public async call(parameters: Public.Procedures.RewardsReport.Parameters, options?: Public.Procedures.RewardsReport.Options) : Promise<Public.Types.Customer[]> {
+          public async call(parameters: Public.Procedures.RewardsReport.Parameters) : Promise<Public.Types.Customer[]> {
             const response = await this.client.invoke<Public.Procedures.RewardsReport.Parameters, never, Public.Types.Customer[], Public.Procedures.RewardsReport.Options>({
               operation: "Public.Procedures.RewardsReport.call",
               parameters,
-              options
             });
         
 return response.results?.map(r => Public.Types.Customer.parse(r)) as Public.Types.Customer[] ?? [];
@@ -29727,10 +29659,9 @@ return (
           public MovieListing = new class extends HasClient {
         
 
-          public async call(options?: Scripts.MovieListing.Options) : Promise<Scripts.MovieListing.Results[]> {
+          public async call() : Promise<Scripts.MovieListing.Results[]> {
             const response = await this.client.invoke<never, never, Scripts.MovieListing.Results[], Scripts.MovieListing.Options>({
               operation: "Scripts.MovieListing.call",
-              options
             });
         
 return response.results?.map(r => Scripts.MovieListing.Results.parse(r)) as Scripts.MovieListing.Results[] ?? [];
@@ -29746,11 +29677,10 @@ return response.results?.map(r => Scripts.MovieListing.Results.parse(r)) as Scri
           public Rated = new class extends HasClient {
         
 
-          public async call(parameters: Scripts.Sample.Film.Rated.Parameters, options?: Scripts.Sample.Film.Rated.Options) : Promise<Scripts.Sample.Film.Rated.Results[]> {
+          public async call(parameters: Scripts.Sample.Film.Rated.Parameters) : Promise<Scripts.Sample.Film.Rated.Results[]> {
             const response = await this.client.invoke<Scripts.Sample.Film.Rated.Parameters, never, Scripts.Sample.Film.Rated.Results[], Scripts.Sample.Film.Rated.Options>({
               operation: "Scripts.Sample.Film.Rated.call",
               parameters,
-              options
             });
         
 return response.results?.map(r => Scripts.Sample.Film.Rated.Results.parse(r)) as Scripts.Sample.Film.Rated.Results[] ?? [];
@@ -29760,10 +29690,9 @@ return response.results?.map(r => Scripts.Sample.Film.Rated.Results.parse(r)) as
           public Tally = new class extends HasClient {
         
 
-          public async call(options?: Scripts.Sample.Film.Tally.Options) : Promise<Scripts.Sample.Film.Tally.Results[]> {
+          public async call() : Promise<Scripts.Sample.Film.Tally.Results[]> {
             const response = await this.client.invoke<never, never, Scripts.Sample.Film.Tally.Results[], Scripts.Sample.Film.Tally.Options>({
               operation: "Scripts.Sample.Film.Tally.call",
-              options
             });
         
 return response.results?.map(r => Scripts.Sample.Film.Tally.Results.parse(r)) as Scripts.Sample.Film.Tally.Results[] ?? [];
@@ -29774,11 +29703,10 @@ return response.results?.map(r => Scripts.Sample.Film.Tally.Results.parse(r)) as
           public Pick = new class extends HasClient {
         
 
-          public async call(parameters: Scripts.Sample.Pick.Parameters, options?: Scripts.Sample.Pick.Options) : Promise<Scripts.Sample.Pick.Results[]> {
+          public async call(parameters: Scripts.Sample.Pick.Parameters) : Promise<Scripts.Sample.Pick.Results[]> {
             const response = await this.client.invoke<Scripts.Sample.Pick.Parameters, never, Scripts.Sample.Pick.Results[], Scripts.Sample.Pick.Options>({
               operation: "Scripts.Sample.Pick.call",
               parameters,
-              options
             });
         
 return response.results?.map(r => Scripts.Sample.Pick.Results.parse(r)) as Scripts.Sample.Pick.Results[] ?? [];
@@ -29789,10 +29717,9 @@ return response.results?.map(r => Scripts.Sample.Pick.Results.parse(r)) as Scrip
           public Tally = new class extends HasClient {
         
 
-          public async call(options?: Scripts.Tally.Options) : Promise<Scripts.Tally.Results[]> {
+          public async call() : Promise<Scripts.Tally.Results[]> {
             const response = await this.client.invoke<never, never, Scripts.Tally.Results[], Scripts.Tally.Options>({
               operation: "Scripts.Tally.call",
-              options
             });
         
 return response.results?.map(r => Scripts.Tally.Results.parse(r)) as Scripts.Tally.Results[] ?? [];
