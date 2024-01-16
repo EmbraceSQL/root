@@ -3529,6 +3529,37 @@ export type PrimaryKey = PgCatalog.Types.PgStatisticRelidAttInhIndex;
 export type Optional = Pick<PgCatalog.Types.PgStatistic,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgStatistic, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+starelid?: Sort;
+staattnum?: Sort;
+stainherit?: Sort;
+stanullfrac?: Sort;
+stawidth?: Sort;
+stadistinct?: Sort;
+stakind1?: Sort;
+stakind2?: Sort;
+stakind3?: Sort;
+stakind4?: Sort;
+stakind5?: Sort;
+staop1?: Sort;
+staop2?: Sort;
+staop3?: Sort;
+staop4?: Sort;
+staop5?: Sort;
+stacoll1?: Sort;
+stacoll2?: Sort;
+stacoll3?: Sort;
+stacoll4?: Sort;
+stacoll5?: Sort;
+stanumbers1?: Sort;
+stanumbers2?: Sort;
+stanumbers3?: Sort;
+stanumbers4?: Sort;
+stanumbers5?: Sort;
+stavalues1?: Sort;
+stavalues2?: Sort;
+stavalues3?: Sort;
+stavalues4?: Sort;
+stavalues5?: Sort;
 };
 }
 export namespace PgType {
@@ -3540,6 +3571,38 @@ export type PrimaryKey = PgCatalog.Types.PgTypeOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgType,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgType, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+typname?: Sort;
+typnamespace?: Sort;
+typowner?: Sort;
+typlen?: Sort;
+typbyval?: Sort;
+typtype?: Sort;
+typcategory?: Sort;
+typispreferred?: Sort;
+typisdefined?: Sort;
+typdelim?: Sort;
+typrelid?: Sort;
+typsubscript?: Sort;
+typelem?: Sort;
+typarray?: Sort;
+typinput?: Sort;
+typoutput?: Sort;
+typreceive?: Sort;
+typsend?: Sort;
+typmodin?: Sort;
+typmodout?: Sort;
+typanalyze?: Sort;
+typalign?: Sort;
+typstorage?: Sort;
+typnotnull?: Sort;
+typbasetype?: Sort;
+typtypmod?: Sort;
+typndims?: Sort;
+typcollation?: Sort;
+typdefaultbin?: Sort;
+typdefault?: Sort;
+typacl?: Sort;
 };
 }
 export namespace PgForeignTable {
@@ -3551,6 +3614,9 @@ export type PrimaryKey = PgCatalog.Types.PgForeignTableRelidIndex;
 export type Optional = Pick<PgCatalog.Types.PgForeignTable,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgForeignTable, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+ftrelid?: Sort;
+ftserver?: Sort;
+ftoptions?: Sort;
 };
 }
 export namespace PgAuthid {
@@ -3562,6 +3628,18 @@ export type PrimaryKey = PgCatalog.Types.PgAuthidOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgAuthid,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAuthid, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+rolname?: Sort;
+rolsuper?: Sort;
+rolinherit?: Sort;
+rolcreaterole?: Sort;
+rolcreatedb?: Sort;
+rolcanlogin?: Sort;
+rolreplication?: Sort;
+rolbypassrls?: Sort;
+rolconnlimit?: Sort;
+rolpassword?: Sort;
+rolvaliduntil?: Sort;
 };
 }
 export namespace PgStatisticExtData {
@@ -3573,6 +3651,12 @@ export type PrimaryKey = PgCatalog.Types.PgStatisticExtDataStxoidInhIndex;
 export type Optional = Pick<PgCatalog.Types.PgStatisticExtData,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgStatisticExtData, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+stxoid?: Sort;
+stxdinherit?: Sort;
+stxdndistinct?: Sort;
+stxddependencies?: Sort;
+stxdmcv?: Sort;
+stxdexpr?: Sort;
 };
 }
 export namespace PgUserMapping {
@@ -3584,6 +3668,10 @@ export type PrimaryKey = PgCatalog.Types.PgUserMappingOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgUserMapping,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgUserMapping, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+umuser?: Sort;
+umserver?: Sort;
+umoptions?: Sort;
 };
 }
 export namespace PgSubscription {
@@ -3595,6 +3683,23 @@ export type PrimaryKey = PgCatalog.Types.PgSubscriptionOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgSubscription,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgSubscription, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+subdbid?: Sort;
+subskiplsn?: Sort;
+subname?: Sort;
+subowner?: Sort;
+subenabled?: Sort;
+subbinary?: Sort;
+substream?: Sort;
+subtwophasestate?: Sort;
+subdisableonerr?: Sort;
+subpasswordrequired?: Sort;
+subrunasowner?: Sort;
+subconninfo?: Sort;
+subslotname?: Sort;
+subsynccommit?: Sort;
+subpublications?: Sort;
+suborigin?: Sort;
 };
 }
 export namespace PgAttribute {
@@ -3606,6 +3711,32 @@ export type PrimaryKey = PgCatalog.Types.PgAttributeRelidAttnumIndex;
 export type Optional = Pick<PgCatalog.Types.PgAttribute,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAttribute, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+attrelid?: Sort;
+attname?: Sort;
+atttypid?: Sort;
+attlen?: Sort;
+attnum?: Sort;
+attcacheoff?: Sort;
+atttypmod?: Sort;
+attndims?: Sort;
+attbyval?: Sort;
+attalign?: Sort;
+attstorage?: Sort;
+attcompression?: Sort;
+attnotnull?: Sort;
+atthasdef?: Sort;
+atthasmissing?: Sort;
+attidentity?: Sort;
+attgenerated?: Sort;
+attisdropped?: Sort;
+attislocal?: Sort;
+attinhcount?: Sort;
+attstattarget?: Sort;
+attcollation?: Sort;
+attacl?: Sort;
+attoptions?: Sort;
+attfdwoptions?: Sort;
+attmissingval?: Sort;
 };
 }
 export namespace PgProc {
@@ -3617,6 +3748,36 @@ export type PrimaryKey = PgCatalog.Types.PgProcOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgProc,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgProc, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+proname?: Sort;
+pronamespace?: Sort;
+proowner?: Sort;
+prolang?: Sort;
+procost?: Sort;
+prorows?: Sort;
+provariadic?: Sort;
+prosupport?: Sort;
+prokind?: Sort;
+prosecdef?: Sort;
+proleakproof?: Sort;
+proisstrict?: Sort;
+proretset?: Sort;
+provolatile?: Sort;
+proparallel?: Sort;
+pronargs?: Sort;
+pronargdefaults?: Sort;
+prorettype?: Sort;
+proargtypes?: Sort;
+proallargtypes?: Sort;
+proargmodes?: Sort;
+proargnames?: Sort;
+proargdefaults?: Sort;
+protrftypes?: Sort;
+prosrc?: Sort;
+probin?: Sort;
+prosqlbody?: Sort;
+proconfig?: Sort;
+proacl?: Sort;
 };
 }
 export namespace PgClass {
@@ -3628,6 +3789,39 @@ export type PrimaryKey = PgCatalog.Types.PgClassOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgClass,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgClass, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+relname?: Sort;
+relnamespace?: Sort;
+reltype?: Sort;
+reloftype?: Sort;
+relowner?: Sort;
+relam?: Sort;
+relfilenode?: Sort;
+reltablespace?: Sort;
+relpages?: Sort;
+reltuples?: Sort;
+relallvisible?: Sort;
+reltoastrelid?: Sort;
+relhasindex?: Sort;
+relisshared?: Sort;
+relpersistence?: Sort;
+relkind?: Sort;
+relnatts?: Sort;
+relchecks?: Sort;
+relhasrules?: Sort;
+relhastriggers?: Sort;
+relhassubclass?: Sort;
+relrowsecurity?: Sort;
+relforcerowsecurity?: Sort;
+relispopulated?: Sort;
+relreplident?: Sort;
+relispartition?: Sort;
+relrewrite?: Sort;
+relfrozenxid?: Sort;
+relminmxid?: Sort;
+relacl?: Sort;
+reloptions?: Sort;
+relpartbound?: Sort;
 };
 }
 export namespace PgAttrdef {
@@ -3639,6 +3833,10 @@ export type PrimaryKey = PgCatalog.Types.PgAttrdefOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgAttrdef,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAttrdef, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+adrelid?: Sort;
+adnum?: Sort;
+adbin?: Sort;
 };
 }
 export namespace PgConstraint {
@@ -3650,6 +3848,32 @@ export type PrimaryKey = PgCatalog.Types.PgConstraintOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgConstraint,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgConstraint, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+conname?: Sort;
+connamespace?: Sort;
+contype?: Sort;
+condeferrable?: Sort;
+condeferred?: Sort;
+convalidated?: Sort;
+conrelid?: Sort;
+contypid?: Sort;
+conindid?: Sort;
+conparentid?: Sort;
+confrelid?: Sort;
+confupdtype?: Sort;
+confdeltype?: Sort;
+confmatchtype?: Sort;
+conislocal?: Sort;
+coninhcount?: Sort;
+connoinherit?: Sort;
+conkey?: Sort;
+confkey?: Sort;
+conpfeqop?: Sort;
+conppeqop?: Sort;
+conffeqop?: Sort;
+confdelsetcols?: Sort;
+conexclop?: Sort;
+conbin?: Sort;
 };
 }
 export namespace PgInherits {
@@ -3661,6 +3885,10 @@ export type PrimaryKey = PgCatalog.Types.PgInheritsRelidSeqnoIndex;
 export type Optional = Pick<PgCatalog.Types.PgInherits,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgInherits, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+inhrelid?: Sort;
+inhparent?: Sort;
+inhseqno?: Sort;
+inhdetachpending?: Sort;
 };
 }
 export namespace PgIndex {
@@ -3672,6 +3900,27 @@ export type PrimaryKey = PgCatalog.Types.PgIndexIndexrelidIndex;
 export type Optional = Pick<PgCatalog.Types.PgIndex,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgIndex, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+indexrelid?: Sort;
+indrelid?: Sort;
+indnatts?: Sort;
+indnkeyatts?: Sort;
+indisunique?: Sort;
+indnullsnotdistinct?: Sort;
+indisprimary?: Sort;
+indisexclusion?: Sort;
+indimmediate?: Sort;
+indisclustered?: Sort;
+indisvalid?: Sort;
+indcheckxmin?: Sort;
+indisready?: Sort;
+indislive?: Sort;
+indisreplident?: Sort;
+indkey?: Sort;
+indcollation?: Sort;
+indclass?: Sort;
+indoption?: Sort;
+indexprs?: Sort;
+indpred?: Sort;
 };
 }
 export namespace PgOperator {
@@ -3683,6 +3932,21 @@ export type PrimaryKey = PgCatalog.Types.PgOperatorOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgOperator,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgOperator, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+oprname?: Sort;
+oprnamespace?: Sort;
+oprowner?: Sort;
+oprkind?: Sort;
+oprcanmerge?: Sort;
+oprcanhash?: Sort;
+oprleft?: Sort;
+oprright?: Sort;
+oprresult?: Sort;
+oprcom?: Sort;
+oprnegate?: Sort;
+oprcode?: Sort;
+oprrest?: Sort;
+oprjoin?: Sort;
 };
 }
 export namespace PgOpfamily {
@@ -3694,6 +3958,11 @@ export type PrimaryKey = PgCatalog.Types.PgOpfamilyOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgOpfamily,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgOpfamily, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+opfmethod?: Sort;
+opfname?: Sort;
+opfnamespace?: Sort;
+opfowner?: Sort;
 };
 }
 export namespace PgOpclass {
@@ -3705,6 +3974,15 @@ export type PrimaryKey = PgCatalog.Types.PgOpclassOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgOpclass,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgOpclass, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+opcmethod?: Sort;
+opcname?: Sort;
+opcnamespace?: Sort;
+opcowner?: Sort;
+opcfamily?: Sort;
+opcintype?: Sort;
+opcdefault?: Sort;
+opckeytype?: Sort;
 };
 }
 export namespace PgAm {
@@ -3716,6 +3994,10 @@ export type PrimaryKey = PgCatalog.Types.PgAmOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgAm,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAm, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+amname?: Sort;
+amhandler?: Sort;
+amtype?: Sort;
 };
 }
 export namespace PgAmop {
@@ -3727,6 +4009,15 @@ export type PrimaryKey = PgCatalog.Types.PgAmopOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgAmop,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAmop, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+amopfamily?: Sort;
+amoplefttype?: Sort;
+amoprighttype?: Sort;
+amopstrategy?: Sort;
+amoppurpose?: Sort;
+amopopr?: Sort;
+amopmethod?: Sort;
+amopsortfamily?: Sort;
 };
 }
 export namespace PgAmproc {
@@ -3738,6 +4029,12 @@ export type PrimaryKey = PgCatalog.Types.PgAmprocOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgAmproc,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAmproc, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+amprocfamily?: Sort;
+amproclefttype?: Sort;
+amprocrighttype?: Sort;
+amprocnum?: Sort;
+amproc?: Sort;
 };
 }
 export namespace PgLanguage {
@@ -3749,6 +4046,15 @@ export type PrimaryKey = PgCatalog.Types.PgLanguageOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgLanguage,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgLanguage, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+lanname?: Sort;
+lanowner?: Sort;
+lanispl?: Sort;
+lanpltrusted?: Sort;
+lanplcallfoid?: Sort;
+laninline?: Sort;
+lanvalidator?: Sort;
+lanacl?: Sort;
 };
 }
 export namespace PgLargeobjectMetadata {
@@ -3760,6 +4066,9 @@ export type PrimaryKey = PgCatalog.Types.PgLargeobjectMetadataOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgLargeobjectMetadata,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgLargeobjectMetadata, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+lomowner?: Sort;
+lomacl?: Sort;
 };
 }
 export namespace PgAggregate {
@@ -3771,6 +4080,28 @@ export type PrimaryKey = PgCatalog.Types.PgAggregateFnoidIndex;
 export type Optional = Pick<PgCatalog.Types.PgAggregate,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAggregate, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+aggfnoid?: Sort;
+aggkind?: Sort;
+aggnumdirectargs?: Sort;
+aggtransfn?: Sort;
+aggfinalfn?: Sort;
+aggcombinefn?: Sort;
+aggserialfn?: Sort;
+aggdeserialfn?: Sort;
+aggmtransfn?: Sort;
+aggminvtransfn?: Sort;
+aggmfinalfn?: Sort;
+aggfinalextra?: Sort;
+aggmfinalextra?: Sort;
+aggfinalmodify?: Sort;
+aggmfinalmodify?: Sort;
+aggsortop?: Sort;
+aggtranstype?: Sort;
+aggtransspace?: Sort;
+aggmtranstype?: Sort;
+aggmtransspace?: Sort;
+agginitval?: Sort;
+aggminitval?: Sort;
 };
 }
 export namespace PgStatisticExt {
@@ -3782,6 +4113,15 @@ export type PrimaryKey = PgCatalog.Types.PgStatisticExtOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgStatisticExt,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgStatisticExt, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+stxrelid?: Sort;
+stxname?: Sort;
+stxnamespace?: Sort;
+stxowner?: Sort;
+stxstattarget?: Sort;
+stxkeys?: Sort;
+stxkind?: Sort;
+stxexprs?: Sort;
 };
 }
 export namespace PgRewrite {
@@ -3793,6 +4133,14 @@ export type PrimaryKey = PgCatalog.Types.PgRewriteOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgRewrite,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgRewrite, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+rulename?: Sort;
+ev_class?: Sort;
+ev_type?: Sort;
+ev_enabled?: Sort;
+is_instead?: Sort;
+ev_qual?: Sort;
+ev_action?: Sort;
 };
 }
 export namespace PgTrigger {
@@ -3804,6 +4152,25 @@ export type PrimaryKey = PgCatalog.Types.PgTriggerOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgTrigger,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTrigger, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+tgrelid?: Sort;
+tgparentid?: Sort;
+tgname?: Sort;
+tgfoid?: Sort;
+tgtype?: Sort;
+tgenabled?: Sort;
+tgisinternal?: Sort;
+tgconstrrelid?: Sort;
+tgconstrindid?: Sort;
+tgconstraint?: Sort;
+tgdeferrable?: Sort;
+tginitdeferred?: Sort;
+tgnargs?: Sort;
+tgattr?: Sort;
+tgargs?: Sort;
+tgqual?: Sort;
+tgoldtable?: Sort;
+tgnewtable?: Sort;
 };
 }
 export namespace PgEventTrigger {
@@ -3815,6 +4182,13 @@ export type PrimaryKey = PgCatalog.Types.PgEventTriggerOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgEventTrigger,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgEventTrigger, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+evtname?: Sort;
+evtevent?: Sort;
+evtowner?: Sort;
+evtfoid?: Sort;
+evtenabled?: Sort;
+evttags?: Sort;
 };
 }
 export namespace PgDescription {
@@ -3826,6 +4200,10 @@ export type PrimaryKey = PgCatalog.Types.PgDescriptionOCOIndex;
 export type Optional = Pick<PgCatalog.Types.PgDescription,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgDescription, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+objoid?: Sort;
+classoid?: Sort;
+objsubid?: Sort;
+description?: Sort;
 };
 }
 export namespace PgCast {
@@ -3837,6 +4215,12 @@ export type PrimaryKey = PgCatalog.Types.PgCastOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgCast,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgCast, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+castsource?: Sort;
+casttarget?: Sort;
+castfunc?: Sort;
+castcontext?: Sort;
+castmethod?: Sort;
 };
 }
 export namespace PgEnum {
@@ -3848,6 +4232,10 @@ export type PrimaryKey = PgCatalog.Types.PgEnumOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgEnum,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgEnum, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+enumtypid?: Sort;
+enumsortorder?: Sort;
+enumlabel?: Sort;
 };
 }
 export namespace PgNamespace {
@@ -3859,6 +4247,10 @@ export type PrimaryKey = PgCatalog.Types.PgNamespaceOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgNamespace,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgNamespace, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+nspname?: Sort;
+nspowner?: Sort;
+nspacl?: Sort;
 };
 }
 export namespace PgConversion {
@@ -3870,6 +4262,14 @@ export type PrimaryKey = PgCatalog.Types.PgConversionOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgConversion,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgConversion, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+conname?: Sort;
+connamespace?: Sort;
+conowner?: Sort;
+conforencoding?: Sort;
+contoencoding?: Sort;
+conproc?: Sort;
+condefault?: Sort;
 };
 }
 export namespace PgDepend {
@@ -3880,6 +4280,13 @@ export type PrimaryKey = never;
 export type Optional = Pick<PgCatalog.Types.PgDepend,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgDepend, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+classid?: Sort;
+objid?: Sort;
+objsubid?: Sort;
+refclassid?: Sort;
+refobjid?: Sort;
+refobjsubid?: Sort;
+deptype?: Sort;
 };
 }
 export namespace PgDatabase {
@@ -3891,6 +4298,23 @@ export type PrimaryKey = PgCatalog.Types.PgDatabaseOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgDatabase,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgDatabase, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+datname?: Sort;
+datdba?: Sort;
+encoding?: Sort;
+datlocprovider?: Sort;
+datistemplate?: Sort;
+datallowconn?: Sort;
+datconnlimit?: Sort;
+datfrozenxid?: Sort;
+datminmxid?: Sort;
+dattablespace?: Sort;
+datcollate?: Sort;
+datctype?: Sort;
+daticulocale?: Sort;
+daticurules?: Sort;
+datcollversion?: Sort;
+datacl?: Sort;
 };
 }
 export namespace PgDbRoleSetting {
@@ -3902,6 +4326,9 @@ export type PrimaryKey = PgCatalog.Types.PgDbRoleSettingDatabaseidRolIndex;
 export type Optional = Pick<PgCatalog.Types.PgDbRoleSetting,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgDbRoleSetting, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+setdatabase?: Sort;
+setrole?: Sort;
+setconfig?: Sort;
 };
 }
 export namespace PgTablespace {
@@ -3913,6 +4340,11 @@ export type PrimaryKey = PgCatalog.Types.PgTablespaceOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgTablespace,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTablespace, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+spcname?: Sort;
+spcowner?: Sort;
+spcacl?: Sort;
+spcoptions?: Sort;
 };
 }
 export namespace PgAuthMembers {
@@ -3924,6 +4356,13 @@ export type PrimaryKey = PgCatalog.Types.PgAuthMembersOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgAuthMembers,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAuthMembers, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+roleid?: Sort;
+member?: Sort;
+grantor?: Sort;
+admin_option?: Sort;
+inherit_option?: Sort;
+set_option?: Sort;
 };
 }
 export namespace PgShdepend {
@@ -3934,6 +4373,13 @@ export type PrimaryKey = never;
 export type Optional = Pick<PgCatalog.Types.PgShdepend,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgShdepend, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+dbid?: Sort;
+classid?: Sort;
+objid?: Sort;
+objsubid?: Sort;
+refclassid?: Sort;
+refobjid?: Sort;
+deptype?: Sort;
 };
 }
 export namespace PgShdescription {
@@ -3945,6 +4391,9 @@ export type PrimaryKey = PgCatalog.Types.PgShdescriptionOCIndex;
 export type Optional = Pick<PgCatalog.Types.PgShdescription,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgShdescription, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+objoid?: Sort;
+classoid?: Sort;
+description?: Sort;
 };
 }
 export namespace PgTsConfig {
@@ -3956,6 +4405,11 @@ export type PrimaryKey = PgCatalog.Types.PgTsConfigOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgTsConfig,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTsConfig, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+cfgname?: Sort;
+cfgnamespace?: Sort;
+cfgowner?: Sort;
+cfgparser?: Sort;
 };
 }
 export namespace PgTsConfigMap {
@@ -3967,6 +4421,10 @@ export type PrimaryKey = PgCatalog.Types.PgTsConfigMapIndex;
 export type Optional = Pick<PgCatalog.Types.PgTsConfigMap,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTsConfigMap, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+mapcfg?: Sort;
+maptokentype?: Sort;
+mapseqno?: Sort;
+mapdict?: Sort;
 };
 }
 export namespace PgTsDict {
@@ -3978,6 +4436,12 @@ export type PrimaryKey = PgCatalog.Types.PgTsDictOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgTsDict,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTsDict, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+dictname?: Sort;
+dictnamespace?: Sort;
+dictowner?: Sort;
+dicttemplate?: Sort;
+dictinitoption?: Sort;
 };
 }
 export namespace PgTsParser {
@@ -3989,6 +4453,14 @@ export type PrimaryKey = PgCatalog.Types.PgTsParserOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgTsParser,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTsParser, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+prsname?: Sort;
+prsnamespace?: Sort;
+prsstart?: Sort;
+prstoken?: Sort;
+prsend?: Sort;
+prsheadline?: Sort;
+prslextype?: Sort;
 };
 }
 export namespace PgTsTemplate {
@@ -4000,6 +4472,11 @@ export type PrimaryKey = PgCatalog.Types.PgTsTemplateOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgTsTemplate,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTsTemplate, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+tmplname?: Sort;
+tmplnamespace?: Sort;
+tmplinit?: Sort;
+tmpllexize?: Sort;
 };
 }
 export namespace PgExtension {
@@ -4011,6 +4488,14 @@ export type PrimaryKey = PgCatalog.Types.PgExtensionOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgExtension,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgExtension, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+extname?: Sort;
+extowner?: Sort;
+extnamespace?: Sort;
+extrelocatable?: Sort;
+extversion?: Sort;
+extconfig?: Sort;
+extcondition?: Sort;
 };
 }
 export namespace PgForeignDataWrapper {
@@ -4022,6 +4507,13 @@ export type PrimaryKey = PgCatalog.Types.PgForeignDataWrapperOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgForeignDataWrapper,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgForeignDataWrapper, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+fdwname?: Sort;
+fdwowner?: Sort;
+fdwhandler?: Sort;
+fdwvalidator?: Sort;
+fdwacl?: Sort;
+fdwoptions?: Sort;
 };
 }
 export namespace PgForeignServer {
@@ -4033,6 +4525,14 @@ export type PrimaryKey = PgCatalog.Types.PgForeignServerOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgForeignServer,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgForeignServer, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+srvname?: Sort;
+srvowner?: Sort;
+srvfdw?: Sort;
+srvtype?: Sort;
+srvversion?: Sort;
+srvacl?: Sort;
+srvoptions?: Sort;
 };
 }
 export namespace PgPolicy {
@@ -4044,6 +4544,14 @@ export type PrimaryKey = PgCatalog.Types.PgPolicyOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgPolicy,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgPolicy, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+polname?: Sort;
+polrelid?: Sort;
+polcmd?: Sort;
+polpermissive?: Sort;
+polroles?: Sort;
+polqual?: Sort;
+polwithcheck?: Sort;
 };
 }
 export namespace PgReplicationOrigin {
@@ -4055,6 +4563,8 @@ export type PrimaryKey = PgCatalog.Types.PgReplicationOriginRoiidentIndex;
 export type Optional = Pick<PgCatalog.Types.PgReplicationOrigin,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgReplicationOrigin, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+roident?: Sort;
+roname?: Sort;
 };
 }
 export namespace PgDefaultAcl {
@@ -4066,6 +4576,11 @@ export type PrimaryKey = PgCatalog.Types.PgDefaultAclOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgDefaultAcl,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgDefaultAcl, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+defaclrole?: Sort;
+defaclnamespace?: Sort;
+defaclobjtype?: Sort;
+defaclacl?: Sort;
 };
 }
 export namespace PgInitPrivs {
@@ -4077,6 +4592,11 @@ export type PrimaryKey = PgCatalog.Types.PgInitPrivsOCOIndex;
 export type Optional = Pick<PgCatalog.Types.PgInitPrivs,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgInitPrivs, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+objoid?: Sort;
+classoid?: Sort;
+objsubid?: Sort;
+privtype?: Sort;
+initprivs?: Sort;
 };
 }
 export namespace PgSeclabel {
@@ -4088,6 +4608,11 @@ export type PrimaryKey = PgCatalog.Types.PgSeclabelObjectIndex;
 export type Optional = Pick<PgCatalog.Types.PgSeclabel,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgSeclabel, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+objoid?: Sort;
+classoid?: Sort;
+objsubid?: Sort;
+provider?: Sort;
+label?: Sort;
 };
 }
 export namespace PgShseclabel {
@@ -4099,6 +4624,10 @@ export type PrimaryKey = PgCatalog.Types.PgShseclabelObjectIndex;
 export type Optional = Pick<PgCatalog.Types.PgShseclabel,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgShseclabel, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+objoid?: Sort;
+classoid?: Sort;
+provider?: Sort;
+label?: Sort;
 };
 }
 export namespace PgCollation {
@@ -4110,6 +4639,18 @@ export type PrimaryKey = PgCatalog.Types.PgCollationOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgCollation,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgCollation, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+collname?: Sort;
+collnamespace?: Sort;
+collowner?: Sort;
+collprovider?: Sort;
+collisdeterministic?: Sort;
+collencoding?: Sort;
+collcollate?: Sort;
+collctype?: Sort;
+colliculocale?: Sort;
+collicurules?: Sort;
+collversion?: Sort;
 };
 }
 export namespace PgParameterAcl {
@@ -4121,6 +4662,9 @@ export type PrimaryKey = PgCatalog.Types.PgParameterAclOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgParameterAcl,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgParameterAcl, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+parname?: Sort;
+paracl?: Sort;
 };
 }
 export namespace PgPartitionedTable {
@@ -4132,6 +4676,14 @@ export type PrimaryKey = PgCatalog.Types.PgPartitionedTablePartrelidIndex;
 export type Optional = Pick<PgCatalog.Types.PgPartitionedTable,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgPartitionedTable, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+partrelid?: Sort;
+partstrat?: Sort;
+partnatts?: Sort;
+partdefid?: Sort;
+partattrs?: Sort;
+partclass?: Sort;
+partcollation?: Sort;
+partexprs?: Sort;
 };
 }
 export namespace PgRange {
@@ -4143,6 +4695,13 @@ export type PrimaryKey = PgCatalog.Types.PgRangeRngtypidIndex;
 export type Optional = Pick<PgCatalog.Types.PgRange,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgRange, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+rngtypid?: Sort;
+rngsubtype?: Sort;
+rngmultitypid?: Sort;
+rngcollation?: Sort;
+rngsubopc?: Sort;
+rngcanonical?: Sort;
+rngsubdiff?: Sort;
 };
 }
 export namespace PgTransform {
@@ -4154,6 +4713,11 @@ export type PrimaryKey = PgCatalog.Types.PgTransformOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgTransform,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTransform, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+trftype?: Sort;
+trflang?: Sort;
+trffromsql?: Sort;
+trftosql?: Sort;
 };
 }
 export namespace PgSequence {
@@ -4165,6 +4729,14 @@ export type PrimaryKey = PgCatalog.Types.PgSequenceSeqrelidIndex;
 export type Optional = Pick<PgCatalog.Types.PgSequence,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgSequence, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+seqrelid?: Sort;
+seqtypid?: Sort;
+seqstart?: Sort;
+seqincrement?: Sort;
+seqmax?: Sort;
+seqmin?: Sort;
+seqcache?: Sort;
+seqcycle?: Sort;
 };
 }
 export namespace PgPublication {
@@ -4176,6 +4748,15 @@ export type PrimaryKey = PgCatalog.Types.PgPublicationOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgPublication,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgPublication, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+pubname?: Sort;
+pubowner?: Sort;
+puballtables?: Sort;
+pubinsert?: Sort;
+pubupdate?: Sort;
+pubdelete?: Sort;
+pubtruncate?: Sort;
+pubviaroot?: Sort;
 };
 }
 export namespace PgPublicationNamespace {
@@ -4187,6 +4768,9 @@ export type PrimaryKey = PgCatalog.Types.PgPublicationNamespaceOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgPublicationNamespace,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgPublicationNamespace, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+pnpubid?: Sort;
+pnnspid?: Sort;
 };
 }
 export namespace PgPublicationRel {
@@ -4198,6 +4782,11 @@ export type PrimaryKey = PgCatalog.Types.PgPublicationRelOidIndex;
 export type Optional = Pick<PgCatalog.Types.PgPublicationRel,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgPublicationRel, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+oid?: Sort;
+prpubid?: Sort;
+prrelid?: Sort;
+prqual?: Sort;
+prattrs?: Sort;
 };
 }
 export namespace PgSubscriptionRel {
@@ -4209,6 +4798,10 @@ export type PrimaryKey = PgCatalog.Types.PgSubscriptionRelSrrelidSrsubidIndex;
 export type Optional = Pick<PgCatalog.Types.PgSubscriptionRel,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgSubscriptionRel, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+srsubid?: Sort;
+srrelid?: Sort;
+srsubstate?: Sort;
+srsublsn?: Sort;
 };
 }
 export namespace PgLargeobject {
@@ -4220,6 +4813,9 @@ export type PrimaryKey = PgCatalog.Types.PgLargeobjectLoidPnIndex;
 export type Optional = Pick<PgCatalog.Types.PgLargeobject,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgLargeobject, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+loid?: Sort;
+pageno?: Sort;
+data?: Sort;
 };
 }
 }
@@ -5428,6 +6024,13 @@ export type PrimaryKey = never;
 export type Optional = Pick<InformationSchema.Types.SqlFeatures,never>
 export type Values = PartiallyOptional<InformationSchema.Types.SqlFeatures, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+feature_id?: Sort;
+feature_name?: Sort;
+sub_feature_id?: Sort;
+sub_feature_name?: Sort;
+is_supported?: Sort;
+is_verified_by?: Sort;
+comments?: Sort;
 };
 }
 export namespace SqlImplementationInfo {
@@ -5438,6 +6041,11 @@ export type PrimaryKey = never;
 export type Optional = Pick<InformationSchema.Types.SqlImplementationInfo,never>
 export type Values = PartiallyOptional<InformationSchema.Types.SqlImplementationInfo, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+implementation_info_id?: Sort;
+implementation_info_name?: Sort;
+integer_value?: Sort;
+character_value?: Sort;
+comments?: Sort;
 };
 }
 export namespace SqlParts {
@@ -5448,6 +6056,11 @@ export type PrimaryKey = never;
 export type Optional = Pick<InformationSchema.Types.SqlParts,never>
 export type Values = PartiallyOptional<InformationSchema.Types.SqlParts, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+feature_id?: Sort;
+feature_name?: Sort;
+is_supported?: Sort;
+is_verified_by?: Sort;
+comments?: Sort;
 };
 }
 export namespace SqlSizing {
@@ -5458,6 +6071,10 @@ export type PrimaryKey = never;
 export type Optional = Pick<InformationSchema.Types.SqlSizing,never>
 export type Values = PartiallyOptional<InformationSchema.Types.SqlSizing, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+sizing_id?: Sort;
+sizing_name?: Sort;
+supported_value?: Sort;
+comments?: Sort;
 };
 }
 }
@@ -5953,6 +6570,9 @@ export type PrimaryKey = Public.Types.FilmActorPkey;
 export type Optional = Pick<Public.Types.FilmActor,"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.FilmActor, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+actor_id?: Sort;
+film_id?: Sort;
+last_update?: Sort;
 };
 }
 export namespace Address {
@@ -5964,6 +6584,14 @@ export type PrimaryKey = Public.Types.AddressPkey;
 export type Optional = Pick<Public.Types.Address,"addressId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Address, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+address_id?: Sort;
+address?: Sort;
+address2?: Sort;
+district?: Sort;
+city_id?: Sort;
+postal_code?: Sort;
+phone?: Sort;
+last_update?: Sort;
 };
 }
 export namespace City {
@@ -5975,6 +6603,10 @@ export type PrimaryKey = Public.Types.CityPkey;
 export type Optional = Pick<Public.Types.City,"cityId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.City, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+city_id?: Sort;
+city?: Sort;
+country_id?: Sort;
+last_update?: Sort;
 };
 }
 export namespace Customer {
@@ -5986,6 +6618,16 @@ export type PrimaryKey = Public.Types.CustomerPkey;
 export type Optional = Pick<Public.Types.Customer,"customerId"|"activebool"|"createDate"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Customer, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+customer_id?: Sort;
+store_id?: Sort;
+first_name?: Sort;
+last_name?: Sort;
+email?: Sort;
+address_id?: Sort;
+activebool?: Sort;
+create_date?: Sort;
+last_update?: Sort;
+active?: Sort;
 };
 }
 export namespace Actor {
@@ -5997,6 +6639,10 @@ export type PrimaryKey = Public.Types.ActorPkey;
 export type Optional = Pick<Public.Types.Actor,"actorId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Actor, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+actor_id?: Sort;
+first_name?: Sort;
+last_name?: Sort;
+last_update?: Sort;
 };
 }
 export namespace FilmCategory {
@@ -6008,6 +6654,9 @@ export type PrimaryKey = Public.Types.FilmCategoryPkey;
 export type Optional = Pick<Public.Types.FilmCategory,"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.FilmCategory, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+film_id?: Sort;
+category_id?: Sort;
+last_update?: Sort;
 };
 }
 export namespace Inventory {
@@ -6019,6 +6668,10 @@ export type PrimaryKey = Public.Types.InventoryPkey;
 export type Optional = Pick<Public.Types.Inventory,"inventoryId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Inventory, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+inventory_id?: Sort;
+film_id?: Sort;
+store_id?: Sort;
+last_update?: Sort;
 };
 }
 export namespace Category {
@@ -6030,6 +6683,9 @@ export type PrimaryKey = Public.Types.CategoryPkey;
 export type Optional = Pick<Public.Types.Category,"categoryId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Category, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+category_id?: Sort;
+name?: Sort;
+last_update?: Sort;
 };
 }
 export namespace Country {
@@ -6041,6 +6697,9 @@ export type PrimaryKey = Public.Types.CountryPkey;
 export type Optional = Pick<Public.Types.Country,"countryId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Country, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+country_id?: Sort;
+country?: Sort;
+last_update?: Sort;
 };
 }
 export namespace Language {
@@ -6052,6 +6711,9 @@ export type PrimaryKey = Public.Types.LanguagePkey;
 export type Optional = Pick<Public.Types.Language,"languageId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Language, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+language_id?: Sort;
+name?: Sort;
+last_update?: Sort;
 };
 }
 export namespace Rental {
@@ -6063,6 +6725,13 @@ export type PrimaryKey = Public.Types.RentalPkey;
 export type Optional = Pick<Public.Types.Rental,"rentalId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Rental, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+rental_id?: Sort;
+rental_date?: Sort;
+inventory_id?: Sort;
+customer_id?: Sort;
+return_date?: Sort;
+staff_id?: Sort;
+last_update?: Sort;
 };
 }
 export namespace Staff {
@@ -6074,6 +6743,17 @@ export type PrimaryKey = Public.Types.StaffPkey;
 export type Optional = Pick<Public.Types.Staff,"staffId"|"active"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Staff, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+staff_id?: Sort;
+first_name?: Sort;
+last_name?: Sort;
+address_id?: Sort;
+email?: Sort;
+store_id?: Sort;
+active?: Sort;
+username?: Sort;
+password?: Sort;
+last_update?: Sort;
+picture?: Sort;
 };
 }
 export namespace Store {
@@ -6085,6 +6765,10 @@ export type PrimaryKey = Public.Types.StorePkey;
 export type Optional = Pick<Public.Types.Store,"storeId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Store, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+store_id?: Sort;
+manager_staff_id?: Sort;
+address_id?: Sort;
+last_update?: Sort;
 };
 }
 export namespace Payment {
@@ -6096,6 +6780,12 @@ export type PrimaryKey = Public.Types.PaymentPkey;
 export type Optional = Pick<Public.Types.Payment,"paymentId">
 export type Values = PartiallyOptional<Public.Types.Payment, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+payment_id?: Sort;
+customer_id?: Sort;
+staff_id?: Sort;
+rental_id?: Sort;
+amount?: Sort;
+payment_date?: Sort;
 };
 }
 export namespace Film {
@@ -6107,6 +6797,19 @@ export type PrimaryKey = Public.Types.FilmPkey;
 export type Optional = Pick<Public.Types.Film,"filmId"|"rentalDuration"|"rentalRate"|"replacementCost"|"rating"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Film, Optional & PrimaryKey>
 export type Options = ReadOptions & {
+film_id?: Sort;
+title?: Sort;
+description?: Sort;
+release_year?: Sort;
+language_id?: Sort;
+rental_duration?: Sort;
+rental_rate?: Sort;
+length?: Sort;
+replacement_cost?: Sort;
+rating?: Sort;
+last_update?: Sort;
+special_features?: Sort;
+fulltext?: Sort;
 };
 }
 }

@@ -15,12 +15,13 @@ export const ReadOperation = {
   async before(context: GenerationContext, node: ReadOperationNode) {
     const generationBuffer = [""];
     const parameters = `${PARAMETERS}: ${node.index.type.typescriptNamespacedName}`;
+    const options = `options?: ${node.index.table.typescriptNamespacedName}.Options`;
     const returns = node.index.unique
       ? `Promise<${node.index.table.type.typescriptNamespacedName}>`
       : `Promise<${node.index.table.type.typescriptNamespacedName}[]>`;
 
     generationBuffer.push(
-      `async ${node.typescriptPropertyName}(${parameters}) : ${returns}{`,
+      `async ${node.typescriptPropertyName}(${parameters}, ${options}) : ${returns}{`,
     );
     generationBuffer.push(
       `
