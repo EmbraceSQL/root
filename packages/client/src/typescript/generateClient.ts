@@ -46,6 +46,7 @@ const IndexOperation = {
     const resultType = node.index.unique
       ? `${node.index.table.type.typescriptNamespacedName} | undefined`
       : `${node.index.table.type.typescriptNamespacedName}[] | undefined`;
+    const optionType = `${node.index.table.typescriptNamespacedName}.Options`;
     const parametersPick = node.index.type.attributes
       .map(
         (c) =>
@@ -54,10 +55,11 @@ const IndexOperation = {
       .join(",");
     const generationBuffer = [
       `
-          public async ${node.typescriptPropertyName}(parameters: ${parametersType}) {
-            const response = await this.client.invoke<${parametersType}, never, ${resultType}>({
+          public async ${node.typescriptPropertyName}(parameters: ${parametersType}, options?: ${optionType}) {
+            const response = await this.client.invoke<${parametersType}, never, ${resultType}, ${optionType}>({
               operation: "${node.typescriptNamespacedPropertyName}",
-              parameters: {${parametersPick}}
+              parameters: {${parametersPick}},
+              options
             });
         `,
     ];
@@ -84,7 +86,7 @@ const FunctionalOperation = {
         const parametersType = `${node.parametersType.typescriptNamespacedName}`;
         return `
           public async call(parameters: ${parametersType}) : Promise<${returnType}> {
-            const response = await this.client.invoke<${parametersType}, never, ${returnType}>({
+            const response = await this.client.invoke<${parametersType}, never, ${returnType}, never>({
               operation: "${node.typescriptNamespacedName}.call",
               parameters
             });
@@ -92,7 +94,7 @@ const FunctionalOperation = {
       } else {
         return `
           public async call() : Promise<${returnType}> {
-            const response = await this.client.invoke<never, never, ${returnType}>({
+            const response = await this.client.invoke<never, never, ${returnType}, never>({
               operation: "${node.typescriptNamespacedName}.call",
             });
         `;
@@ -176,7 +178,7 @@ export async function generateClient(context: GenerationContext) {
           .join(",");
         return `
           public async create(values: ${valuesType}) : Promise<${returnType}|undefined> {
-            const response = await this.client.invoke<never, ${valuesType}, ${returnType}>({
+            const response = await this.client.invoke<never, ${valuesType}, ${returnType}, never>({
               operation: "${node.typescriptNamespacedPropertyName}",
               values: {${valuesPick}}
             });
@@ -189,13 +191,14 @@ export async function generateClient(context: GenerationContext) {
       before: async (_, node) => {
         // all those rows
         return `
-          public async all() : Promise<${
-            node.table.type.typescriptNamespacedName
-          }[]> {
+          public async all(options?: ${
+            node.table.typescriptNamespacedName
+          }.Options) : Promise<${node.table.type.typescriptNamespacedName}[]> {
             const response = await this.client.invoke<never, never, ${
               node.table.type.typescriptNamespacedName
-            }[]>({
-              operation: "${node.typescriptNamespacedPropertyName}"
+            }[], ${node.table.typescriptNamespacedName}.Options>({
+              operation: "${node.typescriptNamespacedPropertyName}",
+              options
             });
             return ${returnParsedRows(node.table)};
           }
@@ -229,7 +232,7 @@ export async function generateClient(context: GenerationContext) {
         const generationBuffer = [
           `
           public async ${node.typescriptPropertyName}(parameters: ${parametersType}, values: ${valuesType}) {
-            const response = await this.client.invoke<${parametersType}, ${valuesType}, ${resultType}>({
+            const response = await this.client.invoke<${parametersType}, ${valuesType}, ${resultType}, never>({
               operation: "${node.typescriptNamespacedPropertyName}",
               parameters: {${parametersPick}},
               values: {${valuesPick}}

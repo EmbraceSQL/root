@@ -39,8 +39,8 @@ export class EmbraceSQLClient implements _HasClient {
    * You can call the server yourself this way, but it isn't particularly convenient
    * compared to using generated react hooks!
    */
-  async invoke<Parameters, Values, Response>(
-    request: EmbraceSQLRequest<Parameters, Values>,
+  async invoke<Parameters, Values, Response, Options>(
+    request: EmbraceSQLRequest<Parameters, Values, Options>,
   ): Promise<EmbraceSQLResponse<Response>> {
     // it's always POST JSON in EmbraceSQL
     const props = {

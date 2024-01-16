@@ -6817,12 +6817,12 @@ fulltext?: Sort;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_35153Index = {
+export type PgToast_36081Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_35239Index = {
+export type PgToast_36167Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -20474,11 +20474,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_35153Index {
+export namespace PgToast_36081Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_35153Index.is(from)) {
+if (PgToast.Types.PgToast_36081Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -20489,11 +20489,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_35239Index {
+export namespace PgToast_36167Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_35239Index.is(from)) {
+if (PgToast.Types.PgToast_36167Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -27106,16 +27106,16 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_35153Index {
-export function is(value: any) : value is PgToast.Types.PgToast_35153Index {
+export namespace PgToast_36081Index {
+export function is(value: any) : value is PgToast.Types.PgToast_36081Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_35239Index {
-export function is(value: any) : value is PgToast.Types.PgToast_35239Index {
+export namespace PgToast_36167Index {
+export function is(value: any) : value is PgToast.Types.PgToast_36167Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -27540,7 +27540,7 @@ import { EmbraceSQLClient as BaseClient, EmbraceSQLClientProps, HasClient } from
         
 
           public async call(parameters: Public.Procedures.FilmInStock.Parameters) : Promise<PgCatalog.Types.Int4[]> {
-            const response = await this.client.invoke<Public.Procedures.FilmInStock.Parameters, never, PgCatalog.Types.Int4[]>({
+            const response = await this.client.invoke<Public.Procedures.FilmInStock.Parameters, never, PgCatalog.Types.Int4[], never>({
               operation: "Public.Procedures.FilmInStock.call",
               parameters
             });
@@ -27553,7 +27553,7 @@ return response.results?.map(r => PgCatalog.Types.Int4.parse(r)) as PgCatalog.Ty
         
 
           public async call(parameters: Public.Procedures.FilmNotInStock.Parameters) : Promise<PgCatalog.Types.Int4[]> {
-            const response = await this.client.invoke<Public.Procedures.FilmNotInStock.Parameters, never, PgCatalog.Types.Int4[]>({
+            const response = await this.client.invoke<Public.Procedures.FilmNotInStock.Parameters, never, PgCatalog.Types.Int4[], never>({
               operation: "Public.Procedures.FilmNotInStock.call",
               parameters
             });
@@ -27566,7 +27566,7 @@ return response.results?.map(r => PgCatalog.Types.Int4.parse(r)) as PgCatalog.Ty
         
 
           public async call(parameters: Public.Procedures.GetCustomerBalance.Parameters) : Promise<PgCatalog.Types.Numeric | undefined> {
-            const response = await this.client.invoke<Public.Procedures.GetCustomerBalance.Parameters, never, PgCatalog.Types.Numeric | undefined>({
+            const response = await this.client.invoke<Public.Procedures.GetCustomerBalance.Parameters, never, PgCatalog.Types.Numeric | undefined, never>({
               operation: "Public.Procedures.GetCustomerBalance.call",
               parameters
             });
@@ -27579,7 +27579,7 @@ return response.results ? nullIsUndefined(PgCatalog.Types.Numeric.parse(response
         
 
           public async call(parameters: Public.Procedures.InventoryHeldByCustomer.Parameters) : Promise<PgCatalog.Types.Int4 | undefined> {
-            const response = await this.client.invoke<Public.Procedures.InventoryHeldByCustomer.Parameters, never, PgCatalog.Types.Int4 | undefined>({
+            const response = await this.client.invoke<Public.Procedures.InventoryHeldByCustomer.Parameters, never, PgCatalog.Types.Int4 | undefined, never>({
               operation: "Public.Procedures.InventoryHeldByCustomer.call",
               parameters
             });
@@ -27592,7 +27592,7 @@ return response.results ? nullIsUndefined(PgCatalog.Types.Int4.parse(response.re
         
 
           public async call(parameters: Public.Procedures.InventoryInStock.Parameters) : Promise<PgCatalog.Types.Bool | undefined> {
-            const response = await this.client.invoke<Public.Procedures.InventoryInStock.Parameters, never, PgCatalog.Types.Bool | undefined>({
+            const response = await this.client.invoke<Public.Procedures.InventoryInStock.Parameters, never, PgCatalog.Types.Bool | undefined, never>({
               operation: "Public.Procedures.InventoryInStock.call",
               parameters
             });
@@ -27605,7 +27605,7 @@ return response.results ? nullIsUndefined(PgCatalog.Types.Bool.parse(response.re
         
 
           public async call(parameters: Public.Procedures.LastDay.Parameters) : Promise<PgCatalog.Types.Date | undefined> {
-            const response = await this.client.invoke<Public.Procedures.LastDay.Parameters, never, PgCatalog.Types.Date | undefined>({
+            const response = await this.client.invoke<Public.Procedures.LastDay.Parameters, never, PgCatalog.Types.Date | undefined, never>({
               operation: "Public.Procedures.LastDay.call",
               parameters
             });
@@ -27618,7 +27618,7 @@ return response.results ? nullIsUndefined(PgCatalog.Types.Date.parse(response.re
         
 
           public async call(parameters: Public.Procedures.RewardsReport.Parameters) : Promise<Public.Types.Customer[]> {
-            const response = await this.client.invoke<Public.Procedures.RewardsReport.Parameters, never, Public.Types.Customer[]>({
+            const response = await this.client.invoke<Public.Procedures.RewardsReport.Parameters, never, Public.Types.Customer[], never>({
               operation: "Public.Procedures.RewardsReport.call",
               parameters
             });
@@ -27635,7 +27635,7 @@ return response.results?.map(r => Public.Types.Customer.parse(r)) as Public.Type
         
 
           public async create(values: Partial<Public.Types.FilmActor>) : Promise<Public.Types.FilmActor|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.FilmActor>, Public.Types.FilmActor>({
+            const response = await this.client.invoke<never, Partial<Public.Types.FilmActor>, Public.Types.FilmActor, never>({
               operation: "Public.Tables.FilmActor.create",
               values: {actorId: values.actorId,filmId: values.filmId,lastUpdate: values.lastUpdate}
             });
@@ -27646,9 +27646,10 @@ return response.results?.map(r => Public.Types.Customer.parse(r)) as Public.Type
           }
         
 
-          public async all() : Promise<Public.Types.FilmActor[]> {
-            const response = await this.client.invoke<never, never, Public.Types.FilmActor[]>({
-              operation: "Public.Tables.FilmActor.all"
+          public async all(options?: Public.Tables.FilmActor.Options) : Promise<Public.Types.FilmActor[]> {
+            const response = await this.client.invoke<never, never, Public.Types.FilmActor[], never>({
+              operation: "Public.Tables.FilmActor.all",
+              options
             });
             return (
     response.results
@@ -27663,10 +27664,11 @@ return response.results?.map(r => Public.Types.Customer.parse(r)) as Public.Type
           public FilmActorPkey = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.FilmActorPkey) {
-            const response = await this.client.invoke<Public.Types.FilmActorPkey, never, Public.Types.FilmActor | undefined>({
+          public async read(parameters: Public.Types.FilmActorPkey, options?: Public.Tables.FilmActor.Options) {
+            const response = await this.client.invoke<Public.Types.FilmActorPkey, never, Public.Types.FilmActor | undefined, Public.Tables.FilmActor.Options>({
               operation: "Public.Tables.FilmActor.FilmActorPkey.read",
-              parameters: {actorId: parameters.actorId,filmId: parameters.filmId}
+              parameters: {actorId: parameters.actorId,filmId: parameters.filmId},
+              options
             });
         
 return (
@@ -27676,7 +27678,7 @@ return (
 }
 
           public async update(parameters: Public.Types.FilmActorPkey, values: Partial<Public.Types.FilmActor>) {
-            const response = await this.client.invoke<Public.Types.FilmActorPkey, Partial<Public.Types.FilmActor>, Public.Types.FilmActor | undefined>({
+            const response = await this.client.invoke<Public.Types.FilmActorPkey, Partial<Public.Types.FilmActor>, Public.Types.FilmActor | undefined, never>({
               operation: "Public.Tables.FilmActor.FilmActorPkey.update",
               parameters: {actorId: parameters.actorId,filmId: parameters.filmId},
               values: {actorId: values.actorId,filmId: values.filmId,lastUpdate: values.lastUpdate}
@@ -27688,10 +27690,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.FilmActorPkey) {
-            const response = await this.client.invoke<Public.Types.FilmActorPkey, never, Public.Types.FilmActor | undefined>({
+          public async delete(parameters: Public.Types.FilmActorPkey, options?: Public.Tables.FilmActor.Options) {
+            const response = await this.client.invoke<Public.Types.FilmActorPkey, never, Public.Types.FilmActor | undefined, Public.Tables.FilmActor.Options>({
               operation: "Public.Tables.FilmActor.FilmActorPkey.delete",
-              parameters: {actorId: parameters.actorId,filmId: parameters.filmId}
+              parameters: {actorId: parameters.actorId,filmId: parameters.filmId},
+              options
             });
         
 return (
@@ -27705,10 +27708,11 @@ public get ByPrimaryKey(){ return this.FilmActorPkey };
           public IdxFkFilmId = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.IdxFkFilmId) {
-            const response = await this.client.invoke<Public.Types.IdxFkFilmId, never, Public.Types.FilmActor[] | undefined>({
+          public async read(parameters: Public.Types.IdxFkFilmId, options?: Public.Tables.FilmActor.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkFilmId, never, Public.Types.FilmActor[] | undefined, Public.Tables.FilmActor.Options>({
               operation: "Public.Tables.FilmActor.IdxFkFilmId.read",
-              parameters: {filmId: parameters.filmId}
+              parameters: {filmId: parameters.filmId},
+              options
             });
         
 return (
@@ -27721,7 +27725,7 @@ return (
 }
 
           public async update(parameters: Public.Types.IdxFkFilmId, values: Partial<Public.Types.FilmActor>) {
-            const response = await this.client.invoke<Public.Types.IdxFkFilmId, Partial<Public.Types.FilmActor>, Public.Types.FilmActor[] | undefined>({
+            const response = await this.client.invoke<Public.Types.IdxFkFilmId, Partial<Public.Types.FilmActor>, Public.Types.FilmActor[] | undefined, never>({
               operation: "Public.Tables.FilmActor.IdxFkFilmId.update",
               parameters: {filmId: parameters.filmId},
               values: {actorId: values.actorId,filmId: values.filmId,lastUpdate: values.lastUpdate}
@@ -27736,10 +27740,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.IdxFkFilmId) {
-            const response = await this.client.invoke<Public.Types.IdxFkFilmId, never, Public.Types.FilmActor[] | undefined>({
+          public async delete(parameters: Public.Types.IdxFkFilmId, options?: Public.Tables.FilmActor.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkFilmId, never, Public.Types.FilmActor[] | undefined, Public.Tables.FilmActor.Options>({
               operation: "Public.Tables.FilmActor.IdxFkFilmId.delete",
-              parameters: {filmId: parameters.filmId}
+              parameters: {filmId: parameters.filmId},
+              options
             });
         
 return (
@@ -27758,7 +27763,7 @@ return (
         
 
           public async create(values: Partial<Public.Types.Address>) : Promise<Public.Types.Address|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Address>, Public.Types.Address>({
+            const response = await this.client.invoke<never, Partial<Public.Types.Address>, Public.Types.Address, never>({
               operation: "Public.Tables.Address.create",
               values: {addressId: values.addressId,address: values.address,address2: values.address2,district: values.district,cityId: values.cityId,postalCode: values.postalCode,phone: values.phone,lastUpdate: values.lastUpdate}
             });
@@ -27769,9 +27774,10 @@ return (
           }
         
 
-          public async all() : Promise<Public.Types.Address[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Address[]>({
-              operation: "Public.Tables.Address.all"
+          public async all(options?: Public.Tables.Address.Options) : Promise<Public.Types.Address[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Address[], never>({
+              operation: "Public.Tables.Address.all",
+              options
             });
             return (
     response.results
@@ -27786,10 +27792,11 @@ return (
           public AddressPkey = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.AddressPkey) {
-            const response = await this.client.invoke<Public.Types.AddressPkey, never, Public.Types.Address | undefined>({
+          public async read(parameters: Public.Types.AddressPkey, options?: Public.Tables.Address.Options) {
+            const response = await this.client.invoke<Public.Types.AddressPkey, never, Public.Types.Address | undefined, Public.Tables.Address.Options>({
               operation: "Public.Tables.Address.AddressPkey.read",
-              parameters: {addressId: parameters.addressId}
+              parameters: {addressId: parameters.addressId},
+              options
             });
         
 return (
@@ -27799,7 +27806,7 @@ return (
 }
 
           public async update(parameters: Public.Types.AddressPkey, values: Partial<Public.Types.Address>) {
-            const response = await this.client.invoke<Public.Types.AddressPkey, Partial<Public.Types.Address>, Public.Types.Address | undefined>({
+            const response = await this.client.invoke<Public.Types.AddressPkey, Partial<Public.Types.Address>, Public.Types.Address | undefined, never>({
               operation: "Public.Tables.Address.AddressPkey.update",
               parameters: {addressId: parameters.addressId},
               values: {addressId: values.addressId,address: values.address,address2: values.address2,district: values.district,cityId: values.cityId,postalCode: values.postalCode,phone: values.phone,lastUpdate: values.lastUpdate}
@@ -27811,10 +27818,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.AddressPkey) {
-            const response = await this.client.invoke<Public.Types.AddressPkey, never, Public.Types.Address | undefined>({
+          public async delete(parameters: Public.Types.AddressPkey, options?: Public.Tables.Address.Options) {
+            const response = await this.client.invoke<Public.Types.AddressPkey, never, Public.Types.Address | undefined, Public.Tables.Address.Options>({
               operation: "Public.Tables.Address.AddressPkey.delete",
-              parameters: {addressId: parameters.addressId}
+              parameters: {addressId: parameters.addressId},
+              options
             });
         
 return (
@@ -27828,10 +27836,11 @@ public get ByPrimaryKey(){ return this.AddressPkey };
           public IdxFkCityId = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.IdxFkCityId) {
-            const response = await this.client.invoke<Public.Types.IdxFkCityId, never, Public.Types.Address[] | undefined>({
+          public async read(parameters: Public.Types.IdxFkCityId, options?: Public.Tables.Address.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkCityId, never, Public.Types.Address[] | undefined, Public.Tables.Address.Options>({
               operation: "Public.Tables.Address.IdxFkCityId.read",
-              parameters: {cityId: parameters.cityId}
+              parameters: {cityId: parameters.cityId},
+              options
             });
         
 return (
@@ -27844,7 +27853,7 @@ return (
 }
 
           public async update(parameters: Public.Types.IdxFkCityId, values: Partial<Public.Types.Address>) {
-            const response = await this.client.invoke<Public.Types.IdxFkCityId, Partial<Public.Types.Address>, Public.Types.Address[] | undefined>({
+            const response = await this.client.invoke<Public.Types.IdxFkCityId, Partial<Public.Types.Address>, Public.Types.Address[] | undefined, never>({
               operation: "Public.Tables.Address.IdxFkCityId.update",
               parameters: {cityId: parameters.cityId},
               values: {addressId: values.addressId,address: values.address,address2: values.address2,district: values.district,cityId: values.cityId,postalCode: values.postalCode,phone: values.phone,lastUpdate: values.lastUpdate}
@@ -27859,10 +27868,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.IdxFkCityId) {
-            const response = await this.client.invoke<Public.Types.IdxFkCityId, never, Public.Types.Address[] | undefined>({
+          public async delete(parameters: Public.Types.IdxFkCityId, options?: Public.Tables.Address.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkCityId, never, Public.Types.Address[] | undefined, Public.Tables.Address.Options>({
               operation: "Public.Tables.Address.IdxFkCityId.delete",
-              parameters: {cityId: parameters.cityId}
+              parameters: {cityId: parameters.cityId},
+              options
             });
         
 return (
@@ -27881,7 +27891,7 @@ return (
         
 
           public async create(values: Partial<Public.Types.City>) : Promise<Public.Types.City|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.City>, Public.Types.City>({
+            const response = await this.client.invoke<never, Partial<Public.Types.City>, Public.Types.City, never>({
               operation: "Public.Tables.City.create",
               values: {cityId: values.cityId,city: values.city,countryId: values.countryId,lastUpdate: values.lastUpdate}
             });
@@ -27892,9 +27902,10 @@ return (
           }
         
 
-          public async all() : Promise<Public.Types.City[]> {
-            const response = await this.client.invoke<never, never, Public.Types.City[]>({
-              operation: "Public.Tables.City.all"
+          public async all(options?: Public.Tables.City.Options) : Promise<Public.Types.City[]> {
+            const response = await this.client.invoke<never, never, Public.Types.City[], never>({
+              operation: "Public.Tables.City.all",
+              options
             });
             return (
     response.results
@@ -27909,10 +27920,11 @@ return (
           public CityPkey = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.CityPkey) {
-            const response = await this.client.invoke<Public.Types.CityPkey, never, Public.Types.City | undefined>({
+          public async read(parameters: Public.Types.CityPkey, options?: Public.Tables.City.Options) {
+            const response = await this.client.invoke<Public.Types.CityPkey, never, Public.Types.City | undefined, Public.Tables.City.Options>({
               operation: "Public.Tables.City.CityPkey.read",
-              parameters: {cityId: parameters.cityId}
+              parameters: {cityId: parameters.cityId},
+              options
             });
         
 return (
@@ -27922,7 +27934,7 @@ return (
 }
 
           public async update(parameters: Public.Types.CityPkey, values: Partial<Public.Types.City>) {
-            const response = await this.client.invoke<Public.Types.CityPkey, Partial<Public.Types.City>, Public.Types.City | undefined>({
+            const response = await this.client.invoke<Public.Types.CityPkey, Partial<Public.Types.City>, Public.Types.City | undefined, never>({
               operation: "Public.Tables.City.CityPkey.update",
               parameters: {cityId: parameters.cityId},
               values: {cityId: values.cityId,city: values.city,countryId: values.countryId,lastUpdate: values.lastUpdate}
@@ -27934,10 +27946,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.CityPkey) {
-            const response = await this.client.invoke<Public.Types.CityPkey, never, Public.Types.City | undefined>({
+          public async delete(parameters: Public.Types.CityPkey, options?: Public.Tables.City.Options) {
+            const response = await this.client.invoke<Public.Types.CityPkey, never, Public.Types.City | undefined, Public.Tables.City.Options>({
               operation: "Public.Tables.City.CityPkey.delete",
-              parameters: {cityId: parameters.cityId}
+              parameters: {cityId: parameters.cityId},
+              options
             });
         
 return (
@@ -27951,10 +27964,11 @@ public get ByPrimaryKey(){ return this.CityPkey };
           public IdxFkCountryId = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.IdxFkCountryId) {
-            const response = await this.client.invoke<Public.Types.IdxFkCountryId, never, Public.Types.City[] | undefined>({
+          public async read(parameters: Public.Types.IdxFkCountryId, options?: Public.Tables.City.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkCountryId, never, Public.Types.City[] | undefined, Public.Tables.City.Options>({
               operation: "Public.Tables.City.IdxFkCountryId.read",
-              parameters: {countryId: parameters.countryId}
+              parameters: {countryId: parameters.countryId},
+              options
             });
         
 return (
@@ -27967,7 +27981,7 @@ return (
 }
 
           public async update(parameters: Public.Types.IdxFkCountryId, values: Partial<Public.Types.City>) {
-            const response = await this.client.invoke<Public.Types.IdxFkCountryId, Partial<Public.Types.City>, Public.Types.City[] | undefined>({
+            const response = await this.client.invoke<Public.Types.IdxFkCountryId, Partial<Public.Types.City>, Public.Types.City[] | undefined, never>({
               operation: "Public.Tables.City.IdxFkCountryId.update",
               parameters: {countryId: parameters.countryId},
               values: {cityId: values.cityId,city: values.city,countryId: values.countryId,lastUpdate: values.lastUpdate}
@@ -27982,10 +27996,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.IdxFkCountryId) {
-            const response = await this.client.invoke<Public.Types.IdxFkCountryId, never, Public.Types.City[] | undefined>({
+          public async delete(parameters: Public.Types.IdxFkCountryId, options?: Public.Tables.City.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkCountryId, never, Public.Types.City[] | undefined, Public.Tables.City.Options>({
               operation: "Public.Tables.City.IdxFkCountryId.delete",
-              parameters: {countryId: parameters.countryId}
+              parameters: {countryId: parameters.countryId},
+              options
             });
         
 return (
@@ -28004,7 +28019,7 @@ return (
         
 
           public async create(values: Partial<Public.Types.Customer>) : Promise<Public.Types.Customer|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Customer>, Public.Types.Customer>({
+            const response = await this.client.invoke<never, Partial<Public.Types.Customer>, Public.Types.Customer, never>({
               operation: "Public.Tables.Customer.create",
               values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active}
             });
@@ -28015,9 +28030,10 @@ return (
           }
         
 
-          public async all() : Promise<Public.Types.Customer[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Customer[]>({
-              operation: "Public.Tables.Customer.all"
+          public async all(options?: Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Customer[], never>({
+              operation: "Public.Tables.Customer.all",
+              options
             });
             return (
     response.results
@@ -28032,10 +28048,11 @@ return (
           public CustomerPkey = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.CustomerPkey) {
-            const response = await this.client.invoke<Public.Types.CustomerPkey, never, Public.Types.Customer | undefined>({
+          public async read(parameters: Public.Types.CustomerPkey, options?: Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.CustomerPkey, never, Public.Types.Customer | undefined, Public.Tables.Customer.Options>({
               operation: "Public.Tables.Customer.CustomerPkey.read",
-              parameters: {customerId: parameters.customerId}
+              parameters: {customerId: parameters.customerId},
+              options
             });
         
 return (
@@ -28045,7 +28062,7 @@ return (
 }
 
           public async update(parameters: Public.Types.CustomerPkey, values: Partial<Public.Types.Customer>) {
-            const response = await this.client.invoke<Public.Types.CustomerPkey, Partial<Public.Types.Customer>, Public.Types.Customer | undefined>({
+            const response = await this.client.invoke<Public.Types.CustomerPkey, Partial<Public.Types.Customer>, Public.Types.Customer | undefined, never>({
               operation: "Public.Tables.Customer.CustomerPkey.update",
               parameters: {customerId: parameters.customerId},
               values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active}
@@ -28057,10 +28074,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.CustomerPkey) {
-            const response = await this.client.invoke<Public.Types.CustomerPkey, never, Public.Types.Customer | undefined>({
+          public async delete(parameters: Public.Types.CustomerPkey, options?: Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.CustomerPkey, never, Public.Types.Customer | undefined, Public.Tables.Customer.Options>({
               operation: "Public.Tables.Customer.CustomerPkey.delete",
-              parameters: {customerId: parameters.customerId}
+              parameters: {customerId: parameters.customerId},
+              options
             });
         
 return (
@@ -28074,10 +28092,11 @@ public get ByPrimaryKey(){ return this.CustomerPkey };
           public IdxFkAddressId = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.IdxFkAddressId) {
-            const response = await this.client.invoke<Public.Types.IdxFkAddressId, never, Public.Types.Customer[] | undefined>({
+          public async read(parameters: Public.Types.IdxFkAddressId, options?: Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkAddressId, never, Public.Types.Customer[] | undefined, Public.Tables.Customer.Options>({
               operation: "Public.Tables.Customer.IdxFkAddressId.read",
-              parameters: {addressId: parameters.addressId}
+              parameters: {addressId: parameters.addressId},
+              options
             });
         
 return (
@@ -28090,7 +28109,7 @@ return (
 }
 
           public async update(parameters: Public.Types.IdxFkAddressId, values: Partial<Public.Types.Customer>) {
-            const response = await this.client.invoke<Public.Types.IdxFkAddressId, Partial<Public.Types.Customer>, Public.Types.Customer[] | undefined>({
+            const response = await this.client.invoke<Public.Types.IdxFkAddressId, Partial<Public.Types.Customer>, Public.Types.Customer[] | undefined, never>({
               operation: "Public.Tables.Customer.IdxFkAddressId.update",
               parameters: {addressId: parameters.addressId},
               values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active}
@@ -28105,10 +28124,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.IdxFkAddressId) {
-            const response = await this.client.invoke<Public.Types.IdxFkAddressId, never, Public.Types.Customer[] | undefined>({
+          public async delete(parameters: Public.Types.IdxFkAddressId, options?: Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkAddressId, never, Public.Types.Customer[] | undefined, Public.Tables.Customer.Options>({
               operation: "Public.Tables.Customer.IdxFkAddressId.delete",
-              parameters: {addressId: parameters.addressId}
+              parameters: {addressId: parameters.addressId},
+              options
             });
         
 return (
@@ -28125,10 +28145,11 @@ return (
           public IdxFkStoreId = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.IdxFkStoreId) {
-            const response = await this.client.invoke<Public.Types.IdxFkStoreId, never, Public.Types.Customer[] | undefined>({
+          public async read(parameters: Public.Types.IdxFkStoreId, options?: Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkStoreId, never, Public.Types.Customer[] | undefined, Public.Tables.Customer.Options>({
               operation: "Public.Tables.Customer.IdxFkStoreId.read",
-              parameters: {storeId: parameters.storeId}
+              parameters: {storeId: parameters.storeId},
+              options
             });
         
 return (
@@ -28141,7 +28162,7 @@ return (
 }
 
           public async update(parameters: Public.Types.IdxFkStoreId, values: Partial<Public.Types.Customer>) {
-            const response = await this.client.invoke<Public.Types.IdxFkStoreId, Partial<Public.Types.Customer>, Public.Types.Customer[] | undefined>({
+            const response = await this.client.invoke<Public.Types.IdxFkStoreId, Partial<Public.Types.Customer>, Public.Types.Customer[] | undefined, never>({
               operation: "Public.Tables.Customer.IdxFkStoreId.update",
               parameters: {storeId: parameters.storeId},
               values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active}
@@ -28156,10 +28177,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.IdxFkStoreId) {
-            const response = await this.client.invoke<Public.Types.IdxFkStoreId, never, Public.Types.Customer[] | undefined>({
+          public async delete(parameters: Public.Types.IdxFkStoreId, options?: Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkStoreId, never, Public.Types.Customer[] | undefined, Public.Tables.Customer.Options>({
               operation: "Public.Tables.Customer.IdxFkStoreId.delete",
-              parameters: {storeId: parameters.storeId}
+              parameters: {storeId: parameters.storeId},
+              options
             });
         
 return (
@@ -28176,10 +28198,11 @@ return (
           public IdxLastName = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.IdxLastName) {
-            const response = await this.client.invoke<Public.Types.IdxLastName, never, Public.Types.Customer[] | undefined>({
+          public async read(parameters: Public.Types.IdxLastName, options?: Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.IdxLastName, never, Public.Types.Customer[] | undefined, Public.Tables.Customer.Options>({
               operation: "Public.Tables.Customer.IdxLastName.read",
-              parameters: {lastName: parameters.lastName}
+              parameters: {lastName: parameters.lastName},
+              options
             });
         
 return (
@@ -28192,7 +28215,7 @@ return (
 }
 
           public async update(parameters: Public.Types.IdxLastName, values: Partial<Public.Types.Customer>) {
-            const response = await this.client.invoke<Public.Types.IdxLastName, Partial<Public.Types.Customer>, Public.Types.Customer[] | undefined>({
+            const response = await this.client.invoke<Public.Types.IdxLastName, Partial<Public.Types.Customer>, Public.Types.Customer[] | undefined, never>({
               operation: "Public.Tables.Customer.IdxLastName.update",
               parameters: {lastName: parameters.lastName},
               values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active}
@@ -28207,10 +28230,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.IdxLastName) {
-            const response = await this.client.invoke<Public.Types.IdxLastName, never, Public.Types.Customer[] | undefined>({
+          public async delete(parameters: Public.Types.IdxLastName, options?: Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.IdxLastName, never, Public.Types.Customer[] | undefined, Public.Tables.Customer.Options>({
               operation: "Public.Tables.Customer.IdxLastName.delete",
-              parameters: {lastName: parameters.lastName}
+              parameters: {lastName: parameters.lastName},
+              options
             });
         
 return (
@@ -28229,7 +28253,7 @@ return (
         
 
           public async create(values: Partial<Public.Types.Actor>) : Promise<Public.Types.Actor|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Actor>, Public.Types.Actor>({
+            const response = await this.client.invoke<never, Partial<Public.Types.Actor>, Public.Types.Actor, never>({
               operation: "Public.Tables.Actor.create",
               values: {actorId: values.actorId,firstName: values.firstName,lastName: values.lastName,lastUpdate: values.lastUpdate}
             });
@@ -28240,9 +28264,10 @@ return (
           }
         
 
-          public async all() : Promise<Public.Types.Actor[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Actor[]>({
-              operation: "Public.Tables.Actor.all"
+          public async all(options?: Public.Tables.Actor.Options) : Promise<Public.Types.Actor[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Actor[], never>({
+              operation: "Public.Tables.Actor.all",
+              options
             });
             return (
     response.results
@@ -28257,10 +28282,11 @@ return (
           public ActorPkey = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.ActorPkey) {
-            const response = await this.client.invoke<Public.Types.ActorPkey, never, Public.Types.Actor | undefined>({
+          public async read(parameters: Public.Types.ActorPkey, options?: Public.Tables.Actor.Options) {
+            const response = await this.client.invoke<Public.Types.ActorPkey, never, Public.Types.Actor | undefined, Public.Tables.Actor.Options>({
               operation: "Public.Tables.Actor.ActorPkey.read",
-              parameters: {actorId: parameters.actorId}
+              parameters: {actorId: parameters.actorId},
+              options
             });
         
 return (
@@ -28270,7 +28296,7 @@ return (
 }
 
           public async update(parameters: Public.Types.ActorPkey, values: Partial<Public.Types.Actor>) {
-            const response = await this.client.invoke<Public.Types.ActorPkey, Partial<Public.Types.Actor>, Public.Types.Actor | undefined>({
+            const response = await this.client.invoke<Public.Types.ActorPkey, Partial<Public.Types.Actor>, Public.Types.Actor | undefined, never>({
               operation: "Public.Tables.Actor.ActorPkey.update",
               parameters: {actorId: parameters.actorId},
               values: {actorId: values.actorId,firstName: values.firstName,lastName: values.lastName,lastUpdate: values.lastUpdate}
@@ -28282,10 +28308,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.ActorPkey) {
-            const response = await this.client.invoke<Public.Types.ActorPkey, never, Public.Types.Actor | undefined>({
+          public async delete(parameters: Public.Types.ActorPkey, options?: Public.Tables.Actor.Options) {
+            const response = await this.client.invoke<Public.Types.ActorPkey, never, Public.Types.Actor | undefined, Public.Tables.Actor.Options>({
               operation: "Public.Tables.Actor.ActorPkey.delete",
-              parameters: {actorId: parameters.actorId}
+              parameters: {actorId: parameters.actorId},
+              options
             });
         
 return (
@@ -28299,10 +28326,11 @@ public get ByPrimaryKey(){ return this.ActorPkey };
           public IdxActorLastName = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.IdxActorLastName) {
-            const response = await this.client.invoke<Public.Types.IdxActorLastName, never, Public.Types.Actor[] | undefined>({
+          public async read(parameters: Public.Types.IdxActorLastName, options?: Public.Tables.Actor.Options) {
+            const response = await this.client.invoke<Public.Types.IdxActorLastName, never, Public.Types.Actor[] | undefined, Public.Tables.Actor.Options>({
               operation: "Public.Tables.Actor.IdxActorLastName.read",
-              parameters: {lastName: parameters.lastName}
+              parameters: {lastName: parameters.lastName},
+              options
             });
         
 return (
@@ -28315,7 +28343,7 @@ return (
 }
 
           public async update(parameters: Public.Types.IdxActorLastName, values: Partial<Public.Types.Actor>) {
-            const response = await this.client.invoke<Public.Types.IdxActorLastName, Partial<Public.Types.Actor>, Public.Types.Actor[] | undefined>({
+            const response = await this.client.invoke<Public.Types.IdxActorLastName, Partial<Public.Types.Actor>, Public.Types.Actor[] | undefined, never>({
               operation: "Public.Tables.Actor.IdxActorLastName.update",
               parameters: {lastName: parameters.lastName},
               values: {actorId: values.actorId,firstName: values.firstName,lastName: values.lastName,lastUpdate: values.lastUpdate}
@@ -28330,10 +28358,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.IdxActorLastName) {
-            const response = await this.client.invoke<Public.Types.IdxActorLastName, never, Public.Types.Actor[] | undefined>({
+          public async delete(parameters: Public.Types.IdxActorLastName, options?: Public.Tables.Actor.Options) {
+            const response = await this.client.invoke<Public.Types.IdxActorLastName, never, Public.Types.Actor[] | undefined, Public.Tables.Actor.Options>({
               operation: "Public.Tables.Actor.IdxActorLastName.delete",
-              parameters: {lastName: parameters.lastName}
+              parameters: {lastName: parameters.lastName},
+              options
             });
         
 return (
@@ -28352,7 +28381,7 @@ return (
         
 
           public async create(values: Partial<Public.Types.FilmCategory>) : Promise<Public.Types.FilmCategory|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.FilmCategory>, Public.Types.FilmCategory>({
+            const response = await this.client.invoke<never, Partial<Public.Types.FilmCategory>, Public.Types.FilmCategory, never>({
               operation: "Public.Tables.FilmCategory.create",
               values: {filmId: values.filmId,categoryId: values.categoryId,lastUpdate: values.lastUpdate}
             });
@@ -28363,9 +28392,10 @@ return (
           }
         
 
-          public async all() : Promise<Public.Types.FilmCategory[]> {
-            const response = await this.client.invoke<never, never, Public.Types.FilmCategory[]>({
-              operation: "Public.Tables.FilmCategory.all"
+          public async all(options?: Public.Tables.FilmCategory.Options) : Promise<Public.Types.FilmCategory[]> {
+            const response = await this.client.invoke<never, never, Public.Types.FilmCategory[], never>({
+              operation: "Public.Tables.FilmCategory.all",
+              options
             });
             return (
     response.results
@@ -28380,10 +28410,11 @@ return (
           public FilmCategoryPkey = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.FilmCategoryPkey) {
-            const response = await this.client.invoke<Public.Types.FilmCategoryPkey, never, Public.Types.FilmCategory | undefined>({
+          public async read(parameters: Public.Types.FilmCategoryPkey, options?: Public.Tables.FilmCategory.Options) {
+            const response = await this.client.invoke<Public.Types.FilmCategoryPkey, never, Public.Types.FilmCategory | undefined, Public.Tables.FilmCategory.Options>({
               operation: "Public.Tables.FilmCategory.FilmCategoryPkey.read",
-              parameters: {filmId: parameters.filmId,categoryId: parameters.categoryId}
+              parameters: {filmId: parameters.filmId,categoryId: parameters.categoryId},
+              options
             });
         
 return (
@@ -28393,7 +28424,7 @@ return (
 }
 
           public async update(parameters: Public.Types.FilmCategoryPkey, values: Partial<Public.Types.FilmCategory>) {
-            const response = await this.client.invoke<Public.Types.FilmCategoryPkey, Partial<Public.Types.FilmCategory>, Public.Types.FilmCategory | undefined>({
+            const response = await this.client.invoke<Public.Types.FilmCategoryPkey, Partial<Public.Types.FilmCategory>, Public.Types.FilmCategory | undefined, never>({
               operation: "Public.Tables.FilmCategory.FilmCategoryPkey.update",
               parameters: {filmId: parameters.filmId,categoryId: parameters.categoryId},
               values: {filmId: values.filmId,categoryId: values.categoryId,lastUpdate: values.lastUpdate}
@@ -28405,10 +28436,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.FilmCategoryPkey) {
-            const response = await this.client.invoke<Public.Types.FilmCategoryPkey, never, Public.Types.FilmCategory | undefined>({
+          public async delete(parameters: Public.Types.FilmCategoryPkey, options?: Public.Tables.FilmCategory.Options) {
+            const response = await this.client.invoke<Public.Types.FilmCategoryPkey, never, Public.Types.FilmCategory | undefined, Public.Tables.FilmCategory.Options>({
               operation: "Public.Tables.FilmCategory.FilmCategoryPkey.delete",
-              parameters: {filmId: parameters.filmId,categoryId: parameters.categoryId}
+              parameters: {filmId: parameters.filmId,categoryId: parameters.categoryId},
+              options
             });
         
 return (
@@ -28424,7 +28456,7 @@ public get ByPrimaryKey(){ return this.FilmCategoryPkey };
         
 
           public async create(values: Partial<Public.Types.Inventory>) : Promise<Public.Types.Inventory|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Inventory>, Public.Types.Inventory>({
+            const response = await this.client.invoke<never, Partial<Public.Types.Inventory>, Public.Types.Inventory, never>({
               operation: "Public.Tables.Inventory.create",
               values: {inventoryId: values.inventoryId,filmId: values.filmId,storeId: values.storeId,lastUpdate: values.lastUpdate}
             });
@@ -28435,9 +28467,10 @@ public get ByPrimaryKey(){ return this.FilmCategoryPkey };
           }
         
 
-          public async all() : Promise<Public.Types.Inventory[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Inventory[]>({
-              operation: "Public.Tables.Inventory.all"
+          public async all(options?: Public.Tables.Inventory.Options) : Promise<Public.Types.Inventory[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Inventory[], never>({
+              operation: "Public.Tables.Inventory.all",
+              options
             });
             return (
     response.results
@@ -28452,10 +28485,11 @@ public get ByPrimaryKey(){ return this.FilmCategoryPkey };
           public InventoryPkey = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.InventoryPkey) {
-            const response = await this.client.invoke<Public.Types.InventoryPkey, never, Public.Types.Inventory | undefined>({
+          public async read(parameters: Public.Types.InventoryPkey, options?: Public.Tables.Inventory.Options) {
+            const response = await this.client.invoke<Public.Types.InventoryPkey, never, Public.Types.Inventory | undefined, Public.Tables.Inventory.Options>({
               operation: "Public.Tables.Inventory.InventoryPkey.read",
-              parameters: {inventoryId: parameters.inventoryId}
+              parameters: {inventoryId: parameters.inventoryId},
+              options
             });
         
 return (
@@ -28465,7 +28499,7 @@ return (
 }
 
           public async update(parameters: Public.Types.InventoryPkey, values: Partial<Public.Types.Inventory>) {
-            const response = await this.client.invoke<Public.Types.InventoryPkey, Partial<Public.Types.Inventory>, Public.Types.Inventory | undefined>({
+            const response = await this.client.invoke<Public.Types.InventoryPkey, Partial<Public.Types.Inventory>, Public.Types.Inventory | undefined, never>({
               operation: "Public.Tables.Inventory.InventoryPkey.update",
               parameters: {inventoryId: parameters.inventoryId},
               values: {inventoryId: values.inventoryId,filmId: values.filmId,storeId: values.storeId,lastUpdate: values.lastUpdate}
@@ -28477,10 +28511,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.InventoryPkey) {
-            const response = await this.client.invoke<Public.Types.InventoryPkey, never, Public.Types.Inventory | undefined>({
+          public async delete(parameters: Public.Types.InventoryPkey, options?: Public.Tables.Inventory.Options) {
+            const response = await this.client.invoke<Public.Types.InventoryPkey, never, Public.Types.Inventory | undefined, Public.Tables.Inventory.Options>({
               operation: "Public.Tables.Inventory.InventoryPkey.delete",
-              parameters: {inventoryId: parameters.inventoryId}
+              parameters: {inventoryId: parameters.inventoryId},
+              options
             });
         
 return (
@@ -28494,10 +28529,11 @@ public get ByPrimaryKey(){ return this.InventoryPkey };
           public IdxStoreIdFilmId = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.IdxStoreIdFilmId) {
-            const response = await this.client.invoke<Public.Types.IdxStoreIdFilmId, never, Public.Types.Inventory[] | undefined>({
+          public async read(parameters: Public.Types.IdxStoreIdFilmId, options?: Public.Tables.Inventory.Options) {
+            const response = await this.client.invoke<Public.Types.IdxStoreIdFilmId, never, Public.Types.Inventory[] | undefined, Public.Tables.Inventory.Options>({
               operation: "Public.Tables.Inventory.IdxStoreIdFilmId.read",
-              parameters: {storeId: parameters.storeId,filmId: parameters.filmId}
+              parameters: {storeId: parameters.storeId,filmId: parameters.filmId},
+              options
             });
         
 return (
@@ -28510,7 +28546,7 @@ return (
 }
 
           public async update(parameters: Public.Types.IdxStoreIdFilmId, values: Partial<Public.Types.Inventory>) {
-            const response = await this.client.invoke<Public.Types.IdxStoreIdFilmId, Partial<Public.Types.Inventory>, Public.Types.Inventory[] | undefined>({
+            const response = await this.client.invoke<Public.Types.IdxStoreIdFilmId, Partial<Public.Types.Inventory>, Public.Types.Inventory[] | undefined, never>({
               operation: "Public.Tables.Inventory.IdxStoreIdFilmId.update",
               parameters: {storeId: parameters.storeId,filmId: parameters.filmId},
               values: {inventoryId: values.inventoryId,filmId: values.filmId,storeId: values.storeId,lastUpdate: values.lastUpdate}
@@ -28525,10 +28561,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.IdxStoreIdFilmId) {
-            const response = await this.client.invoke<Public.Types.IdxStoreIdFilmId, never, Public.Types.Inventory[] | undefined>({
+          public async delete(parameters: Public.Types.IdxStoreIdFilmId, options?: Public.Tables.Inventory.Options) {
+            const response = await this.client.invoke<Public.Types.IdxStoreIdFilmId, never, Public.Types.Inventory[] | undefined, Public.Tables.Inventory.Options>({
               operation: "Public.Tables.Inventory.IdxStoreIdFilmId.delete",
-              parameters: {storeId: parameters.storeId,filmId: parameters.filmId}
+              parameters: {storeId: parameters.storeId,filmId: parameters.filmId},
+              options
             });
         
 return (
@@ -28547,7 +28584,7 @@ return (
         
 
           public async create(values: Partial<Public.Types.Category>) : Promise<Public.Types.Category|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Category>, Public.Types.Category>({
+            const response = await this.client.invoke<never, Partial<Public.Types.Category>, Public.Types.Category, never>({
               operation: "Public.Tables.Category.create",
               values: {categoryId: values.categoryId,name: values.name,lastUpdate: values.lastUpdate}
             });
@@ -28558,9 +28595,10 @@ return (
           }
         
 
-          public async all() : Promise<Public.Types.Category[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Category[]>({
-              operation: "Public.Tables.Category.all"
+          public async all(options?: Public.Tables.Category.Options) : Promise<Public.Types.Category[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Category[], never>({
+              operation: "Public.Tables.Category.all",
+              options
             });
             return (
     response.results
@@ -28575,10 +28613,11 @@ return (
           public CategoryPkey = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.CategoryPkey) {
-            const response = await this.client.invoke<Public.Types.CategoryPkey, never, Public.Types.Category | undefined>({
+          public async read(parameters: Public.Types.CategoryPkey, options?: Public.Tables.Category.Options) {
+            const response = await this.client.invoke<Public.Types.CategoryPkey, never, Public.Types.Category | undefined, Public.Tables.Category.Options>({
               operation: "Public.Tables.Category.CategoryPkey.read",
-              parameters: {categoryId: parameters.categoryId}
+              parameters: {categoryId: parameters.categoryId},
+              options
             });
         
 return (
@@ -28588,7 +28627,7 @@ return (
 }
 
           public async update(parameters: Public.Types.CategoryPkey, values: Partial<Public.Types.Category>) {
-            const response = await this.client.invoke<Public.Types.CategoryPkey, Partial<Public.Types.Category>, Public.Types.Category | undefined>({
+            const response = await this.client.invoke<Public.Types.CategoryPkey, Partial<Public.Types.Category>, Public.Types.Category | undefined, never>({
               operation: "Public.Tables.Category.CategoryPkey.update",
               parameters: {categoryId: parameters.categoryId},
               values: {categoryId: values.categoryId,name: values.name,lastUpdate: values.lastUpdate}
@@ -28600,10 +28639,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.CategoryPkey) {
-            const response = await this.client.invoke<Public.Types.CategoryPkey, never, Public.Types.Category | undefined>({
+          public async delete(parameters: Public.Types.CategoryPkey, options?: Public.Tables.Category.Options) {
+            const response = await this.client.invoke<Public.Types.CategoryPkey, never, Public.Types.Category | undefined, Public.Tables.Category.Options>({
               operation: "Public.Tables.Category.CategoryPkey.delete",
-              parameters: {categoryId: parameters.categoryId}
+              parameters: {categoryId: parameters.categoryId},
+              options
             });
         
 return (
@@ -28619,7 +28659,7 @@ public get ByPrimaryKey(){ return this.CategoryPkey };
         
 
           public async create(values: Partial<Public.Types.Country>) : Promise<Public.Types.Country|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Country>, Public.Types.Country>({
+            const response = await this.client.invoke<never, Partial<Public.Types.Country>, Public.Types.Country, never>({
               operation: "Public.Tables.Country.create",
               values: {countryId: values.countryId,country: values.country,lastUpdate: values.lastUpdate}
             });
@@ -28630,9 +28670,10 @@ public get ByPrimaryKey(){ return this.CategoryPkey };
           }
         
 
-          public async all() : Promise<Public.Types.Country[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Country[]>({
-              operation: "Public.Tables.Country.all"
+          public async all(options?: Public.Tables.Country.Options) : Promise<Public.Types.Country[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Country[], never>({
+              operation: "Public.Tables.Country.all",
+              options
             });
             return (
     response.results
@@ -28647,10 +28688,11 @@ public get ByPrimaryKey(){ return this.CategoryPkey };
           public CountryPkey = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.CountryPkey) {
-            const response = await this.client.invoke<Public.Types.CountryPkey, never, Public.Types.Country | undefined>({
+          public async read(parameters: Public.Types.CountryPkey, options?: Public.Tables.Country.Options) {
+            const response = await this.client.invoke<Public.Types.CountryPkey, never, Public.Types.Country | undefined, Public.Tables.Country.Options>({
               operation: "Public.Tables.Country.CountryPkey.read",
-              parameters: {countryId: parameters.countryId}
+              parameters: {countryId: parameters.countryId},
+              options
             });
         
 return (
@@ -28660,7 +28702,7 @@ return (
 }
 
           public async update(parameters: Public.Types.CountryPkey, values: Partial<Public.Types.Country>) {
-            const response = await this.client.invoke<Public.Types.CountryPkey, Partial<Public.Types.Country>, Public.Types.Country | undefined>({
+            const response = await this.client.invoke<Public.Types.CountryPkey, Partial<Public.Types.Country>, Public.Types.Country | undefined, never>({
               operation: "Public.Tables.Country.CountryPkey.update",
               parameters: {countryId: parameters.countryId},
               values: {countryId: values.countryId,country: values.country,lastUpdate: values.lastUpdate}
@@ -28672,10 +28714,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.CountryPkey) {
-            const response = await this.client.invoke<Public.Types.CountryPkey, never, Public.Types.Country | undefined>({
+          public async delete(parameters: Public.Types.CountryPkey, options?: Public.Tables.Country.Options) {
+            const response = await this.client.invoke<Public.Types.CountryPkey, never, Public.Types.Country | undefined, Public.Tables.Country.Options>({
               operation: "Public.Tables.Country.CountryPkey.delete",
-              parameters: {countryId: parameters.countryId}
+              parameters: {countryId: parameters.countryId},
+              options
             });
         
 return (
@@ -28691,7 +28734,7 @@ public get ByPrimaryKey(){ return this.CountryPkey };
         
 
           public async create(values: Partial<Public.Types.Language>) : Promise<Public.Types.Language|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Language>, Public.Types.Language>({
+            const response = await this.client.invoke<never, Partial<Public.Types.Language>, Public.Types.Language, never>({
               operation: "Public.Tables.Language.create",
               values: {languageId: values.languageId,name: values.name,lastUpdate: values.lastUpdate}
             });
@@ -28702,9 +28745,10 @@ public get ByPrimaryKey(){ return this.CountryPkey };
           }
         
 
-          public async all() : Promise<Public.Types.Language[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Language[]>({
-              operation: "Public.Tables.Language.all"
+          public async all(options?: Public.Tables.Language.Options) : Promise<Public.Types.Language[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Language[], never>({
+              operation: "Public.Tables.Language.all",
+              options
             });
             return (
     response.results
@@ -28719,10 +28763,11 @@ public get ByPrimaryKey(){ return this.CountryPkey };
           public LanguagePkey = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.LanguagePkey) {
-            const response = await this.client.invoke<Public.Types.LanguagePkey, never, Public.Types.Language | undefined>({
+          public async read(parameters: Public.Types.LanguagePkey, options?: Public.Tables.Language.Options) {
+            const response = await this.client.invoke<Public.Types.LanguagePkey, never, Public.Types.Language | undefined, Public.Tables.Language.Options>({
               operation: "Public.Tables.Language.LanguagePkey.read",
-              parameters: {languageId: parameters.languageId}
+              parameters: {languageId: parameters.languageId},
+              options
             });
         
 return (
@@ -28732,7 +28777,7 @@ return (
 }
 
           public async update(parameters: Public.Types.LanguagePkey, values: Partial<Public.Types.Language>) {
-            const response = await this.client.invoke<Public.Types.LanguagePkey, Partial<Public.Types.Language>, Public.Types.Language | undefined>({
+            const response = await this.client.invoke<Public.Types.LanguagePkey, Partial<Public.Types.Language>, Public.Types.Language | undefined, never>({
               operation: "Public.Tables.Language.LanguagePkey.update",
               parameters: {languageId: parameters.languageId},
               values: {languageId: values.languageId,name: values.name,lastUpdate: values.lastUpdate}
@@ -28744,10 +28789,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.LanguagePkey) {
-            const response = await this.client.invoke<Public.Types.LanguagePkey, never, Public.Types.Language | undefined>({
+          public async delete(parameters: Public.Types.LanguagePkey, options?: Public.Tables.Language.Options) {
+            const response = await this.client.invoke<Public.Types.LanguagePkey, never, Public.Types.Language | undefined, Public.Tables.Language.Options>({
               operation: "Public.Tables.Language.LanguagePkey.delete",
-              parameters: {languageId: parameters.languageId}
+              parameters: {languageId: parameters.languageId},
+              options
             });
         
 return (
@@ -28763,7 +28809,7 @@ public get ByPrimaryKey(){ return this.LanguagePkey };
         
 
           public async create(values: Partial<Public.Types.Rental>) : Promise<Public.Types.Rental|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Rental>, Public.Types.Rental>({
+            const response = await this.client.invoke<never, Partial<Public.Types.Rental>, Public.Types.Rental, never>({
               operation: "Public.Tables.Rental.create",
               values: {rentalId: values.rentalId,rentalDate: values.rentalDate,inventoryId: values.inventoryId,customerId: values.customerId,returnDate: values.returnDate,staffId: values.staffId,lastUpdate: values.lastUpdate}
             });
@@ -28774,9 +28820,10 @@ public get ByPrimaryKey(){ return this.LanguagePkey };
           }
         
 
-          public async all() : Promise<Public.Types.Rental[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Rental[]>({
-              operation: "Public.Tables.Rental.all"
+          public async all(options?: Public.Tables.Rental.Options) : Promise<Public.Types.Rental[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Rental[], never>({
+              operation: "Public.Tables.Rental.all",
+              options
             });
             return (
     response.results
@@ -28791,10 +28838,11 @@ public get ByPrimaryKey(){ return this.LanguagePkey };
           public RentalPkey = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.RentalPkey) {
-            const response = await this.client.invoke<Public.Types.RentalPkey, never, Public.Types.Rental | undefined>({
+          public async read(parameters: Public.Types.RentalPkey, options?: Public.Tables.Rental.Options) {
+            const response = await this.client.invoke<Public.Types.RentalPkey, never, Public.Types.Rental | undefined, Public.Tables.Rental.Options>({
               operation: "Public.Tables.Rental.RentalPkey.read",
-              parameters: {rentalId: parameters.rentalId}
+              parameters: {rentalId: parameters.rentalId},
+              options
             });
         
 return (
@@ -28804,7 +28852,7 @@ return (
 }
 
           public async update(parameters: Public.Types.RentalPkey, values: Partial<Public.Types.Rental>) {
-            const response = await this.client.invoke<Public.Types.RentalPkey, Partial<Public.Types.Rental>, Public.Types.Rental | undefined>({
+            const response = await this.client.invoke<Public.Types.RentalPkey, Partial<Public.Types.Rental>, Public.Types.Rental | undefined, never>({
               operation: "Public.Tables.Rental.RentalPkey.update",
               parameters: {rentalId: parameters.rentalId},
               values: {rentalId: values.rentalId,rentalDate: values.rentalDate,inventoryId: values.inventoryId,customerId: values.customerId,returnDate: values.returnDate,staffId: values.staffId,lastUpdate: values.lastUpdate}
@@ -28816,10 +28864,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.RentalPkey) {
-            const response = await this.client.invoke<Public.Types.RentalPkey, never, Public.Types.Rental | undefined>({
+          public async delete(parameters: Public.Types.RentalPkey, options?: Public.Tables.Rental.Options) {
+            const response = await this.client.invoke<Public.Types.RentalPkey, never, Public.Types.Rental | undefined, Public.Tables.Rental.Options>({
               operation: "Public.Tables.Rental.RentalPkey.delete",
-              parameters: {rentalId: parameters.rentalId}
+              parameters: {rentalId: parameters.rentalId},
+              options
             });
         
 return (
@@ -28833,10 +28882,11 @@ public get ByPrimaryKey(){ return this.RentalPkey };
           public IdxFkInventoryId = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.IdxFkInventoryId) {
-            const response = await this.client.invoke<Public.Types.IdxFkInventoryId, never, Public.Types.Rental[] | undefined>({
+          public async read(parameters: Public.Types.IdxFkInventoryId, options?: Public.Tables.Rental.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkInventoryId, never, Public.Types.Rental[] | undefined, Public.Tables.Rental.Options>({
               operation: "Public.Tables.Rental.IdxFkInventoryId.read",
-              parameters: {inventoryId: parameters.inventoryId}
+              parameters: {inventoryId: parameters.inventoryId},
+              options
             });
         
 return (
@@ -28849,7 +28899,7 @@ return (
 }
 
           public async update(parameters: Public.Types.IdxFkInventoryId, values: Partial<Public.Types.Rental>) {
-            const response = await this.client.invoke<Public.Types.IdxFkInventoryId, Partial<Public.Types.Rental>, Public.Types.Rental[] | undefined>({
+            const response = await this.client.invoke<Public.Types.IdxFkInventoryId, Partial<Public.Types.Rental>, Public.Types.Rental[] | undefined, never>({
               operation: "Public.Tables.Rental.IdxFkInventoryId.update",
               parameters: {inventoryId: parameters.inventoryId},
               values: {rentalId: values.rentalId,rentalDate: values.rentalDate,inventoryId: values.inventoryId,customerId: values.customerId,returnDate: values.returnDate,staffId: values.staffId,lastUpdate: values.lastUpdate}
@@ -28864,10 +28914,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.IdxFkInventoryId) {
-            const response = await this.client.invoke<Public.Types.IdxFkInventoryId, never, Public.Types.Rental[] | undefined>({
+          public async delete(parameters: Public.Types.IdxFkInventoryId, options?: Public.Tables.Rental.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkInventoryId, never, Public.Types.Rental[] | undefined, Public.Tables.Rental.Options>({
               operation: "Public.Tables.Rental.IdxFkInventoryId.delete",
-              parameters: {inventoryId: parameters.inventoryId}
+              parameters: {inventoryId: parameters.inventoryId},
+              options
             });
         
 return (
@@ -28884,10 +28935,11 @@ return (
           public IdxUnqRentalRentalDateInventoryIdCustomerId = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId) {
-            const response = await this.client.invoke<Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, never, Public.Types.Rental | undefined>({
+          public async read(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, options?: Public.Tables.Rental.Options) {
+            const response = await this.client.invoke<Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, never, Public.Types.Rental | undefined, Public.Tables.Rental.Options>({
               operation: "Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.read",
-              parameters: {rentalDate: parameters.rentalDate,inventoryId: parameters.inventoryId,customerId: parameters.customerId}
+              parameters: {rentalDate: parameters.rentalDate,inventoryId: parameters.inventoryId,customerId: parameters.customerId},
+              options
             });
         
 return (
@@ -28897,7 +28949,7 @@ return (
 }
 
           public async update(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, values: Partial<Public.Types.Rental>) {
-            const response = await this.client.invoke<Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, Partial<Public.Types.Rental>, Public.Types.Rental | undefined>({
+            const response = await this.client.invoke<Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, Partial<Public.Types.Rental>, Public.Types.Rental | undefined, never>({
               operation: "Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.update",
               parameters: {rentalDate: parameters.rentalDate,inventoryId: parameters.inventoryId,customerId: parameters.customerId},
               values: {rentalId: values.rentalId,rentalDate: values.rentalDate,inventoryId: values.inventoryId,customerId: values.customerId,returnDate: values.returnDate,staffId: values.staffId,lastUpdate: values.lastUpdate}
@@ -28909,10 +28961,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId) {
-            const response = await this.client.invoke<Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, never, Public.Types.Rental | undefined>({
+          public async delete(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, options?: Public.Tables.Rental.Options) {
+            const response = await this.client.invoke<Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, never, Public.Types.Rental | undefined, Public.Tables.Rental.Options>({
               operation: "Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.delete",
-              parameters: {rentalDate: parameters.rentalDate,inventoryId: parameters.inventoryId,customerId: parameters.customerId}
+              parameters: {rentalDate: parameters.rentalDate,inventoryId: parameters.inventoryId,customerId: parameters.customerId},
+              options
             });
         
 return (
@@ -28928,7 +28981,7 @@ return (
         
 
           public async create(values: Partial<Public.Types.Staff>) : Promise<Public.Types.Staff|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Staff>, Public.Types.Staff>({
+            const response = await this.client.invoke<never, Partial<Public.Types.Staff>, Public.Types.Staff, never>({
               operation: "Public.Tables.Staff.create",
               values: {staffId: values.staffId,firstName: values.firstName,lastName: values.lastName,addressId: values.addressId,email: values.email,storeId: values.storeId,active: values.active,username: values.username,password: values.password,lastUpdate: values.lastUpdate,picture: values.picture}
             });
@@ -28939,9 +28992,10 @@ return (
           }
         
 
-          public async all() : Promise<Public.Types.Staff[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Staff[]>({
-              operation: "Public.Tables.Staff.all"
+          public async all(options?: Public.Tables.Staff.Options) : Promise<Public.Types.Staff[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Staff[], never>({
+              operation: "Public.Tables.Staff.all",
+              options
             });
             return (
     response.results
@@ -28956,10 +29010,11 @@ return (
           public StaffPkey = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.StaffPkey) {
-            const response = await this.client.invoke<Public.Types.StaffPkey, never, Public.Types.Staff | undefined>({
+          public async read(parameters: Public.Types.StaffPkey, options?: Public.Tables.Staff.Options) {
+            const response = await this.client.invoke<Public.Types.StaffPkey, never, Public.Types.Staff | undefined, Public.Tables.Staff.Options>({
               operation: "Public.Tables.Staff.StaffPkey.read",
-              parameters: {staffId: parameters.staffId}
+              parameters: {staffId: parameters.staffId},
+              options
             });
         
 return (
@@ -28969,7 +29024,7 @@ return (
 }
 
           public async update(parameters: Public.Types.StaffPkey, values: Partial<Public.Types.Staff>) {
-            const response = await this.client.invoke<Public.Types.StaffPkey, Partial<Public.Types.Staff>, Public.Types.Staff | undefined>({
+            const response = await this.client.invoke<Public.Types.StaffPkey, Partial<Public.Types.Staff>, Public.Types.Staff | undefined, never>({
               operation: "Public.Tables.Staff.StaffPkey.update",
               parameters: {staffId: parameters.staffId},
               values: {staffId: values.staffId,firstName: values.firstName,lastName: values.lastName,addressId: values.addressId,email: values.email,storeId: values.storeId,active: values.active,username: values.username,password: values.password,lastUpdate: values.lastUpdate,picture: values.picture}
@@ -28981,10 +29036,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.StaffPkey) {
-            const response = await this.client.invoke<Public.Types.StaffPkey, never, Public.Types.Staff | undefined>({
+          public async delete(parameters: Public.Types.StaffPkey, options?: Public.Tables.Staff.Options) {
+            const response = await this.client.invoke<Public.Types.StaffPkey, never, Public.Types.Staff | undefined, Public.Tables.Staff.Options>({
               operation: "Public.Tables.Staff.StaffPkey.delete",
-              parameters: {staffId: parameters.staffId}
+              parameters: {staffId: parameters.staffId},
+              options
             });
         
 return (
@@ -29000,7 +29056,7 @@ public get ByPrimaryKey(){ return this.StaffPkey };
         
 
           public async create(values: Partial<Public.Types.Store>) : Promise<Public.Types.Store|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Store>, Public.Types.Store>({
+            const response = await this.client.invoke<never, Partial<Public.Types.Store>, Public.Types.Store, never>({
               operation: "Public.Tables.Store.create",
               values: {storeId: values.storeId,managerStaffId: values.managerStaffId,addressId: values.addressId,lastUpdate: values.lastUpdate}
             });
@@ -29011,9 +29067,10 @@ public get ByPrimaryKey(){ return this.StaffPkey };
           }
         
 
-          public async all() : Promise<Public.Types.Store[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Store[]>({
-              operation: "Public.Tables.Store.all"
+          public async all(options?: Public.Tables.Store.Options) : Promise<Public.Types.Store[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Store[], never>({
+              operation: "Public.Tables.Store.all",
+              options
             });
             return (
     response.results
@@ -29028,10 +29085,11 @@ public get ByPrimaryKey(){ return this.StaffPkey };
           public StorePkey = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.StorePkey) {
-            const response = await this.client.invoke<Public.Types.StorePkey, never, Public.Types.Store | undefined>({
+          public async read(parameters: Public.Types.StorePkey, options?: Public.Tables.Store.Options) {
+            const response = await this.client.invoke<Public.Types.StorePkey, never, Public.Types.Store | undefined, Public.Tables.Store.Options>({
               operation: "Public.Tables.Store.StorePkey.read",
-              parameters: {storeId: parameters.storeId}
+              parameters: {storeId: parameters.storeId},
+              options
             });
         
 return (
@@ -29041,7 +29099,7 @@ return (
 }
 
           public async update(parameters: Public.Types.StorePkey, values: Partial<Public.Types.Store>) {
-            const response = await this.client.invoke<Public.Types.StorePkey, Partial<Public.Types.Store>, Public.Types.Store | undefined>({
+            const response = await this.client.invoke<Public.Types.StorePkey, Partial<Public.Types.Store>, Public.Types.Store | undefined, never>({
               operation: "Public.Tables.Store.StorePkey.update",
               parameters: {storeId: parameters.storeId},
               values: {storeId: values.storeId,managerStaffId: values.managerStaffId,addressId: values.addressId,lastUpdate: values.lastUpdate}
@@ -29053,10 +29111,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.StorePkey) {
-            const response = await this.client.invoke<Public.Types.StorePkey, never, Public.Types.Store | undefined>({
+          public async delete(parameters: Public.Types.StorePkey, options?: Public.Tables.Store.Options) {
+            const response = await this.client.invoke<Public.Types.StorePkey, never, Public.Types.Store | undefined, Public.Tables.Store.Options>({
               operation: "Public.Tables.Store.StorePkey.delete",
-              parameters: {storeId: parameters.storeId}
+              parameters: {storeId: parameters.storeId},
+              options
             });
         
 return (
@@ -29070,10 +29129,11 @@ public get ByPrimaryKey(){ return this.StorePkey };
           public IdxUnqManagerStaffId = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.IdxUnqManagerStaffId) {
-            const response = await this.client.invoke<Public.Types.IdxUnqManagerStaffId, never, Public.Types.Store | undefined>({
+          public async read(parameters: Public.Types.IdxUnqManagerStaffId, options?: Public.Tables.Store.Options) {
+            const response = await this.client.invoke<Public.Types.IdxUnqManagerStaffId, never, Public.Types.Store | undefined, Public.Tables.Store.Options>({
               operation: "Public.Tables.Store.IdxUnqManagerStaffId.read",
-              parameters: {managerStaffId: parameters.managerStaffId}
+              parameters: {managerStaffId: parameters.managerStaffId},
+              options
             });
         
 return (
@@ -29083,7 +29143,7 @@ return (
 }
 
           public async update(parameters: Public.Types.IdxUnqManagerStaffId, values: Partial<Public.Types.Store>) {
-            const response = await this.client.invoke<Public.Types.IdxUnqManagerStaffId, Partial<Public.Types.Store>, Public.Types.Store | undefined>({
+            const response = await this.client.invoke<Public.Types.IdxUnqManagerStaffId, Partial<Public.Types.Store>, Public.Types.Store | undefined, never>({
               operation: "Public.Tables.Store.IdxUnqManagerStaffId.update",
               parameters: {managerStaffId: parameters.managerStaffId},
               values: {storeId: values.storeId,managerStaffId: values.managerStaffId,addressId: values.addressId,lastUpdate: values.lastUpdate}
@@ -29095,10 +29155,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.IdxUnqManagerStaffId) {
-            const response = await this.client.invoke<Public.Types.IdxUnqManagerStaffId, never, Public.Types.Store | undefined>({
+          public async delete(parameters: Public.Types.IdxUnqManagerStaffId, options?: Public.Tables.Store.Options) {
+            const response = await this.client.invoke<Public.Types.IdxUnqManagerStaffId, never, Public.Types.Store | undefined, Public.Tables.Store.Options>({
               operation: "Public.Tables.Store.IdxUnqManagerStaffId.delete",
-              parameters: {managerStaffId: parameters.managerStaffId}
+              parameters: {managerStaffId: parameters.managerStaffId},
+              options
             });
         
 return (
@@ -29114,7 +29175,7 @@ return (
         
 
           public async create(values: Partial<Public.Types.Payment>) : Promise<Public.Types.Payment|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Payment>, Public.Types.Payment>({
+            const response = await this.client.invoke<never, Partial<Public.Types.Payment>, Public.Types.Payment, never>({
               operation: "Public.Tables.Payment.create",
               values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate}
             });
@@ -29125,9 +29186,10 @@ return (
           }
         
 
-          public async all() : Promise<Public.Types.Payment[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Payment[]>({
-              operation: "Public.Tables.Payment.all"
+          public async all(options?: Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Payment[], never>({
+              operation: "Public.Tables.Payment.all",
+              options
             });
             return (
     response.results
@@ -29142,10 +29204,11 @@ return (
           public PaymentPkey = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.PaymentPkey) {
-            const response = await this.client.invoke<Public.Types.PaymentPkey, never, Public.Types.Payment | undefined>({
+          public async read(parameters: Public.Types.PaymentPkey, options?: Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.PaymentPkey, never, Public.Types.Payment | undefined, Public.Tables.Payment.Options>({
               operation: "Public.Tables.Payment.PaymentPkey.read",
-              parameters: {paymentId: parameters.paymentId}
+              parameters: {paymentId: parameters.paymentId},
+              options
             });
         
 return (
@@ -29155,7 +29218,7 @@ return (
 }
 
           public async update(parameters: Public.Types.PaymentPkey, values: Partial<Public.Types.Payment>) {
-            const response = await this.client.invoke<Public.Types.PaymentPkey, Partial<Public.Types.Payment>, Public.Types.Payment | undefined>({
+            const response = await this.client.invoke<Public.Types.PaymentPkey, Partial<Public.Types.Payment>, Public.Types.Payment | undefined, never>({
               operation: "Public.Tables.Payment.PaymentPkey.update",
               parameters: {paymentId: parameters.paymentId},
               values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate}
@@ -29167,10 +29230,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.PaymentPkey) {
-            const response = await this.client.invoke<Public.Types.PaymentPkey, never, Public.Types.Payment | undefined>({
+          public async delete(parameters: Public.Types.PaymentPkey, options?: Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.PaymentPkey, never, Public.Types.Payment | undefined, Public.Tables.Payment.Options>({
               operation: "Public.Tables.Payment.PaymentPkey.delete",
-              parameters: {paymentId: parameters.paymentId}
+              parameters: {paymentId: parameters.paymentId},
+              options
             });
         
 return (
@@ -29184,10 +29248,11 @@ public get ByPrimaryKey(){ return this.PaymentPkey };
           public IdxFkCustomerId = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.IdxFkCustomerId) {
-            const response = await this.client.invoke<Public.Types.IdxFkCustomerId, never, Public.Types.Payment[] | undefined>({
+          public async read(parameters: Public.Types.IdxFkCustomerId, options?: Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkCustomerId, never, Public.Types.Payment[] | undefined, Public.Tables.Payment.Options>({
               operation: "Public.Tables.Payment.IdxFkCustomerId.read",
-              parameters: {customerId: parameters.customerId}
+              parameters: {customerId: parameters.customerId},
+              options
             });
         
 return (
@@ -29200,7 +29265,7 @@ return (
 }
 
           public async update(parameters: Public.Types.IdxFkCustomerId, values: Partial<Public.Types.Payment>) {
-            const response = await this.client.invoke<Public.Types.IdxFkCustomerId, Partial<Public.Types.Payment>, Public.Types.Payment[] | undefined>({
+            const response = await this.client.invoke<Public.Types.IdxFkCustomerId, Partial<Public.Types.Payment>, Public.Types.Payment[] | undefined, never>({
               operation: "Public.Tables.Payment.IdxFkCustomerId.update",
               parameters: {customerId: parameters.customerId},
               values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate}
@@ -29215,10 +29280,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.IdxFkCustomerId) {
-            const response = await this.client.invoke<Public.Types.IdxFkCustomerId, never, Public.Types.Payment[] | undefined>({
+          public async delete(parameters: Public.Types.IdxFkCustomerId, options?: Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkCustomerId, never, Public.Types.Payment[] | undefined, Public.Tables.Payment.Options>({
               operation: "Public.Tables.Payment.IdxFkCustomerId.delete",
-              parameters: {customerId: parameters.customerId}
+              parameters: {customerId: parameters.customerId},
+              options
             });
         
 return (
@@ -29235,10 +29301,11 @@ return (
           public IdxFkRentalId = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.IdxFkRentalId) {
-            const response = await this.client.invoke<Public.Types.IdxFkRentalId, never, Public.Types.Payment[] | undefined>({
+          public async read(parameters: Public.Types.IdxFkRentalId, options?: Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkRentalId, never, Public.Types.Payment[] | undefined, Public.Tables.Payment.Options>({
               operation: "Public.Tables.Payment.IdxFkRentalId.read",
-              parameters: {rentalId: parameters.rentalId}
+              parameters: {rentalId: parameters.rentalId},
+              options
             });
         
 return (
@@ -29251,7 +29318,7 @@ return (
 }
 
           public async update(parameters: Public.Types.IdxFkRentalId, values: Partial<Public.Types.Payment>) {
-            const response = await this.client.invoke<Public.Types.IdxFkRentalId, Partial<Public.Types.Payment>, Public.Types.Payment[] | undefined>({
+            const response = await this.client.invoke<Public.Types.IdxFkRentalId, Partial<Public.Types.Payment>, Public.Types.Payment[] | undefined, never>({
               operation: "Public.Tables.Payment.IdxFkRentalId.update",
               parameters: {rentalId: parameters.rentalId},
               values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate}
@@ -29266,10 +29333,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.IdxFkRentalId) {
-            const response = await this.client.invoke<Public.Types.IdxFkRentalId, never, Public.Types.Payment[] | undefined>({
+          public async delete(parameters: Public.Types.IdxFkRentalId, options?: Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkRentalId, never, Public.Types.Payment[] | undefined, Public.Tables.Payment.Options>({
               operation: "Public.Tables.Payment.IdxFkRentalId.delete",
-              parameters: {rentalId: parameters.rentalId}
+              parameters: {rentalId: parameters.rentalId},
+              options
             });
         
 return (
@@ -29286,10 +29354,11 @@ return (
           public IdxFkStaffId = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.IdxFkStaffId) {
-            const response = await this.client.invoke<Public.Types.IdxFkStaffId, never, Public.Types.Payment[] | undefined>({
+          public async read(parameters: Public.Types.IdxFkStaffId, options?: Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkStaffId, never, Public.Types.Payment[] | undefined, Public.Tables.Payment.Options>({
               operation: "Public.Tables.Payment.IdxFkStaffId.read",
-              parameters: {staffId: parameters.staffId}
+              parameters: {staffId: parameters.staffId},
+              options
             });
         
 return (
@@ -29302,7 +29371,7 @@ return (
 }
 
           public async update(parameters: Public.Types.IdxFkStaffId, values: Partial<Public.Types.Payment>) {
-            const response = await this.client.invoke<Public.Types.IdxFkStaffId, Partial<Public.Types.Payment>, Public.Types.Payment[] | undefined>({
+            const response = await this.client.invoke<Public.Types.IdxFkStaffId, Partial<Public.Types.Payment>, Public.Types.Payment[] | undefined, never>({
               operation: "Public.Tables.Payment.IdxFkStaffId.update",
               parameters: {staffId: parameters.staffId},
               values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate}
@@ -29317,10 +29386,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.IdxFkStaffId) {
-            const response = await this.client.invoke<Public.Types.IdxFkStaffId, never, Public.Types.Payment[] | undefined>({
+          public async delete(parameters: Public.Types.IdxFkStaffId, options?: Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkStaffId, never, Public.Types.Payment[] | undefined, Public.Tables.Payment.Options>({
               operation: "Public.Tables.Payment.IdxFkStaffId.delete",
-              parameters: {staffId: parameters.staffId}
+              parameters: {staffId: parameters.staffId},
+              options
             });
         
 return (
@@ -29339,7 +29409,7 @@ return (
         
 
           public async create(values: Partial<Public.Types.Film>) : Promise<Public.Types.Film|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Film>, Public.Types.Film>({
+            const response = await this.client.invoke<never, Partial<Public.Types.Film>, Public.Types.Film, never>({
               operation: "Public.Tables.Film.create",
               values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext}
             });
@@ -29350,9 +29420,10 @@ return (
           }
         
 
-          public async all() : Promise<Public.Types.Film[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Film[]>({
-              operation: "Public.Tables.Film.all"
+          public async all(options?: Public.Tables.Film.Options) : Promise<Public.Types.Film[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Film[], never>({
+              operation: "Public.Tables.Film.all",
+              options
             });
             return (
     response.results
@@ -29367,10 +29438,11 @@ return (
           public FilmPkey = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.FilmPkey) {
-            const response = await this.client.invoke<Public.Types.FilmPkey, never, Public.Types.Film | undefined>({
+          public async read(parameters: Public.Types.FilmPkey, options?: Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.FilmPkey, never, Public.Types.Film | undefined, Public.Tables.Film.Options>({
               operation: "Public.Tables.Film.FilmPkey.read",
-              parameters: {filmId: parameters.filmId}
+              parameters: {filmId: parameters.filmId},
+              options
             });
         
 return (
@@ -29380,7 +29452,7 @@ return (
 }
 
           public async update(parameters: Public.Types.FilmPkey, values: Partial<Public.Types.Film>) {
-            const response = await this.client.invoke<Public.Types.FilmPkey, Partial<Public.Types.Film>, Public.Types.Film | undefined>({
+            const response = await this.client.invoke<Public.Types.FilmPkey, Partial<Public.Types.Film>, Public.Types.Film | undefined, never>({
               operation: "Public.Tables.Film.FilmPkey.update",
               parameters: {filmId: parameters.filmId},
               values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext}
@@ -29392,10 +29464,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.FilmPkey) {
-            const response = await this.client.invoke<Public.Types.FilmPkey, never, Public.Types.Film | undefined>({
+          public async delete(parameters: Public.Types.FilmPkey, options?: Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.FilmPkey, never, Public.Types.Film | undefined, Public.Tables.Film.Options>({
               operation: "Public.Tables.Film.FilmPkey.delete",
-              parameters: {filmId: parameters.filmId}
+              parameters: {filmId: parameters.filmId},
+              options
             });
         
 return (
@@ -29409,10 +29482,11 @@ public get ByPrimaryKey(){ return this.FilmPkey };
           public FilmFulltextIdx = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.FilmFulltextIdx) {
-            const response = await this.client.invoke<Public.Types.FilmFulltextIdx, never, Public.Types.Film[] | undefined>({
+          public async read(parameters: Public.Types.FilmFulltextIdx, options?: Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.FilmFulltextIdx, never, Public.Types.Film[] | undefined, Public.Tables.Film.Options>({
               operation: "Public.Tables.Film.FilmFulltextIdx.read",
-              parameters: {fulltext: parameters.fulltext}
+              parameters: {fulltext: parameters.fulltext},
+              options
             });
         
 return (
@@ -29425,7 +29499,7 @@ return (
 }
 
           public async update(parameters: Public.Types.FilmFulltextIdx, values: Partial<Public.Types.Film>) {
-            const response = await this.client.invoke<Public.Types.FilmFulltextIdx, Partial<Public.Types.Film>, Public.Types.Film[] | undefined>({
+            const response = await this.client.invoke<Public.Types.FilmFulltextIdx, Partial<Public.Types.Film>, Public.Types.Film[] | undefined, never>({
               operation: "Public.Tables.Film.FilmFulltextIdx.update",
               parameters: {fulltext: parameters.fulltext},
               values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext}
@@ -29440,10 +29514,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.FilmFulltextIdx) {
-            const response = await this.client.invoke<Public.Types.FilmFulltextIdx, never, Public.Types.Film[] | undefined>({
+          public async delete(parameters: Public.Types.FilmFulltextIdx, options?: Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.FilmFulltextIdx, never, Public.Types.Film[] | undefined, Public.Tables.Film.Options>({
               operation: "Public.Tables.Film.FilmFulltextIdx.delete",
-              parameters: {fulltext: parameters.fulltext}
+              parameters: {fulltext: parameters.fulltext},
+              options
             });
         
 return (
@@ -29460,10 +29535,11 @@ return (
           public IdxFkLanguageId = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.IdxFkLanguageId) {
-            const response = await this.client.invoke<Public.Types.IdxFkLanguageId, never, Public.Types.Film[] | undefined>({
+          public async read(parameters: Public.Types.IdxFkLanguageId, options?: Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkLanguageId, never, Public.Types.Film[] | undefined, Public.Tables.Film.Options>({
               operation: "Public.Tables.Film.IdxFkLanguageId.read",
-              parameters: {languageId: parameters.languageId}
+              parameters: {languageId: parameters.languageId},
+              options
             });
         
 return (
@@ -29476,7 +29552,7 @@ return (
 }
 
           public async update(parameters: Public.Types.IdxFkLanguageId, values: Partial<Public.Types.Film>) {
-            const response = await this.client.invoke<Public.Types.IdxFkLanguageId, Partial<Public.Types.Film>, Public.Types.Film[] | undefined>({
+            const response = await this.client.invoke<Public.Types.IdxFkLanguageId, Partial<Public.Types.Film>, Public.Types.Film[] | undefined, never>({
               operation: "Public.Tables.Film.IdxFkLanguageId.update",
               parameters: {languageId: parameters.languageId},
               values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext}
@@ -29491,10 +29567,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.IdxFkLanguageId) {
-            const response = await this.client.invoke<Public.Types.IdxFkLanguageId, never, Public.Types.Film[] | undefined>({
+          public async delete(parameters: Public.Types.IdxFkLanguageId, options?: Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkLanguageId, never, Public.Types.Film[] | undefined, Public.Tables.Film.Options>({
               operation: "Public.Tables.Film.IdxFkLanguageId.delete",
-              parameters: {languageId: parameters.languageId}
+              parameters: {languageId: parameters.languageId},
+              options
             });
         
 return (
@@ -29511,10 +29588,11 @@ return (
           public IdxTitle = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.IdxTitle) {
-            const response = await this.client.invoke<Public.Types.IdxTitle, never, Public.Types.Film[] | undefined>({
+          public async read(parameters: Public.Types.IdxTitle, options?: Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.IdxTitle, never, Public.Types.Film[] | undefined, Public.Tables.Film.Options>({
               operation: "Public.Tables.Film.IdxTitle.read",
-              parameters: {title: parameters.title}
+              parameters: {title: parameters.title},
+              options
             });
         
 return (
@@ -29527,7 +29605,7 @@ return (
 }
 
           public async update(parameters: Public.Types.IdxTitle, values: Partial<Public.Types.Film>) {
-            const response = await this.client.invoke<Public.Types.IdxTitle, Partial<Public.Types.Film>, Public.Types.Film[] | undefined>({
+            const response = await this.client.invoke<Public.Types.IdxTitle, Partial<Public.Types.Film>, Public.Types.Film[] | undefined, never>({
               operation: "Public.Tables.Film.IdxTitle.update",
               parameters: {title: parameters.title},
               values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext}
@@ -29542,10 +29620,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.IdxTitle) {
-            const response = await this.client.invoke<Public.Types.IdxTitle, never, Public.Types.Film[] | undefined>({
+          public async delete(parameters: Public.Types.IdxTitle, options?: Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.IdxTitle, never, Public.Types.Film[] | undefined, Public.Tables.Film.Options>({
               operation: "Public.Tables.Film.IdxTitle.delete",
-              parameters: {title: parameters.title}
+              parameters: {title: parameters.title},
+              options
             });
         
 return (
@@ -29581,7 +29660,7 @@ return (
         
 
           public async call() : Promise<Scripts.MovieListing.Results[]> {
-            const response = await this.client.invoke<never, never, Scripts.MovieListing.Results[]>({
+            const response = await this.client.invoke<never, never, Scripts.MovieListing.Results[], never>({
               operation: "Scripts.MovieListing.call",
             });
         
@@ -29599,7 +29678,7 @@ return response.results?.map(r => Scripts.MovieListing.Results.parse(r)) as Scri
         
 
           public async call(parameters: Scripts.Sample.Film.Rated.Parameters) : Promise<Scripts.Sample.Film.Rated.Results[]> {
-            const response = await this.client.invoke<Scripts.Sample.Film.Rated.Parameters, never, Scripts.Sample.Film.Rated.Results[]>({
+            const response = await this.client.invoke<Scripts.Sample.Film.Rated.Parameters, never, Scripts.Sample.Film.Rated.Results[], never>({
               operation: "Scripts.Sample.Film.Rated.call",
               parameters
             });
@@ -29612,7 +29691,7 @@ return response.results?.map(r => Scripts.Sample.Film.Rated.Results.parse(r)) as
         
 
           public async call() : Promise<Scripts.Sample.Film.Tally.Results[]> {
-            const response = await this.client.invoke<never, never, Scripts.Sample.Film.Tally.Results[]>({
+            const response = await this.client.invoke<never, never, Scripts.Sample.Film.Tally.Results[], never>({
               operation: "Scripts.Sample.Film.Tally.call",
             });
         
@@ -29625,7 +29704,7 @@ return response.results?.map(r => Scripts.Sample.Film.Tally.Results.parse(r)) as
         
 
           public async call(parameters: Scripts.Sample.Pick.Parameters) : Promise<Scripts.Sample.Pick.Results[]> {
-            const response = await this.client.invoke<Scripts.Sample.Pick.Parameters, never, Scripts.Sample.Pick.Results[]>({
+            const response = await this.client.invoke<Scripts.Sample.Pick.Parameters, never, Scripts.Sample.Pick.Results[], never>({
               operation: "Scripts.Sample.Pick.call",
               parameters
             });
@@ -29639,7 +29718,7 @@ return response.results?.map(r => Scripts.Sample.Pick.Results.parse(r)) as Scrip
         
 
           public async call() : Promise<Scripts.Tally.Results[]> {
-            const response = await this.client.invoke<never, never, Scripts.Tally.Results[]>({
+            const response = await this.client.invoke<never, never, Scripts.Tally.Results[], never>({
               operation: "Scripts.Tally.call",
             });
         

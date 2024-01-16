@@ -6154,12 +6154,12 @@ created_at?: Sort;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_35630Index = {
+export type PgToast_36558Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_35639Index = {
+export type PgToast_36567Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -18454,11 +18454,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_35630Index {
+export namespace PgToast_36558Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_35630Index.is(from)) {
+if (PgToast.Types.PgToast_36558Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -18469,11 +18469,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_35639Index {
+export namespace PgToast_36567Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_35639Index.is(from)) {
+if (PgToast.Types.PgToast_36567Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -24028,16 +24028,16 @@ export namespace ChecklistItem {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_35630Index {
-export function is(value: any) : value is PgToast.Types.PgToast_35630Index {
+export namespace PgToast_36558Index {
+export function is(value: any) : value is PgToast.Types.PgToast_36558Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_35639Index {
-export function is(value: any) : value is PgToast.Types.PgToast_35639Index {
+export namespace PgToast_36567Index {
+export function is(value: any) : value is PgToast.Types.PgToast_36567Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -24394,7 +24394,7 @@ import { EmbraceSQLClient as BaseClient, EmbraceSQLClientProps, HasClient } from
         
 
           public async create(values: Partial<Public.Types.Checklist>) : Promise<Public.Types.Checklist|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Checklist>, Public.Types.Checklist>({
+            const response = await this.client.invoke<never, Partial<Public.Types.Checklist>, Public.Types.Checklist, never>({
               operation: "Public.Tables.Checklist.create",
               values: {id: values.id,name: values.name,createdAt: values.createdAt}
             });
@@ -24405,9 +24405,10 @@ import { EmbraceSQLClient as BaseClient, EmbraceSQLClientProps, HasClient } from
           }
         
 
-          public async all() : Promise<Public.Types.Checklist[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Checklist[]>({
-              operation: "Public.Tables.Checklist.all"
+          public async all(options?: Public.Tables.Checklist.Options) : Promise<Public.Types.Checklist[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Checklist[], never>({
+              operation: "Public.Tables.Checklist.all",
+              options
             });
             return (
     response.results
@@ -24422,10 +24423,11 @@ import { EmbraceSQLClient as BaseClient, EmbraceSQLClientProps, HasClient } from
           public ChecklistPkey = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.ChecklistPkey) {
-            const response = await this.client.invoke<Public.Types.ChecklistPkey, never, Public.Types.Checklist | undefined>({
+          public async read(parameters: Public.Types.ChecklistPkey, options?: Public.Tables.Checklist.Options) {
+            const response = await this.client.invoke<Public.Types.ChecklistPkey, never, Public.Types.Checklist | undefined, Public.Tables.Checklist.Options>({
               operation: "Public.Tables.Checklist.ChecklistPkey.read",
-              parameters: {id: parameters.id}
+              parameters: {id: parameters.id},
+              options
             });
         
 return (
@@ -24435,7 +24437,7 @@ return (
 }
 
           public async update(parameters: Public.Types.ChecklistPkey, values: Partial<Public.Types.Checklist>) {
-            const response = await this.client.invoke<Public.Types.ChecklistPkey, Partial<Public.Types.Checklist>, Public.Types.Checklist | undefined>({
+            const response = await this.client.invoke<Public.Types.ChecklistPkey, Partial<Public.Types.Checklist>, Public.Types.Checklist | undefined, never>({
               operation: "Public.Tables.Checklist.ChecklistPkey.update",
               parameters: {id: parameters.id},
               values: {id: values.id,name: values.name,createdAt: values.createdAt}
@@ -24447,10 +24449,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.ChecklistPkey) {
-            const response = await this.client.invoke<Public.Types.ChecklistPkey, never, Public.Types.Checklist | undefined>({
+          public async delete(parameters: Public.Types.ChecklistPkey, options?: Public.Tables.Checklist.Options) {
+            const response = await this.client.invoke<Public.Types.ChecklistPkey, never, Public.Types.Checklist | undefined, Public.Tables.Checklist.Options>({
               operation: "Public.Tables.Checklist.ChecklistPkey.delete",
-              parameters: {id: parameters.id}
+              parameters: {id: parameters.id},
+              options
             });
         
 return (
@@ -24466,7 +24469,7 @@ public get ByPrimaryKey(){ return this.ChecklistPkey };
         
 
           public async create(values: Partial<Public.Types.ChecklistItem>) : Promise<Public.Types.ChecklistItem|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.ChecklistItem>, Public.Types.ChecklistItem>({
+            const response = await this.client.invoke<never, Partial<Public.Types.ChecklistItem>, Public.Types.ChecklistItem, never>({
               operation: "Public.Tables.ChecklistItem.create",
               values: {id: values.id,checklistId: values.checklistId,title: values.title,checked: values.checked,createdAt: values.createdAt}
             });
@@ -24477,9 +24480,10 @@ public get ByPrimaryKey(){ return this.ChecklistPkey };
           }
         
 
-          public async all() : Promise<Public.Types.ChecklistItem[]> {
-            const response = await this.client.invoke<never, never, Public.Types.ChecklistItem[]>({
-              operation: "Public.Tables.ChecklistItem.all"
+          public async all(options?: Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem[]> {
+            const response = await this.client.invoke<never, never, Public.Types.ChecklistItem[], never>({
+              operation: "Public.Tables.ChecklistItem.all",
+              options
             });
             return (
     response.results
@@ -24494,10 +24498,11 @@ public get ByPrimaryKey(){ return this.ChecklistPkey };
           public ChecklistItemPkey = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.ChecklistItemPkey) {
-            const response = await this.client.invoke<Public.Types.ChecklistItemPkey, never, Public.Types.ChecklistItem | undefined>({
+          public async read(parameters: Public.Types.ChecklistItemPkey, options?: Public.Tables.ChecklistItem.Options) {
+            const response = await this.client.invoke<Public.Types.ChecklistItemPkey, never, Public.Types.ChecklistItem | undefined, Public.Tables.ChecklistItem.Options>({
               operation: "Public.Tables.ChecklistItem.ChecklistItemPkey.read",
-              parameters: {id: parameters.id}
+              parameters: {id: parameters.id},
+              options
             });
         
 return (
@@ -24507,7 +24512,7 @@ return (
 }
 
           public async update(parameters: Public.Types.ChecklistItemPkey, values: Partial<Public.Types.ChecklistItem>) {
-            const response = await this.client.invoke<Public.Types.ChecklistItemPkey, Partial<Public.Types.ChecklistItem>, Public.Types.ChecklistItem | undefined>({
+            const response = await this.client.invoke<Public.Types.ChecklistItemPkey, Partial<Public.Types.ChecklistItem>, Public.Types.ChecklistItem | undefined, never>({
               operation: "Public.Tables.ChecklistItem.ChecklistItemPkey.update",
               parameters: {id: parameters.id},
               values: {id: values.id,checklistId: values.checklistId,title: values.title,checked: values.checked,createdAt: values.createdAt}
@@ -24519,10 +24524,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.ChecklistItemPkey) {
-            const response = await this.client.invoke<Public.Types.ChecklistItemPkey, never, Public.Types.ChecklistItem | undefined>({
+          public async delete(parameters: Public.Types.ChecklistItemPkey, options?: Public.Tables.ChecklistItem.Options) {
+            const response = await this.client.invoke<Public.Types.ChecklistItemPkey, never, Public.Types.ChecklistItem | undefined, Public.Tables.ChecklistItem.Options>({
               operation: "Public.Tables.ChecklistItem.ChecklistItemPkey.delete",
-              parameters: {id: parameters.id}
+              parameters: {id: parameters.id},
+              options
             });
         
 return (
@@ -24536,10 +24542,11 @@ public get ByPrimaryKey(){ return this.ChecklistItemPkey };
           public ChecklistItemParent = new class extends HasClient {
         
 
-          public async read(parameters: Public.Types.ChecklistItemParent) {
-            const response = await this.client.invoke<Public.Types.ChecklistItemParent, never, Public.Types.ChecklistItem[] | undefined>({
+          public async read(parameters: Public.Types.ChecklistItemParent, options?: Public.Tables.ChecklistItem.Options) {
+            const response = await this.client.invoke<Public.Types.ChecklistItemParent, never, Public.Types.ChecklistItem[] | undefined, Public.Tables.ChecklistItem.Options>({
               operation: "Public.Tables.ChecklistItem.ChecklistItemParent.read",
-              parameters: {checklistId: parameters.checklistId}
+              parameters: {checklistId: parameters.checklistId},
+              options
             });
         
 return (
@@ -24552,7 +24559,7 @@ return (
 }
 
           public async update(parameters: Public.Types.ChecklistItemParent, values: Partial<Public.Types.ChecklistItem>) {
-            const response = await this.client.invoke<Public.Types.ChecklistItemParent, Partial<Public.Types.ChecklistItem>, Public.Types.ChecklistItem[] | undefined>({
+            const response = await this.client.invoke<Public.Types.ChecklistItemParent, Partial<Public.Types.ChecklistItem>, Public.Types.ChecklistItem[] | undefined, never>({
               operation: "Public.Tables.ChecklistItem.ChecklistItemParent.update",
               parameters: {checklistId: parameters.checklistId},
               values: {id: values.id,checklistId: values.checklistId,title: values.title,checked: values.checked,createdAt: values.createdAt}
@@ -24567,10 +24574,11 @@ return (
   ;
 }
 
-          public async delete(parameters: Public.Types.ChecklistItemParent) {
-            const response = await this.client.invoke<Public.Types.ChecklistItemParent, never, Public.Types.ChecklistItem[] | undefined>({
+          public async delete(parameters: Public.Types.ChecklistItemParent, options?: Public.Tables.ChecklistItem.Options) {
+            const response = await this.client.invoke<Public.Types.ChecklistItemParent, never, Public.Types.ChecklistItem[] | undefined, Public.Tables.ChecklistItem.Options>({
               operation: "Public.Tables.ChecklistItem.ChecklistItemParent.delete",
-              parameters: {checklistId: parameters.checklistId}
+              parameters: {checklistId: parameters.checklistId},
+              options
             });
         
 return (

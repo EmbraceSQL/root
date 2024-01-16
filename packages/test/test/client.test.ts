@@ -19,10 +19,11 @@ describe("EmbraceSQLClient can", () => {
     );
     const client = new EmbraceSQLClient({ url: "http://localhost" });
     expect(client).toBeDefined();
-    const response = await client.invoke<unknown, unknown, string>({
+    const response = await client.invoke<unknown, unknown, string, unknown>({
       operation: "hello",
       parameters: {},
       values: {},
+      options: {},
     });
     expect(response).toMatchObject({ operation: "hello", results: "world" });
   });
