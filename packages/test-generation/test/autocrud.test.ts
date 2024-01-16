@@ -79,9 +79,33 @@ describe("The database can AutoCRUD", () => {
     });
     expect(values.length).toBeGreaterThan(1);
   });
-  it("all rows read", async () => {
-    const values = await database.Public.Tables.Actor.all();
-    expect(values.length).toBeGreaterThan(1);
+  describe("read all rows", () => {
+    it("at all", async () => {
+      const values = await database.Public.Tables.Actor.all();
+      expect(values.length).toBeGreaterThan(1);
+    });
+    it("with pagination", async () => {
+      const values = await database.Public.Tables.Actor.all({
+        limitNumberOfRows: 1,
+        offsetNumberOfRows: 0,
+      });
+      expect(values.length).toBe(1);
+    });
+    it("with pagination offset", async () => {
+      const values = await database.Public.Tables.Actor.all({
+        limitNumberOfRows: 2,
+        offsetNumberOfRows: 0,
+      });
+      // offset by one so we get an overlap
+      const nextValues = await database.Public.Tables.Actor.all({
+        limitNumberOfRows: 2,
+        offsetNumberOfRows: 1,
+      });
+      expect(values[0]).not.toMatchObject(nextValues[0]);
+      expect(values[1]).not.toMatchObject(nextValues[1]);
+      // overlap in the middle
+      expect(values[1]).toMatchObject(nextValues[0]);
+    });
   });
   it("a unique index delete", async () => {
     const before = await database.Public.Tables.Payment.PaymentPkey.read({

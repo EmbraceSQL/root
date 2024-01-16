@@ -27244,7 +27244,7 @@ import { EmbraceSQLClient as BaseClient, EmbraceSQLClientProps, HasClient } from
         
 
           public async call(parameters: Public.Procedures.FilmInStock.Parameters) : Promise<PgCatalog.Types.Int4[]> {
-            const response = await this.client.invoke<Public.Procedures.FilmInStock.Parameters, never, PgCatalog.Types.Int4[], Public.Procedures.FilmInStock.Options>({
+            const response = await this.client.invoke<Public.Procedures.FilmInStock.Parameters, never, PgCatalog.Types.Int4[], never>({
               operation: "Public.Procedures.FilmInStock.call",
               parameters,
             });
@@ -27257,7 +27257,7 @@ return response.results?.map(r => PgCatalog.Types.Int4.parse(r)) as PgCatalog.Ty
         
 
           public async call(parameters: Public.Procedures.FilmNotInStock.Parameters) : Promise<PgCatalog.Types.Int4[]> {
-            const response = await this.client.invoke<Public.Procedures.FilmNotInStock.Parameters, never, PgCatalog.Types.Int4[], Public.Procedures.FilmNotInStock.Options>({
+            const response = await this.client.invoke<Public.Procedures.FilmNotInStock.Parameters, never, PgCatalog.Types.Int4[], never>({
               operation: "Public.Procedures.FilmNotInStock.call",
               parameters,
             });
@@ -27270,7 +27270,7 @@ return response.results?.map(r => PgCatalog.Types.Int4.parse(r)) as PgCatalog.Ty
         
 
           public async call(parameters: Public.Procedures.GetCustomerBalance.Parameters) : Promise<PgCatalog.Types.Numeric | undefined> {
-            const response = await this.client.invoke<Public.Procedures.GetCustomerBalance.Parameters, never, PgCatalog.Types.Numeric | undefined, Public.Procedures.GetCustomerBalance.Options>({
+            const response = await this.client.invoke<Public.Procedures.GetCustomerBalance.Parameters, never, PgCatalog.Types.Numeric | undefined, never>({
               operation: "Public.Procedures.GetCustomerBalance.call",
               parameters,
             });
@@ -27283,7 +27283,7 @@ return response.results ? nullIsUndefined(PgCatalog.Types.Numeric.parse(response
         
 
           public async call(parameters: Public.Procedures.InventoryHeldByCustomer.Parameters) : Promise<PgCatalog.Types.Int4 | undefined> {
-            const response = await this.client.invoke<Public.Procedures.InventoryHeldByCustomer.Parameters, never, PgCatalog.Types.Int4 | undefined, Public.Procedures.InventoryHeldByCustomer.Options>({
+            const response = await this.client.invoke<Public.Procedures.InventoryHeldByCustomer.Parameters, never, PgCatalog.Types.Int4 | undefined, never>({
               operation: "Public.Procedures.InventoryHeldByCustomer.call",
               parameters,
             });
@@ -27296,7 +27296,7 @@ return response.results ? nullIsUndefined(PgCatalog.Types.Int4.parse(response.re
         
 
           public async call(parameters: Public.Procedures.InventoryInStock.Parameters) : Promise<PgCatalog.Types.Bool | undefined> {
-            const response = await this.client.invoke<Public.Procedures.InventoryInStock.Parameters, never, PgCatalog.Types.Bool | undefined, Public.Procedures.InventoryInStock.Options>({
+            const response = await this.client.invoke<Public.Procedures.InventoryInStock.Parameters, never, PgCatalog.Types.Bool | undefined, never>({
               operation: "Public.Procedures.InventoryInStock.call",
               parameters,
             });
@@ -27309,7 +27309,7 @@ return response.results ? nullIsUndefined(PgCatalog.Types.Bool.parse(response.re
         
 
           public async call(parameters: Public.Procedures.LastDay.Parameters) : Promise<PgCatalog.Types.Date | undefined> {
-            const response = await this.client.invoke<Public.Procedures.LastDay.Parameters, never, PgCatalog.Types.Date | undefined, Public.Procedures.LastDay.Options>({
+            const response = await this.client.invoke<Public.Procedures.LastDay.Parameters, never, PgCatalog.Types.Date | undefined, never>({
               operation: "Public.Procedures.LastDay.call",
               parameters,
             });
@@ -27322,7 +27322,7 @@ return response.results ? nullIsUndefined(PgCatalog.Types.Date.parse(response.re
         
 
           public async call(parameters: Public.Procedures.RewardsReport.Parameters) : Promise<Public.Types.Customer[]> {
-            const response = await this.client.invoke<Public.Procedures.RewardsReport.Parameters, never, Public.Types.Customer[], Public.Procedures.RewardsReport.Options>({
+            const response = await this.client.invoke<Public.Procedures.RewardsReport.Parameters, never, Public.Types.Customer[], never>({
               operation: "Public.Procedures.RewardsReport.call",
               parameters,
             });

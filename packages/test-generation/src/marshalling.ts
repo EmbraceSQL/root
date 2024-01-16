@@ -31238,11 +31238,12 @@ async all(options?: Public.Tables.Slug.Options) : Promise<Public.Types.Slug[]>{
       const typed = sql.typed as unknown as PostgresTypecasts;
       
 const response = await sql`
-    -- 
     SELECT 
       slug_id 
     FROM
       public.slug 
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))
 }
@@ -31578,11 +31579,12 @@ async all(options?: Api.Tables.QAndA.Options) : Promise<Api.Types.QAndA[]>{
       const typed = sql.typed as unknown as PostgresTypecasts;
       
 const response = await sql`
-    -- 
     SELECT 
       question,answer 
     FROM
       api.q_and_a 
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
 }
@@ -31681,11 +31683,12 @@ async all(options?: Api.Tables.Timezones.Options) : Promise<Api.Types.Timezones[
       const typed = sql.typed as unknown as PostgresTypecasts;
       
 const response = await sql`
-    -- 
     SELECT 
       country_code,time_zone,gmt_offset,dst_offset,raw_offset 
     FROM
       api.timezones 
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
     `
 return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
 }

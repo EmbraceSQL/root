@@ -12,11 +12,12 @@ export const AllOperation = {
     const returns = `Promise<${node.table.type.typescriptNamespacedName}[]>`;
     // query using postgres driver bindings to the index
     const sql = `
-    -- 
     SELECT 
       ${node.table.allColumns.map((c) => c.name).join(",")} 
     FROM
       ${node.table.databaseName} 
+    LIMIT \${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET \${options?.offsetNumberOfRows ?? 0} 
     `;
     return [
       `async ${node.typescriptPropertyName}(${parameters}${options}) : ${returns}{`,
