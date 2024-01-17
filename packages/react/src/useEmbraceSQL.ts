@@ -3,11 +3,10 @@ import { useNetwork } from "./useNetwork";
 import { PartialRecursive, DebounceMap } from "@embracesql/shared";
 import React from "react";
 
-type NoParameters<RR> = () => Promise<RR>;
-type Parameters<P, RR> = (parameters: P) => Promise<RR>;
-type ReadOperation<P, RR> = [P] extends [never]
-  ? NoParameters<RR>
-  : Parameters<P, RR>;
+type NoParameters<R> = () => Promise<R>;
+type NoParametersHasOptions<R, O> = (options?: O) => Promise<R>;
+type Parameters<P, R> = (parameters: P) => Promise<R>;
+type ParametersHasOptions<P, R, O> = (parameters: P, options?: O) => Promise<R>;
 
 type UpdateCallbackProps<R> = {
   deleteOperation: (values: R) => Promise<R | undefined>;
@@ -20,7 +19,7 @@ type UpdateCallbackProps<R> = {
  * Shared callback to update a single row in the database.
  *
  * This is a debounced asynchronous trip to the database combined with
- * a `responseCallback` which is intended to modify React state - so that when
+ * a `responseCallback` which is intended to fmodify React state - so that when
  * you are typing you can get a nice quick in memory state update with an
  * eventual to the database state update.
  *
@@ -58,7 +57,9 @@ function useUpdateCallback<R>(props: UpdateCallbackProps<R>) {
 
 type RowProps<P, R> = UpdateCallbackProps<R> & {
   parameters: P;
-  readOperation: ReadOperation<P, R | undefined>;
+  readOperation: [P] extends [never]
+    ? NoParameters<R | undefined>
+    : Parameters<P, R | undefined>;
   emptyRow: () => PartialRecursive<R>;
   createIfNotExists?: boolean;
 };
@@ -127,16 +128,19 @@ export function useEmbraceSQLRow<P, V, R>(props: RowProps<P, R>) {
   };
 }
 
-type RowsProps<P, R> = UpdateCallbackProps<R> & {
+type RowsProps<P, R, O> = UpdateCallbackProps<R> & {
   emptyRow: () => PartialRecursive<R>;
   parameters: P;
-  readOperation: ReadOperation<P, R[]>;
+  options?: O;
+  readOperation: ([P] extends [never]
+    ? [NoParametersHasOptions<R[], O>]
+    : [ParametersHasOptions<P, R[], O>])[0];
 };
 
 /**
  * Use rows, this allows adding and removing rows.
  */
-export function useEmbraceSQLRows<P, V, R>(props: RowsProps<P, R>) {
+export function useEmbraceSQLRows<P, V, R, O>(props: RowsProps<P, R, O>) {
   const [results, setResults] = React.useState<R[]>();
 
   // row is changed -- it goes into the results list at a particular index
@@ -157,7 +161,12 @@ export function useEmbraceSQLRows<P, V, R>(props: RowsProps<P, R>) {
 
   // load up the data
   const readState = useNetwork(async () => {
-    const read = await props.readOperation(props.parameters);
+    const read = props.parameters
+      ? await props.readOperation(
+          props.parameters as P & (O | undefined),
+          props.options,
+        )
+      : await props.readOperation(props.options as P & (O | undefined));
     setResults(read);
   }, [JSON.stringify(props.parameters)]);
 
@@ -236,12 +245,13 @@ export function useEmbraceSQLRows<P, V, R>(props: RowsProps<P, R>) {
 
 type ImmutableRowsProps<P, R> = {
   parameters: P;
-  readOperation: ReadOperation<P, R[]>;
+  readOperation: [P] extends [never] ? NoParameters<R[]> : Parameters<P, R[]>;
   RowImplementation: RowConstructor<R>;
 };
 
 /**
- * Use rows immutably. This is useful for SQL script hook generation.
+ * Use rows immutably. This is useful for SQL script and procedure hook generation
+ * where we won't have AutoCRUD style options.
  */
 export function useEmbraceSQLImmutableRows<P, R>(
   props: ImmutableRowsProps<P, R>,
@@ -272,7 +282,7 @@ export function useEmbraceSQLImmutableRows<P, R>(
 
 type ImmutableProps<P, R> = {
   parameters: P;
-  readOperation: ReadOperation<P, R>;
+  readOperation: [P] extends [never] ? NoParameters<R> : Parameters<P, R>;
 };
 
 /**

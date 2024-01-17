@@ -94,14 +94,16 @@ export const generateReactHooks = async (context: GenerationContext) => {
              )`,
           `}`,
           // the 'all the rows' hook'
-          `export function useRows() {`,
+          `export function useRows(options?: ${node.typescriptNamespacedName}.Options) {`,
           `const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
           `return useEmbraceSQLRows<never,`,
           `  Partial<${node.type.typescriptNamespacedName}>, `,
-          `  ${node.type.typescriptNamespacedName}> (`,
+          `  ${node.type.typescriptNamespacedName},`,
+          `  ${node.typescriptNamespacedName}.Options> (`,
           `
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.${node.typescriptNamespacedName}.all.bind(client),
                  upsertOperation: client.${node.typescriptNamespacedName}.create.bind(client),
                  deleteOperation: client.${node.typescriptNamespacedName}.${BY_PRIMARY_KEY}.delete.bind(client),
@@ -121,10 +123,16 @@ export const generateReactHooks = async (context: GenerationContext) => {
       before: async (_, node) => {
         const rowTypeName = `${node.table.type.typescriptNamespacedName}`;
         const hookName = node.unique ? `useEmbraceSQLRow` : `useEmbraceSQLRows`;
+        const optionsGeneric = node.unique
+          ? ``
+          : `, ${node.table.typescriptNamespacedName}.Options`;
+        const optionsParameter = node.unique
+          ? ``
+          : `, options?: ${node.table.typescriptNamespacedName}.Options`;
         return [
-          `export function use${node.typescriptName}(parameters: ${node.type.typescriptNamespacedName}) {`,
+          `export function use${node.typescriptName}(parameters: ${node.type.typescriptNamespacedName} ${optionsParameter}) {`,
           `const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
-          `return ${hookName}<${node.type.typescriptNamespacedName}, Partial<${node.table.type.typescriptNamespacedName}>,  ${rowTypeName}>(
+          `return ${hookName}<${node.type.typescriptNamespacedName}, Partial<${node.table.type.typescriptNamespacedName}>,  ${rowTypeName} ${optionsGeneric}>(
                {
                  readOperation: client.${node.typescriptNamespacedName}.read.bind(client),
                  parameters,

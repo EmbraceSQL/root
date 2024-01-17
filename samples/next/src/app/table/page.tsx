@@ -7,19 +7,35 @@ import {
 } from "../../client/dvdrental-react";
 
 function Table() {
-  const { rows } = Public.Tables.Actor.useRows();
+  const { rows } = Public.Tables.Actor.useRows(
+    // using sort and pagination, generally how you would show tables
+    {
+      // showing the first page
+      offsetNumberOfRows: 0,
+      limitNumberOfRows: 10,
+      // multi-sort
+      sort: [
+        Public.Tables.Actor.SortOptions.lastNameAscending,
+        Public.Tables.Actor.SortOptions.firstNameAscending,
+      ],
+    },
+  );
 
   if (rows) {
     // old school - let's make a table
     return (
       <table>
-        <tr></tr>
-        {rows.map((r) => (
-          <tr>
-            <td>{r.firstName}</td>
-            <td>{r.lastName}</td>
-          </tr>
-        ))}
+        <thead>
+          <tr></tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr key={r.rowNumberInResultset}>
+              <td>{r.firstName}</td>
+              <td>{r.lastName}</td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     );
   } else {

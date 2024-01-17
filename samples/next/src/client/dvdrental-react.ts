@@ -32356,14 +32356,16 @@ export function useRow(props: GeneratedRowProps<Public.Tables.FilmActor.Values>)
                }
              )
 }
-export function useRows() {
+export function useRows(options?: Public.Tables.FilmActor.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
 return useEmbraceSQLRows<never,
   Partial<Public.Types.FilmActor>, 
-  Public.Types.FilmActor> (
+  Public.Types.FilmActor,
+  Public.Tables.FilmActor.Options> (
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.FilmActor.all.bind(client),
                  upsertOperation: client.Public.Tables.FilmActor.create.bind(client),
                  deleteOperation: client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
@@ -32379,9 +32381,9 @@ export namespace FilmId {
 }
 export namespace LastUpdate {
 }
-export function useFilmActorPkey(parameters: Public.Types.FilmActorPkey) {
+export function useFilmActorPkey(parameters: Public.Types.FilmActorPkey ) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.FilmActorPkey, Partial<Public.Types.FilmActor>,  Public.Types.FilmActor>(
+return useEmbraceSQLRow<Public.Types.FilmActorPkey, Partial<Public.Types.FilmActor>,  Public.Types.FilmActor >(
                {
                  readOperation: client.Public.Tables.FilmActor.FilmActorPkey.read.bind(client),
                  parameters,
@@ -32393,9 +32395,9 @@ return useEmbraceSQLRow<Public.Types.FilmActorPkey, Partial<Public.Types.FilmAct
                }
              )
 }
-export function useIdxFkFilmId(parameters: Public.Types.IdxFkFilmId) {
+export function useIdxFkFilmId(parameters: Public.Types.IdxFkFilmId , options?: Public.Tables.FilmActor.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxFkFilmId, Partial<Public.Types.FilmActor>,  Public.Types.FilmActor>(
+return useEmbraceSQLRows<Public.Types.IdxFkFilmId, Partial<Public.Types.FilmActor>,  Public.Types.FilmActor , Public.Tables.FilmActor.Options>(
                {
                  readOperation: client.Public.Tables.FilmActor.IdxFkFilmId.read.bind(client),
                  parameters,
@@ -32427,14 +32429,16 @@ export function useRow(props: GeneratedRowProps<Public.Tables.Address.Values>) {
                }
              )
 }
-export function useRows() {
+export function useRows(options?: Public.Tables.Address.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
 return useEmbraceSQLRows<never,
   Partial<Public.Types.Address>, 
-  Public.Types.Address> (
+  Public.Types.Address,
+  Public.Tables.Address.Options> (
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Address.all.bind(client),
                  upsertOperation: client.Public.Tables.Address.create.bind(client),
                  deleteOperation: client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
@@ -32460,9 +32464,9 @@ export namespace Phone {
 }
 export namespace LastUpdate {
 }
-export function useAddressPkey(parameters: Public.Types.AddressPkey) {
+export function useAddressPkey(parameters: Public.Types.AddressPkey ) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.AddressPkey, Partial<Public.Types.Address>,  Public.Types.Address>(
+return useEmbraceSQLRow<Public.Types.AddressPkey, Partial<Public.Types.Address>,  Public.Types.Address >(
                {
                  readOperation: client.Public.Tables.Address.AddressPkey.read.bind(client),
                  parameters,
@@ -32474,9 +32478,9 @@ return useEmbraceSQLRow<Public.Types.AddressPkey, Partial<Public.Types.Address>,
                }
              )
 }
-export function useIdxFkCityId(parameters: Public.Types.IdxFkCityId) {
+export function useIdxFkCityId(parameters: Public.Types.IdxFkCityId , options?: Public.Tables.Address.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxFkCityId, Partial<Public.Types.Address>,  Public.Types.Address>(
+return useEmbraceSQLRows<Public.Types.IdxFkCityId, Partial<Public.Types.Address>,  Public.Types.Address , Public.Tables.Address.Options>(
                {
                  readOperation: client.Public.Tables.Address.IdxFkCityId.read.bind(client),
                  parameters,
@@ -32508,14 +32512,16 @@ export function useRow(props: GeneratedRowProps<Public.Tables.City.Values>) {
                }
              )
 }
-export function useRows() {
+export function useRows(options?: Public.Tables.City.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
 return useEmbraceSQLRows<never,
   Partial<Public.Types.City>, 
-  Public.Types.City> (
+  Public.Types.City,
+  Public.Tables.City.Options> (
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.City.all.bind(client),
                  upsertOperation: client.Public.Tables.City.create.bind(client),
                  deleteOperation: client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
@@ -32533,9 +32539,9 @@ export namespace CountryId {
 }
 export namespace LastUpdate {
 }
-export function useCityPkey(parameters: Public.Types.CityPkey) {
+export function useCityPkey(parameters: Public.Types.CityPkey ) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.CityPkey, Partial<Public.Types.City>,  Public.Types.City>(
+return useEmbraceSQLRow<Public.Types.CityPkey, Partial<Public.Types.City>,  Public.Types.City >(
                {
                  readOperation: client.Public.Tables.City.CityPkey.read.bind(client),
                  parameters,
@@ -32547,9 +32553,9 @@ return useEmbraceSQLRow<Public.Types.CityPkey, Partial<Public.Types.City>,  Publ
                }
              )
 }
-export function useIdxFkCountryId(parameters: Public.Types.IdxFkCountryId) {
+export function useIdxFkCountryId(parameters: Public.Types.IdxFkCountryId , options?: Public.Tables.City.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxFkCountryId, Partial<Public.Types.City>,  Public.Types.City>(
+return useEmbraceSQLRows<Public.Types.IdxFkCountryId, Partial<Public.Types.City>,  Public.Types.City , Public.Tables.City.Options>(
                {
                  readOperation: client.Public.Tables.City.IdxFkCountryId.read.bind(client),
                  parameters,
@@ -32581,14 +32587,16 @@ export function useRow(props: GeneratedRowProps<Public.Tables.Customer.Values>) 
                }
              )
 }
-export function useRows() {
+export function useRows(options?: Public.Tables.Customer.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
 return useEmbraceSQLRows<never,
   Partial<Public.Types.Customer>, 
-  Public.Types.Customer> (
+  Public.Types.Customer,
+  Public.Tables.Customer.Options> (
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Customer.all.bind(client),
                  upsertOperation: client.Public.Tables.Customer.create.bind(client),
                  deleteOperation: client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
@@ -32618,9 +32626,9 @@ export namespace LastUpdate {
 }
 export namespace Active {
 }
-export function useCustomerPkey(parameters: Public.Types.CustomerPkey) {
+export function useCustomerPkey(parameters: Public.Types.CustomerPkey ) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.CustomerPkey, Partial<Public.Types.Customer>,  Public.Types.Customer>(
+return useEmbraceSQLRow<Public.Types.CustomerPkey, Partial<Public.Types.Customer>,  Public.Types.Customer >(
                {
                  readOperation: client.Public.Tables.Customer.CustomerPkey.read.bind(client),
                  parameters,
@@ -32632,9 +32640,9 @@ return useEmbraceSQLRow<Public.Types.CustomerPkey, Partial<Public.Types.Customer
                }
              )
 }
-export function useIdxFkAddressId(parameters: Public.Types.IdxFkAddressId) {
+export function useIdxFkAddressId(parameters: Public.Types.IdxFkAddressId , options?: Public.Tables.Customer.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxFkAddressId, Partial<Public.Types.Customer>,  Public.Types.Customer>(
+return useEmbraceSQLRows<Public.Types.IdxFkAddressId, Partial<Public.Types.Customer>,  Public.Types.Customer , Public.Tables.Customer.Options>(
                {
                  readOperation: client.Public.Tables.Customer.IdxFkAddressId.read.bind(client),
                  parameters,
@@ -32646,9 +32654,9 @@ return useEmbraceSQLRows<Public.Types.IdxFkAddressId, Partial<Public.Types.Custo
                }
              )
 }
-export function useIdxFkStoreId(parameters: Public.Types.IdxFkStoreId) {
+export function useIdxFkStoreId(parameters: Public.Types.IdxFkStoreId , options?: Public.Tables.Customer.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxFkStoreId, Partial<Public.Types.Customer>,  Public.Types.Customer>(
+return useEmbraceSQLRows<Public.Types.IdxFkStoreId, Partial<Public.Types.Customer>,  Public.Types.Customer , Public.Tables.Customer.Options>(
                {
                  readOperation: client.Public.Tables.Customer.IdxFkStoreId.read.bind(client),
                  parameters,
@@ -32660,9 +32668,9 @@ return useEmbraceSQLRows<Public.Types.IdxFkStoreId, Partial<Public.Types.Custome
                }
              )
 }
-export function useIdxLastName(parameters: Public.Types.IdxLastName) {
+export function useIdxLastName(parameters: Public.Types.IdxLastName , options?: Public.Tables.Customer.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxLastName, Partial<Public.Types.Customer>,  Public.Types.Customer>(
+return useEmbraceSQLRows<Public.Types.IdxLastName, Partial<Public.Types.Customer>,  Public.Types.Customer , Public.Tables.Customer.Options>(
                {
                  readOperation: client.Public.Tables.Customer.IdxLastName.read.bind(client),
                  parameters,
@@ -32694,14 +32702,16 @@ export function useRow(props: GeneratedRowProps<Public.Tables.Actor.Values>) {
                }
              )
 }
-export function useRows() {
+export function useRows(options?: Public.Tables.Actor.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
 return useEmbraceSQLRows<never,
   Partial<Public.Types.Actor>, 
-  Public.Types.Actor> (
+  Public.Types.Actor,
+  Public.Tables.Actor.Options> (
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Actor.all.bind(client),
                  upsertOperation: client.Public.Tables.Actor.create.bind(client),
                  deleteOperation: client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
@@ -32719,9 +32729,9 @@ export namespace LastName {
 }
 export namespace LastUpdate {
 }
-export function useActorPkey(parameters: Public.Types.ActorPkey) {
+export function useActorPkey(parameters: Public.Types.ActorPkey ) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.ActorPkey, Partial<Public.Types.Actor>,  Public.Types.Actor>(
+return useEmbraceSQLRow<Public.Types.ActorPkey, Partial<Public.Types.Actor>,  Public.Types.Actor >(
                {
                  readOperation: client.Public.Tables.Actor.ActorPkey.read.bind(client),
                  parameters,
@@ -32733,9 +32743,9 @@ return useEmbraceSQLRow<Public.Types.ActorPkey, Partial<Public.Types.Actor>,  Pu
                }
              )
 }
-export function useIdxActorLastName(parameters: Public.Types.IdxActorLastName) {
+export function useIdxActorLastName(parameters: Public.Types.IdxActorLastName , options?: Public.Tables.Actor.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxActorLastName, Partial<Public.Types.Actor>,  Public.Types.Actor>(
+return useEmbraceSQLRows<Public.Types.IdxActorLastName, Partial<Public.Types.Actor>,  Public.Types.Actor , Public.Tables.Actor.Options>(
                {
                  readOperation: client.Public.Tables.Actor.IdxActorLastName.read.bind(client),
                  parameters,
@@ -32767,14 +32777,16 @@ export function useRow(props: GeneratedRowProps<Public.Tables.FilmCategory.Value
                }
              )
 }
-export function useRows() {
+export function useRows(options?: Public.Tables.FilmCategory.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
 return useEmbraceSQLRows<never,
   Partial<Public.Types.FilmCategory>, 
-  Public.Types.FilmCategory> (
+  Public.Types.FilmCategory,
+  Public.Tables.FilmCategory.Options> (
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.FilmCategory.all.bind(client),
                  upsertOperation: client.Public.Tables.FilmCategory.create.bind(client),
                  deleteOperation: client.Public.Tables.FilmCategory.ByPrimaryKey.delete.bind(client),
@@ -32790,9 +32802,9 @@ export namespace CategoryId {
 }
 export namespace LastUpdate {
 }
-export function useFilmCategoryPkey(parameters: Public.Types.FilmCategoryPkey) {
+export function useFilmCategoryPkey(parameters: Public.Types.FilmCategoryPkey ) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.FilmCategoryPkey, Partial<Public.Types.FilmCategory>,  Public.Types.FilmCategory>(
+return useEmbraceSQLRow<Public.Types.FilmCategoryPkey, Partial<Public.Types.FilmCategory>,  Public.Types.FilmCategory >(
                {
                  readOperation: client.Public.Tables.FilmCategory.FilmCategoryPkey.read.bind(client),
                  parameters,
@@ -32824,14 +32836,16 @@ export function useRow(props: GeneratedRowProps<Public.Tables.Inventory.Values>)
                }
              )
 }
-export function useRows() {
+export function useRows(options?: Public.Tables.Inventory.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
 return useEmbraceSQLRows<never,
   Partial<Public.Types.Inventory>, 
-  Public.Types.Inventory> (
+  Public.Types.Inventory,
+  Public.Tables.Inventory.Options> (
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Inventory.all.bind(client),
                  upsertOperation: client.Public.Tables.Inventory.create.bind(client),
                  deleteOperation: client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
@@ -32849,9 +32863,9 @@ export namespace StoreId {
 }
 export namespace LastUpdate {
 }
-export function useInventoryPkey(parameters: Public.Types.InventoryPkey) {
+export function useInventoryPkey(parameters: Public.Types.InventoryPkey ) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.InventoryPkey, Partial<Public.Types.Inventory>,  Public.Types.Inventory>(
+return useEmbraceSQLRow<Public.Types.InventoryPkey, Partial<Public.Types.Inventory>,  Public.Types.Inventory >(
                {
                  readOperation: client.Public.Tables.Inventory.InventoryPkey.read.bind(client),
                  parameters,
@@ -32863,9 +32877,9 @@ return useEmbraceSQLRow<Public.Types.InventoryPkey, Partial<Public.Types.Invento
                }
              )
 }
-export function useIdxStoreIdFilmId(parameters: Public.Types.IdxStoreIdFilmId) {
+export function useIdxStoreIdFilmId(parameters: Public.Types.IdxStoreIdFilmId , options?: Public.Tables.Inventory.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxStoreIdFilmId, Partial<Public.Types.Inventory>,  Public.Types.Inventory>(
+return useEmbraceSQLRows<Public.Types.IdxStoreIdFilmId, Partial<Public.Types.Inventory>,  Public.Types.Inventory , Public.Tables.Inventory.Options>(
                {
                  readOperation: client.Public.Tables.Inventory.IdxStoreIdFilmId.read.bind(client),
                  parameters,
@@ -32897,14 +32911,16 @@ export function useRow(props: GeneratedRowProps<Public.Tables.Category.Values>) 
                }
              )
 }
-export function useRows() {
+export function useRows(options?: Public.Tables.Category.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
 return useEmbraceSQLRows<never,
   Partial<Public.Types.Category>, 
-  Public.Types.Category> (
+  Public.Types.Category,
+  Public.Tables.Category.Options> (
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Category.all.bind(client),
                  upsertOperation: client.Public.Tables.Category.create.bind(client),
                  deleteOperation: client.Public.Tables.Category.ByPrimaryKey.delete.bind(client),
@@ -32920,9 +32936,9 @@ export namespace Name {
 }
 export namespace LastUpdate {
 }
-export function useCategoryPkey(parameters: Public.Types.CategoryPkey) {
+export function useCategoryPkey(parameters: Public.Types.CategoryPkey ) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.CategoryPkey, Partial<Public.Types.Category>,  Public.Types.Category>(
+return useEmbraceSQLRow<Public.Types.CategoryPkey, Partial<Public.Types.Category>,  Public.Types.Category >(
                {
                  readOperation: client.Public.Tables.Category.CategoryPkey.read.bind(client),
                  parameters,
@@ -32954,14 +32970,16 @@ export function useRow(props: GeneratedRowProps<Public.Tables.Country.Values>) {
                }
              )
 }
-export function useRows() {
+export function useRows(options?: Public.Tables.Country.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
 return useEmbraceSQLRows<never,
   Partial<Public.Types.Country>, 
-  Public.Types.Country> (
+  Public.Types.Country,
+  Public.Tables.Country.Options> (
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Country.all.bind(client),
                  upsertOperation: client.Public.Tables.Country.create.bind(client),
                  deleteOperation: client.Public.Tables.Country.ByPrimaryKey.delete.bind(client),
@@ -32977,9 +32995,9 @@ export namespace Country {
 }
 export namespace LastUpdate {
 }
-export function useCountryPkey(parameters: Public.Types.CountryPkey) {
+export function useCountryPkey(parameters: Public.Types.CountryPkey ) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.CountryPkey, Partial<Public.Types.Country>,  Public.Types.Country>(
+return useEmbraceSQLRow<Public.Types.CountryPkey, Partial<Public.Types.Country>,  Public.Types.Country >(
                {
                  readOperation: client.Public.Tables.Country.CountryPkey.read.bind(client),
                  parameters,
@@ -33011,14 +33029,16 @@ export function useRow(props: GeneratedRowProps<Public.Tables.Language.Values>) 
                }
              )
 }
-export function useRows() {
+export function useRows(options?: Public.Tables.Language.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
 return useEmbraceSQLRows<never,
   Partial<Public.Types.Language>, 
-  Public.Types.Language> (
+  Public.Types.Language,
+  Public.Tables.Language.Options> (
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Language.all.bind(client),
                  upsertOperation: client.Public.Tables.Language.create.bind(client),
                  deleteOperation: client.Public.Tables.Language.ByPrimaryKey.delete.bind(client),
@@ -33034,9 +33054,9 @@ export namespace Name {
 }
 export namespace LastUpdate {
 }
-export function useLanguagePkey(parameters: Public.Types.LanguagePkey) {
+export function useLanguagePkey(parameters: Public.Types.LanguagePkey ) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.LanguagePkey, Partial<Public.Types.Language>,  Public.Types.Language>(
+return useEmbraceSQLRow<Public.Types.LanguagePkey, Partial<Public.Types.Language>,  Public.Types.Language >(
                {
                  readOperation: client.Public.Tables.Language.LanguagePkey.read.bind(client),
                  parameters,
@@ -33068,14 +33088,16 @@ export function useRow(props: GeneratedRowProps<Public.Tables.Rental.Values>) {
                }
              )
 }
-export function useRows() {
+export function useRows(options?: Public.Tables.Rental.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
 return useEmbraceSQLRows<never,
   Partial<Public.Types.Rental>, 
-  Public.Types.Rental> (
+  Public.Types.Rental,
+  Public.Tables.Rental.Options> (
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Rental.all.bind(client),
                  upsertOperation: client.Public.Tables.Rental.create.bind(client),
                  deleteOperation: client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
@@ -33099,9 +33121,9 @@ export namespace StaffId {
 }
 export namespace LastUpdate {
 }
-export function useRentalPkey(parameters: Public.Types.RentalPkey) {
+export function useRentalPkey(parameters: Public.Types.RentalPkey ) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.RentalPkey, Partial<Public.Types.Rental>,  Public.Types.Rental>(
+return useEmbraceSQLRow<Public.Types.RentalPkey, Partial<Public.Types.Rental>,  Public.Types.Rental >(
                {
                  readOperation: client.Public.Tables.Rental.RentalPkey.read.bind(client),
                  parameters,
@@ -33113,9 +33135,9 @@ return useEmbraceSQLRow<Public.Types.RentalPkey, Partial<Public.Types.Rental>,  
                }
              )
 }
-export function useIdxFkInventoryId(parameters: Public.Types.IdxFkInventoryId) {
+export function useIdxFkInventoryId(parameters: Public.Types.IdxFkInventoryId , options?: Public.Tables.Rental.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxFkInventoryId, Partial<Public.Types.Rental>,  Public.Types.Rental>(
+return useEmbraceSQLRows<Public.Types.IdxFkInventoryId, Partial<Public.Types.Rental>,  Public.Types.Rental , Public.Tables.Rental.Options>(
                {
                  readOperation: client.Public.Tables.Rental.IdxFkInventoryId.read.bind(client),
                  parameters,
@@ -33127,9 +33149,9 @@ return useEmbraceSQLRows<Public.Types.IdxFkInventoryId, Partial<Public.Types.Ren
                }
              )
 }
-export function useIdxUnqRentalRentalDateInventoryIdCustomerId(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId) {
+export function useIdxUnqRentalRentalDateInventoryIdCustomerId(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId ) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, Partial<Public.Types.Rental>,  Public.Types.Rental>(
+return useEmbraceSQLRow<Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, Partial<Public.Types.Rental>,  Public.Types.Rental >(
                {
                  readOperation: client.Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.read.bind(client),
                  parameters,
@@ -33161,14 +33183,16 @@ export function useRow(props: GeneratedRowProps<Public.Tables.Staff.Values>) {
                }
              )
 }
-export function useRows() {
+export function useRows(options?: Public.Tables.Staff.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
 return useEmbraceSQLRows<never,
   Partial<Public.Types.Staff>, 
-  Public.Types.Staff> (
+  Public.Types.Staff,
+  Public.Tables.Staff.Options> (
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Staff.all.bind(client),
                  upsertOperation: client.Public.Tables.Staff.create.bind(client),
                  deleteOperation: client.Public.Tables.Staff.ByPrimaryKey.delete.bind(client),
@@ -33200,9 +33224,9 @@ export namespace LastUpdate {
 }
 export namespace Picture {
 }
-export function useStaffPkey(parameters: Public.Types.StaffPkey) {
+export function useStaffPkey(parameters: Public.Types.StaffPkey ) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.StaffPkey, Partial<Public.Types.Staff>,  Public.Types.Staff>(
+return useEmbraceSQLRow<Public.Types.StaffPkey, Partial<Public.Types.Staff>,  Public.Types.Staff >(
                {
                  readOperation: client.Public.Tables.Staff.StaffPkey.read.bind(client),
                  parameters,
@@ -33234,14 +33258,16 @@ export function useRow(props: GeneratedRowProps<Public.Tables.Store.Values>) {
                }
              )
 }
-export function useRows() {
+export function useRows(options?: Public.Tables.Store.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
 return useEmbraceSQLRows<never,
   Partial<Public.Types.Store>, 
-  Public.Types.Store> (
+  Public.Types.Store,
+  Public.Tables.Store.Options> (
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Store.all.bind(client),
                  upsertOperation: client.Public.Tables.Store.create.bind(client),
                  deleteOperation: client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
@@ -33259,9 +33285,9 @@ export namespace AddressId {
 }
 export namespace LastUpdate {
 }
-export function useStorePkey(parameters: Public.Types.StorePkey) {
+export function useStorePkey(parameters: Public.Types.StorePkey ) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.StorePkey, Partial<Public.Types.Store>,  Public.Types.Store>(
+return useEmbraceSQLRow<Public.Types.StorePkey, Partial<Public.Types.Store>,  Public.Types.Store >(
                {
                  readOperation: client.Public.Tables.Store.StorePkey.read.bind(client),
                  parameters,
@@ -33273,9 +33299,9 @@ return useEmbraceSQLRow<Public.Types.StorePkey, Partial<Public.Types.Store>,  Pu
                }
              )
 }
-export function useIdxUnqManagerStaffId(parameters: Public.Types.IdxUnqManagerStaffId) {
+export function useIdxUnqManagerStaffId(parameters: Public.Types.IdxUnqManagerStaffId ) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.IdxUnqManagerStaffId, Partial<Public.Types.Store>,  Public.Types.Store>(
+return useEmbraceSQLRow<Public.Types.IdxUnqManagerStaffId, Partial<Public.Types.Store>,  Public.Types.Store >(
                {
                  readOperation: client.Public.Tables.Store.IdxUnqManagerStaffId.read.bind(client),
                  parameters,
@@ -33307,14 +33333,16 @@ export function useRow(props: GeneratedRowProps<Public.Tables.Payment.Values>) {
                }
              )
 }
-export function useRows() {
+export function useRows(options?: Public.Tables.Payment.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
 return useEmbraceSQLRows<never,
   Partial<Public.Types.Payment>, 
-  Public.Types.Payment> (
+  Public.Types.Payment,
+  Public.Tables.Payment.Options> (
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Payment.all.bind(client),
                  upsertOperation: client.Public.Tables.Payment.create.bind(client),
                  deleteOperation: client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
@@ -33336,9 +33364,9 @@ export namespace Amount {
 }
 export namespace PaymentDate {
 }
-export function usePaymentPkey(parameters: Public.Types.PaymentPkey) {
+export function usePaymentPkey(parameters: Public.Types.PaymentPkey ) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.PaymentPkey, Partial<Public.Types.Payment>,  Public.Types.Payment>(
+return useEmbraceSQLRow<Public.Types.PaymentPkey, Partial<Public.Types.Payment>,  Public.Types.Payment >(
                {
                  readOperation: client.Public.Tables.Payment.PaymentPkey.read.bind(client),
                  parameters,
@@ -33350,9 +33378,9 @@ return useEmbraceSQLRow<Public.Types.PaymentPkey, Partial<Public.Types.Payment>,
                }
              )
 }
-export function useIdxFkCustomerId(parameters: Public.Types.IdxFkCustomerId) {
+export function useIdxFkCustomerId(parameters: Public.Types.IdxFkCustomerId , options?: Public.Tables.Payment.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxFkCustomerId, Partial<Public.Types.Payment>,  Public.Types.Payment>(
+return useEmbraceSQLRows<Public.Types.IdxFkCustomerId, Partial<Public.Types.Payment>,  Public.Types.Payment , Public.Tables.Payment.Options>(
                {
                  readOperation: client.Public.Tables.Payment.IdxFkCustomerId.read.bind(client),
                  parameters,
@@ -33364,9 +33392,9 @@ return useEmbraceSQLRows<Public.Types.IdxFkCustomerId, Partial<Public.Types.Paym
                }
              )
 }
-export function useIdxFkRentalId(parameters: Public.Types.IdxFkRentalId) {
+export function useIdxFkRentalId(parameters: Public.Types.IdxFkRentalId , options?: Public.Tables.Payment.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxFkRentalId, Partial<Public.Types.Payment>,  Public.Types.Payment>(
+return useEmbraceSQLRows<Public.Types.IdxFkRentalId, Partial<Public.Types.Payment>,  Public.Types.Payment , Public.Tables.Payment.Options>(
                {
                  readOperation: client.Public.Tables.Payment.IdxFkRentalId.read.bind(client),
                  parameters,
@@ -33378,9 +33406,9 @@ return useEmbraceSQLRows<Public.Types.IdxFkRentalId, Partial<Public.Types.Paymen
                }
              )
 }
-export function useIdxFkStaffId(parameters: Public.Types.IdxFkStaffId) {
+export function useIdxFkStaffId(parameters: Public.Types.IdxFkStaffId , options?: Public.Tables.Payment.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxFkStaffId, Partial<Public.Types.Payment>,  Public.Types.Payment>(
+return useEmbraceSQLRows<Public.Types.IdxFkStaffId, Partial<Public.Types.Payment>,  Public.Types.Payment , Public.Tables.Payment.Options>(
                {
                  readOperation: client.Public.Tables.Payment.IdxFkStaffId.read.bind(client),
                  parameters,
@@ -33412,14 +33440,16 @@ export function useRow(props: GeneratedRowProps<Public.Tables.Film.Values>) {
                }
              )
 }
-export function useRows() {
+export function useRows(options?: Public.Tables.Film.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
 return useEmbraceSQLRows<never,
   Partial<Public.Types.Film>, 
-  Public.Types.Film> (
+  Public.Types.Film,
+  Public.Tables.Film.Options> (
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Film.all.bind(client),
                  upsertOperation: client.Public.Tables.Film.create.bind(client),
                  deleteOperation: client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
@@ -33455,9 +33485,9 @@ export namespace SpecialFeatures {
 }
 export namespace Fulltext {
 }
-export function useFilmPkey(parameters: Public.Types.FilmPkey) {
+export function useFilmPkey(parameters: Public.Types.FilmPkey ) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.FilmPkey, Partial<Public.Types.Film>,  Public.Types.Film>(
+return useEmbraceSQLRow<Public.Types.FilmPkey, Partial<Public.Types.Film>,  Public.Types.Film >(
                {
                  readOperation: client.Public.Tables.Film.FilmPkey.read.bind(client),
                  parameters,
@@ -33469,9 +33499,9 @@ return useEmbraceSQLRow<Public.Types.FilmPkey, Partial<Public.Types.Film>,  Publ
                }
              )
 }
-export function useFilmFulltextIdx(parameters: Public.Types.FilmFulltextIdx) {
+export function useFilmFulltextIdx(parameters: Public.Types.FilmFulltextIdx , options?: Public.Tables.Film.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.FilmFulltextIdx, Partial<Public.Types.Film>,  Public.Types.Film>(
+return useEmbraceSQLRows<Public.Types.FilmFulltextIdx, Partial<Public.Types.Film>,  Public.Types.Film , Public.Tables.Film.Options>(
                {
                  readOperation: client.Public.Tables.Film.FilmFulltextIdx.read.bind(client),
                  parameters,
@@ -33483,9 +33513,9 @@ return useEmbraceSQLRows<Public.Types.FilmFulltextIdx, Partial<Public.Types.Film
                }
              )
 }
-export function useIdxFkLanguageId(parameters: Public.Types.IdxFkLanguageId) {
+export function useIdxFkLanguageId(parameters: Public.Types.IdxFkLanguageId , options?: Public.Tables.Film.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxFkLanguageId, Partial<Public.Types.Film>,  Public.Types.Film>(
+return useEmbraceSQLRows<Public.Types.IdxFkLanguageId, Partial<Public.Types.Film>,  Public.Types.Film , Public.Tables.Film.Options>(
                {
                  readOperation: client.Public.Tables.Film.IdxFkLanguageId.read.bind(client),
                  parameters,
@@ -33497,9 +33527,9 @@ return useEmbraceSQLRows<Public.Types.IdxFkLanguageId, Partial<Public.Types.Film
                }
              )
 }
-export function useIdxTitle(parameters: Public.Types.IdxTitle) {
+export function useIdxTitle(parameters: Public.Types.IdxTitle , options?: Public.Tables.Film.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxTitle, Partial<Public.Types.Film>,  Public.Types.Film>(
+return useEmbraceSQLRows<Public.Types.IdxTitle, Partial<Public.Types.Film>,  Public.Types.Film , Public.Tables.Film.Options>(
                {
                  readOperation: client.Public.Tables.Film.IdxTitle.read.bind(client),
                  parameters,
