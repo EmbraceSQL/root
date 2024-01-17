@@ -28466,6 +28466,7 @@ return useEmbraceSQLRow<Public.Types.ChecklistPkey, Partial<Public.Types.Checkli
                {
                  readOperation: client.Public.Tables.Checklist.ChecklistPkey.read.bind(client),
                  parameters,
+                 
                  upsertOperation: client.Public.Tables.Checklist.create.bind(client),
                  deleteOperation: client.Public.Tables.Checklist.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Checklist.primaryKeyFrom,
@@ -28529,6 +28530,7 @@ return useEmbraceSQLRow<Public.Types.ChecklistItemPkey, Partial<Public.Types.Che
                {
                  readOperation: client.Public.Tables.ChecklistItem.ChecklistItemPkey.read.bind(client),
                  parameters,
+                 
                  upsertOperation: client.Public.Tables.ChecklistItem.create.bind(client),
                  deleteOperation: client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
@@ -28543,6 +28545,7 @@ return useEmbraceSQLRows<Public.Types.ChecklistItemParent, Partial<Public.Types.
                {
                  readOperation: client.Public.Tables.ChecklistItem.ChecklistItemParent.read.bind(client),
                  parameters,
+                 options,
                  upsertOperation: client.Public.Tables.ChecklistItem.create.bind(client),
                  deleteOperation: client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,

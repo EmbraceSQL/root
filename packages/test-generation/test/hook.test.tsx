@@ -168,6 +168,63 @@ describe("EmbraceSQL Hooks can", () => {
       expect(result.current?.rows?.length).toBeGreaterThan(100),
     );
   });
+  it("read all rows with options", async () => {
+    const wrapper = ({ children }: WithChildren) => (
+      <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
+    );
+    const { result } = renderHook(
+      () =>
+        Public.Tables.Actor.useRows({
+          // showing the first page
+          offsetNumberOfRows: 0,
+          limitNumberOfRows: 10,
+          // multi-sort
+          sort: [
+            Public.Tables.Actor.SortOptions.lastNameAscending,
+            Public.Tables.Actor.SortOptions.firstNameAscending,
+          ],
+        }),
+      {
+        wrapper,
+      },
+    );
+    await waitFor(() => expect(result.current?.loading).toBe(false));
+    await waitFor(() => expect(result.current?.rows?.length).toBe(10));
+    expect(
+      result.current.rows[0].lastName.localeCompare(
+        result.current.rows[9].lastName,
+      ),
+    ).toBe(-1);
+  });
+  it("read rows by index with options", async () => {
+    const wrapper = ({ children }: WithChildren) => (
+      <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
+    );
+    const { result } = renderHook(
+      () =>
+        Public.Tables.Actor.useIdxActorLastName(
+          {
+            lastName: "Akroyd",
+          },
+          {
+            // showing the first page
+            limitNumberOfRows: 2,
+            // multi-sort
+            sort: [Public.Tables.Actor.SortOptions.firstNameAscending],
+          },
+        ),
+      {
+        wrapper,
+      },
+    );
+    await waitFor(() => expect(result.current?.loading).toBe(false));
+    await waitFor(() => expect(result.current?.rows?.length).toBe(2));
+    expect(
+      result.current.rows[0].firstName.localeCompare(
+        result.current.rows[1].firstName,
+      ),
+    ).toBe(-1);
+  });
   it("add a row to read rows", async () => {
     const wrapper = ({ children }: WithChildren) => (
       <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>

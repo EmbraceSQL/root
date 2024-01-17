@@ -34848,6 +34848,7 @@ return useEmbraceSQLRow<Public.Types.FilmActorPkey, Partial<Public.Types.FilmAct
                {
                  readOperation: client.Public.Tables.FilmActor.FilmActorPkey.read.bind(client),
                  parameters,
+                 
                  upsertOperation: client.Public.Tables.FilmActor.create.bind(client),
                  deleteOperation: client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
@@ -34862,6 +34863,7 @@ return useEmbraceSQLRows<Public.Types.IdxFkFilmId, Partial<Public.Types.FilmActo
                {
                  readOperation: client.Public.Tables.FilmActor.IdxFkFilmId.read.bind(client),
                  parameters,
+                 options,
                  upsertOperation: client.Public.Tables.FilmActor.create.bind(client),
                  deleteOperation: client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
@@ -34931,6 +34933,7 @@ return useEmbraceSQLRow<Public.Types.AddressPkey, Partial<Public.Types.Address>,
                {
                  readOperation: client.Public.Tables.Address.AddressPkey.read.bind(client),
                  parameters,
+                 
                  upsertOperation: client.Public.Tables.Address.create.bind(client),
                  deleteOperation: client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
@@ -34945,6 +34948,7 @@ return useEmbraceSQLRows<Public.Types.IdxFkCityId, Partial<Public.Types.Address>
                {
                  readOperation: client.Public.Tables.Address.IdxFkCityId.read.bind(client),
                  parameters,
+                 options,
                  upsertOperation: client.Public.Tables.Address.create.bind(client),
                  deleteOperation: client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
@@ -35006,6 +35010,7 @@ return useEmbraceSQLRow<Public.Types.CityPkey, Partial<Public.Types.City>,  Publ
                {
                  readOperation: client.Public.Tables.City.CityPkey.read.bind(client),
                  parameters,
+                 
                  upsertOperation: client.Public.Tables.City.create.bind(client),
                  deleteOperation: client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
@@ -35020,6 +35025,7 @@ return useEmbraceSQLRows<Public.Types.IdxFkCountryId, Partial<Public.Types.City>
                {
                  readOperation: client.Public.Tables.City.IdxFkCountryId.read.bind(client),
                  parameters,
+                 options,
                  upsertOperation: client.Public.Tables.City.create.bind(client),
                  deleteOperation: client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
@@ -35093,6 +35099,7 @@ return useEmbraceSQLRow<Public.Types.CustomerPkey, Partial<Public.Types.Customer
                {
                  readOperation: client.Public.Tables.Customer.CustomerPkey.read.bind(client),
                  parameters,
+                 
                  upsertOperation: client.Public.Tables.Customer.create.bind(client),
                  deleteOperation: client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
@@ -35107,6 +35114,7 @@ return useEmbraceSQLRows<Public.Types.IdxFkAddressId, Partial<Public.Types.Custo
                {
                  readOperation: client.Public.Tables.Customer.IdxFkAddressId.read.bind(client),
                  parameters,
+                 options,
                  upsertOperation: client.Public.Tables.Customer.create.bind(client),
                  deleteOperation: client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
@@ -35121,6 +35129,7 @@ return useEmbraceSQLRows<Public.Types.IdxFkStoreId, Partial<Public.Types.Custome
                {
                  readOperation: client.Public.Tables.Customer.IdxFkStoreId.read.bind(client),
                  parameters,
+                 options,
                  upsertOperation: client.Public.Tables.Customer.create.bind(client),
                  deleteOperation: client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
@@ -35135,6 +35144,7 @@ return useEmbraceSQLRows<Public.Types.IdxLastName, Partial<Public.Types.Customer
                {
                  readOperation: client.Public.Tables.Customer.IdxLastName.read.bind(client),
                  parameters,
+                 options,
                  upsertOperation: client.Public.Tables.Customer.create.bind(client),
                  deleteOperation: client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
@@ -35196,6 +35206,7 @@ return useEmbraceSQLRow<Public.Types.ActorPkey, Partial<Public.Types.Actor>,  Pu
                {
                  readOperation: client.Public.Tables.Actor.ActorPkey.read.bind(client),
                  parameters,
+                 
                  upsertOperation: client.Public.Tables.Actor.create.bind(client),
                  deleteOperation: client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
@@ -35210,6 +35221,7 @@ return useEmbraceSQLRows<Public.Types.IdxActorLastName, Partial<Public.Types.Act
                {
                  readOperation: client.Public.Tables.Actor.IdxActorLastName.read.bind(client),
                  parameters,
+                 options,
                  upsertOperation: client.Public.Tables.Actor.create.bind(client),
                  deleteOperation: client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
@@ -35269,6 +35281,7 @@ return useEmbraceSQLRow<Public.Types.FilmCategoryPkey, Partial<Public.Types.Film
                {
                  readOperation: client.Public.Tables.FilmCategory.FilmCategoryPkey.read.bind(client),
                  parameters,
+                 
                  upsertOperation: client.Public.Tables.FilmCategory.create.bind(client),
                  deleteOperation: client.Public.Tables.FilmCategory.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.FilmCategory.primaryKeyFrom,
@@ -35330,6 +35343,7 @@ return useEmbraceSQLRow<Public.Types.InventoryPkey, Partial<Public.Types.Invento
                {
                  readOperation: client.Public.Tables.Inventory.InventoryPkey.read.bind(client),
                  parameters,
+                 
                  upsertOperation: client.Public.Tables.Inventory.create.bind(client),
                  deleteOperation: client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
@@ -35344,6 +35358,7 @@ return useEmbraceSQLRows<Public.Types.IdxStoreIdFilmId, Partial<Public.Types.Inv
                {
                  readOperation: client.Public.Tables.Inventory.IdxStoreIdFilmId.read.bind(client),
                  parameters,
+                 options,
                  upsertOperation: client.Public.Tables.Inventory.create.bind(client),
                  deleteOperation: client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
@@ -35403,6 +35418,7 @@ return useEmbraceSQLRow<Public.Types.CategoryPkey, Partial<Public.Types.Category
                {
                  readOperation: client.Public.Tables.Category.CategoryPkey.read.bind(client),
                  parameters,
+                 
                  upsertOperation: client.Public.Tables.Category.create.bind(client),
                  deleteOperation: client.Public.Tables.Category.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Category.primaryKeyFrom,
@@ -35462,6 +35478,7 @@ return useEmbraceSQLRow<Public.Types.CountryPkey, Partial<Public.Types.Country>,
                {
                  readOperation: client.Public.Tables.Country.CountryPkey.read.bind(client),
                  parameters,
+                 
                  upsertOperation: client.Public.Tables.Country.create.bind(client),
                  deleteOperation: client.Public.Tables.Country.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Country.primaryKeyFrom,
@@ -35521,6 +35538,7 @@ return useEmbraceSQLRow<Public.Types.LanguagePkey, Partial<Public.Types.Language
                {
                  readOperation: client.Public.Tables.Language.LanguagePkey.read.bind(client),
                  parameters,
+                 
                  upsertOperation: client.Public.Tables.Language.create.bind(client),
                  deleteOperation: client.Public.Tables.Language.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Language.primaryKeyFrom,
@@ -35588,6 +35606,7 @@ return useEmbraceSQLRow<Public.Types.RentalPkey, Partial<Public.Types.Rental>,  
                {
                  readOperation: client.Public.Tables.Rental.RentalPkey.read.bind(client),
                  parameters,
+                 
                  upsertOperation: client.Public.Tables.Rental.create.bind(client),
                  deleteOperation: client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
@@ -35602,6 +35621,7 @@ return useEmbraceSQLRows<Public.Types.IdxFkInventoryId, Partial<Public.Types.Ren
                {
                  readOperation: client.Public.Tables.Rental.IdxFkInventoryId.read.bind(client),
                  parameters,
+                 options,
                  upsertOperation: client.Public.Tables.Rental.create.bind(client),
                  deleteOperation: client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
@@ -35616,6 +35636,7 @@ return useEmbraceSQLRow<Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId
                {
                  readOperation: client.Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.read.bind(client),
                  parameters,
+                 
                  upsertOperation: client.Public.Tables.Rental.create.bind(client),
                  deleteOperation: client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
@@ -35691,6 +35712,7 @@ return useEmbraceSQLRow<Public.Types.StaffPkey, Partial<Public.Types.Staff>,  Pu
                {
                  readOperation: client.Public.Tables.Staff.StaffPkey.read.bind(client),
                  parameters,
+                 
                  upsertOperation: client.Public.Tables.Staff.create.bind(client),
                  deleteOperation: client.Public.Tables.Staff.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Staff.primaryKeyFrom,
@@ -35752,6 +35774,7 @@ return useEmbraceSQLRow<Public.Types.StorePkey, Partial<Public.Types.Store>,  Pu
                {
                  readOperation: client.Public.Tables.Store.StorePkey.read.bind(client),
                  parameters,
+                 
                  upsertOperation: client.Public.Tables.Store.create.bind(client),
                  deleteOperation: client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
@@ -35766,6 +35789,7 @@ return useEmbraceSQLRow<Public.Types.IdxUnqManagerStaffId, Partial<Public.Types.
                {
                  readOperation: client.Public.Tables.Store.IdxUnqManagerStaffId.read.bind(client),
                  parameters,
+                 
                  upsertOperation: client.Public.Tables.Store.create.bind(client),
                  deleteOperation: client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
@@ -35831,6 +35855,7 @@ return useEmbraceSQLRow<Public.Types.PaymentPkey, Partial<Public.Types.Payment>,
                {
                  readOperation: client.Public.Tables.Payment.PaymentPkey.read.bind(client),
                  parameters,
+                 
                  upsertOperation: client.Public.Tables.Payment.create.bind(client),
                  deleteOperation: client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
@@ -35845,6 +35870,7 @@ return useEmbraceSQLRows<Public.Types.IdxFkCustomerId, Partial<Public.Types.Paym
                {
                  readOperation: client.Public.Tables.Payment.IdxFkCustomerId.read.bind(client),
                  parameters,
+                 options,
                  upsertOperation: client.Public.Tables.Payment.create.bind(client),
                  deleteOperation: client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
@@ -35859,6 +35885,7 @@ return useEmbraceSQLRows<Public.Types.IdxFkRentalId, Partial<Public.Types.Paymen
                {
                  readOperation: client.Public.Tables.Payment.IdxFkRentalId.read.bind(client),
                  parameters,
+                 options,
                  upsertOperation: client.Public.Tables.Payment.create.bind(client),
                  deleteOperation: client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
@@ -35873,6 +35900,7 @@ return useEmbraceSQLRows<Public.Types.IdxFkStaffId, Partial<Public.Types.Payment
                {
                  readOperation: client.Public.Tables.Payment.IdxFkStaffId.read.bind(client),
                  parameters,
+                 options,
                  upsertOperation: client.Public.Tables.Payment.create.bind(client),
                  deleteOperation: client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
@@ -35952,6 +35980,7 @@ return useEmbraceSQLRow<Public.Types.FilmPkey, Partial<Public.Types.Film>,  Publ
                {
                  readOperation: client.Public.Tables.Film.FilmPkey.read.bind(client),
                  parameters,
+                 
                  upsertOperation: client.Public.Tables.Film.create.bind(client),
                  deleteOperation: client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
@@ -35966,6 +35995,7 @@ return useEmbraceSQLRows<Public.Types.FilmFulltextIdx, Partial<Public.Types.Film
                {
                  readOperation: client.Public.Tables.Film.FilmFulltextIdx.read.bind(client),
                  parameters,
+                 options,
                  upsertOperation: client.Public.Tables.Film.create.bind(client),
                  deleteOperation: client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
@@ -35980,6 +36010,7 @@ return useEmbraceSQLRows<Public.Types.IdxFkLanguageId, Partial<Public.Types.Film
                {
                  readOperation: client.Public.Tables.Film.IdxFkLanguageId.read.bind(client),
                  parameters,
+                 options,
                  upsertOperation: client.Public.Tables.Film.create.bind(client),
                  deleteOperation: client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
@@ -35994,6 +36025,7 @@ return useEmbraceSQLRows<Public.Types.IdxTitle, Partial<Public.Types.Film>,  Pub
                {
                  readOperation: client.Public.Tables.Film.IdxTitle.read.bind(client),
                  parameters,
+                 options,
                  upsertOperation: client.Public.Tables.Film.create.bind(client),
                  deleteOperation: client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
                  primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
