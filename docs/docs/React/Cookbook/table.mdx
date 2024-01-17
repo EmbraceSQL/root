@@ -1,0 +1,33 @@
+import SQLScript from "!!raw-loader!../../../../var/data/dvdrental/sql/movie_listing.sql";
+import ReactSource from "!!raw-loader!../../../../samples/next/src/app/table/page.tsx";
+import CodeBlock from "@theme/CodeBlock";
+import GenerateSource from "!!raw-loader!../../../../samples/next/bin/generate";
+
+# Database Table
+
+Sometimes you just want all the rows, or pages of the rows. EmbraceSQL generates
+a `useRows` hook for ever table.
+
+
+## Requirements
+
+Make sure you are read as specified in the [Cookbook](./).
+
+## Steps
+
+### Generate Code
+
+Now that there is a SQL Script - regenerate from the database. If you are already
+running NextJS, it'll hot reload.
+
+<CodeBlock language="shell" >
+  {GenerateSource}
+</CodeBlock>
+
+### Code React
+
+Now use a table hook. Note the options to paginate and sort.
+
+<CodeBlock language="tsx" title="src/app/table/page.tsx" >
+  {ReactSource}
+</CodeBlock>

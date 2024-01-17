@@ -9,6 +9,7 @@ import {
   AbstractTypeNode,
   ColumnNode,
   NamespaceVisitor,
+  TableNode,
   VALUES,
   cleanIdentifierForTypescript,
 } from "@embracesql/shared";
@@ -16,7 +17,8 @@ import { GenerationContext as GC } from "@embracesql/shared";
 import { pascalCase } from "change-case";
 
 /**
- *
+ * All available columns -- generate the sort option permumtations
+ * as an enum.
  */
 function sortOptions(columns: ColumnNode[]) {
   return [
@@ -29,6 +31,44 @@ function sortOptions(columns: ColumnNode[]) {
       .join("\n")}`,
     `}`,
   ].join("\n");
+}
+
+/**
+ * All available columns -- generate column metadata.
+ */
+async function columnMetadata(context: GC, table: TableNode) {
+  return await table.visit({
+    ...context,
+    handlers: {
+      [ASTKind.Table]: {
+        before: async () => `export const Columns = {`,
+        after: async (_, node) => {
+          return [
+            `}`, // close columns
+            // convenience iterable column names
+            `export const ColumnNames = [${node.allColumns
+              .map((c) => `"${c.typescriptName}"`)
+              .join(",")}] as const;`,
+            `export const FieldNames = [${node.allColumns
+              .map((c) => `"${c.typescriptPropertyName}"`)
+              .join(",")}] as const;`,
+            `type FieldNamesType = typeof FieldNames[number];`,
+          ].join("\n");
+        },
+      },
+      [ASTKind.Column]: {
+        before: async (_, node) => {
+          // each column worth of metadata including a type constant
+          return [
+            `${node.typescriptName}: {`,
+            ` typeName: "${node.type.typescriptNamespacedName}",`,
+            ` fieldName: "${node.typescriptPropertyName}" as FieldNamesType,`,
+            `},`,
+          ].join("\n");
+        },
+      },
+    },
+  });
 }
 
 /**
@@ -55,7 +95,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
         /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
         /* @typescript-eslint/no-redundant-type-constituents */
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
-        import type { PartiallyOptional, ReadOptions, Sort } from "@embracesql/shared";
+        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
 
     `,
   ];
@@ -109,13 +149,9 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
             return [
               await NamespaceVisitor.before(context, node),
               // empty placeholder row used in UI adding
-              `export function emptyRow() {`,
+              `export function emptyRow() : PossiblyEmpty<${node.type.typescriptNamespacedName}> {`,
               ` return ${emptyTypescriptRow(context, node.type)};`,
               `}`,
-            ].join("\n");
-          },
-          after: async (context, node) => {
-            return [
               // exhaustive -- if there is no primary key, say so explicitly
               node.primaryKey ? "" : `export type PrimaryKey = never;`,
               // optional columns -- won't always need to pass these
@@ -136,9 +172,11 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
               `export type Options = ReadOptions & {`,
               ` sort?: SortOptions[],`,
               `};`,
-              await NamespaceVisitor.after(context, node),
+              // a convenient metadata constant for all columns
+              await columnMetadata(context, node),
             ].join("\n");
           },
+          after: NamespaceVisitor.after,
         },
         [ASTKind.Index]: {
           before: async (_, node) =>

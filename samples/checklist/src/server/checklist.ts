@@ -13,7 +13,7 @@
         /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
         /* @typescript-eslint/no-redundant-type-constituents */
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
-        import type { PartiallyOptional, ReadOptions, Sort } from "@embracesql/shared";
+        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
 
     
 export namespace PgCatalog {
@@ -3521,10 +3521,9 @@ export namespace Procedures {
 }
 export namespace Tables {
 export namespace PgStatistic {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgStatistic> {
  return { starelid: undefined,staattnum: undefined,stainherit: undefined,stanullfrac: undefined,stawidth: undefined,stadistinct: undefined,stakind1: undefined,stakind2: undefined,stakind3: undefined,stakind4: undefined,stakind5: undefined,staop1: undefined,staop2: undefined,staop3: undefined,staop4: undefined,staop5: undefined,stacoll1: undefined,stacoll2: undefined,stacoll3: undefined,stacoll4: undefined,stacoll5: undefined,stanumbers1: undefined,stanumbers2: undefined,stanumbers3: undefined,stanumbers4: undefined,stanumbers5: undefined,stavalues1: undefined,stavalues2: undefined,stavalues3: undefined,stavalues4: undefined,stavalues5: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgStatisticRelidAttInhIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgStatistic,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgStatistic, Optional & PrimaryKey>
@@ -3595,12 +3594,141 @@ stavalues5Descending = "stavalues5 DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Starelid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "starelid" as FieldNamesType,
+},
+Staattnum: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "staattnum" as FieldNamesType,
+},
+Stainherit: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "stainherit" as FieldNamesType,
+},
+Stanullfrac: {
+ typeName: "PgCatalog.Types.Float4",
+ fieldName: "stanullfrac" as FieldNamesType,
+},
+Stawidth: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "stawidth" as FieldNamesType,
+},
+Stadistinct: {
+ typeName: "PgCatalog.Types.Float4",
+ fieldName: "stadistinct" as FieldNamesType,
+},
+Stakind1: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "stakind1" as FieldNamesType,
+},
+Stakind2: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "stakind2" as FieldNamesType,
+},
+Stakind3: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "stakind3" as FieldNamesType,
+},
+Stakind4: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "stakind4" as FieldNamesType,
+},
+Stakind5: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "stakind5" as FieldNamesType,
+},
+Staop1: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "staop1" as FieldNamesType,
+},
+Staop2: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "staop2" as FieldNamesType,
+},
+Staop3: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "staop3" as FieldNamesType,
+},
+Staop4: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "staop4" as FieldNamesType,
+},
+Staop5: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "staop5" as FieldNamesType,
+},
+Stacoll1: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "stacoll1" as FieldNamesType,
+},
+Stacoll2: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "stacoll2" as FieldNamesType,
+},
+Stacoll3: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "stacoll3" as FieldNamesType,
+},
+Stacoll4: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "stacoll4" as FieldNamesType,
+},
+Stacoll5: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "stacoll5" as FieldNamesType,
+},
+Stanumbers1: {
+ typeName: "PgCatalog.Types.Float4Array",
+ fieldName: "stanumbers1" as FieldNamesType,
+},
+Stanumbers2: {
+ typeName: "PgCatalog.Types.Float4Array",
+ fieldName: "stanumbers2" as FieldNamesType,
+},
+Stanumbers3: {
+ typeName: "PgCatalog.Types.Float4Array",
+ fieldName: "stanumbers3" as FieldNamesType,
+},
+Stanumbers4: {
+ typeName: "PgCatalog.Types.Float4Array",
+ fieldName: "stanumbers4" as FieldNamesType,
+},
+Stanumbers5: {
+ typeName: "PgCatalog.Types.Float4Array",
+ fieldName: "stanumbers5" as FieldNamesType,
+},
+Stavalues1: {
+ typeName: "PgCatalog.Types.Anyarray",
+ fieldName: "stavalues1" as FieldNamesType,
+},
+Stavalues2: {
+ typeName: "PgCatalog.Types.Anyarray",
+ fieldName: "stavalues2" as FieldNamesType,
+},
+Stavalues3: {
+ typeName: "PgCatalog.Types.Anyarray",
+ fieldName: "stavalues3" as FieldNamesType,
+},
+Stavalues4: {
+ typeName: "PgCatalog.Types.Anyarray",
+ fieldName: "stavalues4" as FieldNamesType,
+},
+Stavalues5: {
+ typeName: "PgCatalog.Types.Anyarray",
+ fieldName: "stavalues5" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Starelid","Staattnum","Stainherit","Stanullfrac","Stawidth","Stadistinct","Stakind1","Stakind2","Stakind3","Stakind4","Stakind5","Staop1","Staop2","Staop3","Staop4","Staop5","Stacoll1","Stacoll2","Stacoll3","Stacoll4","Stacoll5","Stanumbers1","Stanumbers2","Stanumbers3","Stanumbers4","Stanumbers5","Stavalues1","Stavalues2","Stavalues3","Stavalues4","Stavalues5"] as const;
+export const FieldNames = ["starelid","staattnum","stainherit","stanullfrac","stawidth","stadistinct","stakind1","stakind2","stakind3","stakind4","stakind5","staop1","staop2","staop3","staop4","staop5","stacoll1","stacoll2","stacoll3","stacoll4","stacoll5","stanumbers1","stanumbers2","stanumbers3","stanumbers4","stanumbers5","stavalues1","stavalues2","stavalues3","stavalues4","stavalues5"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgStatisticRelidAttInhIndex;
 }
 export namespace PgType {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgType> {
  return { oid: undefined,typname: undefined,typnamespace: undefined,typowner: undefined,typlen: undefined,typbyval: undefined,typtype: undefined,typcategory: undefined,typispreferred: undefined,typisdefined: undefined,typdelim: undefined,typrelid: undefined,typsubscript: undefined,typelem: undefined,typarray: undefined,typinput: undefined,typoutput: undefined,typreceive: undefined,typsend: undefined,typmodin: undefined,typmodout: undefined,typanalyze: undefined,typalign: undefined,typstorage: undefined,typnotnull: undefined,typbasetype: undefined,typtypmod: undefined,typndims: undefined,typcollation: undefined,typdefaultbin: undefined,typdefault: undefined,typacl: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgTypeOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgType,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgType, Optional & PrimaryKey>
@@ -3673,12 +3801,145 @@ typaclDescending = "typacl DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Typname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "typname" as FieldNamesType,
+},
+Typnamespace: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "typnamespace" as FieldNamesType,
+},
+Typowner: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "typowner" as FieldNamesType,
+},
+Typlen: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "typlen" as FieldNamesType,
+},
+Typbyval: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "typbyval" as FieldNamesType,
+},
+Typtype: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "typtype" as FieldNamesType,
+},
+Typcategory: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "typcategory" as FieldNamesType,
+},
+Typispreferred: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "typispreferred" as FieldNamesType,
+},
+Typisdefined: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "typisdefined" as FieldNamesType,
+},
+Typdelim: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "typdelim" as FieldNamesType,
+},
+Typrelid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "typrelid" as FieldNamesType,
+},
+Typsubscript: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "typsubscript" as FieldNamesType,
+},
+Typelem: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "typelem" as FieldNamesType,
+},
+Typarray: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "typarray" as FieldNamesType,
+},
+Typinput: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "typinput" as FieldNamesType,
+},
+Typoutput: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "typoutput" as FieldNamesType,
+},
+Typreceive: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "typreceive" as FieldNamesType,
+},
+Typsend: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "typsend" as FieldNamesType,
+},
+Typmodin: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "typmodin" as FieldNamesType,
+},
+Typmodout: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "typmodout" as FieldNamesType,
+},
+Typanalyze: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "typanalyze" as FieldNamesType,
+},
+Typalign: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "typalign" as FieldNamesType,
+},
+Typstorage: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "typstorage" as FieldNamesType,
+},
+Typnotnull: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "typnotnull" as FieldNamesType,
+},
+Typbasetype: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "typbasetype" as FieldNamesType,
+},
+Typtypmod: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "typtypmod" as FieldNamesType,
+},
+Typndims: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "typndims" as FieldNamesType,
+},
+Typcollation: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "typcollation" as FieldNamesType,
+},
+Typdefaultbin: {
+ typeName: "PgCatalog.Types.PgNodeTree",
+ fieldName: "typdefaultbin" as FieldNamesType,
+},
+Typdefault: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "typdefault" as FieldNamesType,
+},
+Typacl: {
+ typeName: "PgCatalog.Types.AclitemArray",
+ fieldName: "typacl" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Typname","Typnamespace","Typowner","Typlen","Typbyval","Typtype","Typcategory","Typispreferred","Typisdefined","Typdelim","Typrelid","Typsubscript","Typelem","Typarray","Typinput","Typoutput","Typreceive","Typsend","Typmodin","Typmodout","Typanalyze","Typalign","Typstorage","Typnotnull","Typbasetype","Typtypmod","Typndims","Typcollation","Typdefaultbin","Typdefault","Typacl"] as const;
+export const FieldNames = ["oid","typname","typnamespace","typowner","typlen","typbyval","typtype","typcategory","typispreferred","typisdefined","typdelim","typrelid","typsubscript","typelem","typarray","typinput","typoutput","typreceive","typsend","typmodin","typmodout","typanalyze","typalign","typstorage","typnotnull","typbasetype","typtypmod","typndims","typcollation","typdefaultbin","typdefault","typacl"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgTypeOidIndex;
 }
 export namespace PgForeignTable {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgForeignTable> {
  return { ftrelid: undefined,ftserver: undefined,ftoptions: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgForeignTableRelidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgForeignTable,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgForeignTable, Optional & PrimaryKey>
@@ -3693,12 +3954,29 @@ ftoptionsDescending = "ftoptions DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Ftrelid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "ftrelid" as FieldNamesType,
+},
+Ftserver: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "ftserver" as FieldNamesType,
+},
+Ftoptions: {
+ typeName: "PgCatalog.Types.TextArray",
+ fieldName: "ftoptions" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Ftrelid","Ftserver","Ftoptions"] as const;
+export const FieldNames = ["ftrelid","ftserver","ftoptions"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgForeignTableRelidIndex;
 }
 export namespace PgAuthid {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAuthid> {
  return { oid: undefined,rolname: undefined,rolsuper: undefined,rolinherit: undefined,rolcreaterole: undefined,rolcreatedb: undefined,rolcanlogin: undefined,rolreplication: undefined,rolbypassrls: undefined,rolconnlimit: undefined,rolpassword: undefined,rolvaliduntil: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgAuthidOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAuthid,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAuthid, Optional & PrimaryKey>
@@ -3731,12 +4009,65 @@ rolvaliduntilDescending = "rolvaliduntil DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Rolname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "rolname" as FieldNamesType,
+},
+Rolsuper: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "rolsuper" as FieldNamesType,
+},
+Rolinherit: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "rolinherit" as FieldNamesType,
+},
+Rolcreaterole: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "rolcreaterole" as FieldNamesType,
+},
+Rolcreatedb: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "rolcreatedb" as FieldNamesType,
+},
+Rolcanlogin: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "rolcanlogin" as FieldNamesType,
+},
+Rolreplication: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "rolreplication" as FieldNamesType,
+},
+Rolbypassrls: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "rolbypassrls" as FieldNamesType,
+},
+Rolconnlimit: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "rolconnlimit" as FieldNamesType,
+},
+Rolpassword: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "rolpassword" as FieldNamesType,
+},
+Rolvaliduntil: {
+ typeName: "PgCatalog.Types.Timestamptz",
+ fieldName: "rolvaliduntil" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Rolname","Rolsuper","Rolinherit","Rolcreaterole","Rolcreatedb","Rolcanlogin","Rolreplication","Rolbypassrls","Rolconnlimit","Rolpassword","Rolvaliduntil"] as const;
+export const FieldNames = ["oid","rolname","rolsuper","rolinherit","rolcreaterole","rolcreatedb","rolcanlogin","rolreplication","rolbypassrls","rolconnlimit","rolpassword","rolvaliduntil"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgAuthidOidIndex;
 }
 export namespace PgStatisticExtData {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgStatisticExtData> {
  return { stxoid: undefined,stxdinherit: undefined,stxdndistinct: undefined,stxddependencies: undefined,stxdmcv: undefined,stxdexpr: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgStatisticExtDataStxoidInhIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgStatisticExtData,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgStatisticExtData, Optional & PrimaryKey>
@@ -3757,12 +4088,41 @@ stxdexprDescending = "stxdexpr DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Stxoid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "stxoid" as FieldNamesType,
+},
+Stxdinherit: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "stxdinherit" as FieldNamesType,
+},
+Stxdndistinct: {
+ typeName: "PgCatalog.Types.PgNdistinct",
+ fieldName: "stxdndistinct" as FieldNamesType,
+},
+Stxddependencies: {
+ typeName: "PgCatalog.Types.PgDependencies",
+ fieldName: "stxddependencies" as FieldNamesType,
+},
+Stxdmcv: {
+ typeName: "PgCatalog.Types.PgMcvList",
+ fieldName: "stxdmcv" as FieldNamesType,
+},
+Stxdexpr: {
+ typeName: "PgCatalog.Types.PgStatisticArray",
+ fieldName: "stxdexpr" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Stxoid","Stxdinherit","Stxdndistinct","Stxddependencies","Stxdmcv","Stxdexpr"] as const;
+export const FieldNames = ["stxoid","stxdinherit","stxdndistinct","stxddependencies","stxdmcv","stxdexpr"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgStatisticExtDataStxoidInhIndex;
 }
 export namespace PgUserMapping {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgUserMapping> {
  return { oid: undefined,umuser: undefined,umserver: undefined,umoptions: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgUserMappingOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgUserMapping,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgUserMapping, Optional & PrimaryKey>
@@ -3779,12 +4139,33 @@ umoptionsDescending = "umoptions DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Umuser: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "umuser" as FieldNamesType,
+},
+Umserver: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "umserver" as FieldNamesType,
+},
+Umoptions: {
+ typeName: "PgCatalog.Types.TextArray",
+ fieldName: "umoptions" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Umuser","Umserver","Umoptions"] as const;
+export const FieldNames = ["oid","umuser","umserver","umoptions"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgUserMappingOidIndex;
 }
 export namespace PgSubscription {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgSubscription> {
  return { oid: undefined,subdbid: undefined,subskiplsn: undefined,subname: undefined,subowner: undefined,subenabled: undefined,subbinary: undefined,substream: undefined,subtwophasestate: undefined,subdisableonerr: undefined,subpasswordrequired: undefined,subrunasowner: undefined,subconninfo: undefined,subslotname: undefined,subsynccommit: undefined,subpublications: undefined,suborigin: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgSubscriptionOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgSubscription,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgSubscription, Optional & PrimaryKey>
@@ -3827,12 +4208,85 @@ suboriginDescending = "suborigin DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Subdbid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "subdbid" as FieldNamesType,
+},
+Subskiplsn: {
+ typeName: "PgCatalog.Types.PgLsn",
+ fieldName: "subskiplsn" as FieldNamesType,
+},
+Subname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "subname" as FieldNamesType,
+},
+Subowner: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "subowner" as FieldNamesType,
+},
+Subenabled: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "subenabled" as FieldNamesType,
+},
+Subbinary: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "subbinary" as FieldNamesType,
+},
+Substream: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "substream" as FieldNamesType,
+},
+Subtwophasestate: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "subtwophasestate" as FieldNamesType,
+},
+Subdisableonerr: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "subdisableonerr" as FieldNamesType,
+},
+Subpasswordrequired: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "subpasswordrequired" as FieldNamesType,
+},
+Subrunasowner: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "subrunasowner" as FieldNamesType,
+},
+Subconninfo: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "subconninfo" as FieldNamesType,
+},
+Subslotname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "subslotname" as FieldNamesType,
+},
+Subsynccommit: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "subsynccommit" as FieldNamesType,
+},
+Subpublications: {
+ typeName: "PgCatalog.Types.TextArray",
+ fieldName: "subpublications" as FieldNamesType,
+},
+Suborigin: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "suborigin" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Subdbid","Subskiplsn","Subname","Subowner","Subenabled","Subbinary","Substream","Subtwophasestate","Subdisableonerr","Subpasswordrequired","Subrunasowner","Subconninfo","Subslotname","Subsynccommit","Subpublications","Suborigin"] as const;
+export const FieldNames = ["oid","subdbid","subskiplsn","subname","subowner","subenabled","subbinary","substream","subtwophasestate","subdisableonerr","subpasswordrequired","subrunasowner","subconninfo","subslotname","subsynccommit","subpublications","suborigin"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgSubscriptionOidIndex;
 }
 export namespace PgAttribute {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAttribute> {
  return { attrelid: undefined,attname: undefined,atttypid: undefined,attlen: undefined,attnum: undefined,attcacheoff: undefined,atttypmod: undefined,attndims: undefined,attbyval: undefined,attalign: undefined,attstorage: undefined,attcompression: undefined,attnotnull: undefined,atthasdef: undefined,atthasmissing: undefined,attidentity: undefined,attgenerated: undefined,attisdropped: undefined,attislocal: undefined,attinhcount: undefined,attstattarget: undefined,attcollation: undefined,attacl: undefined,attoptions: undefined,attfdwoptions: undefined,attmissingval: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgAttributeRelidAttnumIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAttribute,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAttribute, Optional & PrimaryKey>
@@ -3893,12 +4347,121 @@ attmissingvalDescending = "attmissingval DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Attrelid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "attrelid" as FieldNamesType,
+},
+Attname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "attname" as FieldNamesType,
+},
+Atttypid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "atttypid" as FieldNamesType,
+},
+Attlen: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "attlen" as FieldNamesType,
+},
+Attnum: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "attnum" as FieldNamesType,
+},
+Attcacheoff: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "attcacheoff" as FieldNamesType,
+},
+Atttypmod: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "atttypmod" as FieldNamesType,
+},
+Attndims: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "attndims" as FieldNamesType,
+},
+Attbyval: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "attbyval" as FieldNamesType,
+},
+Attalign: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "attalign" as FieldNamesType,
+},
+Attstorage: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "attstorage" as FieldNamesType,
+},
+Attcompression: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "attcompression" as FieldNamesType,
+},
+Attnotnull: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "attnotnull" as FieldNamesType,
+},
+Atthasdef: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "atthasdef" as FieldNamesType,
+},
+Atthasmissing: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "atthasmissing" as FieldNamesType,
+},
+Attidentity: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "attidentity" as FieldNamesType,
+},
+Attgenerated: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "attgenerated" as FieldNamesType,
+},
+Attisdropped: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "attisdropped" as FieldNamesType,
+},
+Attislocal: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "attislocal" as FieldNamesType,
+},
+Attinhcount: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "attinhcount" as FieldNamesType,
+},
+Attstattarget: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "attstattarget" as FieldNamesType,
+},
+Attcollation: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "attcollation" as FieldNamesType,
+},
+Attacl: {
+ typeName: "PgCatalog.Types.AclitemArray",
+ fieldName: "attacl" as FieldNamesType,
+},
+Attoptions: {
+ typeName: "PgCatalog.Types.TextArray",
+ fieldName: "attoptions" as FieldNamesType,
+},
+Attfdwoptions: {
+ typeName: "PgCatalog.Types.TextArray",
+ fieldName: "attfdwoptions" as FieldNamesType,
+},
+Attmissingval: {
+ typeName: "PgCatalog.Types.Anyarray",
+ fieldName: "attmissingval" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Attrelid","Attname","Atttypid","Attlen","Attnum","Attcacheoff","Atttypmod","Attndims","Attbyval","Attalign","Attstorage","Attcompression","Attnotnull","Atthasdef","Atthasmissing","Attidentity","Attgenerated","Attisdropped","Attislocal","Attinhcount","Attstattarget","Attcollation","Attacl","Attoptions","Attfdwoptions","Attmissingval"] as const;
+export const FieldNames = ["attrelid","attname","atttypid","attlen","attnum","attcacheoff","atttypmod","attndims","attbyval","attalign","attstorage","attcompression","attnotnull","atthasdef","atthasmissing","attidentity","attgenerated","attisdropped","attislocal","attinhcount","attstattarget","attcollation","attacl","attoptions","attfdwoptions","attmissingval"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgAttributeRelidAttnumIndex;
 }
 export namespace PgProc {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgProc> {
  return { oid: undefined,proname: undefined,pronamespace: undefined,proowner: undefined,prolang: undefined,procost: undefined,prorows: undefined,provariadic: undefined,prosupport: undefined,prokind: undefined,prosecdef: undefined,proleakproof: undefined,proisstrict: undefined,proretset: undefined,provolatile: undefined,proparallel: undefined,pronargs: undefined,pronargdefaults: undefined,prorettype: undefined,proargtypes: undefined,proallargtypes: undefined,proargmodes: undefined,proargnames: undefined,proargdefaults: undefined,protrftypes: undefined,prosrc: undefined,probin: undefined,prosqlbody: undefined,proconfig: undefined,proacl: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgProcOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgProc,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgProc, Optional & PrimaryKey>
@@ -3967,12 +4530,137 @@ proaclDescending = "proacl DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Proname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "proname" as FieldNamesType,
+},
+Pronamespace: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "pronamespace" as FieldNamesType,
+},
+Proowner: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "proowner" as FieldNamesType,
+},
+Prolang: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "prolang" as FieldNamesType,
+},
+Procost: {
+ typeName: "PgCatalog.Types.Float4",
+ fieldName: "procost" as FieldNamesType,
+},
+Prorows: {
+ typeName: "PgCatalog.Types.Float4",
+ fieldName: "prorows" as FieldNamesType,
+},
+Provariadic: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "provariadic" as FieldNamesType,
+},
+Prosupport: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "prosupport" as FieldNamesType,
+},
+Prokind: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "prokind" as FieldNamesType,
+},
+Prosecdef: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "prosecdef" as FieldNamesType,
+},
+Proleakproof: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "proleakproof" as FieldNamesType,
+},
+Proisstrict: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "proisstrict" as FieldNamesType,
+},
+Proretset: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "proretset" as FieldNamesType,
+},
+Provolatile: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "provolatile" as FieldNamesType,
+},
+Proparallel: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "proparallel" as FieldNamesType,
+},
+Pronargs: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "pronargs" as FieldNamesType,
+},
+Pronargdefaults: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "pronargdefaults" as FieldNamesType,
+},
+Prorettype: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "prorettype" as FieldNamesType,
+},
+Proargtypes: {
+ typeName: "PgCatalog.Types.Oidvector",
+ fieldName: "proargtypes" as FieldNamesType,
+},
+Proallargtypes: {
+ typeName: "PgCatalog.Types.OidArray",
+ fieldName: "proallargtypes" as FieldNamesType,
+},
+Proargmodes: {
+ typeName: "PgCatalog.Types.CharArray",
+ fieldName: "proargmodes" as FieldNamesType,
+},
+Proargnames: {
+ typeName: "PgCatalog.Types.TextArray",
+ fieldName: "proargnames" as FieldNamesType,
+},
+Proargdefaults: {
+ typeName: "PgCatalog.Types.PgNodeTree",
+ fieldName: "proargdefaults" as FieldNamesType,
+},
+Protrftypes: {
+ typeName: "PgCatalog.Types.OidArray",
+ fieldName: "protrftypes" as FieldNamesType,
+},
+Prosrc: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "prosrc" as FieldNamesType,
+},
+Probin: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "probin" as FieldNamesType,
+},
+Prosqlbody: {
+ typeName: "PgCatalog.Types.PgNodeTree",
+ fieldName: "prosqlbody" as FieldNamesType,
+},
+Proconfig: {
+ typeName: "PgCatalog.Types.TextArray",
+ fieldName: "proconfig" as FieldNamesType,
+},
+Proacl: {
+ typeName: "PgCatalog.Types.AclitemArray",
+ fieldName: "proacl" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Proname","Pronamespace","Proowner","Prolang","Procost","Prorows","Provariadic","Prosupport","Prokind","Prosecdef","Proleakproof","Proisstrict","Proretset","Provolatile","Proparallel","Pronargs","Pronargdefaults","Prorettype","Proargtypes","Proallargtypes","Proargmodes","Proargnames","Proargdefaults","Protrftypes","Prosrc","Probin","Prosqlbody","Proconfig","Proacl"] as const;
+export const FieldNames = ["oid","proname","pronamespace","proowner","prolang","procost","prorows","provariadic","prosupport","prokind","prosecdef","proleakproof","proisstrict","proretset","provolatile","proparallel","pronargs","pronargdefaults","prorettype","proargtypes","proallargtypes","proargmodes","proargnames","proargdefaults","protrftypes","prosrc","probin","prosqlbody","proconfig","proacl"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgProcOidIndex;
 }
 export namespace PgClass {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgClass> {
  return { oid: undefined,relname: undefined,relnamespace: undefined,reltype: undefined,reloftype: undefined,relowner: undefined,relam: undefined,relfilenode: undefined,reltablespace: undefined,relpages: undefined,reltuples: undefined,relallvisible: undefined,reltoastrelid: undefined,relhasindex: undefined,relisshared: undefined,relpersistence: undefined,relkind: undefined,relnatts: undefined,relchecks: undefined,relhasrules: undefined,relhastriggers: undefined,relhassubclass: undefined,relrowsecurity: undefined,relforcerowsecurity: undefined,relispopulated: undefined,relreplident: undefined,relispartition: undefined,relrewrite: undefined,relfrozenxid: undefined,relminmxid: undefined,relacl: undefined,reloptions: undefined,relpartbound: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgClassOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgClass,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgClass, Optional & PrimaryKey>
@@ -4047,12 +4735,149 @@ relpartboundDescending = "relpartbound DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Relname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "relname" as FieldNamesType,
+},
+Relnamespace: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "relnamespace" as FieldNamesType,
+},
+Reltype: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "reltype" as FieldNamesType,
+},
+Reloftype: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "reloftype" as FieldNamesType,
+},
+Relowner: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "relowner" as FieldNamesType,
+},
+Relam: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "relam" as FieldNamesType,
+},
+Relfilenode: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "relfilenode" as FieldNamesType,
+},
+Reltablespace: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "reltablespace" as FieldNamesType,
+},
+Relpages: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "relpages" as FieldNamesType,
+},
+Reltuples: {
+ typeName: "PgCatalog.Types.Float4",
+ fieldName: "reltuples" as FieldNamesType,
+},
+Relallvisible: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "relallvisible" as FieldNamesType,
+},
+Reltoastrelid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "reltoastrelid" as FieldNamesType,
+},
+Relhasindex: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "relhasindex" as FieldNamesType,
+},
+Relisshared: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "relisshared" as FieldNamesType,
+},
+Relpersistence: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "relpersistence" as FieldNamesType,
+},
+Relkind: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "relkind" as FieldNamesType,
+},
+Relnatts: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "relnatts" as FieldNamesType,
+},
+Relchecks: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "relchecks" as FieldNamesType,
+},
+Relhasrules: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "relhasrules" as FieldNamesType,
+},
+Relhastriggers: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "relhastriggers" as FieldNamesType,
+},
+Relhassubclass: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "relhassubclass" as FieldNamesType,
+},
+Relrowsecurity: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "relrowsecurity" as FieldNamesType,
+},
+Relforcerowsecurity: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "relforcerowsecurity" as FieldNamesType,
+},
+Relispopulated: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "relispopulated" as FieldNamesType,
+},
+Relreplident: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "relreplident" as FieldNamesType,
+},
+Relispartition: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "relispartition" as FieldNamesType,
+},
+Relrewrite: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "relrewrite" as FieldNamesType,
+},
+Relfrozenxid: {
+ typeName: "PgCatalog.Types.Xid",
+ fieldName: "relfrozenxid" as FieldNamesType,
+},
+Relminmxid: {
+ typeName: "PgCatalog.Types.Xid",
+ fieldName: "relminmxid" as FieldNamesType,
+},
+Relacl: {
+ typeName: "PgCatalog.Types.AclitemArray",
+ fieldName: "relacl" as FieldNamesType,
+},
+Reloptions: {
+ typeName: "PgCatalog.Types.TextArray",
+ fieldName: "reloptions" as FieldNamesType,
+},
+Relpartbound: {
+ typeName: "PgCatalog.Types.PgNodeTree",
+ fieldName: "relpartbound" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Relname","Relnamespace","Reltype","Reloftype","Relowner","Relam","Relfilenode","Reltablespace","Relpages","Reltuples","Relallvisible","Reltoastrelid","Relhasindex","Relisshared","Relpersistence","Relkind","Relnatts","Relchecks","Relhasrules","Relhastriggers","Relhassubclass","Relrowsecurity","Relforcerowsecurity","Relispopulated","Relreplident","Relispartition","Relrewrite","Relfrozenxid","Relminmxid","Relacl","Reloptions","Relpartbound"] as const;
+export const FieldNames = ["oid","relname","relnamespace","reltype","reloftype","relowner","relam","relfilenode","reltablespace","relpages","reltuples","relallvisible","reltoastrelid","relhasindex","relisshared","relpersistence","relkind","relnatts","relchecks","relhasrules","relhastriggers","relhassubclass","relrowsecurity","relforcerowsecurity","relispopulated","relreplident","relispartition","relrewrite","relfrozenxid","relminmxid","relacl","reloptions","relpartbound"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgClassOidIndex;
 }
 export namespace PgAttrdef {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAttrdef> {
  return { oid: undefined,adrelid: undefined,adnum: undefined,adbin: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgAttrdefOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAttrdef,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAttrdef, Optional & PrimaryKey>
@@ -4069,12 +4894,33 @@ adbinDescending = "adbin DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Adrelid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "adrelid" as FieldNamesType,
+},
+Adnum: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "adnum" as FieldNamesType,
+},
+Adbin: {
+ typeName: "PgCatalog.Types.PgNodeTree",
+ fieldName: "adbin" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Adrelid","Adnum","Adbin"] as const;
+export const FieldNames = ["oid","adrelid","adnum","adbin"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgAttrdefOidIndex;
 }
 export namespace PgConstraint {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgConstraint> {
  return { oid: undefined,conname: undefined,connamespace: undefined,contype: undefined,condeferrable: undefined,condeferred: undefined,convalidated: undefined,conrelid: undefined,contypid: undefined,conindid: undefined,conparentid: undefined,confrelid: undefined,confupdtype: undefined,confdeltype: undefined,confmatchtype: undefined,conislocal: undefined,coninhcount: undefined,connoinherit: undefined,conkey: undefined,confkey: undefined,conpfeqop: undefined,conppeqop: undefined,conffeqop: undefined,confdelsetcols: undefined,conexclop: undefined,conbin: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgConstraintOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgConstraint,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgConstraint, Optional & PrimaryKey>
@@ -4135,12 +4981,121 @@ conbinDescending = "conbin DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Conname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "conname" as FieldNamesType,
+},
+Connamespace: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "connamespace" as FieldNamesType,
+},
+Contype: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "contype" as FieldNamesType,
+},
+Condeferrable: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "condeferrable" as FieldNamesType,
+},
+Condeferred: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "condeferred" as FieldNamesType,
+},
+Convalidated: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "convalidated" as FieldNamesType,
+},
+Conrelid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "conrelid" as FieldNamesType,
+},
+Contypid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "contypid" as FieldNamesType,
+},
+Conindid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "conindid" as FieldNamesType,
+},
+Conparentid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "conparentid" as FieldNamesType,
+},
+Confrelid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "confrelid" as FieldNamesType,
+},
+Confupdtype: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "confupdtype" as FieldNamesType,
+},
+Confdeltype: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "confdeltype" as FieldNamesType,
+},
+Confmatchtype: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "confmatchtype" as FieldNamesType,
+},
+Conislocal: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "conislocal" as FieldNamesType,
+},
+Coninhcount: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "coninhcount" as FieldNamesType,
+},
+Connoinherit: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "connoinherit" as FieldNamesType,
+},
+Conkey: {
+ typeName: "PgCatalog.Types.Int2Array",
+ fieldName: "conkey" as FieldNamesType,
+},
+Confkey: {
+ typeName: "PgCatalog.Types.Int2Array",
+ fieldName: "confkey" as FieldNamesType,
+},
+Conpfeqop: {
+ typeName: "PgCatalog.Types.OidArray",
+ fieldName: "conpfeqop" as FieldNamesType,
+},
+Conppeqop: {
+ typeName: "PgCatalog.Types.OidArray",
+ fieldName: "conppeqop" as FieldNamesType,
+},
+Conffeqop: {
+ typeName: "PgCatalog.Types.OidArray",
+ fieldName: "conffeqop" as FieldNamesType,
+},
+Confdelsetcols: {
+ typeName: "PgCatalog.Types.Int2Array",
+ fieldName: "confdelsetcols" as FieldNamesType,
+},
+Conexclop: {
+ typeName: "PgCatalog.Types.OidArray",
+ fieldName: "conexclop" as FieldNamesType,
+},
+Conbin: {
+ typeName: "PgCatalog.Types.PgNodeTree",
+ fieldName: "conbin" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Conname","Connamespace","Contype","Condeferrable","Condeferred","Convalidated","Conrelid","Contypid","Conindid","Conparentid","Confrelid","Confupdtype","Confdeltype","Confmatchtype","Conislocal","Coninhcount","Connoinherit","Conkey","Confkey","Conpfeqop","Conppeqop","Conffeqop","Confdelsetcols","Conexclop","Conbin"] as const;
+export const FieldNames = ["oid","conname","connamespace","contype","condeferrable","condeferred","convalidated","conrelid","contypid","conindid","conparentid","confrelid","confupdtype","confdeltype","confmatchtype","conislocal","coninhcount","connoinherit","conkey","confkey","conpfeqop","conppeqop","conffeqop","confdelsetcols","conexclop","conbin"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgConstraintOidIndex;
 }
 export namespace PgInherits {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgInherits> {
  return { inhrelid: undefined,inhparent: undefined,inhseqno: undefined,inhdetachpending: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgInheritsRelidSeqnoIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgInherits,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgInherits, Optional & PrimaryKey>
@@ -4157,12 +5112,33 @@ inhdetachpendingDescending = "inhdetachpending DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Inhrelid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "inhrelid" as FieldNamesType,
+},
+Inhparent: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "inhparent" as FieldNamesType,
+},
+Inhseqno: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "inhseqno" as FieldNamesType,
+},
+Inhdetachpending: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "inhdetachpending" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Inhrelid","Inhparent","Inhseqno","Inhdetachpending"] as const;
+export const FieldNames = ["inhrelid","inhparent","inhseqno","inhdetachpending"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgInheritsRelidSeqnoIndex;
 }
 export namespace PgIndex {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgIndex> {
  return { indexrelid: undefined,indrelid: undefined,indnatts: undefined,indnkeyatts: undefined,indisunique: undefined,indnullsnotdistinct: undefined,indisprimary: undefined,indisexclusion: undefined,indimmediate: undefined,indisclustered: undefined,indisvalid: undefined,indcheckxmin: undefined,indisready: undefined,indislive: undefined,indisreplident: undefined,indkey: undefined,indcollation: undefined,indclass: undefined,indoption: undefined,indexprs: undefined,indpred: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgIndexIndexrelidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgIndex,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgIndex, Optional & PrimaryKey>
@@ -4213,12 +5189,101 @@ indpredDescending = "indpred DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Indexrelid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "indexrelid" as FieldNamesType,
+},
+Indrelid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "indrelid" as FieldNamesType,
+},
+Indnatts: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "indnatts" as FieldNamesType,
+},
+Indnkeyatts: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "indnkeyatts" as FieldNamesType,
+},
+Indisunique: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "indisunique" as FieldNamesType,
+},
+Indnullsnotdistinct: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "indnullsnotdistinct" as FieldNamesType,
+},
+Indisprimary: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "indisprimary" as FieldNamesType,
+},
+Indisexclusion: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "indisexclusion" as FieldNamesType,
+},
+Indimmediate: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "indimmediate" as FieldNamesType,
+},
+Indisclustered: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "indisclustered" as FieldNamesType,
+},
+Indisvalid: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "indisvalid" as FieldNamesType,
+},
+Indcheckxmin: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "indcheckxmin" as FieldNamesType,
+},
+Indisready: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "indisready" as FieldNamesType,
+},
+Indislive: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "indislive" as FieldNamesType,
+},
+Indisreplident: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "indisreplident" as FieldNamesType,
+},
+Indkey: {
+ typeName: "PgCatalog.Types.Int2vector",
+ fieldName: "indkey" as FieldNamesType,
+},
+Indcollation: {
+ typeName: "PgCatalog.Types.Oidvector",
+ fieldName: "indcollation" as FieldNamesType,
+},
+Indclass: {
+ typeName: "PgCatalog.Types.Oidvector",
+ fieldName: "indclass" as FieldNamesType,
+},
+Indoption: {
+ typeName: "PgCatalog.Types.Int2vector",
+ fieldName: "indoption" as FieldNamesType,
+},
+Indexprs: {
+ typeName: "PgCatalog.Types.PgNodeTree",
+ fieldName: "indexprs" as FieldNamesType,
+},
+Indpred: {
+ typeName: "PgCatalog.Types.PgNodeTree",
+ fieldName: "indpred" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Indexrelid","Indrelid","Indnatts","Indnkeyatts","Indisunique","Indnullsnotdistinct","Indisprimary","Indisexclusion","Indimmediate","Indisclustered","Indisvalid","Indcheckxmin","Indisready","Indislive","Indisreplident","Indkey","Indcollation","Indclass","Indoption","Indexprs","Indpred"] as const;
+export const FieldNames = ["indexrelid","indrelid","indnatts","indnkeyatts","indisunique","indnullsnotdistinct","indisprimary","indisexclusion","indimmediate","indisclustered","indisvalid","indcheckxmin","indisready","indislive","indisreplident","indkey","indcollation","indclass","indoption","indexprs","indpred"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgIndexIndexrelidIndex;
 }
 export namespace PgOperator {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgOperator> {
  return { oid: undefined,oprname: undefined,oprnamespace: undefined,oprowner: undefined,oprkind: undefined,oprcanmerge: undefined,oprcanhash: undefined,oprleft: undefined,oprright: undefined,oprresult: undefined,oprcom: undefined,oprnegate: undefined,oprcode: undefined,oprrest: undefined,oprjoin: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgOperatorOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgOperator,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgOperator, Optional & PrimaryKey>
@@ -4257,12 +5322,77 @@ oprjoinDescending = "oprjoin DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Oprname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "oprname" as FieldNamesType,
+},
+Oprnamespace: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oprnamespace" as FieldNamesType,
+},
+Oprowner: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oprowner" as FieldNamesType,
+},
+Oprkind: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "oprkind" as FieldNamesType,
+},
+Oprcanmerge: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "oprcanmerge" as FieldNamesType,
+},
+Oprcanhash: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "oprcanhash" as FieldNamesType,
+},
+Oprleft: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oprleft" as FieldNamesType,
+},
+Oprright: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oprright" as FieldNamesType,
+},
+Oprresult: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oprresult" as FieldNamesType,
+},
+Oprcom: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oprcom" as FieldNamesType,
+},
+Oprnegate: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oprnegate" as FieldNamesType,
+},
+Oprcode: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "oprcode" as FieldNamesType,
+},
+Oprrest: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "oprrest" as FieldNamesType,
+},
+Oprjoin: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "oprjoin" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Oprname","Oprnamespace","Oprowner","Oprkind","Oprcanmerge","Oprcanhash","Oprleft","Oprright","Oprresult","Oprcom","Oprnegate","Oprcode","Oprrest","Oprjoin"] as const;
+export const FieldNames = ["oid","oprname","oprnamespace","oprowner","oprkind","oprcanmerge","oprcanhash","oprleft","oprright","oprresult","oprcom","oprnegate","oprcode","oprrest","oprjoin"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgOperatorOidIndex;
 }
 export namespace PgOpfamily {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgOpfamily> {
  return { oid: undefined,opfmethod: undefined,opfname: undefined,opfnamespace: undefined,opfowner: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgOpfamilyOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgOpfamily,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgOpfamily, Optional & PrimaryKey>
@@ -4281,12 +5411,37 @@ opfownerDescending = "opfowner DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Opfmethod: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "opfmethod" as FieldNamesType,
+},
+Opfname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "opfname" as FieldNamesType,
+},
+Opfnamespace: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "opfnamespace" as FieldNamesType,
+},
+Opfowner: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "opfowner" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Opfmethod","Opfname","Opfnamespace","Opfowner"] as const;
+export const FieldNames = ["oid","opfmethod","opfname","opfnamespace","opfowner"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgOpfamilyOidIndex;
 }
 export namespace PgOpclass {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgOpclass> {
  return { oid: undefined,opcmethod: undefined,opcname: undefined,opcnamespace: undefined,opcowner: undefined,opcfamily: undefined,opcintype: undefined,opcdefault: undefined,opckeytype: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgOpclassOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgOpclass,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgOpclass, Optional & PrimaryKey>
@@ -4313,12 +5468,53 @@ opckeytypeDescending = "opckeytype DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Opcmethod: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "opcmethod" as FieldNamesType,
+},
+Opcname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "opcname" as FieldNamesType,
+},
+Opcnamespace: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "opcnamespace" as FieldNamesType,
+},
+Opcowner: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "opcowner" as FieldNamesType,
+},
+Opcfamily: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "opcfamily" as FieldNamesType,
+},
+Opcintype: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "opcintype" as FieldNamesType,
+},
+Opcdefault: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "opcdefault" as FieldNamesType,
+},
+Opckeytype: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "opckeytype" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Opcmethod","Opcname","Opcnamespace","Opcowner","Opcfamily","Opcintype","Opcdefault","Opckeytype"] as const;
+export const FieldNames = ["oid","opcmethod","opcname","opcnamespace","opcowner","opcfamily","opcintype","opcdefault","opckeytype"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgOpclassOidIndex;
 }
 export namespace PgAm {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAm> {
  return { oid: undefined,amname: undefined,amhandler: undefined,amtype: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgAmOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAm,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAm, Optional & PrimaryKey>
@@ -4335,12 +5531,33 @@ amtypeDescending = "amtype DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Amname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "amname" as FieldNamesType,
+},
+Amhandler: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "amhandler" as FieldNamesType,
+},
+Amtype: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "amtype" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Amname","Amhandler","Amtype"] as const;
+export const FieldNames = ["oid","amname","amhandler","amtype"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgAmOidIndex;
 }
 export namespace PgAmop {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAmop> {
  return { oid: undefined,amopfamily: undefined,amoplefttype: undefined,amoprighttype: undefined,amopstrategy: undefined,amoppurpose: undefined,amopopr: undefined,amopmethod: undefined,amopsortfamily: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgAmopOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAmop,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAmop, Optional & PrimaryKey>
@@ -4367,12 +5584,53 @@ amopsortfamilyDescending = "amopsortfamily DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Amopfamily: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "amopfamily" as FieldNamesType,
+},
+Amoplefttype: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "amoplefttype" as FieldNamesType,
+},
+Amoprighttype: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "amoprighttype" as FieldNamesType,
+},
+Amopstrategy: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "amopstrategy" as FieldNamesType,
+},
+Amoppurpose: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "amoppurpose" as FieldNamesType,
+},
+Amopopr: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "amopopr" as FieldNamesType,
+},
+Amopmethod: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "amopmethod" as FieldNamesType,
+},
+Amopsortfamily: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "amopsortfamily" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Amopfamily","Amoplefttype","Amoprighttype","Amopstrategy","Amoppurpose","Amopopr","Amopmethod","Amopsortfamily"] as const;
+export const FieldNames = ["oid","amopfamily","amoplefttype","amoprighttype","amopstrategy","amoppurpose","amopopr","amopmethod","amopsortfamily"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgAmopOidIndex;
 }
 export namespace PgAmproc {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAmproc> {
  return { oid: undefined,amprocfamily: undefined,amproclefttype: undefined,amprocrighttype: undefined,amprocnum: undefined,amproc: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgAmprocOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAmproc,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAmproc, Optional & PrimaryKey>
@@ -4393,12 +5651,41 @@ amprocDescending = "amproc DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Amprocfamily: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "amprocfamily" as FieldNamesType,
+},
+Amproclefttype: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "amproclefttype" as FieldNamesType,
+},
+Amprocrighttype: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "amprocrighttype" as FieldNamesType,
+},
+Amprocnum: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "amprocnum" as FieldNamesType,
+},
+Amproc: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "amproc" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Amprocfamily","Amproclefttype","Amprocrighttype","Amprocnum","Amproc"] as const;
+export const FieldNames = ["oid","amprocfamily","amproclefttype","amprocrighttype","amprocnum","amproc"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgAmprocOidIndex;
 }
 export namespace PgLanguage {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgLanguage> {
  return { oid: undefined,lanname: undefined,lanowner: undefined,lanispl: undefined,lanpltrusted: undefined,lanplcallfoid: undefined,laninline: undefined,lanvalidator: undefined,lanacl: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgLanguageOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgLanguage,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgLanguage, Optional & PrimaryKey>
@@ -4425,12 +5712,53 @@ lanaclDescending = "lanacl DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Lanname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "lanname" as FieldNamesType,
+},
+Lanowner: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "lanowner" as FieldNamesType,
+},
+Lanispl: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "lanispl" as FieldNamesType,
+},
+Lanpltrusted: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "lanpltrusted" as FieldNamesType,
+},
+Lanplcallfoid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "lanplcallfoid" as FieldNamesType,
+},
+Laninline: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "laninline" as FieldNamesType,
+},
+Lanvalidator: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "lanvalidator" as FieldNamesType,
+},
+Lanacl: {
+ typeName: "PgCatalog.Types.AclitemArray",
+ fieldName: "lanacl" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Lanname","Lanowner","Lanispl","Lanpltrusted","Lanplcallfoid","Laninline","Lanvalidator","Lanacl"] as const;
+export const FieldNames = ["oid","lanname","lanowner","lanispl","lanpltrusted","lanplcallfoid","laninline","lanvalidator","lanacl"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgLanguageOidIndex;
 }
 export namespace PgLargeobjectMetadata {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgLargeobjectMetadata> {
  return { oid: undefined,lomowner: undefined,lomacl: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgLargeobjectMetadataOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgLargeobjectMetadata,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgLargeobjectMetadata, Optional & PrimaryKey>
@@ -4445,12 +5773,29 @@ lomaclDescending = "lomacl DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Lomowner: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "lomowner" as FieldNamesType,
+},
+Lomacl: {
+ typeName: "PgCatalog.Types.AclitemArray",
+ fieldName: "lomacl" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Lomowner","Lomacl"] as const;
+export const FieldNames = ["oid","lomowner","lomacl"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgLargeobjectMetadataOidIndex;
 }
 export namespace PgAggregate {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAggregate> {
  return { aggfnoid: undefined,aggkind: undefined,aggnumdirectargs: undefined,aggtransfn: undefined,aggfinalfn: undefined,aggcombinefn: undefined,aggserialfn: undefined,aggdeserialfn: undefined,aggmtransfn: undefined,aggminvtransfn: undefined,aggmfinalfn: undefined,aggfinalextra: undefined,aggmfinalextra: undefined,aggfinalmodify: undefined,aggmfinalmodify: undefined,aggsortop: undefined,aggtranstype: undefined,aggtransspace: undefined,aggmtranstype: undefined,aggmtransspace: undefined,agginitval: undefined,aggminitval: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgAggregateFnoidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAggregate,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAggregate, Optional & PrimaryKey>
@@ -4503,12 +5848,105 @@ aggminitvalDescending = "aggminitval DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Aggfnoid: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "aggfnoid" as FieldNamesType,
+},
+Aggkind: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "aggkind" as FieldNamesType,
+},
+Aggnumdirectargs: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "aggnumdirectargs" as FieldNamesType,
+},
+Aggtransfn: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "aggtransfn" as FieldNamesType,
+},
+Aggfinalfn: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "aggfinalfn" as FieldNamesType,
+},
+Aggcombinefn: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "aggcombinefn" as FieldNamesType,
+},
+Aggserialfn: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "aggserialfn" as FieldNamesType,
+},
+Aggdeserialfn: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "aggdeserialfn" as FieldNamesType,
+},
+Aggmtransfn: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "aggmtransfn" as FieldNamesType,
+},
+Aggminvtransfn: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "aggminvtransfn" as FieldNamesType,
+},
+Aggmfinalfn: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "aggmfinalfn" as FieldNamesType,
+},
+Aggfinalextra: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "aggfinalextra" as FieldNamesType,
+},
+Aggmfinalextra: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "aggmfinalextra" as FieldNamesType,
+},
+Aggfinalmodify: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "aggfinalmodify" as FieldNamesType,
+},
+Aggmfinalmodify: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "aggmfinalmodify" as FieldNamesType,
+},
+Aggsortop: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "aggsortop" as FieldNamesType,
+},
+Aggtranstype: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "aggtranstype" as FieldNamesType,
+},
+Aggtransspace: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "aggtransspace" as FieldNamesType,
+},
+Aggmtranstype: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "aggmtranstype" as FieldNamesType,
+},
+Aggmtransspace: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "aggmtransspace" as FieldNamesType,
+},
+Agginitval: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "agginitval" as FieldNamesType,
+},
+Aggminitval: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "aggminitval" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Aggfnoid","Aggkind","Aggnumdirectargs","Aggtransfn","Aggfinalfn","Aggcombinefn","Aggserialfn","Aggdeserialfn","Aggmtransfn","Aggminvtransfn","Aggmfinalfn","Aggfinalextra","Aggmfinalextra","Aggfinalmodify","Aggmfinalmodify","Aggsortop","Aggtranstype","Aggtransspace","Aggmtranstype","Aggmtransspace","Agginitval","Aggminitval"] as const;
+export const FieldNames = ["aggfnoid","aggkind","aggnumdirectargs","aggtransfn","aggfinalfn","aggcombinefn","aggserialfn","aggdeserialfn","aggmtransfn","aggminvtransfn","aggmfinalfn","aggfinalextra","aggmfinalextra","aggfinalmodify","aggmfinalmodify","aggsortop","aggtranstype","aggtransspace","aggmtranstype","aggmtransspace","agginitval","aggminitval"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgAggregateFnoidIndex;
 }
 export namespace PgStatisticExt {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgStatisticExt> {
  return { oid: undefined,stxrelid: undefined,stxname: undefined,stxnamespace: undefined,stxowner: undefined,stxstattarget: undefined,stxkeys: undefined,stxkind: undefined,stxexprs: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgStatisticExtOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgStatisticExt,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgStatisticExt, Optional & PrimaryKey>
@@ -4535,12 +5973,53 @@ stxexprsDescending = "stxexprs DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Stxrelid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "stxrelid" as FieldNamesType,
+},
+Stxname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "stxname" as FieldNamesType,
+},
+Stxnamespace: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "stxnamespace" as FieldNamesType,
+},
+Stxowner: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "stxowner" as FieldNamesType,
+},
+Stxstattarget: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "stxstattarget" as FieldNamesType,
+},
+Stxkeys: {
+ typeName: "PgCatalog.Types.Int2vector",
+ fieldName: "stxkeys" as FieldNamesType,
+},
+Stxkind: {
+ typeName: "PgCatalog.Types.CharArray",
+ fieldName: "stxkind" as FieldNamesType,
+},
+Stxexprs: {
+ typeName: "PgCatalog.Types.PgNodeTree",
+ fieldName: "stxexprs" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Stxrelid","Stxname","Stxnamespace","Stxowner","Stxstattarget","Stxkeys","Stxkind","Stxexprs"] as const;
+export const FieldNames = ["oid","stxrelid","stxname","stxnamespace","stxowner","stxstattarget","stxkeys","stxkind","stxexprs"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgStatisticExtOidIndex;
 }
 export namespace PgRewrite {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgRewrite> {
  return { oid: undefined,rulename: undefined,evClass: undefined,evType: undefined,evEnabled: undefined,isInstead: undefined,evQual: undefined,evAction: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgRewriteOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgRewrite,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgRewrite, Optional & PrimaryKey>
@@ -4565,12 +6044,49 @@ evActionDescending = "ev_action DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Rulename: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "rulename" as FieldNamesType,
+},
+EvClass: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "evClass" as FieldNamesType,
+},
+EvType: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "evType" as FieldNamesType,
+},
+EvEnabled: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "evEnabled" as FieldNamesType,
+},
+IsInstead: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "isInstead" as FieldNamesType,
+},
+EvQual: {
+ typeName: "PgCatalog.Types.PgNodeTree",
+ fieldName: "evQual" as FieldNamesType,
+},
+EvAction: {
+ typeName: "PgCatalog.Types.PgNodeTree",
+ fieldName: "evAction" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Rulename","EvClass","EvType","EvEnabled","IsInstead","EvQual","EvAction"] as const;
+export const FieldNames = ["oid","rulename","evClass","evType","evEnabled","isInstead","evQual","evAction"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgRewriteOidIndex;
 }
 export namespace PgTrigger {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTrigger> {
  return { oid: undefined,tgrelid: undefined,tgparentid: undefined,tgname: undefined,tgfoid: undefined,tgtype: undefined,tgenabled: undefined,tgisinternal: undefined,tgconstrrelid: undefined,tgconstrindid: undefined,tgconstraint: undefined,tgdeferrable: undefined,tginitdeferred: undefined,tgnargs: undefined,tgattr: undefined,tgargs: undefined,tgqual: undefined,tgoldtable: undefined,tgnewtable: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgTriggerOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTrigger,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTrigger, Optional & PrimaryKey>
@@ -4617,12 +6133,93 @@ tgnewtableDescending = "tgnewtable DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Tgrelid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "tgrelid" as FieldNamesType,
+},
+Tgparentid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "tgparentid" as FieldNamesType,
+},
+Tgname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "tgname" as FieldNamesType,
+},
+Tgfoid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "tgfoid" as FieldNamesType,
+},
+Tgtype: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "tgtype" as FieldNamesType,
+},
+Tgenabled: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "tgenabled" as FieldNamesType,
+},
+Tgisinternal: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "tgisinternal" as FieldNamesType,
+},
+Tgconstrrelid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "tgconstrrelid" as FieldNamesType,
+},
+Tgconstrindid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "tgconstrindid" as FieldNamesType,
+},
+Tgconstraint: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "tgconstraint" as FieldNamesType,
+},
+Tgdeferrable: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "tgdeferrable" as FieldNamesType,
+},
+Tginitdeferred: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "tginitdeferred" as FieldNamesType,
+},
+Tgnargs: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "tgnargs" as FieldNamesType,
+},
+Tgattr: {
+ typeName: "PgCatalog.Types.Int2vector",
+ fieldName: "tgattr" as FieldNamesType,
+},
+Tgargs: {
+ typeName: "PgCatalog.Types.Bytea",
+ fieldName: "tgargs" as FieldNamesType,
+},
+Tgqual: {
+ typeName: "PgCatalog.Types.PgNodeTree",
+ fieldName: "tgqual" as FieldNamesType,
+},
+Tgoldtable: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "tgoldtable" as FieldNamesType,
+},
+Tgnewtable: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "tgnewtable" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Tgrelid","Tgparentid","Tgname","Tgfoid","Tgtype","Tgenabled","Tgisinternal","Tgconstrrelid","Tgconstrindid","Tgconstraint","Tgdeferrable","Tginitdeferred","Tgnargs","Tgattr","Tgargs","Tgqual","Tgoldtable","Tgnewtable"] as const;
+export const FieldNames = ["oid","tgrelid","tgparentid","tgname","tgfoid","tgtype","tgenabled","tgisinternal","tgconstrrelid","tgconstrindid","tgconstraint","tgdeferrable","tginitdeferred","tgnargs","tgattr","tgargs","tgqual","tgoldtable","tgnewtable"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgTriggerOidIndex;
 }
 export namespace PgEventTrigger {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgEventTrigger> {
  return { oid: undefined,evtname: undefined,evtevent: undefined,evtowner: undefined,evtfoid: undefined,evtenabled: undefined,evttags: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgEventTriggerOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgEventTrigger,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgEventTrigger, Optional & PrimaryKey>
@@ -4645,12 +6242,45 @@ evttagsDescending = "evttags DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Evtname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "evtname" as FieldNamesType,
+},
+Evtevent: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "evtevent" as FieldNamesType,
+},
+Evtowner: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "evtowner" as FieldNamesType,
+},
+Evtfoid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "evtfoid" as FieldNamesType,
+},
+Evtenabled: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "evtenabled" as FieldNamesType,
+},
+Evttags: {
+ typeName: "PgCatalog.Types.TextArray",
+ fieldName: "evttags" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Evtname","Evtevent","Evtowner","Evtfoid","Evtenabled","Evttags"] as const;
+export const FieldNames = ["oid","evtname","evtevent","evtowner","evtfoid","evtenabled","evttags"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgEventTriggerOidIndex;
 }
 export namespace PgDescription {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgDescription> {
  return { objoid: undefined,classoid: undefined,objsubid: undefined,description: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgDescriptionOCOIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgDescription,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgDescription, Optional & PrimaryKey>
@@ -4667,12 +6297,33 @@ descriptionDescending = "description DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Objoid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "objoid" as FieldNamesType,
+},
+Classoid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "classoid" as FieldNamesType,
+},
+Objsubid: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "objsubid" as FieldNamesType,
+},
+Description: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "description" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Objoid","Classoid","Objsubid","Description"] as const;
+export const FieldNames = ["objoid","classoid","objsubid","description"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgDescriptionOCOIndex;
 }
 export namespace PgCast {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgCast> {
  return { oid: undefined,castsource: undefined,casttarget: undefined,castfunc: undefined,castcontext: undefined,castmethod: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgCastOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgCast,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgCast, Optional & PrimaryKey>
@@ -4693,12 +6344,41 @@ castmethodDescending = "castmethod DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Castsource: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "castsource" as FieldNamesType,
+},
+Casttarget: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "casttarget" as FieldNamesType,
+},
+Castfunc: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "castfunc" as FieldNamesType,
+},
+Castcontext: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "castcontext" as FieldNamesType,
+},
+Castmethod: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "castmethod" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Castsource","Casttarget","Castfunc","Castcontext","Castmethod"] as const;
+export const FieldNames = ["oid","castsource","casttarget","castfunc","castcontext","castmethod"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgCastOidIndex;
 }
 export namespace PgEnum {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgEnum> {
  return { oid: undefined,enumtypid: undefined,enumsortorder: undefined,enumlabel: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgEnumOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgEnum,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgEnum, Optional & PrimaryKey>
@@ -4715,12 +6395,33 @@ enumlabelDescending = "enumlabel DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Enumtypid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "enumtypid" as FieldNamesType,
+},
+Enumsortorder: {
+ typeName: "PgCatalog.Types.Float4",
+ fieldName: "enumsortorder" as FieldNamesType,
+},
+Enumlabel: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "enumlabel" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Enumtypid","Enumsortorder","Enumlabel"] as const;
+export const FieldNames = ["oid","enumtypid","enumsortorder","enumlabel"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgEnumOidIndex;
 }
 export namespace PgNamespace {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgNamespace> {
  return { oid: undefined,nspname: undefined,nspowner: undefined,nspacl: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgNamespaceOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgNamespace,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgNamespace, Optional & PrimaryKey>
@@ -4737,12 +6438,33 @@ nspaclDescending = "nspacl DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Nspname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "nspname" as FieldNamesType,
+},
+Nspowner: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "nspowner" as FieldNamesType,
+},
+Nspacl: {
+ typeName: "PgCatalog.Types.AclitemArray",
+ fieldName: "nspacl" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Nspname","Nspowner","Nspacl"] as const;
+export const FieldNames = ["oid","nspname","nspowner","nspacl"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgNamespaceOidIndex;
 }
 export namespace PgConversion {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgConversion> {
  return { oid: undefined,conname: undefined,connamespace: undefined,conowner: undefined,conforencoding: undefined,contoencoding: undefined,conproc: undefined,condefault: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgConversionOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgConversion,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgConversion, Optional & PrimaryKey>
@@ -4767,9 +6489,47 @@ condefaultDescending = "condefault DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Conname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "conname" as FieldNamesType,
+},
+Connamespace: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "connamespace" as FieldNamesType,
+},
+Conowner: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "conowner" as FieldNamesType,
+},
+Conforencoding: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "conforencoding" as FieldNamesType,
+},
+Contoencoding: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "contoencoding" as FieldNamesType,
+},
+Conproc: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "conproc" as FieldNamesType,
+},
+Condefault: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "condefault" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Conname","Connamespace","Conowner","Conforencoding","Contoencoding","Conproc","Condefault"] as const;
+export const FieldNames = ["oid","conname","connamespace","conowner","conforencoding","contoencoding","conproc","condefault"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgConversionOidIndex;
 }
 export namespace PgDepend {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgDepend> {
  return { classid: undefined,objid: undefined,objsubid: undefined,refclassid: undefined,refobjid: undefined,refobjsubid: undefined,deptype: undefined };
 }
 export type PrimaryKey = never;
@@ -4794,12 +6554,44 @@ deptypeDescending = "deptype DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Classid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "classid" as FieldNamesType,
+},
+Objid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "objid" as FieldNamesType,
+},
+Objsubid: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "objsubid" as FieldNamesType,
+},
+Refclassid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "refclassid" as FieldNamesType,
+},
+Refobjid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "refobjid" as FieldNamesType,
+},
+Refobjsubid: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "refobjsubid" as FieldNamesType,
+},
+Deptype: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "deptype" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Classid","Objid","Objsubid","Refclassid","Refobjid","Refobjsubid","Deptype"] as const;
+export const FieldNames = ["classid","objid","objsubid","refclassid","refobjid","refobjsubid","deptype"] as const;
+type FieldNamesType = typeof FieldNames[number];
 }
 export namespace PgDatabase {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgDatabase> {
  return { oid: undefined,datname: undefined,datdba: undefined,encoding: undefined,datlocprovider: undefined,datistemplate: undefined,datallowconn: undefined,datconnlimit: undefined,datfrozenxid: undefined,datminmxid: undefined,dattablespace: undefined,datcollate: undefined,datctype: undefined,daticulocale: undefined,daticurules: undefined,datcollversion: undefined,datacl: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgDatabaseOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgDatabase,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgDatabase, Optional & PrimaryKey>
@@ -4842,12 +6634,85 @@ dataclDescending = "datacl DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Datname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "datname" as FieldNamesType,
+},
+Datdba: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "datdba" as FieldNamesType,
+},
+Encoding: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "encoding" as FieldNamesType,
+},
+Datlocprovider: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "datlocprovider" as FieldNamesType,
+},
+Datistemplate: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "datistemplate" as FieldNamesType,
+},
+Datallowconn: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "datallowconn" as FieldNamesType,
+},
+Datconnlimit: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "datconnlimit" as FieldNamesType,
+},
+Datfrozenxid: {
+ typeName: "PgCatalog.Types.Xid",
+ fieldName: "datfrozenxid" as FieldNamesType,
+},
+Datminmxid: {
+ typeName: "PgCatalog.Types.Xid",
+ fieldName: "datminmxid" as FieldNamesType,
+},
+Dattablespace: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "dattablespace" as FieldNamesType,
+},
+Datcollate: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "datcollate" as FieldNamesType,
+},
+Datctype: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "datctype" as FieldNamesType,
+},
+Daticulocale: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "daticulocale" as FieldNamesType,
+},
+Daticurules: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "daticurules" as FieldNamesType,
+},
+Datcollversion: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "datcollversion" as FieldNamesType,
+},
+Datacl: {
+ typeName: "PgCatalog.Types.AclitemArray",
+ fieldName: "datacl" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Datname","Datdba","Encoding","Datlocprovider","Datistemplate","Datallowconn","Datconnlimit","Datfrozenxid","Datminmxid","Dattablespace","Datcollate","Datctype","Daticulocale","Daticurules","Datcollversion","Datacl"] as const;
+export const FieldNames = ["oid","datname","datdba","encoding","datlocprovider","datistemplate","datallowconn","datconnlimit","datfrozenxid","datminmxid","dattablespace","datcollate","datctype","daticulocale","daticurules","datcollversion","datacl"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgDatabaseOidIndex;
 }
 export namespace PgDbRoleSetting {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgDbRoleSetting> {
  return { setdatabase: undefined,setrole: undefined,setconfig: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgDbRoleSettingDatabaseidRolIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgDbRoleSetting,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgDbRoleSetting, Optional & PrimaryKey>
@@ -4862,12 +6727,29 @@ setconfigDescending = "setconfig DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Setdatabase: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "setdatabase" as FieldNamesType,
+},
+Setrole: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "setrole" as FieldNamesType,
+},
+Setconfig: {
+ typeName: "PgCatalog.Types.TextArray",
+ fieldName: "setconfig" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Setdatabase","Setrole","Setconfig"] as const;
+export const FieldNames = ["setdatabase","setrole","setconfig"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgDbRoleSettingDatabaseidRolIndex;
 }
 export namespace PgTablespace {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTablespace> {
  return { oid: undefined,spcname: undefined,spcowner: undefined,spcacl: undefined,spcoptions: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgTablespaceOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTablespace,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTablespace, Optional & PrimaryKey>
@@ -4886,12 +6768,37 @@ spcoptionsDescending = "spcoptions DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Spcname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "spcname" as FieldNamesType,
+},
+Spcowner: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "spcowner" as FieldNamesType,
+},
+Spcacl: {
+ typeName: "PgCatalog.Types.AclitemArray",
+ fieldName: "spcacl" as FieldNamesType,
+},
+Spcoptions: {
+ typeName: "PgCatalog.Types.TextArray",
+ fieldName: "spcoptions" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Spcname","Spcowner","Spcacl","Spcoptions"] as const;
+export const FieldNames = ["oid","spcname","spcowner","spcacl","spcoptions"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgTablespaceOidIndex;
 }
 export namespace PgAuthMembers {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAuthMembers> {
  return { oid: undefined,roleid: undefined,member: undefined,grantor: undefined,adminOption: undefined,inheritOption: undefined,setOption: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgAuthMembersOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAuthMembers,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAuthMembers, Optional & PrimaryKey>
@@ -4914,9 +6821,43 @@ setOptionDescending = "set_option DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Roleid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "roleid" as FieldNamesType,
+},
+Member: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "member" as FieldNamesType,
+},
+Grantor: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "grantor" as FieldNamesType,
+},
+AdminOption: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "adminOption" as FieldNamesType,
+},
+InheritOption: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "inheritOption" as FieldNamesType,
+},
+SetOption: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "setOption" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Roleid","Member","Grantor","AdminOption","InheritOption","SetOption"] as const;
+export const FieldNames = ["oid","roleid","member","grantor","adminOption","inheritOption","setOption"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgAuthMembersOidIndex;
 }
 export namespace PgShdepend {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgShdepend> {
  return { dbid: undefined,classid: undefined,objid: undefined,objsubid: undefined,refclassid: undefined,refobjid: undefined,deptype: undefined };
 }
 export type PrimaryKey = never;
@@ -4941,12 +6882,44 @@ deptypeDescending = "deptype DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Dbid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "dbid" as FieldNamesType,
+},
+Classid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "classid" as FieldNamesType,
+},
+Objid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "objid" as FieldNamesType,
+},
+Objsubid: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "objsubid" as FieldNamesType,
+},
+Refclassid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "refclassid" as FieldNamesType,
+},
+Refobjid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "refobjid" as FieldNamesType,
+},
+Deptype: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "deptype" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Dbid","Classid","Objid","Objsubid","Refclassid","Refobjid","Deptype"] as const;
+export const FieldNames = ["dbid","classid","objid","objsubid","refclassid","refobjid","deptype"] as const;
+type FieldNamesType = typeof FieldNames[number];
 }
 export namespace PgShdescription {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgShdescription> {
  return { objoid: undefined,classoid: undefined,description: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgShdescriptionOCIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgShdescription,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgShdescription, Optional & PrimaryKey>
@@ -4961,12 +6934,29 @@ descriptionDescending = "description DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Objoid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "objoid" as FieldNamesType,
+},
+Classoid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "classoid" as FieldNamesType,
+},
+Description: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "description" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Objoid","Classoid","Description"] as const;
+export const FieldNames = ["objoid","classoid","description"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgShdescriptionOCIndex;
 }
 export namespace PgTsConfig {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTsConfig> {
  return { oid: undefined,cfgname: undefined,cfgnamespace: undefined,cfgowner: undefined,cfgparser: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgTsConfigOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTsConfig,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTsConfig, Optional & PrimaryKey>
@@ -4985,12 +6975,37 @@ cfgparserDescending = "cfgparser DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Cfgname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "cfgname" as FieldNamesType,
+},
+Cfgnamespace: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "cfgnamespace" as FieldNamesType,
+},
+Cfgowner: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "cfgowner" as FieldNamesType,
+},
+Cfgparser: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "cfgparser" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Cfgname","Cfgnamespace","Cfgowner","Cfgparser"] as const;
+export const FieldNames = ["oid","cfgname","cfgnamespace","cfgowner","cfgparser"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgTsConfigOidIndex;
 }
 export namespace PgTsConfigMap {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTsConfigMap> {
  return { mapcfg: undefined,maptokentype: undefined,mapseqno: undefined,mapdict: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgTsConfigMapIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTsConfigMap,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTsConfigMap, Optional & PrimaryKey>
@@ -5007,12 +7022,33 @@ mapdictDescending = "mapdict DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Mapcfg: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "mapcfg" as FieldNamesType,
+},
+Maptokentype: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "maptokentype" as FieldNamesType,
+},
+Mapseqno: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "mapseqno" as FieldNamesType,
+},
+Mapdict: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "mapdict" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Mapcfg","Maptokentype","Mapseqno","Mapdict"] as const;
+export const FieldNames = ["mapcfg","maptokentype","mapseqno","mapdict"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgTsConfigMapIndex;
 }
 export namespace PgTsDict {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTsDict> {
  return { oid: undefined,dictname: undefined,dictnamespace: undefined,dictowner: undefined,dicttemplate: undefined,dictinitoption: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgTsDictOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTsDict,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTsDict, Optional & PrimaryKey>
@@ -5033,12 +7069,41 @@ dictinitoptionDescending = "dictinitoption DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Dictname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "dictname" as FieldNamesType,
+},
+Dictnamespace: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "dictnamespace" as FieldNamesType,
+},
+Dictowner: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "dictowner" as FieldNamesType,
+},
+Dicttemplate: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "dicttemplate" as FieldNamesType,
+},
+Dictinitoption: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "dictinitoption" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Dictname","Dictnamespace","Dictowner","Dicttemplate","Dictinitoption"] as const;
+export const FieldNames = ["oid","dictname","dictnamespace","dictowner","dicttemplate","dictinitoption"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgTsDictOidIndex;
 }
 export namespace PgTsParser {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTsParser> {
  return { oid: undefined,prsname: undefined,prsnamespace: undefined,prsstart: undefined,prstoken: undefined,prsend: undefined,prsheadline: undefined,prslextype: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgTsParserOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTsParser,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTsParser, Optional & PrimaryKey>
@@ -5063,12 +7128,49 @@ prslextypeDescending = "prslextype DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Prsname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "prsname" as FieldNamesType,
+},
+Prsnamespace: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "prsnamespace" as FieldNamesType,
+},
+Prsstart: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "prsstart" as FieldNamesType,
+},
+Prstoken: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "prstoken" as FieldNamesType,
+},
+Prsend: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "prsend" as FieldNamesType,
+},
+Prsheadline: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "prsheadline" as FieldNamesType,
+},
+Prslextype: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "prslextype" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Prsname","Prsnamespace","Prsstart","Prstoken","Prsend","Prsheadline","Prslextype"] as const;
+export const FieldNames = ["oid","prsname","prsnamespace","prsstart","prstoken","prsend","prsheadline","prslextype"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgTsParserOidIndex;
 }
 export namespace PgTsTemplate {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTsTemplate> {
  return { oid: undefined,tmplname: undefined,tmplnamespace: undefined,tmplinit: undefined,tmpllexize: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgTsTemplateOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTsTemplate,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTsTemplate, Optional & PrimaryKey>
@@ -5087,12 +7189,37 @@ tmpllexizeDescending = "tmpllexize DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Tmplname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "tmplname" as FieldNamesType,
+},
+Tmplnamespace: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "tmplnamespace" as FieldNamesType,
+},
+Tmplinit: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "tmplinit" as FieldNamesType,
+},
+Tmpllexize: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "tmpllexize" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Tmplname","Tmplnamespace","Tmplinit","Tmpllexize"] as const;
+export const FieldNames = ["oid","tmplname","tmplnamespace","tmplinit","tmpllexize"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgTsTemplateOidIndex;
 }
 export namespace PgExtension {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgExtension> {
  return { oid: undefined,extname: undefined,extowner: undefined,extnamespace: undefined,extrelocatable: undefined,extversion: undefined,extconfig: undefined,extcondition: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgExtensionOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgExtension,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgExtension, Optional & PrimaryKey>
@@ -5117,12 +7244,49 @@ extconditionDescending = "extcondition DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Extname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "extname" as FieldNamesType,
+},
+Extowner: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "extowner" as FieldNamesType,
+},
+Extnamespace: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "extnamespace" as FieldNamesType,
+},
+Extrelocatable: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "extrelocatable" as FieldNamesType,
+},
+Extversion: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "extversion" as FieldNamesType,
+},
+Extconfig: {
+ typeName: "PgCatalog.Types.OidArray",
+ fieldName: "extconfig" as FieldNamesType,
+},
+Extcondition: {
+ typeName: "PgCatalog.Types.TextArray",
+ fieldName: "extcondition" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Extname","Extowner","Extnamespace","Extrelocatable","Extversion","Extconfig","Extcondition"] as const;
+export const FieldNames = ["oid","extname","extowner","extnamespace","extrelocatable","extversion","extconfig","extcondition"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgExtensionOidIndex;
 }
 export namespace PgForeignDataWrapper {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgForeignDataWrapper> {
  return { oid: undefined,fdwname: undefined,fdwowner: undefined,fdwhandler: undefined,fdwvalidator: undefined,fdwacl: undefined,fdwoptions: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgForeignDataWrapperOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgForeignDataWrapper,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgForeignDataWrapper, Optional & PrimaryKey>
@@ -5145,12 +7309,45 @@ fdwoptionsDescending = "fdwoptions DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Fdwname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "fdwname" as FieldNamesType,
+},
+Fdwowner: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "fdwowner" as FieldNamesType,
+},
+Fdwhandler: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "fdwhandler" as FieldNamesType,
+},
+Fdwvalidator: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "fdwvalidator" as FieldNamesType,
+},
+Fdwacl: {
+ typeName: "PgCatalog.Types.AclitemArray",
+ fieldName: "fdwacl" as FieldNamesType,
+},
+Fdwoptions: {
+ typeName: "PgCatalog.Types.TextArray",
+ fieldName: "fdwoptions" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Fdwname","Fdwowner","Fdwhandler","Fdwvalidator","Fdwacl","Fdwoptions"] as const;
+export const FieldNames = ["oid","fdwname","fdwowner","fdwhandler","fdwvalidator","fdwacl","fdwoptions"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgForeignDataWrapperOidIndex;
 }
 export namespace PgForeignServer {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgForeignServer> {
  return { oid: undefined,srvname: undefined,srvowner: undefined,srvfdw: undefined,srvtype: undefined,srvversion: undefined,srvacl: undefined,srvoptions: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgForeignServerOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgForeignServer,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgForeignServer, Optional & PrimaryKey>
@@ -5175,12 +7372,49 @@ srvoptionsDescending = "srvoptions DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Srvname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "srvname" as FieldNamesType,
+},
+Srvowner: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "srvowner" as FieldNamesType,
+},
+Srvfdw: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "srvfdw" as FieldNamesType,
+},
+Srvtype: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "srvtype" as FieldNamesType,
+},
+Srvversion: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "srvversion" as FieldNamesType,
+},
+Srvacl: {
+ typeName: "PgCatalog.Types.AclitemArray",
+ fieldName: "srvacl" as FieldNamesType,
+},
+Srvoptions: {
+ typeName: "PgCatalog.Types.TextArray",
+ fieldName: "srvoptions" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Srvname","Srvowner","Srvfdw","Srvtype","Srvversion","Srvacl","Srvoptions"] as const;
+export const FieldNames = ["oid","srvname","srvowner","srvfdw","srvtype","srvversion","srvacl","srvoptions"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgForeignServerOidIndex;
 }
 export namespace PgPolicy {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgPolicy> {
  return { oid: undefined,polname: undefined,polrelid: undefined,polcmd: undefined,polpermissive: undefined,polroles: undefined,polqual: undefined,polwithcheck: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgPolicyOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgPolicy,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgPolicy, Optional & PrimaryKey>
@@ -5205,12 +7439,49 @@ polwithcheckDescending = "polwithcheck DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Polname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "polname" as FieldNamesType,
+},
+Polrelid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "polrelid" as FieldNamesType,
+},
+Polcmd: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "polcmd" as FieldNamesType,
+},
+Polpermissive: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "polpermissive" as FieldNamesType,
+},
+Polroles: {
+ typeName: "PgCatalog.Types.OidArray",
+ fieldName: "polroles" as FieldNamesType,
+},
+Polqual: {
+ typeName: "PgCatalog.Types.PgNodeTree",
+ fieldName: "polqual" as FieldNamesType,
+},
+Polwithcheck: {
+ typeName: "PgCatalog.Types.PgNodeTree",
+ fieldName: "polwithcheck" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Polname","Polrelid","Polcmd","Polpermissive","Polroles","Polqual","Polwithcheck"] as const;
+export const FieldNames = ["oid","polname","polrelid","polcmd","polpermissive","polroles","polqual","polwithcheck"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgPolicyOidIndex;
 }
 export namespace PgReplicationOrigin {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgReplicationOrigin> {
  return { roident: undefined,roname: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgReplicationOriginRoiidentIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgReplicationOrigin,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgReplicationOrigin, Optional & PrimaryKey>
@@ -5223,12 +7494,25 @@ ronameDescending = "roname DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Roident: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "roident" as FieldNamesType,
+},
+Roname: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "roname" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Roident","Roname"] as const;
+export const FieldNames = ["roident","roname"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgReplicationOriginRoiidentIndex;
 }
 export namespace PgDefaultAcl {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgDefaultAcl> {
  return { oid: undefined,defaclrole: undefined,defaclnamespace: undefined,defaclobjtype: undefined,defaclacl: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgDefaultAclOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgDefaultAcl,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgDefaultAcl, Optional & PrimaryKey>
@@ -5247,12 +7531,37 @@ defaclaclDescending = "defaclacl DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Defaclrole: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "defaclrole" as FieldNamesType,
+},
+Defaclnamespace: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "defaclnamespace" as FieldNamesType,
+},
+Defaclobjtype: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "defaclobjtype" as FieldNamesType,
+},
+Defaclacl: {
+ typeName: "PgCatalog.Types.AclitemArray",
+ fieldName: "defaclacl" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Defaclrole","Defaclnamespace","Defaclobjtype","Defaclacl"] as const;
+export const FieldNames = ["oid","defaclrole","defaclnamespace","defaclobjtype","defaclacl"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgDefaultAclOidIndex;
 }
 export namespace PgInitPrivs {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgInitPrivs> {
  return { objoid: undefined,classoid: undefined,objsubid: undefined,privtype: undefined,initprivs: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgInitPrivsOCOIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgInitPrivs,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgInitPrivs, Optional & PrimaryKey>
@@ -5271,12 +7580,37 @@ initprivsDescending = "initprivs DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Objoid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "objoid" as FieldNamesType,
+},
+Classoid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "classoid" as FieldNamesType,
+},
+Objsubid: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "objsubid" as FieldNamesType,
+},
+Privtype: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "privtype" as FieldNamesType,
+},
+Initprivs: {
+ typeName: "PgCatalog.Types.AclitemArray",
+ fieldName: "initprivs" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Objoid","Classoid","Objsubid","Privtype","Initprivs"] as const;
+export const FieldNames = ["objoid","classoid","objsubid","privtype","initprivs"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgInitPrivsOCOIndex;
 }
 export namespace PgSeclabel {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgSeclabel> {
  return { objoid: undefined,classoid: undefined,objsubid: undefined,provider: undefined,label: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgSeclabelObjectIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgSeclabel,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgSeclabel, Optional & PrimaryKey>
@@ -5295,12 +7629,37 @@ labelDescending = "label DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Objoid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "objoid" as FieldNamesType,
+},
+Classoid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "classoid" as FieldNamesType,
+},
+Objsubid: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "objsubid" as FieldNamesType,
+},
+Provider: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "provider" as FieldNamesType,
+},
+Label: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "label" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Objoid","Classoid","Objsubid","Provider","Label"] as const;
+export const FieldNames = ["objoid","classoid","objsubid","provider","label"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgSeclabelObjectIndex;
 }
 export namespace PgShseclabel {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgShseclabel> {
  return { objoid: undefined,classoid: undefined,provider: undefined,label: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgShseclabelObjectIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgShseclabel,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgShseclabel, Optional & PrimaryKey>
@@ -5317,12 +7676,33 @@ labelDescending = "label DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Objoid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "objoid" as FieldNamesType,
+},
+Classoid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "classoid" as FieldNamesType,
+},
+Provider: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "provider" as FieldNamesType,
+},
+Label: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "label" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Objoid","Classoid","Provider","Label"] as const;
+export const FieldNames = ["objoid","classoid","provider","label"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgShseclabelObjectIndex;
 }
 export namespace PgCollation {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgCollation> {
  return { oid: undefined,collname: undefined,collnamespace: undefined,collowner: undefined,collprovider: undefined,collisdeterministic: undefined,collencoding: undefined,collcollate: undefined,collctype: undefined,colliculocale: undefined,collicurules: undefined,collversion: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgCollationOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgCollation,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgCollation, Optional & PrimaryKey>
@@ -5355,12 +7735,65 @@ collversionDescending = "collversion DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Collname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "collname" as FieldNamesType,
+},
+Collnamespace: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "collnamespace" as FieldNamesType,
+},
+Collowner: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "collowner" as FieldNamesType,
+},
+Collprovider: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "collprovider" as FieldNamesType,
+},
+Collisdeterministic: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "collisdeterministic" as FieldNamesType,
+},
+Collencoding: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "collencoding" as FieldNamesType,
+},
+Collcollate: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "collcollate" as FieldNamesType,
+},
+Collctype: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "collctype" as FieldNamesType,
+},
+Colliculocale: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "colliculocale" as FieldNamesType,
+},
+Collicurules: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "collicurules" as FieldNamesType,
+},
+Collversion: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "collversion" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Collname","Collnamespace","Collowner","Collprovider","Collisdeterministic","Collencoding","Collcollate","Collctype","Colliculocale","Collicurules","Collversion"] as const;
+export const FieldNames = ["oid","collname","collnamespace","collowner","collprovider","collisdeterministic","collencoding","collcollate","collctype","colliculocale","collicurules","collversion"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgCollationOidIndex;
 }
 export namespace PgParameterAcl {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgParameterAcl> {
  return { oid: undefined,parname: undefined,paracl: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgParameterAclOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgParameterAcl,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgParameterAcl, Optional & PrimaryKey>
@@ -5375,12 +7808,29 @@ paraclDescending = "paracl DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Parname: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "parname" as FieldNamesType,
+},
+Paracl: {
+ typeName: "PgCatalog.Types.AclitemArray",
+ fieldName: "paracl" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Parname","Paracl"] as const;
+export const FieldNames = ["oid","parname","paracl"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgParameterAclOidIndex;
 }
 export namespace PgPartitionedTable {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgPartitionedTable> {
  return { partrelid: undefined,partstrat: undefined,partnatts: undefined,partdefid: undefined,partattrs: undefined,partclass: undefined,partcollation: undefined,partexprs: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgPartitionedTablePartrelidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgPartitionedTable,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgPartitionedTable, Optional & PrimaryKey>
@@ -5405,12 +7855,49 @@ partexprsDescending = "partexprs DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Partrelid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "partrelid" as FieldNamesType,
+},
+Partstrat: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "partstrat" as FieldNamesType,
+},
+Partnatts: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "partnatts" as FieldNamesType,
+},
+Partdefid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "partdefid" as FieldNamesType,
+},
+Partattrs: {
+ typeName: "PgCatalog.Types.Int2vector",
+ fieldName: "partattrs" as FieldNamesType,
+},
+Partclass: {
+ typeName: "PgCatalog.Types.Oidvector",
+ fieldName: "partclass" as FieldNamesType,
+},
+Partcollation: {
+ typeName: "PgCatalog.Types.Oidvector",
+ fieldName: "partcollation" as FieldNamesType,
+},
+Partexprs: {
+ typeName: "PgCatalog.Types.PgNodeTree",
+ fieldName: "partexprs" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Partrelid","Partstrat","Partnatts","Partdefid","Partattrs","Partclass","Partcollation","Partexprs"] as const;
+export const FieldNames = ["partrelid","partstrat","partnatts","partdefid","partattrs","partclass","partcollation","partexprs"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgPartitionedTablePartrelidIndex;
 }
 export namespace PgRange {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgRange> {
  return { rngtypid: undefined,rngsubtype: undefined,rngmultitypid: undefined,rngcollation: undefined,rngsubopc: undefined,rngcanonical: undefined,rngsubdiff: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgRangeRngtypidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgRange,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgRange, Optional & PrimaryKey>
@@ -5433,12 +7920,45 @@ rngsubdiffDescending = "rngsubdiff DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Rngtypid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "rngtypid" as FieldNamesType,
+},
+Rngsubtype: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "rngsubtype" as FieldNamesType,
+},
+Rngmultitypid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "rngmultitypid" as FieldNamesType,
+},
+Rngcollation: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "rngcollation" as FieldNamesType,
+},
+Rngsubopc: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "rngsubopc" as FieldNamesType,
+},
+Rngcanonical: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "rngcanonical" as FieldNamesType,
+},
+Rngsubdiff: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "rngsubdiff" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Rngtypid","Rngsubtype","Rngmultitypid","Rngcollation","Rngsubopc","Rngcanonical","Rngsubdiff"] as const;
+export const FieldNames = ["rngtypid","rngsubtype","rngmultitypid","rngcollation","rngsubopc","rngcanonical","rngsubdiff"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgRangeRngtypidIndex;
 }
 export namespace PgTransform {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTransform> {
  return { oid: undefined,trftype: undefined,trflang: undefined,trffromsql: undefined,trftosql: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgTransformOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTransform,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTransform, Optional & PrimaryKey>
@@ -5457,12 +7977,37 @@ trftosqlDescending = "trftosql DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Trftype: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "trftype" as FieldNamesType,
+},
+Trflang: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "trflang" as FieldNamesType,
+},
+Trffromsql: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "trffromsql" as FieldNamesType,
+},
+Trftosql: {
+ typeName: "PgCatalog.Types.Regproc",
+ fieldName: "trftosql" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Trftype","Trflang","Trffromsql","Trftosql"] as const;
+export const FieldNames = ["oid","trftype","trflang","trffromsql","trftosql"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgTransformOidIndex;
 }
 export namespace PgSequence {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgSequence> {
  return { seqrelid: undefined,seqtypid: undefined,seqstart: undefined,seqincrement: undefined,seqmax: undefined,seqmin: undefined,seqcache: undefined,seqcycle: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgSequenceSeqrelidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgSequence,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgSequence, Optional & PrimaryKey>
@@ -5487,12 +8032,49 @@ seqcycleDescending = "seqcycle DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Seqrelid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "seqrelid" as FieldNamesType,
+},
+Seqtypid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "seqtypid" as FieldNamesType,
+},
+Seqstart: {
+ typeName: "PgCatalog.Types.Int8",
+ fieldName: "seqstart" as FieldNamesType,
+},
+Seqincrement: {
+ typeName: "PgCatalog.Types.Int8",
+ fieldName: "seqincrement" as FieldNamesType,
+},
+Seqmax: {
+ typeName: "PgCatalog.Types.Int8",
+ fieldName: "seqmax" as FieldNamesType,
+},
+Seqmin: {
+ typeName: "PgCatalog.Types.Int8",
+ fieldName: "seqmin" as FieldNamesType,
+},
+Seqcache: {
+ typeName: "PgCatalog.Types.Int8",
+ fieldName: "seqcache" as FieldNamesType,
+},
+Seqcycle: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "seqcycle" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Seqrelid","Seqtypid","Seqstart","Seqincrement","Seqmax","Seqmin","Seqcache","Seqcycle"] as const;
+export const FieldNames = ["seqrelid","seqtypid","seqstart","seqincrement","seqmax","seqmin","seqcache","seqcycle"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgSequenceSeqrelidIndex;
 }
 export namespace PgPublication {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgPublication> {
  return { oid: undefined,pubname: undefined,pubowner: undefined,puballtables: undefined,pubinsert: undefined,pubupdate: undefined,pubdelete: undefined,pubtruncate: undefined,pubviaroot: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgPublicationOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgPublication,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgPublication, Optional & PrimaryKey>
@@ -5519,12 +8101,53 @@ pubviarootDescending = "pubviaroot DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Pubname: {
+ typeName: "PgCatalog.Types.Name",
+ fieldName: "pubname" as FieldNamesType,
+},
+Pubowner: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "pubowner" as FieldNamesType,
+},
+Puballtables: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "puballtables" as FieldNamesType,
+},
+Pubinsert: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "pubinsert" as FieldNamesType,
+},
+Pubupdate: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "pubupdate" as FieldNamesType,
+},
+Pubdelete: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "pubdelete" as FieldNamesType,
+},
+Pubtruncate: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "pubtruncate" as FieldNamesType,
+},
+Pubviaroot: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "pubviaroot" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Pubname","Pubowner","Puballtables","Pubinsert","Pubupdate","Pubdelete","Pubtruncate","Pubviaroot"] as const;
+export const FieldNames = ["oid","pubname","pubowner","puballtables","pubinsert","pubupdate","pubdelete","pubtruncate","pubviaroot"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgPublicationOidIndex;
 }
 export namespace PgPublicationNamespace {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgPublicationNamespace> {
  return { oid: undefined,pnpubid: undefined,pnnspid: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgPublicationNamespaceOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgPublicationNamespace,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgPublicationNamespace, Optional & PrimaryKey>
@@ -5539,12 +8162,29 @@ pnnspidDescending = "pnnspid DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Pnpubid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "pnpubid" as FieldNamesType,
+},
+Pnnspid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "pnnspid" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Pnpubid","Pnnspid"] as const;
+export const FieldNames = ["oid","pnpubid","pnnspid"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgPublicationNamespaceOidIndex;
 }
 export namespace PgPublicationRel {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgPublicationRel> {
  return { oid: undefined,prpubid: undefined,prrelid: undefined,prqual: undefined,prattrs: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgPublicationRelOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgPublicationRel,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgPublicationRel, Optional & PrimaryKey>
@@ -5563,12 +8203,37 @@ prattrsDescending = "prattrs DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Oid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "oid" as FieldNamesType,
+},
+Prpubid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "prpubid" as FieldNamesType,
+},
+Prrelid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "prrelid" as FieldNamesType,
+},
+Prqual: {
+ typeName: "PgCatalog.Types.PgNodeTree",
+ fieldName: "prqual" as FieldNamesType,
+},
+Prattrs: {
+ typeName: "PgCatalog.Types.Int2vector",
+ fieldName: "prattrs" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Oid","Prpubid","Prrelid","Prqual","Prattrs"] as const;
+export const FieldNames = ["oid","prpubid","prrelid","prqual","prattrs"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgPublicationRelOidIndex;
 }
 export namespace PgSubscriptionRel {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgSubscriptionRel> {
  return { srsubid: undefined,srrelid: undefined,srsubstate: undefined,srsublsn: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgSubscriptionRelSrrelidSrsubidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgSubscriptionRel,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgSubscriptionRel, Optional & PrimaryKey>
@@ -5585,12 +8250,33 @@ srsublsnDescending = "srsublsn DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Srsubid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "srsubid" as FieldNamesType,
+},
+Srrelid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "srrelid" as FieldNamesType,
+},
+Srsubstate: {
+ typeName: "PgCatalog.Types.Char",
+ fieldName: "srsubstate" as FieldNamesType,
+},
+Srsublsn: {
+ typeName: "PgCatalog.Types.PgLsn",
+ fieldName: "srsublsn" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Srsubid","Srrelid","Srsubstate","Srsublsn"] as const;
+export const FieldNames = ["srsubid","srrelid","srsubstate","srsublsn"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgSubscriptionRelSrrelidSrsubidIndex;
 }
 export namespace PgLargeobject {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgLargeobject> {
  return { loid: undefined,pageno: undefined,data: undefined };
 }
-export type PrimaryKey = PgCatalog.Types.PgLargeobjectLoidPnIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgLargeobject,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgLargeobject, Optional & PrimaryKey>
@@ -5605,6 +8291,24 @@ dataDescending = "data DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Loid: {
+ typeName: "PgCatalog.Types.Oid",
+ fieldName: "loid" as FieldNamesType,
+},
+Pageno: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "pageno" as FieldNamesType,
+},
+Data: {
+ typeName: "PgCatalog.Types.Bytea",
+ fieldName: "data" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Loid","Pageno","Data"] as const;
+export const FieldNames = ["loid","pageno","data"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = PgCatalog.Types.PgLargeobjectLoidPnIndex;
 }
 }
 }
@@ -6805,7 +9509,7 @@ export namespace Procedures {
 }
 export namespace Tables {
 export namespace SqlFeatures {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<InformationSchema.Types.SqlFeatures> {
  return { featureId: undefined,featureName: undefined,subFeatureId: undefined,subFeatureName: undefined,isSupported: undefined,isVerifiedBy: undefined,comments: undefined };
 }
 export type PrimaryKey = never;
@@ -6830,9 +9534,42 @@ commentsDescending = "comments DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+FeatureId: {
+ typeName: "InformationSchema.Types.CharacterData",
+ fieldName: "featureId" as FieldNamesType,
+},
+FeatureName: {
+ typeName: "InformationSchema.Types.CharacterData",
+ fieldName: "featureName" as FieldNamesType,
+},
+SubFeatureId: {
+ typeName: "InformationSchema.Types.CharacterData",
+ fieldName: "subFeatureId" as FieldNamesType,
+},
+SubFeatureName: {
+ typeName: "InformationSchema.Types.CharacterData",
+ fieldName: "subFeatureName" as FieldNamesType,
+},
+IsSupported: {
+ typeName: "InformationSchema.Types.YesOrNo",
+ fieldName: "isSupported" as FieldNamesType,
+},
+IsVerifiedBy: {
+ typeName: "InformationSchema.Types.CharacterData",
+ fieldName: "isVerifiedBy" as FieldNamesType,
+},
+Comments: {
+ typeName: "InformationSchema.Types.CharacterData",
+ fieldName: "comments" as FieldNamesType,
+},
+}
+export const ColumnNames = ["FeatureId","FeatureName","SubFeatureId","SubFeatureName","IsSupported","IsVerifiedBy","Comments"] as const;
+export const FieldNames = ["featureId","featureName","subFeatureId","subFeatureName","isSupported","isVerifiedBy","comments"] as const;
+type FieldNamesType = typeof FieldNames[number];
 }
 export namespace SqlImplementationInfo {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<InformationSchema.Types.SqlImplementationInfo> {
  return { implementationInfoId: undefined,implementationInfoName: undefined,integerValue: undefined,characterValue: undefined,comments: undefined };
 }
 export type PrimaryKey = never;
@@ -6853,9 +9590,34 @@ commentsDescending = "comments DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+ImplementationInfoId: {
+ typeName: "InformationSchema.Types.CharacterData",
+ fieldName: "implementationInfoId" as FieldNamesType,
+},
+ImplementationInfoName: {
+ typeName: "InformationSchema.Types.CharacterData",
+ fieldName: "implementationInfoName" as FieldNamesType,
+},
+IntegerValue: {
+ typeName: "InformationSchema.Types.CardinalNumber",
+ fieldName: "integerValue" as FieldNamesType,
+},
+CharacterValue: {
+ typeName: "InformationSchema.Types.CharacterData",
+ fieldName: "characterValue" as FieldNamesType,
+},
+Comments: {
+ typeName: "InformationSchema.Types.CharacterData",
+ fieldName: "comments" as FieldNamesType,
+},
+}
+export const ColumnNames = ["ImplementationInfoId","ImplementationInfoName","IntegerValue","CharacterValue","Comments"] as const;
+export const FieldNames = ["implementationInfoId","implementationInfoName","integerValue","characterValue","comments"] as const;
+type FieldNamesType = typeof FieldNames[number];
 }
 export namespace SqlParts {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<InformationSchema.Types.SqlParts> {
  return { featureId: undefined,featureName: undefined,isSupported: undefined,isVerifiedBy: undefined,comments: undefined };
 }
 export type PrimaryKey = never;
@@ -6876,9 +9638,34 @@ commentsDescending = "comments DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+FeatureId: {
+ typeName: "InformationSchema.Types.CharacterData",
+ fieldName: "featureId" as FieldNamesType,
+},
+FeatureName: {
+ typeName: "InformationSchema.Types.CharacterData",
+ fieldName: "featureName" as FieldNamesType,
+},
+IsSupported: {
+ typeName: "InformationSchema.Types.YesOrNo",
+ fieldName: "isSupported" as FieldNamesType,
+},
+IsVerifiedBy: {
+ typeName: "InformationSchema.Types.CharacterData",
+ fieldName: "isVerifiedBy" as FieldNamesType,
+},
+Comments: {
+ typeName: "InformationSchema.Types.CharacterData",
+ fieldName: "comments" as FieldNamesType,
+},
+}
+export const ColumnNames = ["FeatureId","FeatureName","IsSupported","IsVerifiedBy","Comments"] as const;
+export const FieldNames = ["featureId","featureName","isSupported","isVerifiedBy","comments"] as const;
+type FieldNamesType = typeof FieldNames[number];
 }
 export namespace SqlSizing {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<InformationSchema.Types.SqlSizing> {
  return { sizingId: undefined,sizingName: undefined,supportedValue: undefined,comments: undefined };
 }
 export type PrimaryKey = never;
@@ -6897,6 +9684,27 @@ commentsDescending = "comments DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+SizingId: {
+ typeName: "InformationSchema.Types.CardinalNumber",
+ fieldName: "sizingId" as FieldNamesType,
+},
+SizingName: {
+ typeName: "InformationSchema.Types.CharacterData",
+ fieldName: "sizingName" as FieldNamesType,
+},
+SupportedValue: {
+ typeName: "InformationSchema.Types.CardinalNumber",
+ fieldName: "supportedValue" as FieldNamesType,
+},
+Comments: {
+ typeName: "InformationSchema.Types.CharacterData",
+ fieldName: "comments" as FieldNamesType,
+},
+}
+export const ColumnNames = ["SizingId","SizingName","SupportedValue","Comments"] as const;
+export const FieldNames = ["sizingId","sizingName","supportedValue","comments"] as const;
+type FieldNamesType = typeof FieldNames[number];
 }
 }
 }
@@ -6941,10 +9749,9 @@ export namespace Procedures {
 }
 export namespace Tables {
 export namespace Checklist {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<Public.Types.Checklist> {
  return { id: undefined,name: undefined,createdAt: undefined };
 }
-export type PrimaryKey = Public.Types.ChecklistPkey;
 
 export type Optional = Pick<Public.Types.Checklist,"id"|"createdAt">
 export type Values = PartiallyOptional<Public.Types.Checklist, Optional & PrimaryKey>
@@ -6959,12 +9766,29 @@ createdAtDescending = "created_at DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Id: {
+ typeName: "PgCatalog.Types.Uuid",
+ fieldName: "id" as FieldNamesType,
+},
+Name: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "name" as FieldNamesType,
+},
+CreatedAt: {
+ typeName: "PgCatalog.Types.Timestamp",
+ fieldName: "createdAt" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Id","Name","CreatedAt"] as const;
+export const FieldNames = ["id","name","createdAt"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = Public.Types.ChecklistPkey;
 }
 export namespace ChecklistItem {
-export function emptyRow() {
+export function emptyRow() : PossiblyEmpty<Public.Types.ChecklistItem> {
  return { id: undefined,checklistId: undefined,title: undefined,checked: undefined,createdAt: undefined };
 }
-export type PrimaryKey = Public.Types.ChecklistItemPkey;
 
 export type Optional = Pick<Public.Types.ChecklistItem,"id"|"checked"|"createdAt">
 export type Values = PartiallyOptional<Public.Types.ChecklistItem, Optional & PrimaryKey>
@@ -6983,6 +9807,32 @@ createdAtDescending = "created_at DESC",
 export type Options = ReadOptions & {
  sort?: SortOptions[],
 };
+export const Columns = {
+Id: {
+ typeName: "PgCatalog.Types.Uuid",
+ fieldName: "id" as FieldNamesType,
+},
+ChecklistId: {
+ typeName: "PgCatalog.Types.Uuid",
+ fieldName: "checklistId" as FieldNamesType,
+},
+Title: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "title" as FieldNamesType,
+},
+Checked: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "checked" as FieldNamesType,
+},
+CreatedAt: {
+ typeName: "PgCatalog.Types.Timestamp",
+ fieldName: "createdAt" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Id","ChecklistId","Title","Checked","CreatedAt"] as const;
+export const FieldNames = ["id","checklistId","title","checked","createdAt"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = Public.Types.ChecklistItemPkey;
 }
 }
 }

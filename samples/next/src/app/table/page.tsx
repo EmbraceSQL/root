@@ -22,17 +22,25 @@ function Table() {
   );
 
   if (rows) {
-    // old school - let's make a table
+    // old school - let's make a table - EmbraceSQL generates column
+    // name metadata based on the table schemas which makes it easy to iterate
     return (
       <table>
         <thead>
-          <tr></tr>
+          <tr>
+            {Public.Tables.Actor.ColumnNames.map((c) => (
+              <th key={c}>{c}</th>
+            ))}
+          </tr>
         </thead>
         <tbody>
           {rows.map((r) => (
             <tr key={r.rowNumberInResultset}>
-              <td>{r.firstName}</td>
-              <td>{r.lastName}</td>
+              {Public.Tables.Actor.ColumnNames.map((c) => (
+                <td key={c}>{`${r[
+                  Public.Tables.Actor.Columns[c].fieldName
+                ].toLocaleString()}`}</td>
+              ))}
             </tr>
           ))}
         </tbody>

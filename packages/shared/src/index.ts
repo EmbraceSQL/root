@@ -182,3 +182,11 @@ export enum Sort {
   Ascending = "ASC",
   Descending = "DESC",
 }
+
+/**
+ * Possibly empty. Used for nice new empty rows ready for
+ * user edits.
+ */
+export type PossiblyEmpty<T> = {
+  [K in keyof T]: T[K] | undefined;
+};
