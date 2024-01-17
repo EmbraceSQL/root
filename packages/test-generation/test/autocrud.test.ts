@@ -1,4 +1,4 @@
-import { Database } from "../src/dvdrental";
+import { Database, Public } from "../src/dvdrental";
 
 describe("The database can AutoCRUD", () => {
   // each test runs in an isolated transaction that is rolled back
@@ -118,6 +118,19 @@ describe("The database can AutoCRUD", () => {
       // overlap in the middle
       expect(values[1]).toMatchObject(nextValues[0]);
     });
+    it("with sorting", async () => {
+      const values = await database.Public.Tables.Actor.IdxActorLastName.read(
+        {
+          lastName: "Akroyd",
+        },
+        {
+          sort: [Public.Tables.Actor.SortOptions.firstNameAscending],
+        },
+      );
+      expect(values.map((v) => v.firstName).toSorted()).toMatchObject(
+        values.map((v) => v.firstName),
+      );
+    });
   });
   describe("read all rows", () => {
     it("at all", async () => {
@@ -145,6 +158,17 @@ describe("The database can AutoCRUD", () => {
       expect(values[1]).not.toMatchObject(nextValues[1]);
       // overlap in the middle
       expect(values[1]).toMatchObject(nextValues[0]);
+    });
+    it("with sorting", async () => {
+      const values = await database.Public.Tables.Actor.all({
+        sort: [
+          Public.Tables.Actor.SortOptions.lastNameAscending,
+          Public.Tables.Actor.SortOptions.firstNameAscending,
+        ],
+      });
+      expect(
+        values.map((v) => `${v.lastName} ${v.firstName}`).toSorted(),
+      ).toMatchObject(values.map((v) => `${v.lastName} ${v.firstName}`));
     });
   });
   it("a unique index delete", async () => {

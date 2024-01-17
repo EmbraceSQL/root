@@ -13,23 +13,12 @@ import {
  */
 export const ReadOperation = {
   async before(context: GenerationContext, node: ReadOperationNode) {
-    const generationBuffer = [""];
     const parameters = `${PARAMETERS}: ${node.index.type.typescriptNamespacedName}`;
     const options = `options?: ${node.index.table.typescriptNamespacedName}.Options`;
     const returns = node.index.unique
       ? `Promise<${node.index.table.type.typescriptNamespacedName}>`
       : `Promise<${node.index.table.type.typescriptNamespacedName}[]>`;
 
-    generationBuffer.push(
-      `async ${node.typescriptPropertyName}(${parameters}, ${options}) : ${returns}{`,
-    );
-    generationBuffer.push(
-      `
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      `,
-    );
     // query using postgres driver bindings to the index
     const sql = `
     -- 
@@ -39,19 +28,25 @@ export const ReadOperation = {
       ${node.index.table.databaseName} 
     WHERE
       ${sqlPredicate(context, node.index, PARAMETERS)}
+    \${sql.unsafe(\`\${orderBy}\`)}
     LIMIT \${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET \${options?.offsetNumberOfRows ?? 0} 
     `;
-    generationBuffer.push(`const response = await sql\`${sql}\``);
+    return [
+      `async ${node.typescriptPropertyName}(${parameters}, ${options}) : ${returns}{`,
+      `
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? \`ORDER BY \${options.sort.join(",")}\` : "";
+      `,
+      `const response = await sql\`${sql}\``,
 
-    generationBuffer.push(
       `return ${postgresToTypescript(context, node.index.table.type)}${
         node.index.unique ? "[0]" : ""
       }`,
-    );
 
-    generationBuffer.push(`}`);
-
-    return generationBuffer.join("\n");
+      `}`,
+    ].join("\n");
   },
 };

@@ -7,12 +7,29 @@ import { generateTypeParsers } from "./generateTypeParsers";
 import {
   ASTKind,
   AbstractTypeNode,
+  ColumnNode,
   NamespaceVisitor,
   VALUES,
   cleanIdentifierForTypescript,
 } from "@embracesql/shared";
 import { GenerationContext as GC } from "@embracesql/shared";
 import { pascalCase } from "change-case";
+
+/**
+ *
+ */
+function sortOptions(columns: ColumnNode[]) {
+  return [
+    `enum SortOptions  {`,
+    `${columns
+      .map((c) => `${c.typescriptPropertyName}Ascending = "${c.name} ASC",`)
+      .join("\n")}`,
+    `${columns
+      .map((c) => `${c.typescriptPropertyName}Descending = "${c.name} DESC",`)
+      .join("\n")}`,
+    `}`,
+  ].join("\n");
+}
 
 /**
  * Generate TypeScript type definitions for all types available
@@ -115,8 +132,9 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
                 node.type.typescriptNamespacedName
               }, Optional & PrimaryKey>`,
               // read options exist per table
+              `export ${sortOptions(node.allColumns)};`,
               `export type Options = ReadOptions & {`,
-              `${node.allColumns.map((c) => `${c.name}?: Sort;`).join("\n")}`,
+              ` sort?: SortOptions[],`,
               `};`,
               await NamespaceVisitor.after(context, node),
             ].join("\n");

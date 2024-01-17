@@ -167,18 +167,18 @@ export type ReadOptions = {
   /**
    * Pagination support, this defines the page size.
    */
-  limitNumberOfRows: number;
+  limitNumberOfRows?: number;
   /**
    * Pagination support, this defines how many rows to skip
    * before returning a page.
    */
-  offsetNumberOfRows: number;
+  offsetNumberOfRows?: number;
 };
 
 /**
  * Sorting mode.
  */
 export enum Sort {
-  Ascending,
-  Descending,
+  Ascending = "ASC",
+  Descending = "DESC",
 }

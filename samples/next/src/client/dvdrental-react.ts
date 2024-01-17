@@ -3528,38 +3528,72 @@ export type PrimaryKey = PgCatalog.Types.PgStatisticRelidAttInhIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgStatistic,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgStatistic, Optional & PrimaryKey>
+export enum SortOptions  {
+starelidAscending = "starelid ASC",
+staattnumAscending = "staattnum ASC",
+stainheritAscending = "stainherit ASC",
+stanullfracAscending = "stanullfrac ASC",
+stawidthAscending = "stawidth ASC",
+stadistinctAscending = "stadistinct ASC",
+stakind1Ascending = "stakind1 ASC",
+stakind2Ascending = "stakind2 ASC",
+stakind3Ascending = "stakind3 ASC",
+stakind4Ascending = "stakind4 ASC",
+stakind5Ascending = "stakind5 ASC",
+staop1Ascending = "staop1 ASC",
+staop2Ascending = "staop2 ASC",
+staop3Ascending = "staop3 ASC",
+staop4Ascending = "staop4 ASC",
+staop5Ascending = "staop5 ASC",
+stacoll1Ascending = "stacoll1 ASC",
+stacoll2Ascending = "stacoll2 ASC",
+stacoll3Ascending = "stacoll3 ASC",
+stacoll4Ascending = "stacoll4 ASC",
+stacoll5Ascending = "stacoll5 ASC",
+stanumbers1Ascending = "stanumbers1 ASC",
+stanumbers2Ascending = "stanumbers2 ASC",
+stanumbers3Ascending = "stanumbers3 ASC",
+stanumbers4Ascending = "stanumbers4 ASC",
+stanumbers5Ascending = "stanumbers5 ASC",
+stavalues1Ascending = "stavalues1 ASC",
+stavalues2Ascending = "stavalues2 ASC",
+stavalues3Ascending = "stavalues3 ASC",
+stavalues4Ascending = "stavalues4 ASC",
+stavalues5Ascending = "stavalues5 ASC",
+starelidDescending = "starelid DESC",
+staattnumDescending = "staattnum DESC",
+stainheritDescending = "stainherit DESC",
+stanullfracDescending = "stanullfrac DESC",
+stawidthDescending = "stawidth DESC",
+stadistinctDescending = "stadistinct DESC",
+stakind1Descending = "stakind1 DESC",
+stakind2Descending = "stakind2 DESC",
+stakind3Descending = "stakind3 DESC",
+stakind4Descending = "stakind4 DESC",
+stakind5Descending = "stakind5 DESC",
+staop1Descending = "staop1 DESC",
+staop2Descending = "staop2 DESC",
+staop3Descending = "staop3 DESC",
+staop4Descending = "staop4 DESC",
+staop5Descending = "staop5 DESC",
+stacoll1Descending = "stacoll1 DESC",
+stacoll2Descending = "stacoll2 DESC",
+stacoll3Descending = "stacoll3 DESC",
+stacoll4Descending = "stacoll4 DESC",
+stacoll5Descending = "stacoll5 DESC",
+stanumbers1Descending = "stanumbers1 DESC",
+stanumbers2Descending = "stanumbers2 DESC",
+stanumbers3Descending = "stanumbers3 DESC",
+stanumbers4Descending = "stanumbers4 DESC",
+stanumbers5Descending = "stanumbers5 DESC",
+stavalues1Descending = "stavalues1 DESC",
+stavalues2Descending = "stavalues2 DESC",
+stavalues3Descending = "stavalues3 DESC",
+stavalues4Descending = "stavalues4 DESC",
+stavalues5Descending = "stavalues5 DESC",
+};
 export type Options = ReadOptions & {
-starelid?: Sort;
-staattnum?: Sort;
-stainherit?: Sort;
-stanullfrac?: Sort;
-stawidth?: Sort;
-stadistinct?: Sort;
-stakind1?: Sort;
-stakind2?: Sort;
-stakind3?: Sort;
-stakind4?: Sort;
-stakind5?: Sort;
-staop1?: Sort;
-staop2?: Sort;
-staop3?: Sort;
-staop4?: Sort;
-staop5?: Sort;
-stacoll1?: Sort;
-stacoll2?: Sort;
-stacoll3?: Sort;
-stacoll4?: Sort;
-stacoll5?: Sort;
-stanumbers1?: Sort;
-stanumbers2?: Sort;
-stanumbers3?: Sort;
-stanumbers4?: Sort;
-stanumbers5?: Sort;
-stavalues1?: Sort;
-stavalues2?: Sort;
-stavalues3?: Sort;
-stavalues4?: Sort;
-stavalues5?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgType {
@@ -3570,39 +3604,74 @@ export type PrimaryKey = PgCatalog.Types.PgTypeOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgType,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgType, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+typnameAscending = "typname ASC",
+typnamespaceAscending = "typnamespace ASC",
+typownerAscending = "typowner ASC",
+typlenAscending = "typlen ASC",
+typbyvalAscending = "typbyval ASC",
+typtypeAscending = "typtype ASC",
+typcategoryAscending = "typcategory ASC",
+typispreferredAscending = "typispreferred ASC",
+typisdefinedAscending = "typisdefined ASC",
+typdelimAscending = "typdelim ASC",
+typrelidAscending = "typrelid ASC",
+typsubscriptAscending = "typsubscript ASC",
+typelemAscending = "typelem ASC",
+typarrayAscending = "typarray ASC",
+typinputAscending = "typinput ASC",
+typoutputAscending = "typoutput ASC",
+typreceiveAscending = "typreceive ASC",
+typsendAscending = "typsend ASC",
+typmodinAscending = "typmodin ASC",
+typmodoutAscending = "typmodout ASC",
+typanalyzeAscending = "typanalyze ASC",
+typalignAscending = "typalign ASC",
+typstorageAscending = "typstorage ASC",
+typnotnullAscending = "typnotnull ASC",
+typbasetypeAscending = "typbasetype ASC",
+typtypmodAscending = "typtypmod ASC",
+typndimsAscending = "typndims ASC",
+typcollationAscending = "typcollation ASC",
+typdefaultbinAscending = "typdefaultbin ASC",
+typdefaultAscending = "typdefault ASC",
+typaclAscending = "typacl ASC",
+oidDescending = "oid DESC",
+typnameDescending = "typname DESC",
+typnamespaceDescending = "typnamespace DESC",
+typownerDescending = "typowner DESC",
+typlenDescending = "typlen DESC",
+typbyvalDescending = "typbyval DESC",
+typtypeDescending = "typtype DESC",
+typcategoryDescending = "typcategory DESC",
+typispreferredDescending = "typispreferred DESC",
+typisdefinedDescending = "typisdefined DESC",
+typdelimDescending = "typdelim DESC",
+typrelidDescending = "typrelid DESC",
+typsubscriptDescending = "typsubscript DESC",
+typelemDescending = "typelem DESC",
+typarrayDescending = "typarray DESC",
+typinputDescending = "typinput DESC",
+typoutputDescending = "typoutput DESC",
+typreceiveDescending = "typreceive DESC",
+typsendDescending = "typsend DESC",
+typmodinDescending = "typmodin DESC",
+typmodoutDescending = "typmodout DESC",
+typanalyzeDescending = "typanalyze DESC",
+typalignDescending = "typalign DESC",
+typstorageDescending = "typstorage DESC",
+typnotnullDescending = "typnotnull DESC",
+typbasetypeDescending = "typbasetype DESC",
+typtypmodDescending = "typtypmod DESC",
+typndimsDescending = "typndims DESC",
+typcollationDescending = "typcollation DESC",
+typdefaultbinDescending = "typdefaultbin DESC",
+typdefaultDescending = "typdefault DESC",
+typaclDescending = "typacl DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-typname?: Sort;
-typnamespace?: Sort;
-typowner?: Sort;
-typlen?: Sort;
-typbyval?: Sort;
-typtype?: Sort;
-typcategory?: Sort;
-typispreferred?: Sort;
-typisdefined?: Sort;
-typdelim?: Sort;
-typrelid?: Sort;
-typsubscript?: Sort;
-typelem?: Sort;
-typarray?: Sort;
-typinput?: Sort;
-typoutput?: Sort;
-typreceive?: Sort;
-typsend?: Sort;
-typmodin?: Sort;
-typmodout?: Sort;
-typanalyze?: Sort;
-typalign?: Sort;
-typstorage?: Sort;
-typnotnull?: Sort;
-typbasetype?: Sort;
-typtypmod?: Sort;
-typndims?: Sort;
-typcollation?: Sort;
-typdefaultbin?: Sort;
-typdefault?: Sort;
-typacl?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgForeignTable {
@@ -3613,10 +3682,16 @@ export type PrimaryKey = PgCatalog.Types.PgForeignTableRelidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgForeignTable,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgForeignTable, Optional & PrimaryKey>
+export enum SortOptions  {
+ftrelidAscending = "ftrelid ASC",
+ftserverAscending = "ftserver ASC",
+ftoptionsAscending = "ftoptions ASC",
+ftrelidDescending = "ftrelid DESC",
+ftserverDescending = "ftserver DESC",
+ftoptionsDescending = "ftoptions DESC",
+};
 export type Options = ReadOptions & {
-ftrelid?: Sort;
-ftserver?: Sort;
-ftoptions?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgAuthid {
@@ -3627,19 +3702,34 @@ export type PrimaryKey = PgCatalog.Types.PgAuthidOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAuthid,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAuthid, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+rolnameAscending = "rolname ASC",
+rolsuperAscending = "rolsuper ASC",
+rolinheritAscending = "rolinherit ASC",
+rolcreateroleAscending = "rolcreaterole ASC",
+rolcreatedbAscending = "rolcreatedb ASC",
+rolcanloginAscending = "rolcanlogin ASC",
+rolreplicationAscending = "rolreplication ASC",
+rolbypassrlsAscending = "rolbypassrls ASC",
+rolconnlimitAscending = "rolconnlimit ASC",
+rolpasswordAscending = "rolpassword ASC",
+rolvaliduntilAscending = "rolvaliduntil ASC",
+oidDescending = "oid DESC",
+rolnameDescending = "rolname DESC",
+rolsuperDescending = "rolsuper DESC",
+rolinheritDescending = "rolinherit DESC",
+rolcreateroleDescending = "rolcreaterole DESC",
+rolcreatedbDescending = "rolcreatedb DESC",
+rolcanloginDescending = "rolcanlogin DESC",
+rolreplicationDescending = "rolreplication DESC",
+rolbypassrlsDescending = "rolbypassrls DESC",
+rolconnlimitDescending = "rolconnlimit DESC",
+rolpasswordDescending = "rolpassword DESC",
+rolvaliduntilDescending = "rolvaliduntil DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-rolname?: Sort;
-rolsuper?: Sort;
-rolinherit?: Sort;
-rolcreaterole?: Sort;
-rolcreatedb?: Sort;
-rolcanlogin?: Sort;
-rolreplication?: Sort;
-rolbypassrls?: Sort;
-rolconnlimit?: Sort;
-rolpassword?: Sort;
-rolvaliduntil?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgStatisticExtData {
@@ -3650,13 +3740,22 @@ export type PrimaryKey = PgCatalog.Types.PgStatisticExtDataStxoidInhIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgStatisticExtData,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgStatisticExtData, Optional & PrimaryKey>
+export enum SortOptions  {
+stxoidAscending = "stxoid ASC",
+stxdinheritAscending = "stxdinherit ASC",
+stxdndistinctAscending = "stxdndistinct ASC",
+stxddependenciesAscending = "stxddependencies ASC",
+stxdmcvAscending = "stxdmcv ASC",
+stxdexprAscending = "stxdexpr ASC",
+stxoidDescending = "stxoid DESC",
+stxdinheritDescending = "stxdinherit DESC",
+stxdndistinctDescending = "stxdndistinct DESC",
+stxddependenciesDescending = "stxddependencies DESC",
+stxdmcvDescending = "stxdmcv DESC",
+stxdexprDescending = "stxdexpr DESC",
+};
 export type Options = ReadOptions & {
-stxoid?: Sort;
-stxdinherit?: Sort;
-stxdndistinct?: Sort;
-stxddependencies?: Sort;
-stxdmcv?: Sort;
-stxdexpr?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgUserMapping {
@@ -3667,11 +3766,18 @@ export type PrimaryKey = PgCatalog.Types.PgUserMappingOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgUserMapping,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgUserMapping, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+umuserAscending = "umuser ASC",
+umserverAscending = "umserver ASC",
+umoptionsAscending = "umoptions ASC",
+oidDescending = "oid DESC",
+umuserDescending = "umuser DESC",
+umserverDescending = "umserver DESC",
+umoptionsDescending = "umoptions DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-umuser?: Sort;
-umserver?: Sort;
-umoptions?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgSubscription {
@@ -3682,24 +3788,44 @@ export type PrimaryKey = PgCatalog.Types.PgSubscriptionOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgSubscription,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgSubscription, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+subdbidAscending = "subdbid ASC",
+subskiplsnAscending = "subskiplsn ASC",
+subnameAscending = "subname ASC",
+subownerAscending = "subowner ASC",
+subenabledAscending = "subenabled ASC",
+subbinaryAscending = "subbinary ASC",
+substreamAscending = "substream ASC",
+subtwophasestateAscending = "subtwophasestate ASC",
+subdisableonerrAscending = "subdisableonerr ASC",
+subpasswordrequiredAscending = "subpasswordrequired ASC",
+subrunasownerAscending = "subrunasowner ASC",
+subconninfoAscending = "subconninfo ASC",
+subslotnameAscending = "subslotname ASC",
+subsynccommitAscending = "subsynccommit ASC",
+subpublicationsAscending = "subpublications ASC",
+suboriginAscending = "suborigin ASC",
+oidDescending = "oid DESC",
+subdbidDescending = "subdbid DESC",
+subskiplsnDescending = "subskiplsn DESC",
+subnameDescending = "subname DESC",
+subownerDescending = "subowner DESC",
+subenabledDescending = "subenabled DESC",
+subbinaryDescending = "subbinary DESC",
+substreamDescending = "substream DESC",
+subtwophasestateDescending = "subtwophasestate DESC",
+subdisableonerrDescending = "subdisableonerr DESC",
+subpasswordrequiredDescending = "subpasswordrequired DESC",
+subrunasownerDescending = "subrunasowner DESC",
+subconninfoDescending = "subconninfo DESC",
+subslotnameDescending = "subslotname DESC",
+subsynccommitDescending = "subsynccommit DESC",
+subpublicationsDescending = "subpublications DESC",
+suboriginDescending = "suborigin DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-subdbid?: Sort;
-subskiplsn?: Sort;
-subname?: Sort;
-subowner?: Sort;
-subenabled?: Sort;
-subbinary?: Sort;
-substream?: Sort;
-subtwophasestate?: Sort;
-subdisableonerr?: Sort;
-subpasswordrequired?: Sort;
-subrunasowner?: Sort;
-subconninfo?: Sort;
-subslotname?: Sort;
-subsynccommit?: Sort;
-subpublications?: Sort;
-suborigin?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgAttribute {
@@ -3710,33 +3836,62 @@ export type PrimaryKey = PgCatalog.Types.PgAttributeRelidAttnumIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAttribute,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAttribute, Optional & PrimaryKey>
+export enum SortOptions  {
+attrelidAscending = "attrelid ASC",
+attnameAscending = "attname ASC",
+atttypidAscending = "atttypid ASC",
+attlenAscending = "attlen ASC",
+attnumAscending = "attnum ASC",
+attcacheoffAscending = "attcacheoff ASC",
+atttypmodAscending = "atttypmod ASC",
+attndimsAscending = "attndims ASC",
+attbyvalAscending = "attbyval ASC",
+attalignAscending = "attalign ASC",
+attstorageAscending = "attstorage ASC",
+attcompressionAscending = "attcompression ASC",
+attnotnullAscending = "attnotnull ASC",
+atthasdefAscending = "atthasdef ASC",
+atthasmissingAscending = "atthasmissing ASC",
+attidentityAscending = "attidentity ASC",
+attgeneratedAscending = "attgenerated ASC",
+attisdroppedAscending = "attisdropped ASC",
+attislocalAscending = "attislocal ASC",
+attinhcountAscending = "attinhcount ASC",
+attstattargetAscending = "attstattarget ASC",
+attcollationAscending = "attcollation ASC",
+attaclAscending = "attacl ASC",
+attoptionsAscending = "attoptions ASC",
+attfdwoptionsAscending = "attfdwoptions ASC",
+attmissingvalAscending = "attmissingval ASC",
+attrelidDescending = "attrelid DESC",
+attnameDescending = "attname DESC",
+atttypidDescending = "atttypid DESC",
+attlenDescending = "attlen DESC",
+attnumDescending = "attnum DESC",
+attcacheoffDescending = "attcacheoff DESC",
+atttypmodDescending = "atttypmod DESC",
+attndimsDescending = "attndims DESC",
+attbyvalDescending = "attbyval DESC",
+attalignDescending = "attalign DESC",
+attstorageDescending = "attstorage DESC",
+attcompressionDescending = "attcompression DESC",
+attnotnullDescending = "attnotnull DESC",
+atthasdefDescending = "atthasdef DESC",
+atthasmissingDescending = "atthasmissing DESC",
+attidentityDescending = "attidentity DESC",
+attgeneratedDescending = "attgenerated DESC",
+attisdroppedDescending = "attisdropped DESC",
+attislocalDescending = "attislocal DESC",
+attinhcountDescending = "attinhcount DESC",
+attstattargetDescending = "attstattarget DESC",
+attcollationDescending = "attcollation DESC",
+attaclDescending = "attacl DESC",
+attoptionsDescending = "attoptions DESC",
+attfdwoptionsDescending = "attfdwoptions DESC",
+attmissingvalDescending = "attmissingval DESC",
+};
 export type Options = ReadOptions & {
-attrelid?: Sort;
-attname?: Sort;
-atttypid?: Sort;
-attlen?: Sort;
-attnum?: Sort;
-attcacheoff?: Sort;
-atttypmod?: Sort;
-attndims?: Sort;
-attbyval?: Sort;
-attalign?: Sort;
-attstorage?: Sort;
-attcompression?: Sort;
-attnotnull?: Sort;
-atthasdef?: Sort;
-atthasmissing?: Sort;
-attidentity?: Sort;
-attgenerated?: Sort;
-attisdropped?: Sort;
-attislocal?: Sort;
-attinhcount?: Sort;
-attstattarget?: Sort;
-attcollation?: Sort;
-attacl?: Sort;
-attoptions?: Sort;
-attfdwoptions?: Sort;
-attmissingval?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgProc {
@@ -3747,37 +3902,70 @@ export type PrimaryKey = PgCatalog.Types.PgProcOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgProc,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgProc, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+pronameAscending = "proname ASC",
+pronamespaceAscending = "pronamespace ASC",
+proownerAscending = "proowner ASC",
+prolangAscending = "prolang ASC",
+procostAscending = "procost ASC",
+prorowsAscending = "prorows ASC",
+provariadicAscending = "provariadic ASC",
+prosupportAscending = "prosupport ASC",
+prokindAscending = "prokind ASC",
+prosecdefAscending = "prosecdef ASC",
+proleakproofAscending = "proleakproof ASC",
+proisstrictAscending = "proisstrict ASC",
+proretsetAscending = "proretset ASC",
+provolatileAscending = "provolatile ASC",
+proparallelAscending = "proparallel ASC",
+pronargsAscending = "pronargs ASC",
+pronargdefaultsAscending = "pronargdefaults ASC",
+prorettypeAscending = "prorettype ASC",
+proargtypesAscending = "proargtypes ASC",
+proallargtypesAscending = "proallargtypes ASC",
+proargmodesAscending = "proargmodes ASC",
+proargnamesAscending = "proargnames ASC",
+proargdefaultsAscending = "proargdefaults ASC",
+protrftypesAscending = "protrftypes ASC",
+prosrcAscending = "prosrc ASC",
+probinAscending = "probin ASC",
+prosqlbodyAscending = "prosqlbody ASC",
+proconfigAscending = "proconfig ASC",
+proaclAscending = "proacl ASC",
+oidDescending = "oid DESC",
+pronameDescending = "proname DESC",
+pronamespaceDescending = "pronamespace DESC",
+proownerDescending = "proowner DESC",
+prolangDescending = "prolang DESC",
+procostDescending = "procost DESC",
+prorowsDescending = "prorows DESC",
+provariadicDescending = "provariadic DESC",
+prosupportDescending = "prosupport DESC",
+prokindDescending = "prokind DESC",
+prosecdefDescending = "prosecdef DESC",
+proleakproofDescending = "proleakproof DESC",
+proisstrictDescending = "proisstrict DESC",
+proretsetDescending = "proretset DESC",
+provolatileDescending = "provolatile DESC",
+proparallelDescending = "proparallel DESC",
+pronargsDescending = "pronargs DESC",
+pronargdefaultsDescending = "pronargdefaults DESC",
+prorettypeDescending = "prorettype DESC",
+proargtypesDescending = "proargtypes DESC",
+proallargtypesDescending = "proallargtypes DESC",
+proargmodesDescending = "proargmodes DESC",
+proargnamesDescending = "proargnames DESC",
+proargdefaultsDescending = "proargdefaults DESC",
+protrftypesDescending = "protrftypes DESC",
+prosrcDescending = "prosrc DESC",
+probinDescending = "probin DESC",
+prosqlbodyDescending = "prosqlbody DESC",
+proconfigDescending = "proconfig DESC",
+proaclDescending = "proacl DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-proname?: Sort;
-pronamespace?: Sort;
-proowner?: Sort;
-prolang?: Sort;
-procost?: Sort;
-prorows?: Sort;
-provariadic?: Sort;
-prosupport?: Sort;
-prokind?: Sort;
-prosecdef?: Sort;
-proleakproof?: Sort;
-proisstrict?: Sort;
-proretset?: Sort;
-provolatile?: Sort;
-proparallel?: Sort;
-pronargs?: Sort;
-pronargdefaults?: Sort;
-prorettype?: Sort;
-proargtypes?: Sort;
-proallargtypes?: Sort;
-proargmodes?: Sort;
-proargnames?: Sort;
-proargdefaults?: Sort;
-protrftypes?: Sort;
-prosrc?: Sort;
-probin?: Sort;
-prosqlbody?: Sort;
-proconfig?: Sort;
-proacl?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgClass {
@@ -3788,40 +3976,76 @@ export type PrimaryKey = PgCatalog.Types.PgClassOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgClass,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgClass, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+relnameAscending = "relname ASC",
+relnamespaceAscending = "relnamespace ASC",
+reltypeAscending = "reltype ASC",
+reloftypeAscending = "reloftype ASC",
+relownerAscending = "relowner ASC",
+relamAscending = "relam ASC",
+relfilenodeAscending = "relfilenode ASC",
+reltablespaceAscending = "reltablespace ASC",
+relpagesAscending = "relpages ASC",
+reltuplesAscending = "reltuples ASC",
+relallvisibleAscending = "relallvisible ASC",
+reltoastrelidAscending = "reltoastrelid ASC",
+relhasindexAscending = "relhasindex ASC",
+relissharedAscending = "relisshared ASC",
+relpersistenceAscending = "relpersistence ASC",
+relkindAscending = "relkind ASC",
+relnattsAscending = "relnatts ASC",
+relchecksAscending = "relchecks ASC",
+relhasrulesAscending = "relhasrules ASC",
+relhastriggersAscending = "relhastriggers ASC",
+relhassubclassAscending = "relhassubclass ASC",
+relrowsecurityAscending = "relrowsecurity ASC",
+relforcerowsecurityAscending = "relforcerowsecurity ASC",
+relispopulatedAscending = "relispopulated ASC",
+relreplidentAscending = "relreplident ASC",
+relispartitionAscending = "relispartition ASC",
+relrewriteAscending = "relrewrite ASC",
+relfrozenxidAscending = "relfrozenxid ASC",
+relminmxidAscending = "relminmxid ASC",
+relaclAscending = "relacl ASC",
+reloptionsAscending = "reloptions ASC",
+relpartboundAscending = "relpartbound ASC",
+oidDescending = "oid DESC",
+relnameDescending = "relname DESC",
+relnamespaceDescending = "relnamespace DESC",
+reltypeDescending = "reltype DESC",
+reloftypeDescending = "reloftype DESC",
+relownerDescending = "relowner DESC",
+relamDescending = "relam DESC",
+relfilenodeDescending = "relfilenode DESC",
+reltablespaceDescending = "reltablespace DESC",
+relpagesDescending = "relpages DESC",
+reltuplesDescending = "reltuples DESC",
+relallvisibleDescending = "relallvisible DESC",
+reltoastrelidDescending = "reltoastrelid DESC",
+relhasindexDescending = "relhasindex DESC",
+relissharedDescending = "relisshared DESC",
+relpersistenceDescending = "relpersistence DESC",
+relkindDescending = "relkind DESC",
+relnattsDescending = "relnatts DESC",
+relchecksDescending = "relchecks DESC",
+relhasrulesDescending = "relhasrules DESC",
+relhastriggersDescending = "relhastriggers DESC",
+relhassubclassDescending = "relhassubclass DESC",
+relrowsecurityDescending = "relrowsecurity DESC",
+relforcerowsecurityDescending = "relforcerowsecurity DESC",
+relispopulatedDescending = "relispopulated DESC",
+relreplidentDescending = "relreplident DESC",
+relispartitionDescending = "relispartition DESC",
+relrewriteDescending = "relrewrite DESC",
+relfrozenxidDescending = "relfrozenxid DESC",
+relminmxidDescending = "relminmxid DESC",
+relaclDescending = "relacl DESC",
+reloptionsDescending = "reloptions DESC",
+relpartboundDescending = "relpartbound DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-relname?: Sort;
-relnamespace?: Sort;
-reltype?: Sort;
-reloftype?: Sort;
-relowner?: Sort;
-relam?: Sort;
-relfilenode?: Sort;
-reltablespace?: Sort;
-relpages?: Sort;
-reltuples?: Sort;
-relallvisible?: Sort;
-reltoastrelid?: Sort;
-relhasindex?: Sort;
-relisshared?: Sort;
-relpersistence?: Sort;
-relkind?: Sort;
-relnatts?: Sort;
-relchecks?: Sort;
-relhasrules?: Sort;
-relhastriggers?: Sort;
-relhassubclass?: Sort;
-relrowsecurity?: Sort;
-relforcerowsecurity?: Sort;
-relispopulated?: Sort;
-relreplident?: Sort;
-relispartition?: Sort;
-relrewrite?: Sort;
-relfrozenxid?: Sort;
-relminmxid?: Sort;
-relacl?: Sort;
-reloptions?: Sort;
-relpartbound?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgAttrdef {
@@ -3832,11 +4056,18 @@ export type PrimaryKey = PgCatalog.Types.PgAttrdefOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAttrdef,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAttrdef, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+adrelidAscending = "adrelid ASC",
+adnumAscending = "adnum ASC",
+adbinAscending = "adbin ASC",
+oidDescending = "oid DESC",
+adrelidDescending = "adrelid DESC",
+adnumDescending = "adnum DESC",
+adbinDescending = "adbin DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-adrelid?: Sort;
-adnum?: Sort;
-adbin?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgConstraint {
@@ -3847,33 +4078,62 @@ export type PrimaryKey = PgCatalog.Types.PgConstraintOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgConstraint,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgConstraint, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+connameAscending = "conname ASC",
+connamespaceAscending = "connamespace ASC",
+contypeAscending = "contype ASC",
+condeferrableAscending = "condeferrable ASC",
+condeferredAscending = "condeferred ASC",
+convalidatedAscending = "convalidated ASC",
+conrelidAscending = "conrelid ASC",
+contypidAscending = "contypid ASC",
+conindidAscending = "conindid ASC",
+conparentidAscending = "conparentid ASC",
+confrelidAscending = "confrelid ASC",
+confupdtypeAscending = "confupdtype ASC",
+confdeltypeAscending = "confdeltype ASC",
+confmatchtypeAscending = "confmatchtype ASC",
+conislocalAscending = "conislocal ASC",
+coninhcountAscending = "coninhcount ASC",
+connoinheritAscending = "connoinherit ASC",
+conkeyAscending = "conkey ASC",
+confkeyAscending = "confkey ASC",
+conpfeqopAscending = "conpfeqop ASC",
+conppeqopAscending = "conppeqop ASC",
+conffeqopAscending = "conffeqop ASC",
+confdelsetcolsAscending = "confdelsetcols ASC",
+conexclopAscending = "conexclop ASC",
+conbinAscending = "conbin ASC",
+oidDescending = "oid DESC",
+connameDescending = "conname DESC",
+connamespaceDescending = "connamespace DESC",
+contypeDescending = "contype DESC",
+condeferrableDescending = "condeferrable DESC",
+condeferredDescending = "condeferred DESC",
+convalidatedDescending = "convalidated DESC",
+conrelidDescending = "conrelid DESC",
+contypidDescending = "contypid DESC",
+conindidDescending = "conindid DESC",
+conparentidDescending = "conparentid DESC",
+confrelidDescending = "confrelid DESC",
+confupdtypeDescending = "confupdtype DESC",
+confdeltypeDescending = "confdeltype DESC",
+confmatchtypeDescending = "confmatchtype DESC",
+conislocalDescending = "conislocal DESC",
+coninhcountDescending = "coninhcount DESC",
+connoinheritDescending = "connoinherit DESC",
+conkeyDescending = "conkey DESC",
+confkeyDescending = "confkey DESC",
+conpfeqopDescending = "conpfeqop DESC",
+conppeqopDescending = "conppeqop DESC",
+conffeqopDescending = "conffeqop DESC",
+confdelsetcolsDescending = "confdelsetcols DESC",
+conexclopDescending = "conexclop DESC",
+conbinDescending = "conbin DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-conname?: Sort;
-connamespace?: Sort;
-contype?: Sort;
-condeferrable?: Sort;
-condeferred?: Sort;
-convalidated?: Sort;
-conrelid?: Sort;
-contypid?: Sort;
-conindid?: Sort;
-conparentid?: Sort;
-confrelid?: Sort;
-confupdtype?: Sort;
-confdeltype?: Sort;
-confmatchtype?: Sort;
-conislocal?: Sort;
-coninhcount?: Sort;
-connoinherit?: Sort;
-conkey?: Sort;
-confkey?: Sort;
-conpfeqop?: Sort;
-conppeqop?: Sort;
-conffeqop?: Sort;
-confdelsetcols?: Sort;
-conexclop?: Sort;
-conbin?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgInherits {
@@ -3884,11 +4144,18 @@ export type PrimaryKey = PgCatalog.Types.PgInheritsRelidSeqnoIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgInherits,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgInherits, Optional & PrimaryKey>
+export enum SortOptions  {
+inhrelidAscending = "inhrelid ASC",
+inhparentAscending = "inhparent ASC",
+inhseqnoAscending = "inhseqno ASC",
+inhdetachpendingAscending = "inhdetachpending ASC",
+inhrelidDescending = "inhrelid DESC",
+inhparentDescending = "inhparent DESC",
+inhseqnoDescending = "inhseqno DESC",
+inhdetachpendingDescending = "inhdetachpending DESC",
+};
 export type Options = ReadOptions & {
-inhrelid?: Sort;
-inhparent?: Sort;
-inhseqno?: Sort;
-inhdetachpending?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgIndex {
@@ -3899,28 +4166,52 @@ export type PrimaryKey = PgCatalog.Types.PgIndexIndexrelidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgIndex,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgIndex, Optional & PrimaryKey>
+export enum SortOptions  {
+indexrelidAscending = "indexrelid ASC",
+indrelidAscending = "indrelid ASC",
+indnattsAscending = "indnatts ASC",
+indnkeyattsAscending = "indnkeyatts ASC",
+indisuniqueAscending = "indisunique ASC",
+indnullsnotdistinctAscending = "indnullsnotdistinct ASC",
+indisprimaryAscending = "indisprimary ASC",
+indisexclusionAscending = "indisexclusion ASC",
+indimmediateAscending = "indimmediate ASC",
+indisclusteredAscending = "indisclustered ASC",
+indisvalidAscending = "indisvalid ASC",
+indcheckxminAscending = "indcheckxmin ASC",
+indisreadyAscending = "indisready ASC",
+indisliveAscending = "indislive ASC",
+indisreplidentAscending = "indisreplident ASC",
+indkeyAscending = "indkey ASC",
+indcollationAscending = "indcollation ASC",
+indclassAscending = "indclass ASC",
+indoptionAscending = "indoption ASC",
+indexprsAscending = "indexprs ASC",
+indpredAscending = "indpred ASC",
+indexrelidDescending = "indexrelid DESC",
+indrelidDescending = "indrelid DESC",
+indnattsDescending = "indnatts DESC",
+indnkeyattsDescending = "indnkeyatts DESC",
+indisuniqueDescending = "indisunique DESC",
+indnullsnotdistinctDescending = "indnullsnotdistinct DESC",
+indisprimaryDescending = "indisprimary DESC",
+indisexclusionDescending = "indisexclusion DESC",
+indimmediateDescending = "indimmediate DESC",
+indisclusteredDescending = "indisclustered DESC",
+indisvalidDescending = "indisvalid DESC",
+indcheckxminDescending = "indcheckxmin DESC",
+indisreadyDescending = "indisready DESC",
+indisliveDescending = "indislive DESC",
+indisreplidentDescending = "indisreplident DESC",
+indkeyDescending = "indkey DESC",
+indcollationDescending = "indcollation DESC",
+indclassDescending = "indclass DESC",
+indoptionDescending = "indoption DESC",
+indexprsDescending = "indexprs DESC",
+indpredDescending = "indpred DESC",
+};
 export type Options = ReadOptions & {
-indexrelid?: Sort;
-indrelid?: Sort;
-indnatts?: Sort;
-indnkeyatts?: Sort;
-indisunique?: Sort;
-indnullsnotdistinct?: Sort;
-indisprimary?: Sort;
-indisexclusion?: Sort;
-indimmediate?: Sort;
-indisclustered?: Sort;
-indisvalid?: Sort;
-indcheckxmin?: Sort;
-indisready?: Sort;
-indislive?: Sort;
-indisreplident?: Sort;
-indkey?: Sort;
-indcollation?: Sort;
-indclass?: Sort;
-indoption?: Sort;
-indexprs?: Sort;
-indpred?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgOperator {
@@ -3931,22 +4222,40 @@ export type PrimaryKey = PgCatalog.Types.PgOperatorOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgOperator,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgOperator, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+oprnameAscending = "oprname ASC",
+oprnamespaceAscending = "oprnamespace ASC",
+oprownerAscending = "oprowner ASC",
+oprkindAscending = "oprkind ASC",
+oprcanmergeAscending = "oprcanmerge ASC",
+oprcanhashAscending = "oprcanhash ASC",
+oprleftAscending = "oprleft ASC",
+oprrightAscending = "oprright ASC",
+oprresultAscending = "oprresult ASC",
+oprcomAscending = "oprcom ASC",
+oprnegateAscending = "oprnegate ASC",
+oprcodeAscending = "oprcode ASC",
+oprrestAscending = "oprrest ASC",
+oprjoinAscending = "oprjoin ASC",
+oidDescending = "oid DESC",
+oprnameDescending = "oprname DESC",
+oprnamespaceDescending = "oprnamespace DESC",
+oprownerDescending = "oprowner DESC",
+oprkindDescending = "oprkind DESC",
+oprcanmergeDescending = "oprcanmerge DESC",
+oprcanhashDescending = "oprcanhash DESC",
+oprleftDescending = "oprleft DESC",
+oprrightDescending = "oprright DESC",
+oprresultDescending = "oprresult DESC",
+oprcomDescending = "oprcom DESC",
+oprnegateDescending = "oprnegate DESC",
+oprcodeDescending = "oprcode DESC",
+oprrestDescending = "oprrest DESC",
+oprjoinDescending = "oprjoin DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-oprname?: Sort;
-oprnamespace?: Sort;
-oprowner?: Sort;
-oprkind?: Sort;
-oprcanmerge?: Sort;
-oprcanhash?: Sort;
-oprleft?: Sort;
-oprright?: Sort;
-oprresult?: Sort;
-oprcom?: Sort;
-oprnegate?: Sort;
-oprcode?: Sort;
-oprrest?: Sort;
-oprjoin?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgOpfamily {
@@ -3957,12 +4266,20 @@ export type PrimaryKey = PgCatalog.Types.PgOpfamilyOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgOpfamily,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgOpfamily, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+opfmethodAscending = "opfmethod ASC",
+opfnameAscending = "opfname ASC",
+opfnamespaceAscending = "opfnamespace ASC",
+opfownerAscending = "opfowner ASC",
+oidDescending = "oid DESC",
+opfmethodDescending = "opfmethod DESC",
+opfnameDescending = "opfname DESC",
+opfnamespaceDescending = "opfnamespace DESC",
+opfownerDescending = "opfowner DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-opfmethod?: Sort;
-opfname?: Sort;
-opfnamespace?: Sort;
-opfowner?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgOpclass {
@@ -3973,16 +4290,28 @@ export type PrimaryKey = PgCatalog.Types.PgOpclassOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgOpclass,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgOpclass, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+opcmethodAscending = "opcmethod ASC",
+opcnameAscending = "opcname ASC",
+opcnamespaceAscending = "opcnamespace ASC",
+opcownerAscending = "opcowner ASC",
+opcfamilyAscending = "opcfamily ASC",
+opcintypeAscending = "opcintype ASC",
+opcdefaultAscending = "opcdefault ASC",
+opckeytypeAscending = "opckeytype ASC",
+oidDescending = "oid DESC",
+opcmethodDescending = "opcmethod DESC",
+opcnameDescending = "opcname DESC",
+opcnamespaceDescending = "opcnamespace DESC",
+opcownerDescending = "opcowner DESC",
+opcfamilyDescending = "opcfamily DESC",
+opcintypeDescending = "opcintype DESC",
+opcdefaultDescending = "opcdefault DESC",
+opckeytypeDescending = "opckeytype DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-opcmethod?: Sort;
-opcname?: Sort;
-opcnamespace?: Sort;
-opcowner?: Sort;
-opcfamily?: Sort;
-opcintype?: Sort;
-opcdefault?: Sort;
-opckeytype?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgAm {
@@ -3993,11 +4322,18 @@ export type PrimaryKey = PgCatalog.Types.PgAmOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAm,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAm, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+amnameAscending = "amname ASC",
+amhandlerAscending = "amhandler ASC",
+amtypeAscending = "amtype ASC",
+oidDescending = "oid DESC",
+amnameDescending = "amname DESC",
+amhandlerDescending = "amhandler DESC",
+amtypeDescending = "amtype DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-amname?: Sort;
-amhandler?: Sort;
-amtype?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgAmop {
@@ -4008,16 +4344,28 @@ export type PrimaryKey = PgCatalog.Types.PgAmopOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAmop,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAmop, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+amopfamilyAscending = "amopfamily ASC",
+amoplefttypeAscending = "amoplefttype ASC",
+amoprighttypeAscending = "amoprighttype ASC",
+amopstrategyAscending = "amopstrategy ASC",
+amoppurposeAscending = "amoppurpose ASC",
+amopoprAscending = "amopopr ASC",
+amopmethodAscending = "amopmethod ASC",
+amopsortfamilyAscending = "amopsortfamily ASC",
+oidDescending = "oid DESC",
+amopfamilyDescending = "amopfamily DESC",
+amoplefttypeDescending = "amoplefttype DESC",
+amoprighttypeDescending = "amoprighttype DESC",
+amopstrategyDescending = "amopstrategy DESC",
+amoppurposeDescending = "amoppurpose DESC",
+amopoprDescending = "amopopr DESC",
+amopmethodDescending = "amopmethod DESC",
+amopsortfamilyDescending = "amopsortfamily DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-amopfamily?: Sort;
-amoplefttype?: Sort;
-amoprighttype?: Sort;
-amopstrategy?: Sort;
-amoppurpose?: Sort;
-amopopr?: Sort;
-amopmethod?: Sort;
-amopsortfamily?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgAmproc {
@@ -4028,13 +4376,22 @@ export type PrimaryKey = PgCatalog.Types.PgAmprocOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAmproc,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAmproc, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+amprocfamilyAscending = "amprocfamily ASC",
+amproclefttypeAscending = "amproclefttype ASC",
+amprocrighttypeAscending = "amprocrighttype ASC",
+amprocnumAscending = "amprocnum ASC",
+amprocAscending = "amproc ASC",
+oidDescending = "oid DESC",
+amprocfamilyDescending = "amprocfamily DESC",
+amproclefttypeDescending = "amproclefttype DESC",
+amprocrighttypeDescending = "amprocrighttype DESC",
+amprocnumDescending = "amprocnum DESC",
+amprocDescending = "amproc DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-amprocfamily?: Sort;
-amproclefttype?: Sort;
-amprocrighttype?: Sort;
-amprocnum?: Sort;
-amproc?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgLanguage {
@@ -4045,16 +4402,28 @@ export type PrimaryKey = PgCatalog.Types.PgLanguageOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgLanguage,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgLanguage, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+lannameAscending = "lanname ASC",
+lanownerAscending = "lanowner ASC",
+lanisplAscending = "lanispl ASC",
+lanpltrustedAscending = "lanpltrusted ASC",
+lanplcallfoidAscending = "lanplcallfoid ASC",
+laninlineAscending = "laninline ASC",
+lanvalidatorAscending = "lanvalidator ASC",
+lanaclAscending = "lanacl ASC",
+oidDescending = "oid DESC",
+lannameDescending = "lanname DESC",
+lanownerDescending = "lanowner DESC",
+lanisplDescending = "lanispl DESC",
+lanpltrustedDescending = "lanpltrusted DESC",
+lanplcallfoidDescending = "lanplcallfoid DESC",
+laninlineDescending = "laninline DESC",
+lanvalidatorDescending = "lanvalidator DESC",
+lanaclDescending = "lanacl DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-lanname?: Sort;
-lanowner?: Sort;
-lanispl?: Sort;
-lanpltrusted?: Sort;
-lanplcallfoid?: Sort;
-laninline?: Sort;
-lanvalidator?: Sort;
-lanacl?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgLargeobjectMetadata {
@@ -4065,10 +4434,16 @@ export type PrimaryKey = PgCatalog.Types.PgLargeobjectMetadataOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgLargeobjectMetadata,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgLargeobjectMetadata, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+lomownerAscending = "lomowner ASC",
+lomaclAscending = "lomacl ASC",
+oidDescending = "oid DESC",
+lomownerDescending = "lomowner DESC",
+lomaclDescending = "lomacl DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-lomowner?: Sort;
-lomacl?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgAggregate {
@@ -4079,29 +4454,54 @@ export type PrimaryKey = PgCatalog.Types.PgAggregateFnoidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAggregate,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAggregate, Optional & PrimaryKey>
+export enum SortOptions  {
+aggfnoidAscending = "aggfnoid ASC",
+aggkindAscending = "aggkind ASC",
+aggnumdirectargsAscending = "aggnumdirectargs ASC",
+aggtransfnAscending = "aggtransfn ASC",
+aggfinalfnAscending = "aggfinalfn ASC",
+aggcombinefnAscending = "aggcombinefn ASC",
+aggserialfnAscending = "aggserialfn ASC",
+aggdeserialfnAscending = "aggdeserialfn ASC",
+aggmtransfnAscending = "aggmtransfn ASC",
+aggminvtransfnAscending = "aggminvtransfn ASC",
+aggmfinalfnAscending = "aggmfinalfn ASC",
+aggfinalextraAscending = "aggfinalextra ASC",
+aggmfinalextraAscending = "aggmfinalextra ASC",
+aggfinalmodifyAscending = "aggfinalmodify ASC",
+aggmfinalmodifyAscending = "aggmfinalmodify ASC",
+aggsortopAscending = "aggsortop ASC",
+aggtranstypeAscending = "aggtranstype ASC",
+aggtransspaceAscending = "aggtransspace ASC",
+aggmtranstypeAscending = "aggmtranstype ASC",
+aggmtransspaceAscending = "aggmtransspace ASC",
+agginitvalAscending = "agginitval ASC",
+aggminitvalAscending = "aggminitval ASC",
+aggfnoidDescending = "aggfnoid DESC",
+aggkindDescending = "aggkind DESC",
+aggnumdirectargsDescending = "aggnumdirectargs DESC",
+aggtransfnDescending = "aggtransfn DESC",
+aggfinalfnDescending = "aggfinalfn DESC",
+aggcombinefnDescending = "aggcombinefn DESC",
+aggserialfnDescending = "aggserialfn DESC",
+aggdeserialfnDescending = "aggdeserialfn DESC",
+aggmtransfnDescending = "aggmtransfn DESC",
+aggminvtransfnDescending = "aggminvtransfn DESC",
+aggmfinalfnDescending = "aggmfinalfn DESC",
+aggfinalextraDescending = "aggfinalextra DESC",
+aggmfinalextraDescending = "aggmfinalextra DESC",
+aggfinalmodifyDescending = "aggfinalmodify DESC",
+aggmfinalmodifyDescending = "aggmfinalmodify DESC",
+aggsortopDescending = "aggsortop DESC",
+aggtranstypeDescending = "aggtranstype DESC",
+aggtransspaceDescending = "aggtransspace DESC",
+aggmtranstypeDescending = "aggmtranstype DESC",
+aggmtransspaceDescending = "aggmtransspace DESC",
+agginitvalDescending = "agginitval DESC",
+aggminitvalDescending = "aggminitval DESC",
+};
 export type Options = ReadOptions & {
-aggfnoid?: Sort;
-aggkind?: Sort;
-aggnumdirectargs?: Sort;
-aggtransfn?: Sort;
-aggfinalfn?: Sort;
-aggcombinefn?: Sort;
-aggserialfn?: Sort;
-aggdeserialfn?: Sort;
-aggmtransfn?: Sort;
-aggminvtransfn?: Sort;
-aggmfinalfn?: Sort;
-aggfinalextra?: Sort;
-aggmfinalextra?: Sort;
-aggfinalmodify?: Sort;
-aggmfinalmodify?: Sort;
-aggsortop?: Sort;
-aggtranstype?: Sort;
-aggtransspace?: Sort;
-aggmtranstype?: Sort;
-aggmtransspace?: Sort;
-agginitval?: Sort;
-aggminitval?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgStatisticExt {
@@ -4112,16 +4512,28 @@ export type PrimaryKey = PgCatalog.Types.PgStatisticExtOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgStatisticExt,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgStatisticExt, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+stxrelidAscending = "stxrelid ASC",
+stxnameAscending = "stxname ASC",
+stxnamespaceAscending = "stxnamespace ASC",
+stxownerAscending = "stxowner ASC",
+stxstattargetAscending = "stxstattarget ASC",
+stxkeysAscending = "stxkeys ASC",
+stxkindAscending = "stxkind ASC",
+stxexprsAscending = "stxexprs ASC",
+oidDescending = "oid DESC",
+stxrelidDescending = "stxrelid DESC",
+stxnameDescending = "stxname DESC",
+stxnamespaceDescending = "stxnamespace DESC",
+stxownerDescending = "stxowner DESC",
+stxstattargetDescending = "stxstattarget DESC",
+stxkeysDescending = "stxkeys DESC",
+stxkindDescending = "stxkind DESC",
+stxexprsDescending = "stxexprs DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-stxrelid?: Sort;
-stxname?: Sort;
-stxnamespace?: Sort;
-stxowner?: Sort;
-stxstattarget?: Sort;
-stxkeys?: Sort;
-stxkind?: Sort;
-stxexprs?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgRewrite {
@@ -4132,15 +4544,26 @@ export type PrimaryKey = PgCatalog.Types.PgRewriteOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgRewrite,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgRewrite, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+rulenameAscending = "rulename ASC",
+evClassAscending = "ev_class ASC",
+evTypeAscending = "ev_type ASC",
+evEnabledAscending = "ev_enabled ASC",
+isInsteadAscending = "is_instead ASC",
+evQualAscending = "ev_qual ASC",
+evActionAscending = "ev_action ASC",
+oidDescending = "oid DESC",
+rulenameDescending = "rulename DESC",
+evClassDescending = "ev_class DESC",
+evTypeDescending = "ev_type DESC",
+evEnabledDescending = "ev_enabled DESC",
+isInsteadDescending = "is_instead DESC",
+evQualDescending = "ev_qual DESC",
+evActionDescending = "ev_action DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-rulename?: Sort;
-ev_class?: Sort;
-ev_type?: Sort;
-ev_enabled?: Sort;
-is_instead?: Sort;
-ev_qual?: Sort;
-ev_action?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgTrigger {
@@ -4151,26 +4574,48 @@ export type PrimaryKey = PgCatalog.Types.PgTriggerOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTrigger,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTrigger, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+tgrelidAscending = "tgrelid ASC",
+tgparentidAscending = "tgparentid ASC",
+tgnameAscending = "tgname ASC",
+tgfoidAscending = "tgfoid ASC",
+tgtypeAscending = "tgtype ASC",
+tgenabledAscending = "tgenabled ASC",
+tgisinternalAscending = "tgisinternal ASC",
+tgconstrrelidAscending = "tgconstrrelid ASC",
+tgconstrindidAscending = "tgconstrindid ASC",
+tgconstraintAscending = "tgconstraint ASC",
+tgdeferrableAscending = "tgdeferrable ASC",
+tginitdeferredAscending = "tginitdeferred ASC",
+tgnargsAscending = "tgnargs ASC",
+tgattrAscending = "tgattr ASC",
+tgargsAscending = "tgargs ASC",
+tgqualAscending = "tgqual ASC",
+tgoldtableAscending = "tgoldtable ASC",
+tgnewtableAscending = "tgnewtable ASC",
+oidDescending = "oid DESC",
+tgrelidDescending = "tgrelid DESC",
+tgparentidDescending = "tgparentid DESC",
+tgnameDescending = "tgname DESC",
+tgfoidDescending = "tgfoid DESC",
+tgtypeDescending = "tgtype DESC",
+tgenabledDescending = "tgenabled DESC",
+tgisinternalDescending = "tgisinternal DESC",
+tgconstrrelidDescending = "tgconstrrelid DESC",
+tgconstrindidDescending = "tgconstrindid DESC",
+tgconstraintDescending = "tgconstraint DESC",
+tgdeferrableDescending = "tgdeferrable DESC",
+tginitdeferredDescending = "tginitdeferred DESC",
+tgnargsDescending = "tgnargs DESC",
+tgattrDescending = "tgattr DESC",
+tgargsDescending = "tgargs DESC",
+tgqualDescending = "tgqual DESC",
+tgoldtableDescending = "tgoldtable DESC",
+tgnewtableDescending = "tgnewtable DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-tgrelid?: Sort;
-tgparentid?: Sort;
-tgname?: Sort;
-tgfoid?: Sort;
-tgtype?: Sort;
-tgenabled?: Sort;
-tgisinternal?: Sort;
-tgconstrrelid?: Sort;
-tgconstrindid?: Sort;
-tgconstraint?: Sort;
-tgdeferrable?: Sort;
-tginitdeferred?: Sort;
-tgnargs?: Sort;
-tgattr?: Sort;
-tgargs?: Sort;
-tgqual?: Sort;
-tgoldtable?: Sort;
-tgnewtable?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgEventTrigger {
@@ -4181,14 +4626,24 @@ export type PrimaryKey = PgCatalog.Types.PgEventTriggerOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgEventTrigger,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgEventTrigger, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+evtnameAscending = "evtname ASC",
+evteventAscending = "evtevent ASC",
+evtownerAscending = "evtowner ASC",
+evtfoidAscending = "evtfoid ASC",
+evtenabledAscending = "evtenabled ASC",
+evttagsAscending = "evttags ASC",
+oidDescending = "oid DESC",
+evtnameDescending = "evtname DESC",
+evteventDescending = "evtevent DESC",
+evtownerDescending = "evtowner DESC",
+evtfoidDescending = "evtfoid DESC",
+evtenabledDescending = "evtenabled DESC",
+evttagsDescending = "evttags DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-evtname?: Sort;
-evtevent?: Sort;
-evtowner?: Sort;
-evtfoid?: Sort;
-evtenabled?: Sort;
-evttags?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgDescription {
@@ -4199,11 +4654,18 @@ export type PrimaryKey = PgCatalog.Types.PgDescriptionOCOIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgDescription,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgDescription, Optional & PrimaryKey>
+export enum SortOptions  {
+objoidAscending = "objoid ASC",
+classoidAscending = "classoid ASC",
+objsubidAscending = "objsubid ASC",
+descriptionAscending = "description ASC",
+objoidDescending = "objoid DESC",
+classoidDescending = "classoid DESC",
+objsubidDescending = "objsubid DESC",
+descriptionDescending = "description DESC",
+};
 export type Options = ReadOptions & {
-objoid?: Sort;
-classoid?: Sort;
-objsubid?: Sort;
-description?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgCast {
@@ -4214,13 +4676,22 @@ export type PrimaryKey = PgCatalog.Types.PgCastOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgCast,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgCast, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+castsourceAscending = "castsource ASC",
+casttargetAscending = "casttarget ASC",
+castfuncAscending = "castfunc ASC",
+castcontextAscending = "castcontext ASC",
+castmethodAscending = "castmethod ASC",
+oidDescending = "oid DESC",
+castsourceDescending = "castsource DESC",
+casttargetDescending = "casttarget DESC",
+castfuncDescending = "castfunc DESC",
+castcontextDescending = "castcontext DESC",
+castmethodDescending = "castmethod DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-castsource?: Sort;
-casttarget?: Sort;
-castfunc?: Sort;
-castcontext?: Sort;
-castmethod?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgEnum {
@@ -4231,11 +4702,18 @@ export type PrimaryKey = PgCatalog.Types.PgEnumOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgEnum,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgEnum, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+enumtypidAscending = "enumtypid ASC",
+enumsortorderAscending = "enumsortorder ASC",
+enumlabelAscending = "enumlabel ASC",
+oidDescending = "oid DESC",
+enumtypidDescending = "enumtypid DESC",
+enumsortorderDescending = "enumsortorder DESC",
+enumlabelDescending = "enumlabel DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-enumtypid?: Sort;
-enumsortorder?: Sort;
-enumlabel?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgNamespace {
@@ -4246,11 +4724,18 @@ export type PrimaryKey = PgCatalog.Types.PgNamespaceOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgNamespace,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgNamespace, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+nspnameAscending = "nspname ASC",
+nspownerAscending = "nspowner ASC",
+nspaclAscending = "nspacl ASC",
+oidDescending = "oid DESC",
+nspnameDescending = "nspname DESC",
+nspownerDescending = "nspowner DESC",
+nspaclDescending = "nspacl DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-nspname?: Sort;
-nspowner?: Sort;
-nspacl?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgConversion {
@@ -4261,15 +4746,26 @@ export type PrimaryKey = PgCatalog.Types.PgConversionOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgConversion,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgConversion, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+connameAscending = "conname ASC",
+connamespaceAscending = "connamespace ASC",
+conownerAscending = "conowner ASC",
+conforencodingAscending = "conforencoding ASC",
+contoencodingAscending = "contoencoding ASC",
+conprocAscending = "conproc ASC",
+condefaultAscending = "condefault ASC",
+oidDescending = "oid DESC",
+connameDescending = "conname DESC",
+connamespaceDescending = "connamespace DESC",
+conownerDescending = "conowner DESC",
+conforencodingDescending = "conforencoding DESC",
+contoencodingDescending = "contoencoding DESC",
+conprocDescending = "conproc DESC",
+condefaultDescending = "condefault DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-conname?: Sort;
-connamespace?: Sort;
-conowner?: Sort;
-conforencoding?: Sort;
-contoencoding?: Sort;
-conproc?: Sort;
-condefault?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgDepend {
@@ -4279,14 +4775,24 @@ export function emptyRow() {
 export type PrimaryKey = never;
 export type Optional = Pick<PgCatalog.Types.PgDepend,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgDepend, Optional & PrimaryKey>
+export enum SortOptions  {
+classidAscending = "classid ASC",
+objidAscending = "objid ASC",
+objsubidAscending = "objsubid ASC",
+refclassidAscending = "refclassid ASC",
+refobjidAscending = "refobjid ASC",
+refobjsubidAscending = "refobjsubid ASC",
+deptypeAscending = "deptype ASC",
+classidDescending = "classid DESC",
+objidDescending = "objid DESC",
+objsubidDescending = "objsubid DESC",
+refclassidDescending = "refclassid DESC",
+refobjidDescending = "refobjid DESC",
+refobjsubidDescending = "refobjsubid DESC",
+deptypeDescending = "deptype DESC",
+};
 export type Options = ReadOptions & {
-classid?: Sort;
-objid?: Sort;
-objsubid?: Sort;
-refclassid?: Sort;
-refobjid?: Sort;
-refobjsubid?: Sort;
-deptype?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgDatabase {
@@ -4297,24 +4803,44 @@ export type PrimaryKey = PgCatalog.Types.PgDatabaseOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgDatabase,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgDatabase, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+datnameAscending = "datname ASC",
+datdbaAscending = "datdba ASC",
+encodingAscending = "encoding ASC",
+datlocproviderAscending = "datlocprovider ASC",
+datistemplateAscending = "datistemplate ASC",
+datallowconnAscending = "datallowconn ASC",
+datconnlimitAscending = "datconnlimit ASC",
+datfrozenxidAscending = "datfrozenxid ASC",
+datminmxidAscending = "datminmxid ASC",
+dattablespaceAscending = "dattablespace ASC",
+datcollateAscending = "datcollate ASC",
+datctypeAscending = "datctype ASC",
+daticulocaleAscending = "daticulocale ASC",
+daticurulesAscending = "daticurules ASC",
+datcollversionAscending = "datcollversion ASC",
+dataclAscending = "datacl ASC",
+oidDescending = "oid DESC",
+datnameDescending = "datname DESC",
+datdbaDescending = "datdba DESC",
+encodingDescending = "encoding DESC",
+datlocproviderDescending = "datlocprovider DESC",
+datistemplateDescending = "datistemplate DESC",
+datallowconnDescending = "datallowconn DESC",
+datconnlimitDescending = "datconnlimit DESC",
+datfrozenxidDescending = "datfrozenxid DESC",
+datminmxidDescending = "datminmxid DESC",
+dattablespaceDescending = "dattablespace DESC",
+datcollateDescending = "datcollate DESC",
+datctypeDescending = "datctype DESC",
+daticulocaleDescending = "daticulocale DESC",
+daticurulesDescending = "daticurules DESC",
+datcollversionDescending = "datcollversion DESC",
+dataclDescending = "datacl DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-datname?: Sort;
-datdba?: Sort;
-encoding?: Sort;
-datlocprovider?: Sort;
-datistemplate?: Sort;
-datallowconn?: Sort;
-datconnlimit?: Sort;
-datfrozenxid?: Sort;
-datminmxid?: Sort;
-dattablespace?: Sort;
-datcollate?: Sort;
-datctype?: Sort;
-daticulocale?: Sort;
-daticurules?: Sort;
-datcollversion?: Sort;
-datacl?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgDbRoleSetting {
@@ -4325,10 +4851,16 @@ export type PrimaryKey = PgCatalog.Types.PgDbRoleSettingDatabaseidRolIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgDbRoleSetting,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgDbRoleSetting, Optional & PrimaryKey>
+export enum SortOptions  {
+setdatabaseAscending = "setdatabase ASC",
+setroleAscending = "setrole ASC",
+setconfigAscending = "setconfig ASC",
+setdatabaseDescending = "setdatabase DESC",
+setroleDescending = "setrole DESC",
+setconfigDescending = "setconfig DESC",
+};
 export type Options = ReadOptions & {
-setdatabase?: Sort;
-setrole?: Sort;
-setconfig?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgTablespace {
@@ -4339,12 +4871,20 @@ export type PrimaryKey = PgCatalog.Types.PgTablespaceOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTablespace,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTablespace, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+spcnameAscending = "spcname ASC",
+spcownerAscending = "spcowner ASC",
+spcaclAscending = "spcacl ASC",
+spcoptionsAscending = "spcoptions ASC",
+oidDescending = "oid DESC",
+spcnameDescending = "spcname DESC",
+spcownerDescending = "spcowner DESC",
+spcaclDescending = "spcacl DESC",
+spcoptionsDescending = "spcoptions DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-spcname?: Sort;
-spcowner?: Sort;
-spcacl?: Sort;
-spcoptions?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgAuthMembers {
@@ -4355,14 +4895,24 @@ export type PrimaryKey = PgCatalog.Types.PgAuthMembersOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgAuthMembers,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgAuthMembers, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+roleidAscending = "roleid ASC",
+memberAscending = "member ASC",
+grantorAscending = "grantor ASC",
+adminOptionAscending = "admin_option ASC",
+inheritOptionAscending = "inherit_option ASC",
+setOptionAscending = "set_option ASC",
+oidDescending = "oid DESC",
+roleidDescending = "roleid DESC",
+memberDescending = "member DESC",
+grantorDescending = "grantor DESC",
+adminOptionDescending = "admin_option DESC",
+inheritOptionDescending = "inherit_option DESC",
+setOptionDescending = "set_option DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-roleid?: Sort;
-member?: Sort;
-grantor?: Sort;
-admin_option?: Sort;
-inherit_option?: Sort;
-set_option?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgShdepend {
@@ -4372,14 +4922,24 @@ export function emptyRow() {
 export type PrimaryKey = never;
 export type Optional = Pick<PgCatalog.Types.PgShdepend,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgShdepend, Optional & PrimaryKey>
+export enum SortOptions  {
+dbidAscending = "dbid ASC",
+classidAscending = "classid ASC",
+objidAscending = "objid ASC",
+objsubidAscending = "objsubid ASC",
+refclassidAscending = "refclassid ASC",
+refobjidAscending = "refobjid ASC",
+deptypeAscending = "deptype ASC",
+dbidDescending = "dbid DESC",
+classidDescending = "classid DESC",
+objidDescending = "objid DESC",
+objsubidDescending = "objsubid DESC",
+refclassidDescending = "refclassid DESC",
+refobjidDescending = "refobjid DESC",
+deptypeDescending = "deptype DESC",
+};
 export type Options = ReadOptions & {
-dbid?: Sort;
-classid?: Sort;
-objid?: Sort;
-objsubid?: Sort;
-refclassid?: Sort;
-refobjid?: Sort;
-deptype?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgShdescription {
@@ -4390,10 +4950,16 @@ export type PrimaryKey = PgCatalog.Types.PgShdescriptionOCIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgShdescription,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgShdescription, Optional & PrimaryKey>
+export enum SortOptions  {
+objoidAscending = "objoid ASC",
+classoidAscending = "classoid ASC",
+descriptionAscending = "description ASC",
+objoidDescending = "objoid DESC",
+classoidDescending = "classoid DESC",
+descriptionDescending = "description DESC",
+};
 export type Options = ReadOptions & {
-objoid?: Sort;
-classoid?: Sort;
-description?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgTsConfig {
@@ -4404,12 +4970,20 @@ export type PrimaryKey = PgCatalog.Types.PgTsConfigOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTsConfig,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTsConfig, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+cfgnameAscending = "cfgname ASC",
+cfgnamespaceAscending = "cfgnamespace ASC",
+cfgownerAscending = "cfgowner ASC",
+cfgparserAscending = "cfgparser ASC",
+oidDescending = "oid DESC",
+cfgnameDescending = "cfgname DESC",
+cfgnamespaceDescending = "cfgnamespace DESC",
+cfgownerDescending = "cfgowner DESC",
+cfgparserDescending = "cfgparser DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-cfgname?: Sort;
-cfgnamespace?: Sort;
-cfgowner?: Sort;
-cfgparser?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgTsConfigMap {
@@ -4420,11 +4994,18 @@ export type PrimaryKey = PgCatalog.Types.PgTsConfigMapIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTsConfigMap,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTsConfigMap, Optional & PrimaryKey>
+export enum SortOptions  {
+mapcfgAscending = "mapcfg ASC",
+maptokentypeAscending = "maptokentype ASC",
+mapseqnoAscending = "mapseqno ASC",
+mapdictAscending = "mapdict ASC",
+mapcfgDescending = "mapcfg DESC",
+maptokentypeDescending = "maptokentype DESC",
+mapseqnoDescending = "mapseqno DESC",
+mapdictDescending = "mapdict DESC",
+};
 export type Options = ReadOptions & {
-mapcfg?: Sort;
-maptokentype?: Sort;
-mapseqno?: Sort;
-mapdict?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgTsDict {
@@ -4435,13 +5016,22 @@ export type PrimaryKey = PgCatalog.Types.PgTsDictOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTsDict,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTsDict, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+dictnameAscending = "dictname ASC",
+dictnamespaceAscending = "dictnamespace ASC",
+dictownerAscending = "dictowner ASC",
+dicttemplateAscending = "dicttemplate ASC",
+dictinitoptionAscending = "dictinitoption ASC",
+oidDescending = "oid DESC",
+dictnameDescending = "dictname DESC",
+dictnamespaceDescending = "dictnamespace DESC",
+dictownerDescending = "dictowner DESC",
+dicttemplateDescending = "dicttemplate DESC",
+dictinitoptionDescending = "dictinitoption DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-dictname?: Sort;
-dictnamespace?: Sort;
-dictowner?: Sort;
-dicttemplate?: Sort;
-dictinitoption?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgTsParser {
@@ -4452,15 +5042,26 @@ export type PrimaryKey = PgCatalog.Types.PgTsParserOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTsParser,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTsParser, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+prsnameAscending = "prsname ASC",
+prsnamespaceAscending = "prsnamespace ASC",
+prsstartAscending = "prsstart ASC",
+prstokenAscending = "prstoken ASC",
+prsendAscending = "prsend ASC",
+prsheadlineAscending = "prsheadline ASC",
+prslextypeAscending = "prslextype ASC",
+oidDescending = "oid DESC",
+prsnameDescending = "prsname DESC",
+prsnamespaceDescending = "prsnamespace DESC",
+prsstartDescending = "prsstart DESC",
+prstokenDescending = "prstoken DESC",
+prsendDescending = "prsend DESC",
+prsheadlineDescending = "prsheadline DESC",
+prslextypeDescending = "prslextype DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-prsname?: Sort;
-prsnamespace?: Sort;
-prsstart?: Sort;
-prstoken?: Sort;
-prsend?: Sort;
-prsheadline?: Sort;
-prslextype?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgTsTemplate {
@@ -4471,12 +5072,20 @@ export type PrimaryKey = PgCatalog.Types.PgTsTemplateOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTsTemplate,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTsTemplate, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+tmplnameAscending = "tmplname ASC",
+tmplnamespaceAscending = "tmplnamespace ASC",
+tmplinitAscending = "tmplinit ASC",
+tmpllexizeAscending = "tmpllexize ASC",
+oidDescending = "oid DESC",
+tmplnameDescending = "tmplname DESC",
+tmplnamespaceDescending = "tmplnamespace DESC",
+tmplinitDescending = "tmplinit DESC",
+tmpllexizeDescending = "tmpllexize DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-tmplname?: Sort;
-tmplnamespace?: Sort;
-tmplinit?: Sort;
-tmpllexize?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgExtension {
@@ -4487,15 +5096,26 @@ export type PrimaryKey = PgCatalog.Types.PgExtensionOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgExtension,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgExtension, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+extnameAscending = "extname ASC",
+extownerAscending = "extowner ASC",
+extnamespaceAscending = "extnamespace ASC",
+extrelocatableAscending = "extrelocatable ASC",
+extversionAscending = "extversion ASC",
+extconfigAscending = "extconfig ASC",
+extconditionAscending = "extcondition ASC",
+oidDescending = "oid DESC",
+extnameDescending = "extname DESC",
+extownerDescending = "extowner DESC",
+extnamespaceDescending = "extnamespace DESC",
+extrelocatableDescending = "extrelocatable DESC",
+extversionDescending = "extversion DESC",
+extconfigDescending = "extconfig DESC",
+extconditionDescending = "extcondition DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-extname?: Sort;
-extowner?: Sort;
-extnamespace?: Sort;
-extrelocatable?: Sort;
-extversion?: Sort;
-extconfig?: Sort;
-extcondition?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgForeignDataWrapper {
@@ -4506,14 +5126,24 @@ export type PrimaryKey = PgCatalog.Types.PgForeignDataWrapperOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgForeignDataWrapper,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgForeignDataWrapper, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+fdwnameAscending = "fdwname ASC",
+fdwownerAscending = "fdwowner ASC",
+fdwhandlerAscending = "fdwhandler ASC",
+fdwvalidatorAscending = "fdwvalidator ASC",
+fdwaclAscending = "fdwacl ASC",
+fdwoptionsAscending = "fdwoptions ASC",
+oidDescending = "oid DESC",
+fdwnameDescending = "fdwname DESC",
+fdwownerDescending = "fdwowner DESC",
+fdwhandlerDescending = "fdwhandler DESC",
+fdwvalidatorDescending = "fdwvalidator DESC",
+fdwaclDescending = "fdwacl DESC",
+fdwoptionsDescending = "fdwoptions DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-fdwname?: Sort;
-fdwowner?: Sort;
-fdwhandler?: Sort;
-fdwvalidator?: Sort;
-fdwacl?: Sort;
-fdwoptions?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgForeignServer {
@@ -4524,15 +5154,26 @@ export type PrimaryKey = PgCatalog.Types.PgForeignServerOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgForeignServer,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgForeignServer, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+srvnameAscending = "srvname ASC",
+srvownerAscending = "srvowner ASC",
+srvfdwAscending = "srvfdw ASC",
+srvtypeAscending = "srvtype ASC",
+srvversionAscending = "srvversion ASC",
+srvaclAscending = "srvacl ASC",
+srvoptionsAscending = "srvoptions ASC",
+oidDescending = "oid DESC",
+srvnameDescending = "srvname DESC",
+srvownerDescending = "srvowner DESC",
+srvfdwDescending = "srvfdw DESC",
+srvtypeDescending = "srvtype DESC",
+srvversionDescending = "srvversion DESC",
+srvaclDescending = "srvacl DESC",
+srvoptionsDescending = "srvoptions DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-srvname?: Sort;
-srvowner?: Sort;
-srvfdw?: Sort;
-srvtype?: Sort;
-srvversion?: Sort;
-srvacl?: Sort;
-srvoptions?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgPolicy {
@@ -4543,15 +5184,26 @@ export type PrimaryKey = PgCatalog.Types.PgPolicyOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgPolicy,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgPolicy, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+polnameAscending = "polname ASC",
+polrelidAscending = "polrelid ASC",
+polcmdAscending = "polcmd ASC",
+polpermissiveAscending = "polpermissive ASC",
+polrolesAscending = "polroles ASC",
+polqualAscending = "polqual ASC",
+polwithcheckAscending = "polwithcheck ASC",
+oidDescending = "oid DESC",
+polnameDescending = "polname DESC",
+polrelidDescending = "polrelid DESC",
+polcmdDescending = "polcmd DESC",
+polpermissiveDescending = "polpermissive DESC",
+polrolesDescending = "polroles DESC",
+polqualDescending = "polqual DESC",
+polwithcheckDescending = "polwithcheck DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-polname?: Sort;
-polrelid?: Sort;
-polcmd?: Sort;
-polpermissive?: Sort;
-polroles?: Sort;
-polqual?: Sort;
-polwithcheck?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgReplicationOrigin {
@@ -4562,9 +5214,14 @@ export type PrimaryKey = PgCatalog.Types.PgReplicationOriginRoiidentIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgReplicationOrigin,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgReplicationOrigin, Optional & PrimaryKey>
+export enum SortOptions  {
+roidentAscending = "roident ASC",
+ronameAscending = "roname ASC",
+roidentDescending = "roident DESC",
+ronameDescending = "roname DESC",
+};
 export type Options = ReadOptions & {
-roident?: Sort;
-roname?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgDefaultAcl {
@@ -4575,12 +5232,20 @@ export type PrimaryKey = PgCatalog.Types.PgDefaultAclOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgDefaultAcl,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgDefaultAcl, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+defaclroleAscending = "defaclrole ASC",
+defaclnamespaceAscending = "defaclnamespace ASC",
+defaclobjtypeAscending = "defaclobjtype ASC",
+defaclaclAscending = "defaclacl ASC",
+oidDescending = "oid DESC",
+defaclroleDescending = "defaclrole DESC",
+defaclnamespaceDescending = "defaclnamespace DESC",
+defaclobjtypeDescending = "defaclobjtype DESC",
+defaclaclDescending = "defaclacl DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-defaclrole?: Sort;
-defaclnamespace?: Sort;
-defaclobjtype?: Sort;
-defaclacl?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgInitPrivs {
@@ -4591,12 +5256,20 @@ export type PrimaryKey = PgCatalog.Types.PgInitPrivsOCOIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgInitPrivs,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgInitPrivs, Optional & PrimaryKey>
+export enum SortOptions  {
+objoidAscending = "objoid ASC",
+classoidAscending = "classoid ASC",
+objsubidAscending = "objsubid ASC",
+privtypeAscending = "privtype ASC",
+initprivsAscending = "initprivs ASC",
+objoidDescending = "objoid DESC",
+classoidDescending = "classoid DESC",
+objsubidDescending = "objsubid DESC",
+privtypeDescending = "privtype DESC",
+initprivsDescending = "initprivs DESC",
+};
 export type Options = ReadOptions & {
-objoid?: Sort;
-classoid?: Sort;
-objsubid?: Sort;
-privtype?: Sort;
-initprivs?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgSeclabel {
@@ -4607,12 +5280,20 @@ export type PrimaryKey = PgCatalog.Types.PgSeclabelObjectIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgSeclabel,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgSeclabel, Optional & PrimaryKey>
+export enum SortOptions  {
+objoidAscending = "objoid ASC",
+classoidAscending = "classoid ASC",
+objsubidAscending = "objsubid ASC",
+providerAscending = "provider ASC",
+labelAscending = "label ASC",
+objoidDescending = "objoid DESC",
+classoidDescending = "classoid DESC",
+objsubidDescending = "objsubid DESC",
+providerDescending = "provider DESC",
+labelDescending = "label DESC",
+};
 export type Options = ReadOptions & {
-objoid?: Sort;
-classoid?: Sort;
-objsubid?: Sort;
-provider?: Sort;
-label?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgShseclabel {
@@ -4623,11 +5304,18 @@ export type PrimaryKey = PgCatalog.Types.PgShseclabelObjectIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgShseclabel,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgShseclabel, Optional & PrimaryKey>
+export enum SortOptions  {
+objoidAscending = "objoid ASC",
+classoidAscending = "classoid ASC",
+providerAscending = "provider ASC",
+labelAscending = "label ASC",
+objoidDescending = "objoid DESC",
+classoidDescending = "classoid DESC",
+providerDescending = "provider DESC",
+labelDescending = "label DESC",
+};
 export type Options = ReadOptions & {
-objoid?: Sort;
-classoid?: Sort;
-provider?: Sort;
-label?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgCollation {
@@ -4638,19 +5326,34 @@ export type PrimaryKey = PgCatalog.Types.PgCollationOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgCollation,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgCollation, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+collnameAscending = "collname ASC",
+collnamespaceAscending = "collnamespace ASC",
+collownerAscending = "collowner ASC",
+collproviderAscending = "collprovider ASC",
+collisdeterministicAscending = "collisdeterministic ASC",
+collencodingAscending = "collencoding ASC",
+collcollateAscending = "collcollate ASC",
+collctypeAscending = "collctype ASC",
+colliculocaleAscending = "colliculocale ASC",
+collicurulesAscending = "collicurules ASC",
+collversionAscending = "collversion ASC",
+oidDescending = "oid DESC",
+collnameDescending = "collname DESC",
+collnamespaceDescending = "collnamespace DESC",
+collownerDescending = "collowner DESC",
+collproviderDescending = "collprovider DESC",
+collisdeterministicDescending = "collisdeterministic DESC",
+collencodingDescending = "collencoding DESC",
+collcollateDescending = "collcollate DESC",
+collctypeDescending = "collctype DESC",
+colliculocaleDescending = "colliculocale DESC",
+collicurulesDescending = "collicurules DESC",
+collversionDescending = "collversion DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-collname?: Sort;
-collnamespace?: Sort;
-collowner?: Sort;
-collprovider?: Sort;
-collisdeterministic?: Sort;
-collencoding?: Sort;
-collcollate?: Sort;
-collctype?: Sort;
-colliculocale?: Sort;
-collicurules?: Sort;
-collversion?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgParameterAcl {
@@ -4661,10 +5364,16 @@ export type PrimaryKey = PgCatalog.Types.PgParameterAclOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgParameterAcl,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgParameterAcl, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+parnameAscending = "parname ASC",
+paraclAscending = "paracl ASC",
+oidDescending = "oid DESC",
+parnameDescending = "parname DESC",
+paraclDescending = "paracl DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-parname?: Sort;
-paracl?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgPartitionedTable {
@@ -4675,15 +5384,26 @@ export type PrimaryKey = PgCatalog.Types.PgPartitionedTablePartrelidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgPartitionedTable,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgPartitionedTable, Optional & PrimaryKey>
+export enum SortOptions  {
+partrelidAscending = "partrelid ASC",
+partstratAscending = "partstrat ASC",
+partnattsAscending = "partnatts ASC",
+partdefidAscending = "partdefid ASC",
+partattrsAscending = "partattrs ASC",
+partclassAscending = "partclass ASC",
+partcollationAscending = "partcollation ASC",
+partexprsAscending = "partexprs ASC",
+partrelidDescending = "partrelid DESC",
+partstratDescending = "partstrat DESC",
+partnattsDescending = "partnatts DESC",
+partdefidDescending = "partdefid DESC",
+partattrsDescending = "partattrs DESC",
+partclassDescending = "partclass DESC",
+partcollationDescending = "partcollation DESC",
+partexprsDescending = "partexprs DESC",
+};
 export type Options = ReadOptions & {
-partrelid?: Sort;
-partstrat?: Sort;
-partnatts?: Sort;
-partdefid?: Sort;
-partattrs?: Sort;
-partclass?: Sort;
-partcollation?: Sort;
-partexprs?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgRange {
@@ -4694,14 +5414,24 @@ export type PrimaryKey = PgCatalog.Types.PgRangeRngtypidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgRange,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgRange, Optional & PrimaryKey>
+export enum SortOptions  {
+rngtypidAscending = "rngtypid ASC",
+rngsubtypeAscending = "rngsubtype ASC",
+rngmultitypidAscending = "rngmultitypid ASC",
+rngcollationAscending = "rngcollation ASC",
+rngsubopcAscending = "rngsubopc ASC",
+rngcanonicalAscending = "rngcanonical ASC",
+rngsubdiffAscending = "rngsubdiff ASC",
+rngtypidDescending = "rngtypid DESC",
+rngsubtypeDescending = "rngsubtype DESC",
+rngmultitypidDescending = "rngmultitypid DESC",
+rngcollationDescending = "rngcollation DESC",
+rngsubopcDescending = "rngsubopc DESC",
+rngcanonicalDescending = "rngcanonical DESC",
+rngsubdiffDescending = "rngsubdiff DESC",
+};
 export type Options = ReadOptions & {
-rngtypid?: Sort;
-rngsubtype?: Sort;
-rngmultitypid?: Sort;
-rngcollation?: Sort;
-rngsubopc?: Sort;
-rngcanonical?: Sort;
-rngsubdiff?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgTransform {
@@ -4712,12 +5442,20 @@ export type PrimaryKey = PgCatalog.Types.PgTransformOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgTransform,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgTransform, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+trftypeAscending = "trftype ASC",
+trflangAscending = "trflang ASC",
+trffromsqlAscending = "trffromsql ASC",
+trftosqlAscending = "trftosql ASC",
+oidDescending = "oid DESC",
+trftypeDescending = "trftype DESC",
+trflangDescending = "trflang DESC",
+trffromsqlDescending = "trffromsql DESC",
+trftosqlDescending = "trftosql DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-trftype?: Sort;
-trflang?: Sort;
-trffromsql?: Sort;
-trftosql?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgSequence {
@@ -4728,15 +5466,26 @@ export type PrimaryKey = PgCatalog.Types.PgSequenceSeqrelidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgSequence,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgSequence, Optional & PrimaryKey>
+export enum SortOptions  {
+seqrelidAscending = "seqrelid ASC",
+seqtypidAscending = "seqtypid ASC",
+seqstartAscending = "seqstart ASC",
+seqincrementAscending = "seqincrement ASC",
+seqmaxAscending = "seqmax ASC",
+seqminAscending = "seqmin ASC",
+seqcacheAscending = "seqcache ASC",
+seqcycleAscending = "seqcycle ASC",
+seqrelidDescending = "seqrelid DESC",
+seqtypidDescending = "seqtypid DESC",
+seqstartDescending = "seqstart DESC",
+seqincrementDescending = "seqincrement DESC",
+seqmaxDescending = "seqmax DESC",
+seqminDescending = "seqmin DESC",
+seqcacheDescending = "seqcache DESC",
+seqcycleDescending = "seqcycle DESC",
+};
 export type Options = ReadOptions & {
-seqrelid?: Sort;
-seqtypid?: Sort;
-seqstart?: Sort;
-seqincrement?: Sort;
-seqmax?: Sort;
-seqmin?: Sort;
-seqcache?: Sort;
-seqcycle?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgPublication {
@@ -4747,16 +5496,28 @@ export type PrimaryKey = PgCatalog.Types.PgPublicationOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgPublication,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgPublication, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+pubnameAscending = "pubname ASC",
+pubownerAscending = "pubowner ASC",
+puballtablesAscending = "puballtables ASC",
+pubinsertAscending = "pubinsert ASC",
+pubupdateAscending = "pubupdate ASC",
+pubdeleteAscending = "pubdelete ASC",
+pubtruncateAscending = "pubtruncate ASC",
+pubviarootAscending = "pubviaroot ASC",
+oidDescending = "oid DESC",
+pubnameDescending = "pubname DESC",
+pubownerDescending = "pubowner DESC",
+puballtablesDescending = "puballtables DESC",
+pubinsertDescending = "pubinsert DESC",
+pubupdateDescending = "pubupdate DESC",
+pubdeleteDescending = "pubdelete DESC",
+pubtruncateDescending = "pubtruncate DESC",
+pubviarootDescending = "pubviaroot DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-pubname?: Sort;
-pubowner?: Sort;
-puballtables?: Sort;
-pubinsert?: Sort;
-pubupdate?: Sort;
-pubdelete?: Sort;
-pubtruncate?: Sort;
-pubviaroot?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgPublicationNamespace {
@@ -4767,10 +5528,16 @@ export type PrimaryKey = PgCatalog.Types.PgPublicationNamespaceOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgPublicationNamespace,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgPublicationNamespace, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+pnpubidAscending = "pnpubid ASC",
+pnnspidAscending = "pnnspid ASC",
+oidDescending = "oid DESC",
+pnpubidDescending = "pnpubid DESC",
+pnnspidDescending = "pnnspid DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-pnpubid?: Sort;
-pnnspid?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgPublicationRel {
@@ -4781,12 +5548,20 @@ export type PrimaryKey = PgCatalog.Types.PgPublicationRelOidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgPublicationRel,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgPublicationRel, Optional & PrimaryKey>
+export enum SortOptions  {
+oidAscending = "oid ASC",
+prpubidAscending = "prpubid ASC",
+prrelidAscending = "prrelid ASC",
+prqualAscending = "prqual ASC",
+prattrsAscending = "prattrs ASC",
+oidDescending = "oid DESC",
+prpubidDescending = "prpubid DESC",
+prrelidDescending = "prrelid DESC",
+prqualDescending = "prqual DESC",
+prattrsDescending = "prattrs DESC",
+};
 export type Options = ReadOptions & {
-oid?: Sort;
-prpubid?: Sort;
-prrelid?: Sort;
-prqual?: Sort;
-prattrs?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgSubscriptionRel {
@@ -4797,11 +5572,18 @@ export type PrimaryKey = PgCatalog.Types.PgSubscriptionRelSrrelidSrsubidIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgSubscriptionRel,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgSubscriptionRel, Optional & PrimaryKey>
+export enum SortOptions  {
+srsubidAscending = "srsubid ASC",
+srrelidAscending = "srrelid ASC",
+srsubstateAscending = "srsubstate ASC",
+srsublsnAscending = "srsublsn ASC",
+srsubidDescending = "srsubid DESC",
+srrelidDescending = "srrelid DESC",
+srsubstateDescending = "srsubstate DESC",
+srsublsnDescending = "srsublsn DESC",
+};
 export type Options = ReadOptions & {
-srsubid?: Sort;
-srrelid?: Sort;
-srsubstate?: Sort;
-srsublsn?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace PgLargeobject {
@@ -4812,10 +5594,16 @@ export type PrimaryKey = PgCatalog.Types.PgLargeobjectLoidPnIndex;
 
 export type Optional = Pick<PgCatalog.Types.PgLargeobject,never>
 export type Values = PartiallyOptional<PgCatalog.Types.PgLargeobject, Optional & PrimaryKey>
+export enum SortOptions  {
+loidAscending = "loid ASC",
+pagenoAscending = "pageno ASC",
+dataAscending = "data ASC",
+loidDescending = "loid DESC",
+pagenoDescending = "pageno DESC",
+dataDescending = "data DESC",
+};
 export type Options = ReadOptions & {
-loid?: Sort;
-pageno?: Sort;
-data?: Sort;
+ sort?: SortOptions[],
 };
 }
 }
@@ -6023,14 +6811,24 @@ export function emptyRow() {
 export type PrimaryKey = never;
 export type Optional = Pick<InformationSchema.Types.SqlFeatures,never>
 export type Values = PartiallyOptional<InformationSchema.Types.SqlFeatures, Optional & PrimaryKey>
+export enum SortOptions  {
+featureIdAscending = "feature_id ASC",
+featureNameAscending = "feature_name ASC",
+subFeatureIdAscending = "sub_feature_id ASC",
+subFeatureNameAscending = "sub_feature_name ASC",
+isSupportedAscending = "is_supported ASC",
+isVerifiedByAscending = "is_verified_by ASC",
+commentsAscending = "comments ASC",
+featureIdDescending = "feature_id DESC",
+featureNameDescending = "feature_name DESC",
+subFeatureIdDescending = "sub_feature_id DESC",
+subFeatureNameDescending = "sub_feature_name DESC",
+isSupportedDescending = "is_supported DESC",
+isVerifiedByDescending = "is_verified_by DESC",
+commentsDescending = "comments DESC",
+};
 export type Options = ReadOptions & {
-feature_id?: Sort;
-feature_name?: Sort;
-sub_feature_id?: Sort;
-sub_feature_name?: Sort;
-is_supported?: Sort;
-is_verified_by?: Sort;
-comments?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace SqlImplementationInfo {
@@ -6040,12 +6838,20 @@ export function emptyRow() {
 export type PrimaryKey = never;
 export type Optional = Pick<InformationSchema.Types.SqlImplementationInfo,never>
 export type Values = PartiallyOptional<InformationSchema.Types.SqlImplementationInfo, Optional & PrimaryKey>
+export enum SortOptions  {
+implementationInfoIdAscending = "implementation_info_id ASC",
+implementationInfoNameAscending = "implementation_info_name ASC",
+integerValueAscending = "integer_value ASC",
+characterValueAscending = "character_value ASC",
+commentsAscending = "comments ASC",
+implementationInfoIdDescending = "implementation_info_id DESC",
+implementationInfoNameDescending = "implementation_info_name DESC",
+integerValueDescending = "integer_value DESC",
+characterValueDescending = "character_value DESC",
+commentsDescending = "comments DESC",
+};
 export type Options = ReadOptions & {
-implementation_info_id?: Sort;
-implementation_info_name?: Sort;
-integer_value?: Sort;
-character_value?: Sort;
-comments?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace SqlParts {
@@ -6055,12 +6861,20 @@ export function emptyRow() {
 export type PrimaryKey = never;
 export type Optional = Pick<InformationSchema.Types.SqlParts,never>
 export type Values = PartiallyOptional<InformationSchema.Types.SqlParts, Optional & PrimaryKey>
+export enum SortOptions  {
+featureIdAscending = "feature_id ASC",
+featureNameAscending = "feature_name ASC",
+isSupportedAscending = "is_supported ASC",
+isVerifiedByAscending = "is_verified_by ASC",
+commentsAscending = "comments ASC",
+featureIdDescending = "feature_id DESC",
+featureNameDescending = "feature_name DESC",
+isSupportedDescending = "is_supported DESC",
+isVerifiedByDescending = "is_verified_by DESC",
+commentsDescending = "comments DESC",
+};
 export type Options = ReadOptions & {
-feature_id?: Sort;
-feature_name?: Sort;
-is_supported?: Sort;
-is_verified_by?: Sort;
-comments?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace SqlSizing {
@@ -6070,11 +6884,18 @@ export function emptyRow() {
 export type PrimaryKey = never;
 export type Optional = Pick<InformationSchema.Types.SqlSizing,never>
 export type Values = PartiallyOptional<InformationSchema.Types.SqlSizing, Optional & PrimaryKey>
+export enum SortOptions  {
+sizingIdAscending = "sizing_id ASC",
+sizingNameAscending = "sizing_name ASC",
+supportedValueAscending = "supported_value ASC",
+commentsAscending = "comments ASC",
+sizingIdDescending = "sizing_id DESC",
+sizingNameDescending = "sizing_name DESC",
+supportedValueDescending = "supported_value DESC",
+commentsDescending = "comments DESC",
+};
 export type Options = ReadOptions & {
-sizing_id?: Sort;
-sizing_name?: Sort;
-supported_value?: Sort;
-comments?: Sort;
+ sort?: SortOptions[],
 };
 }
 }
@@ -6569,10 +7390,16 @@ export type PrimaryKey = Public.Types.FilmActorPkey;
 
 export type Optional = Pick<Public.Types.FilmActor,"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.FilmActor, Optional & PrimaryKey>
+export enum SortOptions  {
+actorIdAscending = "actor_id ASC",
+filmIdAscending = "film_id ASC",
+lastUpdateAscending = "last_update ASC",
+actorIdDescending = "actor_id DESC",
+filmIdDescending = "film_id DESC",
+lastUpdateDescending = "last_update DESC",
+};
 export type Options = ReadOptions & {
-actor_id?: Sort;
-film_id?: Sort;
-last_update?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace Address {
@@ -6583,15 +7410,26 @@ export type PrimaryKey = Public.Types.AddressPkey;
 
 export type Optional = Pick<Public.Types.Address,"addressId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Address, Optional & PrimaryKey>
+export enum SortOptions  {
+addressIdAscending = "address_id ASC",
+addressAscending = "address ASC",
+address2Ascending = "address2 ASC",
+districtAscending = "district ASC",
+cityIdAscending = "city_id ASC",
+postalCodeAscending = "postal_code ASC",
+phoneAscending = "phone ASC",
+lastUpdateAscending = "last_update ASC",
+addressIdDescending = "address_id DESC",
+addressDescending = "address DESC",
+address2Descending = "address2 DESC",
+districtDescending = "district DESC",
+cityIdDescending = "city_id DESC",
+postalCodeDescending = "postal_code DESC",
+phoneDescending = "phone DESC",
+lastUpdateDescending = "last_update DESC",
+};
 export type Options = ReadOptions & {
-address_id?: Sort;
-address?: Sort;
-address2?: Sort;
-district?: Sort;
-city_id?: Sort;
-postal_code?: Sort;
-phone?: Sort;
-last_update?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace City {
@@ -6602,11 +7440,18 @@ export type PrimaryKey = Public.Types.CityPkey;
 
 export type Optional = Pick<Public.Types.City,"cityId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.City, Optional & PrimaryKey>
+export enum SortOptions  {
+cityIdAscending = "city_id ASC",
+cityAscending = "city ASC",
+countryIdAscending = "country_id ASC",
+lastUpdateAscending = "last_update ASC",
+cityIdDescending = "city_id DESC",
+cityDescending = "city DESC",
+countryIdDescending = "country_id DESC",
+lastUpdateDescending = "last_update DESC",
+};
 export type Options = ReadOptions & {
-city_id?: Sort;
-city?: Sort;
-country_id?: Sort;
-last_update?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace Customer {
@@ -6617,17 +7462,30 @@ export type PrimaryKey = Public.Types.CustomerPkey;
 
 export type Optional = Pick<Public.Types.Customer,"customerId"|"activebool"|"createDate"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Customer, Optional & PrimaryKey>
+export enum SortOptions  {
+customerIdAscending = "customer_id ASC",
+storeIdAscending = "store_id ASC",
+firstNameAscending = "first_name ASC",
+lastNameAscending = "last_name ASC",
+emailAscending = "email ASC",
+addressIdAscending = "address_id ASC",
+activeboolAscending = "activebool ASC",
+createDateAscending = "create_date ASC",
+lastUpdateAscending = "last_update ASC",
+activeAscending = "active ASC",
+customerIdDescending = "customer_id DESC",
+storeIdDescending = "store_id DESC",
+firstNameDescending = "first_name DESC",
+lastNameDescending = "last_name DESC",
+emailDescending = "email DESC",
+addressIdDescending = "address_id DESC",
+activeboolDescending = "activebool DESC",
+createDateDescending = "create_date DESC",
+lastUpdateDescending = "last_update DESC",
+activeDescending = "active DESC",
+};
 export type Options = ReadOptions & {
-customer_id?: Sort;
-store_id?: Sort;
-first_name?: Sort;
-last_name?: Sort;
-email?: Sort;
-address_id?: Sort;
-activebool?: Sort;
-create_date?: Sort;
-last_update?: Sort;
-active?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace Actor {
@@ -6638,11 +7496,18 @@ export type PrimaryKey = Public.Types.ActorPkey;
 
 export type Optional = Pick<Public.Types.Actor,"actorId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Actor, Optional & PrimaryKey>
+export enum SortOptions  {
+actorIdAscending = "actor_id ASC",
+firstNameAscending = "first_name ASC",
+lastNameAscending = "last_name ASC",
+lastUpdateAscending = "last_update ASC",
+actorIdDescending = "actor_id DESC",
+firstNameDescending = "first_name DESC",
+lastNameDescending = "last_name DESC",
+lastUpdateDescending = "last_update DESC",
+};
 export type Options = ReadOptions & {
-actor_id?: Sort;
-first_name?: Sort;
-last_name?: Sort;
-last_update?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace FilmCategory {
@@ -6653,10 +7518,16 @@ export type PrimaryKey = Public.Types.FilmCategoryPkey;
 
 export type Optional = Pick<Public.Types.FilmCategory,"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.FilmCategory, Optional & PrimaryKey>
+export enum SortOptions  {
+filmIdAscending = "film_id ASC",
+categoryIdAscending = "category_id ASC",
+lastUpdateAscending = "last_update ASC",
+filmIdDescending = "film_id DESC",
+categoryIdDescending = "category_id DESC",
+lastUpdateDescending = "last_update DESC",
+};
 export type Options = ReadOptions & {
-film_id?: Sort;
-category_id?: Sort;
-last_update?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace Inventory {
@@ -6667,11 +7538,18 @@ export type PrimaryKey = Public.Types.InventoryPkey;
 
 export type Optional = Pick<Public.Types.Inventory,"inventoryId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Inventory, Optional & PrimaryKey>
+export enum SortOptions  {
+inventoryIdAscending = "inventory_id ASC",
+filmIdAscending = "film_id ASC",
+storeIdAscending = "store_id ASC",
+lastUpdateAscending = "last_update ASC",
+inventoryIdDescending = "inventory_id DESC",
+filmIdDescending = "film_id DESC",
+storeIdDescending = "store_id DESC",
+lastUpdateDescending = "last_update DESC",
+};
 export type Options = ReadOptions & {
-inventory_id?: Sort;
-film_id?: Sort;
-store_id?: Sort;
-last_update?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace Category {
@@ -6682,10 +7560,16 @@ export type PrimaryKey = Public.Types.CategoryPkey;
 
 export type Optional = Pick<Public.Types.Category,"categoryId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Category, Optional & PrimaryKey>
+export enum SortOptions  {
+categoryIdAscending = "category_id ASC",
+nameAscending = "name ASC",
+lastUpdateAscending = "last_update ASC",
+categoryIdDescending = "category_id DESC",
+nameDescending = "name DESC",
+lastUpdateDescending = "last_update DESC",
+};
 export type Options = ReadOptions & {
-category_id?: Sort;
-name?: Sort;
-last_update?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace Country {
@@ -6696,10 +7580,16 @@ export type PrimaryKey = Public.Types.CountryPkey;
 
 export type Optional = Pick<Public.Types.Country,"countryId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Country, Optional & PrimaryKey>
+export enum SortOptions  {
+countryIdAscending = "country_id ASC",
+countryAscending = "country ASC",
+lastUpdateAscending = "last_update ASC",
+countryIdDescending = "country_id DESC",
+countryDescending = "country DESC",
+lastUpdateDescending = "last_update DESC",
+};
 export type Options = ReadOptions & {
-country_id?: Sort;
-country?: Sort;
-last_update?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace Language {
@@ -6710,10 +7600,16 @@ export type PrimaryKey = Public.Types.LanguagePkey;
 
 export type Optional = Pick<Public.Types.Language,"languageId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Language, Optional & PrimaryKey>
+export enum SortOptions  {
+languageIdAscending = "language_id ASC",
+nameAscending = "name ASC",
+lastUpdateAscending = "last_update ASC",
+languageIdDescending = "language_id DESC",
+nameDescending = "name DESC",
+lastUpdateDescending = "last_update DESC",
+};
 export type Options = ReadOptions & {
-language_id?: Sort;
-name?: Sort;
-last_update?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace Rental {
@@ -6724,14 +7620,24 @@ export type PrimaryKey = Public.Types.RentalPkey;
 
 export type Optional = Pick<Public.Types.Rental,"rentalId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Rental, Optional & PrimaryKey>
+export enum SortOptions  {
+rentalIdAscending = "rental_id ASC",
+rentalDateAscending = "rental_date ASC",
+inventoryIdAscending = "inventory_id ASC",
+customerIdAscending = "customer_id ASC",
+returnDateAscending = "return_date ASC",
+staffIdAscending = "staff_id ASC",
+lastUpdateAscending = "last_update ASC",
+rentalIdDescending = "rental_id DESC",
+rentalDateDescending = "rental_date DESC",
+inventoryIdDescending = "inventory_id DESC",
+customerIdDescending = "customer_id DESC",
+returnDateDescending = "return_date DESC",
+staffIdDescending = "staff_id DESC",
+lastUpdateDescending = "last_update DESC",
+};
 export type Options = ReadOptions & {
-rental_id?: Sort;
-rental_date?: Sort;
-inventory_id?: Sort;
-customer_id?: Sort;
-return_date?: Sort;
-staff_id?: Sort;
-last_update?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace Staff {
@@ -6742,18 +7648,32 @@ export type PrimaryKey = Public.Types.StaffPkey;
 
 export type Optional = Pick<Public.Types.Staff,"staffId"|"active"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Staff, Optional & PrimaryKey>
+export enum SortOptions  {
+staffIdAscending = "staff_id ASC",
+firstNameAscending = "first_name ASC",
+lastNameAscending = "last_name ASC",
+addressIdAscending = "address_id ASC",
+emailAscending = "email ASC",
+storeIdAscending = "store_id ASC",
+activeAscending = "active ASC",
+usernameAscending = "username ASC",
+passwordAscending = "password ASC",
+lastUpdateAscending = "last_update ASC",
+pictureAscending = "picture ASC",
+staffIdDescending = "staff_id DESC",
+firstNameDescending = "first_name DESC",
+lastNameDescending = "last_name DESC",
+addressIdDescending = "address_id DESC",
+emailDescending = "email DESC",
+storeIdDescending = "store_id DESC",
+activeDescending = "active DESC",
+usernameDescending = "username DESC",
+passwordDescending = "password DESC",
+lastUpdateDescending = "last_update DESC",
+pictureDescending = "picture DESC",
+};
 export type Options = ReadOptions & {
-staff_id?: Sort;
-first_name?: Sort;
-last_name?: Sort;
-address_id?: Sort;
-email?: Sort;
-store_id?: Sort;
-active?: Sort;
-username?: Sort;
-password?: Sort;
-last_update?: Sort;
-picture?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace Store {
@@ -6764,11 +7684,18 @@ export type PrimaryKey = Public.Types.StorePkey;
 
 export type Optional = Pick<Public.Types.Store,"storeId"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Store, Optional & PrimaryKey>
+export enum SortOptions  {
+storeIdAscending = "store_id ASC",
+managerStaffIdAscending = "manager_staff_id ASC",
+addressIdAscending = "address_id ASC",
+lastUpdateAscending = "last_update ASC",
+storeIdDescending = "store_id DESC",
+managerStaffIdDescending = "manager_staff_id DESC",
+addressIdDescending = "address_id DESC",
+lastUpdateDescending = "last_update DESC",
+};
 export type Options = ReadOptions & {
-store_id?: Sort;
-manager_staff_id?: Sort;
-address_id?: Sort;
-last_update?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace Payment {
@@ -6779,13 +7706,22 @@ export type PrimaryKey = Public.Types.PaymentPkey;
 
 export type Optional = Pick<Public.Types.Payment,"paymentId">
 export type Values = PartiallyOptional<Public.Types.Payment, Optional & PrimaryKey>
+export enum SortOptions  {
+paymentIdAscending = "payment_id ASC",
+customerIdAscending = "customer_id ASC",
+staffIdAscending = "staff_id ASC",
+rentalIdAscending = "rental_id ASC",
+amountAscending = "amount ASC",
+paymentDateAscending = "payment_date ASC",
+paymentIdDescending = "payment_id DESC",
+customerIdDescending = "customer_id DESC",
+staffIdDescending = "staff_id DESC",
+rentalIdDescending = "rental_id DESC",
+amountDescending = "amount DESC",
+paymentDateDescending = "payment_date DESC",
+};
 export type Options = ReadOptions & {
-payment_id?: Sort;
-customer_id?: Sort;
-staff_id?: Sort;
-rental_id?: Sort;
-amount?: Sort;
-payment_date?: Sort;
+ sort?: SortOptions[],
 };
 }
 export namespace Film {
@@ -6796,20 +7732,36 @@ export type PrimaryKey = Public.Types.FilmPkey;
 
 export type Optional = Pick<Public.Types.Film,"filmId"|"rentalDuration"|"rentalRate"|"replacementCost"|"rating"|"lastUpdate">
 export type Values = PartiallyOptional<Public.Types.Film, Optional & PrimaryKey>
+export enum SortOptions  {
+filmIdAscending = "film_id ASC",
+titleAscending = "title ASC",
+descriptionAscending = "description ASC",
+releaseYearAscending = "release_year ASC",
+languageIdAscending = "language_id ASC",
+rentalDurationAscending = "rental_duration ASC",
+rentalRateAscending = "rental_rate ASC",
+lengthAscending = "length ASC",
+replacementCostAscending = "replacement_cost ASC",
+ratingAscending = "rating ASC",
+lastUpdateAscending = "last_update ASC",
+specialFeaturesAscending = "special_features ASC",
+fulltextAscending = "fulltext ASC",
+filmIdDescending = "film_id DESC",
+titleDescending = "title DESC",
+descriptionDescending = "description DESC",
+releaseYearDescending = "release_year DESC",
+languageIdDescending = "language_id DESC",
+rentalDurationDescending = "rental_duration DESC",
+rentalRateDescending = "rental_rate DESC",
+lengthDescending = "length DESC",
+replacementCostDescending = "replacement_cost DESC",
+ratingDescending = "rating DESC",
+lastUpdateDescending = "last_update DESC",
+specialFeaturesDescending = "special_features DESC",
+fulltextDescending = "fulltext DESC",
+};
 export type Options = ReadOptions & {
-film_id?: Sort;
-title?: Sort;
-description?: Sort;
-release_year?: Sort;
-language_id?: Sort;
-rental_duration?: Sort;
-rental_rate?: Sort;
-length?: Sort;
-replacement_cost?: Sort;
-rating?: Sort;
-last_update?: Sort;
-special_features?: Sort;
-fulltext?: Sort;
+ sort?: SortOptions[],
 };
 }
 }

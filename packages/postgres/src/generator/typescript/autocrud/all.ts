@@ -16,6 +16,7 @@ export const AllOperation = {
       ${node.table.allColumns.map((c) => c.name).join(",")} 
     FROM
       ${node.table.databaseName} 
+    \${sql.unsafe(\`\${orderBy}\`)}
     LIMIT \${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET \${options?.offsetNumberOfRows ?? 0} 
     `;
@@ -24,6 +25,7 @@ export const AllOperation = {
       `
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? \`ORDER BY \${options.sort.join(",")}\` : "";
       `,
       `const response = await sql\`${sql}\``,
 
