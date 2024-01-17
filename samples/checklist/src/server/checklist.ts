@@ -26891,7 +26891,6 @@ return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.na
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.ChecklistPkey, options?: Public.Tables.Checklist.Options) : Promise<Public.Types.Checklist>{
 
       console.assert(parameters);
@@ -27014,7 +27013,6 @@ return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNu
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.ChecklistItemPkey, options?: Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem>{
 
       console.assert(parameters);
@@ -27079,7 +27077,6 @@ public get ByPrimaryKey(){ return this.ChecklistItemPkey };
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.ChecklistItemParent, options?: Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem[]>{
 
       console.assert(parameters);

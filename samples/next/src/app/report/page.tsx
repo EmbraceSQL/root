@@ -6,7 +6,7 @@ import {
   Scripts,
 } from "../../client/dvdrental-react";
 
-const Report = () => {
+function Report() {
   // this is hooking the SQL Script
   const { rows } = Scripts.MovieListing.useMovieListing();
 
@@ -53,7 +53,7 @@ const Report = () => {
   } else {
     return null;
   }
-};
+}
 
 export default function Page() {
   // connect to where we mounted EmbraceSQL in our server

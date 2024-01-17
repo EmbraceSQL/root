@@ -32096,7 +32096,6 @@ return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.SlugPkey, options?: Public.Tables.Slug.Options) : Promise<Public.Types.Slug>{
 
       console.assert(parameters);
@@ -32443,7 +32442,6 @@ return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefi
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Api.Types.QAndAAnswer, options?: Api.Tables.QAndA.Options) : Promise<Api.Types.QAndA[]>{
 
       console.assert(parameters);
@@ -32553,7 +32551,6 @@ return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZon
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Api.Types.TrgmIdxGist, options?: Api.Tables.Timezones.Options) : Promise<Api.Types.Timezones[]>{
 
       console.assert(parameters);
@@ -32618,7 +32615,6 @@ async delete(parameters: Api.Types.TrgmIdxGist) {
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Api.Types.TrgmIdxGin, options?: Api.Tables.Timezones.Options) : Promise<Api.Types.Timezones[]>{
 
       console.assert(parameters);

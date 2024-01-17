@@ -30499,7 +30499,6 @@ return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefin
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.FilmActorPkey, options?: Public.Tables.FilmActor.Options) : Promise<Public.Types.FilmActor>{
 
       console.assert(parameters);
@@ -30564,7 +30563,6 @@ public get ByPrimaryKey(){ return this.FilmActorPkey };
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.IdxFkFilmId, options?: Public.Tables.FilmActor.Options) : Promise<Public.Types.FilmActor[]>{
 
       console.assert(parameters);
@@ -30687,7 +30685,6 @@ return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: un
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.AddressPkey, options?: Public.Tables.Address.Options) : Promise<Public.Types.Address>{
 
       console.assert(parameters);
@@ -30752,7 +30749,6 @@ public get ByPrimaryKey(){ return this.AddressPkey };
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.IdxFkCityId, options?: Public.Tables.Address.Options) : Promise<Public.Types.Address[]>{
 
       console.assert(parameters);
@@ -30875,7 +30871,6 @@ return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIs
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.CityPkey, options?: Public.Tables.City.Options) : Promise<Public.Types.City>{
 
       console.assert(parameters);
@@ -30940,7 +30935,6 @@ public get ByPrimaryKey(){ return this.CityPkey };
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.IdxFkCountryId, options?: Public.Tables.City.Options) : Promise<Public.Types.City[]>{
 
       console.assert(parameters);
@@ -31063,7 +31057,6 @@ return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: 
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.CustomerPkey, options?: Public.Tables.Customer.Options) : Promise<Public.Types.Customer>{
 
       console.assert(parameters);
@@ -31128,7 +31121,6 @@ public get ByPrimaryKey(){ return this.CustomerPkey };
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.IdxFkAddressId, options?: Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]>{
 
       console.assert(parameters);
@@ -31193,7 +31185,6 @@ async delete(parameters: Public.Types.IdxFkAddressId) {
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.IdxFkStoreId, options?: Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]>{
 
       console.assert(parameters);
@@ -31258,7 +31249,6 @@ async delete(parameters: Public.Types.IdxFkStoreId) {
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.IdxLastName, options?: Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]>{
 
       console.assert(parameters);
@@ -31381,7 +31371,6 @@ return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: unde
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.ActorPkey, options?: Public.Tables.Actor.Options) : Promise<Public.Types.Actor>{
 
       console.assert(parameters);
@@ -31446,7 +31435,6 @@ public get ByPrimaryKey(){ return this.ActorPkey };
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.IdxActorLastName, options?: Public.Tables.Actor.Options) : Promise<Public.Types.Actor[]>{
 
       console.assert(parameters);
@@ -31556,7 +31544,6 @@ return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undef
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.FilmCategoryPkey, options?: Public.Tables.FilmCategory.Options) : Promise<Public.Types.FilmCategory>{
 
       console.assert(parameters);
@@ -31679,7 +31666,6 @@ return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId:
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.InventoryPkey, options?: Public.Tables.Inventory.Options) : Promise<Public.Types.Inventory>{
 
       console.assert(parameters);
@@ -31744,7 +31730,6 @@ public get ByPrimaryKey(){ return this.InventoryPkey };
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.IdxStoreIdFilmId, options?: Public.Tables.Inventory.Options) : Promise<Public.Types.Inventory[]>{
 
       console.assert(parameters);
@@ -31867,7 +31852,6 @@ return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: und
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.CategoryPkey, options?: Public.Tables.Category.Options) : Promise<Public.Types.Category>{
 
       console.assert(parameters);
@@ -31990,7 +31974,6 @@ return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: un
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.CountryPkey, options?: Public.Tables.Country.Options) : Promise<Public.Types.Country>{
 
       console.assert(parameters);
@@ -32113,7 +32096,6 @@ return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: und
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.LanguagePkey, options?: Public.Tables.Language.Options) : Promise<Public.Types.Language>{
 
       console.assert(parameters);
@@ -32236,7 +32218,6 @@ return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: u
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.RentalPkey, options?: Public.Tables.Rental.Options) : Promise<Public.Types.Rental>{
 
       console.assert(parameters);
@@ -32301,7 +32282,6 @@ public get ByPrimaryKey(){ return this.RentalPkey };
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.IdxFkInventoryId, options?: Public.Tables.Rental.Options) : Promise<Public.Types.Rental[]>{
 
       console.assert(parameters);
@@ -32366,7 +32346,6 @@ async delete(parameters: Public.Types.IdxFkInventoryId) {
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, options?: Public.Tables.Rental.Options) : Promise<Public.Types.Rental>{
 
       console.assert(parameters);
@@ -32489,7 +32468,6 @@ return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: unde
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.StaffPkey, options?: Public.Tables.Staff.Options) : Promise<Public.Types.Staff>{
 
       console.assert(parameters);
@@ -32612,7 +32590,6 @@ return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId:
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.StorePkey, options?: Public.Tables.Store.Options) : Promise<Public.Types.Store>{
 
       console.assert(parameters);
@@ -32677,7 +32654,6 @@ public get ByPrimaryKey(){ return this.StorePkey };
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.IdxUnqManagerStaffId, options?: Public.Tables.Store.Options) : Promise<Public.Types.Store>{
 
       console.assert(parameters);
@@ -32800,7 +32776,6 @@ return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId:
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.PaymentPkey, options?: Public.Tables.Payment.Options) : Promise<Public.Types.Payment>{
 
       console.assert(parameters);
@@ -32865,7 +32840,6 @@ public get ByPrimaryKey(){ return this.PaymentPkey };
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.IdxFkCustomerId, options?: Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]>{
 
       console.assert(parameters);
@@ -32930,7 +32904,6 @@ async delete(parameters: Public.Types.IdxFkCustomerId) {
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.IdxFkRentalId, options?: Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]>{
 
       console.assert(parameters);
@@ -32995,7 +32968,6 @@ async delete(parameters: Public.Types.IdxFkRentalId) {
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.IdxFkStaffId, options?: Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]>{
 
       console.assert(parameters);
@@ -33118,7 +33090,6 @@ return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedI
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.FilmPkey, options?: Public.Tables.Film.Options) : Promise<Public.Types.Film>{
 
       console.assert(parameters);
@@ -33183,7 +33154,6 @@ public get ByPrimaryKey(){ return this.FilmPkey };
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.FilmFulltextIdx, options?: Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
 
       console.assert(parameters);
@@ -33248,7 +33218,6 @@ async delete(parameters: Public.Types.FilmFulltextIdx) {
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.IdxFkLanguageId, options?: Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
 
       console.assert(parameters);
@@ -33313,7 +33282,6 @@ async delete(parameters: Public.Types.IdxFkLanguageId) {
               return this.hasDatabase.database;
             }
         
-
 async read(parameters: Public.Types.IdxTitle, options?: Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
 
       console.assert(parameters);
