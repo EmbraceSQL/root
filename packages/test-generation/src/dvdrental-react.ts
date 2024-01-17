@@ -32365,6 +32365,7 @@ return useEmbraceSQLRows<never,
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.FilmActor.all.bind(client),
                  upsertOperation: client.Public.Tables.FilmActor.create.bind(client),
                  deleteOperation: client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
@@ -32437,6 +32438,7 @@ return useEmbraceSQLRows<never,
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Address.all.bind(client),
                  upsertOperation: client.Public.Tables.Address.create.bind(client),
                  deleteOperation: client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
@@ -32519,6 +32521,7 @@ return useEmbraceSQLRows<never,
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.City.all.bind(client),
                  upsertOperation: client.Public.Tables.City.create.bind(client),
                  deleteOperation: client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
@@ -32593,6 +32596,7 @@ return useEmbraceSQLRows<never,
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Customer.all.bind(client),
                  upsertOperation: client.Public.Tables.Customer.create.bind(client),
                  deleteOperation: client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
@@ -32707,6 +32711,7 @@ return useEmbraceSQLRows<never,
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Actor.all.bind(client),
                  upsertOperation: client.Public.Tables.Actor.create.bind(client),
                  deleteOperation: client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
@@ -32781,6 +32786,7 @@ return useEmbraceSQLRows<never,
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.FilmCategory.all.bind(client),
                  upsertOperation: client.Public.Tables.FilmCategory.create.bind(client),
                  deleteOperation: client.Public.Tables.FilmCategory.ByPrimaryKey.delete.bind(client),
@@ -32839,6 +32845,7 @@ return useEmbraceSQLRows<never,
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Inventory.all.bind(client),
                  upsertOperation: client.Public.Tables.Inventory.create.bind(client),
                  deleteOperation: client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
@@ -32913,6 +32920,7 @@ return useEmbraceSQLRows<never,
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Category.all.bind(client),
                  upsertOperation: client.Public.Tables.Category.create.bind(client),
                  deleteOperation: client.Public.Tables.Category.ByPrimaryKey.delete.bind(client),
@@ -32971,6 +32979,7 @@ return useEmbraceSQLRows<never,
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Country.all.bind(client),
                  upsertOperation: client.Public.Tables.Country.create.bind(client),
                  deleteOperation: client.Public.Tables.Country.ByPrimaryKey.delete.bind(client),
@@ -33029,6 +33038,7 @@ return useEmbraceSQLRows<never,
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Language.all.bind(client),
                  upsertOperation: client.Public.Tables.Language.create.bind(client),
                  deleteOperation: client.Public.Tables.Language.ByPrimaryKey.delete.bind(client),
@@ -33087,6 +33097,7 @@ return useEmbraceSQLRows<never,
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Rental.all.bind(client),
                  upsertOperation: client.Public.Tables.Rental.create.bind(client),
                  deleteOperation: client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
@@ -33181,6 +33192,7 @@ return useEmbraceSQLRows<never,
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Staff.all.bind(client),
                  upsertOperation: client.Public.Tables.Staff.create.bind(client),
                  deleteOperation: client.Public.Tables.Staff.ByPrimaryKey.delete.bind(client),
@@ -33255,6 +33267,7 @@ return useEmbraceSQLRows<never,
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Store.all.bind(client),
                  upsertOperation: client.Public.Tables.Store.create.bind(client),
                  deleteOperation: client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
@@ -33329,6 +33342,7 @@ return useEmbraceSQLRows<never,
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Payment.all.bind(client),
                  upsertOperation: client.Public.Tables.Payment.create.bind(client),
                  deleteOperation: client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
@@ -33435,6 +33449,7 @@ return useEmbraceSQLRows<never,
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Film.all.bind(client),
                  upsertOperation: client.Public.Tables.Film.create.bind(client),
                  deleteOperation: client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),

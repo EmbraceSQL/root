@@ -25585,14 +25585,16 @@ export function useRow(props: GeneratedRowProps<Public.Tables.Checklist.Values>)
                }
              )
 }
-export function useRows() {
+export function useRows(options?: Public.Tables.Checklist.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
 return useEmbraceSQLRows<never,
   Partial<Public.Types.Checklist>, 
-  Public.Types.Checklist> (
+  Public.Types.Checklist,
+  Public.Tables.Checklist.Options> (
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.Checklist.all.bind(client),
                  upsertOperation: client.Public.Tables.Checklist.create.bind(client),
                  deleteOperation: client.Public.Tables.Checklist.ByPrimaryKey.delete.bind(client),
@@ -25608,9 +25610,9 @@ export namespace Name {
 }
 export namespace CreatedAt {
 }
-export function useChecklistPkey(parameters: Public.Types.ChecklistPkey) {
+export function useChecklistPkey(parameters: Public.Types.ChecklistPkey ) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.ChecklistPkey, Partial<Public.Types.Checklist>,  Public.Types.Checklist>(
+return useEmbraceSQLRow<Public.Types.ChecklistPkey, Partial<Public.Types.Checklist>,  Public.Types.Checklist >(
                {
                  readOperation: client.Public.Tables.Checklist.ChecklistPkey.read.bind(client),
                  parameters,
@@ -25642,14 +25644,16 @@ export function useRow(props: GeneratedRowProps<Public.Tables.ChecklistItem.Valu
                }
              )
 }
-export function useRows() {
+export function useRows(options?: Public.Tables.ChecklistItem.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
 return useEmbraceSQLRows<never,
   Partial<Public.Types.ChecklistItem>, 
-  Public.Types.ChecklistItem> (
+  Public.Types.ChecklistItem,
+  Public.Tables.ChecklistItem.Options> (
 
                {
                  parameters: NEVER,
+                 options,
                  readOperation: client.Public.Tables.ChecklistItem.all.bind(client),
                  upsertOperation: client.Public.Tables.ChecklistItem.create.bind(client),
                  deleteOperation: client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
@@ -25669,9 +25673,9 @@ export namespace Checked {
 }
 export namespace CreatedAt {
 }
-export function useChecklistItemPkey(parameters: Public.Types.ChecklistItemPkey) {
+export function useChecklistItemPkey(parameters: Public.Types.ChecklistItemPkey ) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.ChecklistItemPkey, Partial<Public.Types.ChecklistItem>,  Public.Types.ChecklistItem>(
+return useEmbraceSQLRow<Public.Types.ChecklistItemPkey, Partial<Public.Types.ChecklistItem>,  Public.Types.ChecklistItem >(
                {
                  readOperation: client.Public.Tables.ChecklistItem.ChecklistItemPkey.read.bind(client),
                  parameters,
@@ -25683,9 +25687,9 @@ return useEmbraceSQLRow<Public.Types.ChecklistItemPkey, Partial<Public.Types.Che
                }
              )
 }
-export function useChecklistItemParent(parameters: Public.Types.ChecklistItemParent) {
+export function useChecklistItemParent(parameters: Public.Types.ChecklistItemParent , options?: Public.Tables.ChecklistItem.Options) {
 const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.ChecklistItemParent, Partial<Public.Types.ChecklistItem>,  Public.Types.ChecklistItem>(
+return useEmbraceSQLRows<Public.Types.ChecklistItemParent, Partial<Public.Types.ChecklistItem>,  Public.Types.ChecklistItem , Public.Tables.ChecklistItem.Options>(
                {
                  readOperation: client.Public.Tables.ChecklistItem.ChecklistItemParent.read.bind(client),
                  parameters,
