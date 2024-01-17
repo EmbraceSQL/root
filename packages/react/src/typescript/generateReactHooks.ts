@@ -129,6 +129,7 @@ export const generateReactHooks = async (context: GenerationContext) => {
         const optionsParameter = node.unique
           ? ``
           : `, options?: ${node.table.typescriptNamespacedName}.Options`;
+        const usesOptions = node.unique ? `` : `options,`;
         return [
           `export function use${node.typescriptName}(parameters: ${node.type.typescriptNamespacedName} ${optionsParameter}) {`,
           `const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
@@ -136,6 +137,7 @@ export const generateReactHooks = async (context: GenerationContext) => {
                {
                  readOperation: client.${node.typescriptNamespacedName}.read.bind(client),
                  parameters,
+                 ${usesOptions}
                  upsertOperation: client.${node.table.typescriptNamespacedName}.create.bind(client),
                  deleteOperation: client.${node.table.typescriptNamespacedName}.${BY_PRIMARY_KEY}.delete.bind(client),
                  primaryKeyPicker: ${node.table.typescriptNamespacedName}.primaryKeyFrom,
