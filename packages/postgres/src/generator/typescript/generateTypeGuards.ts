@@ -17,11 +17,6 @@ export async function generateTypeGuards(context: GenerationContext) {
       // all schemas are needed for type guards
       skipSchemas: [],
       handlers: {
-        [ASTKind.Database]: {
-          before: async () => {
-            return `// begin type guards`;
-          },
-        },
         [ASTKind.Schema]: NamespaceVisitor,
         [ASTKind.Tables]: NamespaceVisitor,
         [ASTKind.Table]: NamespaceVisitor,

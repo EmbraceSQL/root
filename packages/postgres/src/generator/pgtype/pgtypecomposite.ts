@@ -7,7 +7,6 @@ import {
   CompositeTypeNode,
   DELIMITER,
   GenerationContext,
-  cleanIdentifierForTypescript,
   compositeAttribute,
   escapeCompositeValue,
   parseObjectWithAttributes,
@@ -69,24 +68,6 @@ export class PGTypeComposite extends PGCatalogType {
   attributeByAttnum(attnum: number) {
     // yep -- postgres is one based
     return this.attributes[attnum - 1];
-  }
-
-  typescriptTypeDefinition(context: GenerationContext) {
-    // all the fields -- and a partial type to allow filling out with
-    // various sub selects
-    const nameAndType = this.attributes.map((a) => {
-      const attributeType = context.database.resolveType(a.attribute.atttypid)!;
-      const attributeName = `${camelCase(
-        cleanIdentifierForTypescript(a.attribute.attname),
-      )}`;
-      const attributeTypeName = a.notNull
-        ? attributeType.typescriptNamespacedName
-        : `Nullable<${attributeType.typescriptNamespacedName}>`;
-      return `${attributeName}${
-        a.isOptional ? "?" : ""
-      }: ${attributeTypeName};`;
-    });
-    return `{${nameAndType.join(" ")}}`;
   }
 
   get sqlColumns() {

@@ -27702,7 +27702,6 @@ export namespace Tables {
 }
 }
 
-// begin type guards
 export namespace PgCatalog {
 export namespace Types {
 export namespace PgType {
@@ -31396,6 +31395,4523 @@ if (
 ) return true;
 return false;
 }
+}
+}
+export namespace Procedures {
+}
+export namespace Tables {
+}
+}
+export namespace PgCatalog {
+export namespace Types {
+export namespace Bool {
+ export function equals(l: PgCatalog.Types.Bool, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Bytea {
+ export function equals(l: PgCatalog.Types.Bytea, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Char {
+ export function equals(l: PgCatalog.Types.Char, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Name {
+ export function equals(l: PgCatalog.Types.Name, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Int8 {
+ export function equals(l: PgCatalog.Types.Int8, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Int2 {
+ export function equals(l: PgCatalog.Types.Int2, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Int2vector {
+ export function equals(l: PgCatalog.Types.Int2vector, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Int4 {
+ export function equals(l: PgCatalog.Types.Int4, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Regproc {
+ export function equals(l: PgCatalog.Types.Regproc, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Text {
+ export function equals(l: PgCatalog.Types.Text, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Oid {
+ export function equals(l: PgCatalog.Types.Oid, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Tid {
+ export function equals(l: PgCatalog.Types.Tid, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Xid {
+ export function equals(l: PgCatalog.Types.Xid, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Cid {
+ export function equals(l: PgCatalog.Types.Cid, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Oidvector {
+ export function equals(l: PgCatalog.Types.Oidvector, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgType {
+ export function equals(l: PgCatalog.Types.PgType, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAttribute {
+ export function equals(l: PgCatalog.Types.PgAttribute, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgProc {
+ export function equals(l: PgCatalog.Types.PgProc, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgClass {
+ export function equals(l: PgCatalog.Types.PgClass, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Json {
+ export function equals(l: PgCatalog.Types.Json, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Xml {
+ export function equals(l: PgCatalog.Types.Xml, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgNodeTree {
+ export function equals(l: PgCatalog.Types.PgNodeTree, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgNdistinct {
+ export function equals(l: PgCatalog.Types.PgNdistinct, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgDependencies {
+ export function equals(l: PgCatalog.Types.PgDependencies, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgMcvList {
+ export function equals(l: PgCatalog.Types.PgMcvList, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgDdlCommand {
+ export function equals(l: PgCatalog.Types.PgDdlCommand, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Xid8 {
+ export function equals(l: PgCatalog.Types.Xid8, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Point {
+ export function equals(l: PgCatalog.Types.Point, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Lseg {
+ export function equals(l: PgCatalog.Types.Lseg, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Path {
+ export function equals(l: PgCatalog.Types.Path, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Box {
+ export function equals(l: PgCatalog.Types.Box, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Polygon {
+ export function equals(l: PgCatalog.Types.Polygon, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Line {
+ export function equals(l: PgCatalog.Types.Line, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Float4 {
+ export function equals(l: PgCatalog.Types.Float4, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Float8 {
+ export function equals(l: PgCatalog.Types.Float8, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Unknown {
+ export function equals(l: PgCatalog.Types.Unknown, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Circle {
+ export function equals(l: PgCatalog.Types.Circle, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Money {
+ export function equals(l: PgCatalog.Types.Money, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Macaddr {
+ export function equals(l: PgCatalog.Types.Macaddr, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Inet {
+ export function equals(l: PgCatalog.Types.Inet, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Cidr {
+ export function equals(l: PgCatalog.Types.Cidr, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Macaddr8 {
+ export function equals(l: PgCatalog.Types.Macaddr8, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Aclitem {
+ export function equals(l: PgCatalog.Types.Aclitem, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Bpchar {
+ export function equals(l: PgCatalog.Types.Bpchar, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Varchar {
+ export function equals(l: PgCatalog.Types.Varchar, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Date {
+ export function equals(l: PgCatalog.Types.Date, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Time {
+ export function equals(l: PgCatalog.Types.Time, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Timestamp {
+ export function equals(l: PgCatalog.Types.Timestamp, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Timestamptz {
+ export function equals(l: PgCatalog.Types.Timestamptz, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Interval {
+ export function equals(l: PgCatalog.Types.Interval, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Timetz {
+ export function equals(l: PgCatalog.Types.Timetz, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Bit {
+ export function equals(l: PgCatalog.Types.Bit, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Varbit {
+ export function equals(l: PgCatalog.Types.Varbit, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Numeric {
+ export function equals(l: PgCatalog.Types.Numeric, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Refcursor {
+ export function equals(l: PgCatalog.Types.Refcursor, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Regprocedure {
+ export function equals(l: PgCatalog.Types.Regprocedure, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Regoper {
+ export function equals(l: PgCatalog.Types.Regoper, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Regoperator {
+ export function equals(l: PgCatalog.Types.Regoperator, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Regclass {
+ export function equals(l: PgCatalog.Types.Regclass, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Regcollation {
+ export function equals(l: PgCatalog.Types.Regcollation, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Regtype {
+ export function equals(l: PgCatalog.Types.Regtype, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Regrole {
+ export function equals(l: PgCatalog.Types.Regrole, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Regnamespace {
+ export function equals(l: PgCatalog.Types.Regnamespace, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Uuid {
+ export function equals(l: PgCatalog.Types.Uuid, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgLsn {
+ export function equals(l: PgCatalog.Types.PgLsn, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Tsvector {
+ export function equals(l: PgCatalog.Types.Tsvector, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Gtsvector {
+ export function equals(l: PgCatalog.Types.Gtsvector, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Tsquery {
+ export function equals(l: PgCatalog.Types.Tsquery, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Regconfig {
+ export function equals(l: PgCatalog.Types.Regconfig, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Regdictionary {
+ export function equals(l: PgCatalog.Types.Regdictionary, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Jsonb {
+ export function equals(l: PgCatalog.Types.Jsonb, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Jsonpath {
+ export function equals(l: PgCatalog.Types.Jsonpath, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TxidSnapshot {
+ export function equals(l: PgCatalog.Types.TxidSnapshot, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgSnapshot {
+ export function equals(l: PgCatalog.Types.PgSnapshot, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Int4range {
+ export function equals(l: PgCatalog.Types.Int4range, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Numrange {
+ export function equals(l: PgCatalog.Types.Numrange, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Tsrange {
+ export function equals(l: PgCatalog.Types.Tsrange, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Tstzrange {
+ export function equals(l: PgCatalog.Types.Tstzrange, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Daterange {
+ export function equals(l: PgCatalog.Types.Daterange, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Int8range {
+ export function equals(l: PgCatalog.Types.Int8range, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Int4multirange {
+ export function equals(l: PgCatalog.Types.Int4multirange, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Nummultirange {
+ export function equals(l: PgCatalog.Types.Nummultirange, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Tsmultirange {
+ export function equals(l: PgCatalog.Types.Tsmultirange, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Tstzmultirange {
+ export function equals(l: PgCatalog.Types.Tstzmultirange, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Datemultirange {
+ export function equals(l: PgCatalog.Types.Datemultirange, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Int8multirange {
+ export function equals(l: PgCatalog.Types.Int8multirange, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Record {
+ export function equals(l: PgCatalog.Types.Record, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RecordArray {
+ export function equals(l: PgCatalog.Types.RecordArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Cstring {
+ export function equals(l: PgCatalog.Types.Cstring, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Any {
+ export function equals(l: PgCatalog.Types.Any, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Anyarray {
+ export function equals(l: PgCatalog.Types.Anyarray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Void {
+ export function equals(l: PgCatalog.Types.Void, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Trigger {
+ export function equals(l: PgCatalog.Types.Trigger, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace EventTrigger {
+ export function equals(l: PgCatalog.Types.EventTrigger, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace LanguageHandler {
+ export function equals(l: PgCatalog.Types.LanguageHandler, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Internal {
+ export function equals(l: PgCatalog.Types.Internal, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Anyelement {
+ export function equals(l: PgCatalog.Types.Anyelement, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Anynonarray {
+ export function equals(l: PgCatalog.Types.Anynonarray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Anyenum {
+ export function equals(l: PgCatalog.Types.Anyenum, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace FdwHandler {
+ export function equals(l: PgCatalog.Types.FdwHandler, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace IndexAmHandler {
+ export function equals(l: PgCatalog.Types.IndexAmHandler, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TsmHandler {
+ export function equals(l: PgCatalog.Types.TsmHandler, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TableAmHandler {
+ export function equals(l: PgCatalog.Types.TableAmHandler, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Anyrange {
+ export function equals(l: PgCatalog.Types.Anyrange, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Anycompatible {
+ export function equals(l: PgCatalog.Types.Anycompatible, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Anycompatiblearray {
+ export function equals(l: PgCatalog.Types.Anycompatiblearray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Anycompatiblenonarray {
+ export function equals(l: PgCatalog.Types.Anycompatiblenonarray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Anycompatiblerange {
+ export function equals(l: PgCatalog.Types.Anycompatiblerange, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Anymultirange {
+ export function equals(l: PgCatalog.Types.Anymultirange, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Anycompatiblemultirange {
+ export function equals(l: PgCatalog.Types.Anycompatiblemultirange, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgBrinBloomSummary {
+ export function equals(l: PgCatalog.Types.PgBrinBloomSummary, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgBrinMinmaxMultiSummary {
+ export function equals(l: PgCatalog.Types.PgBrinMinmaxMultiSummary, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace BoolArray {
+ export function equals(l: PgCatalog.Types.BoolArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ByteaArray {
+ export function equals(l: PgCatalog.Types.ByteaArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CharArray {
+ export function equals(l: PgCatalog.Types.CharArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace NameArray {
+ export function equals(l: PgCatalog.Types.NameArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Int8Array {
+ export function equals(l: PgCatalog.Types.Int8Array, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Int2Array {
+ export function equals(l: PgCatalog.Types.Int2Array, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Int2vectorArray {
+ export function equals(l: PgCatalog.Types.Int2vectorArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Int4Array {
+ export function equals(l: PgCatalog.Types.Int4Array, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RegprocArray {
+ export function equals(l: PgCatalog.Types.RegprocArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TextArray {
+ export function equals(l: PgCatalog.Types.TextArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace OidArray {
+ export function equals(l: PgCatalog.Types.OidArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TidArray {
+ export function equals(l: PgCatalog.Types.TidArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace XidArray {
+ export function equals(l: PgCatalog.Types.XidArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CidArray {
+ export function equals(l: PgCatalog.Types.CidArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace OidvectorArray {
+ export function equals(l: PgCatalog.Types.OidvectorArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTypeArray {
+ export function equals(l: PgCatalog.Types.PgTypeArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAttributeArray {
+ export function equals(l: PgCatalog.Types.PgAttributeArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgProcArray {
+ export function equals(l: PgCatalog.Types.PgProcArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgClassArray {
+ export function equals(l: PgCatalog.Types.PgClassArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace JsonArray {
+ export function equals(l: PgCatalog.Types.JsonArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace XmlArray {
+ export function equals(l: PgCatalog.Types.XmlArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Xid8Array {
+ export function equals(l: PgCatalog.Types.Xid8Array, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PointArray {
+ export function equals(l: PgCatalog.Types.PointArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace LsegArray {
+ export function equals(l: PgCatalog.Types.LsegArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PathArray {
+ export function equals(l: PgCatalog.Types.PathArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace BoxArray {
+ export function equals(l: PgCatalog.Types.BoxArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PolygonArray {
+ export function equals(l: PgCatalog.Types.PolygonArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace LineArray {
+ export function equals(l: PgCatalog.Types.LineArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Float4Array {
+ export function equals(l: PgCatalog.Types.Float4Array, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Float8Array {
+ export function equals(l: PgCatalog.Types.Float8Array, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CircleArray {
+ export function equals(l: PgCatalog.Types.CircleArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace MoneyArray {
+ export function equals(l: PgCatalog.Types.MoneyArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace MacaddrArray {
+ export function equals(l: PgCatalog.Types.MacaddrArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace InetArray {
+ export function equals(l: PgCatalog.Types.InetArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CidrArray {
+ export function equals(l: PgCatalog.Types.CidrArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Macaddr8Array {
+ export function equals(l: PgCatalog.Types.Macaddr8Array, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace AclitemArray {
+ export function equals(l: PgCatalog.Types.AclitemArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace BpcharArray {
+ export function equals(l: PgCatalog.Types.BpcharArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace VarcharArray {
+ export function equals(l: PgCatalog.Types.VarcharArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace DateArray {
+ export function equals(l: PgCatalog.Types.DateArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TimeArray {
+ export function equals(l: PgCatalog.Types.TimeArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TimestampArray {
+ export function equals(l: PgCatalog.Types.TimestampArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TimestamptzArray {
+ export function equals(l: PgCatalog.Types.TimestamptzArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace IntervalArray {
+ export function equals(l: PgCatalog.Types.IntervalArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TimetzArray {
+ export function equals(l: PgCatalog.Types.TimetzArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace BitArray {
+ export function equals(l: PgCatalog.Types.BitArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace VarbitArray {
+ export function equals(l: PgCatalog.Types.VarbitArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace NumericArray {
+ export function equals(l: PgCatalog.Types.NumericArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RefcursorArray {
+ export function equals(l: PgCatalog.Types.RefcursorArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RegprocedureArray {
+ export function equals(l: PgCatalog.Types.RegprocedureArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RegoperArray {
+ export function equals(l: PgCatalog.Types.RegoperArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RegoperatorArray {
+ export function equals(l: PgCatalog.Types.RegoperatorArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RegclassArray {
+ export function equals(l: PgCatalog.Types.RegclassArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RegcollationArray {
+ export function equals(l: PgCatalog.Types.RegcollationArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RegtypeArray {
+ export function equals(l: PgCatalog.Types.RegtypeArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RegroleArray {
+ export function equals(l: PgCatalog.Types.RegroleArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RegnamespaceArray {
+ export function equals(l: PgCatalog.Types.RegnamespaceArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace UuidArray {
+ export function equals(l: PgCatalog.Types.UuidArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgLsnArray {
+ export function equals(l: PgCatalog.Types.PgLsnArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TsvectorArray {
+ export function equals(l: PgCatalog.Types.TsvectorArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace GtsvectorArray {
+ export function equals(l: PgCatalog.Types.GtsvectorArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TsqueryArray {
+ export function equals(l: PgCatalog.Types.TsqueryArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RegconfigArray {
+ export function equals(l: PgCatalog.Types.RegconfigArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RegdictionaryArray {
+ export function equals(l: PgCatalog.Types.RegdictionaryArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace JsonbArray {
+ export function equals(l: PgCatalog.Types.JsonbArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace JsonpathArray {
+ export function equals(l: PgCatalog.Types.JsonpathArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TxidSnapshotArray {
+ export function equals(l: PgCatalog.Types.TxidSnapshotArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgSnapshotArray {
+ export function equals(l: PgCatalog.Types.PgSnapshotArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Int4rangeArray {
+ export function equals(l: PgCatalog.Types.Int4rangeArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace NumrangeArray {
+ export function equals(l: PgCatalog.Types.NumrangeArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TsrangeArray {
+ export function equals(l: PgCatalog.Types.TsrangeArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TstzrangeArray {
+ export function equals(l: PgCatalog.Types.TstzrangeArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace DaterangeArray {
+ export function equals(l: PgCatalog.Types.DaterangeArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Int8rangeArray {
+ export function equals(l: PgCatalog.Types.Int8rangeArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Int4multirangeArray {
+ export function equals(l: PgCatalog.Types.Int4multirangeArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace NummultirangeArray {
+ export function equals(l: PgCatalog.Types.NummultirangeArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TsmultirangeArray {
+ export function equals(l: PgCatalog.Types.TsmultirangeArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TstzmultirangeArray {
+ export function equals(l: PgCatalog.Types.TstzmultirangeArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace DatemultirangeArray {
+ export function equals(l: PgCatalog.Types.DatemultirangeArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Int8multirangeArray {
+ export function equals(l: PgCatalog.Types.Int8multirangeArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CstringArray {
+ export function equals(l: PgCatalog.Types.CstringArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAttrdef {
+ export function equals(l: PgCatalog.Types.PgAttrdef, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAttrdefArray {
+ export function equals(l: PgCatalog.Types.PgAttrdefArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgConstraint {
+ export function equals(l: PgCatalog.Types.PgConstraint, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgConstraintArray {
+ export function equals(l: PgCatalog.Types.PgConstraintArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgInherits {
+ export function equals(l: PgCatalog.Types.PgInherits, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgInheritsArray {
+ export function equals(l: PgCatalog.Types.PgInheritsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgIndex {
+ export function equals(l: PgCatalog.Types.PgIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgIndexArray {
+ export function equals(l: PgCatalog.Types.PgIndexArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgOperator {
+ export function equals(l: PgCatalog.Types.PgOperator, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgOperatorArray {
+ export function equals(l: PgCatalog.Types.PgOperatorArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgOpfamily {
+ export function equals(l: PgCatalog.Types.PgOpfamily, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgOpfamilyArray {
+ export function equals(l: PgCatalog.Types.PgOpfamilyArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgOpclass {
+ export function equals(l: PgCatalog.Types.PgOpclass, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgOpclassArray {
+ export function equals(l: PgCatalog.Types.PgOpclassArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAm {
+ export function equals(l: PgCatalog.Types.PgAm, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAmArray {
+ export function equals(l: PgCatalog.Types.PgAmArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAmop {
+ export function equals(l: PgCatalog.Types.PgAmop, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAmopArray {
+ export function equals(l: PgCatalog.Types.PgAmopArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAmproc {
+ export function equals(l: PgCatalog.Types.PgAmproc, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAmprocArray {
+ export function equals(l: PgCatalog.Types.PgAmprocArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgLanguage {
+ export function equals(l: PgCatalog.Types.PgLanguage, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgLanguageArray {
+ export function equals(l: PgCatalog.Types.PgLanguageArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgLargeobjectMetadata {
+ export function equals(l: PgCatalog.Types.PgLargeobjectMetadata, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgLargeobjectMetadataArray {
+ export function equals(l: PgCatalog.Types.PgLargeobjectMetadataArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgLargeobject {
+ export function equals(l: PgCatalog.Types.PgLargeobject, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgLargeobjectArray {
+ export function equals(l: PgCatalog.Types.PgLargeobjectArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAggregate {
+ export function equals(l: PgCatalog.Types.PgAggregate, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAggregateArray {
+ export function equals(l: PgCatalog.Types.PgAggregateArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatistic {
+ export function equals(l: PgCatalog.Types.PgStatistic, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatisticArray {
+ export function equals(l: PgCatalog.Types.PgStatisticArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatisticExt {
+ export function equals(l: PgCatalog.Types.PgStatisticExt, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatisticExtArray {
+ export function equals(l: PgCatalog.Types.PgStatisticExtArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatisticExtData {
+ export function equals(l: PgCatalog.Types.PgStatisticExtData, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatisticExtDataArray {
+ export function equals(l: PgCatalog.Types.PgStatisticExtDataArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgRewrite {
+ export function equals(l: PgCatalog.Types.PgRewrite, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgRewriteArray {
+ export function equals(l: PgCatalog.Types.PgRewriteArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTrigger {
+ export function equals(l: PgCatalog.Types.PgTrigger, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTriggerArray {
+ export function equals(l: PgCatalog.Types.PgTriggerArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgEventTrigger {
+ export function equals(l: PgCatalog.Types.PgEventTrigger, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgEventTriggerArray {
+ export function equals(l: PgCatalog.Types.PgEventTriggerArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgDescription {
+ export function equals(l: PgCatalog.Types.PgDescription, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgDescriptionArray {
+ export function equals(l: PgCatalog.Types.PgDescriptionArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgCast {
+ export function equals(l: PgCatalog.Types.PgCast, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgCastArray {
+ export function equals(l: PgCatalog.Types.PgCastArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgEnum {
+ export function equals(l: PgCatalog.Types.PgEnum, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgEnumArray {
+ export function equals(l: PgCatalog.Types.PgEnumArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgNamespace {
+ export function equals(l: PgCatalog.Types.PgNamespace, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgNamespaceArray {
+ export function equals(l: PgCatalog.Types.PgNamespaceArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgConversion {
+ export function equals(l: PgCatalog.Types.PgConversion, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgConversionArray {
+ export function equals(l: PgCatalog.Types.PgConversionArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgDepend {
+ export function equals(l: PgCatalog.Types.PgDepend, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgDependArray {
+ export function equals(l: PgCatalog.Types.PgDependArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgDatabase {
+ export function equals(l: PgCatalog.Types.PgDatabase, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgDatabaseArray {
+ export function equals(l: PgCatalog.Types.PgDatabaseArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgDbRoleSetting {
+ export function equals(l: PgCatalog.Types.PgDbRoleSetting, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgDbRoleSettingArray {
+ export function equals(l: PgCatalog.Types.PgDbRoleSettingArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTablespace {
+ export function equals(l: PgCatalog.Types.PgTablespace, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTablespaceArray {
+ export function equals(l: PgCatalog.Types.PgTablespaceArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAuthid {
+ export function equals(l: PgCatalog.Types.PgAuthid, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAuthidArray {
+ export function equals(l: PgCatalog.Types.PgAuthidArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAuthMembers {
+ export function equals(l: PgCatalog.Types.PgAuthMembers, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAuthMembersArray {
+ export function equals(l: PgCatalog.Types.PgAuthMembersArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgShdepend {
+ export function equals(l: PgCatalog.Types.PgShdepend, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgShdependArray {
+ export function equals(l: PgCatalog.Types.PgShdependArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgShdescription {
+ export function equals(l: PgCatalog.Types.PgShdescription, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgShdescriptionArray {
+ export function equals(l: PgCatalog.Types.PgShdescriptionArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTsConfig {
+ export function equals(l: PgCatalog.Types.PgTsConfig, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTsConfigArray {
+ export function equals(l: PgCatalog.Types.PgTsConfigArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTsConfigMap {
+ export function equals(l: PgCatalog.Types.PgTsConfigMap, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTsConfigMapArray {
+ export function equals(l: PgCatalog.Types.PgTsConfigMapArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTsDict {
+ export function equals(l: PgCatalog.Types.PgTsDict, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTsDictArray {
+ export function equals(l: PgCatalog.Types.PgTsDictArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTsParser {
+ export function equals(l: PgCatalog.Types.PgTsParser, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTsParserArray {
+ export function equals(l: PgCatalog.Types.PgTsParserArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTsTemplate {
+ export function equals(l: PgCatalog.Types.PgTsTemplate, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTsTemplateArray {
+ export function equals(l: PgCatalog.Types.PgTsTemplateArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgExtension {
+ export function equals(l: PgCatalog.Types.PgExtension, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgExtensionArray {
+ export function equals(l: PgCatalog.Types.PgExtensionArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgForeignDataWrapper {
+ export function equals(l: PgCatalog.Types.PgForeignDataWrapper, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgForeignDataWrapperArray {
+ export function equals(l: PgCatalog.Types.PgForeignDataWrapperArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgForeignServer {
+ export function equals(l: PgCatalog.Types.PgForeignServer, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgForeignServerArray {
+ export function equals(l: PgCatalog.Types.PgForeignServerArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgUserMapping {
+ export function equals(l: PgCatalog.Types.PgUserMapping, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgUserMappingArray {
+ export function equals(l: PgCatalog.Types.PgUserMappingArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgForeignTable {
+ export function equals(l: PgCatalog.Types.PgForeignTable, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgForeignTableArray {
+ export function equals(l: PgCatalog.Types.PgForeignTableArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPolicy {
+ export function equals(l: PgCatalog.Types.PgPolicy, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPolicyArray {
+ export function equals(l: PgCatalog.Types.PgPolicyArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgReplicationOrigin {
+ export function equals(l: PgCatalog.Types.PgReplicationOrigin, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgReplicationOriginArray {
+ export function equals(l: PgCatalog.Types.PgReplicationOriginArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgDefaultAcl {
+ export function equals(l: PgCatalog.Types.PgDefaultAcl, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgDefaultAclArray {
+ export function equals(l: PgCatalog.Types.PgDefaultAclArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgInitPrivs {
+ export function equals(l: PgCatalog.Types.PgInitPrivs, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgInitPrivsArray {
+ export function equals(l: PgCatalog.Types.PgInitPrivsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgSeclabel {
+ export function equals(l: PgCatalog.Types.PgSeclabel, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgSeclabelArray {
+ export function equals(l: PgCatalog.Types.PgSeclabelArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgShseclabel {
+ export function equals(l: PgCatalog.Types.PgShseclabel, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgShseclabelArray {
+ export function equals(l: PgCatalog.Types.PgShseclabelArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgCollation {
+ export function equals(l: PgCatalog.Types.PgCollation, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgCollationArray {
+ export function equals(l: PgCatalog.Types.PgCollationArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgParameterAcl {
+ export function equals(l: PgCatalog.Types.PgParameterAcl, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgParameterAclArray {
+ export function equals(l: PgCatalog.Types.PgParameterAclArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPartitionedTable {
+ export function equals(l: PgCatalog.Types.PgPartitionedTable, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPartitionedTableArray {
+ export function equals(l: PgCatalog.Types.PgPartitionedTableArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgRange {
+ export function equals(l: PgCatalog.Types.PgRange, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgRangeArray {
+ export function equals(l: PgCatalog.Types.PgRangeArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTransform {
+ export function equals(l: PgCatalog.Types.PgTransform, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTransformArray {
+ export function equals(l: PgCatalog.Types.PgTransformArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgSequence {
+ export function equals(l: PgCatalog.Types.PgSequence, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgSequenceArray {
+ export function equals(l: PgCatalog.Types.PgSequenceArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPublication {
+ export function equals(l: PgCatalog.Types.PgPublication, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPublicationArray {
+ export function equals(l: PgCatalog.Types.PgPublicationArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPublicationNamespace {
+ export function equals(l: PgCatalog.Types.PgPublicationNamespace, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPublicationNamespaceArray {
+ export function equals(l: PgCatalog.Types.PgPublicationNamespaceArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPublicationRel {
+ export function equals(l: PgCatalog.Types.PgPublicationRel, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPublicationRelArray {
+ export function equals(l: PgCatalog.Types.PgPublicationRelArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgSubscription {
+ export function equals(l: PgCatalog.Types.PgSubscription, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgSubscriptionArray {
+ export function equals(l: PgCatalog.Types.PgSubscriptionArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgSubscriptionRel {
+ export function equals(l: PgCatalog.Types.PgSubscriptionRel, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgSubscriptionRelArray {
+ export function equals(l: PgCatalog.Types.PgSubscriptionRelArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgRoles {
+ export function equals(l: PgCatalog.Types.PgRoles, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgRolesArray {
+ export function equals(l: PgCatalog.Types.PgRolesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgShadow {
+ export function equals(l: PgCatalog.Types.PgShadow, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgShadowArray {
+ export function equals(l: PgCatalog.Types.PgShadowArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgGroup {
+ export function equals(l: PgCatalog.Types.PgGroup, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgGroupArray {
+ export function equals(l: PgCatalog.Types.PgGroupArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgUser {
+ export function equals(l: PgCatalog.Types.PgUser, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgUserArray {
+ export function equals(l: PgCatalog.Types.PgUserArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPolicies {
+ export function equals(l: PgCatalog.Types.PgPolicies, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPoliciesArray {
+ export function equals(l: PgCatalog.Types.PgPoliciesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgRules {
+ export function equals(l: PgCatalog.Types.PgRules, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgRulesArray {
+ export function equals(l: PgCatalog.Types.PgRulesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgViews {
+ export function equals(l: PgCatalog.Types.PgViews, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgViewsArray {
+ export function equals(l: PgCatalog.Types.PgViewsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTables {
+ export function equals(l: PgCatalog.Types.PgTables, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTablesArray {
+ export function equals(l: PgCatalog.Types.PgTablesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgMatviews {
+ export function equals(l: PgCatalog.Types.PgMatviews, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgMatviewsArray {
+ export function equals(l: PgCatalog.Types.PgMatviewsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgIndexes {
+ export function equals(l: PgCatalog.Types.PgIndexes, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgIndexesArray {
+ export function equals(l: PgCatalog.Types.PgIndexesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgSequences {
+ export function equals(l: PgCatalog.Types.PgSequences, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgSequencesArray {
+ export function equals(l: PgCatalog.Types.PgSequencesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStats {
+ export function equals(l: PgCatalog.Types.PgStats, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatsArray {
+ export function equals(l: PgCatalog.Types.PgStatsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatsExt {
+ export function equals(l: PgCatalog.Types.PgStatsExt, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatsExtArray {
+ export function equals(l: PgCatalog.Types.PgStatsExtArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatsExtExprs {
+ export function equals(l: PgCatalog.Types.PgStatsExtExprs, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatsExtExprsArray {
+ export function equals(l: PgCatalog.Types.PgStatsExtExprsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPublicationTables {
+ export function equals(l: PgCatalog.Types.PgPublicationTables, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPublicationTablesArray {
+ export function equals(l: PgCatalog.Types.PgPublicationTablesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgLocks {
+ export function equals(l: PgCatalog.Types.PgLocks, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgLocksArray {
+ export function equals(l: PgCatalog.Types.PgLocksArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgCursors {
+ export function equals(l: PgCatalog.Types.PgCursors, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgCursorsArray {
+ export function equals(l: PgCatalog.Types.PgCursorsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAvailableExtensions {
+ export function equals(l: PgCatalog.Types.PgAvailableExtensions, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAvailableExtensionsArray {
+ export function equals(l: PgCatalog.Types.PgAvailableExtensionsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAvailableExtensionVersions {
+ export function equals(l: PgCatalog.Types.PgAvailableExtensionVersions, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAvailableExtensionVersionsArray {
+ export function equals(l: PgCatalog.Types.PgAvailableExtensionVersionsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPreparedXacts {
+ export function equals(l: PgCatalog.Types.PgPreparedXacts, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPreparedXactsArray {
+ export function equals(l: PgCatalog.Types.PgPreparedXactsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPreparedStatements {
+ export function equals(l: PgCatalog.Types.PgPreparedStatements, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPreparedStatementsArray {
+ export function equals(l: PgCatalog.Types.PgPreparedStatementsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgSeclabels {
+ export function equals(l: PgCatalog.Types.PgSeclabels, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgSeclabelsArray {
+ export function equals(l: PgCatalog.Types.PgSeclabelsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgSettings {
+ export function equals(l: PgCatalog.Types.PgSettings, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgSettingsArray {
+ export function equals(l: PgCatalog.Types.PgSettingsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgFileSettings {
+ export function equals(l: PgCatalog.Types.PgFileSettings, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgFileSettingsArray {
+ export function equals(l: PgCatalog.Types.PgFileSettingsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgHbaFileRules {
+ export function equals(l: PgCatalog.Types.PgHbaFileRules, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgHbaFileRulesArray {
+ export function equals(l: PgCatalog.Types.PgHbaFileRulesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgIdentFileMappings {
+ export function equals(l: PgCatalog.Types.PgIdentFileMappings, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgIdentFileMappingsArray {
+ export function equals(l: PgCatalog.Types.PgIdentFileMappingsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTimezoneAbbrevs {
+ export function equals(l: PgCatalog.Types.PgTimezoneAbbrevs, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTimezoneAbbrevsArray {
+ export function equals(l: PgCatalog.Types.PgTimezoneAbbrevsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTimezoneNames {
+ export function equals(l: PgCatalog.Types.PgTimezoneNames, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTimezoneNamesArray {
+ export function equals(l: PgCatalog.Types.PgTimezoneNamesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgConfig {
+ export function equals(l: PgCatalog.Types.PgConfig, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgConfigArray {
+ export function equals(l: PgCatalog.Types.PgConfigArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgShmemAllocations {
+ export function equals(l: PgCatalog.Types.PgShmemAllocations, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgShmemAllocationsArray {
+ export function equals(l: PgCatalog.Types.PgShmemAllocationsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgBackendMemoryContexts {
+ export function equals(l: PgCatalog.Types.PgBackendMemoryContexts, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgBackendMemoryContextsArray {
+ export function equals(l: PgCatalog.Types.PgBackendMemoryContextsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatAllTables {
+ export function equals(l: PgCatalog.Types.PgStatAllTables, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatAllTablesArray {
+ export function equals(l: PgCatalog.Types.PgStatAllTablesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatXactAllTables {
+ export function equals(l: PgCatalog.Types.PgStatXactAllTables, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatXactAllTablesArray {
+ export function equals(l: PgCatalog.Types.PgStatXactAllTablesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatSysTables {
+ export function equals(l: PgCatalog.Types.PgStatSysTables, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatSysTablesArray {
+ export function equals(l: PgCatalog.Types.PgStatSysTablesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatXactSysTables {
+ export function equals(l: PgCatalog.Types.PgStatXactSysTables, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatXactSysTablesArray {
+ export function equals(l: PgCatalog.Types.PgStatXactSysTablesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatUserTables {
+ export function equals(l: PgCatalog.Types.PgStatUserTables, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatUserTablesArray {
+ export function equals(l: PgCatalog.Types.PgStatUserTablesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatXactUserTables {
+ export function equals(l: PgCatalog.Types.PgStatXactUserTables, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatXactUserTablesArray {
+ export function equals(l: PgCatalog.Types.PgStatXactUserTablesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatioAllTables {
+ export function equals(l: PgCatalog.Types.PgStatioAllTables, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatioAllTablesArray {
+ export function equals(l: PgCatalog.Types.PgStatioAllTablesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatioSysTables {
+ export function equals(l: PgCatalog.Types.PgStatioSysTables, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatioSysTablesArray {
+ export function equals(l: PgCatalog.Types.PgStatioSysTablesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatioUserTables {
+ export function equals(l: PgCatalog.Types.PgStatioUserTables, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatioUserTablesArray {
+ export function equals(l: PgCatalog.Types.PgStatioUserTablesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatAllIndexes {
+ export function equals(l: PgCatalog.Types.PgStatAllIndexes, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatAllIndexesArray {
+ export function equals(l: PgCatalog.Types.PgStatAllIndexesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatSysIndexes {
+ export function equals(l: PgCatalog.Types.PgStatSysIndexes, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatSysIndexesArray {
+ export function equals(l: PgCatalog.Types.PgStatSysIndexesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatUserIndexes {
+ export function equals(l: PgCatalog.Types.PgStatUserIndexes, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatUserIndexesArray {
+ export function equals(l: PgCatalog.Types.PgStatUserIndexesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatioAllIndexes {
+ export function equals(l: PgCatalog.Types.PgStatioAllIndexes, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatioAllIndexesArray {
+ export function equals(l: PgCatalog.Types.PgStatioAllIndexesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatioSysIndexes {
+ export function equals(l: PgCatalog.Types.PgStatioSysIndexes, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatioSysIndexesArray {
+ export function equals(l: PgCatalog.Types.PgStatioSysIndexesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatioUserIndexes {
+ export function equals(l: PgCatalog.Types.PgStatioUserIndexes, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatioUserIndexesArray {
+ export function equals(l: PgCatalog.Types.PgStatioUserIndexesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatioAllSequences {
+ export function equals(l: PgCatalog.Types.PgStatioAllSequences, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatioAllSequencesArray {
+ export function equals(l: PgCatalog.Types.PgStatioAllSequencesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatioSysSequences {
+ export function equals(l: PgCatalog.Types.PgStatioSysSequences, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatioSysSequencesArray {
+ export function equals(l: PgCatalog.Types.PgStatioSysSequencesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatioUserSequences {
+ export function equals(l: PgCatalog.Types.PgStatioUserSequences, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatioUserSequencesArray {
+ export function equals(l: PgCatalog.Types.PgStatioUserSequencesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatActivity {
+ export function equals(l: PgCatalog.Types.PgStatActivity, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatActivityArray {
+ export function equals(l: PgCatalog.Types.PgStatActivityArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatReplication {
+ export function equals(l: PgCatalog.Types.PgStatReplication, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatReplicationArray {
+ export function equals(l: PgCatalog.Types.PgStatReplicationArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatSlru {
+ export function equals(l: PgCatalog.Types.PgStatSlru, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatSlruArray {
+ export function equals(l: PgCatalog.Types.PgStatSlruArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatWalReceiver {
+ export function equals(l: PgCatalog.Types.PgStatWalReceiver, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatWalReceiverArray {
+ export function equals(l: PgCatalog.Types.PgStatWalReceiverArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatRecoveryPrefetch {
+ export function equals(l: PgCatalog.Types.PgStatRecoveryPrefetch, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatRecoveryPrefetchArray {
+ export function equals(l: PgCatalog.Types.PgStatRecoveryPrefetchArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatSubscription {
+ export function equals(l: PgCatalog.Types.PgStatSubscription, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatSubscriptionArray {
+ export function equals(l: PgCatalog.Types.PgStatSubscriptionArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatSsl {
+ export function equals(l: PgCatalog.Types.PgStatSsl, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatSslArray {
+ export function equals(l: PgCatalog.Types.PgStatSslArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatGssapi {
+ export function equals(l: PgCatalog.Types.PgStatGssapi, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatGssapiArray {
+ export function equals(l: PgCatalog.Types.PgStatGssapiArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgReplicationSlots {
+ export function equals(l: PgCatalog.Types.PgReplicationSlots, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgReplicationSlotsArray {
+ export function equals(l: PgCatalog.Types.PgReplicationSlotsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatReplicationSlots {
+ export function equals(l: PgCatalog.Types.PgStatReplicationSlots, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatReplicationSlotsArray {
+ export function equals(l: PgCatalog.Types.PgStatReplicationSlotsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatDatabase {
+ export function equals(l: PgCatalog.Types.PgStatDatabase, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatDatabaseArray {
+ export function equals(l: PgCatalog.Types.PgStatDatabaseArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatDatabaseConflicts {
+ export function equals(l: PgCatalog.Types.PgStatDatabaseConflicts, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatDatabaseConflictsArray {
+ export function equals(l: PgCatalog.Types.PgStatDatabaseConflictsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatUserFunctions {
+ export function equals(l: PgCatalog.Types.PgStatUserFunctions, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatUserFunctionsArray {
+ export function equals(l: PgCatalog.Types.PgStatUserFunctionsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatXactUserFunctions {
+ export function equals(l: PgCatalog.Types.PgStatXactUserFunctions, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatXactUserFunctionsArray {
+ export function equals(l: PgCatalog.Types.PgStatXactUserFunctionsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatArchiver {
+ export function equals(l: PgCatalog.Types.PgStatArchiver, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatArchiverArray {
+ export function equals(l: PgCatalog.Types.PgStatArchiverArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatBgwriter {
+ export function equals(l: PgCatalog.Types.PgStatBgwriter, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatBgwriterArray {
+ export function equals(l: PgCatalog.Types.PgStatBgwriterArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatIo {
+ export function equals(l: PgCatalog.Types.PgStatIo, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatIoArray {
+ export function equals(l: PgCatalog.Types.PgStatIoArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatWal {
+ export function equals(l: PgCatalog.Types.PgStatWal, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatWalArray {
+ export function equals(l: PgCatalog.Types.PgStatWalArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatProgressAnalyze {
+ export function equals(l: PgCatalog.Types.PgStatProgressAnalyze, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatProgressAnalyzeArray {
+ export function equals(l: PgCatalog.Types.PgStatProgressAnalyzeArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatProgressVacuum {
+ export function equals(l: PgCatalog.Types.PgStatProgressVacuum, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatProgressVacuumArray {
+ export function equals(l: PgCatalog.Types.PgStatProgressVacuumArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatProgressCluster {
+ export function equals(l: PgCatalog.Types.PgStatProgressCluster, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatProgressClusterArray {
+ export function equals(l: PgCatalog.Types.PgStatProgressClusterArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatProgressCreateIndex {
+ export function equals(l: PgCatalog.Types.PgStatProgressCreateIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatProgressCreateIndexArray {
+ export function equals(l: PgCatalog.Types.PgStatProgressCreateIndexArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatProgressBasebackup {
+ export function equals(l: PgCatalog.Types.PgStatProgressBasebackup, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatProgressBasebackupArray {
+ export function equals(l: PgCatalog.Types.PgStatProgressBasebackupArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatProgressCopy {
+ export function equals(l: PgCatalog.Types.PgStatProgressCopy, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatProgressCopyArray {
+ export function equals(l: PgCatalog.Types.PgStatProgressCopyArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgUserMappings {
+ export function equals(l: PgCatalog.Types.PgUserMappings, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgUserMappingsArray {
+ export function equals(l: PgCatalog.Types.PgUserMappingsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgReplicationOriginStatus {
+ export function equals(l: PgCatalog.Types.PgReplicationOriginStatus, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgReplicationOriginStatusArray {
+ export function equals(l: PgCatalog.Types.PgReplicationOriginStatusArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatSubscriptionStats {
+ export function equals(l: PgCatalog.Types.PgStatSubscriptionStats, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatSubscriptionStatsArray {
+ export function equals(l: PgCatalog.Types.PgStatSubscriptionStatsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgProcOidIndex {
+ export function equals(l: PgCatalog.Types.PgProcOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgProcPronameArgsNspIndex {
+ export function equals(l: PgCatalog.Types.PgProcPronameArgsNspIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTypeOidIndex {
+ export function equals(l: PgCatalog.Types.PgTypeOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTypeTypnameNspIndex {
+ export function equals(l: PgCatalog.Types.PgTypeTypnameNspIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAttributeRelidAttnamIndex {
+ export function equals(l: PgCatalog.Types.PgAttributeRelidAttnamIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAttributeRelidAttnumIndex {
+ export function equals(l: PgCatalog.Types.PgAttributeRelidAttnumIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgClassOidIndex {
+ export function equals(l: PgCatalog.Types.PgClassOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgClassRelnameNspIndex {
+ export function equals(l: PgCatalog.Types.PgClassRelnameNspIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgClassTblspcRelfilenodeIndex {
+ export function equals(l: PgCatalog.Types.PgClassTblspcRelfilenodeIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAttrdefAdrelidAdnumIndex {
+ export function equals(l: PgCatalog.Types.PgAttrdefAdrelidAdnumIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAttrdefOidIndex {
+ export function equals(l: PgCatalog.Types.PgAttrdefOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgConstraintConnameNspIndex {
+ export function equals(l: PgCatalog.Types.PgConstraintConnameNspIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgConstraintConrelidContypidConnameIndex {
+ export function equals(l: PgCatalog.Types.PgConstraintConrelidContypidConnameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgConstraintContypidIndex {
+ export function equals(l: PgCatalog.Types.PgConstraintContypidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgConstraintOidIndex {
+ export function equals(l: PgCatalog.Types.PgConstraintOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgConstraintConparentidIndex {
+ export function equals(l: PgCatalog.Types.PgConstraintConparentidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgInheritsRelidSeqnoIndex {
+ export function equals(l: PgCatalog.Types.PgInheritsRelidSeqnoIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgInheritsParentIndex {
+ export function equals(l: PgCatalog.Types.PgInheritsParentIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgIndexIndrelidIndex {
+ export function equals(l: PgCatalog.Types.PgIndexIndrelidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgIndexIndexrelidIndex {
+ export function equals(l: PgCatalog.Types.PgIndexIndexrelidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgOperatorOidIndex {
+ export function equals(l: PgCatalog.Types.PgOperatorOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgOperatorOprnameLRNIndex {
+ export function equals(l: PgCatalog.Types.PgOperatorOprnameLRNIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgOpfamilyAmNameNspIndex {
+ export function equals(l: PgCatalog.Types.PgOpfamilyAmNameNspIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgOpfamilyOidIndex {
+ export function equals(l: PgCatalog.Types.PgOpfamilyOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgOpclassAmNameNspIndex {
+ export function equals(l: PgCatalog.Types.PgOpclassAmNameNspIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgOpclassOidIndex {
+ export function equals(l: PgCatalog.Types.PgOpclassOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAmNameIndex {
+ export function equals(l: PgCatalog.Types.PgAmNameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAmOidIndex {
+ export function equals(l: PgCatalog.Types.PgAmOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAmopFamStratIndex {
+ export function equals(l: PgCatalog.Types.PgAmopFamStratIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAmopOprFamIndex {
+ export function equals(l: PgCatalog.Types.PgAmopOprFamIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAmopOidIndex {
+ export function equals(l: PgCatalog.Types.PgAmopOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAmprocFamProcIndex {
+ export function equals(l: PgCatalog.Types.PgAmprocFamProcIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAmprocOidIndex {
+ export function equals(l: PgCatalog.Types.PgAmprocOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgLanguageNameIndex {
+ export function equals(l: PgCatalog.Types.PgLanguageNameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgLanguageOidIndex {
+ export function equals(l: PgCatalog.Types.PgLanguageOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgLargeobjectMetadataOidIndex {
+ export function equals(l: PgCatalog.Types.PgLargeobjectMetadataOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgLargeobjectLoidPnIndex {
+ export function equals(l: PgCatalog.Types.PgLargeobjectLoidPnIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAggregateFnoidIndex {
+ export function equals(l: PgCatalog.Types.PgAggregateFnoidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatisticRelidAttInhIndex {
+ export function equals(l: PgCatalog.Types.PgStatisticRelidAttInhIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatisticExtOidIndex {
+ export function equals(l: PgCatalog.Types.PgStatisticExtOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatisticExtNameIndex {
+ export function equals(l: PgCatalog.Types.PgStatisticExtNameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatisticExtRelidIndex {
+ export function equals(l: PgCatalog.Types.PgStatisticExtRelidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgStatisticExtDataStxoidInhIndex {
+ export function equals(l: PgCatalog.Types.PgStatisticExtDataStxoidInhIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgRewriteOidIndex {
+ export function equals(l: PgCatalog.Types.PgRewriteOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgRewriteRelRulenameIndex {
+ export function equals(l: PgCatalog.Types.PgRewriteRelRulenameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTriggerTgconstraintIndex {
+ export function equals(l: PgCatalog.Types.PgTriggerTgconstraintIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTriggerTgrelidTgnameIndex {
+ export function equals(l: PgCatalog.Types.PgTriggerTgrelidTgnameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTriggerOidIndex {
+ export function equals(l: PgCatalog.Types.PgTriggerOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgEventTriggerEvtnameIndex {
+ export function equals(l: PgCatalog.Types.PgEventTriggerEvtnameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgEventTriggerOidIndex {
+ export function equals(l: PgCatalog.Types.PgEventTriggerOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgDescriptionOCOIndex {
+ export function equals(l: PgCatalog.Types.PgDescriptionOCOIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgCastOidIndex {
+ export function equals(l: PgCatalog.Types.PgCastOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgCastSourceTargetIndex {
+ export function equals(l: PgCatalog.Types.PgCastSourceTargetIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgEnumOidIndex {
+ export function equals(l: PgCatalog.Types.PgEnumOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgEnumTypidLabelIndex {
+ export function equals(l: PgCatalog.Types.PgEnumTypidLabelIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgEnumTypidSortorderIndex {
+ export function equals(l: PgCatalog.Types.PgEnumTypidSortorderIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgNamespaceNspnameIndex {
+ export function equals(l: PgCatalog.Types.PgNamespaceNspnameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgNamespaceOidIndex {
+ export function equals(l: PgCatalog.Types.PgNamespaceOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgConversionDefaultIndex {
+ export function equals(l: PgCatalog.Types.PgConversionDefaultIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgConversionNameNspIndex {
+ export function equals(l: PgCatalog.Types.PgConversionNameNspIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgConversionOidIndex {
+ export function equals(l: PgCatalog.Types.PgConversionOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgDependDependerIndex {
+ export function equals(l: PgCatalog.Types.PgDependDependerIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgDependReferenceIndex {
+ export function equals(l: PgCatalog.Types.PgDependReferenceIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgDatabaseDatnameIndex {
+ export function equals(l: PgCatalog.Types.PgDatabaseDatnameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgDatabaseOidIndex {
+ export function equals(l: PgCatalog.Types.PgDatabaseOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgDbRoleSettingDatabaseidRolIndex {
+ export function equals(l: PgCatalog.Types.PgDbRoleSettingDatabaseidRolIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTablespaceOidIndex {
+ export function equals(l: PgCatalog.Types.PgTablespaceOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTablespaceSpcnameIndex {
+ export function equals(l: PgCatalog.Types.PgTablespaceSpcnameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAuthidRolnameIndex {
+ export function equals(l: PgCatalog.Types.PgAuthidRolnameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAuthidOidIndex {
+ export function equals(l: PgCatalog.Types.PgAuthidOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAuthMembersOidIndex {
+ export function equals(l: PgCatalog.Types.PgAuthMembersOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAuthMembersRoleMemberIndex {
+ export function equals(l: PgCatalog.Types.PgAuthMembersRoleMemberIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAuthMembersMemberRoleIndex {
+ export function equals(l: PgCatalog.Types.PgAuthMembersMemberRoleIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgAuthMembersGrantorIndex {
+ export function equals(l: PgCatalog.Types.PgAuthMembersGrantorIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgShdependDependerIndex {
+ export function equals(l: PgCatalog.Types.PgShdependDependerIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgShdependReferenceIndex {
+ export function equals(l: PgCatalog.Types.PgShdependReferenceIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgShdescriptionOCIndex {
+ export function equals(l: PgCatalog.Types.PgShdescriptionOCIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTsConfigCfgnameIndex {
+ export function equals(l: PgCatalog.Types.PgTsConfigCfgnameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTsConfigOidIndex {
+ export function equals(l: PgCatalog.Types.PgTsConfigOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTsConfigMapIndex {
+ export function equals(l: PgCatalog.Types.PgTsConfigMapIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTsDictDictnameIndex {
+ export function equals(l: PgCatalog.Types.PgTsDictDictnameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTsDictOidIndex {
+ export function equals(l: PgCatalog.Types.PgTsDictOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTsParserPrsnameIndex {
+ export function equals(l: PgCatalog.Types.PgTsParserPrsnameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTsParserOidIndex {
+ export function equals(l: PgCatalog.Types.PgTsParserOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTsTemplateTmplnameIndex {
+ export function equals(l: PgCatalog.Types.PgTsTemplateTmplnameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTsTemplateOidIndex {
+ export function equals(l: PgCatalog.Types.PgTsTemplateOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgExtensionOidIndex {
+ export function equals(l: PgCatalog.Types.PgExtensionOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgExtensionNameIndex {
+ export function equals(l: PgCatalog.Types.PgExtensionNameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgForeignDataWrapperOidIndex {
+ export function equals(l: PgCatalog.Types.PgForeignDataWrapperOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgForeignDataWrapperNameIndex {
+ export function equals(l: PgCatalog.Types.PgForeignDataWrapperNameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgForeignServerOidIndex {
+ export function equals(l: PgCatalog.Types.PgForeignServerOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgForeignServerNameIndex {
+ export function equals(l: PgCatalog.Types.PgForeignServerNameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgUserMappingOidIndex {
+ export function equals(l: PgCatalog.Types.PgUserMappingOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgUserMappingUserServerIndex {
+ export function equals(l: PgCatalog.Types.PgUserMappingUserServerIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgForeignTableRelidIndex {
+ export function equals(l: PgCatalog.Types.PgForeignTableRelidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPolicyOidIndex {
+ export function equals(l: PgCatalog.Types.PgPolicyOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPolicyPolrelidPolnameIndex {
+ export function equals(l: PgCatalog.Types.PgPolicyPolrelidPolnameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgReplicationOriginRoiidentIndex {
+ export function equals(l: PgCatalog.Types.PgReplicationOriginRoiidentIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgReplicationOriginRonameIndex {
+ export function equals(l: PgCatalog.Types.PgReplicationOriginRonameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgDefaultAclRoleNspObjIndex {
+ export function equals(l: PgCatalog.Types.PgDefaultAclRoleNspObjIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgDefaultAclOidIndex {
+ export function equals(l: PgCatalog.Types.PgDefaultAclOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgInitPrivsOCOIndex {
+ export function equals(l: PgCatalog.Types.PgInitPrivsOCOIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgSeclabelObjectIndex {
+ export function equals(l: PgCatalog.Types.PgSeclabelObjectIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgShseclabelObjectIndex {
+ export function equals(l: PgCatalog.Types.PgShseclabelObjectIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgCollationNameEncNspIndex {
+ export function equals(l: PgCatalog.Types.PgCollationNameEncNspIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgCollationOidIndex {
+ export function equals(l: PgCatalog.Types.PgCollationOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgParameterAclParnameIndex {
+ export function equals(l: PgCatalog.Types.PgParameterAclParnameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgParameterAclOidIndex {
+ export function equals(l: PgCatalog.Types.PgParameterAclOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPartitionedTablePartrelidIndex {
+ export function equals(l: PgCatalog.Types.PgPartitionedTablePartrelidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgRangeRngtypidIndex {
+ export function equals(l: PgCatalog.Types.PgRangeRngtypidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgRangeRngmultitypidIndex {
+ export function equals(l: PgCatalog.Types.PgRangeRngmultitypidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTransformOidIndex {
+ export function equals(l: PgCatalog.Types.PgTransformOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgTransformTypeLangIndex {
+ export function equals(l: PgCatalog.Types.PgTransformTypeLangIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgSequenceSeqrelidIndex {
+ export function equals(l: PgCatalog.Types.PgSequenceSeqrelidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPublicationOidIndex {
+ export function equals(l: PgCatalog.Types.PgPublicationOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPublicationPubnameIndex {
+ export function equals(l: PgCatalog.Types.PgPublicationPubnameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPublicationNamespaceOidIndex {
+ export function equals(l: PgCatalog.Types.PgPublicationNamespaceOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPublicationNamespacePnnspidPnpubidIndex {
+ export function equals(l: PgCatalog.Types.PgPublicationNamespacePnnspidPnpubidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPublicationRelOidIndex {
+ export function equals(l: PgCatalog.Types.PgPublicationRelOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPublicationRelPrrelidPrpubidIndex {
+ export function equals(l: PgCatalog.Types.PgPublicationRelPrrelidPrpubidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgPublicationRelPrpubidIndex {
+ export function equals(l: PgCatalog.Types.PgPublicationRelPrpubidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgSubscriptionOidIndex {
+ export function equals(l: PgCatalog.Types.PgSubscriptionOidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgSubscriptionSubnameIndex {
+ export function equals(l: PgCatalog.Types.PgSubscriptionSubnameIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgSubscriptionRelSrrelidSrsubidIndex {
+ export function equals(l: PgCatalog.Types.PgSubscriptionRelSrrelidSrsubidIndex, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+}
+export namespace Procedures {
+}
+export namespace Tables {
+export namespace PgStatistic {
+}
+export namespace PgType {
+}
+export namespace PgForeignTable {
+}
+export namespace PgAuthid {
+}
+export namespace PgStatisticExtData {
+}
+export namespace PgUserMapping {
+}
+export namespace PgSubscription {
+}
+export namespace PgAttribute {
+}
+export namespace PgProc {
+}
+export namespace PgClass {
+}
+export namespace PgAttrdef {
+}
+export namespace PgConstraint {
+}
+export namespace PgInherits {
+}
+export namespace PgIndex {
+}
+export namespace PgOperator {
+}
+export namespace PgOpfamily {
+}
+export namespace PgOpclass {
+}
+export namespace PgAm {
+}
+export namespace PgAmop {
+}
+export namespace PgAmproc {
+}
+export namespace PgLanguage {
+}
+export namespace PgLargeobjectMetadata {
+}
+export namespace PgAggregate {
+}
+export namespace PgStatisticExt {
+}
+export namespace PgRewrite {
+}
+export namespace PgTrigger {
+}
+export namespace PgEventTrigger {
+}
+export namespace PgDescription {
+}
+export namespace PgCast {
+}
+export namespace PgEnum {
+}
+export namespace PgNamespace {
+}
+export namespace PgConversion {
+}
+export namespace PgDepend {
+}
+export namespace PgDatabase {
+}
+export namespace PgDbRoleSetting {
+}
+export namespace PgTablespace {
+}
+export namespace PgAuthMembers {
+}
+export namespace PgShdepend {
+}
+export namespace PgShdescription {
+}
+export namespace PgTsConfig {
+}
+export namespace PgTsConfigMap {
+}
+export namespace PgTsDict {
+}
+export namespace PgTsParser {
+}
+export namespace PgTsTemplate {
+}
+export namespace PgExtension {
+}
+export namespace PgForeignDataWrapper {
+}
+export namespace PgForeignServer {
+}
+export namespace PgPolicy {
+}
+export namespace PgReplicationOrigin {
+}
+export namespace PgDefaultAcl {
+}
+export namespace PgInitPrivs {
+}
+export namespace PgSeclabel {
+}
+export namespace PgShseclabel {
+}
+export namespace PgCollation {
+}
+export namespace PgParameterAcl {
+}
+export namespace PgPartitionedTable {
+}
+export namespace PgRange {
+}
+export namespace PgTransform {
+}
+export namespace PgSequence {
+}
+export namespace PgPublication {
+}
+export namespace PgPublicationNamespace {
+}
+export namespace PgPublicationRel {
+}
+export namespace PgSubscriptionRel {
+}
+export namespace PgLargeobject {
+}
+}
+}
+export namespace InformationSchema {
+export namespace Types {
+export namespace CardinalNumber {
+ export function equals(l: InformationSchema.Types.CardinalNumber, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CardinalNumberArray {
+ export function equals(l: InformationSchema.Types.CardinalNumberArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CharacterData {
+ export function equals(l: InformationSchema.Types.CharacterData, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CharacterDataArray {
+ export function equals(l: InformationSchema.Types.CharacterDataArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace SqlIdentifier {
+ export function equals(l: InformationSchema.Types.SqlIdentifier, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace SqlIdentifierArray {
+ export function equals(l: InformationSchema.Types.SqlIdentifierArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace InformationSchemaCatalogName {
+ export function equals(l: InformationSchema.Types.InformationSchemaCatalogName, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace InformationSchemaCatalogNameArray {
+ export function equals(l: InformationSchema.Types.InformationSchemaCatalogNameArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TimeStamp {
+ export function equals(l: InformationSchema.Types.TimeStamp, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TimeStampArray {
+ export function equals(l: InformationSchema.Types.TimeStampArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace YesOrNo {
+ export function equals(l: InformationSchema.Types.YesOrNo, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace YesOrNoArray {
+ export function equals(l: InformationSchema.Types.YesOrNoArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ApplicableRoles {
+ export function equals(l: InformationSchema.Types.ApplicableRoles, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ApplicableRolesArray {
+ export function equals(l: InformationSchema.Types.ApplicableRolesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace AdministrableRoleAuthorizations {
+ export function equals(l: InformationSchema.Types.AdministrableRoleAuthorizations, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace AdministrableRoleAuthorizationsArray {
+ export function equals(l: InformationSchema.Types.AdministrableRoleAuthorizationsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Attributes {
+ export function equals(l: InformationSchema.Types.Attributes, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace AttributesArray {
+ export function equals(l: InformationSchema.Types.AttributesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CharacterSets {
+ export function equals(l: InformationSchema.Types.CharacterSets, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CharacterSetsArray {
+ export function equals(l: InformationSchema.Types.CharacterSetsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CheckConstraintRoutineUsage {
+ export function equals(l: InformationSchema.Types.CheckConstraintRoutineUsage, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CheckConstraintRoutineUsageArray {
+ export function equals(l: InformationSchema.Types.CheckConstraintRoutineUsageArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CheckConstraints {
+ export function equals(l: InformationSchema.Types.CheckConstraints, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CheckConstraintsArray {
+ export function equals(l: InformationSchema.Types.CheckConstraintsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Collations {
+ export function equals(l: InformationSchema.Types.Collations, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CollationsArray {
+ export function equals(l: InformationSchema.Types.CollationsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CollationCharacterSetApplicability {
+ export function equals(l: InformationSchema.Types.CollationCharacterSetApplicability, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CollationCharacterSetApplicabilityArray {
+ export function equals(l: InformationSchema.Types.CollationCharacterSetApplicabilityArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ColumnColumnUsage {
+ export function equals(l: InformationSchema.Types.ColumnColumnUsage, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ColumnColumnUsageArray {
+ export function equals(l: InformationSchema.Types.ColumnColumnUsageArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ColumnDomainUsage {
+ export function equals(l: InformationSchema.Types.ColumnDomainUsage, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ColumnDomainUsageArray {
+ export function equals(l: InformationSchema.Types.ColumnDomainUsageArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ColumnPrivileges {
+ export function equals(l: InformationSchema.Types.ColumnPrivileges, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ColumnPrivilegesArray {
+ export function equals(l: InformationSchema.Types.ColumnPrivilegesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ColumnUdtUsage {
+ export function equals(l: InformationSchema.Types.ColumnUdtUsage, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ColumnUdtUsageArray {
+ export function equals(l: InformationSchema.Types.ColumnUdtUsageArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Columns {
+ export function equals(l: InformationSchema.Types.Columns, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ColumnsArray {
+ export function equals(l: InformationSchema.Types.ColumnsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ConstraintColumnUsage {
+ export function equals(l: InformationSchema.Types.ConstraintColumnUsage, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ConstraintColumnUsageArray {
+ export function equals(l: InformationSchema.Types.ConstraintColumnUsageArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ConstraintTableUsage {
+ export function equals(l: InformationSchema.Types.ConstraintTableUsage, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ConstraintTableUsageArray {
+ export function equals(l: InformationSchema.Types.ConstraintTableUsageArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace DomainConstraints {
+ export function equals(l: InformationSchema.Types.DomainConstraints, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace DomainConstraintsArray {
+ export function equals(l: InformationSchema.Types.DomainConstraintsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace DomainUdtUsage {
+ export function equals(l: InformationSchema.Types.DomainUdtUsage, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace DomainUdtUsageArray {
+ export function equals(l: InformationSchema.Types.DomainUdtUsageArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Domains {
+ export function equals(l: InformationSchema.Types.Domains, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace DomainsArray {
+ export function equals(l: InformationSchema.Types.DomainsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace EnabledRoles {
+ export function equals(l: InformationSchema.Types.EnabledRoles, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace EnabledRolesArray {
+ export function equals(l: InformationSchema.Types.EnabledRolesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace KeyColumnUsage {
+ export function equals(l: InformationSchema.Types.KeyColumnUsage, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace KeyColumnUsageArray {
+ export function equals(l: InformationSchema.Types.KeyColumnUsageArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Parameters {
+ export function equals(l: InformationSchema.Types.Parameters, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ParametersArray {
+ export function equals(l: InformationSchema.Types.ParametersArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ReferentialConstraints {
+ export function equals(l: InformationSchema.Types.ReferentialConstraints, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ReferentialConstraintsArray {
+ export function equals(l: InformationSchema.Types.ReferentialConstraintsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RoleColumnGrants {
+ export function equals(l: InformationSchema.Types.RoleColumnGrants, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RoleColumnGrantsArray {
+ export function equals(l: InformationSchema.Types.RoleColumnGrantsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RoutineColumnUsage {
+ export function equals(l: InformationSchema.Types.RoutineColumnUsage, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RoutineColumnUsageArray {
+ export function equals(l: InformationSchema.Types.RoutineColumnUsageArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RoutinePrivileges {
+ export function equals(l: InformationSchema.Types.RoutinePrivileges, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RoutinePrivilegesArray {
+ export function equals(l: InformationSchema.Types.RoutinePrivilegesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RoleRoutineGrants {
+ export function equals(l: InformationSchema.Types.RoleRoutineGrants, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RoleRoutineGrantsArray {
+ export function equals(l: InformationSchema.Types.RoleRoutineGrantsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RoutineRoutineUsage {
+ export function equals(l: InformationSchema.Types.RoutineRoutineUsage, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RoutineRoutineUsageArray {
+ export function equals(l: InformationSchema.Types.RoutineRoutineUsageArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RoutineSequenceUsage {
+ export function equals(l: InformationSchema.Types.RoutineSequenceUsage, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RoutineSequenceUsageArray {
+ export function equals(l: InformationSchema.Types.RoutineSequenceUsageArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RoutineTableUsage {
+ export function equals(l: InformationSchema.Types.RoutineTableUsage, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RoutineTableUsageArray {
+ export function equals(l: InformationSchema.Types.RoutineTableUsageArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Routines {
+ export function equals(l: InformationSchema.Types.Routines, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RoutinesArray {
+ export function equals(l: InformationSchema.Types.RoutinesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Schemata {
+ export function equals(l: InformationSchema.Types.Schemata, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace SchemataArray {
+ export function equals(l: InformationSchema.Types.SchemataArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Sequences {
+ export function equals(l: InformationSchema.Types.Sequences, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace SequencesArray {
+ export function equals(l: InformationSchema.Types.SequencesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace SqlFeatures {
+ export function equals(l: InformationSchema.Types.SqlFeatures, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace SqlFeaturesArray {
+ export function equals(l: InformationSchema.Types.SqlFeaturesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace SqlImplementationInfo {
+ export function equals(l: InformationSchema.Types.SqlImplementationInfo, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace SqlImplementationInfoArray {
+ export function equals(l: InformationSchema.Types.SqlImplementationInfoArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace SqlParts {
+ export function equals(l: InformationSchema.Types.SqlParts, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace SqlPartsArray {
+ export function equals(l: InformationSchema.Types.SqlPartsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace SqlSizing {
+ export function equals(l: InformationSchema.Types.SqlSizing, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace SqlSizingArray {
+ export function equals(l: InformationSchema.Types.SqlSizingArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TableConstraints {
+ export function equals(l: InformationSchema.Types.TableConstraints, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TableConstraintsArray {
+ export function equals(l: InformationSchema.Types.TableConstraintsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TablePrivileges {
+ export function equals(l: InformationSchema.Types.TablePrivileges, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TablePrivilegesArray {
+ export function equals(l: InformationSchema.Types.TablePrivilegesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RoleTableGrants {
+ export function equals(l: InformationSchema.Types.RoleTableGrants, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RoleTableGrantsArray {
+ export function equals(l: InformationSchema.Types.RoleTableGrantsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Tables {
+ export function equals(l: InformationSchema.Types.Tables, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TablesArray {
+ export function equals(l: InformationSchema.Types.TablesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Transforms {
+ export function equals(l: InformationSchema.Types.Transforms, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TransformsArray {
+ export function equals(l: InformationSchema.Types.TransformsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TriggeredUpdateColumns {
+ export function equals(l: InformationSchema.Types.TriggeredUpdateColumns, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TriggeredUpdateColumnsArray {
+ export function equals(l: InformationSchema.Types.TriggeredUpdateColumnsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Triggers {
+ export function equals(l: InformationSchema.Types.Triggers, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace TriggersArray {
+ export function equals(l: InformationSchema.Types.TriggersArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace UdtPrivileges {
+ export function equals(l: InformationSchema.Types.UdtPrivileges, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace UdtPrivilegesArray {
+ export function equals(l: InformationSchema.Types.UdtPrivilegesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RoleUdtGrants {
+ export function equals(l: InformationSchema.Types.RoleUdtGrants, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RoleUdtGrantsArray {
+ export function equals(l: InformationSchema.Types.RoleUdtGrantsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace UsagePrivileges {
+ export function equals(l: InformationSchema.Types.UsagePrivileges, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace UsagePrivilegesArray {
+ export function equals(l: InformationSchema.Types.UsagePrivilegesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RoleUsageGrants {
+ export function equals(l: InformationSchema.Types.RoleUsageGrants, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RoleUsageGrantsArray {
+ export function equals(l: InformationSchema.Types.RoleUsageGrantsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace UserDefinedTypes {
+ export function equals(l: InformationSchema.Types.UserDefinedTypes, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace UserDefinedTypesArray {
+ export function equals(l: InformationSchema.Types.UserDefinedTypesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ViewColumnUsage {
+ export function equals(l: InformationSchema.Types.ViewColumnUsage, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ViewColumnUsageArray {
+ export function equals(l: InformationSchema.Types.ViewColumnUsageArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ViewRoutineUsage {
+ export function equals(l: InformationSchema.Types.ViewRoutineUsage, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ViewRoutineUsageArray {
+ export function equals(l: InformationSchema.Types.ViewRoutineUsageArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ViewTableUsage {
+ export function equals(l: InformationSchema.Types.ViewTableUsage, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ViewTableUsageArray {
+ export function equals(l: InformationSchema.Types.ViewTableUsageArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Views {
+ export function equals(l: InformationSchema.Types.Views, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ViewsArray {
+ export function equals(l: InformationSchema.Types.ViewsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace DataTypePrivileges {
+ export function equals(l: InformationSchema.Types.DataTypePrivileges, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace DataTypePrivilegesArray {
+ export function equals(l: InformationSchema.Types.DataTypePrivilegesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ElementTypes {
+ export function equals(l: InformationSchema.Types.ElementTypes, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ElementTypesArray {
+ export function equals(l: InformationSchema.Types.ElementTypesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgForeignTableColumns {
+ export function equals(l: InformationSchema.Types.PgForeignTableColumns, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ColumnOptions {
+ export function equals(l: InformationSchema.Types.ColumnOptions, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ColumnOptionsArray {
+ export function equals(l: InformationSchema.Types.ColumnOptionsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgForeignDataWrappers {
+ export function equals(l: InformationSchema.Types.PgForeignDataWrappers, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ForeignDataWrapperOptions {
+ export function equals(l: InformationSchema.Types.ForeignDataWrapperOptions, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ForeignDataWrapperOptionsArray {
+ export function equals(l: InformationSchema.Types.ForeignDataWrapperOptionsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ForeignDataWrappers {
+ export function equals(l: InformationSchema.Types.ForeignDataWrappers, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ForeignDataWrappersArray {
+ export function equals(l: InformationSchema.Types.ForeignDataWrappersArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgForeignServers {
+ export function equals(l: InformationSchema.Types.PgForeignServers, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ForeignServerOptions {
+ export function equals(l: InformationSchema.Types.ForeignServerOptions, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ForeignServerOptionsArray {
+ export function equals(l: InformationSchema.Types.ForeignServerOptionsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ForeignServers {
+ export function equals(l: InformationSchema.Types.ForeignServers, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ForeignServersArray {
+ export function equals(l: InformationSchema.Types.ForeignServersArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgForeignTables {
+ export function equals(l: InformationSchema.Types.PgForeignTables, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ForeignTableOptions {
+ export function equals(l: InformationSchema.Types.ForeignTableOptions, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ForeignTableOptionsArray {
+ export function equals(l: InformationSchema.Types.ForeignTableOptionsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ForeignTables {
+ export function equals(l: InformationSchema.Types.ForeignTables, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ForeignTablesArray {
+ export function equals(l: InformationSchema.Types.ForeignTablesArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgUserMappings {
+ export function equals(l: InformationSchema.Types.PgUserMappings, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace UserMappingOptions {
+ export function equals(l: InformationSchema.Types.UserMappingOptions, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace UserMappingOptionsArray {
+ export function equals(l: InformationSchema.Types.UserMappingOptionsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace UserMappings {
+ export function equals(l: InformationSchema.Types.UserMappings, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace UserMappingsArray {
+ export function equals(l: InformationSchema.Types.UserMappingsArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+}
+export namespace Procedures {
+}
+export namespace Tables {
+export namespace SqlFeatures {
+}
+export namespace SqlImplementationInfo {
+}
+export namespace SqlParts {
+}
+export namespace SqlSizing {
+}
+}
+}
+export namespace Public {
+export namespace Types {
+export namespace MpaaRating {
+ export function equals(l: Public.Types.MpaaRating, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace MpaaRatingArray {
+ export function equals(l: Public.Types.MpaaRatingArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Year {
+ export function equals(l: Public.Types.Year, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace YearArray {
+ export function equals(l: Public.Types.YearArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Customer {
+ export function equals(l: Public.Types.Customer, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CustomerArray {
+ export function equals(l: Public.Types.CustomerArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Actor {
+ export function equals(l: Public.Types.Actor, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ActorArray {
+ export function equals(l: Public.Types.ActorArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Category {
+ export function equals(l: Public.Types.Category, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CategoryArray {
+ export function equals(l: Public.Types.CategoryArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Film {
+ export function equals(l: Public.Types.Film, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace FilmArray {
+ export function equals(l: Public.Types.FilmArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace FilmActor {
+ export function equals(l: Public.Types.FilmActor, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace FilmActorArray {
+ export function equals(l: Public.Types.FilmActorArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace FilmCategory {
+ export function equals(l: Public.Types.FilmCategory, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace FilmCategoryArray {
+ export function equals(l: Public.Types.FilmCategoryArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ActorInfo {
+ export function equals(l: Public.Types.ActorInfo, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ActorInfoArray {
+ export function equals(l: Public.Types.ActorInfoArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Address {
+ export function equals(l: Public.Types.Address, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace AddressArray {
+ export function equals(l: Public.Types.AddressArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace City {
+ export function equals(l: Public.Types.City, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CityArray {
+ export function equals(l: Public.Types.CityArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Country {
+ export function equals(l: Public.Types.Country, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CountryArray {
+ export function equals(l: Public.Types.CountryArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CustomerList {
+ export function equals(l: Public.Types.CustomerList, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CustomerListArray {
+ export function equals(l: Public.Types.CustomerListArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace FilmList {
+ export function equals(l: Public.Types.FilmList, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace FilmListArray {
+ export function equals(l: Public.Types.FilmListArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Inventory {
+ export function equals(l: Public.Types.Inventory, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace InventoryArray {
+ export function equals(l: Public.Types.InventoryArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Language {
+ export function equals(l: Public.Types.Language, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace LanguageArray {
+ export function equals(l: Public.Types.LanguageArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace NicerButSlowerFilmList {
+ export function equals(l: Public.Types.NicerButSlowerFilmList, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace NicerButSlowerFilmListArray {
+ export function equals(l: Public.Types.NicerButSlowerFilmListArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Payment {
+ export function equals(l: Public.Types.Payment, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PaymentArray {
+ export function equals(l: Public.Types.PaymentArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Rental {
+ export function equals(l: Public.Types.Rental, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RentalArray {
+ export function equals(l: Public.Types.RentalArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace SalesByFilmCategory {
+ export function equals(l: Public.Types.SalesByFilmCategory, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace SalesByFilmCategoryArray {
+ export function equals(l: Public.Types.SalesByFilmCategoryArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Staff {
+ export function equals(l: Public.Types.Staff, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace StaffArray {
+ export function equals(l: Public.Types.StaffArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace Store {
+ export function equals(l: Public.Types.Store, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace StoreArray {
+ export function equals(l: Public.Types.StoreArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace SalesByStore {
+ export function equals(l: Public.Types.SalesByStore, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace SalesByStoreArray {
+ export function equals(l: Public.Types.SalesByStoreArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace StaffList {
+ export function equals(l: Public.Types.StaffList, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace StaffListArray {
+ export function equals(l: Public.Types.StaffListArray, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace ActorPkey {
+ export function equals(l: Public.Types.ActorPkey, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace AddressPkey {
+ export function equals(l: Public.Types.AddressPkey, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CategoryPkey {
+ export function equals(l: Public.Types.CategoryPkey, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CityPkey {
+ export function equals(l: Public.Types.CityPkey, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CountryPkey {
+ export function equals(l: Public.Types.CountryPkey, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace CustomerPkey {
+ export function equals(l: Public.Types.CustomerPkey, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace FilmActorPkey {
+ export function equals(l: Public.Types.FilmActorPkey, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace FilmCategoryPkey {
+ export function equals(l: Public.Types.FilmCategoryPkey, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace FilmPkey {
+ export function equals(l: Public.Types.FilmPkey, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace InventoryPkey {
+ export function equals(l: Public.Types.InventoryPkey, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace LanguagePkey {
+ export function equals(l: Public.Types.LanguagePkey, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PaymentPkey {
+ export function equals(l: Public.Types.PaymentPkey, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace RentalPkey {
+ export function equals(l: Public.Types.RentalPkey, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace StaffPkey {
+ export function equals(l: Public.Types.StaffPkey, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace StorePkey {
+ export function equals(l: Public.Types.StorePkey, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace FilmFulltextIdx {
+ export function equals(l: Public.Types.FilmFulltextIdx, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace IdxActorLastName {
+ export function equals(l: Public.Types.IdxActorLastName, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace IdxFkAddressId {
+ export function equals(l: Public.Types.IdxFkAddressId, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace IdxFkCityId {
+ export function equals(l: Public.Types.IdxFkCityId, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace IdxFkCountryId {
+ export function equals(l: Public.Types.IdxFkCountryId, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace IdxFkCustomerId {
+ export function equals(l: Public.Types.IdxFkCustomerId, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace IdxFkFilmId {
+ export function equals(l: Public.Types.IdxFkFilmId, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace IdxFkInventoryId {
+ export function equals(l: Public.Types.IdxFkInventoryId, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace IdxFkLanguageId {
+ export function equals(l: Public.Types.IdxFkLanguageId, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace IdxFkRentalId {
+ export function equals(l: Public.Types.IdxFkRentalId, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace IdxFkStaffId {
+ export function equals(l: Public.Types.IdxFkStaffId, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace IdxFkStoreId {
+ export function equals(l: Public.Types.IdxFkStoreId, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace IdxLastName {
+ export function equals(l: Public.Types.IdxLastName, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace IdxStoreIdFilmId {
+ export function equals(l: Public.Types.IdxStoreIdFilmId, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace IdxTitle {
+ export function equals(l: Public.Types.IdxTitle, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace IdxUnqManagerStaffId {
+ export function equals(l: Public.Types.IdxUnqManagerStaffId, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace IdxUnqRentalRentalDateInventoryIdCustomerId {
+ export function equals(l: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+}
+export namespace Procedures {
+export namespace FilmInStock {
+export namespace Parameters {
+ export function equals(l: Public.Procedures.FilmInStock.Parameters, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+}
+export namespace FilmNotInStock {
+export namespace Parameters {
+ export function equals(l: Public.Procedures.FilmNotInStock.Parameters, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+}
+export namespace GetCustomerBalance {
+export namespace Parameters {
+ export function equals(l: Public.Procedures.GetCustomerBalance.Parameters, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+}
+export namespace InventoryHeldByCustomer {
+export namespace Parameters {
+ export function equals(l: Public.Procedures.InventoryHeldByCustomer.Parameters, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+}
+export namespace InventoryInStock {
+export namespace Parameters {
+ export function equals(l: Public.Procedures.InventoryInStock.Parameters, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+}
+export namespace LastDay {
+export namespace Parameters {
+ export function equals(l: Public.Procedures.LastDay.Parameters, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+}
+export namespace RewardsReport {
+export namespace Parameters {
+ export function equals(l: Public.Procedures.RewardsReport.Parameters, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+}
+}
+export namespace Tables {
+export namespace FilmActor {
+}
+export namespace Address {
+}
+export namespace City {
+}
+export namespace Customer {
+}
+export namespace Actor {
+}
+export namespace FilmCategory {
+}
+export namespace Inventory {
+}
+export namespace Category {
+}
+export namespace Country {
+}
+export namespace Language {
+}
+export namespace Rental {
+}
+export namespace Staff {
+}
+export namespace Store {
+}
+export namespace Payment {
+}
+export namespace Film {
+}
+}
+}
+export namespace PgToast {
+export namespace Types {
+export namespace PgToast_36081Index {
+ export function equals(l: PgToast.Types.PgToast_36081Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_36167Index {
+ export function equals(l: PgToast.Types.PgToast_36167Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_1255Index {
+ export function equals(l: PgToast.Types.PgToast_1255Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_1247Index {
+ export function equals(l: PgToast.Types.PgToast_1247Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_2604Index {
+ export function equals(l: PgToast.Types.PgToast_2604Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_2606Index {
+ export function equals(l: PgToast.Types.PgToast_2606Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_2612Index {
+ export function equals(l: PgToast.Types.PgToast_2612Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_2600Index {
+ export function equals(l: PgToast.Types.PgToast_2600Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_2619Index {
+ export function equals(l: PgToast.Types.PgToast_2619Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_3381Index {
+ export function equals(l: PgToast.Types.PgToast_3381Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_3429Index {
+ export function equals(l: PgToast.Types.PgToast_3429Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_2618Index {
+ export function equals(l: PgToast.Types.PgToast_2618Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_2620Index {
+ export function equals(l: PgToast.Types.PgToast_2620Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_3466Index {
+ export function equals(l: PgToast.Types.PgToast_3466Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_2609Index {
+ export function equals(l: PgToast.Types.PgToast_2609Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_2615Index {
+ export function equals(l: PgToast.Types.PgToast_2615Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_1262Index {
+ export function equals(l: PgToast.Types.PgToast_1262Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_2964Index {
+ export function equals(l: PgToast.Types.PgToast_2964Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_1213Index {
+ export function equals(l: PgToast.Types.PgToast_1213Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_1260Index {
+ export function equals(l: PgToast.Types.PgToast_1260Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_2396Index {
+ export function equals(l: PgToast.Types.PgToast_2396Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_3600Index {
+ export function equals(l: PgToast.Types.PgToast_3600Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_3079Index {
+ export function equals(l: PgToast.Types.PgToast_3079Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_2328Index {
+ export function equals(l: PgToast.Types.PgToast_2328Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_1417Index {
+ export function equals(l: PgToast.Types.PgToast_1417Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_1418Index {
+ export function equals(l: PgToast.Types.PgToast_1418Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_3118Index {
+ export function equals(l: PgToast.Types.PgToast_3118Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_3256Index {
+ export function equals(l: PgToast.Types.PgToast_3256Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_6000Index {
+ export function equals(l: PgToast.Types.PgToast_6000Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_826Index {
+ export function equals(l: PgToast.Types.PgToast_826Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_3394Index {
+ export function equals(l: PgToast.Types.PgToast_3394Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_3596Index {
+ export function equals(l: PgToast.Types.PgToast_3596Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_3592Index {
+ export function equals(l: PgToast.Types.PgToast_3592Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_3456Index {
+ export function equals(l: PgToast.Types.PgToast_3456Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_6243Index {
+ export function equals(l: PgToast.Types.PgToast_6243Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_3350Index {
+ export function equals(l: PgToast.Types.PgToast_3350Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_6106Index {
+ export function equals(l: PgToast.Types.PgToast_6106Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_6100Index {
+ export function equals(l: PgToast.Types.PgToast_6100Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_13658Index {
+ export function equals(l: PgToast.Types.PgToast_13658Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_13663Index {
+ export function equals(l: PgToast.Types.PgToast_13663Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_13668Index {
+ export function equals(l: PgToast.Types.PgToast_13668Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PgToast_13673Index {
+ export function equals(l: PgToast.Types.PgToast_13673Index, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
 }
 }
 export namespace Procedures {

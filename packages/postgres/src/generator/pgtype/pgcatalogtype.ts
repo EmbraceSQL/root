@@ -72,7 +72,6 @@ export class PGCatalogType implements GeneratesTypeScript {
   serializeToPostgres(context: Context, x: unknown) {
     console.assert(context);
     // default is just 'a string of it'
-    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     if (x === null) return null;
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     return `${x}`;
@@ -82,10 +81,8 @@ export class PGCatalogType implements GeneratesTypeScript {
    * Given text encoded data coming in from postgres, parse it into
    * structured data.
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   parseFromPostgres(context: Context, x: unknown) {
     // default is just to echo it -- which is almost never correct
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return x;
   }
 
@@ -98,7 +95,6 @@ export class PGCatalogType implements GeneratesTypeScript {
       to: this.oid,
       from: [this.oid],
       serialize: (x) => this.serializeToPostgres(context, x),
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       parse: (x) => this.parseFromPostgres(context, x),
     };
   }

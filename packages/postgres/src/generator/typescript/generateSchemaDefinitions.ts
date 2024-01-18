@@ -2,6 +2,7 @@ import { GenerationContext } from "..";
 import { asDocComment } from "../../util";
 import { emptyTypescriptRow } from "./autocrud/shared";
 import { generatePrimaryKeyPickers } from "./generatePrimaryKeyPickers";
+import { generateTypeComparison } from "./generateTypeComparison";
 import { generateTypeGuards } from "./generateTypeGuards";
 import { generateTypeParsers } from "./generateTypeParsers";
 import {
@@ -189,6 +190,11 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
         },
         [ASTKind.Procedures]: NamespaceVisitor,
         [ASTKind.Procedure]: NamespaceVisitor,
+        [ASTKind.DomainType]: TypeDefiner,
+        [ASTKind.ArrayType]: TypeDefiner,
+        [ASTKind.Scripts]: NamespaceVisitor,
+        [ASTKind.ScriptFolder]: NamespaceVisitor,
+        [ASTKind.Script]: NamespaceVisitor,
         [ASTKind.CompositeType]: {
           // composite types are a name and AttributeNode(s) will fill the body
           before: async (_, node) => {
@@ -199,11 +205,6 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
           },
           after: async () => `}`,
         },
-        [ASTKind.DomainType]: TypeDefiner,
-        [ASTKind.ArrayType]: TypeDefiner,
-        [ASTKind.Scripts]: NamespaceVisitor,
-        [ASTKind.ScriptFolder]: NamespaceVisitor,
-        [ASTKind.Script]: NamespaceVisitor,
         [ASTKind.Attribute]: {
           before: async (_, node) => {
             // arrays are not nullable, they are empty arrays []
@@ -225,6 +226,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
   generationBuffer.push(await generateTypeParsers(context));
   generationBuffer.push(await generatePrimaryKeyPickers(context));
   generationBuffer.push(await generateTypeGuards(context));
+  generationBuffer.push(await generateTypeComparison(context));
 
   return generationBuffer.join("\n");
 };
