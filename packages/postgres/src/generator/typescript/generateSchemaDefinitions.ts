@@ -9,10 +9,11 @@ import {
   ASTKind,
   AbstractTypeNode,
   ColumnNode,
+  CompositeTypeNode,
   NamespaceVisitor,
-  TableNode,
   VALUES,
   cleanIdentifierForTypescript,
+  isNodeType,
 } from "@embracesql/shared";
 import { GenerationContext as GC } from "@embracesql/shared";
 import { pascalCase } from "change-case";
@@ -37,27 +38,27 @@ function sortOptions(columns: ColumnNode[]) {
 /**
  * All available columns -- generate column metadata.
  */
-async function columnMetadata(context: GC, table: TableNode) {
-  return await table.visit({
+async function columnMetadata(context: GC, type: CompositeTypeNode) {
+  return await type.visit({
     ...context,
     handlers: {
-      [ASTKind.Table]: {
+      [ASTKind.CompositeType]: {
         before: async () => `export const Columns = {`,
         after: async (_, node) => {
           return [
             `}`, // close columns
             // convenience iterable column names
-            `export const ColumnNames = [${node.allColumns
+            `export const ColumnNames = [${node.attributes
               .map((c) => `"${c.typescriptName}"`)
               .join(",")}] as const;`,
-            `export const FieldNames = [${node.allColumns
+            `export const FieldNames = [${node.attributes
               .map((c) => `"${c.typescriptPropertyName}"`)
               .join(",")}] as const;`,
             `type FieldNamesType = typeof FieldNames[number];`,
           ].join("\n");
         },
       },
-      [ASTKind.Column]: {
+      [ASTKind.Attribute]: {
         before: async (_, node) => {
           // each column worth of metadata including a type constant
           return [
@@ -174,7 +175,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
               ` sort?: SortOptions[],`,
               `};`,
               // a convenient metadata constant for all columns
-              await columnMetadata(context, node),
+              await columnMetadata(context, node.type),
             ].join("\n");
           },
           after: NamespaceVisitor.after,
@@ -189,12 +190,32 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
             ].join("\n"),
         },
         [ASTKind.Procedures]: NamespaceVisitor,
-        [ASTKind.Procedure]: NamespaceVisitor,
+        [ASTKind.Procedure]: {
+          before: async (context, node) => {
+            return [
+              await NamespaceVisitor.before(context, node),
+              isNodeType(node.resultsType, ASTKind.CompositeType)
+                ? await columnMetadata(context, node.resultsType)
+                : "",
+            ].join("\n");
+          },
+          after: NamespaceVisitor.after,
+        },
         [ASTKind.DomainType]: TypeDefiner,
         [ASTKind.ArrayType]: TypeDefiner,
         [ASTKind.Scripts]: NamespaceVisitor,
         [ASTKind.ScriptFolder]: NamespaceVisitor,
-        [ASTKind.Script]: NamespaceVisitor,
+        [ASTKind.Script]: {
+          before: async (context, node) => {
+            return [
+              await NamespaceVisitor.before(context, node),
+              isNodeType(node.resultsType, ASTKind.CompositeType)
+                ? await columnMetadata(context, node.resultsType)
+                : "",
+            ].join("\n");
+          },
+          after: NamespaceVisitor.after,
+        },
         [ASTKind.CompositeType]: {
           // composite types are a name and AttributeNode(s) will fill the body
           before: async (_, node) => {

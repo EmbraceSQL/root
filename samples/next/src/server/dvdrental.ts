@@ -10144,12 +10144,14 @@ customerId: Nullable<PgCatalog.Types.Int2>;
 export namespace Procedures {
 export namespace FilmInStock {
 
+
 export type Parameters = {
 pFilmId: Nullable<PgCatalog.Types.Int4>;
 pStoreId: Nullable<PgCatalog.Types.Int4>;
 }
 }
 export namespace FilmNotInStock {
+
 
 export type Parameters = {
 pFilmId: Nullable<PgCatalog.Types.Int4>;
@@ -10158,6 +10160,7 @@ pStoreId: Nullable<PgCatalog.Types.Int4>;
 }
 export namespace GetCustomerBalance {
 
+
 export type Parameters = {
 pCustomerId: Nullable<PgCatalog.Types.Int4>;
 pEffectiveDate: Nullable<PgCatalog.Types.Timestamp>;
@@ -10165,11 +10168,13 @@ pEffectiveDate: Nullable<PgCatalog.Types.Timestamp>;
 }
 export namespace InventoryHeldByCustomer {
 
+
 export type Parameters = {
 pInventoryId: Nullable<PgCatalog.Types.Int4>;
 }
 }
 export namespace InventoryInStock {
+
 
 export type Parameters = {
 pInventoryId: Nullable<PgCatalog.Types.Int4>;
@@ -10177,11 +10182,57 @@ pInventoryId: Nullable<PgCatalog.Types.Int4>;
 }
 export namespace LastDay {
 
+
 export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Timestamp>;
 }
 }
 export namespace RewardsReport {
+export const Columns = {
+CustomerId: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "customerId" as FieldNamesType,
+},
+StoreId: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "storeId" as FieldNamesType,
+},
+FirstName: {
+ typeName: "PgCatalog.Types.Varchar",
+ fieldName: "firstName" as FieldNamesType,
+},
+LastName: {
+ typeName: "PgCatalog.Types.Varchar",
+ fieldName: "lastName" as FieldNamesType,
+},
+Email: {
+ typeName: "PgCatalog.Types.Varchar",
+ fieldName: "email" as FieldNamesType,
+},
+AddressId: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "addressId" as FieldNamesType,
+},
+Activebool: {
+ typeName: "PgCatalog.Types.Bool",
+ fieldName: "activebool" as FieldNamesType,
+},
+CreateDate: {
+ typeName: "PgCatalog.Types.Date",
+ fieldName: "createDate" as FieldNamesType,
+},
+LastUpdate: {
+ typeName: "PgCatalog.Types.Timestamp",
+ fieldName: "lastUpdate" as FieldNamesType,
+},
+Active: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "active" as FieldNamesType,
+},
+}
+export const ColumnNames = ["CustomerId","StoreId","FirstName","LastName","Email","AddressId","Activebool","CreateDate","LastUpdate","Active"] as const;
+export const FieldNames = ["customerId","storeId","firstName","lastName","email","addressId","activebool","createDate","lastUpdate","active"] as const;
+type FieldNamesType = typeof FieldNames[number];
 
 export type Parameters = {
 minMonthlyPurchases: Nullable<PgCatalog.Types.Int4>;
@@ -11213,6 +11264,31 @@ export namespace Tables {
 }
 export namespace Scripts {
 export namespace MovieListing {
+export const Columns = {
+FilmId: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "filmId" as FieldNamesType,
+},
+Title: {
+ typeName: "PgCatalog.Types.Varchar",
+ fieldName: "title" as FieldNamesType,
+},
+ReleaseYear: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "releaseYear" as FieldNamesType,
+},
+Rating: {
+ typeName: "Public.Types.MpaaRating",
+ fieldName: "rating" as FieldNamesType,
+},
+Actors: {
+ typeName: "PgCatalog.Types.TextArray",
+ fieldName: "actors" as FieldNamesType,
+},
+}
+export const ColumnNames = ["FilmId","Title","ReleaseYear","Rating","Actors"] as const;
+export const FieldNames = ["filmId","title","releaseYear","rating","actors"] as const;
+type FieldNamesType = typeof FieldNames[number];
 
 export type Results = {
 filmId: Nullable<PgCatalog.Types.Int4>;
@@ -11225,6 +11301,63 @@ actors: PgCatalog.Types.TextArray;
 export namespace Sample {
 export namespace Film {
 export namespace Rated {
+export const Columns = {
+FilmId: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "filmId" as FieldNamesType,
+},
+Title: {
+ typeName: "PgCatalog.Types.Varchar",
+ fieldName: "title" as FieldNamesType,
+},
+Description: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "description" as FieldNamesType,
+},
+ReleaseYear: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "releaseYear" as FieldNamesType,
+},
+LanguageId: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "languageId" as FieldNamesType,
+},
+RentalDuration: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "rentalDuration" as FieldNamesType,
+},
+RentalRate: {
+ typeName: "PgCatalog.Types.Numeric",
+ fieldName: "rentalRate" as FieldNamesType,
+},
+Length: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "length" as FieldNamesType,
+},
+ReplacementCost: {
+ typeName: "PgCatalog.Types.Numeric",
+ fieldName: "replacementCost" as FieldNamesType,
+},
+Rating: {
+ typeName: "Public.Types.MpaaRating",
+ fieldName: "rating" as FieldNamesType,
+},
+LastUpdate: {
+ typeName: "PgCatalog.Types.Timestamp",
+ fieldName: "lastUpdate" as FieldNamesType,
+},
+SpecialFeatures: {
+ typeName: "PgCatalog.Types.TextArray",
+ fieldName: "specialFeatures" as FieldNamesType,
+},
+Fulltext: {
+ typeName: "PgCatalog.Types.Tsvector",
+ fieldName: "fulltext" as FieldNamesType,
+},
+}
+export const ColumnNames = ["FilmId","Title","Description","ReleaseYear","LanguageId","RentalDuration","RentalRate","Length","ReplacementCost","Rating","LastUpdate","SpecialFeatures","Fulltext"] as const;
+export const FieldNames = ["filmId","title","description","releaseYear","languageId","rentalDuration","rentalRate","length","replacementCost","rating","lastUpdate","specialFeatures","fulltext"] as const;
+type FieldNamesType = typeof FieldNames[number];
 
 export type Results = {
 filmId: Nullable<PgCatalog.Types.Int4>;
@@ -11247,6 +11380,15 @@ argument_1: Public.Types.MpaaRating;
 }
 }
 export namespace Tally {
+export const Columns = {
+Count: {
+ typeName: "PgCatalog.Types.Int8",
+ fieldName: "count" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Count"] as const;
+export const FieldNames = ["count"] as const;
+type FieldNamesType = typeof FieldNames[number];
 
 export type Results = {
 count: Nullable<PgCatalog.Types.Int8>;
@@ -11254,6 +11396,63 @@ count: Nullable<PgCatalog.Types.Int8>;
 }
 }
 export namespace Pick {
+export const Columns = {
+FilmId: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "filmId" as FieldNamesType,
+},
+Title: {
+ typeName: "PgCatalog.Types.Varchar",
+ fieldName: "title" as FieldNamesType,
+},
+Description: {
+ typeName: "PgCatalog.Types.Text",
+ fieldName: "description" as FieldNamesType,
+},
+ReleaseYear: {
+ typeName: "PgCatalog.Types.Int4",
+ fieldName: "releaseYear" as FieldNamesType,
+},
+LanguageId: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "languageId" as FieldNamesType,
+},
+RentalDuration: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "rentalDuration" as FieldNamesType,
+},
+RentalRate: {
+ typeName: "PgCatalog.Types.Numeric",
+ fieldName: "rentalRate" as FieldNamesType,
+},
+Length: {
+ typeName: "PgCatalog.Types.Int2",
+ fieldName: "length" as FieldNamesType,
+},
+ReplacementCost: {
+ typeName: "PgCatalog.Types.Numeric",
+ fieldName: "replacementCost" as FieldNamesType,
+},
+Rating: {
+ typeName: "Public.Types.MpaaRating",
+ fieldName: "rating" as FieldNamesType,
+},
+LastUpdate: {
+ typeName: "PgCatalog.Types.Timestamp",
+ fieldName: "lastUpdate" as FieldNamesType,
+},
+SpecialFeatures: {
+ typeName: "PgCatalog.Types.TextArray",
+ fieldName: "specialFeatures" as FieldNamesType,
+},
+Fulltext: {
+ typeName: "PgCatalog.Types.Tsvector",
+ fieldName: "fulltext" as FieldNamesType,
+},
+}
+export const ColumnNames = ["FilmId","Title","Description","ReleaseYear","LanguageId","RentalDuration","RentalRate","Length","ReplacementCost","Rating","LastUpdate","SpecialFeatures","Fulltext"] as const;
+export const FieldNames = ["filmId","title","description","releaseYear","languageId","rentalDuration","rentalRate","length","replacementCost","rating","lastUpdate","specialFeatures","fulltext"] as const;
+type FieldNamesType = typeof FieldNames[number];
 
 export type Results = {
 filmId: Nullable<PgCatalog.Types.Int4>;
@@ -11277,6 +11476,15 @@ argument_1: PgCatalog.Types.Text;
 }
 }
 export namespace Tally {
+export const Columns = {
+Count: {
+ typeName: "PgCatalog.Types.Int8",
+ fieldName: "count" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Count"] as const;
+export const FieldNames = ["count"] as const;
+type FieldNamesType = typeof FieldNames[number];
 
 export type Results = {
 count: Nullable<PgCatalog.Types.Int8>;

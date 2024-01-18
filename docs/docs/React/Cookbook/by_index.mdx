@@ -1,12 +1,13 @@
 import SQLScript from "!!raw-loader!../../../../var/data/dvdrental/sql/movie_listing.sql";
-import ReactSource from "!!raw-loader!../../../../samples/next/src/app/table/page.tsx";
+import ReactSource from "!!raw-loader!../../../../samples/next/src/app/by_index/page.tsx";
 import CodeBlock from "@theme/CodeBlock";
 import GenerateSource from "!!raw-loader!../../../../samples/next/bin/generate";
 
-# Database Table
+# Database Table by Index
 
-Sometimes you just want all the rows, or pages of the rows. EmbraceSQL generates
-a `useRows` hook for every table.
+Sometimes you just want just a few rows, and you want it fast. 
+
+EmbraceSQL generates a `useRows` hook for every index on every table.
 
 
 ## Requirements
@@ -28,6 +29,6 @@ running NextJS, it'll hot reload.
 
 Now use a table hook. Note the options to paginate and sort.
 
-<CodeBlock language="tsx" title="src/app/table/page.tsx" >
+<CodeBlock language="tsx" title="src/app/by_index/page.tsx" >
   {ReactSource}
 </CodeBlock>

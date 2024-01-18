@@ -1,0 +1,43 @@
+import SQLScript from "!!raw-loader!../../../../var/data/dvdrental/sql/movie_listing.sql";
+import ReactSource from "!!raw-loader!../../../../samples/next/src/app/script/page.tsx";
+import CodeBlock from "@theme/CodeBlock";
+import GenerateSource from "!!raw-loader!../../../../samples/next/bin/generate";
+
+# SQL Script
+
+You want to pull in some data and create a view using an SQL query. Write an 
+SQL script and generate away!
+
+
+## Requirements
+
+Make sure you are read as specified in the [Cookbook](./).
+
+## Steps
+
+### Write an SQL Script
+
+Here is our SQL, we're going to make a report of all the movies in the sample
+database, along with their actors. Using an ARRAY, which you might have avoided
+in the past becuase it is a pain to deal with using off the shelf PostgreSQL drivers.
+
+<CodeBlock language="sql" title="./sql/movie_listing.sql">
+  {SQLScript}
+</CodeBlock>
+
+### Generate Code
+
+Now that there is a SQL Script - regenerate from the database. If you are already
+running NextJS, it'll hot reload.
+
+<CodeBlock language="shell" >
+  {GenerateSource}
+</CodeBlock>
+
+### Code React
+
+Now use a table hook. Note the options to paginate and sort.
+
+<CodeBlock language="tsx" title="src/app/script/page.tsx" >
+  {ReactSource}
+</CodeBlock>
