@@ -9,7 +9,7 @@ const TypecastEntry = {
   before: async (_: GenerationContext, node: AbstractTypeNode) => {
     return [
       `export namespace ${node.typescriptName} {`,
-      ` export function equals(l: ${node.typescriptNamespacedName}, r: unknown) {`,
+      ` export function equals(l: ${node.typescriptNamespacedName}|undefined, r: unknown) {`,
       `  return JSON.stringify(l) === JSON.stringify(r);`,
       ` }`,
       `}`,

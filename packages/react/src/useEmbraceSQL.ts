@@ -13,6 +13,7 @@ type UpdateCallbackProps<R> = {
   upsertOperation: (values: R) => Promise<R | undefined>;
   primaryKeyPicker: (row: R) => string;
   RowImplementation: RowConstructor<R>;
+  rowEquals: (l: R | undefined, r: unknown) => boolean;
 };
 
 /**
@@ -77,8 +78,7 @@ export function useEmbraceSQLRow<P, V, R>(props: RowProps<P, R>) {
   const [results, setResults] = React.useState<R>();
   const responseCallback = React.useCallback(
     (row: R | undefined) => {
-      // TODO -- need to generate equals methods
-      if (JSON.stringify(results) === JSON.stringify(row)) {
+      if (props.rowEquals(row, results)) {
         return;
       } else {
         setResults(row);
@@ -147,8 +147,7 @@ export function useEmbraceSQLRows<P, V, R, O>(props: RowsProps<P, R, O>) {
   const responseCallback = React.useCallback(
     (index: number) => {
       return (row: R | undefined) => {
-        // TODO -- need to generate equals methods
-        if (JSON.stringify(results) === JSON.stringify(row)) {
+        if (props.rowEquals(row, results)) {
           return;
         } else if (row) {
           setResults(results?.toSpliced(index, 1, row));
