@@ -222,16 +222,11 @@ export type Point = Geometry.Point;
 
 export type Lseg = Geometry.LineSegment;
 
-export type Path = Array<Point>;
+export type Path = Geometry.Path;
 
-export type Box = 
-    {
-      upperRight: Point;
-      lowerLeft: Point;
-    }
-    ;
+export type Box = Geometry.Box;
 
-export type Polygon = Array<Point>;
+export type Polygon = Geometry.Polygon;
 
 export type Line = Geometry.Line;
 
@@ -11032,12 +11027,12 @@ export type PrimaryKey = Public.Types.FilmPkey;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_62961Index = {
+export type PgToast_21337Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_63047Index = {
+export type PgToast_21423Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -12031,7 +12026,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      return from;
+      return Geometry.parsePath(from);
     
 }
 
@@ -12042,7 +12037,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      return from;
+      return Geometry.parseBox(from);
     
 }
 
@@ -12053,7 +12048,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      return from;
+      return Geometry.parsePolygon(from);
     
 }
 
@@ -24846,11 +24841,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_62961Index {
+export namespace PgToast_21337Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_62961Index.is(from)) {
+if (PgToast.Types.PgToast_21337Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -24861,11 +24856,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_63047Index {
+export namespace PgToast_21423Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_63047Index.is(from)) {
+if (PgToast.Types.PgToast_21423Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -31477,16 +31472,16 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_62961Index {
-export function is(value: any) : value is PgToast.Types.PgToast_62961Index {
+export namespace PgToast_21337Index {
+export function is(value: any) : value is PgToast.Types.PgToast_21337Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_63047Index {
-export function is(value: any) : value is PgToast.Types.PgToast_63047Index {
+export namespace PgToast_21423Index {
+export function is(value: any) : value is PgToast.Types.PgToast_21423Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -36192,13 +36187,13 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_62961Index {
- export function equals(l: PgToast.Types.PgToast_62961Index|undefined, r: unknown) {
+export namespace PgToast_21337Index {
+ export function equals(l: PgToast.Types.PgToast_21337Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_63047Index {
- export function equals(l: PgToast.Types.PgToast_63047Index|undefined, r: unknown) {
+export namespace PgToast_21423Index {
+ export function equals(l: PgToast.Types.PgToast_21423Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }

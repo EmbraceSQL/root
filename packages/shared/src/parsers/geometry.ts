@@ -225,4 +225,106 @@ export namespace Geometry {
       box.lowerLeft,
     )})`;
   }
+
+  export enum PathKind {
+    Open,
+    Closed,
+  }
+
+  type HasPoints = {
+    points: Point[];
+  };
+
+  export type Path = HasPoints & {
+    kind: PathKind;
+  };
+
+  function isPath(from: unknown): from is Path {
+    return (
+      isPoint((from as Path)?.kind !== undefined) &&
+      ((from as Path)?.points ?? []).every(isPoint)
+    );
+  }
+
+  const pathOpen = parsimmon
+    .seqObj<HasPoints>(
+      parsimmon.string("[").skip(whitespace),
+      ["points", pointParser.sepBy1(parsimmon.string(",").skip(whitespace))],
+      parsimmon.string("]").skip(whitespace),
+    )
+    .map<Path>((p) => ({ kind: PathKind.Open, points: p.points }));
+
+  const pathClosedParens = parsimmon
+    .seqObj<HasPoints>(
+      parsimmon.string("(").skip(whitespace),
+      ["points", pointParser.sepBy1(parsimmon.string(",").skip(whitespace))],
+      parsimmon.string(")").skip(whitespace),
+    )
+    .map<Path>((p) => ({ kind: PathKind.Closed, points: p.points }));
+  const pathClosed = parsimmon
+    .seqObj<HasPoints>(
+      parsimmon.optWhitespace,
+      ["points", pointParser.sepBy1(parsimmon.string(",").skip(whitespace))],
+      parsimmon.optWhitespace,
+    )
+    .map<Path>((p) => ({ kind: PathKind.Closed, points: p.points }));
+
+  const pathParser = parsimmon.alt(pathOpen, pathClosedParens, pathClosed);
+
+  /**
+   * Parse postgres string representation of a path.
+   */
+  export function parsePath(from: unknown) {
+    if (typeof from === "string") {
+      return pathParser.tryParse(from);
+    }
+    if (isPath(from)) {
+      return from;
+    }
+    return null;
+  }
+
+  /**
+   * Serialize a path to postgres text format.
+   */
+  export function serializePath(x: unknown) {
+    const path = x as Path;
+    if (path === undefined || path === null) return null;
+    if (path.kind === PathKind.Closed) {
+      return `(${path.points.map(serializePoint).join(",")})`;
+    } else {
+      return `[${path.points.map(serializePoint).join(",")}]`;
+    }
+  }
+
+  export type Polygon = HasPoints;
+  /**
+   * Parse postgres string representationo of a polygon.
+   */
+  export function parsePolygon(from: unknown) {
+    if (typeof from === "string") {
+      const path = pathParser.tryParse(from);
+      return {
+        points: path.points,
+      };
+    }
+    if (isPath(from)) {
+      return {
+        points: from.points,
+      };
+    }
+    return null;
+  }
+
+  /**
+   * Serialize polygon to postgres text format.
+   */
+  export function serializePolygon(x: unknown) {
+    const path = x as Polygon;
+    if (path === undefined || path === null) return null;
+    return serializePath({
+      kind: PathKind.Closed,
+      points: path.points,
+    });
+  }
 }

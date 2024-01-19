@@ -26,14 +26,4 @@ class PGTypePoint extends PGCatalogType {
   }
 }
 
-class PGTypePointArray extends PGCatalogType {
-  typescriptTypeDefinition(context: GenerationContext) {
-    console.assert(context);
-    return `Array<Point>`;
-  }
-}
-
 registerOverride("point", PGTypePoint);
-// TODO: proper parsing, these are not just arrays
-registerOverride("path", PGTypePointArray);
-registerOverride("polygon", PGTypePointArray);

@@ -5,6 +5,7 @@ import {
   PostgresTypecasts,
   Api,
 } from "../src/marshalling";
+import { Geometry } from "@embracesql/shared";
 
 /**
  * Works-at-all.
@@ -175,22 +176,15 @@ describe("Can marshall base types", () => {
   it("that are paths", () => {
     for (const val of [
       null,
-      JSON.stringify([
-        { x: 0, y: 0 },
-        { x: 1.5, y: 100 },
-      ]),
+      `((0,0), (1.5, 100))`,
+      `[(0,0), (1.5, 100)]`,
+      `0,0, 1.5, 100`,
     ]) {
       roundTrip("PgCatalog.Types.Path", PgCatalog.Types.Path.parse, val);
     }
   });
   it("that are polygons", () => {
-    for (const val of [
-      null,
-      JSON.stringify([
-        { x: 0, y: 0 },
-        { x: 1.5, y: 100 },
-      ]),
-    ]) {
+    for (const val of [null, `((0,0), (1.5, 100))`, `0,0, 1.5, 100`]) {
       roundTrip("PgCatalog.Types.Polygon", PgCatalog.Types.Polygon.parse, val);
     }
   });
@@ -369,6 +363,63 @@ describe("Can marshall geometric", () => {
         x: 0,
         y: 0,
       },
+    });
+  });
+  describe("paths", () => {
+    it("closed", async () => {
+      const ret = await database.Api.Tables.Paths.create({
+        path: {
+          kind: Geometry.PathKind.Closed,
+          points: [
+            { x: 1, y: 2 },
+            { x: 2, y: 3 },
+          ],
+        },
+      });
+      expect(ret.id).toBeTruthy();
+      expect(ret.path).toMatchObject({
+        kind: Geometry.PathKind.Closed,
+        points: [
+          { x: 1, y: 2 },
+          { x: 2, y: 3 },
+        ],
+      });
+    });
+    it("open", async () => {
+      const ret = await database.Api.Tables.Paths.create({
+        path: {
+          kind: Geometry.PathKind.Open,
+          points: [
+            { x: 1, y: 2 },
+            { x: 2, y: 3 },
+          ],
+        },
+      });
+      expect(ret.id).toBeTruthy();
+      expect(ret.path).toMatchObject({
+        kind: Geometry.PathKind.Open,
+        points: [
+          { x: 1, y: 2 },
+          { x: 2, y: 3 },
+        ],
+      });
+    });
+  });
+  it("polygons", async () => {
+    const ret = await database.Api.Tables.Polygons.create({
+      polygon: {
+        points: [
+          { x: 1, y: 2 },
+          { x: 2, y: 3 },
+        ],
+      },
+    });
+    expect(ret.id).toBeTruthy();
+    expect(ret.polygon).toMatchObject({
+      points: [
+        { x: 1, y: 2 },
+        { x: 2, y: 3 },
+      ],
     });
   });
 });
