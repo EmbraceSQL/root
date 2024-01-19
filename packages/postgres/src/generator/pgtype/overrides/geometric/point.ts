@@ -1,6 +1,11 @@
+import { Context } from "../../../../context";
 import { PGCatalogType } from "../../pgcatalogtype";
 import { registerOverride } from "../_overrides";
-import { GenerationContext } from "@embracesql/shared";
+import {
+  GenerationContext,
+  parsePoint,
+  serializePoint,
+} from "@embracesql/shared";
 
 class PGTypePoint extends PGCatalogType {
   typescriptTypeDefinition(context: GenerationContext) {
@@ -11,6 +16,22 @@ class PGTypePoint extends PGCatalogType {
       y: number;
     }
     `;
+  }
+  typescriptTypeParser(context: GenerationContext) {
+    console.assert(context);
+    return `
+      return parsePoint(from);
+    `;
+  }
+
+  serializeToPostgres(context: Context, x: unknown) {
+    console.assert(context);
+    return serializePoint(x);
+  }
+
+  parseFromPostgres(context: Context, x: unknown) {
+    console.assert(context);
+    return parsePoint(x as string);
   }
 }
 

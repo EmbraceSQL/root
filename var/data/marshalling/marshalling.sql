@@ -9,8 +9,6 @@ CREATE EXTENSION CUBE;
 CREATE EXTENSION pg_trgm;
 
 
-DROP TABLE IF EXISTS slug;
-
 CREATE TABLE slug(
   slug_id serial PRIMARY KEY NOT NULL
 );
@@ -141,3 +139,10 @@ CREATE TABLE api.timezones (
 CREATE INDEX trgm_idx_gist ON api.timezones USING GIST (time_zone gist_trgm_ops);
 CREATE INDEX trgm_idx_gin ON api.timezones USING GIN (time_zone gin_trgm_ops);
 \copy api.timezones  FROM 'var/data/marshalling/timezones.tsv';
+
+
+-- geometric types
+CREATE TABLE api.points (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  point point NOT NULL
+)

@@ -98,6 +98,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
         /* @typescript-eslint/no-redundant-type-constituents */
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
         import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
+        import { parsePoint } from "@embracesql/shared";
 
     `,
   ];
@@ -168,7 +169,9 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
               // values type -- used in create and update
               `export type ${pascalCase(VALUES)} = PartiallyOptional<${
                 node.type.typescriptNamespacedName
-              }, Optional & PrimaryKey>`,
+              }, ${
+                node.optionalColumns.length ? "Optional &" : ""
+              } PrimaryKey>`,
               // read options exist per table
               `export ${sortOptions(node.allColumns)};`,
               `export type Options = ReadOptions & {`,

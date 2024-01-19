@@ -11,7 +11,12 @@ SELECT
     attnum,
     attrelid,
     attname,
-    attnotnull,
+	COALESCE(
+		-- pick the nullability from the corresponding table
+		-- personally I think this is a bug in the postgres catalog
+		(SELECT attnotnull FROM pg_attribute aa WHERE aa.attrelid = i.tabletypeoid AND aa.attname = a.attname),
+		attnotnull
+	) attnotnull,
     atthasdef,
 	tabletypeoid,
 	COALESCE(

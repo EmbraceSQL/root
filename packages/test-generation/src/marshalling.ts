@@ -14,6 +14,7 @@
         /* @typescript-eslint/no-redundant-type-constituents */
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
         import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
+        import { parsePoint } from "@embracesql/shared";
 
     
 export namespace PgCatalog {
@@ -389,7 +390,7 @@ export type LanguageHandler = unknown;
 
 export type Internal = unknown;
 
-export type Anyelement = unknown;
+export type Anyelement = any;
 
 export type Anynonarray = unknown;
 
@@ -2941,580 +2942,580 @@ export type PgStatSubscriptionStatsArray =
     ;
 
 export type PgProcOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgProcPronameArgsNspIndex = {
-proname: Nullable<PgCatalog.Types.Name>;
+proname: PgCatalog.Types.Name;
 proargtypes: PgCatalog.Types.Oidvector;
-pronamespace: Nullable<PgCatalog.Types.Oid>;
+pronamespace: PgCatalog.Types.Oid;
 }
 
 export type PgTypeOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgTypeTypnameNspIndex = {
-typname: Nullable<PgCatalog.Types.Name>;
-typnamespace: Nullable<PgCatalog.Types.Oid>;
+typname: PgCatalog.Types.Name;
+typnamespace: PgCatalog.Types.Oid;
 }
 
 export type PgAttributeRelidAttnamIndex = {
-attrelid: Nullable<PgCatalog.Types.Oid>;
-attname: Nullable<PgCatalog.Types.Name>;
+attrelid: PgCatalog.Types.Oid;
+attname: PgCatalog.Types.Name;
 }
 
 export type PgAttributeRelidAttnumIndex = {
-attrelid: Nullable<PgCatalog.Types.Oid>;
-attnum: Nullable<PgCatalog.Types.Int2>;
+attrelid: PgCatalog.Types.Oid;
+attnum: PgCatalog.Types.Int2;
 }
 
 export type PgClassOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgClassRelnameNspIndex = {
-relname: Nullable<PgCatalog.Types.Name>;
-relnamespace: Nullable<PgCatalog.Types.Oid>;
+relname: PgCatalog.Types.Name;
+relnamespace: PgCatalog.Types.Oid;
 }
 
 export type PgClassTblspcRelfilenodeIndex = {
-reltablespace: Nullable<PgCatalog.Types.Oid>;
-relfilenode: Nullable<PgCatalog.Types.Oid>;
+reltablespace: PgCatalog.Types.Oid;
+relfilenode: PgCatalog.Types.Oid;
 }
 
 export type PgAttrdefAdrelidAdnumIndex = {
-adrelid: Nullable<PgCatalog.Types.Oid>;
-adnum: Nullable<PgCatalog.Types.Int2>;
+adrelid: PgCatalog.Types.Oid;
+adnum: PgCatalog.Types.Int2;
 }
 
 export type PgAttrdefOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgConstraintConnameNspIndex = {
-conname: Nullable<PgCatalog.Types.Name>;
-connamespace: Nullable<PgCatalog.Types.Oid>;
+conname: PgCatalog.Types.Name;
+connamespace: PgCatalog.Types.Oid;
 }
 
 export type PgConstraintConrelidContypidConnameIndex = {
-conrelid: Nullable<PgCatalog.Types.Oid>;
-contypid: Nullable<PgCatalog.Types.Oid>;
-conname: Nullable<PgCatalog.Types.Name>;
+conrelid: PgCatalog.Types.Oid;
+contypid: PgCatalog.Types.Oid;
+conname: PgCatalog.Types.Name;
 }
 
 export type PgConstraintContypidIndex = {
-contypid: Nullable<PgCatalog.Types.Oid>;
+contypid: PgCatalog.Types.Oid;
 }
 
 export type PgConstraintOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgConstraintConparentidIndex = {
-conparentid: Nullable<PgCatalog.Types.Oid>;
+conparentid: PgCatalog.Types.Oid;
 }
 
 export type PgInheritsRelidSeqnoIndex = {
-inhrelid: Nullable<PgCatalog.Types.Oid>;
-inhseqno: Nullable<PgCatalog.Types.Int4>;
+inhrelid: PgCatalog.Types.Oid;
+inhseqno: PgCatalog.Types.Int4;
 }
 
 export type PgInheritsParentIndex = {
-inhparent: Nullable<PgCatalog.Types.Oid>;
+inhparent: PgCatalog.Types.Oid;
 }
 
 export type PgIndexIndrelidIndex = {
-indrelid: Nullable<PgCatalog.Types.Oid>;
+indrelid: PgCatalog.Types.Oid;
 }
 
 export type PgIndexIndexrelidIndex = {
-indexrelid: Nullable<PgCatalog.Types.Oid>;
+indexrelid: PgCatalog.Types.Oid;
 }
 
 export type PgOperatorOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgOperatorOprnameLRNIndex = {
-oprname: Nullable<PgCatalog.Types.Name>;
-oprleft: Nullable<PgCatalog.Types.Oid>;
-oprright: Nullable<PgCatalog.Types.Oid>;
-oprnamespace: Nullable<PgCatalog.Types.Oid>;
+oprname: PgCatalog.Types.Name;
+oprleft: PgCatalog.Types.Oid;
+oprright: PgCatalog.Types.Oid;
+oprnamespace: PgCatalog.Types.Oid;
 }
 
 export type PgOpfamilyAmNameNspIndex = {
-opfmethod: Nullable<PgCatalog.Types.Oid>;
-opfname: Nullable<PgCatalog.Types.Name>;
-opfnamespace: Nullable<PgCatalog.Types.Oid>;
+opfmethod: PgCatalog.Types.Oid;
+opfname: PgCatalog.Types.Name;
+opfnamespace: PgCatalog.Types.Oid;
 }
 
 export type PgOpfamilyOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgOpclassAmNameNspIndex = {
-opcmethod: Nullable<PgCatalog.Types.Oid>;
-opcname: Nullable<PgCatalog.Types.Name>;
-opcnamespace: Nullable<PgCatalog.Types.Oid>;
+opcmethod: PgCatalog.Types.Oid;
+opcname: PgCatalog.Types.Name;
+opcnamespace: PgCatalog.Types.Oid;
 }
 
 export type PgOpclassOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgAmNameIndex = {
-amname: Nullable<PgCatalog.Types.Name>;
+amname: PgCatalog.Types.Name;
 }
 
 export type PgAmOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgAmopFamStratIndex = {
-amopfamily: Nullable<PgCatalog.Types.Oid>;
-amoplefttype: Nullable<PgCatalog.Types.Oid>;
-amoprighttype: Nullable<PgCatalog.Types.Oid>;
-amopstrategy: Nullable<PgCatalog.Types.Int2>;
+amopfamily: PgCatalog.Types.Oid;
+amoplefttype: PgCatalog.Types.Oid;
+amoprighttype: PgCatalog.Types.Oid;
+amopstrategy: PgCatalog.Types.Int2;
 }
 
 export type PgAmopOprFamIndex = {
-amopopr: Nullable<PgCatalog.Types.Oid>;
-amoppurpose: Nullable<PgCatalog.Types.Char>;
-amopfamily: Nullable<PgCatalog.Types.Oid>;
+amopopr: PgCatalog.Types.Oid;
+amoppurpose: PgCatalog.Types.Char;
+amopfamily: PgCatalog.Types.Oid;
 }
 
 export type PgAmopOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgAmprocFamProcIndex = {
-amprocfamily: Nullable<PgCatalog.Types.Oid>;
-amproclefttype: Nullable<PgCatalog.Types.Oid>;
-amprocrighttype: Nullable<PgCatalog.Types.Oid>;
-amprocnum: Nullable<PgCatalog.Types.Int2>;
+amprocfamily: PgCatalog.Types.Oid;
+amproclefttype: PgCatalog.Types.Oid;
+amprocrighttype: PgCatalog.Types.Oid;
+amprocnum: PgCatalog.Types.Int2;
 }
 
 export type PgAmprocOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgLanguageNameIndex = {
-lanname: Nullable<PgCatalog.Types.Name>;
+lanname: PgCatalog.Types.Name;
 }
 
 export type PgLanguageOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgLargeobjectMetadataOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgLargeobjectLoidPnIndex = {
-loid: Nullable<PgCatalog.Types.Oid>;
-pageno: Nullable<PgCatalog.Types.Int4>;
+loid: PgCatalog.Types.Oid;
+pageno: PgCatalog.Types.Int4;
 }
 
 export type PgAggregateFnoidIndex = {
-aggfnoid: Nullable<PgCatalog.Types.Regproc>;
+aggfnoid: PgCatalog.Types.Regproc;
 }
 
 export type PgStatisticRelidAttInhIndex = {
-starelid: Nullable<PgCatalog.Types.Oid>;
-staattnum: Nullable<PgCatalog.Types.Int2>;
-stainherit: Nullable<PgCatalog.Types.Bool>;
+starelid: PgCatalog.Types.Oid;
+staattnum: PgCatalog.Types.Int2;
+stainherit: PgCatalog.Types.Bool;
 }
 
 export type PgStatisticExtOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgStatisticExtNameIndex = {
-stxname: Nullable<PgCatalog.Types.Name>;
-stxnamespace: Nullable<PgCatalog.Types.Oid>;
+stxname: PgCatalog.Types.Name;
+stxnamespace: PgCatalog.Types.Oid;
 }
 
 export type PgStatisticExtRelidIndex = {
-stxrelid: Nullable<PgCatalog.Types.Oid>;
+stxrelid: PgCatalog.Types.Oid;
 }
 
 export type PgStatisticExtDataStxoidInhIndex = {
-stxoid: Nullable<PgCatalog.Types.Oid>;
-stxdinherit: Nullable<PgCatalog.Types.Bool>;
+stxoid: PgCatalog.Types.Oid;
+stxdinherit: PgCatalog.Types.Bool;
 }
 
 export type PgRewriteOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgRewriteRelRulenameIndex = {
-evClass: Nullable<PgCatalog.Types.Oid>;
-rulename: Nullable<PgCatalog.Types.Name>;
+evClass: PgCatalog.Types.Oid;
+rulename: PgCatalog.Types.Name;
 }
 
 export type PgTriggerTgconstraintIndex = {
-tgconstraint: Nullable<PgCatalog.Types.Oid>;
+tgconstraint: PgCatalog.Types.Oid;
 }
 
 export type PgTriggerTgrelidTgnameIndex = {
-tgrelid: Nullable<PgCatalog.Types.Oid>;
-tgname: Nullable<PgCatalog.Types.Name>;
+tgrelid: PgCatalog.Types.Oid;
+tgname: PgCatalog.Types.Name;
 }
 
 export type PgTriggerOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgEventTriggerEvtnameIndex = {
-evtname: Nullable<PgCatalog.Types.Name>;
+evtname: PgCatalog.Types.Name;
 }
 
 export type PgEventTriggerOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgDescriptionOCOIndex = {
-objoid: Nullable<PgCatalog.Types.Oid>;
-classoid: Nullable<PgCatalog.Types.Oid>;
-objsubid: Nullable<PgCatalog.Types.Int4>;
+objoid: PgCatalog.Types.Oid;
+classoid: PgCatalog.Types.Oid;
+objsubid: PgCatalog.Types.Int4;
 }
 
 export type PgCastOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgCastSourceTargetIndex = {
-castsource: Nullable<PgCatalog.Types.Oid>;
-casttarget: Nullable<PgCatalog.Types.Oid>;
+castsource: PgCatalog.Types.Oid;
+casttarget: PgCatalog.Types.Oid;
 }
 
 export type PgEnumOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgEnumTypidLabelIndex = {
-enumtypid: Nullable<PgCatalog.Types.Oid>;
-enumlabel: Nullable<PgCatalog.Types.Name>;
+enumtypid: PgCatalog.Types.Oid;
+enumlabel: PgCatalog.Types.Name;
 }
 
 export type PgEnumTypidSortorderIndex = {
-enumtypid: Nullable<PgCatalog.Types.Oid>;
-enumsortorder: Nullable<PgCatalog.Types.Float4>;
+enumtypid: PgCatalog.Types.Oid;
+enumsortorder: PgCatalog.Types.Float4;
 }
 
 export type PgNamespaceNspnameIndex = {
-nspname: Nullable<PgCatalog.Types.Name>;
+nspname: PgCatalog.Types.Name;
 }
 
 export type PgNamespaceOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgConversionDefaultIndex = {
-connamespace: Nullable<PgCatalog.Types.Oid>;
-conforencoding: Nullable<PgCatalog.Types.Int4>;
-contoencoding: Nullable<PgCatalog.Types.Int4>;
-oid: Nullable<PgCatalog.Types.Oid>;
+connamespace: PgCatalog.Types.Oid;
+conforencoding: PgCatalog.Types.Int4;
+contoencoding: PgCatalog.Types.Int4;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgConversionNameNspIndex = {
-conname: Nullable<PgCatalog.Types.Name>;
-connamespace: Nullable<PgCatalog.Types.Oid>;
+conname: PgCatalog.Types.Name;
+connamespace: PgCatalog.Types.Oid;
 }
 
 export type PgConversionOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgDependDependerIndex = {
-classid: Nullable<PgCatalog.Types.Oid>;
-objid: Nullable<PgCatalog.Types.Oid>;
-objsubid: Nullable<PgCatalog.Types.Int4>;
+classid: PgCatalog.Types.Oid;
+objid: PgCatalog.Types.Oid;
+objsubid: PgCatalog.Types.Int4;
 }
 
 export type PgDependReferenceIndex = {
-refclassid: Nullable<PgCatalog.Types.Oid>;
-refobjid: Nullable<PgCatalog.Types.Oid>;
-refobjsubid: Nullable<PgCatalog.Types.Int4>;
+refclassid: PgCatalog.Types.Oid;
+refobjid: PgCatalog.Types.Oid;
+refobjsubid: PgCatalog.Types.Int4;
 }
 
 export type PgDatabaseDatnameIndex = {
-datname: Nullable<PgCatalog.Types.Name>;
+datname: PgCatalog.Types.Name;
 }
 
 export type PgDatabaseOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgDbRoleSettingDatabaseidRolIndex = {
-setdatabase: Nullable<PgCatalog.Types.Oid>;
-setrole: Nullable<PgCatalog.Types.Oid>;
+setdatabase: PgCatalog.Types.Oid;
+setrole: PgCatalog.Types.Oid;
 }
 
 export type PgTablespaceOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgTablespaceSpcnameIndex = {
-spcname: Nullable<PgCatalog.Types.Name>;
+spcname: PgCatalog.Types.Name;
 }
 
 export type PgAuthidRolnameIndex = {
-rolname: Nullable<PgCatalog.Types.Name>;
+rolname: PgCatalog.Types.Name;
 }
 
 export type PgAuthidOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgAuthMembersOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgAuthMembersRoleMemberIndex = {
-roleid: Nullable<PgCatalog.Types.Oid>;
-member: Nullable<PgCatalog.Types.Oid>;
-grantor: Nullable<PgCatalog.Types.Oid>;
+roleid: PgCatalog.Types.Oid;
+member: PgCatalog.Types.Oid;
+grantor: PgCatalog.Types.Oid;
 }
 
 export type PgAuthMembersMemberRoleIndex = {
-member: Nullable<PgCatalog.Types.Oid>;
-roleid: Nullable<PgCatalog.Types.Oid>;
-grantor: Nullable<PgCatalog.Types.Oid>;
+member: PgCatalog.Types.Oid;
+roleid: PgCatalog.Types.Oid;
+grantor: PgCatalog.Types.Oid;
 }
 
 export type PgAuthMembersGrantorIndex = {
-grantor: Nullable<PgCatalog.Types.Oid>;
+grantor: PgCatalog.Types.Oid;
 }
 
 export type PgShdependDependerIndex = {
-dbid: Nullable<PgCatalog.Types.Oid>;
-classid: Nullable<PgCatalog.Types.Oid>;
-objid: Nullable<PgCatalog.Types.Oid>;
-objsubid: Nullable<PgCatalog.Types.Int4>;
+dbid: PgCatalog.Types.Oid;
+classid: PgCatalog.Types.Oid;
+objid: PgCatalog.Types.Oid;
+objsubid: PgCatalog.Types.Int4;
 }
 
 export type PgShdependReferenceIndex = {
-refclassid: Nullable<PgCatalog.Types.Oid>;
-refobjid: Nullable<PgCatalog.Types.Oid>;
+refclassid: PgCatalog.Types.Oid;
+refobjid: PgCatalog.Types.Oid;
 }
 
 export type PgShdescriptionOCIndex = {
-objoid: Nullable<PgCatalog.Types.Oid>;
-classoid: Nullable<PgCatalog.Types.Oid>;
+objoid: PgCatalog.Types.Oid;
+classoid: PgCatalog.Types.Oid;
 }
 
 export type PgTsConfigCfgnameIndex = {
-cfgname: Nullable<PgCatalog.Types.Name>;
-cfgnamespace: Nullable<PgCatalog.Types.Oid>;
+cfgname: PgCatalog.Types.Name;
+cfgnamespace: PgCatalog.Types.Oid;
 }
 
 export type PgTsConfigOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgTsConfigMapIndex = {
-mapcfg: Nullable<PgCatalog.Types.Oid>;
-maptokentype: Nullable<PgCatalog.Types.Int4>;
-mapseqno: Nullable<PgCatalog.Types.Int4>;
+mapcfg: PgCatalog.Types.Oid;
+maptokentype: PgCatalog.Types.Int4;
+mapseqno: PgCatalog.Types.Int4;
 }
 
 export type PgTsDictDictnameIndex = {
-dictname: Nullable<PgCatalog.Types.Name>;
-dictnamespace: Nullable<PgCatalog.Types.Oid>;
+dictname: PgCatalog.Types.Name;
+dictnamespace: PgCatalog.Types.Oid;
 }
 
 export type PgTsDictOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgTsParserPrsnameIndex = {
-prsname: Nullable<PgCatalog.Types.Name>;
-prsnamespace: Nullable<PgCatalog.Types.Oid>;
+prsname: PgCatalog.Types.Name;
+prsnamespace: PgCatalog.Types.Oid;
 }
 
 export type PgTsParserOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgTsTemplateTmplnameIndex = {
-tmplname: Nullable<PgCatalog.Types.Name>;
-tmplnamespace: Nullable<PgCatalog.Types.Oid>;
+tmplname: PgCatalog.Types.Name;
+tmplnamespace: PgCatalog.Types.Oid;
 }
 
 export type PgTsTemplateOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgExtensionOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgExtensionNameIndex = {
-extname: Nullable<PgCatalog.Types.Name>;
+extname: PgCatalog.Types.Name;
 }
 
 export type PgForeignDataWrapperOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgForeignDataWrapperNameIndex = {
-fdwname: Nullable<PgCatalog.Types.Name>;
+fdwname: PgCatalog.Types.Name;
 }
 
 export type PgForeignServerOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgForeignServerNameIndex = {
-srvname: Nullable<PgCatalog.Types.Name>;
+srvname: PgCatalog.Types.Name;
 }
 
 export type PgUserMappingOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgUserMappingUserServerIndex = {
-umuser: Nullable<PgCatalog.Types.Oid>;
-umserver: Nullable<PgCatalog.Types.Oid>;
+umuser: PgCatalog.Types.Oid;
+umserver: PgCatalog.Types.Oid;
 }
 
 export type PgForeignTableRelidIndex = {
-ftrelid: Nullable<PgCatalog.Types.Oid>;
+ftrelid: PgCatalog.Types.Oid;
 }
 
 export type PgPolicyOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgPolicyPolrelidPolnameIndex = {
-polrelid: Nullable<PgCatalog.Types.Oid>;
-polname: Nullable<PgCatalog.Types.Name>;
+polrelid: PgCatalog.Types.Oid;
+polname: PgCatalog.Types.Name;
 }
 
 export type PgReplicationOriginRoiidentIndex = {
-roident: Nullable<PgCatalog.Types.Oid>;
+roident: PgCatalog.Types.Oid;
 }
 
 export type PgReplicationOriginRonameIndex = {
-roname: Nullable<PgCatalog.Types.Text>;
+roname: PgCatalog.Types.Text;
 }
 
 export type PgDefaultAclRoleNspObjIndex = {
-defaclrole: Nullable<PgCatalog.Types.Oid>;
-defaclnamespace: Nullable<PgCatalog.Types.Oid>;
-defaclobjtype: Nullable<PgCatalog.Types.Char>;
+defaclrole: PgCatalog.Types.Oid;
+defaclnamespace: PgCatalog.Types.Oid;
+defaclobjtype: PgCatalog.Types.Char;
 }
 
 export type PgDefaultAclOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgInitPrivsOCOIndex = {
-objoid: Nullable<PgCatalog.Types.Oid>;
-classoid: Nullable<PgCatalog.Types.Oid>;
-objsubid: Nullable<PgCatalog.Types.Int4>;
+objoid: PgCatalog.Types.Oid;
+classoid: PgCatalog.Types.Oid;
+objsubid: PgCatalog.Types.Int4;
 }
 
 export type PgSeclabelObjectIndex = {
-objoid: Nullable<PgCatalog.Types.Oid>;
-classoid: Nullable<PgCatalog.Types.Oid>;
-objsubid: Nullable<PgCatalog.Types.Int4>;
-provider: Nullable<PgCatalog.Types.Text>;
+objoid: PgCatalog.Types.Oid;
+classoid: PgCatalog.Types.Oid;
+objsubid: PgCatalog.Types.Int4;
+provider: PgCatalog.Types.Text;
 }
 
 export type PgShseclabelObjectIndex = {
-objoid: Nullable<PgCatalog.Types.Oid>;
-classoid: Nullable<PgCatalog.Types.Oid>;
-provider: Nullable<PgCatalog.Types.Text>;
+objoid: PgCatalog.Types.Oid;
+classoid: PgCatalog.Types.Oid;
+provider: PgCatalog.Types.Text;
 }
 
 export type PgCollationNameEncNspIndex = {
-collname: Nullable<PgCatalog.Types.Name>;
-collencoding: Nullable<PgCatalog.Types.Int4>;
-collnamespace: Nullable<PgCatalog.Types.Oid>;
+collname: PgCatalog.Types.Name;
+collencoding: PgCatalog.Types.Int4;
+collnamespace: PgCatalog.Types.Oid;
 }
 
 export type PgCollationOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgParameterAclParnameIndex = {
-parname: Nullable<PgCatalog.Types.Text>;
+parname: PgCatalog.Types.Text;
 }
 
 export type PgParameterAclOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgPartitionedTablePartrelidIndex = {
-partrelid: Nullable<PgCatalog.Types.Oid>;
+partrelid: PgCatalog.Types.Oid;
 }
 
 export type PgRangeRngtypidIndex = {
-rngtypid: Nullable<PgCatalog.Types.Oid>;
+rngtypid: PgCatalog.Types.Oid;
 }
 
 export type PgRangeRngmultitypidIndex = {
-rngmultitypid: Nullable<PgCatalog.Types.Oid>;
+rngmultitypid: PgCatalog.Types.Oid;
 }
 
 export type PgTransformOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgTransformTypeLangIndex = {
-trftype: Nullable<PgCatalog.Types.Oid>;
-trflang: Nullable<PgCatalog.Types.Oid>;
+trftype: PgCatalog.Types.Oid;
+trflang: PgCatalog.Types.Oid;
 }
 
 export type PgSequenceSeqrelidIndex = {
-seqrelid: Nullable<PgCatalog.Types.Oid>;
+seqrelid: PgCatalog.Types.Oid;
 }
 
 export type PgPublicationOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgPublicationPubnameIndex = {
-pubname: Nullable<PgCatalog.Types.Name>;
+pubname: PgCatalog.Types.Name;
 }
 
 export type PgPublicationNamespaceOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgPublicationNamespacePnnspidPnpubidIndex = {
-pnnspid: Nullable<PgCatalog.Types.Oid>;
-pnpubid: Nullable<PgCatalog.Types.Oid>;
+pnnspid: PgCatalog.Types.Oid;
+pnpubid: PgCatalog.Types.Oid;
 }
 
 export type PgPublicationRelOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgPublicationRelPrrelidPrpubidIndex = {
-prrelid: Nullable<PgCatalog.Types.Oid>;
-prpubid: Nullable<PgCatalog.Types.Oid>;
+prrelid: PgCatalog.Types.Oid;
+prpubid: PgCatalog.Types.Oid;
 }
 
 export type PgPublicationRelPrpubidIndex = {
-prpubid: Nullable<PgCatalog.Types.Oid>;
+prpubid: PgCatalog.Types.Oid;
 }
 
 export type PgSubscriptionOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgSubscriptionSubnameIndex = {
-subdbid: Nullable<PgCatalog.Types.Oid>;
-subname: Nullable<PgCatalog.Types.Name>;
+subdbid: PgCatalog.Types.Oid;
+subname: PgCatalog.Types.Name;
 }
 
 export type PgSubscriptionRelSrrelidSrsubidIndex = {
-srrelid: Nullable<PgCatalog.Types.Oid>;
-srsubid: Nullable<PgCatalog.Types.Oid>;
+srrelid: PgCatalog.Types.Oid;
+srsubid: PgCatalog.Types.Oid;
 }
 }
 export namespace Procedures {
@@ -3526,7 +3527,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgStatistic> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgStatistic,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgStatistic, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgStatistic,  PrimaryKey>
 export enum SortOptions  {
 starelidAscending = "starelid ASC",
 staattnumAscending = "staattnum ASC",
@@ -3731,7 +3732,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgType> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgType,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgType, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgType,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 typnameAscending = "typname ASC",
@@ -3942,7 +3943,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgForeignTable> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgForeignTable,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgForeignTable, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgForeignTable,  PrimaryKey>
 export enum SortOptions  {
 ftrelidAscending = "ftrelid ASC",
 ftserverAscending = "ftserver ASC",
@@ -3979,7 +3980,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAuthid> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgAuthid,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgAuthid, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgAuthid,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 rolnameAscending = "rolname ASC",
@@ -4070,7 +4071,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgStatisticExtData> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgStatisticExtData,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgStatisticExtData, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgStatisticExtData,  PrimaryKey>
 export enum SortOptions  {
 stxoidAscending = "stxoid ASC",
 stxdinheritAscending = "stxdinherit ASC",
@@ -4125,7 +4126,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgUserMapping> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgUserMapping,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgUserMapping, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgUserMapping,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 umuserAscending = "umuser ASC",
@@ -4168,7 +4169,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgSubscription> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgSubscription,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgSubscription, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgSubscription,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 subdbidAscending = "subdbid ASC",
@@ -4289,7 +4290,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAttribute> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgAttribute,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgAttribute, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgAttribute,  PrimaryKey>
 export enum SortOptions  {
 attrelidAscending = "attrelid ASC",
 attnameAscending = "attname ASC",
@@ -4464,7 +4465,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgProc> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgProc,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgProc, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgProc,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 pronameAscending = "proname ASC",
@@ -4663,7 +4664,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgClass> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgClass,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgClass, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgClass,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 relnameAscending = "relname ASC",
@@ -4880,7 +4881,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAttrdef> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgAttrdef,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgAttrdef, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgAttrdef,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 adrelidAscending = "adrelid ASC",
@@ -4923,7 +4924,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgConstraint> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgConstraint,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgConstraint, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgConstraint,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 connameAscending = "conname ASC",
@@ -5098,7 +5099,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgInherits> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgInherits,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgInherits, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgInherits,  PrimaryKey>
 export enum SortOptions  {
 inhrelidAscending = "inhrelid ASC",
 inhparentAscending = "inhparent ASC",
@@ -5141,7 +5142,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgIndex> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgIndex,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgIndex, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgIndex,  PrimaryKey>
 export enum SortOptions  {
 indexrelidAscending = "indexrelid ASC",
 indrelidAscending = "indrelid ASC",
@@ -5286,7 +5287,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgOperator> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgOperator,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgOperator, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgOperator,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 oprnameAscending = "oprname ASC",
@@ -5395,7 +5396,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgOpfamily> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgOpfamily,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgOpfamily, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgOpfamily,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 opfmethodAscending = "opfmethod ASC",
@@ -5444,7 +5445,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgOpclass> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgOpclass,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgOpclass, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgOpclass,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 opcmethodAscending = "opcmethod ASC",
@@ -5517,7 +5518,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAm> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgAm,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgAm, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgAm,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 amnameAscending = "amname ASC",
@@ -5560,7 +5561,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAmop> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgAmop,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgAmop, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgAmop,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 amopfamilyAscending = "amopfamily ASC",
@@ -5633,7 +5634,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAmproc> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgAmproc,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgAmproc, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgAmproc,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 amprocfamilyAscending = "amprocfamily ASC",
@@ -5688,7 +5689,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgLanguage> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgLanguage,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgLanguage, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgLanguage,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 lannameAscending = "lanname ASC",
@@ -5761,7 +5762,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgLargeobjectMetadata
 }
 
 export type Optional = Pick<PgCatalog.Types.PgLargeobjectMetadata,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgLargeobjectMetadata, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgLargeobjectMetadata,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 lomownerAscending = "lomowner ASC",
@@ -5798,7 +5799,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAggregate> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgAggregate,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgAggregate, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgAggregate,  PrimaryKey>
 export enum SortOptions  {
 aggfnoidAscending = "aggfnoid ASC",
 aggkindAscending = "aggkind ASC",
@@ -5949,7 +5950,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgStatisticExt> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgStatisticExt,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgStatisticExt, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgStatisticExt,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 stxrelidAscending = "stxrelid ASC",
@@ -6022,7 +6023,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgRewrite> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgRewrite,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgRewrite, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgRewrite,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 rulenameAscending = "rulename ASC",
@@ -6089,7 +6090,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTrigger> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgTrigger,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgTrigger, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgTrigger,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 tgrelidAscending = "tgrelid ASC",
@@ -6222,7 +6223,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgEventTrigger> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgEventTrigger,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgEventTrigger, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgEventTrigger,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 evtnameAscending = "evtname ASC",
@@ -6283,7 +6284,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgDescription> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgDescription,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgDescription, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgDescription,  PrimaryKey>
 export enum SortOptions  {
 objoidAscending = "objoid ASC",
 classoidAscending = "classoid ASC",
@@ -6326,7 +6327,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgCast> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgCast,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgCast, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgCast,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 castsourceAscending = "castsource ASC",
@@ -6381,7 +6382,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgEnum> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgEnum,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgEnum, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgEnum,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 enumtypidAscending = "enumtypid ASC",
@@ -6424,7 +6425,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgNamespace> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgNamespace,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgNamespace, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgNamespace,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 nspnameAscending = "nspname ASC",
@@ -6467,7 +6468,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgConversion> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgConversion,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgConversion, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgConversion,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 connameAscending = "conname ASC",
@@ -6534,7 +6535,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgDepend> {
 }
 export type PrimaryKey = never;
 export type Optional = Pick<PgCatalog.Types.PgDepend,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgDepend, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgDepend,  PrimaryKey>
 export enum SortOptions  {
 classidAscending = "classid ASC",
 objidAscending = "objid ASC",
@@ -6594,7 +6595,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgDatabase> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgDatabase,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgDatabase, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgDatabase,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 datnameAscending = "datname ASC",
@@ -6715,7 +6716,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgDbRoleSetting> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgDbRoleSetting,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgDbRoleSetting, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgDbRoleSetting,  PrimaryKey>
 export enum SortOptions  {
 setdatabaseAscending = "setdatabase ASC",
 setroleAscending = "setrole ASC",
@@ -6752,7 +6753,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTablespace> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgTablespace,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgTablespace, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgTablespace,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 spcnameAscending = "spcname ASC",
@@ -6801,7 +6802,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAuthMembers> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgAuthMembers,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgAuthMembers, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgAuthMembers,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 roleidAscending = "roleid ASC",
@@ -6862,7 +6863,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgShdepend> {
 }
 export type PrimaryKey = never;
 export type Optional = Pick<PgCatalog.Types.PgShdepend,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgShdepend, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgShdepend,  PrimaryKey>
 export enum SortOptions  {
 dbidAscending = "dbid ASC",
 classidAscending = "classid ASC",
@@ -6922,7 +6923,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgShdescription> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgShdescription,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgShdescription, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgShdescription,  PrimaryKey>
 export enum SortOptions  {
 objoidAscending = "objoid ASC",
 classoidAscending = "classoid ASC",
@@ -6959,7 +6960,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTsConfig> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgTsConfig,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgTsConfig, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgTsConfig,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 cfgnameAscending = "cfgname ASC",
@@ -7008,7 +7009,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTsConfigMap> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgTsConfigMap,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgTsConfigMap, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgTsConfigMap,  PrimaryKey>
 export enum SortOptions  {
 mapcfgAscending = "mapcfg ASC",
 maptokentypeAscending = "maptokentype ASC",
@@ -7051,7 +7052,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTsDict> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgTsDict,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgTsDict, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgTsDict,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 dictnameAscending = "dictname ASC",
@@ -7106,7 +7107,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTsParser> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgTsParser,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgTsParser, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgTsParser,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 prsnameAscending = "prsname ASC",
@@ -7173,7 +7174,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTsTemplate> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgTsTemplate,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgTsTemplate, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgTsTemplate,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 tmplnameAscending = "tmplname ASC",
@@ -7222,7 +7223,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgExtension> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgExtension,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgExtension, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgExtension,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 extnameAscending = "extname ASC",
@@ -7289,7 +7290,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgForeignDataWrapper>
 }
 
 export type Optional = Pick<PgCatalog.Types.PgForeignDataWrapper,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgForeignDataWrapper, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgForeignDataWrapper,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 fdwnameAscending = "fdwname ASC",
@@ -7350,7 +7351,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgForeignServer> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgForeignServer,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgForeignServer, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgForeignServer,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 srvnameAscending = "srvname ASC",
@@ -7417,7 +7418,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgPolicy> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgPolicy,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgPolicy, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgPolicy,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 polnameAscending = "polname ASC",
@@ -7484,7 +7485,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgReplicationOrigin> 
 }
 
 export type Optional = Pick<PgCatalog.Types.PgReplicationOrigin,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgReplicationOrigin, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgReplicationOrigin,  PrimaryKey>
 export enum SortOptions  {
 roidentAscending = "roident ASC",
 ronameAscending = "roname ASC",
@@ -7515,7 +7516,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgDefaultAcl> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgDefaultAcl,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgDefaultAcl, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgDefaultAcl,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 defaclroleAscending = "defaclrole ASC",
@@ -7564,7 +7565,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgInitPrivs> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgInitPrivs,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgInitPrivs, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgInitPrivs,  PrimaryKey>
 export enum SortOptions  {
 objoidAscending = "objoid ASC",
 classoidAscending = "classoid ASC",
@@ -7613,7 +7614,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgSeclabel> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgSeclabel,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgSeclabel, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgSeclabel,  PrimaryKey>
 export enum SortOptions  {
 objoidAscending = "objoid ASC",
 classoidAscending = "classoid ASC",
@@ -7662,7 +7663,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgShseclabel> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgShseclabel,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgShseclabel, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgShseclabel,  PrimaryKey>
 export enum SortOptions  {
 objoidAscending = "objoid ASC",
 classoidAscending = "classoid ASC",
@@ -7705,7 +7706,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgCollation> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgCollation,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgCollation, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgCollation,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 collnameAscending = "collname ASC",
@@ -7796,7 +7797,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgParameterAcl> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgParameterAcl,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgParameterAcl, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgParameterAcl,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 parnameAscending = "parname ASC",
@@ -7833,7 +7834,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgPartitionedTable> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgPartitionedTable,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgPartitionedTable, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgPartitionedTable,  PrimaryKey>
 export enum SortOptions  {
 partrelidAscending = "partrelid ASC",
 partstratAscending = "partstrat ASC",
@@ -7900,7 +7901,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgRange> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgRange,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgRange, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgRange,  PrimaryKey>
 export enum SortOptions  {
 rngtypidAscending = "rngtypid ASC",
 rngsubtypeAscending = "rngsubtype ASC",
@@ -7961,7 +7962,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTransform> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgTransform,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgTransform, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgTransform,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 trftypeAscending = "trftype ASC",
@@ -8010,7 +8011,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgSequence> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgSequence,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgSequence, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgSequence,  PrimaryKey>
 export enum SortOptions  {
 seqrelidAscending = "seqrelid ASC",
 seqtypidAscending = "seqtypid ASC",
@@ -8077,7 +8078,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgPublication> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgPublication,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgPublication, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgPublication,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 pubnameAscending = "pubname ASC",
@@ -8150,7 +8151,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgPublicationNamespac
 }
 
 export type Optional = Pick<PgCatalog.Types.PgPublicationNamespace,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgPublicationNamespace, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgPublicationNamespace,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 pnpubidAscending = "pnpubid ASC",
@@ -8187,7 +8188,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgPublicationRel> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgPublicationRel,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgPublicationRel, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgPublicationRel,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 prpubidAscending = "prpubid ASC",
@@ -8236,7 +8237,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgSubscriptionRel> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgSubscriptionRel,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgSubscriptionRel, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgSubscriptionRel,  PrimaryKey>
 export enum SortOptions  {
 srsubidAscending = "srsubid ASC",
 srrelidAscending = "srrelid ASC",
@@ -8279,7 +8280,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgLargeobject> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgLargeobject,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgLargeobject, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgLargeobject,  PrimaryKey>
 export enum SortOptions  {
 loidAscending = "loid ASC",
 pagenoAscending = "pageno ASC",
@@ -9514,7 +9515,7 @@ export function emptyRow() : PossiblyEmpty<InformationSchema.Types.SqlFeatures> 
 }
 export type PrimaryKey = never;
 export type Optional = Pick<InformationSchema.Types.SqlFeatures,never>
-export type Values = PartiallyOptional<InformationSchema.Types.SqlFeatures, Optional & PrimaryKey>
+export type Values = PartiallyOptional<InformationSchema.Types.SqlFeatures,  PrimaryKey>
 export enum SortOptions  {
 featureIdAscending = "feature_id ASC",
 featureNameAscending = "feature_name ASC",
@@ -9574,7 +9575,7 @@ export function emptyRow() : PossiblyEmpty<InformationSchema.Types.SqlImplementa
 }
 export type PrimaryKey = never;
 export type Optional = Pick<InformationSchema.Types.SqlImplementationInfo,never>
-export type Values = PartiallyOptional<InformationSchema.Types.SqlImplementationInfo, Optional & PrimaryKey>
+export type Values = PartiallyOptional<InformationSchema.Types.SqlImplementationInfo,  PrimaryKey>
 export enum SortOptions  {
 implementationInfoIdAscending = "implementation_info_id ASC",
 implementationInfoNameAscending = "implementation_info_name ASC",
@@ -9622,7 +9623,7 @@ export function emptyRow() : PossiblyEmpty<InformationSchema.Types.SqlParts> {
 }
 export type PrimaryKey = never;
 export type Optional = Pick<InformationSchema.Types.SqlParts,never>
-export type Values = PartiallyOptional<InformationSchema.Types.SqlParts, Optional & PrimaryKey>
+export type Values = PartiallyOptional<InformationSchema.Types.SqlParts,  PrimaryKey>
 export enum SortOptions  {
 featureIdAscending = "feature_id ASC",
 featureNameAscending = "feature_name ASC",
@@ -9670,7 +9671,7 @@ export function emptyRow() : PossiblyEmpty<InformationSchema.Types.SqlSizing> {
 }
 export type PrimaryKey = never;
 export type Optional = Pick<InformationSchema.Types.SqlSizing,never>
-export type Values = PartiallyOptional<InformationSchema.Types.SqlSizing, Optional & PrimaryKey>
+export type Values = PartiallyOptional<InformationSchema.Types.SqlSizing,  PrimaryKey>
 export enum SortOptions  {
 sizingIdAscending = "sizing_id ASC",
 sizingNameAscending = "sizing_name ASC",
@@ -9732,7 +9733,7 @@ export type SlugArray =
     ;
 
 export type SlugPkey = {
-slugId: Nullable<PgCatalog.Types.Int4>;
+slugId: PgCatalog.Types.Int4;
 }
 }
 export namespace Procedures {
@@ -9954,7 +9955,7 @@ argument_0: Nullable<PgCatalog.Types.Float8>;
 argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace Cube_6a4c {
+export namespace Cube_3765 {
 
 
 export type Parameters = {
@@ -9962,7 +9963,7 @@ argument_0: Nullable<Public.Types.Cube>;
 argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace CubeD1e7 {
+export namespace CubeEca1 {
 
 
 export type Parameters = {
@@ -10396,16 +10397,29 @@ export type TimezonesArray =
      Array<Api.Types.Timezones>
     ;
 
+export type Points = {
+id: PgCatalog.Types.Uuid;
+point: PgCatalog.Types.Point;
+}
+
+export type PointsArray = 
+     Array<Api.Types.Points>
+    ;
+
 export type QAndAAnswer = {
 answer: Nullable<Api.Types.Answer>;
 }
 
 export type TrgmIdxGist = {
-timeZone: Nullable<PgCatalog.Types.Text>;
+timeZone: PgCatalog.Types.Text;
 }
 
 export type TrgmIdxGin = {
-timeZone: Nullable<PgCatalog.Types.Text>;
+timeZone: PgCatalog.Types.Text;
+}
+
+export type PointsPkey = {
+id: PgCatalog.Types.Uuid;
 }
 
 export type EchoTable = {
@@ -10522,7 +10536,7 @@ export function emptyRow() : PossiblyEmpty<Api.Types.QAndA> {
 }
 export type PrimaryKey = never;
 export type Optional = Pick<Api.Types.QAndA,never>
-export type Values = PartiallyOptional<Api.Types.QAndA, Optional & PrimaryKey>
+export type Values = PartiallyOptional<Api.Types.QAndA,  PrimaryKey>
 export enum SortOptions  {
 questionAscending = "question ASC",
 answerAscending = "answer ASC",
@@ -10552,7 +10566,7 @@ export function emptyRow() : PossiblyEmpty<Api.Types.Timezones> {
 }
 export type PrimaryKey = never;
 export type Optional = Pick<Api.Types.Timezones,never>
-export type Values = PartiallyOptional<Api.Types.Timezones, Optional & PrimaryKey>
+export type Values = PartiallyOptional<Api.Types.Timezones,  PrimaryKey>
 export enum SortOptions  {
 countryCodeAscending = "country_code ASC",
 timeZoneAscending = "time_zone ASC",
@@ -10594,17 +10608,48 @@ export const ColumnNames = ["CountryCode","TimeZone","GmtOffset","DstOffset","Ra
 export const FieldNames = ["countryCode","timeZone","gmtOffset","dstOffset","rawOffset"] as const;
 type FieldNamesType = typeof FieldNames[number];
 }
+export namespace Points {
+export function emptyRow() : PossiblyEmpty<Api.Types.Points> {
+ return { id: undefined,point: undefined };
+}
+
+export type Optional = Pick<Api.Types.Points,"id">
+export type Values = PartiallyOptional<Api.Types.Points, Optional & PrimaryKey>
+export enum SortOptions  {
+idAscending = "id ASC",
+pointAscending = "point ASC",
+idDescending = "id DESC",
+pointDescending = "point DESC",
+};
+export type Options = ReadOptions & {
+ sort?: SortOptions[],
+};
+export const Columns = {
+Id: {
+ typeName: "PgCatalog.Types.Uuid",
+ fieldName: "id" as FieldNamesType,
+},
+Point: {
+ typeName: "PgCatalog.Types.Point",
+ fieldName: "point" as FieldNamesType,
+},
+}
+export const ColumnNames = ["Id","Point"] as const;
+export const FieldNames = ["id","point"] as const;
+type FieldNamesType = typeof FieldNames[number];
+export type PrimaryKey = Api.Types.PointsPkey;
+}
 }
 }
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_42952Index = {
+export type PgToast_49192Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_42958Index = {
+export type PgToast_49198Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -11347,7 +11392,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      return from;
+      return parsePoint(from);
     
 }
 
@@ -12285,7 +12330,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      return from;
+      throw new Error("not implemented");
     
 }
 
@@ -23402,14 +23447,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace Cube_6a4c {
+export namespace Cube_3765 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.Cube_6a4c.Parameters.is(from)) {
+if (Public.Procedures.Cube_3765.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Cube.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -23421,14 +23466,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace CubeD1e7 {
+export namespace CubeEca1 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.CubeD1e7.Parameters.is(from)) {
+if (Public.Procedures.CubeEca1.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Cube.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -24375,6 +24420,33 @@ if (from === null || from === undefined) return [];
 
 
 }
+export namespace Points {
+export function parse(from: unknown) {
+// CompositeType
+if (from === null || from === undefined) return null;
+if (Api.Types.Points.is(from)) {
+  return {
+id: PgCatalog.Types.Uuid.parse(from.id),
+point: PgCatalog.Types.Point.parse(from.point),
+};
+}
+throw new Error(JSON.stringify(from))
+}
+
+
+}
+export namespace PointsArray {
+export function parse(from: unknown) {
+// ArrayType
+if (from === null || from === undefined) return [];
+
+      const rawArray = Array.isArray(from) ? from : JSON.parse(from as string) as unknown[];
+      return rawArray.map((e:unknown) => Points.parse(e));
+    
+}
+
+
+}
 export namespace QAndAAnswer {
 export function parse(from: unknown) {
 // CompositeType
@@ -24410,6 +24482,20 @@ if (from === null || from === undefined) return null;
 if (Api.Types.TrgmIdxGin.is(from)) {
   return {
 timeZone: PgCatalog.Types.Text.parse(from.timeZone),
+};
+}
+throw new Error(JSON.stringify(from))
+}
+
+
+}
+export namespace PointsPkey {
+export function parse(from: unknown) {
+// CompositeType
+if (from === null || from === undefined) return null;
+if (Api.Types.PointsPkey.is(from)) {
+  return {
+id: PgCatalog.Types.Uuid.parse(from.id),
 };
 }
 throw new Error(JSON.stringify(from))
@@ -24592,15 +24678,21 @@ export namespace Results {
 export namespace Create {
 }
 }
+export namespace Points {
+export namespace Results {
+}
+export namespace Create {
+}
+}
 }
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_42952Index {
+export namespace PgToast_49192Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_42952Index.is(from)) {
+if (PgToast.Types.PgToast_49192Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -24611,11 +24703,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_42958Index {
+export namespace PgToast_49198Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_42958Index.is(from)) {
+if (PgToast.Types.PgToast_49198Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -27264,6 +27356,14 @@ export namespace RawOffset {
 export const parse = PgCatalog.Types.Float4.parse;
 }
 }
+export namespace Points {
+export namespace Id {
+export const parse = PgCatalog.Types.Uuid.parse;
+}
+export namespace Point {
+export const parse = PgCatalog.Types.Point.parse;
+}
+}
 }
 }
 export namespace PgToast {
@@ -27305,6 +27405,18 @@ export function primaryKeyFrom(value: Api.Types.Timezones) {
 export function includesPrimaryKey(value: Api.Types.Timezones) {
   return false;
 }
+}
+export namespace Points {
+export function primaryKeyFrom(value: Api.Types.Points) : string {
+return JSON.stringify({
+id: value.id,
+});
+}
+
+      export function includesPrimaryKey(value: Partial<Api.Types.Points>){
+        return value.id !== undefined
+      }
+      
 }
 }
 }
@@ -30429,9 +30541,9 @@ return false;
 }
 }
 }
-export namespace Cube_6a4c {
+export namespace Cube_3765 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.Cube_6a4c.Parameters {
+export function is(value: any) : value is Public.Procedures.Cube_3765.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -30439,9 +30551,9 @@ return false;
 }
 }
 }
-export namespace CubeD1e7 {
+export namespace CubeEca1 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.CubeD1e7.Parameters {
+export function is(value: any) : value is Public.Procedures.CubeEca1.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -30891,6 +31003,14 @@ if (
 return false;
 }
 }
+export namespace Points {
+export function is(value: any) : value is Api.Types.Points {
+if (
+(value.id !== undefined) && (value.point !== undefined)
+) return true;
+return false;
+}
+}
 export namespace QAndAAnswer {
 export function is(value: any) : value is Api.Types.QAndAAnswer {
 if (
@@ -30911,6 +31031,14 @@ export namespace TrgmIdxGin {
 export function is(value: any) : value is Api.Types.TrgmIdxGin {
 if (
 (value.timeZone !== undefined)
+) return true;
+return false;
+}
+}
+export namespace PointsPkey {
+export function is(value: any) : value is Api.Types.PointsPkey {
+if (
+(value.id !== undefined)
 ) return true;
 return false;
 }
@@ -31011,20 +31139,22 @@ export namespace QAndA {
 }
 export namespace Timezones {
 }
+export namespace Points {
+}
 }
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_42952Index {
-export function is(value: any) : value is PgToast.Types.PgToast_42952Index {
+export namespace PgToast_49192Index {
+export function is(value: any) : value is PgToast.Types.PgToast_49192Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_42958Index {
-export function is(value: any) : value is PgToast.Types.PgToast_42958Index {
+export namespace PgToast_49198Index {
+export function is(value: any) : value is PgToast.Types.PgToast_49198Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -35404,16 +35534,16 @@ export namespace Parameters {
  }
 }
 }
-export namespace Cube_6a4c {
+export namespace Cube_3765 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.Cube_6a4c.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.Cube_3765.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace CubeD1e7 {
+export namespace CubeEca1 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.CubeD1e7.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.CubeEca1.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -35758,6 +35888,16 @@ export namespace TimezonesArray {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
+export namespace Points {
+ export function equals(l: Api.Types.Points|undefined, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PointsArray {
+ export function equals(l: Api.Types.PointsArray|undefined, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
 export namespace QAndAAnswer {
  export function equals(l: Api.Types.QAndAAnswer|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
@@ -35770,6 +35910,11 @@ export namespace TrgmIdxGist {
 }
 export namespace TrgmIdxGin {
  export function equals(l: Api.Types.TrgmIdxGin|undefined, r: unknown) {
+  return JSON.stringify(l) === JSON.stringify(r);
+ }
+}
+export namespace PointsPkey {
+ export function equals(l: Api.Types.PointsPkey|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -35842,17 +35987,19 @@ export namespace QAndA {
 }
 export namespace Timezones {
 }
+export namespace Points {
+}
 }
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_42952Index {
- export function equals(l: PgToast.Types.PgToast_42952Index|undefined, r: unknown) {
+export namespace PgToast_49192Index {
+ export function equals(l: PgToast.Types.PgToast_49192Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_42958Index {
- export function equals(l: PgToast.Types.PgToast_42958Index|undefined, r: unknown) {
+export namespace PgToast_49198Index {
+ export function equals(l: PgToast.Types.PgToast_49198Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -37538,19 +37685,19 @@ export namespace Tables {
 ["InformationSchema.Types.UserMappings"]: Typecast
 [13823]: Typecast;
 ["InformationSchema.Types.UserMappingsArray"]: Typecast
-[42758]: Typecast;
+[48998]: Typecast;
 ["Public.Types.CubeArray"]: Typecast
-[42753]: Typecast;
+[48993]: Typecast;
 ["Public.Types.Cube"]: Typecast
-[42859]: Typecast;
+[49099]: Typecast;
 ["Public.Types.Gtrgm"]: Typecast
-[42862]: Typecast;
+[49102]: Typecast;
 ["Public.Types.GtrgmArray"]: Typecast
-[42925]: Typecast;
+[49165]: Typecast;
 ["Public.Types.Slug"]: Typecast
-[42924]: Typecast;
+[49164]: Typecast;
 ["Public.Types.SlugArray"]: Typecast
-[42927]: Typecast;
+[49167]: Typecast;
 ["Public.Types.SlugPkey"]: Typecast
 
 ["Public.Procedures.CubeIn.Parameters"]: Typecast
@@ -37609,9 +37756,9 @@ export namespace Tables {
 
 ["Public.Procedures.Cube_0aec.Parameters"]: Typecast
 
-["Public.Procedures.Cube_6a4c.Parameters"]: Typecast
+["Public.Procedures.Cube_3765.Parameters"]: Typecast
 
-["Public.Procedures.CubeD1e7.Parameters"]: Typecast
+["Public.Procedures.CubeEca1.Parameters"]: Typecast
 
 ["Public.Procedures.CubeIsPoint.Parameters"]: Typecast
 
@@ -37692,33 +37839,39 @@ export namespace Tables {
 ["Public.Procedures.StrictWordSimilarityDistCommutatorOp.Parameters"]: Typecast
 
 ["Public.Procedures.GtrgmOptions.Parameters"]: Typecast
-[42935]: Typecast;
+[49175]: Typecast;
 ["Api.Types.EchoType"]: Typecast
-[42934]: Typecast;
+[49174]: Typecast;
 ["Api.Types.EchoTypeArray"]: Typecast
-[42938]: Typecast;
+[49178]: Typecast;
 ["Api.Types.EchoTypeNested"]: Typecast
-[42937]: Typecast;
+[49177]: Typecast;
 ["Api.Types.EchoTypeNestedArray"]: Typecast
-[42944]: Typecast;
+[49184]: Typecast;
 ["Api.Types.Answer"]: Typecast
-[42943]: Typecast;
+[49183]: Typecast;
 ["Api.Types.AnswerArray"]: Typecast
-[42954]: Typecast;
+[49194]: Typecast;
 ["Api.Types.QAndA"]: Typecast
-[42953]: Typecast;
+[49193]: Typecast;
 ["Api.Types.QAndAArray"]: Typecast
-[42960]: Typecast;
+[49200]: Typecast;
 ["Api.Types.Timezones"]: Typecast
-[42959]: Typecast;
+[49199]: Typecast;
 ["Api.Types.TimezonesArray"]: Typecast
-[42957]: Typecast;
+[49207]: Typecast;
+["Api.Types.Points"]: Typecast
+[49206]: Typecast;
+["Api.Types.PointsArray"]: Typecast
+[49197]: Typecast;
 ["Api.Types.QAndAAnswer"]: Typecast
-[42963]: Typecast;
+[49203]: Typecast;
 ["Api.Types.TrgmIdxGist"]: Typecast
-[42964]: Typecast;
+[49204]: Typecast;
 ["Api.Types.TrgmIdxGin"]: Typecast
-[42932]: Typecast;
+[49209]: Typecast;
+["Api.Types.PointsPkey"]: Typecast
+[49172]: Typecast;
 ["Api.Types.EchoTable"]: Typecast
 
 ["Api.Procedures.Echo.Parameters"]: Typecast
@@ -37736,10 +37889,10 @@ export namespace Tables {
 ["Api.Procedures.EchoTypeSet.Parameters"]: Typecast
 
 ["Api.Procedures.EchoAnswer.Parameters"]: Typecast
-[42956]: Typecast;
-["PgToast.Types.PgToast_42952Index"]: Typecast
-[42962]: Typecast;
-["PgToast.Types.PgToast_42958Index"]: Typecast
+[49196]: Typecast;
+["PgToast.Types.PgToast_49192Index"]: Typecast
+[49202]: Typecast;
+["PgToast.Types.PgToast_49198Index"]: Typecast
 [2837]: Typecast;
 ["PgToast.Types.PgToast_1255Index"]: Typecast
 [4172]: Typecast;
@@ -37952,7 +38105,7 @@ async call(parameters : Public.Procedures.CubeOut.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_out( ${ typed[42753](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.cube_out( ${ typed[48993](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].cube_out) );
@@ -37978,7 +38131,7 @@ async call(parameters : Public.Procedures.CubeEq.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_eq( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[42753](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_eq( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[48993](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_eq) );
@@ -38004,7 +38157,7 @@ async call(parameters : Public.Procedures.CubeNe.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_ne( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[42753](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_ne( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[48993](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_ne) );
@@ -38030,7 +38183,7 @@ async call(parameters : Public.Procedures.CubeLt.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_lt( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[42753](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_lt( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[48993](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_lt) );
@@ -38056,7 +38209,7 @@ async call(parameters : Public.Procedures.CubeGt.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_gt( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[42753](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_gt( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[48993](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_gt) );
@@ -38082,7 +38235,7 @@ async call(parameters : Public.Procedures.CubeLe.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_le( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[42753](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_le( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[48993](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_le) );
@@ -38108,7 +38261,7 @@ async call(parameters : Public.Procedures.CubeGe.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_ge( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[42753](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_ge( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[48993](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_ge) );
@@ -38134,7 +38287,7 @@ async call(parameters : Public.Procedures.CubeCmp.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_cmp( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[42753](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_cmp( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[48993](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].cube_cmp) );
@@ -38160,7 +38313,7 @@ async call(parameters : Public.Procedures.CubeContains.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_contains( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[42753](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_contains( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[48993](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_contains) );
@@ -38186,7 +38339,7 @@ async call(parameters : Public.Procedures.CubeContained.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_contained( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[42753](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_contained( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[48993](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_contained) );
@@ -38212,7 +38365,7 @@ async call(parameters : Public.Procedures.CubeOverlap.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_overlap( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[42753](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_overlap( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[48993](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_overlap) );
@@ -38238,7 +38391,7 @@ async call(parameters : Public.Procedures.CubeUnion.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_union( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[42753](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_union( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[48993](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_union) );
@@ -38264,7 +38417,7 @@ async call(parameters : Public.Procedures.CubeInter.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_inter( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[42753](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_inter( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[48993](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_inter) );
@@ -38290,7 +38443,7 @@ async call(parameters : Public.Procedures.CubeSize.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_size( ${ typed[42753](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.cube_size( ${ typed[48993](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_size) );
@@ -38316,7 +38469,7 @@ async call(parameters : Public.Procedures.CubeSubset.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_subset( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[1007](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_subset( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[1007](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_subset) );
@@ -38342,7 +38495,7 @@ async call(parameters : Public.Procedures.CubeDistance.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_distance( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[42753](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_distance( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[48993](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_distance) );
@@ -38368,7 +38521,7 @@ async call(parameters : Public.Procedures.DistanceChebyshev.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.distance_chebyshev( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[42753](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.distance_chebyshev( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[48993](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].distance_chebyshev) );
@@ -38394,7 +38547,7 @@ async call(parameters : Public.Procedures.DistanceTaxicab.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.distance_taxicab( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[42753](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.distance_taxicab( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[48993](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].distance_taxicab) );
@@ -38420,7 +38573,7 @@ async call(parameters : Public.Procedures.CubeDim.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_dim( ${ typed[42753](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.cube_dim( ${ typed[48993](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].cube_dim) );
@@ -38446,7 +38599,7 @@ async call(parameters : Public.Procedures.CubeLlCoord.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_ll_coord( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_ll_coord( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_ll_coord) );
@@ -38472,7 +38625,7 @@ async call(parameters : Public.Procedures.CubeUrCoord.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_ur_coord( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_ur_coord( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_ur_coord) );
@@ -38498,7 +38651,7 @@ async call(parameters : Public.Procedures.CubeCoord.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_coord( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_coord( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_coord) );
@@ -38524,7 +38677,7 @@ async call(parameters : Public.Procedures.CubeCoordLlur.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_coord_llur( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_coord_llur( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_coord_llur) );
@@ -38585,7 +38738,7 @@ async call(parameters : Public.Procedures.Cube_0aec.Parameters) {
 }
 }(this)
 
-          public Cube_6a4c = new class implements HasDatabase {
+          public Cube_3765 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -38593,7 +38746,7 @@ async call(parameters : Public.Procedures.Cube_0aec.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.Cube_6a4c.Parameters) {
+async call(parameters : Public.Procedures.Cube_3765.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -38602,7 +38755,7 @@ async call(parameters : Public.Procedures.Cube_6a4c.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
@@ -38611,7 +38764,7 @@ async call(parameters : Public.Procedures.Cube_6a4c.Parameters) {
 }
 }(this)
 
-          public CubeD1e7 = new class implements HasDatabase {
+          public CubeEca1 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -38619,7 +38772,7 @@ async call(parameters : Public.Procedures.Cube_6a4c.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.CubeD1e7.Parameters) {
+async call(parameters : Public.Procedures.CubeEca1.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -38628,7 +38781,7 @@ async call(parameters : Public.Procedures.CubeD1e7.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.cube( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
@@ -38654,7 +38807,7 @@ async call(parameters : Public.Procedures.CubeIsPoint.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_is_point( ${ typed[42753](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.cube_is_point( ${ typed[48993](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_is_point) );
@@ -38680,7 +38833,7 @@ async call(parameters : Public.Procedures.CubeEnlarge.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_enlarge( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.cube_enlarge( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_enlarge) );
@@ -38706,7 +38859,7 @@ async call(parameters : Public.Procedures.GCubeConsistent.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.g_cube_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[42753](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`
+  const response = await sql`SELECT public.g_cube_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[48993](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].g_cube_consistent) );
@@ -38810,7 +38963,7 @@ async call(parameters : Public.Procedures.GCubeSame.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.g_cube_same( ${ typed[42753](undefinedIsNull(parameters.argument_0)) }, ${ typed[42753](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.g_cube_same( ${ typed[48993](undefinedIsNull(parameters.argument_0)) }, ${ typed[48993](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].g_cube_same) );
@@ -38836,7 +38989,7 @@ async call(parameters : Public.Procedures.GCubeDistance.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.g_cube_distance( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[42753](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`
+  const response = await sql`SELECT public.g_cube_distance( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[48993](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].g_cube_distance) );
@@ -38888,7 +39041,7 @@ async call(parameters : Public.Procedures.CubeSend.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_send( ${ typed[42753](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.cube_send( ${ typed[48993](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].cube_send) );
@@ -39226,7 +39379,7 @@ async call(parameters : Public.Procedures.GtrgmOut.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gtrgm_out( ${ typed[42859](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.gtrgm_out( ${ typed[49099](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].gtrgm_out) );
@@ -39434,7 +39587,7 @@ async call(parameters : Public.Procedures.GtrgmSame.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gtrgm_same( ${ typed[42859](undefinedIsNull(parameters.argument_0)) }, ${ typed[42859](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.gtrgm_same( ${ typed[49099](undefinedIsNull(parameters.argument_0)) }, ${ typed[49099](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gtrgm_same) );
@@ -39918,7 +40071,7 @@ async call(parameters : Api.Procedures.EchoSet.Parameters) {
 async call(parameters : Api.Procedures.EchoTable.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[42932].parseFromPostgresIfPseudoType(context, result) as unknown as Api.Types.EchoTable;
+              return context.procTypes[49172].parseFromPostgresIfPseudoType(context, result) as unknown as Api.Types.EchoTable;
             };
           
   const sql = this.database.context.sql;
@@ -40053,7 +40206,7 @@ async call(parameters : Api.Procedures.EchoAnswer.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT api.echo_answer(message => ${ typed[42944](undefinedIsNull(parameters.message)) })`
+  const response = await sql`SELECT api.echo_answer(message => ${ typed[49184](undefinedIsNull(parameters.message)) })`
   const results = response;
 
               const responseBody = ( Api.Types.Answer.parse(results?.[0].echo_answer) );
@@ -40089,7 +40242,7 @@ async create(values: Api.Tables.QAndA.Values): Promise<Api.Types.QAndA>{
 const response = await sql`
     INSERT INTO
       api.q_and_a (question,answer)
-    VALUES (${ values.question === undefined ? sql`DEFAULT` : typed[25](values.question) },${ values.answer === undefined ? sql`DEFAULT` : typed[42944](values.answer) })
+    VALUES (${ values.question === undefined ? sql`DEFAULT` : typed[25](values.question) },${ values.answer === undefined ? sql`DEFAULT` : typed[49184](values.answer) })
     ON CONFLICT () DO UPDATE
     SET
       question = EXCLUDED.question,answer = EXCLUDED.answer
@@ -40138,7 +40291,7 @@ const response = await sql`
     FROM
       api.q_and_a 
     WHERE
-      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[42944](parameters.answer) }
+      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[49184](parameters.answer) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
@@ -40158,9 +40311,9 @@ const response = await sql`
     UPDATE 
       api.q_and_a 
     SET
-      question = ${ values.question === undefined ? sql`question` : typed[25](values.question) } , answer = ${ values.answer === undefined ? sql`answer` : typed[42944](values.answer) } 
+      question = ${ values.question === undefined ? sql`question` : typed[25](values.question) } , answer = ${ values.answer === undefined ? sql`answer` : typed[49184](values.answer) } 
     WHERE
-      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[42944](parameters.answer) }
+      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[49184](parameters.answer) }
     RETURNING question,answer`
 return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
 }
@@ -40173,7 +40326,7 @@ async delete(parameters: Api.Types.QAndAAnswer) {
     DELETE FROM 
       api.q_and_a 
     WHERE
-      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[42944](parameters.answer) }
+      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[49184](parameters.answer) }
     RETURNING question,answer`
  return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
 }
@@ -40353,6 +40506,128 @@ async delete(parameters: Api.Types.TrgmIdxGin) {
 }(this)
 
 }(this)
+
+          public Points = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+
+async create(values: Api.Tables.Points.Values): Promise<Api.Types.Points>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+
+      if (!Api.Tables.Points.includesPrimaryKey(values)) {
+      
+const response = await sql`
+      --
+      INSERT INTO
+        api.points (point)
+      VALUES (${ values.point === undefined ? sql`DEFAULT` : typed[600](values.point) })
+      RETURNING
+        id,point
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
+}
+const response = await sql`
+    INSERT INTO
+      api.points (id,point)
+    VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.point === undefined ? sql`DEFAULT` : typed[600](values.point) })
+    ON CONFLICT (id) DO UPDATE
+    SET
+      point = EXCLUDED.point
+    RETURNING
+      id,point
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
+}
+async all(options?: Api.Tables.Points.Options) : Promise<Api.Types.Points[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      id,point 
+    FROM
+      api.points 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))
+}
+
+          public PointsPkey = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async read(parameters: Api.Types.PointsPkey, options?: Api.Tables.Points.Options) : Promise<Api.Types.Points>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      id,point 
+    FROM
+      api.points 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
+}
+
+async update(parameters: Api.Types.PointsPkey, values: Partial<Api.Tables.Points.Values>) : Promise<Api.Types.Points>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      api.points 
+    SET
+      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , point = ${ values.point === undefined ? sql`point` : typed[600](values.point) } 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    RETURNING id,point`
+return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
+}
+async delete(parameters: Api.Types.PointsPkey) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      api.points 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    RETURNING id,point`
+ return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
+}
+}(this)
+public get ByPrimaryKey(){ return this.PointsPkey };
+}(this)
 }(this)
 }(this)
 
@@ -40423,8 +40698,8 @@ async delete(parameters: Api.Types.TrgmIdxGin) {
 "Public.Procedures.CubeCoordLlur.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeCoordLlur.call(request.parameters as Public.Procedures.CubeCoordLlur.Parameters),
 "Public.Procedures.CubeA5b3.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeA5b3.call(request.parameters as Public.Procedures.CubeA5b3.Parameters),
 "Public.Procedures.Cube_0aec.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Cube_0aec.call(request.parameters as Public.Procedures.Cube_0aec.Parameters),
-"Public.Procedures.Cube_6a4c.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Cube_6a4c.call(request.parameters as Public.Procedures.Cube_6a4c.Parameters),
-"Public.Procedures.CubeD1e7.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeD1e7.call(request.parameters as Public.Procedures.CubeD1e7.Parameters),
+"Public.Procedures.Cube_3765.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Cube_3765.call(request.parameters as Public.Procedures.Cube_3765.Parameters),
+"Public.Procedures.CubeEca1.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeEca1.call(request.parameters as Public.Procedures.CubeEca1.Parameters),
 "Public.Procedures.CubeIsPoint.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeIsPoint.call(request.parameters as Public.Procedures.CubeIsPoint.Parameters),
 "Public.Procedures.CubeEnlarge.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeEnlarge.call(request.parameters as Public.Procedures.CubeEnlarge.Parameters),
 "Public.Procedures.GCubeConsistent.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GCubeConsistent.call(request.parameters as Public.Procedures.GCubeConsistent.Parameters),
@@ -40501,6 +40776,14 @@ async delete(parameters: Api.Types.TrgmIdxGin) {
 "Api.Tables.Timezones.TrgmIdxGin.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGin.read(request.parameters as Api.Types.TrgmIdxGin,request.options as Api.Tables.Timezones.Options),
 "Api.Tables.Timezones.TrgmIdxGin.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGin.update(request.parameters as Api.Types.TrgmIdxGin,request.values as Partial<Api.Tables.Timezones.Values>),
 "Api.Tables.Timezones.TrgmIdxGin.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGin.delete(request.parameters as Api.Types.TrgmIdxGin),
+"Api.Tables.Points.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Points.create(request.values as Api.Tables.Points.Values),
+
+             "Api.Tables.Points.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Api.Tables.Points.all(request.options as Api.Tables.Points.Options),
+            
+"Api.Tables.Points.PointsPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Points.PointsPkey.read(request.parameters as Api.Types.PointsPkey,request.options as Api.Tables.Points.Options),
+"Api.Tables.Points.PointsPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Points.PointsPkey.update(request.parameters as Api.Types.PointsPkey,request.values as Partial<Api.Tables.Points.Values>),
+"Api.Tables.Points.PointsPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Points.PointsPkey.delete(request.parameters as Api.Types.PointsPkey),
 }
 }
 

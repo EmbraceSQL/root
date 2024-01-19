@@ -14,6 +14,7 @@
         /* @typescript-eslint/no-redundant-type-constituents */
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
         import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
+        import { parsePoint } from "@embracesql/shared";
 
     
 export namespace PgCatalog {
@@ -389,7 +390,7 @@ export type LanguageHandler = unknown;
 
 export type Internal = unknown;
 
-export type Anyelement = unknown;
+export type Anyelement = any;
 
 export type Anynonarray = unknown;
 
@@ -2941,580 +2942,580 @@ export type PgStatSubscriptionStatsArray =
     ;
 
 export type PgProcOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgProcPronameArgsNspIndex = {
-proname: Nullable<PgCatalog.Types.Name>;
+proname: PgCatalog.Types.Name;
 proargtypes: PgCatalog.Types.Oidvector;
-pronamespace: Nullable<PgCatalog.Types.Oid>;
+pronamespace: PgCatalog.Types.Oid;
 }
 
 export type PgTypeOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgTypeTypnameNspIndex = {
-typname: Nullable<PgCatalog.Types.Name>;
-typnamespace: Nullable<PgCatalog.Types.Oid>;
+typname: PgCatalog.Types.Name;
+typnamespace: PgCatalog.Types.Oid;
 }
 
 export type PgAttributeRelidAttnamIndex = {
-attrelid: Nullable<PgCatalog.Types.Oid>;
-attname: Nullable<PgCatalog.Types.Name>;
+attrelid: PgCatalog.Types.Oid;
+attname: PgCatalog.Types.Name;
 }
 
 export type PgAttributeRelidAttnumIndex = {
-attrelid: Nullable<PgCatalog.Types.Oid>;
-attnum: Nullable<PgCatalog.Types.Int2>;
+attrelid: PgCatalog.Types.Oid;
+attnum: PgCatalog.Types.Int2;
 }
 
 export type PgClassOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgClassRelnameNspIndex = {
-relname: Nullable<PgCatalog.Types.Name>;
-relnamespace: Nullable<PgCatalog.Types.Oid>;
+relname: PgCatalog.Types.Name;
+relnamespace: PgCatalog.Types.Oid;
 }
 
 export type PgClassTblspcRelfilenodeIndex = {
-reltablespace: Nullable<PgCatalog.Types.Oid>;
-relfilenode: Nullable<PgCatalog.Types.Oid>;
+reltablespace: PgCatalog.Types.Oid;
+relfilenode: PgCatalog.Types.Oid;
 }
 
 export type PgAttrdefAdrelidAdnumIndex = {
-adrelid: Nullable<PgCatalog.Types.Oid>;
-adnum: Nullable<PgCatalog.Types.Int2>;
+adrelid: PgCatalog.Types.Oid;
+adnum: PgCatalog.Types.Int2;
 }
 
 export type PgAttrdefOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgConstraintConnameNspIndex = {
-conname: Nullable<PgCatalog.Types.Name>;
-connamespace: Nullable<PgCatalog.Types.Oid>;
+conname: PgCatalog.Types.Name;
+connamespace: PgCatalog.Types.Oid;
 }
 
 export type PgConstraintConrelidContypidConnameIndex = {
-conrelid: Nullable<PgCatalog.Types.Oid>;
-contypid: Nullable<PgCatalog.Types.Oid>;
-conname: Nullable<PgCatalog.Types.Name>;
+conrelid: PgCatalog.Types.Oid;
+contypid: PgCatalog.Types.Oid;
+conname: PgCatalog.Types.Name;
 }
 
 export type PgConstraintContypidIndex = {
-contypid: Nullable<PgCatalog.Types.Oid>;
+contypid: PgCatalog.Types.Oid;
 }
 
 export type PgConstraintOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgConstraintConparentidIndex = {
-conparentid: Nullable<PgCatalog.Types.Oid>;
+conparentid: PgCatalog.Types.Oid;
 }
 
 export type PgInheritsRelidSeqnoIndex = {
-inhrelid: Nullable<PgCatalog.Types.Oid>;
-inhseqno: Nullable<PgCatalog.Types.Int4>;
+inhrelid: PgCatalog.Types.Oid;
+inhseqno: PgCatalog.Types.Int4;
 }
 
 export type PgInheritsParentIndex = {
-inhparent: Nullable<PgCatalog.Types.Oid>;
+inhparent: PgCatalog.Types.Oid;
 }
 
 export type PgIndexIndrelidIndex = {
-indrelid: Nullable<PgCatalog.Types.Oid>;
+indrelid: PgCatalog.Types.Oid;
 }
 
 export type PgIndexIndexrelidIndex = {
-indexrelid: Nullable<PgCatalog.Types.Oid>;
+indexrelid: PgCatalog.Types.Oid;
 }
 
 export type PgOperatorOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgOperatorOprnameLRNIndex = {
-oprname: Nullable<PgCatalog.Types.Name>;
-oprleft: Nullable<PgCatalog.Types.Oid>;
-oprright: Nullable<PgCatalog.Types.Oid>;
-oprnamespace: Nullable<PgCatalog.Types.Oid>;
+oprname: PgCatalog.Types.Name;
+oprleft: PgCatalog.Types.Oid;
+oprright: PgCatalog.Types.Oid;
+oprnamespace: PgCatalog.Types.Oid;
 }
 
 export type PgOpfamilyAmNameNspIndex = {
-opfmethod: Nullable<PgCatalog.Types.Oid>;
-opfname: Nullable<PgCatalog.Types.Name>;
-opfnamespace: Nullable<PgCatalog.Types.Oid>;
+opfmethod: PgCatalog.Types.Oid;
+opfname: PgCatalog.Types.Name;
+opfnamespace: PgCatalog.Types.Oid;
 }
 
 export type PgOpfamilyOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgOpclassAmNameNspIndex = {
-opcmethod: Nullable<PgCatalog.Types.Oid>;
-opcname: Nullable<PgCatalog.Types.Name>;
-opcnamespace: Nullable<PgCatalog.Types.Oid>;
+opcmethod: PgCatalog.Types.Oid;
+opcname: PgCatalog.Types.Name;
+opcnamespace: PgCatalog.Types.Oid;
 }
 
 export type PgOpclassOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgAmNameIndex = {
-amname: Nullable<PgCatalog.Types.Name>;
+amname: PgCatalog.Types.Name;
 }
 
 export type PgAmOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgAmopFamStratIndex = {
-amopfamily: Nullable<PgCatalog.Types.Oid>;
-amoplefttype: Nullable<PgCatalog.Types.Oid>;
-amoprighttype: Nullable<PgCatalog.Types.Oid>;
-amopstrategy: Nullable<PgCatalog.Types.Int2>;
+amopfamily: PgCatalog.Types.Oid;
+amoplefttype: PgCatalog.Types.Oid;
+amoprighttype: PgCatalog.Types.Oid;
+amopstrategy: PgCatalog.Types.Int2;
 }
 
 export type PgAmopOprFamIndex = {
-amopopr: Nullable<PgCatalog.Types.Oid>;
-amoppurpose: Nullable<PgCatalog.Types.Char>;
-amopfamily: Nullable<PgCatalog.Types.Oid>;
+amopopr: PgCatalog.Types.Oid;
+amoppurpose: PgCatalog.Types.Char;
+amopfamily: PgCatalog.Types.Oid;
 }
 
 export type PgAmopOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgAmprocFamProcIndex = {
-amprocfamily: Nullable<PgCatalog.Types.Oid>;
-amproclefttype: Nullable<PgCatalog.Types.Oid>;
-amprocrighttype: Nullable<PgCatalog.Types.Oid>;
-amprocnum: Nullable<PgCatalog.Types.Int2>;
+amprocfamily: PgCatalog.Types.Oid;
+amproclefttype: PgCatalog.Types.Oid;
+amprocrighttype: PgCatalog.Types.Oid;
+amprocnum: PgCatalog.Types.Int2;
 }
 
 export type PgAmprocOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgLanguageNameIndex = {
-lanname: Nullable<PgCatalog.Types.Name>;
+lanname: PgCatalog.Types.Name;
 }
 
 export type PgLanguageOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgLargeobjectMetadataOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgLargeobjectLoidPnIndex = {
-loid: Nullable<PgCatalog.Types.Oid>;
-pageno: Nullable<PgCatalog.Types.Int4>;
+loid: PgCatalog.Types.Oid;
+pageno: PgCatalog.Types.Int4;
 }
 
 export type PgAggregateFnoidIndex = {
-aggfnoid: Nullable<PgCatalog.Types.Regproc>;
+aggfnoid: PgCatalog.Types.Regproc;
 }
 
 export type PgStatisticRelidAttInhIndex = {
-starelid: Nullable<PgCatalog.Types.Oid>;
-staattnum: Nullable<PgCatalog.Types.Int2>;
-stainherit: Nullable<PgCatalog.Types.Bool>;
+starelid: PgCatalog.Types.Oid;
+staattnum: PgCatalog.Types.Int2;
+stainherit: PgCatalog.Types.Bool;
 }
 
 export type PgStatisticExtOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgStatisticExtNameIndex = {
-stxname: Nullable<PgCatalog.Types.Name>;
-stxnamespace: Nullable<PgCatalog.Types.Oid>;
+stxname: PgCatalog.Types.Name;
+stxnamespace: PgCatalog.Types.Oid;
 }
 
 export type PgStatisticExtRelidIndex = {
-stxrelid: Nullable<PgCatalog.Types.Oid>;
+stxrelid: PgCatalog.Types.Oid;
 }
 
 export type PgStatisticExtDataStxoidInhIndex = {
-stxoid: Nullable<PgCatalog.Types.Oid>;
-stxdinherit: Nullable<PgCatalog.Types.Bool>;
+stxoid: PgCatalog.Types.Oid;
+stxdinherit: PgCatalog.Types.Bool;
 }
 
 export type PgRewriteOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgRewriteRelRulenameIndex = {
-evClass: Nullable<PgCatalog.Types.Oid>;
-rulename: Nullable<PgCatalog.Types.Name>;
+evClass: PgCatalog.Types.Oid;
+rulename: PgCatalog.Types.Name;
 }
 
 export type PgTriggerTgconstraintIndex = {
-tgconstraint: Nullable<PgCatalog.Types.Oid>;
+tgconstraint: PgCatalog.Types.Oid;
 }
 
 export type PgTriggerTgrelidTgnameIndex = {
-tgrelid: Nullable<PgCatalog.Types.Oid>;
-tgname: Nullable<PgCatalog.Types.Name>;
+tgrelid: PgCatalog.Types.Oid;
+tgname: PgCatalog.Types.Name;
 }
 
 export type PgTriggerOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgEventTriggerEvtnameIndex = {
-evtname: Nullable<PgCatalog.Types.Name>;
+evtname: PgCatalog.Types.Name;
 }
 
 export type PgEventTriggerOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgDescriptionOCOIndex = {
-objoid: Nullable<PgCatalog.Types.Oid>;
-classoid: Nullable<PgCatalog.Types.Oid>;
-objsubid: Nullable<PgCatalog.Types.Int4>;
+objoid: PgCatalog.Types.Oid;
+classoid: PgCatalog.Types.Oid;
+objsubid: PgCatalog.Types.Int4;
 }
 
 export type PgCastOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgCastSourceTargetIndex = {
-castsource: Nullable<PgCatalog.Types.Oid>;
-casttarget: Nullable<PgCatalog.Types.Oid>;
+castsource: PgCatalog.Types.Oid;
+casttarget: PgCatalog.Types.Oid;
 }
 
 export type PgEnumOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgEnumTypidLabelIndex = {
-enumtypid: Nullable<PgCatalog.Types.Oid>;
-enumlabel: Nullable<PgCatalog.Types.Name>;
+enumtypid: PgCatalog.Types.Oid;
+enumlabel: PgCatalog.Types.Name;
 }
 
 export type PgEnumTypidSortorderIndex = {
-enumtypid: Nullable<PgCatalog.Types.Oid>;
-enumsortorder: Nullable<PgCatalog.Types.Float4>;
+enumtypid: PgCatalog.Types.Oid;
+enumsortorder: PgCatalog.Types.Float4;
 }
 
 export type PgNamespaceNspnameIndex = {
-nspname: Nullable<PgCatalog.Types.Name>;
+nspname: PgCatalog.Types.Name;
 }
 
 export type PgNamespaceOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgConversionDefaultIndex = {
-connamespace: Nullable<PgCatalog.Types.Oid>;
-conforencoding: Nullable<PgCatalog.Types.Int4>;
-contoencoding: Nullable<PgCatalog.Types.Int4>;
-oid: Nullable<PgCatalog.Types.Oid>;
+connamespace: PgCatalog.Types.Oid;
+conforencoding: PgCatalog.Types.Int4;
+contoencoding: PgCatalog.Types.Int4;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgConversionNameNspIndex = {
-conname: Nullable<PgCatalog.Types.Name>;
-connamespace: Nullable<PgCatalog.Types.Oid>;
+conname: PgCatalog.Types.Name;
+connamespace: PgCatalog.Types.Oid;
 }
 
 export type PgConversionOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgDependDependerIndex = {
-classid: Nullable<PgCatalog.Types.Oid>;
-objid: Nullable<PgCatalog.Types.Oid>;
-objsubid: Nullable<PgCatalog.Types.Int4>;
+classid: PgCatalog.Types.Oid;
+objid: PgCatalog.Types.Oid;
+objsubid: PgCatalog.Types.Int4;
 }
 
 export type PgDependReferenceIndex = {
-refclassid: Nullable<PgCatalog.Types.Oid>;
-refobjid: Nullable<PgCatalog.Types.Oid>;
-refobjsubid: Nullable<PgCatalog.Types.Int4>;
+refclassid: PgCatalog.Types.Oid;
+refobjid: PgCatalog.Types.Oid;
+refobjsubid: PgCatalog.Types.Int4;
 }
 
 export type PgDatabaseDatnameIndex = {
-datname: Nullable<PgCatalog.Types.Name>;
+datname: PgCatalog.Types.Name;
 }
 
 export type PgDatabaseOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgDbRoleSettingDatabaseidRolIndex = {
-setdatabase: Nullable<PgCatalog.Types.Oid>;
-setrole: Nullable<PgCatalog.Types.Oid>;
+setdatabase: PgCatalog.Types.Oid;
+setrole: PgCatalog.Types.Oid;
 }
 
 export type PgTablespaceOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgTablespaceSpcnameIndex = {
-spcname: Nullable<PgCatalog.Types.Name>;
+spcname: PgCatalog.Types.Name;
 }
 
 export type PgAuthidRolnameIndex = {
-rolname: Nullable<PgCatalog.Types.Name>;
+rolname: PgCatalog.Types.Name;
 }
 
 export type PgAuthidOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgAuthMembersOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgAuthMembersRoleMemberIndex = {
-roleid: Nullable<PgCatalog.Types.Oid>;
-member: Nullable<PgCatalog.Types.Oid>;
-grantor: Nullable<PgCatalog.Types.Oid>;
+roleid: PgCatalog.Types.Oid;
+member: PgCatalog.Types.Oid;
+grantor: PgCatalog.Types.Oid;
 }
 
 export type PgAuthMembersMemberRoleIndex = {
-member: Nullable<PgCatalog.Types.Oid>;
-roleid: Nullable<PgCatalog.Types.Oid>;
-grantor: Nullable<PgCatalog.Types.Oid>;
+member: PgCatalog.Types.Oid;
+roleid: PgCatalog.Types.Oid;
+grantor: PgCatalog.Types.Oid;
 }
 
 export type PgAuthMembersGrantorIndex = {
-grantor: Nullable<PgCatalog.Types.Oid>;
+grantor: PgCatalog.Types.Oid;
 }
 
 export type PgShdependDependerIndex = {
-dbid: Nullable<PgCatalog.Types.Oid>;
-classid: Nullable<PgCatalog.Types.Oid>;
-objid: Nullable<PgCatalog.Types.Oid>;
-objsubid: Nullable<PgCatalog.Types.Int4>;
+dbid: PgCatalog.Types.Oid;
+classid: PgCatalog.Types.Oid;
+objid: PgCatalog.Types.Oid;
+objsubid: PgCatalog.Types.Int4;
 }
 
 export type PgShdependReferenceIndex = {
-refclassid: Nullable<PgCatalog.Types.Oid>;
-refobjid: Nullable<PgCatalog.Types.Oid>;
+refclassid: PgCatalog.Types.Oid;
+refobjid: PgCatalog.Types.Oid;
 }
 
 export type PgShdescriptionOCIndex = {
-objoid: Nullable<PgCatalog.Types.Oid>;
-classoid: Nullable<PgCatalog.Types.Oid>;
+objoid: PgCatalog.Types.Oid;
+classoid: PgCatalog.Types.Oid;
 }
 
 export type PgTsConfigCfgnameIndex = {
-cfgname: Nullable<PgCatalog.Types.Name>;
-cfgnamespace: Nullable<PgCatalog.Types.Oid>;
+cfgname: PgCatalog.Types.Name;
+cfgnamespace: PgCatalog.Types.Oid;
 }
 
 export type PgTsConfigOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgTsConfigMapIndex = {
-mapcfg: Nullable<PgCatalog.Types.Oid>;
-maptokentype: Nullable<PgCatalog.Types.Int4>;
-mapseqno: Nullable<PgCatalog.Types.Int4>;
+mapcfg: PgCatalog.Types.Oid;
+maptokentype: PgCatalog.Types.Int4;
+mapseqno: PgCatalog.Types.Int4;
 }
 
 export type PgTsDictDictnameIndex = {
-dictname: Nullable<PgCatalog.Types.Name>;
-dictnamespace: Nullable<PgCatalog.Types.Oid>;
+dictname: PgCatalog.Types.Name;
+dictnamespace: PgCatalog.Types.Oid;
 }
 
 export type PgTsDictOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgTsParserPrsnameIndex = {
-prsname: Nullable<PgCatalog.Types.Name>;
-prsnamespace: Nullable<PgCatalog.Types.Oid>;
+prsname: PgCatalog.Types.Name;
+prsnamespace: PgCatalog.Types.Oid;
 }
 
 export type PgTsParserOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgTsTemplateTmplnameIndex = {
-tmplname: Nullable<PgCatalog.Types.Name>;
-tmplnamespace: Nullable<PgCatalog.Types.Oid>;
+tmplname: PgCatalog.Types.Name;
+tmplnamespace: PgCatalog.Types.Oid;
 }
 
 export type PgTsTemplateOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgExtensionOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgExtensionNameIndex = {
-extname: Nullable<PgCatalog.Types.Name>;
+extname: PgCatalog.Types.Name;
 }
 
 export type PgForeignDataWrapperOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgForeignDataWrapperNameIndex = {
-fdwname: Nullable<PgCatalog.Types.Name>;
+fdwname: PgCatalog.Types.Name;
 }
 
 export type PgForeignServerOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgForeignServerNameIndex = {
-srvname: Nullable<PgCatalog.Types.Name>;
+srvname: PgCatalog.Types.Name;
 }
 
 export type PgUserMappingOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgUserMappingUserServerIndex = {
-umuser: Nullable<PgCatalog.Types.Oid>;
-umserver: Nullable<PgCatalog.Types.Oid>;
+umuser: PgCatalog.Types.Oid;
+umserver: PgCatalog.Types.Oid;
 }
 
 export type PgForeignTableRelidIndex = {
-ftrelid: Nullable<PgCatalog.Types.Oid>;
+ftrelid: PgCatalog.Types.Oid;
 }
 
 export type PgPolicyOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgPolicyPolrelidPolnameIndex = {
-polrelid: Nullable<PgCatalog.Types.Oid>;
-polname: Nullable<PgCatalog.Types.Name>;
+polrelid: PgCatalog.Types.Oid;
+polname: PgCatalog.Types.Name;
 }
 
 export type PgReplicationOriginRoiidentIndex = {
-roident: Nullable<PgCatalog.Types.Oid>;
+roident: PgCatalog.Types.Oid;
 }
 
 export type PgReplicationOriginRonameIndex = {
-roname: Nullable<PgCatalog.Types.Text>;
+roname: PgCatalog.Types.Text;
 }
 
 export type PgDefaultAclRoleNspObjIndex = {
-defaclrole: Nullable<PgCatalog.Types.Oid>;
-defaclnamespace: Nullable<PgCatalog.Types.Oid>;
-defaclobjtype: Nullable<PgCatalog.Types.Char>;
+defaclrole: PgCatalog.Types.Oid;
+defaclnamespace: PgCatalog.Types.Oid;
+defaclobjtype: PgCatalog.Types.Char;
 }
 
 export type PgDefaultAclOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgInitPrivsOCOIndex = {
-objoid: Nullable<PgCatalog.Types.Oid>;
-classoid: Nullable<PgCatalog.Types.Oid>;
-objsubid: Nullable<PgCatalog.Types.Int4>;
+objoid: PgCatalog.Types.Oid;
+classoid: PgCatalog.Types.Oid;
+objsubid: PgCatalog.Types.Int4;
 }
 
 export type PgSeclabelObjectIndex = {
-objoid: Nullable<PgCatalog.Types.Oid>;
-classoid: Nullable<PgCatalog.Types.Oid>;
-objsubid: Nullable<PgCatalog.Types.Int4>;
-provider: Nullable<PgCatalog.Types.Text>;
+objoid: PgCatalog.Types.Oid;
+classoid: PgCatalog.Types.Oid;
+objsubid: PgCatalog.Types.Int4;
+provider: PgCatalog.Types.Text;
 }
 
 export type PgShseclabelObjectIndex = {
-objoid: Nullable<PgCatalog.Types.Oid>;
-classoid: Nullable<PgCatalog.Types.Oid>;
-provider: Nullable<PgCatalog.Types.Text>;
+objoid: PgCatalog.Types.Oid;
+classoid: PgCatalog.Types.Oid;
+provider: PgCatalog.Types.Text;
 }
 
 export type PgCollationNameEncNspIndex = {
-collname: Nullable<PgCatalog.Types.Name>;
-collencoding: Nullable<PgCatalog.Types.Int4>;
-collnamespace: Nullable<PgCatalog.Types.Oid>;
+collname: PgCatalog.Types.Name;
+collencoding: PgCatalog.Types.Int4;
+collnamespace: PgCatalog.Types.Oid;
 }
 
 export type PgCollationOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgParameterAclParnameIndex = {
-parname: Nullable<PgCatalog.Types.Text>;
+parname: PgCatalog.Types.Text;
 }
 
 export type PgParameterAclOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgPartitionedTablePartrelidIndex = {
-partrelid: Nullable<PgCatalog.Types.Oid>;
+partrelid: PgCatalog.Types.Oid;
 }
 
 export type PgRangeRngtypidIndex = {
-rngtypid: Nullable<PgCatalog.Types.Oid>;
+rngtypid: PgCatalog.Types.Oid;
 }
 
 export type PgRangeRngmultitypidIndex = {
-rngmultitypid: Nullable<PgCatalog.Types.Oid>;
+rngmultitypid: PgCatalog.Types.Oid;
 }
 
 export type PgTransformOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgTransformTypeLangIndex = {
-trftype: Nullable<PgCatalog.Types.Oid>;
-trflang: Nullable<PgCatalog.Types.Oid>;
+trftype: PgCatalog.Types.Oid;
+trflang: PgCatalog.Types.Oid;
 }
 
 export type PgSequenceSeqrelidIndex = {
-seqrelid: Nullable<PgCatalog.Types.Oid>;
+seqrelid: PgCatalog.Types.Oid;
 }
 
 export type PgPublicationOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgPublicationPubnameIndex = {
-pubname: Nullable<PgCatalog.Types.Name>;
+pubname: PgCatalog.Types.Name;
 }
 
 export type PgPublicationNamespaceOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgPublicationNamespacePnnspidPnpubidIndex = {
-pnnspid: Nullable<PgCatalog.Types.Oid>;
-pnpubid: Nullable<PgCatalog.Types.Oid>;
+pnnspid: PgCatalog.Types.Oid;
+pnpubid: PgCatalog.Types.Oid;
 }
 
 export type PgPublicationRelOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgPublicationRelPrrelidPrpubidIndex = {
-prrelid: Nullable<PgCatalog.Types.Oid>;
-prpubid: Nullable<PgCatalog.Types.Oid>;
+prrelid: PgCatalog.Types.Oid;
+prpubid: PgCatalog.Types.Oid;
 }
 
 export type PgPublicationRelPrpubidIndex = {
-prpubid: Nullable<PgCatalog.Types.Oid>;
+prpubid: PgCatalog.Types.Oid;
 }
 
 export type PgSubscriptionOidIndex = {
-oid: Nullable<PgCatalog.Types.Oid>;
+oid: PgCatalog.Types.Oid;
 }
 
 export type PgSubscriptionSubnameIndex = {
-subdbid: Nullable<PgCatalog.Types.Oid>;
-subname: Nullable<PgCatalog.Types.Name>;
+subdbid: PgCatalog.Types.Oid;
+subname: PgCatalog.Types.Name;
 }
 
 export type PgSubscriptionRelSrrelidSrsubidIndex = {
-srrelid: Nullable<PgCatalog.Types.Oid>;
-srsubid: Nullable<PgCatalog.Types.Oid>;
+srrelid: PgCatalog.Types.Oid;
+srsubid: PgCatalog.Types.Oid;
 }
 }
 export namespace Procedures {
@@ -3526,7 +3527,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgStatistic> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgStatistic,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgStatistic, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgStatistic,  PrimaryKey>
 export enum SortOptions  {
 starelidAscending = "starelid ASC",
 staattnumAscending = "staattnum ASC",
@@ -3731,7 +3732,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgType> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgType,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgType, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgType,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 typnameAscending = "typname ASC",
@@ -3942,7 +3943,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgForeignTable> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgForeignTable,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgForeignTable, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgForeignTable,  PrimaryKey>
 export enum SortOptions  {
 ftrelidAscending = "ftrelid ASC",
 ftserverAscending = "ftserver ASC",
@@ -3979,7 +3980,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAuthid> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgAuthid,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgAuthid, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgAuthid,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 rolnameAscending = "rolname ASC",
@@ -4070,7 +4071,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgStatisticExtData> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgStatisticExtData,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgStatisticExtData, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgStatisticExtData,  PrimaryKey>
 export enum SortOptions  {
 stxoidAscending = "stxoid ASC",
 stxdinheritAscending = "stxdinherit ASC",
@@ -4125,7 +4126,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgUserMapping> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgUserMapping,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgUserMapping, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgUserMapping,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 umuserAscending = "umuser ASC",
@@ -4168,7 +4169,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgSubscription> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgSubscription,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgSubscription, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgSubscription,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 subdbidAscending = "subdbid ASC",
@@ -4289,7 +4290,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAttribute> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgAttribute,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgAttribute, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgAttribute,  PrimaryKey>
 export enum SortOptions  {
 attrelidAscending = "attrelid ASC",
 attnameAscending = "attname ASC",
@@ -4464,7 +4465,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgProc> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgProc,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgProc, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgProc,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 pronameAscending = "proname ASC",
@@ -4663,7 +4664,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgClass> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgClass,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgClass, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgClass,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 relnameAscending = "relname ASC",
@@ -4880,7 +4881,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAttrdef> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgAttrdef,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgAttrdef, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgAttrdef,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 adrelidAscending = "adrelid ASC",
@@ -4923,7 +4924,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgConstraint> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgConstraint,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgConstraint, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgConstraint,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 connameAscending = "conname ASC",
@@ -5098,7 +5099,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgInherits> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgInherits,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgInherits, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgInherits,  PrimaryKey>
 export enum SortOptions  {
 inhrelidAscending = "inhrelid ASC",
 inhparentAscending = "inhparent ASC",
@@ -5141,7 +5142,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgIndex> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgIndex,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgIndex, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgIndex,  PrimaryKey>
 export enum SortOptions  {
 indexrelidAscending = "indexrelid ASC",
 indrelidAscending = "indrelid ASC",
@@ -5286,7 +5287,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgOperator> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgOperator,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgOperator, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgOperator,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 oprnameAscending = "oprname ASC",
@@ -5395,7 +5396,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgOpfamily> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgOpfamily,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgOpfamily, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgOpfamily,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 opfmethodAscending = "opfmethod ASC",
@@ -5444,7 +5445,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgOpclass> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgOpclass,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgOpclass, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgOpclass,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 opcmethodAscending = "opcmethod ASC",
@@ -5517,7 +5518,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAm> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgAm,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgAm, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgAm,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 amnameAscending = "amname ASC",
@@ -5560,7 +5561,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAmop> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgAmop,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgAmop, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgAmop,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 amopfamilyAscending = "amopfamily ASC",
@@ -5633,7 +5634,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAmproc> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgAmproc,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgAmproc, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgAmproc,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 amprocfamilyAscending = "amprocfamily ASC",
@@ -5688,7 +5689,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgLanguage> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgLanguage,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgLanguage, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgLanguage,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 lannameAscending = "lanname ASC",
@@ -5761,7 +5762,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgLargeobjectMetadata
 }
 
 export type Optional = Pick<PgCatalog.Types.PgLargeobjectMetadata,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgLargeobjectMetadata, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgLargeobjectMetadata,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 lomownerAscending = "lomowner ASC",
@@ -5798,7 +5799,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAggregate> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgAggregate,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgAggregate, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgAggregate,  PrimaryKey>
 export enum SortOptions  {
 aggfnoidAscending = "aggfnoid ASC",
 aggkindAscending = "aggkind ASC",
@@ -5949,7 +5950,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgStatisticExt> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgStatisticExt,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgStatisticExt, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgStatisticExt,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 stxrelidAscending = "stxrelid ASC",
@@ -6022,7 +6023,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgRewrite> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgRewrite,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgRewrite, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgRewrite,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 rulenameAscending = "rulename ASC",
@@ -6089,7 +6090,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTrigger> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgTrigger,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgTrigger, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgTrigger,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 tgrelidAscending = "tgrelid ASC",
@@ -6222,7 +6223,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgEventTrigger> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgEventTrigger,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgEventTrigger, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgEventTrigger,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 evtnameAscending = "evtname ASC",
@@ -6283,7 +6284,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgDescription> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgDescription,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgDescription, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgDescription,  PrimaryKey>
 export enum SortOptions  {
 objoidAscending = "objoid ASC",
 classoidAscending = "classoid ASC",
@@ -6326,7 +6327,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgCast> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgCast,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgCast, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgCast,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 castsourceAscending = "castsource ASC",
@@ -6381,7 +6382,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgEnum> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgEnum,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgEnum, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgEnum,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 enumtypidAscending = "enumtypid ASC",
@@ -6424,7 +6425,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgNamespace> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgNamespace,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgNamespace, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgNamespace,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 nspnameAscending = "nspname ASC",
@@ -6467,7 +6468,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgConversion> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgConversion,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgConversion, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgConversion,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 connameAscending = "conname ASC",
@@ -6534,7 +6535,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgDepend> {
 }
 export type PrimaryKey = never;
 export type Optional = Pick<PgCatalog.Types.PgDepend,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgDepend, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgDepend,  PrimaryKey>
 export enum SortOptions  {
 classidAscending = "classid ASC",
 objidAscending = "objid ASC",
@@ -6594,7 +6595,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgDatabase> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgDatabase,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgDatabase, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgDatabase,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 datnameAscending = "datname ASC",
@@ -6715,7 +6716,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgDbRoleSetting> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgDbRoleSetting,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgDbRoleSetting, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgDbRoleSetting,  PrimaryKey>
 export enum SortOptions  {
 setdatabaseAscending = "setdatabase ASC",
 setroleAscending = "setrole ASC",
@@ -6752,7 +6753,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTablespace> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgTablespace,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgTablespace, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgTablespace,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 spcnameAscending = "spcname ASC",
@@ -6801,7 +6802,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgAuthMembers> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgAuthMembers,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgAuthMembers, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgAuthMembers,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 roleidAscending = "roleid ASC",
@@ -6862,7 +6863,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgShdepend> {
 }
 export type PrimaryKey = never;
 export type Optional = Pick<PgCatalog.Types.PgShdepend,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgShdepend, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgShdepend,  PrimaryKey>
 export enum SortOptions  {
 dbidAscending = "dbid ASC",
 classidAscending = "classid ASC",
@@ -6922,7 +6923,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgShdescription> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgShdescription,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgShdescription, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgShdescription,  PrimaryKey>
 export enum SortOptions  {
 objoidAscending = "objoid ASC",
 classoidAscending = "classoid ASC",
@@ -6959,7 +6960,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTsConfig> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgTsConfig,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgTsConfig, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgTsConfig,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 cfgnameAscending = "cfgname ASC",
@@ -7008,7 +7009,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTsConfigMap> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgTsConfigMap,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgTsConfigMap, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgTsConfigMap,  PrimaryKey>
 export enum SortOptions  {
 mapcfgAscending = "mapcfg ASC",
 maptokentypeAscending = "maptokentype ASC",
@@ -7051,7 +7052,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTsDict> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgTsDict,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgTsDict, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgTsDict,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 dictnameAscending = "dictname ASC",
@@ -7106,7 +7107,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTsParser> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgTsParser,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgTsParser, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgTsParser,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 prsnameAscending = "prsname ASC",
@@ -7173,7 +7174,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTsTemplate> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgTsTemplate,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgTsTemplate, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgTsTemplate,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 tmplnameAscending = "tmplname ASC",
@@ -7222,7 +7223,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgExtension> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgExtension,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgExtension, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgExtension,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 extnameAscending = "extname ASC",
@@ -7289,7 +7290,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgForeignDataWrapper>
 }
 
 export type Optional = Pick<PgCatalog.Types.PgForeignDataWrapper,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgForeignDataWrapper, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgForeignDataWrapper,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 fdwnameAscending = "fdwname ASC",
@@ -7350,7 +7351,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgForeignServer> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgForeignServer,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgForeignServer, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgForeignServer,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 srvnameAscending = "srvname ASC",
@@ -7417,7 +7418,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgPolicy> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgPolicy,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgPolicy, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgPolicy,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 polnameAscending = "polname ASC",
@@ -7484,7 +7485,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgReplicationOrigin> 
 }
 
 export type Optional = Pick<PgCatalog.Types.PgReplicationOrigin,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgReplicationOrigin, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgReplicationOrigin,  PrimaryKey>
 export enum SortOptions  {
 roidentAscending = "roident ASC",
 ronameAscending = "roname ASC",
@@ -7515,7 +7516,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgDefaultAcl> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgDefaultAcl,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgDefaultAcl, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgDefaultAcl,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 defaclroleAscending = "defaclrole ASC",
@@ -7564,7 +7565,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgInitPrivs> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgInitPrivs,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgInitPrivs, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgInitPrivs,  PrimaryKey>
 export enum SortOptions  {
 objoidAscending = "objoid ASC",
 classoidAscending = "classoid ASC",
@@ -7613,7 +7614,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgSeclabel> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgSeclabel,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgSeclabel, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgSeclabel,  PrimaryKey>
 export enum SortOptions  {
 objoidAscending = "objoid ASC",
 classoidAscending = "classoid ASC",
@@ -7662,7 +7663,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgShseclabel> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgShseclabel,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgShseclabel, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgShseclabel,  PrimaryKey>
 export enum SortOptions  {
 objoidAscending = "objoid ASC",
 classoidAscending = "classoid ASC",
@@ -7705,7 +7706,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgCollation> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgCollation,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgCollation, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgCollation,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 collnameAscending = "collname ASC",
@@ -7796,7 +7797,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgParameterAcl> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgParameterAcl,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgParameterAcl, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgParameterAcl,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 parnameAscending = "parname ASC",
@@ -7833,7 +7834,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgPartitionedTable> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgPartitionedTable,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgPartitionedTable, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgPartitionedTable,  PrimaryKey>
 export enum SortOptions  {
 partrelidAscending = "partrelid ASC",
 partstratAscending = "partstrat ASC",
@@ -7900,7 +7901,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgRange> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgRange,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgRange, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgRange,  PrimaryKey>
 export enum SortOptions  {
 rngtypidAscending = "rngtypid ASC",
 rngsubtypeAscending = "rngsubtype ASC",
@@ -7961,7 +7962,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgTransform> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgTransform,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgTransform, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgTransform,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 trftypeAscending = "trftype ASC",
@@ -8010,7 +8011,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgSequence> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgSequence,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgSequence, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgSequence,  PrimaryKey>
 export enum SortOptions  {
 seqrelidAscending = "seqrelid ASC",
 seqtypidAscending = "seqtypid ASC",
@@ -8077,7 +8078,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgPublication> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgPublication,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgPublication, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgPublication,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 pubnameAscending = "pubname ASC",
@@ -8150,7 +8151,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgPublicationNamespac
 }
 
 export type Optional = Pick<PgCatalog.Types.PgPublicationNamespace,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgPublicationNamespace, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgPublicationNamespace,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 pnpubidAscending = "pnpubid ASC",
@@ -8187,7 +8188,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgPublicationRel> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgPublicationRel,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgPublicationRel, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgPublicationRel,  PrimaryKey>
 export enum SortOptions  {
 oidAscending = "oid ASC",
 prpubidAscending = "prpubid ASC",
@@ -8236,7 +8237,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgSubscriptionRel> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgSubscriptionRel,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgSubscriptionRel, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgSubscriptionRel,  PrimaryKey>
 export enum SortOptions  {
 srsubidAscending = "srsubid ASC",
 srrelidAscending = "srrelid ASC",
@@ -8279,7 +8280,7 @@ export function emptyRow() : PossiblyEmpty<PgCatalog.Types.PgLargeobject> {
 }
 
 export type Optional = Pick<PgCatalog.Types.PgLargeobject,never>
-export type Values = PartiallyOptional<PgCatalog.Types.PgLargeobject, Optional & PrimaryKey>
+export type Values = PartiallyOptional<PgCatalog.Types.PgLargeobject,  PrimaryKey>
 export enum SortOptions  {
 loidAscending = "loid ASC",
 pagenoAscending = "pageno ASC",
@@ -9514,7 +9515,7 @@ export function emptyRow() : PossiblyEmpty<InformationSchema.Types.SqlFeatures> 
 }
 export type PrimaryKey = never;
 export type Optional = Pick<InformationSchema.Types.SqlFeatures,never>
-export type Values = PartiallyOptional<InformationSchema.Types.SqlFeatures, Optional & PrimaryKey>
+export type Values = PartiallyOptional<InformationSchema.Types.SqlFeatures,  PrimaryKey>
 export enum SortOptions  {
 featureIdAscending = "feature_id ASC",
 featureNameAscending = "feature_name ASC",
@@ -9574,7 +9575,7 @@ export function emptyRow() : PossiblyEmpty<InformationSchema.Types.SqlImplementa
 }
 export type PrimaryKey = never;
 export type Optional = Pick<InformationSchema.Types.SqlImplementationInfo,never>
-export type Values = PartiallyOptional<InformationSchema.Types.SqlImplementationInfo, Optional & PrimaryKey>
+export type Values = PartiallyOptional<InformationSchema.Types.SqlImplementationInfo,  PrimaryKey>
 export enum SortOptions  {
 implementationInfoIdAscending = "implementation_info_id ASC",
 implementationInfoNameAscending = "implementation_info_name ASC",
@@ -9622,7 +9623,7 @@ export function emptyRow() : PossiblyEmpty<InformationSchema.Types.SqlParts> {
 }
 export type PrimaryKey = never;
 export type Optional = Pick<InformationSchema.Types.SqlParts,never>
-export type Values = PartiallyOptional<InformationSchema.Types.SqlParts, Optional & PrimaryKey>
+export type Values = PartiallyOptional<InformationSchema.Types.SqlParts,  PrimaryKey>
 export enum SortOptions  {
 featureIdAscending = "feature_id ASC",
 featureNameAscending = "feature_name ASC",
@@ -9670,7 +9671,7 @@ export function emptyRow() : PossiblyEmpty<InformationSchema.Types.SqlSizing> {
 }
 export type PrimaryKey = never;
 export type Optional = Pick<InformationSchema.Types.SqlSizing,never>
-export type Values = PartiallyOptional<InformationSchema.Types.SqlSizing, Optional & PrimaryKey>
+export type Values = PartiallyOptional<InformationSchema.Types.SqlSizing,  PrimaryKey>
 export enum SortOptions  {
 sizingIdAscending = "sizing_id ASC",
 sizingNameAscending = "sizing_name ASC",
@@ -10009,136 +10010,136 @@ export type StaffListArray =
     ;
 
 export type ActorPkey = {
-actorId: Nullable<PgCatalog.Types.Int4>;
+actorId: PgCatalog.Types.Int4;
 }
 
 export type AddressPkey = {
-addressId: Nullable<PgCatalog.Types.Int4>;
+addressId: PgCatalog.Types.Int4;
 }
 
 export type CategoryPkey = {
-categoryId: Nullable<PgCatalog.Types.Int4>;
+categoryId: PgCatalog.Types.Int4;
 }
 
 export type CityPkey = {
-cityId: Nullable<PgCatalog.Types.Int4>;
+cityId: PgCatalog.Types.Int4;
 }
 
 export type CountryPkey = {
-countryId: Nullable<PgCatalog.Types.Int4>;
+countryId: PgCatalog.Types.Int4;
 }
 
 export type CustomerPkey = {
-customerId: Nullable<PgCatalog.Types.Int4>;
+customerId: PgCatalog.Types.Int4;
 }
 
 export type FilmActorPkey = {
-actorId: Nullable<PgCatalog.Types.Int2>;
-filmId: Nullable<PgCatalog.Types.Int2>;
+actorId: PgCatalog.Types.Int2;
+filmId: PgCatalog.Types.Int2;
 }
 
 export type FilmCategoryPkey = {
-filmId: Nullable<PgCatalog.Types.Int2>;
-categoryId: Nullable<PgCatalog.Types.Int2>;
+filmId: PgCatalog.Types.Int2;
+categoryId: PgCatalog.Types.Int2;
 }
 
 export type FilmPkey = {
-filmId: Nullable<PgCatalog.Types.Int4>;
+filmId: PgCatalog.Types.Int4;
 }
 
 export type InventoryPkey = {
-inventoryId: Nullable<PgCatalog.Types.Int4>;
+inventoryId: PgCatalog.Types.Int4;
 }
 
 export type LanguagePkey = {
-languageId: Nullable<PgCatalog.Types.Int4>;
+languageId: PgCatalog.Types.Int4;
 }
 
 export type PaymentPkey = {
-paymentId: Nullable<PgCatalog.Types.Int4>;
+paymentId: PgCatalog.Types.Int4;
 }
 
 export type RentalPkey = {
-rentalId: Nullable<PgCatalog.Types.Int4>;
+rentalId: PgCatalog.Types.Int4;
 }
 
 export type StaffPkey = {
-staffId: Nullable<PgCatalog.Types.Int4>;
+staffId: PgCatalog.Types.Int4;
 }
 
 export type StorePkey = {
-storeId: Nullable<PgCatalog.Types.Int4>;
+storeId: PgCatalog.Types.Int4;
 }
 
 export type FilmFulltextIdx = {
-fulltext: Nullable<PgCatalog.Types.Tsvector>;
+fulltext: PgCatalog.Types.Tsvector;
 }
 
 export type IdxActorLastName = {
-lastName: Nullable<PgCatalog.Types.Varchar>;
+lastName: PgCatalog.Types.Varchar;
 }
 
 export type IdxFkAddressId = {
-addressId: Nullable<PgCatalog.Types.Int2>;
+addressId: PgCatalog.Types.Int2;
 }
 
 export type IdxFkCityId = {
-cityId: Nullable<PgCatalog.Types.Int2>;
+cityId: PgCatalog.Types.Int2;
 }
 
 export type IdxFkCountryId = {
-countryId: Nullable<PgCatalog.Types.Int2>;
+countryId: PgCatalog.Types.Int2;
 }
 
 export type IdxFkCustomerId = {
-customerId: Nullable<PgCatalog.Types.Int2>;
+customerId: PgCatalog.Types.Int2;
 }
 
 export type IdxFkFilmId = {
-filmId: Nullable<PgCatalog.Types.Int2>;
+filmId: PgCatalog.Types.Int2;
 }
 
 export type IdxFkInventoryId = {
-inventoryId: Nullable<PgCatalog.Types.Int4>;
+inventoryId: PgCatalog.Types.Int4;
 }
 
 export type IdxFkLanguageId = {
-languageId: Nullable<PgCatalog.Types.Int2>;
+languageId: PgCatalog.Types.Int2;
 }
 
 export type IdxFkRentalId = {
-rentalId: Nullable<PgCatalog.Types.Int4>;
+rentalId: PgCatalog.Types.Int4;
 }
 
 export type IdxFkStaffId = {
-staffId: Nullable<PgCatalog.Types.Int2>;
+staffId: PgCatalog.Types.Int2;
 }
 
 export type IdxFkStoreId = {
-storeId: Nullable<PgCatalog.Types.Int2>;
+storeId: PgCatalog.Types.Int2;
 }
 
 export type IdxLastName = {
-lastName: Nullable<PgCatalog.Types.Varchar>;
+lastName: PgCatalog.Types.Varchar;
 }
 
 export type IdxStoreIdFilmId = {
-storeId: Nullable<PgCatalog.Types.Int2>;
-filmId: Nullable<PgCatalog.Types.Int2>;
+storeId: PgCatalog.Types.Int2;
+filmId: PgCatalog.Types.Int2;
 }
 
 export type IdxTitle = {
-title: Nullable<PgCatalog.Types.Varchar>;
+title: PgCatalog.Types.Varchar;
 }
 
 export type IdxUnqManagerStaffId = {
-managerStaffId: Nullable<PgCatalog.Types.Int2>;
+managerStaffId: PgCatalog.Types.Int2;
 }
 
 export type IdxUnqRentalRentalDateInventoryIdCustomerId = {
-rentalDate: Nullable<PgCatalog.Types.Timestamp>;
-inventoryId: Nullable<PgCatalog.Types.Int4>;
-customerId: Nullable<PgCatalog.Types.Int2>;
+rentalDate: PgCatalog.Types.Timestamp;
+inventoryId: PgCatalog.Types.Int4;
+customerId: PgCatalog.Types.Int2;
 }
 }
 export namespace Procedures {
@@ -11047,12 +11048,12 @@ export type PrimaryKey = Public.Types.FilmPkey;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_42489Index = {
+export type PgToast_47255Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_42575Index = {
+export type PgToast_47341Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -12024,7 +12025,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      return from;
+      return parsePoint(from);
     
 }
 
@@ -12962,7 +12963,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      return from;
+      throw new Error("not implemented");
     
 }
 
@@ -24861,11 +24862,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_42489Index {
+export namespace PgToast_47255Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_42489Index.is(from)) {
+if (PgToast.Types.PgToast_47255Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -24876,11 +24877,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_42575Index {
+export namespace PgToast_47341Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_42575Index.is(from)) {
+if (PgToast.Types.PgToast_47341Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -31492,16 +31493,16 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_42489Index {
-export function is(value: any) : value is PgToast.Types.PgToast_42489Index {
+export namespace PgToast_47255Index {
+export function is(value: any) : value is PgToast.Types.PgToast_47255Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_42575Index {
-export function is(value: any) : value is PgToast.Types.PgToast_42575Index {
+export namespace PgToast_47341Index {
+export function is(value: any) : value is PgToast.Types.PgToast_47341Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -36207,13 +36208,13 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_42489Index {
- export function equals(l: PgToast.Types.PgToast_42489Index|undefined, r: unknown) {
+export namespace PgToast_47255Index {
+ export function equals(l: PgToast.Types.PgToast_47255Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_42575Index {
- export function equals(l: PgToast.Types.PgToast_42575Index|undefined, r: unknown) {
+export namespace PgToast_47341Index {
+ export function equals(l: PgToast.Types.PgToast_47341Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -37950,165 +37951,165 @@ export namespace Results {
 ["InformationSchema.Types.UserMappings"]: Typecast
 [13823]: Typecast;
 ["InformationSchema.Types.UserMappingsArray"]: Typecast
-[42445]: Typecast;
+[47211]: Typecast;
 ["Public.Types.MpaaRating"]: Typecast
-[42444]: Typecast;
+[47210]: Typecast;
 ["Public.Types.MpaaRatingArray"]: Typecast
-[42456]: Typecast;
+[47222]: Typecast;
 ["Public.Types.Year"]: Typecast
-[42455]: Typecast;
+[47221]: Typecast;
 ["Public.Types.YearArray"]: Typecast
-[42469]: Typecast;
+[47235]: Typecast;
 ["Public.Types.Customer"]: Typecast
-[42468]: Typecast;
+[47234]: Typecast;
 ["Public.Types.CustomerArray"]: Typecast
-[42479]: Typecast;
+[47245]: Typecast;
 ["Public.Types.Actor"]: Typecast
-[42478]: Typecast;
+[47244]: Typecast;
 ["Public.Types.ActorArray"]: Typecast
-[42485]: Typecast;
+[47251]: Typecast;
 ["Public.Types.Category"]: Typecast
-[42484]: Typecast;
+[47250]: Typecast;
 ["Public.Types.CategoryArray"]: Typecast
-[42491]: Typecast;
+[47257]: Typecast;
 ["Public.Types.Film"]: Typecast
-[42490]: Typecast;
+[47256]: Typecast;
 ["Public.Types.FilmArray"]: Typecast
-[42502]: Typecast;
+[47268]: Typecast;
 ["Public.Types.FilmActor"]: Typecast
-[42501]: Typecast;
+[47267]: Typecast;
 ["Public.Types.FilmActorArray"]: Typecast
-[42506]: Typecast;
+[47272]: Typecast;
 ["Public.Types.FilmCategory"]: Typecast
-[42505]: Typecast;
+[47271]: Typecast;
 ["Public.Types.FilmCategoryArray"]: Typecast
-[42510]: Typecast;
+[47276]: Typecast;
 ["Public.Types.ActorInfo"]: Typecast
-[42509]: Typecast;
+[47275]: Typecast;
 ["Public.Types.ActorInfoArray"]: Typecast
-[42516]: Typecast;
+[47282]: Typecast;
 ["Public.Types.Address"]: Typecast
-[42515]: Typecast;
+[47281]: Typecast;
 ["Public.Types.AddressArray"]: Typecast
-[42522]: Typecast;
+[47288]: Typecast;
 ["Public.Types.City"]: Typecast
-[42521]: Typecast;
+[47287]: Typecast;
 ["Public.Types.CityArray"]: Typecast
-[42528]: Typecast;
+[47294]: Typecast;
 ["Public.Types.Country"]: Typecast
-[42527]: Typecast;
+[47293]: Typecast;
 ["Public.Types.CountryArray"]: Typecast
-[42533]: Typecast;
+[47299]: Typecast;
 ["Public.Types.CustomerList"]: Typecast
-[42532]: Typecast;
+[47298]: Typecast;
 ["Public.Types.CustomerListArray"]: Typecast
-[42538]: Typecast;
+[47304]: Typecast;
 ["Public.Types.FilmList"]: Typecast
-[42537]: Typecast;
+[47303]: Typecast;
 ["Public.Types.FilmListArray"]: Typecast
-[42544]: Typecast;
+[47310]: Typecast;
 ["Public.Types.Inventory"]: Typecast
-[42543]: Typecast;
+[47309]: Typecast;
 ["Public.Types.InventoryArray"]: Typecast
-[42550]: Typecast;
+[47316]: Typecast;
 ["Public.Types.Language"]: Typecast
-[42549]: Typecast;
+[47315]: Typecast;
 ["Public.Types.LanguageArray"]: Typecast
-[42555]: Typecast;
+[47321]: Typecast;
 ["Public.Types.NicerButSlowerFilmList"]: Typecast
-[42554]: Typecast;
+[47320]: Typecast;
 ["Public.Types.NicerButSlowerFilmListArray"]: Typecast
-[42561]: Typecast;
+[47327]: Typecast;
 ["Public.Types.Payment"]: Typecast
-[42560]: Typecast;
+[47326]: Typecast;
 ["Public.Types.PaymentArray"]: Typecast
-[42566]: Typecast;
+[47332]: Typecast;
 ["Public.Types.Rental"]: Typecast
-[42565]: Typecast;
+[47331]: Typecast;
 ["Public.Types.RentalArray"]: Typecast
-[42571]: Typecast;
+[47337]: Typecast;
 ["Public.Types.SalesByFilmCategory"]: Typecast
-[42570]: Typecast;
+[47336]: Typecast;
 ["Public.Types.SalesByFilmCategoryArray"]: Typecast
-[42577]: Typecast;
+[47343]: Typecast;
 ["Public.Types.Staff"]: Typecast
-[42576]: Typecast;
+[47342]: Typecast;
 ["Public.Types.StaffArray"]: Typecast
-[42586]: Typecast;
+[47352]: Typecast;
 ["Public.Types.Store"]: Typecast
-[42585]: Typecast;
+[47351]: Typecast;
 ["Public.Types.StoreArray"]: Typecast
-[42591]: Typecast;
+[47357]: Typecast;
 ["Public.Types.SalesByStore"]: Typecast
-[42590]: Typecast;
+[47356]: Typecast;
 ["Public.Types.SalesByStoreArray"]: Typecast
-[42596]: Typecast;
+[47362]: Typecast;
 ["Public.Types.StaffList"]: Typecast
-[42595]: Typecast;
+[47361]: Typecast;
 ["Public.Types.StaffListArray"]: Typecast
-[42599]: Typecast;
+[47365]: Typecast;
 ["Public.Types.ActorPkey"]: Typecast
-[42601]: Typecast;
+[47367]: Typecast;
 ["Public.Types.AddressPkey"]: Typecast
-[42603]: Typecast;
+[47369]: Typecast;
 ["Public.Types.CategoryPkey"]: Typecast
-[42605]: Typecast;
+[47371]: Typecast;
 ["Public.Types.CityPkey"]: Typecast
-[42607]: Typecast;
+[47373]: Typecast;
 ["Public.Types.CountryPkey"]: Typecast
-[42609]: Typecast;
+[47375]: Typecast;
 ["Public.Types.CustomerPkey"]: Typecast
-[42611]: Typecast;
+[47377]: Typecast;
 ["Public.Types.FilmActorPkey"]: Typecast
-[42613]: Typecast;
+[47379]: Typecast;
 ["Public.Types.FilmCategoryPkey"]: Typecast
-[42615]: Typecast;
+[47381]: Typecast;
 ["Public.Types.FilmPkey"]: Typecast
-[42617]: Typecast;
+[47383]: Typecast;
 ["Public.Types.InventoryPkey"]: Typecast
-[42619]: Typecast;
+[47385]: Typecast;
 ["Public.Types.LanguagePkey"]: Typecast
-[42621]: Typecast;
+[47387]: Typecast;
 ["Public.Types.PaymentPkey"]: Typecast
-[42623]: Typecast;
+[47389]: Typecast;
 ["Public.Types.RentalPkey"]: Typecast
-[42625]: Typecast;
+[47391]: Typecast;
 ["Public.Types.StaffPkey"]: Typecast
-[42627]: Typecast;
+[47393]: Typecast;
 ["Public.Types.StorePkey"]: Typecast
-[42629]: Typecast;
+[47395]: Typecast;
 ["Public.Types.FilmFulltextIdx"]: Typecast
-[42630]: Typecast;
+[47396]: Typecast;
 ["Public.Types.IdxActorLastName"]: Typecast
-[42631]: Typecast;
+[47397]: Typecast;
 ["Public.Types.IdxFkAddressId"]: Typecast
-[42632]: Typecast;
+[47398]: Typecast;
 ["Public.Types.IdxFkCityId"]: Typecast
-[42633]: Typecast;
+[47399]: Typecast;
 ["Public.Types.IdxFkCountryId"]: Typecast
-[42634]: Typecast;
+[47400]: Typecast;
 ["Public.Types.IdxFkCustomerId"]: Typecast
-[42635]: Typecast;
+[47401]: Typecast;
 ["Public.Types.IdxFkFilmId"]: Typecast
-[42636]: Typecast;
+[47402]: Typecast;
 ["Public.Types.IdxFkInventoryId"]: Typecast
-[42637]: Typecast;
+[47403]: Typecast;
 ["Public.Types.IdxFkLanguageId"]: Typecast
-[42638]: Typecast;
+[47404]: Typecast;
 ["Public.Types.IdxFkRentalId"]: Typecast
-[42639]: Typecast;
+[47405]: Typecast;
 ["Public.Types.IdxFkStaffId"]: Typecast
-[42640]: Typecast;
+[47406]: Typecast;
 ["Public.Types.IdxFkStoreId"]: Typecast
-[42641]: Typecast;
+[47407]: Typecast;
 ["Public.Types.IdxLastName"]: Typecast
-[42642]: Typecast;
+[47408]: Typecast;
 ["Public.Types.IdxStoreIdFilmId"]: Typecast
-[42643]: Typecast;
+[47409]: Typecast;
 ["Public.Types.IdxTitle"]: Typecast
-[42644]: Typecast;
+[47410]: Typecast;
 ["Public.Types.IdxUnqManagerStaffId"]: Typecast
-[42645]: Typecast;
+[47411]: Typecast;
 ["Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId"]: Typecast
 
 ["Public.Procedures.FilmInStock.Parameters"]: Typecast
@@ -38124,10 +38125,10 @@ export namespace Results {
 ["Public.Procedures.LastDay.Parameters"]: Typecast
 
 ["Public.Procedures.RewardsReport.Parameters"]: Typecast
-[42499]: Typecast;
-["PgToast.Types.PgToast_42489Index"]: Typecast
-[42582]: Typecast;
-["PgToast.Types.PgToast_42575Index"]: Typecast
+[47265]: Typecast;
+["PgToast.Types.PgToast_47255Index"]: Typecast
+[47348]: Typecast;
+["PgToast.Types.PgToast_47341Index"]: Typecast
 [2837]: Typecast;
 ["PgToast.Types.PgToast_1255Index"]: Typecast
 [4172]: Typecast;
@@ -38270,7 +38271,7 @@ get database() { return this};
 async call(parameters : Public.Procedures.FilmInStock.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[42459].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
+              return context.procTypes[47225].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
             };
           
   const sql = this.database.context.sql;
@@ -38295,7 +38296,7 @@ async call(parameters : Public.Procedures.FilmInStock.Parameters) {
 async call(parameters : Public.Procedures.FilmNotInStock.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[42460].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
+              return context.procTypes[47226].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
             };
           
   const sql = this.database.context.sql;
@@ -41048,7 +41049,7 @@ const response = await sql`
       --
       INSERT INTO
         public.film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
-      VALUES (${ values.title === undefined ? sql`DEFAULT` : typed[1043](values.title) },${ values.description === undefined ? sql`DEFAULT` : typed[25](values.description) },${ values.releaseYear === undefined ? sql`DEFAULT` : typed[42456](values.releaseYear) },${ values.languageId === undefined ? sql`DEFAULT` : typed[21](values.languageId) },${ values.rentalDuration === undefined ? sql`DEFAULT` : typed[21](values.rentalDuration) },${ values.rentalRate === undefined ? sql`DEFAULT` : typed[1700](values.rentalRate) },${ values.length === undefined ? sql`DEFAULT` : typed[21](values.length) },${ values.replacementCost === undefined ? sql`DEFAULT` : typed[1700](values.replacementCost) },${ values.rating === undefined ? sql`DEFAULT` : typed[42445](values.rating) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.specialFeatures === undefined ? sql`DEFAULT` : typed[1009](values.specialFeatures) },${ values.fulltext === undefined ? sql`DEFAULT` : typed[3614](values.fulltext) })
+      VALUES (${ values.title === undefined ? sql`DEFAULT` : typed[1043](values.title) },${ values.description === undefined ? sql`DEFAULT` : typed[25](values.description) },${ values.releaseYear === undefined ? sql`DEFAULT` : typed[47222](values.releaseYear) },${ values.languageId === undefined ? sql`DEFAULT` : typed[21](values.languageId) },${ values.rentalDuration === undefined ? sql`DEFAULT` : typed[21](values.rentalDuration) },${ values.rentalRate === undefined ? sql`DEFAULT` : typed[1700](values.rentalRate) },${ values.length === undefined ? sql`DEFAULT` : typed[21](values.length) },${ values.replacementCost === undefined ? sql`DEFAULT` : typed[1700](values.replacementCost) },${ values.rating === undefined ? sql`DEFAULT` : typed[47211](values.rating) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.specialFeatures === undefined ? sql`DEFAULT` : typed[1009](values.specialFeatures) },${ values.fulltext === undefined ? sql`DEFAULT` : typed[3614](values.fulltext) })
       RETURNING
         film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
     `
@@ -41057,7 +41058,7 @@ return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedI
 const response = await sql`
     INSERT INTO
       public.film (film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
-    VALUES (${ values.filmId === undefined ? sql`DEFAULT` : typed[23](values.filmId) },${ values.title === undefined ? sql`DEFAULT` : typed[1043](values.title) },${ values.description === undefined ? sql`DEFAULT` : typed[25](values.description) },${ values.releaseYear === undefined ? sql`DEFAULT` : typed[42456](values.releaseYear) },${ values.languageId === undefined ? sql`DEFAULT` : typed[21](values.languageId) },${ values.rentalDuration === undefined ? sql`DEFAULT` : typed[21](values.rentalDuration) },${ values.rentalRate === undefined ? sql`DEFAULT` : typed[1700](values.rentalRate) },${ values.length === undefined ? sql`DEFAULT` : typed[21](values.length) },${ values.replacementCost === undefined ? sql`DEFAULT` : typed[1700](values.replacementCost) },${ values.rating === undefined ? sql`DEFAULT` : typed[42445](values.rating) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.specialFeatures === undefined ? sql`DEFAULT` : typed[1009](values.specialFeatures) },${ values.fulltext === undefined ? sql`DEFAULT` : typed[3614](values.fulltext) })
+    VALUES (${ values.filmId === undefined ? sql`DEFAULT` : typed[23](values.filmId) },${ values.title === undefined ? sql`DEFAULT` : typed[1043](values.title) },${ values.description === undefined ? sql`DEFAULT` : typed[25](values.description) },${ values.releaseYear === undefined ? sql`DEFAULT` : typed[47222](values.releaseYear) },${ values.languageId === undefined ? sql`DEFAULT` : typed[21](values.languageId) },${ values.rentalDuration === undefined ? sql`DEFAULT` : typed[21](values.rentalDuration) },${ values.rentalRate === undefined ? sql`DEFAULT` : typed[1700](values.rentalRate) },${ values.length === undefined ? sql`DEFAULT` : typed[21](values.length) },${ values.replacementCost === undefined ? sql`DEFAULT` : typed[1700](values.replacementCost) },${ values.rating === undefined ? sql`DEFAULT` : typed[47211](values.rating) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.specialFeatures === undefined ? sql`DEFAULT` : typed[1009](values.specialFeatures) },${ values.fulltext === undefined ? sql`DEFAULT` : typed[3614](values.fulltext) })
     ON CONFLICT (film_id) DO UPDATE
     SET
       title = EXCLUDED.title,description = EXCLUDED.description,release_year = EXCLUDED.release_year,language_id = EXCLUDED.language_id,rental_duration = EXCLUDED.rental_duration,rental_rate = EXCLUDED.rental_rate,length = EXCLUDED.length,replacement_cost = EXCLUDED.replacement_cost,rating = EXCLUDED.rating,last_update = EXCLUDED.last_update,special_features = EXCLUDED.special_features,fulltext = EXCLUDED.fulltext
@@ -41126,7 +41127,7 @@ const response = await sql`
     UPDATE 
       public.film 
     SET
-      film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[42456](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[42445](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
+      film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[47222](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[47211](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
     WHERE
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[23](parameters.filmId) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`
@@ -41190,7 +41191,7 @@ const response = await sql`
     UPDATE 
       public.film 
     SET
-      film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[42456](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[42445](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
+      film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[47222](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[47211](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
     WHERE
       fulltext = ${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3614](parameters.fulltext) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`
@@ -41254,7 +41255,7 @@ const response = await sql`
     UPDATE 
       public.film 
     SET
-      film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[42456](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[42445](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
+      film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[47222](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[47211](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
     WHERE
       language_id = ${ parameters.languageId === undefined ? sql`DEFAULT` : typed[21](parameters.languageId) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`
@@ -41318,7 +41319,7 @@ const response = await sql`
     UPDATE 
       public.film 
     SET
-      film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[42456](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[42445](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
+      film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[47222](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[47211](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
     WHERE
       title = ${ parameters.title === undefined ? sql`DEFAULT` : typed[1043](parameters.title) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`

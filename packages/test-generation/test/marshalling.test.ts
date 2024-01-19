@@ -9,7 +9,7 @@ import {
 /**
  * Works-at-all.
  */
-describe("The database can marshall complex types", () => {
+describe("Can marshall complex types", () => {
   let db: Database;
   beforeAll(async () => {
     db = await Database.connect(
@@ -72,9 +72,15 @@ describe("The database can marshall complex types", () => {
     });
     expect(ret[0].question).toBe("Is this a test?");
   });
+  it("that are enum equality", async () => {
+    const ret = await db.Api.Tables.QAndA.QAndAAnswer.read({
+      answer: Api.Types.Answer.Yes,
+    });
+    expect(ret[0].question).toBe("Is this a test?");
+  });
 });
 
-describe("The database can marshall base types", () => {
+describe("Can marshall base types", () => {
   let db: Database;
   beforeAll(async () => {
     db = await Database.connect(
@@ -136,11 +142,7 @@ describe("The database can marshall base types", () => {
     }
   });
   it("that are points", () => {
-    for (const val of [
-      null,
-      JSON.stringify({ x: 0, y: 0 }),
-      JSON.stringify({ x: 1.5, y: 100 }),
-    ]) {
+    for (const val of [null, "(0, 0)", "(1.5, 100)"]) {
       roundTrip("PgCatalog.Types.Point", PgCatalog.Types.Point.parse, val);
     }
   });
@@ -272,7 +274,8 @@ describe("The database can marshall base types", () => {
     }
   });
 });
-describe("The database can handle index operators", () => {
+
+describe("Can marshall pg_trgm types", () => {
   let db: Database;
   beforeAll(async () => {
     db = await Database.connect(
@@ -282,22 +285,46 @@ describe("The database can handle index operators", () => {
   afterAll(async () => {
     await db.disconnect();
   });
-  it("that are enum equality", async () => {
-    const ret = await db.Api.Tables.QAndA.QAndAAnswer.read({
-      answer: Api.Types.Answer.Yes,
-    });
-    expect(ret[0].question).toBe("Is this a test?");
-  });
-  it("that are gin trigram match", async () => {
+
+  it("that gin trigram match", async () => {
     const ret = await db.Api.Tables.Timezones.TrgmIdxGin.read({
       timeZone: "Afri",
     });
     expect(ret.length).toBeGreaterThan(0);
   });
-  it("that are gist trigram match", async () => {
+  it("that gist trigram match", async () => {
     const ret = await db.Api.Tables.Timezones.TrgmIdxGist.read({
       timeZone: "Afri",
     });
     expect(ret.length).toBeGreaterThan(0);
+  });
+});
+
+describe("Can marshall geometric", () => {
+  // each test runs in an isolated transaction that is rolled back
+  // so the database has a consisten state
+  let rootDatabase: Database;
+  let database: Database;
+  let rollback: (message?: string) => void;
+  beforeEach(async () => {
+    rootDatabase = await Database.connect(
+      "postgres://postgres:postgres@localhost:5432/marshalling",
+    );
+    // and in a transaction now
+    ({ database, rollback } = await rootDatabase.beginTransaction());
+  });
+  afterEach(async () => {
+    rollback();
+    await rootDatabase.disconnect();
+  });
+  it("points", async () => {
+    const ret = await database.Api.Tables.Points.create({
+      point: {
+        x: 1,
+        y: 1,
+      },
+    });
+    expect(ret.id).toBeTruthy();
+    expect(ret.point).toMatchObject({ x: 1, y: 1 });
   });
 });
