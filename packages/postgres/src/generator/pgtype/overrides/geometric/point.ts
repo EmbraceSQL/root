@@ -34,5 +34,6 @@ class PGTypePointArray extends PGCatalogType {
 }
 
 registerOverride("point", PGTypePoint);
+// TODO: proper parsing, these are not just arrays
 registerOverride("path", PGTypePointArray);
 registerOverride("polygon", PGTypePointArray);

@@ -145,4 +145,9 @@ CREATE INDEX trgm_idx_gin ON api.timezones USING GIN (time_zone gin_trgm_ops);
 CREATE TABLE api.points (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   point point NOT NULL
-)
+);
+
+CREATE TABLE api.lines (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  line line NOT NULL
+);

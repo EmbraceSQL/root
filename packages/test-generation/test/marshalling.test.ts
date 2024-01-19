@@ -158,11 +158,7 @@ describe("Can marshall base types", () => {
     }
   });
   it("that are lines", () => {
-    for (const val of [
-      null,
-      JSON.stringify({ a: 0, b: 0, c: 0 }),
-      JSON.stringify({ a: 1, b: 2, c: 3 }),
-    ]) {
+    for (const val of [null, "{0, 0, 0}", "{1, 2, 3}"]) {
       roundTrip("PgCatalog.Types.Line", PgCatalog.Types.Line.parse, val);
     }
   });
@@ -326,5 +322,16 @@ describe("Can marshall geometric", () => {
     });
     expect(ret.id).toBeTruthy();
     expect(ret.point).toMatchObject({ x: 1, y: 1 });
+  });
+  it("lines", async () => {
+    const ret = await database.Api.Tables.Lines.create({
+      line: {
+        a: 1,
+        b: 2,
+        c: 3,
+      },
+    });
+    expect(ret.id).toBeTruthy();
+    expect(ret.line).toMatchObject({ a: 1, b: 2, c: 3 });
   });
 });

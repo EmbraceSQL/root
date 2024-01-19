@@ -48,4 +48,50 @@ export namespace Geometry {
     if (point === undefined || point === null) return null;
     return `(${point.x}, ${point.y})`;
   }
+
+  export type Line = {
+    a: number;
+    b: number;
+    c: number;
+  };
+
+  function isLine(from: unknown): from is Line {
+    return (
+      typeof (from as Line)?.a === "number" &&
+      typeof (from as Line)?.b === "number" &&
+      typeof (from as Line)?.c === "number"
+    );
+  }
+
+  const lineParser = parsimmon.seqObj<Line>(
+    parsimmon.string("{").skip(whitespace),
+    ["a", number],
+    parsimmon.string(",").skip(whitespace),
+    ["b", number],
+    parsimmon.string(",").skip(whitespace),
+    ["c", number],
+    parsimmon.string("}").skip(whitespace),
+  );
+
+  /**
+   * Parse postgres string representation of an infinite line.
+   */
+  export function parseLine(from: unknown) {
+    if (typeof from === "string") {
+      return lineParser.tryParse(from);
+    }
+    if (isLine(from)) {
+      return from;
+    }
+    return null;
+  }
+
+  /**
+   * Serialize an infinite line.
+   */
+  export function serializeLine(x: unknown) {
+    const line = x as Line;
+    if (line === undefined || line === null) return null;
+    return `{${line.a}, ${line.b}, ${line.c}}`;
+  }
 }
