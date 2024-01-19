@@ -16,5 +16,6 @@ export * from "./vector";
 export * from "./date";
 export * from "./json";
 export * from "./cube";
+export * from "./postgis";
 
 registerOverride("interval", PGTypeNumber);

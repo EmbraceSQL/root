@@ -11047,12 +11047,12 @@ export type PrimaryKey = Public.Types.FilmPkey;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_36081Index = {
+export type PgToast_42489Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_36167Index = {
+export type PgToast_42575Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -24632,11 +24632,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_36081Index {
+export namespace PgToast_42489Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_36081Index.is(from)) {
+if (PgToast.Types.PgToast_42489Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -24647,11 +24647,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_36167Index {
+export namespace PgToast_42575Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_36167Index.is(from)) {
+if (PgToast.Types.PgToast_42575Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -31111,16 +31111,16 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_36081Index {
-export function is(value: any) : value is PgToast.Types.PgToast_36081Index {
+export namespace PgToast_42489Index {
+export function is(value: any) : value is PgToast.Types.PgToast_42489Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_36167Index {
-export function is(value: any) : value is PgToast.Types.PgToast_36167Index {
+export namespace PgToast_42575Index {
+export function is(value: any) : value is PgToast.Types.PgToast_42575Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -35754,13 +35754,13 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_36081Index {
- export function equals(l: PgToast.Types.PgToast_36081Index|undefined, r: unknown) {
+export namespace PgToast_42489Index {
+ export function equals(l: PgToast.Types.PgToast_42489Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_36167Index {
- export function equals(l: PgToast.Types.PgToast_36167Index|undefined, r: unknown) {
+export namespace PgToast_42575Index {
+ export function equals(l: PgToast.Types.PgToast_42575Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
