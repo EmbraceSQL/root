@@ -156,3 +156,8 @@ CREATE TABLE api.line_segments (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   line_segment lseg NOT NULL
 );
+
+CREATE TABLE api.boxes (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  box box NOT NULL
+);

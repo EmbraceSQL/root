@@ -173,4 +173,56 @@ export namespace Geometry {
     if (line === undefined || line === null) return null;
     return `(${serializePoint(line.from)}, ${serializePoint(line.to)})`;
   }
+
+  /**
+   * A box defined by corners
+   */
+  export type Box = {
+    upperRight: Point;
+    lowerLeft: Point;
+  };
+
+  function isBox(from: unknown): from is Box {
+    return (
+      isPoint((from as Box)?.upperRight) && isPoint((from as Box)?.lowerLeft)
+    );
+  }
+
+  const boxParserParen = parsimmon.seqObj<Box>(
+    parsimmon.string("(").skip(whitespace),
+    ["upperRight", pointParser],
+    parsimmon.string(",").skip(whitespace),
+    ["lowerLeft", pointParser],
+    parsimmon.string(")").skip(whitespace),
+  );
+  const boxParserBare = parsimmon.seqObj<Box>(
+    ["upperRight", pointParser],
+    parsimmon.string(",").skip(whitespace),
+    ["lowerLeft", pointParser],
+  );
+  const boxParser = parsimmon.alt(boxParserParen, boxParserBare);
+
+  /**
+   * Parse postgres string representation of a box.
+   */
+  export function parseBox(from: unknown) {
+    if (typeof from === "string") {
+      return boxParser.tryParse(from);
+    }
+    if (isBox(from)) {
+      return from;
+    }
+    return null;
+  }
+
+  /**
+   * Serialize a line segment to postgres text format.
+   */
+  export function serializeBox(x: unknown) {
+    const box = x as Box;
+    if (box === undefined || box === null) return null;
+    return `(${serializePoint(box.upperRight)}, ${serializePoint(
+      box.lowerLeft,
+    )})`;
+  }
 }

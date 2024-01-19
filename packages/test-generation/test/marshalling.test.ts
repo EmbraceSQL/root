@@ -165,10 +165,9 @@ describe("Can marshall base types", () => {
   it("that are boxes", () => {
     for (const val of [
       null,
-      JSON.stringify({
-        lowerLeft: { x: 0, y: 0 },
-        upperRight: { x: 1.5, y: 100 },
-      }),
+      `((0,0), (1.5, 100))`,
+      `(0,0), (1.5, 100)`,
+      `0, 0, 1.5, 100`,
     ]) {
       roundTrip("PgCatalog.Types.Box", PgCatalog.Types.Box.parse, val);
     }
@@ -350,6 +349,25 @@ describe("Can marshall geometric", () => {
       to: {
         x: 100,
         y: 100,
+      },
+    });
+  });
+  it("boxes", async () => {
+    const ret = await database.Api.Tables.Boxes.create({
+      box: {
+        upperRight: { x: 100, y: 100 },
+        lowerLeft: {
+          x: 0,
+          y: 0,
+        },
+      },
+    });
+    expect(ret.id).toBeTruthy();
+    expect(ret.box).toMatchObject({
+      upperRight: { x: 100, y: 100 },
+      lowerLeft: {
+        x: 0,
+        y: 0,
       },
     });
   });
