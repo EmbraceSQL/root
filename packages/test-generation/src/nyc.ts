@@ -220,12 +220,7 @@ export type Xid8 = number;
 
 export type Point = Geometry.Point;
 
-export type Lseg = 
-     {
-      from: Point;
-      to: Point;
-    }
-    ;
+export type Lseg = Geometry.LineSegment;
 
 export type Path = Array<Point>;
 
@@ -10078,7 +10073,7 @@ export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace Geometry_3198 {
+export namespace GeometryEd31 {
 
 
 export type Parameters = {
@@ -10693,7 +10688,7 @@ export type Parameters = {
 argument_0: Nullable<Public.Types.Box3d>;
 }
 }
-export namespace StExpandC2f2 {
+export namespace StExpand_0683 {
 
 
 export type Parameters = {
@@ -10701,7 +10696,7 @@ argument_0: Nullable<Public.Types.Box2d>;
 argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StExpand_0686 {
+export namespace StExpand_509e {
 
 
 export type Parameters = {
@@ -10808,7 +10803,7 @@ export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StSummary_52cb {
+export namespace StSummaryC567 {
 
 
 export type Parameters = {
@@ -10843,7 +10838,7 @@ export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StLength_52cb {
+export namespace StLengthC567 {
 
 
 export type Parameters = {
@@ -10880,7 +10875,7 @@ export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StPerimeter_52cb {
+export namespace StPerimeterC567 {
 
 
 export type Parameters = {
@@ -10894,7 +10889,7 @@ export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StArea_52cb {
+export namespace StAreaC567 {
 
 
 export type Parameters = {
@@ -10915,7 +10910,7 @@ export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StDistancespheroidA3f5 {
+export namespace StDistancespheroid_094c {
 
 
 export type Parameters = {
@@ -10924,7 +10919,7 @@ geom2: Nullable<Public.Types.Geometry>;
 argument_2: Nullable<Public.Types.Spheroid>;
 }
 }
-export namespace StDistancespheroid_4e70 {
+export namespace StDistancespheroid_6bd0 {
 
 
 export type Parameters = {
@@ -10932,7 +10927,7 @@ geom1: Nullable<Public.Types.Geometry>;
 geom2: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StDistance_4e70 {
+export namespace StDistance_6bd0 {
 
 
 export type Parameters = {
@@ -10950,7 +10945,7 @@ argument_2: Nullable<PgCatalog.Types.Float8>;
 argument_3: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StAzimuth_4e70 {
+export namespace StAzimuth_6bd0 {
 
 
 export type Parameters = {
@@ -10958,7 +10953,7 @@ geom1: Nullable<Public.Types.Geometry>;
 geom2: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StProjectBdaa {
+export namespace StProject_9adf {
 
 
 export type Parameters = {
@@ -10967,7 +10962,7 @@ distance: Nullable<PgCatalog.Types.Float8>;
 azimuth: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StProject_0b21 {
+export namespace StProjectBab7 {
 
 
 export type Parameters = {
@@ -10976,7 +10971,7 @@ geom2: Nullable<Public.Types.Geometry>;
 distance: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StAngleDd35 {
+export namespace StAngle_3749 {
 
 
 export type Parameters = {
@@ -11042,7 +11037,7 @@ export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StCollectionextractF74e {
+export namespace StCollectionextract_73ac {
 
 
 export type Parameters = {
@@ -11050,7 +11045,7 @@ argument_0: Nullable<Public.Types.Geometry>;
 argument_1: Nullable<PgCatalog.Types.Int4>;
 }
 }
-export namespace StCollectionextract_52cb {
+export namespace StCollectionextractC567 {
 
 
 export type Parameters = {
@@ -11078,14 +11073,14 @@ export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StForcesfs_52cb {
+export namespace StForcesfsC567 {
 
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StForcesfs_09ea {
+export namespace StForcesfs_9881 {
 
 
 export type Parameters = {
@@ -11093,7 +11088,7 @@ argument_0: Nullable<Public.Types.Geometry>;
 version: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StExpandC8db {
+export namespace StExpandDbaa {
 
 
 export type Parameters = {
@@ -11101,7 +11096,7 @@ argument_0: Nullable<Public.Types.Box3d>;
 argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StExpandB682 {
+export namespace StExpand_4f8f {
 
 
 export type Parameters = {
@@ -11111,7 +11106,7 @@ dy: Nullable<PgCatalog.Types.Float8>;
 dz: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StExpand_8fd9 {
+export namespace StExpand_23e5 {
 
 
 export type Parameters = {
@@ -11119,7 +11114,7 @@ argument_0: Nullable<Public.Types.Geometry>;
 argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StExpand_3395 {
+export namespace StExpand_6e33 {
 
 
 export type Parameters = {
@@ -11188,14 +11183,14 @@ export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StAsewkt_52cb {
+export namespace StAsewktC567 {
 
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StAsewktF74e {
+export namespace StAsewkt_73ac {
 
 
 export type Parameters = {
@@ -11203,7 +11198,7 @@ argument_0: Nullable<Public.Types.Geometry>;
 argument_1: Nullable<PgCatalog.Types.Int4>;
 }
 }
-export namespace StAstwkbC537 {
+export namespace StAstwkbE417 {
 
 
 export type Parameters = {
@@ -11215,7 +11210,7 @@ withSizes: Nullable<PgCatalog.Types.Bool>;
 withBoxes: Nullable<PgCatalog.Types.Bool>;
 }
 }
-export namespace StAstwkb_911a {
+export namespace StAstwkbE7ff {
 
 
 export type Parameters = {
@@ -11228,21 +11223,21 @@ withSizes: Nullable<PgCatalog.Types.Bool>;
 withBoxes: Nullable<PgCatalog.Types.Bool>;
 }
 }
-export namespace StAsewkb_52cb {
+export namespace StAsewkbC567 {
 
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StAshexewkb_52cb {
+export namespace StAshexewkbC567 {
 
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StAshexewkb_09ea {
+export namespace StAshexewkb_9881 {
 
 
 export type Parameters = {
@@ -11250,7 +11245,7 @@ argument_0: Nullable<Public.Types.Geometry>;
 argument_1: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StAsewkb_09ea {
+export namespace StAsewkb_9881 {
 
 
 export type Parameters = {
@@ -11348,7 +11343,7 @@ geom1: Nullable<Public.Types.Geometry>;
 geom2: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StMakeline_1ecf {
+export namespace StMakelineA84e {
 
 
 export type Parameters = {
@@ -11362,7 +11357,7 @@ export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StMakeline_4e70 {
+export namespace StMakeline_6bd0 {
 
 
 export type Parameters = {
@@ -11370,7 +11365,7 @@ geom1: Nullable<Public.Types.Geometry>;
 geom2: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StAddpoint_4e70 {
+export namespace StAddpoint_6bd0 {
 
 
 export type Parameters = {
@@ -11378,7 +11373,7 @@ geom1: Nullable<Public.Types.Geometry>;
 geom2: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StScaleBdaa {
+export namespace StScale_9adf {
 
 
 export type Parameters = {
@@ -11387,7 +11382,7 @@ argument_1: Nullable<PgCatalog.Types.Float8>;
 argument_2: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StAddpointBf6c {
+export namespace StAddpointAcbc {
 
 
 export type Parameters = {
@@ -11435,7 +11430,7 @@ bounds: Nullable<Public.Types.Geometry>;
 margin: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StMakepolygonCd1b {
+export namespace StMakepolygon_88d3 {
 
 
 export type Parameters = {
@@ -11443,7 +11438,7 @@ argument_0: Nullable<Public.Types.Geometry>;
 argument_1: Public.Types.GeometryArray;
 }
 }
-export namespace StMakepolygon_52cb {
+export namespace StMakepolygonC567 {
 
 
 export type Parameters = {
@@ -11457,21 +11452,21 @@ export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StPolygonize_1ecf {
+export namespace StPolygonizeA84e {
 
 
 export type Parameters = {
 argument_0: Public.Types.GeometryArray;
 }
 }
-export namespace StClusterintersecting_1ecf {
+export namespace StClusterintersectingA84e {
 
 
 export type Parameters = {
 argument_0: Public.Types.GeometryArray;
 }
 }
-export namespace StClusterwithin_7fe3 {
+export namespace StClusterwithinAece {
 
 
 export type Parameters = {
@@ -11479,14 +11474,14 @@ argument_0: Public.Types.GeometryArray;
 argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StLinemerge_52cb {
+export namespace StLinemergeC567 {
 
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StLinemergeE9cd {
+export namespace StLinemergeE62d {
 
 
 export type Parameters = {
@@ -11494,7 +11489,7 @@ argument_0: Nullable<Public.Types.Geometry>;
 argument_1: Nullable<PgCatalog.Types.Bool>;
 }
 }
-export namespace StAffineAb49 {
+export namespace StAffine_35f7 {
 
 
 export type Parameters = {
@@ -11513,7 +11508,7 @@ argument_11: Nullable<PgCatalog.Types.Float8>;
 argument_12: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StAffine_1347 {
+export namespace StAffine_78d2 {
 
 
 export type Parameters = {
@@ -11526,7 +11521,7 @@ argument_5: Nullable<PgCatalog.Types.Float8>;
 argument_6: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StRotate_8fd9 {
+export namespace StRotate_23e5 {
 
 
 export type Parameters = {
@@ -11534,7 +11529,7 @@ argument_0: Nullable<Public.Types.Geometry>;
 argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StRotate_196d {
+export namespace StRotateA6e8 {
 
 
 export type Parameters = {
@@ -11544,7 +11539,7 @@ argument_2: Nullable<PgCatalog.Types.Float8>;
 argument_3: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StRotateD16f {
+export namespace StRotate_4c28 {
 
 
 export type Parameters = {
@@ -11577,7 +11572,7 @@ argument_0: Nullable<Public.Types.Geometry>;
 argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StTranslate_196d {
+export namespace StTranslateA6e8 {
 
 
 export type Parameters = {
@@ -11587,7 +11582,7 @@ argument_2: Nullable<PgCatalog.Types.Float8>;
 argument_3: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StTranslateBdaa {
+export namespace StTranslate_9adf {
 
 
 export type Parameters = {
@@ -11596,7 +11591,7 @@ argument_1: Nullable<PgCatalog.Types.Float8>;
 argument_2: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StScale_4e70 {
+export namespace StScale_6bd0 {
 
 
 export type Parameters = {
@@ -11604,7 +11599,7 @@ argument_0: Nullable<Public.Types.Geometry>;
 argument_1: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StScaleFaae {
+export namespace StScaleE109 {
 
 
 export type Parameters = {
@@ -11613,7 +11608,7 @@ argument_1: Nullable<Public.Types.Geometry>;
 origin: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StScale_196d {
+export namespace StScaleA6e8 {
 
 
 export type Parameters = {
@@ -11800,7 +11795,7 @@ schemaName: Nullable<PgCatalog.Types.Varchar>;
 tableName: Nullable<PgCatalog.Types.Varchar>;
 }
 }
-export namespace StSegmentize_8fd9 {
+export namespace StSegmentize_23e5 {
 
 
 export type Parameters = {
@@ -11869,7 +11864,7 @@ export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Int4>;
 }
 }
-export namespace StSetsridF74e {
+export namespace StSetsrid_73ac {
 
 
 export type Parameters = {
@@ -11877,7 +11872,7 @@ geom: Nullable<Public.Types.Geometry>;
 srid: Nullable<PgCatalog.Types.Int4>;
 }
 }
-export namespace StSrid_52cb {
+export namespace StSridC567 {
 
 
 export type Parameters = {
@@ -12016,7 +12011,7 @@ bounds: Nullable<Public.Types.Geometry>;
 authname: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StTransformF74e {
+export namespace StTransform_73ac {
 
 
 export type Parameters = {
@@ -12024,7 +12019,7 @@ argument_0: Nullable<Public.Types.Geometry>;
 argument_1: Nullable<PgCatalog.Types.Int4>;
 }
 }
-export namespace StTransform_09ea {
+export namespace StTransform_9881 {
 
 
 export type Parameters = {
@@ -12032,7 +12027,7 @@ geom: Nullable<Public.Types.Geometry>;
 toProj: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StTransform_58c7 {
+export namespace StTransformF6ce {
 
 
 export type Parameters = {
@@ -12041,7 +12036,7 @@ fromProj: Nullable<PgCatalog.Types.Text>;
 toProj: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StTransform_226f {
+export namespace StTransformFe9f {
 
 
 export type Parameters = {
@@ -12127,7 +12122,7 @@ export type Parameters = {
 targetVersion: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StLineinterpolatepoint_8fd9 {
+export namespace StLineinterpolatepoint_23e5 {
 
 
 export type Parameters = {
@@ -12135,7 +12130,7 @@ argument_0: Nullable<Public.Types.Geometry>;
 argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StLineinterpolatepoints_2d1f {
+export namespace StLineinterpolatepoints_71ec {
 
 
 export type Parameters = {
@@ -12144,7 +12139,7 @@ argument_1: Nullable<PgCatalog.Types.Float8>;
 repeat: Nullable<PgCatalog.Types.Bool>;
 }
 }
-export namespace StLinesubstringBdaa {
+export namespace StLinesubstring_9adf {
 
 
 export type Parameters = {
@@ -12153,7 +12148,7 @@ argument_1: Nullable<PgCatalog.Types.Float8>;
 argument_2: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StLinelocatepoint_4e70 {
+export namespace StLinelocatepoint_6bd0 {
 
 
 export type Parameters = {
@@ -12181,42 +12176,42 @@ argument_1: Nullable<Public.Types.Geometry>;
 export namespace PostgisFullVersion {
 
 }
-export namespace Box2d_52cb {
+export namespace Box2dC567 {
 
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace Box3d_52cb {
+export namespace Box3dC567 {
 
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace Box_52cb {
+export namespace BoxC567 {
 
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace Box2dC8c3 {
+export namespace Box2dAad0 {
 
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Box3d>;
 }
 }
-export namespace Box3dEf50 {
+export namespace Box3d_232c {
 
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Box2d>;
 }
 }
-export namespace BoxC8c3 {
+export namespace BoxAad0 {
 
 
 export type Parameters = {
@@ -12237,14 +12232,14 @@ export type Parameters = {
 argument_0: Nullable<Public.Types.Box3d>;
 }
 }
-export namespace GeometryEf50 {
+export namespace Geometry_232c {
 
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Box2d>;
 }
 }
-export namespace GeometryC8c3 {
+export namespace GeometryAad0 {
 
 
 export type Parameters = {
@@ -12265,14 +12260,14 @@ export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Bytea>;
 }
 }
-export namespace Bytea_52cb {
+export namespace ByteaC567 {
 
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StSimplify_8fd9 {
+export namespace StSimplify_23e5 {
 
 
 export type Parameters = {
@@ -12280,7 +12275,7 @@ argument_0: Nullable<Public.Types.Geometry>;
 argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StSimplify_2d1f {
+export namespace StSimplify_71ec {
 
 
 export type Parameters = {
@@ -12325,7 +12320,7 @@ argument_1: Nullable<PgCatalog.Types.Int4>;
 argument_2: Nullable<PgCatalog.Types.Bool>;
 }
 }
-export namespace StSnaptogrid_3395 {
+export namespace StSnaptogrid_6e33 {
 
 
 export type Parameters = {
@@ -12336,7 +12331,7 @@ argument_3: Nullable<PgCatalog.Types.Float8>;
 argument_4: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StSnaptogridBdaa {
+export namespace StSnaptogrid_9adf {
 
 
 export type Parameters = {
@@ -12345,7 +12340,7 @@ argument_1: Nullable<PgCatalog.Types.Float8>;
 argument_2: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StSnaptogrid_8fd9 {
+export namespace StSnaptogrid_23e5 {
 
 
 export type Parameters = {
@@ -12353,7 +12348,7 @@ argument_0: Nullable<Public.Types.Geometry>;
 argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StSnaptogridC48b {
+export namespace StSnaptogrid_0fca {
 
 
 export type Parameters = {
@@ -12389,7 +12384,7 @@ export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StIntersection_0b21 {
+export namespace StIntersectionBab7 {
 
 
 export type Parameters = {
@@ -12398,7 +12393,7 @@ geom2: Nullable<Public.Types.Geometry>;
 gridsize: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StBuffer_5012 {
+export namespace StBufferA313 {
 
 
 export type Parameters = {
@@ -12407,7 +12402,7 @@ radius: Nullable<PgCatalog.Types.Float8>;
 options: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StBuffer_3ea8 {
+export namespace StBufferFed8 {
 
 
 export type Parameters = {
@@ -12459,7 +12454,7 @@ distance: Nullable<PgCatalog.Types.Float8>;
 params: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StGeneratepointsF74e {
+export namespace StGeneratepoints_73ac {
 
 
 export type Parameters = {
@@ -12467,7 +12462,7 @@ area: Nullable<Public.Types.Geometry>;
 npoints: Nullable<PgCatalog.Types.Int4>;
 }
 }
-export namespace StGeneratepointsD3cf {
+export namespace StGeneratepoints_8eae {
 
 
 export type Parameters = {
@@ -12491,7 +12486,7 @@ argument_0: Nullable<Public.Types.Geometry>;
 argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StIsvalidreason_52cb {
+export namespace StIsvalidreasonC567 {
 
 
 export type Parameters = {
@@ -12522,7 +12517,7 @@ geom: Nullable<Public.Types.Geometry>;
 flags: Nullable<PgCatalog.Types.Int4>;
 }
 }
-export namespace StIsvalidreasonF74e {
+export namespace StIsvalidreason_73ac {
 
 
 export type Parameters = {
@@ -12530,7 +12525,7 @@ argument_0: Nullable<Public.Types.Geometry>;
 argument_1: Nullable<PgCatalog.Types.Int4>;
 }
 }
-export namespace StIsvalidF74e {
+export namespace StIsvalid_73ac {
 
 
 export type Parameters = {
@@ -12538,7 +12533,7 @@ argument_0: Nullable<Public.Types.Geometry>;
 argument_1: Nullable<PgCatalog.Types.Int4>;
 }
 }
-export namespace StHausdorffdistance_4e70 {
+export namespace StHausdorffdistance_6bd0 {
 
 
 export type Parameters = {
@@ -12546,7 +12541,7 @@ geom1: Nullable<Public.Types.Geometry>;
 geom2: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StHausdorffdistance_0b21 {
+export namespace StHausdorffdistanceBab7 {
 
 
 export type Parameters = {
@@ -12652,7 +12647,7 @@ geom1: Nullable<Public.Types.Geometry>;
 geom2: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StUnion_4e70 {
+export namespace StUnion_6bd0 {
 
 
 export type Parameters = {
@@ -12660,7 +12655,7 @@ geom1: Nullable<Public.Types.Geometry>;
 geom2: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StUnion_0b21 {
+export namespace StUnionBab7 {
 
 
 export type Parameters = {
@@ -12710,14 +12705,14 @@ geom: Nullable<Public.Types.Geometry>;
 gridsize: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StMakevalid_52cb {
+export namespace StMakevalidC567 {
 
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StMakevalid_09ea {
+export namespace StMakevalid_9881 {
 
 
 export type Parameters = {
@@ -12806,7 +12801,7 @@ tolerance: Nullable<PgCatalog.Types.Float8>;
 extendTo: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StCombinebbox_169a {
+export namespace StCombinebboxDd7e {
 
 
 export type Parameters = {
@@ -12814,7 +12809,7 @@ argument_0: Nullable<Public.Types.Box3d>;
 argument_1: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StCombinebbox_5a63 {
+export namespace StCombinebboxC436 {
 
 
 export type Parameters = {
@@ -12822,7 +12817,7 @@ argument_0: Nullable<Public.Types.Box3d>;
 argument_1: Nullable<Public.Types.Box3d>;
 }
 }
-export namespace StCombinebbox_1ab0 {
+export namespace StCombinebbox_8c90 {
 
 
 export type Parameters = {
@@ -12830,7 +12825,7 @@ argument_0: Nullable<Public.Types.Box2d>;
 argument_1: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StCollect_4e70 {
+export namespace StCollect_6bd0 {
 
 
 export type Parameters = {
@@ -12838,14 +12833,14 @@ geom1: Nullable<Public.Types.Geometry>;
 geom2: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StCollect_1ecf {
+export namespace StCollectA84e {
 
 
 export type Parameters = {
 argument_0: Public.Types.GeometryArray;
 }
 }
-export namespace PgisGeometryAccumTransfn_56af {
+export namespace PgisGeometryAccumTransfn_5f8c {
 
 
 export type Parameters = {
@@ -12853,7 +12848,7 @@ argument_0: Nullable<PgCatalog.Types.Internal>;
 argument_1: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace PgisGeometryAccumTransfn_0b06 {
+export namespace PgisGeometryAccumTransfn_0dbf {
 
 
 export type Parameters = {
@@ -12862,7 +12857,7 @@ argument_1: Nullable<Public.Types.Geometry>;
 argument_2: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace PgisGeometryAccumTransfnAa63 {
+export namespace PgisGeometryAccumTransfnC6b8 {
 
 
 export type Parameters = {
@@ -12914,7 +12909,7 @@ export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Internal>;
 }
 }
-export namespace PgisGeometryUnionParallelTransfn_56af {
+export namespace PgisGeometryUnionParallelTransfn_5f8c {
 
 
 export type Parameters = {
@@ -12922,7 +12917,7 @@ argument_0: Nullable<PgCatalog.Types.Internal>;
 argument_1: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace PgisGeometryUnionParallelTransfn_0b06 {
+export namespace PgisGeometryUnionParallelTransfn_0dbf {
 
 
 export type Parameters = {
@@ -12961,21 +12956,21 @@ export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Internal>;
 }
 }
-export namespace StUnion_1ecf {
+export namespace StUnionA84e {
 
 
 export type Parameters = {
 argument_0: Public.Types.GeometryArray;
 }
 }
-export namespace StCoverageunion_1ecf {
+export namespace StCoverageunionA84e {
 
 
 export type Parameters = {
 argument_0: Public.Types.GeometryArray;
 }
 }
-export namespace StRelate_4e70 {
+export namespace StRelate_6bd0 {
 
 
 export type Parameters = {
@@ -12983,7 +12978,7 @@ geom1: Nullable<Public.Types.Geometry>;
 geom2: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StRelateBf6c {
+export namespace StRelateAcbc {
 
 
 export type Parameters = {
@@ -12992,7 +12987,7 @@ geom2: Nullable<Public.Types.Geometry>;
 argument_2: Nullable<PgCatalog.Types.Int4>;
 }
 }
-export namespace StRelate_2565 {
+export namespace StRelateCe2d {
 
 
 export type Parameters = {
@@ -13024,7 +13019,7 @@ line1: Nullable<Public.Types.Geometry>;
 line2: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StDwithin_0b21 {
+export namespace StDwithinBab7 {
 
 
 export type Parameters = {
@@ -13041,7 +13036,7 @@ geom1: Nullable<Public.Types.Geometry>;
 geom2: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StIntersects_4e70 {
+export namespace StIntersects_6bd0 {
 
 
 export type Parameters = {
@@ -13081,7 +13076,7 @@ geom1: Nullable<Public.Types.Geometry>;
 geom2: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StCovers_4e70 {
+export namespace StCovers_6bd0 {
 
 
 export type Parameters = {
@@ -13089,7 +13084,7 @@ geom1: Nullable<Public.Types.Geometry>;
 geom2: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StCoveredby_4e70 {
+export namespace StCoveredby_6bd0 {
 
 
 export type Parameters = {
@@ -13156,7 +13151,7 @@ geom1: Nullable<Public.Types.Geometry>;
 geom2: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StIsvalid_52cb {
+export namespace StIsvalidC567 {
 
 
 export type Parameters = {
@@ -13177,7 +13172,7 @@ export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StCentroid_52cb {
+export namespace StCentroidC567 {
 
 
 export type Parameters = {
@@ -13322,7 +13317,7 @@ geom: Nullable<Public.Types.Geometry>;
 nprecision: Nullable<PgCatalog.Types.Int4>;
 }
 }
-export namespace StAssvgD3cf {
+export namespace StAssvg_8eae {
 
 
 export type Parameters = {
@@ -13331,7 +13326,7 @@ rel: Nullable<PgCatalog.Types.Int4>;
 maxdecimaldigits: Nullable<PgCatalog.Types.Int4>;
 }
 }
-export namespace StAsgmlD3cf {
+export namespace StAsgml_8eae {
 
 
 export type Parameters = {
@@ -13340,7 +13335,7 @@ maxdecimaldigits: Nullable<PgCatalog.Types.Int4>;
 options: Nullable<PgCatalog.Types.Int4>;
 }
 }
-export namespace StAsgml_3bec {
+export namespace StAsgml_3b73 {
 
 
 export type Parameters = {
@@ -13352,7 +13347,7 @@ nprefix: Nullable<PgCatalog.Types.Text>;
 id: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StAskml_6ebd {
+export namespace StAskmlC975 {
 
 
 export type Parameters = {
@@ -13361,7 +13356,7 @@ maxdecimaldigits: Nullable<PgCatalog.Types.Int4>;
 nprefix: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StAsgeojsonD3cf {
+export namespace StAsgeojson_8eae {
 
 
 export type Parameters = {
@@ -13563,7 +13558,7 @@ argument_0: Nullable<PgCatalog.Types.Anyelement>;
 argument_1: Nullable<PgCatalog.Types.Bytea>;
 }
 }
-export namespace StGeohashF74e {
+export namespace StGeohash_73ac {
 
 
 export type Parameters = {
@@ -13653,7 +13648,7 @@ argument_0: Nullable<Public.Types.Geometry>;
 argument_1: Nullable<PgCatalog.Types.Int4>;
 }
 }
-export namespace Geometrytype_52cb {
+export namespace GeometrytypeC567 {
 
 
 export type Parameters = {
@@ -13718,7 +13713,7 @@ export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StAsbinary_09ea {
+export namespace StAsbinary_9881 {
 
 
 export type Parameters = {
@@ -13726,21 +13721,21 @@ argument_0: Nullable<Public.Types.Geometry>;
 argument_1: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StAsbinary_52cb {
+export namespace StAsbinaryC567 {
 
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StAstext_52cb {
+export namespace StAstextC567 {
 
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StAstextF74e {
+export namespace StAstext_73ac {
 
 
 export type Parameters = {
@@ -14144,7 +14139,7 @@ geom1: Nullable<Public.Types.Geometry>;
 geom2: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StClosestpoint_4e70 {
+export namespace StClosestpoint_6bd0 {
 
 
 export type Parameters = {
@@ -14152,7 +14147,7 @@ geom1: Nullable<Public.Types.Geometry>;
 geom2: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StShortestline_4e70 {
+export namespace StShortestline_6bd0 {
 
 
 export type Parameters = {
@@ -14206,7 +14201,7 @@ export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace Geography_8e85 {
+export namespace Geography_33f0 {
 
 
 export type Parameters = {
@@ -14222,21 +14217,21 @@ export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Bytea>;
 }
 }
-export namespace ByteaB076 {
+export namespace ByteaC6e0 {
 
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Geography>;
 }
 }
-export namespace StAstextB076 {
+export namespace StAstextC6e0 {
 
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Geography>;
 }
 }
-export namespace StAstext_52a9 {
+export namespace StAstextE8cd {
 
 
 export type Parameters = {
@@ -14418,14 +14413,14 @@ export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Int4>;
 }
 }
-export namespace Geography_52cb {
+export namespace GeographyC567 {
 
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace GeometryB076 {
+export namespace GeometryC6e0 {
 
 
 export type Parameters = {
@@ -14514,7 +14509,7 @@ argument_1: Nullable<Public.Types.Geography>;
 argument_2: Nullable<PgCatalog.Types.Int4>;
 }
 }
-export namespace OverlapsGeog_46ba {
+export namespace OverlapsGeogBb60 {
 
 
 export type Parameters = {
@@ -14522,7 +14517,7 @@ argument_0: Nullable<Public.Types.Gidx>;
 argument_1: Nullable<Public.Types.Geography>;
 }
 }
-export namespace OverlapsGeogD1af {
+export namespace OverlapsGeog_8a58 {
 
 
 export type Parameters = {
@@ -14530,7 +14525,7 @@ argument_0: Nullable<Public.Types.Gidx>;
 argument_1: Nullable<Public.Types.Gidx>;
 }
 }
-export namespace OverlapsGeogC98c {
+export namespace OverlapsGeog_21a5 {
 
 
 export type Parameters = {
@@ -14596,7 +14591,7 @@ argument_0: Nullable<Public.Types.Geography>;
 argument_1: Nullable<Public.Types.Geography>;
 }
 }
-export namespace StAssvgFab6 {
+export namespace StAssvg_07a8 {
 
 
 export type Parameters = {
@@ -14612,7 +14607,7 @@ export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StProject_57ad {
+export namespace StProjectCd02 {
 
 
 export type Parameters = {
@@ -14621,7 +14616,7 @@ geogTo: Nullable<Public.Types.Geography>;
 distance: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StAzimuth_25d7 {
+export namespace StAzimuthEa06 {
 
 
 export type Parameters = {
@@ -14638,7 +14633,7 @@ argument_1: Nullable<PgCatalog.Types.Float8>;
 argument_2: Nullable<PgCatalog.Types.Int4>;
 }
 }
-export namespace StAsgml_4503 {
+export namespace StAsgmlF715 {
 
 
 export type Parameters = {
@@ -14650,7 +14645,7 @@ nprefix: Nullable<PgCatalog.Types.Text>;
 id: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StAsgmlDb17 {
+export namespace StAsgmlC08d {
 
 
 export type Parameters = {
@@ -14668,7 +14663,7 @@ export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StAskml_58db {
+export namespace StAskml_874a {
 
 
 export type Parameters = {
@@ -14684,7 +14679,7 @@ export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StAsgeojsonFab6 {
+export namespace StAsgeojson_07a8 {
 
 
 export type Parameters = {
@@ -14700,7 +14695,7 @@ export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StDistanceDea8 {
+export namespace StDistance_05ee {
 
 
 export type Parameters = {
@@ -14717,7 +14712,7 @@ argument_0: Nullable<PgCatalog.Types.Text>;
 argument_1: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StArea_527f {
+export namespace StArea_5f1d {
 
 
 export type Parameters = {
@@ -14732,7 +14727,7 @@ export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StLength_527f {
+export namespace StLength_5f1d {
 
 
 export type Parameters = {
@@ -14747,7 +14742,7 @@ export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StProject_5f39 {
+export namespace StProjectF79f {
 
 
 export type Parameters = {
@@ -14756,7 +14751,7 @@ distance: Nullable<PgCatalog.Types.Float8>;
 azimuth: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StPerimeter_527f {
+export namespace StPerimeter_5f1d {
 
 
 export type Parameters = {
@@ -14764,7 +14759,7 @@ geog: Nullable<Public.Types.Geography>;
 useSpheroid: Nullable<PgCatalog.Types.Bool>;
 }
 }
-export namespace StSegmentize_7120 {
+export namespace StSegmentize_661e {
 
 
 export type Parameters = {
@@ -14772,14 +14767,14 @@ geog: Nullable<Public.Types.Geography>;
 maxSegmentLength: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StAsbinaryB076 {
+export namespace StAsbinaryC6e0 {
 
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Geography>;
 }
 }
-export namespace StAsbinary_543e {
+export namespace StAsbinary_69ab {
 
 
 export type Parameters = {
@@ -14787,14 +14782,14 @@ argument_0: Nullable<Public.Types.Geography>;
 argument_1: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StAsewktB076 {
+export namespace StAsewktC6e0 {
 
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Geography>;
 }
 }
-export namespace StAsewkt_52a9 {
+export namespace StAsewktE8cd {
 
 
 export type Parameters = {
@@ -14809,21 +14804,21 @@ export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace GeometrytypeB076 {
+export namespace GeometrytypeC6e0 {
 
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Geography>;
 }
 }
-export namespace StSummaryB076 {
+export namespace StSummaryC6e0 {
 
 
 export type Parameters = {
 argument_0: Nullable<Public.Types.Geography>;
 }
 }
-export namespace StGeohash_52a9 {
+export namespace StGeohashE8cd {
 
 
 export type Parameters = {
@@ -14831,14 +14826,14 @@ geog: Nullable<Public.Types.Geography>;
 maxchars: Nullable<PgCatalog.Types.Int4>;
 }
 }
-export namespace StSridB076 {
+export namespace StSridC6e0 {
 
 
 export type Parameters = {
 geog: Nullable<Public.Types.Geography>;
 }
 }
-export namespace StSetsrid_52a9 {
+export namespace StSetsridE8cd {
 
 
 export type Parameters = {
@@ -14846,7 +14841,7 @@ geog: Nullable<Public.Types.Geography>;
 srid: Nullable<PgCatalog.Types.Int4>;
 }
 }
-export namespace StCentroid_527f {
+export namespace StCentroid_5f1d {
 
 
 export type Parameters = {
@@ -14861,7 +14856,7 @@ export type Parameters = {
 argument_0: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StCovers_25d7 {
+export namespace StCoversEa06 {
 
 
 export type Parameters = {
@@ -14869,7 +14864,7 @@ geog1: Nullable<Public.Types.Geography>;
 geog2: Nullable<Public.Types.Geography>;
 }
 }
-export namespace StDwithin_1936 {
+export namespace StDwithin_35a5 {
 
 
 export type Parameters = {
@@ -14879,7 +14874,7 @@ tolerance: Nullable<PgCatalog.Types.Float8>;
 useSpheroid: Nullable<PgCatalog.Types.Bool>;
 }
 }
-export namespace StCoveredby_25d7 {
+export namespace StCoveredbyEa06 {
 
 
 export type Parameters = {
@@ -14887,7 +14882,7 @@ geog1: Nullable<Public.Types.Geography>;
 geog2: Nullable<Public.Types.Geography>;
 }
 }
-export namespace StIntersects_25d7 {
+export namespace StIntersectsEa06 {
 
 
 export type Parameters = {
@@ -14895,7 +14890,7 @@ geog1: Nullable<Public.Types.Geography>;
 geog2: Nullable<Public.Types.Geography>;
 }
 }
-export namespace StBuffer_7120 {
+export namespace StBuffer_661e {
 
 
 export type Parameters = {
@@ -14903,7 +14898,7 @@ argument_0: Nullable<Public.Types.Geography>;
 argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StBufferAc74 {
+export namespace StBuffer_693b {
 
 
 export type Parameters = {
@@ -14912,7 +14907,7 @@ argument_1: Nullable<PgCatalog.Types.Float8>;
 argument_2: Nullable<PgCatalog.Types.Int4>;
 }
 }
-export namespace StBuffer_750b {
+export namespace StBuffer_51ed {
 
 
 export type Parameters = {
@@ -14938,7 +14933,7 @@ argument_1: Nullable<PgCatalog.Types.Float8>;
 argument_2: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StIntersection_25d7 {
+export namespace StIntersectionEa06 {
 
 
 export type Parameters = {
@@ -14987,7 +14982,7 @@ argument_0: Nullable<PgCatalog.Types.Text>;
 argument_1: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StClosestpointDea8 {
+export namespace StClosestpoint_05ee {
 
 
 export type Parameters = {
@@ -15004,7 +14999,7 @@ argument_0: Nullable<PgCatalog.Types.Text>;
 argument_1: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StShortestlineDea8 {
+export namespace StShortestline_05ee {
 
 
 export type Parameters = {
@@ -15021,7 +15016,7 @@ argument_0: Nullable<PgCatalog.Types.Text>;
 argument_1: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StLinesubstring_5f39 {
+export namespace StLinesubstringF79f {
 
 
 export type Parameters = {
@@ -15039,7 +15034,7 @@ argument_1: Nullable<PgCatalog.Types.Float8>;
 argument_2: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StLinelocatepointDea8 {
+export namespace StLinelocatepoint_05ee {
 
 
 export type Parameters = {
@@ -15056,7 +15051,7 @@ argument_0: Nullable<PgCatalog.Types.Text>;
 argument_1: Nullable<PgCatalog.Types.Text>;
 }
 }
-export namespace StLineinterpolatepoints_7696 {
+export namespace StLineinterpolatepoints_83da {
 
 
 export type Parameters = {
@@ -15074,7 +15069,7 @@ argument_0: Nullable<PgCatalog.Types.Text>;
 argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StLineinterpolatepoint_6ef8 {
+export namespace StLineinterpolatepoint_57c0 {
 
 
 export type Parameters = {
@@ -15091,7 +15086,7 @@ argument_0: Nullable<PgCatalog.Types.Text>;
 argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace StDistancesphere_4e70 {
+export namespace StDistancesphere_6bd0 {
 
 
 export type Parameters = {
@@ -15099,7 +15094,7 @@ geom1: Nullable<Public.Types.Geometry>;
 geom2: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace StDistancesphere_0b21 {
+export namespace StDistancesphereBab7 {
 
 
 export type Parameters = {
@@ -15382,7 +15377,7 @@ size: Nullable<PgCatalog.Types.Float8>;
 bounds: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace Contains_2dA8e6 {
+export namespace Contains_2d_676e {
 
 
 export type Parameters = {
@@ -15390,7 +15385,7 @@ argument_0: Nullable<Public.Types.Box2df>;
 argument_1: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace IsContained_2dA8e6 {
+export namespace IsContained_2d_676e {
 
 
 export type Parameters = {
@@ -15398,7 +15393,7 @@ argument_0: Nullable<Public.Types.Box2df>;
 argument_1: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace Overlaps_2dA8e6 {
+export namespace Overlaps_2d_676e {
 
 
 export type Parameters = {
@@ -15406,7 +15401,7 @@ argument_0: Nullable<Public.Types.Box2df>;
 argument_1: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace Overlaps_2d_5533 {
+export namespace Overlaps_2dA7ab {
 
 
 export type Parameters = {
@@ -15414,7 +15409,7 @@ argument_0: Nullable<Public.Types.Box2df>;
 argument_1: Nullable<Public.Types.Box2df>;
 }
 }
-export namespace Contains_2d_5533 {
+export namespace Contains_2dA7ab {
 
 
 export type Parameters = {
@@ -15422,7 +15417,7 @@ argument_0: Nullable<Public.Types.Box2df>;
 argument_1: Nullable<Public.Types.Box2df>;
 }
 }
-export namespace IsContained_2d_5533 {
+export namespace IsContained_2dA7ab {
 
 
 export type Parameters = {
@@ -15430,7 +15425,7 @@ argument_0: Nullable<Public.Types.Box2df>;
 argument_1: Nullable<Public.Types.Box2df>;
 }
 }
-export namespace Contains_2d_5225 {
+export namespace Contains_2d_3e52 {
 
 
 export type Parameters = {
@@ -15438,7 +15433,7 @@ argument_0: Nullable<Public.Types.Geometry>;
 argument_1: Nullable<Public.Types.Box2df>;
 }
 }
-export namespace IsContained_2d_5225 {
+export namespace IsContained_2d_3e52 {
 
 
 export type Parameters = {
@@ -15446,7 +15441,7 @@ argument_0: Nullable<Public.Types.Geometry>;
 argument_1: Nullable<Public.Types.Box2df>;
 }
 }
-export namespace Overlaps_2d_5225 {
+export namespace Overlaps_2d_3e52 {
 
 
 export type Parameters = {
@@ -15454,7 +15449,7 @@ argument_0: Nullable<Public.Types.Geometry>;
 argument_1: Nullable<Public.Types.Box2df>;
 }
 }
-export namespace OverlapsNdD353 {
+export namespace OverlapsNd_1882 {
 
 
 export type Parameters = {
@@ -15462,7 +15457,7 @@ argument_0: Nullable<Public.Types.Gidx>;
 argument_1: Nullable<Public.Types.Geometry>;
 }
 }
-export namespace OverlapsNdD1af {
+export namespace OverlapsNd_8a58 {
 
 
 export type Parameters = {
@@ -15470,7 +15465,7 @@ argument_0: Nullable<Public.Types.Gidx>;
 argument_1: Nullable<Public.Types.Gidx>;
 }
 }
-export namespace OverlapsNdA633 {
+export namespace OverlapsNdC3f9 {
 
 
 export type Parameters = {
@@ -15535,7 +15530,7 @@ maxdecimaldigits: Nullable<PgCatalog.Types.Int4>;
 options: Nullable<PgCatalog.Types.Int4>;
 }
 }
-export namespace StAngle_4e70 {
+export namespace StAngle_6bd0 {
 
 
 export type Parameters = {
@@ -16206,17 +16201,17 @@ export type PrimaryKey = Public.Types.NycSubwayStationsPkey;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_56668Index = {
+export type PgToast_63800Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_57426Index = {
+export type PgToast_64558Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_57432Index = {
+export type PgToast_64564Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -16286,7 +16281,7 @@ chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_57438Index = {
+export type PgToast_64570Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -16406,12 +16401,12 @@ chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_57444Index = {
+export type PgToast_64576Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_57450Index = {
+export type PgToast_64582Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -16985,7 +16980,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      return from;
+      return Geometry.parseLineSegment(from);
     
 }
 
@@ -29383,14 +29378,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace Geometry_3198 {
+export namespace GeometryEd31 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.Geometry_3198.Parameters.is(from)) {
+if (Public.Procedures.GeometryEd31.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Int4.parse(from.argument_1),
@@ -30867,14 +30862,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StExpandC2f2 {
+export namespace StExpand_0683 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StExpandC2f2.Parameters.is(from)) {
+if (Public.Procedures.StExpand_0683.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Box2d.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -30886,14 +30881,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StExpand_0686 {
+export namespace StExpand_509e {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StExpand_0686.Parameters.is(from)) {
+if (Public.Procedures.StExpand_509e.Parameters.is(from)) {
   return {
 box: Public.Types.Box2d.parse(from.box),
 dx: PgCatalog.Types.Float8.parse(from.dx),
@@ -31136,14 +31131,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StSummary_52cb {
+export namespace StSummaryC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StSummary_52cb.Parameters.is(from)) {
+if (Public.Procedures.StSummaryC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -31226,14 +31221,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StLength_52cb {
+export namespace StLengthC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StLength_52cb.Parameters.is(from)) {
+if (Public.Procedures.StLengthC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -31318,14 +31313,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StPerimeter_52cb {
+export namespace StPerimeterC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StPerimeter_52cb.Parameters.is(from)) {
+if (Public.Procedures.StPerimeterC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -31354,14 +31349,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StArea_52cb {
+export namespace StAreaC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StArea_52cb.Parameters.is(from)) {
+if (Public.Procedures.StAreaC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -31408,14 +31403,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StDistancespheroidA3f5 {
+export namespace StDistancespheroid_094c {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StDistancespheroidA3f5.Parameters.is(from)) {
+if (Public.Procedures.StDistancespheroid_094c.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -31428,14 +31423,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StDistancespheroid_4e70 {
+export namespace StDistancespheroid_6bd0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StDistancespheroid_4e70.Parameters.is(from)) {
+if (Public.Procedures.StDistancespheroid_6bd0.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -31447,14 +31442,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StDistance_4e70 {
+export namespace StDistance_6bd0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StDistance_4e70.Parameters.is(from)) {
+if (Public.Procedures.StDistance_6bd0.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -31487,14 +31482,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAzimuth_4e70 {
+export namespace StAzimuth_6bd0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAzimuth_4e70.Parameters.is(from)) {
+if (Public.Procedures.StAzimuth_6bd0.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -31506,14 +31501,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StProjectBdaa {
+export namespace StProject_9adf {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StProjectBdaa.Parameters.is(from)) {
+if (Public.Procedures.StProject_9adf.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 distance: PgCatalog.Types.Float8.parse(from.distance),
@@ -31526,14 +31521,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StProject_0b21 {
+export namespace StProjectBab7 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StProject_0b21.Parameters.is(from)) {
+if (Public.Procedures.StProjectBab7.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -31546,14 +31541,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAngleDd35 {
+export namespace StAngle_3749 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAngleDd35.Parameters.is(from)) {
+if (Public.Procedures.StAngle_3749.Parameters.is(from)) {
   return {
 pt1: Public.Types.Geometry.parse(from.pt1),
 pt2: Public.Types.Geometry.parse(from.pt2),
@@ -31700,14 +31695,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StCollectionextractF74e {
+export namespace StCollectionextract_73ac {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StCollectionextractF74e.Parameters.is(from)) {
+if (Public.Procedures.StCollectionextract_73ac.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Int4.parse(from.argument_1),
@@ -31719,14 +31714,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StCollectionextract_52cb {
+export namespace StCollectionextractC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StCollectionextract_52cb.Parameters.is(from)) {
+if (Public.Procedures.StCollectionextractC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -31791,14 +31786,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StForcesfs_52cb {
+export namespace StForcesfsC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StForcesfs_52cb.Parameters.is(from)) {
+if (Public.Procedures.StForcesfsC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -31809,14 +31804,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StForcesfs_09ea {
+export namespace StForcesfs_9881 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StForcesfs_09ea.Parameters.is(from)) {
+if (Public.Procedures.StForcesfs_9881.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 version: PgCatalog.Types.Text.parse(from.version),
@@ -31828,14 +31823,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StExpandC8db {
+export namespace StExpandDbaa {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StExpandC8db.Parameters.is(from)) {
+if (Public.Procedures.StExpandDbaa.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Box3d.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -31847,14 +31842,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StExpandB682 {
+export namespace StExpand_4f8f {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StExpandB682.Parameters.is(from)) {
+if (Public.Procedures.StExpand_4f8f.Parameters.is(from)) {
   return {
 box: Public.Types.Box3d.parse(from.box),
 dx: PgCatalog.Types.Float8.parse(from.dx),
@@ -31868,14 +31863,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StExpand_8fd9 {
+export namespace StExpand_23e5 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StExpand_8fd9.Parameters.is(from)) {
+if (Public.Procedures.StExpand_23e5.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -31887,14 +31882,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StExpand_3395 {
+export namespace StExpand_6e33 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StExpand_3395.Parameters.is(from)) {
+if (Public.Procedures.StExpand_6e33.Parameters.is(from)) {
   return {
 geom: Public.Types.Geometry.parse(from.geom),
 dx: PgCatalog.Types.Float8.parse(from.dx),
@@ -32055,14 +32050,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAsewkt_52cb {
+export namespace StAsewktC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAsewkt_52cb.Parameters.is(from)) {
+if (Public.Procedures.StAsewktC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -32073,14 +32068,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAsewktF74e {
+export namespace StAsewkt_73ac {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAsewktF74e.Parameters.is(from)) {
+if (Public.Procedures.StAsewkt_73ac.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Int4.parse(from.argument_1),
@@ -32092,14 +32087,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAstwkbC537 {
+export namespace StAstwkbE417 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAstwkbC537.Parameters.is(from)) {
+if (Public.Procedures.StAstwkbE417.Parameters.is(from)) {
   return {
 geom: Public.Types.Geometry.parse(from.geom),
 prec: PgCatalog.Types.Int4.parse(from.prec),
@@ -32115,14 +32110,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAstwkb_911a {
+export namespace StAstwkbE7ff {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAstwkb_911a.Parameters.is(from)) {
+if (Public.Procedures.StAstwkbE7ff.Parameters.is(from)) {
   return {
 geom: Public.Types.GeometryArray.parse(from.geom),
 ids: PgCatalog.Types.Int8Array.parse(from.ids),
@@ -32139,14 +32134,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAsewkb_52cb {
+export namespace StAsewkbC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAsewkb_52cb.Parameters.is(from)) {
+if (Public.Procedures.StAsewkbC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -32157,14 +32152,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAshexewkb_52cb {
+export namespace StAshexewkbC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAshexewkb_52cb.Parameters.is(from)) {
+if (Public.Procedures.StAshexewkbC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -32175,14 +32170,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAshexewkb_09ea {
+export namespace StAshexewkb_9881 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAshexewkb_09ea.Parameters.is(from)) {
+if (Public.Procedures.StAshexewkb_9881.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Text.parse(from.argument_1),
@@ -32194,14 +32189,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAsewkb_09ea {
+export namespace StAsewkb_9881 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAsewkb_09ea.Parameters.is(from)) {
+if (Public.Procedures.StAsewkb_9881.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Text.parse(from.argument_1),
@@ -32425,14 +32420,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StMakeline_1ecf {
+export namespace StMakelineA84e {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StMakeline_1ecf.Parameters.is(from)) {
+if (Public.Procedures.StMakelineA84e.Parameters.is(from)) {
   return {
 argument_0: Public.Types.GeometryArray.parse(from.argument_0),
 };
@@ -32461,14 +32456,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StMakeline_4e70 {
+export namespace StMakeline_6bd0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StMakeline_4e70.Parameters.is(from)) {
+if (Public.Procedures.StMakeline_6bd0.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -32480,14 +32475,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAddpoint_4e70 {
+export namespace StAddpoint_6bd0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAddpoint_4e70.Parameters.is(from)) {
+if (Public.Procedures.StAddpoint_6bd0.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -32499,14 +32494,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StScaleBdaa {
+export namespace StScale_9adf {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StScaleBdaa.Parameters.is(from)) {
+if (Public.Procedures.StScale_9adf.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -32519,14 +32514,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAddpointBf6c {
+export namespace StAddpointAcbc {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAddpointBf6c.Parameters.is(from)) {
+if (Public.Procedures.StAddpointAcbc.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -32622,14 +32617,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StMakepolygonCd1b {
+export namespace StMakepolygon_88d3 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StMakepolygonCd1b.Parameters.is(from)) {
+if (Public.Procedures.StMakepolygon_88d3.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: Public.Types.GeometryArray.parse(from.argument_1),
@@ -32641,14 +32636,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StMakepolygon_52cb {
+export namespace StMakepolygonC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StMakepolygon_52cb.Parameters.is(from)) {
+if (Public.Procedures.StMakepolygonC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -32677,14 +32672,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StPolygonize_1ecf {
+export namespace StPolygonizeA84e {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StPolygonize_1ecf.Parameters.is(from)) {
+if (Public.Procedures.StPolygonizeA84e.Parameters.is(from)) {
   return {
 argument_0: Public.Types.GeometryArray.parse(from.argument_0),
 };
@@ -32695,14 +32690,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StClusterintersecting_1ecf {
+export namespace StClusterintersectingA84e {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StClusterintersecting_1ecf.Parameters.is(from)) {
+if (Public.Procedures.StClusterintersectingA84e.Parameters.is(from)) {
   return {
 argument_0: Public.Types.GeometryArray.parse(from.argument_0),
 };
@@ -32713,14 +32708,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StClusterwithin_7fe3 {
+export namespace StClusterwithinAece {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StClusterwithin_7fe3.Parameters.is(from)) {
+if (Public.Procedures.StClusterwithinAece.Parameters.is(from)) {
   return {
 argument_0: Public.Types.GeometryArray.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -32732,14 +32727,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StLinemerge_52cb {
+export namespace StLinemergeC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StLinemerge_52cb.Parameters.is(from)) {
+if (Public.Procedures.StLinemergeC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -32750,14 +32745,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StLinemergeE9cd {
+export namespace StLinemergeE62d {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StLinemergeE9cd.Parameters.is(from)) {
+if (Public.Procedures.StLinemergeE62d.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Bool.parse(from.argument_1),
@@ -32769,14 +32764,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAffineAb49 {
+export namespace StAffine_35f7 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAffineAb49.Parameters.is(from)) {
+if (Public.Procedures.StAffine_35f7.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -32799,14 +32794,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAffine_1347 {
+export namespace StAffine_78d2 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAffine_1347.Parameters.is(from)) {
+if (Public.Procedures.StAffine_78d2.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -32823,14 +32818,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StRotate_8fd9 {
+export namespace StRotate_23e5 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StRotate_8fd9.Parameters.is(from)) {
+if (Public.Procedures.StRotate_23e5.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -32842,14 +32837,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StRotate_196d {
+export namespace StRotateA6e8 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StRotate_196d.Parameters.is(from)) {
+if (Public.Procedures.StRotateA6e8.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -32863,14 +32858,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StRotateD16f {
+export namespace StRotate_4c28 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StRotateD16f.Parameters.is(from)) {
+if (Public.Procedures.StRotate_4c28.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -32940,14 +32935,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StTranslate_196d {
+export namespace StTranslateA6e8 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StTranslate_196d.Parameters.is(from)) {
+if (Public.Procedures.StTranslateA6e8.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -32961,14 +32956,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StTranslateBdaa {
+export namespace StTranslate_9adf {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StTranslateBdaa.Parameters.is(from)) {
+if (Public.Procedures.StTranslate_9adf.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -32981,14 +32976,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StScale_4e70 {
+export namespace StScale_6bd0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StScale_4e70.Parameters.is(from)) {
+if (Public.Procedures.StScale_6bd0.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: Public.Types.Geometry.parse(from.argument_1),
@@ -33000,14 +32995,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StScaleFaae {
+export namespace StScaleE109 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StScaleFaae.Parameters.is(from)) {
+if (Public.Procedures.StScaleE109.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: Public.Types.Geometry.parse(from.argument_1),
@@ -33020,14 +33015,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StScale_196d {
+export namespace StScaleA6e8 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StScale_196d.Parameters.is(from)) {
+if (Public.Procedures.StScaleA6e8.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -33324,14 +33319,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StSegmentize_8fd9 {
+export namespace StSegmentize_23e5 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StSegmentize_8fd9.Parameters.is(from)) {
+if (Public.Procedures.StSegmentize_23e5.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -33481,14 +33476,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StSetsridF74e {
+export namespace StSetsrid_73ac {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StSetsridF74e.Parameters.is(from)) {
+if (Public.Procedures.StSetsrid_73ac.Parameters.is(from)) {
   return {
 geom: Public.Types.Geometry.parse(from.geom),
 srid: PgCatalog.Types.Int4.parse(from.srid),
@@ -33500,14 +33495,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StSrid_52cb {
+export namespace StSridC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StSrid_52cb.Parameters.is(from)) {
+if (Public.Procedures.StSridC567.Parameters.is(from)) {
   return {
 geom: Public.Types.Geometry.parse(from.geom),
 };
@@ -33599,14 +33594,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StTransformF74e {
+export namespace StTransform_73ac {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StTransformF74e.Parameters.is(from)) {
+if (Public.Procedures.StTransform_73ac.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Int4.parse(from.argument_1),
@@ -33618,14 +33613,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StTransform_09ea {
+export namespace StTransform_9881 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StTransform_09ea.Parameters.is(from)) {
+if (Public.Procedures.StTransform_9881.Parameters.is(from)) {
   return {
 geom: Public.Types.Geometry.parse(from.geom),
 toProj: PgCatalog.Types.Text.parse(from.toProj),
@@ -33637,14 +33632,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StTransform_58c7 {
+export namespace StTransformF6ce {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StTransform_58c7.Parameters.is(from)) {
+if (Public.Procedures.StTransformF6ce.Parameters.is(from)) {
   return {
 geom: Public.Types.Geometry.parse(from.geom),
 fromProj: PgCatalog.Types.Text.parse(from.fromProj),
@@ -33657,14 +33652,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StTransform_226f {
+export namespace StTransformFe9f {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StTransform_226f.Parameters.is(from)) {
+if (Public.Procedures.StTransformFe9f.Parameters.is(from)) {
   return {
 geom: Public.Types.Geometry.parse(from.geom),
 fromProj: PgCatalog.Types.Text.parse(from.fromProj),
@@ -33812,14 +33807,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StLineinterpolatepoint_8fd9 {
+export namespace StLineinterpolatepoint_23e5 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StLineinterpolatepoint_8fd9.Parameters.is(from)) {
+if (Public.Procedures.StLineinterpolatepoint_23e5.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -33831,14 +33826,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StLineinterpolatepoints_2d1f {
+export namespace StLineinterpolatepoints_71ec {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StLineinterpolatepoints_2d1f.Parameters.is(from)) {
+if (Public.Procedures.StLineinterpolatepoints_71ec.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -33851,14 +33846,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StLinesubstringBdaa {
+export namespace StLinesubstring_9adf {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StLinesubstringBdaa.Parameters.is(from)) {
+if (Public.Procedures.StLinesubstring_9adf.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -33871,14 +33866,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StLinelocatepoint_4e70 {
+export namespace StLinelocatepoint_6bd0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StLinelocatepoint_4e70.Parameters.is(from)) {
+if (Public.Procedures.StLinelocatepoint_6bd0.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -33933,14 +33928,14 @@ export namespace PostgisFullVersion {
 export namespace Results {
 }
 }
-export namespace Box2d_52cb {
+export namespace Box2dC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.Box2d_52cb.Parameters.is(from)) {
+if (Public.Procedures.Box2dC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -33951,14 +33946,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace Box3d_52cb {
+export namespace Box3dC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.Box3d_52cb.Parameters.is(from)) {
+if (Public.Procedures.Box3dC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -33969,14 +33964,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace Box_52cb {
+export namespace BoxC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.Box_52cb.Parameters.is(from)) {
+if (Public.Procedures.BoxC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -33987,14 +33982,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace Box2dC8c3 {
+export namespace Box2dAad0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.Box2dC8c3.Parameters.is(from)) {
+if (Public.Procedures.Box2dAad0.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Box3d.parse(from.argument_0),
 };
@@ -34005,14 +34000,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace Box3dEf50 {
+export namespace Box3d_232c {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.Box3dEf50.Parameters.is(from)) {
+if (Public.Procedures.Box3d_232c.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Box2d.parse(from.argument_0),
 };
@@ -34023,14 +34018,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace BoxC8c3 {
+export namespace BoxAad0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.BoxC8c3.Parameters.is(from)) {
+if (Public.Procedures.BoxAad0.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Box3d.parse(from.argument_0),
 };
@@ -34077,14 +34072,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace GeometryEf50 {
+export namespace Geometry_232c {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.GeometryEf50.Parameters.is(from)) {
+if (Public.Procedures.Geometry_232c.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Box2d.parse(from.argument_0),
 };
@@ -34095,14 +34090,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace GeometryC8c3 {
+export namespace GeometryAad0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.GeometryC8c3.Parameters.is(from)) {
+if (Public.Procedures.GeometryAad0.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Box3d.parse(from.argument_0),
 };
@@ -34149,14 +34144,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace Bytea_52cb {
+export namespace ByteaC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.Bytea_52cb.Parameters.is(from)) {
+if (Public.Procedures.ByteaC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -34167,14 +34162,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StSimplify_8fd9 {
+export namespace StSimplify_23e5 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StSimplify_8fd9.Parameters.is(from)) {
+if (Public.Procedures.StSimplify_23e5.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -34186,14 +34181,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StSimplify_2d1f {
+export namespace StSimplify_71ec {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StSimplify_2d1f.Parameters.is(from)) {
+if (Public.Procedures.StSimplify_71ec.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -34286,14 +34281,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StSnaptogrid_3395 {
+export namespace StSnaptogrid_6e33 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StSnaptogrid_3395.Parameters.is(from)) {
+if (Public.Procedures.StSnaptogrid_6e33.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -34308,14 +34303,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StSnaptogridBdaa {
+export namespace StSnaptogrid_9adf {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StSnaptogridBdaa.Parameters.is(from)) {
+if (Public.Procedures.StSnaptogrid_9adf.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -34328,14 +34323,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StSnaptogrid_8fd9 {
+export namespace StSnaptogrid_23e5 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StSnaptogrid_8fd9.Parameters.is(from)) {
+if (Public.Procedures.StSnaptogrid_23e5.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -34347,14 +34342,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StSnaptogridC48b {
+export namespace StSnaptogrid_0fca {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StSnaptogridC48b.Parameters.is(from)) {
+if (Public.Procedures.StSnaptogrid_0fca.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -34427,14 +34422,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StIntersection_0b21 {
+export namespace StIntersectionBab7 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StIntersection_0b21.Parameters.is(from)) {
+if (Public.Procedures.StIntersectionBab7.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -34447,14 +34442,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StBuffer_5012 {
+export namespace StBufferA313 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StBuffer_5012.Parameters.is(from)) {
+if (Public.Procedures.StBufferA313.Parameters.is(from)) {
   return {
 geom: Public.Types.Geometry.parse(from.geom),
 radius: PgCatalog.Types.Float8.parse(from.radius),
@@ -34467,14 +34462,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StBuffer_3ea8 {
+export namespace StBufferFed8 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StBuffer_3ea8.Parameters.is(from)) {
+if (Public.Procedures.StBufferFed8.Parameters.is(from)) {
   return {
 geom: Public.Types.Geometry.parse(from.geom),
 radius: PgCatalog.Types.Float8.parse(from.radius),
@@ -34562,14 +34557,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StGeneratepointsF74e {
+export namespace StGeneratepoints_73ac {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StGeneratepointsF74e.Parameters.is(from)) {
+if (Public.Procedures.StGeneratepoints_73ac.Parameters.is(from)) {
   return {
 area: Public.Types.Geometry.parse(from.area),
 npoints: PgCatalog.Types.Int4.parse(from.npoints),
@@ -34581,14 +34576,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StGeneratepointsD3cf {
+export namespace StGeneratepoints_8eae {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StGeneratepointsD3cf.Parameters.is(from)) {
+if (Public.Procedures.StGeneratepoints_8eae.Parameters.is(from)) {
   return {
 area: Public.Types.Geometry.parse(from.area),
 npoints: PgCatalog.Types.Int4.parse(from.npoints),
@@ -34638,14 +34633,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StIsvalidreason_52cb {
+export namespace StIsvalidreasonC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StIsvalidreason_52cb.Parameters.is(from)) {
+if (Public.Procedures.StIsvalidreasonC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -34675,14 +34670,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StIsvalidreasonF74e {
+export namespace StIsvalidreason_73ac {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StIsvalidreasonF74e.Parameters.is(from)) {
+if (Public.Procedures.StIsvalidreason_73ac.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Int4.parse(from.argument_1),
@@ -34694,14 +34689,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StIsvalidF74e {
+export namespace StIsvalid_73ac {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StIsvalidF74e.Parameters.is(from)) {
+if (Public.Procedures.StIsvalid_73ac.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Int4.parse(from.argument_1),
@@ -34713,14 +34708,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StHausdorffdistance_4e70 {
+export namespace StHausdorffdistance_6bd0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StHausdorffdistance_4e70.Parameters.is(from)) {
+if (Public.Procedures.StHausdorffdistance_6bd0.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -34732,14 +34727,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StHausdorffdistance_0b21 {
+export namespace StHausdorffdistanceBab7 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StHausdorffdistance_0b21.Parameters.is(from)) {
+if (Public.Procedures.StHausdorffdistanceBab7.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -34905,14 +34900,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StUnion_4e70 {
+export namespace StUnion_6bd0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StUnion_4e70.Parameters.is(from)) {
+if (Public.Procedures.StUnion_6bd0.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -34924,14 +34919,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StUnion_0b21 {
+export namespace StUnionBab7 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StUnion_0b21.Parameters.is(from)) {
+if (Public.Procedures.StUnionBab7.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -35040,14 +35035,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StMakevalid_52cb {
+export namespace StMakevalidC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StMakevalid_52cb.Parameters.is(from)) {
+if (Public.Procedures.StMakevalidC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -35058,14 +35053,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StMakevalid_09ea {
+export namespace StMakevalid_9881 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StMakevalid_09ea.Parameters.is(from)) {
+if (Public.Procedures.StMakevalid_9881.Parameters.is(from)) {
   return {
 geom: Public.Types.Geometry.parse(from.geom),
 params: PgCatalog.Types.Text.parse(from.params),
@@ -35268,14 +35263,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StCombinebbox_169a {
+export namespace StCombinebboxDd7e {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StCombinebbox_169a.Parameters.is(from)) {
+if (Public.Procedures.StCombinebboxDd7e.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Box3d.parse(from.argument_0),
 argument_1: Public.Types.Geometry.parse(from.argument_1),
@@ -35287,14 +35282,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StCombinebbox_5a63 {
+export namespace StCombinebboxC436 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StCombinebbox_5a63.Parameters.is(from)) {
+if (Public.Procedures.StCombinebboxC436.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Box3d.parse(from.argument_0),
 argument_1: Public.Types.Box3d.parse(from.argument_1),
@@ -35306,14 +35301,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StCombinebbox_1ab0 {
+export namespace StCombinebbox_8c90 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StCombinebbox_1ab0.Parameters.is(from)) {
+if (Public.Procedures.StCombinebbox_8c90.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Box2d.parse(from.argument_0),
 argument_1: Public.Types.Geometry.parse(from.argument_1),
@@ -35325,14 +35320,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StCollect_4e70 {
+export namespace StCollect_6bd0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StCollect_4e70.Parameters.is(from)) {
+if (Public.Procedures.StCollect_6bd0.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -35344,14 +35339,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StCollect_1ecf {
+export namespace StCollectA84e {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StCollect_1ecf.Parameters.is(from)) {
+if (Public.Procedures.StCollectA84e.Parameters.is(from)) {
   return {
 argument_0: Public.Types.GeometryArray.parse(from.argument_0),
 };
@@ -35362,14 +35357,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace PgisGeometryAccumTransfn_56af {
+export namespace PgisGeometryAccumTransfn_5f8c {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.PgisGeometryAccumTransfn_56af.Parameters.is(from)) {
+if (Public.Procedures.PgisGeometryAccumTransfn_5f8c.Parameters.is(from)) {
   return {
 argument_0: PgCatalog.Types.Internal.parse(from.argument_0),
 argument_1: Public.Types.Geometry.parse(from.argument_1),
@@ -35381,14 +35376,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace PgisGeometryAccumTransfn_0b06 {
+export namespace PgisGeometryAccumTransfn_0dbf {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.PgisGeometryAccumTransfn_0b06.Parameters.is(from)) {
+if (Public.Procedures.PgisGeometryAccumTransfn_0dbf.Parameters.is(from)) {
   return {
 argument_0: PgCatalog.Types.Internal.parse(from.argument_0),
 argument_1: Public.Types.Geometry.parse(from.argument_1),
@@ -35401,14 +35396,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace PgisGeometryAccumTransfnAa63 {
+export namespace PgisGeometryAccumTransfnC6b8 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.PgisGeometryAccumTransfnAa63.Parameters.is(from)) {
+if (Public.Procedures.PgisGeometryAccumTransfnC6b8.Parameters.is(from)) {
   return {
 argument_0: PgCatalog.Types.Internal.parse(from.argument_0),
 argument_1: Public.Types.Geometry.parse(from.argument_1),
@@ -35530,14 +35525,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace PgisGeometryUnionParallelTransfn_56af {
+export namespace PgisGeometryUnionParallelTransfn_5f8c {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.PgisGeometryUnionParallelTransfn_56af.Parameters.is(from)) {
+if (Public.Procedures.PgisGeometryUnionParallelTransfn_5f8c.Parameters.is(from)) {
   return {
 argument_0: PgCatalog.Types.Internal.parse(from.argument_0),
 argument_1: Public.Types.Geometry.parse(from.argument_1),
@@ -35549,14 +35544,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace PgisGeometryUnionParallelTransfn_0b06 {
+export namespace PgisGeometryUnionParallelTransfn_0dbf {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.PgisGeometryUnionParallelTransfn_0b06.Parameters.is(from)) {
+if (Public.Procedures.PgisGeometryUnionParallelTransfn_0dbf.Parameters.is(from)) {
   return {
 argument_0: PgCatalog.Types.Internal.parse(from.argument_0),
 argument_1: Public.Types.Geometry.parse(from.argument_1),
@@ -35643,14 +35638,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StUnion_1ecf {
+export namespace StUnionA84e {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StUnion_1ecf.Parameters.is(from)) {
+if (Public.Procedures.StUnionA84e.Parameters.is(from)) {
   return {
 argument_0: Public.Types.GeometryArray.parse(from.argument_0),
 };
@@ -35661,14 +35656,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StCoverageunion_1ecf {
+export namespace StCoverageunionA84e {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StCoverageunion_1ecf.Parameters.is(from)) {
+if (Public.Procedures.StCoverageunionA84e.Parameters.is(from)) {
   return {
 argument_0: Public.Types.GeometryArray.parse(from.argument_0),
 };
@@ -35679,14 +35674,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StRelate_4e70 {
+export namespace StRelate_6bd0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StRelate_4e70.Parameters.is(from)) {
+if (Public.Procedures.StRelate_6bd0.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -35698,14 +35693,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StRelateBf6c {
+export namespace StRelateAcbc {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StRelateBf6c.Parameters.is(from)) {
+if (Public.Procedures.StRelateAcbc.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -35718,14 +35713,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StRelate_2565 {
+export namespace StRelateCe2d {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StRelate_2565.Parameters.is(from)) {
+if (Public.Procedures.StRelateCe2d.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -35794,14 +35789,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StDwithin_0b21 {
+export namespace StDwithinBab7 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StDwithin_0b21.Parameters.is(from)) {
+if (Public.Procedures.StDwithinBab7.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -35833,14 +35828,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StIntersects_4e70 {
+export namespace StIntersects_6bd0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StIntersects_4e70.Parameters.is(from)) {
+if (Public.Procedures.StIntersects_6bd0.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -35928,14 +35923,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StCovers_4e70 {
+export namespace StCovers_6bd0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StCovers_4e70.Parameters.is(from)) {
+if (Public.Procedures.StCovers_6bd0.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -35947,14 +35942,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StCoveredby_4e70 {
+export namespace StCoveredby_6bd0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StCoveredby_4e70.Parameters.is(from)) {
+if (Public.Procedures.StCoveredby_6bd0.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -36102,14 +36097,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StIsvalid_52cb {
+export namespace StIsvalidC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StIsvalid_52cb.Parameters.is(from)) {
+if (Public.Procedures.StIsvalidC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -36156,14 +36151,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StCentroid_52cb {
+export namespace StCentroidC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StCentroid_52cb.Parameters.is(from)) {
+if (Public.Procedures.StCentroidC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -36511,14 +36506,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAssvgD3cf {
+export namespace StAssvg_8eae {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAssvgD3cf.Parameters.is(from)) {
+if (Public.Procedures.StAssvg_8eae.Parameters.is(from)) {
   return {
 geom: Public.Types.Geometry.parse(from.geom),
 rel: PgCatalog.Types.Int4.parse(from.rel),
@@ -36531,14 +36526,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAsgmlD3cf {
+export namespace StAsgml_8eae {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAsgmlD3cf.Parameters.is(from)) {
+if (Public.Procedures.StAsgml_8eae.Parameters.is(from)) {
   return {
 geom: Public.Types.Geometry.parse(from.geom),
 maxdecimaldigits: PgCatalog.Types.Int4.parse(from.maxdecimaldigits),
@@ -36551,14 +36546,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAsgml_3bec {
+export namespace StAsgml_3b73 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAsgml_3bec.Parameters.is(from)) {
+if (Public.Procedures.StAsgml_3b73.Parameters.is(from)) {
   return {
 version: PgCatalog.Types.Int4.parse(from.version),
 geom: Public.Types.Geometry.parse(from.geom),
@@ -36574,14 +36569,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAskml_6ebd {
+export namespace StAskmlC975 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAskml_6ebd.Parameters.is(from)) {
+if (Public.Procedures.StAskmlC975.Parameters.is(from)) {
   return {
 geom: Public.Types.Geometry.parse(from.geom),
 maxdecimaldigits: PgCatalog.Types.Int4.parse(from.maxdecimaldigits),
@@ -36594,14 +36589,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAsgeojsonD3cf {
+export namespace StAsgeojson_8eae {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAsgeojsonD3cf.Parameters.is(from)) {
+if (Public.Procedures.StAsgeojson_8eae.Parameters.is(from)) {
   return {
 geom: Public.Types.Geometry.parse(from.geom),
 maxdecimaldigits: PgCatalog.Types.Int4.parse(from.maxdecimaldigits),
@@ -37050,14 +37045,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StGeohashF74e {
+export namespace StGeohash_73ac {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StGeohashF74e.Parameters.is(from)) {
+if (Public.Procedures.StGeohash_73ac.Parameters.is(from)) {
   return {
 geom: Public.Types.Geometry.parse(from.geom),
 maxchars: PgCatalog.Types.Int4.parse(from.maxchars),
@@ -37272,14 +37267,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace Geometrytype_52cb {
+export namespace GeometrytypeC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.Geometrytype_52cb.Parameters.is(from)) {
+if (Public.Procedures.GeometrytypeC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -37436,14 +37431,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAsbinary_09ea {
+export namespace StAsbinary_9881 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAsbinary_09ea.Parameters.is(from)) {
+if (Public.Procedures.StAsbinary_9881.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Text.parse(from.argument_1),
@@ -37455,14 +37450,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAsbinary_52cb {
+export namespace StAsbinaryC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAsbinary_52cb.Parameters.is(from)) {
+if (Public.Procedures.StAsbinaryC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -37473,14 +37468,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAstext_52cb {
+export namespace StAstextC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAstext_52cb.Parameters.is(from)) {
+if (Public.Procedures.StAstextC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -37491,14 +37486,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAstextF74e {
+export namespace StAstext_73ac {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAstextF74e.Parameters.is(from)) {
+if (Public.Procedures.StAstext_73ac.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: PgCatalog.Types.Int4.parse(from.argument_1),
@@ -38489,14 +38484,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StClosestpoint_4e70 {
+export namespace StClosestpoint_6bd0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StClosestpoint_4e70.Parameters.is(from)) {
+if (Public.Procedures.StClosestpoint_6bd0.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -38508,14 +38503,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StShortestline_4e70 {
+export namespace StShortestline_6bd0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StShortestline_4e70.Parameters.is(from)) {
+if (Public.Procedures.StShortestline_6bd0.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -38639,14 +38634,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace Geography_8e85 {
+export namespace Geography_33f0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.Geography_8e85.Parameters.is(from)) {
+if (Public.Procedures.Geography_33f0.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 argument_1: PgCatalog.Types.Int4.parse(from.argument_1),
@@ -38677,14 +38672,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace ByteaB076 {
+export namespace ByteaC6e0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.ByteaB076.Parameters.is(from)) {
+if (Public.Procedures.ByteaC6e0.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 };
@@ -38695,14 +38690,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAstextB076 {
+export namespace StAstextC6e0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAstextB076.Parameters.is(from)) {
+if (Public.Procedures.StAstextC6e0.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 };
@@ -38713,14 +38708,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAstext_52a9 {
+export namespace StAstextE8cd {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAstext_52a9.Parameters.is(from)) {
+if (Public.Procedures.StAstextE8cd.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 argument_1: PgCatalog.Types.Int4.parse(from.argument_1),
@@ -39131,14 +39126,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace Geography_52cb {
+export namespace GeographyC567 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.Geography_52cb.Parameters.is(from)) {
+if (Public.Procedures.GeographyC567.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 };
@@ -39149,14 +39144,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace GeometryB076 {
+export namespace GeometryC6e0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.GeometryB076.Parameters.is(from)) {
+if (Public.Procedures.GeometryC6e0.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 };
@@ -39359,14 +39354,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace OverlapsGeog_46ba {
+export namespace OverlapsGeogBb60 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.OverlapsGeog_46ba.Parameters.is(from)) {
+if (Public.Procedures.OverlapsGeogBb60.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Gidx.parse(from.argument_0),
 argument_1: Public.Types.Geography.parse(from.argument_1),
@@ -39378,14 +39373,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace OverlapsGeogD1af {
+export namespace OverlapsGeog_8a58 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.OverlapsGeogD1af.Parameters.is(from)) {
+if (Public.Procedures.OverlapsGeog_8a58.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Gidx.parse(from.argument_0),
 argument_1: Public.Types.Gidx.parse(from.argument_1),
@@ -39397,14 +39392,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace OverlapsGeogC98c {
+export namespace OverlapsGeog_21a5 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.OverlapsGeogC98c.Parameters.is(from)) {
+if (Public.Procedures.OverlapsGeog_21a5.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 argument_1: Public.Types.Gidx.parse(from.argument_1),
@@ -39551,14 +39546,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAssvgFab6 {
+export namespace StAssvg_07a8 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAssvgFab6.Parameters.is(from)) {
+if (Public.Procedures.StAssvg_07a8.Parameters.is(from)) {
   return {
 geog: Public.Types.Geography.parse(from.geog),
 rel: PgCatalog.Types.Int4.parse(from.rel),
@@ -39589,14 +39584,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StProject_57ad {
+export namespace StProjectCd02 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StProject_57ad.Parameters.is(from)) {
+if (Public.Procedures.StProjectCd02.Parameters.is(from)) {
   return {
 geogFrom: Public.Types.Geography.parse(from.geogFrom),
 geogTo: Public.Types.Geography.parse(from.geogTo),
@@ -39609,14 +39604,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAzimuth_25d7 {
+export namespace StAzimuthEa06 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAzimuth_25d7.Parameters.is(from)) {
+if (Public.Procedures.StAzimuthEa06.Parameters.is(from)) {
   return {
 geog1: Public.Types.Geography.parse(from.geog1),
 geog2: Public.Types.Geography.parse(from.geog2),
@@ -39648,14 +39643,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAsgml_4503 {
+export namespace StAsgmlF715 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAsgml_4503.Parameters.is(from)) {
+if (Public.Procedures.StAsgmlF715.Parameters.is(from)) {
   return {
 version: PgCatalog.Types.Int4.parse(from.version),
 geog: Public.Types.Geography.parse(from.geog),
@@ -39671,14 +39666,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAsgmlDb17 {
+export namespace StAsgmlC08d {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAsgmlDb17.Parameters.is(from)) {
+if (Public.Procedures.StAsgmlC08d.Parameters.is(from)) {
   return {
 geog: Public.Types.Geography.parse(from.geog),
 maxdecimaldigits: PgCatalog.Types.Int4.parse(from.maxdecimaldigits),
@@ -39711,14 +39706,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAskml_58db {
+export namespace StAskml_874a {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAskml_58db.Parameters.is(from)) {
+if (Public.Procedures.StAskml_874a.Parameters.is(from)) {
   return {
 geog: Public.Types.Geography.parse(from.geog),
 maxdecimaldigits: PgCatalog.Types.Int4.parse(from.maxdecimaldigits),
@@ -39749,14 +39744,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAsgeojsonFab6 {
+export namespace StAsgeojson_07a8 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAsgeojsonFab6.Parameters.is(from)) {
+if (Public.Procedures.StAsgeojson_07a8.Parameters.is(from)) {
   return {
 geog: Public.Types.Geography.parse(from.geog),
 maxdecimaldigits: PgCatalog.Types.Int4.parse(from.maxdecimaldigits),
@@ -39787,14 +39782,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StDistanceDea8 {
+export namespace StDistance_05ee {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StDistanceDea8.Parameters.is(from)) {
+if (Public.Procedures.StDistance_05ee.Parameters.is(from)) {
   return {
 geog1: Public.Types.Geography.parse(from.geog1),
 geog2: Public.Types.Geography.parse(from.geog2),
@@ -39826,14 +39821,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StArea_527f {
+export namespace StArea_5f1d {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StArea_527f.Parameters.is(from)) {
+if (Public.Procedures.StArea_5f1d.Parameters.is(from)) {
   return {
 geog: Public.Types.Geography.parse(from.geog),
 useSpheroid: PgCatalog.Types.Bool.parse(from.useSpheroid),
@@ -39863,14 +39858,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StLength_527f {
+export namespace StLength_5f1d {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StLength_527f.Parameters.is(from)) {
+if (Public.Procedures.StLength_5f1d.Parameters.is(from)) {
   return {
 geog: Public.Types.Geography.parse(from.geog),
 useSpheroid: PgCatalog.Types.Bool.parse(from.useSpheroid),
@@ -39900,14 +39895,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StProject_5f39 {
+export namespace StProjectF79f {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StProject_5f39.Parameters.is(from)) {
+if (Public.Procedures.StProjectF79f.Parameters.is(from)) {
   return {
 geog: Public.Types.Geography.parse(from.geog),
 distance: PgCatalog.Types.Float8.parse(from.distance),
@@ -39920,14 +39915,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StPerimeter_527f {
+export namespace StPerimeter_5f1d {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StPerimeter_527f.Parameters.is(from)) {
+if (Public.Procedures.StPerimeter_5f1d.Parameters.is(from)) {
   return {
 geog: Public.Types.Geography.parse(from.geog),
 useSpheroid: PgCatalog.Types.Bool.parse(from.useSpheroid),
@@ -39939,14 +39934,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StSegmentize_7120 {
+export namespace StSegmentize_661e {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StSegmentize_7120.Parameters.is(from)) {
+if (Public.Procedures.StSegmentize_661e.Parameters.is(from)) {
   return {
 geog: Public.Types.Geography.parse(from.geog),
 maxSegmentLength: PgCatalog.Types.Float8.parse(from.maxSegmentLength),
@@ -39958,14 +39953,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAsbinaryB076 {
+export namespace StAsbinaryC6e0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAsbinaryB076.Parameters.is(from)) {
+if (Public.Procedures.StAsbinaryC6e0.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 };
@@ -39976,14 +39971,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAsbinary_543e {
+export namespace StAsbinary_69ab {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAsbinary_543e.Parameters.is(from)) {
+if (Public.Procedures.StAsbinary_69ab.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 argument_1: PgCatalog.Types.Text.parse(from.argument_1),
@@ -39995,14 +39990,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAsewktB076 {
+export namespace StAsewktC6e0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAsewktB076.Parameters.is(from)) {
+if (Public.Procedures.StAsewktC6e0.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 };
@@ -40013,14 +40008,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAsewkt_52a9 {
+export namespace StAsewktE8cd {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAsewkt_52a9.Parameters.is(from)) {
+if (Public.Procedures.StAsewktE8cd.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 argument_1: PgCatalog.Types.Int4.parse(from.argument_1),
@@ -40050,14 +40045,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace GeometrytypeB076 {
+export namespace GeometrytypeC6e0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.GeometrytypeB076.Parameters.is(from)) {
+if (Public.Procedures.GeometrytypeC6e0.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 };
@@ -40068,14 +40063,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StSummaryB076 {
+export namespace StSummaryC6e0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StSummaryB076.Parameters.is(from)) {
+if (Public.Procedures.StSummaryC6e0.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 };
@@ -40086,14 +40081,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StGeohash_52a9 {
+export namespace StGeohashE8cd {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StGeohash_52a9.Parameters.is(from)) {
+if (Public.Procedures.StGeohashE8cd.Parameters.is(from)) {
   return {
 geog: Public.Types.Geography.parse(from.geog),
 maxchars: PgCatalog.Types.Int4.parse(from.maxchars),
@@ -40105,14 +40100,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StSridB076 {
+export namespace StSridC6e0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StSridB076.Parameters.is(from)) {
+if (Public.Procedures.StSridC6e0.Parameters.is(from)) {
   return {
 geog: Public.Types.Geography.parse(from.geog),
 };
@@ -40123,14 +40118,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StSetsrid_52a9 {
+export namespace StSetsridE8cd {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StSetsrid_52a9.Parameters.is(from)) {
+if (Public.Procedures.StSetsridE8cd.Parameters.is(from)) {
   return {
 geog: Public.Types.Geography.parse(from.geog),
 srid: PgCatalog.Types.Int4.parse(from.srid),
@@ -40142,14 +40137,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StCentroid_527f {
+export namespace StCentroid_5f1d {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StCentroid_527f.Parameters.is(from)) {
+if (Public.Procedures.StCentroid_5f1d.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 useSpheroid: PgCatalog.Types.Bool.parse(from.useSpheroid),
@@ -40179,14 +40174,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StCovers_25d7 {
+export namespace StCoversEa06 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StCovers_25d7.Parameters.is(from)) {
+if (Public.Procedures.StCoversEa06.Parameters.is(from)) {
   return {
 geog1: Public.Types.Geography.parse(from.geog1),
 geog2: Public.Types.Geography.parse(from.geog2),
@@ -40198,14 +40193,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StDwithin_1936 {
+export namespace StDwithin_35a5 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StDwithin_1936.Parameters.is(from)) {
+if (Public.Procedures.StDwithin_35a5.Parameters.is(from)) {
   return {
 geog1: Public.Types.Geography.parse(from.geog1),
 geog2: Public.Types.Geography.parse(from.geog2),
@@ -40219,14 +40214,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StCoveredby_25d7 {
+export namespace StCoveredbyEa06 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StCoveredby_25d7.Parameters.is(from)) {
+if (Public.Procedures.StCoveredbyEa06.Parameters.is(from)) {
   return {
 geog1: Public.Types.Geography.parse(from.geog1),
 geog2: Public.Types.Geography.parse(from.geog2),
@@ -40238,14 +40233,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StIntersects_25d7 {
+export namespace StIntersectsEa06 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StIntersects_25d7.Parameters.is(from)) {
+if (Public.Procedures.StIntersectsEa06.Parameters.is(from)) {
   return {
 geog1: Public.Types.Geography.parse(from.geog1),
 geog2: Public.Types.Geography.parse(from.geog2),
@@ -40257,14 +40252,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StBuffer_7120 {
+export namespace StBuffer_661e {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StBuffer_7120.Parameters.is(from)) {
+if (Public.Procedures.StBuffer_661e.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -40276,14 +40271,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StBufferAc74 {
+export namespace StBuffer_693b {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StBufferAc74.Parameters.is(from)) {
+if (Public.Procedures.StBuffer_693b.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -40296,14 +40291,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StBuffer_750b {
+export namespace StBuffer_51ed {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StBuffer_750b.Parameters.is(from)) {
+if (Public.Procedures.StBuffer_51ed.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -40355,14 +40350,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StIntersection_25d7 {
+export namespace StIntersectionEa06 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StIntersection_25d7.Parameters.is(from)) {
+if (Public.Procedures.StIntersectionEa06.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 argument_1: Public.Types.Geography.parse(from.argument_1),
@@ -40470,14 +40465,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StClosestpointDea8 {
+export namespace StClosestpoint_05ee {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StClosestpointDea8.Parameters.is(from)) {
+if (Public.Procedures.StClosestpoint_05ee.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 argument_1: Public.Types.Geography.parse(from.argument_1),
@@ -40509,14 +40504,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StShortestlineDea8 {
+export namespace StShortestline_05ee {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StShortestlineDea8.Parameters.is(from)) {
+if (Public.Procedures.StShortestline_05ee.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 argument_1: Public.Types.Geography.parse(from.argument_1),
@@ -40548,14 +40543,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StLinesubstring_5f39 {
+export namespace StLinesubstringF79f {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StLinesubstring_5f39.Parameters.is(from)) {
+if (Public.Procedures.StLinesubstringF79f.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -40588,14 +40583,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StLinelocatepointDea8 {
+export namespace StLinelocatepoint_05ee {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StLinelocatepointDea8.Parameters.is(from)) {
+if (Public.Procedures.StLinelocatepoint_05ee.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 argument_1: Public.Types.Geography.parse(from.argument_1),
@@ -40627,14 +40622,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StLineinterpolatepoints_7696 {
+export namespace StLineinterpolatepoints_83da {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StLineinterpolatepoints_7696.Parameters.is(from)) {
+if (Public.Procedures.StLineinterpolatepoints_83da.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -40667,14 +40662,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StLineinterpolatepoint_6ef8 {
+export namespace StLineinterpolatepoint_57c0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StLineinterpolatepoint_6ef8.Parameters.is(from)) {
+if (Public.Procedures.StLineinterpolatepoint_57c0.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geography.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -40706,14 +40701,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StDistancesphere_4e70 {
+export namespace StDistancesphere_6bd0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StDistancesphere_4e70.Parameters.is(from)) {
+if (Public.Procedures.StDistancesphere_6bd0.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -40725,14 +40720,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StDistancesphere_0b21 {
+export namespace StDistancesphereBab7 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StDistancesphere_0b21.Parameters.is(from)) {
+if (Public.Procedures.StDistancesphereBab7.Parameters.is(from)) {
   return {
 geom1: Public.Types.Geometry.parse(from.geom1),
 geom2: Public.Types.Geometry.parse(from.geom2),
@@ -41295,14 +41290,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace Contains_2dA8e6 {
+export namespace Contains_2d_676e {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.Contains_2dA8e6.Parameters.is(from)) {
+if (Public.Procedures.Contains_2d_676e.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Box2df.parse(from.argument_0),
 argument_1: Public.Types.Geometry.parse(from.argument_1),
@@ -41314,14 +41309,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace IsContained_2dA8e6 {
+export namespace IsContained_2d_676e {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.IsContained_2dA8e6.Parameters.is(from)) {
+if (Public.Procedures.IsContained_2d_676e.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Box2df.parse(from.argument_0),
 argument_1: Public.Types.Geometry.parse(from.argument_1),
@@ -41333,14 +41328,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace Overlaps_2dA8e6 {
+export namespace Overlaps_2d_676e {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.Overlaps_2dA8e6.Parameters.is(from)) {
+if (Public.Procedures.Overlaps_2d_676e.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Box2df.parse(from.argument_0),
 argument_1: Public.Types.Geometry.parse(from.argument_1),
@@ -41352,14 +41347,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace Overlaps_2d_5533 {
+export namespace Overlaps_2dA7ab {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.Overlaps_2d_5533.Parameters.is(from)) {
+if (Public.Procedures.Overlaps_2dA7ab.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Box2df.parse(from.argument_0),
 argument_1: Public.Types.Box2df.parse(from.argument_1),
@@ -41371,14 +41366,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace Contains_2d_5533 {
+export namespace Contains_2dA7ab {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.Contains_2d_5533.Parameters.is(from)) {
+if (Public.Procedures.Contains_2dA7ab.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Box2df.parse(from.argument_0),
 argument_1: Public.Types.Box2df.parse(from.argument_1),
@@ -41390,14 +41385,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace IsContained_2d_5533 {
+export namespace IsContained_2dA7ab {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.IsContained_2d_5533.Parameters.is(from)) {
+if (Public.Procedures.IsContained_2dA7ab.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Box2df.parse(from.argument_0),
 argument_1: Public.Types.Box2df.parse(from.argument_1),
@@ -41409,14 +41404,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace Contains_2d_5225 {
+export namespace Contains_2d_3e52 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.Contains_2d_5225.Parameters.is(from)) {
+if (Public.Procedures.Contains_2d_3e52.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: Public.Types.Box2df.parse(from.argument_1),
@@ -41428,14 +41423,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace IsContained_2d_5225 {
+export namespace IsContained_2d_3e52 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.IsContained_2d_5225.Parameters.is(from)) {
+if (Public.Procedures.IsContained_2d_3e52.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: Public.Types.Box2df.parse(from.argument_1),
@@ -41447,14 +41442,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace Overlaps_2d_5225 {
+export namespace Overlaps_2d_3e52 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.Overlaps_2d_5225.Parameters.is(from)) {
+if (Public.Procedures.Overlaps_2d_3e52.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: Public.Types.Box2df.parse(from.argument_1),
@@ -41466,14 +41461,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace OverlapsNdD353 {
+export namespace OverlapsNd_1882 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.OverlapsNdD353.Parameters.is(from)) {
+if (Public.Procedures.OverlapsNd_1882.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Gidx.parse(from.argument_0),
 argument_1: Public.Types.Geometry.parse(from.argument_1),
@@ -41485,14 +41480,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace OverlapsNdD1af {
+export namespace OverlapsNd_8a58 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.OverlapsNdD1af.Parameters.is(from)) {
+if (Public.Procedures.OverlapsNd_8a58.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Gidx.parse(from.argument_0),
 argument_1: Public.Types.Gidx.parse(from.argument_1),
@@ -41504,14 +41499,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace OverlapsNdA633 {
+export namespace OverlapsNdC3f9 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.OverlapsNdA633.Parameters.is(from)) {
+if (Public.Procedures.OverlapsNdC3f9.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Geometry.parse(from.argument_0),
 argument_1: Public.Types.Gidx.parse(from.argument_1),
@@ -41646,14 +41641,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace StAngle_4e70 {
+export namespace StAngle_6bd0 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.StAngle_4e70.Parameters.is(from)) {
+if (Public.Procedures.StAngle_6bd0.Parameters.is(from)) {
   return {
 line1: Public.Types.Geometry.parse(from.line1),
 line2: Public.Types.Geometry.parse(from.line2),
@@ -42273,11 +42268,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_56668Index {
+export namespace PgToast_63800Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_56668Index.is(from)) {
+if (PgToast.Types.PgToast_63800Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -42288,11 +42283,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_57426Index {
+export namespace PgToast_64558Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_57426Index.is(from)) {
+if (PgToast.Types.PgToast_64558Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -42303,11 +42298,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_57432Index {
+export namespace PgToast_64564Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_57432Index.is(from)) {
+if (PgToast.Types.PgToast_64564Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -42513,11 +42508,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_57438Index {
+export namespace PgToast_64570Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_57438Index.is(from)) {
+if (PgToast.Types.PgToast_64570Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -42873,11 +42868,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_57444Index {
+export namespace PgToast_64576Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_57444Index.is(from)) {
+if (PgToast.Types.PgToast_64576Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -42888,11 +42883,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_57450Index {
+export namespace PgToast_64582Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_57450Index.is(from)) {
+if (PgToast.Types.PgToast_64582Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -48373,9 +48368,9 @@ return false;
 }
 }
 }
-export namespace Geometry_3198 {
+export namespace GeometryEd31 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.Geometry_3198.Parameters {
+export function is(value: any) : value is Public.Procedures.GeometryEd31.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -49163,9 +49158,9 @@ return false;
 }
 }
 }
-export namespace StExpandC2f2 {
+export namespace StExpand_0683 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StExpandC2f2.Parameters {
+export function is(value: any) : value is Public.Procedures.StExpand_0683.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -49173,9 +49168,9 @@ return false;
 }
 }
 }
-export namespace StExpand_0686 {
+export namespace StExpand_509e {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StExpand_0686.Parameters {
+export function is(value: any) : value is Public.Procedures.StExpand_509e.Parameters {
 if (
 (value.box !== undefined) && (value.dx !== undefined) && (value.dy !== undefined)
 ) return true;
@@ -49303,9 +49298,9 @@ return false;
 }
 }
 }
-export namespace StSummary_52cb {
+export namespace StSummaryC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StSummary_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.StSummaryC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -49353,9 +49348,9 @@ return false;
 }
 }
 }
-export namespace StLength_52cb {
+export namespace StLengthC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StLength_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.StLengthC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -49403,9 +49398,9 @@ return false;
 }
 }
 }
-export namespace StPerimeter_52cb {
+export namespace StPerimeterC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StPerimeter_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.StPerimeterC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -49423,9 +49418,9 @@ return false;
 }
 }
 }
-export namespace StArea_52cb {
+export namespace StAreaC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StArea_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.StAreaC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -49453,9 +49448,9 @@ return false;
 }
 }
 }
-export namespace StDistancespheroidA3f5 {
+export namespace StDistancespheroid_094c {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StDistancespheroidA3f5.Parameters {
+export function is(value: any) : value is Public.Procedures.StDistancespheroid_094c.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -49463,9 +49458,9 @@ return false;
 }
 }
 }
-export namespace StDistancespheroid_4e70 {
+export namespace StDistancespheroid_6bd0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StDistancespheroid_4e70.Parameters {
+export function is(value: any) : value is Public.Procedures.StDistancespheroid_6bd0.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined)
 ) return true;
@@ -49473,9 +49468,9 @@ return false;
 }
 }
 }
-export namespace StDistance_4e70 {
+export namespace StDistance_6bd0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StDistance_4e70.Parameters {
+export function is(value: any) : value is Public.Procedures.StDistance_6bd0.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined)
 ) return true;
@@ -49493,9 +49488,9 @@ return false;
 }
 }
 }
-export namespace StAzimuth_4e70 {
+export namespace StAzimuth_6bd0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAzimuth_4e70.Parameters {
+export function is(value: any) : value is Public.Procedures.StAzimuth_6bd0.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined)
 ) return true;
@@ -49503,9 +49498,9 @@ return false;
 }
 }
 }
-export namespace StProjectBdaa {
+export namespace StProject_9adf {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StProjectBdaa.Parameters {
+export function is(value: any) : value is Public.Procedures.StProject_9adf.Parameters {
 if (
 (value.geom1 !== undefined) && (value.distance !== undefined) && (value.azimuth !== undefined)
 ) return true;
@@ -49513,9 +49508,9 @@ return false;
 }
 }
 }
-export namespace StProject_0b21 {
+export namespace StProjectBab7 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StProject_0b21.Parameters {
+export function is(value: any) : value is Public.Procedures.StProjectBab7.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined) && (value.distance !== undefined)
 ) return true;
@@ -49523,9 +49518,9 @@ return false;
 }
 }
 }
-export namespace StAngleDd35 {
+export namespace StAngle_3749 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAngleDd35.Parameters {
+export function is(value: any) : value is Public.Procedures.StAngle_3749.Parameters {
 if (
 (value.pt1 !== undefined) && (value.pt2 !== undefined) && (value.pt3 !== undefined) && (value.pt4 !== undefined)
 ) return true;
@@ -49603,9 +49598,9 @@ return false;
 }
 }
 }
-export namespace StCollectionextractF74e {
+export namespace StCollectionextract_73ac {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StCollectionextractF74e.Parameters {
+export function is(value: any) : value is Public.Procedures.StCollectionextract_73ac.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -49613,9 +49608,9 @@ return false;
 }
 }
 }
-export namespace StCollectionextract_52cb {
+export namespace StCollectionextractC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StCollectionextract_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.StCollectionextractC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -49653,9 +49648,9 @@ return false;
 }
 }
 }
-export namespace StForcesfs_52cb {
+export namespace StForcesfsC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StForcesfs_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.StForcesfsC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -49663,9 +49658,9 @@ return false;
 }
 }
 }
-export namespace StForcesfs_09ea {
+export namespace StForcesfs_9881 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StForcesfs_09ea.Parameters {
+export function is(value: any) : value is Public.Procedures.StForcesfs_9881.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.version !== undefined)
 ) return true;
@@ -49673,9 +49668,9 @@ return false;
 }
 }
 }
-export namespace StExpandC8db {
+export namespace StExpandDbaa {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StExpandC8db.Parameters {
+export function is(value: any) : value is Public.Procedures.StExpandDbaa.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -49683,9 +49678,9 @@ return false;
 }
 }
 }
-export namespace StExpandB682 {
+export namespace StExpand_4f8f {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StExpandB682.Parameters {
+export function is(value: any) : value is Public.Procedures.StExpand_4f8f.Parameters {
 if (
 (value.box !== undefined) && (value.dx !== undefined) && (value.dy !== undefined) && (value.dz !== undefined)
 ) return true;
@@ -49693,9 +49688,9 @@ return false;
 }
 }
 }
-export namespace StExpand_8fd9 {
+export namespace StExpand_23e5 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StExpand_8fd9.Parameters {
+export function is(value: any) : value is Public.Procedures.StExpand_23e5.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -49703,9 +49698,9 @@ return false;
 }
 }
 }
-export namespace StExpand_3395 {
+export namespace StExpand_6e33 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StExpand_3395.Parameters {
+export function is(value: any) : value is Public.Procedures.StExpand_6e33.Parameters {
 if (
 (value.geom !== undefined) && (value.dx !== undefined) && (value.dy !== undefined) && (value.dz !== undefined) && (value.dm !== undefined)
 ) return true;
@@ -49793,9 +49788,9 @@ return false;
 }
 }
 }
-export namespace StAsewkt_52cb {
+export namespace StAsewktC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAsewkt_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.StAsewktC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -49803,9 +49798,9 @@ return false;
 }
 }
 }
-export namespace StAsewktF74e {
+export namespace StAsewkt_73ac {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAsewktF74e.Parameters {
+export function is(value: any) : value is Public.Procedures.StAsewkt_73ac.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -49813,9 +49808,9 @@ return false;
 }
 }
 }
-export namespace StAstwkbC537 {
+export namespace StAstwkbE417 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAstwkbC537.Parameters {
+export function is(value: any) : value is Public.Procedures.StAstwkbE417.Parameters {
 if (
 (value.geom !== undefined) && (value.prec !== undefined) && (value.precZ !== undefined) && (value.precM !== undefined) && (value.withSizes !== undefined) && (value.withBoxes !== undefined)
 ) return true;
@@ -49823,9 +49818,9 @@ return false;
 }
 }
 }
-export namespace StAstwkb_911a {
+export namespace StAstwkbE7ff {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAstwkb_911a.Parameters {
+export function is(value: any) : value is Public.Procedures.StAstwkbE7ff.Parameters {
 if (
 (value.geom !== undefined) && (value.ids !== undefined) && (value.prec !== undefined) && (value.precZ !== undefined) && (value.precM !== undefined) && (value.withSizes !== undefined) && (value.withBoxes !== undefined)
 ) return true;
@@ -49833,9 +49828,9 @@ return false;
 }
 }
 }
-export namespace StAsewkb_52cb {
+export namespace StAsewkbC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAsewkb_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.StAsewkbC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -49843,9 +49838,9 @@ return false;
 }
 }
 }
-export namespace StAshexewkb_52cb {
+export namespace StAshexewkbC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAshexewkb_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.StAshexewkbC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -49853,9 +49848,9 @@ return false;
 }
 }
 }
-export namespace StAshexewkb_09ea {
+export namespace StAshexewkb_9881 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAshexewkb_09ea.Parameters {
+export function is(value: any) : value is Public.Procedures.StAshexewkb_9881.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -49863,9 +49858,9 @@ return false;
 }
 }
 }
-export namespace StAsewkb_09ea {
+export namespace StAsewkb_9881 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAsewkb_09ea.Parameters {
+export function is(value: any) : value is Public.Procedures.StAsewkb_9881.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -49985,9 +49980,9 @@ return false;
 }
 }
 }
-export namespace StMakeline_1ecf {
+export namespace StMakelineA84e {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StMakeline_1ecf.Parameters {
+export function is(value: any) : value is Public.Procedures.StMakelineA84e.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -50005,9 +50000,9 @@ return false;
 }
 }
 }
-export namespace StMakeline_4e70 {
+export namespace StMakeline_6bd0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StMakeline_4e70.Parameters {
+export function is(value: any) : value is Public.Procedures.StMakeline_6bd0.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined)
 ) return true;
@@ -50015,9 +50010,9 @@ return false;
 }
 }
 }
-export namespace StAddpoint_4e70 {
+export namespace StAddpoint_6bd0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAddpoint_4e70.Parameters {
+export function is(value: any) : value is Public.Procedures.StAddpoint_6bd0.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined)
 ) return true;
@@ -50025,9 +50020,9 @@ return false;
 }
 }
 }
-export namespace StScaleBdaa {
+export namespace StScale_9adf {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StScaleBdaa.Parameters {
+export function is(value: any) : value is Public.Procedures.StScale_9adf.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -50035,9 +50030,9 @@ return false;
 }
 }
 }
-export namespace StAddpointBf6c {
+export namespace StAddpointAcbc {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAddpointBf6c.Parameters {
+export function is(value: any) : value is Public.Procedures.StAddpointAcbc.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -50085,9 +50080,9 @@ return false;
 }
 }
 }
-export namespace StMakepolygonCd1b {
+export namespace StMakepolygon_88d3 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StMakepolygonCd1b.Parameters {
+export function is(value: any) : value is Public.Procedures.StMakepolygon_88d3.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -50095,9 +50090,9 @@ return false;
 }
 }
 }
-export namespace StMakepolygon_52cb {
+export namespace StMakepolygonC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StMakepolygon_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.StMakepolygonC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -50115,9 +50110,9 @@ return false;
 }
 }
 }
-export namespace StPolygonize_1ecf {
+export namespace StPolygonizeA84e {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StPolygonize_1ecf.Parameters {
+export function is(value: any) : value is Public.Procedures.StPolygonizeA84e.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -50125,9 +50120,9 @@ return false;
 }
 }
 }
-export namespace StClusterintersecting_1ecf {
+export namespace StClusterintersectingA84e {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StClusterintersecting_1ecf.Parameters {
+export function is(value: any) : value is Public.Procedures.StClusterintersectingA84e.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -50135,9 +50130,9 @@ return false;
 }
 }
 }
-export namespace StClusterwithin_7fe3 {
+export namespace StClusterwithinAece {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StClusterwithin_7fe3.Parameters {
+export function is(value: any) : value is Public.Procedures.StClusterwithinAece.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -50145,9 +50140,9 @@ return false;
 }
 }
 }
-export namespace StLinemerge_52cb {
+export namespace StLinemergeC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StLinemerge_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.StLinemergeC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -50155,9 +50150,9 @@ return false;
 }
 }
 }
-export namespace StLinemergeE9cd {
+export namespace StLinemergeE62d {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StLinemergeE9cd.Parameters {
+export function is(value: any) : value is Public.Procedures.StLinemergeE62d.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -50165,9 +50160,9 @@ return false;
 }
 }
 }
-export namespace StAffineAb49 {
+export namespace StAffine_35f7 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAffineAb49.Parameters {
+export function is(value: any) : value is Public.Procedures.StAffine_35f7.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined) && (value.argument_3 !== undefined) && (value.argument_4 !== undefined) && (value.argument_5 !== undefined) && (value.argument_6 !== undefined) && (value.argument_7 !== undefined) && (value.argument_8 !== undefined) && (value.argument_9 !== undefined) && (value.argument_10 !== undefined) && (value.argument_11 !== undefined) && (value.argument_12 !== undefined)
 ) return true;
@@ -50175,9 +50170,9 @@ return false;
 }
 }
 }
-export namespace StAffine_1347 {
+export namespace StAffine_78d2 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAffine_1347.Parameters {
+export function is(value: any) : value is Public.Procedures.StAffine_78d2.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined) && (value.argument_3 !== undefined) && (value.argument_4 !== undefined) && (value.argument_5 !== undefined) && (value.argument_6 !== undefined)
 ) return true;
@@ -50185,9 +50180,9 @@ return false;
 }
 }
 }
-export namespace StRotate_8fd9 {
+export namespace StRotate_23e5 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StRotate_8fd9.Parameters {
+export function is(value: any) : value is Public.Procedures.StRotate_23e5.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -50195,9 +50190,9 @@ return false;
 }
 }
 }
-export namespace StRotate_196d {
+export namespace StRotateA6e8 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StRotate_196d.Parameters {
+export function is(value: any) : value is Public.Procedures.StRotateA6e8.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined) && (value.argument_3 !== undefined)
 ) return true;
@@ -50205,9 +50200,9 @@ return false;
 }
 }
 }
-export namespace StRotateD16f {
+export namespace StRotate_4c28 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StRotateD16f.Parameters {
+export function is(value: any) : value is Public.Procedures.StRotate_4c28.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -50245,9 +50240,9 @@ return false;
 }
 }
 }
-export namespace StTranslate_196d {
+export namespace StTranslateA6e8 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StTranslate_196d.Parameters {
+export function is(value: any) : value is Public.Procedures.StTranslateA6e8.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined) && (value.argument_3 !== undefined)
 ) return true;
@@ -50255,9 +50250,9 @@ return false;
 }
 }
 }
-export namespace StTranslateBdaa {
+export namespace StTranslate_9adf {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StTranslateBdaa.Parameters {
+export function is(value: any) : value is Public.Procedures.StTranslate_9adf.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -50265,9 +50260,9 @@ return false;
 }
 }
 }
-export namespace StScale_4e70 {
+export namespace StScale_6bd0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StScale_4e70.Parameters {
+export function is(value: any) : value is Public.Procedures.StScale_6bd0.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -50275,9 +50270,9 @@ return false;
 }
 }
 }
-export namespace StScaleFaae {
+export namespace StScaleE109 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StScaleFaae.Parameters {
+export function is(value: any) : value is Public.Procedures.StScaleE109.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.origin !== undefined)
 ) return true;
@@ -50285,9 +50280,9 @@ return false;
 }
 }
 }
-export namespace StScale_196d {
+export namespace StScaleA6e8 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StScale_196d.Parameters {
+export function is(value: any) : value is Public.Procedures.StScaleA6e8.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined) && (value.argument_3 !== undefined)
 ) return true;
@@ -50435,9 +50430,9 @@ return false;
 }
 }
 }
-export namespace StSegmentize_8fd9 {
+export namespace StSegmentize_23e5 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StSegmentize_8fd9.Parameters {
+export function is(value: any) : value is Public.Procedures.StSegmentize_23e5.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -50515,9 +50510,9 @@ return false;
 }
 }
 }
-export namespace StSetsridF74e {
+export namespace StSetsrid_73ac {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StSetsridF74e.Parameters {
+export function is(value: any) : value is Public.Procedures.StSetsrid_73ac.Parameters {
 if (
 (value.geom !== undefined) && (value.srid !== undefined)
 ) return true;
@@ -50525,9 +50520,9 @@ return false;
 }
 }
 }
-export namespace StSrid_52cb {
+export namespace StSridC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StSrid_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.StSridC567.Parameters {
 if (
 (value.geom !== undefined)
 ) return true;
@@ -50577,9 +50572,9 @@ return false;
 }
 }
 }
-export namespace StTransformF74e {
+export namespace StTransform_73ac {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StTransformF74e.Parameters {
+export function is(value: any) : value is Public.Procedures.StTransform_73ac.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -50587,9 +50582,9 @@ return false;
 }
 }
 }
-export namespace StTransform_09ea {
+export namespace StTransform_9881 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StTransform_09ea.Parameters {
+export function is(value: any) : value is Public.Procedures.StTransform_9881.Parameters {
 if (
 (value.geom !== undefined) && (value.toProj !== undefined)
 ) return true;
@@ -50597,9 +50592,9 @@ return false;
 }
 }
 }
-export namespace StTransform_58c7 {
+export namespace StTransformF6ce {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StTransform_58c7.Parameters {
+export function is(value: any) : value is Public.Procedures.StTransformF6ce.Parameters {
 if (
 (value.geom !== undefined) && (value.fromProj !== undefined) && (value.toProj !== undefined)
 ) return true;
@@ -50607,9 +50602,9 @@ return false;
 }
 }
 }
-export namespace StTransform_226f {
+export namespace StTransformFe9f {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StTransform_226f.Parameters {
+export function is(value: any) : value is Public.Procedures.StTransformFe9f.Parameters {
 if (
 (value.geom !== undefined) && (value.fromProj !== undefined) && (value.toSrid !== undefined)
 ) return true;
@@ -50685,9 +50680,9 @@ return false;
 }
 }
 }
-export namespace StLineinterpolatepoint_8fd9 {
+export namespace StLineinterpolatepoint_23e5 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StLineinterpolatepoint_8fd9.Parameters {
+export function is(value: any) : value is Public.Procedures.StLineinterpolatepoint_23e5.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -50695,9 +50690,9 @@ return false;
 }
 }
 }
-export namespace StLineinterpolatepoints_2d1f {
+export namespace StLineinterpolatepoints_71ec {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StLineinterpolatepoints_2d1f.Parameters {
+export function is(value: any) : value is Public.Procedures.StLineinterpolatepoints_71ec.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.repeat !== undefined)
 ) return true;
@@ -50705,9 +50700,9 @@ return false;
 }
 }
 }
-export namespace StLinesubstringBdaa {
+export namespace StLinesubstring_9adf {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StLinesubstringBdaa.Parameters {
+export function is(value: any) : value is Public.Procedures.StLinesubstring_9adf.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -50715,9 +50710,9 @@ return false;
 }
 }
 }
-export namespace StLinelocatepoint_4e70 {
+export namespace StLinelocatepoint_6bd0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StLinelocatepoint_4e70.Parameters {
+export function is(value: any) : value is Public.Procedures.StLinelocatepoint_6bd0.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined)
 ) return true;
@@ -50747,9 +50742,9 @@ return false;
 }
 export namespace PostgisFullVersion {
 }
-export namespace Box2d_52cb {
+export namespace Box2dC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.Box2d_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.Box2dC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -50757,9 +50752,9 @@ return false;
 }
 }
 }
-export namespace Box3d_52cb {
+export namespace Box3dC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.Box3d_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.Box3dC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -50767,9 +50762,9 @@ return false;
 }
 }
 }
-export namespace Box_52cb {
+export namespace BoxC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.Box_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.BoxC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -50777,9 +50772,9 @@ return false;
 }
 }
 }
-export namespace Box2dC8c3 {
+export namespace Box2dAad0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.Box2dC8c3.Parameters {
+export function is(value: any) : value is Public.Procedures.Box2dAad0.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -50787,9 +50782,9 @@ return false;
 }
 }
 }
-export namespace Box3dEf50 {
+export namespace Box3d_232c {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.Box3dEf50.Parameters {
+export function is(value: any) : value is Public.Procedures.Box3d_232c.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -50797,9 +50792,9 @@ return false;
 }
 }
 }
-export namespace BoxC8c3 {
+export namespace BoxAad0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.BoxC8c3.Parameters {
+export function is(value: any) : value is Public.Procedures.BoxAad0.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -50827,9 +50822,9 @@ return false;
 }
 }
 }
-export namespace GeometryEf50 {
+export namespace Geometry_232c {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.GeometryEf50.Parameters {
+export function is(value: any) : value is Public.Procedures.Geometry_232c.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -50837,9 +50832,9 @@ return false;
 }
 }
 }
-export namespace GeometryC8c3 {
+export namespace GeometryAad0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.GeometryC8c3.Parameters {
+export function is(value: any) : value is Public.Procedures.GeometryAad0.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -50867,9 +50862,9 @@ return false;
 }
 }
 }
-export namespace Bytea_52cb {
+export namespace ByteaC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.Bytea_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.ByteaC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -50877,9 +50872,9 @@ return false;
 }
 }
 }
-export namespace StSimplify_8fd9 {
+export namespace StSimplify_23e5 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StSimplify_8fd9.Parameters {
+export function is(value: any) : value is Public.Procedures.StSimplify_23e5.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -50887,9 +50882,9 @@ return false;
 }
 }
 }
-export namespace StSimplify_2d1f {
+export namespace StSimplify_71ec {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StSimplify_2d1f.Parameters {
+export function is(value: any) : value is Public.Procedures.StSimplify_71ec.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -50937,9 +50932,9 @@ return false;
 }
 }
 }
-export namespace StSnaptogrid_3395 {
+export namespace StSnaptogrid_6e33 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StSnaptogrid_3395.Parameters {
+export function is(value: any) : value is Public.Procedures.StSnaptogrid_6e33.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined) && (value.argument_3 !== undefined) && (value.argument_4 !== undefined)
 ) return true;
@@ -50947,9 +50942,9 @@ return false;
 }
 }
 }
-export namespace StSnaptogridBdaa {
+export namespace StSnaptogrid_9adf {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StSnaptogridBdaa.Parameters {
+export function is(value: any) : value is Public.Procedures.StSnaptogrid_9adf.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -50957,9 +50952,9 @@ return false;
 }
 }
 }
-export namespace StSnaptogrid_8fd9 {
+export namespace StSnaptogrid_23e5 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StSnaptogrid_8fd9.Parameters {
+export function is(value: any) : value is Public.Procedures.StSnaptogrid_23e5.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -50967,9 +50962,9 @@ return false;
 }
 }
 }
-export namespace StSnaptogridC48b {
+export namespace StSnaptogrid_0fca {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StSnaptogridC48b.Parameters {
+export function is(value: any) : value is Public.Procedures.StSnaptogrid_0fca.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined) && (value.argument_2 !== undefined) && (value.argument_3 !== undefined) && (value.argument_4 !== undefined) && (value.argument_5 !== undefined)
 ) return true;
@@ -51007,9 +51002,9 @@ return false;
 }
 }
 }
-export namespace StIntersection_0b21 {
+export namespace StIntersectionBab7 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StIntersection_0b21.Parameters {
+export function is(value: any) : value is Public.Procedures.StIntersectionBab7.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined) && (value.gridsize !== undefined)
 ) return true;
@@ -51017,9 +51012,9 @@ return false;
 }
 }
 }
-export namespace StBuffer_5012 {
+export namespace StBufferA313 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StBuffer_5012.Parameters {
+export function is(value: any) : value is Public.Procedures.StBufferA313.Parameters {
 if (
 (value.geom !== undefined) && (value.radius !== undefined) && (value.options !== undefined)
 ) return true;
@@ -51027,9 +51022,9 @@ return false;
 }
 }
 }
-export namespace StBuffer_3ea8 {
+export namespace StBufferFed8 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StBuffer_3ea8.Parameters {
+export function is(value: any) : value is Public.Procedures.StBufferFed8.Parameters {
 if (
 (value.geom !== undefined) && (value.radius !== undefined) && (value.quadsegs !== undefined)
 ) return true;
@@ -51077,9 +51072,9 @@ return false;
 }
 }
 }
-export namespace StGeneratepointsF74e {
+export namespace StGeneratepoints_73ac {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StGeneratepointsF74e.Parameters {
+export function is(value: any) : value is Public.Procedures.StGeneratepoints_73ac.Parameters {
 if (
 (value.area !== undefined) && (value.npoints !== undefined)
 ) return true;
@@ -51087,9 +51082,9 @@ return false;
 }
 }
 }
-export namespace StGeneratepointsD3cf {
+export namespace StGeneratepoints_8eae {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StGeneratepointsD3cf.Parameters {
+export function is(value: any) : value is Public.Procedures.StGeneratepoints_8eae.Parameters {
 if (
 (value.area !== undefined) && (value.npoints !== undefined) && (value.seed !== undefined)
 ) return true;
@@ -51117,9 +51112,9 @@ return false;
 }
 }
 }
-export namespace StIsvalidreason_52cb {
+export namespace StIsvalidreasonC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StIsvalidreason_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.StIsvalidreasonC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -51137,9 +51132,9 @@ return false;
 }
 }
 }
-export namespace StIsvalidreasonF74e {
+export namespace StIsvalidreason_73ac {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StIsvalidreasonF74e.Parameters {
+export function is(value: any) : value is Public.Procedures.StIsvalidreason_73ac.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -51147,9 +51142,9 @@ return false;
 }
 }
 }
-export namespace StIsvalidF74e {
+export namespace StIsvalid_73ac {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StIsvalidF74e.Parameters {
+export function is(value: any) : value is Public.Procedures.StIsvalid_73ac.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -51157,9 +51152,9 @@ return false;
 }
 }
 }
-export namespace StHausdorffdistance_4e70 {
+export namespace StHausdorffdistance_6bd0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StHausdorffdistance_4e70.Parameters {
+export function is(value: any) : value is Public.Procedures.StHausdorffdistance_6bd0.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined)
 ) return true;
@@ -51167,9 +51162,9 @@ return false;
 }
 }
 }
-export namespace StHausdorffdistance_0b21 {
+export namespace StHausdorffdistanceBab7 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StHausdorffdistance_0b21.Parameters {
+export function is(value: any) : value is Public.Procedures.StHausdorffdistanceBab7.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -51257,9 +51252,9 @@ return false;
 }
 }
 }
-export namespace StUnion_4e70 {
+export namespace StUnion_6bd0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StUnion_4e70.Parameters {
+export function is(value: any) : value is Public.Procedures.StUnion_6bd0.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined)
 ) return true;
@@ -51267,9 +51262,9 @@ return false;
 }
 }
 }
-export namespace StUnion_0b21 {
+export namespace StUnionBab7 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StUnion_0b21.Parameters {
+export function is(value: any) : value is Public.Procedures.StUnionBab7.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined) && (value.gridsize !== undefined)
 ) return true;
@@ -51327,9 +51322,9 @@ return false;
 }
 }
 }
-export namespace StMakevalid_52cb {
+export namespace StMakevalidC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StMakevalid_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.StMakevalidC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -51337,9 +51332,9 @@ return false;
 }
 }
 }
-export namespace StMakevalid_09ea {
+export namespace StMakevalid_9881 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StMakevalid_09ea.Parameters {
+export function is(value: any) : value is Public.Procedures.StMakevalid_9881.Parameters {
 if (
 (value.geom !== undefined) && (value.params !== undefined)
 ) return true;
@@ -51447,9 +51442,9 @@ return false;
 }
 }
 }
-export namespace StCombinebbox_169a {
+export namespace StCombinebboxDd7e {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StCombinebbox_169a.Parameters {
+export function is(value: any) : value is Public.Procedures.StCombinebboxDd7e.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -51457,9 +51452,9 @@ return false;
 }
 }
 }
-export namespace StCombinebbox_5a63 {
+export namespace StCombinebboxC436 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StCombinebbox_5a63.Parameters {
+export function is(value: any) : value is Public.Procedures.StCombinebboxC436.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -51467,9 +51462,9 @@ return false;
 }
 }
 }
-export namespace StCombinebbox_1ab0 {
+export namespace StCombinebbox_8c90 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StCombinebbox_1ab0.Parameters {
+export function is(value: any) : value is Public.Procedures.StCombinebbox_8c90.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -51477,9 +51472,9 @@ return false;
 }
 }
 }
-export namespace StCollect_4e70 {
+export namespace StCollect_6bd0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StCollect_4e70.Parameters {
+export function is(value: any) : value is Public.Procedures.StCollect_6bd0.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined)
 ) return true;
@@ -51487,9 +51482,9 @@ return false;
 }
 }
 }
-export namespace StCollect_1ecf {
+export namespace StCollectA84e {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StCollect_1ecf.Parameters {
+export function is(value: any) : value is Public.Procedures.StCollectA84e.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -51497,9 +51492,9 @@ return false;
 }
 }
 }
-export namespace PgisGeometryAccumTransfn_56af {
+export namespace PgisGeometryAccumTransfn_5f8c {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.PgisGeometryAccumTransfn_56af.Parameters {
+export function is(value: any) : value is Public.Procedures.PgisGeometryAccumTransfn_5f8c.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -51507,9 +51502,9 @@ return false;
 }
 }
 }
-export namespace PgisGeometryAccumTransfn_0b06 {
+export namespace PgisGeometryAccumTransfn_0dbf {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.PgisGeometryAccumTransfn_0b06.Parameters {
+export function is(value: any) : value is Public.Procedures.PgisGeometryAccumTransfn_0dbf.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -51517,9 +51512,9 @@ return false;
 }
 }
 }
-export namespace PgisGeometryAccumTransfnAa63 {
+export namespace PgisGeometryAccumTransfnC6b8 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.PgisGeometryAccumTransfnAa63.Parameters {
+export function is(value: any) : value is Public.Procedures.PgisGeometryAccumTransfnC6b8.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined) && (value.argument_3 !== undefined)
 ) return true;
@@ -51587,9 +51582,9 @@ return false;
 }
 }
 }
-export namespace PgisGeometryUnionParallelTransfn_56af {
+export namespace PgisGeometryUnionParallelTransfn_5f8c {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.PgisGeometryUnionParallelTransfn_56af.Parameters {
+export function is(value: any) : value is Public.Procedures.PgisGeometryUnionParallelTransfn_5f8c.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -51597,9 +51592,9 @@ return false;
 }
 }
 }
-export namespace PgisGeometryUnionParallelTransfn_0b06 {
+export namespace PgisGeometryUnionParallelTransfn_0dbf {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.PgisGeometryUnionParallelTransfn_0b06.Parameters {
+export function is(value: any) : value is Public.Procedures.PgisGeometryUnionParallelTransfn_0dbf.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -51647,9 +51642,9 @@ return false;
 }
 }
 }
-export namespace StUnion_1ecf {
+export namespace StUnionA84e {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StUnion_1ecf.Parameters {
+export function is(value: any) : value is Public.Procedures.StUnionA84e.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -51657,9 +51652,9 @@ return false;
 }
 }
 }
-export namespace StCoverageunion_1ecf {
+export namespace StCoverageunionA84e {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StCoverageunion_1ecf.Parameters {
+export function is(value: any) : value is Public.Procedures.StCoverageunionA84e.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -51667,9 +51662,9 @@ return false;
 }
 }
 }
-export namespace StRelate_4e70 {
+export namespace StRelate_6bd0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StRelate_4e70.Parameters {
+export function is(value: any) : value is Public.Procedures.StRelate_6bd0.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined)
 ) return true;
@@ -51677,9 +51672,9 @@ return false;
 }
 }
 }
-export namespace StRelateBf6c {
+export namespace StRelateAcbc {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StRelateBf6c.Parameters {
+export function is(value: any) : value is Public.Procedures.StRelateAcbc.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -51687,9 +51682,9 @@ return false;
 }
 }
 }
-export namespace StRelate_2565 {
+export namespace StRelateCe2d {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StRelate_2565.Parameters {
+export function is(value: any) : value is Public.Procedures.StRelateCe2d.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -51727,9 +51722,9 @@ return false;
 }
 }
 }
-export namespace StDwithin_0b21 {
+export namespace StDwithinBab7 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StDwithin_0b21.Parameters {
+export function is(value: any) : value is Public.Procedures.StDwithinBab7.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -51747,9 +51742,9 @@ return false;
 }
 }
 }
-export namespace StIntersects_4e70 {
+export namespace StIntersects_6bd0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StIntersects_4e70.Parameters {
+export function is(value: any) : value is Public.Procedures.StIntersects_6bd0.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined)
 ) return true;
@@ -51797,9 +51792,9 @@ return false;
 }
 }
 }
-export namespace StCovers_4e70 {
+export namespace StCovers_6bd0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StCovers_4e70.Parameters {
+export function is(value: any) : value is Public.Procedures.StCovers_6bd0.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined)
 ) return true;
@@ -51807,9 +51802,9 @@ return false;
 }
 }
 }
-export namespace StCoveredby_4e70 {
+export namespace StCoveredby_6bd0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StCoveredby_4e70.Parameters {
+export function is(value: any) : value is Public.Procedures.StCoveredby_6bd0.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined)
 ) return true;
@@ -51887,9 +51882,9 @@ return false;
 }
 }
 }
-export namespace StIsvalid_52cb {
+export namespace StIsvalidC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StIsvalid_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.StIsvalidC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -51917,9 +51912,9 @@ return false;
 }
 }
 }
-export namespace StCentroid_52cb {
+export namespace StCentroidC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StCentroid_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.StCentroidC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -52109,9 +52104,9 @@ return false;
 }
 }
 }
-export namespace StAssvgD3cf {
+export namespace StAssvg_8eae {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAssvgD3cf.Parameters {
+export function is(value: any) : value is Public.Procedures.StAssvg_8eae.Parameters {
 if (
 (value.geom !== undefined) && (value.rel !== undefined) && (value.maxdecimaldigits !== undefined)
 ) return true;
@@ -52119,9 +52114,9 @@ return false;
 }
 }
 }
-export namespace StAsgmlD3cf {
+export namespace StAsgml_8eae {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAsgmlD3cf.Parameters {
+export function is(value: any) : value is Public.Procedures.StAsgml_8eae.Parameters {
 if (
 (value.geom !== undefined) && (value.maxdecimaldigits !== undefined) && (value.options !== undefined)
 ) return true;
@@ -52129,9 +52124,9 @@ return false;
 }
 }
 }
-export namespace StAsgml_3bec {
+export namespace StAsgml_3b73 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAsgml_3bec.Parameters {
+export function is(value: any) : value is Public.Procedures.StAsgml_3b73.Parameters {
 if (
 (value.version !== undefined) && (value.geom !== undefined) && (value.maxdecimaldigits !== undefined) && (value.options !== undefined) && (value.nprefix !== undefined) && (value.id !== undefined)
 ) return true;
@@ -52139,9 +52134,9 @@ return false;
 }
 }
 }
-export namespace StAskml_6ebd {
+export namespace StAskmlC975 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAskml_6ebd.Parameters {
+export function is(value: any) : value is Public.Procedures.StAskmlC975.Parameters {
 if (
 (value.geom !== undefined) && (value.maxdecimaldigits !== undefined) && (value.nprefix !== undefined)
 ) return true;
@@ -52149,9 +52144,9 @@ return false;
 }
 }
 }
-export namespace StAsgeojsonD3cf {
+export namespace StAsgeojson_8eae {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAsgeojsonD3cf.Parameters {
+export function is(value: any) : value is Public.Procedures.StAsgeojson_8eae.Parameters {
 if (
 (value.geom !== undefined) && (value.maxdecimaldigits !== undefined) && (value.options !== undefined)
 ) return true;
@@ -52381,9 +52376,9 @@ return false;
 }
 }
 }
-export namespace StGeohashF74e {
+export namespace StGeohash_73ac {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StGeohashF74e.Parameters {
+export function is(value: any) : value is Public.Procedures.StGeohash_73ac.Parameters {
 if (
 (value.geom !== undefined) && (value.maxchars !== undefined)
 ) return true;
@@ -52501,9 +52496,9 @@ return false;
 }
 }
 }
-export namespace Geometrytype_52cb {
+export namespace GeometrytypeC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.Geometrytype_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.GeometrytypeC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -52591,9 +52586,9 @@ return false;
 }
 }
 }
-export namespace StAsbinary_09ea {
+export namespace StAsbinary_9881 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAsbinary_09ea.Parameters {
+export function is(value: any) : value is Public.Procedures.StAsbinary_9881.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -52601,9 +52596,9 @@ return false;
 }
 }
 }
-export namespace StAsbinary_52cb {
+export namespace StAsbinaryC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAsbinary_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.StAsbinaryC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -52611,9 +52606,9 @@ return false;
 }
 }
 }
-export namespace StAstext_52cb {
+export namespace StAstextC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAstext_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.StAstextC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -52621,9 +52616,9 @@ return false;
 }
 }
 }
-export namespace StAstextF74e {
+export namespace StAstext_73ac {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAstextF74e.Parameters {
+export function is(value: any) : value is Public.Procedures.StAstext_73ac.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -53161,9 +53156,9 @@ return false;
 }
 }
 }
-export namespace StClosestpoint_4e70 {
+export namespace StClosestpoint_6bd0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StClosestpoint_4e70.Parameters {
+export function is(value: any) : value is Public.Procedures.StClosestpoint_6bd0.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined)
 ) return true;
@@ -53171,9 +53166,9 @@ return false;
 }
 }
 }
-export namespace StShortestline_4e70 {
+export namespace StShortestline_6bd0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StShortestline_4e70.Parameters {
+export function is(value: any) : value is Public.Procedures.StShortestline_6bd0.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined)
 ) return true;
@@ -53241,9 +53236,9 @@ return false;
 }
 }
 }
-export namespace Geography_8e85 {
+export namespace Geography_33f0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.Geography_8e85.Parameters {
+export function is(value: any) : value is Public.Procedures.Geography_33f0.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -53261,9 +53256,9 @@ return false;
 }
 }
 }
-export namespace ByteaB076 {
+export namespace ByteaC6e0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.ByteaB076.Parameters {
+export function is(value: any) : value is Public.Procedures.ByteaC6e0.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -53271,9 +53266,9 @@ return false;
 }
 }
 }
-export namespace StAstextB076 {
+export namespace StAstextC6e0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAstextB076.Parameters {
+export function is(value: any) : value is Public.Procedures.StAstextC6e0.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -53281,9 +53276,9 @@ return false;
 }
 }
 }
-export namespace StAstext_52a9 {
+export namespace StAstextE8cd {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAstext_52a9.Parameters {
+export function is(value: any) : value is Public.Procedures.StAstextE8cd.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -53501,9 +53496,9 @@ return false;
 }
 }
 }
-export namespace Geography_52cb {
+export namespace GeographyC567 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.Geography_52cb.Parameters {
+export function is(value: any) : value is Public.Procedures.GeographyC567.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -53511,9 +53506,9 @@ return false;
 }
 }
 }
-export namespace GeometryB076 {
+export namespace GeometryC6e0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.GeometryB076.Parameters {
+export function is(value: any) : value is Public.Procedures.GeometryC6e0.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -53621,9 +53616,9 @@ return false;
 }
 }
 }
-export namespace OverlapsGeog_46ba {
+export namespace OverlapsGeogBb60 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.OverlapsGeog_46ba.Parameters {
+export function is(value: any) : value is Public.Procedures.OverlapsGeogBb60.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -53631,9 +53626,9 @@ return false;
 }
 }
 }
-export namespace OverlapsGeogD1af {
+export namespace OverlapsGeog_8a58 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.OverlapsGeogD1af.Parameters {
+export function is(value: any) : value is Public.Procedures.OverlapsGeog_8a58.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -53641,9 +53636,9 @@ return false;
 }
 }
 }
-export namespace OverlapsGeogC98c {
+export namespace OverlapsGeog_21a5 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.OverlapsGeogC98c.Parameters {
+export function is(value: any) : value is Public.Procedures.OverlapsGeog_21a5.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -53721,9 +53716,9 @@ return false;
 }
 }
 }
-export namespace StAssvgFab6 {
+export namespace StAssvg_07a8 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAssvgFab6.Parameters {
+export function is(value: any) : value is Public.Procedures.StAssvg_07a8.Parameters {
 if (
 (value.geog !== undefined) && (value.rel !== undefined) && (value.maxdecimaldigits !== undefined)
 ) return true;
@@ -53741,9 +53736,9 @@ return false;
 }
 }
 }
-export namespace StProject_57ad {
+export namespace StProjectCd02 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StProject_57ad.Parameters {
+export function is(value: any) : value is Public.Procedures.StProjectCd02.Parameters {
 if (
 (value.geogFrom !== undefined) && (value.geogTo !== undefined) && (value.distance !== undefined)
 ) return true;
@@ -53751,9 +53746,9 @@ return false;
 }
 }
 }
-export namespace StAzimuth_25d7 {
+export namespace StAzimuthEa06 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAzimuth_25d7.Parameters {
+export function is(value: any) : value is Public.Procedures.StAzimuthEa06.Parameters {
 if (
 (value.geog1 !== undefined) && (value.geog2 !== undefined)
 ) return true;
@@ -53771,9 +53766,9 @@ return false;
 }
 }
 }
-export namespace StAsgml_4503 {
+export namespace StAsgmlF715 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAsgml_4503.Parameters {
+export function is(value: any) : value is Public.Procedures.StAsgmlF715.Parameters {
 if (
 (value.version !== undefined) && (value.geog !== undefined) && (value.maxdecimaldigits !== undefined) && (value.options !== undefined) && (value.nprefix !== undefined) && (value.id !== undefined)
 ) return true;
@@ -53781,9 +53776,9 @@ return false;
 }
 }
 }
-export namespace StAsgmlDb17 {
+export namespace StAsgmlC08d {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAsgmlDb17.Parameters {
+export function is(value: any) : value is Public.Procedures.StAsgmlC08d.Parameters {
 if (
 (value.geog !== undefined) && (value.maxdecimaldigits !== undefined) && (value.options !== undefined) && (value.nprefix !== undefined) && (value.id !== undefined)
 ) return true;
@@ -53801,9 +53796,9 @@ return false;
 }
 }
 }
-export namespace StAskml_58db {
+export namespace StAskml_874a {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAskml_58db.Parameters {
+export function is(value: any) : value is Public.Procedures.StAskml_874a.Parameters {
 if (
 (value.geog !== undefined) && (value.maxdecimaldigits !== undefined) && (value.nprefix !== undefined)
 ) return true;
@@ -53821,9 +53816,9 @@ return false;
 }
 }
 }
-export namespace StAsgeojsonFab6 {
+export namespace StAsgeojson_07a8 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAsgeojsonFab6.Parameters {
+export function is(value: any) : value is Public.Procedures.StAsgeojson_07a8.Parameters {
 if (
 (value.geog !== undefined) && (value.maxdecimaldigits !== undefined) && (value.options !== undefined)
 ) return true;
@@ -53841,9 +53836,9 @@ return false;
 }
 }
 }
-export namespace StDistanceDea8 {
+export namespace StDistance_05ee {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StDistanceDea8.Parameters {
+export function is(value: any) : value is Public.Procedures.StDistance_05ee.Parameters {
 if (
 (value.geog1 !== undefined) && (value.geog2 !== undefined) && (value.useSpheroid !== undefined)
 ) return true;
@@ -53861,9 +53856,9 @@ return false;
 }
 }
 }
-export namespace StArea_527f {
+export namespace StArea_5f1d {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StArea_527f.Parameters {
+export function is(value: any) : value is Public.Procedures.StArea_5f1d.Parameters {
 if (
 (value.geog !== undefined) && (value.useSpheroid !== undefined)
 ) return true;
@@ -53881,9 +53876,9 @@ return false;
 }
 }
 }
-export namespace StLength_527f {
+export namespace StLength_5f1d {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StLength_527f.Parameters {
+export function is(value: any) : value is Public.Procedures.StLength_5f1d.Parameters {
 if (
 (value.geog !== undefined) && (value.useSpheroid !== undefined)
 ) return true;
@@ -53901,9 +53896,9 @@ return false;
 }
 }
 }
-export namespace StProject_5f39 {
+export namespace StProjectF79f {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StProject_5f39.Parameters {
+export function is(value: any) : value is Public.Procedures.StProjectF79f.Parameters {
 if (
 (value.geog !== undefined) && (value.distance !== undefined) && (value.azimuth !== undefined)
 ) return true;
@@ -53911,9 +53906,9 @@ return false;
 }
 }
 }
-export namespace StPerimeter_527f {
+export namespace StPerimeter_5f1d {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StPerimeter_527f.Parameters {
+export function is(value: any) : value is Public.Procedures.StPerimeter_5f1d.Parameters {
 if (
 (value.geog !== undefined) && (value.useSpheroid !== undefined)
 ) return true;
@@ -53921,9 +53916,9 @@ return false;
 }
 }
 }
-export namespace StSegmentize_7120 {
+export namespace StSegmentize_661e {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StSegmentize_7120.Parameters {
+export function is(value: any) : value is Public.Procedures.StSegmentize_661e.Parameters {
 if (
 (value.geog !== undefined) && (value.maxSegmentLength !== undefined)
 ) return true;
@@ -53931,9 +53926,9 @@ return false;
 }
 }
 }
-export namespace StAsbinaryB076 {
+export namespace StAsbinaryC6e0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAsbinaryB076.Parameters {
+export function is(value: any) : value is Public.Procedures.StAsbinaryC6e0.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -53941,9 +53936,9 @@ return false;
 }
 }
 }
-export namespace StAsbinary_543e {
+export namespace StAsbinary_69ab {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAsbinary_543e.Parameters {
+export function is(value: any) : value is Public.Procedures.StAsbinary_69ab.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -53951,9 +53946,9 @@ return false;
 }
 }
 }
-export namespace StAsewktB076 {
+export namespace StAsewktC6e0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAsewktB076.Parameters {
+export function is(value: any) : value is Public.Procedures.StAsewktC6e0.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -53961,9 +53956,9 @@ return false;
 }
 }
 }
-export namespace StAsewkt_52a9 {
+export namespace StAsewktE8cd {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAsewkt_52a9.Parameters {
+export function is(value: any) : value is Public.Procedures.StAsewktE8cd.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -53981,9 +53976,9 @@ return false;
 }
 }
 }
-export namespace GeometrytypeB076 {
+export namespace GeometrytypeC6e0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.GeometrytypeB076.Parameters {
+export function is(value: any) : value is Public.Procedures.GeometrytypeC6e0.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -53991,9 +53986,9 @@ return false;
 }
 }
 }
-export namespace StSummaryB076 {
+export namespace StSummaryC6e0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StSummaryB076.Parameters {
+export function is(value: any) : value is Public.Procedures.StSummaryC6e0.Parameters {
 if (
 (value.argument_0 !== undefined)
 ) return true;
@@ -54001,9 +53996,9 @@ return false;
 }
 }
 }
-export namespace StGeohash_52a9 {
+export namespace StGeohashE8cd {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StGeohash_52a9.Parameters {
+export function is(value: any) : value is Public.Procedures.StGeohashE8cd.Parameters {
 if (
 (value.geog !== undefined) && (value.maxchars !== undefined)
 ) return true;
@@ -54011,9 +54006,9 @@ return false;
 }
 }
 }
-export namespace StSridB076 {
+export namespace StSridC6e0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StSridB076.Parameters {
+export function is(value: any) : value is Public.Procedures.StSridC6e0.Parameters {
 if (
 (value.geog !== undefined)
 ) return true;
@@ -54021,9 +54016,9 @@ return false;
 }
 }
 }
-export namespace StSetsrid_52a9 {
+export namespace StSetsridE8cd {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StSetsrid_52a9.Parameters {
+export function is(value: any) : value is Public.Procedures.StSetsridE8cd.Parameters {
 if (
 (value.geog !== undefined) && (value.srid !== undefined)
 ) return true;
@@ -54031,9 +54026,9 @@ return false;
 }
 }
 }
-export namespace StCentroid_527f {
+export namespace StCentroid_5f1d {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StCentroid_527f.Parameters {
+export function is(value: any) : value is Public.Procedures.StCentroid_5f1d.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.useSpheroid !== undefined)
 ) return true;
@@ -54051,9 +54046,9 @@ return false;
 }
 }
 }
-export namespace StCovers_25d7 {
+export namespace StCoversEa06 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StCovers_25d7.Parameters {
+export function is(value: any) : value is Public.Procedures.StCoversEa06.Parameters {
 if (
 (value.geog1 !== undefined) && (value.geog2 !== undefined)
 ) return true;
@@ -54061,9 +54056,9 @@ return false;
 }
 }
 }
-export namespace StDwithin_1936 {
+export namespace StDwithin_35a5 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StDwithin_1936.Parameters {
+export function is(value: any) : value is Public.Procedures.StDwithin_35a5.Parameters {
 if (
 (value.geog1 !== undefined) && (value.geog2 !== undefined) && (value.tolerance !== undefined) && (value.useSpheroid !== undefined)
 ) return true;
@@ -54071,9 +54066,9 @@ return false;
 }
 }
 }
-export namespace StCoveredby_25d7 {
+export namespace StCoveredbyEa06 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StCoveredby_25d7.Parameters {
+export function is(value: any) : value is Public.Procedures.StCoveredbyEa06.Parameters {
 if (
 (value.geog1 !== undefined) && (value.geog2 !== undefined)
 ) return true;
@@ -54081,9 +54076,9 @@ return false;
 }
 }
 }
-export namespace StIntersects_25d7 {
+export namespace StIntersectsEa06 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StIntersects_25d7.Parameters {
+export function is(value: any) : value is Public.Procedures.StIntersectsEa06.Parameters {
 if (
 (value.geog1 !== undefined) && (value.geog2 !== undefined)
 ) return true;
@@ -54091,9 +54086,9 @@ return false;
 }
 }
 }
-export namespace StBuffer_7120 {
+export namespace StBuffer_661e {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StBuffer_7120.Parameters {
+export function is(value: any) : value is Public.Procedures.StBuffer_661e.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -54101,9 +54096,9 @@ return false;
 }
 }
 }
-export namespace StBufferAc74 {
+export namespace StBuffer_693b {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StBufferAc74.Parameters {
+export function is(value: any) : value is Public.Procedures.StBuffer_693b.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -54111,9 +54106,9 @@ return false;
 }
 }
 }
-export namespace StBuffer_750b {
+export namespace StBuffer_51ed {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StBuffer_750b.Parameters {
+export function is(value: any) : value is Public.Procedures.StBuffer_51ed.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -54141,9 +54136,9 @@ return false;
 }
 }
 }
-export namespace StIntersection_25d7 {
+export namespace StIntersectionEa06 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StIntersection_25d7.Parameters {
+export function is(value: any) : value is Public.Procedures.StIntersectionEa06.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -54201,9 +54196,9 @@ return false;
 }
 }
 }
-export namespace StClosestpointDea8 {
+export namespace StClosestpoint_05ee {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StClosestpointDea8.Parameters {
+export function is(value: any) : value is Public.Procedures.StClosestpoint_05ee.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.useSpheroid !== undefined)
 ) return true;
@@ -54221,9 +54216,9 @@ return false;
 }
 }
 }
-export namespace StShortestlineDea8 {
+export namespace StShortestline_05ee {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StShortestlineDea8.Parameters {
+export function is(value: any) : value is Public.Procedures.StShortestline_05ee.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.useSpheroid !== undefined)
 ) return true;
@@ -54241,9 +54236,9 @@ return false;
 }
 }
 }
-export namespace StLinesubstring_5f39 {
+export namespace StLinesubstringF79f {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StLinesubstring_5f39.Parameters {
+export function is(value: any) : value is Public.Procedures.StLinesubstringF79f.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -54261,9 +54256,9 @@ return false;
 }
 }
 }
-export namespace StLinelocatepointDea8 {
+export namespace StLinelocatepoint_05ee {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StLinelocatepointDea8.Parameters {
+export function is(value: any) : value is Public.Procedures.StLinelocatepoint_05ee.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.useSpheroid !== undefined)
 ) return true;
@@ -54281,9 +54276,9 @@ return false;
 }
 }
 }
-export namespace StLineinterpolatepoints_7696 {
+export namespace StLineinterpolatepoints_83da {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StLineinterpolatepoints_7696.Parameters {
+export function is(value: any) : value is Public.Procedures.StLineinterpolatepoints_83da.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.useSpheroid !== undefined) && (value.repeat !== undefined)
 ) return true;
@@ -54301,9 +54296,9 @@ return false;
 }
 }
 }
-export namespace StLineinterpolatepoint_6ef8 {
+export namespace StLineinterpolatepoint_57c0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StLineinterpolatepoint_6ef8.Parameters {
+export function is(value: any) : value is Public.Procedures.StLineinterpolatepoint_57c0.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.useSpheroid !== undefined)
 ) return true;
@@ -54321,9 +54316,9 @@ return false;
 }
 }
 }
-export namespace StDistancesphere_4e70 {
+export namespace StDistancesphere_6bd0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StDistancesphere_4e70.Parameters {
+export function is(value: any) : value is Public.Procedures.StDistancesphere_6bd0.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined)
 ) return true;
@@ -54331,9 +54326,9 @@ return false;
 }
 }
 }
-export namespace StDistancesphere_0b21 {
+export namespace StDistancesphereBab7 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StDistancesphere_0b21.Parameters {
+export function is(value: any) : value is Public.Procedures.StDistancesphereBab7.Parameters {
 if (
 (value.geom1 !== undefined) && (value.geom2 !== undefined) && (value.radius !== undefined)
 ) return true;
@@ -54621,9 +54616,9 @@ return false;
 }
 }
 }
-export namespace Contains_2dA8e6 {
+export namespace Contains_2d_676e {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.Contains_2dA8e6.Parameters {
+export function is(value: any) : value is Public.Procedures.Contains_2d_676e.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -54631,9 +54626,9 @@ return false;
 }
 }
 }
-export namespace IsContained_2dA8e6 {
+export namespace IsContained_2d_676e {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.IsContained_2dA8e6.Parameters {
+export function is(value: any) : value is Public.Procedures.IsContained_2d_676e.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -54641,9 +54636,9 @@ return false;
 }
 }
 }
-export namespace Overlaps_2dA8e6 {
+export namespace Overlaps_2d_676e {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.Overlaps_2dA8e6.Parameters {
+export function is(value: any) : value is Public.Procedures.Overlaps_2d_676e.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -54651,9 +54646,9 @@ return false;
 }
 }
 }
-export namespace Overlaps_2d_5533 {
+export namespace Overlaps_2dA7ab {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.Overlaps_2d_5533.Parameters {
+export function is(value: any) : value is Public.Procedures.Overlaps_2dA7ab.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -54661,9 +54656,9 @@ return false;
 }
 }
 }
-export namespace Contains_2d_5533 {
+export namespace Contains_2dA7ab {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.Contains_2d_5533.Parameters {
+export function is(value: any) : value is Public.Procedures.Contains_2dA7ab.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -54671,9 +54666,9 @@ return false;
 }
 }
 }
-export namespace IsContained_2d_5533 {
+export namespace IsContained_2dA7ab {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.IsContained_2d_5533.Parameters {
+export function is(value: any) : value is Public.Procedures.IsContained_2dA7ab.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -54681,9 +54676,9 @@ return false;
 }
 }
 }
-export namespace Contains_2d_5225 {
+export namespace Contains_2d_3e52 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.Contains_2d_5225.Parameters {
+export function is(value: any) : value is Public.Procedures.Contains_2d_3e52.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -54691,9 +54686,9 @@ return false;
 }
 }
 }
-export namespace IsContained_2d_5225 {
+export namespace IsContained_2d_3e52 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.IsContained_2d_5225.Parameters {
+export function is(value: any) : value is Public.Procedures.IsContained_2d_3e52.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -54701,9 +54696,9 @@ return false;
 }
 }
 }
-export namespace Overlaps_2d_5225 {
+export namespace Overlaps_2d_3e52 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.Overlaps_2d_5225.Parameters {
+export function is(value: any) : value is Public.Procedures.Overlaps_2d_3e52.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -54711,9 +54706,9 @@ return false;
 }
 }
 }
-export namespace OverlapsNdD353 {
+export namespace OverlapsNd_1882 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.OverlapsNdD353.Parameters {
+export function is(value: any) : value is Public.Procedures.OverlapsNd_1882.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -54721,9 +54716,9 @@ return false;
 }
 }
 }
-export namespace OverlapsNdD1af {
+export namespace OverlapsNd_8a58 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.OverlapsNdD1af.Parameters {
+export function is(value: any) : value is Public.Procedures.OverlapsNd_8a58.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -54731,9 +54726,9 @@ return false;
 }
 }
 }
-export namespace OverlapsNdA633 {
+export namespace OverlapsNdC3f9 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.OverlapsNdA633.Parameters {
+export function is(value: any) : value is Public.Procedures.OverlapsNdC3f9.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -54801,9 +54796,9 @@ return false;
 }
 }
 }
-export namespace StAngle_4e70 {
+export namespace StAngle_6bd0 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.StAngle_4e70.Parameters {
+export function is(value: any) : value is Public.Procedures.StAngle_6bd0.Parameters {
 if (
 (value.line1 !== undefined) && (value.line2 !== undefined)
 ) return true;
@@ -55129,24 +55124,24 @@ export namespace NycSubwayStations {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_56668Index {
-export function is(value: any) : value is PgToast.Types.PgToast_56668Index {
+export namespace PgToast_63800Index {
+export function is(value: any) : value is PgToast.Types.PgToast_63800Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_57426Index {
-export function is(value: any) : value is PgToast.Types.PgToast_57426Index {
+export namespace PgToast_64558Index {
+export function is(value: any) : value is PgToast.Types.PgToast_64558Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_57432Index {
-export function is(value: any) : value is PgToast.Types.PgToast_57432Index {
+export namespace PgToast_64564Index {
+export function is(value: any) : value is PgToast.Types.PgToast_64564Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -55257,8 +55252,8 @@ if (
 return false;
 }
 }
-export namespace PgToast_57438Index {
-export function is(value: any) : value is PgToast.Types.PgToast_57438Index {
+export namespace PgToast_64570Index {
+export function is(value: any) : value is PgToast.Types.PgToast_64570Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -55449,16 +55444,16 @@ if (
 return false;
 }
 }
-export namespace PgToast_57444Index {
-export function is(value: any) : value is PgToast.Types.PgToast_57444Index {
+export namespace PgToast_64576Index {
+export function is(value: any) : value is PgToast.Types.PgToast_64576Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_57450Index {
-export function is(value: any) : value is PgToast.Types.PgToast_57450Index {
+export namespace PgToast_64582Index {
+export function is(value: any) : value is PgToast.Types.PgToast_64582Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -59654,9 +59649,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace Geometry_3198 {
+export namespace GeometryEd31 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.Geometry_3198.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.GeometryEd31.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -60207,16 +60202,16 @@ export namespace Parameters {
  }
 }
 }
-export namespace StExpandC2f2 {
+export namespace StExpand_0683 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StExpandC2f2.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StExpand_0683.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StExpand_0686 {
+export namespace StExpand_509e {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StExpand_0686.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StExpand_509e.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -60305,9 +60300,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StSummary_52cb {
+export namespace StSummaryC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StSummary_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StSummaryC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -60340,9 +60335,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StLength_52cb {
+export namespace StLengthC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StLength_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StLengthC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -60375,9 +60370,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StPerimeter_52cb {
+export namespace StPerimeterC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StPerimeter_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StPerimeterC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -60389,9 +60384,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StArea_52cb {
+export namespace StAreaC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StArea_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAreaC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -60410,23 +60405,23 @@ export namespace Parameters {
  }
 }
 }
-export namespace StDistancespheroidA3f5 {
+export namespace StDistancespheroid_094c {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StDistancespheroidA3f5.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StDistancespheroid_094c.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StDistancespheroid_4e70 {
+export namespace StDistancespheroid_6bd0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StDistancespheroid_4e70.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StDistancespheroid_6bd0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StDistance_4e70 {
+export namespace StDistance_6bd0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StDistance_4e70.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StDistance_6bd0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -60438,30 +60433,30 @@ export namespace Parameters {
  }
 }
 }
-export namespace StAzimuth_4e70 {
+export namespace StAzimuth_6bd0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAzimuth_4e70.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAzimuth_6bd0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StProjectBdaa {
+export namespace StProject_9adf {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StProjectBdaa.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StProject_9adf.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StProject_0b21 {
+export namespace StProjectBab7 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StProject_0b21.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StProjectBab7.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAngleDd35 {
+export namespace StAngle_3749 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAngleDd35.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAngle_3749.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -60515,16 +60510,16 @@ export namespace Parameters {
  }
 }
 }
-export namespace StCollectionextractF74e {
+export namespace StCollectionextract_73ac {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StCollectionextractF74e.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StCollectionextract_73ac.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StCollectionextract_52cb {
+export namespace StCollectionextractC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StCollectionextract_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StCollectionextractC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -60550,44 +60545,44 @@ export namespace Parameters {
  }
 }
 }
-export namespace StForcesfs_52cb {
+export namespace StForcesfsC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StForcesfs_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StForcesfsC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StForcesfs_09ea {
+export namespace StForcesfs_9881 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StForcesfs_09ea.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StForcesfs_9881.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StExpandC8db {
+export namespace StExpandDbaa {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StExpandC8db.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StExpandDbaa.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StExpandB682 {
+export namespace StExpand_4f8f {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StExpandB682.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StExpand_4f8f.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StExpand_8fd9 {
+export namespace StExpand_23e5 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StExpand_8fd9.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StExpand_23e5.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StExpand_3395 {
+export namespace StExpand_6e33 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StExpand_3395.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StExpand_6e33.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -60648,58 +60643,58 @@ export namespace Parameters {
  }
 }
 }
-export namespace StAsewkt_52cb {
+export namespace StAsewktC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAsewkt_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAsewktC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAsewktF74e {
+export namespace StAsewkt_73ac {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAsewktF74e.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAsewkt_73ac.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAstwkbC537 {
+export namespace StAstwkbE417 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAstwkbC537.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAstwkbE417.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAstwkb_911a {
+export namespace StAstwkbE7ff {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAstwkb_911a.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAstwkbE7ff.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAsewkb_52cb {
+export namespace StAsewkbC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAsewkb_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAsewkbC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAshexewkb_52cb {
+export namespace StAshexewkbC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAshexewkb_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAshexewkbC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAshexewkb_09ea {
+export namespace StAshexewkb_9881 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAshexewkb_09ea.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAshexewkb_9881.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAsewkb_09ea {
+export namespace StAsewkb_9881 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAsewkb_09ea.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAsewkb_9881.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -60783,9 +60778,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StMakeline_1ecf {
+export namespace StMakelineA84e {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StMakeline_1ecf.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StMakelineA84e.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -60797,30 +60792,30 @@ export namespace Parameters {
  }
 }
 }
-export namespace StMakeline_4e70 {
+export namespace StMakeline_6bd0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StMakeline_4e70.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StMakeline_6bd0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAddpoint_4e70 {
+export namespace StAddpoint_6bd0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAddpoint_4e70.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAddpoint_6bd0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StScaleBdaa {
+export namespace StScale_9adf {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StScaleBdaa.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StScale_9adf.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAddpointBf6c {
+export namespace StAddpointAcbc {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAddpointBf6c.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAddpointAcbc.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -60853,16 +60848,16 @@ export namespace Parameters {
  }
 }
 }
-export namespace StMakepolygonCd1b {
+export namespace StMakepolygon_88d3 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StMakepolygonCd1b.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StMakepolygon_88d3.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StMakepolygon_52cb {
+export namespace StMakepolygonC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StMakepolygon_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StMakepolygonC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -60874,72 +60869,72 @@ export namespace Parameters {
  }
 }
 }
-export namespace StPolygonize_1ecf {
+export namespace StPolygonizeA84e {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StPolygonize_1ecf.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StPolygonizeA84e.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StClusterintersecting_1ecf {
+export namespace StClusterintersectingA84e {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StClusterintersecting_1ecf.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StClusterintersectingA84e.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StClusterwithin_7fe3 {
+export namespace StClusterwithinAece {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StClusterwithin_7fe3.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StClusterwithinAece.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StLinemerge_52cb {
+export namespace StLinemergeC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StLinemerge_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StLinemergeC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StLinemergeE9cd {
+export namespace StLinemergeE62d {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StLinemergeE9cd.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StLinemergeE62d.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAffineAb49 {
+export namespace StAffine_35f7 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAffineAb49.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAffine_35f7.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAffine_1347 {
+export namespace StAffine_78d2 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAffine_1347.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAffine_78d2.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StRotate_8fd9 {
+export namespace StRotate_23e5 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StRotate_8fd9.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StRotate_23e5.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StRotate_196d {
+export namespace StRotateA6e8 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StRotate_196d.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StRotateA6e8.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StRotateD16f {
+export namespace StRotate_4c28 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StRotateD16f.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StRotate_4c28.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -60965,37 +60960,37 @@ export namespace Parameters {
  }
 }
 }
-export namespace StTranslate_196d {
+export namespace StTranslateA6e8 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StTranslate_196d.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StTranslateA6e8.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StTranslateBdaa {
+export namespace StTranslate_9adf {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StTranslateBdaa.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StTranslate_9adf.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StScale_4e70 {
+export namespace StScale_6bd0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StScale_4e70.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StScale_6bd0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StScaleFaae {
+export namespace StScaleE109 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StScaleFaae.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StScaleE109.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StScale_196d {
+export namespace StScaleA6e8 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StScale_196d.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StScaleA6e8.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -61098,9 +61093,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StSegmentize_8fd9 {
+export namespace StSegmentize_23e5 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StSegmentize_8fd9.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StSegmentize_23e5.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -61154,16 +61149,16 @@ export namespace Parameters {
  }
 }
 }
-export namespace StSetsridF74e {
+export namespace StSetsrid_73ac {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StSetsridF74e.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StSetsrid_73ac.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StSrid_52cb {
+export namespace StSridC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StSrid_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StSridC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -61198,30 +61193,30 @@ export namespace Parameters {
  }
 }
 }
-export namespace StTransformF74e {
+export namespace StTransform_73ac {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StTransformF74e.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StTransform_73ac.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StTransform_09ea {
+export namespace StTransform_9881 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StTransform_09ea.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StTransform_9881.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StTransform_58c7 {
+export namespace StTransformF6ce {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StTransform_58c7.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StTransformF6ce.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StTransform_226f {
+export namespace StTransformFe9f {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StTransform_226f.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StTransformFe9f.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -61282,30 +61277,30 @@ export namespace Parameters {
  }
 }
 }
-export namespace StLineinterpolatepoint_8fd9 {
+export namespace StLineinterpolatepoint_23e5 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StLineinterpolatepoint_8fd9.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StLineinterpolatepoint_23e5.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StLineinterpolatepoints_2d1f {
+export namespace StLineinterpolatepoints_71ec {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StLineinterpolatepoints_2d1f.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StLineinterpolatepoints_71ec.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StLinesubstringBdaa {
+export namespace StLinesubstring_9adf {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StLinesubstringBdaa.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StLinesubstring_9adf.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StLinelocatepoint_4e70 {
+export namespace StLinelocatepoint_6bd0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StLinelocatepoint_4e70.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StLinelocatepoint_6bd0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -61326,44 +61321,44 @@ export namespace Parameters {
 }
 export namespace PostgisFullVersion {
 }
-export namespace Box2d_52cb {
+export namespace Box2dC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.Box2d_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.Box2dC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace Box3d_52cb {
+export namespace Box3dC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.Box3d_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.Box3dC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace Box_52cb {
+export namespace BoxC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.Box_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.BoxC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace Box2dC8c3 {
+export namespace Box2dAad0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.Box2dC8c3.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.Box2dAad0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace Box3dEf50 {
+export namespace Box3d_232c {
 export namespace Parameters {
- export function equals(l: Public.Procedures.Box3dEf50.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.Box3d_232c.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace BoxC8c3 {
+export namespace BoxAad0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.BoxC8c3.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.BoxAad0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -61382,16 +61377,16 @@ export namespace Parameters {
  }
 }
 }
-export namespace GeometryEf50 {
+export namespace Geometry_232c {
 export namespace Parameters {
- export function equals(l: Public.Procedures.GeometryEf50.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.Geometry_232c.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace GeometryC8c3 {
+export namespace GeometryAad0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.GeometryC8c3.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.GeometryAad0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -61410,23 +61405,23 @@ export namespace Parameters {
  }
 }
 }
-export namespace Bytea_52cb {
+export namespace ByteaC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.Bytea_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.ByteaC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StSimplify_8fd9 {
+export namespace StSimplify_23e5 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StSimplify_8fd9.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StSimplify_23e5.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StSimplify_2d1f {
+export namespace StSimplify_71ec {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StSimplify_2d1f.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StSimplify_71ec.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -61459,30 +61454,30 @@ export namespace Parameters {
  }
 }
 }
-export namespace StSnaptogrid_3395 {
+export namespace StSnaptogrid_6e33 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StSnaptogrid_3395.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StSnaptogrid_6e33.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StSnaptogridBdaa {
+export namespace StSnaptogrid_9adf {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StSnaptogridBdaa.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StSnaptogrid_9adf.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StSnaptogrid_8fd9 {
+export namespace StSnaptogrid_23e5 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StSnaptogrid_8fd9.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StSnaptogrid_23e5.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StSnaptogridC48b {
+export namespace StSnaptogrid_0fca {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StSnaptogridC48b.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StSnaptogrid_0fca.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -61508,23 +61503,23 @@ export namespace Parameters {
  }
 }
 }
-export namespace StIntersection_0b21 {
+export namespace StIntersectionBab7 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StIntersection_0b21.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StIntersectionBab7.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StBuffer_5012 {
+export namespace StBufferA313 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StBuffer_5012.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StBufferA313.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StBuffer_3ea8 {
+export namespace StBufferFed8 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StBuffer_3ea8.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StBufferFed8.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -61557,16 +61552,16 @@ export namespace Parameters {
  }
 }
 }
-export namespace StGeneratepointsF74e {
+export namespace StGeneratepoints_73ac {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StGeneratepointsF74e.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StGeneratepoints_73ac.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StGeneratepointsD3cf {
+export namespace StGeneratepoints_8eae {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StGeneratepointsD3cf.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StGeneratepoints_8eae.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -61585,9 +61580,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StIsvalidreason_52cb {
+export namespace StIsvalidreasonC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StIsvalidreason_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StIsvalidreasonC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -61599,30 +61594,30 @@ export namespace Parameters {
  }
 }
 }
-export namespace StIsvalidreasonF74e {
+export namespace StIsvalidreason_73ac {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StIsvalidreasonF74e.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StIsvalidreason_73ac.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StIsvalidF74e {
+export namespace StIsvalid_73ac {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StIsvalidF74e.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StIsvalid_73ac.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StHausdorffdistance_4e70 {
+export namespace StHausdorffdistance_6bd0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StHausdorffdistance_4e70.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StHausdorffdistance_6bd0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StHausdorffdistance_0b21 {
+export namespace StHausdorffdistanceBab7 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StHausdorffdistance_0b21.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StHausdorffdistanceBab7.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -61683,16 +61678,16 @@ export namespace Parameters {
  }
 }
 }
-export namespace StUnion_4e70 {
+export namespace StUnion_6bd0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StUnion_4e70.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StUnion_6bd0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StUnion_0b21 {
+export namespace StUnionBab7 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StUnion_0b21.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StUnionBab7.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -61732,16 +61727,16 @@ export namespace Parameters {
  }
 }
 }
-export namespace StMakevalid_52cb {
+export namespace StMakevalidC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StMakevalid_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StMakevalidC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StMakevalid_09ea {
+export namespace StMakevalid_9881 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StMakevalid_09ea.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StMakevalid_9881.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -61816,58 +61811,58 @@ export namespace Parameters {
  }
 }
 }
-export namespace StCombinebbox_169a {
+export namespace StCombinebboxDd7e {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StCombinebbox_169a.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StCombinebboxDd7e.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StCombinebbox_5a63 {
+export namespace StCombinebboxC436 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StCombinebbox_5a63.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StCombinebboxC436.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StCombinebbox_1ab0 {
+export namespace StCombinebbox_8c90 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StCombinebbox_1ab0.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StCombinebbox_8c90.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StCollect_4e70 {
+export namespace StCollect_6bd0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StCollect_4e70.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StCollect_6bd0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StCollect_1ecf {
+export namespace StCollectA84e {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StCollect_1ecf.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StCollectA84e.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace PgisGeometryAccumTransfn_56af {
+export namespace PgisGeometryAccumTransfn_5f8c {
 export namespace Parameters {
- export function equals(l: Public.Procedures.PgisGeometryAccumTransfn_56af.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.PgisGeometryAccumTransfn_5f8c.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace PgisGeometryAccumTransfn_0b06 {
+export namespace PgisGeometryAccumTransfn_0dbf {
 export namespace Parameters {
- export function equals(l: Public.Procedures.PgisGeometryAccumTransfn_0b06.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.PgisGeometryAccumTransfn_0dbf.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace PgisGeometryAccumTransfnAa63 {
+export namespace PgisGeometryAccumTransfnC6b8 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.PgisGeometryAccumTransfnAa63.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.PgisGeometryAccumTransfnC6b8.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -61914,16 +61909,16 @@ export namespace Parameters {
  }
 }
 }
-export namespace PgisGeometryUnionParallelTransfn_56af {
+export namespace PgisGeometryUnionParallelTransfn_5f8c {
 export namespace Parameters {
- export function equals(l: Public.Procedures.PgisGeometryUnionParallelTransfn_56af.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.PgisGeometryUnionParallelTransfn_5f8c.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace PgisGeometryUnionParallelTransfn_0b06 {
+export namespace PgisGeometryUnionParallelTransfn_0dbf {
 export namespace Parameters {
- export function equals(l: Public.Procedures.PgisGeometryUnionParallelTransfn_0b06.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.PgisGeometryUnionParallelTransfn_0dbf.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -61956,37 +61951,37 @@ export namespace Parameters {
  }
 }
 }
-export namespace StUnion_1ecf {
+export namespace StUnionA84e {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StUnion_1ecf.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StUnionA84e.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StCoverageunion_1ecf {
+export namespace StCoverageunionA84e {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StCoverageunion_1ecf.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StCoverageunionA84e.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StRelate_4e70 {
+export namespace StRelate_6bd0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StRelate_4e70.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StRelate_6bd0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StRelateBf6c {
+export namespace StRelateAcbc {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StRelateBf6c.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StRelateAcbc.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StRelate_2565 {
+export namespace StRelateCe2d {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StRelate_2565.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StRelateCe2d.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -62012,9 +62007,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StDwithin_0b21 {
+export namespace StDwithinBab7 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StDwithin_0b21.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StDwithinBab7.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -62026,9 +62021,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StIntersects_4e70 {
+export namespace StIntersects_6bd0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StIntersects_4e70.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StIntersects_6bd0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -62061,16 +62056,16 @@ export namespace Parameters {
  }
 }
 }
-export namespace StCovers_4e70 {
+export namespace StCovers_6bd0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StCovers_4e70.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StCovers_6bd0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StCoveredby_4e70 {
+export namespace StCoveredby_6bd0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StCoveredby_4e70.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StCoveredby_6bd0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -62124,9 +62119,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StIsvalid_52cb {
+export namespace StIsvalidC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StIsvalid_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StIsvalidC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -62145,9 +62140,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StCentroid_52cb {
+export namespace StCentroidC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StCentroid_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StCentroidC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -62280,37 +62275,37 @@ export namespace Parameters {
  }
 }
 }
-export namespace StAssvgD3cf {
+export namespace StAssvg_8eae {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAssvgD3cf.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAssvg_8eae.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAsgmlD3cf {
+export namespace StAsgml_8eae {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAsgmlD3cf.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAsgml_8eae.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAsgml_3bec {
+export namespace StAsgml_3b73 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAsgml_3bec.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAsgml_3b73.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAskml_6ebd {
+export namespace StAskmlC975 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAskml_6ebd.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAskmlC975.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAsgeojsonD3cf {
+export namespace StAsgeojson_8eae {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAsgeojsonD3cf.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAsgeojson_8eae.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -62471,9 +62466,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StGeohashF74e {
+export namespace StGeohash_73ac {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StGeohashF74e.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StGeohash_73ac.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -62555,9 +62550,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace Geometrytype_52cb {
+export namespace GeometrytypeC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.Geometrytype_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.GeometrytypeC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -62618,30 +62613,30 @@ export namespace Parameters {
  }
 }
 }
-export namespace StAsbinary_09ea {
+export namespace StAsbinary_9881 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAsbinary_09ea.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAsbinary_9881.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAsbinary_52cb {
+export namespace StAsbinaryC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAsbinary_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAsbinaryC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAstext_52cb {
+export namespace StAstextC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAstext_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAstextC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAstextF74e {
+export namespace StAstext_73ac {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAstextF74e.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAstext_73ac.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63017,16 +63012,16 @@ export namespace Parameters {
  }
 }
 }
-export namespace StClosestpoint_4e70 {
+export namespace StClosestpoint_6bd0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StClosestpoint_4e70.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StClosestpoint_6bd0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StShortestline_4e70 {
+export namespace StShortestline_6bd0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StShortestline_4e70.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StShortestline_6bd0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63073,9 +63068,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace Geography_8e85 {
+export namespace Geography_33f0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.Geography_8e85.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.Geography_33f0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63087,23 +63082,23 @@ export namespace Parameters {
  }
 }
 }
-export namespace ByteaB076 {
+export namespace ByteaC6e0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.ByteaB076.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.ByteaC6e0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAstextB076 {
+export namespace StAstextC6e0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAstextB076.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAstextC6e0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAstext_52a9 {
+export namespace StAstextE8cd {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAstext_52a9.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAstextE8cd.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63258,16 +63253,16 @@ export namespace Parameters {
  }
 }
 }
-export namespace Geography_52cb {
+export namespace GeographyC567 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.Geography_52cb.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.GeographyC567.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace GeometryB076 {
+export namespace GeometryC6e0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.GeometryB076.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.GeometryC6e0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63342,23 +63337,23 @@ export namespace Parameters {
  }
 }
 }
-export namespace OverlapsGeog_46ba {
+export namespace OverlapsGeogBb60 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.OverlapsGeog_46ba.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.OverlapsGeogBb60.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace OverlapsGeogD1af {
+export namespace OverlapsGeog_8a58 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.OverlapsGeogD1af.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.OverlapsGeog_8a58.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace OverlapsGeogC98c {
+export namespace OverlapsGeog_21a5 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.OverlapsGeogC98c.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.OverlapsGeog_21a5.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63412,9 +63407,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StAssvgFab6 {
+export namespace StAssvg_07a8 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAssvgFab6.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAssvg_07a8.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63426,16 +63421,16 @@ export namespace Parameters {
  }
 }
 }
-export namespace StProject_57ad {
+export namespace StProjectCd02 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StProject_57ad.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StProjectCd02.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAzimuth_25d7 {
+export namespace StAzimuthEa06 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAzimuth_25d7.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAzimuthEa06.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63447,16 +63442,16 @@ export namespace Parameters {
  }
 }
 }
-export namespace StAsgml_4503 {
+export namespace StAsgmlF715 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAsgml_4503.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAsgmlF715.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAsgmlDb17 {
+export namespace StAsgmlC08d {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAsgmlDb17.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAsgmlC08d.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63468,9 +63463,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StAskml_58db {
+export namespace StAskml_874a {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAskml_58db.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAskml_874a.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63482,9 +63477,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StAsgeojsonFab6 {
+export namespace StAsgeojson_07a8 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAsgeojsonFab6.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAsgeojson_07a8.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63496,9 +63491,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StDistanceDea8 {
+export namespace StDistance_05ee {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StDistanceDea8.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StDistance_05ee.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63510,9 +63505,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StArea_527f {
+export namespace StArea_5f1d {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StArea_527f.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StArea_5f1d.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63524,9 +63519,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StLength_527f {
+export namespace StLength_5f1d {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StLength_527f.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StLength_5f1d.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63538,51 +63533,51 @@ export namespace Parameters {
  }
 }
 }
-export namespace StProject_5f39 {
+export namespace StProjectF79f {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StProject_5f39.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StProjectF79f.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StPerimeter_527f {
+export namespace StPerimeter_5f1d {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StPerimeter_527f.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StPerimeter_5f1d.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StSegmentize_7120 {
+export namespace StSegmentize_661e {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StSegmentize_7120.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StSegmentize_661e.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAsbinaryB076 {
+export namespace StAsbinaryC6e0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAsbinaryB076.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAsbinaryC6e0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAsbinary_543e {
+export namespace StAsbinary_69ab {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAsbinary_543e.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAsbinary_69ab.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAsewktB076 {
+export namespace StAsewktC6e0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAsewktB076.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAsewktC6e0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StAsewkt_52a9 {
+export namespace StAsewktE8cd {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAsewkt_52a9.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAsewktE8cd.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63594,44 +63589,44 @@ export namespace Parameters {
  }
 }
 }
-export namespace GeometrytypeB076 {
+export namespace GeometrytypeC6e0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.GeometrytypeB076.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.GeometrytypeC6e0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StSummaryB076 {
+export namespace StSummaryC6e0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StSummaryB076.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StSummaryC6e0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StGeohash_52a9 {
+export namespace StGeohashE8cd {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StGeohash_52a9.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StGeohashE8cd.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StSridB076 {
+export namespace StSridC6e0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StSridB076.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StSridC6e0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StSetsrid_52a9 {
+export namespace StSetsridE8cd {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StSetsrid_52a9.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StSetsridE8cd.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StCentroid_527f {
+export namespace StCentroid_5f1d {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StCentroid_527f.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StCentroid_5f1d.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63643,51 +63638,51 @@ export namespace Parameters {
  }
 }
 }
-export namespace StCovers_25d7 {
+export namespace StCoversEa06 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StCovers_25d7.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StCoversEa06.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StDwithin_1936 {
+export namespace StDwithin_35a5 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StDwithin_1936.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StDwithin_35a5.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StCoveredby_25d7 {
+export namespace StCoveredbyEa06 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StCoveredby_25d7.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StCoveredbyEa06.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StIntersects_25d7 {
+export namespace StIntersectsEa06 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StIntersects_25d7.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StIntersectsEa06.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StBuffer_7120 {
+export namespace StBuffer_661e {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StBuffer_7120.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StBuffer_661e.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StBufferAc74 {
+export namespace StBuffer_693b {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StBufferAc74.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StBuffer_693b.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StBuffer_750b {
+export namespace StBuffer_51ed {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StBuffer_750b.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StBuffer_51ed.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63706,9 +63701,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StIntersection_25d7 {
+export namespace StIntersectionEa06 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StIntersection_25d7.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StIntersectionEa06.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63748,9 +63743,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StClosestpointDea8 {
+export namespace StClosestpoint_05ee {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StClosestpointDea8.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StClosestpoint_05ee.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63762,9 +63757,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StShortestlineDea8 {
+export namespace StShortestline_05ee {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StShortestlineDea8.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StShortestline_05ee.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63776,9 +63771,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StLinesubstring_5f39 {
+export namespace StLinesubstringF79f {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StLinesubstring_5f39.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StLinesubstringF79f.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63790,9 +63785,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StLinelocatepointDea8 {
+export namespace StLinelocatepoint_05ee {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StLinelocatepointDea8.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StLinelocatepoint_05ee.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63804,9 +63799,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StLineinterpolatepoints_7696 {
+export namespace StLineinterpolatepoints_83da {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StLineinterpolatepoints_7696.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StLineinterpolatepoints_83da.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63818,9 +63813,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StLineinterpolatepoint_6ef8 {
+export namespace StLineinterpolatepoint_57c0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StLineinterpolatepoint_6ef8.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StLineinterpolatepoint_57c0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -63832,16 +63827,16 @@ export namespace Parameters {
  }
 }
 }
-export namespace StDistancesphere_4e70 {
+export namespace StDistancesphere_6bd0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StDistancesphere_4e70.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StDistancesphere_6bd0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace StDistancesphere_0b21 {
+export namespace StDistancesphereBab7 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StDistancesphere_0b21.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StDistancesphereBab7.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -64042,86 +64037,86 @@ export namespace Parameters {
  }
 }
 }
-export namespace Contains_2dA8e6 {
+export namespace Contains_2d_676e {
 export namespace Parameters {
- export function equals(l: Public.Procedures.Contains_2dA8e6.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.Contains_2d_676e.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace IsContained_2dA8e6 {
+export namespace IsContained_2d_676e {
 export namespace Parameters {
- export function equals(l: Public.Procedures.IsContained_2dA8e6.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.IsContained_2d_676e.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace Overlaps_2dA8e6 {
+export namespace Overlaps_2d_676e {
 export namespace Parameters {
- export function equals(l: Public.Procedures.Overlaps_2dA8e6.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.Overlaps_2d_676e.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace Overlaps_2d_5533 {
+export namespace Overlaps_2dA7ab {
 export namespace Parameters {
- export function equals(l: Public.Procedures.Overlaps_2d_5533.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.Overlaps_2dA7ab.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace Contains_2d_5533 {
+export namespace Contains_2dA7ab {
 export namespace Parameters {
- export function equals(l: Public.Procedures.Contains_2d_5533.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.Contains_2dA7ab.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace IsContained_2d_5533 {
+export namespace IsContained_2dA7ab {
 export namespace Parameters {
- export function equals(l: Public.Procedures.IsContained_2d_5533.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.IsContained_2dA7ab.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace Contains_2d_5225 {
+export namespace Contains_2d_3e52 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.Contains_2d_5225.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.Contains_2d_3e52.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace IsContained_2d_5225 {
+export namespace IsContained_2d_3e52 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.IsContained_2d_5225.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.IsContained_2d_3e52.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace Overlaps_2d_5225 {
+export namespace Overlaps_2d_3e52 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.Overlaps_2d_5225.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.Overlaps_2d_3e52.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace OverlapsNdD353 {
+export namespace OverlapsNd_1882 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.OverlapsNdD353.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.OverlapsNd_1882.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace OverlapsNdD1af {
+export namespace OverlapsNd_8a58 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.OverlapsNdD1af.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.OverlapsNd_8a58.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace OverlapsNdA633 {
+export namespace OverlapsNdC3f9 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.OverlapsNdA633.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.OverlapsNdC3f9.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -64168,9 +64163,9 @@ export namespace Parameters {
  }
 }
 }
-export namespace StAngle_4e70 {
+export namespace StAngle_6bd0 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.StAngle_4e70.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.StAngle_6bd0.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -64403,18 +64398,18 @@ export namespace NycSubwayStations {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_56668Index {
- export function equals(l: PgToast.Types.PgToast_56668Index|undefined, r: unknown) {
+export namespace PgToast_63800Index {
+ export function equals(l: PgToast.Types.PgToast_63800Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_57426Index {
- export function equals(l: PgToast.Types.PgToast_57426Index|undefined, r: unknown) {
+export namespace PgToast_64558Index {
+ export function equals(l: PgToast.Types.PgToast_64558Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_57432Index {
- export function equals(l: PgToast.Types.PgToast_57432Index|undefined, r: unknown) {
+export namespace PgToast_64564Index {
+ export function equals(l: PgToast.Types.PgToast_64564Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -64483,8 +64478,8 @@ export namespace PgToast_2609Index {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_57438Index {
- export function equals(l: PgToast.Types.PgToast_57438Index|undefined, r: unknown) {
+export namespace PgToast_64570Index {
+ export function equals(l: PgToast.Types.PgToast_64570Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -64603,13 +64598,13 @@ export namespace PgToast_6100Index {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_57444Index {
- export function equals(l: PgToast.Types.PgToast_57444Index|undefined, r: unknown) {
+export namespace PgToast_64576Index {
+ export function equals(l: PgToast.Types.PgToast_64576Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_57450Index {
- export function equals(l: PgToast.Types.PgToast_57450Index|undefined, r: unknown) {
+export namespace PgToast_64582Index {
+ export function equals(l: PgToast.Types.PgToast_64582Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -66115,111 +66110,111 @@ export namespace Tables {
 ["InformationSchema.Types.UserMappings"]: Typecast
 [13823]: Typecast;
 ["InformationSchema.Types.UserMappingsArray"]: Typecast
-[56352]: Typecast;
+[63484]: Typecast;
 ["Public.Types.Spheroid"]: Typecast
-[56355]: Typecast;
+[63487]: Typecast;
 ["Public.Types.SpheroidArray"]: Typecast
-[56356]: Typecast;
+[63488]: Typecast;
 ["Public.Types.Geometry"]: Typecast
-[56364]: Typecast;
+[63496]: Typecast;
 ["Public.Types.GeometryArray"]: Typecast
-[56383]: Typecast;
+[63515]: Typecast;
 ["Public.Types.Box3d"]: Typecast
-[56386]: Typecast;
+[63518]: Typecast;
 ["Public.Types.Box3dArray"]: Typecast
-[56387]: Typecast;
+[63519]: Typecast;
 ["Public.Types.Box2d"]: Typecast
-[56390]: Typecast;
+[63522]: Typecast;
 ["Public.Types.Box2dArray"]: Typecast
-[56391]: Typecast;
+[63523]: Typecast;
 ["Public.Types.Box2df"]: Typecast
-[56394]: Typecast;
+[63526]: Typecast;
 ["Public.Types.Box2dfArray"]: Typecast
-[56395]: Typecast;
+[63527]: Typecast;
 ["Public.Types.Gidx"]: Typecast
-[56398]: Typecast;
+[63530]: Typecast;
 ["Public.Types.GidxArray"]: Typecast
-[56663]: Typecast;
+[63795]: Typecast;
 ["Public.Types.GeometryDump"]: Typecast
-[56662]: Typecast;
+[63794]: Typecast;
 ["Public.Types.GeometryDumpArray"]: Typecast
-[56670]: Typecast;
+[63802]: Typecast;
 ["Public.Types.SpatialRefSys"]: Typecast
-[56669]: Typecast;
+[63801]: Typecast;
 ["Public.Types.SpatialRefSysArray"]: Typecast
-[56785]: Typecast;
+[63917]: Typecast;
 ["Public.Types.ValidDetail"]: Typecast
-[56784]: Typecast;
+[63916]: Typecast;
 ["Public.Types.ValidDetailArray"]: Typecast
-[57062]: Typecast;
+[64194]: Typecast;
 ["Public.Types.Geography"]: Typecast
-[57068]: Typecast;
+[64200]: Typecast;
 ["Public.Types.GeographyArray"]: Typecast
-[57086]: Typecast;
+[64218]: Typecast;
 ["Public.Types.GeographyColumns"]: Typecast
-[57085]: Typecast;
+[64217]: Typecast;
 ["Public.Types.GeographyColumnsArray"]: Typecast
-[57235]: Typecast;
+[64367]: Typecast;
 ["Public.Types.GeometryColumns"]: Typecast
-[57234]: Typecast;
+[64366]: Typecast;
 ["Public.Types.GeometryColumnsArray"]: Typecast
-[57428]: Typecast;
+[64560]: Typecast;
 ["Public.Types.NycCensusBlocks"]: Typecast
-[57427]: Typecast;
+[64559]: Typecast;
 ["Public.Types.NycCensusBlocksArray"]: Typecast
-[57434]: Typecast;
+[64566]: Typecast;
 ["Public.Types.NycHomicides"]: Typecast
-[57433]: Typecast;
+[64565]: Typecast;
 ["Public.Types.NycHomicidesArray"]: Typecast
-[57440]: Typecast;
+[64572]: Typecast;
 ["Public.Types.NycNeighborhoods"]: Typecast
-[57439]: Typecast;
+[64571]: Typecast;
 ["Public.Types.NycNeighborhoodsArray"]: Typecast
-[57446]: Typecast;
+[64578]: Typecast;
 ["Public.Types.NycStreets"]: Typecast
-[57445]: Typecast;
+[64577]: Typecast;
 ["Public.Types.NycStreetsArray"]: Typecast
-[57452]: Typecast;
+[64584]: Typecast;
 ["Public.Types.NycSubwayStations"]: Typecast
-[57451]: Typecast;
+[64583]: Typecast;
 ["Public.Types.NycSubwayStationsArray"]: Typecast
-[56674]: Typecast;
+[63806]: Typecast;
 ["Public.Types.SpatialRefSysPkey"]: Typecast
-[57508]: Typecast;
+[64640]: Typecast;
 ["Public.Types.NycCensusBlocksPkey"]: Typecast
-[57510]: Typecast;
+[64642]: Typecast;
 ["Public.Types.NycHomicidesPkey"]: Typecast
-[57512]: Typecast;
+[64644]: Typecast;
 ["Public.Types.NycNeighborhoodsPkey"]: Typecast
-[57514]: Typecast;
+[64646]: Typecast;
 ["Public.Types.NycStreetsPkey"]: Typecast
-[57516]: Typecast;
+[64648]: Typecast;
 ["Public.Types.NycSubwayStationsPkey"]: Typecast
-[57518]: Typecast;
+[64650]: Typecast;
 ["Public.Types.NycCensusBlocksGeomIdx"]: Typecast
-[57519]: Typecast;
+[64651]: Typecast;
 ["Public.Types.NycHomicidesGeomIdx"]: Typecast
-[57520]: Typecast;
+[64652]: Typecast;
 ["Public.Types.NycNeighborhoodsGeomIdx"]: Typecast
-[57521]: Typecast;
+[64653]: Typecast;
 ["Public.Types.NycStreetsGeomIdx"]: Typecast
-[57522]: Typecast;
+[64654]: Typecast;
 ["Public.Types.NycSubwayStationsGeomIdx"]: Typecast
-[56698]: Typecast;
+[63830]: Typecast;
 ["Public.Types.PostgisSrs"]: Typecast
-[56699]: Typecast;
+[63831]: Typecast;
 ["Public.Types.PostgisSrsAll"]: Typecast
-[56700]: Typecast;
+[63832]: Typecast;
 ["Public.Types.PostgisSrsSearch"]: Typecast
-[56774]: Typecast;
+[63906]: Typecast;
 ["Public.Types.StMinimumboundingradius"]: Typecast
-[56792]: Typecast;
+[63924]: Typecast;
 ["Public.Types.StMaximuminscribedcircle"]: Typecast
-[56793]: Typecast;
+[63925]: Typecast;
 ["Public.Types.StLargestemptycircle"]: Typecast
-[57263]: Typecast;
+[64395]: Typecast;
 ["Public.Types.StHexagongrid"]: Typecast
-[57264]: Typecast;
+[64396]: Typecast;
 ["Public.Types.StSquaregrid"]: Typecast
 
 ["Public.Procedures.StForcepolygoncw.Parameters"]: Typecast
@@ -66242,7 +66237,7 @@ export namespace Tables {
 
 ["Public.Procedures.GeometrySend.Parameters"]: Typecast
 
-["Public.Procedures.Geometry_3198.Parameters"]: Typecast
+["Public.Procedures.GeometryEd31.Parameters"]: Typecast
 
 ["Public.Procedures.Geometry_8997.Parameters"]: Typecast
 
@@ -66400,9 +66395,9 @@ export namespace Tables {
 
 ["Public.Procedures.StZmax.Parameters"]: Typecast
 
-["Public.Procedures.StExpandC2f2.Parameters"]: Typecast
+["Public.Procedures.StExpand_0683.Parameters"]: Typecast
 
-["Public.Procedures.StExpand_0686.Parameters"]: Typecast
+["Public.Procedures.StExpand_509e.Parameters"]: Typecast
 
 ["Public.Procedures.PostgisGetbbox.Parameters"]: Typecast
 
@@ -66428,7 +66423,7 @@ export namespace Tables {
 
 ["Public.Procedures.StMemsize.Parameters"]: Typecast
 
-["Public.Procedures.StSummary_52cb.Parameters"]: Typecast
+["Public.Procedures.StSummaryC567.Parameters"]: Typecast
 
 ["Public.Procedures.StNpoints.Parameters"]: Typecast
 
@@ -66438,7 +66433,7 @@ export namespace Tables {
 
 ["Public.Procedures.StLength2d.Parameters"]: Typecast
 
-["Public.Procedures.StLength_52cb.Parameters"]: Typecast
+["Public.Procedures.StLengthC567.Parameters"]: Typecast
 
 ["Public.Procedures.StLengthspheroid.Parameters"]: Typecast
 
@@ -66448,31 +66443,31 @@ export namespace Tables {
 
 ["Public.Procedures.StPerimeter2d.Parameters"]: Typecast
 
-["Public.Procedures.StPerimeter_52cb.Parameters"]: Typecast
+["Public.Procedures.StPerimeterC567.Parameters"]: Typecast
 
 ["Public.Procedures.StArea2d.Parameters"]: Typecast
 
-["Public.Procedures.StArea_52cb.Parameters"]: Typecast
+["Public.Procedures.StAreaC567.Parameters"]: Typecast
 
 ["Public.Procedures.StIspolygoncw.Parameters"]: Typecast
 
 ["Public.Procedures.StIspolygonccw.Parameters"]: Typecast
 
-["Public.Procedures.StDistancespheroidA3f5.Parameters"]: Typecast
+["Public.Procedures.StDistancespheroid_094c.Parameters"]: Typecast
 
-["Public.Procedures.StDistancespheroid_4e70.Parameters"]: Typecast
+["Public.Procedures.StDistancespheroid_6bd0.Parameters"]: Typecast
 
-["Public.Procedures.StDistance_4e70.Parameters"]: Typecast
+["Public.Procedures.StDistance_6bd0.Parameters"]: Typecast
 
 ["Public.Procedures.StPointinsidecircle.Parameters"]: Typecast
 
-["Public.Procedures.StAzimuth_4e70.Parameters"]: Typecast
+["Public.Procedures.StAzimuth_6bd0.Parameters"]: Typecast
 
-["Public.Procedures.StProjectBdaa.Parameters"]: Typecast
+["Public.Procedures.StProject_9adf.Parameters"]: Typecast
 
-["Public.Procedures.StProject_0b21.Parameters"]: Typecast
+["Public.Procedures.StProjectBab7.Parameters"]: Typecast
 
-["Public.Procedures.StAngleDd35.Parameters"]: Typecast
+["Public.Procedures.StAngle_3749.Parameters"]: Typecast
 
 ["Public.Procedures.StLineextend.Parameters"]: Typecast
 
@@ -66488,9 +66483,9 @@ export namespace Tables {
 
 ["Public.Procedures.StForcecollection.Parameters"]: Typecast
 
-["Public.Procedures.StCollectionextractF74e.Parameters"]: Typecast
+["Public.Procedures.StCollectionextract_73ac.Parameters"]: Typecast
 
-["Public.Procedures.StCollectionextract_52cb.Parameters"]: Typecast
+["Public.Procedures.StCollectionextractC567.Parameters"]: Typecast
 
 ["Public.Procedures.StCollectionhomogenize.Parameters"]: Typecast
 
@@ -66498,17 +66493,17 @@ export namespace Tables {
 
 ["Public.Procedures.StForcecurve.Parameters"]: Typecast
 
-["Public.Procedures.StForcesfs_52cb.Parameters"]: Typecast
+["Public.Procedures.StForcesfsC567.Parameters"]: Typecast
 
-["Public.Procedures.StForcesfs_09ea.Parameters"]: Typecast
+["Public.Procedures.StForcesfs_9881.Parameters"]: Typecast
 
-["Public.Procedures.StExpandC8db.Parameters"]: Typecast
+["Public.Procedures.StExpandDbaa.Parameters"]: Typecast
 
-["Public.Procedures.StExpandB682.Parameters"]: Typecast
+["Public.Procedures.StExpand_4f8f.Parameters"]: Typecast
 
-["Public.Procedures.StExpand_8fd9.Parameters"]: Typecast
+["Public.Procedures.StExpand_23e5.Parameters"]: Typecast
 
-["Public.Procedures.StExpand_3395.Parameters"]: Typecast
+["Public.Procedures.StExpand_6e33.Parameters"]: Typecast
 
 ["Public.Procedures.StEnvelope.Parameters"]: Typecast
 
@@ -66526,21 +66521,21 @@ export namespace Tables {
 
 ["Public.Procedures.StNdims.Parameters"]: Typecast
 
-["Public.Procedures.StAsewkt_52cb.Parameters"]: Typecast
+["Public.Procedures.StAsewktC567.Parameters"]: Typecast
 
-["Public.Procedures.StAsewktF74e.Parameters"]: Typecast
+["Public.Procedures.StAsewkt_73ac.Parameters"]: Typecast
 
-["Public.Procedures.StAstwkbC537.Parameters"]: Typecast
+["Public.Procedures.StAstwkbE417.Parameters"]: Typecast
 
-["Public.Procedures.StAstwkb_911a.Parameters"]: Typecast
+["Public.Procedures.StAstwkbE7ff.Parameters"]: Typecast
 
-["Public.Procedures.StAsewkb_52cb.Parameters"]: Typecast
+["Public.Procedures.StAsewkbC567.Parameters"]: Typecast
 
-["Public.Procedures.StAshexewkb_52cb.Parameters"]: Typecast
+["Public.Procedures.StAshexewkbC567.Parameters"]: Typecast
 
-["Public.Procedures.StAshexewkb_09ea.Parameters"]: Typecast
+["Public.Procedures.StAshexewkb_9881.Parameters"]: Typecast
 
-["Public.Procedures.StAsewkb_09ea.Parameters"]: Typecast
+["Public.Procedures.StAsewkb_9881.Parameters"]: Typecast
 
 ["Public.Procedures.StAslatlontext.Parameters"]: Typecast
 
@@ -66564,17 +66559,17 @@ export namespace Tables {
 
 ["Public.Procedures.St_3dmakebox.Parameters"]: Typecast
 
-["Public.Procedures.StMakeline_1ecf.Parameters"]: Typecast
+["Public.Procedures.StMakelineA84e.Parameters"]: Typecast
 
 ["Public.Procedures.StLinefrommultipoint.Parameters"]: Typecast
 
-["Public.Procedures.StMakeline_4e70.Parameters"]: Typecast
+["Public.Procedures.StMakeline_6bd0.Parameters"]: Typecast
 
-["Public.Procedures.StAddpoint_4e70.Parameters"]: Typecast
+["Public.Procedures.StAddpoint_6bd0.Parameters"]: Typecast
 
-["Public.Procedures.StScaleBdaa.Parameters"]: Typecast
+["Public.Procedures.StScale_9adf.Parameters"]: Typecast
 
-["Public.Procedures.StAddpointBf6c.Parameters"]: Typecast
+["Public.Procedures.StAddpointAcbc.Parameters"]: Typecast
 
 ["Public.Procedures.StRemovepoint.Parameters"]: Typecast
 
@@ -66584,31 +66579,31 @@ export namespace Tables {
 
 ["Public.Procedures.StTileenvelope.Parameters"]: Typecast
 
-["Public.Procedures.StMakepolygonCd1b.Parameters"]: Typecast
+["Public.Procedures.StMakepolygon_88d3.Parameters"]: Typecast
 
-["Public.Procedures.StMakepolygon_52cb.Parameters"]: Typecast
+["Public.Procedures.StMakepolygonC567.Parameters"]: Typecast
 
 ["Public.Procedures.StBuildarea.Parameters"]: Typecast
 
-["Public.Procedures.StPolygonize_1ecf.Parameters"]: Typecast
+["Public.Procedures.StPolygonizeA84e.Parameters"]: Typecast
 
-["Public.Procedures.StClusterintersecting_1ecf.Parameters"]: Typecast
+["Public.Procedures.StClusterintersectingA84e.Parameters"]: Typecast
 
-["Public.Procedures.StClusterwithin_7fe3.Parameters"]: Typecast
+["Public.Procedures.StClusterwithinAece.Parameters"]: Typecast
 
-["Public.Procedures.StLinemerge_52cb.Parameters"]: Typecast
+["Public.Procedures.StLinemergeC567.Parameters"]: Typecast
 
-["Public.Procedures.StLinemergeE9cd.Parameters"]: Typecast
+["Public.Procedures.StLinemergeE62d.Parameters"]: Typecast
 
-["Public.Procedures.StAffineAb49.Parameters"]: Typecast
+["Public.Procedures.StAffine_35f7.Parameters"]: Typecast
 
-["Public.Procedures.StAffine_1347.Parameters"]: Typecast
+["Public.Procedures.StAffine_78d2.Parameters"]: Typecast
 
-["Public.Procedures.StRotate_8fd9.Parameters"]: Typecast
+["Public.Procedures.StRotate_23e5.Parameters"]: Typecast
 
-["Public.Procedures.StRotate_196d.Parameters"]: Typecast
+["Public.Procedures.StRotateA6e8.Parameters"]: Typecast
 
-["Public.Procedures.StRotateD16f.Parameters"]: Typecast
+["Public.Procedures.StRotate_4c28.Parameters"]: Typecast
 
 ["Public.Procedures.StRotatez.Parameters"]: Typecast
 
@@ -66616,15 +66611,15 @@ export namespace Tables {
 
 ["Public.Procedures.StRotatey.Parameters"]: Typecast
 
-["Public.Procedures.StTranslate_196d.Parameters"]: Typecast
+["Public.Procedures.StTranslateA6e8.Parameters"]: Typecast
 
-["Public.Procedures.StTranslateBdaa.Parameters"]: Typecast
+["Public.Procedures.StTranslate_9adf.Parameters"]: Typecast
 
-["Public.Procedures.StScale_4e70.Parameters"]: Typecast
+["Public.Procedures.StScale_6bd0.Parameters"]: Typecast
 
-["Public.Procedures.StScaleFaae.Parameters"]: Typecast
+["Public.Procedures.StScaleE109.Parameters"]: Typecast
 
-["Public.Procedures.StScale_196d.Parameters"]: Typecast
+["Public.Procedures.StScaleA6e8.Parameters"]: Typecast
 
 ["Public.Procedures.StTransscale.Parameters"]: Typecast
 
@@ -66654,7 +66649,7 @@ export namespace Tables {
 
 ["Public.Procedures.Dropgeometrytable_2253.Parameters"]: Typecast
 
-["Public.Procedures.StSegmentize_8fd9.Parameters"]: Typecast
+["Public.Procedures.StSegmentize_23e5.Parameters"]: Typecast
 
 ["Public.Procedures.DropgeometrytableF11a.Parameters"]: Typecast
 
@@ -66670,9 +66665,9 @@ export namespace Tables {
 
 ["Public.Procedures.GetProj4FromSrid.Parameters"]: Typecast
 
-["Public.Procedures.StSetsridF74e.Parameters"]: Typecast
+["Public.Procedures.StSetsrid_73ac.Parameters"]: Typecast
 
-["Public.Procedures.StSrid_52cb.Parameters"]: Typecast
+["Public.Procedures.StSridC567.Parameters"]: Typecast
 
 ["Public.Procedures.PostgisTransformGeometry.Parameters"]: Typecast
 
@@ -66682,13 +66677,13 @@ export namespace Tables {
 
 ["Public.Procedures.PostgisSrsSearch.Parameters"]: Typecast
 
-["Public.Procedures.StTransformF74e.Parameters"]: Typecast
+["Public.Procedures.StTransform_73ac.Parameters"]: Typecast
 
-["Public.Procedures.StTransform_09ea.Parameters"]: Typecast
+["Public.Procedures.StTransform_9881.Parameters"]: Typecast
 
-["Public.Procedures.StTransform_58c7.Parameters"]: Typecast
+["Public.Procedures.StTransformF6ce.Parameters"]: Typecast
 
-["Public.Procedures.StTransform_226f.Parameters"]: Typecast
+["Public.Procedures.StTransformFe9f.Parameters"]: Typecast
 
 ["Public.Procedures.PostgisTransformPipelineGeometry.Parameters"]: Typecast
 
@@ -66698,47 +66693,47 @@ export namespace Tables {
 
 ["Public.Procedures.PostgisExtensionsUpgrade.Parameters"]: Typecast
 
-["Public.Procedures.StLineinterpolatepoint_8fd9.Parameters"]: Typecast
+["Public.Procedures.StLineinterpolatepoint_23e5.Parameters"]: Typecast
 
-["Public.Procedures.StLineinterpolatepoints_2d1f.Parameters"]: Typecast
+["Public.Procedures.StLineinterpolatepoints_71ec.Parameters"]: Typecast
 
-["Public.Procedures.StLinesubstringBdaa.Parameters"]: Typecast
+["Public.Procedures.StLinesubstring_9adf.Parameters"]: Typecast
 
-["Public.Procedures.StLinelocatepoint_4e70.Parameters"]: Typecast
+["Public.Procedures.StLinelocatepoint_6bd0.Parameters"]: Typecast
 
 ["Public.Procedures.StAddmeasure.Parameters"]: Typecast
 
 ["Public.Procedures.StClosestpointofapproach.Parameters"]: Typecast
 
-["Public.Procedures.Box2d_52cb.Parameters"]: Typecast
+["Public.Procedures.Box2dC567.Parameters"]: Typecast
 
-["Public.Procedures.Box3d_52cb.Parameters"]: Typecast
+["Public.Procedures.Box3dC567.Parameters"]: Typecast
 
-["Public.Procedures.Box_52cb.Parameters"]: Typecast
+["Public.Procedures.BoxC567.Parameters"]: Typecast
 
-["Public.Procedures.Box2dC8c3.Parameters"]: Typecast
+["Public.Procedures.Box2dAad0.Parameters"]: Typecast
 
-["Public.Procedures.Box3dEf50.Parameters"]: Typecast
+["Public.Procedures.Box3d_232c.Parameters"]: Typecast
 
-["Public.Procedures.BoxC8c3.Parameters"]: Typecast
+["Public.Procedures.BoxAad0.Parameters"]: Typecast
 
 ["Public.Procedures.Text.Parameters"]: Typecast
 
 ["Public.Procedures.Box3dtobox.Parameters"]: Typecast
 
-["Public.Procedures.GeometryEf50.Parameters"]: Typecast
+["Public.Procedures.Geometry_232c.Parameters"]: Typecast
 
-["Public.Procedures.GeometryC8c3.Parameters"]: Typecast
+["Public.Procedures.GeometryAad0.Parameters"]: Typecast
 
 ["Public.Procedures.GeometryE728.Parameters"]: Typecast
 
 ["Public.Procedures.Geometry_2d19.Parameters"]: Typecast
 
-["Public.Procedures.Bytea_52cb.Parameters"]: Typecast
+["Public.Procedures.ByteaC567.Parameters"]: Typecast
 
-["Public.Procedures.StSimplify_8fd9.Parameters"]: Typecast
+["Public.Procedures.StSimplify_23e5.Parameters"]: Typecast
 
-["Public.Procedures.StSimplify_2d1f.Parameters"]: Typecast
+["Public.Procedures.StSimplify_71ec.Parameters"]: Typecast
 
 ["Public.Procedures.StSimplifyvw.Parameters"]: Typecast
 
@@ -66748,13 +66743,13 @@ export namespace Tables {
 
 ["Public.Procedures.StChaikinsmoothing.Parameters"]: Typecast
 
-["Public.Procedures.StSnaptogrid_3395.Parameters"]: Typecast
+["Public.Procedures.StSnaptogrid_6e33.Parameters"]: Typecast
 
-["Public.Procedures.StSnaptogridBdaa.Parameters"]: Typecast
+["Public.Procedures.StSnaptogrid_9adf.Parameters"]: Typecast
 
-["Public.Procedures.StSnaptogrid_8fd9.Parameters"]: Typecast
+["Public.Procedures.StSnaptogrid_23e5.Parameters"]: Typecast
 
-["Public.Procedures.StSnaptogridC48b.Parameters"]: Typecast
+["Public.Procedures.StSnaptogrid_0fca.Parameters"]: Typecast
 
 ["Public.Procedures.StDistancecpa.Parameters"]: Typecast
 
@@ -66762,11 +66757,11 @@ export namespace Tables {
 
 ["Public.Procedures.StIsvalidtrajectory.Parameters"]: Typecast
 
-["Public.Procedures.StIntersection_0b21.Parameters"]: Typecast
+["Public.Procedures.StIntersectionBab7.Parameters"]: Typecast
 
-["Public.Procedures.StBuffer_5012.Parameters"]: Typecast
+["Public.Procedures.StBufferA313.Parameters"]: Typecast
 
-["Public.Procedures.StBuffer_3ea8.Parameters"]: Typecast
+["Public.Procedures.StBufferFed8.Parameters"]: Typecast
 
 ["Public.Procedures.StMinimumboundingradius.Parameters"]: Typecast
 
@@ -66776,25 +66771,25 @@ export namespace Tables {
 
 ["Public.Procedures.StOffsetcurve.Parameters"]: Typecast
 
-["Public.Procedures.StGeneratepointsF74e.Parameters"]: Typecast
+["Public.Procedures.StGeneratepoints_73ac.Parameters"]: Typecast
 
-["Public.Procedures.StGeneratepointsD3cf.Parameters"]: Typecast
+["Public.Procedures.StGeneratepoints_8eae.Parameters"]: Typecast
 
 ["Public.Procedures.StConvexhull.Parameters"]: Typecast
 
 ["Public.Procedures.StSimplifypreservetopology.Parameters"]: Typecast
 
-["Public.Procedures.StIsvalidreason_52cb.Parameters"]: Typecast
+["Public.Procedures.StIsvalidreasonC567.Parameters"]: Typecast
 
 ["Public.Procedures.StIsvaliddetail.Parameters"]: Typecast
 
-["Public.Procedures.StIsvalidreasonF74e.Parameters"]: Typecast
+["Public.Procedures.StIsvalidreason_73ac.Parameters"]: Typecast
 
-["Public.Procedures.StIsvalidF74e.Parameters"]: Typecast
+["Public.Procedures.StIsvalid_73ac.Parameters"]: Typecast
 
-["Public.Procedures.StHausdorffdistance_4e70.Parameters"]: Typecast
+["Public.Procedures.StHausdorffdistance_6bd0.Parameters"]: Typecast
 
-["Public.Procedures.StHausdorffdistance_0b21.Parameters"]: Typecast
+["Public.Procedures.StHausdorffdistanceBab7.Parameters"]: Typecast
 
 ["Public.Procedures.StFrechetdistance.Parameters"]: Typecast
 
@@ -66812,9 +66807,9 @@ export namespace Tables {
 
 ["Public.Procedures.StSymmetricdifference.Parameters"]: Typecast
 
-["Public.Procedures.StUnion_4e70.Parameters"]: Typecast
+["Public.Procedures.StUnion_6bd0.Parameters"]: Typecast
 
-["Public.Procedures.StUnion_0b21.Parameters"]: Typecast
+["Public.Procedures.StUnionBab7.Parameters"]: Typecast
 
 ["Public.Procedures.StUnaryunion.Parameters"]: Typecast
 
@@ -66826,9 +66821,9 @@ export namespace Tables {
 
 ["Public.Procedures.StReduceprecision.Parameters"]: Typecast
 
-["Public.Procedures.StMakevalid_52cb.Parameters"]: Typecast
+["Public.Procedures.StMakevalidC567.Parameters"]: Typecast
 
-["Public.Procedures.StMakevalid_09ea.Parameters"]: Typecast
+["Public.Procedures.StMakevalid_9881.Parameters"]: Typecast
 
 ["Public.Procedures.StCleangeometry.Parameters"]: Typecast
 
@@ -66850,21 +66845,21 @@ export namespace Tables {
 
 ["Public.Procedures.StVoronoilines.Parameters"]: Typecast
 
-["Public.Procedures.StCombinebbox_169a.Parameters"]: Typecast
+["Public.Procedures.StCombinebboxDd7e.Parameters"]: Typecast
 
-["Public.Procedures.StCombinebbox_5a63.Parameters"]: Typecast
+["Public.Procedures.StCombinebboxC436.Parameters"]: Typecast
 
-["Public.Procedures.StCombinebbox_1ab0.Parameters"]: Typecast
+["Public.Procedures.StCombinebbox_8c90.Parameters"]: Typecast
 
-["Public.Procedures.StCollect_4e70.Parameters"]: Typecast
+["Public.Procedures.StCollect_6bd0.Parameters"]: Typecast
 
-["Public.Procedures.StCollect_1ecf.Parameters"]: Typecast
+["Public.Procedures.StCollectA84e.Parameters"]: Typecast
 
-["Public.Procedures.PgisGeometryAccumTransfn_56af.Parameters"]: Typecast
+["Public.Procedures.PgisGeometryAccumTransfn_5f8c.Parameters"]: Typecast
 
-["Public.Procedures.PgisGeometryAccumTransfn_0b06.Parameters"]: Typecast
+["Public.Procedures.PgisGeometryAccumTransfn_0dbf.Parameters"]: Typecast
 
-["Public.Procedures.PgisGeometryAccumTransfnAa63.Parameters"]: Typecast
+["Public.Procedures.PgisGeometryAccumTransfnC6b8.Parameters"]: Typecast
 
 ["Public.Procedures.PgisGeometryCollectFinalfn.Parameters"]: Typecast
 
@@ -66878,9 +66873,9 @@ export namespace Tables {
 
 ["Public.Procedures.PgisGeometryCoverageunionFinalfn.Parameters"]: Typecast
 
-["Public.Procedures.PgisGeometryUnionParallelTransfn_56af.Parameters"]: Typecast
+["Public.Procedures.PgisGeometryUnionParallelTransfn_5f8c.Parameters"]: Typecast
 
-["Public.Procedures.PgisGeometryUnionParallelTransfn_0b06.Parameters"]: Typecast
+["Public.Procedures.PgisGeometryUnionParallelTransfn_0dbf.Parameters"]: Typecast
 
 ["Public.Procedures.PgisGeometryUnionParallelCombinefn.Parameters"]: Typecast
 
@@ -66890,15 +66885,15 @@ export namespace Tables {
 
 ["Public.Procedures.PgisGeometryUnionParallelFinalfn.Parameters"]: Typecast
 
-["Public.Procedures.StUnion_1ecf.Parameters"]: Typecast
+["Public.Procedures.StUnionA84e.Parameters"]: Typecast
 
-["Public.Procedures.StCoverageunion_1ecf.Parameters"]: Typecast
+["Public.Procedures.StCoverageunionA84e.Parameters"]: Typecast
 
-["Public.Procedures.StRelate_4e70.Parameters"]: Typecast
+["Public.Procedures.StRelate_6bd0.Parameters"]: Typecast
 
-["Public.Procedures.StRelateBf6c.Parameters"]: Typecast
+["Public.Procedures.StRelateAcbc.Parameters"]: Typecast
 
-["Public.Procedures.StRelate_2565.Parameters"]: Typecast
+["Public.Procedures.StRelateCe2d.Parameters"]: Typecast
 
 ["Public.Procedures.StDisjoint.Parameters"]: Typecast
 
@@ -66906,11 +66901,11 @@ export namespace Tables {
 
 ["Public.Procedures.StLinecrossingdirection.Parameters"]: Typecast
 
-["Public.Procedures.StDwithin_0b21.Parameters"]: Typecast
+["Public.Procedures.StDwithinBab7.Parameters"]: Typecast
 
 ["Public.Procedures.StTouches.Parameters"]: Typecast
 
-["Public.Procedures.StIntersects_4e70.Parameters"]: Typecast
+["Public.Procedures.StIntersects_6bd0.Parameters"]: Typecast
 
 ["Public.Procedures.StCrosses.Parameters"]: Typecast
 
@@ -66920,9 +66915,9 @@ export namespace Tables {
 
 ["Public.Procedures.StWithin.Parameters"]: Typecast
 
-["Public.Procedures.StCovers_4e70.Parameters"]: Typecast
+["Public.Procedures.StCovers_6bd0.Parameters"]: Typecast
 
-["Public.Procedures.StCoveredby_4e70.Parameters"]: Typecast
+["Public.Procedures.StCoveredby_6bd0.Parameters"]: Typecast
 
 ["Public.Procedures.StOverlaps.Parameters"]: Typecast
 
@@ -66938,13 +66933,13 @@ export namespace Tables {
 
 ["Public.Procedures.StEquals.Parameters"]: Typecast
 
-["Public.Procedures.StIsvalid_52cb.Parameters"]: Typecast
+["Public.Procedures.StIsvalidC567.Parameters"]: Typecast
 
 ["Public.Procedures.StMinimumclearance.Parameters"]: Typecast
 
 ["Public.Procedures.StMinimumclearanceline.Parameters"]: Typecast
 
-["Public.Procedures.StCentroid_52cb.Parameters"]: Typecast
+["Public.Procedures.StCentroidC567.Parameters"]: Typecast
 
 ["Public.Procedures.StGeometricmedian.Parameters"]: Typecast
 
@@ -66982,15 +66977,15 @@ export namespace Tables {
 
 ["Public.Procedures.StAsencodedpolyline.Parameters"]: Typecast
 
-["Public.Procedures.StAssvgD3cf.Parameters"]: Typecast
+["Public.Procedures.StAssvg_8eae.Parameters"]: Typecast
 
-["Public.Procedures.StAsgmlD3cf.Parameters"]: Typecast
+["Public.Procedures.StAsgml_8eae.Parameters"]: Typecast
 
-["Public.Procedures.StAsgml_3bec.Parameters"]: Typecast
+["Public.Procedures.StAsgml_3b73.Parameters"]: Typecast
 
-["Public.Procedures.StAskml_6ebd.Parameters"]: Typecast
+["Public.Procedures.StAskmlC975.Parameters"]: Typecast
 
-["Public.Procedures.StAsgeojsonD3cf.Parameters"]: Typecast
+["Public.Procedures.StAsgeojson_8eae.Parameters"]: Typecast
 
 ["Public.Procedures.StAsgeojsonF2c6.Parameters"]: Typecast
 
@@ -67036,7 +67031,7 @@ export namespace Tables {
 
 ["Public.Procedures.StFromflatgeobuf.Parameters"]: Typecast
 
-["Public.Procedures.StGeohashF74e.Parameters"]: Typecast
+["Public.Procedures.StGeohash_73ac.Parameters"]: Typecast
 
 ["Public.Procedures.StBox2dfromgeohash.Parameters"]: Typecast
 
@@ -67060,7 +67055,7 @@ export namespace Tables {
 
 ["Public.Procedures.StInteriorringn.Parameters"]: Typecast
 
-["Public.Procedures.Geometrytype_52cb.Parameters"]: Typecast
+["Public.Procedures.GeometrytypeC567.Parameters"]: Typecast
 
 ["Public.Procedures.StGeometrytype.Parameters"]: Typecast
 
@@ -67078,13 +67073,13 @@ export namespace Tables {
 
 ["Public.Procedures.StIsempty.Parameters"]: Typecast
 
-["Public.Procedures.StAsbinary_09ea.Parameters"]: Typecast
+["Public.Procedures.StAsbinary_9881.Parameters"]: Typecast
 
-["Public.Procedures.StAsbinary_52cb.Parameters"]: Typecast
+["Public.Procedures.StAsbinaryC567.Parameters"]: Typecast
 
-["Public.Procedures.StAstext_52cb.Parameters"]: Typecast
+["Public.Procedures.StAstextC567.Parameters"]: Typecast
 
-["Public.Procedures.StAstextF74e.Parameters"]: Typecast
+["Public.Procedures.StAstext_73ac.Parameters"]: Typecast
 
 ["Public.Procedures.StGeometryfromtextE728.Parameters"]: Typecast
 
@@ -67192,9 +67187,9 @@ export namespace Tables {
 
 ["Public.Procedures.StMaxdistance.Parameters"]: Typecast
 
-["Public.Procedures.StClosestpoint_4e70.Parameters"]: Typecast
+["Public.Procedures.StClosestpoint_6bd0.Parameters"]: Typecast
 
-["Public.Procedures.StShortestline_4e70.Parameters"]: Typecast
+["Public.Procedures.StShortestline_6bd0.Parameters"]: Typecast
 
 ["Public.Procedures.StLongestline.Parameters"]: Typecast
 
@@ -67208,15 +67203,15 @@ export namespace Tables {
 
 ["Public.Procedures.Unlockrows.Parameters"]: Typecast
 
-["Public.Procedures.Geography_8e85.Parameters"]: Typecast
+["Public.Procedures.Geography_33f0.Parameters"]: Typecast
 
 ["Public.Procedures.Geography_2d19.Parameters"]: Typecast
 
-["Public.Procedures.ByteaB076.Parameters"]: Typecast
+["Public.Procedures.ByteaC6e0.Parameters"]: Typecast
 
-["Public.Procedures.StAstextB076.Parameters"]: Typecast
+["Public.Procedures.StAstextC6e0.Parameters"]: Typecast
 
-["Public.Procedures.StAstext_52a9.Parameters"]: Typecast
+["Public.Procedures.StAstextE8cd.Parameters"]: Typecast
 
 ["Public.Procedures.LockrowE9aa.Parameters"]: Typecast
 
@@ -67258,9 +67253,9 @@ export namespace Tables {
 
 ["Public.Procedures.PostgisTypmodType.Parameters"]: Typecast
 
-["Public.Procedures.Geography_52cb.Parameters"]: Typecast
+["Public.Procedures.GeographyC567.Parameters"]: Typecast
 
-["Public.Procedures.GeometryB076.Parameters"]: Typecast
+["Public.Procedures.GeometryC6e0.Parameters"]: Typecast
 
 ["Public.Procedures.GeographyGistConsistent.Parameters"]: Typecast
 
@@ -67282,11 +67277,11 @@ export namespace Tables {
 
 ["Public.Procedures.GeographyGistDistance.Parameters"]: Typecast
 
-["Public.Procedures.OverlapsGeog_46ba.Parameters"]: Typecast
+["Public.Procedures.OverlapsGeogBb60.Parameters"]: Typecast
 
-["Public.Procedures.OverlapsGeogD1af.Parameters"]: Typecast
+["Public.Procedures.OverlapsGeog_8a58.Parameters"]: Typecast
 
-["Public.Procedures.OverlapsGeogC98c.Parameters"]: Typecast
+["Public.Procedures.OverlapsGeog_21a5.Parameters"]: Typecast
 
 ["Public.Procedures.GeogBrinInclusionAddValue.Parameters"]: Typecast
 
@@ -67302,91 +67297,91 @@ export namespace Tables {
 
 ["Public.Procedures.GeographyCmp.Parameters"]: Typecast
 
-["Public.Procedures.StAssvgFab6.Parameters"]: Typecast
+["Public.Procedures.StAssvg_07a8.Parameters"]: Typecast
 
 ["Public.Procedures.StAssvgE728.Parameters"]: Typecast
 
-["Public.Procedures.StProject_57ad.Parameters"]: Typecast
+["Public.Procedures.StProjectCd02.Parameters"]: Typecast
 
-["Public.Procedures.StAzimuth_25d7.Parameters"]: Typecast
+["Public.Procedures.StAzimuthEa06.Parameters"]: Typecast
 
 ["Public.Procedures.StBuffer_49f7.Parameters"]: Typecast
 
-["Public.Procedures.StAsgml_4503.Parameters"]: Typecast
+["Public.Procedures.StAsgmlF715.Parameters"]: Typecast
 
-["Public.Procedures.StAsgmlDb17.Parameters"]: Typecast
+["Public.Procedures.StAsgmlC08d.Parameters"]: Typecast
 
 ["Public.Procedures.StAsgmlE728.Parameters"]: Typecast
 
-["Public.Procedures.StAskml_58db.Parameters"]: Typecast
+["Public.Procedures.StAskml_874a.Parameters"]: Typecast
 
 ["Public.Procedures.StAskmlE728.Parameters"]: Typecast
 
-["Public.Procedures.StAsgeojsonFab6.Parameters"]: Typecast
+["Public.Procedures.StAsgeojson_07a8.Parameters"]: Typecast
 
 ["Public.Procedures.StAsgeojsonE728.Parameters"]: Typecast
 
-["Public.Procedures.StDistanceDea8.Parameters"]: Typecast
+["Public.Procedures.StDistance_05ee.Parameters"]: Typecast
 
 ["Public.Procedures.StDistance_2ec2.Parameters"]: Typecast
 
-["Public.Procedures.StArea_527f.Parameters"]: Typecast
+["Public.Procedures.StArea_5f1d.Parameters"]: Typecast
 
 ["Public.Procedures.StAreaE728.Parameters"]: Typecast
 
-["Public.Procedures.StLength_527f.Parameters"]: Typecast
+["Public.Procedures.StLength_5f1d.Parameters"]: Typecast
 
 ["Public.Procedures.StLengthE728.Parameters"]: Typecast
 
-["Public.Procedures.StProject_5f39.Parameters"]: Typecast
+["Public.Procedures.StProjectF79f.Parameters"]: Typecast
 
-["Public.Procedures.StPerimeter_527f.Parameters"]: Typecast
+["Public.Procedures.StPerimeter_5f1d.Parameters"]: Typecast
 
-["Public.Procedures.StSegmentize_7120.Parameters"]: Typecast
+["Public.Procedures.StSegmentize_661e.Parameters"]: Typecast
 
-["Public.Procedures.StAsbinaryB076.Parameters"]: Typecast
+["Public.Procedures.StAsbinaryC6e0.Parameters"]: Typecast
 
-["Public.Procedures.StAsbinary_543e.Parameters"]: Typecast
+["Public.Procedures.StAsbinary_69ab.Parameters"]: Typecast
 
-["Public.Procedures.StAsewktB076.Parameters"]: Typecast
+["Public.Procedures.StAsewktC6e0.Parameters"]: Typecast
 
-["Public.Procedures.StAsewkt_52a9.Parameters"]: Typecast
+["Public.Procedures.StAsewktE8cd.Parameters"]: Typecast
 
 ["Public.Procedures.StAsewktE728.Parameters"]: Typecast
 
-["Public.Procedures.GeometrytypeB076.Parameters"]: Typecast
+["Public.Procedures.GeometrytypeC6e0.Parameters"]: Typecast
 
-["Public.Procedures.StSummaryB076.Parameters"]: Typecast
+["Public.Procedures.StSummaryC6e0.Parameters"]: Typecast
 
-["Public.Procedures.StGeohash_52a9.Parameters"]: Typecast
+["Public.Procedures.StGeohashE8cd.Parameters"]: Typecast
 
-["Public.Procedures.StSridB076.Parameters"]: Typecast
+["Public.Procedures.StSridC6e0.Parameters"]: Typecast
 
-["Public.Procedures.StSetsrid_52a9.Parameters"]: Typecast
+["Public.Procedures.StSetsridE8cd.Parameters"]: Typecast
 
-["Public.Procedures.StCentroid_527f.Parameters"]: Typecast
+["Public.Procedures.StCentroid_5f1d.Parameters"]: Typecast
 
 ["Public.Procedures.StCentroidE728.Parameters"]: Typecast
 
-["Public.Procedures.StCovers_25d7.Parameters"]: Typecast
+["Public.Procedures.StCoversEa06.Parameters"]: Typecast
 
-["Public.Procedures.StDwithin_1936.Parameters"]: Typecast
+["Public.Procedures.StDwithin_35a5.Parameters"]: Typecast
 
-["Public.Procedures.StCoveredby_25d7.Parameters"]: Typecast
+["Public.Procedures.StCoveredbyEa06.Parameters"]: Typecast
 
-["Public.Procedures.StIntersects_25d7.Parameters"]: Typecast
+["Public.Procedures.StIntersectsEa06.Parameters"]: Typecast
 
-["Public.Procedures.StBuffer_7120.Parameters"]: Typecast
+["Public.Procedures.StBuffer_661e.Parameters"]: Typecast
 
-["Public.Procedures.StBufferAc74.Parameters"]: Typecast
+["Public.Procedures.StBuffer_693b.Parameters"]: Typecast
 
-["Public.Procedures.StBuffer_750b.Parameters"]: Typecast
+["Public.Procedures.StBuffer_51ed.Parameters"]: Typecast
 
 ["Public.Procedures.StBufferC349.Parameters"]: Typecast
 
 ["Public.Procedures.StBufferF7c6.Parameters"]: Typecast
 
-["Public.Procedures.StIntersection_25d7.Parameters"]: Typecast
+["Public.Procedures.StIntersectionEa06.Parameters"]: Typecast
 
 ["Public.Procedures.StIntersection_2ec2.Parameters"]: Typecast
 
@@ -67398,33 +67393,33 @@ export namespace Tables {
 
 ["Public.Procedures.StIntersects_2ec2.Parameters"]: Typecast
 
-["Public.Procedures.StClosestpointDea8.Parameters"]: Typecast
+["Public.Procedures.StClosestpoint_05ee.Parameters"]: Typecast
 
 ["Public.Procedures.StClosestpoint_2ec2.Parameters"]: Typecast
 
-["Public.Procedures.StShortestlineDea8.Parameters"]: Typecast
+["Public.Procedures.StShortestline_05ee.Parameters"]: Typecast
 
 ["Public.Procedures.StShortestline_2ec2.Parameters"]: Typecast
 
-["Public.Procedures.StLinesubstring_5f39.Parameters"]: Typecast
+["Public.Procedures.StLinesubstringF79f.Parameters"]: Typecast
 
 ["Public.Procedures.StLinesubstringE586.Parameters"]: Typecast
 
-["Public.Procedures.StLinelocatepointDea8.Parameters"]: Typecast
+["Public.Procedures.StLinelocatepoint_05ee.Parameters"]: Typecast
 
 ["Public.Procedures.StLinelocatepoint_2ec2.Parameters"]: Typecast
 
-["Public.Procedures.StLineinterpolatepoints_7696.Parameters"]: Typecast
+["Public.Procedures.StLineinterpolatepoints_83da.Parameters"]: Typecast
 
 ["Public.Procedures.StLineinterpolatepointsC349.Parameters"]: Typecast
 
-["Public.Procedures.StLineinterpolatepoint_6ef8.Parameters"]: Typecast
+["Public.Procedures.StLineinterpolatepoint_57c0.Parameters"]: Typecast
 
 ["Public.Procedures.StLineinterpolatepointC349.Parameters"]: Typecast
 
-["Public.Procedures.StDistancesphere_4e70.Parameters"]: Typecast
+["Public.Procedures.StDistancesphere_6bd0.Parameters"]: Typecast
 
-["Public.Procedures.StDistancesphere_0b21.Parameters"]: Typecast
+["Public.Procedures.StDistancesphereBab7.Parameters"]: Typecast
 
 ["Public.Procedures.PostgisTypeName.Parameters"]: Typecast
 
@@ -67482,29 +67477,29 @@ export namespace Tables {
 
 ["Public.Procedures.StSquaregrid.Parameters"]: Typecast
 
-["Public.Procedures.Contains_2dA8e6.Parameters"]: Typecast
+["Public.Procedures.Contains_2d_676e.Parameters"]: Typecast
 
-["Public.Procedures.IsContained_2dA8e6.Parameters"]: Typecast
+["Public.Procedures.IsContained_2d_676e.Parameters"]: Typecast
 
-["Public.Procedures.Overlaps_2dA8e6.Parameters"]: Typecast
+["Public.Procedures.Overlaps_2d_676e.Parameters"]: Typecast
 
-["Public.Procedures.Overlaps_2d_5533.Parameters"]: Typecast
+["Public.Procedures.Overlaps_2dA7ab.Parameters"]: Typecast
 
-["Public.Procedures.Contains_2d_5533.Parameters"]: Typecast
+["Public.Procedures.Contains_2dA7ab.Parameters"]: Typecast
 
-["Public.Procedures.IsContained_2d_5533.Parameters"]: Typecast
+["Public.Procedures.IsContained_2dA7ab.Parameters"]: Typecast
 
-["Public.Procedures.Contains_2d_5225.Parameters"]: Typecast
+["Public.Procedures.Contains_2d_3e52.Parameters"]: Typecast
 
-["Public.Procedures.IsContained_2d_5225.Parameters"]: Typecast
+["Public.Procedures.IsContained_2d_3e52.Parameters"]: Typecast
 
-["Public.Procedures.Overlaps_2d_5225.Parameters"]: Typecast
+["Public.Procedures.Overlaps_2d_3e52.Parameters"]: Typecast
 
-["Public.Procedures.OverlapsNdD353.Parameters"]: Typecast
+["Public.Procedures.OverlapsNd_1882.Parameters"]: Typecast
 
-["Public.Procedures.OverlapsNdD1af.Parameters"]: Typecast
+["Public.Procedures.OverlapsNd_8a58.Parameters"]: Typecast
 
-["Public.Procedures.OverlapsNdA633.Parameters"]: Typecast
+["Public.Procedures.OverlapsNdC3f9.Parameters"]: Typecast
 
 ["Public.Procedures.Geom2dBrinInclusionAddValue.Parameters"]: Typecast
 
@@ -67518,7 +67513,7 @@ export namespace Tables {
 
 ["Public.Procedures.StAsx3d.Parameters"]: Typecast
 
-["Public.Procedures.StAngle_4e70.Parameters"]: Typecast
+["Public.Procedures.StAngle_6bd0.Parameters"]: Typecast
 
 ["Public.Procedures.St_3dlineinterpolatepoint.Parameters"]: Typecast
 
@@ -67579,12 +67574,12 @@ export namespace Tables {
 ["Public.Procedures.GeographySpgistCompressNd.Parameters"]: Typecast
 
 ["Public.Procedures.StLetters.Parameters"]: Typecast
-[56673]: Typecast;
-["PgToast.Types.PgToast_56668Index"]: Typecast
-[57430]: Typecast;
-["PgToast.Types.PgToast_57426Index"]: Typecast
-[57436]: Typecast;
-["PgToast.Types.PgToast_57432Index"]: Typecast
+[63805]: Typecast;
+["PgToast.Types.PgToast_63800Index"]: Typecast
+[64562]: Typecast;
+["PgToast.Types.PgToast_64558Index"]: Typecast
+[64568]: Typecast;
+["PgToast.Types.PgToast_64564Index"]: Typecast
 [2837]: Typecast;
 ["PgToast.Types.PgToast_1255Index"]: Typecast
 [4172]: Typecast;
@@ -67611,8 +67606,8 @@ export namespace Tables {
 ["PgToast.Types.PgToast_3466Index"]: Typecast
 [2835]: Typecast;
 ["PgToast.Types.PgToast_2609Index"]: Typecast
-[57442]: Typecast;
-["PgToast.Types.PgToast_57438Index"]: Typecast
+[64574]: Typecast;
+["PgToast.Types.PgToast_64570Index"]: Typecast
 [4164]: Typecast;
 ["PgToast.Types.PgToast_2615Index"]: Typecast
 [4178]: Typecast;
@@ -67659,10 +67654,10 @@ export namespace Tables {
 ["PgToast.Types.PgToast_6106Index"]: Typecast
 [4184]: Typecast;
 ["PgToast.Types.PgToast_6100Index"]: Typecast
-[57448]: Typecast;
-["PgToast.Types.PgToast_57444Index"]: Typecast
-[57454]: Typecast;
-["PgToast.Types.PgToast_57450Index"]: Typecast
+[64580]: Typecast;
+["PgToast.Types.PgToast_64576Index"]: Typecast
+[64586]: Typecast;
+["PgToast.Types.PgToast_64582Index"]: Typecast
 [13662]: Typecast;
 ["PgToast.Types.PgToast_13658Index"]: Typecast
 [13667]: Typecast;
@@ -67725,7 +67720,7 @@ async call(parameters : Public.Procedures.StForcepolygoncw.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_forcepolygoncw( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_forcepolygoncw( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_forcepolygoncw) );
@@ -67777,7 +67772,7 @@ async call(parameters : Public.Procedures.SpheroidOut.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.spheroid_out( ${ typed[56352](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.spheroid_out( ${ typed[63484](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].spheroid_out) );
@@ -67829,7 +67824,7 @@ async call(parameters : Public.Procedures.GeometryOut.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_out( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.geometry_out( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].geometry_out) );
@@ -67959,7 +67954,7 @@ async call(parameters : Public.Procedures.GeometrySend.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_send( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.geometry_send( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].geometry_send) );
@@ -67968,7 +67963,7 @@ async call(parameters : Public.Procedures.GeometrySend.Parameters) {
 }
 }(this)
 
-          public Geometry_3198 = new class implements HasDatabase {
+          public GeometryEd31 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -67976,7 +67971,7 @@ async call(parameters : Public.Procedures.GeometrySend.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.Geometry_3198.Parameters) {
+async call(parameters : Public.Procedures.GeometryEd31.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -67985,7 +67980,7 @@ async call(parameters : Public.Procedures.Geometry_3198.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.geometry( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry) );
@@ -68037,7 +68032,7 @@ async call(parameters : Public.Procedures.Point.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.point( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.point( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Point.parse(results?.[0].point) );
@@ -68089,7 +68084,7 @@ async call(parameters : Public.Procedures.Path.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.path( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.path( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Path.parse(results?.[0].path) );
@@ -68141,7 +68136,7 @@ async call(parameters : Public.Procedures.Polygon.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.polygon( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.polygon( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Polygon.parse(results?.[0].polygon) );
@@ -68167,7 +68162,7 @@ async call(parameters : Public.Procedures.StX.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_x( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_x( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_x) );
@@ -68193,7 +68188,7 @@ async call(parameters : Public.Procedures.StY.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_y( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_y( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_y) );
@@ -68219,7 +68214,7 @@ async call(parameters : Public.Procedures.StZ.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_z( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_z( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_z) );
@@ -68245,7 +68240,7 @@ async call(parameters : Public.Procedures.StM.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_m( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_m( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_m) );
@@ -68297,7 +68292,7 @@ async call(parameters : Public.Procedures.Box3dOut.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box3d_out( ${ typed[56383](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.box3d_out( ${ typed[63515](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].box3d_out) );
@@ -68349,7 +68344,7 @@ async call(parameters : Public.Procedures.Box2dOut.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box2d_out( ${ typed[56387](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.box2d_out( ${ typed[63519](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].box2d_out) );
@@ -68401,7 +68396,7 @@ async call(parameters : Public.Procedures.Box2dfOut.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box2df_out( ${ typed[56391](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.box2df_out( ${ typed[63523](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].box2df_out) );
@@ -68453,7 +68448,7 @@ async call(parameters : Public.Procedures.GidxOut.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gidx_out( ${ typed[56395](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.gidx_out( ${ typed[63527](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].gidx_out) );
@@ -68479,7 +68474,7 @@ async call(parameters : Public.Procedures.GeometryLt.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_lt(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_lt(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_lt) );
@@ -68505,7 +68500,7 @@ async call(parameters : Public.Procedures.GeometryLe.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_le(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_le(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_le) );
@@ -68531,7 +68526,7 @@ async call(parameters : Public.Procedures.GeometryGt.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gt(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_gt(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_gt) );
@@ -68557,7 +68552,7 @@ async call(parameters : Public.Procedures.GeometryGe.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_ge(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_ge(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_ge) );
@@ -68583,7 +68578,7 @@ async call(parameters : Public.Procedures.GeometryEq.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_eq(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_eq(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_eq) );
@@ -68609,7 +68604,7 @@ async call(parameters : Public.Procedures.GeometryCmp.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_cmp(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_cmp(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].geometry_cmp) );
@@ -68661,7 +68656,7 @@ async call(parameters : Public.Procedures.GeometryHash.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_hash( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.geometry_hash( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].geometry_hash) );
@@ -68687,7 +68682,7 @@ async call(parameters : Public.Procedures.GeometryGistDistance_2d.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_distance_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.geometry_gist_distance_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geometry_gist_distance_2d) );
@@ -68713,7 +68708,7 @@ async call(parameters : Public.Procedures.GeometryGistConsistent_2d.Parameters) 
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_consistent_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.geometry_gist_consistent_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_gist_consistent_2d) );
@@ -68843,7 +68838,7 @@ async call(parameters : Public.Procedures.GeometryGistSame_2d.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_same_2d(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.geometry_gist_same_2d(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_same_2d) );
@@ -68921,7 +68916,7 @@ async call(parameters : Public.Procedures.StForcerhr.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_forcerhr( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_forcerhr( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_forcerhr) );
@@ -68947,7 +68942,7 @@ async call(parameters : Public.Procedures.PostgisNoop.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_noop( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.postgis_noop( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].postgis_noop) );
@@ -68973,7 +68968,7 @@ async call(parameters : Public.Procedures.StForcepolygonccw.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_forcepolygonccw( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_forcepolygonccw( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_forcepolygonccw) );
@@ -69103,7 +69098,7 @@ async call(parameters : Public.Procedures.GeometryOverlaps.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_overlaps(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_overlaps(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_overlaps) );
@@ -69129,7 +69124,7 @@ async call(parameters : Public.Procedures.GeometrySame.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_same(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_same(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_same) );
@@ -69155,7 +69150,7 @@ async call(parameters : Public.Procedures.GeometryDistanceCentroid.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_distance_centroid(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_distance_centroid(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geometry_distance_centroid) );
@@ -69181,7 +69176,7 @@ async call(parameters : Public.Procedures.GeometryDistanceBox.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_distance_box(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_distance_box(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geometry_distance_box) );
@@ -69207,7 +69202,7 @@ async call(parameters : Public.Procedures.GeometryContains.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_contains(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_contains(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_contains) );
@@ -69233,7 +69228,7 @@ async call(parameters : Public.Procedures.GeometryWithin.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_within(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_within(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_within) );
@@ -69259,7 +69254,7 @@ async call(parameters : Public.Procedures.GeometryLeft.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_left(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_left(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_left) );
@@ -69285,7 +69280,7 @@ async call(parameters : Public.Procedures.GeometryOverleft.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_overleft(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_overleft(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_overleft) );
@@ -69311,7 +69306,7 @@ async call(parameters : Public.Procedures.GeometryBelow.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_below(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_below(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_below) );
@@ -69337,7 +69332,7 @@ async call(parameters : Public.Procedures.GeometryOverbelow.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_overbelow(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_overbelow(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_overbelow) );
@@ -69363,7 +69358,7 @@ async call(parameters : Public.Procedures.GeometryOverright.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_overright(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_overright(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_overright) );
@@ -69389,7 +69384,7 @@ async call(parameters : Public.Procedures.GeometryRight.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_right(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_right(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_right) );
@@ -69415,7 +69410,7 @@ async call(parameters : Public.Procedures.GeometryOverabove.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_overabove(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_overabove(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_overabove) );
@@ -69441,7 +69436,7 @@ async call(parameters : Public.Procedures.GeometryAbove.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_above(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_above(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_above) );
@@ -69467,7 +69462,7 @@ async call(parameters : Public.Procedures.GeometryGistConsistentNd.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_consistent_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.geometry_gist_consistent_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_gist_consistent_nd) );
@@ -69597,7 +69592,7 @@ async call(parameters : Public.Procedures.GeometryGistSameNd.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_same_nd( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.geometry_gist_same_nd( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_same_nd) );
@@ -69649,7 +69644,7 @@ async call(parameters : Public.Procedures.GeometryOverlapsNd.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_overlaps_nd( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.geometry_overlaps_nd( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_overlaps_nd) );
@@ -69675,7 +69670,7 @@ async call(parameters : Public.Procedures.GeometryContainsNd.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_contains_nd( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.geometry_contains_nd( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_contains_nd) );
@@ -69701,7 +69696,7 @@ async call(parameters : Public.Procedures.GeometryWithinNd.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_within_nd( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.geometry_within_nd( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_within_nd) );
@@ -69727,7 +69722,7 @@ async call(parameters : Public.Procedures.GeometrySameNd.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_same_nd( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.geometry_same_nd( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_same_nd) );
@@ -69753,7 +69748,7 @@ async call(parameters : Public.Procedures.GeometryDistanceCentroidNd.Parameters)
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_distance_centroid_nd( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.geometry_distance_centroid_nd( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geometry_distance_centroid_nd) );
@@ -69779,7 +69774,7 @@ async call(parameters : Public.Procedures.GeometryDistanceCpa.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_distance_cpa( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.geometry_distance_cpa( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geometry_distance_cpa) );
@@ -69805,7 +69800,7 @@ async call(parameters : Public.Procedures.GeometryGistDistanceNd.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_distance_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.geometry_gist_distance_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geometry_gist_distance_nd) );
@@ -69831,7 +69826,7 @@ async call(parameters : Public.Procedures.StShiftlongitude.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_shiftlongitude( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_shiftlongitude( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_shiftlongitude) );
@@ -69857,7 +69852,7 @@ async call(parameters : Public.Procedures.StWrapx.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_wrapx(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },wrap => ${ typed[701](undefinedIsNull(parameters.wrap)) },move => ${ typed[701](undefinedIsNull(parameters.move)) })`
+  const response = await sql`SELECT public.st_wrapx(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },wrap => ${ typed[701](undefinedIsNull(parameters.wrap)) },move => ${ typed[701](undefinedIsNull(parameters.move)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_wrapx) );
@@ -69883,7 +69878,7 @@ async call(parameters : Public.Procedures.StXmin.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_xmin( ${ typed[56383](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_xmin( ${ typed[63515](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_xmin) );
@@ -69909,7 +69904,7 @@ async call(parameters : Public.Procedures.StYmin.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_ymin( ${ typed[56383](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_ymin( ${ typed[63515](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_ymin) );
@@ -69935,7 +69930,7 @@ async call(parameters : Public.Procedures.StZmin.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_zmin( ${ typed[56383](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_zmin( ${ typed[63515](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_zmin) );
@@ -69961,7 +69956,7 @@ async call(parameters : Public.Procedures.StXmax.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_xmax( ${ typed[56383](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_xmax( ${ typed[63515](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_xmax) );
@@ -69987,7 +69982,7 @@ async call(parameters : Public.Procedures.StYmax.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_ymax( ${ typed[56383](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_ymax( ${ typed[63515](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_ymax) );
@@ -70013,7 +70008,7 @@ async call(parameters : Public.Procedures.StZmax.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_zmax( ${ typed[56383](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_zmax( ${ typed[63515](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_zmax) );
@@ -70022,7 +70017,7 @@ async call(parameters : Public.Procedures.StZmax.Parameters) {
 }
 }(this)
 
-          public StExpandC2f2 = new class implements HasDatabase {
+          public StExpand_0683 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -70030,7 +70025,7 @@ async call(parameters : Public.Procedures.StZmax.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StExpandC2f2.Parameters) {
+async call(parameters : Public.Procedures.StExpand_0683.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -70039,7 +70034,7 @@ async call(parameters : Public.Procedures.StExpandC2f2.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_expand( ${ typed[56387](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_expand( ${ typed[63519](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_expand) );
@@ -70048,7 +70043,7 @@ async call(parameters : Public.Procedures.StExpandC2f2.Parameters) {
 }
 }(this)
 
-          public StExpand_0686 = new class implements HasDatabase {
+          public StExpand_509e = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -70056,7 +70051,7 @@ async call(parameters : Public.Procedures.StExpandC2f2.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StExpand_0686.Parameters) {
+async call(parameters : Public.Procedures.StExpand_509e.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -70065,7 +70060,7 @@ async call(parameters : Public.Procedures.StExpand_0686.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_expand(box => ${ typed[56387](undefinedIsNull(parameters.box)) },dx => ${ typed[701](undefinedIsNull(parameters.dx)) },dy => ${ typed[701](undefinedIsNull(parameters.dy)) })`
+  const response = await sql`SELECT public.st_expand(box => ${ typed[63519](undefinedIsNull(parameters.box)) },dx => ${ typed[701](undefinedIsNull(parameters.dx)) },dy => ${ typed[701](undefinedIsNull(parameters.dy)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_expand) );
@@ -70091,7 +70086,7 @@ async call(parameters : Public.Procedures.PostgisGetbbox.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_getbbox( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.postgis_getbbox( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].postgis_getbbox) );
@@ -70117,7 +70112,7 @@ async call(parameters : Public.Procedures.StMakebox2d.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_makebox2d(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_makebox2d(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_makebox2d) );
@@ -70273,7 +70268,7 @@ async call(parameters : Public.Procedures.PostgisAddbbox.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_addbbox( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.postgis_addbbox( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].postgis_addbbox) );
@@ -70299,7 +70294,7 @@ async call(parameters : Public.Procedures.PostgisDropbbox.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_dropbbox( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.postgis_dropbbox( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].postgis_dropbbox) );
@@ -70325,7 +70320,7 @@ async call(parameters : Public.Procedures.PostgisHasbbox.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_hasbbox( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.postgis_hasbbox( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].postgis_hasbbox) );
@@ -70351,7 +70346,7 @@ async call(parameters : Public.Procedures.StQuantizecoordinates.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_quantizecoordinates(g => ${ typed[56356](undefinedIsNull(parameters.g)) },prec_x => ${ typed[23](undefinedIsNull(parameters.precX)) },prec_y => ${ typed[23](undefinedIsNull(parameters.precY)) },prec_z => ${ typed[23](undefinedIsNull(parameters.precZ)) },prec_m => ${ typed[23](undefinedIsNull(parameters.precM)) })`
+  const response = await sql`SELECT public.st_quantizecoordinates(g => ${ typed[63488](undefinedIsNull(parameters.g)) },prec_x => ${ typed[23](undefinedIsNull(parameters.precX)) },prec_y => ${ typed[23](undefinedIsNull(parameters.precY)) },prec_z => ${ typed[23](undefinedIsNull(parameters.precZ)) },prec_m => ${ typed[23](undefinedIsNull(parameters.precM)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_quantizecoordinates) );
@@ -70377,7 +70372,7 @@ async call(parameters : Public.Procedures.StMemsize.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_memsize( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_memsize( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_memsize) );
@@ -70386,7 +70381,7 @@ async call(parameters : Public.Procedures.StMemsize.Parameters) {
 }
 }(this)
 
-          public StSummary_52cb = new class implements HasDatabase {
+          public StSummaryC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -70394,7 +70389,7 @@ async call(parameters : Public.Procedures.StMemsize.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StSummary_52cb.Parameters) {
+async call(parameters : Public.Procedures.StSummaryC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -70403,7 +70398,7 @@ async call(parameters : Public.Procedures.StSummary_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_summary( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_summary( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_summary) );
@@ -70429,7 +70424,7 @@ async call(parameters : Public.Procedures.StNpoints.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_npoints( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_npoints( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_npoints) );
@@ -70455,7 +70450,7 @@ async call(parameters : Public.Procedures.StNrings.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_nrings( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_nrings( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_nrings) );
@@ -70481,7 +70476,7 @@ async call(parameters : Public.Procedures.St_3dlength.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3dlength( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_3dlength( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_3dlength) );
@@ -70507,7 +70502,7 @@ async call(parameters : Public.Procedures.StLength2d.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_length2d( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_length2d( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_length2d) );
@@ -70516,7 +70511,7 @@ async call(parameters : Public.Procedures.StLength2d.Parameters) {
 }
 }(this)
 
-          public StLength_52cb = new class implements HasDatabase {
+          public StLengthC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -70524,7 +70519,7 @@ async call(parameters : Public.Procedures.StLength2d.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StLength_52cb.Parameters) {
+async call(parameters : Public.Procedures.StLengthC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -70533,7 +70528,7 @@ async call(parameters : Public.Procedures.StLength_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_length( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_length( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_length) );
@@ -70559,7 +70554,7 @@ async call(parameters : Public.Procedures.StLengthspheroid.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_lengthspheroid( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[56352](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_lengthspheroid( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[63484](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_lengthspheroid) );
@@ -70585,7 +70580,7 @@ async call(parameters : Public.Procedures.StLength2dspheroid.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_length2dspheroid( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[56352](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_length2dspheroid( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[63484](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_length2dspheroid) );
@@ -70611,7 +70606,7 @@ async call(parameters : Public.Procedures.St_3dperimeter.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3dperimeter( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_3dperimeter( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_3dperimeter) );
@@ -70637,7 +70632,7 @@ async call(parameters : Public.Procedures.StPerimeter2d.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_perimeter2d( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_perimeter2d( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_perimeter2d) );
@@ -70646,7 +70641,7 @@ async call(parameters : Public.Procedures.StPerimeter2d.Parameters) {
 }
 }(this)
 
-          public StPerimeter_52cb = new class implements HasDatabase {
+          public StPerimeterC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -70654,7 +70649,7 @@ async call(parameters : Public.Procedures.StPerimeter2d.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StPerimeter_52cb.Parameters) {
+async call(parameters : Public.Procedures.StPerimeterC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -70663,7 +70658,7 @@ async call(parameters : Public.Procedures.StPerimeter_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_perimeter( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_perimeter( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_perimeter) );
@@ -70689,7 +70684,7 @@ async call(parameters : Public.Procedures.StArea2d.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_area2d( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_area2d( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_area2d) );
@@ -70698,7 +70693,7 @@ async call(parameters : Public.Procedures.StArea2d.Parameters) {
 }
 }(this)
 
-          public StArea_52cb = new class implements HasDatabase {
+          public StAreaC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -70706,7 +70701,7 @@ async call(parameters : Public.Procedures.StArea2d.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StArea_52cb.Parameters) {
+async call(parameters : Public.Procedures.StAreaC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -70715,7 +70710,7 @@ async call(parameters : Public.Procedures.StArea_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_area( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_area( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_area) );
@@ -70741,7 +70736,7 @@ async call(parameters : Public.Procedures.StIspolygoncw.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_ispolygoncw( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_ispolygoncw( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_ispolygoncw) );
@@ -70767,7 +70762,7 @@ async call(parameters : Public.Procedures.StIspolygonccw.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_ispolygonccw( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_ispolygonccw( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_ispolygonccw) );
@@ -70776,7 +70771,7 @@ async call(parameters : Public.Procedures.StIspolygonccw.Parameters) {
 }
 }(this)
 
-          public StDistancespheroidA3f5 = new class implements HasDatabase {
+          public StDistancespheroid_094c = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -70784,7 +70779,7 @@ async call(parameters : Public.Procedures.StIspolygonccw.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StDistancespheroidA3f5.Parameters) {
+async call(parameters : Public.Procedures.StDistancespheroid_094c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -70793,7 +70788,7 @@ async call(parameters : Public.Procedures.StDistancespheroidA3f5.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_distancespheroid(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[56352](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_distancespheroid(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[63484](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distancespheroid) );
@@ -70802,7 +70797,7 @@ async call(parameters : Public.Procedures.StDistancespheroidA3f5.Parameters) {
 }
 }(this)
 
-          public StDistancespheroid_4e70 = new class implements HasDatabase {
+          public StDistancespheroid_6bd0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -70810,7 +70805,7 @@ async call(parameters : Public.Procedures.StDistancespheroidA3f5.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StDistancespheroid_4e70.Parameters) {
+async call(parameters : Public.Procedures.StDistancespheroid_6bd0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -70819,7 +70814,7 @@ async call(parameters : Public.Procedures.StDistancespheroid_4e70.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_distancespheroid(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_distancespheroid(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distancespheroid) );
@@ -70828,7 +70823,7 @@ async call(parameters : Public.Procedures.StDistancespheroid_4e70.Parameters) {
 }
 }(this)
 
-          public StDistance_4e70 = new class implements HasDatabase {
+          public StDistance_6bd0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -70836,7 +70831,7 @@ async call(parameters : Public.Procedures.StDistancespheroid_4e70.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StDistance_4e70.Parameters) {
+async call(parameters : Public.Procedures.StDistance_6bd0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -70845,7 +70840,7 @@ async call(parameters : Public.Procedures.StDistance_4e70.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_distance(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_distance(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distance) );
@@ -70871,7 +70866,7 @@ async call(parameters : Public.Procedures.StPointinsidecircle.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_pointinsidecircle( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`
+  const response = await sql`SELECT public.st_pointinsidecircle( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_pointinsidecircle) );
@@ -70880,7 +70875,7 @@ async call(parameters : Public.Procedures.StPointinsidecircle.Parameters) {
 }
 }(this)
 
-          public StAzimuth_4e70 = new class implements HasDatabase {
+          public StAzimuth_6bd0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -70888,7 +70883,7 @@ async call(parameters : Public.Procedures.StPointinsidecircle.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAzimuth_4e70.Parameters) {
+async call(parameters : Public.Procedures.StAzimuth_6bd0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -70897,7 +70892,7 @@ async call(parameters : Public.Procedures.StAzimuth_4e70.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_azimuth(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_azimuth(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_azimuth) );
@@ -70906,7 +70901,7 @@ async call(parameters : Public.Procedures.StAzimuth_4e70.Parameters) {
 }
 }(this)
 
-          public StProjectBdaa = new class implements HasDatabase {
+          public StProject_9adf = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -70914,7 +70909,7 @@ async call(parameters : Public.Procedures.StAzimuth_4e70.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StProjectBdaa.Parameters) {
+async call(parameters : Public.Procedures.StProject_9adf.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -70923,7 +70918,7 @@ async call(parameters : Public.Procedures.StProjectBdaa.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_project(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) },azimuth => ${ typed[701](undefinedIsNull(parameters.azimuth)) })`
+  const response = await sql`SELECT public.st_project(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) },azimuth => ${ typed[701](undefinedIsNull(parameters.azimuth)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_project) );
@@ -70932,7 +70927,7 @@ async call(parameters : Public.Procedures.StProjectBdaa.Parameters) {
 }
 }(this)
 
-          public StProject_0b21 = new class implements HasDatabase {
+          public StProjectBab7 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -70940,7 +70935,7 @@ async call(parameters : Public.Procedures.StProjectBdaa.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StProject_0b21.Parameters) {
+async call(parameters : Public.Procedures.StProjectBab7.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -70949,7 +70944,7 @@ async call(parameters : Public.Procedures.StProject_0b21.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_project(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) })`
+  const response = await sql`SELECT public.st_project(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_project) );
@@ -70958,7 +70953,7 @@ async call(parameters : Public.Procedures.StProject_0b21.Parameters) {
 }
 }(this)
 
-          public StAngleDd35 = new class implements HasDatabase {
+          public StAngle_3749 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -70966,7 +70961,7 @@ async call(parameters : Public.Procedures.StProject_0b21.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAngleDd35.Parameters) {
+async call(parameters : Public.Procedures.StAngle_3749.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -70975,7 +70970,7 @@ async call(parameters : Public.Procedures.StAngleDd35.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_angle(pt1 => ${ typed[56356](undefinedIsNull(parameters.pt1)) },pt2 => ${ typed[56356](undefinedIsNull(parameters.pt2)) },pt3 => ${ typed[56356](undefinedIsNull(parameters.pt3)) },pt4 => ${ typed[56356](undefinedIsNull(parameters.pt4)) })`
+  const response = await sql`SELECT public.st_angle(pt1 => ${ typed[63488](undefinedIsNull(parameters.pt1)) },pt2 => ${ typed[63488](undefinedIsNull(parameters.pt2)) },pt3 => ${ typed[63488](undefinedIsNull(parameters.pt3)) },pt4 => ${ typed[63488](undefinedIsNull(parameters.pt4)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_angle) );
@@ -71001,7 +70996,7 @@ async call(parameters : Public.Procedures.StLineextend.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_lineextend(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },distance_forward => ${ typed[701](undefinedIsNull(parameters.distanceForward)) },distance_backward => ${ typed[701](undefinedIsNull(parameters.distanceBackward)) })`
+  const response = await sql`SELECT public.st_lineextend(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },distance_forward => ${ typed[701](undefinedIsNull(parameters.distanceForward)) },distance_backward => ${ typed[701](undefinedIsNull(parameters.distanceBackward)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_lineextend) );
@@ -71027,7 +71022,7 @@ async call(parameters : Public.Procedures.StForce2d.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_force2d( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_force2d( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_force2d) );
@@ -71053,7 +71048,7 @@ async call(parameters : Public.Procedures.StForce3dz.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_force3dz(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },zvalue => ${ typed[701](undefinedIsNull(parameters.zvalue)) })`
+  const response = await sql`SELECT public.st_force3dz(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },zvalue => ${ typed[701](undefinedIsNull(parameters.zvalue)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_force3dz) );
@@ -71079,7 +71074,7 @@ async call(parameters : Public.Procedures.StForce3d.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_force3d(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },zvalue => ${ typed[701](undefinedIsNull(parameters.zvalue)) })`
+  const response = await sql`SELECT public.st_force3d(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },zvalue => ${ typed[701](undefinedIsNull(parameters.zvalue)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_force3d) );
@@ -71105,7 +71100,7 @@ async call(parameters : Public.Procedures.StForce3dm.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_force3dm(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },mvalue => ${ typed[701](undefinedIsNull(parameters.mvalue)) })`
+  const response = await sql`SELECT public.st_force3dm(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },mvalue => ${ typed[701](undefinedIsNull(parameters.mvalue)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_force3dm) );
@@ -71131,7 +71126,7 @@ async call(parameters : Public.Procedures.StForce4d.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_force4d(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },zvalue => ${ typed[701](undefinedIsNull(parameters.zvalue)) },mvalue => ${ typed[701](undefinedIsNull(parameters.mvalue)) })`
+  const response = await sql`SELECT public.st_force4d(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },zvalue => ${ typed[701](undefinedIsNull(parameters.zvalue)) },mvalue => ${ typed[701](undefinedIsNull(parameters.mvalue)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_force4d) );
@@ -71157,7 +71152,7 @@ async call(parameters : Public.Procedures.StForcecollection.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_forcecollection( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_forcecollection( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_forcecollection) );
@@ -71166,7 +71161,7 @@ async call(parameters : Public.Procedures.StForcecollection.Parameters) {
 }
 }(this)
 
-          public StCollectionextractF74e = new class implements HasDatabase {
+          public StCollectionextract_73ac = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -71174,7 +71169,7 @@ async call(parameters : Public.Procedures.StForcecollection.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StCollectionextractF74e.Parameters) {
+async call(parameters : Public.Procedures.StCollectionextract_73ac.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -71183,7 +71178,7 @@ async call(parameters : Public.Procedures.StCollectionextractF74e.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_collectionextract( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_collectionextract( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_collectionextract) );
@@ -71192,7 +71187,7 @@ async call(parameters : Public.Procedures.StCollectionextractF74e.Parameters) {
 }
 }(this)
 
-          public StCollectionextract_52cb = new class implements HasDatabase {
+          public StCollectionextractC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -71200,7 +71195,7 @@ async call(parameters : Public.Procedures.StCollectionextractF74e.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StCollectionextract_52cb.Parameters) {
+async call(parameters : Public.Procedures.StCollectionextractC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -71209,7 +71204,7 @@ async call(parameters : Public.Procedures.StCollectionextract_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_collectionextract( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_collectionextract( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_collectionextract) );
@@ -71235,7 +71230,7 @@ async call(parameters : Public.Procedures.StCollectionhomogenize.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_collectionhomogenize( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_collectionhomogenize( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_collectionhomogenize) );
@@ -71261,7 +71256,7 @@ async call(parameters : Public.Procedures.StMulti.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_multi( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_multi( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multi) );
@@ -71287,7 +71282,7 @@ async call(parameters : Public.Procedures.StForcecurve.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_forcecurve( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_forcecurve( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_forcecurve) );
@@ -71296,7 +71291,7 @@ async call(parameters : Public.Procedures.StForcecurve.Parameters) {
 }
 }(this)
 
-          public StForcesfs_52cb = new class implements HasDatabase {
+          public StForcesfsC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -71304,7 +71299,7 @@ async call(parameters : Public.Procedures.StForcecurve.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StForcesfs_52cb.Parameters) {
+async call(parameters : Public.Procedures.StForcesfsC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -71313,7 +71308,7 @@ async call(parameters : Public.Procedures.StForcesfs_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_forcesfs( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_forcesfs( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_forcesfs) );
@@ -71322,7 +71317,7 @@ async call(parameters : Public.Procedures.StForcesfs_52cb.Parameters) {
 }
 }(this)
 
-          public StForcesfs_09ea = new class implements HasDatabase {
+          public StForcesfs_9881 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -71330,7 +71325,7 @@ async call(parameters : Public.Procedures.StForcesfs_52cb.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StForcesfs_09ea.Parameters) {
+async call(parameters : Public.Procedures.StForcesfs_9881.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -71339,7 +71334,7 @@ async call(parameters : Public.Procedures.StForcesfs_09ea.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_forcesfs(argument_0 => ${ typed[56356](undefinedIsNull(parameters.argument_0)) },version => ${ typed[25](undefinedIsNull(parameters.version)) })`
+  const response = await sql`SELECT public.st_forcesfs(argument_0 => ${ typed[63488](undefinedIsNull(parameters.argument_0)) },version => ${ typed[25](undefinedIsNull(parameters.version)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_forcesfs) );
@@ -71348,7 +71343,7 @@ async call(parameters : Public.Procedures.StForcesfs_09ea.Parameters) {
 }
 }(this)
 
-          public StExpandC8db = new class implements HasDatabase {
+          public StExpandDbaa = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -71356,7 +71351,7 @@ async call(parameters : Public.Procedures.StForcesfs_09ea.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StExpandC8db.Parameters) {
+async call(parameters : Public.Procedures.StExpandDbaa.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -71365,7 +71360,7 @@ async call(parameters : Public.Procedures.StExpandC8db.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_expand( ${ typed[56383](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_expand( ${ typed[63515](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].st_expand) );
@@ -71374,7 +71369,7 @@ async call(parameters : Public.Procedures.StExpandC8db.Parameters) {
 }
 }(this)
 
-          public StExpandB682 = new class implements HasDatabase {
+          public StExpand_4f8f = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -71382,7 +71377,7 @@ async call(parameters : Public.Procedures.StExpandC8db.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StExpandB682.Parameters) {
+async call(parameters : Public.Procedures.StExpand_4f8f.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -71391,7 +71386,7 @@ async call(parameters : Public.Procedures.StExpandB682.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_expand(box => ${ typed[56383](undefinedIsNull(parameters.box)) },dx => ${ typed[701](undefinedIsNull(parameters.dx)) },dy => ${ typed[701](undefinedIsNull(parameters.dy)) },dz => ${ typed[701](undefinedIsNull(parameters.dz)) })`
+  const response = await sql`SELECT public.st_expand(box => ${ typed[63515](undefinedIsNull(parameters.box)) },dx => ${ typed[701](undefinedIsNull(parameters.dx)) },dy => ${ typed[701](undefinedIsNull(parameters.dy)) },dz => ${ typed[701](undefinedIsNull(parameters.dz)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].st_expand) );
@@ -71400,7 +71395,7 @@ async call(parameters : Public.Procedures.StExpandB682.Parameters) {
 }
 }(this)
 
-          public StExpand_8fd9 = new class implements HasDatabase {
+          public StExpand_23e5 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -71408,7 +71403,7 @@ async call(parameters : Public.Procedures.StExpandB682.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StExpand_8fd9.Parameters) {
+async call(parameters : Public.Procedures.StExpand_23e5.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -71417,7 +71412,7 @@ async call(parameters : Public.Procedures.StExpand_8fd9.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_expand( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_expand( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_expand) );
@@ -71426,7 +71421,7 @@ async call(parameters : Public.Procedures.StExpand_8fd9.Parameters) {
 }
 }(this)
 
-          public StExpand_3395 = new class implements HasDatabase {
+          public StExpand_6e33 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -71434,7 +71429,7 @@ async call(parameters : Public.Procedures.StExpand_8fd9.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StExpand_3395.Parameters) {
+async call(parameters : Public.Procedures.StExpand_6e33.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -71443,7 +71438,7 @@ async call(parameters : Public.Procedures.StExpand_3395.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_expand(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },dx => ${ typed[701](undefinedIsNull(parameters.dx)) },dy => ${ typed[701](undefinedIsNull(parameters.dy)) },dz => ${ typed[701](undefinedIsNull(parameters.dz)) },dm => ${ typed[701](undefinedIsNull(parameters.dm)) })`
+  const response = await sql`SELECT public.st_expand(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },dx => ${ typed[701](undefinedIsNull(parameters.dx)) },dy => ${ typed[701](undefinedIsNull(parameters.dy)) },dz => ${ typed[701](undefinedIsNull(parameters.dz)) },dm => ${ typed[701](undefinedIsNull(parameters.dm)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_expand) );
@@ -71469,7 +71464,7 @@ async call(parameters : Public.Procedures.StEnvelope.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_envelope( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_envelope( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_envelope) );
@@ -71495,7 +71490,7 @@ async call(parameters : Public.Procedures.StBoundingdiagonal.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_boundingdiagonal(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },fits => ${ typed[16](undefinedIsNull(parameters.fits)) })`
+  const response = await sql`SELECT public.st_boundingdiagonal(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },fits => ${ typed[16](undefinedIsNull(parameters.fits)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_boundingdiagonal) );
@@ -71521,7 +71516,7 @@ async call(parameters : Public.Procedures.StReverse.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_reverse( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_reverse( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_reverse) );
@@ -71547,7 +71542,7 @@ async call(parameters : Public.Procedures.StScroll.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_scroll( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_scroll( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_scroll) );
@@ -71573,7 +71568,7 @@ async call(parameters : Public.Procedures.PostgisGeosNoop.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_geos_noop( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.postgis_geos_noop( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].postgis_geos_noop) );
@@ -71599,7 +71594,7 @@ async call(parameters : Public.Procedures.StNormalize.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_normalize(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) })`
+  const response = await sql`SELECT public.st_normalize(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_normalize) );
@@ -71625,7 +71620,7 @@ async call(parameters : Public.Procedures.StZmflag.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_zmflag( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_zmflag( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int2.parse(results?.[0].st_zmflag) );
@@ -71651,7 +71646,7 @@ async call(parameters : Public.Procedures.StNdims.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_ndims( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_ndims( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int2.parse(results?.[0].st_ndims) );
@@ -71660,7 +71655,7 @@ async call(parameters : Public.Procedures.StNdims.Parameters) {
 }
 }(this)
 
-          public StAsewkt_52cb = new class implements HasDatabase {
+          public StAsewktC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -71668,7 +71663,7 @@ async call(parameters : Public.Procedures.StNdims.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAsewkt_52cb.Parameters) {
+async call(parameters : Public.Procedures.StAsewktC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -71677,7 +71672,7 @@ async call(parameters : Public.Procedures.StAsewkt_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asewkt( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_asewkt( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asewkt) );
@@ -71686,7 +71681,7 @@ async call(parameters : Public.Procedures.StAsewkt_52cb.Parameters) {
 }
 }(this)
 
-          public StAsewktF74e = new class implements HasDatabase {
+          public StAsewkt_73ac = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -71694,7 +71689,7 @@ async call(parameters : Public.Procedures.StAsewkt_52cb.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAsewktF74e.Parameters) {
+async call(parameters : Public.Procedures.StAsewkt_73ac.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -71703,7 +71698,7 @@ async call(parameters : Public.Procedures.StAsewktF74e.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asewkt( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_asewkt( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asewkt) );
@@ -71712,7 +71707,7 @@ async call(parameters : Public.Procedures.StAsewktF74e.Parameters) {
 }
 }(this)
 
-          public StAstwkbC537 = new class implements HasDatabase {
+          public StAstwkbE417 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -71720,7 +71715,7 @@ async call(parameters : Public.Procedures.StAsewktF74e.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAstwkbC537.Parameters) {
+async call(parameters : Public.Procedures.StAstwkbE417.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -71729,7 +71724,7 @@ async call(parameters : Public.Procedures.StAstwkbC537.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_astwkb(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },prec => ${ typed[23](undefinedIsNull(parameters.prec)) },prec_z => ${ typed[23](undefinedIsNull(parameters.precZ)) },prec_m => ${ typed[23](undefinedIsNull(parameters.precM)) },with_sizes => ${ typed[16](undefinedIsNull(parameters.withSizes)) },with_boxes => ${ typed[16](undefinedIsNull(parameters.withBoxes)) })`
+  const response = await sql`SELECT public.st_astwkb(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },prec => ${ typed[23](undefinedIsNull(parameters.prec)) },prec_z => ${ typed[23](undefinedIsNull(parameters.precZ)) },prec_m => ${ typed[23](undefinedIsNull(parameters.precM)) },with_sizes => ${ typed[16](undefinedIsNull(parameters.withSizes)) },with_boxes => ${ typed[16](undefinedIsNull(parameters.withBoxes)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_astwkb) );
@@ -71738,7 +71733,7 @@ async call(parameters : Public.Procedures.StAstwkbC537.Parameters) {
 }
 }(this)
 
-          public StAstwkb_911a = new class implements HasDatabase {
+          public StAstwkbE7ff = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -71746,7 +71741,7 @@ async call(parameters : Public.Procedures.StAstwkbC537.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAstwkb_911a.Parameters) {
+async call(parameters : Public.Procedures.StAstwkbE7ff.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -71755,7 +71750,7 @@ async call(parameters : Public.Procedures.StAstwkb_911a.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_astwkb(geom => ${ typed[56364](undefinedIsNull(parameters.geom)) },ids => ${ typed[1016](undefinedIsNull(parameters.ids)) },prec => ${ typed[23](undefinedIsNull(parameters.prec)) },prec_z => ${ typed[23](undefinedIsNull(parameters.precZ)) },prec_m => ${ typed[23](undefinedIsNull(parameters.precM)) },with_sizes => ${ typed[16](undefinedIsNull(parameters.withSizes)) },with_boxes => ${ typed[16](undefinedIsNull(parameters.withBoxes)) })`
+  const response = await sql`SELECT public.st_astwkb(geom => ${ typed[63496](undefinedIsNull(parameters.geom)) },ids => ${ typed[1016](undefinedIsNull(parameters.ids)) },prec => ${ typed[23](undefinedIsNull(parameters.prec)) },prec_z => ${ typed[23](undefinedIsNull(parameters.precZ)) },prec_m => ${ typed[23](undefinedIsNull(parameters.precM)) },with_sizes => ${ typed[16](undefinedIsNull(parameters.withSizes)) },with_boxes => ${ typed[16](undefinedIsNull(parameters.withBoxes)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_astwkb) );
@@ -71764,7 +71759,7 @@ async call(parameters : Public.Procedures.StAstwkb_911a.Parameters) {
 }
 }(this)
 
-          public StAsewkb_52cb = new class implements HasDatabase {
+          public StAsewkbC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -71772,7 +71767,7 @@ async call(parameters : Public.Procedures.StAstwkb_911a.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAsewkb_52cb.Parameters) {
+async call(parameters : Public.Procedures.StAsewkbC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -71781,7 +71776,7 @@ async call(parameters : Public.Procedures.StAsewkb_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asewkb( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_asewkb( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_asewkb) );
@@ -71790,7 +71785,7 @@ async call(parameters : Public.Procedures.StAsewkb_52cb.Parameters) {
 }
 }(this)
 
-          public StAshexewkb_52cb = new class implements HasDatabase {
+          public StAshexewkbC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -71798,7 +71793,7 @@ async call(parameters : Public.Procedures.StAsewkb_52cb.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAshexewkb_52cb.Parameters) {
+async call(parameters : Public.Procedures.StAshexewkbC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -71807,7 +71802,7 @@ async call(parameters : Public.Procedures.StAshexewkb_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_ashexewkb( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_ashexewkb( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_ashexewkb) );
@@ -71816,7 +71811,7 @@ async call(parameters : Public.Procedures.StAshexewkb_52cb.Parameters) {
 }
 }(this)
 
-          public StAshexewkb_09ea = new class implements HasDatabase {
+          public StAshexewkb_9881 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -71824,7 +71819,7 @@ async call(parameters : Public.Procedures.StAshexewkb_52cb.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAshexewkb_09ea.Parameters) {
+async call(parameters : Public.Procedures.StAshexewkb_9881.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -71833,7 +71828,7 @@ async call(parameters : Public.Procedures.StAshexewkb_09ea.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_ashexewkb( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_ashexewkb( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_ashexewkb) );
@@ -71842,7 +71837,7 @@ async call(parameters : Public.Procedures.StAshexewkb_09ea.Parameters) {
 }
 }(this)
 
-          public StAsewkb_09ea = new class implements HasDatabase {
+          public StAsewkb_9881 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -71850,7 +71845,7 @@ async call(parameters : Public.Procedures.StAshexewkb_09ea.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAsewkb_09ea.Parameters) {
+async call(parameters : Public.Procedures.StAsewkb_9881.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -71859,7 +71854,7 @@ async call(parameters : Public.Procedures.StAsewkb_09ea.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asewkb( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_asewkb( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_asewkb) );
@@ -71885,7 +71880,7 @@ async call(parameters : Public.Procedures.StAslatlontext.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_aslatlontext(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },tmpl => ${ typed[25](undefinedIsNull(parameters.tmpl)) })`
+  const response = await sql`SELECT public.st_aslatlontext(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },tmpl => ${ typed[25](undefinedIsNull(parameters.tmpl)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_aslatlontext) );
@@ -72171,7 +72166,7 @@ async call(parameters : Public.Procedures.St_3dmakebox.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3dmakebox(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_3dmakebox(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].st_3dmakebox) );
@@ -72180,7 +72175,7 @@ async call(parameters : Public.Procedures.St_3dmakebox.Parameters) {
 }
 }(this)
 
-          public StMakeline_1ecf = new class implements HasDatabase {
+          public StMakelineA84e = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -72188,7 +72183,7 @@ async call(parameters : Public.Procedures.St_3dmakebox.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StMakeline_1ecf.Parameters) {
+async call(parameters : Public.Procedures.StMakelineA84e.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -72197,7 +72192,7 @@ async call(parameters : Public.Procedures.StMakeline_1ecf.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_makeline( ${ typed[56364](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_makeline( ${ typed[63496](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makeline) );
@@ -72223,7 +72218,7 @@ async call(parameters : Public.Procedures.StLinefrommultipoint.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linefrommultipoint( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_linefrommultipoint( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linefrommultipoint) );
@@ -72232,7 +72227,7 @@ async call(parameters : Public.Procedures.StLinefrommultipoint.Parameters) {
 }
 }(this)
 
-          public StMakeline_4e70 = new class implements HasDatabase {
+          public StMakeline_6bd0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -72240,7 +72235,7 @@ async call(parameters : Public.Procedures.StLinefrommultipoint.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StMakeline_4e70.Parameters) {
+async call(parameters : Public.Procedures.StMakeline_6bd0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -72249,7 +72244,7 @@ async call(parameters : Public.Procedures.StMakeline_4e70.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_makeline(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_makeline(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makeline) );
@@ -72258,7 +72253,7 @@ async call(parameters : Public.Procedures.StMakeline_4e70.Parameters) {
 }
 }(this)
 
-          public StAddpoint_4e70 = new class implements HasDatabase {
+          public StAddpoint_6bd0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -72266,7 +72261,7 @@ async call(parameters : Public.Procedures.StMakeline_4e70.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAddpoint_4e70.Parameters) {
+async call(parameters : Public.Procedures.StAddpoint_6bd0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -72275,7 +72270,7 @@ async call(parameters : Public.Procedures.StAddpoint_4e70.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_addpoint(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_addpoint(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_addpoint) );
@@ -72284,7 +72279,7 @@ async call(parameters : Public.Procedures.StAddpoint_4e70.Parameters) {
 }
 }(this)
 
-          public StScaleBdaa = new class implements HasDatabase {
+          public StScale_9adf = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -72292,7 +72287,7 @@ async call(parameters : Public.Procedures.StAddpoint_4e70.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StScaleBdaa.Parameters) {
+async call(parameters : Public.Procedures.StScale_9adf.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -72301,7 +72296,7 @@ async call(parameters : Public.Procedures.StScaleBdaa.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_scale( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_scale( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_scale) );
@@ -72310,7 +72305,7 @@ async call(parameters : Public.Procedures.StScaleBdaa.Parameters) {
 }
 }(this)
 
-          public StAddpointBf6c = new class implements HasDatabase {
+          public StAddpointAcbc = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -72318,7 +72313,7 @@ async call(parameters : Public.Procedures.StScaleBdaa.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAddpointBf6c.Parameters) {
+async call(parameters : Public.Procedures.StAddpointAcbc.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -72327,7 +72322,7 @@ async call(parameters : Public.Procedures.StAddpointBf6c.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_addpoint(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_addpoint(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_addpoint) );
@@ -72353,7 +72348,7 @@ async call(parameters : Public.Procedures.StRemovepoint.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_removepoint( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_removepoint( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_removepoint) );
@@ -72379,7 +72374,7 @@ async call(parameters : Public.Procedures.StSetpoint.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_setpoint( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[56356](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_setpoint( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[63488](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_setpoint) );
@@ -72431,7 +72426,7 @@ async call(parameters : Public.Procedures.StTileenvelope.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_tileenvelope(zoom => ${ typed[23](undefinedIsNull(parameters.zoom)) },x => ${ typed[23](undefinedIsNull(parameters.x)) },y => ${ typed[23](undefinedIsNull(parameters.y)) },bounds => ${ typed[56356](undefinedIsNull(parameters.bounds)) },margin => ${ typed[701](undefinedIsNull(parameters.margin)) })`
+  const response = await sql`SELECT public.st_tileenvelope(zoom => ${ typed[23](undefinedIsNull(parameters.zoom)) },x => ${ typed[23](undefinedIsNull(parameters.x)) },y => ${ typed[23](undefinedIsNull(parameters.y)) },bounds => ${ typed[63488](undefinedIsNull(parameters.bounds)) },margin => ${ typed[701](undefinedIsNull(parameters.margin)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_tileenvelope) );
@@ -72440,7 +72435,7 @@ async call(parameters : Public.Procedures.StTileenvelope.Parameters) {
 }
 }(this)
 
-          public StMakepolygonCd1b = new class implements HasDatabase {
+          public StMakepolygon_88d3 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -72448,7 +72443,7 @@ async call(parameters : Public.Procedures.StTileenvelope.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StMakepolygonCd1b.Parameters) {
+async call(parameters : Public.Procedures.StMakepolygon_88d3.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -72457,7 +72452,7 @@ async call(parameters : Public.Procedures.StMakepolygonCd1b.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_makepolygon( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[56364](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_makepolygon( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[63496](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makepolygon) );
@@ -72466,7 +72461,7 @@ async call(parameters : Public.Procedures.StMakepolygonCd1b.Parameters) {
 }
 }(this)
 
-          public StMakepolygon_52cb = new class implements HasDatabase {
+          public StMakepolygonC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -72474,7 +72469,7 @@ async call(parameters : Public.Procedures.StMakepolygonCd1b.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StMakepolygon_52cb.Parameters) {
+async call(parameters : Public.Procedures.StMakepolygonC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -72483,7 +72478,7 @@ async call(parameters : Public.Procedures.StMakepolygon_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_makepolygon( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_makepolygon( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makepolygon) );
@@ -72509,7 +72504,7 @@ async call(parameters : Public.Procedures.StBuildarea.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_buildarea( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_buildarea( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_buildarea) );
@@ -72518,7 +72513,7 @@ async call(parameters : Public.Procedures.StBuildarea.Parameters) {
 }
 }(this)
 
-          public StPolygonize_1ecf = new class implements HasDatabase {
+          public StPolygonizeA84e = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -72526,7 +72521,7 @@ async call(parameters : Public.Procedures.StBuildarea.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StPolygonize_1ecf.Parameters) {
+async call(parameters : Public.Procedures.StPolygonizeA84e.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -72535,7 +72530,7 @@ async call(parameters : Public.Procedures.StPolygonize_1ecf.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_polygonize( ${ typed[56364](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_polygonize( ${ typed[63496](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_polygonize) );
@@ -72544,7 +72539,7 @@ async call(parameters : Public.Procedures.StPolygonize_1ecf.Parameters) {
 }
 }(this)
 
-          public StClusterintersecting_1ecf = new class implements HasDatabase {
+          public StClusterintersectingA84e = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -72552,7 +72547,7 @@ async call(parameters : Public.Procedures.StPolygonize_1ecf.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StClusterintersecting_1ecf.Parameters) {
+async call(parameters : Public.Procedures.StClusterintersectingA84e.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -72561,7 +72556,7 @@ async call(parameters : Public.Procedures.StClusterintersecting_1ecf.Parameters)
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_clusterintersecting( ${ typed[56364](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_clusterintersecting( ${ typed[63496](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.GeometryArray.parse(results?.[0].st_clusterintersecting) );
@@ -72570,7 +72565,7 @@ async call(parameters : Public.Procedures.StClusterintersecting_1ecf.Parameters)
 }
 }(this)
 
-          public StClusterwithin_7fe3 = new class implements HasDatabase {
+          public StClusterwithinAece = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -72578,7 +72573,7 @@ async call(parameters : Public.Procedures.StClusterintersecting_1ecf.Parameters)
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StClusterwithin_7fe3.Parameters) {
+async call(parameters : Public.Procedures.StClusterwithinAece.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -72587,7 +72582,7 @@ async call(parameters : Public.Procedures.StClusterwithin_7fe3.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_clusterwithin( ${ typed[56364](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_clusterwithin( ${ typed[63496](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.GeometryArray.parse(results?.[0].st_clusterwithin) );
@@ -72596,7 +72591,7 @@ async call(parameters : Public.Procedures.StClusterwithin_7fe3.Parameters) {
 }
 }(this)
 
-          public StLinemerge_52cb = new class implements HasDatabase {
+          public StLinemergeC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -72604,7 +72599,7 @@ async call(parameters : Public.Procedures.StClusterwithin_7fe3.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StLinemerge_52cb.Parameters) {
+async call(parameters : Public.Procedures.StLinemergeC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -72613,7 +72608,7 @@ async call(parameters : Public.Procedures.StLinemerge_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linemerge( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_linemerge( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linemerge) );
@@ -72622,7 +72617,7 @@ async call(parameters : Public.Procedures.StLinemerge_52cb.Parameters) {
 }
 }(this)
 
-          public StLinemergeE9cd = new class implements HasDatabase {
+          public StLinemergeE62d = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -72630,7 +72625,7 @@ async call(parameters : Public.Procedures.StLinemerge_52cb.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StLinemergeE9cd.Parameters) {
+async call(parameters : Public.Procedures.StLinemergeE62d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -72639,7 +72634,7 @@ async call(parameters : Public.Procedures.StLinemergeE9cd.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linemerge( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[16](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_linemerge( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[16](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linemerge) );
@@ -72648,7 +72643,7 @@ async call(parameters : Public.Procedures.StLinemergeE9cd.Parameters) {
 }
 }(this)
 
-          public StAffineAb49 = new class implements HasDatabase {
+          public StAffine_35f7 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -72656,7 +72651,7 @@ async call(parameters : Public.Procedures.StLinemergeE9cd.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAffineAb49.Parameters) {
+async call(parameters : Public.Procedures.StAffine_35f7.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -72665,7 +72660,7 @@ async call(parameters : Public.Procedures.StAffineAb49.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_affine( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) }, ${ typed[701](undefinedIsNull(parameters.argument_5)) }, ${ typed[701](undefinedIsNull(parameters.argument_6)) }, ${ typed[701](undefinedIsNull(parameters.argument_7)) }, ${ typed[701](undefinedIsNull(parameters.argument_8)) }, ${ typed[701](undefinedIsNull(parameters.argument_9)) }, ${ typed[701](undefinedIsNull(parameters.argument_10)) }, ${ typed[701](undefinedIsNull(parameters.argument_11)) }, ${ typed[701](undefinedIsNull(parameters.argument_12)) })`
+  const response = await sql`SELECT public.st_affine( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) }, ${ typed[701](undefinedIsNull(parameters.argument_5)) }, ${ typed[701](undefinedIsNull(parameters.argument_6)) }, ${ typed[701](undefinedIsNull(parameters.argument_7)) }, ${ typed[701](undefinedIsNull(parameters.argument_8)) }, ${ typed[701](undefinedIsNull(parameters.argument_9)) }, ${ typed[701](undefinedIsNull(parameters.argument_10)) }, ${ typed[701](undefinedIsNull(parameters.argument_11)) }, ${ typed[701](undefinedIsNull(parameters.argument_12)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_affine) );
@@ -72674,7 +72669,7 @@ async call(parameters : Public.Procedures.StAffineAb49.Parameters) {
 }
 }(this)
 
-          public StAffine_1347 = new class implements HasDatabase {
+          public StAffine_78d2 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -72682,7 +72677,7 @@ async call(parameters : Public.Procedures.StAffineAb49.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAffine_1347.Parameters) {
+async call(parameters : Public.Procedures.StAffine_78d2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -72691,7 +72686,7 @@ async call(parameters : Public.Procedures.StAffine_1347.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_affine( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) }, ${ typed[701](undefinedIsNull(parameters.argument_5)) }, ${ typed[701](undefinedIsNull(parameters.argument_6)) })`
+  const response = await sql`SELECT public.st_affine( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) }, ${ typed[701](undefinedIsNull(parameters.argument_5)) }, ${ typed[701](undefinedIsNull(parameters.argument_6)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_affine) );
@@ -72700,7 +72695,7 @@ async call(parameters : Public.Procedures.StAffine_1347.Parameters) {
 }
 }(this)
 
-          public StRotate_8fd9 = new class implements HasDatabase {
+          public StRotate_23e5 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -72708,7 +72703,7 @@ async call(parameters : Public.Procedures.StAffine_1347.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StRotate_8fd9.Parameters) {
+async call(parameters : Public.Procedures.StRotate_23e5.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -72717,7 +72712,7 @@ async call(parameters : Public.Procedures.StRotate_8fd9.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_rotate( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_rotate( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_rotate) );
@@ -72726,7 +72721,7 @@ async call(parameters : Public.Procedures.StRotate_8fd9.Parameters) {
 }
 }(this)
 
-          public StRotate_196d = new class implements HasDatabase {
+          public StRotateA6e8 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -72734,7 +72729,7 @@ async call(parameters : Public.Procedures.StRotate_8fd9.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StRotate_196d.Parameters) {
+async call(parameters : Public.Procedures.StRotateA6e8.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -72743,7 +72738,7 @@ async call(parameters : Public.Procedures.StRotate_196d.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_rotate( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`
+  const response = await sql`SELECT public.st_rotate( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_rotate) );
@@ -72752,7 +72747,7 @@ async call(parameters : Public.Procedures.StRotate_196d.Parameters) {
 }
 }(this)
 
-          public StRotateD16f = new class implements HasDatabase {
+          public StRotate_4c28 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -72760,7 +72755,7 @@ async call(parameters : Public.Procedures.StRotate_196d.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StRotateD16f.Parameters) {
+async call(parameters : Public.Procedures.StRotate_4c28.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -72769,7 +72764,7 @@ async call(parameters : Public.Procedures.StRotateD16f.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_rotate( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[56356](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_rotate( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[63488](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_rotate) );
@@ -72795,7 +72790,7 @@ async call(parameters : Public.Procedures.StRotatez.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_rotatez( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_rotatez( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_rotatez) );
@@ -72821,7 +72816,7 @@ async call(parameters : Public.Procedures.StRotatex.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_rotatex( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_rotatex( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_rotatex) );
@@ -72847,7 +72842,7 @@ async call(parameters : Public.Procedures.StRotatey.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_rotatey( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_rotatey( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_rotatey) );
@@ -72856,7 +72851,7 @@ async call(parameters : Public.Procedures.StRotatey.Parameters) {
 }
 }(this)
 
-          public StTranslate_196d = new class implements HasDatabase {
+          public StTranslateA6e8 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -72864,7 +72859,7 @@ async call(parameters : Public.Procedures.StRotatey.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StTranslate_196d.Parameters) {
+async call(parameters : Public.Procedures.StTranslateA6e8.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -72873,7 +72868,7 @@ async call(parameters : Public.Procedures.StTranslate_196d.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_translate( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`
+  const response = await sql`SELECT public.st_translate( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_translate) );
@@ -72882,7 +72877,7 @@ async call(parameters : Public.Procedures.StTranslate_196d.Parameters) {
 }
 }(this)
 
-          public StTranslateBdaa = new class implements HasDatabase {
+          public StTranslate_9adf = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -72890,7 +72885,7 @@ async call(parameters : Public.Procedures.StTranslate_196d.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StTranslateBdaa.Parameters) {
+async call(parameters : Public.Procedures.StTranslate_9adf.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -72899,7 +72894,7 @@ async call(parameters : Public.Procedures.StTranslateBdaa.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_translate( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_translate( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_translate) );
@@ -72908,7 +72903,7 @@ async call(parameters : Public.Procedures.StTranslateBdaa.Parameters) {
 }
 }(this)
 
-          public StScale_4e70 = new class implements HasDatabase {
+          public StScale_6bd0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -72916,7 +72911,7 @@ async call(parameters : Public.Procedures.StTranslateBdaa.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StScale_4e70.Parameters) {
+async call(parameters : Public.Procedures.StScale_6bd0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -72925,7 +72920,7 @@ async call(parameters : Public.Procedures.StScale_4e70.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_scale( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_scale( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_scale) );
@@ -72934,7 +72929,7 @@ async call(parameters : Public.Procedures.StScale_4e70.Parameters) {
 }
 }(this)
 
-          public StScaleFaae = new class implements HasDatabase {
+          public StScaleE109 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -72942,7 +72937,7 @@ async call(parameters : Public.Procedures.StScale_4e70.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StScaleFaae.Parameters) {
+async call(parameters : Public.Procedures.StScaleE109.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -72951,7 +72946,7 @@ async call(parameters : Public.Procedures.StScaleFaae.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_scale(argument_0 => ${ typed[56356](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[56356](undefinedIsNull(parameters.argument_1)) },origin => ${ typed[56356](undefinedIsNull(parameters.origin)) })`
+  const response = await sql`SELECT public.st_scale(argument_0 => ${ typed[63488](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[63488](undefinedIsNull(parameters.argument_1)) },origin => ${ typed[63488](undefinedIsNull(parameters.origin)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_scale) );
@@ -72960,7 +72955,7 @@ async call(parameters : Public.Procedures.StScaleFaae.Parameters) {
 }
 }(this)
 
-          public StScale_196d = new class implements HasDatabase {
+          public StScaleA6e8 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -72968,7 +72963,7 @@ async call(parameters : Public.Procedures.StScaleFaae.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StScale_196d.Parameters) {
+async call(parameters : Public.Procedures.StScaleA6e8.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -72977,7 +72972,7 @@ async call(parameters : Public.Procedures.StScale_196d.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_scale( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`
+  const response = await sql`SELECT public.st_scale( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_scale) );
@@ -73003,7 +72998,7 @@ async call(parameters : Public.Procedures.StTransscale.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_transscale( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) })`
+  const response = await sql`SELECT public.st_transscale( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_transscale) );
@@ -73029,7 +73024,7 @@ async call(parameters : Public.Procedures.StDump.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_dump( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_dump( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_dump)).filter<Public.Types.GeometryDump>((r):r is Public.Types.GeometryDump => r !== null) );
@@ -73055,7 +73050,7 @@ async call(parameters : Public.Procedures.StDumprings.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_dumprings( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_dumprings( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_dumprings)).filter<Public.Types.GeometryDump>((r):r is Public.Types.GeometryDump => r !== null) );
@@ -73081,7 +73076,7 @@ async call(parameters : Public.Procedures.StDumppoints.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_dumppoints( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_dumppoints( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_dumppoints)).filter<Public.Types.GeometryDump>((r):r is Public.Types.GeometryDump => r !== null) );
@@ -73107,7 +73102,7 @@ async call(parameters : Public.Procedures.StDumpsegments.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_dumpsegments( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_dumpsegments( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_dumpsegments)).filter<Public.Types.GeometryDump>((r):r is Public.Types.GeometryDump => r !== null) );
@@ -73350,7 +73345,7 @@ async call(parameters : Public.Procedures.Dropgeometrytable_2253.Parameters) {
 }
 }(this)
 
-          public StSegmentize_8fd9 = new class implements HasDatabase {
+          public StSegmentize_23e5 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -73358,7 +73353,7 @@ async call(parameters : Public.Procedures.Dropgeometrytable_2253.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StSegmentize_8fd9.Parameters) {
+async call(parameters : Public.Procedures.StSegmentize_23e5.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -73367,7 +73362,7 @@ async call(parameters : Public.Procedures.StSegmentize_8fd9.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_segmentize( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_segmentize( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_segmentize) );
@@ -73558,7 +73553,7 @@ async call(parameters : Public.Procedures.GetProj4FromSrid.Parameters) {
 }
 }(this)
 
-          public StSetsridF74e = new class implements HasDatabase {
+          public StSetsrid_73ac = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -73566,7 +73561,7 @@ async call(parameters : Public.Procedures.GetProj4FromSrid.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StSetsridF74e.Parameters) {
+async call(parameters : Public.Procedures.StSetsrid_73ac.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -73575,7 +73570,7 @@ async call(parameters : Public.Procedures.StSetsridF74e.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_setsrid(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`
+  const response = await sql`SELECT public.st_setsrid(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_setsrid) );
@@ -73584,7 +73579,7 @@ async call(parameters : Public.Procedures.StSetsridF74e.Parameters) {
 }
 }(this)
 
-          public StSrid_52cb = new class implements HasDatabase {
+          public StSridC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -73592,7 +73587,7 @@ async call(parameters : Public.Procedures.StSetsridF74e.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StSrid_52cb.Parameters) {
+async call(parameters : Public.Procedures.StSridC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -73601,7 +73596,7 @@ async call(parameters : Public.Procedures.StSrid_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_srid(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) })`
+  const response = await sql`SELECT public.st_srid(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_srid) );
@@ -73627,7 +73622,7 @@ async call(parameters : Public.Procedures.PostgisTransformGeometry.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_transform_geometry(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },argument_1 => ${ typed[25](undefinedIsNull(parameters.argument_1)) },argument_2 => ${ typed[25](undefinedIsNull(parameters.argument_2)) },argument_3 => ${ typed[23](undefinedIsNull(parameters.argument_3)) })`
+  const response = await sql`SELECT public.postgis_transform_geometry(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },argument_1 => ${ typed[25](undefinedIsNull(parameters.argument_1)) },argument_2 => ${ typed[25](undefinedIsNull(parameters.argument_2)) },argument_3 => ${ typed[23](undefinedIsNull(parameters.argument_3)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].postgis_transform_geometry) );
@@ -73673,7 +73668,7 @@ async call(parameters : Public.Procedures.PostgisSrsCodes.Parameters) {
 async call(parameters : Public.Procedures.PostgisSrs.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[56698].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.PostgisSrs;
+              return context.procTypes[63830].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.PostgisSrs;
             };
           
   const sql = this.database.context.sql;
@@ -73698,7 +73693,7 @@ async call(parameters : Public.Procedures.PostgisSrs.Parameters) {
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[56699].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.PostgisSrsAll;
+              return context.procTypes[63831].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.PostgisSrsAll;
             };
           
   const sql = this.database.context.sql;
@@ -73723,12 +73718,12 @@ async call() {
 async call(parameters : Public.Procedures.PostgisSrsSearch.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[56700].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.PostgisSrsSearch;
+              return context.procTypes[63832].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.PostgisSrsSearch;
             };
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_srs_search(bounds => ${ typed[56356](undefinedIsNull(parameters.bounds)) },authname => ${ typed[25](undefinedIsNull(parameters.authname)) })`
+  const response = await sql`SELECT public.postgis_srs_search(bounds => ${ typed[63488](undefinedIsNull(parameters.bounds)) },authname => ${ typed[25](undefinedIsNull(parameters.authname)) })`
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.postgis_srs_search)).filter<Public.Types.PostgisSrsSearch>((r):r is Public.Types.PostgisSrsSearch => r !== null) );
@@ -73737,7 +73732,7 @@ async call(parameters : Public.Procedures.PostgisSrsSearch.Parameters) {
 }
 }(this)
 
-          public StTransformF74e = new class implements HasDatabase {
+          public StTransform_73ac = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -73745,7 +73740,7 @@ async call(parameters : Public.Procedures.PostgisSrsSearch.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StTransformF74e.Parameters) {
+async call(parameters : Public.Procedures.StTransform_73ac.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -73754,7 +73749,7 @@ async call(parameters : Public.Procedures.StTransformF74e.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_transform( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_transform( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_transform) );
@@ -73763,7 +73758,7 @@ async call(parameters : Public.Procedures.StTransformF74e.Parameters) {
 }
 }(this)
 
-          public StTransform_09ea = new class implements HasDatabase {
+          public StTransform_9881 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -73771,7 +73766,7 @@ async call(parameters : Public.Procedures.StTransformF74e.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StTransform_09ea.Parameters) {
+async call(parameters : Public.Procedures.StTransform_9881.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -73780,7 +73775,7 @@ async call(parameters : Public.Procedures.StTransform_09ea.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_transform(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },to_proj => ${ typed[25](undefinedIsNull(parameters.toProj)) })`
+  const response = await sql`SELECT public.st_transform(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },to_proj => ${ typed[25](undefinedIsNull(parameters.toProj)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_transform) );
@@ -73789,7 +73784,7 @@ async call(parameters : Public.Procedures.StTransform_09ea.Parameters) {
 }
 }(this)
 
-          public StTransform_58c7 = new class implements HasDatabase {
+          public StTransformF6ce = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -73797,7 +73792,7 @@ async call(parameters : Public.Procedures.StTransform_09ea.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StTransform_58c7.Parameters) {
+async call(parameters : Public.Procedures.StTransformF6ce.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -73806,7 +73801,7 @@ async call(parameters : Public.Procedures.StTransform_58c7.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_transform(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },from_proj => ${ typed[25](undefinedIsNull(parameters.fromProj)) },to_proj => ${ typed[25](undefinedIsNull(parameters.toProj)) })`
+  const response = await sql`SELECT public.st_transform(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },from_proj => ${ typed[25](undefinedIsNull(parameters.fromProj)) },to_proj => ${ typed[25](undefinedIsNull(parameters.toProj)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_transform) );
@@ -73815,7 +73810,7 @@ async call(parameters : Public.Procedures.StTransform_58c7.Parameters) {
 }
 }(this)
 
-          public StTransform_226f = new class implements HasDatabase {
+          public StTransformFe9f = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -73823,7 +73818,7 @@ async call(parameters : Public.Procedures.StTransform_58c7.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StTransform_226f.Parameters) {
+async call(parameters : Public.Procedures.StTransformFe9f.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -73832,7 +73827,7 @@ async call(parameters : Public.Procedures.StTransform_226f.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_transform(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },from_proj => ${ typed[25](undefinedIsNull(parameters.fromProj)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`
+  const response = await sql`SELECT public.st_transform(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },from_proj => ${ typed[25](undefinedIsNull(parameters.fromProj)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_transform) );
@@ -73858,7 +73853,7 @@ async call(parameters : Public.Procedures.PostgisTransformPipelineGeometry.Param
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_transform_pipeline_geometry(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },pipeline => ${ typed[25](undefinedIsNull(parameters.pipeline)) },forward => ${ typed[16](undefinedIsNull(parameters.forward)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`
+  const response = await sql`SELECT public.postgis_transform_pipeline_geometry(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },pipeline => ${ typed[25](undefinedIsNull(parameters.pipeline)) },forward => ${ typed[16](undefinedIsNull(parameters.forward)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].postgis_transform_pipeline_geometry) );
@@ -73884,7 +73879,7 @@ async call(parameters : Public.Procedures.StTransformpipeline.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_transformpipeline(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },pipeline => ${ typed[25](undefinedIsNull(parameters.pipeline)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`
+  const response = await sql`SELECT public.st_transformpipeline(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },pipeline => ${ typed[25](undefinedIsNull(parameters.pipeline)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_transformpipeline) );
@@ -73910,7 +73905,7 @@ async call(parameters : Public.Procedures.StInversetransformpipeline.Parameters)
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_inversetransformpipeline(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },pipeline => ${ typed[25](undefinedIsNull(parameters.pipeline)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`
+  const response = await sql`SELECT public.st_inversetransformpipeline(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },pipeline => ${ typed[25](undefinedIsNull(parameters.pipeline)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_inversetransformpipeline) );
@@ -74309,7 +74304,7 @@ async call(parameters : Public.Procedures.PostgisExtensionsUpgrade.Parameters) {
 }
 }(this)
 
-          public StLineinterpolatepoint_8fd9 = new class implements HasDatabase {
+          public StLineinterpolatepoint_23e5 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -74317,7 +74312,7 @@ async call(parameters : Public.Procedures.PostgisExtensionsUpgrade.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StLineinterpolatepoint_8fd9.Parameters) {
+async call(parameters : Public.Procedures.StLineinterpolatepoint_23e5.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -74326,7 +74321,7 @@ async call(parameters : Public.Procedures.StLineinterpolatepoint_8fd9.Parameters
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_lineinterpolatepoint( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_lineinterpolatepoint( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_lineinterpolatepoint) );
@@ -74335,7 +74330,7 @@ async call(parameters : Public.Procedures.StLineinterpolatepoint_8fd9.Parameters
 }
 }(this)
 
-          public StLineinterpolatepoints_2d1f = new class implements HasDatabase {
+          public StLineinterpolatepoints_71ec = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -74343,7 +74338,7 @@ async call(parameters : Public.Procedures.StLineinterpolatepoint_8fd9.Parameters
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StLineinterpolatepoints_2d1f.Parameters) {
+async call(parameters : Public.Procedures.StLineinterpolatepoints_71ec.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -74352,7 +74347,7 @@ async call(parameters : Public.Procedures.StLineinterpolatepoints_2d1f.Parameter
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_lineinterpolatepoints(argument_0 => ${ typed[56356](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[701](undefinedIsNull(parameters.argument_1)) },repeat => ${ typed[16](undefinedIsNull(parameters.repeat)) })`
+  const response = await sql`SELECT public.st_lineinterpolatepoints(argument_0 => ${ typed[63488](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[701](undefinedIsNull(parameters.argument_1)) },repeat => ${ typed[16](undefinedIsNull(parameters.repeat)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_lineinterpolatepoints) );
@@ -74361,7 +74356,7 @@ async call(parameters : Public.Procedures.StLineinterpolatepoints_2d1f.Parameter
 }
 }(this)
 
-          public StLinesubstringBdaa = new class implements HasDatabase {
+          public StLinesubstring_9adf = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -74369,7 +74364,7 @@ async call(parameters : Public.Procedures.StLineinterpolatepoints_2d1f.Parameter
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StLinesubstringBdaa.Parameters) {
+async call(parameters : Public.Procedures.StLinesubstring_9adf.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -74378,7 +74373,7 @@ async call(parameters : Public.Procedures.StLinesubstringBdaa.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linesubstring( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_linesubstring( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linesubstring) );
@@ -74387,7 +74382,7 @@ async call(parameters : Public.Procedures.StLinesubstringBdaa.Parameters) {
 }
 }(this)
 
-          public StLinelocatepoint_4e70 = new class implements HasDatabase {
+          public StLinelocatepoint_6bd0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -74395,7 +74390,7 @@ async call(parameters : Public.Procedures.StLinesubstringBdaa.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StLinelocatepoint_4e70.Parameters) {
+async call(parameters : Public.Procedures.StLinelocatepoint_6bd0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -74404,7 +74399,7 @@ async call(parameters : Public.Procedures.StLinelocatepoint_4e70.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linelocatepoint(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_linelocatepoint(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_linelocatepoint) );
@@ -74430,7 +74425,7 @@ async call(parameters : Public.Procedures.StAddmeasure.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_addmeasure( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_addmeasure( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_addmeasure) );
@@ -74456,7 +74451,7 @@ async call(parameters : Public.Procedures.StClosestpointofapproach.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_closestpointofapproach( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_closestpointofapproach( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_closestpointofapproach) );
@@ -74491,7 +74486,7 @@ async call() {
 }
 }(this)
 
-          public Box2d_52cb = new class implements HasDatabase {
+          public Box2dC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -74499,7 +74494,7 @@ async call() {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.Box2d_52cb.Parameters) {
+async call(parameters : Public.Procedures.Box2dC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -74508,7 +74503,7 @@ async call(parameters : Public.Procedures.Box2d_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box2d( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.box2d( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].box2d) );
@@ -74517,7 +74512,7 @@ async call(parameters : Public.Procedures.Box2d_52cb.Parameters) {
 }
 }(this)
 
-          public Box3d_52cb = new class implements HasDatabase {
+          public Box3dC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -74525,7 +74520,7 @@ async call(parameters : Public.Procedures.Box2d_52cb.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.Box3d_52cb.Parameters) {
+async call(parameters : Public.Procedures.Box3dC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -74534,7 +74529,7 @@ async call(parameters : Public.Procedures.Box3d_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box3d( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.box3d( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].box3d) );
@@ -74543,7 +74538,7 @@ async call(parameters : Public.Procedures.Box3d_52cb.Parameters) {
 }
 }(this)
 
-          public Box_52cb = new class implements HasDatabase {
+          public BoxC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -74551,7 +74546,7 @@ async call(parameters : Public.Procedures.Box3d_52cb.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.Box_52cb.Parameters) {
+async call(parameters : Public.Procedures.BoxC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -74560,7 +74555,7 @@ async call(parameters : Public.Procedures.Box_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.box( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Box.parse(results?.[0].box) );
@@ -74569,7 +74564,7 @@ async call(parameters : Public.Procedures.Box_52cb.Parameters) {
 }
 }(this)
 
-          public Box2dC8c3 = new class implements HasDatabase {
+          public Box2dAad0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -74577,7 +74572,7 @@ async call(parameters : Public.Procedures.Box_52cb.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.Box2dC8c3.Parameters) {
+async call(parameters : Public.Procedures.Box2dAad0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -74586,7 +74581,7 @@ async call(parameters : Public.Procedures.Box2dC8c3.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box2d( ${ typed[56383](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.box2d( ${ typed[63515](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].box2d) );
@@ -74595,7 +74590,7 @@ async call(parameters : Public.Procedures.Box2dC8c3.Parameters) {
 }
 }(this)
 
-          public Box3dEf50 = new class implements HasDatabase {
+          public Box3d_232c = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -74603,7 +74598,7 @@ async call(parameters : Public.Procedures.Box2dC8c3.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.Box3dEf50.Parameters) {
+async call(parameters : Public.Procedures.Box3d_232c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -74612,7 +74607,7 @@ async call(parameters : Public.Procedures.Box3dEf50.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box3d( ${ typed[56387](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.box3d( ${ typed[63519](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].box3d) );
@@ -74621,7 +74616,7 @@ async call(parameters : Public.Procedures.Box3dEf50.Parameters) {
 }
 }(this)
 
-          public BoxC8c3 = new class implements HasDatabase {
+          public BoxAad0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -74629,7 +74624,7 @@ async call(parameters : Public.Procedures.Box3dEf50.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.BoxC8c3.Parameters) {
+async call(parameters : Public.Procedures.BoxAad0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -74638,7 +74633,7 @@ async call(parameters : Public.Procedures.BoxC8c3.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box( ${ typed[56383](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.box( ${ typed[63515](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Box.parse(results?.[0].box) );
@@ -74664,7 +74659,7 @@ async call(parameters : Public.Procedures.Text.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.text( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.text( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].text) );
@@ -74690,7 +74685,7 @@ async call(parameters : Public.Procedures.Box3dtobox.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box3dtobox( ${ typed[56383](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.box3dtobox( ${ typed[63515](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Box.parse(results?.[0].box3dtobox) );
@@ -74699,7 +74694,7 @@ async call(parameters : Public.Procedures.Box3dtobox.Parameters) {
 }
 }(this)
 
-          public GeometryEf50 = new class implements HasDatabase {
+          public Geometry_232c = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -74707,7 +74702,7 @@ async call(parameters : Public.Procedures.Box3dtobox.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.GeometryEf50.Parameters) {
+async call(parameters : Public.Procedures.Geometry_232c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -74716,7 +74711,7 @@ async call(parameters : Public.Procedures.GeometryEf50.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry( ${ typed[56387](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.geometry( ${ typed[63519](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry) );
@@ -74725,7 +74720,7 @@ async call(parameters : Public.Procedures.GeometryEf50.Parameters) {
 }
 }(this)
 
-          public GeometryC8c3 = new class implements HasDatabase {
+          public GeometryAad0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -74733,7 +74728,7 @@ async call(parameters : Public.Procedures.GeometryEf50.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.GeometryC8c3.Parameters) {
+async call(parameters : Public.Procedures.GeometryAad0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -74742,7 +74737,7 @@ async call(parameters : Public.Procedures.GeometryC8c3.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry( ${ typed[56383](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.geometry( ${ typed[63515](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry) );
@@ -74803,7 +74798,7 @@ async call(parameters : Public.Procedures.Geometry_2d19.Parameters) {
 }
 }(this)
 
-          public Bytea_52cb = new class implements HasDatabase {
+          public ByteaC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -74811,7 +74806,7 @@ async call(parameters : Public.Procedures.Geometry_2d19.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.Bytea_52cb.Parameters) {
+async call(parameters : Public.Procedures.ByteaC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -74820,7 +74815,7 @@ async call(parameters : Public.Procedures.Bytea_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.bytea( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.bytea( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].bytea) );
@@ -74829,7 +74824,7 @@ async call(parameters : Public.Procedures.Bytea_52cb.Parameters) {
 }
 }(this)
 
-          public StSimplify_8fd9 = new class implements HasDatabase {
+          public StSimplify_23e5 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -74837,7 +74832,7 @@ async call(parameters : Public.Procedures.Bytea_52cb.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StSimplify_8fd9.Parameters) {
+async call(parameters : Public.Procedures.StSimplify_23e5.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -74846,7 +74841,7 @@ async call(parameters : Public.Procedures.StSimplify_8fd9.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_simplify( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_simplify( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_simplify) );
@@ -74855,7 +74850,7 @@ async call(parameters : Public.Procedures.StSimplify_8fd9.Parameters) {
 }
 }(this)
 
-          public StSimplify_2d1f = new class implements HasDatabase {
+          public StSimplify_71ec = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -74863,7 +74858,7 @@ async call(parameters : Public.Procedures.StSimplify_8fd9.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StSimplify_2d1f.Parameters) {
+async call(parameters : Public.Procedures.StSimplify_71ec.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -74872,7 +74867,7 @@ async call(parameters : Public.Procedures.StSimplify_2d1f.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_simplify( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_simplify( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_simplify) );
@@ -74898,7 +74893,7 @@ async call(parameters : Public.Procedures.StSimplifyvw.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_simplifyvw( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_simplifyvw( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_simplifyvw) );
@@ -74924,7 +74919,7 @@ async call(parameters : Public.Procedures.StSeteffectivearea.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_seteffectivearea( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_seteffectivearea( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_seteffectivearea) );
@@ -74950,7 +74945,7 @@ async call(parameters : Public.Procedures.StFilterbym.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_filterbym( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[16](undefinedIsNull(parameters.argument_3)) })`
+  const response = await sql`SELECT public.st_filterbym( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[16](undefinedIsNull(parameters.argument_3)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_filterbym) );
@@ -74976,7 +74971,7 @@ async call(parameters : Public.Procedures.StChaikinsmoothing.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_chaikinsmoothing( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_chaikinsmoothing( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_chaikinsmoothing) );
@@ -74985,7 +74980,7 @@ async call(parameters : Public.Procedures.StChaikinsmoothing.Parameters) {
 }
 }(this)
 
-          public StSnaptogrid_3395 = new class implements HasDatabase {
+          public StSnaptogrid_6e33 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -74993,7 +74988,7 @@ async call(parameters : Public.Procedures.StChaikinsmoothing.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StSnaptogrid_3395.Parameters) {
+async call(parameters : Public.Procedures.StSnaptogrid_6e33.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -75002,7 +74997,7 @@ async call(parameters : Public.Procedures.StSnaptogrid_3395.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_snaptogrid( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) })`
+  const response = await sql`SELECT public.st_snaptogrid( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_snaptogrid) );
@@ -75011,7 +75006,7 @@ async call(parameters : Public.Procedures.StSnaptogrid_3395.Parameters) {
 }
 }(this)
 
-          public StSnaptogridBdaa = new class implements HasDatabase {
+          public StSnaptogrid_9adf = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -75019,7 +75014,7 @@ async call(parameters : Public.Procedures.StSnaptogrid_3395.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StSnaptogridBdaa.Parameters) {
+async call(parameters : Public.Procedures.StSnaptogrid_9adf.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -75028,7 +75023,7 @@ async call(parameters : Public.Procedures.StSnaptogridBdaa.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_snaptogrid( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_snaptogrid( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_snaptogrid) );
@@ -75037,7 +75032,7 @@ async call(parameters : Public.Procedures.StSnaptogridBdaa.Parameters) {
 }
 }(this)
 
-          public StSnaptogrid_8fd9 = new class implements HasDatabase {
+          public StSnaptogrid_23e5 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -75045,7 +75040,7 @@ async call(parameters : Public.Procedures.StSnaptogridBdaa.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StSnaptogrid_8fd9.Parameters) {
+async call(parameters : Public.Procedures.StSnaptogrid_23e5.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -75054,7 +75049,7 @@ async call(parameters : Public.Procedures.StSnaptogrid_8fd9.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_snaptogrid( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_snaptogrid( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_snaptogrid) );
@@ -75063,7 +75058,7 @@ async call(parameters : Public.Procedures.StSnaptogrid_8fd9.Parameters) {
 }
 }(this)
 
-          public StSnaptogridC48b = new class implements HasDatabase {
+          public StSnaptogrid_0fca = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -75071,7 +75066,7 @@ async call(parameters : Public.Procedures.StSnaptogrid_8fd9.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StSnaptogridC48b.Parameters) {
+async call(parameters : Public.Procedures.StSnaptogrid_0fca.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -75080,7 +75075,7 @@ async call(parameters : Public.Procedures.StSnaptogridC48b.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_snaptogrid(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) },argument_3 => ${ typed[701](undefinedIsNull(parameters.argument_3)) },argument_4 => ${ typed[701](undefinedIsNull(parameters.argument_4)) },argument_5 => ${ typed[701](undefinedIsNull(parameters.argument_5)) })`
+  const response = await sql`SELECT public.st_snaptogrid(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) },argument_3 => ${ typed[701](undefinedIsNull(parameters.argument_3)) },argument_4 => ${ typed[701](undefinedIsNull(parameters.argument_4)) },argument_5 => ${ typed[701](undefinedIsNull(parameters.argument_5)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_snaptogrid) );
@@ -75106,7 +75101,7 @@ async call(parameters : Public.Procedures.StDistancecpa.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_distancecpa( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_distancecpa( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distancecpa) );
@@ -75132,7 +75127,7 @@ async call(parameters : Public.Procedures.StCpawithin.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_cpawithin( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_cpawithin( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_cpawithin) );
@@ -75158,7 +75153,7 @@ async call(parameters : Public.Procedures.StIsvalidtrajectory.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_isvalidtrajectory( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_isvalidtrajectory( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_isvalidtrajectory) );
@@ -75167,7 +75162,7 @@ async call(parameters : Public.Procedures.StIsvalidtrajectory.Parameters) {
 }
 }(this)
 
-          public StIntersection_0b21 = new class implements HasDatabase {
+          public StIntersectionBab7 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -75175,7 +75170,7 @@ async call(parameters : Public.Procedures.StIsvalidtrajectory.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StIntersection_0b21.Parameters) {
+async call(parameters : Public.Procedures.StIntersectionBab7.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -75184,7 +75179,7 @@ async call(parameters : Public.Procedures.StIntersection_0b21.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_intersection(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`
+  const response = await sql`SELECT public.st_intersection(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_intersection) );
@@ -75193,7 +75188,7 @@ async call(parameters : Public.Procedures.StIntersection_0b21.Parameters) {
 }
 }(this)
 
-          public StBuffer_5012 = new class implements HasDatabase {
+          public StBufferA313 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -75201,7 +75196,7 @@ async call(parameters : Public.Procedures.StIntersection_0b21.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StBuffer_5012.Parameters) {
+async call(parameters : Public.Procedures.StBufferA313.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -75210,7 +75205,7 @@ async call(parameters : Public.Procedures.StBuffer_5012.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_buffer(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },radius => ${ typed[701](undefinedIsNull(parameters.radius)) },options => ${ typed[25](undefinedIsNull(parameters.options)) })`
+  const response = await sql`SELECT public.st_buffer(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },radius => ${ typed[701](undefinedIsNull(parameters.radius)) },options => ${ typed[25](undefinedIsNull(parameters.options)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_buffer) );
@@ -75219,7 +75214,7 @@ async call(parameters : Public.Procedures.StBuffer_5012.Parameters) {
 }
 }(this)
 
-          public StBuffer_3ea8 = new class implements HasDatabase {
+          public StBufferFed8 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -75227,7 +75222,7 @@ async call(parameters : Public.Procedures.StBuffer_5012.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StBuffer_3ea8.Parameters) {
+async call(parameters : Public.Procedures.StBufferFed8.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -75236,7 +75231,7 @@ async call(parameters : Public.Procedures.StBuffer_3ea8.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_buffer(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },radius => ${ typed[701](undefinedIsNull(parameters.radius)) },quadsegs => ${ typed[23](undefinedIsNull(parameters.quadsegs)) })`
+  const response = await sql`SELECT public.st_buffer(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },radius => ${ typed[701](undefinedIsNull(parameters.radius)) },quadsegs => ${ typed[23](undefinedIsNull(parameters.quadsegs)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_buffer) );
@@ -75256,12 +75251,12 @@ async call(parameters : Public.Procedures.StBuffer_3ea8.Parameters) {
 async call(parameters : Public.Procedures.StMinimumboundingradius.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[56774].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.StMinimumboundingradius;
+              return context.procTypes[63906].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.StMinimumboundingradius;
             };
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_minimumboundingradius(argument_0 => ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_minimumboundingradius(argument_0 => ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_minimumboundingradius)).filter<Public.Types.StMinimumboundingradius>((r):r is Public.Types.StMinimumboundingradius => r !== null) );
@@ -75287,7 +75282,7 @@ async call(parameters : Public.Procedures.StMinimumboundingcircle.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_minimumboundingcircle(inputgeom => ${ typed[56356](undefinedIsNull(parameters.inputgeom)) },segs_per_quarter => ${ typed[23](undefinedIsNull(parameters.segsPerQuarter)) })`
+  const response = await sql`SELECT public.st_minimumboundingcircle(inputgeom => ${ typed[63488](undefinedIsNull(parameters.inputgeom)) },segs_per_quarter => ${ typed[23](undefinedIsNull(parameters.segsPerQuarter)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_minimumboundingcircle) );
@@ -75313,7 +75308,7 @@ async call(parameters : Public.Procedures.StOrientedenvelope.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_orientedenvelope( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_orientedenvelope( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_orientedenvelope) );
@@ -75339,7 +75334,7 @@ async call(parameters : Public.Procedures.StOffsetcurve.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_offsetcurve(line => ${ typed[56356](undefinedIsNull(parameters.line)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) },params => ${ typed[25](undefinedIsNull(parameters.params)) })`
+  const response = await sql`SELECT public.st_offsetcurve(line => ${ typed[63488](undefinedIsNull(parameters.line)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) },params => ${ typed[25](undefinedIsNull(parameters.params)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_offsetcurve) );
@@ -75348,7 +75343,7 @@ async call(parameters : Public.Procedures.StOffsetcurve.Parameters) {
 }
 }(this)
 
-          public StGeneratepointsF74e = new class implements HasDatabase {
+          public StGeneratepoints_73ac = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -75356,7 +75351,7 @@ async call(parameters : Public.Procedures.StOffsetcurve.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StGeneratepointsF74e.Parameters) {
+async call(parameters : Public.Procedures.StGeneratepoints_73ac.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -75365,7 +75360,7 @@ async call(parameters : Public.Procedures.StGeneratepointsF74e.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_generatepoints(area => ${ typed[56356](undefinedIsNull(parameters.area)) },npoints => ${ typed[23](undefinedIsNull(parameters.npoints)) })`
+  const response = await sql`SELECT public.st_generatepoints(area => ${ typed[63488](undefinedIsNull(parameters.area)) },npoints => ${ typed[23](undefinedIsNull(parameters.npoints)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_generatepoints) );
@@ -75374,7 +75369,7 @@ async call(parameters : Public.Procedures.StGeneratepointsF74e.Parameters) {
 }
 }(this)
 
-          public StGeneratepointsD3cf = new class implements HasDatabase {
+          public StGeneratepoints_8eae = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -75382,7 +75377,7 @@ async call(parameters : Public.Procedures.StGeneratepointsF74e.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StGeneratepointsD3cf.Parameters) {
+async call(parameters : Public.Procedures.StGeneratepoints_8eae.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -75391,7 +75386,7 @@ async call(parameters : Public.Procedures.StGeneratepointsD3cf.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_generatepoints(area => ${ typed[56356](undefinedIsNull(parameters.area)) },npoints => ${ typed[23](undefinedIsNull(parameters.npoints)) },seed => ${ typed[23](undefinedIsNull(parameters.seed)) })`
+  const response = await sql`SELECT public.st_generatepoints(area => ${ typed[63488](undefinedIsNull(parameters.area)) },npoints => ${ typed[23](undefinedIsNull(parameters.npoints)) },seed => ${ typed[23](undefinedIsNull(parameters.seed)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_generatepoints) );
@@ -75417,7 +75412,7 @@ async call(parameters : Public.Procedures.StConvexhull.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_convexhull( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_convexhull( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_convexhull) );
@@ -75443,7 +75438,7 @@ async call(parameters : Public.Procedures.StSimplifypreservetopology.Parameters)
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_simplifypreservetopology( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_simplifypreservetopology( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_simplifypreservetopology) );
@@ -75452,7 +75447,7 @@ async call(parameters : Public.Procedures.StSimplifypreservetopology.Parameters)
 }
 }(this)
 
-          public StIsvalidreason_52cb = new class implements HasDatabase {
+          public StIsvalidreasonC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -75460,7 +75455,7 @@ async call(parameters : Public.Procedures.StSimplifypreservetopology.Parameters)
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StIsvalidreason_52cb.Parameters) {
+async call(parameters : Public.Procedures.StIsvalidreasonC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -75469,7 +75464,7 @@ async call(parameters : Public.Procedures.StIsvalidreason_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_isvalidreason( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_isvalidreason( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_isvalidreason) );
@@ -75495,7 +75490,7 @@ async call(parameters : Public.Procedures.StIsvaliddetail.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_isvaliddetail(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },flags => ${ typed[23](undefinedIsNull(parameters.flags)) })`
+  const response = await sql`SELECT public.st_isvaliddetail(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },flags => ${ typed[23](undefinedIsNull(parameters.flags)) })`
   const results = response;
 
               const responseBody = ( Public.Types.ValidDetail.parse(results?.[0].st_isvaliddetail) );
@@ -75504,7 +75499,7 @@ async call(parameters : Public.Procedures.StIsvaliddetail.Parameters) {
 }
 }(this)
 
-          public StIsvalidreasonF74e = new class implements HasDatabase {
+          public StIsvalidreason_73ac = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -75512,7 +75507,7 @@ async call(parameters : Public.Procedures.StIsvaliddetail.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StIsvalidreasonF74e.Parameters) {
+async call(parameters : Public.Procedures.StIsvalidreason_73ac.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -75521,7 +75516,7 @@ async call(parameters : Public.Procedures.StIsvalidreasonF74e.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_isvalidreason( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_isvalidreason( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_isvalidreason) );
@@ -75530,7 +75525,7 @@ async call(parameters : Public.Procedures.StIsvalidreasonF74e.Parameters) {
 }
 }(this)
 
-          public StIsvalidF74e = new class implements HasDatabase {
+          public StIsvalid_73ac = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -75538,7 +75533,7 @@ async call(parameters : Public.Procedures.StIsvalidreasonF74e.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StIsvalidF74e.Parameters) {
+async call(parameters : Public.Procedures.StIsvalid_73ac.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -75547,7 +75542,7 @@ async call(parameters : Public.Procedures.StIsvalidF74e.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_isvalid( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_isvalid( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_isvalid) );
@@ -75556,7 +75551,7 @@ async call(parameters : Public.Procedures.StIsvalidF74e.Parameters) {
 }
 }(this)
 
-          public StHausdorffdistance_4e70 = new class implements HasDatabase {
+          public StHausdorffdistance_6bd0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -75564,7 +75559,7 @@ async call(parameters : Public.Procedures.StIsvalidF74e.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StHausdorffdistance_4e70.Parameters) {
+async call(parameters : Public.Procedures.StHausdorffdistance_6bd0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -75573,7 +75568,7 @@ async call(parameters : Public.Procedures.StHausdorffdistance_4e70.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_hausdorffdistance(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_hausdorffdistance(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_hausdorffdistance) );
@@ -75582,7 +75577,7 @@ async call(parameters : Public.Procedures.StHausdorffdistance_4e70.Parameters) {
 }
 }(this)
 
-          public StHausdorffdistance_0b21 = new class implements HasDatabase {
+          public StHausdorffdistanceBab7 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -75590,7 +75585,7 @@ async call(parameters : Public.Procedures.StHausdorffdistance_4e70.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StHausdorffdistance_0b21.Parameters) {
+async call(parameters : Public.Procedures.StHausdorffdistanceBab7.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -75599,7 +75594,7 @@ async call(parameters : Public.Procedures.StHausdorffdistance_0b21.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_hausdorffdistance(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_hausdorffdistance(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_hausdorffdistance) );
@@ -75625,7 +75620,7 @@ async call(parameters : Public.Procedures.StFrechetdistance.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_frechetdistance(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_frechetdistance(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_frechetdistance) );
@@ -75645,12 +75640,12 @@ async call(parameters : Public.Procedures.StFrechetdistance.Parameters) {
 async call(parameters : Public.Procedures.StMaximuminscribedcircle.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[56792].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.StMaximuminscribedcircle;
+              return context.procTypes[63924].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.StMaximuminscribedcircle;
             };
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_maximuminscribedcircle(argument_0 => ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_maximuminscribedcircle(argument_0 => ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_maximuminscribedcircle)).filter<Public.Types.StMaximuminscribedcircle>((r):r is Public.Types.StMaximuminscribedcircle => r !== null) );
@@ -75670,12 +75665,12 @@ async call(parameters : Public.Procedures.StMaximuminscribedcircle.Parameters) {
 async call(parameters : Public.Procedures.StLargestemptycircle.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[56793].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.StLargestemptycircle;
+              return context.procTypes[63925].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.StLargestemptycircle;
             };
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_largestemptycircle(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },boundary => ${ typed[56356](undefinedIsNull(parameters.boundary)) })`
+  const response = await sql`SELECT public.st_largestemptycircle(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },boundary => ${ typed[63488](undefinedIsNull(parameters.boundary)) })`
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_largestemptycircle)).filter<Public.Types.StLargestemptycircle>((r):r is Public.Types.StLargestemptycircle => r !== null) );
@@ -75701,7 +75696,7 @@ async call(parameters : Public.Procedures.StDifference.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_difference(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`
+  const response = await sql`SELECT public.st_difference(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_difference) );
@@ -75727,7 +75722,7 @@ async call(parameters : Public.Procedures.StBoundary.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_boundary( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_boundary( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_boundary) );
@@ -75753,7 +75748,7 @@ async call(parameters : Public.Procedures.StPoints.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_points( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_points( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_points) );
@@ -75779,7 +75774,7 @@ async call(parameters : Public.Procedures.StSymdifference.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_symdifference(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`
+  const response = await sql`SELECT public.st_symdifference(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_symdifference) );
@@ -75805,7 +75800,7 @@ async call(parameters : Public.Procedures.StSymmetricdifference.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_symmetricdifference(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_symmetricdifference(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_symmetricdifference) );
@@ -75814,7 +75809,7 @@ async call(parameters : Public.Procedures.StSymmetricdifference.Parameters) {
 }
 }(this)
 
-          public StUnion_4e70 = new class implements HasDatabase {
+          public StUnion_6bd0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -75822,7 +75817,7 @@ async call(parameters : Public.Procedures.StSymmetricdifference.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StUnion_4e70.Parameters) {
+async call(parameters : Public.Procedures.StUnion_6bd0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -75831,7 +75826,7 @@ async call(parameters : Public.Procedures.StUnion_4e70.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_union(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_union(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_union) );
@@ -75840,7 +75835,7 @@ async call(parameters : Public.Procedures.StUnion_4e70.Parameters) {
 }
 }(this)
 
-          public StUnion_0b21 = new class implements HasDatabase {
+          public StUnionBab7 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -75848,7 +75843,7 @@ async call(parameters : Public.Procedures.StUnion_4e70.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StUnion_0b21.Parameters) {
+async call(parameters : Public.Procedures.StUnionBab7.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -75857,7 +75852,7 @@ async call(parameters : Public.Procedures.StUnion_0b21.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_union(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`
+  const response = await sql`SELECT public.st_union(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_union) );
@@ -75883,7 +75878,7 @@ async call(parameters : Public.Procedures.StUnaryunion.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_unaryunion(argument_0 => ${ typed[56356](undefinedIsNull(parameters.argument_0)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`
+  const response = await sql`SELECT public.st_unaryunion(argument_0 => ${ typed[63488](undefinedIsNull(parameters.argument_0)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_unaryunion) );
@@ -75909,7 +75904,7 @@ async call(parameters : Public.Procedures.StRemoverepeatedpoints.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_removerepeatedpoints(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) })`
+  const response = await sql`SELECT public.st_removerepeatedpoints(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_removerepeatedpoints) );
@@ -75935,7 +75930,7 @@ async call(parameters : Public.Procedures.StClipbybox2d.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_clipbybox2d(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },box => ${ typed[56387](undefinedIsNull(parameters.box)) })`
+  const response = await sql`SELECT public.st_clipbybox2d(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },box => ${ typed[63519](undefinedIsNull(parameters.box)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_clipbybox2d) );
@@ -75961,7 +75956,7 @@ async call(parameters : Public.Procedures.StSubdivide.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_subdivide(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },maxvertices => ${ typed[23](undefinedIsNull(parameters.maxvertices)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`
+  const response = await sql`SELECT public.st_subdivide(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },maxvertices => ${ typed[23](undefinedIsNull(parameters.maxvertices)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_subdivide)).filter<Public.Types.Geometry>((r):r is Public.Types.Geometry => r !== null) );
@@ -75987,7 +75982,7 @@ async call(parameters : Public.Procedures.StReduceprecision.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_reduceprecision(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`
+  const response = await sql`SELECT public.st_reduceprecision(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_reduceprecision) );
@@ -75996,7 +75991,7 @@ async call(parameters : Public.Procedures.StReduceprecision.Parameters) {
 }
 }(this)
 
-          public StMakevalid_52cb = new class implements HasDatabase {
+          public StMakevalidC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -76004,7 +75999,7 @@ async call(parameters : Public.Procedures.StReduceprecision.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StMakevalid_52cb.Parameters) {
+async call(parameters : Public.Procedures.StMakevalidC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -76013,7 +76008,7 @@ async call(parameters : Public.Procedures.StMakevalid_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_makevalid( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_makevalid( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makevalid) );
@@ -76022,7 +76017,7 @@ async call(parameters : Public.Procedures.StMakevalid_52cb.Parameters) {
 }
 }(this)
 
-          public StMakevalid_09ea = new class implements HasDatabase {
+          public StMakevalid_9881 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -76030,7 +76025,7 @@ async call(parameters : Public.Procedures.StMakevalid_52cb.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StMakevalid_09ea.Parameters) {
+async call(parameters : Public.Procedures.StMakevalid_9881.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -76039,7 +76034,7 @@ async call(parameters : Public.Procedures.StMakevalid_09ea.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_makevalid(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },params => ${ typed[25](undefinedIsNull(parameters.params)) })`
+  const response = await sql`SELECT public.st_makevalid(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },params => ${ typed[25](undefinedIsNull(parameters.params)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makevalid) );
@@ -76065,7 +76060,7 @@ async call(parameters : Public.Procedures.StCleangeometry.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_cleangeometry( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_cleangeometry( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_cleangeometry) );
@@ -76091,7 +76086,7 @@ async call(parameters : Public.Procedures.StSplit.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_split(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_split(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_split) );
@@ -76117,7 +76112,7 @@ async call(parameters : Public.Procedures.StSharedpaths.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_sharedpaths(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_sharedpaths(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_sharedpaths) );
@@ -76143,7 +76138,7 @@ async call(parameters : Public.Procedures.StSnap.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_snap(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_snap(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_snap) );
@@ -76195,7 +76190,7 @@ async call(parameters : Public.Procedures.StNode.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_node(g => ${ typed[56356](undefinedIsNull(parameters.g)) })`
+  const response = await sql`SELECT public.st_node(g => ${ typed[63488](undefinedIsNull(parameters.g)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_node) );
@@ -76221,7 +76216,7 @@ async call(parameters : Public.Procedures.StDelaunaytriangles.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_delaunaytriangles(g1 => ${ typed[56356](undefinedIsNull(parameters.g1)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },flags => ${ typed[23](undefinedIsNull(parameters.flags)) })`
+  const response = await sql`SELECT public.st_delaunaytriangles(g1 => ${ typed[63488](undefinedIsNull(parameters.g1)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },flags => ${ typed[23](undefinedIsNull(parameters.flags)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_delaunaytriangles) );
@@ -76247,7 +76242,7 @@ async call(parameters : Public.Procedures.StTriangulatepolygon.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_triangulatepolygon(g1 => ${ typed[56356](undefinedIsNull(parameters.g1)) })`
+  const response = await sql`SELECT public.st_triangulatepolygon(g1 => ${ typed[63488](undefinedIsNull(parameters.g1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_triangulatepolygon) );
@@ -76273,7 +76268,7 @@ async call(parameters : Public.Procedures.StVoronoipolygons.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_voronoipolygons(g1 => ${ typed[56356](undefinedIsNull(parameters.g1)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },extend_to => ${ typed[56356](undefinedIsNull(parameters.extendTo)) })`
+  const response = await sql`SELECT public.st_voronoipolygons(g1 => ${ typed[63488](undefinedIsNull(parameters.g1)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },extend_to => ${ typed[63488](undefinedIsNull(parameters.extendTo)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_voronoipolygons) );
@@ -76299,7 +76294,7 @@ async call(parameters : Public.Procedures.StVoronoilines.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_voronoilines(g1 => ${ typed[56356](undefinedIsNull(parameters.g1)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },extend_to => ${ typed[56356](undefinedIsNull(parameters.extendTo)) })`
+  const response = await sql`SELECT public.st_voronoilines(g1 => ${ typed[63488](undefinedIsNull(parameters.g1)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },extend_to => ${ typed[63488](undefinedIsNull(parameters.extendTo)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_voronoilines) );
@@ -76308,7 +76303,7 @@ async call(parameters : Public.Procedures.StVoronoilines.Parameters) {
 }
 }(this)
 
-          public StCombinebbox_169a = new class implements HasDatabase {
+          public StCombinebboxDd7e = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -76316,7 +76311,7 @@ async call(parameters : Public.Procedures.StVoronoilines.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StCombinebbox_169a.Parameters) {
+async call(parameters : Public.Procedures.StCombinebboxDd7e.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -76325,7 +76320,7 @@ async call(parameters : Public.Procedures.StCombinebbox_169a.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_combinebbox( ${ typed[56383](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_combinebbox( ${ typed[63515](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].st_combinebbox) );
@@ -76334,7 +76329,7 @@ async call(parameters : Public.Procedures.StCombinebbox_169a.Parameters) {
 }
 }(this)
 
-          public StCombinebbox_5a63 = new class implements HasDatabase {
+          public StCombinebboxC436 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -76342,7 +76337,7 @@ async call(parameters : Public.Procedures.StCombinebbox_169a.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StCombinebbox_5a63.Parameters) {
+async call(parameters : Public.Procedures.StCombinebboxC436.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -76351,7 +76346,7 @@ async call(parameters : Public.Procedures.StCombinebbox_5a63.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_combinebbox( ${ typed[56383](undefinedIsNull(parameters.argument_0)) }, ${ typed[56383](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_combinebbox( ${ typed[63515](undefinedIsNull(parameters.argument_0)) }, ${ typed[63515](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].st_combinebbox) );
@@ -76360,7 +76355,7 @@ async call(parameters : Public.Procedures.StCombinebbox_5a63.Parameters) {
 }
 }(this)
 
-          public StCombinebbox_1ab0 = new class implements HasDatabase {
+          public StCombinebbox_8c90 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -76368,7 +76363,7 @@ async call(parameters : Public.Procedures.StCombinebbox_5a63.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StCombinebbox_1ab0.Parameters) {
+async call(parameters : Public.Procedures.StCombinebbox_8c90.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -76377,7 +76372,7 @@ async call(parameters : Public.Procedures.StCombinebbox_1ab0.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_combinebbox( ${ typed[56387](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_combinebbox( ${ typed[63519](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_combinebbox) );
@@ -76386,7 +76381,7 @@ async call(parameters : Public.Procedures.StCombinebbox_1ab0.Parameters) {
 }
 }(this)
 
-          public StCollect_4e70 = new class implements HasDatabase {
+          public StCollect_6bd0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -76394,7 +76389,7 @@ async call(parameters : Public.Procedures.StCombinebbox_1ab0.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StCollect_4e70.Parameters) {
+async call(parameters : Public.Procedures.StCollect_6bd0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -76403,7 +76398,7 @@ async call(parameters : Public.Procedures.StCollect_4e70.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_collect(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_collect(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_collect) );
@@ -76412,7 +76407,7 @@ async call(parameters : Public.Procedures.StCollect_4e70.Parameters) {
 }
 }(this)
 
-          public StCollect_1ecf = new class implements HasDatabase {
+          public StCollectA84e = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -76420,7 +76415,7 @@ async call(parameters : Public.Procedures.StCollect_4e70.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StCollect_1ecf.Parameters) {
+async call(parameters : Public.Procedures.StCollectA84e.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -76429,7 +76424,7 @@ async call(parameters : Public.Procedures.StCollect_1ecf.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_collect( ${ typed[56364](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_collect( ${ typed[63496](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_collect) );
@@ -76438,7 +76433,7 @@ async call(parameters : Public.Procedures.StCollect_1ecf.Parameters) {
 }
 }(this)
 
-          public PgisGeometryAccumTransfn_56af = new class implements HasDatabase {
+          public PgisGeometryAccumTransfn_5f8c = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -76446,7 +76441,7 @@ async call(parameters : Public.Procedures.StCollect_1ecf.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.PgisGeometryAccumTransfn_56af.Parameters) {
+async call(parameters : Public.Procedures.PgisGeometryAccumTransfn_5f8c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -76455,7 +76450,7 @@ async call(parameters : Public.Procedures.PgisGeometryAccumTransfn_56af.Paramete
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_geometry_accum_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.pgis_geometry_accum_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_geometry_accum_transfn) );
@@ -76464,7 +76459,7 @@ async call(parameters : Public.Procedures.PgisGeometryAccumTransfn_56af.Paramete
 }
 }(this)
 
-          public PgisGeometryAccumTransfn_0b06 = new class implements HasDatabase {
+          public PgisGeometryAccumTransfn_0dbf = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -76472,7 +76467,7 @@ async call(parameters : Public.Procedures.PgisGeometryAccumTransfn_56af.Paramete
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.PgisGeometryAccumTransfn_0b06.Parameters) {
+async call(parameters : Public.Procedures.PgisGeometryAccumTransfn_0dbf.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -76481,7 +76476,7 @@ async call(parameters : Public.Procedures.PgisGeometryAccumTransfn_0b06.Paramete
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_geometry_accum_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.pgis_geometry_accum_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_geometry_accum_transfn) );
@@ -76490,7 +76485,7 @@ async call(parameters : Public.Procedures.PgisGeometryAccumTransfn_0b06.Paramete
 }
 }(this)
 
-          public PgisGeometryAccumTransfnAa63 = new class implements HasDatabase {
+          public PgisGeometryAccumTransfnC6b8 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -76498,7 +76493,7 @@ async call(parameters : Public.Procedures.PgisGeometryAccumTransfn_0b06.Paramete
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.PgisGeometryAccumTransfnAa63.Parameters) {
+async call(parameters : Public.Procedures.PgisGeometryAccumTransfnC6b8.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -76507,7 +76502,7 @@ async call(parameters : Public.Procedures.PgisGeometryAccumTransfnAa63.Parameter
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_geometry_accum_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) })`
+  const response = await sql`SELECT public.pgis_geometry_accum_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_geometry_accum_transfn) );
@@ -76672,7 +76667,7 @@ async call(parameters : Public.Procedures.PgisGeometryCoverageunionFinalfn.Param
 }
 }(this)
 
-          public PgisGeometryUnionParallelTransfn_56af = new class implements HasDatabase {
+          public PgisGeometryUnionParallelTransfn_5f8c = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -76680,7 +76675,7 @@ async call(parameters : Public.Procedures.PgisGeometryCoverageunionFinalfn.Param
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.PgisGeometryUnionParallelTransfn_56af.Parameters) {
+async call(parameters : Public.Procedures.PgisGeometryUnionParallelTransfn_5f8c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -76689,7 +76684,7 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelTransfn_56af.
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_geometry_union_parallel_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.pgis_geometry_union_parallel_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_geometry_union_parallel_transfn) );
@@ -76698,7 +76693,7 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelTransfn_56af.
 }
 }(this)
 
-          public PgisGeometryUnionParallelTransfn_0b06 = new class implements HasDatabase {
+          public PgisGeometryUnionParallelTransfn_0dbf = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -76706,7 +76701,7 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelTransfn_56af.
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.PgisGeometryUnionParallelTransfn_0b06.Parameters) {
+async call(parameters : Public.Procedures.PgisGeometryUnionParallelTransfn_0dbf.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -76715,7 +76710,7 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelTransfn_0b06.
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_geometry_union_parallel_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.pgis_geometry_union_parallel_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_geometry_union_parallel_transfn) );
@@ -76828,7 +76823,7 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelFinalfn.Param
 }
 }(this)
 
-          public StUnion_1ecf = new class implements HasDatabase {
+          public StUnionA84e = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -76836,7 +76831,7 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelFinalfn.Param
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StUnion_1ecf.Parameters) {
+async call(parameters : Public.Procedures.StUnionA84e.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -76845,7 +76840,7 @@ async call(parameters : Public.Procedures.StUnion_1ecf.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_union( ${ typed[56364](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_union( ${ typed[63496](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_union) );
@@ -76854,7 +76849,7 @@ async call(parameters : Public.Procedures.StUnion_1ecf.Parameters) {
 }
 }(this)
 
-          public StCoverageunion_1ecf = new class implements HasDatabase {
+          public StCoverageunionA84e = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -76862,7 +76857,7 @@ async call(parameters : Public.Procedures.StUnion_1ecf.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StCoverageunion_1ecf.Parameters) {
+async call(parameters : Public.Procedures.StCoverageunionA84e.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -76871,7 +76866,7 @@ async call(parameters : Public.Procedures.StCoverageunion_1ecf.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_coverageunion( ${ typed[56364](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_coverageunion( ${ typed[63496](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_coverageunion) );
@@ -76880,7 +76875,7 @@ async call(parameters : Public.Procedures.StCoverageunion_1ecf.Parameters) {
 }
 }(this)
 
-          public StRelate_4e70 = new class implements HasDatabase {
+          public StRelate_6bd0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -76888,7 +76883,7 @@ async call(parameters : Public.Procedures.StCoverageunion_1ecf.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StRelate_4e70.Parameters) {
+async call(parameters : Public.Procedures.StRelate_6bd0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -76897,7 +76892,7 @@ async call(parameters : Public.Procedures.StRelate_4e70.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_relate(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_relate(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_relate) );
@@ -76906,7 +76901,7 @@ async call(parameters : Public.Procedures.StRelate_4e70.Parameters) {
 }
 }(this)
 
-          public StRelateBf6c = new class implements HasDatabase {
+          public StRelateAcbc = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -76914,7 +76909,7 @@ async call(parameters : Public.Procedures.StRelate_4e70.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StRelateBf6c.Parameters) {
+async call(parameters : Public.Procedures.StRelateAcbc.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -76923,7 +76918,7 @@ async call(parameters : Public.Procedures.StRelateBf6c.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_relate(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_relate(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_relate) );
@@ -76932,7 +76927,7 @@ async call(parameters : Public.Procedures.StRelateBf6c.Parameters) {
 }
 }(this)
 
-          public StRelate_2565 = new class implements HasDatabase {
+          public StRelateCe2d = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -76940,7 +76935,7 @@ async call(parameters : Public.Procedures.StRelateBf6c.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StRelate_2565.Parameters) {
+async call(parameters : Public.Procedures.StRelateCe2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -76949,7 +76944,7 @@ async call(parameters : Public.Procedures.StRelate_2565.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_relate(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[25](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_relate(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[25](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_relate) );
@@ -76975,7 +76970,7 @@ async call(parameters : Public.Procedures.StDisjoint.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_disjoint(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_disjoint(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_disjoint) );
@@ -77027,7 +77022,7 @@ async call(parameters : Public.Procedures.StLinecrossingdirection.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linecrossingdirection(line1 => ${ typed[56356](undefinedIsNull(parameters.line1)) },line2 => ${ typed[56356](undefinedIsNull(parameters.line2)) })`
+  const response = await sql`SELECT public.st_linecrossingdirection(line1 => ${ typed[63488](undefinedIsNull(parameters.line1)) },line2 => ${ typed[63488](undefinedIsNull(parameters.line2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_linecrossingdirection) );
@@ -77036,7 +77031,7 @@ async call(parameters : Public.Procedures.StLinecrossingdirection.Parameters) {
 }
 }(this)
 
-          public StDwithin_0b21 = new class implements HasDatabase {
+          public StDwithinBab7 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -77044,7 +77039,7 @@ async call(parameters : Public.Procedures.StLinecrossingdirection.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StDwithin_0b21.Parameters) {
+async call(parameters : Public.Procedures.StDwithinBab7.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -77053,7 +77048,7 @@ async call(parameters : Public.Procedures.StDwithin_0b21.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_dwithin(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_dwithin(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_dwithin) );
@@ -77079,7 +77074,7 @@ async call(parameters : Public.Procedures.StTouches.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_touches(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_touches(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_touches) );
@@ -77088,7 +77083,7 @@ async call(parameters : Public.Procedures.StTouches.Parameters) {
 }
 }(this)
 
-          public StIntersects_4e70 = new class implements HasDatabase {
+          public StIntersects_6bd0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -77096,7 +77091,7 @@ async call(parameters : Public.Procedures.StTouches.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StIntersects_4e70.Parameters) {
+async call(parameters : Public.Procedures.StIntersects_6bd0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -77105,7 +77100,7 @@ async call(parameters : Public.Procedures.StIntersects_4e70.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_intersects(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_intersects(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_intersects) );
@@ -77131,7 +77126,7 @@ async call(parameters : Public.Procedures.StCrosses.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_crosses(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_crosses(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_crosses) );
@@ -77157,7 +77152,7 @@ async call(parameters : Public.Procedures.StContains.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_contains(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_contains(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_contains) );
@@ -77183,7 +77178,7 @@ async call(parameters : Public.Procedures.StContainsproperly.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_containsproperly(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_containsproperly(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_containsproperly) );
@@ -77209,7 +77204,7 @@ async call(parameters : Public.Procedures.StWithin.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_within(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_within(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_within) );
@@ -77218,7 +77213,7 @@ async call(parameters : Public.Procedures.StWithin.Parameters) {
 }
 }(this)
 
-          public StCovers_4e70 = new class implements HasDatabase {
+          public StCovers_6bd0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -77226,7 +77221,7 @@ async call(parameters : Public.Procedures.StWithin.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StCovers_4e70.Parameters) {
+async call(parameters : Public.Procedures.StCovers_6bd0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -77235,7 +77230,7 @@ async call(parameters : Public.Procedures.StCovers_4e70.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_covers(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_covers(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_covers) );
@@ -77244,7 +77239,7 @@ async call(parameters : Public.Procedures.StCovers_4e70.Parameters) {
 }
 }(this)
 
-          public StCoveredby_4e70 = new class implements HasDatabase {
+          public StCoveredby_6bd0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -77252,7 +77247,7 @@ async call(parameters : Public.Procedures.StCovers_4e70.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StCoveredby_4e70.Parameters) {
+async call(parameters : Public.Procedures.StCoveredby_6bd0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -77261,7 +77256,7 @@ async call(parameters : Public.Procedures.StCoveredby_4e70.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_coveredby(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_coveredby(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_coveredby) );
@@ -77287,7 +77282,7 @@ async call(parameters : Public.Procedures.StOverlaps.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_overlaps(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_overlaps(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_overlaps) );
@@ -77313,7 +77308,7 @@ async call(parameters : Public.Procedures.StDfullywithin.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_dfullywithin(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_dfullywithin(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_dfullywithin) );
@@ -77339,7 +77334,7 @@ async call(parameters : Public.Procedures.St_3ddwithin.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3ddwithin(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_3ddwithin(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_3ddwithin) );
@@ -77365,7 +77360,7 @@ async call(parameters : Public.Procedures.St_3ddfullywithin.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3ddfullywithin(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_3ddfullywithin(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_3ddfullywithin) );
@@ -77391,7 +77386,7 @@ async call(parameters : Public.Procedures.St_3dintersects.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3dintersects(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_3dintersects(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_3dintersects) );
@@ -77417,7 +77412,7 @@ async call(parameters : Public.Procedures.StOrderingequals.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_orderingequals(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_orderingequals(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_orderingequals) );
@@ -77443,7 +77438,7 @@ async call(parameters : Public.Procedures.StEquals.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_equals(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_equals(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_equals) );
@@ -77452,7 +77447,7 @@ async call(parameters : Public.Procedures.StEquals.Parameters) {
 }
 }(this)
 
-          public StIsvalid_52cb = new class implements HasDatabase {
+          public StIsvalidC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -77460,7 +77455,7 @@ async call(parameters : Public.Procedures.StEquals.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StIsvalid_52cb.Parameters) {
+async call(parameters : Public.Procedures.StIsvalidC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -77469,7 +77464,7 @@ async call(parameters : Public.Procedures.StIsvalid_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_isvalid( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_isvalid( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_isvalid) );
@@ -77495,7 +77490,7 @@ async call(parameters : Public.Procedures.StMinimumclearance.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_minimumclearance( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_minimumclearance( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_minimumclearance) );
@@ -77521,7 +77516,7 @@ async call(parameters : Public.Procedures.StMinimumclearanceline.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_minimumclearanceline( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_minimumclearanceline( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_minimumclearanceline) );
@@ -77530,7 +77525,7 @@ async call(parameters : Public.Procedures.StMinimumclearanceline.Parameters) {
 }
 }(this)
 
-          public StCentroid_52cb = new class implements HasDatabase {
+          public StCentroidC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -77538,7 +77533,7 @@ async call(parameters : Public.Procedures.StMinimumclearanceline.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StCentroid_52cb.Parameters) {
+async call(parameters : Public.Procedures.StCentroidC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -77547,7 +77542,7 @@ async call(parameters : Public.Procedures.StCentroid_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_centroid( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_centroid( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_centroid) );
@@ -77573,7 +77568,7 @@ async call(parameters : Public.Procedures.StGeometricmedian.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geometricmedian(g => ${ typed[56356](undefinedIsNull(parameters.g)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },max_iter => ${ typed[23](undefinedIsNull(parameters.maxIter)) },fail_if_not_converged => ${ typed[16](undefinedIsNull(parameters.failIfNotConverged)) })`
+  const response = await sql`SELECT public.st_geometricmedian(g => ${ typed[63488](undefinedIsNull(parameters.g)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },max_iter => ${ typed[23](undefinedIsNull(parameters.maxIter)) },fail_if_not_converged => ${ typed[16](undefinedIsNull(parameters.failIfNotConverged)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geometricmedian) );
@@ -77599,7 +77594,7 @@ async call(parameters : Public.Procedures.StIsring.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_isring( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_isring( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_isring) );
@@ -77625,7 +77620,7 @@ async call(parameters : Public.Procedures.StPointonsurface.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_pointonsurface( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_pointonsurface( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_pointonsurface) );
@@ -77651,7 +77646,7 @@ async call(parameters : Public.Procedures.StIssimple.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_issimple( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_issimple( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_issimple) );
@@ -77677,7 +77672,7 @@ async call(parameters : Public.Procedures.StIscollection.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_iscollection( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_iscollection( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_iscollection) );
@@ -77703,7 +77698,7 @@ async call(parameters : Public.Procedures.Equals.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.equals(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.equals(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].equals) );
@@ -77885,7 +77880,7 @@ async call(parameters : Public.Procedures.StAsmarc21.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asmarc21(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },format => ${ typed[25](undefinedIsNull(parameters.format)) })`
+  const response = await sql`SELECT public.st_asmarc21(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },format => ${ typed[25](undefinedIsNull(parameters.format)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asmarc21) );
@@ -78041,7 +78036,7 @@ async call(parameters : Public.Procedures.StAsencodedpolyline.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asencodedpolyline(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },nprecision => ${ typed[23](undefinedIsNull(parameters.nprecision)) })`
+  const response = await sql`SELECT public.st_asencodedpolyline(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },nprecision => ${ typed[23](undefinedIsNull(parameters.nprecision)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asencodedpolyline) );
@@ -78050,7 +78045,7 @@ async call(parameters : Public.Procedures.StAsencodedpolyline.Parameters) {
 }
 }(this)
 
-          public StAssvgD3cf = new class implements HasDatabase {
+          public StAssvg_8eae = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -78058,7 +78053,7 @@ async call(parameters : Public.Procedures.StAsencodedpolyline.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAssvgD3cf.Parameters) {
+async call(parameters : Public.Procedures.StAssvg_8eae.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -78067,7 +78062,7 @@ async call(parameters : Public.Procedures.StAssvgD3cf.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_assvg(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },rel => ${ typed[23](undefinedIsNull(parameters.rel)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) })`
+  const response = await sql`SELECT public.st_assvg(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },rel => ${ typed[23](undefinedIsNull(parameters.rel)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_assvg) );
@@ -78076,7 +78071,7 @@ async call(parameters : Public.Procedures.StAssvgD3cf.Parameters) {
 }
 }(this)
 
-          public StAsgmlD3cf = new class implements HasDatabase {
+          public StAsgml_8eae = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -78084,7 +78079,7 @@ async call(parameters : Public.Procedures.StAssvgD3cf.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAsgmlD3cf.Parameters) {
+async call(parameters : Public.Procedures.StAsgml_8eae.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -78093,7 +78088,7 @@ async call(parameters : Public.Procedures.StAsgmlD3cf.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asgml(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`
+  const response = await sql`SELECT public.st_asgml(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgml) );
@@ -78102,7 +78097,7 @@ async call(parameters : Public.Procedures.StAsgmlD3cf.Parameters) {
 }
 }(this)
 
-          public StAsgml_3bec = new class implements HasDatabase {
+          public StAsgml_3b73 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -78110,7 +78105,7 @@ async call(parameters : Public.Procedures.StAsgmlD3cf.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAsgml_3bec.Parameters) {
+async call(parameters : Public.Procedures.StAsgml_3b73.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -78119,7 +78114,7 @@ async call(parameters : Public.Procedures.StAsgml_3bec.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asgml(version => ${ typed[23](undefinedIsNull(parameters.version)) },geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) },id => ${ typed[25](undefinedIsNull(parameters.id)) })`
+  const response = await sql`SELECT public.st_asgml(version => ${ typed[23](undefinedIsNull(parameters.version)) },geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) },id => ${ typed[25](undefinedIsNull(parameters.id)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgml) );
@@ -78128,7 +78123,7 @@ async call(parameters : Public.Procedures.StAsgml_3bec.Parameters) {
 }
 }(this)
 
-          public StAskml_6ebd = new class implements HasDatabase {
+          public StAskmlC975 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -78136,7 +78131,7 @@ async call(parameters : Public.Procedures.StAsgml_3bec.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAskml_6ebd.Parameters) {
+async call(parameters : Public.Procedures.StAskmlC975.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -78145,7 +78140,7 @@ async call(parameters : Public.Procedures.StAskml_6ebd.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_askml(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) })`
+  const response = await sql`SELECT public.st_askml(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_askml) );
@@ -78154,7 +78149,7 @@ async call(parameters : Public.Procedures.StAskml_6ebd.Parameters) {
 }
 }(this)
 
-          public StAsgeojsonD3cf = new class implements HasDatabase {
+          public StAsgeojson_8eae = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -78162,7 +78157,7 @@ async call(parameters : Public.Procedures.StAskml_6ebd.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAsgeojsonD3cf.Parameters) {
+async call(parameters : Public.Procedures.StAsgeojson_8eae.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -78171,7 +78166,7 @@ async call(parameters : Public.Procedures.StAsgeojsonD3cf.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asgeojson(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`
+  const response = await sql`SELECT public.st_asgeojson(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgeojson) );
@@ -78223,7 +78218,7 @@ async call(parameters : Public.Procedures.Json.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.json( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.json( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Json.parse(results?.[0].json) );
@@ -78249,7 +78244,7 @@ async call(parameters : Public.Procedures.Jsonb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.jsonb( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.jsonb( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Jsonb.parse(results?.[0].jsonb) );
@@ -78509,7 +78504,7 @@ async call(parameters : Public.Procedures.StAsmvtgeom.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asmvtgeom(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },bounds => ${ typed[56387](undefinedIsNull(parameters.bounds)) },extent => ${ typed[23](undefinedIsNull(parameters.extent)) },buffer => ${ typed[23](undefinedIsNull(parameters.buffer)) },clip_geom => ${ typed[16](undefinedIsNull(parameters.clipGeom)) })`
+  const response = await sql`SELECT public.st_asmvtgeom(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },bounds => ${ typed[63519](undefinedIsNull(parameters.bounds)) },extent => ${ typed[23](undefinedIsNull(parameters.extent)) },buffer => ${ typed[23](undefinedIsNull(parameters.buffer)) },clip_geom => ${ typed[16](undefinedIsNull(parameters.clipGeom)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_asmvtgeom) );
@@ -78778,7 +78773,7 @@ async call(parameters : Public.Procedures.StFromflatgeobuf.Parameters) {
 }
 }(this)
 
-          public StGeohashF74e = new class implements HasDatabase {
+          public StGeohash_73ac = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -78786,7 +78781,7 @@ async call(parameters : Public.Procedures.StFromflatgeobuf.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StGeohashF74e.Parameters) {
+async call(parameters : Public.Procedures.StGeohash_73ac.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -78795,7 +78790,7 @@ async call(parameters : Public.Procedures.StGeohashF74e.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geohash(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },maxchars => ${ typed[23](undefinedIsNull(parameters.maxchars)) })`
+  const response = await sql`SELECT public.st_geohash(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },maxchars => ${ typed[23](undefinedIsNull(parameters.maxchars)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_geohash) );
@@ -78899,7 +78894,7 @@ async call(parameters : Public.Procedures.StNumpoints.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_numpoints( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_numpoints( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_numpoints) );
@@ -78925,7 +78920,7 @@ async call(parameters : Public.Procedures.StNumgeometries.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_numgeometries( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_numgeometries( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_numgeometries) );
@@ -78951,7 +78946,7 @@ async call(parameters : Public.Procedures.StGeometryn.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geometryn( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_geometryn( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geometryn) );
@@ -78977,7 +78972,7 @@ async call(parameters : Public.Procedures.StDimension.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_dimension( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_dimension( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_dimension) );
@@ -79003,7 +78998,7 @@ async call(parameters : Public.Procedures.StExteriorring.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_exteriorring( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_exteriorring( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_exteriorring) );
@@ -79029,7 +79024,7 @@ async call(parameters : Public.Procedures.StNuminteriorrings.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_numinteriorrings( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_numinteriorrings( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_numinteriorrings) );
@@ -79055,7 +79050,7 @@ async call(parameters : Public.Procedures.StNuminteriorring.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_numinteriorring( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_numinteriorring( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_numinteriorring) );
@@ -79081,7 +79076,7 @@ async call(parameters : Public.Procedures.StInteriorringn.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_interiorringn( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_interiorringn( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_interiorringn) );
@@ -79090,7 +79085,7 @@ async call(parameters : Public.Procedures.StInteriorringn.Parameters) {
 }
 }(this)
 
-          public Geometrytype_52cb = new class implements HasDatabase {
+          public GeometrytypeC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -79098,7 +79093,7 @@ async call(parameters : Public.Procedures.StInteriorringn.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.Geometrytype_52cb.Parameters) {
+async call(parameters : Public.Procedures.GeometrytypeC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -79107,7 +79102,7 @@ async call(parameters : Public.Procedures.Geometrytype_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometrytype( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.geometrytype( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].geometrytype) );
@@ -79133,7 +79128,7 @@ async call(parameters : Public.Procedures.StGeometrytype.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geometrytype( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_geometrytype( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_geometrytype) );
@@ -79159,7 +79154,7 @@ async call(parameters : Public.Procedures.StPointn.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_pointn( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_pointn( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_pointn) );
@@ -79185,7 +79180,7 @@ async call(parameters : Public.Procedures.StNumpatches.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_numpatches( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_numpatches( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_numpatches) );
@@ -79211,7 +79206,7 @@ async call(parameters : Public.Procedures.StPatchn.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_patchn( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_patchn( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_patchn) );
@@ -79237,7 +79232,7 @@ async call(parameters : Public.Procedures.StStartpoint.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_startpoint( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_startpoint( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_startpoint) );
@@ -79263,7 +79258,7 @@ async call(parameters : Public.Procedures.StEndpoint.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_endpoint( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_endpoint( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_endpoint) );
@@ -79289,7 +79284,7 @@ async call(parameters : Public.Procedures.StIsclosed.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_isclosed( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_isclosed( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_isclosed) );
@@ -79315,7 +79310,7 @@ async call(parameters : Public.Procedures.StIsempty.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_isempty( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_isempty( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_isempty) );
@@ -79324,7 +79319,7 @@ async call(parameters : Public.Procedures.StIsempty.Parameters) {
 }
 }(this)
 
-          public StAsbinary_09ea = new class implements HasDatabase {
+          public StAsbinary_9881 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -79332,7 +79327,7 @@ async call(parameters : Public.Procedures.StIsempty.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAsbinary_09ea.Parameters) {
+async call(parameters : Public.Procedures.StAsbinary_9881.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -79341,7 +79336,7 @@ async call(parameters : Public.Procedures.StAsbinary_09ea.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asbinary( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_asbinary( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_asbinary) );
@@ -79350,7 +79345,7 @@ async call(parameters : Public.Procedures.StAsbinary_09ea.Parameters) {
 }
 }(this)
 
-          public StAsbinary_52cb = new class implements HasDatabase {
+          public StAsbinaryC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -79358,7 +79353,7 @@ async call(parameters : Public.Procedures.StAsbinary_09ea.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAsbinary_52cb.Parameters) {
+async call(parameters : Public.Procedures.StAsbinaryC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -79367,7 +79362,7 @@ async call(parameters : Public.Procedures.StAsbinary_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asbinary( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_asbinary( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_asbinary) );
@@ -79376,7 +79371,7 @@ async call(parameters : Public.Procedures.StAsbinary_52cb.Parameters) {
 }
 }(this)
 
-          public StAstext_52cb = new class implements HasDatabase {
+          public StAstextC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -79384,7 +79379,7 @@ async call(parameters : Public.Procedures.StAsbinary_52cb.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAstext_52cb.Parameters) {
+async call(parameters : Public.Procedures.StAstextC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -79393,7 +79388,7 @@ async call(parameters : Public.Procedures.StAstext_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_astext( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_astext( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_astext) );
@@ -79402,7 +79397,7 @@ async call(parameters : Public.Procedures.StAstext_52cb.Parameters) {
 }
 }(this)
 
-          public StAstextF74e = new class implements HasDatabase {
+          public StAstext_73ac = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -79410,7 +79405,7 @@ async call(parameters : Public.Procedures.StAstext_52cb.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAstextF74e.Parameters) {
+async call(parameters : Public.Procedures.StAstext_73ac.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -79419,7 +79414,7 @@ async call(parameters : Public.Procedures.StAstextF74e.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_astext( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_astext( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_astext) );
@@ -80797,7 +80792,7 @@ async call(parameters : Public.Procedures.StMaxdistance.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_maxdistance(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_maxdistance(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_maxdistance) );
@@ -80806,7 +80801,7 @@ async call(parameters : Public.Procedures.StMaxdistance.Parameters) {
 }
 }(this)
 
-          public StClosestpoint_4e70 = new class implements HasDatabase {
+          public StClosestpoint_6bd0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -80814,7 +80809,7 @@ async call(parameters : Public.Procedures.StMaxdistance.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StClosestpoint_4e70.Parameters) {
+async call(parameters : Public.Procedures.StClosestpoint_6bd0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -80823,7 +80818,7 @@ async call(parameters : Public.Procedures.StClosestpoint_4e70.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_closestpoint(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_closestpoint(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_closestpoint) );
@@ -80832,7 +80827,7 @@ async call(parameters : Public.Procedures.StClosestpoint_4e70.Parameters) {
 }
 }(this)
 
-          public StShortestline_4e70 = new class implements HasDatabase {
+          public StShortestline_6bd0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -80840,7 +80835,7 @@ async call(parameters : Public.Procedures.StClosestpoint_4e70.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StShortestline_4e70.Parameters) {
+async call(parameters : Public.Procedures.StShortestline_6bd0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -80849,7 +80844,7 @@ async call(parameters : Public.Procedures.StShortestline_4e70.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_shortestline(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_shortestline(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_shortestline) );
@@ -80875,7 +80870,7 @@ async call(parameters : Public.Procedures.StLongestline.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_longestline(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_longestline(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_longestline) );
@@ -80901,7 +80896,7 @@ async call(parameters : Public.Procedures.StSwapordinates.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_swapordinates(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },ords => ${ typed[2275](undefinedIsNull(parameters.ords)) })`
+  const response = await sql`SELECT public.st_swapordinates(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },ords => ${ typed[2275](undefinedIsNull(parameters.ords)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_swapordinates) );
@@ -80927,7 +80922,7 @@ async call(parameters : Public.Procedures.StFlipcoordinates.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_flipcoordinates( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_flipcoordinates( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_flipcoordinates) );
@@ -81014,7 +81009,7 @@ async call(parameters : Public.Procedures.Unlockrows.Parameters) {
 }
 }(this)
 
-          public Geography_8e85 = new class implements HasDatabase {
+          public Geography_33f0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -81022,7 +81017,7 @@ async call(parameters : Public.Procedures.Unlockrows.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.Geography_8e85.Parameters) {
+async call(parameters : Public.Procedures.Geography_33f0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -81031,7 +81026,7 @@ async call(parameters : Public.Procedures.Geography_8e85.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography( ${ typed[57062](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.geography( ${ typed[64194](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].geography) );
@@ -81066,7 +81061,7 @@ async call(parameters : Public.Procedures.Geography_2d19.Parameters) {
 }
 }(this)
 
-          public ByteaB076 = new class implements HasDatabase {
+          public ByteaC6e0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -81074,7 +81069,7 @@ async call(parameters : Public.Procedures.Geography_2d19.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.ByteaB076.Parameters) {
+async call(parameters : Public.Procedures.ByteaC6e0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -81083,7 +81078,7 @@ async call(parameters : Public.Procedures.ByteaB076.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.bytea( ${ typed[57062](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.bytea( ${ typed[64194](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].bytea) );
@@ -81092,7 +81087,7 @@ async call(parameters : Public.Procedures.ByteaB076.Parameters) {
 }
 }(this)
 
-          public StAstextB076 = new class implements HasDatabase {
+          public StAstextC6e0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -81100,7 +81095,7 @@ async call(parameters : Public.Procedures.ByteaB076.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAstextB076.Parameters) {
+async call(parameters : Public.Procedures.StAstextC6e0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -81109,7 +81104,7 @@ async call(parameters : Public.Procedures.StAstextB076.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_astext( ${ typed[57062](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_astext( ${ typed[64194](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_astext) );
@@ -81118,7 +81113,7 @@ async call(parameters : Public.Procedures.StAstextB076.Parameters) {
 }
 }(this)
 
-          public StAstext_52a9 = new class implements HasDatabase {
+          public StAstextE8cd = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -81126,7 +81121,7 @@ async call(parameters : Public.Procedures.StAstextB076.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAstext_52a9.Parameters) {
+async call(parameters : Public.Procedures.StAstextE8cd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -81135,7 +81130,7 @@ async call(parameters : Public.Procedures.StAstext_52a9.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_astext( ${ typed[57062](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_astext( ${ typed[64194](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_astext) );
@@ -81551,7 +81546,7 @@ async call(parameters : Public.Procedures.GeographyOut.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_out( ${ typed[57062](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.geography_out( ${ typed[64194](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].geography_out) );
@@ -81603,7 +81598,7 @@ async call(parameters : Public.Procedures.GeographySend.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_send( ${ typed[57062](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.geography_send( ${ typed[64194](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].geography_send) );
@@ -81794,7 +81789,7 @@ async call(parameters : Public.Procedures.PostgisTypmodType.Parameters) {
 }
 }(this)
 
-          public Geography_52cb = new class implements HasDatabase {
+          public GeographyC567 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -81802,7 +81797,7 @@ async call(parameters : Public.Procedures.PostgisTypmodType.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.Geography_52cb.Parameters) {
+async call(parameters : Public.Procedures.GeographyC567.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -81811,7 +81806,7 @@ async call(parameters : Public.Procedures.Geography_52cb.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography( ${ typed[56356](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.geography( ${ typed[63488](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].geography) );
@@ -81820,7 +81815,7 @@ async call(parameters : Public.Procedures.Geography_52cb.Parameters) {
 }
 }(this)
 
-          public GeometryB076 = new class implements HasDatabase {
+          public GeometryC6e0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -81828,7 +81823,7 @@ async call(parameters : Public.Procedures.Geography_52cb.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.GeometryB076.Parameters) {
+async call(parameters : Public.Procedures.GeometryC6e0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -81837,7 +81832,7 @@ async call(parameters : Public.Procedures.GeometryB076.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry( ${ typed[57062](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.geometry( ${ typed[64194](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry) );
@@ -81863,7 +81858,7 @@ async call(parameters : Public.Procedures.GeographyGistConsistent.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_gist_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[57062](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.geography_gist_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[64194](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_gist_consistent) );
@@ -81993,7 +81988,7 @@ async call(parameters : Public.Procedures.GeographyGistSame.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_gist_same( ${ typed[56387](undefinedIsNull(parameters.argument_0)) }, ${ typed[56387](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.geography_gist_same( ${ typed[63519](undefinedIsNull(parameters.argument_0)) }, ${ typed[63519](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geography_gist_same) );
@@ -82045,7 +82040,7 @@ async call(parameters : Public.Procedures.GeographyOverlaps.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_overlaps( ${ typed[57062](undefinedIsNull(parameters.argument_0)) }, ${ typed[57062](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.geography_overlaps( ${ typed[64194](undefinedIsNull(parameters.argument_0)) }, ${ typed[64194](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_overlaps) );
@@ -82071,7 +82066,7 @@ async call(parameters : Public.Procedures.GeographyDistanceKnn.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_distance_knn( ${ typed[57062](undefinedIsNull(parameters.argument_0)) }, ${ typed[57062](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.geography_distance_knn( ${ typed[64194](undefinedIsNull(parameters.argument_0)) }, ${ typed[64194](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geography_distance_knn) );
@@ -82097,7 +82092,7 @@ async call(parameters : Public.Procedures.GeographyGistDistance.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_gist_distance( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[57062](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.geography_gist_distance( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[64194](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geography_gist_distance) );
@@ -82106,7 +82101,7 @@ async call(parameters : Public.Procedures.GeographyGistDistance.Parameters) {
 }
 }(this)
 
-          public OverlapsGeog_46ba = new class implements HasDatabase {
+          public OverlapsGeogBb60 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -82114,7 +82109,7 @@ async call(parameters : Public.Procedures.GeographyGistDistance.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.OverlapsGeog_46ba.Parameters) {
+async call(parameters : Public.Procedures.OverlapsGeogBb60.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -82123,7 +82118,7 @@ async call(parameters : Public.Procedures.OverlapsGeog_46ba.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.overlaps_geog( ${ typed[56395](undefinedIsNull(parameters.argument_0)) }, ${ typed[57062](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.overlaps_geog( ${ typed[63527](undefinedIsNull(parameters.argument_0)) }, ${ typed[64194](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_geog) );
@@ -82132,7 +82127,7 @@ async call(parameters : Public.Procedures.OverlapsGeog_46ba.Parameters) {
 }
 }(this)
 
-          public OverlapsGeogD1af = new class implements HasDatabase {
+          public OverlapsGeog_8a58 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -82140,7 +82135,7 @@ async call(parameters : Public.Procedures.OverlapsGeog_46ba.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.OverlapsGeogD1af.Parameters) {
+async call(parameters : Public.Procedures.OverlapsGeog_8a58.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -82149,7 +82144,7 @@ async call(parameters : Public.Procedures.OverlapsGeogD1af.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.overlaps_geog( ${ typed[56395](undefinedIsNull(parameters.argument_0)) }, ${ typed[56395](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.overlaps_geog( ${ typed[63527](undefinedIsNull(parameters.argument_0)) }, ${ typed[63527](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_geog) );
@@ -82158,7 +82153,7 @@ async call(parameters : Public.Procedures.OverlapsGeogD1af.Parameters) {
 }
 }(this)
 
-          public OverlapsGeogC98c = new class implements HasDatabase {
+          public OverlapsGeog_21a5 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -82166,7 +82161,7 @@ async call(parameters : Public.Procedures.OverlapsGeogD1af.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.OverlapsGeogC98c.Parameters) {
+async call(parameters : Public.Procedures.OverlapsGeog_21a5.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -82175,7 +82170,7 @@ async call(parameters : Public.Procedures.OverlapsGeogC98c.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.overlaps_geog( ${ typed[57062](undefinedIsNull(parameters.argument_0)) }, ${ typed[56395](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.overlaps_geog( ${ typed[64194](undefinedIsNull(parameters.argument_0)) }, ${ typed[63527](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_geog) );
@@ -82227,7 +82222,7 @@ async call(parameters : Public.Procedures.GeographyLt.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_lt( ${ typed[57062](undefinedIsNull(parameters.argument_0)) }, ${ typed[57062](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.geography_lt( ${ typed[64194](undefinedIsNull(parameters.argument_0)) }, ${ typed[64194](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_lt) );
@@ -82253,7 +82248,7 @@ async call(parameters : Public.Procedures.GeographyLe.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_le( ${ typed[57062](undefinedIsNull(parameters.argument_0)) }, ${ typed[57062](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.geography_le( ${ typed[64194](undefinedIsNull(parameters.argument_0)) }, ${ typed[64194](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_le) );
@@ -82279,7 +82274,7 @@ async call(parameters : Public.Procedures.GeographyGt.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_gt( ${ typed[57062](undefinedIsNull(parameters.argument_0)) }, ${ typed[57062](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.geography_gt( ${ typed[64194](undefinedIsNull(parameters.argument_0)) }, ${ typed[64194](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_gt) );
@@ -82305,7 +82300,7 @@ async call(parameters : Public.Procedures.GeographyGe.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_ge( ${ typed[57062](undefinedIsNull(parameters.argument_0)) }, ${ typed[57062](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.geography_ge( ${ typed[64194](undefinedIsNull(parameters.argument_0)) }, ${ typed[64194](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_ge) );
@@ -82331,7 +82326,7 @@ async call(parameters : Public.Procedures.GeographyEq.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_eq( ${ typed[57062](undefinedIsNull(parameters.argument_0)) }, ${ typed[57062](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.geography_eq( ${ typed[64194](undefinedIsNull(parameters.argument_0)) }, ${ typed[64194](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_eq) );
@@ -82357,7 +82352,7 @@ async call(parameters : Public.Procedures.GeographyCmp.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_cmp( ${ typed[57062](undefinedIsNull(parameters.argument_0)) }, ${ typed[57062](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.geography_cmp( ${ typed[64194](undefinedIsNull(parameters.argument_0)) }, ${ typed[64194](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].geography_cmp) );
@@ -82366,7 +82361,7 @@ async call(parameters : Public.Procedures.GeographyCmp.Parameters) {
 }
 }(this)
 
-          public StAssvgFab6 = new class implements HasDatabase {
+          public StAssvg_07a8 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -82374,7 +82369,7 @@ async call(parameters : Public.Procedures.GeographyCmp.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAssvgFab6.Parameters) {
+async call(parameters : Public.Procedures.StAssvg_07a8.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -82383,7 +82378,7 @@ async call(parameters : Public.Procedures.StAssvgFab6.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_assvg(geog => ${ typed[57062](undefinedIsNull(parameters.geog)) },rel => ${ typed[23](undefinedIsNull(parameters.rel)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) })`
+  const response = await sql`SELECT public.st_assvg(geog => ${ typed[64194](undefinedIsNull(parameters.geog)) },rel => ${ typed[23](undefinedIsNull(parameters.rel)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_assvg) );
@@ -82418,7 +82413,7 @@ async call(parameters : Public.Procedures.StAssvgE728.Parameters) {
 }
 }(this)
 
-          public StProject_57ad = new class implements HasDatabase {
+          public StProjectCd02 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -82426,7 +82421,7 @@ async call(parameters : Public.Procedures.StAssvgE728.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StProject_57ad.Parameters) {
+async call(parameters : Public.Procedures.StProjectCd02.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -82435,7 +82430,7 @@ async call(parameters : Public.Procedures.StProject_57ad.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_project(geog_from => ${ typed[57062](undefinedIsNull(parameters.geogFrom)) },geog_to => ${ typed[57062](undefinedIsNull(parameters.geogTo)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) })`
+  const response = await sql`SELECT public.st_project(geog_from => ${ typed[64194](undefinedIsNull(parameters.geogFrom)) },geog_to => ${ typed[64194](undefinedIsNull(parameters.geogTo)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_project) );
@@ -82444,7 +82439,7 @@ async call(parameters : Public.Procedures.StProject_57ad.Parameters) {
 }
 }(this)
 
-          public StAzimuth_25d7 = new class implements HasDatabase {
+          public StAzimuthEa06 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -82452,7 +82447,7 @@ async call(parameters : Public.Procedures.StProject_57ad.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAzimuth_25d7.Parameters) {
+async call(parameters : Public.Procedures.StAzimuthEa06.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -82461,7 +82456,7 @@ async call(parameters : Public.Procedures.StAzimuth_25d7.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_azimuth(geog1 => ${ typed[57062](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[57062](undefinedIsNull(parameters.geog2)) })`
+  const response = await sql`SELECT public.st_azimuth(geog1 => ${ typed[64194](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[64194](undefinedIsNull(parameters.geog2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_azimuth) );
@@ -82496,7 +82491,7 @@ async call(parameters : Public.Procedures.StBuffer_49f7.Parameters) {
 }
 }(this)
 
-          public StAsgml_4503 = new class implements HasDatabase {
+          public StAsgmlF715 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -82504,7 +82499,7 @@ async call(parameters : Public.Procedures.StBuffer_49f7.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAsgml_4503.Parameters) {
+async call(parameters : Public.Procedures.StAsgmlF715.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -82513,7 +82508,7 @@ async call(parameters : Public.Procedures.StAsgml_4503.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asgml(version => ${ typed[23](undefinedIsNull(parameters.version)) },geog => ${ typed[57062](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) },id => ${ typed[25](undefinedIsNull(parameters.id)) })`
+  const response = await sql`SELECT public.st_asgml(version => ${ typed[23](undefinedIsNull(parameters.version)) },geog => ${ typed[64194](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) },id => ${ typed[25](undefinedIsNull(parameters.id)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgml) );
@@ -82522,7 +82517,7 @@ async call(parameters : Public.Procedures.StAsgml_4503.Parameters) {
 }
 }(this)
 
-          public StAsgmlDb17 = new class implements HasDatabase {
+          public StAsgmlC08d = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -82530,7 +82525,7 @@ async call(parameters : Public.Procedures.StAsgml_4503.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAsgmlDb17.Parameters) {
+async call(parameters : Public.Procedures.StAsgmlC08d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -82539,7 +82534,7 @@ async call(parameters : Public.Procedures.StAsgmlDb17.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asgml(geog => ${ typed[57062](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) },id => ${ typed[25](undefinedIsNull(parameters.id)) })`
+  const response = await sql`SELECT public.st_asgml(geog => ${ typed[64194](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) },id => ${ typed[25](undefinedIsNull(parameters.id)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgml) );
@@ -82574,7 +82569,7 @@ async call(parameters : Public.Procedures.StAsgmlE728.Parameters) {
 }
 }(this)
 
-          public StAskml_58db = new class implements HasDatabase {
+          public StAskml_874a = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -82582,7 +82577,7 @@ async call(parameters : Public.Procedures.StAsgmlE728.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAskml_58db.Parameters) {
+async call(parameters : Public.Procedures.StAskml_874a.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -82591,7 +82586,7 @@ async call(parameters : Public.Procedures.StAskml_58db.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_askml(geog => ${ typed[57062](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) })`
+  const response = await sql`SELECT public.st_askml(geog => ${ typed[64194](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_askml) );
@@ -82626,7 +82621,7 @@ async call(parameters : Public.Procedures.StAskmlE728.Parameters) {
 }
 }(this)
 
-          public StAsgeojsonFab6 = new class implements HasDatabase {
+          public StAsgeojson_07a8 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -82634,7 +82629,7 @@ async call(parameters : Public.Procedures.StAskmlE728.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAsgeojsonFab6.Parameters) {
+async call(parameters : Public.Procedures.StAsgeojson_07a8.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -82643,7 +82638,7 @@ async call(parameters : Public.Procedures.StAsgeojsonFab6.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asgeojson(geog => ${ typed[57062](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`
+  const response = await sql`SELECT public.st_asgeojson(geog => ${ typed[64194](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgeojson) );
@@ -82678,7 +82673,7 @@ async call(parameters : Public.Procedures.StAsgeojsonE728.Parameters) {
 }
 }(this)
 
-          public StDistanceDea8 = new class implements HasDatabase {
+          public StDistance_05ee = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -82686,7 +82681,7 @@ async call(parameters : Public.Procedures.StAsgeojsonE728.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StDistanceDea8.Parameters) {
+async call(parameters : Public.Procedures.StDistance_05ee.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -82695,7 +82690,7 @@ async call(parameters : Public.Procedures.StDistanceDea8.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_distance(geog1 => ${ typed[57062](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[57062](undefinedIsNull(parameters.geog2)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
+  const response = await sql`SELECT public.st_distance(geog1 => ${ typed[64194](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[64194](undefinedIsNull(parameters.geog2)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distance) );
@@ -82730,7 +82725,7 @@ async call(parameters : Public.Procedures.StDistance_2ec2.Parameters) {
 }
 }(this)
 
-          public StArea_527f = new class implements HasDatabase {
+          public StArea_5f1d = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -82738,7 +82733,7 @@ async call(parameters : Public.Procedures.StDistance_2ec2.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StArea_527f.Parameters) {
+async call(parameters : Public.Procedures.StArea_5f1d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -82747,7 +82742,7 @@ async call(parameters : Public.Procedures.StArea_527f.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_area(geog => ${ typed[57062](undefinedIsNull(parameters.geog)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
+  const response = await sql`SELECT public.st_area(geog => ${ typed[64194](undefinedIsNull(parameters.geog)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_area) );
@@ -82782,7 +82777,7 @@ async call(parameters : Public.Procedures.StAreaE728.Parameters) {
 }
 }(this)
 
-          public StLength_527f = new class implements HasDatabase {
+          public StLength_5f1d = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -82790,7 +82785,7 @@ async call(parameters : Public.Procedures.StAreaE728.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StLength_527f.Parameters) {
+async call(parameters : Public.Procedures.StLength_5f1d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -82799,7 +82794,7 @@ async call(parameters : Public.Procedures.StLength_527f.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_length(geog => ${ typed[57062](undefinedIsNull(parameters.geog)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
+  const response = await sql`SELECT public.st_length(geog => ${ typed[64194](undefinedIsNull(parameters.geog)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_length) );
@@ -82834,7 +82829,7 @@ async call(parameters : Public.Procedures.StLengthE728.Parameters) {
 }
 }(this)
 
-          public StProject_5f39 = new class implements HasDatabase {
+          public StProjectF79f = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -82842,7 +82837,7 @@ async call(parameters : Public.Procedures.StLengthE728.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StProject_5f39.Parameters) {
+async call(parameters : Public.Procedures.StProjectF79f.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -82851,7 +82846,7 @@ async call(parameters : Public.Procedures.StProject_5f39.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_project(geog => ${ typed[57062](undefinedIsNull(parameters.geog)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) },azimuth => ${ typed[701](undefinedIsNull(parameters.azimuth)) })`
+  const response = await sql`SELECT public.st_project(geog => ${ typed[64194](undefinedIsNull(parameters.geog)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) },azimuth => ${ typed[701](undefinedIsNull(parameters.azimuth)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_project) );
@@ -82860,7 +82855,7 @@ async call(parameters : Public.Procedures.StProject_5f39.Parameters) {
 }
 }(this)
 
-          public StPerimeter_527f = new class implements HasDatabase {
+          public StPerimeter_5f1d = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -82868,7 +82863,7 @@ async call(parameters : Public.Procedures.StProject_5f39.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StPerimeter_527f.Parameters) {
+async call(parameters : Public.Procedures.StPerimeter_5f1d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -82877,7 +82872,7 @@ async call(parameters : Public.Procedures.StPerimeter_527f.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_perimeter(geog => ${ typed[57062](undefinedIsNull(parameters.geog)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
+  const response = await sql`SELECT public.st_perimeter(geog => ${ typed[64194](undefinedIsNull(parameters.geog)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_perimeter) );
@@ -82886,7 +82881,7 @@ async call(parameters : Public.Procedures.StPerimeter_527f.Parameters) {
 }
 }(this)
 
-          public StSegmentize_7120 = new class implements HasDatabase {
+          public StSegmentize_661e = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -82894,7 +82889,7 @@ async call(parameters : Public.Procedures.StPerimeter_527f.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StSegmentize_7120.Parameters) {
+async call(parameters : Public.Procedures.StSegmentize_661e.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -82903,7 +82898,7 @@ async call(parameters : Public.Procedures.StSegmentize_7120.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_segmentize(geog => ${ typed[57062](undefinedIsNull(parameters.geog)) },max_segment_length => ${ typed[701](undefinedIsNull(parameters.maxSegmentLength)) })`
+  const response = await sql`SELECT public.st_segmentize(geog => ${ typed[64194](undefinedIsNull(parameters.geog)) },max_segment_length => ${ typed[701](undefinedIsNull(parameters.maxSegmentLength)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_segmentize) );
@@ -82912,7 +82907,7 @@ async call(parameters : Public.Procedures.StSegmentize_7120.Parameters) {
 }
 }(this)
 
-          public StAsbinaryB076 = new class implements HasDatabase {
+          public StAsbinaryC6e0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -82920,7 +82915,7 @@ async call(parameters : Public.Procedures.StSegmentize_7120.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAsbinaryB076.Parameters) {
+async call(parameters : Public.Procedures.StAsbinaryC6e0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -82929,7 +82924,7 @@ async call(parameters : Public.Procedures.StAsbinaryB076.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asbinary( ${ typed[57062](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_asbinary( ${ typed[64194](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_asbinary) );
@@ -82938,7 +82933,7 @@ async call(parameters : Public.Procedures.StAsbinaryB076.Parameters) {
 }
 }(this)
 
-          public StAsbinary_543e = new class implements HasDatabase {
+          public StAsbinary_69ab = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -82946,7 +82941,7 @@ async call(parameters : Public.Procedures.StAsbinaryB076.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAsbinary_543e.Parameters) {
+async call(parameters : Public.Procedures.StAsbinary_69ab.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -82955,7 +82950,7 @@ async call(parameters : Public.Procedures.StAsbinary_543e.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asbinary( ${ typed[57062](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_asbinary( ${ typed[64194](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_asbinary) );
@@ -82964,7 +82959,7 @@ async call(parameters : Public.Procedures.StAsbinary_543e.Parameters) {
 }
 }(this)
 
-          public StAsewktB076 = new class implements HasDatabase {
+          public StAsewktC6e0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -82972,7 +82967,7 @@ async call(parameters : Public.Procedures.StAsbinary_543e.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAsewktB076.Parameters) {
+async call(parameters : Public.Procedures.StAsewktC6e0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -82981,7 +82976,7 @@ async call(parameters : Public.Procedures.StAsewktB076.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asewkt( ${ typed[57062](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_asewkt( ${ typed[64194](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asewkt) );
@@ -82990,7 +82985,7 @@ async call(parameters : Public.Procedures.StAsewktB076.Parameters) {
 }
 }(this)
 
-          public StAsewkt_52a9 = new class implements HasDatabase {
+          public StAsewktE8cd = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -82998,7 +82993,7 @@ async call(parameters : Public.Procedures.StAsewktB076.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAsewkt_52a9.Parameters) {
+async call(parameters : Public.Procedures.StAsewktE8cd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83007,7 +83002,7 @@ async call(parameters : Public.Procedures.StAsewkt_52a9.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asewkt( ${ typed[57062](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_asewkt( ${ typed[64194](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asewkt) );
@@ -83042,7 +83037,7 @@ async call(parameters : Public.Procedures.StAsewktE728.Parameters) {
 }
 }(this)
 
-          public GeometrytypeB076 = new class implements HasDatabase {
+          public GeometrytypeC6e0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -83050,7 +83045,7 @@ async call(parameters : Public.Procedures.StAsewktE728.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.GeometrytypeB076.Parameters) {
+async call(parameters : Public.Procedures.GeometrytypeC6e0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83059,7 +83054,7 @@ async call(parameters : Public.Procedures.GeometrytypeB076.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometrytype( ${ typed[57062](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.geometrytype( ${ typed[64194](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].geometrytype) );
@@ -83068,7 +83063,7 @@ async call(parameters : Public.Procedures.GeometrytypeB076.Parameters) {
 }
 }(this)
 
-          public StSummaryB076 = new class implements HasDatabase {
+          public StSummaryC6e0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -83076,7 +83071,7 @@ async call(parameters : Public.Procedures.GeometrytypeB076.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StSummaryB076.Parameters) {
+async call(parameters : Public.Procedures.StSummaryC6e0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83085,7 +83080,7 @@ async call(parameters : Public.Procedures.StSummaryB076.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_summary( ${ typed[57062](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.st_summary( ${ typed[64194](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_summary) );
@@ -83094,7 +83089,7 @@ async call(parameters : Public.Procedures.StSummaryB076.Parameters) {
 }
 }(this)
 
-          public StGeohash_52a9 = new class implements HasDatabase {
+          public StGeohashE8cd = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -83102,7 +83097,7 @@ async call(parameters : Public.Procedures.StSummaryB076.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StGeohash_52a9.Parameters) {
+async call(parameters : Public.Procedures.StGeohashE8cd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83111,7 +83106,7 @@ async call(parameters : Public.Procedures.StGeohash_52a9.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geohash(geog => ${ typed[57062](undefinedIsNull(parameters.geog)) },maxchars => ${ typed[23](undefinedIsNull(parameters.maxchars)) })`
+  const response = await sql`SELECT public.st_geohash(geog => ${ typed[64194](undefinedIsNull(parameters.geog)) },maxchars => ${ typed[23](undefinedIsNull(parameters.maxchars)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_geohash) );
@@ -83120,7 +83115,7 @@ async call(parameters : Public.Procedures.StGeohash_52a9.Parameters) {
 }
 }(this)
 
-          public StSridB076 = new class implements HasDatabase {
+          public StSridC6e0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -83128,7 +83123,7 @@ async call(parameters : Public.Procedures.StGeohash_52a9.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StSridB076.Parameters) {
+async call(parameters : Public.Procedures.StSridC6e0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83137,7 +83132,7 @@ async call(parameters : Public.Procedures.StSridB076.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_srid(geog => ${ typed[57062](undefinedIsNull(parameters.geog)) })`
+  const response = await sql`SELECT public.st_srid(geog => ${ typed[64194](undefinedIsNull(parameters.geog)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_srid) );
@@ -83146,7 +83141,7 @@ async call(parameters : Public.Procedures.StSridB076.Parameters) {
 }
 }(this)
 
-          public StSetsrid_52a9 = new class implements HasDatabase {
+          public StSetsridE8cd = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -83154,7 +83149,7 @@ async call(parameters : Public.Procedures.StSridB076.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StSetsrid_52a9.Parameters) {
+async call(parameters : Public.Procedures.StSetsridE8cd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83163,7 +83158,7 @@ async call(parameters : Public.Procedures.StSetsrid_52a9.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_setsrid(geog => ${ typed[57062](undefinedIsNull(parameters.geog)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`
+  const response = await sql`SELECT public.st_setsrid(geog => ${ typed[64194](undefinedIsNull(parameters.geog)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_setsrid) );
@@ -83172,7 +83167,7 @@ async call(parameters : Public.Procedures.StSetsrid_52a9.Parameters) {
 }
 }(this)
 
-          public StCentroid_527f = new class implements HasDatabase {
+          public StCentroid_5f1d = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -83180,7 +83175,7 @@ async call(parameters : Public.Procedures.StSetsrid_52a9.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StCentroid_527f.Parameters) {
+async call(parameters : Public.Procedures.StCentroid_5f1d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83189,7 +83184,7 @@ async call(parameters : Public.Procedures.StCentroid_527f.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_centroid(argument_0 => ${ typed[57062](undefinedIsNull(parameters.argument_0)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
+  const response = await sql`SELECT public.st_centroid(argument_0 => ${ typed[64194](undefinedIsNull(parameters.argument_0)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_centroid) );
@@ -83224,7 +83219,7 @@ async call(parameters : Public.Procedures.StCentroidE728.Parameters) {
 }
 }(this)
 
-          public StCovers_25d7 = new class implements HasDatabase {
+          public StCoversEa06 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -83232,7 +83227,7 @@ async call(parameters : Public.Procedures.StCentroidE728.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StCovers_25d7.Parameters) {
+async call(parameters : Public.Procedures.StCoversEa06.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83241,7 +83236,7 @@ async call(parameters : Public.Procedures.StCovers_25d7.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_covers(geog1 => ${ typed[57062](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[57062](undefinedIsNull(parameters.geog2)) })`
+  const response = await sql`SELECT public.st_covers(geog1 => ${ typed[64194](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[64194](undefinedIsNull(parameters.geog2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_covers) );
@@ -83250,7 +83245,7 @@ async call(parameters : Public.Procedures.StCovers_25d7.Parameters) {
 }
 }(this)
 
-          public StDwithin_1936 = new class implements HasDatabase {
+          public StDwithin_35a5 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -83258,7 +83253,7 @@ async call(parameters : Public.Procedures.StCovers_25d7.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StDwithin_1936.Parameters) {
+async call(parameters : Public.Procedures.StDwithin_35a5.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83267,7 +83262,7 @@ async call(parameters : Public.Procedures.StDwithin_1936.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_dwithin(geog1 => ${ typed[57062](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[57062](undefinedIsNull(parameters.geog2)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
+  const response = await sql`SELECT public.st_dwithin(geog1 => ${ typed[64194](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[64194](undefinedIsNull(parameters.geog2)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_dwithin) );
@@ -83276,7 +83271,7 @@ async call(parameters : Public.Procedures.StDwithin_1936.Parameters) {
 }
 }(this)
 
-          public StCoveredby_25d7 = new class implements HasDatabase {
+          public StCoveredbyEa06 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -83284,7 +83279,7 @@ async call(parameters : Public.Procedures.StDwithin_1936.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StCoveredby_25d7.Parameters) {
+async call(parameters : Public.Procedures.StCoveredbyEa06.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83293,7 +83288,7 @@ async call(parameters : Public.Procedures.StCoveredby_25d7.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_coveredby(geog1 => ${ typed[57062](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[57062](undefinedIsNull(parameters.geog2)) })`
+  const response = await sql`SELECT public.st_coveredby(geog1 => ${ typed[64194](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[64194](undefinedIsNull(parameters.geog2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_coveredby) );
@@ -83302,7 +83297,7 @@ async call(parameters : Public.Procedures.StCoveredby_25d7.Parameters) {
 }
 }(this)
 
-          public StIntersects_25d7 = new class implements HasDatabase {
+          public StIntersectsEa06 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -83310,7 +83305,7 @@ async call(parameters : Public.Procedures.StCoveredby_25d7.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StIntersects_25d7.Parameters) {
+async call(parameters : Public.Procedures.StIntersectsEa06.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83319,7 +83314,7 @@ async call(parameters : Public.Procedures.StIntersects_25d7.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_intersects(geog1 => ${ typed[57062](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[57062](undefinedIsNull(parameters.geog2)) })`
+  const response = await sql`SELECT public.st_intersects(geog1 => ${ typed[64194](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[64194](undefinedIsNull(parameters.geog2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_intersects) );
@@ -83328,7 +83323,7 @@ async call(parameters : Public.Procedures.StIntersects_25d7.Parameters) {
 }
 }(this)
 
-          public StBuffer_7120 = new class implements HasDatabase {
+          public StBuffer_661e = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -83336,7 +83331,7 @@ async call(parameters : Public.Procedures.StIntersects_25d7.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StBuffer_7120.Parameters) {
+async call(parameters : Public.Procedures.StBuffer_661e.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83345,7 +83340,7 @@ async call(parameters : Public.Procedures.StBuffer_7120.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_buffer( ${ typed[57062](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_buffer( ${ typed[64194](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_buffer) );
@@ -83354,7 +83349,7 @@ async call(parameters : Public.Procedures.StBuffer_7120.Parameters) {
 }
 }(this)
 
-          public StBufferAc74 = new class implements HasDatabase {
+          public StBuffer_693b = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -83362,7 +83357,7 @@ async call(parameters : Public.Procedures.StBuffer_7120.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StBufferAc74.Parameters) {
+async call(parameters : Public.Procedures.StBuffer_693b.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83371,7 +83366,7 @@ async call(parameters : Public.Procedures.StBufferAc74.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_buffer( ${ typed[57062](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_buffer( ${ typed[64194](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_buffer) );
@@ -83380,7 +83375,7 @@ async call(parameters : Public.Procedures.StBufferAc74.Parameters) {
 }
 }(this)
 
-          public StBuffer_750b = new class implements HasDatabase {
+          public StBuffer_51ed = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -83388,7 +83383,7 @@ async call(parameters : Public.Procedures.StBufferAc74.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StBuffer_750b.Parameters) {
+async call(parameters : Public.Procedures.StBuffer_51ed.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83397,7 +83392,7 @@ async call(parameters : Public.Procedures.StBuffer_750b.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_buffer( ${ typed[57062](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_buffer( ${ typed[64194](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_buffer) );
@@ -83458,7 +83453,7 @@ async call(parameters : Public.Procedures.StBufferF7c6.Parameters) {
 }
 }(this)
 
-          public StIntersection_25d7 = new class implements HasDatabase {
+          public StIntersectionEa06 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -83466,7 +83461,7 @@ async call(parameters : Public.Procedures.StBufferF7c6.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StIntersection_25d7.Parameters) {
+async call(parameters : Public.Procedures.StIntersectionEa06.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83475,7 +83470,7 @@ async call(parameters : Public.Procedures.StIntersection_25d7.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_intersection( ${ typed[57062](undefinedIsNull(parameters.argument_0)) }, ${ typed[57062](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_intersection( ${ typed[64194](undefinedIsNull(parameters.argument_0)) }, ${ typed[64194](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_intersection) );
@@ -83614,7 +83609,7 @@ async call(parameters : Public.Procedures.StIntersects_2ec2.Parameters) {
 }
 }(this)
 
-          public StClosestpointDea8 = new class implements HasDatabase {
+          public StClosestpoint_05ee = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -83622,7 +83617,7 @@ async call(parameters : Public.Procedures.StIntersects_2ec2.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StClosestpointDea8.Parameters) {
+async call(parameters : Public.Procedures.StClosestpoint_05ee.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83631,7 +83626,7 @@ async call(parameters : Public.Procedures.StClosestpointDea8.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_closestpoint(argument_0 => ${ typed[57062](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[57062](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
+  const response = await sql`SELECT public.st_closestpoint(argument_0 => ${ typed[64194](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[64194](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_closestpoint) );
@@ -83666,7 +83661,7 @@ async call(parameters : Public.Procedures.StClosestpoint_2ec2.Parameters) {
 }
 }(this)
 
-          public StShortestlineDea8 = new class implements HasDatabase {
+          public StShortestline_05ee = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -83674,7 +83669,7 @@ async call(parameters : Public.Procedures.StClosestpoint_2ec2.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StShortestlineDea8.Parameters) {
+async call(parameters : Public.Procedures.StShortestline_05ee.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83683,7 +83678,7 @@ async call(parameters : Public.Procedures.StShortestlineDea8.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_shortestline(argument_0 => ${ typed[57062](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[57062](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
+  const response = await sql`SELECT public.st_shortestline(argument_0 => ${ typed[64194](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[64194](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_shortestline) );
@@ -83718,7 +83713,7 @@ async call(parameters : Public.Procedures.StShortestline_2ec2.Parameters) {
 }
 }(this)
 
-          public StLinesubstring_5f39 = new class implements HasDatabase {
+          public StLinesubstringF79f = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -83726,7 +83721,7 @@ async call(parameters : Public.Procedures.StShortestline_2ec2.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StLinesubstring_5f39.Parameters) {
+async call(parameters : Public.Procedures.StLinesubstringF79f.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83735,7 +83730,7 @@ async call(parameters : Public.Procedures.StLinesubstring_5f39.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linesubstring( ${ typed[57062](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.st_linesubstring( ${ typed[64194](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_linesubstring) );
@@ -83770,7 +83765,7 @@ async call(parameters : Public.Procedures.StLinesubstringE586.Parameters) {
 }
 }(this)
 
-          public StLinelocatepointDea8 = new class implements HasDatabase {
+          public StLinelocatepoint_05ee = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -83778,7 +83773,7 @@ async call(parameters : Public.Procedures.StLinesubstringE586.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StLinelocatepointDea8.Parameters) {
+async call(parameters : Public.Procedures.StLinelocatepoint_05ee.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83787,7 +83782,7 @@ async call(parameters : Public.Procedures.StLinelocatepointDea8.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linelocatepoint(argument_0 => ${ typed[57062](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[57062](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
+  const response = await sql`SELECT public.st_linelocatepoint(argument_0 => ${ typed[64194](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[64194](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_linelocatepoint) );
@@ -83822,7 +83817,7 @@ async call(parameters : Public.Procedures.StLinelocatepoint_2ec2.Parameters) {
 }
 }(this)
 
-          public StLineinterpolatepoints_7696 = new class implements HasDatabase {
+          public StLineinterpolatepoints_83da = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -83830,7 +83825,7 @@ async call(parameters : Public.Procedures.StLinelocatepoint_2ec2.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StLineinterpolatepoints_7696.Parameters) {
+async call(parameters : Public.Procedures.StLineinterpolatepoints_83da.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83839,7 +83834,7 @@ async call(parameters : Public.Procedures.StLineinterpolatepoints_7696.Parameter
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_lineinterpolatepoints(argument_0 => ${ typed[57062](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[701](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) },repeat => ${ typed[16](undefinedIsNull(parameters.repeat)) })`
+  const response = await sql`SELECT public.st_lineinterpolatepoints(argument_0 => ${ typed[64194](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[701](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) },repeat => ${ typed[16](undefinedIsNull(parameters.repeat)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_lineinterpolatepoints) );
@@ -83874,7 +83869,7 @@ async call(parameters : Public.Procedures.StLineinterpolatepointsC349.Parameters
 }
 }(this)
 
-          public StLineinterpolatepoint_6ef8 = new class implements HasDatabase {
+          public StLineinterpolatepoint_57c0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -83882,7 +83877,7 @@ async call(parameters : Public.Procedures.StLineinterpolatepointsC349.Parameters
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StLineinterpolatepoint_6ef8.Parameters) {
+async call(parameters : Public.Procedures.StLineinterpolatepoint_57c0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83891,7 +83886,7 @@ async call(parameters : Public.Procedures.StLineinterpolatepoint_6ef8.Parameters
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_lineinterpolatepoint(argument_0 => ${ typed[57062](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[701](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
+  const response = await sql`SELECT public.st_lineinterpolatepoint(argument_0 => ${ typed[64194](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[701](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_lineinterpolatepoint) );
@@ -83926,7 +83921,7 @@ async call(parameters : Public.Procedures.StLineinterpolatepointC349.Parameters)
 }
 }(this)
 
-          public StDistancesphere_4e70 = new class implements HasDatabase {
+          public StDistancesphere_6bd0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -83934,7 +83929,7 @@ async call(parameters : Public.Procedures.StLineinterpolatepointC349.Parameters)
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StDistancesphere_4e70.Parameters) {
+async call(parameters : Public.Procedures.StDistancesphere_6bd0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83943,7 +83938,7 @@ async call(parameters : Public.Procedures.StDistancesphere_4e70.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_distancesphere(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_distancesphere(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distancesphere) );
@@ -83952,7 +83947,7 @@ async call(parameters : Public.Procedures.StDistancesphere_4e70.Parameters) {
 }
 }(this)
 
-          public StDistancesphere_0b21 = new class implements HasDatabase {
+          public StDistancesphereBab7 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -83960,7 +83955,7 @@ async call(parameters : Public.Procedures.StDistancesphere_4e70.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StDistancesphere_0b21.Parameters) {
+async call(parameters : Public.Procedures.StDistancesphereBab7.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -83969,7 +83964,7 @@ async call(parameters : Public.Procedures.StDistancesphere_0b21.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_distancesphere(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) },radius => ${ typed[701](undefinedIsNull(parameters.radius)) })`
+  const response = await sql`SELECT public.st_distancesphere(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) },radius => ${ typed[701](undefinedIsNull(parameters.radius)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distancesphere) );
@@ -84099,7 +84094,7 @@ async call(parameters : Public.Procedures.St_3ddistance.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3ddistance(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_3ddistance(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_3ddistance) );
@@ -84125,7 +84120,7 @@ async call(parameters : Public.Procedures.St_3dmaxdistance.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3dmaxdistance(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_3dmaxdistance(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_3dmaxdistance) );
@@ -84151,7 +84146,7 @@ async call(parameters : Public.Procedures.St_3dclosestpoint.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3dclosestpoint(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_3dclosestpoint(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_3dclosestpoint) );
@@ -84177,7 +84172,7 @@ async call(parameters : Public.Procedures.St_3dshortestline.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3dshortestline(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_3dshortestline(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_3dshortestline) );
@@ -84203,7 +84198,7 @@ async call(parameters : Public.Procedures.St_3dlongestline.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3dlongestline(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.st_3dlongestline(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_3dlongestline) );
@@ -84229,7 +84224,7 @@ async call(parameters : Public.Procedures.StCoorddim.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_coorddim(geometry => ${ typed[56356](undefinedIsNull(parameters.geometry)) })`
+  const response = await sql`SELECT public.st_coorddim(geometry => ${ typed[63488](undefinedIsNull(parameters.geometry)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int2.parse(results?.[0].st_coorddim) );
@@ -84255,7 +84250,7 @@ async call(parameters : Public.Procedures.StCurvetoline.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_curvetoline(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },tol => ${ typed[701](undefinedIsNull(parameters.tol)) },toltype => ${ typed[23](undefinedIsNull(parameters.toltype)) },flags => ${ typed[23](undefinedIsNull(parameters.flags)) })`
+  const response = await sql`SELECT public.st_curvetoline(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },tol => ${ typed[701](undefinedIsNull(parameters.tol)) },toltype => ${ typed[23](undefinedIsNull(parameters.toltype)) },flags => ${ typed[23](undefinedIsNull(parameters.flags)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_curvetoline) );
@@ -84281,7 +84276,7 @@ async call(parameters : Public.Procedures.StHasarc.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_hasarc(geometry => ${ typed[56356](undefinedIsNull(parameters.geometry)) })`
+  const response = await sql`SELECT public.st_hasarc(geometry => ${ typed[63488](undefinedIsNull(parameters.geometry)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_hasarc) );
@@ -84307,7 +84302,7 @@ async call(parameters : Public.Procedures.StLinetocurve.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linetocurve(geometry => ${ typed[56356](undefinedIsNull(parameters.geometry)) })`
+  const response = await sql`SELECT public.st_linetocurve(geometry => ${ typed[63488](undefinedIsNull(parameters.geometry)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linetocurve) );
@@ -84463,7 +84458,7 @@ async call(parameters : Public.Procedures.StPolygon.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_polygon( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_polygon( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_polygon) );
@@ -84515,7 +84510,7 @@ async call(parameters : Public.Procedures.StLocatebetween.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_locatebetween(geometry => ${ typed[56356](undefinedIsNull(parameters.geometry)) },frommeasure => ${ typed[701](undefinedIsNull(parameters.frommeasure)) },tomeasure => ${ typed[701](undefinedIsNull(parameters.tomeasure)) },leftrightoffset => ${ typed[701](undefinedIsNull(parameters.leftrightoffset)) })`
+  const response = await sql`SELECT public.st_locatebetween(geometry => ${ typed[63488](undefinedIsNull(parameters.geometry)) },frommeasure => ${ typed[701](undefinedIsNull(parameters.frommeasure)) },tomeasure => ${ typed[701](undefinedIsNull(parameters.tomeasure)) },leftrightoffset => ${ typed[701](undefinedIsNull(parameters.leftrightoffset)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_locatebetween) );
@@ -84541,7 +84536,7 @@ async call(parameters : Public.Procedures.StLocatealong.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_locatealong(geometry => ${ typed[56356](undefinedIsNull(parameters.geometry)) },measure => ${ typed[701](undefinedIsNull(parameters.measure)) },leftrightoffset => ${ typed[701](undefinedIsNull(parameters.leftrightoffset)) })`
+  const response = await sql`SELECT public.st_locatealong(geometry => ${ typed[63488](undefinedIsNull(parameters.geometry)) },measure => ${ typed[701](undefinedIsNull(parameters.measure)) },leftrightoffset => ${ typed[701](undefinedIsNull(parameters.leftrightoffset)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_locatealong) );
@@ -84567,7 +84562,7 @@ async call(parameters : Public.Procedures.StLocatebetweenelevations.Parameters) 
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_locatebetweenelevations(geometry => ${ typed[56356](undefinedIsNull(parameters.geometry)) },fromelevation => ${ typed[701](undefinedIsNull(parameters.fromelevation)) },toelevation => ${ typed[701](undefinedIsNull(parameters.toelevation)) })`
+  const response = await sql`SELECT public.st_locatebetweenelevations(geometry => ${ typed[63488](undefinedIsNull(parameters.geometry)) },fromelevation => ${ typed[701](undefinedIsNull(parameters.fromelevation)) },toelevation => ${ typed[701](undefinedIsNull(parameters.toelevation)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_locatebetweenelevations) );
@@ -84593,7 +84588,7 @@ async call(parameters : Public.Procedures.StInterpolatepoint.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_interpolatepoint(line => ${ typed[56356](undefinedIsNull(parameters.line)) },point => ${ typed[56356](undefinedIsNull(parameters.point)) })`
+  const response = await sql`SELECT public.st_interpolatepoint(line => ${ typed[63488](undefinedIsNull(parameters.line)) },point => ${ typed[63488](undefinedIsNull(parameters.point)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_interpolatepoint) );
@@ -84619,7 +84614,7 @@ async call(parameters : Public.Procedures.StHexagon.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_hexagon(size => ${ typed[701](undefinedIsNull(parameters.size)) },cell_i => ${ typed[23](undefinedIsNull(parameters.cellI)) },cell_j => ${ typed[23](undefinedIsNull(parameters.cellJ)) },origin => ${ typed[56356](undefinedIsNull(parameters.origin)) })`
+  const response = await sql`SELECT public.st_hexagon(size => ${ typed[701](undefinedIsNull(parameters.size)) },cell_i => ${ typed[23](undefinedIsNull(parameters.cellI)) },cell_j => ${ typed[23](undefinedIsNull(parameters.cellJ)) },origin => ${ typed[63488](undefinedIsNull(parameters.origin)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_hexagon) );
@@ -84645,7 +84640,7 @@ async call(parameters : Public.Procedures.StSquare.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_square(size => ${ typed[701](undefinedIsNull(parameters.size)) },cell_i => ${ typed[23](undefinedIsNull(parameters.cellI)) },cell_j => ${ typed[23](undefinedIsNull(parameters.cellJ)) },origin => ${ typed[56356](undefinedIsNull(parameters.origin)) })`
+  const response = await sql`SELECT public.st_square(size => ${ typed[701](undefinedIsNull(parameters.size)) },cell_i => ${ typed[23](undefinedIsNull(parameters.cellI)) },cell_j => ${ typed[23](undefinedIsNull(parameters.cellJ)) },origin => ${ typed[63488](undefinedIsNull(parameters.origin)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_square) );
@@ -84665,12 +84660,12 @@ async call(parameters : Public.Procedures.StSquare.Parameters) {
 async call(parameters : Public.Procedures.StHexagongrid.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[57263].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.StHexagongrid;
+              return context.procTypes[64395].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.StHexagongrid;
             };
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_hexagongrid(size => ${ typed[701](undefinedIsNull(parameters.size)) },bounds => ${ typed[56356](undefinedIsNull(parameters.bounds)) })`
+  const response = await sql`SELECT public.st_hexagongrid(size => ${ typed[701](undefinedIsNull(parameters.size)) },bounds => ${ typed[63488](undefinedIsNull(parameters.bounds)) })`
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_hexagongrid)).filter<Public.Types.StHexagongrid>((r):r is Public.Types.StHexagongrid => r !== null) );
@@ -84690,12 +84685,12 @@ async call(parameters : Public.Procedures.StHexagongrid.Parameters) {
 async call(parameters : Public.Procedures.StSquaregrid.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[57264].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.StSquaregrid;
+              return context.procTypes[64396].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.StSquaregrid;
             };
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_squaregrid(size => ${ typed[701](undefinedIsNull(parameters.size)) },bounds => ${ typed[56356](undefinedIsNull(parameters.bounds)) })`
+  const response = await sql`SELECT public.st_squaregrid(size => ${ typed[701](undefinedIsNull(parameters.size)) },bounds => ${ typed[63488](undefinedIsNull(parameters.bounds)) })`
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_squaregrid)).filter<Public.Types.StSquaregrid>((r):r is Public.Types.StSquaregrid => r !== null) );
@@ -84704,7 +84699,7 @@ async call(parameters : Public.Procedures.StSquaregrid.Parameters) {
 }
 }(this)
 
-          public Contains_2dA8e6 = new class implements HasDatabase {
+          public Contains_2d_676e = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -84712,7 +84707,7 @@ async call(parameters : Public.Procedures.StSquaregrid.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.Contains_2dA8e6.Parameters) {
+async call(parameters : Public.Procedures.Contains_2d_676e.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -84721,7 +84716,7 @@ async call(parameters : Public.Procedures.Contains_2dA8e6.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.contains_2d( ${ typed[56391](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.contains_2d( ${ typed[63523](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].contains_2d) );
@@ -84730,7 +84725,7 @@ async call(parameters : Public.Procedures.Contains_2dA8e6.Parameters) {
 }
 }(this)
 
-          public IsContained_2dA8e6 = new class implements HasDatabase {
+          public IsContained_2d_676e = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -84738,7 +84733,7 @@ async call(parameters : Public.Procedures.Contains_2dA8e6.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.IsContained_2dA8e6.Parameters) {
+async call(parameters : Public.Procedures.IsContained_2d_676e.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -84747,7 +84742,7 @@ async call(parameters : Public.Procedures.IsContained_2dA8e6.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.is_contained_2d( ${ typed[56391](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.is_contained_2d( ${ typed[63523](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].is_contained_2d) );
@@ -84756,7 +84751,7 @@ async call(parameters : Public.Procedures.IsContained_2dA8e6.Parameters) {
 }
 }(this)
 
-          public Overlaps_2dA8e6 = new class implements HasDatabase {
+          public Overlaps_2d_676e = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -84764,7 +84759,7 @@ async call(parameters : Public.Procedures.IsContained_2dA8e6.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.Overlaps_2dA8e6.Parameters) {
+async call(parameters : Public.Procedures.Overlaps_2d_676e.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -84773,7 +84768,7 @@ async call(parameters : Public.Procedures.Overlaps_2dA8e6.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.overlaps_2d( ${ typed[56391](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.overlaps_2d( ${ typed[63523](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_2d) );
@@ -84782,7 +84777,7 @@ async call(parameters : Public.Procedures.Overlaps_2dA8e6.Parameters) {
 }
 }(this)
 
-          public Overlaps_2d_5533 = new class implements HasDatabase {
+          public Overlaps_2dA7ab = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -84790,7 +84785,7 @@ async call(parameters : Public.Procedures.Overlaps_2dA8e6.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.Overlaps_2d_5533.Parameters) {
+async call(parameters : Public.Procedures.Overlaps_2dA7ab.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -84799,7 +84794,7 @@ async call(parameters : Public.Procedures.Overlaps_2d_5533.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.overlaps_2d( ${ typed[56391](undefinedIsNull(parameters.argument_0)) }, ${ typed[56391](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.overlaps_2d( ${ typed[63523](undefinedIsNull(parameters.argument_0)) }, ${ typed[63523](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_2d) );
@@ -84808,7 +84803,7 @@ async call(parameters : Public.Procedures.Overlaps_2d_5533.Parameters) {
 }
 }(this)
 
-          public Contains_2d_5533 = new class implements HasDatabase {
+          public Contains_2dA7ab = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -84816,7 +84811,7 @@ async call(parameters : Public.Procedures.Overlaps_2d_5533.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.Contains_2d_5533.Parameters) {
+async call(parameters : Public.Procedures.Contains_2dA7ab.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -84825,7 +84820,7 @@ async call(parameters : Public.Procedures.Contains_2d_5533.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.contains_2d( ${ typed[56391](undefinedIsNull(parameters.argument_0)) }, ${ typed[56391](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.contains_2d( ${ typed[63523](undefinedIsNull(parameters.argument_0)) }, ${ typed[63523](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].contains_2d) );
@@ -84834,7 +84829,7 @@ async call(parameters : Public.Procedures.Contains_2d_5533.Parameters) {
 }
 }(this)
 
-          public IsContained_2d_5533 = new class implements HasDatabase {
+          public IsContained_2dA7ab = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -84842,7 +84837,7 @@ async call(parameters : Public.Procedures.Contains_2d_5533.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.IsContained_2d_5533.Parameters) {
+async call(parameters : Public.Procedures.IsContained_2dA7ab.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -84851,7 +84846,7 @@ async call(parameters : Public.Procedures.IsContained_2d_5533.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.is_contained_2d( ${ typed[56391](undefinedIsNull(parameters.argument_0)) }, ${ typed[56391](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.is_contained_2d( ${ typed[63523](undefinedIsNull(parameters.argument_0)) }, ${ typed[63523](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].is_contained_2d) );
@@ -84860,7 +84855,7 @@ async call(parameters : Public.Procedures.IsContained_2d_5533.Parameters) {
 }
 }(this)
 
-          public Contains_2d_5225 = new class implements HasDatabase {
+          public Contains_2d_3e52 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -84868,7 +84863,7 @@ async call(parameters : Public.Procedures.IsContained_2d_5533.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.Contains_2d_5225.Parameters) {
+async call(parameters : Public.Procedures.Contains_2d_3e52.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -84877,7 +84872,7 @@ async call(parameters : Public.Procedures.Contains_2d_5225.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.contains_2d( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[56391](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.contains_2d( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[63523](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].contains_2d) );
@@ -84886,7 +84881,7 @@ async call(parameters : Public.Procedures.Contains_2d_5225.Parameters) {
 }
 }(this)
 
-          public IsContained_2d_5225 = new class implements HasDatabase {
+          public IsContained_2d_3e52 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -84894,7 +84889,7 @@ async call(parameters : Public.Procedures.Contains_2d_5225.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.IsContained_2d_5225.Parameters) {
+async call(parameters : Public.Procedures.IsContained_2d_3e52.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -84903,7 +84898,7 @@ async call(parameters : Public.Procedures.IsContained_2d_5225.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.is_contained_2d( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[56391](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.is_contained_2d( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[63523](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].is_contained_2d) );
@@ -84912,7 +84907,7 @@ async call(parameters : Public.Procedures.IsContained_2d_5225.Parameters) {
 }
 }(this)
 
-          public Overlaps_2d_5225 = new class implements HasDatabase {
+          public Overlaps_2d_3e52 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -84920,7 +84915,7 @@ async call(parameters : Public.Procedures.IsContained_2d_5225.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.Overlaps_2d_5225.Parameters) {
+async call(parameters : Public.Procedures.Overlaps_2d_3e52.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -84929,7 +84924,7 @@ async call(parameters : Public.Procedures.Overlaps_2d_5225.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.overlaps_2d( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[56391](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.overlaps_2d( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[63523](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_2d) );
@@ -84938,7 +84933,7 @@ async call(parameters : Public.Procedures.Overlaps_2d_5225.Parameters) {
 }
 }(this)
 
-          public OverlapsNdD353 = new class implements HasDatabase {
+          public OverlapsNd_1882 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -84946,7 +84941,7 @@ async call(parameters : Public.Procedures.Overlaps_2d_5225.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.OverlapsNdD353.Parameters) {
+async call(parameters : Public.Procedures.OverlapsNd_1882.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -84955,7 +84950,7 @@ async call(parameters : Public.Procedures.OverlapsNdD353.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.overlaps_nd( ${ typed[56395](undefinedIsNull(parameters.argument_0)) }, ${ typed[56356](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.overlaps_nd( ${ typed[63527](undefinedIsNull(parameters.argument_0)) }, ${ typed[63488](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_nd) );
@@ -84964,7 +84959,7 @@ async call(parameters : Public.Procedures.OverlapsNdD353.Parameters) {
 }
 }(this)
 
-          public OverlapsNdD1af = new class implements HasDatabase {
+          public OverlapsNd_8a58 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -84972,7 +84967,7 @@ async call(parameters : Public.Procedures.OverlapsNdD353.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.OverlapsNdD1af.Parameters) {
+async call(parameters : Public.Procedures.OverlapsNd_8a58.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -84981,7 +84976,7 @@ async call(parameters : Public.Procedures.OverlapsNdD1af.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.overlaps_nd( ${ typed[56395](undefinedIsNull(parameters.argument_0)) }, ${ typed[56395](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.overlaps_nd( ${ typed[63527](undefinedIsNull(parameters.argument_0)) }, ${ typed[63527](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_nd) );
@@ -84990,7 +84985,7 @@ async call(parameters : Public.Procedures.OverlapsNdD1af.Parameters) {
 }
 }(this)
 
-          public OverlapsNdA633 = new class implements HasDatabase {
+          public OverlapsNdC3f9 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -84998,7 +84993,7 @@ async call(parameters : Public.Procedures.OverlapsNdD1af.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.OverlapsNdA633.Parameters) {
+async call(parameters : Public.Procedures.OverlapsNdC3f9.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -85007,7 +85002,7 @@ async call(parameters : Public.Procedures.OverlapsNdA633.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.overlaps_nd( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[56395](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.overlaps_nd( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[63527](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_nd) );
@@ -85111,7 +85106,7 @@ async call(parameters : Public.Procedures.StSimplifypolygonhull.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_simplifypolygonhull(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },vertex_fraction => ${ typed[701](undefinedIsNull(parameters.vertexFraction)) },is_outer => ${ typed[16](undefinedIsNull(parameters.isOuter)) })`
+  const response = await sql`SELECT public.st_simplifypolygonhull(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },vertex_fraction => ${ typed[701](undefinedIsNull(parameters.vertexFraction)) },is_outer => ${ typed[16](undefinedIsNull(parameters.isOuter)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_simplifypolygonhull) );
@@ -85137,7 +85132,7 @@ async call(parameters : Public.Procedures.StConcavehull.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_concavehull(param_geom => ${ typed[56356](undefinedIsNull(parameters.paramGeom)) },param_pctconvex => ${ typed[701](undefinedIsNull(parameters.paramPctconvex)) },param_allow_holes => ${ typed[16](undefinedIsNull(parameters.paramAllowHoles)) })`
+  const response = await sql`SELECT public.st_concavehull(param_geom => ${ typed[63488](undefinedIsNull(parameters.paramGeom)) },param_pctconvex => ${ typed[701](undefinedIsNull(parameters.paramPctconvex)) },param_allow_holes => ${ typed[16](undefinedIsNull(parameters.paramAllowHoles)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_concavehull) );
@@ -85163,7 +85158,7 @@ async call(parameters : Public.Procedures.StAsx3d.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asx3d(geom => ${ typed[56356](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`
+  const response = await sql`SELECT public.st_asx3d(geom => ${ typed[63488](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asx3d) );
@@ -85172,7 +85167,7 @@ async call(parameters : Public.Procedures.StAsx3d.Parameters) {
 }
 }(this)
 
-          public StAngle_4e70 = new class implements HasDatabase {
+          public StAngle_6bd0 = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -85180,7 +85175,7 @@ async call(parameters : Public.Procedures.StAsx3d.Parameters) {
               return this.hasDatabase.database;
             }
         
-async call(parameters : Public.Procedures.StAngle_4e70.Parameters) {
+async call(parameters : Public.Procedures.StAngle_6bd0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -85189,7 +85184,7 @@ async call(parameters : Public.Procedures.StAngle_4e70.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_angle(line1 => ${ typed[56356](undefinedIsNull(parameters.line1)) },line2 => ${ typed[56356](undefinedIsNull(parameters.line2)) })`
+  const response = await sql`SELECT public.st_angle(line1 => ${ typed[63488](undefinedIsNull(parameters.line1)) },line2 => ${ typed[63488](undefinedIsNull(parameters.line2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_angle) );
@@ -85215,7 +85210,7 @@ async call(parameters : Public.Procedures.St_3dlineinterpolatepoint.Parameters) 
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3dlineinterpolatepoint( ${ typed[56356](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.st_3dlineinterpolatepoint( ${ typed[63488](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_3dlineinterpolatepoint) );
@@ -85397,7 +85392,7 @@ async call(parameters : Public.Procedures.GeometryOverlaps_3d.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_overlaps_3d(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_overlaps_3d(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_overlaps_3d) );
@@ -85423,7 +85418,7 @@ async call(parameters : Public.Procedures.GeometryContains_3d.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_contains_3d(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_contains_3d(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_contains_3d) );
@@ -85449,7 +85444,7 @@ async call(parameters : Public.Procedures.GeometryContained_3d.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_contained_3d(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_contained_3d(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_contained_3d) );
@@ -85475,7 +85470,7 @@ async call(parameters : Public.Procedures.GeometrySame_3d.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_same_3d(geom1 => ${ typed[56356](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[56356](undefinedIsNull(parameters.geom2)) })`
+  const response = await sql`SELECT public.geometry_same_3d(geom1 => ${ typed[63488](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[63488](undefinedIsNull(parameters.geom2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_same_3d) );
@@ -86118,7 +86113,7 @@ const response = await sql`
       --
       INSERT INTO
         public.nyc_census_blocks (blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom)
-      VALUES (${ values.blkid === undefined ? sql`DEFAULT` : typed[1043](values.blkid) },${ values.popnTotal === undefined ? sql`DEFAULT` : typed[701](values.popnTotal) },${ values.popnWhite === undefined ? sql`DEFAULT` : typed[701](values.popnWhite) },${ values.popnBlack === undefined ? sql`DEFAULT` : typed[701](values.popnBlack) },${ values.popnNativ === undefined ? sql`DEFAULT` : typed[701](values.popnNativ) },${ values.popnAsian === undefined ? sql`DEFAULT` : typed[701](values.popnAsian) },${ values.popnOther === undefined ? sql`DEFAULT` : typed[701](values.popnOther) },${ values.boroname === undefined ? sql`DEFAULT` : typed[1043](values.boroname) },${ values.geom === undefined ? sql`DEFAULT` : typed[56356](values.geom) })
+      VALUES (${ values.blkid === undefined ? sql`DEFAULT` : typed[1043](values.blkid) },${ values.popnTotal === undefined ? sql`DEFAULT` : typed[701](values.popnTotal) },${ values.popnWhite === undefined ? sql`DEFAULT` : typed[701](values.popnWhite) },${ values.popnBlack === undefined ? sql`DEFAULT` : typed[701](values.popnBlack) },${ values.popnNativ === undefined ? sql`DEFAULT` : typed[701](values.popnNativ) },${ values.popnAsian === undefined ? sql`DEFAULT` : typed[701](values.popnAsian) },${ values.popnOther === undefined ? sql`DEFAULT` : typed[701](values.popnOther) },${ values.boroname === undefined ? sql`DEFAULT` : typed[1043](values.boroname) },${ values.geom === undefined ? sql`DEFAULT` : typed[63488](values.geom) })
       RETURNING
         gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom
     `
@@ -86127,7 +86122,7 @@ return response.map(r => ({ gid: undefinedIsNull(r.gid),blkid: undefinedIsNull(r
 const response = await sql`
     INSERT INTO
       public.nyc_census_blocks (gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom)
-    VALUES (${ values.gid === undefined ? sql`DEFAULT` : typed[23](values.gid) },${ values.blkid === undefined ? sql`DEFAULT` : typed[1043](values.blkid) },${ values.popnTotal === undefined ? sql`DEFAULT` : typed[701](values.popnTotal) },${ values.popnWhite === undefined ? sql`DEFAULT` : typed[701](values.popnWhite) },${ values.popnBlack === undefined ? sql`DEFAULT` : typed[701](values.popnBlack) },${ values.popnNativ === undefined ? sql`DEFAULT` : typed[701](values.popnNativ) },${ values.popnAsian === undefined ? sql`DEFAULT` : typed[701](values.popnAsian) },${ values.popnOther === undefined ? sql`DEFAULT` : typed[701](values.popnOther) },${ values.boroname === undefined ? sql`DEFAULT` : typed[1043](values.boroname) },${ values.geom === undefined ? sql`DEFAULT` : typed[56356](values.geom) })
+    VALUES (${ values.gid === undefined ? sql`DEFAULT` : typed[23](values.gid) },${ values.blkid === undefined ? sql`DEFAULT` : typed[1043](values.blkid) },${ values.popnTotal === undefined ? sql`DEFAULT` : typed[701](values.popnTotal) },${ values.popnWhite === undefined ? sql`DEFAULT` : typed[701](values.popnWhite) },${ values.popnBlack === undefined ? sql`DEFAULT` : typed[701](values.popnBlack) },${ values.popnNativ === undefined ? sql`DEFAULT` : typed[701](values.popnNativ) },${ values.popnAsian === undefined ? sql`DEFAULT` : typed[701](values.popnAsian) },${ values.popnOther === undefined ? sql`DEFAULT` : typed[701](values.popnOther) },${ values.boroname === undefined ? sql`DEFAULT` : typed[1043](values.boroname) },${ values.geom === undefined ? sql`DEFAULT` : typed[63488](values.geom) })
     ON CONFLICT (gid) DO UPDATE
     SET
       blkid = EXCLUDED.blkid,popn_total = EXCLUDED.popn_total,popn_white = EXCLUDED.popn_white,popn_black = EXCLUDED.popn_black,popn_nativ = EXCLUDED.popn_nativ,popn_asian = EXCLUDED.popn_asian,popn_other = EXCLUDED.popn_other,boroname = EXCLUDED.boroname,geom = EXCLUDED.geom
@@ -86196,7 +86191,7 @@ const response = await sql`
     UPDATE 
       public.nyc_census_blocks 
     SET
-      gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , blkid = ${ values.blkid === undefined ? sql`blkid` : typed[1043](values.blkid) } , popn_total = ${ values.popnTotal === undefined ? sql`popn_total` : typed[701](values.popnTotal) } , popn_white = ${ values.popnWhite === undefined ? sql`popn_white` : typed[701](values.popnWhite) } , popn_black = ${ values.popnBlack === undefined ? sql`popn_black` : typed[701](values.popnBlack) } , popn_nativ = ${ values.popnNativ === undefined ? sql`popn_nativ` : typed[701](values.popnNativ) } , popn_asian = ${ values.popnAsian === undefined ? sql`popn_asian` : typed[701](values.popnAsian) } , popn_other = ${ values.popnOther === undefined ? sql`popn_other` : typed[701](values.popnOther) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , geom = ${ values.geom === undefined ? sql`geom` : typed[56356](values.geom) } 
+      gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , blkid = ${ values.blkid === undefined ? sql`blkid` : typed[1043](values.blkid) } , popn_total = ${ values.popnTotal === undefined ? sql`popn_total` : typed[701](values.popnTotal) } , popn_white = ${ values.popnWhite === undefined ? sql`popn_white` : typed[701](values.popnWhite) } , popn_black = ${ values.popnBlack === undefined ? sql`popn_black` : typed[701](values.popnBlack) } , popn_nativ = ${ values.popnNativ === undefined ? sql`popn_nativ` : typed[701](values.popnNativ) } , popn_asian = ${ values.popnAsian === undefined ? sql`popn_asian` : typed[701](values.popnAsian) } , popn_other = ${ values.popnOther === undefined ? sql`popn_other` : typed[701](values.popnOther) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , geom = ${ values.geom === undefined ? sql`geom` : typed[63488](values.geom) } 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
     RETURNING gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom`
@@ -86240,7 +86235,7 @@ const response = await sql`
     FROM
       public.nyc_census_blocks 
     WHERE
-      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[56356](parameters.geom) }
+      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[63488](parameters.geom) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
@@ -86260,9 +86255,9 @@ const response = await sql`
     UPDATE 
       public.nyc_census_blocks 
     SET
-      gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , blkid = ${ values.blkid === undefined ? sql`blkid` : typed[1043](values.blkid) } , popn_total = ${ values.popnTotal === undefined ? sql`popn_total` : typed[701](values.popnTotal) } , popn_white = ${ values.popnWhite === undefined ? sql`popn_white` : typed[701](values.popnWhite) } , popn_black = ${ values.popnBlack === undefined ? sql`popn_black` : typed[701](values.popnBlack) } , popn_nativ = ${ values.popnNativ === undefined ? sql`popn_nativ` : typed[701](values.popnNativ) } , popn_asian = ${ values.popnAsian === undefined ? sql`popn_asian` : typed[701](values.popnAsian) } , popn_other = ${ values.popnOther === undefined ? sql`popn_other` : typed[701](values.popnOther) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , geom = ${ values.geom === undefined ? sql`geom` : typed[56356](values.geom) } 
+      gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , blkid = ${ values.blkid === undefined ? sql`blkid` : typed[1043](values.blkid) } , popn_total = ${ values.popnTotal === undefined ? sql`popn_total` : typed[701](values.popnTotal) } , popn_white = ${ values.popnWhite === undefined ? sql`popn_white` : typed[701](values.popnWhite) } , popn_black = ${ values.popnBlack === undefined ? sql`popn_black` : typed[701](values.popnBlack) } , popn_nativ = ${ values.popnNativ === undefined ? sql`popn_nativ` : typed[701](values.popnNativ) } , popn_asian = ${ values.popnAsian === undefined ? sql`popn_asian` : typed[701](values.popnAsian) } , popn_other = ${ values.popnOther === undefined ? sql`popn_other` : typed[701](values.popnOther) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , geom = ${ values.geom === undefined ? sql`geom` : typed[63488](values.geom) } 
     WHERE
-      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[56356](parameters.geom) }
+      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[63488](parameters.geom) }
     RETURNING gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom`
 return response.map(r => ({ gid: undefinedIsNull(r.gid),blkid: undefinedIsNull(r.blkid),popnTotal: undefinedIsNull(r.popn_total),popnWhite: undefinedIsNull(r.popn_white),popnBlack: undefinedIsNull(r.popn_black),popnNativ: undefinedIsNull(r.popn_nativ),popnAsian: undefinedIsNull(r.popn_asian),popnOther: undefinedIsNull(r.popn_other),boroname: undefinedIsNull(r.boroname),geom: undefinedIsNull(r.geom) }))
 }
@@ -86275,7 +86270,7 @@ async delete(parameters: Public.Types.NycCensusBlocksGeomIdx) {
     DELETE FROM 
       public.nyc_census_blocks 
     WHERE
-      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[56356](parameters.geom) }
+      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[63488](parameters.geom) }
     RETURNING gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom`
  return response.map(r => ({ gid: undefinedIsNull(r.gid),blkid: undefinedIsNull(r.blkid),popnTotal: undefinedIsNull(r.popn_total),popnWhite: undefinedIsNull(r.popn_white),popnBlack: undefinedIsNull(r.popn_black),popnNativ: undefinedIsNull(r.popn_nativ),popnAsian: undefinedIsNull(r.popn_asian),popnOther: undefinedIsNull(r.popn_other),boroname: undefinedIsNull(r.boroname),geom: undefinedIsNull(r.geom) }))
 }
@@ -86304,7 +86299,7 @@ const response = await sql`
       --
       INSERT INTO
         public.nyc_homicides (incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom)
-      VALUES (${ values.incidentD === undefined ? sql`DEFAULT` : typed[1082](values.incidentD) },${ values.boroname === undefined ? sql`DEFAULT` : typed[1043](values.boroname) },${ values.numVictim === undefined ? sql`DEFAULT` : typed[1043](values.numVictim) },${ values.primaryMo === undefined ? sql`DEFAULT` : typed[1043](values.primaryMo) },${ values.id === undefined ? sql`DEFAULT` : typed[701](values.id) },${ values.weapon === undefined ? sql`DEFAULT` : typed[1043](values.weapon) },${ values.lightDark === undefined ? sql`DEFAULT` : typed[1043](values.lightDark) },${ values.year === undefined ? sql`DEFAULT` : typed[701](values.year) },${ values.geom === undefined ? sql`DEFAULT` : typed[56356](values.geom) })
+      VALUES (${ values.incidentD === undefined ? sql`DEFAULT` : typed[1082](values.incidentD) },${ values.boroname === undefined ? sql`DEFAULT` : typed[1043](values.boroname) },${ values.numVictim === undefined ? sql`DEFAULT` : typed[1043](values.numVictim) },${ values.primaryMo === undefined ? sql`DEFAULT` : typed[1043](values.primaryMo) },${ values.id === undefined ? sql`DEFAULT` : typed[701](values.id) },${ values.weapon === undefined ? sql`DEFAULT` : typed[1043](values.weapon) },${ values.lightDark === undefined ? sql`DEFAULT` : typed[1043](values.lightDark) },${ values.year === undefined ? sql`DEFAULT` : typed[701](values.year) },${ values.geom === undefined ? sql`DEFAULT` : typed[63488](values.geom) })
       RETURNING
         gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom
     `
@@ -86313,7 +86308,7 @@ return response.map(r => ({ gid: undefinedIsNull(r.gid),incidentD: undefinedIsNu
 const response = await sql`
     INSERT INTO
       public.nyc_homicides (gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom)
-    VALUES (${ values.gid === undefined ? sql`DEFAULT` : typed[23](values.gid) },${ values.incidentD === undefined ? sql`DEFAULT` : typed[1082](values.incidentD) },${ values.boroname === undefined ? sql`DEFAULT` : typed[1043](values.boroname) },${ values.numVictim === undefined ? sql`DEFAULT` : typed[1043](values.numVictim) },${ values.primaryMo === undefined ? sql`DEFAULT` : typed[1043](values.primaryMo) },${ values.id === undefined ? sql`DEFAULT` : typed[701](values.id) },${ values.weapon === undefined ? sql`DEFAULT` : typed[1043](values.weapon) },${ values.lightDark === undefined ? sql`DEFAULT` : typed[1043](values.lightDark) },${ values.year === undefined ? sql`DEFAULT` : typed[701](values.year) },${ values.geom === undefined ? sql`DEFAULT` : typed[56356](values.geom) })
+    VALUES (${ values.gid === undefined ? sql`DEFAULT` : typed[23](values.gid) },${ values.incidentD === undefined ? sql`DEFAULT` : typed[1082](values.incidentD) },${ values.boroname === undefined ? sql`DEFAULT` : typed[1043](values.boroname) },${ values.numVictim === undefined ? sql`DEFAULT` : typed[1043](values.numVictim) },${ values.primaryMo === undefined ? sql`DEFAULT` : typed[1043](values.primaryMo) },${ values.id === undefined ? sql`DEFAULT` : typed[701](values.id) },${ values.weapon === undefined ? sql`DEFAULT` : typed[1043](values.weapon) },${ values.lightDark === undefined ? sql`DEFAULT` : typed[1043](values.lightDark) },${ values.year === undefined ? sql`DEFAULT` : typed[701](values.year) },${ values.geom === undefined ? sql`DEFAULT` : typed[63488](values.geom) })
     ON CONFLICT (gid) DO UPDATE
     SET
       incident_d = EXCLUDED.incident_d,boroname = EXCLUDED.boroname,num_victim = EXCLUDED.num_victim,primary_mo = EXCLUDED.primary_mo,id = EXCLUDED.id,weapon = EXCLUDED.weapon,light_dark = EXCLUDED.light_dark,year = EXCLUDED.year,geom = EXCLUDED.geom
@@ -86382,7 +86377,7 @@ const response = await sql`
     UPDATE 
       public.nyc_homicides 
     SET
-      gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , incident_d = ${ values.incidentD === undefined ? sql`incident_d` : typed[1082](values.incidentD) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , num_victim = ${ values.numVictim === undefined ? sql`num_victim` : typed[1043](values.numVictim) } , primary_mo = ${ values.primaryMo === undefined ? sql`primary_mo` : typed[1043](values.primaryMo) } , id = ${ values.id === undefined ? sql`id` : typed[701](values.id) } , weapon = ${ values.weapon === undefined ? sql`weapon` : typed[1043](values.weapon) } , light_dark = ${ values.lightDark === undefined ? sql`light_dark` : typed[1043](values.lightDark) } , year = ${ values.year === undefined ? sql`year` : typed[701](values.year) } , geom = ${ values.geom === undefined ? sql`geom` : typed[56356](values.geom) } 
+      gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , incident_d = ${ values.incidentD === undefined ? sql`incident_d` : typed[1082](values.incidentD) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , num_victim = ${ values.numVictim === undefined ? sql`num_victim` : typed[1043](values.numVictim) } , primary_mo = ${ values.primaryMo === undefined ? sql`primary_mo` : typed[1043](values.primaryMo) } , id = ${ values.id === undefined ? sql`id` : typed[701](values.id) } , weapon = ${ values.weapon === undefined ? sql`weapon` : typed[1043](values.weapon) } , light_dark = ${ values.lightDark === undefined ? sql`light_dark` : typed[1043](values.lightDark) } , year = ${ values.year === undefined ? sql`year` : typed[701](values.year) } , geom = ${ values.geom === undefined ? sql`geom` : typed[63488](values.geom) } 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
     RETURNING gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom`
@@ -86426,7 +86421,7 @@ const response = await sql`
     FROM
       public.nyc_homicides 
     WHERE
-      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[56356](parameters.geom) }
+      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[63488](parameters.geom) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
@@ -86446,9 +86441,9 @@ const response = await sql`
     UPDATE 
       public.nyc_homicides 
     SET
-      gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , incident_d = ${ values.incidentD === undefined ? sql`incident_d` : typed[1082](values.incidentD) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , num_victim = ${ values.numVictim === undefined ? sql`num_victim` : typed[1043](values.numVictim) } , primary_mo = ${ values.primaryMo === undefined ? sql`primary_mo` : typed[1043](values.primaryMo) } , id = ${ values.id === undefined ? sql`id` : typed[701](values.id) } , weapon = ${ values.weapon === undefined ? sql`weapon` : typed[1043](values.weapon) } , light_dark = ${ values.lightDark === undefined ? sql`light_dark` : typed[1043](values.lightDark) } , year = ${ values.year === undefined ? sql`year` : typed[701](values.year) } , geom = ${ values.geom === undefined ? sql`geom` : typed[56356](values.geom) } 
+      gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , incident_d = ${ values.incidentD === undefined ? sql`incident_d` : typed[1082](values.incidentD) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , num_victim = ${ values.numVictim === undefined ? sql`num_victim` : typed[1043](values.numVictim) } , primary_mo = ${ values.primaryMo === undefined ? sql`primary_mo` : typed[1043](values.primaryMo) } , id = ${ values.id === undefined ? sql`id` : typed[701](values.id) } , weapon = ${ values.weapon === undefined ? sql`weapon` : typed[1043](values.weapon) } , light_dark = ${ values.lightDark === undefined ? sql`light_dark` : typed[1043](values.lightDark) } , year = ${ values.year === undefined ? sql`year` : typed[701](values.year) } , geom = ${ values.geom === undefined ? sql`geom` : typed[63488](values.geom) } 
     WHERE
-      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[56356](parameters.geom) }
+      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[63488](parameters.geom) }
     RETURNING gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom`
 return response.map(r => ({ gid: undefinedIsNull(r.gid),incidentD: undefinedIsNull(r.incident_d),boroname: undefinedIsNull(r.boroname),numVictim: undefinedIsNull(r.num_victim),primaryMo: undefinedIsNull(r.primary_mo),id: undefinedIsNull(r.id),weapon: undefinedIsNull(r.weapon),lightDark: undefinedIsNull(r.light_dark),year: undefinedIsNull(r.year),geom: undefinedIsNull(r.geom) }))
 }
@@ -86461,7 +86456,7 @@ async delete(parameters: Public.Types.NycHomicidesGeomIdx) {
     DELETE FROM 
       public.nyc_homicides 
     WHERE
-      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[56356](parameters.geom) }
+      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[63488](parameters.geom) }
     RETURNING gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom`
  return response.map(r => ({ gid: undefinedIsNull(r.gid),incidentD: undefinedIsNull(r.incident_d),boroname: undefinedIsNull(r.boroname),numVictim: undefinedIsNull(r.num_victim),primaryMo: undefinedIsNull(r.primary_mo),id: undefinedIsNull(r.id),weapon: undefinedIsNull(r.weapon),lightDark: undefinedIsNull(r.light_dark),year: undefinedIsNull(r.year),geom: undefinedIsNull(r.geom) }))
 }
@@ -86490,7 +86485,7 @@ const response = await sql`
       --
       INSERT INTO
         public.nyc_neighborhoods (boroname,name,geom)
-      VALUES (${ values.boroname === undefined ? sql`DEFAULT` : typed[1043](values.boroname) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.geom === undefined ? sql`DEFAULT` : typed[56356](values.geom) })
+      VALUES (${ values.boroname === undefined ? sql`DEFAULT` : typed[1043](values.boroname) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.geom === undefined ? sql`DEFAULT` : typed[63488](values.geom) })
       RETURNING
         gid,boroname,name,geom
     `
@@ -86499,7 +86494,7 @@ return response.map(r => ({ gid: undefinedIsNull(r.gid),boroname: undefinedIsNul
 const response = await sql`
     INSERT INTO
       public.nyc_neighborhoods (gid,boroname,name,geom)
-    VALUES (${ values.gid === undefined ? sql`DEFAULT` : typed[23](values.gid) },${ values.boroname === undefined ? sql`DEFAULT` : typed[1043](values.boroname) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.geom === undefined ? sql`DEFAULT` : typed[56356](values.geom) })
+    VALUES (${ values.gid === undefined ? sql`DEFAULT` : typed[23](values.gid) },${ values.boroname === undefined ? sql`DEFAULT` : typed[1043](values.boroname) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.geom === undefined ? sql`DEFAULT` : typed[63488](values.geom) })
     ON CONFLICT (gid) DO UPDATE
     SET
       boroname = EXCLUDED.boroname,name = EXCLUDED.name,geom = EXCLUDED.geom
@@ -86568,7 +86563,7 @@ const response = await sql`
     UPDATE 
       public.nyc_neighborhoods 
     SET
-      gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , geom = ${ values.geom === undefined ? sql`geom` : typed[56356](values.geom) } 
+      gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , geom = ${ values.geom === undefined ? sql`geom` : typed[63488](values.geom) } 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
     RETURNING gid,boroname,name,geom`
@@ -86612,7 +86607,7 @@ const response = await sql`
     FROM
       public.nyc_neighborhoods 
     WHERE
-      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[56356](parameters.geom) }
+      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[63488](parameters.geom) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
@@ -86632,9 +86627,9 @@ const response = await sql`
     UPDATE 
       public.nyc_neighborhoods 
     SET
-      gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , geom = ${ values.geom === undefined ? sql`geom` : typed[56356](values.geom) } 
+      gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , geom = ${ values.geom === undefined ? sql`geom` : typed[63488](values.geom) } 
     WHERE
-      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[56356](parameters.geom) }
+      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[63488](parameters.geom) }
     RETURNING gid,boroname,name,geom`
 return response.map(r => ({ gid: undefinedIsNull(r.gid),boroname: undefinedIsNull(r.boroname),name: undefinedIsNull(r.name),geom: undefinedIsNull(r.geom) }))
 }
@@ -86647,7 +86642,7 @@ async delete(parameters: Public.Types.NycNeighborhoodsGeomIdx) {
     DELETE FROM 
       public.nyc_neighborhoods 
     WHERE
-      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[56356](parameters.geom) }
+      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[63488](parameters.geom) }
     RETURNING gid,boroname,name,geom`
  return response.map(r => ({ gid: undefinedIsNull(r.gid),boroname: undefinedIsNull(r.boroname),name: undefinedIsNull(r.name),geom: undefinedIsNull(r.geom) }))
 }
@@ -86676,7 +86671,7 @@ const response = await sql`
       --
       INSERT INTO
         public.nyc_streets (id,name,oneway,type,geom)
-      VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[701](values.id) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.oneway === undefined ? sql`DEFAULT` : typed[1043](values.oneway) },${ values.type === undefined ? sql`DEFAULT` : typed[1043](values.type) },${ values.geom === undefined ? sql`DEFAULT` : typed[56356](values.geom) })
+      VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[701](values.id) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.oneway === undefined ? sql`DEFAULT` : typed[1043](values.oneway) },${ values.type === undefined ? sql`DEFAULT` : typed[1043](values.type) },${ values.geom === undefined ? sql`DEFAULT` : typed[63488](values.geom) })
       RETURNING
         gid,id,name,oneway,type,geom
     `
@@ -86685,7 +86680,7 @@ return response.map(r => ({ gid: undefinedIsNull(r.gid),id: undefinedIsNull(r.id
 const response = await sql`
     INSERT INTO
       public.nyc_streets (gid,id,name,oneway,type,geom)
-    VALUES (${ values.gid === undefined ? sql`DEFAULT` : typed[23](values.gid) },${ values.id === undefined ? sql`DEFAULT` : typed[701](values.id) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.oneway === undefined ? sql`DEFAULT` : typed[1043](values.oneway) },${ values.type === undefined ? sql`DEFAULT` : typed[1043](values.type) },${ values.geom === undefined ? sql`DEFAULT` : typed[56356](values.geom) })
+    VALUES (${ values.gid === undefined ? sql`DEFAULT` : typed[23](values.gid) },${ values.id === undefined ? sql`DEFAULT` : typed[701](values.id) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.oneway === undefined ? sql`DEFAULT` : typed[1043](values.oneway) },${ values.type === undefined ? sql`DEFAULT` : typed[1043](values.type) },${ values.geom === undefined ? sql`DEFAULT` : typed[63488](values.geom) })
     ON CONFLICT (gid) DO UPDATE
     SET
       id = EXCLUDED.id,name = EXCLUDED.name,oneway = EXCLUDED.oneway,type = EXCLUDED.type,geom = EXCLUDED.geom
@@ -86754,7 +86749,7 @@ const response = await sql`
     UPDATE 
       public.nyc_streets 
     SET
-      gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , id = ${ values.id === undefined ? sql`id` : typed[701](values.id) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , oneway = ${ values.oneway === undefined ? sql`oneway` : typed[1043](values.oneway) } , type = ${ values.type === undefined ? sql`type` : typed[1043](values.type) } , geom = ${ values.geom === undefined ? sql`geom` : typed[56356](values.geom) } 
+      gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , id = ${ values.id === undefined ? sql`id` : typed[701](values.id) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , oneway = ${ values.oneway === undefined ? sql`oneway` : typed[1043](values.oneway) } , type = ${ values.type === undefined ? sql`type` : typed[1043](values.type) } , geom = ${ values.geom === undefined ? sql`geom` : typed[63488](values.geom) } 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
     RETURNING gid,id,name,oneway,type,geom`
@@ -86798,7 +86793,7 @@ const response = await sql`
     FROM
       public.nyc_streets 
     WHERE
-      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[56356](parameters.geom) }
+      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[63488](parameters.geom) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
@@ -86818,9 +86813,9 @@ const response = await sql`
     UPDATE 
       public.nyc_streets 
     SET
-      gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , id = ${ values.id === undefined ? sql`id` : typed[701](values.id) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , oneway = ${ values.oneway === undefined ? sql`oneway` : typed[1043](values.oneway) } , type = ${ values.type === undefined ? sql`type` : typed[1043](values.type) } , geom = ${ values.geom === undefined ? sql`geom` : typed[56356](values.geom) } 
+      gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , id = ${ values.id === undefined ? sql`id` : typed[701](values.id) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , oneway = ${ values.oneway === undefined ? sql`oneway` : typed[1043](values.oneway) } , type = ${ values.type === undefined ? sql`type` : typed[1043](values.type) } , geom = ${ values.geom === undefined ? sql`geom` : typed[63488](values.geom) } 
     WHERE
-      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[56356](parameters.geom) }
+      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[63488](parameters.geom) }
     RETURNING gid,id,name,oneway,type,geom`
 return response.map(r => ({ gid: undefinedIsNull(r.gid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),oneway: undefinedIsNull(r.oneway),type: undefinedIsNull(r.type),geom: undefinedIsNull(r.geom) }))
 }
@@ -86833,7 +86828,7 @@ async delete(parameters: Public.Types.NycStreetsGeomIdx) {
     DELETE FROM 
       public.nyc_streets 
     WHERE
-      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[56356](parameters.geom) }
+      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[63488](parameters.geom) }
     RETURNING gid,id,name,oneway,type,geom`
  return response.map(r => ({ gid: undefinedIsNull(r.gid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),oneway: undefinedIsNull(r.oneway),type: undefinedIsNull(r.type),geom: undefinedIsNull(r.geom) }))
 }
@@ -86862,7 +86857,7 @@ const response = await sql`
       --
       INSERT INTO
         public.nyc_subway_stations (objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom)
-      VALUES (${ values.objectid === undefined ? sql`DEFAULT` : typed[1700](values.objectid) },${ values.id === undefined ? sql`DEFAULT` : typed[1700](values.id) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.altName === undefined ? sql`DEFAULT` : typed[1043](values.altName) },${ values.crossSt === undefined ? sql`DEFAULT` : typed[1043](values.crossSt) },${ values.longName === undefined ? sql`DEFAULT` : typed[1043](values.longName) },${ values.label === undefined ? sql`DEFAULT` : typed[1043](values.label) },${ values.borough === undefined ? sql`DEFAULT` : typed[1043](values.borough) },${ values.nghbhd === undefined ? sql`DEFAULT` : typed[1043](values.nghbhd) },${ values.routes === undefined ? sql`DEFAULT` : typed[1043](values.routes) },${ values.transfers === undefined ? sql`DEFAULT` : typed[1043](values.transfers) },${ values.color === undefined ? sql`DEFAULT` : typed[1043](values.color) },${ values.express === undefined ? sql`DEFAULT` : typed[1043](values.express) },${ values.closed === undefined ? sql`DEFAULT` : typed[1043](values.closed) },${ values.geom === undefined ? sql`DEFAULT` : typed[56356](values.geom) })
+      VALUES (${ values.objectid === undefined ? sql`DEFAULT` : typed[1700](values.objectid) },${ values.id === undefined ? sql`DEFAULT` : typed[1700](values.id) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.altName === undefined ? sql`DEFAULT` : typed[1043](values.altName) },${ values.crossSt === undefined ? sql`DEFAULT` : typed[1043](values.crossSt) },${ values.longName === undefined ? sql`DEFAULT` : typed[1043](values.longName) },${ values.label === undefined ? sql`DEFAULT` : typed[1043](values.label) },${ values.borough === undefined ? sql`DEFAULT` : typed[1043](values.borough) },${ values.nghbhd === undefined ? sql`DEFAULT` : typed[1043](values.nghbhd) },${ values.routes === undefined ? sql`DEFAULT` : typed[1043](values.routes) },${ values.transfers === undefined ? sql`DEFAULT` : typed[1043](values.transfers) },${ values.color === undefined ? sql`DEFAULT` : typed[1043](values.color) },${ values.express === undefined ? sql`DEFAULT` : typed[1043](values.express) },${ values.closed === undefined ? sql`DEFAULT` : typed[1043](values.closed) },${ values.geom === undefined ? sql`DEFAULT` : typed[63488](values.geom) })
       RETURNING
         gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom
     `
@@ -86871,7 +86866,7 @@ return response.map(r => ({ gid: undefinedIsNull(r.gid),objectid: undefinedIsNul
 const response = await sql`
     INSERT INTO
       public.nyc_subway_stations (gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom)
-    VALUES (${ values.gid === undefined ? sql`DEFAULT` : typed[23](values.gid) },${ values.objectid === undefined ? sql`DEFAULT` : typed[1700](values.objectid) },${ values.id === undefined ? sql`DEFAULT` : typed[1700](values.id) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.altName === undefined ? sql`DEFAULT` : typed[1043](values.altName) },${ values.crossSt === undefined ? sql`DEFAULT` : typed[1043](values.crossSt) },${ values.longName === undefined ? sql`DEFAULT` : typed[1043](values.longName) },${ values.label === undefined ? sql`DEFAULT` : typed[1043](values.label) },${ values.borough === undefined ? sql`DEFAULT` : typed[1043](values.borough) },${ values.nghbhd === undefined ? sql`DEFAULT` : typed[1043](values.nghbhd) },${ values.routes === undefined ? sql`DEFAULT` : typed[1043](values.routes) },${ values.transfers === undefined ? sql`DEFAULT` : typed[1043](values.transfers) },${ values.color === undefined ? sql`DEFAULT` : typed[1043](values.color) },${ values.express === undefined ? sql`DEFAULT` : typed[1043](values.express) },${ values.closed === undefined ? sql`DEFAULT` : typed[1043](values.closed) },${ values.geom === undefined ? sql`DEFAULT` : typed[56356](values.geom) })
+    VALUES (${ values.gid === undefined ? sql`DEFAULT` : typed[23](values.gid) },${ values.objectid === undefined ? sql`DEFAULT` : typed[1700](values.objectid) },${ values.id === undefined ? sql`DEFAULT` : typed[1700](values.id) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.altName === undefined ? sql`DEFAULT` : typed[1043](values.altName) },${ values.crossSt === undefined ? sql`DEFAULT` : typed[1043](values.crossSt) },${ values.longName === undefined ? sql`DEFAULT` : typed[1043](values.longName) },${ values.label === undefined ? sql`DEFAULT` : typed[1043](values.label) },${ values.borough === undefined ? sql`DEFAULT` : typed[1043](values.borough) },${ values.nghbhd === undefined ? sql`DEFAULT` : typed[1043](values.nghbhd) },${ values.routes === undefined ? sql`DEFAULT` : typed[1043](values.routes) },${ values.transfers === undefined ? sql`DEFAULT` : typed[1043](values.transfers) },${ values.color === undefined ? sql`DEFAULT` : typed[1043](values.color) },${ values.express === undefined ? sql`DEFAULT` : typed[1043](values.express) },${ values.closed === undefined ? sql`DEFAULT` : typed[1043](values.closed) },${ values.geom === undefined ? sql`DEFAULT` : typed[63488](values.geom) })
     ON CONFLICT (gid) DO UPDATE
     SET
       objectid = EXCLUDED.objectid,id = EXCLUDED.id,name = EXCLUDED.name,alt_name = EXCLUDED.alt_name,cross_st = EXCLUDED.cross_st,long_name = EXCLUDED.long_name,label = EXCLUDED.label,borough = EXCLUDED.borough,nghbhd = EXCLUDED.nghbhd,routes = EXCLUDED.routes,transfers = EXCLUDED.transfers,color = EXCLUDED.color,express = EXCLUDED.express,closed = EXCLUDED.closed,geom = EXCLUDED.geom
@@ -86940,7 +86935,7 @@ const response = await sql`
     UPDATE 
       public.nyc_subway_stations 
     SET
-      gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , objectid = ${ values.objectid === undefined ? sql`objectid` : typed[1700](values.objectid) } , id = ${ values.id === undefined ? sql`id` : typed[1700](values.id) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , alt_name = ${ values.altName === undefined ? sql`alt_name` : typed[1043](values.altName) } , cross_st = ${ values.crossSt === undefined ? sql`cross_st` : typed[1043](values.crossSt) } , long_name = ${ values.longName === undefined ? sql`long_name` : typed[1043](values.longName) } , label = ${ values.label === undefined ? sql`label` : typed[1043](values.label) } , borough = ${ values.borough === undefined ? sql`borough` : typed[1043](values.borough) } , nghbhd = ${ values.nghbhd === undefined ? sql`nghbhd` : typed[1043](values.nghbhd) } , routes = ${ values.routes === undefined ? sql`routes` : typed[1043](values.routes) } , transfers = ${ values.transfers === undefined ? sql`transfers` : typed[1043](values.transfers) } , color = ${ values.color === undefined ? sql`color` : typed[1043](values.color) } , express = ${ values.express === undefined ? sql`express` : typed[1043](values.express) } , closed = ${ values.closed === undefined ? sql`closed` : typed[1043](values.closed) } , geom = ${ values.geom === undefined ? sql`geom` : typed[56356](values.geom) } 
+      gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , objectid = ${ values.objectid === undefined ? sql`objectid` : typed[1700](values.objectid) } , id = ${ values.id === undefined ? sql`id` : typed[1700](values.id) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , alt_name = ${ values.altName === undefined ? sql`alt_name` : typed[1043](values.altName) } , cross_st = ${ values.crossSt === undefined ? sql`cross_st` : typed[1043](values.crossSt) } , long_name = ${ values.longName === undefined ? sql`long_name` : typed[1043](values.longName) } , label = ${ values.label === undefined ? sql`label` : typed[1043](values.label) } , borough = ${ values.borough === undefined ? sql`borough` : typed[1043](values.borough) } , nghbhd = ${ values.nghbhd === undefined ? sql`nghbhd` : typed[1043](values.nghbhd) } , routes = ${ values.routes === undefined ? sql`routes` : typed[1043](values.routes) } , transfers = ${ values.transfers === undefined ? sql`transfers` : typed[1043](values.transfers) } , color = ${ values.color === undefined ? sql`color` : typed[1043](values.color) } , express = ${ values.express === undefined ? sql`express` : typed[1043](values.express) } , closed = ${ values.closed === undefined ? sql`closed` : typed[1043](values.closed) } , geom = ${ values.geom === undefined ? sql`geom` : typed[63488](values.geom) } 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
     RETURNING gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom`
@@ -86984,7 +86979,7 @@ const response = await sql`
     FROM
       public.nyc_subway_stations 
     WHERE
-      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[56356](parameters.geom) }
+      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[63488](parameters.geom) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
@@ -87004,9 +86999,9 @@ const response = await sql`
     UPDATE 
       public.nyc_subway_stations 
     SET
-      gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , objectid = ${ values.objectid === undefined ? sql`objectid` : typed[1700](values.objectid) } , id = ${ values.id === undefined ? sql`id` : typed[1700](values.id) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , alt_name = ${ values.altName === undefined ? sql`alt_name` : typed[1043](values.altName) } , cross_st = ${ values.crossSt === undefined ? sql`cross_st` : typed[1043](values.crossSt) } , long_name = ${ values.longName === undefined ? sql`long_name` : typed[1043](values.longName) } , label = ${ values.label === undefined ? sql`label` : typed[1043](values.label) } , borough = ${ values.borough === undefined ? sql`borough` : typed[1043](values.borough) } , nghbhd = ${ values.nghbhd === undefined ? sql`nghbhd` : typed[1043](values.nghbhd) } , routes = ${ values.routes === undefined ? sql`routes` : typed[1043](values.routes) } , transfers = ${ values.transfers === undefined ? sql`transfers` : typed[1043](values.transfers) } , color = ${ values.color === undefined ? sql`color` : typed[1043](values.color) } , express = ${ values.express === undefined ? sql`express` : typed[1043](values.express) } , closed = ${ values.closed === undefined ? sql`closed` : typed[1043](values.closed) } , geom = ${ values.geom === undefined ? sql`geom` : typed[56356](values.geom) } 
+      gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , objectid = ${ values.objectid === undefined ? sql`objectid` : typed[1700](values.objectid) } , id = ${ values.id === undefined ? sql`id` : typed[1700](values.id) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , alt_name = ${ values.altName === undefined ? sql`alt_name` : typed[1043](values.altName) } , cross_st = ${ values.crossSt === undefined ? sql`cross_st` : typed[1043](values.crossSt) } , long_name = ${ values.longName === undefined ? sql`long_name` : typed[1043](values.longName) } , label = ${ values.label === undefined ? sql`label` : typed[1043](values.label) } , borough = ${ values.borough === undefined ? sql`borough` : typed[1043](values.borough) } , nghbhd = ${ values.nghbhd === undefined ? sql`nghbhd` : typed[1043](values.nghbhd) } , routes = ${ values.routes === undefined ? sql`routes` : typed[1043](values.routes) } , transfers = ${ values.transfers === undefined ? sql`transfers` : typed[1043](values.transfers) } , color = ${ values.color === undefined ? sql`color` : typed[1043](values.color) } , express = ${ values.express === undefined ? sql`express` : typed[1043](values.express) } , closed = ${ values.closed === undefined ? sql`closed` : typed[1043](values.closed) } , geom = ${ values.geom === undefined ? sql`geom` : typed[63488](values.geom) } 
     WHERE
-      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[56356](parameters.geom) }
+      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[63488](parameters.geom) }
     RETURNING gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom`
 return response.map(r => ({ gid: undefinedIsNull(r.gid),objectid: undefinedIsNull(r.objectid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),altName: undefinedIsNull(r.alt_name),crossSt: undefinedIsNull(r.cross_st),longName: undefinedIsNull(r.long_name),label: undefinedIsNull(r.label),borough: undefinedIsNull(r.borough),nghbhd: undefinedIsNull(r.nghbhd),routes: undefinedIsNull(r.routes),transfers: undefinedIsNull(r.transfers),color: undefinedIsNull(r.color),express: undefinedIsNull(r.express),closed: undefinedIsNull(r.closed),geom: undefinedIsNull(r.geom) }))
 }
@@ -87019,7 +87014,7 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx) {
     DELETE FROM 
       public.nyc_subway_stations 
     WHERE
-      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[56356](parameters.geom) }
+      geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[63488](parameters.geom) }
     RETURNING gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom`
  return response.map(r => ({ gid: undefinedIsNull(r.gid),objectid: undefinedIsNull(r.objectid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),altName: undefinedIsNull(r.alt_name),crossSt: undefinedIsNull(r.cross_st),longName: undefinedIsNull(r.long_name),label: undefinedIsNull(r.label),borough: undefinedIsNull(r.borough),nghbhd: undefinedIsNull(r.nghbhd),routes: undefinedIsNull(r.routes),transfers: undefinedIsNull(r.transfers),color: undefinedIsNull(r.color),express: undefinedIsNull(r.express),closed: undefinedIsNull(r.closed),geom: undefinedIsNull(r.geom) }))
 }
@@ -87078,7 +87073,7 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx) {
 "Public.Procedures.GeometryAnalyze.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeometryAnalyze.call(request.parameters as Public.Procedures.GeometryAnalyze.Parameters),
 "Public.Procedures.GeometryRecv.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeometryRecv.call(request.parameters as Public.Procedures.GeometryRecv.Parameters),
 "Public.Procedures.GeometrySend.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeometrySend.call(request.parameters as Public.Procedures.GeometrySend.Parameters),
-"Public.Procedures.Geometry_3198.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Geometry_3198.call(request.parameters as Public.Procedures.Geometry_3198.Parameters),
+"Public.Procedures.GeometryEd31.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeometryEd31.call(request.parameters as Public.Procedures.GeometryEd31.Parameters),
 "Public.Procedures.Geometry_8997.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Geometry_8997.call(request.parameters as Public.Procedures.Geometry_8997.Parameters),
 "Public.Procedures.Point.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Point.call(request.parameters as Public.Procedures.Point.Parameters),
 "Public.Procedures.GeometryB0d8.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeometryB0d8.call(request.parameters as Public.Procedures.GeometryB0d8.Parameters),
@@ -87157,8 +87152,8 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx) {
 "Public.Procedures.StXmax.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StXmax.call(request.parameters as Public.Procedures.StXmax.Parameters),
 "Public.Procedures.StYmax.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StYmax.call(request.parameters as Public.Procedures.StYmax.Parameters),
 "Public.Procedures.StZmax.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StZmax.call(request.parameters as Public.Procedures.StZmax.Parameters),
-"Public.Procedures.StExpandC2f2.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StExpandC2f2.call(request.parameters as Public.Procedures.StExpandC2f2.Parameters),
-"Public.Procedures.StExpand_0686.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StExpand_0686.call(request.parameters as Public.Procedures.StExpand_0686.Parameters),
+"Public.Procedures.StExpand_0683.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StExpand_0683.call(request.parameters as Public.Procedures.StExpand_0683.Parameters),
+"Public.Procedures.StExpand_509e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StExpand_509e.call(request.parameters as Public.Procedures.StExpand_509e.Parameters),
 "Public.Procedures.PostgisGetbbox.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PostgisGetbbox.call(request.parameters as Public.Procedures.PostgisGetbbox.Parameters),
 "Public.Procedures.StMakebox2d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMakebox2d.call(request.parameters as Public.Procedures.StMakebox2d.Parameters),
 "Public.Procedures.StEstimatedextentD2f5.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StEstimatedextentD2f5.call(request.parameters as Public.Procedures.StEstimatedextentD2f5.Parameters),
@@ -87171,29 +87166,29 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx) {
 "Public.Procedures.PostgisHasbbox.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PostgisHasbbox.call(request.parameters as Public.Procedures.PostgisHasbbox.Parameters),
 "Public.Procedures.StQuantizecoordinates.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StQuantizecoordinates.call(request.parameters as Public.Procedures.StQuantizecoordinates.Parameters),
 "Public.Procedures.StMemsize.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMemsize.call(request.parameters as Public.Procedures.StMemsize.Parameters),
-"Public.Procedures.StSummary_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSummary_52cb.call(request.parameters as Public.Procedures.StSummary_52cb.Parameters),
+"Public.Procedures.StSummaryC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSummaryC567.call(request.parameters as Public.Procedures.StSummaryC567.Parameters),
 "Public.Procedures.StNpoints.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StNpoints.call(request.parameters as Public.Procedures.StNpoints.Parameters),
 "Public.Procedures.StNrings.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StNrings.call(request.parameters as Public.Procedures.StNrings.Parameters),
 "Public.Procedures.St_3dlength.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.St_3dlength.call(request.parameters as Public.Procedures.St_3dlength.Parameters),
 "Public.Procedures.StLength2d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLength2d.call(request.parameters as Public.Procedures.StLength2d.Parameters),
-"Public.Procedures.StLength_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLength_52cb.call(request.parameters as Public.Procedures.StLength_52cb.Parameters),
+"Public.Procedures.StLengthC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLengthC567.call(request.parameters as Public.Procedures.StLengthC567.Parameters),
 "Public.Procedures.StLengthspheroid.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLengthspheroid.call(request.parameters as Public.Procedures.StLengthspheroid.Parameters),
 "Public.Procedures.StLength2dspheroid.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLength2dspheroid.call(request.parameters as Public.Procedures.StLength2dspheroid.Parameters),
 "Public.Procedures.St_3dperimeter.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.St_3dperimeter.call(request.parameters as Public.Procedures.St_3dperimeter.Parameters),
 "Public.Procedures.StPerimeter2d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StPerimeter2d.call(request.parameters as Public.Procedures.StPerimeter2d.Parameters),
-"Public.Procedures.StPerimeter_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StPerimeter_52cb.call(request.parameters as Public.Procedures.StPerimeter_52cb.Parameters),
+"Public.Procedures.StPerimeterC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StPerimeterC567.call(request.parameters as Public.Procedures.StPerimeterC567.Parameters),
 "Public.Procedures.StArea2d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StArea2d.call(request.parameters as Public.Procedures.StArea2d.Parameters),
-"Public.Procedures.StArea_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StArea_52cb.call(request.parameters as Public.Procedures.StArea_52cb.Parameters),
+"Public.Procedures.StAreaC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAreaC567.call(request.parameters as Public.Procedures.StAreaC567.Parameters),
 "Public.Procedures.StIspolygoncw.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIspolygoncw.call(request.parameters as Public.Procedures.StIspolygoncw.Parameters),
 "Public.Procedures.StIspolygonccw.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIspolygonccw.call(request.parameters as Public.Procedures.StIspolygonccw.Parameters),
-"Public.Procedures.StDistancespheroidA3f5.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDistancespheroidA3f5.call(request.parameters as Public.Procedures.StDistancespheroidA3f5.Parameters),
-"Public.Procedures.StDistancespheroid_4e70.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDistancespheroid_4e70.call(request.parameters as Public.Procedures.StDistancespheroid_4e70.Parameters),
-"Public.Procedures.StDistance_4e70.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDistance_4e70.call(request.parameters as Public.Procedures.StDistance_4e70.Parameters),
+"Public.Procedures.StDistancespheroid_094c.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDistancespheroid_094c.call(request.parameters as Public.Procedures.StDistancespheroid_094c.Parameters),
+"Public.Procedures.StDistancespheroid_6bd0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDistancespheroid_6bd0.call(request.parameters as Public.Procedures.StDistancespheroid_6bd0.Parameters),
+"Public.Procedures.StDistance_6bd0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDistance_6bd0.call(request.parameters as Public.Procedures.StDistance_6bd0.Parameters),
 "Public.Procedures.StPointinsidecircle.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StPointinsidecircle.call(request.parameters as Public.Procedures.StPointinsidecircle.Parameters),
-"Public.Procedures.StAzimuth_4e70.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAzimuth_4e70.call(request.parameters as Public.Procedures.StAzimuth_4e70.Parameters),
-"Public.Procedures.StProjectBdaa.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StProjectBdaa.call(request.parameters as Public.Procedures.StProjectBdaa.Parameters),
-"Public.Procedures.StProject_0b21.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StProject_0b21.call(request.parameters as Public.Procedures.StProject_0b21.Parameters),
-"Public.Procedures.StAngleDd35.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAngleDd35.call(request.parameters as Public.Procedures.StAngleDd35.Parameters),
+"Public.Procedures.StAzimuth_6bd0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAzimuth_6bd0.call(request.parameters as Public.Procedures.StAzimuth_6bd0.Parameters),
+"Public.Procedures.StProject_9adf.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StProject_9adf.call(request.parameters as Public.Procedures.StProject_9adf.Parameters),
+"Public.Procedures.StProjectBab7.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StProjectBab7.call(request.parameters as Public.Procedures.StProjectBab7.Parameters),
+"Public.Procedures.StAngle_3749.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAngle_3749.call(request.parameters as Public.Procedures.StAngle_3749.Parameters),
 "Public.Procedures.StLineextend.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLineextend.call(request.parameters as Public.Procedures.StLineextend.Parameters),
 "Public.Procedures.StForce2d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StForce2d.call(request.parameters as Public.Procedures.StForce2d.Parameters),
 "Public.Procedures.StForce3dz.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StForce3dz.call(request.parameters as Public.Procedures.StForce3dz.Parameters),
@@ -87201,17 +87196,17 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx) {
 "Public.Procedures.StForce3dm.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StForce3dm.call(request.parameters as Public.Procedures.StForce3dm.Parameters),
 "Public.Procedures.StForce4d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StForce4d.call(request.parameters as Public.Procedures.StForce4d.Parameters),
 "Public.Procedures.StForcecollection.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StForcecollection.call(request.parameters as Public.Procedures.StForcecollection.Parameters),
-"Public.Procedures.StCollectionextractF74e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCollectionextractF74e.call(request.parameters as Public.Procedures.StCollectionextractF74e.Parameters),
-"Public.Procedures.StCollectionextract_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCollectionextract_52cb.call(request.parameters as Public.Procedures.StCollectionextract_52cb.Parameters),
+"Public.Procedures.StCollectionextract_73ac.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCollectionextract_73ac.call(request.parameters as Public.Procedures.StCollectionextract_73ac.Parameters),
+"Public.Procedures.StCollectionextractC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCollectionextractC567.call(request.parameters as Public.Procedures.StCollectionextractC567.Parameters),
 "Public.Procedures.StCollectionhomogenize.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCollectionhomogenize.call(request.parameters as Public.Procedures.StCollectionhomogenize.Parameters),
 "Public.Procedures.StMulti.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMulti.call(request.parameters as Public.Procedures.StMulti.Parameters),
 "Public.Procedures.StForcecurve.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StForcecurve.call(request.parameters as Public.Procedures.StForcecurve.Parameters),
-"Public.Procedures.StForcesfs_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StForcesfs_52cb.call(request.parameters as Public.Procedures.StForcesfs_52cb.Parameters),
-"Public.Procedures.StForcesfs_09ea.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StForcesfs_09ea.call(request.parameters as Public.Procedures.StForcesfs_09ea.Parameters),
-"Public.Procedures.StExpandC8db.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StExpandC8db.call(request.parameters as Public.Procedures.StExpandC8db.Parameters),
-"Public.Procedures.StExpandB682.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StExpandB682.call(request.parameters as Public.Procedures.StExpandB682.Parameters),
-"Public.Procedures.StExpand_8fd9.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StExpand_8fd9.call(request.parameters as Public.Procedures.StExpand_8fd9.Parameters),
-"Public.Procedures.StExpand_3395.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StExpand_3395.call(request.parameters as Public.Procedures.StExpand_3395.Parameters),
+"Public.Procedures.StForcesfsC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StForcesfsC567.call(request.parameters as Public.Procedures.StForcesfsC567.Parameters),
+"Public.Procedures.StForcesfs_9881.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StForcesfs_9881.call(request.parameters as Public.Procedures.StForcesfs_9881.Parameters),
+"Public.Procedures.StExpandDbaa.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StExpandDbaa.call(request.parameters as Public.Procedures.StExpandDbaa.Parameters),
+"Public.Procedures.StExpand_4f8f.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StExpand_4f8f.call(request.parameters as Public.Procedures.StExpand_4f8f.Parameters),
+"Public.Procedures.StExpand_23e5.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StExpand_23e5.call(request.parameters as Public.Procedures.StExpand_23e5.Parameters),
+"Public.Procedures.StExpand_6e33.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StExpand_6e33.call(request.parameters as Public.Procedures.StExpand_6e33.Parameters),
 "Public.Procedures.StEnvelope.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StEnvelope.call(request.parameters as Public.Procedures.StEnvelope.Parameters),
 "Public.Procedures.StBoundingdiagonal.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StBoundingdiagonal.call(request.parameters as Public.Procedures.StBoundingdiagonal.Parameters),
 "Public.Procedures.StReverse.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StReverse.call(request.parameters as Public.Procedures.StReverse.Parameters),
@@ -87220,14 +87215,14 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx) {
 "Public.Procedures.StNormalize.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StNormalize.call(request.parameters as Public.Procedures.StNormalize.Parameters),
 "Public.Procedures.StZmflag.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StZmflag.call(request.parameters as Public.Procedures.StZmflag.Parameters),
 "Public.Procedures.StNdims.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StNdims.call(request.parameters as Public.Procedures.StNdims.Parameters),
-"Public.Procedures.StAsewkt_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsewkt_52cb.call(request.parameters as Public.Procedures.StAsewkt_52cb.Parameters),
-"Public.Procedures.StAsewktF74e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsewktF74e.call(request.parameters as Public.Procedures.StAsewktF74e.Parameters),
-"Public.Procedures.StAstwkbC537.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAstwkbC537.call(request.parameters as Public.Procedures.StAstwkbC537.Parameters),
-"Public.Procedures.StAstwkb_911a.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAstwkb_911a.call(request.parameters as Public.Procedures.StAstwkb_911a.Parameters),
-"Public.Procedures.StAsewkb_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsewkb_52cb.call(request.parameters as Public.Procedures.StAsewkb_52cb.Parameters),
-"Public.Procedures.StAshexewkb_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAshexewkb_52cb.call(request.parameters as Public.Procedures.StAshexewkb_52cb.Parameters),
-"Public.Procedures.StAshexewkb_09ea.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAshexewkb_09ea.call(request.parameters as Public.Procedures.StAshexewkb_09ea.Parameters),
-"Public.Procedures.StAsewkb_09ea.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsewkb_09ea.call(request.parameters as Public.Procedures.StAsewkb_09ea.Parameters),
+"Public.Procedures.StAsewktC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsewktC567.call(request.parameters as Public.Procedures.StAsewktC567.Parameters),
+"Public.Procedures.StAsewkt_73ac.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsewkt_73ac.call(request.parameters as Public.Procedures.StAsewkt_73ac.Parameters),
+"Public.Procedures.StAstwkbE417.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAstwkbE417.call(request.parameters as Public.Procedures.StAstwkbE417.Parameters),
+"Public.Procedures.StAstwkbE7ff.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAstwkbE7ff.call(request.parameters as Public.Procedures.StAstwkbE7ff.Parameters),
+"Public.Procedures.StAsewkbC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsewkbC567.call(request.parameters as Public.Procedures.StAsewkbC567.Parameters),
+"Public.Procedures.StAshexewkbC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAshexewkbC567.call(request.parameters as Public.Procedures.StAshexewkbC567.Parameters),
+"Public.Procedures.StAshexewkb_9881.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAshexewkb_9881.call(request.parameters as Public.Procedures.StAshexewkb_9881.Parameters),
+"Public.Procedures.StAsewkb_9881.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsewkb_9881.call(request.parameters as Public.Procedures.StAsewkb_9881.Parameters),
 "Public.Procedures.StAslatlontext.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAslatlontext.call(request.parameters as Public.Procedures.StAslatlontext.Parameters),
 "Public.Procedures.Geomfromewkb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Geomfromewkb.call(request.parameters as Public.Procedures.Geomfromewkb.Parameters),
 "Public.Procedures.StGeomfromewkb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StGeomfromewkb.call(request.parameters as Public.Procedures.StGeomfromewkb.Parameters),
@@ -87240,37 +87235,37 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx) {
 "Public.Procedures.StMakepoint_570b.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMakepoint_570b.call(request.parameters as Public.Procedures.StMakepoint_570b.Parameters),
 "Public.Procedures.StMakepointm.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMakepointm.call(request.parameters as Public.Procedures.StMakepointm.Parameters),
 "Public.Procedures.St_3dmakebox.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.St_3dmakebox.call(request.parameters as Public.Procedures.St_3dmakebox.Parameters),
-"Public.Procedures.StMakeline_1ecf.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMakeline_1ecf.call(request.parameters as Public.Procedures.StMakeline_1ecf.Parameters),
+"Public.Procedures.StMakelineA84e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMakelineA84e.call(request.parameters as Public.Procedures.StMakelineA84e.Parameters),
 "Public.Procedures.StLinefrommultipoint.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLinefrommultipoint.call(request.parameters as Public.Procedures.StLinefrommultipoint.Parameters),
-"Public.Procedures.StMakeline_4e70.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMakeline_4e70.call(request.parameters as Public.Procedures.StMakeline_4e70.Parameters),
-"Public.Procedures.StAddpoint_4e70.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAddpoint_4e70.call(request.parameters as Public.Procedures.StAddpoint_4e70.Parameters),
-"Public.Procedures.StScaleBdaa.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StScaleBdaa.call(request.parameters as Public.Procedures.StScaleBdaa.Parameters),
-"Public.Procedures.StAddpointBf6c.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAddpointBf6c.call(request.parameters as Public.Procedures.StAddpointBf6c.Parameters),
+"Public.Procedures.StMakeline_6bd0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMakeline_6bd0.call(request.parameters as Public.Procedures.StMakeline_6bd0.Parameters),
+"Public.Procedures.StAddpoint_6bd0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAddpoint_6bd0.call(request.parameters as Public.Procedures.StAddpoint_6bd0.Parameters),
+"Public.Procedures.StScale_9adf.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StScale_9adf.call(request.parameters as Public.Procedures.StScale_9adf.Parameters),
+"Public.Procedures.StAddpointAcbc.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAddpointAcbc.call(request.parameters as Public.Procedures.StAddpointAcbc.Parameters),
 "Public.Procedures.StRemovepoint.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StRemovepoint.call(request.parameters as Public.Procedures.StRemovepoint.Parameters),
 "Public.Procedures.StSetpoint.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSetpoint.call(request.parameters as Public.Procedures.StSetpoint.Parameters),
 "Public.Procedures.StMakeenvelope.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMakeenvelope.call(request.parameters as Public.Procedures.StMakeenvelope.Parameters),
 "Public.Procedures.StTileenvelope.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StTileenvelope.call(request.parameters as Public.Procedures.StTileenvelope.Parameters),
-"Public.Procedures.StMakepolygonCd1b.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMakepolygonCd1b.call(request.parameters as Public.Procedures.StMakepolygonCd1b.Parameters),
-"Public.Procedures.StMakepolygon_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMakepolygon_52cb.call(request.parameters as Public.Procedures.StMakepolygon_52cb.Parameters),
+"Public.Procedures.StMakepolygon_88d3.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMakepolygon_88d3.call(request.parameters as Public.Procedures.StMakepolygon_88d3.Parameters),
+"Public.Procedures.StMakepolygonC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMakepolygonC567.call(request.parameters as Public.Procedures.StMakepolygonC567.Parameters),
 "Public.Procedures.StBuildarea.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StBuildarea.call(request.parameters as Public.Procedures.StBuildarea.Parameters),
-"Public.Procedures.StPolygonize_1ecf.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StPolygonize_1ecf.call(request.parameters as Public.Procedures.StPolygonize_1ecf.Parameters),
-"Public.Procedures.StClusterintersecting_1ecf.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StClusterintersecting_1ecf.call(request.parameters as Public.Procedures.StClusterintersecting_1ecf.Parameters),
-"Public.Procedures.StClusterwithin_7fe3.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StClusterwithin_7fe3.call(request.parameters as Public.Procedures.StClusterwithin_7fe3.Parameters),
-"Public.Procedures.StLinemerge_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLinemerge_52cb.call(request.parameters as Public.Procedures.StLinemerge_52cb.Parameters),
-"Public.Procedures.StLinemergeE9cd.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLinemergeE9cd.call(request.parameters as Public.Procedures.StLinemergeE9cd.Parameters),
-"Public.Procedures.StAffineAb49.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAffineAb49.call(request.parameters as Public.Procedures.StAffineAb49.Parameters),
-"Public.Procedures.StAffine_1347.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAffine_1347.call(request.parameters as Public.Procedures.StAffine_1347.Parameters),
-"Public.Procedures.StRotate_8fd9.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StRotate_8fd9.call(request.parameters as Public.Procedures.StRotate_8fd9.Parameters),
-"Public.Procedures.StRotate_196d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StRotate_196d.call(request.parameters as Public.Procedures.StRotate_196d.Parameters),
-"Public.Procedures.StRotateD16f.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StRotateD16f.call(request.parameters as Public.Procedures.StRotateD16f.Parameters),
+"Public.Procedures.StPolygonizeA84e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StPolygonizeA84e.call(request.parameters as Public.Procedures.StPolygonizeA84e.Parameters),
+"Public.Procedures.StClusterintersectingA84e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StClusterintersectingA84e.call(request.parameters as Public.Procedures.StClusterintersectingA84e.Parameters),
+"Public.Procedures.StClusterwithinAece.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StClusterwithinAece.call(request.parameters as Public.Procedures.StClusterwithinAece.Parameters),
+"Public.Procedures.StLinemergeC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLinemergeC567.call(request.parameters as Public.Procedures.StLinemergeC567.Parameters),
+"Public.Procedures.StLinemergeE62d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLinemergeE62d.call(request.parameters as Public.Procedures.StLinemergeE62d.Parameters),
+"Public.Procedures.StAffine_35f7.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAffine_35f7.call(request.parameters as Public.Procedures.StAffine_35f7.Parameters),
+"Public.Procedures.StAffine_78d2.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAffine_78d2.call(request.parameters as Public.Procedures.StAffine_78d2.Parameters),
+"Public.Procedures.StRotate_23e5.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StRotate_23e5.call(request.parameters as Public.Procedures.StRotate_23e5.Parameters),
+"Public.Procedures.StRotateA6e8.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StRotateA6e8.call(request.parameters as Public.Procedures.StRotateA6e8.Parameters),
+"Public.Procedures.StRotate_4c28.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StRotate_4c28.call(request.parameters as Public.Procedures.StRotate_4c28.Parameters),
 "Public.Procedures.StRotatez.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StRotatez.call(request.parameters as Public.Procedures.StRotatez.Parameters),
 "Public.Procedures.StRotatex.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StRotatex.call(request.parameters as Public.Procedures.StRotatex.Parameters),
 "Public.Procedures.StRotatey.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StRotatey.call(request.parameters as Public.Procedures.StRotatey.Parameters),
-"Public.Procedures.StTranslate_196d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StTranslate_196d.call(request.parameters as Public.Procedures.StTranslate_196d.Parameters),
-"Public.Procedures.StTranslateBdaa.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StTranslateBdaa.call(request.parameters as Public.Procedures.StTranslateBdaa.Parameters),
-"Public.Procedures.StScale_4e70.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StScale_4e70.call(request.parameters as Public.Procedures.StScale_4e70.Parameters),
-"Public.Procedures.StScaleFaae.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StScaleFaae.call(request.parameters as Public.Procedures.StScaleFaae.Parameters),
-"Public.Procedures.StScale_196d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StScale_196d.call(request.parameters as Public.Procedures.StScale_196d.Parameters),
+"Public.Procedures.StTranslateA6e8.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StTranslateA6e8.call(request.parameters as Public.Procedures.StTranslateA6e8.Parameters),
+"Public.Procedures.StTranslate_9adf.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StTranslate_9adf.call(request.parameters as Public.Procedures.StTranslate_9adf.Parameters),
+"Public.Procedures.StScale_6bd0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StScale_6bd0.call(request.parameters as Public.Procedures.StScale_6bd0.Parameters),
+"Public.Procedures.StScaleE109.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StScaleE109.call(request.parameters as Public.Procedures.StScaleE109.Parameters),
+"Public.Procedures.StScaleA6e8.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StScaleA6e8.call(request.parameters as Public.Procedures.StScaleA6e8.Parameters),
 "Public.Procedures.StTransscale.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StTransscale.call(request.parameters as Public.Procedures.StTransscale.Parameters),
 "Public.Procedures.StDump.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDump.call(request.parameters as Public.Procedures.StDump.Parameters),
 "Public.Procedures.StDumprings.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDumprings.call(request.parameters as Public.Procedures.StDumprings.Parameters),
@@ -87285,7 +87280,7 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx) {
 "Public.Procedures.Dropgeometrycolumn_2253.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Dropgeometrycolumn_2253.call(request.parameters as Public.Procedures.Dropgeometrycolumn_2253.Parameters),
 "Public.Procedures.DropgeometrycolumnF11a.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.DropgeometrycolumnF11a.call(request.parameters as Public.Procedures.DropgeometrycolumnF11a.Parameters),
 "Public.Procedures.Dropgeometrytable_2253.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Dropgeometrytable_2253.call(request.parameters as Public.Procedures.Dropgeometrytable_2253.Parameters),
-"Public.Procedures.StSegmentize_8fd9.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSegmentize_8fd9.call(request.parameters as Public.Procedures.StSegmentize_8fd9.Parameters),
+"Public.Procedures.StSegmentize_23e5.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSegmentize_23e5.call(request.parameters as Public.Procedures.StSegmentize_23e5.Parameters),
 "Public.Procedures.DropgeometrytableF11a.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.DropgeometrytableF11a.call(request.parameters as Public.Procedures.DropgeometrytableF11a.Parameters),
 "Public.Procedures.DropgeometrytableBfde.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.DropgeometrytableBfde.call(request.parameters as Public.Procedures.DropgeometrytableBfde.Parameters),
 "Public.Procedures.UpdategeometrysridB2ee.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.UpdategeometrysridB2ee.call(request.parameters as Public.Procedures.UpdategeometrysridB2ee.Parameters),
@@ -87293,17 +87288,17 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx) {
 "Public.Procedures.Updategeometrysrid_11c8.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Updategeometrysrid_11c8.call(request.parameters as Public.Procedures.Updategeometrysrid_11c8.Parameters),
 "Public.Procedures.FindSrid.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.FindSrid.call(request.parameters as Public.Procedures.FindSrid.Parameters),
 "Public.Procedures.GetProj4FromSrid.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GetProj4FromSrid.call(request.parameters as Public.Procedures.GetProj4FromSrid.Parameters),
-"Public.Procedures.StSetsridF74e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSetsridF74e.call(request.parameters as Public.Procedures.StSetsridF74e.Parameters),
-"Public.Procedures.StSrid_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSrid_52cb.call(request.parameters as Public.Procedures.StSrid_52cb.Parameters),
+"Public.Procedures.StSetsrid_73ac.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSetsrid_73ac.call(request.parameters as Public.Procedures.StSetsrid_73ac.Parameters),
+"Public.Procedures.StSridC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSridC567.call(request.parameters as Public.Procedures.StSridC567.Parameters),
 "Public.Procedures.PostgisTransformGeometry.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PostgisTransformGeometry.call(request.parameters as Public.Procedures.PostgisTransformGeometry.Parameters),
 "Public.Procedures.PostgisSrsCodes.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PostgisSrsCodes.call(request.parameters as Public.Procedures.PostgisSrsCodes.Parameters),
 "Public.Procedures.PostgisSrs.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PostgisSrs.call(request.parameters as Public.Procedures.PostgisSrs.Parameters),
 "Public.Procedures.PostgisSrsAll.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PostgisSrsAll.call(),
 "Public.Procedures.PostgisSrsSearch.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PostgisSrsSearch.call(request.parameters as Public.Procedures.PostgisSrsSearch.Parameters),
-"Public.Procedures.StTransformF74e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StTransformF74e.call(request.parameters as Public.Procedures.StTransformF74e.Parameters),
-"Public.Procedures.StTransform_09ea.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StTransform_09ea.call(request.parameters as Public.Procedures.StTransform_09ea.Parameters),
-"Public.Procedures.StTransform_58c7.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StTransform_58c7.call(request.parameters as Public.Procedures.StTransform_58c7.Parameters),
-"Public.Procedures.StTransform_226f.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StTransform_226f.call(request.parameters as Public.Procedures.StTransform_226f.Parameters),
+"Public.Procedures.StTransform_73ac.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StTransform_73ac.call(request.parameters as Public.Procedures.StTransform_73ac.Parameters),
+"Public.Procedures.StTransform_9881.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StTransform_9881.call(request.parameters as Public.Procedures.StTransform_9881.Parameters),
+"Public.Procedures.StTransformF6ce.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StTransformF6ce.call(request.parameters as Public.Procedures.StTransformF6ce.Parameters),
+"Public.Procedures.StTransformFe9f.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StTransformFe9f.call(request.parameters as Public.Procedures.StTransformFe9f.Parameters),
 "Public.Procedures.PostgisTransformPipelineGeometry.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PostgisTransformPipelineGeometry.call(request.parameters as Public.Procedures.PostgisTransformPipelineGeometry.Parameters),
 "Public.Procedures.StTransformpipeline.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StTransformpipeline.call(request.parameters as Public.Procedures.StTransformpipeline.Parameters),
 "Public.Procedures.StInversetransformpipeline.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StInversetransformpipeline.call(request.parameters as Public.Procedures.StInversetransformpipeline.Parameters),
@@ -87322,56 +87317,56 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx) {
 "Public.Procedures.PostgisScriptsBuildDate.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PostgisScriptsBuildDate.call(),
 "Public.Procedures.PostgisLibBuildDate.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PostgisLibBuildDate.call(),
 "Public.Procedures.PostgisExtensionsUpgrade.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PostgisExtensionsUpgrade.call(request.parameters as Public.Procedures.PostgisExtensionsUpgrade.Parameters),
-"Public.Procedures.StLineinterpolatepoint_8fd9.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLineinterpolatepoint_8fd9.call(request.parameters as Public.Procedures.StLineinterpolatepoint_8fd9.Parameters),
-"Public.Procedures.StLineinterpolatepoints_2d1f.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLineinterpolatepoints_2d1f.call(request.parameters as Public.Procedures.StLineinterpolatepoints_2d1f.Parameters),
-"Public.Procedures.StLinesubstringBdaa.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLinesubstringBdaa.call(request.parameters as Public.Procedures.StLinesubstringBdaa.Parameters),
-"Public.Procedures.StLinelocatepoint_4e70.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLinelocatepoint_4e70.call(request.parameters as Public.Procedures.StLinelocatepoint_4e70.Parameters),
+"Public.Procedures.StLineinterpolatepoint_23e5.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLineinterpolatepoint_23e5.call(request.parameters as Public.Procedures.StLineinterpolatepoint_23e5.Parameters),
+"Public.Procedures.StLineinterpolatepoints_71ec.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLineinterpolatepoints_71ec.call(request.parameters as Public.Procedures.StLineinterpolatepoints_71ec.Parameters),
+"Public.Procedures.StLinesubstring_9adf.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLinesubstring_9adf.call(request.parameters as Public.Procedures.StLinesubstring_9adf.Parameters),
+"Public.Procedures.StLinelocatepoint_6bd0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLinelocatepoint_6bd0.call(request.parameters as Public.Procedures.StLinelocatepoint_6bd0.Parameters),
 "Public.Procedures.StAddmeasure.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAddmeasure.call(request.parameters as Public.Procedures.StAddmeasure.Parameters),
 "Public.Procedures.StClosestpointofapproach.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StClosestpointofapproach.call(request.parameters as Public.Procedures.StClosestpointofapproach.Parameters),
 "Public.Procedures.PostgisFullVersion.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PostgisFullVersion.call(),
-"Public.Procedures.Box2d_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Box2d_52cb.call(request.parameters as Public.Procedures.Box2d_52cb.Parameters),
-"Public.Procedures.Box3d_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Box3d_52cb.call(request.parameters as Public.Procedures.Box3d_52cb.Parameters),
-"Public.Procedures.Box_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Box_52cb.call(request.parameters as Public.Procedures.Box_52cb.Parameters),
-"Public.Procedures.Box2dC8c3.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Box2dC8c3.call(request.parameters as Public.Procedures.Box2dC8c3.Parameters),
-"Public.Procedures.Box3dEf50.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Box3dEf50.call(request.parameters as Public.Procedures.Box3dEf50.Parameters),
-"Public.Procedures.BoxC8c3.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.BoxC8c3.call(request.parameters as Public.Procedures.BoxC8c3.Parameters),
+"Public.Procedures.Box2dC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Box2dC567.call(request.parameters as Public.Procedures.Box2dC567.Parameters),
+"Public.Procedures.Box3dC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Box3dC567.call(request.parameters as Public.Procedures.Box3dC567.Parameters),
+"Public.Procedures.BoxC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.BoxC567.call(request.parameters as Public.Procedures.BoxC567.Parameters),
+"Public.Procedures.Box2dAad0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Box2dAad0.call(request.parameters as Public.Procedures.Box2dAad0.Parameters),
+"Public.Procedures.Box3d_232c.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Box3d_232c.call(request.parameters as Public.Procedures.Box3d_232c.Parameters),
+"Public.Procedures.BoxAad0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.BoxAad0.call(request.parameters as Public.Procedures.BoxAad0.Parameters),
 "Public.Procedures.Text.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Text.call(request.parameters as Public.Procedures.Text.Parameters),
 "Public.Procedures.Box3dtobox.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Box3dtobox.call(request.parameters as Public.Procedures.Box3dtobox.Parameters),
-"Public.Procedures.GeometryEf50.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeometryEf50.call(request.parameters as Public.Procedures.GeometryEf50.Parameters),
-"Public.Procedures.GeometryC8c3.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeometryC8c3.call(request.parameters as Public.Procedures.GeometryC8c3.Parameters),
+"Public.Procedures.Geometry_232c.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Geometry_232c.call(request.parameters as Public.Procedures.Geometry_232c.Parameters),
+"Public.Procedures.GeometryAad0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeometryAad0.call(request.parameters as Public.Procedures.GeometryAad0.Parameters),
 "Public.Procedures.GeometryE728.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeometryE728.call(request.parameters as Public.Procedures.GeometryE728.Parameters),
 "Public.Procedures.Geometry_2d19.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Geometry_2d19.call(request.parameters as Public.Procedures.Geometry_2d19.Parameters),
-"Public.Procedures.Bytea_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Bytea_52cb.call(request.parameters as Public.Procedures.Bytea_52cb.Parameters),
-"Public.Procedures.StSimplify_8fd9.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSimplify_8fd9.call(request.parameters as Public.Procedures.StSimplify_8fd9.Parameters),
-"Public.Procedures.StSimplify_2d1f.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSimplify_2d1f.call(request.parameters as Public.Procedures.StSimplify_2d1f.Parameters),
+"Public.Procedures.ByteaC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.ByteaC567.call(request.parameters as Public.Procedures.ByteaC567.Parameters),
+"Public.Procedures.StSimplify_23e5.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSimplify_23e5.call(request.parameters as Public.Procedures.StSimplify_23e5.Parameters),
+"Public.Procedures.StSimplify_71ec.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSimplify_71ec.call(request.parameters as Public.Procedures.StSimplify_71ec.Parameters),
 "Public.Procedures.StSimplifyvw.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSimplifyvw.call(request.parameters as Public.Procedures.StSimplifyvw.Parameters),
 "Public.Procedures.StSeteffectivearea.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSeteffectivearea.call(request.parameters as Public.Procedures.StSeteffectivearea.Parameters),
 "Public.Procedures.StFilterbym.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StFilterbym.call(request.parameters as Public.Procedures.StFilterbym.Parameters),
 "Public.Procedures.StChaikinsmoothing.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StChaikinsmoothing.call(request.parameters as Public.Procedures.StChaikinsmoothing.Parameters),
-"Public.Procedures.StSnaptogrid_3395.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSnaptogrid_3395.call(request.parameters as Public.Procedures.StSnaptogrid_3395.Parameters),
-"Public.Procedures.StSnaptogridBdaa.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSnaptogridBdaa.call(request.parameters as Public.Procedures.StSnaptogridBdaa.Parameters),
-"Public.Procedures.StSnaptogrid_8fd9.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSnaptogrid_8fd9.call(request.parameters as Public.Procedures.StSnaptogrid_8fd9.Parameters),
-"Public.Procedures.StSnaptogridC48b.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSnaptogridC48b.call(request.parameters as Public.Procedures.StSnaptogridC48b.Parameters),
+"Public.Procedures.StSnaptogrid_6e33.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSnaptogrid_6e33.call(request.parameters as Public.Procedures.StSnaptogrid_6e33.Parameters),
+"Public.Procedures.StSnaptogrid_9adf.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSnaptogrid_9adf.call(request.parameters as Public.Procedures.StSnaptogrid_9adf.Parameters),
+"Public.Procedures.StSnaptogrid_23e5.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSnaptogrid_23e5.call(request.parameters as Public.Procedures.StSnaptogrid_23e5.Parameters),
+"Public.Procedures.StSnaptogrid_0fca.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSnaptogrid_0fca.call(request.parameters as Public.Procedures.StSnaptogrid_0fca.Parameters),
 "Public.Procedures.StDistancecpa.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDistancecpa.call(request.parameters as Public.Procedures.StDistancecpa.Parameters),
 "Public.Procedures.StCpawithin.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCpawithin.call(request.parameters as Public.Procedures.StCpawithin.Parameters),
 "Public.Procedures.StIsvalidtrajectory.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIsvalidtrajectory.call(request.parameters as Public.Procedures.StIsvalidtrajectory.Parameters),
-"Public.Procedures.StIntersection_0b21.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIntersection_0b21.call(request.parameters as Public.Procedures.StIntersection_0b21.Parameters),
-"Public.Procedures.StBuffer_5012.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StBuffer_5012.call(request.parameters as Public.Procedures.StBuffer_5012.Parameters),
-"Public.Procedures.StBuffer_3ea8.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StBuffer_3ea8.call(request.parameters as Public.Procedures.StBuffer_3ea8.Parameters),
+"Public.Procedures.StIntersectionBab7.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIntersectionBab7.call(request.parameters as Public.Procedures.StIntersectionBab7.Parameters),
+"Public.Procedures.StBufferA313.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StBufferA313.call(request.parameters as Public.Procedures.StBufferA313.Parameters),
+"Public.Procedures.StBufferFed8.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StBufferFed8.call(request.parameters as Public.Procedures.StBufferFed8.Parameters),
 "Public.Procedures.StMinimumboundingradius.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMinimumboundingradius.call(request.parameters as Public.Procedures.StMinimumboundingradius.Parameters),
 "Public.Procedures.StMinimumboundingcircle.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMinimumboundingcircle.call(request.parameters as Public.Procedures.StMinimumboundingcircle.Parameters),
 "Public.Procedures.StOrientedenvelope.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StOrientedenvelope.call(request.parameters as Public.Procedures.StOrientedenvelope.Parameters),
 "Public.Procedures.StOffsetcurve.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StOffsetcurve.call(request.parameters as Public.Procedures.StOffsetcurve.Parameters),
-"Public.Procedures.StGeneratepointsF74e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StGeneratepointsF74e.call(request.parameters as Public.Procedures.StGeneratepointsF74e.Parameters),
-"Public.Procedures.StGeneratepointsD3cf.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StGeneratepointsD3cf.call(request.parameters as Public.Procedures.StGeneratepointsD3cf.Parameters),
+"Public.Procedures.StGeneratepoints_73ac.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StGeneratepoints_73ac.call(request.parameters as Public.Procedures.StGeneratepoints_73ac.Parameters),
+"Public.Procedures.StGeneratepoints_8eae.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StGeneratepoints_8eae.call(request.parameters as Public.Procedures.StGeneratepoints_8eae.Parameters),
 "Public.Procedures.StConvexhull.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StConvexhull.call(request.parameters as Public.Procedures.StConvexhull.Parameters),
 "Public.Procedures.StSimplifypreservetopology.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSimplifypreservetopology.call(request.parameters as Public.Procedures.StSimplifypreservetopology.Parameters),
-"Public.Procedures.StIsvalidreason_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIsvalidreason_52cb.call(request.parameters as Public.Procedures.StIsvalidreason_52cb.Parameters),
+"Public.Procedures.StIsvalidreasonC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIsvalidreasonC567.call(request.parameters as Public.Procedures.StIsvalidreasonC567.Parameters),
 "Public.Procedures.StIsvaliddetail.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIsvaliddetail.call(request.parameters as Public.Procedures.StIsvaliddetail.Parameters),
-"Public.Procedures.StIsvalidreasonF74e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIsvalidreasonF74e.call(request.parameters as Public.Procedures.StIsvalidreasonF74e.Parameters),
-"Public.Procedures.StIsvalidF74e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIsvalidF74e.call(request.parameters as Public.Procedures.StIsvalidF74e.Parameters),
-"Public.Procedures.StHausdorffdistance_4e70.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StHausdorffdistance_4e70.call(request.parameters as Public.Procedures.StHausdorffdistance_4e70.Parameters),
-"Public.Procedures.StHausdorffdistance_0b21.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StHausdorffdistance_0b21.call(request.parameters as Public.Procedures.StHausdorffdistance_0b21.Parameters),
+"Public.Procedures.StIsvalidreason_73ac.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIsvalidreason_73ac.call(request.parameters as Public.Procedures.StIsvalidreason_73ac.Parameters),
+"Public.Procedures.StIsvalid_73ac.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIsvalid_73ac.call(request.parameters as Public.Procedures.StIsvalid_73ac.Parameters),
+"Public.Procedures.StHausdorffdistance_6bd0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StHausdorffdistance_6bd0.call(request.parameters as Public.Procedures.StHausdorffdistance_6bd0.Parameters),
+"Public.Procedures.StHausdorffdistanceBab7.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StHausdorffdistanceBab7.call(request.parameters as Public.Procedures.StHausdorffdistanceBab7.Parameters),
 "Public.Procedures.StFrechetdistance.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StFrechetdistance.call(request.parameters as Public.Procedures.StFrechetdistance.Parameters),
 "Public.Procedures.StMaximuminscribedcircle.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMaximuminscribedcircle.call(request.parameters as Public.Procedures.StMaximuminscribedcircle.Parameters),
 "Public.Procedures.StLargestemptycircle.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLargestemptycircle.call(request.parameters as Public.Procedures.StLargestemptycircle.Parameters),
@@ -87380,15 +87375,15 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx) {
 "Public.Procedures.StPoints.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StPoints.call(request.parameters as Public.Procedures.StPoints.Parameters),
 "Public.Procedures.StSymdifference.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSymdifference.call(request.parameters as Public.Procedures.StSymdifference.Parameters),
 "Public.Procedures.StSymmetricdifference.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSymmetricdifference.call(request.parameters as Public.Procedures.StSymmetricdifference.Parameters),
-"Public.Procedures.StUnion_4e70.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StUnion_4e70.call(request.parameters as Public.Procedures.StUnion_4e70.Parameters),
-"Public.Procedures.StUnion_0b21.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StUnion_0b21.call(request.parameters as Public.Procedures.StUnion_0b21.Parameters),
+"Public.Procedures.StUnion_6bd0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StUnion_6bd0.call(request.parameters as Public.Procedures.StUnion_6bd0.Parameters),
+"Public.Procedures.StUnionBab7.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StUnionBab7.call(request.parameters as Public.Procedures.StUnionBab7.Parameters),
 "Public.Procedures.StUnaryunion.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StUnaryunion.call(request.parameters as Public.Procedures.StUnaryunion.Parameters),
 "Public.Procedures.StRemoverepeatedpoints.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StRemoverepeatedpoints.call(request.parameters as Public.Procedures.StRemoverepeatedpoints.Parameters),
 "Public.Procedures.StClipbybox2d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StClipbybox2d.call(request.parameters as Public.Procedures.StClipbybox2d.Parameters),
 "Public.Procedures.StSubdivide.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSubdivide.call(request.parameters as Public.Procedures.StSubdivide.Parameters),
 "Public.Procedures.StReduceprecision.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StReduceprecision.call(request.parameters as Public.Procedures.StReduceprecision.Parameters),
-"Public.Procedures.StMakevalid_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMakevalid_52cb.call(request.parameters as Public.Procedures.StMakevalid_52cb.Parameters),
-"Public.Procedures.StMakevalid_09ea.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMakevalid_09ea.call(request.parameters as Public.Procedures.StMakevalid_09ea.Parameters),
+"Public.Procedures.StMakevalidC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMakevalidC567.call(request.parameters as Public.Procedures.StMakevalidC567.Parameters),
+"Public.Procedures.StMakevalid_9881.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMakevalid_9881.call(request.parameters as Public.Procedures.StMakevalid_9881.Parameters),
 "Public.Procedures.StCleangeometry.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCleangeometry.call(request.parameters as Public.Procedures.StCleangeometry.Parameters),
 "Public.Procedures.StSplit.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSplit.call(request.parameters as Public.Procedures.StSplit.Parameters),
 "Public.Procedures.StSharedpaths.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSharedpaths.call(request.parameters as Public.Procedures.StSharedpaths.Parameters),
@@ -87399,43 +87394,43 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx) {
 "Public.Procedures.StTriangulatepolygon.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StTriangulatepolygon.call(request.parameters as Public.Procedures.StTriangulatepolygon.Parameters),
 "Public.Procedures.StVoronoipolygons.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StVoronoipolygons.call(request.parameters as Public.Procedures.StVoronoipolygons.Parameters),
 "Public.Procedures.StVoronoilines.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StVoronoilines.call(request.parameters as Public.Procedures.StVoronoilines.Parameters),
-"Public.Procedures.StCombinebbox_169a.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCombinebbox_169a.call(request.parameters as Public.Procedures.StCombinebbox_169a.Parameters),
-"Public.Procedures.StCombinebbox_5a63.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCombinebbox_5a63.call(request.parameters as Public.Procedures.StCombinebbox_5a63.Parameters),
-"Public.Procedures.StCombinebbox_1ab0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCombinebbox_1ab0.call(request.parameters as Public.Procedures.StCombinebbox_1ab0.Parameters),
-"Public.Procedures.StCollect_4e70.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCollect_4e70.call(request.parameters as Public.Procedures.StCollect_4e70.Parameters),
-"Public.Procedures.StCollect_1ecf.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCollect_1ecf.call(request.parameters as Public.Procedures.StCollect_1ecf.Parameters),
-"Public.Procedures.PgisGeometryAccumTransfn_56af.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PgisGeometryAccumTransfn_56af.call(request.parameters as Public.Procedures.PgisGeometryAccumTransfn_56af.Parameters),
-"Public.Procedures.PgisGeometryAccumTransfn_0b06.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PgisGeometryAccumTransfn_0b06.call(request.parameters as Public.Procedures.PgisGeometryAccumTransfn_0b06.Parameters),
-"Public.Procedures.PgisGeometryAccumTransfnAa63.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PgisGeometryAccumTransfnAa63.call(request.parameters as Public.Procedures.PgisGeometryAccumTransfnAa63.Parameters),
+"Public.Procedures.StCombinebboxDd7e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCombinebboxDd7e.call(request.parameters as Public.Procedures.StCombinebboxDd7e.Parameters),
+"Public.Procedures.StCombinebboxC436.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCombinebboxC436.call(request.parameters as Public.Procedures.StCombinebboxC436.Parameters),
+"Public.Procedures.StCombinebbox_8c90.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCombinebbox_8c90.call(request.parameters as Public.Procedures.StCombinebbox_8c90.Parameters),
+"Public.Procedures.StCollect_6bd0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCollect_6bd0.call(request.parameters as Public.Procedures.StCollect_6bd0.Parameters),
+"Public.Procedures.StCollectA84e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCollectA84e.call(request.parameters as Public.Procedures.StCollectA84e.Parameters),
+"Public.Procedures.PgisGeometryAccumTransfn_5f8c.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PgisGeometryAccumTransfn_5f8c.call(request.parameters as Public.Procedures.PgisGeometryAccumTransfn_5f8c.Parameters),
+"Public.Procedures.PgisGeometryAccumTransfn_0dbf.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PgisGeometryAccumTransfn_0dbf.call(request.parameters as Public.Procedures.PgisGeometryAccumTransfn_0dbf.Parameters),
+"Public.Procedures.PgisGeometryAccumTransfnC6b8.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PgisGeometryAccumTransfnC6b8.call(request.parameters as Public.Procedures.PgisGeometryAccumTransfnC6b8.Parameters),
 "Public.Procedures.PgisGeometryCollectFinalfn.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PgisGeometryCollectFinalfn.call(request.parameters as Public.Procedures.PgisGeometryCollectFinalfn.Parameters),
 "Public.Procedures.PgisGeometryPolygonizeFinalfn.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PgisGeometryPolygonizeFinalfn.call(request.parameters as Public.Procedures.PgisGeometryPolygonizeFinalfn.Parameters),
 "Public.Procedures.PgisGeometryClusterintersectingFinalfn.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PgisGeometryClusterintersectingFinalfn.call(request.parameters as Public.Procedures.PgisGeometryClusterintersectingFinalfn.Parameters),
 "Public.Procedures.PgisGeometryClusterwithinFinalfn.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PgisGeometryClusterwithinFinalfn.call(request.parameters as Public.Procedures.PgisGeometryClusterwithinFinalfn.Parameters),
 "Public.Procedures.PgisGeometryMakelineFinalfn.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PgisGeometryMakelineFinalfn.call(request.parameters as Public.Procedures.PgisGeometryMakelineFinalfn.Parameters),
 "Public.Procedures.PgisGeometryCoverageunionFinalfn.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PgisGeometryCoverageunionFinalfn.call(request.parameters as Public.Procedures.PgisGeometryCoverageunionFinalfn.Parameters),
-"Public.Procedures.PgisGeometryUnionParallelTransfn_56af.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PgisGeometryUnionParallelTransfn_56af.call(request.parameters as Public.Procedures.PgisGeometryUnionParallelTransfn_56af.Parameters),
-"Public.Procedures.PgisGeometryUnionParallelTransfn_0b06.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PgisGeometryUnionParallelTransfn_0b06.call(request.parameters as Public.Procedures.PgisGeometryUnionParallelTransfn_0b06.Parameters),
+"Public.Procedures.PgisGeometryUnionParallelTransfn_5f8c.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PgisGeometryUnionParallelTransfn_5f8c.call(request.parameters as Public.Procedures.PgisGeometryUnionParallelTransfn_5f8c.Parameters),
+"Public.Procedures.PgisGeometryUnionParallelTransfn_0dbf.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PgisGeometryUnionParallelTransfn_0dbf.call(request.parameters as Public.Procedures.PgisGeometryUnionParallelTransfn_0dbf.Parameters),
 "Public.Procedures.PgisGeometryUnionParallelCombinefn.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PgisGeometryUnionParallelCombinefn.call(request.parameters as Public.Procedures.PgisGeometryUnionParallelCombinefn.Parameters),
 "Public.Procedures.PgisGeometryUnionParallelSerialfn.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PgisGeometryUnionParallelSerialfn.call(request.parameters as Public.Procedures.PgisGeometryUnionParallelSerialfn.Parameters),
 "Public.Procedures.PgisGeometryUnionParallelDeserialfn.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PgisGeometryUnionParallelDeserialfn.call(request.parameters as Public.Procedures.PgisGeometryUnionParallelDeserialfn.Parameters),
 "Public.Procedures.PgisGeometryUnionParallelFinalfn.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PgisGeometryUnionParallelFinalfn.call(request.parameters as Public.Procedures.PgisGeometryUnionParallelFinalfn.Parameters),
-"Public.Procedures.StUnion_1ecf.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StUnion_1ecf.call(request.parameters as Public.Procedures.StUnion_1ecf.Parameters),
-"Public.Procedures.StCoverageunion_1ecf.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCoverageunion_1ecf.call(request.parameters as Public.Procedures.StCoverageunion_1ecf.Parameters),
-"Public.Procedures.StRelate_4e70.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StRelate_4e70.call(request.parameters as Public.Procedures.StRelate_4e70.Parameters),
-"Public.Procedures.StRelateBf6c.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StRelateBf6c.call(request.parameters as Public.Procedures.StRelateBf6c.Parameters),
-"Public.Procedures.StRelate_2565.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StRelate_2565.call(request.parameters as Public.Procedures.StRelate_2565.Parameters),
+"Public.Procedures.StUnionA84e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StUnionA84e.call(request.parameters as Public.Procedures.StUnionA84e.Parameters),
+"Public.Procedures.StCoverageunionA84e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCoverageunionA84e.call(request.parameters as Public.Procedures.StCoverageunionA84e.Parameters),
+"Public.Procedures.StRelate_6bd0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StRelate_6bd0.call(request.parameters as Public.Procedures.StRelate_6bd0.Parameters),
+"Public.Procedures.StRelateAcbc.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StRelateAcbc.call(request.parameters as Public.Procedures.StRelateAcbc.Parameters),
+"Public.Procedures.StRelateCe2d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StRelateCe2d.call(request.parameters as Public.Procedures.StRelateCe2d.Parameters),
 "Public.Procedures.StDisjoint.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDisjoint.call(request.parameters as Public.Procedures.StDisjoint.Parameters),
 "Public.Procedures.PostgisIndexSupportfn.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PostgisIndexSupportfn.call(request.parameters as Public.Procedures.PostgisIndexSupportfn.Parameters),
 "Public.Procedures.StLinecrossingdirection.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLinecrossingdirection.call(request.parameters as Public.Procedures.StLinecrossingdirection.Parameters),
-"Public.Procedures.StDwithin_0b21.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDwithin_0b21.call(request.parameters as Public.Procedures.StDwithin_0b21.Parameters),
+"Public.Procedures.StDwithinBab7.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDwithinBab7.call(request.parameters as Public.Procedures.StDwithinBab7.Parameters),
 "Public.Procedures.StTouches.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StTouches.call(request.parameters as Public.Procedures.StTouches.Parameters),
-"Public.Procedures.StIntersects_4e70.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIntersects_4e70.call(request.parameters as Public.Procedures.StIntersects_4e70.Parameters),
+"Public.Procedures.StIntersects_6bd0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIntersects_6bd0.call(request.parameters as Public.Procedures.StIntersects_6bd0.Parameters),
 "Public.Procedures.StCrosses.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCrosses.call(request.parameters as Public.Procedures.StCrosses.Parameters),
 "Public.Procedures.StContains.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StContains.call(request.parameters as Public.Procedures.StContains.Parameters),
 "Public.Procedures.StContainsproperly.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StContainsproperly.call(request.parameters as Public.Procedures.StContainsproperly.Parameters),
 "Public.Procedures.StWithin.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StWithin.call(request.parameters as Public.Procedures.StWithin.Parameters),
-"Public.Procedures.StCovers_4e70.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCovers_4e70.call(request.parameters as Public.Procedures.StCovers_4e70.Parameters),
-"Public.Procedures.StCoveredby_4e70.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCoveredby_4e70.call(request.parameters as Public.Procedures.StCoveredby_4e70.Parameters),
+"Public.Procedures.StCovers_6bd0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCovers_6bd0.call(request.parameters as Public.Procedures.StCovers_6bd0.Parameters),
+"Public.Procedures.StCoveredby_6bd0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCoveredby_6bd0.call(request.parameters as Public.Procedures.StCoveredby_6bd0.Parameters),
 "Public.Procedures.StOverlaps.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StOverlaps.call(request.parameters as Public.Procedures.StOverlaps.Parameters),
 "Public.Procedures.StDfullywithin.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDfullywithin.call(request.parameters as Public.Procedures.StDfullywithin.Parameters),
 "Public.Procedures.St_3ddwithin.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.St_3ddwithin.call(request.parameters as Public.Procedures.St_3ddwithin.Parameters),
@@ -87443,10 +87438,10 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx) {
 "Public.Procedures.St_3dintersects.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.St_3dintersects.call(request.parameters as Public.Procedures.St_3dintersects.Parameters),
 "Public.Procedures.StOrderingequals.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StOrderingequals.call(request.parameters as Public.Procedures.StOrderingequals.Parameters),
 "Public.Procedures.StEquals.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StEquals.call(request.parameters as Public.Procedures.StEquals.Parameters),
-"Public.Procedures.StIsvalid_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIsvalid_52cb.call(request.parameters as Public.Procedures.StIsvalid_52cb.Parameters),
+"Public.Procedures.StIsvalidC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIsvalidC567.call(request.parameters as Public.Procedures.StIsvalidC567.Parameters),
 "Public.Procedures.StMinimumclearance.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMinimumclearance.call(request.parameters as Public.Procedures.StMinimumclearance.Parameters),
 "Public.Procedures.StMinimumclearanceline.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMinimumclearanceline.call(request.parameters as Public.Procedures.StMinimumclearanceline.Parameters),
-"Public.Procedures.StCentroid_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCentroid_52cb.call(request.parameters as Public.Procedures.StCentroid_52cb.Parameters),
+"Public.Procedures.StCentroidC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCentroidC567.call(request.parameters as Public.Procedures.StCentroidC567.Parameters),
 "Public.Procedures.StGeometricmedian.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StGeometricmedian.call(request.parameters as Public.Procedures.StGeometricmedian.Parameters),
 "Public.Procedures.StIsring.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIsring.call(request.parameters as Public.Procedures.StIsring.Parameters),
 "Public.Procedures.StPointonsurface.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StPointonsurface.call(request.parameters as Public.Procedures.StPointonsurface.Parameters),
@@ -87466,11 +87461,11 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx) {
 "Public.Procedures.PostgisLibjsonVersion.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PostgisLibjsonVersion.call(),
 "Public.Procedures.StLinefromencodedpolyline.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLinefromencodedpolyline.call(request.parameters as Public.Procedures.StLinefromencodedpolyline.Parameters),
 "Public.Procedures.StAsencodedpolyline.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsencodedpolyline.call(request.parameters as Public.Procedures.StAsencodedpolyline.Parameters),
-"Public.Procedures.StAssvgD3cf.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAssvgD3cf.call(request.parameters as Public.Procedures.StAssvgD3cf.Parameters),
-"Public.Procedures.StAsgmlD3cf.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsgmlD3cf.call(request.parameters as Public.Procedures.StAsgmlD3cf.Parameters),
-"Public.Procedures.StAsgml_3bec.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsgml_3bec.call(request.parameters as Public.Procedures.StAsgml_3bec.Parameters),
-"Public.Procedures.StAskml_6ebd.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAskml_6ebd.call(request.parameters as Public.Procedures.StAskml_6ebd.Parameters),
-"Public.Procedures.StAsgeojsonD3cf.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsgeojsonD3cf.call(request.parameters as Public.Procedures.StAsgeojsonD3cf.Parameters),
+"Public.Procedures.StAssvg_8eae.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAssvg_8eae.call(request.parameters as Public.Procedures.StAssvg_8eae.Parameters),
+"Public.Procedures.StAsgml_8eae.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsgml_8eae.call(request.parameters as Public.Procedures.StAsgml_8eae.Parameters),
+"Public.Procedures.StAsgml_3b73.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsgml_3b73.call(request.parameters as Public.Procedures.StAsgml_3b73.Parameters),
+"Public.Procedures.StAskmlC975.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAskmlC975.call(request.parameters as Public.Procedures.StAskmlC975.Parameters),
+"Public.Procedures.StAsgeojson_8eae.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsgeojson_8eae.call(request.parameters as Public.Procedures.StAsgeojson_8eae.Parameters),
 "Public.Procedures.StAsgeojsonF2c6.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsgeojsonF2c6.call(request.parameters as Public.Procedures.StAsgeojsonF2c6.Parameters),
 "Public.Procedures.Json.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Json.call(request.parameters as Public.Procedures.Json.Parameters),
 "Public.Procedures.Jsonb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Jsonb.call(request.parameters as Public.Procedures.Jsonb.Parameters),
@@ -87494,7 +87489,7 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx) {
 "Public.Procedures.PgisAsflatgeobufFinalfn.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PgisAsflatgeobufFinalfn.call(request.parameters as Public.Procedures.PgisAsflatgeobufFinalfn.Parameters),
 "Public.Procedures.StFromflatgeobuftotable.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StFromflatgeobuftotable.call(request.parameters as Public.Procedures.StFromflatgeobuftotable.Parameters),
 "Public.Procedures.StFromflatgeobuf.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StFromflatgeobuf.call(request.parameters as Public.Procedures.StFromflatgeobuf.Parameters),
-"Public.Procedures.StGeohashF74e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StGeohashF74e.call(request.parameters as Public.Procedures.StGeohashF74e.Parameters),
+"Public.Procedures.StGeohash_73ac.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StGeohash_73ac.call(request.parameters as Public.Procedures.StGeohash_73ac.Parameters),
 "Public.Procedures.StBox2dfromgeohash.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StBox2dfromgeohash.call(request.parameters as Public.Procedures.StBox2dfromgeohash.Parameters),
 "Public.Procedures.StPointfromgeohash.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StPointfromgeohash.call(request.parameters as Public.Procedures.StPointfromgeohash.Parameters),
 "Public.Procedures.StGeomfromgeohash.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StGeomfromgeohash.call(request.parameters as Public.Procedures.StGeomfromgeohash.Parameters),
@@ -87506,7 +87501,7 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx) {
 "Public.Procedures.StNuminteriorrings.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StNuminteriorrings.call(request.parameters as Public.Procedures.StNuminteriorrings.Parameters),
 "Public.Procedures.StNuminteriorring.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StNuminteriorring.call(request.parameters as Public.Procedures.StNuminteriorring.Parameters),
 "Public.Procedures.StInteriorringn.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StInteriorringn.call(request.parameters as Public.Procedures.StInteriorringn.Parameters),
-"Public.Procedures.Geometrytype_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Geometrytype_52cb.call(request.parameters as Public.Procedures.Geometrytype_52cb.Parameters),
+"Public.Procedures.GeometrytypeC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeometrytypeC567.call(request.parameters as Public.Procedures.GeometrytypeC567.Parameters),
 "Public.Procedures.StGeometrytype.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StGeometrytype.call(request.parameters as Public.Procedures.StGeometrytype.Parameters),
 "Public.Procedures.StPointn.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StPointn.call(request.parameters as Public.Procedures.StPointn.Parameters),
 "Public.Procedures.StNumpatches.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StNumpatches.call(request.parameters as Public.Procedures.StNumpatches.Parameters),
@@ -87515,10 +87510,10 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx) {
 "Public.Procedures.StEndpoint.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StEndpoint.call(request.parameters as Public.Procedures.StEndpoint.Parameters),
 "Public.Procedures.StIsclosed.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIsclosed.call(request.parameters as Public.Procedures.StIsclosed.Parameters),
 "Public.Procedures.StIsempty.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIsempty.call(request.parameters as Public.Procedures.StIsempty.Parameters),
-"Public.Procedures.StAsbinary_09ea.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsbinary_09ea.call(request.parameters as Public.Procedures.StAsbinary_09ea.Parameters),
-"Public.Procedures.StAsbinary_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsbinary_52cb.call(request.parameters as Public.Procedures.StAsbinary_52cb.Parameters),
-"Public.Procedures.StAstext_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAstext_52cb.call(request.parameters as Public.Procedures.StAstext_52cb.Parameters),
-"Public.Procedures.StAstextF74e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAstextF74e.call(request.parameters as Public.Procedures.StAstextF74e.Parameters),
+"Public.Procedures.StAsbinary_9881.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsbinary_9881.call(request.parameters as Public.Procedures.StAsbinary_9881.Parameters),
+"Public.Procedures.StAsbinaryC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsbinaryC567.call(request.parameters as Public.Procedures.StAsbinaryC567.Parameters),
+"Public.Procedures.StAstextC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAstextC567.call(request.parameters as Public.Procedures.StAstextC567.Parameters),
+"Public.Procedures.StAstext_73ac.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAstext_73ac.call(request.parameters as Public.Procedures.StAstext_73ac.Parameters),
 "Public.Procedures.StGeometryfromtextE728.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StGeometryfromtextE728.call(request.parameters as Public.Procedures.StGeometryfromtextE728.Parameters),
 "Public.Procedures.StGeometryfromtext_27e2.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StGeometryfromtext_27e2.call(request.parameters as Public.Procedures.StGeometryfromtext_27e2.Parameters),
 "Public.Procedures.StGeomfromtextE728.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StGeomfromtextE728.call(request.parameters as Public.Procedures.StGeomfromtextE728.Parameters),
@@ -87572,19 +87567,19 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx) {
 "Public.Procedures.StGeomcollfromwkbD8af.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StGeomcollfromwkbD8af.call(request.parameters as Public.Procedures.StGeomcollfromwkbD8af.Parameters),
 "Public.Procedures.StGeomcollfromwkb_2d19.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StGeomcollfromwkb_2d19.call(request.parameters as Public.Procedures.StGeomcollfromwkb_2d19.Parameters),
 "Public.Procedures.StMaxdistance.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StMaxdistance.call(request.parameters as Public.Procedures.StMaxdistance.Parameters),
-"Public.Procedures.StClosestpoint_4e70.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StClosestpoint_4e70.call(request.parameters as Public.Procedures.StClosestpoint_4e70.Parameters),
-"Public.Procedures.StShortestline_4e70.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StShortestline_4e70.call(request.parameters as Public.Procedures.StShortestline_4e70.Parameters),
+"Public.Procedures.StClosestpoint_6bd0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StClosestpoint_6bd0.call(request.parameters as Public.Procedures.StClosestpoint_6bd0.Parameters),
+"Public.Procedures.StShortestline_6bd0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StShortestline_6bd0.call(request.parameters as Public.Procedures.StShortestline_6bd0.Parameters),
 "Public.Procedures.StLongestline.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLongestline.call(request.parameters as Public.Procedures.StLongestline.Parameters),
 "Public.Procedures.StSwapordinates.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSwapordinates.call(request.parameters as Public.Procedures.StSwapordinates.Parameters),
 "Public.Procedures.StFlipcoordinates.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StFlipcoordinates.call(request.parameters as Public.Procedures.StFlipcoordinates.Parameters),
 "Public.Procedures.StBdpolyfromtext.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StBdpolyfromtext.call(request.parameters as Public.Procedures.StBdpolyfromtext.Parameters),
 "Public.Procedures.StBdmpolyfromtext.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StBdmpolyfromtext.call(request.parameters as Public.Procedures.StBdmpolyfromtext.Parameters),
 "Public.Procedures.Unlockrows.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Unlockrows.call(request.parameters as Public.Procedures.Unlockrows.Parameters),
-"Public.Procedures.Geography_8e85.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Geography_8e85.call(request.parameters as Public.Procedures.Geography_8e85.Parameters),
+"Public.Procedures.Geography_33f0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Geography_33f0.call(request.parameters as Public.Procedures.Geography_33f0.Parameters),
 "Public.Procedures.Geography_2d19.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Geography_2d19.call(request.parameters as Public.Procedures.Geography_2d19.Parameters),
-"Public.Procedures.ByteaB076.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.ByteaB076.call(request.parameters as Public.Procedures.ByteaB076.Parameters),
-"Public.Procedures.StAstextB076.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAstextB076.call(request.parameters as Public.Procedures.StAstextB076.Parameters),
-"Public.Procedures.StAstext_52a9.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAstext_52a9.call(request.parameters as Public.Procedures.StAstext_52a9.Parameters),
+"Public.Procedures.ByteaC6e0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.ByteaC6e0.call(request.parameters as Public.Procedures.ByteaC6e0.Parameters),
+"Public.Procedures.StAstextC6e0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAstextC6e0.call(request.parameters as Public.Procedures.StAstextC6e0.Parameters),
+"Public.Procedures.StAstextE8cd.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAstextE8cd.call(request.parameters as Public.Procedures.StAstextE8cd.Parameters),
 "Public.Procedures.LockrowE9aa.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.LockrowE9aa.call(request.parameters as Public.Procedures.LockrowE9aa.Parameters),
 "Public.Procedures.Lockrow_02b4.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Lockrow_02b4.call(request.parameters as Public.Procedures.Lockrow_02b4.Parameters),
 "Public.Procedures.Lockrow_27e1.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Lockrow_27e1.call(request.parameters as Public.Procedures.Lockrow_27e1.Parameters),
@@ -87610,8 +87605,8 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx) {
 "Public.Procedures.PostgisTypmodDims.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PostgisTypmodDims.call(request.parameters as Public.Procedures.PostgisTypmodDims.Parameters),
 "Public.Procedures.PostgisTypmodSrid.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PostgisTypmodSrid.call(request.parameters as Public.Procedures.PostgisTypmodSrid.Parameters),
 "Public.Procedures.PostgisTypmodType.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PostgisTypmodType.call(request.parameters as Public.Procedures.PostgisTypmodType.Parameters),
-"Public.Procedures.Geography_52cb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Geography_52cb.call(request.parameters as Public.Procedures.Geography_52cb.Parameters),
-"Public.Procedures.GeometryB076.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeometryB076.call(request.parameters as Public.Procedures.GeometryB076.Parameters),
+"Public.Procedures.GeographyC567.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeographyC567.call(request.parameters as Public.Procedures.GeographyC567.Parameters),
+"Public.Procedures.GeometryC6e0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeometryC6e0.call(request.parameters as Public.Procedures.GeometryC6e0.Parameters),
 "Public.Procedures.GeographyGistConsistent.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeographyGistConsistent.call(request.parameters as Public.Procedures.GeographyGistConsistent.Parameters),
 "Public.Procedures.GeographyGistCompress.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeographyGistCompress.call(request.parameters as Public.Procedures.GeographyGistCompress.Parameters),
 "Public.Procedures.GeographyGistPenalty.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeographyGistPenalty.call(request.parameters as Public.Procedures.GeographyGistPenalty.Parameters),
@@ -87622,9 +87617,9 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx) {
 "Public.Procedures.GeographyOverlaps.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeographyOverlaps.call(request.parameters as Public.Procedures.GeographyOverlaps.Parameters),
 "Public.Procedures.GeographyDistanceKnn.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeographyDistanceKnn.call(request.parameters as Public.Procedures.GeographyDistanceKnn.Parameters),
 "Public.Procedures.GeographyGistDistance.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeographyGistDistance.call(request.parameters as Public.Procedures.GeographyGistDistance.Parameters),
-"Public.Procedures.OverlapsGeog_46ba.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.OverlapsGeog_46ba.call(request.parameters as Public.Procedures.OverlapsGeog_46ba.Parameters),
-"Public.Procedures.OverlapsGeogD1af.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.OverlapsGeogD1af.call(request.parameters as Public.Procedures.OverlapsGeogD1af.Parameters),
-"Public.Procedures.OverlapsGeogC98c.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.OverlapsGeogC98c.call(request.parameters as Public.Procedures.OverlapsGeogC98c.Parameters),
+"Public.Procedures.OverlapsGeogBb60.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.OverlapsGeogBb60.call(request.parameters as Public.Procedures.OverlapsGeogBb60.Parameters),
+"Public.Procedures.OverlapsGeog_8a58.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.OverlapsGeog_8a58.call(request.parameters as Public.Procedures.OverlapsGeog_8a58.Parameters),
+"Public.Procedures.OverlapsGeog_21a5.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.OverlapsGeog_21a5.call(request.parameters as Public.Procedures.OverlapsGeog_21a5.Parameters),
 "Public.Procedures.GeogBrinInclusionAddValue.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeogBrinInclusionAddValue.call(request.parameters as Public.Procedures.GeogBrinInclusionAddValue.Parameters),
 "Public.Procedures.GeographyLt.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeographyLt.call(request.parameters as Public.Procedures.GeographyLt.Parameters),
 "Public.Procedures.GeographyLe.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeographyLe.call(request.parameters as Public.Procedures.GeographyLe.Parameters),
@@ -87632,68 +87627,68 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx) {
 "Public.Procedures.GeographyGe.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeographyGe.call(request.parameters as Public.Procedures.GeographyGe.Parameters),
 "Public.Procedures.GeographyEq.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeographyEq.call(request.parameters as Public.Procedures.GeographyEq.Parameters),
 "Public.Procedures.GeographyCmp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeographyCmp.call(request.parameters as Public.Procedures.GeographyCmp.Parameters),
-"Public.Procedures.StAssvgFab6.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAssvgFab6.call(request.parameters as Public.Procedures.StAssvgFab6.Parameters),
+"Public.Procedures.StAssvg_07a8.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAssvg_07a8.call(request.parameters as Public.Procedures.StAssvg_07a8.Parameters),
 "Public.Procedures.StAssvgE728.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAssvgE728.call(request.parameters as Public.Procedures.StAssvgE728.Parameters),
-"Public.Procedures.StProject_57ad.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StProject_57ad.call(request.parameters as Public.Procedures.StProject_57ad.Parameters),
-"Public.Procedures.StAzimuth_25d7.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAzimuth_25d7.call(request.parameters as Public.Procedures.StAzimuth_25d7.Parameters),
+"Public.Procedures.StProjectCd02.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StProjectCd02.call(request.parameters as Public.Procedures.StProjectCd02.Parameters),
+"Public.Procedures.StAzimuthEa06.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAzimuthEa06.call(request.parameters as Public.Procedures.StAzimuthEa06.Parameters),
 "Public.Procedures.StBuffer_49f7.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StBuffer_49f7.call(request.parameters as Public.Procedures.StBuffer_49f7.Parameters),
-"Public.Procedures.StAsgml_4503.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsgml_4503.call(request.parameters as Public.Procedures.StAsgml_4503.Parameters),
-"Public.Procedures.StAsgmlDb17.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsgmlDb17.call(request.parameters as Public.Procedures.StAsgmlDb17.Parameters),
+"Public.Procedures.StAsgmlF715.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsgmlF715.call(request.parameters as Public.Procedures.StAsgmlF715.Parameters),
+"Public.Procedures.StAsgmlC08d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsgmlC08d.call(request.parameters as Public.Procedures.StAsgmlC08d.Parameters),
 "Public.Procedures.StAsgmlE728.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsgmlE728.call(request.parameters as Public.Procedures.StAsgmlE728.Parameters),
-"Public.Procedures.StAskml_58db.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAskml_58db.call(request.parameters as Public.Procedures.StAskml_58db.Parameters),
+"Public.Procedures.StAskml_874a.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAskml_874a.call(request.parameters as Public.Procedures.StAskml_874a.Parameters),
 "Public.Procedures.StAskmlE728.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAskmlE728.call(request.parameters as Public.Procedures.StAskmlE728.Parameters),
-"Public.Procedures.StAsgeojsonFab6.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsgeojsonFab6.call(request.parameters as Public.Procedures.StAsgeojsonFab6.Parameters),
+"Public.Procedures.StAsgeojson_07a8.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsgeojson_07a8.call(request.parameters as Public.Procedures.StAsgeojson_07a8.Parameters),
 "Public.Procedures.StAsgeojsonE728.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsgeojsonE728.call(request.parameters as Public.Procedures.StAsgeojsonE728.Parameters),
-"Public.Procedures.StDistanceDea8.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDistanceDea8.call(request.parameters as Public.Procedures.StDistanceDea8.Parameters),
+"Public.Procedures.StDistance_05ee.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDistance_05ee.call(request.parameters as Public.Procedures.StDistance_05ee.Parameters),
 "Public.Procedures.StDistance_2ec2.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDistance_2ec2.call(request.parameters as Public.Procedures.StDistance_2ec2.Parameters),
-"Public.Procedures.StArea_527f.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StArea_527f.call(request.parameters as Public.Procedures.StArea_527f.Parameters),
+"Public.Procedures.StArea_5f1d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StArea_5f1d.call(request.parameters as Public.Procedures.StArea_5f1d.Parameters),
 "Public.Procedures.StAreaE728.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAreaE728.call(request.parameters as Public.Procedures.StAreaE728.Parameters),
-"Public.Procedures.StLength_527f.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLength_527f.call(request.parameters as Public.Procedures.StLength_527f.Parameters),
+"Public.Procedures.StLength_5f1d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLength_5f1d.call(request.parameters as Public.Procedures.StLength_5f1d.Parameters),
 "Public.Procedures.StLengthE728.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLengthE728.call(request.parameters as Public.Procedures.StLengthE728.Parameters),
-"Public.Procedures.StProject_5f39.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StProject_5f39.call(request.parameters as Public.Procedures.StProject_5f39.Parameters),
-"Public.Procedures.StPerimeter_527f.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StPerimeter_527f.call(request.parameters as Public.Procedures.StPerimeter_527f.Parameters),
-"Public.Procedures.StSegmentize_7120.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSegmentize_7120.call(request.parameters as Public.Procedures.StSegmentize_7120.Parameters),
-"Public.Procedures.StAsbinaryB076.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsbinaryB076.call(request.parameters as Public.Procedures.StAsbinaryB076.Parameters),
-"Public.Procedures.StAsbinary_543e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsbinary_543e.call(request.parameters as Public.Procedures.StAsbinary_543e.Parameters),
-"Public.Procedures.StAsewktB076.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsewktB076.call(request.parameters as Public.Procedures.StAsewktB076.Parameters),
-"Public.Procedures.StAsewkt_52a9.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsewkt_52a9.call(request.parameters as Public.Procedures.StAsewkt_52a9.Parameters),
+"Public.Procedures.StProjectF79f.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StProjectF79f.call(request.parameters as Public.Procedures.StProjectF79f.Parameters),
+"Public.Procedures.StPerimeter_5f1d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StPerimeter_5f1d.call(request.parameters as Public.Procedures.StPerimeter_5f1d.Parameters),
+"Public.Procedures.StSegmentize_661e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSegmentize_661e.call(request.parameters as Public.Procedures.StSegmentize_661e.Parameters),
+"Public.Procedures.StAsbinaryC6e0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsbinaryC6e0.call(request.parameters as Public.Procedures.StAsbinaryC6e0.Parameters),
+"Public.Procedures.StAsbinary_69ab.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsbinary_69ab.call(request.parameters as Public.Procedures.StAsbinary_69ab.Parameters),
+"Public.Procedures.StAsewktC6e0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsewktC6e0.call(request.parameters as Public.Procedures.StAsewktC6e0.Parameters),
+"Public.Procedures.StAsewktE8cd.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsewktE8cd.call(request.parameters as Public.Procedures.StAsewktE8cd.Parameters),
 "Public.Procedures.StAsewktE728.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsewktE728.call(request.parameters as Public.Procedures.StAsewktE728.Parameters),
-"Public.Procedures.GeometrytypeB076.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeometrytypeB076.call(request.parameters as Public.Procedures.GeometrytypeB076.Parameters),
-"Public.Procedures.StSummaryB076.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSummaryB076.call(request.parameters as Public.Procedures.StSummaryB076.Parameters),
-"Public.Procedures.StGeohash_52a9.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StGeohash_52a9.call(request.parameters as Public.Procedures.StGeohash_52a9.Parameters),
-"Public.Procedures.StSridB076.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSridB076.call(request.parameters as Public.Procedures.StSridB076.Parameters),
-"Public.Procedures.StSetsrid_52a9.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSetsrid_52a9.call(request.parameters as Public.Procedures.StSetsrid_52a9.Parameters),
-"Public.Procedures.StCentroid_527f.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCentroid_527f.call(request.parameters as Public.Procedures.StCentroid_527f.Parameters),
+"Public.Procedures.GeometrytypeC6e0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeometrytypeC6e0.call(request.parameters as Public.Procedures.GeometrytypeC6e0.Parameters),
+"Public.Procedures.StSummaryC6e0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSummaryC6e0.call(request.parameters as Public.Procedures.StSummaryC6e0.Parameters),
+"Public.Procedures.StGeohashE8cd.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StGeohashE8cd.call(request.parameters as Public.Procedures.StGeohashE8cd.Parameters),
+"Public.Procedures.StSridC6e0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSridC6e0.call(request.parameters as Public.Procedures.StSridC6e0.Parameters),
+"Public.Procedures.StSetsridE8cd.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSetsridE8cd.call(request.parameters as Public.Procedures.StSetsridE8cd.Parameters),
+"Public.Procedures.StCentroid_5f1d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCentroid_5f1d.call(request.parameters as Public.Procedures.StCentroid_5f1d.Parameters),
 "Public.Procedures.StCentroidE728.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCentroidE728.call(request.parameters as Public.Procedures.StCentroidE728.Parameters),
-"Public.Procedures.StCovers_25d7.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCovers_25d7.call(request.parameters as Public.Procedures.StCovers_25d7.Parameters),
-"Public.Procedures.StDwithin_1936.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDwithin_1936.call(request.parameters as Public.Procedures.StDwithin_1936.Parameters),
-"Public.Procedures.StCoveredby_25d7.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCoveredby_25d7.call(request.parameters as Public.Procedures.StCoveredby_25d7.Parameters),
-"Public.Procedures.StIntersects_25d7.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIntersects_25d7.call(request.parameters as Public.Procedures.StIntersects_25d7.Parameters),
-"Public.Procedures.StBuffer_7120.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StBuffer_7120.call(request.parameters as Public.Procedures.StBuffer_7120.Parameters),
-"Public.Procedures.StBufferAc74.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StBufferAc74.call(request.parameters as Public.Procedures.StBufferAc74.Parameters),
-"Public.Procedures.StBuffer_750b.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StBuffer_750b.call(request.parameters as Public.Procedures.StBuffer_750b.Parameters),
+"Public.Procedures.StCoversEa06.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCoversEa06.call(request.parameters as Public.Procedures.StCoversEa06.Parameters),
+"Public.Procedures.StDwithin_35a5.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDwithin_35a5.call(request.parameters as Public.Procedures.StDwithin_35a5.Parameters),
+"Public.Procedures.StCoveredbyEa06.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCoveredbyEa06.call(request.parameters as Public.Procedures.StCoveredbyEa06.Parameters),
+"Public.Procedures.StIntersectsEa06.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIntersectsEa06.call(request.parameters as Public.Procedures.StIntersectsEa06.Parameters),
+"Public.Procedures.StBuffer_661e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StBuffer_661e.call(request.parameters as Public.Procedures.StBuffer_661e.Parameters),
+"Public.Procedures.StBuffer_693b.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StBuffer_693b.call(request.parameters as Public.Procedures.StBuffer_693b.Parameters),
+"Public.Procedures.StBuffer_51ed.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StBuffer_51ed.call(request.parameters as Public.Procedures.StBuffer_51ed.Parameters),
 "Public.Procedures.StBufferC349.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StBufferC349.call(request.parameters as Public.Procedures.StBufferC349.Parameters),
 "Public.Procedures.StBufferF7c6.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StBufferF7c6.call(request.parameters as Public.Procedures.StBufferF7c6.Parameters),
-"Public.Procedures.StIntersection_25d7.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIntersection_25d7.call(request.parameters as Public.Procedures.StIntersection_25d7.Parameters),
+"Public.Procedures.StIntersectionEa06.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIntersectionEa06.call(request.parameters as Public.Procedures.StIntersectionEa06.Parameters),
 "Public.Procedures.StIntersection_2ec2.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIntersection_2ec2.call(request.parameters as Public.Procedures.StIntersection_2ec2.Parameters),
 "Public.Procedures.StCovers_2ec2.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCovers_2ec2.call(request.parameters as Public.Procedures.StCovers_2ec2.Parameters),
 "Public.Procedures.StCoveredby_2ec2.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StCoveredby_2ec2.call(request.parameters as Public.Procedures.StCoveredby_2ec2.Parameters),
 "Public.Procedures.StDwithinEfc0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDwithinEfc0.call(request.parameters as Public.Procedures.StDwithinEfc0.Parameters),
 "Public.Procedures.StIntersects_2ec2.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StIntersects_2ec2.call(request.parameters as Public.Procedures.StIntersects_2ec2.Parameters),
-"Public.Procedures.StClosestpointDea8.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StClosestpointDea8.call(request.parameters as Public.Procedures.StClosestpointDea8.Parameters),
+"Public.Procedures.StClosestpoint_05ee.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StClosestpoint_05ee.call(request.parameters as Public.Procedures.StClosestpoint_05ee.Parameters),
 "Public.Procedures.StClosestpoint_2ec2.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StClosestpoint_2ec2.call(request.parameters as Public.Procedures.StClosestpoint_2ec2.Parameters),
-"Public.Procedures.StShortestlineDea8.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StShortestlineDea8.call(request.parameters as Public.Procedures.StShortestlineDea8.Parameters),
+"Public.Procedures.StShortestline_05ee.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StShortestline_05ee.call(request.parameters as Public.Procedures.StShortestline_05ee.Parameters),
 "Public.Procedures.StShortestline_2ec2.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StShortestline_2ec2.call(request.parameters as Public.Procedures.StShortestline_2ec2.Parameters),
-"Public.Procedures.StLinesubstring_5f39.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLinesubstring_5f39.call(request.parameters as Public.Procedures.StLinesubstring_5f39.Parameters),
+"Public.Procedures.StLinesubstringF79f.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLinesubstringF79f.call(request.parameters as Public.Procedures.StLinesubstringF79f.Parameters),
 "Public.Procedures.StLinesubstringE586.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLinesubstringE586.call(request.parameters as Public.Procedures.StLinesubstringE586.Parameters),
-"Public.Procedures.StLinelocatepointDea8.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLinelocatepointDea8.call(request.parameters as Public.Procedures.StLinelocatepointDea8.Parameters),
+"Public.Procedures.StLinelocatepoint_05ee.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLinelocatepoint_05ee.call(request.parameters as Public.Procedures.StLinelocatepoint_05ee.Parameters),
 "Public.Procedures.StLinelocatepoint_2ec2.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLinelocatepoint_2ec2.call(request.parameters as Public.Procedures.StLinelocatepoint_2ec2.Parameters),
-"Public.Procedures.StLineinterpolatepoints_7696.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLineinterpolatepoints_7696.call(request.parameters as Public.Procedures.StLineinterpolatepoints_7696.Parameters),
+"Public.Procedures.StLineinterpolatepoints_83da.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLineinterpolatepoints_83da.call(request.parameters as Public.Procedures.StLineinterpolatepoints_83da.Parameters),
 "Public.Procedures.StLineinterpolatepointsC349.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLineinterpolatepointsC349.call(request.parameters as Public.Procedures.StLineinterpolatepointsC349.Parameters),
-"Public.Procedures.StLineinterpolatepoint_6ef8.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLineinterpolatepoint_6ef8.call(request.parameters as Public.Procedures.StLineinterpolatepoint_6ef8.Parameters),
+"Public.Procedures.StLineinterpolatepoint_57c0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLineinterpolatepoint_57c0.call(request.parameters as Public.Procedures.StLineinterpolatepoint_57c0.Parameters),
 "Public.Procedures.StLineinterpolatepointC349.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StLineinterpolatepointC349.call(request.parameters as Public.Procedures.StLineinterpolatepointC349.Parameters),
-"Public.Procedures.StDistancesphere_4e70.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDistancesphere_4e70.call(request.parameters as Public.Procedures.StDistancesphere_4e70.Parameters),
-"Public.Procedures.StDistancesphere_0b21.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDistancesphere_0b21.call(request.parameters as Public.Procedures.StDistancesphere_0b21.Parameters),
+"Public.Procedures.StDistancesphere_6bd0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDistancesphere_6bd0.call(request.parameters as Public.Procedures.StDistancesphere_6bd0.Parameters),
+"Public.Procedures.StDistancesphereBab7.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StDistancesphereBab7.call(request.parameters as Public.Procedures.StDistancesphereBab7.Parameters),
 "Public.Procedures.PostgisTypeName.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PostgisTypeName.call(request.parameters as Public.Procedures.PostgisTypeName.Parameters),
 "Public.Procedures.PostgisConstraintSrid.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PostgisConstraintSrid.call(request.parameters as Public.Procedures.PostgisConstraintSrid.Parameters),
 "Public.Procedures.PostgisConstraintDims.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.PostgisConstraintDims.call(request.parameters as Public.Procedures.PostgisConstraintDims.Parameters),
@@ -87722,25 +87717,25 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx) {
 "Public.Procedures.StSquare.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSquare.call(request.parameters as Public.Procedures.StSquare.Parameters),
 "Public.Procedures.StHexagongrid.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StHexagongrid.call(request.parameters as Public.Procedures.StHexagongrid.Parameters),
 "Public.Procedures.StSquaregrid.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSquaregrid.call(request.parameters as Public.Procedures.StSquaregrid.Parameters),
-"Public.Procedures.Contains_2dA8e6.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Contains_2dA8e6.call(request.parameters as Public.Procedures.Contains_2dA8e6.Parameters),
-"Public.Procedures.IsContained_2dA8e6.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.IsContained_2dA8e6.call(request.parameters as Public.Procedures.IsContained_2dA8e6.Parameters),
-"Public.Procedures.Overlaps_2dA8e6.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Overlaps_2dA8e6.call(request.parameters as Public.Procedures.Overlaps_2dA8e6.Parameters),
-"Public.Procedures.Overlaps_2d_5533.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Overlaps_2d_5533.call(request.parameters as Public.Procedures.Overlaps_2d_5533.Parameters),
-"Public.Procedures.Contains_2d_5533.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Contains_2d_5533.call(request.parameters as Public.Procedures.Contains_2d_5533.Parameters),
-"Public.Procedures.IsContained_2d_5533.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.IsContained_2d_5533.call(request.parameters as Public.Procedures.IsContained_2d_5533.Parameters),
-"Public.Procedures.Contains_2d_5225.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Contains_2d_5225.call(request.parameters as Public.Procedures.Contains_2d_5225.Parameters),
-"Public.Procedures.IsContained_2d_5225.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.IsContained_2d_5225.call(request.parameters as Public.Procedures.IsContained_2d_5225.Parameters),
-"Public.Procedures.Overlaps_2d_5225.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Overlaps_2d_5225.call(request.parameters as Public.Procedures.Overlaps_2d_5225.Parameters),
-"Public.Procedures.OverlapsNdD353.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.OverlapsNdD353.call(request.parameters as Public.Procedures.OverlapsNdD353.Parameters),
-"Public.Procedures.OverlapsNdD1af.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.OverlapsNdD1af.call(request.parameters as Public.Procedures.OverlapsNdD1af.Parameters),
-"Public.Procedures.OverlapsNdA633.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.OverlapsNdA633.call(request.parameters as Public.Procedures.OverlapsNdA633.Parameters),
+"Public.Procedures.Contains_2d_676e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Contains_2d_676e.call(request.parameters as Public.Procedures.Contains_2d_676e.Parameters),
+"Public.Procedures.IsContained_2d_676e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.IsContained_2d_676e.call(request.parameters as Public.Procedures.IsContained_2d_676e.Parameters),
+"Public.Procedures.Overlaps_2d_676e.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Overlaps_2d_676e.call(request.parameters as Public.Procedures.Overlaps_2d_676e.Parameters),
+"Public.Procedures.Overlaps_2dA7ab.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Overlaps_2dA7ab.call(request.parameters as Public.Procedures.Overlaps_2dA7ab.Parameters),
+"Public.Procedures.Contains_2dA7ab.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Contains_2dA7ab.call(request.parameters as Public.Procedures.Contains_2dA7ab.Parameters),
+"Public.Procedures.IsContained_2dA7ab.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.IsContained_2dA7ab.call(request.parameters as Public.Procedures.IsContained_2dA7ab.Parameters),
+"Public.Procedures.Contains_2d_3e52.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Contains_2d_3e52.call(request.parameters as Public.Procedures.Contains_2d_3e52.Parameters),
+"Public.Procedures.IsContained_2d_3e52.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.IsContained_2d_3e52.call(request.parameters as Public.Procedures.IsContained_2d_3e52.Parameters),
+"Public.Procedures.Overlaps_2d_3e52.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Overlaps_2d_3e52.call(request.parameters as Public.Procedures.Overlaps_2d_3e52.Parameters),
+"Public.Procedures.OverlapsNd_1882.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.OverlapsNd_1882.call(request.parameters as Public.Procedures.OverlapsNd_1882.Parameters),
+"Public.Procedures.OverlapsNd_8a58.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.OverlapsNd_8a58.call(request.parameters as Public.Procedures.OverlapsNd_8a58.Parameters),
+"Public.Procedures.OverlapsNdC3f9.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.OverlapsNdC3f9.call(request.parameters as Public.Procedures.OverlapsNdC3f9.Parameters),
 "Public.Procedures.Geom2dBrinInclusionAddValue.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Geom2dBrinInclusionAddValue.call(request.parameters as Public.Procedures.Geom2dBrinInclusionAddValue.Parameters),
 "Public.Procedures.Geom3dBrinInclusionAddValue.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Geom3dBrinInclusionAddValue.call(request.parameters as Public.Procedures.Geom3dBrinInclusionAddValue.Parameters),
 "Public.Procedures.Geom4dBrinInclusionAddValue.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Geom4dBrinInclusionAddValue.call(request.parameters as Public.Procedures.Geom4dBrinInclusionAddValue.Parameters),
 "Public.Procedures.StSimplifypolygonhull.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StSimplifypolygonhull.call(request.parameters as Public.Procedures.StSimplifypolygonhull.Parameters),
 "Public.Procedures.StConcavehull.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StConcavehull.call(request.parameters as Public.Procedures.StConcavehull.Parameters),
 "Public.Procedures.StAsx3d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAsx3d.call(request.parameters as Public.Procedures.StAsx3d.Parameters),
-"Public.Procedures.StAngle_4e70.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAngle_4e70.call(request.parameters as Public.Procedures.StAngle_4e70.Parameters),
+"Public.Procedures.StAngle_6bd0.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StAngle_6bd0.call(request.parameters as Public.Procedures.StAngle_6bd0.Parameters),
 "Public.Procedures.St_3dlineinterpolatepoint.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.St_3dlineinterpolatepoint.call(request.parameters as Public.Procedures.St_3dlineinterpolatepoint.Parameters),
 "Public.Procedures.GeometrySpgistConfig_2d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeometrySpgistConfig_2d.call(request.parameters as Public.Procedures.GeometrySpgistConfig_2d.Parameters),
 "Public.Procedures.GeometrySpgistChoose_2d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GeometrySpgistChoose_2d.call(request.parameters as Public.Procedures.GeometrySpgistChoose_2d.Parameters),

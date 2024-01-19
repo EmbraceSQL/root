@@ -220,12 +220,7 @@ export type Xid8 = number;
 
 export type Point = Geometry.Point;
 
-export type Lseg = 
-     {
-      from: Point;
-      to: Point;
-    }
-    ;
+export type Lseg = Geometry.LineSegment;
 
 export type Path = Array<Point>;
 
@@ -9829,12 +9824,12 @@ export type PrimaryKey = Public.Types.ChecklistItemPkey;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_56324Index = {
+export type PgToast_63456Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_56333Index = {
+export type PgToast_63465Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -10588,7 +10583,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      return from;
+      return Geometry.parseLineSegment(from);
     
 }
 
@@ -22129,11 +22124,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_56324Index {
+export namespace PgToast_63456Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_56324Index.is(from)) {
+if (PgToast.Types.PgToast_63456Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -22144,11 +22139,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_56333Index {
+export namespace PgToast_63465Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_56333Index.is(from)) {
+if (PgToast.Types.PgToast_63465Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -27702,16 +27697,16 @@ export namespace ChecklistItem {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_56324Index {
-export function is(value: any) : value is PgToast.Types.PgToast_56324Index {
+export namespace PgToast_63456Index {
+export function is(value: any) : value is PgToast.Types.PgToast_63456Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_56333Index {
-export function is(value: any) : value is PgToast.Types.PgToast_56333Index {
+export namespace PgToast_63465Index {
+export function is(value: any) : value is PgToast.Types.PgToast_63465Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -31905,13 +31900,13 @@ export namespace ChecklistItem {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_56324Index {
- export function equals(l: PgToast.Types.PgToast_56324Index|undefined, r: unknown) {
+export namespace PgToast_63456Index {
+ export function equals(l: PgToast.Types.PgToast_63456Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_56333Index {
- export function equals(l: PgToast.Types.PgToast_56333Index|undefined, r: unknown) {
+export namespace PgToast_63465Index {
+ export function equals(l: PgToast.Types.PgToast_63465Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }

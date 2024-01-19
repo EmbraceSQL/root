@@ -220,12 +220,7 @@ export type Xid8 = number;
 
 export type Point = Geometry.Point;
 
-export type Lseg = 
-     {
-      from: Point;
-      to: Point;
-    }
-    ;
+export type Lseg = Geometry.LineSegment;
 
 export type Path = Array<Point>;
 
@@ -9829,12 +9824,12 @@ export type PrimaryKey = Public.Types.ChecklistItemPkey;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_56324Index = {
+export type PgToast_63456Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_56333Index = {
+export type PgToast_63465Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -10588,7 +10583,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      return from;
+      return Geometry.parseLineSegment(from);
     
 }
 
@@ -22129,11 +22124,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_56324Index {
+export namespace PgToast_63456Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_56324Index.is(from)) {
+if (PgToast.Types.PgToast_63456Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -22144,11 +22139,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_56333Index {
+export namespace PgToast_63465Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_56333Index.is(from)) {
+if (PgToast.Types.PgToast_63465Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -27702,16 +27697,16 @@ export namespace ChecklistItem {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_56324Index {
-export function is(value: any) : value is PgToast.Types.PgToast_56324Index {
+export namespace PgToast_63456Index {
+export function is(value: any) : value is PgToast.Types.PgToast_63456Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_56333Index {
-export function is(value: any) : value is PgToast.Types.PgToast_56333Index {
+export namespace PgToast_63465Index {
+export function is(value: any) : value is PgToast.Types.PgToast_63465Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -31905,13 +31900,13 @@ export namespace ChecklistItem {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_56324Index {
- export function equals(l: PgToast.Types.PgToast_56324Index|undefined, r: unknown) {
+export namespace PgToast_63456Index {
+ export function equals(l: PgToast.Types.PgToast_63456Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_56333Index {
- export function equals(l: PgToast.Types.PgToast_56333Index|undefined, r: unknown) {
+export namespace PgToast_63465Index {
+ export function equals(l: PgToast.Types.PgToast_63465Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -33597,24 +33592,24 @@ export namespace Tables {
 ["InformationSchema.Types.UserMappings"]: Typecast
 [13823]: Typecast;
 ["InformationSchema.Types.UserMappingsArray"]: Typecast
-[56326]: Typecast;
+[63458]: Typecast;
 ["Public.Types.Checklist"]: Typecast
-[56325]: Typecast;
+[63457]: Typecast;
 ["Public.Types.ChecklistArray"]: Typecast
-[56335]: Typecast;
+[63467]: Typecast;
 ["Public.Types.ChecklistItem"]: Typecast
-[56334]: Typecast;
+[63466]: Typecast;
 ["Public.Types.ChecklistItemArray"]: Typecast
-[56331]: Typecast;
+[63463]: Typecast;
 ["Public.Types.ChecklistPkey"]: Typecast
-[56341]: Typecast;
+[63473]: Typecast;
 ["Public.Types.ChecklistItemPkey"]: Typecast
-[56348]: Typecast;
+[63480]: Typecast;
 ["Public.Types.ChecklistItemParent"]: Typecast
-[56330]: Typecast;
-["PgToast.Types.PgToast_56324Index"]: Typecast
-[56340]: Typecast;
-["PgToast.Types.PgToast_56333Index"]: Typecast
+[63462]: Typecast;
+["PgToast.Types.PgToast_63456Index"]: Typecast
+[63472]: Typecast;
+["PgToast.Types.PgToast_63465Index"]: Typecast
 [2837]: Typecast;
 ["PgToast.Types.PgToast_1255Index"]: Typecast
 [4172]: Typecast;
