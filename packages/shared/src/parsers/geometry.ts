@@ -327,4 +327,64 @@ export namespace Geometry {
       points: path.points,
     });
   }
+
+  export type Circle = {
+    center: Point;
+    radius: number;
+  };
+
+  function isCircle(from: unknown): from is Circle {
+    return (
+      isPoint((from as Circle)?.center) &&
+      typeof (from as Circle)?.radius === "number"
+    );
+  }
+
+  const circleAngleBrackets = parsimmon.seqObj<Circle>(
+    parsimmon.string("<").skip(whitespace),
+    ["center", pointParser],
+    parsimmon.string(",").skip(whitespace),
+    ["radius", number],
+    parsimmon.string(">").skip(whitespace),
+  );
+  const circleParenthesis = parsimmon.seqObj<Circle>(
+    parsimmon.string("(").skip(whitespace),
+    ["center", pointParser],
+    parsimmon.string(",").skip(whitespace),
+    ["radius", number],
+    parsimmon.string(")").skip(whitespace),
+  );
+  const circleBare = parsimmon.seqObj<Circle>(
+    ["center", pointParser],
+    parsimmon.string(",").skip(whitespace),
+    ["radius", number],
+  );
+
+  const circleParser = parsimmon.alt(
+    circleAngleBrackets,
+    circleParenthesis,
+    circleBare,
+  );
+
+  /**
+   * Parse postgres string representation of a circle.
+   */
+  export function parseCircle(from: unknown) {
+    if (typeof from === "string") {
+      return circleParser.tryParse(from);
+    }
+    if (isCircle(from)) {
+      return from;
+    }
+    return null;
+  }
+
+  /**
+   * Serialize a circle to postgres text format.
+   */
+  export function serializeCircle(x: unknown) {
+    const circle = x as Circle;
+    if (circle === undefined || circle === null) return null;
+    return `<${serializePoint(circle.center)}, ${circle.radius}>`;
+  }
 }

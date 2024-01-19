@@ -172,3 +172,8 @@ CREATE TABLE api.polygons(
   polygon polygon NOT NULL
 );
 
+CREATE TABLE api.circles(
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  circle circle NOT NULL
+);
+

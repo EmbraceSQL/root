@@ -191,14 +191,10 @@ describe("Can marshall base types", () => {
   it("that are circles", () => {
     for (const val of [
       null,
-      JSON.stringify({
-        center: { x: 0, y: 0 },
-        radius: 0,
-      }),
-      JSON.stringify({
-        center: { x: 1, y: 2 },
-        radius: 3.5,
-      }),
+      "< (0, 0), 0 >",
+      "( (1, 2), 4.0 )",
+      "(1, 2), 4.0",
+      "1, 2, 4.0",
     ]) {
       roundTrip("PgCatalog.Types.Circle", PgCatalog.Types.Circle.parse, val);
     }
@@ -420,6 +416,19 @@ describe("Can marshall geometric", () => {
         { x: 1, y: 2 },
         { x: 2, y: 3 },
       ],
+    });
+  });
+  it("circles", async () => {
+    const ret = await database.Api.Tables.Circles.create({
+      circle: {
+        center: { x: 1, y: 2 },
+        radius: 4.5,
+      },
+    });
+    expect(ret.id).toBeTruthy();
+    expect(ret.circle).toMatchObject({
+      center: { x: 1, y: 2 },
+      radius: 4.5,
     });
   });
 });
