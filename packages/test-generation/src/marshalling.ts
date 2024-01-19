@@ -14,7 +14,7 @@
         /* @typescript-eslint/no-redundant-type-constituents */
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
         import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
-        import { parsePoint } from "@embracesql/shared";
+        import { Geometry } from "@embracesql/shared";
 
     
 export namespace PgCatalog {
@@ -218,12 +218,7 @@ export type PgDdlCommand = unknown;
 
 export type Xid8 = number;
 
-export type Point = 
-     {
-      x: number;
-      y: number;
-    }
-    ;
+export type Point = Geometry.Point;
 
 export type Lseg = 
      {
@@ -11392,7 +11387,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      return parsePoint(from);
+      return Geometry.parsePoint(from);
     
 }
 

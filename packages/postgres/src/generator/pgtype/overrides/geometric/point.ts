@@ -1,37 +1,28 @@
 import { Context } from "../../../../context";
 import { PGCatalogType } from "../../pgcatalogtype";
 import { registerOverride } from "../_overrides";
-import {
-  GenerationContext,
-  parsePoint,
-  serializePoint,
-} from "@embracesql/shared";
+import { GenerationContext, Geometry } from "@embracesql/shared";
 
 class PGTypePoint extends PGCatalogType {
   typescriptTypeDefinition(context: GenerationContext) {
     console.assert(context);
-    return `
-     {
-      x: number;
-      y: number;
-    }
-    `;
+    return `Geometry.Point`;
   }
   typescriptTypeParser(context: GenerationContext) {
     console.assert(context);
     return `
-      return parsePoint(from);
+      return Geometry.parsePoint(from);
     `;
   }
 
   serializeToPostgres(context: Context, x: unknown) {
     console.assert(context);
-    return serializePoint(x);
+    return Geometry.serializePoint(x);
   }
 
   parseFromPostgres(context: Context, x: unknown) {
     console.assert(context);
-    return parsePoint(x as string);
+    return Geometry.parsePoint(x as string);
   }
 }
 

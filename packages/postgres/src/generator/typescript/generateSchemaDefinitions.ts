@@ -98,7 +98,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
         /* @typescript-eslint/no-redundant-type-constituents */
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
         import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
-        import { parsePoint } from "@embracesql/shared";
+        import { Geometry } from "@embracesql/shared";
 
     `,
   ];
