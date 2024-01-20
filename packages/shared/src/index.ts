@@ -49,6 +49,7 @@ export type GenerationContextProps = {
 export type GenerationContext = GenerationContextProps & {
   database: DatabaseNode;
   handlers?: VisitorMap;
+  currentSymbolName?: string;
 };
 
 /**
@@ -190,17 +191,3 @@ export enum Sort {
 export type PossiblyEmpty<T> = {
   [K in keyof T]: T[K] | undefined;
 };
-
-/**
- * Fulltext queries have different parsers that turn your query search
- * text into a runnable search in the database.
- *
- * For PostgreSQL these are documented at:
- * https://www.postgresql.org/docs/current/textsearch-controls.html#TEXTSEARCH-HEADLINE
- */
-export enum FulltextParser {
-  Default = "to_tsquery",
-  Plain = "plainto_tsquerty",
-  Phrase = "phraseto_tsquyer",
-  Web = "websearch_to_tsquery",
-}

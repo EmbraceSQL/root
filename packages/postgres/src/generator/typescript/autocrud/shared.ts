@@ -102,7 +102,10 @@ export function sqlPredicate(
     .map(
       (a, i) =>
         `${a.name} ${node.operators[i]} ${a.type.postgresWrapReadParameter(
-          context,
+          {
+            ...context,
+            currentSymbolName: `options?.${a.typescriptPropertyName}`,
+          },
           postgresValueExpression(context, a, holder),
         )}`,
     )

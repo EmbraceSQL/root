@@ -1,4 +1,4 @@
-import { Database, Public } from "../src/dvdrental";
+import { Database, PgCatalog, Public } from "../src/dvdrental";
 
 describe("The database can AutoCRUD", () => {
   // each test runs in an isolated transaction that is rolled back
@@ -296,6 +296,45 @@ describe("The database can AutoCRUD", () => {
       const films = await database.Public.Tables.Film.FilmFulltextIdx.read({
         fulltext: "lumberjack & car",
       });
+      expect(films.length).toBeGreaterThan(0);
+    });
+    it("with simple tsvector parsing", async () => {
+      const films = await database.Public.Tables.Film.FilmFulltextIdx.read(
+        {
+          fulltext: "lumberjack car",
+        },
+        {
+          fulltext: {
+            queryParser: PgCatalog.Types.Tsvector.FulltextParser.Plain,
+          },
+        },
+      );
+      expect(films.length).toBeGreaterThan(0);
+    });
+    it("with phrase tsvector parsing", async () => {
+      const films = await database.Public.Tables.Film.FilmFulltextIdx.read(
+        {
+          fulltext: "a lumberjack and a",
+        },
+        {
+          fulltext: {
+            queryParser: PgCatalog.Types.Tsvector.FulltextParser.Plain,
+          },
+        },
+      );
+      expect(films.length).toBeGreaterThan(0);
+    });
+    it("with web tsvector parsing", async () => {
+      const films = await database.Public.Tables.Film.FilmFulltextIdx.read(
+        {
+          fulltext: "lumberjack -car",
+        },
+        {
+          fulltext: {
+            queryParser: PgCatalog.Types.Tsvector.FulltextParser.Plain,
+          },
+        },
+      );
       expect(films.length).toBeGreaterThan(0);
     });
   });

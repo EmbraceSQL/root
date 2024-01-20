@@ -16,6 +16,7 @@ import {
 export const DeleteOperation = {
   async before(context: GenerationContext, node: DeleteOperationNode) {
     const parameters = `${PARAMETERS}: ${node.index.type.typescriptNamespacedName}`;
+    const options = `options?: ${node.index.table.typescriptNamespacedName}.ModifyOptions`;
     const sqlColumnNames = node.index.table.type.attributes
       .map((a) => a.name)
       .join(",");
@@ -29,7 +30,7 @@ export const DeleteOperation = {
     RETURNING ${sqlColumnNames}`;
 
     return [
-      `async ${node.typescriptPropertyName}(${parameters}) {`,
+      `async ${node.typescriptPropertyName}(${parameters}, ${options}) {`,
       ` console.assert(parameters);`,
       ` const sql = this.database.context.sql;`,
       ` const typed = sql.typed as unknown as PostgresTypecasts;`,

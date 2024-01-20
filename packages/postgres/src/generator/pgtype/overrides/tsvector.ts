@@ -13,7 +13,7 @@ export class PGTypeTsVector extends PGTypeText {
     expression: string,
   ): string {
     console.assert(context);
-    return `to_tsquery(${expression})`;
+    return `\${sql.unsafe(\`\${${context.currentSymbolName}?.queryParser ?? "to_tsquery"}\`)}(${expression})`;
   }
 
   /**
@@ -40,8 +40,8 @@ export class PGTypeTsVector extends PGTypeText {
          */
         export enum FulltextParser {
         Default = "to_tsquery",
-        Plain = "plainto_tsquerty",
-        Phrase = "phraseto_tsquyer",
+        Plain = "plainto_tsquery",
+        Phrase = "phraseto_tsquery",
         Web = "websearch_to_tsquery",
         }
         export type Options = {

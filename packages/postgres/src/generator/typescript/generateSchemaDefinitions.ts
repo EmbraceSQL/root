@@ -180,7 +180,15 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
               ` ${node.allColumns
                 .map(
                   (c) =>
-                    `${c.typescriptName}?: ${c.type.typescriptNamespacedName}.Options`,
+                    `${c.typescriptPropertyName}?: ${c.type.typescriptNamespacedName}.Options`,
+                )
+                .join(",\n")}`,
+              `};`,
+              `export type ModifyOptions = {`,
+              ` ${node.allColumns
+                .map(
+                  (c) =>
+                    `${c.typescriptPropertyName}?: ${c.type.typescriptNamespacedName}.Options`,
                 )
                 .join(",\n")}`,
               `};`,

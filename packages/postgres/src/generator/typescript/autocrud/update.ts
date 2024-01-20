@@ -22,6 +22,7 @@ export const UpdateOperation = {
   async before(context: GenerationContext, node: UpdateOperationNode) {
     const generationBuffer = [""];
     const parameters = `${PARAMETERS}: ${node.index.type.typescriptNamespacedName}, ${VALUES}: Partial<${node.index.table.typescriptNamespacedName}.Values>`;
+    const options = `options?: ${node.index.table.typescriptNamespacedName}.ModifyOptions`;
     const returns = node.index.unique
       ? `Promise<${node.index.table.type.typescriptNamespacedName}>`
       : `Promise<${node.index.table.type.typescriptNamespacedName}[]>`;
@@ -30,7 +31,7 @@ export const UpdateOperation = {
       .join(",");
 
     generationBuffer.push(
-      `async ${node.typescriptPropertyName}(${parameters}) : ${returns}{`,
+      `async ${node.typescriptPropertyName}(${parameters}, ${options}) : ${returns}{`,
     );
     generationBuffer.push(
       `
