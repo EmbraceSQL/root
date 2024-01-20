@@ -43096,7 +43096,7 @@ async call(parameters : Public.Procedures.RewardsReport.Parameters) {
             }
         
 
-async create(values: Public.Tables.FilmActor.Values): Promise<Public.Types.FilmActor>{
+async create(values: Partial<Public.Types.FilmActor>, options?: Public.Tables.FilmActor.Options): Promise<Public.Types.FilmActor>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -43269,7 +43269,7 @@ async delete(parameters: Public.Types.IdxFkFilmId, options?: Public.Tables.FilmA
             }
         
 
-async create(values: Public.Tables.Address.Values): Promise<Public.Types.Address>{
+async create(values: Partial<Public.Types.Address>, options?: Public.Tables.Address.Options): Promise<Public.Types.Address>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -43455,7 +43455,7 @@ async delete(parameters: Public.Types.IdxFkCityId, options?: Public.Tables.Addre
             }
         
 
-async create(values: Public.Tables.City.Values): Promise<Public.Types.City>{
+async create(values: Partial<Public.Types.City>, options?: Public.Tables.City.Options): Promise<Public.Types.City>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -43641,7 +43641,7 @@ async delete(parameters: Public.Types.IdxFkCountryId, options?: Public.Tables.Ci
             }
         
 
-async create(values: Public.Tables.Customer.Values): Promise<Public.Types.Customer>{
+async create(values: Partial<Public.Types.Customer>, options?: Public.Tables.Customer.Options): Promise<Public.Types.Customer>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -43955,7 +43955,7 @@ async delete(parameters: Public.Types.IdxLastName, options?: Public.Tables.Custo
             }
         
 
-async create(values: Public.Tables.Actor.Values): Promise<Public.Types.Actor>{
+async create(values: Partial<Public.Types.Actor>, options?: Public.Tables.Actor.Options): Promise<Public.Types.Actor>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -44141,7 +44141,7 @@ async delete(parameters: Public.Types.IdxActorLastName, options?: Public.Tables.
             }
         
 
-async create(values: Public.Tables.FilmCategory.Values): Promise<Public.Types.FilmCategory>{
+async create(values: Partial<Public.Types.FilmCategory>, options?: Public.Tables.FilmCategory.Options): Promise<Public.Types.FilmCategory>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -44250,7 +44250,7 @@ public get ByPrimaryKey(){ return this.FilmCategoryPkey };
             }
         
 
-async create(values: Public.Tables.Inventory.Values): Promise<Public.Types.Inventory>{
+async create(values: Partial<Public.Types.Inventory>, options?: Public.Tables.Inventory.Options): Promise<Public.Types.Inventory>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -44436,7 +44436,7 @@ async delete(parameters: Public.Types.IdxStoreIdFilmId, options?: Public.Tables.
             }
         
 
-async create(values: Public.Tables.Category.Values): Promise<Public.Types.Category>{
+async create(values: Partial<Public.Types.Category>, options?: Public.Tables.Category.Options): Promise<Public.Types.Category>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -44558,7 +44558,7 @@ public get ByPrimaryKey(){ return this.CategoryPkey };
             }
         
 
-async create(values: Public.Tables.Country.Values): Promise<Public.Types.Country>{
+async create(values: Partial<Public.Types.Country>, options?: Public.Tables.Country.Options): Promise<Public.Types.Country>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -44680,7 +44680,7 @@ public get ByPrimaryKey(){ return this.CountryPkey };
             }
         
 
-async create(values: Public.Tables.Language.Values): Promise<Public.Types.Language>{
+async create(values: Partial<Public.Types.Language>, options?: Public.Tables.Language.Options): Promise<Public.Types.Language>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -44802,7 +44802,7 @@ public get ByPrimaryKey(){ return this.LanguagePkey };
             }
         
 
-async create(values: Public.Tables.Rental.Values): Promise<Public.Types.Rental>{
+async create(values: Partial<Public.Types.Rental>, options?: Public.Tables.Rental.Options): Promise<Public.Types.Rental>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -45052,7 +45052,7 @@ async delete(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerI
             }
         
 
-async create(values: Public.Tables.Staff.Values): Promise<Public.Types.Staff>{
+async create(values: Partial<Public.Types.Staff>, options?: Public.Tables.Staff.Options): Promise<Public.Types.Staff>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -45174,7 +45174,7 @@ public get ByPrimaryKey(){ return this.StaffPkey };
             }
         
 
-async create(values: Public.Tables.Store.Values): Promise<Public.Types.Store>{
+async create(values: Partial<Public.Types.Store>, options?: Public.Tables.Store.Options): Promise<Public.Types.Store>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -45360,7 +45360,7 @@ async delete(parameters: Public.Types.IdxUnqManagerStaffId, options?: Public.Tab
             }
         
 
-async create(values: Public.Tables.Payment.Values): Promise<Public.Types.Payment>{
+async create(values: Partial<Public.Types.Payment>, options?: Public.Tables.Payment.Options): Promise<Public.Types.Payment>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -45674,7 +45674,7 @@ async delete(parameters: Public.Types.IdxFkStaffId, options?: Public.Tables.Paym
             }
         
 
-async create(values: Public.Tables.Film.Values): Promise<Public.Types.Film>{
+async create(values: Partial<Public.Types.Film>, options?: Public.Tables.Film.Options): Promise<Public.Types.Film>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;

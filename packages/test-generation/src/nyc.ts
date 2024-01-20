@@ -93851,7 +93851,7 @@ async call(parameters : Public.Procedures.StLetters.Parameters) {
             }
         
 
-async create(values: Public.Tables.SpatialRefSys.Values): Promise<Public.Types.SpatialRefSys>{
+async create(values: Partial<Public.Types.SpatialRefSys>, options?: Public.Tables.SpatialRefSys.Options): Promise<Public.Types.SpatialRefSys>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -93960,7 +93960,7 @@ public get ByPrimaryKey(){ return this.SpatialRefSysPkey };
             }
         
 
-async create(values: Public.Tables.NycCensusBlocks.Values): Promise<Public.Types.NycCensusBlocks>{
+async create(values: Partial<Public.Types.NycCensusBlocks>, options?: Public.Tables.NycCensusBlocks.Options): Promise<Public.Types.NycCensusBlocks>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -94146,7 +94146,7 @@ async delete(parameters: Public.Types.NycCensusBlocksGeomIdx, options?: Public.T
             }
         
 
-async create(values: Public.Tables.NycHomicides.Values): Promise<Public.Types.NycHomicides>{
+async create(values: Partial<Public.Types.NycHomicides>, options?: Public.Tables.NycHomicides.Options): Promise<Public.Types.NycHomicides>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -94332,7 +94332,7 @@ async delete(parameters: Public.Types.NycHomicidesGeomIdx, options?: Public.Tabl
             }
         
 
-async create(values: Public.Tables.NycNeighborhoods.Values): Promise<Public.Types.NycNeighborhoods>{
+async create(values: Partial<Public.Types.NycNeighborhoods>, options?: Public.Tables.NycNeighborhoods.Options): Promise<Public.Types.NycNeighborhoods>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -94518,7 +94518,7 @@ async delete(parameters: Public.Types.NycNeighborhoodsGeomIdx, options?: Public.
             }
         
 
-async create(values: Public.Tables.NycStreets.Values): Promise<Public.Types.NycStreets>{
+async create(values: Partial<Public.Types.NycStreets>, options?: Public.Tables.NycStreets.Options): Promise<Public.Types.NycStreets>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -94704,7 +94704,7 @@ async delete(parameters: Public.Types.NycStreetsGeomIdx, options?: Public.Tables
             }
         
 
-async create(values: Public.Tables.NycSubwayStations.Values): Promise<Public.Types.NycSubwayStations>{
+async create(values: Partial<Public.Types.NycSubwayStations>, options?: Public.Tables.NycSubwayStations.Options): Promise<Public.Types.NycSubwayStations>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;

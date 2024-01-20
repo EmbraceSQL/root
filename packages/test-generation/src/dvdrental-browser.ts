@@ -41226,10 +41226,11 @@ return response.results?.map(r => Public.Types.Customer.parse(r)) as Public.Type
           public FilmActor = new class extends HasClient {
         
 
-          public async create(values: Partial<Public.Types.FilmActor>) : Promise<Public.Types.FilmActor|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.FilmActor>, Public.Types.FilmActor, never>({
+          public async create(values: Partial<Public.Types.FilmActor>, options?: Public.Tables.FilmActor.Options) : Promise<Public.Types.FilmActor|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.FilmActor>, Public.Types.FilmActor, Public.Tables.FilmActor.Options>({
               operation: "Public.Tables.FilmActor.create",
-              values: {actorId: values.actorId,filmId: values.filmId,lastUpdate: values.lastUpdate}
+              values: {actorId: values.actorId,filmId: values.filmId,lastUpdate: values.lastUpdate},
+              options
             });
             return (
     nullIsUndefined<Public.Types.FilmActor>(Public.Types.FilmActor.parse(response.results))
@@ -41269,11 +41270,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.FilmActorPkey, values: Partial<Public.Types.FilmActor>) {
-            const response = await this.client.invoke<Public.Types.FilmActorPkey, Partial<Public.Types.FilmActor>, Public.Types.FilmActor | undefined, never>({
+          public async update(parameters: Public.Types.FilmActorPkey, values: Partial<Public.Types.FilmActor>, options?: Public.Tables.FilmActor.Options) {
+            const response = await this.client.invoke<Public.Types.FilmActorPkey, Partial<Public.Types.FilmActor>, Public.Types.FilmActor | undefined, Public.Tables.FilmActor.Options>({
               operation: "Public.Tables.FilmActor.FilmActorPkey.update",
               parameters: {actorId: parameters.actorId,filmId: parameters.filmId},
-              values: {actorId: values.actorId,filmId: values.filmId,lastUpdate: values.lastUpdate}
+              values: {actorId: values.actorId,filmId: values.filmId,lastUpdate: values.lastUpdate},
+              options
             });
         
 return (
@@ -41316,11 +41318,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.IdxFkFilmId, values: Partial<Public.Types.FilmActor>) {
-            const response = await this.client.invoke<Public.Types.IdxFkFilmId, Partial<Public.Types.FilmActor>, Public.Types.FilmActor[] | undefined, never>({
+          public async update(parameters: Public.Types.IdxFkFilmId, values: Partial<Public.Types.FilmActor>, options?: Public.Tables.FilmActor.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkFilmId, Partial<Public.Types.FilmActor>, Public.Types.FilmActor[] | undefined, Public.Tables.FilmActor.Options>({
               operation: "Public.Tables.FilmActor.IdxFkFilmId.update",
               parameters: {filmId: parameters.filmId},
-              values: {actorId: values.actorId,filmId: values.filmId,lastUpdate: values.lastUpdate}
+              values: {actorId: values.actorId,filmId: values.filmId,lastUpdate: values.lastUpdate},
+              options
             });
         
 return (
@@ -41354,10 +41357,11 @@ return (
           public Address = new class extends HasClient {
         
 
-          public async create(values: Partial<Public.Types.Address>) : Promise<Public.Types.Address|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Address>, Public.Types.Address, never>({
+          public async create(values: Partial<Public.Types.Address>, options?: Public.Tables.Address.Options) : Promise<Public.Types.Address|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Address>, Public.Types.Address, Public.Tables.Address.Options>({
               operation: "Public.Tables.Address.create",
-              values: {addressId: values.addressId,address: values.address,address2: values.address2,district: values.district,cityId: values.cityId,postalCode: values.postalCode,phone: values.phone,lastUpdate: values.lastUpdate}
+              values: {addressId: values.addressId,address: values.address,address2: values.address2,district: values.district,cityId: values.cityId,postalCode: values.postalCode,phone: values.phone,lastUpdate: values.lastUpdate},
+              options
             });
             return (
     nullIsUndefined<Public.Types.Address>(Public.Types.Address.parse(response.results))
@@ -41397,11 +41401,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.AddressPkey, values: Partial<Public.Types.Address>) {
-            const response = await this.client.invoke<Public.Types.AddressPkey, Partial<Public.Types.Address>, Public.Types.Address | undefined, never>({
+          public async update(parameters: Public.Types.AddressPkey, values: Partial<Public.Types.Address>, options?: Public.Tables.Address.Options) {
+            const response = await this.client.invoke<Public.Types.AddressPkey, Partial<Public.Types.Address>, Public.Types.Address | undefined, Public.Tables.Address.Options>({
               operation: "Public.Tables.Address.AddressPkey.update",
               parameters: {addressId: parameters.addressId},
-              values: {addressId: values.addressId,address: values.address,address2: values.address2,district: values.district,cityId: values.cityId,postalCode: values.postalCode,phone: values.phone,lastUpdate: values.lastUpdate}
+              values: {addressId: values.addressId,address: values.address,address2: values.address2,district: values.district,cityId: values.cityId,postalCode: values.postalCode,phone: values.phone,lastUpdate: values.lastUpdate},
+              options
             });
         
 return (
@@ -41444,11 +41449,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.IdxFkCityId, values: Partial<Public.Types.Address>) {
-            const response = await this.client.invoke<Public.Types.IdxFkCityId, Partial<Public.Types.Address>, Public.Types.Address[] | undefined, never>({
+          public async update(parameters: Public.Types.IdxFkCityId, values: Partial<Public.Types.Address>, options?: Public.Tables.Address.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkCityId, Partial<Public.Types.Address>, Public.Types.Address[] | undefined, Public.Tables.Address.Options>({
               operation: "Public.Tables.Address.IdxFkCityId.update",
               parameters: {cityId: parameters.cityId},
-              values: {addressId: values.addressId,address: values.address,address2: values.address2,district: values.district,cityId: values.cityId,postalCode: values.postalCode,phone: values.phone,lastUpdate: values.lastUpdate}
+              values: {addressId: values.addressId,address: values.address,address2: values.address2,district: values.district,cityId: values.cityId,postalCode: values.postalCode,phone: values.phone,lastUpdate: values.lastUpdate},
+              options
             });
         
 return (
@@ -41482,10 +41488,11 @@ return (
           public City = new class extends HasClient {
         
 
-          public async create(values: Partial<Public.Types.City>) : Promise<Public.Types.City|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.City>, Public.Types.City, never>({
+          public async create(values: Partial<Public.Types.City>, options?: Public.Tables.City.Options) : Promise<Public.Types.City|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.City>, Public.Types.City, Public.Tables.City.Options>({
               operation: "Public.Tables.City.create",
-              values: {cityId: values.cityId,city: values.city,countryId: values.countryId,lastUpdate: values.lastUpdate}
+              values: {cityId: values.cityId,city: values.city,countryId: values.countryId,lastUpdate: values.lastUpdate},
+              options
             });
             return (
     nullIsUndefined<Public.Types.City>(Public.Types.City.parse(response.results))
@@ -41525,11 +41532,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.CityPkey, values: Partial<Public.Types.City>) {
-            const response = await this.client.invoke<Public.Types.CityPkey, Partial<Public.Types.City>, Public.Types.City | undefined, never>({
+          public async update(parameters: Public.Types.CityPkey, values: Partial<Public.Types.City>, options?: Public.Tables.City.Options) {
+            const response = await this.client.invoke<Public.Types.CityPkey, Partial<Public.Types.City>, Public.Types.City | undefined, Public.Tables.City.Options>({
               operation: "Public.Tables.City.CityPkey.update",
               parameters: {cityId: parameters.cityId},
-              values: {cityId: values.cityId,city: values.city,countryId: values.countryId,lastUpdate: values.lastUpdate}
+              values: {cityId: values.cityId,city: values.city,countryId: values.countryId,lastUpdate: values.lastUpdate},
+              options
             });
         
 return (
@@ -41572,11 +41580,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.IdxFkCountryId, values: Partial<Public.Types.City>) {
-            const response = await this.client.invoke<Public.Types.IdxFkCountryId, Partial<Public.Types.City>, Public.Types.City[] | undefined, never>({
+          public async update(parameters: Public.Types.IdxFkCountryId, values: Partial<Public.Types.City>, options?: Public.Tables.City.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkCountryId, Partial<Public.Types.City>, Public.Types.City[] | undefined, Public.Tables.City.Options>({
               operation: "Public.Tables.City.IdxFkCountryId.update",
               parameters: {countryId: parameters.countryId},
-              values: {cityId: values.cityId,city: values.city,countryId: values.countryId,lastUpdate: values.lastUpdate}
+              values: {cityId: values.cityId,city: values.city,countryId: values.countryId,lastUpdate: values.lastUpdate},
+              options
             });
         
 return (
@@ -41610,10 +41619,11 @@ return (
           public Customer = new class extends HasClient {
         
 
-          public async create(values: Partial<Public.Types.Customer>) : Promise<Public.Types.Customer|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Customer>, Public.Types.Customer, never>({
+          public async create(values: Partial<Public.Types.Customer>, options?: Public.Tables.Customer.Options) : Promise<Public.Types.Customer|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Customer>, Public.Types.Customer, Public.Tables.Customer.Options>({
               operation: "Public.Tables.Customer.create",
-              values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active}
+              values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active},
+              options
             });
             return (
     nullIsUndefined<Public.Types.Customer>(Public.Types.Customer.parse(response.results))
@@ -41653,11 +41663,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.CustomerPkey, values: Partial<Public.Types.Customer>) {
-            const response = await this.client.invoke<Public.Types.CustomerPkey, Partial<Public.Types.Customer>, Public.Types.Customer | undefined, never>({
+          public async update(parameters: Public.Types.CustomerPkey, values: Partial<Public.Types.Customer>, options?: Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.CustomerPkey, Partial<Public.Types.Customer>, Public.Types.Customer | undefined, Public.Tables.Customer.Options>({
               operation: "Public.Tables.Customer.CustomerPkey.update",
               parameters: {customerId: parameters.customerId},
-              values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active}
+              values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active},
+              options
             });
         
 return (
@@ -41700,11 +41711,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.IdxFkAddressId, values: Partial<Public.Types.Customer>) {
-            const response = await this.client.invoke<Public.Types.IdxFkAddressId, Partial<Public.Types.Customer>, Public.Types.Customer[] | undefined, never>({
+          public async update(parameters: Public.Types.IdxFkAddressId, values: Partial<Public.Types.Customer>, options?: Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkAddressId, Partial<Public.Types.Customer>, Public.Types.Customer[] | undefined, Public.Tables.Customer.Options>({
               operation: "Public.Tables.Customer.IdxFkAddressId.update",
               parameters: {addressId: parameters.addressId},
-              values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active}
+              values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active},
+              options
             });
         
 return (
@@ -41753,11 +41765,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.IdxFkStoreId, values: Partial<Public.Types.Customer>) {
-            const response = await this.client.invoke<Public.Types.IdxFkStoreId, Partial<Public.Types.Customer>, Public.Types.Customer[] | undefined, never>({
+          public async update(parameters: Public.Types.IdxFkStoreId, values: Partial<Public.Types.Customer>, options?: Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkStoreId, Partial<Public.Types.Customer>, Public.Types.Customer[] | undefined, Public.Tables.Customer.Options>({
               operation: "Public.Tables.Customer.IdxFkStoreId.update",
               parameters: {storeId: parameters.storeId},
-              values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active}
+              values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active},
+              options
             });
         
 return (
@@ -41806,11 +41819,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.IdxLastName, values: Partial<Public.Types.Customer>) {
-            const response = await this.client.invoke<Public.Types.IdxLastName, Partial<Public.Types.Customer>, Public.Types.Customer[] | undefined, never>({
+          public async update(parameters: Public.Types.IdxLastName, values: Partial<Public.Types.Customer>, options?: Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.IdxLastName, Partial<Public.Types.Customer>, Public.Types.Customer[] | undefined, Public.Tables.Customer.Options>({
               operation: "Public.Tables.Customer.IdxLastName.update",
               parameters: {lastName: parameters.lastName},
-              values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active}
+              values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active},
+              options
             });
         
 return (
@@ -41844,10 +41858,11 @@ return (
           public Actor = new class extends HasClient {
         
 
-          public async create(values: Partial<Public.Types.Actor>) : Promise<Public.Types.Actor|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Actor>, Public.Types.Actor, never>({
+          public async create(values: Partial<Public.Types.Actor>, options?: Public.Tables.Actor.Options) : Promise<Public.Types.Actor|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Actor>, Public.Types.Actor, Public.Tables.Actor.Options>({
               operation: "Public.Tables.Actor.create",
-              values: {actorId: values.actorId,firstName: values.firstName,lastName: values.lastName,lastUpdate: values.lastUpdate}
+              values: {actorId: values.actorId,firstName: values.firstName,lastName: values.lastName,lastUpdate: values.lastUpdate},
+              options
             });
             return (
     nullIsUndefined<Public.Types.Actor>(Public.Types.Actor.parse(response.results))
@@ -41887,11 +41902,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.ActorPkey, values: Partial<Public.Types.Actor>) {
-            const response = await this.client.invoke<Public.Types.ActorPkey, Partial<Public.Types.Actor>, Public.Types.Actor | undefined, never>({
+          public async update(parameters: Public.Types.ActorPkey, values: Partial<Public.Types.Actor>, options?: Public.Tables.Actor.Options) {
+            const response = await this.client.invoke<Public.Types.ActorPkey, Partial<Public.Types.Actor>, Public.Types.Actor | undefined, Public.Tables.Actor.Options>({
               operation: "Public.Tables.Actor.ActorPkey.update",
               parameters: {actorId: parameters.actorId},
-              values: {actorId: values.actorId,firstName: values.firstName,lastName: values.lastName,lastUpdate: values.lastUpdate}
+              values: {actorId: values.actorId,firstName: values.firstName,lastName: values.lastName,lastUpdate: values.lastUpdate},
+              options
             });
         
 return (
@@ -41934,11 +41950,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.IdxActorLastName, values: Partial<Public.Types.Actor>) {
-            const response = await this.client.invoke<Public.Types.IdxActorLastName, Partial<Public.Types.Actor>, Public.Types.Actor[] | undefined, never>({
+          public async update(parameters: Public.Types.IdxActorLastName, values: Partial<Public.Types.Actor>, options?: Public.Tables.Actor.Options) {
+            const response = await this.client.invoke<Public.Types.IdxActorLastName, Partial<Public.Types.Actor>, Public.Types.Actor[] | undefined, Public.Tables.Actor.Options>({
               operation: "Public.Tables.Actor.IdxActorLastName.update",
               parameters: {lastName: parameters.lastName},
-              values: {actorId: values.actorId,firstName: values.firstName,lastName: values.lastName,lastUpdate: values.lastUpdate}
+              values: {actorId: values.actorId,firstName: values.firstName,lastName: values.lastName,lastUpdate: values.lastUpdate},
+              options
             });
         
 return (
@@ -41972,10 +41989,11 @@ return (
           public FilmCategory = new class extends HasClient {
         
 
-          public async create(values: Partial<Public.Types.FilmCategory>) : Promise<Public.Types.FilmCategory|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.FilmCategory>, Public.Types.FilmCategory, never>({
+          public async create(values: Partial<Public.Types.FilmCategory>, options?: Public.Tables.FilmCategory.Options) : Promise<Public.Types.FilmCategory|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.FilmCategory>, Public.Types.FilmCategory, Public.Tables.FilmCategory.Options>({
               operation: "Public.Tables.FilmCategory.create",
-              values: {filmId: values.filmId,categoryId: values.categoryId,lastUpdate: values.lastUpdate}
+              values: {filmId: values.filmId,categoryId: values.categoryId,lastUpdate: values.lastUpdate},
+              options
             });
             return (
     nullIsUndefined<Public.Types.FilmCategory>(Public.Types.FilmCategory.parse(response.results))
@@ -42015,11 +42033,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.FilmCategoryPkey, values: Partial<Public.Types.FilmCategory>) {
-            const response = await this.client.invoke<Public.Types.FilmCategoryPkey, Partial<Public.Types.FilmCategory>, Public.Types.FilmCategory | undefined, never>({
+          public async update(parameters: Public.Types.FilmCategoryPkey, values: Partial<Public.Types.FilmCategory>, options?: Public.Tables.FilmCategory.Options) {
+            const response = await this.client.invoke<Public.Types.FilmCategoryPkey, Partial<Public.Types.FilmCategory>, Public.Types.FilmCategory | undefined, Public.Tables.FilmCategory.Options>({
               operation: "Public.Tables.FilmCategory.FilmCategoryPkey.update",
               parameters: {filmId: parameters.filmId,categoryId: parameters.categoryId},
-              values: {filmId: values.filmId,categoryId: values.categoryId,lastUpdate: values.lastUpdate}
+              values: {filmId: values.filmId,categoryId: values.categoryId,lastUpdate: values.lastUpdate},
+              options
             });
         
 return (
@@ -42047,10 +42066,11 @@ public get ByPrimaryKey(){ return this.FilmCategoryPkey };
           public Inventory = new class extends HasClient {
         
 
-          public async create(values: Partial<Public.Types.Inventory>) : Promise<Public.Types.Inventory|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Inventory>, Public.Types.Inventory, never>({
+          public async create(values: Partial<Public.Types.Inventory>, options?: Public.Tables.Inventory.Options) : Promise<Public.Types.Inventory|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Inventory>, Public.Types.Inventory, Public.Tables.Inventory.Options>({
               operation: "Public.Tables.Inventory.create",
-              values: {inventoryId: values.inventoryId,filmId: values.filmId,storeId: values.storeId,lastUpdate: values.lastUpdate}
+              values: {inventoryId: values.inventoryId,filmId: values.filmId,storeId: values.storeId,lastUpdate: values.lastUpdate},
+              options
             });
             return (
     nullIsUndefined<Public.Types.Inventory>(Public.Types.Inventory.parse(response.results))
@@ -42090,11 +42110,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.InventoryPkey, values: Partial<Public.Types.Inventory>) {
-            const response = await this.client.invoke<Public.Types.InventoryPkey, Partial<Public.Types.Inventory>, Public.Types.Inventory | undefined, never>({
+          public async update(parameters: Public.Types.InventoryPkey, values: Partial<Public.Types.Inventory>, options?: Public.Tables.Inventory.Options) {
+            const response = await this.client.invoke<Public.Types.InventoryPkey, Partial<Public.Types.Inventory>, Public.Types.Inventory | undefined, Public.Tables.Inventory.Options>({
               operation: "Public.Tables.Inventory.InventoryPkey.update",
               parameters: {inventoryId: parameters.inventoryId},
-              values: {inventoryId: values.inventoryId,filmId: values.filmId,storeId: values.storeId,lastUpdate: values.lastUpdate}
+              values: {inventoryId: values.inventoryId,filmId: values.filmId,storeId: values.storeId,lastUpdate: values.lastUpdate},
+              options
             });
         
 return (
@@ -42137,11 +42158,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.IdxStoreIdFilmId, values: Partial<Public.Types.Inventory>) {
-            const response = await this.client.invoke<Public.Types.IdxStoreIdFilmId, Partial<Public.Types.Inventory>, Public.Types.Inventory[] | undefined, never>({
+          public async update(parameters: Public.Types.IdxStoreIdFilmId, values: Partial<Public.Types.Inventory>, options?: Public.Tables.Inventory.Options) {
+            const response = await this.client.invoke<Public.Types.IdxStoreIdFilmId, Partial<Public.Types.Inventory>, Public.Types.Inventory[] | undefined, Public.Tables.Inventory.Options>({
               operation: "Public.Tables.Inventory.IdxStoreIdFilmId.update",
               parameters: {storeId: parameters.storeId,filmId: parameters.filmId},
-              values: {inventoryId: values.inventoryId,filmId: values.filmId,storeId: values.storeId,lastUpdate: values.lastUpdate}
+              values: {inventoryId: values.inventoryId,filmId: values.filmId,storeId: values.storeId,lastUpdate: values.lastUpdate},
+              options
             });
         
 return (
@@ -42175,10 +42197,11 @@ return (
           public Category = new class extends HasClient {
         
 
-          public async create(values: Partial<Public.Types.Category>) : Promise<Public.Types.Category|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Category>, Public.Types.Category, never>({
+          public async create(values: Partial<Public.Types.Category>, options?: Public.Tables.Category.Options) : Promise<Public.Types.Category|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Category>, Public.Types.Category, Public.Tables.Category.Options>({
               operation: "Public.Tables.Category.create",
-              values: {categoryId: values.categoryId,name: values.name,lastUpdate: values.lastUpdate}
+              values: {categoryId: values.categoryId,name: values.name,lastUpdate: values.lastUpdate},
+              options
             });
             return (
     nullIsUndefined<Public.Types.Category>(Public.Types.Category.parse(response.results))
@@ -42218,11 +42241,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.CategoryPkey, values: Partial<Public.Types.Category>) {
-            const response = await this.client.invoke<Public.Types.CategoryPkey, Partial<Public.Types.Category>, Public.Types.Category | undefined, never>({
+          public async update(parameters: Public.Types.CategoryPkey, values: Partial<Public.Types.Category>, options?: Public.Tables.Category.Options) {
+            const response = await this.client.invoke<Public.Types.CategoryPkey, Partial<Public.Types.Category>, Public.Types.Category | undefined, Public.Tables.Category.Options>({
               operation: "Public.Tables.Category.CategoryPkey.update",
               parameters: {categoryId: parameters.categoryId},
-              values: {categoryId: values.categoryId,name: values.name,lastUpdate: values.lastUpdate}
+              values: {categoryId: values.categoryId,name: values.name,lastUpdate: values.lastUpdate},
+              options
             });
         
 return (
@@ -42250,10 +42274,11 @@ public get ByPrimaryKey(){ return this.CategoryPkey };
           public Country = new class extends HasClient {
         
 
-          public async create(values: Partial<Public.Types.Country>) : Promise<Public.Types.Country|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Country>, Public.Types.Country, never>({
+          public async create(values: Partial<Public.Types.Country>, options?: Public.Tables.Country.Options) : Promise<Public.Types.Country|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Country>, Public.Types.Country, Public.Tables.Country.Options>({
               operation: "Public.Tables.Country.create",
-              values: {countryId: values.countryId,country: values.country,lastUpdate: values.lastUpdate}
+              values: {countryId: values.countryId,country: values.country,lastUpdate: values.lastUpdate},
+              options
             });
             return (
     nullIsUndefined<Public.Types.Country>(Public.Types.Country.parse(response.results))
@@ -42293,11 +42318,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.CountryPkey, values: Partial<Public.Types.Country>) {
-            const response = await this.client.invoke<Public.Types.CountryPkey, Partial<Public.Types.Country>, Public.Types.Country | undefined, never>({
+          public async update(parameters: Public.Types.CountryPkey, values: Partial<Public.Types.Country>, options?: Public.Tables.Country.Options) {
+            const response = await this.client.invoke<Public.Types.CountryPkey, Partial<Public.Types.Country>, Public.Types.Country | undefined, Public.Tables.Country.Options>({
               operation: "Public.Tables.Country.CountryPkey.update",
               parameters: {countryId: parameters.countryId},
-              values: {countryId: values.countryId,country: values.country,lastUpdate: values.lastUpdate}
+              values: {countryId: values.countryId,country: values.country,lastUpdate: values.lastUpdate},
+              options
             });
         
 return (
@@ -42325,10 +42351,11 @@ public get ByPrimaryKey(){ return this.CountryPkey };
           public Language = new class extends HasClient {
         
 
-          public async create(values: Partial<Public.Types.Language>) : Promise<Public.Types.Language|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Language>, Public.Types.Language, never>({
+          public async create(values: Partial<Public.Types.Language>, options?: Public.Tables.Language.Options) : Promise<Public.Types.Language|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Language>, Public.Types.Language, Public.Tables.Language.Options>({
               operation: "Public.Tables.Language.create",
-              values: {languageId: values.languageId,name: values.name,lastUpdate: values.lastUpdate}
+              values: {languageId: values.languageId,name: values.name,lastUpdate: values.lastUpdate},
+              options
             });
             return (
     nullIsUndefined<Public.Types.Language>(Public.Types.Language.parse(response.results))
@@ -42368,11 +42395,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.LanguagePkey, values: Partial<Public.Types.Language>) {
-            const response = await this.client.invoke<Public.Types.LanguagePkey, Partial<Public.Types.Language>, Public.Types.Language | undefined, never>({
+          public async update(parameters: Public.Types.LanguagePkey, values: Partial<Public.Types.Language>, options?: Public.Tables.Language.Options) {
+            const response = await this.client.invoke<Public.Types.LanguagePkey, Partial<Public.Types.Language>, Public.Types.Language | undefined, Public.Tables.Language.Options>({
               operation: "Public.Tables.Language.LanguagePkey.update",
               parameters: {languageId: parameters.languageId},
-              values: {languageId: values.languageId,name: values.name,lastUpdate: values.lastUpdate}
+              values: {languageId: values.languageId,name: values.name,lastUpdate: values.lastUpdate},
+              options
             });
         
 return (
@@ -42400,10 +42428,11 @@ public get ByPrimaryKey(){ return this.LanguagePkey };
           public Rental = new class extends HasClient {
         
 
-          public async create(values: Partial<Public.Types.Rental>) : Promise<Public.Types.Rental|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Rental>, Public.Types.Rental, never>({
+          public async create(values: Partial<Public.Types.Rental>, options?: Public.Tables.Rental.Options) : Promise<Public.Types.Rental|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Rental>, Public.Types.Rental, Public.Tables.Rental.Options>({
               operation: "Public.Tables.Rental.create",
-              values: {rentalId: values.rentalId,rentalDate: values.rentalDate,inventoryId: values.inventoryId,customerId: values.customerId,returnDate: values.returnDate,staffId: values.staffId,lastUpdate: values.lastUpdate}
+              values: {rentalId: values.rentalId,rentalDate: values.rentalDate,inventoryId: values.inventoryId,customerId: values.customerId,returnDate: values.returnDate,staffId: values.staffId,lastUpdate: values.lastUpdate},
+              options
             });
             return (
     nullIsUndefined<Public.Types.Rental>(Public.Types.Rental.parse(response.results))
@@ -42443,11 +42472,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.RentalPkey, values: Partial<Public.Types.Rental>) {
-            const response = await this.client.invoke<Public.Types.RentalPkey, Partial<Public.Types.Rental>, Public.Types.Rental | undefined, never>({
+          public async update(parameters: Public.Types.RentalPkey, values: Partial<Public.Types.Rental>, options?: Public.Tables.Rental.Options) {
+            const response = await this.client.invoke<Public.Types.RentalPkey, Partial<Public.Types.Rental>, Public.Types.Rental | undefined, Public.Tables.Rental.Options>({
               operation: "Public.Tables.Rental.RentalPkey.update",
               parameters: {rentalId: parameters.rentalId},
-              values: {rentalId: values.rentalId,rentalDate: values.rentalDate,inventoryId: values.inventoryId,customerId: values.customerId,returnDate: values.returnDate,staffId: values.staffId,lastUpdate: values.lastUpdate}
+              values: {rentalId: values.rentalId,rentalDate: values.rentalDate,inventoryId: values.inventoryId,customerId: values.customerId,returnDate: values.returnDate,staffId: values.staffId,lastUpdate: values.lastUpdate},
+              options
             });
         
 return (
@@ -42490,11 +42520,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.IdxFkInventoryId, values: Partial<Public.Types.Rental>) {
-            const response = await this.client.invoke<Public.Types.IdxFkInventoryId, Partial<Public.Types.Rental>, Public.Types.Rental[] | undefined, never>({
+          public async update(parameters: Public.Types.IdxFkInventoryId, values: Partial<Public.Types.Rental>, options?: Public.Tables.Rental.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkInventoryId, Partial<Public.Types.Rental>, Public.Types.Rental[] | undefined, Public.Tables.Rental.Options>({
               operation: "Public.Tables.Rental.IdxFkInventoryId.update",
               parameters: {inventoryId: parameters.inventoryId},
-              values: {rentalId: values.rentalId,rentalDate: values.rentalDate,inventoryId: values.inventoryId,customerId: values.customerId,returnDate: values.returnDate,staffId: values.staffId,lastUpdate: values.lastUpdate}
+              values: {rentalId: values.rentalId,rentalDate: values.rentalDate,inventoryId: values.inventoryId,customerId: values.customerId,returnDate: values.returnDate,staffId: values.staffId,lastUpdate: values.lastUpdate},
+              options
             });
         
 return (
@@ -42540,11 +42571,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, values: Partial<Public.Types.Rental>) {
-            const response = await this.client.invoke<Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, Partial<Public.Types.Rental>, Public.Types.Rental | undefined, never>({
+          public async update(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, values: Partial<Public.Types.Rental>, options?: Public.Tables.Rental.Options) {
+            const response = await this.client.invoke<Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, Partial<Public.Types.Rental>, Public.Types.Rental | undefined, Public.Tables.Rental.Options>({
               operation: "Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.update",
               parameters: {rentalDate: parameters.rentalDate,inventoryId: parameters.inventoryId,customerId: parameters.customerId},
-              values: {rentalId: values.rentalId,rentalDate: values.rentalDate,inventoryId: values.inventoryId,customerId: values.customerId,returnDate: values.returnDate,staffId: values.staffId,lastUpdate: values.lastUpdate}
+              values: {rentalId: values.rentalId,rentalDate: values.rentalDate,inventoryId: values.inventoryId,customerId: values.customerId,returnDate: values.returnDate,staffId: values.staffId,lastUpdate: values.lastUpdate},
+              options
             });
         
 return (
@@ -42572,10 +42604,11 @@ return (
           public Staff = new class extends HasClient {
         
 
-          public async create(values: Partial<Public.Types.Staff>) : Promise<Public.Types.Staff|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Staff>, Public.Types.Staff, never>({
+          public async create(values: Partial<Public.Types.Staff>, options?: Public.Tables.Staff.Options) : Promise<Public.Types.Staff|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Staff>, Public.Types.Staff, Public.Tables.Staff.Options>({
               operation: "Public.Tables.Staff.create",
-              values: {staffId: values.staffId,firstName: values.firstName,lastName: values.lastName,addressId: values.addressId,email: values.email,storeId: values.storeId,active: values.active,username: values.username,password: values.password,lastUpdate: values.lastUpdate,picture: values.picture}
+              values: {staffId: values.staffId,firstName: values.firstName,lastName: values.lastName,addressId: values.addressId,email: values.email,storeId: values.storeId,active: values.active,username: values.username,password: values.password,lastUpdate: values.lastUpdate,picture: values.picture},
+              options
             });
             return (
     nullIsUndefined<Public.Types.Staff>(Public.Types.Staff.parse(response.results))
@@ -42615,11 +42648,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.StaffPkey, values: Partial<Public.Types.Staff>) {
-            const response = await this.client.invoke<Public.Types.StaffPkey, Partial<Public.Types.Staff>, Public.Types.Staff | undefined, never>({
+          public async update(parameters: Public.Types.StaffPkey, values: Partial<Public.Types.Staff>, options?: Public.Tables.Staff.Options) {
+            const response = await this.client.invoke<Public.Types.StaffPkey, Partial<Public.Types.Staff>, Public.Types.Staff | undefined, Public.Tables.Staff.Options>({
               operation: "Public.Tables.Staff.StaffPkey.update",
               parameters: {staffId: parameters.staffId},
-              values: {staffId: values.staffId,firstName: values.firstName,lastName: values.lastName,addressId: values.addressId,email: values.email,storeId: values.storeId,active: values.active,username: values.username,password: values.password,lastUpdate: values.lastUpdate,picture: values.picture}
+              values: {staffId: values.staffId,firstName: values.firstName,lastName: values.lastName,addressId: values.addressId,email: values.email,storeId: values.storeId,active: values.active,username: values.username,password: values.password,lastUpdate: values.lastUpdate,picture: values.picture},
+              options
             });
         
 return (
@@ -42647,10 +42681,11 @@ public get ByPrimaryKey(){ return this.StaffPkey };
           public Store = new class extends HasClient {
         
 
-          public async create(values: Partial<Public.Types.Store>) : Promise<Public.Types.Store|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Store>, Public.Types.Store, never>({
+          public async create(values: Partial<Public.Types.Store>, options?: Public.Tables.Store.Options) : Promise<Public.Types.Store|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Store>, Public.Types.Store, Public.Tables.Store.Options>({
               operation: "Public.Tables.Store.create",
-              values: {storeId: values.storeId,managerStaffId: values.managerStaffId,addressId: values.addressId,lastUpdate: values.lastUpdate}
+              values: {storeId: values.storeId,managerStaffId: values.managerStaffId,addressId: values.addressId,lastUpdate: values.lastUpdate},
+              options
             });
             return (
     nullIsUndefined<Public.Types.Store>(Public.Types.Store.parse(response.results))
@@ -42690,11 +42725,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.StorePkey, values: Partial<Public.Types.Store>) {
-            const response = await this.client.invoke<Public.Types.StorePkey, Partial<Public.Types.Store>, Public.Types.Store | undefined, never>({
+          public async update(parameters: Public.Types.StorePkey, values: Partial<Public.Types.Store>, options?: Public.Tables.Store.Options) {
+            const response = await this.client.invoke<Public.Types.StorePkey, Partial<Public.Types.Store>, Public.Types.Store | undefined, Public.Tables.Store.Options>({
               operation: "Public.Tables.Store.StorePkey.update",
               parameters: {storeId: parameters.storeId},
-              values: {storeId: values.storeId,managerStaffId: values.managerStaffId,addressId: values.addressId,lastUpdate: values.lastUpdate}
+              values: {storeId: values.storeId,managerStaffId: values.managerStaffId,addressId: values.addressId,lastUpdate: values.lastUpdate},
+              options
             });
         
 return (
@@ -42734,11 +42770,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.IdxUnqManagerStaffId, values: Partial<Public.Types.Store>) {
-            const response = await this.client.invoke<Public.Types.IdxUnqManagerStaffId, Partial<Public.Types.Store>, Public.Types.Store | undefined, never>({
+          public async update(parameters: Public.Types.IdxUnqManagerStaffId, values: Partial<Public.Types.Store>, options?: Public.Tables.Store.Options) {
+            const response = await this.client.invoke<Public.Types.IdxUnqManagerStaffId, Partial<Public.Types.Store>, Public.Types.Store | undefined, Public.Tables.Store.Options>({
               operation: "Public.Tables.Store.IdxUnqManagerStaffId.update",
               parameters: {managerStaffId: parameters.managerStaffId},
-              values: {storeId: values.storeId,managerStaffId: values.managerStaffId,addressId: values.addressId,lastUpdate: values.lastUpdate}
+              values: {storeId: values.storeId,managerStaffId: values.managerStaffId,addressId: values.addressId,lastUpdate: values.lastUpdate},
+              options
             });
         
 return (
@@ -42766,10 +42803,11 @@ return (
           public Payment = new class extends HasClient {
         
 
-          public async create(values: Partial<Public.Types.Payment>) : Promise<Public.Types.Payment|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Payment>, Public.Types.Payment, never>({
+          public async create(values: Partial<Public.Types.Payment>, options?: Public.Tables.Payment.Options) : Promise<Public.Types.Payment|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Payment>, Public.Types.Payment, Public.Tables.Payment.Options>({
               operation: "Public.Tables.Payment.create",
-              values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate}
+              values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate},
+              options
             });
             return (
     nullIsUndefined<Public.Types.Payment>(Public.Types.Payment.parse(response.results))
@@ -42809,11 +42847,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.PaymentPkey, values: Partial<Public.Types.Payment>) {
-            const response = await this.client.invoke<Public.Types.PaymentPkey, Partial<Public.Types.Payment>, Public.Types.Payment | undefined, never>({
+          public async update(parameters: Public.Types.PaymentPkey, values: Partial<Public.Types.Payment>, options?: Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.PaymentPkey, Partial<Public.Types.Payment>, Public.Types.Payment | undefined, Public.Tables.Payment.Options>({
               operation: "Public.Tables.Payment.PaymentPkey.update",
               parameters: {paymentId: parameters.paymentId},
-              values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate}
+              values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate},
+              options
             });
         
 return (
@@ -42856,11 +42895,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.IdxFkCustomerId, values: Partial<Public.Types.Payment>) {
-            const response = await this.client.invoke<Public.Types.IdxFkCustomerId, Partial<Public.Types.Payment>, Public.Types.Payment[] | undefined, never>({
+          public async update(parameters: Public.Types.IdxFkCustomerId, values: Partial<Public.Types.Payment>, options?: Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkCustomerId, Partial<Public.Types.Payment>, Public.Types.Payment[] | undefined, Public.Tables.Payment.Options>({
               operation: "Public.Tables.Payment.IdxFkCustomerId.update",
               parameters: {customerId: parameters.customerId},
-              values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate}
+              values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate},
+              options
             });
         
 return (
@@ -42909,11 +42949,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.IdxFkRentalId, values: Partial<Public.Types.Payment>) {
-            const response = await this.client.invoke<Public.Types.IdxFkRentalId, Partial<Public.Types.Payment>, Public.Types.Payment[] | undefined, never>({
+          public async update(parameters: Public.Types.IdxFkRentalId, values: Partial<Public.Types.Payment>, options?: Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkRentalId, Partial<Public.Types.Payment>, Public.Types.Payment[] | undefined, Public.Tables.Payment.Options>({
               operation: "Public.Tables.Payment.IdxFkRentalId.update",
               parameters: {rentalId: parameters.rentalId},
-              values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate}
+              values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate},
+              options
             });
         
 return (
@@ -42962,11 +43003,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.IdxFkStaffId, values: Partial<Public.Types.Payment>) {
-            const response = await this.client.invoke<Public.Types.IdxFkStaffId, Partial<Public.Types.Payment>, Public.Types.Payment[] | undefined, never>({
+          public async update(parameters: Public.Types.IdxFkStaffId, values: Partial<Public.Types.Payment>, options?: Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkStaffId, Partial<Public.Types.Payment>, Public.Types.Payment[] | undefined, Public.Tables.Payment.Options>({
               operation: "Public.Tables.Payment.IdxFkStaffId.update",
               parameters: {staffId: parameters.staffId},
-              values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate}
+              values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate},
+              options
             });
         
 return (
@@ -43000,10 +43042,11 @@ return (
           public Film = new class extends HasClient {
         
 
-          public async create(values: Partial<Public.Types.Film>) : Promise<Public.Types.Film|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Film>, Public.Types.Film, never>({
+          public async create(values: Partial<Public.Types.Film>, options?: Public.Tables.Film.Options) : Promise<Public.Types.Film|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Film>, Public.Types.Film, Public.Tables.Film.Options>({
               operation: "Public.Tables.Film.create",
-              values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext}
+              values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext},
+              options
             });
             return (
     nullIsUndefined<Public.Types.Film>(Public.Types.Film.parse(response.results))
@@ -43043,11 +43086,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.FilmPkey, values: Partial<Public.Types.Film>) {
-            const response = await this.client.invoke<Public.Types.FilmPkey, Partial<Public.Types.Film>, Public.Types.Film | undefined, never>({
+          public async update(parameters: Public.Types.FilmPkey, values: Partial<Public.Types.Film>, options?: Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.FilmPkey, Partial<Public.Types.Film>, Public.Types.Film | undefined, Public.Tables.Film.Options>({
               operation: "Public.Tables.Film.FilmPkey.update",
               parameters: {filmId: parameters.filmId},
-              values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext}
+              values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext},
+              options
             });
         
 return (
@@ -43090,11 +43134,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.FilmFulltextIdx, values: Partial<Public.Types.Film>) {
-            const response = await this.client.invoke<Public.Types.FilmFulltextIdx, Partial<Public.Types.Film>, Public.Types.Film[] | undefined, never>({
+          public async update(parameters: Public.Types.FilmFulltextIdx, values: Partial<Public.Types.Film>, options?: Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.FilmFulltextIdx, Partial<Public.Types.Film>, Public.Types.Film[] | undefined, Public.Tables.Film.Options>({
               operation: "Public.Tables.Film.FilmFulltextIdx.update",
               parameters: {fulltext: parameters.fulltext},
-              values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext}
+              values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext},
+              options
             });
         
 return (
@@ -43143,11 +43188,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.IdxFkLanguageId, values: Partial<Public.Types.Film>) {
-            const response = await this.client.invoke<Public.Types.IdxFkLanguageId, Partial<Public.Types.Film>, Public.Types.Film[] | undefined, never>({
+          public async update(parameters: Public.Types.IdxFkLanguageId, values: Partial<Public.Types.Film>, options?: Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkLanguageId, Partial<Public.Types.Film>, Public.Types.Film[] | undefined, Public.Tables.Film.Options>({
               operation: "Public.Tables.Film.IdxFkLanguageId.update",
               parameters: {languageId: parameters.languageId},
-              values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext}
+              values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext},
+              options
             });
         
 return (
@@ -43196,11 +43242,12 @@ return (
   ;
 }
 
-          public async update(parameters: Public.Types.IdxTitle, values: Partial<Public.Types.Film>) {
-            const response = await this.client.invoke<Public.Types.IdxTitle, Partial<Public.Types.Film>, Public.Types.Film[] | undefined, never>({
+          public async update(parameters: Public.Types.IdxTitle, values: Partial<Public.Types.Film>, options?: Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.IdxTitle, Partial<Public.Types.Film>, Public.Types.Film[] | undefined, Public.Tables.Film.Options>({
               operation: "Public.Tables.Film.IdxTitle.update",
               parameters: {title: parameters.title},
-              values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext}
+              values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext},
+              options
             });
         
 return (

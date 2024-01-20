@@ -45568,7 +45568,7 @@ async call(parameters : Public.Procedures.GtrgmOptions.Parameters) {
             }
         
 
-async create(values: Public.Tables.Slug.Values): Promise<Public.Types.Slug>{
+async create(values: Partial<Public.Types.Slug>, options?: Public.Tables.Slug.Options): Promise<Public.Types.Slug>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -45927,7 +45927,7 @@ async call(parameters : Api.Procedures.EchoAnswer.Parameters) {
             }
         
 
-async create(values: Api.Tables.QAndA.Values): Promise<Api.Types.QAndA>{
+async create(values: Partial<Api.Types.QAndA>, options?: Api.Tables.QAndA.Options): Promise<Api.Types.QAndA>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -46036,7 +46036,7 @@ async delete(parameters: Api.Types.QAndAAnswer, options?: Api.Tables.QAndA.Modif
             }
         
 
-async create(values: Api.Tables.Timezones.Values): Promise<Api.Types.Timezones>{
+async create(values: Partial<Api.Types.Timezones>, options?: Api.Tables.Timezones.Options): Promise<Api.Types.Timezones>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -46209,7 +46209,7 @@ async delete(parameters: Api.Types.TrgmIdxGin, options?: Api.Tables.Timezones.Mo
             }
         
 
-async create(values: Api.Tables.Points.Values): Promise<Api.Types.Points>{
+async create(values: Partial<Api.Types.Points>, options?: Api.Tables.Points.Options): Promise<Api.Types.Points>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -46331,7 +46331,7 @@ public get ByPrimaryKey(){ return this.PointsPkey };
             }
         
 
-async create(values: Api.Tables.Lines.Values): Promise<Api.Types.Lines>{
+async create(values: Partial<Api.Types.Lines>, options?: Api.Tables.Lines.Options): Promise<Api.Types.Lines>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -46453,7 +46453,7 @@ public get ByPrimaryKey(){ return this.LinesPkey };
             }
         
 
-async create(values: Api.Tables.LineSegments.Values): Promise<Api.Types.LineSegments>{
+async create(values: Partial<Api.Types.LineSegments>, options?: Api.Tables.LineSegments.Options): Promise<Api.Types.LineSegments>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -46575,7 +46575,7 @@ public get ByPrimaryKey(){ return this.LineSegmentsPkey };
             }
         
 
-async create(values: Api.Tables.Boxes.Values): Promise<Api.Types.Boxes>{
+async create(values: Partial<Api.Types.Boxes>, options?: Api.Tables.Boxes.Options): Promise<Api.Types.Boxes>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -46697,7 +46697,7 @@ public get ByPrimaryKey(){ return this.BoxesPkey };
             }
         
 
-async create(values: Api.Tables.Paths.Values): Promise<Api.Types.Paths>{
+async create(values: Partial<Api.Types.Paths>, options?: Api.Tables.Paths.Options): Promise<Api.Types.Paths>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -46819,7 +46819,7 @@ public get ByPrimaryKey(){ return this.PathsPkey };
             }
         
 
-async create(values: Api.Tables.Polygons.Values): Promise<Api.Types.Polygons>{
+async create(values: Partial<Api.Types.Polygons>, options?: Api.Tables.Polygons.Options): Promise<Api.Types.Polygons>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -46941,7 +46941,7 @@ public get ByPrimaryKey(){ return this.PolygonsPkey };
             }
         
 
-async create(values: Api.Tables.Circles.Values): Promise<Api.Types.Circles>{
+async create(values: Partial<Api.Types.Circles>, options?: Api.Tables.Circles.Options): Promise<Api.Types.Circles>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;

@@ -3568,37 +3568,70 @@ stavalues5Descending = "stavalues5 DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Starelid?: PgCatalog.Types.Oid.Options,
-Staattnum?: PgCatalog.Types.Int2.Options,
-Stainherit?: PgCatalog.Types.Bool.Options,
-Stanullfrac?: PgCatalog.Types.Float4.Options,
-Stawidth?: PgCatalog.Types.Int4.Options,
-Stadistinct?: PgCatalog.Types.Float4.Options,
-Stakind1?: PgCatalog.Types.Int2.Options,
-Stakind2?: PgCatalog.Types.Int2.Options,
-Stakind3?: PgCatalog.Types.Int2.Options,
-Stakind4?: PgCatalog.Types.Int2.Options,
-Stakind5?: PgCatalog.Types.Int2.Options,
-Staop1?: PgCatalog.Types.Oid.Options,
-Staop2?: PgCatalog.Types.Oid.Options,
-Staop3?: PgCatalog.Types.Oid.Options,
-Staop4?: PgCatalog.Types.Oid.Options,
-Staop5?: PgCatalog.Types.Oid.Options,
-Stacoll1?: PgCatalog.Types.Oid.Options,
-Stacoll2?: PgCatalog.Types.Oid.Options,
-Stacoll3?: PgCatalog.Types.Oid.Options,
-Stacoll4?: PgCatalog.Types.Oid.Options,
-Stacoll5?: PgCatalog.Types.Oid.Options,
-Stanumbers1?: PgCatalog.Types.Float4Array.Options,
-Stanumbers2?: PgCatalog.Types.Float4Array.Options,
-Stanumbers3?: PgCatalog.Types.Float4Array.Options,
-Stanumbers4?: PgCatalog.Types.Float4Array.Options,
-Stanumbers5?: PgCatalog.Types.Float4Array.Options,
-Stavalues1?: PgCatalog.Types.Anyarray.Options,
-Stavalues2?: PgCatalog.Types.Anyarray.Options,
-Stavalues3?: PgCatalog.Types.Anyarray.Options,
-Stavalues4?: PgCatalog.Types.Anyarray.Options,
-Stavalues5?: PgCatalog.Types.Anyarray.Options
+ starelid?: PgCatalog.Types.Oid.Options,
+staattnum?: PgCatalog.Types.Int2.Options,
+stainherit?: PgCatalog.Types.Bool.Options,
+stanullfrac?: PgCatalog.Types.Float4.Options,
+stawidth?: PgCatalog.Types.Int4.Options,
+stadistinct?: PgCatalog.Types.Float4.Options,
+stakind1?: PgCatalog.Types.Int2.Options,
+stakind2?: PgCatalog.Types.Int2.Options,
+stakind3?: PgCatalog.Types.Int2.Options,
+stakind4?: PgCatalog.Types.Int2.Options,
+stakind5?: PgCatalog.Types.Int2.Options,
+staop1?: PgCatalog.Types.Oid.Options,
+staop2?: PgCatalog.Types.Oid.Options,
+staop3?: PgCatalog.Types.Oid.Options,
+staop4?: PgCatalog.Types.Oid.Options,
+staop5?: PgCatalog.Types.Oid.Options,
+stacoll1?: PgCatalog.Types.Oid.Options,
+stacoll2?: PgCatalog.Types.Oid.Options,
+stacoll3?: PgCatalog.Types.Oid.Options,
+stacoll4?: PgCatalog.Types.Oid.Options,
+stacoll5?: PgCatalog.Types.Oid.Options,
+stanumbers1?: PgCatalog.Types.Float4Array.Options,
+stanumbers2?: PgCatalog.Types.Float4Array.Options,
+stanumbers3?: PgCatalog.Types.Float4Array.Options,
+stanumbers4?: PgCatalog.Types.Float4Array.Options,
+stanumbers5?: PgCatalog.Types.Float4Array.Options,
+stavalues1?: PgCatalog.Types.Anyarray.Options,
+stavalues2?: PgCatalog.Types.Anyarray.Options,
+stavalues3?: PgCatalog.Types.Anyarray.Options,
+stavalues4?: PgCatalog.Types.Anyarray.Options,
+stavalues5?: PgCatalog.Types.Anyarray.Options
+};
+export type ModifyOptions = {
+ starelid?: PgCatalog.Types.Oid.Options,
+staattnum?: PgCatalog.Types.Int2.Options,
+stainherit?: PgCatalog.Types.Bool.Options,
+stanullfrac?: PgCatalog.Types.Float4.Options,
+stawidth?: PgCatalog.Types.Int4.Options,
+stadistinct?: PgCatalog.Types.Float4.Options,
+stakind1?: PgCatalog.Types.Int2.Options,
+stakind2?: PgCatalog.Types.Int2.Options,
+stakind3?: PgCatalog.Types.Int2.Options,
+stakind4?: PgCatalog.Types.Int2.Options,
+stakind5?: PgCatalog.Types.Int2.Options,
+staop1?: PgCatalog.Types.Oid.Options,
+staop2?: PgCatalog.Types.Oid.Options,
+staop3?: PgCatalog.Types.Oid.Options,
+staop4?: PgCatalog.Types.Oid.Options,
+staop5?: PgCatalog.Types.Oid.Options,
+stacoll1?: PgCatalog.Types.Oid.Options,
+stacoll2?: PgCatalog.Types.Oid.Options,
+stacoll3?: PgCatalog.Types.Oid.Options,
+stacoll4?: PgCatalog.Types.Oid.Options,
+stacoll5?: PgCatalog.Types.Oid.Options,
+stanumbers1?: PgCatalog.Types.Float4Array.Options,
+stanumbers2?: PgCatalog.Types.Float4Array.Options,
+stanumbers3?: PgCatalog.Types.Float4Array.Options,
+stanumbers4?: PgCatalog.Types.Float4Array.Options,
+stanumbers5?: PgCatalog.Types.Float4Array.Options,
+stavalues1?: PgCatalog.Types.Anyarray.Options,
+stavalues2?: PgCatalog.Types.Anyarray.Options,
+stavalues3?: PgCatalog.Types.Anyarray.Options,
+stavalues4?: PgCatalog.Types.Anyarray.Options,
+stavalues5?: PgCatalog.Types.Anyarray.Options
 };
 export const Columns = {
 Starelid: {
@@ -3806,38 +3839,72 @@ typaclDescending = "typacl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Typname?: PgCatalog.Types.Name.Options,
-Typnamespace?: PgCatalog.Types.Oid.Options,
-Typowner?: PgCatalog.Types.Oid.Options,
-Typlen?: PgCatalog.Types.Int2.Options,
-Typbyval?: PgCatalog.Types.Bool.Options,
-Typtype?: PgCatalog.Types.Char.Options,
-Typcategory?: PgCatalog.Types.Char.Options,
-Typispreferred?: PgCatalog.Types.Bool.Options,
-Typisdefined?: PgCatalog.Types.Bool.Options,
-Typdelim?: PgCatalog.Types.Char.Options,
-Typrelid?: PgCatalog.Types.Oid.Options,
-Typsubscript?: PgCatalog.Types.Regproc.Options,
-Typelem?: PgCatalog.Types.Oid.Options,
-Typarray?: PgCatalog.Types.Oid.Options,
-Typinput?: PgCatalog.Types.Regproc.Options,
-Typoutput?: PgCatalog.Types.Regproc.Options,
-Typreceive?: PgCatalog.Types.Regproc.Options,
-Typsend?: PgCatalog.Types.Regproc.Options,
-Typmodin?: PgCatalog.Types.Regproc.Options,
-Typmodout?: PgCatalog.Types.Regproc.Options,
-Typanalyze?: PgCatalog.Types.Regproc.Options,
-Typalign?: PgCatalog.Types.Char.Options,
-Typstorage?: PgCatalog.Types.Char.Options,
-Typnotnull?: PgCatalog.Types.Bool.Options,
-Typbasetype?: PgCatalog.Types.Oid.Options,
-Typtypmod?: PgCatalog.Types.Int4.Options,
-Typndims?: PgCatalog.Types.Int4.Options,
-Typcollation?: PgCatalog.Types.Oid.Options,
-Typdefaultbin?: PgCatalog.Types.PgNodeTree.Options,
-Typdefault?: PgCatalog.Types.Text.Options,
-Typacl?: PgCatalog.Types.AclitemArray.Options
+ oid?: PgCatalog.Types.Oid.Options,
+typname?: PgCatalog.Types.Name.Options,
+typnamespace?: PgCatalog.Types.Oid.Options,
+typowner?: PgCatalog.Types.Oid.Options,
+typlen?: PgCatalog.Types.Int2.Options,
+typbyval?: PgCatalog.Types.Bool.Options,
+typtype?: PgCatalog.Types.Char.Options,
+typcategory?: PgCatalog.Types.Char.Options,
+typispreferred?: PgCatalog.Types.Bool.Options,
+typisdefined?: PgCatalog.Types.Bool.Options,
+typdelim?: PgCatalog.Types.Char.Options,
+typrelid?: PgCatalog.Types.Oid.Options,
+typsubscript?: PgCatalog.Types.Regproc.Options,
+typelem?: PgCatalog.Types.Oid.Options,
+typarray?: PgCatalog.Types.Oid.Options,
+typinput?: PgCatalog.Types.Regproc.Options,
+typoutput?: PgCatalog.Types.Regproc.Options,
+typreceive?: PgCatalog.Types.Regproc.Options,
+typsend?: PgCatalog.Types.Regproc.Options,
+typmodin?: PgCatalog.Types.Regproc.Options,
+typmodout?: PgCatalog.Types.Regproc.Options,
+typanalyze?: PgCatalog.Types.Regproc.Options,
+typalign?: PgCatalog.Types.Char.Options,
+typstorage?: PgCatalog.Types.Char.Options,
+typnotnull?: PgCatalog.Types.Bool.Options,
+typbasetype?: PgCatalog.Types.Oid.Options,
+typtypmod?: PgCatalog.Types.Int4.Options,
+typndims?: PgCatalog.Types.Int4.Options,
+typcollation?: PgCatalog.Types.Oid.Options,
+typdefaultbin?: PgCatalog.Types.PgNodeTree.Options,
+typdefault?: PgCatalog.Types.Text.Options,
+typacl?: PgCatalog.Types.AclitemArray.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+typname?: PgCatalog.Types.Name.Options,
+typnamespace?: PgCatalog.Types.Oid.Options,
+typowner?: PgCatalog.Types.Oid.Options,
+typlen?: PgCatalog.Types.Int2.Options,
+typbyval?: PgCatalog.Types.Bool.Options,
+typtype?: PgCatalog.Types.Char.Options,
+typcategory?: PgCatalog.Types.Char.Options,
+typispreferred?: PgCatalog.Types.Bool.Options,
+typisdefined?: PgCatalog.Types.Bool.Options,
+typdelim?: PgCatalog.Types.Char.Options,
+typrelid?: PgCatalog.Types.Oid.Options,
+typsubscript?: PgCatalog.Types.Regproc.Options,
+typelem?: PgCatalog.Types.Oid.Options,
+typarray?: PgCatalog.Types.Oid.Options,
+typinput?: PgCatalog.Types.Regproc.Options,
+typoutput?: PgCatalog.Types.Regproc.Options,
+typreceive?: PgCatalog.Types.Regproc.Options,
+typsend?: PgCatalog.Types.Regproc.Options,
+typmodin?: PgCatalog.Types.Regproc.Options,
+typmodout?: PgCatalog.Types.Regproc.Options,
+typanalyze?: PgCatalog.Types.Regproc.Options,
+typalign?: PgCatalog.Types.Char.Options,
+typstorage?: PgCatalog.Types.Char.Options,
+typnotnull?: PgCatalog.Types.Bool.Options,
+typbasetype?: PgCatalog.Types.Oid.Options,
+typtypmod?: PgCatalog.Types.Int4.Options,
+typndims?: PgCatalog.Types.Int4.Options,
+typcollation?: PgCatalog.Types.Oid.Options,
+typdefaultbin?: PgCatalog.Types.PgNodeTree.Options,
+typdefault?: PgCatalog.Types.Text.Options,
+typacl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -3991,9 +4058,14 @@ ftoptionsDescending = "ftoptions DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Ftrelid?: PgCatalog.Types.Oid.Options,
-Ftserver?: PgCatalog.Types.Oid.Options,
-Ftoptions?: PgCatalog.Types.TextArray.Options
+ ftrelid?: PgCatalog.Types.Oid.Options,
+ftserver?: PgCatalog.Types.Oid.Options,
+ftoptions?: PgCatalog.Types.TextArray.Options
+};
+export type ModifyOptions = {
+ ftrelid?: PgCatalog.Types.Oid.Options,
+ftserver?: PgCatalog.Types.Oid.Options,
+ftoptions?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Ftrelid: {
@@ -4049,18 +4121,32 @@ rolvaliduntilDescending = "rolvaliduntil DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Rolname?: PgCatalog.Types.Name.Options,
-Rolsuper?: PgCatalog.Types.Bool.Options,
-Rolinherit?: PgCatalog.Types.Bool.Options,
-Rolcreaterole?: PgCatalog.Types.Bool.Options,
-Rolcreatedb?: PgCatalog.Types.Bool.Options,
-Rolcanlogin?: PgCatalog.Types.Bool.Options,
-Rolreplication?: PgCatalog.Types.Bool.Options,
-Rolbypassrls?: PgCatalog.Types.Bool.Options,
-Rolconnlimit?: PgCatalog.Types.Int4.Options,
-Rolpassword?: PgCatalog.Types.Text.Options,
-Rolvaliduntil?: PgCatalog.Types.Timestamptz.Options
+ oid?: PgCatalog.Types.Oid.Options,
+rolname?: PgCatalog.Types.Name.Options,
+rolsuper?: PgCatalog.Types.Bool.Options,
+rolinherit?: PgCatalog.Types.Bool.Options,
+rolcreaterole?: PgCatalog.Types.Bool.Options,
+rolcreatedb?: PgCatalog.Types.Bool.Options,
+rolcanlogin?: PgCatalog.Types.Bool.Options,
+rolreplication?: PgCatalog.Types.Bool.Options,
+rolbypassrls?: PgCatalog.Types.Bool.Options,
+rolconnlimit?: PgCatalog.Types.Int4.Options,
+rolpassword?: PgCatalog.Types.Text.Options,
+rolvaliduntil?: PgCatalog.Types.Timestamptz.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+rolname?: PgCatalog.Types.Name.Options,
+rolsuper?: PgCatalog.Types.Bool.Options,
+rolinherit?: PgCatalog.Types.Bool.Options,
+rolcreaterole?: PgCatalog.Types.Bool.Options,
+rolcreatedb?: PgCatalog.Types.Bool.Options,
+rolcanlogin?: PgCatalog.Types.Bool.Options,
+rolreplication?: PgCatalog.Types.Bool.Options,
+rolbypassrls?: PgCatalog.Types.Bool.Options,
+rolconnlimit?: PgCatalog.Types.Int4.Options,
+rolpassword?: PgCatalog.Types.Text.Options,
+rolvaliduntil?: PgCatalog.Types.Timestamptz.Options
 };
 export const Columns = {
 Oid: {
@@ -4140,12 +4226,20 @@ stxdexprDescending = "stxdexpr DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Stxoid?: PgCatalog.Types.Oid.Options,
-Stxdinherit?: PgCatalog.Types.Bool.Options,
-Stxdndistinct?: PgCatalog.Types.PgNdistinct.Options,
-Stxddependencies?: PgCatalog.Types.PgDependencies.Options,
-Stxdmcv?: PgCatalog.Types.PgMcvList.Options,
-Stxdexpr?: PgCatalog.Types.PgStatisticArray.Options
+ stxoid?: PgCatalog.Types.Oid.Options,
+stxdinherit?: PgCatalog.Types.Bool.Options,
+stxdndistinct?: PgCatalog.Types.PgNdistinct.Options,
+stxddependencies?: PgCatalog.Types.PgDependencies.Options,
+stxdmcv?: PgCatalog.Types.PgMcvList.Options,
+stxdexpr?: PgCatalog.Types.PgStatisticArray.Options
+};
+export type ModifyOptions = {
+ stxoid?: PgCatalog.Types.Oid.Options,
+stxdinherit?: PgCatalog.Types.Bool.Options,
+stxdndistinct?: PgCatalog.Types.PgNdistinct.Options,
+stxddependencies?: PgCatalog.Types.PgDependencies.Options,
+stxdmcv?: PgCatalog.Types.PgMcvList.Options,
+stxdexpr?: PgCatalog.Types.PgStatisticArray.Options
 };
 export const Columns = {
 Stxoid: {
@@ -4197,10 +4291,16 @@ umoptionsDescending = "umoptions DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Umuser?: PgCatalog.Types.Oid.Options,
-Umserver?: PgCatalog.Types.Oid.Options,
-Umoptions?: PgCatalog.Types.TextArray.Options
+ oid?: PgCatalog.Types.Oid.Options,
+umuser?: PgCatalog.Types.Oid.Options,
+umserver?: PgCatalog.Types.Oid.Options,
+umoptions?: PgCatalog.Types.TextArray.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+umuser?: PgCatalog.Types.Oid.Options,
+umserver?: PgCatalog.Types.Oid.Options,
+umoptions?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Oid: {
@@ -4270,23 +4370,42 @@ suboriginDescending = "suborigin DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Subdbid?: PgCatalog.Types.Oid.Options,
-Subskiplsn?: PgCatalog.Types.PgLsn.Options,
-Subname?: PgCatalog.Types.Name.Options,
-Subowner?: PgCatalog.Types.Oid.Options,
-Subenabled?: PgCatalog.Types.Bool.Options,
-Subbinary?: PgCatalog.Types.Bool.Options,
-Substream?: PgCatalog.Types.Char.Options,
-Subtwophasestate?: PgCatalog.Types.Char.Options,
-Subdisableonerr?: PgCatalog.Types.Bool.Options,
-Subpasswordrequired?: PgCatalog.Types.Bool.Options,
-Subrunasowner?: PgCatalog.Types.Bool.Options,
-Subconninfo?: PgCatalog.Types.Text.Options,
-Subslotname?: PgCatalog.Types.Name.Options,
-Subsynccommit?: PgCatalog.Types.Text.Options,
-Subpublications?: PgCatalog.Types.TextArray.Options,
-Suborigin?: PgCatalog.Types.Text.Options
+ oid?: PgCatalog.Types.Oid.Options,
+subdbid?: PgCatalog.Types.Oid.Options,
+subskiplsn?: PgCatalog.Types.PgLsn.Options,
+subname?: PgCatalog.Types.Name.Options,
+subowner?: PgCatalog.Types.Oid.Options,
+subenabled?: PgCatalog.Types.Bool.Options,
+subbinary?: PgCatalog.Types.Bool.Options,
+substream?: PgCatalog.Types.Char.Options,
+subtwophasestate?: PgCatalog.Types.Char.Options,
+subdisableonerr?: PgCatalog.Types.Bool.Options,
+subpasswordrequired?: PgCatalog.Types.Bool.Options,
+subrunasowner?: PgCatalog.Types.Bool.Options,
+subconninfo?: PgCatalog.Types.Text.Options,
+subslotname?: PgCatalog.Types.Name.Options,
+subsynccommit?: PgCatalog.Types.Text.Options,
+subpublications?: PgCatalog.Types.TextArray.Options,
+suborigin?: PgCatalog.Types.Text.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+subdbid?: PgCatalog.Types.Oid.Options,
+subskiplsn?: PgCatalog.Types.PgLsn.Options,
+subname?: PgCatalog.Types.Name.Options,
+subowner?: PgCatalog.Types.Oid.Options,
+subenabled?: PgCatalog.Types.Bool.Options,
+subbinary?: PgCatalog.Types.Bool.Options,
+substream?: PgCatalog.Types.Char.Options,
+subtwophasestate?: PgCatalog.Types.Char.Options,
+subdisableonerr?: PgCatalog.Types.Bool.Options,
+subpasswordrequired?: PgCatalog.Types.Bool.Options,
+subrunasowner?: PgCatalog.Types.Bool.Options,
+subconninfo?: PgCatalog.Types.Text.Options,
+subslotname?: PgCatalog.Types.Name.Options,
+subsynccommit?: PgCatalog.Types.Text.Options,
+subpublications?: PgCatalog.Types.TextArray.Options,
+suborigin?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Oid: {
@@ -4426,32 +4545,60 @@ attmissingvalDescending = "attmissingval DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Attrelid?: PgCatalog.Types.Oid.Options,
-Attname?: PgCatalog.Types.Name.Options,
-Atttypid?: PgCatalog.Types.Oid.Options,
-Attlen?: PgCatalog.Types.Int2.Options,
-Attnum?: PgCatalog.Types.Int2.Options,
-Attcacheoff?: PgCatalog.Types.Int4.Options,
-Atttypmod?: PgCatalog.Types.Int4.Options,
-Attndims?: PgCatalog.Types.Int2.Options,
-Attbyval?: PgCatalog.Types.Bool.Options,
-Attalign?: PgCatalog.Types.Char.Options,
-Attstorage?: PgCatalog.Types.Char.Options,
-Attcompression?: PgCatalog.Types.Char.Options,
-Attnotnull?: PgCatalog.Types.Bool.Options,
-Atthasdef?: PgCatalog.Types.Bool.Options,
-Atthasmissing?: PgCatalog.Types.Bool.Options,
-Attidentity?: PgCatalog.Types.Char.Options,
-Attgenerated?: PgCatalog.Types.Char.Options,
-Attisdropped?: PgCatalog.Types.Bool.Options,
-Attislocal?: PgCatalog.Types.Bool.Options,
-Attinhcount?: PgCatalog.Types.Int2.Options,
-Attstattarget?: PgCatalog.Types.Int2.Options,
-Attcollation?: PgCatalog.Types.Oid.Options,
-Attacl?: PgCatalog.Types.AclitemArray.Options,
-Attoptions?: PgCatalog.Types.TextArray.Options,
-Attfdwoptions?: PgCatalog.Types.TextArray.Options,
-Attmissingval?: PgCatalog.Types.Anyarray.Options
+ attrelid?: PgCatalog.Types.Oid.Options,
+attname?: PgCatalog.Types.Name.Options,
+atttypid?: PgCatalog.Types.Oid.Options,
+attlen?: PgCatalog.Types.Int2.Options,
+attnum?: PgCatalog.Types.Int2.Options,
+attcacheoff?: PgCatalog.Types.Int4.Options,
+atttypmod?: PgCatalog.Types.Int4.Options,
+attndims?: PgCatalog.Types.Int2.Options,
+attbyval?: PgCatalog.Types.Bool.Options,
+attalign?: PgCatalog.Types.Char.Options,
+attstorage?: PgCatalog.Types.Char.Options,
+attcompression?: PgCatalog.Types.Char.Options,
+attnotnull?: PgCatalog.Types.Bool.Options,
+atthasdef?: PgCatalog.Types.Bool.Options,
+atthasmissing?: PgCatalog.Types.Bool.Options,
+attidentity?: PgCatalog.Types.Char.Options,
+attgenerated?: PgCatalog.Types.Char.Options,
+attisdropped?: PgCatalog.Types.Bool.Options,
+attislocal?: PgCatalog.Types.Bool.Options,
+attinhcount?: PgCatalog.Types.Int2.Options,
+attstattarget?: PgCatalog.Types.Int2.Options,
+attcollation?: PgCatalog.Types.Oid.Options,
+attacl?: PgCatalog.Types.AclitemArray.Options,
+attoptions?: PgCatalog.Types.TextArray.Options,
+attfdwoptions?: PgCatalog.Types.TextArray.Options,
+attmissingval?: PgCatalog.Types.Anyarray.Options
+};
+export type ModifyOptions = {
+ attrelid?: PgCatalog.Types.Oid.Options,
+attname?: PgCatalog.Types.Name.Options,
+atttypid?: PgCatalog.Types.Oid.Options,
+attlen?: PgCatalog.Types.Int2.Options,
+attnum?: PgCatalog.Types.Int2.Options,
+attcacheoff?: PgCatalog.Types.Int4.Options,
+atttypmod?: PgCatalog.Types.Int4.Options,
+attndims?: PgCatalog.Types.Int2.Options,
+attbyval?: PgCatalog.Types.Bool.Options,
+attalign?: PgCatalog.Types.Char.Options,
+attstorage?: PgCatalog.Types.Char.Options,
+attcompression?: PgCatalog.Types.Char.Options,
+attnotnull?: PgCatalog.Types.Bool.Options,
+atthasdef?: PgCatalog.Types.Bool.Options,
+atthasmissing?: PgCatalog.Types.Bool.Options,
+attidentity?: PgCatalog.Types.Char.Options,
+attgenerated?: PgCatalog.Types.Char.Options,
+attisdropped?: PgCatalog.Types.Bool.Options,
+attislocal?: PgCatalog.Types.Bool.Options,
+attinhcount?: PgCatalog.Types.Int2.Options,
+attstattarget?: PgCatalog.Types.Int2.Options,
+attcollation?: PgCatalog.Types.Oid.Options,
+attacl?: PgCatalog.Types.AclitemArray.Options,
+attoptions?: PgCatalog.Types.TextArray.Options,
+attfdwoptions?: PgCatalog.Types.TextArray.Options,
+attmissingval?: PgCatalog.Types.Anyarray.Options
 };
 export const Columns = {
 Attrelid: {
@@ -4635,36 +4782,68 @@ proaclDescending = "proacl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Proname?: PgCatalog.Types.Name.Options,
-Pronamespace?: PgCatalog.Types.Oid.Options,
-Proowner?: PgCatalog.Types.Oid.Options,
-Prolang?: PgCatalog.Types.Oid.Options,
-Procost?: PgCatalog.Types.Float4.Options,
-Prorows?: PgCatalog.Types.Float4.Options,
-Provariadic?: PgCatalog.Types.Oid.Options,
-Prosupport?: PgCatalog.Types.Regproc.Options,
-Prokind?: PgCatalog.Types.Char.Options,
-Prosecdef?: PgCatalog.Types.Bool.Options,
-Proleakproof?: PgCatalog.Types.Bool.Options,
-Proisstrict?: PgCatalog.Types.Bool.Options,
-Proretset?: PgCatalog.Types.Bool.Options,
-Provolatile?: PgCatalog.Types.Char.Options,
-Proparallel?: PgCatalog.Types.Char.Options,
-Pronargs?: PgCatalog.Types.Int2.Options,
-Pronargdefaults?: PgCatalog.Types.Int2.Options,
-Prorettype?: PgCatalog.Types.Oid.Options,
-Proargtypes?: PgCatalog.Types.Oidvector.Options,
-Proallargtypes?: PgCatalog.Types.OidArray.Options,
-Proargmodes?: PgCatalog.Types.CharArray.Options,
-Proargnames?: PgCatalog.Types.TextArray.Options,
-Proargdefaults?: PgCatalog.Types.PgNodeTree.Options,
-Protrftypes?: PgCatalog.Types.OidArray.Options,
-Prosrc?: PgCatalog.Types.Text.Options,
-Probin?: PgCatalog.Types.Text.Options,
-Prosqlbody?: PgCatalog.Types.PgNodeTree.Options,
-Proconfig?: PgCatalog.Types.TextArray.Options,
-Proacl?: PgCatalog.Types.AclitemArray.Options
+ oid?: PgCatalog.Types.Oid.Options,
+proname?: PgCatalog.Types.Name.Options,
+pronamespace?: PgCatalog.Types.Oid.Options,
+proowner?: PgCatalog.Types.Oid.Options,
+prolang?: PgCatalog.Types.Oid.Options,
+procost?: PgCatalog.Types.Float4.Options,
+prorows?: PgCatalog.Types.Float4.Options,
+provariadic?: PgCatalog.Types.Oid.Options,
+prosupport?: PgCatalog.Types.Regproc.Options,
+prokind?: PgCatalog.Types.Char.Options,
+prosecdef?: PgCatalog.Types.Bool.Options,
+proleakproof?: PgCatalog.Types.Bool.Options,
+proisstrict?: PgCatalog.Types.Bool.Options,
+proretset?: PgCatalog.Types.Bool.Options,
+provolatile?: PgCatalog.Types.Char.Options,
+proparallel?: PgCatalog.Types.Char.Options,
+pronargs?: PgCatalog.Types.Int2.Options,
+pronargdefaults?: PgCatalog.Types.Int2.Options,
+prorettype?: PgCatalog.Types.Oid.Options,
+proargtypes?: PgCatalog.Types.Oidvector.Options,
+proallargtypes?: PgCatalog.Types.OidArray.Options,
+proargmodes?: PgCatalog.Types.CharArray.Options,
+proargnames?: PgCatalog.Types.TextArray.Options,
+proargdefaults?: PgCatalog.Types.PgNodeTree.Options,
+protrftypes?: PgCatalog.Types.OidArray.Options,
+prosrc?: PgCatalog.Types.Text.Options,
+probin?: PgCatalog.Types.Text.Options,
+prosqlbody?: PgCatalog.Types.PgNodeTree.Options,
+proconfig?: PgCatalog.Types.TextArray.Options,
+proacl?: PgCatalog.Types.AclitemArray.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+proname?: PgCatalog.Types.Name.Options,
+pronamespace?: PgCatalog.Types.Oid.Options,
+proowner?: PgCatalog.Types.Oid.Options,
+prolang?: PgCatalog.Types.Oid.Options,
+procost?: PgCatalog.Types.Float4.Options,
+prorows?: PgCatalog.Types.Float4.Options,
+provariadic?: PgCatalog.Types.Oid.Options,
+prosupport?: PgCatalog.Types.Regproc.Options,
+prokind?: PgCatalog.Types.Char.Options,
+prosecdef?: PgCatalog.Types.Bool.Options,
+proleakproof?: PgCatalog.Types.Bool.Options,
+proisstrict?: PgCatalog.Types.Bool.Options,
+proretset?: PgCatalog.Types.Bool.Options,
+provolatile?: PgCatalog.Types.Char.Options,
+proparallel?: PgCatalog.Types.Char.Options,
+pronargs?: PgCatalog.Types.Int2.Options,
+pronargdefaults?: PgCatalog.Types.Int2.Options,
+prorettype?: PgCatalog.Types.Oid.Options,
+proargtypes?: PgCatalog.Types.Oidvector.Options,
+proallargtypes?: PgCatalog.Types.OidArray.Options,
+proargmodes?: PgCatalog.Types.CharArray.Options,
+proargnames?: PgCatalog.Types.TextArray.Options,
+proargdefaults?: PgCatalog.Types.PgNodeTree.Options,
+protrftypes?: PgCatalog.Types.OidArray.Options,
+prosrc?: PgCatalog.Types.Text.Options,
+probin?: PgCatalog.Types.Text.Options,
+prosqlbody?: PgCatalog.Types.PgNodeTree.Options,
+proconfig?: PgCatalog.Types.TextArray.Options,
+proacl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -4870,39 +5049,74 @@ relpartboundDescending = "relpartbound DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Relname?: PgCatalog.Types.Name.Options,
-Relnamespace?: PgCatalog.Types.Oid.Options,
-Reltype?: PgCatalog.Types.Oid.Options,
-Reloftype?: PgCatalog.Types.Oid.Options,
-Relowner?: PgCatalog.Types.Oid.Options,
-Relam?: PgCatalog.Types.Oid.Options,
-Relfilenode?: PgCatalog.Types.Oid.Options,
-Reltablespace?: PgCatalog.Types.Oid.Options,
-Relpages?: PgCatalog.Types.Int4.Options,
-Reltuples?: PgCatalog.Types.Float4.Options,
-Relallvisible?: PgCatalog.Types.Int4.Options,
-Reltoastrelid?: PgCatalog.Types.Oid.Options,
-Relhasindex?: PgCatalog.Types.Bool.Options,
-Relisshared?: PgCatalog.Types.Bool.Options,
-Relpersistence?: PgCatalog.Types.Char.Options,
-Relkind?: PgCatalog.Types.Char.Options,
-Relnatts?: PgCatalog.Types.Int2.Options,
-Relchecks?: PgCatalog.Types.Int2.Options,
-Relhasrules?: PgCatalog.Types.Bool.Options,
-Relhastriggers?: PgCatalog.Types.Bool.Options,
-Relhassubclass?: PgCatalog.Types.Bool.Options,
-Relrowsecurity?: PgCatalog.Types.Bool.Options,
-Relforcerowsecurity?: PgCatalog.Types.Bool.Options,
-Relispopulated?: PgCatalog.Types.Bool.Options,
-Relreplident?: PgCatalog.Types.Char.Options,
-Relispartition?: PgCatalog.Types.Bool.Options,
-Relrewrite?: PgCatalog.Types.Oid.Options,
-Relfrozenxid?: PgCatalog.Types.Xid.Options,
-Relminmxid?: PgCatalog.Types.Xid.Options,
-Relacl?: PgCatalog.Types.AclitemArray.Options,
-Reloptions?: PgCatalog.Types.TextArray.Options,
-Relpartbound?: PgCatalog.Types.PgNodeTree.Options
+ oid?: PgCatalog.Types.Oid.Options,
+relname?: PgCatalog.Types.Name.Options,
+relnamespace?: PgCatalog.Types.Oid.Options,
+reltype?: PgCatalog.Types.Oid.Options,
+reloftype?: PgCatalog.Types.Oid.Options,
+relowner?: PgCatalog.Types.Oid.Options,
+relam?: PgCatalog.Types.Oid.Options,
+relfilenode?: PgCatalog.Types.Oid.Options,
+reltablespace?: PgCatalog.Types.Oid.Options,
+relpages?: PgCatalog.Types.Int4.Options,
+reltuples?: PgCatalog.Types.Float4.Options,
+relallvisible?: PgCatalog.Types.Int4.Options,
+reltoastrelid?: PgCatalog.Types.Oid.Options,
+relhasindex?: PgCatalog.Types.Bool.Options,
+relisshared?: PgCatalog.Types.Bool.Options,
+relpersistence?: PgCatalog.Types.Char.Options,
+relkind?: PgCatalog.Types.Char.Options,
+relnatts?: PgCatalog.Types.Int2.Options,
+relchecks?: PgCatalog.Types.Int2.Options,
+relhasrules?: PgCatalog.Types.Bool.Options,
+relhastriggers?: PgCatalog.Types.Bool.Options,
+relhassubclass?: PgCatalog.Types.Bool.Options,
+relrowsecurity?: PgCatalog.Types.Bool.Options,
+relforcerowsecurity?: PgCatalog.Types.Bool.Options,
+relispopulated?: PgCatalog.Types.Bool.Options,
+relreplident?: PgCatalog.Types.Char.Options,
+relispartition?: PgCatalog.Types.Bool.Options,
+relrewrite?: PgCatalog.Types.Oid.Options,
+relfrozenxid?: PgCatalog.Types.Xid.Options,
+relminmxid?: PgCatalog.Types.Xid.Options,
+relacl?: PgCatalog.Types.AclitemArray.Options,
+reloptions?: PgCatalog.Types.TextArray.Options,
+relpartbound?: PgCatalog.Types.PgNodeTree.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+relname?: PgCatalog.Types.Name.Options,
+relnamespace?: PgCatalog.Types.Oid.Options,
+reltype?: PgCatalog.Types.Oid.Options,
+reloftype?: PgCatalog.Types.Oid.Options,
+relowner?: PgCatalog.Types.Oid.Options,
+relam?: PgCatalog.Types.Oid.Options,
+relfilenode?: PgCatalog.Types.Oid.Options,
+reltablespace?: PgCatalog.Types.Oid.Options,
+relpages?: PgCatalog.Types.Int4.Options,
+reltuples?: PgCatalog.Types.Float4.Options,
+relallvisible?: PgCatalog.Types.Int4.Options,
+reltoastrelid?: PgCatalog.Types.Oid.Options,
+relhasindex?: PgCatalog.Types.Bool.Options,
+relisshared?: PgCatalog.Types.Bool.Options,
+relpersistence?: PgCatalog.Types.Char.Options,
+relkind?: PgCatalog.Types.Char.Options,
+relnatts?: PgCatalog.Types.Int2.Options,
+relchecks?: PgCatalog.Types.Int2.Options,
+relhasrules?: PgCatalog.Types.Bool.Options,
+relhastriggers?: PgCatalog.Types.Bool.Options,
+relhassubclass?: PgCatalog.Types.Bool.Options,
+relrowsecurity?: PgCatalog.Types.Bool.Options,
+relforcerowsecurity?: PgCatalog.Types.Bool.Options,
+relispopulated?: PgCatalog.Types.Bool.Options,
+relreplident?: PgCatalog.Types.Char.Options,
+relispartition?: PgCatalog.Types.Bool.Options,
+relrewrite?: PgCatalog.Types.Oid.Options,
+relfrozenxid?: PgCatalog.Types.Xid.Options,
+relminmxid?: PgCatalog.Types.Xid.Options,
+relacl?: PgCatalog.Types.AclitemArray.Options,
+reloptions?: PgCatalog.Types.TextArray.Options,
+relpartbound?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Oid: {
@@ -5062,10 +5276,16 @@ adbinDescending = "adbin DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Adrelid?: PgCatalog.Types.Oid.Options,
-Adnum?: PgCatalog.Types.Int2.Options,
-Adbin?: PgCatalog.Types.PgNodeTree.Options
+ oid?: PgCatalog.Types.Oid.Options,
+adrelid?: PgCatalog.Types.Oid.Options,
+adnum?: PgCatalog.Types.Int2.Options,
+adbin?: PgCatalog.Types.PgNodeTree.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+adrelid?: PgCatalog.Types.Oid.Options,
+adnum?: PgCatalog.Types.Int2.Options,
+adbin?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Oid: {
@@ -5153,32 +5373,60 @@ conbinDescending = "conbin DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Conname?: PgCatalog.Types.Name.Options,
-Connamespace?: PgCatalog.Types.Oid.Options,
-Contype?: PgCatalog.Types.Char.Options,
-Condeferrable?: PgCatalog.Types.Bool.Options,
-Condeferred?: PgCatalog.Types.Bool.Options,
-Convalidated?: PgCatalog.Types.Bool.Options,
-Conrelid?: PgCatalog.Types.Oid.Options,
-Contypid?: PgCatalog.Types.Oid.Options,
-Conindid?: PgCatalog.Types.Oid.Options,
-Conparentid?: PgCatalog.Types.Oid.Options,
-Confrelid?: PgCatalog.Types.Oid.Options,
-Confupdtype?: PgCatalog.Types.Char.Options,
-Confdeltype?: PgCatalog.Types.Char.Options,
-Confmatchtype?: PgCatalog.Types.Char.Options,
-Conislocal?: PgCatalog.Types.Bool.Options,
-Coninhcount?: PgCatalog.Types.Int2.Options,
-Connoinherit?: PgCatalog.Types.Bool.Options,
-Conkey?: PgCatalog.Types.Int2Array.Options,
-Confkey?: PgCatalog.Types.Int2Array.Options,
-Conpfeqop?: PgCatalog.Types.OidArray.Options,
-Conppeqop?: PgCatalog.Types.OidArray.Options,
-Conffeqop?: PgCatalog.Types.OidArray.Options,
-Confdelsetcols?: PgCatalog.Types.Int2Array.Options,
-Conexclop?: PgCatalog.Types.OidArray.Options,
-Conbin?: PgCatalog.Types.PgNodeTree.Options
+ oid?: PgCatalog.Types.Oid.Options,
+conname?: PgCatalog.Types.Name.Options,
+connamespace?: PgCatalog.Types.Oid.Options,
+contype?: PgCatalog.Types.Char.Options,
+condeferrable?: PgCatalog.Types.Bool.Options,
+condeferred?: PgCatalog.Types.Bool.Options,
+convalidated?: PgCatalog.Types.Bool.Options,
+conrelid?: PgCatalog.Types.Oid.Options,
+contypid?: PgCatalog.Types.Oid.Options,
+conindid?: PgCatalog.Types.Oid.Options,
+conparentid?: PgCatalog.Types.Oid.Options,
+confrelid?: PgCatalog.Types.Oid.Options,
+confupdtype?: PgCatalog.Types.Char.Options,
+confdeltype?: PgCatalog.Types.Char.Options,
+confmatchtype?: PgCatalog.Types.Char.Options,
+conislocal?: PgCatalog.Types.Bool.Options,
+coninhcount?: PgCatalog.Types.Int2.Options,
+connoinherit?: PgCatalog.Types.Bool.Options,
+conkey?: PgCatalog.Types.Int2Array.Options,
+confkey?: PgCatalog.Types.Int2Array.Options,
+conpfeqop?: PgCatalog.Types.OidArray.Options,
+conppeqop?: PgCatalog.Types.OidArray.Options,
+conffeqop?: PgCatalog.Types.OidArray.Options,
+confdelsetcols?: PgCatalog.Types.Int2Array.Options,
+conexclop?: PgCatalog.Types.OidArray.Options,
+conbin?: PgCatalog.Types.PgNodeTree.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+conname?: PgCatalog.Types.Name.Options,
+connamespace?: PgCatalog.Types.Oid.Options,
+contype?: PgCatalog.Types.Char.Options,
+condeferrable?: PgCatalog.Types.Bool.Options,
+condeferred?: PgCatalog.Types.Bool.Options,
+convalidated?: PgCatalog.Types.Bool.Options,
+conrelid?: PgCatalog.Types.Oid.Options,
+contypid?: PgCatalog.Types.Oid.Options,
+conindid?: PgCatalog.Types.Oid.Options,
+conparentid?: PgCatalog.Types.Oid.Options,
+confrelid?: PgCatalog.Types.Oid.Options,
+confupdtype?: PgCatalog.Types.Char.Options,
+confdeltype?: PgCatalog.Types.Char.Options,
+confmatchtype?: PgCatalog.Types.Char.Options,
+conislocal?: PgCatalog.Types.Bool.Options,
+coninhcount?: PgCatalog.Types.Int2.Options,
+connoinherit?: PgCatalog.Types.Bool.Options,
+conkey?: PgCatalog.Types.Int2Array.Options,
+confkey?: PgCatalog.Types.Int2Array.Options,
+conpfeqop?: PgCatalog.Types.OidArray.Options,
+conppeqop?: PgCatalog.Types.OidArray.Options,
+conffeqop?: PgCatalog.Types.OidArray.Options,
+confdelsetcols?: PgCatalog.Types.Int2Array.Options,
+conexclop?: PgCatalog.Types.OidArray.Options,
+conbin?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Oid: {
@@ -5310,10 +5558,16 @@ inhdetachpendingDescending = "inhdetachpending DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Inhrelid?: PgCatalog.Types.Oid.Options,
-Inhparent?: PgCatalog.Types.Oid.Options,
-Inhseqno?: PgCatalog.Types.Int4.Options,
-Inhdetachpending?: PgCatalog.Types.Bool.Options
+ inhrelid?: PgCatalog.Types.Oid.Options,
+inhparent?: PgCatalog.Types.Oid.Options,
+inhseqno?: PgCatalog.Types.Int4.Options,
+inhdetachpending?: PgCatalog.Types.Bool.Options
+};
+export type ModifyOptions = {
+ inhrelid?: PgCatalog.Types.Oid.Options,
+inhparent?: PgCatalog.Types.Oid.Options,
+inhseqno?: PgCatalog.Types.Int4.Options,
+inhdetachpending?: PgCatalog.Types.Bool.Options
 };
 export const Columns = {
 Inhrelid: {
@@ -5391,27 +5645,50 @@ indpredDescending = "indpred DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Indexrelid?: PgCatalog.Types.Oid.Options,
-Indrelid?: PgCatalog.Types.Oid.Options,
-Indnatts?: PgCatalog.Types.Int2.Options,
-Indnkeyatts?: PgCatalog.Types.Int2.Options,
-Indisunique?: PgCatalog.Types.Bool.Options,
-Indnullsnotdistinct?: PgCatalog.Types.Bool.Options,
-Indisprimary?: PgCatalog.Types.Bool.Options,
-Indisexclusion?: PgCatalog.Types.Bool.Options,
-Indimmediate?: PgCatalog.Types.Bool.Options,
-Indisclustered?: PgCatalog.Types.Bool.Options,
-Indisvalid?: PgCatalog.Types.Bool.Options,
-Indcheckxmin?: PgCatalog.Types.Bool.Options,
-Indisready?: PgCatalog.Types.Bool.Options,
-Indislive?: PgCatalog.Types.Bool.Options,
-Indisreplident?: PgCatalog.Types.Bool.Options,
-Indkey?: PgCatalog.Types.Int2vector.Options,
-Indcollation?: PgCatalog.Types.Oidvector.Options,
-Indclass?: PgCatalog.Types.Oidvector.Options,
-Indoption?: PgCatalog.Types.Int2vector.Options,
-Indexprs?: PgCatalog.Types.PgNodeTree.Options,
-Indpred?: PgCatalog.Types.PgNodeTree.Options
+ indexrelid?: PgCatalog.Types.Oid.Options,
+indrelid?: PgCatalog.Types.Oid.Options,
+indnatts?: PgCatalog.Types.Int2.Options,
+indnkeyatts?: PgCatalog.Types.Int2.Options,
+indisunique?: PgCatalog.Types.Bool.Options,
+indnullsnotdistinct?: PgCatalog.Types.Bool.Options,
+indisprimary?: PgCatalog.Types.Bool.Options,
+indisexclusion?: PgCatalog.Types.Bool.Options,
+indimmediate?: PgCatalog.Types.Bool.Options,
+indisclustered?: PgCatalog.Types.Bool.Options,
+indisvalid?: PgCatalog.Types.Bool.Options,
+indcheckxmin?: PgCatalog.Types.Bool.Options,
+indisready?: PgCatalog.Types.Bool.Options,
+indislive?: PgCatalog.Types.Bool.Options,
+indisreplident?: PgCatalog.Types.Bool.Options,
+indkey?: PgCatalog.Types.Int2vector.Options,
+indcollation?: PgCatalog.Types.Oidvector.Options,
+indclass?: PgCatalog.Types.Oidvector.Options,
+indoption?: PgCatalog.Types.Int2vector.Options,
+indexprs?: PgCatalog.Types.PgNodeTree.Options,
+indpred?: PgCatalog.Types.PgNodeTree.Options
+};
+export type ModifyOptions = {
+ indexrelid?: PgCatalog.Types.Oid.Options,
+indrelid?: PgCatalog.Types.Oid.Options,
+indnatts?: PgCatalog.Types.Int2.Options,
+indnkeyatts?: PgCatalog.Types.Int2.Options,
+indisunique?: PgCatalog.Types.Bool.Options,
+indnullsnotdistinct?: PgCatalog.Types.Bool.Options,
+indisprimary?: PgCatalog.Types.Bool.Options,
+indisexclusion?: PgCatalog.Types.Bool.Options,
+indimmediate?: PgCatalog.Types.Bool.Options,
+indisclustered?: PgCatalog.Types.Bool.Options,
+indisvalid?: PgCatalog.Types.Bool.Options,
+indcheckxmin?: PgCatalog.Types.Bool.Options,
+indisready?: PgCatalog.Types.Bool.Options,
+indislive?: PgCatalog.Types.Bool.Options,
+indisreplident?: PgCatalog.Types.Bool.Options,
+indkey?: PgCatalog.Types.Int2vector.Options,
+indcollation?: PgCatalog.Types.Oidvector.Options,
+indclass?: PgCatalog.Types.Oidvector.Options,
+indoption?: PgCatalog.Types.Int2vector.Options,
+indexprs?: PgCatalog.Types.PgNodeTree.Options,
+indpred?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Indexrelid: {
@@ -5545,21 +5822,38 @@ oprjoinDescending = "oprjoin DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Oprname?: PgCatalog.Types.Name.Options,
-Oprnamespace?: PgCatalog.Types.Oid.Options,
-Oprowner?: PgCatalog.Types.Oid.Options,
-Oprkind?: PgCatalog.Types.Char.Options,
-Oprcanmerge?: PgCatalog.Types.Bool.Options,
-Oprcanhash?: PgCatalog.Types.Bool.Options,
-Oprleft?: PgCatalog.Types.Oid.Options,
-Oprright?: PgCatalog.Types.Oid.Options,
-Oprresult?: PgCatalog.Types.Oid.Options,
-Oprcom?: PgCatalog.Types.Oid.Options,
-Oprnegate?: PgCatalog.Types.Oid.Options,
-Oprcode?: PgCatalog.Types.Regproc.Options,
-Oprrest?: PgCatalog.Types.Regproc.Options,
-Oprjoin?: PgCatalog.Types.Regproc.Options
+ oid?: PgCatalog.Types.Oid.Options,
+oprname?: PgCatalog.Types.Name.Options,
+oprnamespace?: PgCatalog.Types.Oid.Options,
+oprowner?: PgCatalog.Types.Oid.Options,
+oprkind?: PgCatalog.Types.Char.Options,
+oprcanmerge?: PgCatalog.Types.Bool.Options,
+oprcanhash?: PgCatalog.Types.Bool.Options,
+oprleft?: PgCatalog.Types.Oid.Options,
+oprright?: PgCatalog.Types.Oid.Options,
+oprresult?: PgCatalog.Types.Oid.Options,
+oprcom?: PgCatalog.Types.Oid.Options,
+oprnegate?: PgCatalog.Types.Oid.Options,
+oprcode?: PgCatalog.Types.Regproc.Options,
+oprrest?: PgCatalog.Types.Regproc.Options,
+oprjoin?: PgCatalog.Types.Regproc.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+oprname?: PgCatalog.Types.Name.Options,
+oprnamespace?: PgCatalog.Types.Oid.Options,
+oprowner?: PgCatalog.Types.Oid.Options,
+oprkind?: PgCatalog.Types.Char.Options,
+oprcanmerge?: PgCatalog.Types.Bool.Options,
+oprcanhash?: PgCatalog.Types.Bool.Options,
+oprleft?: PgCatalog.Types.Oid.Options,
+oprright?: PgCatalog.Types.Oid.Options,
+oprresult?: PgCatalog.Types.Oid.Options,
+oprcom?: PgCatalog.Types.Oid.Options,
+oprnegate?: PgCatalog.Types.Oid.Options,
+oprcode?: PgCatalog.Types.Regproc.Options,
+oprrest?: PgCatalog.Types.Regproc.Options,
+oprjoin?: PgCatalog.Types.Regproc.Options
 };
 export const Columns = {
 Oid: {
@@ -5649,11 +5943,18 @@ opfownerDescending = "opfowner DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Opfmethod?: PgCatalog.Types.Oid.Options,
-Opfname?: PgCatalog.Types.Name.Options,
-Opfnamespace?: PgCatalog.Types.Oid.Options,
-Opfowner?: PgCatalog.Types.Oid.Options
+ oid?: PgCatalog.Types.Oid.Options,
+opfmethod?: PgCatalog.Types.Oid.Options,
+opfname?: PgCatalog.Types.Name.Options,
+opfnamespace?: PgCatalog.Types.Oid.Options,
+opfowner?: PgCatalog.Types.Oid.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+opfmethod?: PgCatalog.Types.Oid.Options,
+opfname?: PgCatalog.Types.Name.Options,
+opfnamespace?: PgCatalog.Types.Oid.Options,
+opfowner?: PgCatalog.Types.Oid.Options
 };
 export const Columns = {
 Oid: {
@@ -5711,15 +6012,26 @@ opckeytypeDescending = "opckeytype DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Opcmethod?: PgCatalog.Types.Oid.Options,
-Opcname?: PgCatalog.Types.Name.Options,
-Opcnamespace?: PgCatalog.Types.Oid.Options,
-Opcowner?: PgCatalog.Types.Oid.Options,
-Opcfamily?: PgCatalog.Types.Oid.Options,
-Opcintype?: PgCatalog.Types.Oid.Options,
-Opcdefault?: PgCatalog.Types.Bool.Options,
-Opckeytype?: PgCatalog.Types.Oid.Options
+ oid?: PgCatalog.Types.Oid.Options,
+opcmethod?: PgCatalog.Types.Oid.Options,
+opcname?: PgCatalog.Types.Name.Options,
+opcnamespace?: PgCatalog.Types.Oid.Options,
+opcowner?: PgCatalog.Types.Oid.Options,
+opcfamily?: PgCatalog.Types.Oid.Options,
+opcintype?: PgCatalog.Types.Oid.Options,
+opcdefault?: PgCatalog.Types.Bool.Options,
+opckeytype?: PgCatalog.Types.Oid.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+opcmethod?: PgCatalog.Types.Oid.Options,
+opcname?: PgCatalog.Types.Name.Options,
+opcnamespace?: PgCatalog.Types.Oid.Options,
+opcowner?: PgCatalog.Types.Oid.Options,
+opcfamily?: PgCatalog.Types.Oid.Options,
+opcintype?: PgCatalog.Types.Oid.Options,
+opcdefault?: PgCatalog.Types.Bool.Options,
+opckeytype?: PgCatalog.Types.Oid.Options
 };
 export const Columns = {
 Oid: {
@@ -5783,10 +6095,16 @@ amtypeDescending = "amtype DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Amname?: PgCatalog.Types.Name.Options,
-Amhandler?: PgCatalog.Types.Regproc.Options,
-Amtype?: PgCatalog.Types.Char.Options
+ oid?: PgCatalog.Types.Oid.Options,
+amname?: PgCatalog.Types.Name.Options,
+amhandler?: PgCatalog.Types.Regproc.Options,
+amtype?: PgCatalog.Types.Char.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+amname?: PgCatalog.Types.Name.Options,
+amhandler?: PgCatalog.Types.Regproc.Options,
+amtype?: PgCatalog.Types.Char.Options
 };
 export const Columns = {
 Oid: {
@@ -5840,15 +6158,26 @@ amopsortfamilyDescending = "amopsortfamily DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Amopfamily?: PgCatalog.Types.Oid.Options,
-Amoplefttype?: PgCatalog.Types.Oid.Options,
-Amoprighttype?: PgCatalog.Types.Oid.Options,
-Amopstrategy?: PgCatalog.Types.Int2.Options,
-Amoppurpose?: PgCatalog.Types.Char.Options,
-Amopopr?: PgCatalog.Types.Oid.Options,
-Amopmethod?: PgCatalog.Types.Oid.Options,
-Amopsortfamily?: PgCatalog.Types.Oid.Options
+ oid?: PgCatalog.Types.Oid.Options,
+amopfamily?: PgCatalog.Types.Oid.Options,
+amoplefttype?: PgCatalog.Types.Oid.Options,
+amoprighttype?: PgCatalog.Types.Oid.Options,
+amopstrategy?: PgCatalog.Types.Int2.Options,
+amoppurpose?: PgCatalog.Types.Char.Options,
+amopopr?: PgCatalog.Types.Oid.Options,
+amopmethod?: PgCatalog.Types.Oid.Options,
+amopsortfamily?: PgCatalog.Types.Oid.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+amopfamily?: PgCatalog.Types.Oid.Options,
+amoplefttype?: PgCatalog.Types.Oid.Options,
+amoprighttype?: PgCatalog.Types.Oid.Options,
+amopstrategy?: PgCatalog.Types.Int2.Options,
+amoppurpose?: PgCatalog.Types.Char.Options,
+amopopr?: PgCatalog.Types.Oid.Options,
+amopmethod?: PgCatalog.Types.Oid.Options,
+amopsortfamily?: PgCatalog.Types.Oid.Options
 };
 export const Columns = {
 Oid: {
@@ -5916,12 +6245,20 @@ amprocDescending = "amproc DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Amprocfamily?: PgCatalog.Types.Oid.Options,
-Amproclefttype?: PgCatalog.Types.Oid.Options,
-Amprocrighttype?: PgCatalog.Types.Oid.Options,
-Amprocnum?: PgCatalog.Types.Int2.Options,
-Amproc?: PgCatalog.Types.Regproc.Options
+ oid?: PgCatalog.Types.Oid.Options,
+amprocfamily?: PgCatalog.Types.Oid.Options,
+amproclefttype?: PgCatalog.Types.Oid.Options,
+amprocrighttype?: PgCatalog.Types.Oid.Options,
+amprocnum?: PgCatalog.Types.Int2.Options,
+amproc?: PgCatalog.Types.Regproc.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+amprocfamily?: PgCatalog.Types.Oid.Options,
+amproclefttype?: PgCatalog.Types.Oid.Options,
+amprocrighttype?: PgCatalog.Types.Oid.Options,
+amprocnum?: PgCatalog.Types.Int2.Options,
+amproc?: PgCatalog.Types.Regproc.Options
 };
 export const Columns = {
 Oid: {
@@ -5983,15 +6320,26 @@ lanaclDescending = "lanacl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Lanname?: PgCatalog.Types.Name.Options,
-Lanowner?: PgCatalog.Types.Oid.Options,
-Lanispl?: PgCatalog.Types.Bool.Options,
-Lanpltrusted?: PgCatalog.Types.Bool.Options,
-Lanplcallfoid?: PgCatalog.Types.Oid.Options,
-Laninline?: PgCatalog.Types.Oid.Options,
-Lanvalidator?: PgCatalog.Types.Oid.Options,
-Lanacl?: PgCatalog.Types.AclitemArray.Options
+ oid?: PgCatalog.Types.Oid.Options,
+lanname?: PgCatalog.Types.Name.Options,
+lanowner?: PgCatalog.Types.Oid.Options,
+lanispl?: PgCatalog.Types.Bool.Options,
+lanpltrusted?: PgCatalog.Types.Bool.Options,
+lanplcallfoid?: PgCatalog.Types.Oid.Options,
+laninline?: PgCatalog.Types.Oid.Options,
+lanvalidator?: PgCatalog.Types.Oid.Options,
+lanacl?: PgCatalog.Types.AclitemArray.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+lanname?: PgCatalog.Types.Name.Options,
+lanowner?: PgCatalog.Types.Oid.Options,
+lanispl?: PgCatalog.Types.Bool.Options,
+lanpltrusted?: PgCatalog.Types.Bool.Options,
+lanplcallfoid?: PgCatalog.Types.Oid.Options,
+laninline?: PgCatalog.Types.Oid.Options,
+lanvalidator?: PgCatalog.Types.Oid.Options,
+lanacl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -6053,9 +6401,14 @@ lomaclDescending = "lomacl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Lomowner?: PgCatalog.Types.Oid.Options,
-Lomacl?: PgCatalog.Types.AclitemArray.Options
+ oid?: PgCatalog.Types.Oid.Options,
+lomowner?: PgCatalog.Types.Oid.Options,
+lomacl?: PgCatalog.Types.AclitemArray.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+lomowner?: PgCatalog.Types.Oid.Options,
+lomacl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -6131,28 +6484,52 @@ aggminitvalDescending = "aggminitval DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Aggfnoid?: PgCatalog.Types.Regproc.Options,
-Aggkind?: PgCatalog.Types.Char.Options,
-Aggnumdirectargs?: PgCatalog.Types.Int2.Options,
-Aggtransfn?: PgCatalog.Types.Regproc.Options,
-Aggfinalfn?: PgCatalog.Types.Regproc.Options,
-Aggcombinefn?: PgCatalog.Types.Regproc.Options,
-Aggserialfn?: PgCatalog.Types.Regproc.Options,
-Aggdeserialfn?: PgCatalog.Types.Regproc.Options,
-Aggmtransfn?: PgCatalog.Types.Regproc.Options,
-Aggminvtransfn?: PgCatalog.Types.Regproc.Options,
-Aggmfinalfn?: PgCatalog.Types.Regproc.Options,
-Aggfinalextra?: PgCatalog.Types.Bool.Options,
-Aggmfinalextra?: PgCatalog.Types.Bool.Options,
-Aggfinalmodify?: PgCatalog.Types.Char.Options,
-Aggmfinalmodify?: PgCatalog.Types.Char.Options,
-Aggsortop?: PgCatalog.Types.Oid.Options,
-Aggtranstype?: PgCatalog.Types.Oid.Options,
-Aggtransspace?: PgCatalog.Types.Int4.Options,
-Aggmtranstype?: PgCatalog.Types.Oid.Options,
-Aggmtransspace?: PgCatalog.Types.Int4.Options,
-Agginitval?: PgCatalog.Types.Text.Options,
-Aggminitval?: PgCatalog.Types.Text.Options
+ aggfnoid?: PgCatalog.Types.Regproc.Options,
+aggkind?: PgCatalog.Types.Char.Options,
+aggnumdirectargs?: PgCatalog.Types.Int2.Options,
+aggtransfn?: PgCatalog.Types.Regproc.Options,
+aggfinalfn?: PgCatalog.Types.Regproc.Options,
+aggcombinefn?: PgCatalog.Types.Regproc.Options,
+aggserialfn?: PgCatalog.Types.Regproc.Options,
+aggdeserialfn?: PgCatalog.Types.Regproc.Options,
+aggmtransfn?: PgCatalog.Types.Regproc.Options,
+aggminvtransfn?: PgCatalog.Types.Regproc.Options,
+aggmfinalfn?: PgCatalog.Types.Regproc.Options,
+aggfinalextra?: PgCatalog.Types.Bool.Options,
+aggmfinalextra?: PgCatalog.Types.Bool.Options,
+aggfinalmodify?: PgCatalog.Types.Char.Options,
+aggmfinalmodify?: PgCatalog.Types.Char.Options,
+aggsortop?: PgCatalog.Types.Oid.Options,
+aggtranstype?: PgCatalog.Types.Oid.Options,
+aggtransspace?: PgCatalog.Types.Int4.Options,
+aggmtranstype?: PgCatalog.Types.Oid.Options,
+aggmtransspace?: PgCatalog.Types.Int4.Options,
+agginitval?: PgCatalog.Types.Text.Options,
+aggminitval?: PgCatalog.Types.Text.Options
+};
+export type ModifyOptions = {
+ aggfnoid?: PgCatalog.Types.Regproc.Options,
+aggkind?: PgCatalog.Types.Char.Options,
+aggnumdirectargs?: PgCatalog.Types.Int2.Options,
+aggtransfn?: PgCatalog.Types.Regproc.Options,
+aggfinalfn?: PgCatalog.Types.Regproc.Options,
+aggcombinefn?: PgCatalog.Types.Regproc.Options,
+aggserialfn?: PgCatalog.Types.Regproc.Options,
+aggdeserialfn?: PgCatalog.Types.Regproc.Options,
+aggmtransfn?: PgCatalog.Types.Regproc.Options,
+aggminvtransfn?: PgCatalog.Types.Regproc.Options,
+aggmfinalfn?: PgCatalog.Types.Regproc.Options,
+aggfinalextra?: PgCatalog.Types.Bool.Options,
+aggmfinalextra?: PgCatalog.Types.Bool.Options,
+aggfinalmodify?: PgCatalog.Types.Char.Options,
+aggmfinalmodify?: PgCatalog.Types.Char.Options,
+aggsortop?: PgCatalog.Types.Oid.Options,
+aggtranstype?: PgCatalog.Types.Oid.Options,
+aggtransspace?: PgCatalog.Types.Int4.Options,
+aggmtranstype?: PgCatalog.Types.Oid.Options,
+aggmtransspace?: PgCatalog.Types.Int4.Options,
+agginitval?: PgCatalog.Types.Text.Options,
+aggminitval?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Aggfnoid: {
@@ -6278,15 +6655,26 @@ stxexprsDescending = "stxexprs DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Stxrelid?: PgCatalog.Types.Oid.Options,
-Stxname?: PgCatalog.Types.Name.Options,
-Stxnamespace?: PgCatalog.Types.Oid.Options,
-Stxowner?: PgCatalog.Types.Oid.Options,
-Stxstattarget?: PgCatalog.Types.Int4.Options,
-Stxkeys?: PgCatalog.Types.Int2vector.Options,
-Stxkind?: PgCatalog.Types.CharArray.Options,
-Stxexprs?: PgCatalog.Types.PgNodeTree.Options
+ oid?: PgCatalog.Types.Oid.Options,
+stxrelid?: PgCatalog.Types.Oid.Options,
+stxname?: PgCatalog.Types.Name.Options,
+stxnamespace?: PgCatalog.Types.Oid.Options,
+stxowner?: PgCatalog.Types.Oid.Options,
+stxstattarget?: PgCatalog.Types.Int4.Options,
+stxkeys?: PgCatalog.Types.Int2vector.Options,
+stxkind?: PgCatalog.Types.CharArray.Options,
+stxexprs?: PgCatalog.Types.PgNodeTree.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+stxrelid?: PgCatalog.Types.Oid.Options,
+stxname?: PgCatalog.Types.Name.Options,
+stxnamespace?: PgCatalog.Types.Oid.Options,
+stxowner?: PgCatalog.Types.Oid.Options,
+stxstattarget?: PgCatalog.Types.Int4.Options,
+stxkeys?: PgCatalog.Types.Int2vector.Options,
+stxkind?: PgCatalog.Types.CharArray.Options,
+stxexprs?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Oid: {
@@ -6358,14 +6746,24 @@ evActionDescending = "ev_action DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Rulename?: PgCatalog.Types.Name.Options,
-EvClass?: PgCatalog.Types.Oid.Options,
-EvType?: PgCatalog.Types.Char.Options,
-EvEnabled?: PgCatalog.Types.Char.Options,
-IsInstead?: PgCatalog.Types.Bool.Options,
-EvQual?: PgCatalog.Types.PgNodeTree.Options,
-EvAction?: PgCatalog.Types.PgNodeTree.Options
+ oid?: PgCatalog.Types.Oid.Options,
+rulename?: PgCatalog.Types.Name.Options,
+evClass?: PgCatalog.Types.Oid.Options,
+evType?: PgCatalog.Types.Char.Options,
+evEnabled?: PgCatalog.Types.Char.Options,
+isInstead?: PgCatalog.Types.Bool.Options,
+evQual?: PgCatalog.Types.PgNodeTree.Options,
+evAction?: PgCatalog.Types.PgNodeTree.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+rulename?: PgCatalog.Types.Name.Options,
+evClass?: PgCatalog.Types.Oid.Options,
+evType?: PgCatalog.Types.Char.Options,
+evEnabled?: PgCatalog.Types.Char.Options,
+isInstead?: PgCatalog.Types.Bool.Options,
+evQual?: PgCatalog.Types.PgNodeTree.Options,
+evAction?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Oid: {
@@ -6455,25 +6853,46 @@ tgnewtableDescending = "tgnewtable DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Tgrelid?: PgCatalog.Types.Oid.Options,
-Tgparentid?: PgCatalog.Types.Oid.Options,
-Tgname?: PgCatalog.Types.Name.Options,
-Tgfoid?: PgCatalog.Types.Oid.Options,
-Tgtype?: PgCatalog.Types.Int2.Options,
-Tgenabled?: PgCatalog.Types.Char.Options,
-Tgisinternal?: PgCatalog.Types.Bool.Options,
-Tgconstrrelid?: PgCatalog.Types.Oid.Options,
-Tgconstrindid?: PgCatalog.Types.Oid.Options,
-Tgconstraint?: PgCatalog.Types.Oid.Options,
-Tgdeferrable?: PgCatalog.Types.Bool.Options,
-Tginitdeferred?: PgCatalog.Types.Bool.Options,
-Tgnargs?: PgCatalog.Types.Int2.Options,
-Tgattr?: PgCatalog.Types.Int2vector.Options,
-Tgargs?: PgCatalog.Types.Bytea.Options,
-Tgqual?: PgCatalog.Types.PgNodeTree.Options,
-Tgoldtable?: PgCatalog.Types.Name.Options,
-Tgnewtable?: PgCatalog.Types.Name.Options
+ oid?: PgCatalog.Types.Oid.Options,
+tgrelid?: PgCatalog.Types.Oid.Options,
+tgparentid?: PgCatalog.Types.Oid.Options,
+tgname?: PgCatalog.Types.Name.Options,
+tgfoid?: PgCatalog.Types.Oid.Options,
+tgtype?: PgCatalog.Types.Int2.Options,
+tgenabled?: PgCatalog.Types.Char.Options,
+tgisinternal?: PgCatalog.Types.Bool.Options,
+tgconstrrelid?: PgCatalog.Types.Oid.Options,
+tgconstrindid?: PgCatalog.Types.Oid.Options,
+tgconstraint?: PgCatalog.Types.Oid.Options,
+tgdeferrable?: PgCatalog.Types.Bool.Options,
+tginitdeferred?: PgCatalog.Types.Bool.Options,
+tgnargs?: PgCatalog.Types.Int2.Options,
+tgattr?: PgCatalog.Types.Int2vector.Options,
+tgargs?: PgCatalog.Types.Bytea.Options,
+tgqual?: PgCatalog.Types.PgNodeTree.Options,
+tgoldtable?: PgCatalog.Types.Name.Options,
+tgnewtable?: PgCatalog.Types.Name.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+tgrelid?: PgCatalog.Types.Oid.Options,
+tgparentid?: PgCatalog.Types.Oid.Options,
+tgname?: PgCatalog.Types.Name.Options,
+tgfoid?: PgCatalog.Types.Oid.Options,
+tgtype?: PgCatalog.Types.Int2.Options,
+tgenabled?: PgCatalog.Types.Char.Options,
+tgisinternal?: PgCatalog.Types.Bool.Options,
+tgconstrrelid?: PgCatalog.Types.Oid.Options,
+tgconstrindid?: PgCatalog.Types.Oid.Options,
+tgconstraint?: PgCatalog.Types.Oid.Options,
+tgdeferrable?: PgCatalog.Types.Bool.Options,
+tginitdeferred?: PgCatalog.Types.Bool.Options,
+tgnargs?: PgCatalog.Types.Int2.Options,
+tgattr?: PgCatalog.Types.Int2vector.Options,
+tgargs?: PgCatalog.Types.Bytea.Options,
+tgqual?: PgCatalog.Types.PgNodeTree.Options,
+tgoldtable?: PgCatalog.Types.Name.Options,
+tgnewtable?: PgCatalog.Types.Name.Options
 };
 export const Columns = {
 Oid: {
@@ -6583,13 +7002,22 @@ evttagsDescending = "evttags DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Evtname?: PgCatalog.Types.Name.Options,
-Evtevent?: PgCatalog.Types.Name.Options,
-Evtowner?: PgCatalog.Types.Oid.Options,
-Evtfoid?: PgCatalog.Types.Oid.Options,
-Evtenabled?: PgCatalog.Types.Char.Options,
-Evttags?: PgCatalog.Types.TextArray.Options
+ oid?: PgCatalog.Types.Oid.Options,
+evtname?: PgCatalog.Types.Name.Options,
+evtevent?: PgCatalog.Types.Name.Options,
+evtowner?: PgCatalog.Types.Oid.Options,
+evtfoid?: PgCatalog.Types.Oid.Options,
+evtenabled?: PgCatalog.Types.Char.Options,
+evttags?: PgCatalog.Types.TextArray.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+evtname?: PgCatalog.Types.Name.Options,
+evtevent?: PgCatalog.Types.Name.Options,
+evtowner?: PgCatalog.Types.Oid.Options,
+evtfoid?: PgCatalog.Types.Oid.Options,
+evtenabled?: PgCatalog.Types.Char.Options,
+evttags?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Oid: {
@@ -6645,10 +7073,16 @@ descriptionDescending = "description DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Objoid?: PgCatalog.Types.Oid.Options,
-Classoid?: PgCatalog.Types.Oid.Options,
-Objsubid?: PgCatalog.Types.Int4.Options,
-Description?: PgCatalog.Types.Text.Options
+ objoid?: PgCatalog.Types.Oid.Options,
+classoid?: PgCatalog.Types.Oid.Options,
+objsubid?: PgCatalog.Types.Int4.Options,
+description?: PgCatalog.Types.Text.Options
+};
+export type ModifyOptions = {
+ objoid?: PgCatalog.Types.Oid.Options,
+classoid?: PgCatalog.Types.Oid.Options,
+objsubid?: PgCatalog.Types.Int4.Options,
+description?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Objoid: {
@@ -6696,12 +7130,20 @@ castmethodDescending = "castmethod DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Castsource?: PgCatalog.Types.Oid.Options,
-Casttarget?: PgCatalog.Types.Oid.Options,
-Castfunc?: PgCatalog.Types.Oid.Options,
-Castcontext?: PgCatalog.Types.Char.Options,
-Castmethod?: PgCatalog.Types.Char.Options
+ oid?: PgCatalog.Types.Oid.Options,
+castsource?: PgCatalog.Types.Oid.Options,
+casttarget?: PgCatalog.Types.Oid.Options,
+castfunc?: PgCatalog.Types.Oid.Options,
+castcontext?: PgCatalog.Types.Char.Options,
+castmethod?: PgCatalog.Types.Char.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+castsource?: PgCatalog.Types.Oid.Options,
+casttarget?: PgCatalog.Types.Oid.Options,
+castfunc?: PgCatalog.Types.Oid.Options,
+castcontext?: PgCatalog.Types.Char.Options,
+castmethod?: PgCatalog.Types.Char.Options
 };
 export const Columns = {
 Oid: {
@@ -6753,10 +7195,16 @@ enumlabelDescending = "enumlabel DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Enumtypid?: PgCatalog.Types.Oid.Options,
-Enumsortorder?: PgCatalog.Types.Float4.Options,
-Enumlabel?: PgCatalog.Types.Name.Options
+ oid?: PgCatalog.Types.Oid.Options,
+enumtypid?: PgCatalog.Types.Oid.Options,
+enumsortorder?: PgCatalog.Types.Float4.Options,
+enumlabel?: PgCatalog.Types.Name.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+enumtypid?: PgCatalog.Types.Oid.Options,
+enumsortorder?: PgCatalog.Types.Float4.Options,
+enumlabel?: PgCatalog.Types.Name.Options
 };
 export const Columns = {
 Oid: {
@@ -6800,10 +7248,16 @@ nspaclDescending = "nspacl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Nspname?: PgCatalog.Types.Name.Options,
-Nspowner?: PgCatalog.Types.Oid.Options,
-Nspacl?: PgCatalog.Types.AclitemArray.Options
+ oid?: PgCatalog.Types.Oid.Options,
+nspname?: PgCatalog.Types.Name.Options,
+nspowner?: PgCatalog.Types.Oid.Options,
+nspacl?: PgCatalog.Types.AclitemArray.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+nspname?: PgCatalog.Types.Name.Options,
+nspowner?: PgCatalog.Types.Oid.Options,
+nspacl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -6855,14 +7309,24 @@ condefaultDescending = "condefault DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Conname?: PgCatalog.Types.Name.Options,
-Connamespace?: PgCatalog.Types.Oid.Options,
-Conowner?: PgCatalog.Types.Oid.Options,
-Conforencoding?: PgCatalog.Types.Int4.Options,
-Contoencoding?: PgCatalog.Types.Int4.Options,
-Conproc?: PgCatalog.Types.Regproc.Options,
-Condefault?: PgCatalog.Types.Bool.Options
+ oid?: PgCatalog.Types.Oid.Options,
+conname?: PgCatalog.Types.Name.Options,
+connamespace?: PgCatalog.Types.Oid.Options,
+conowner?: PgCatalog.Types.Oid.Options,
+conforencoding?: PgCatalog.Types.Int4.Options,
+contoencoding?: PgCatalog.Types.Int4.Options,
+conproc?: PgCatalog.Types.Regproc.Options,
+condefault?: PgCatalog.Types.Bool.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+conname?: PgCatalog.Types.Name.Options,
+connamespace?: PgCatalog.Types.Oid.Options,
+conowner?: PgCatalog.Types.Oid.Options,
+conforencoding?: PgCatalog.Types.Int4.Options,
+contoencoding?: PgCatalog.Types.Int4.Options,
+conproc?: PgCatalog.Types.Regproc.Options,
+condefault?: PgCatalog.Types.Bool.Options
 };
 export const Columns = {
 Oid: {
@@ -6928,13 +7392,22 @@ deptypeDescending = "deptype DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Classid?: PgCatalog.Types.Oid.Options,
-Objid?: PgCatalog.Types.Oid.Options,
-Objsubid?: PgCatalog.Types.Int4.Options,
-Refclassid?: PgCatalog.Types.Oid.Options,
-Refobjid?: PgCatalog.Types.Oid.Options,
-Refobjsubid?: PgCatalog.Types.Int4.Options,
-Deptype?: PgCatalog.Types.Char.Options
+ classid?: PgCatalog.Types.Oid.Options,
+objid?: PgCatalog.Types.Oid.Options,
+objsubid?: PgCatalog.Types.Int4.Options,
+refclassid?: PgCatalog.Types.Oid.Options,
+refobjid?: PgCatalog.Types.Oid.Options,
+refobjsubid?: PgCatalog.Types.Int4.Options,
+deptype?: PgCatalog.Types.Char.Options
+};
+export type ModifyOptions = {
+ classid?: PgCatalog.Types.Oid.Options,
+objid?: PgCatalog.Types.Oid.Options,
+objsubid?: PgCatalog.Types.Int4.Options,
+refclassid?: PgCatalog.Types.Oid.Options,
+refobjid?: PgCatalog.Types.Oid.Options,
+refobjsubid?: PgCatalog.Types.Int4.Options,
+deptype?: PgCatalog.Types.Char.Options
 };
 export const Columns = {
 Classid: {
@@ -7015,23 +7488,42 @@ dataclDescending = "datacl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Datname?: PgCatalog.Types.Name.Options,
-Datdba?: PgCatalog.Types.Oid.Options,
-Encoding?: PgCatalog.Types.Int4.Options,
-Datlocprovider?: PgCatalog.Types.Char.Options,
-Datistemplate?: PgCatalog.Types.Bool.Options,
-Datallowconn?: PgCatalog.Types.Bool.Options,
-Datconnlimit?: PgCatalog.Types.Int4.Options,
-Datfrozenxid?: PgCatalog.Types.Xid.Options,
-Datminmxid?: PgCatalog.Types.Xid.Options,
-Dattablespace?: PgCatalog.Types.Oid.Options,
-Datcollate?: PgCatalog.Types.Text.Options,
-Datctype?: PgCatalog.Types.Text.Options,
-Daticulocale?: PgCatalog.Types.Text.Options,
-Daticurules?: PgCatalog.Types.Text.Options,
-Datcollversion?: PgCatalog.Types.Text.Options,
-Datacl?: PgCatalog.Types.AclitemArray.Options
+ oid?: PgCatalog.Types.Oid.Options,
+datname?: PgCatalog.Types.Name.Options,
+datdba?: PgCatalog.Types.Oid.Options,
+encoding?: PgCatalog.Types.Int4.Options,
+datlocprovider?: PgCatalog.Types.Char.Options,
+datistemplate?: PgCatalog.Types.Bool.Options,
+datallowconn?: PgCatalog.Types.Bool.Options,
+datconnlimit?: PgCatalog.Types.Int4.Options,
+datfrozenxid?: PgCatalog.Types.Xid.Options,
+datminmxid?: PgCatalog.Types.Xid.Options,
+dattablespace?: PgCatalog.Types.Oid.Options,
+datcollate?: PgCatalog.Types.Text.Options,
+datctype?: PgCatalog.Types.Text.Options,
+daticulocale?: PgCatalog.Types.Text.Options,
+daticurules?: PgCatalog.Types.Text.Options,
+datcollversion?: PgCatalog.Types.Text.Options,
+datacl?: PgCatalog.Types.AclitemArray.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+datname?: PgCatalog.Types.Name.Options,
+datdba?: PgCatalog.Types.Oid.Options,
+encoding?: PgCatalog.Types.Int4.Options,
+datlocprovider?: PgCatalog.Types.Char.Options,
+datistemplate?: PgCatalog.Types.Bool.Options,
+datallowconn?: PgCatalog.Types.Bool.Options,
+datconnlimit?: PgCatalog.Types.Int4.Options,
+datfrozenxid?: PgCatalog.Types.Xid.Options,
+datminmxid?: PgCatalog.Types.Xid.Options,
+dattablespace?: PgCatalog.Types.Oid.Options,
+datcollate?: PgCatalog.Types.Text.Options,
+datctype?: PgCatalog.Types.Text.Options,
+daticulocale?: PgCatalog.Types.Text.Options,
+daticurules?: PgCatalog.Types.Text.Options,
+datcollversion?: PgCatalog.Types.Text.Options,
+datacl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -7125,9 +7617,14 @@ setconfigDescending = "setconfig DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Setdatabase?: PgCatalog.Types.Oid.Options,
-Setrole?: PgCatalog.Types.Oid.Options,
-Setconfig?: PgCatalog.Types.TextArray.Options
+ setdatabase?: PgCatalog.Types.Oid.Options,
+setrole?: PgCatalog.Types.Oid.Options,
+setconfig?: PgCatalog.Types.TextArray.Options
+};
+export type ModifyOptions = {
+ setdatabase?: PgCatalog.Types.Oid.Options,
+setrole?: PgCatalog.Types.Oid.Options,
+setconfig?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Setdatabase: {
@@ -7169,11 +7666,18 @@ spcoptionsDescending = "spcoptions DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Spcname?: PgCatalog.Types.Name.Options,
-Spcowner?: PgCatalog.Types.Oid.Options,
-Spcacl?: PgCatalog.Types.AclitemArray.Options,
-Spcoptions?: PgCatalog.Types.TextArray.Options
+ oid?: PgCatalog.Types.Oid.Options,
+spcname?: PgCatalog.Types.Name.Options,
+spcowner?: PgCatalog.Types.Oid.Options,
+spcacl?: PgCatalog.Types.AclitemArray.Options,
+spcoptions?: PgCatalog.Types.TextArray.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+spcname?: PgCatalog.Types.Name.Options,
+spcowner?: PgCatalog.Types.Oid.Options,
+spcacl?: PgCatalog.Types.AclitemArray.Options,
+spcoptions?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Oid: {
@@ -7227,13 +7731,22 @@ setOptionDescending = "set_option DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Roleid?: PgCatalog.Types.Oid.Options,
-Member?: PgCatalog.Types.Oid.Options,
-Grantor?: PgCatalog.Types.Oid.Options,
-AdminOption?: PgCatalog.Types.Bool.Options,
-InheritOption?: PgCatalog.Types.Bool.Options,
-SetOption?: PgCatalog.Types.Bool.Options
+ oid?: PgCatalog.Types.Oid.Options,
+roleid?: PgCatalog.Types.Oid.Options,
+member?: PgCatalog.Types.Oid.Options,
+grantor?: PgCatalog.Types.Oid.Options,
+adminOption?: PgCatalog.Types.Bool.Options,
+inheritOption?: PgCatalog.Types.Bool.Options,
+setOption?: PgCatalog.Types.Bool.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+roleid?: PgCatalog.Types.Oid.Options,
+member?: PgCatalog.Types.Oid.Options,
+grantor?: PgCatalog.Types.Oid.Options,
+adminOption?: PgCatalog.Types.Bool.Options,
+inheritOption?: PgCatalog.Types.Bool.Options,
+setOption?: PgCatalog.Types.Bool.Options
 };
 export const Columns = {
 Oid: {
@@ -7295,13 +7808,22 @@ deptypeDescending = "deptype DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Dbid?: PgCatalog.Types.Oid.Options,
-Classid?: PgCatalog.Types.Oid.Options,
-Objid?: PgCatalog.Types.Oid.Options,
-Objsubid?: PgCatalog.Types.Int4.Options,
-Refclassid?: PgCatalog.Types.Oid.Options,
-Refobjid?: PgCatalog.Types.Oid.Options,
-Deptype?: PgCatalog.Types.Char.Options
+ dbid?: PgCatalog.Types.Oid.Options,
+classid?: PgCatalog.Types.Oid.Options,
+objid?: PgCatalog.Types.Oid.Options,
+objsubid?: PgCatalog.Types.Int4.Options,
+refclassid?: PgCatalog.Types.Oid.Options,
+refobjid?: PgCatalog.Types.Oid.Options,
+deptype?: PgCatalog.Types.Char.Options
+};
+export type ModifyOptions = {
+ dbid?: PgCatalog.Types.Oid.Options,
+classid?: PgCatalog.Types.Oid.Options,
+objid?: PgCatalog.Types.Oid.Options,
+objsubid?: PgCatalog.Types.Int4.Options,
+refclassid?: PgCatalog.Types.Oid.Options,
+refobjid?: PgCatalog.Types.Oid.Options,
+deptype?: PgCatalog.Types.Char.Options
 };
 export const Columns = {
 Dbid: {
@@ -7354,9 +7876,14 @@ descriptionDescending = "description DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Objoid?: PgCatalog.Types.Oid.Options,
-Classoid?: PgCatalog.Types.Oid.Options,
-Description?: PgCatalog.Types.Text.Options
+ objoid?: PgCatalog.Types.Oid.Options,
+classoid?: PgCatalog.Types.Oid.Options,
+description?: PgCatalog.Types.Text.Options
+};
+export type ModifyOptions = {
+ objoid?: PgCatalog.Types.Oid.Options,
+classoid?: PgCatalog.Types.Oid.Options,
+description?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Objoid: {
@@ -7398,11 +7925,18 @@ cfgparserDescending = "cfgparser DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Cfgname?: PgCatalog.Types.Name.Options,
-Cfgnamespace?: PgCatalog.Types.Oid.Options,
-Cfgowner?: PgCatalog.Types.Oid.Options,
-Cfgparser?: PgCatalog.Types.Oid.Options
+ oid?: PgCatalog.Types.Oid.Options,
+cfgname?: PgCatalog.Types.Name.Options,
+cfgnamespace?: PgCatalog.Types.Oid.Options,
+cfgowner?: PgCatalog.Types.Oid.Options,
+cfgparser?: PgCatalog.Types.Oid.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+cfgname?: PgCatalog.Types.Name.Options,
+cfgnamespace?: PgCatalog.Types.Oid.Options,
+cfgowner?: PgCatalog.Types.Oid.Options,
+cfgparser?: PgCatalog.Types.Oid.Options
 };
 export const Columns = {
 Oid: {
@@ -7450,10 +7984,16 @@ mapdictDescending = "mapdict DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Mapcfg?: PgCatalog.Types.Oid.Options,
-Maptokentype?: PgCatalog.Types.Int4.Options,
-Mapseqno?: PgCatalog.Types.Int4.Options,
-Mapdict?: PgCatalog.Types.Oid.Options
+ mapcfg?: PgCatalog.Types.Oid.Options,
+maptokentype?: PgCatalog.Types.Int4.Options,
+mapseqno?: PgCatalog.Types.Int4.Options,
+mapdict?: PgCatalog.Types.Oid.Options
+};
+export type ModifyOptions = {
+ mapcfg?: PgCatalog.Types.Oid.Options,
+maptokentype?: PgCatalog.Types.Int4.Options,
+mapseqno?: PgCatalog.Types.Int4.Options,
+mapdict?: PgCatalog.Types.Oid.Options
 };
 export const Columns = {
 Mapcfg: {
@@ -7501,12 +8041,20 @@ dictinitoptionDescending = "dictinitoption DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Dictname?: PgCatalog.Types.Name.Options,
-Dictnamespace?: PgCatalog.Types.Oid.Options,
-Dictowner?: PgCatalog.Types.Oid.Options,
-Dicttemplate?: PgCatalog.Types.Oid.Options,
-Dictinitoption?: PgCatalog.Types.Text.Options
+ oid?: PgCatalog.Types.Oid.Options,
+dictname?: PgCatalog.Types.Name.Options,
+dictnamespace?: PgCatalog.Types.Oid.Options,
+dictowner?: PgCatalog.Types.Oid.Options,
+dicttemplate?: PgCatalog.Types.Oid.Options,
+dictinitoption?: PgCatalog.Types.Text.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+dictname?: PgCatalog.Types.Name.Options,
+dictnamespace?: PgCatalog.Types.Oid.Options,
+dictowner?: PgCatalog.Types.Oid.Options,
+dicttemplate?: PgCatalog.Types.Oid.Options,
+dictinitoption?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Oid: {
@@ -7566,14 +8114,24 @@ prslextypeDescending = "prslextype DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Prsname?: PgCatalog.Types.Name.Options,
-Prsnamespace?: PgCatalog.Types.Oid.Options,
-Prsstart?: PgCatalog.Types.Regproc.Options,
-Prstoken?: PgCatalog.Types.Regproc.Options,
-Prsend?: PgCatalog.Types.Regproc.Options,
-Prsheadline?: PgCatalog.Types.Regproc.Options,
-Prslextype?: PgCatalog.Types.Regproc.Options
+ oid?: PgCatalog.Types.Oid.Options,
+prsname?: PgCatalog.Types.Name.Options,
+prsnamespace?: PgCatalog.Types.Oid.Options,
+prsstart?: PgCatalog.Types.Regproc.Options,
+prstoken?: PgCatalog.Types.Regproc.Options,
+prsend?: PgCatalog.Types.Regproc.Options,
+prsheadline?: PgCatalog.Types.Regproc.Options,
+prslextype?: PgCatalog.Types.Regproc.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+prsname?: PgCatalog.Types.Name.Options,
+prsnamespace?: PgCatalog.Types.Oid.Options,
+prsstart?: PgCatalog.Types.Regproc.Options,
+prstoken?: PgCatalog.Types.Regproc.Options,
+prsend?: PgCatalog.Types.Regproc.Options,
+prsheadline?: PgCatalog.Types.Regproc.Options,
+prslextype?: PgCatalog.Types.Regproc.Options
 };
 export const Columns = {
 Oid: {
@@ -7635,11 +8193,18 @@ tmpllexizeDescending = "tmpllexize DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Tmplname?: PgCatalog.Types.Name.Options,
-Tmplnamespace?: PgCatalog.Types.Oid.Options,
-Tmplinit?: PgCatalog.Types.Regproc.Options,
-Tmpllexize?: PgCatalog.Types.Regproc.Options
+ oid?: PgCatalog.Types.Oid.Options,
+tmplname?: PgCatalog.Types.Name.Options,
+tmplnamespace?: PgCatalog.Types.Oid.Options,
+tmplinit?: PgCatalog.Types.Regproc.Options,
+tmpllexize?: PgCatalog.Types.Regproc.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+tmplname?: PgCatalog.Types.Name.Options,
+tmplnamespace?: PgCatalog.Types.Oid.Options,
+tmplinit?: PgCatalog.Types.Regproc.Options,
+tmpllexize?: PgCatalog.Types.Regproc.Options
 };
 export const Columns = {
 Oid: {
@@ -7695,14 +8260,24 @@ extconditionDescending = "extcondition DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Extname?: PgCatalog.Types.Name.Options,
-Extowner?: PgCatalog.Types.Oid.Options,
-Extnamespace?: PgCatalog.Types.Oid.Options,
-Extrelocatable?: PgCatalog.Types.Bool.Options,
-Extversion?: PgCatalog.Types.Text.Options,
-Extconfig?: PgCatalog.Types.OidArray.Options,
-Extcondition?: PgCatalog.Types.TextArray.Options
+ oid?: PgCatalog.Types.Oid.Options,
+extname?: PgCatalog.Types.Name.Options,
+extowner?: PgCatalog.Types.Oid.Options,
+extnamespace?: PgCatalog.Types.Oid.Options,
+extrelocatable?: PgCatalog.Types.Bool.Options,
+extversion?: PgCatalog.Types.Text.Options,
+extconfig?: PgCatalog.Types.OidArray.Options,
+extcondition?: PgCatalog.Types.TextArray.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+extname?: PgCatalog.Types.Name.Options,
+extowner?: PgCatalog.Types.Oid.Options,
+extnamespace?: PgCatalog.Types.Oid.Options,
+extrelocatable?: PgCatalog.Types.Bool.Options,
+extversion?: PgCatalog.Types.Text.Options,
+extconfig?: PgCatalog.Types.OidArray.Options,
+extcondition?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Oid: {
@@ -7768,13 +8343,22 @@ fdwoptionsDescending = "fdwoptions DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Fdwname?: PgCatalog.Types.Name.Options,
-Fdwowner?: PgCatalog.Types.Oid.Options,
-Fdwhandler?: PgCatalog.Types.Oid.Options,
-Fdwvalidator?: PgCatalog.Types.Oid.Options,
-Fdwacl?: PgCatalog.Types.AclitemArray.Options,
-Fdwoptions?: PgCatalog.Types.TextArray.Options
+ oid?: PgCatalog.Types.Oid.Options,
+fdwname?: PgCatalog.Types.Name.Options,
+fdwowner?: PgCatalog.Types.Oid.Options,
+fdwhandler?: PgCatalog.Types.Oid.Options,
+fdwvalidator?: PgCatalog.Types.Oid.Options,
+fdwacl?: PgCatalog.Types.AclitemArray.Options,
+fdwoptions?: PgCatalog.Types.TextArray.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+fdwname?: PgCatalog.Types.Name.Options,
+fdwowner?: PgCatalog.Types.Oid.Options,
+fdwhandler?: PgCatalog.Types.Oid.Options,
+fdwvalidator?: PgCatalog.Types.Oid.Options,
+fdwacl?: PgCatalog.Types.AclitemArray.Options,
+fdwoptions?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Oid: {
@@ -7838,14 +8422,24 @@ srvoptionsDescending = "srvoptions DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Srvname?: PgCatalog.Types.Name.Options,
-Srvowner?: PgCatalog.Types.Oid.Options,
-Srvfdw?: PgCatalog.Types.Oid.Options,
-Srvtype?: PgCatalog.Types.Text.Options,
-Srvversion?: PgCatalog.Types.Text.Options,
-Srvacl?: PgCatalog.Types.AclitemArray.Options,
-Srvoptions?: PgCatalog.Types.TextArray.Options
+ oid?: PgCatalog.Types.Oid.Options,
+srvname?: PgCatalog.Types.Name.Options,
+srvowner?: PgCatalog.Types.Oid.Options,
+srvfdw?: PgCatalog.Types.Oid.Options,
+srvtype?: PgCatalog.Types.Text.Options,
+srvversion?: PgCatalog.Types.Text.Options,
+srvacl?: PgCatalog.Types.AclitemArray.Options,
+srvoptions?: PgCatalog.Types.TextArray.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+srvname?: PgCatalog.Types.Name.Options,
+srvowner?: PgCatalog.Types.Oid.Options,
+srvfdw?: PgCatalog.Types.Oid.Options,
+srvtype?: PgCatalog.Types.Text.Options,
+srvversion?: PgCatalog.Types.Text.Options,
+srvacl?: PgCatalog.Types.AclitemArray.Options,
+srvoptions?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Oid: {
@@ -7913,14 +8507,24 @@ polwithcheckDescending = "polwithcheck DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Polname?: PgCatalog.Types.Name.Options,
-Polrelid?: PgCatalog.Types.Oid.Options,
-Polcmd?: PgCatalog.Types.Char.Options,
-Polpermissive?: PgCatalog.Types.Bool.Options,
-Polroles?: PgCatalog.Types.OidArray.Options,
-Polqual?: PgCatalog.Types.PgNodeTree.Options,
-Polwithcheck?: PgCatalog.Types.PgNodeTree.Options
+ oid?: PgCatalog.Types.Oid.Options,
+polname?: PgCatalog.Types.Name.Options,
+polrelid?: PgCatalog.Types.Oid.Options,
+polcmd?: PgCatalog.Types.Char.Options,
+polpermissive?: PgCatalog.Types.Bool.Options,
+polroles?: PgCatalog.Types.OidArray.Options,
+polqual?: PgCatalog.Types.PgNodeTree.Options,
+polwithcheck?: PgCatalog.Types.PgNodeTree.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+polname?: PgCatalog.Types.Name.Options,
+polrelid?: PgCatalog.Types.Oid.Options,
+polcmd?: PgCatalog.Types.Char.Options,
+polpermissive?: PgCatalog.Types.Bool.Options,
+polroles?: PgCatalog.Types.OidArray.Options,
+polqual?: PgCatalog.Types.PgNodeTree.Options,
+polwithcheck?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Oid: {
@@ -7976,8 +8580,12 @@ ronameDescending = "roname DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Roident?: PgCatalog.Types.Oid.Options,
-Roname?: PgCatalog.Types.Text.Options
+ roident?: PgCatalog.Types.Oid.Options,
+roname?: PgCatalog.Types.Text.Options
+};
+export type ModifyOptions = {
+ roident?: PgCatalog.Types.Oid.Options,
+roname?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Roident: {
@@ -8015,11 +8623,18 @@ defaclaclDescending = "defaclacl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Defaclrole?: PgCatalog.Types.Oid.Options,
-Defaclnamespace?: PgCatalog.Types.Oid.Options,
-Defaclobjtype?: PgCatalog.Types.Char.Options,
-Defaclacl?: PgCatalog.Types.AclitemArray.Options
+ oid?: PgCatalog.Types.Oid.Options,
+defaclrole?: PgCatalog.Types.Oid.Options,
+defaclnamespace?: PgCatalog.Types.Oid.Options,
+defaclobjtype?: PgCatalog.Types.Char.Options,
+defaclacl?: PgCatalog.Types.AclitemArray.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+defaclrole?: PgCatalog.Types.Oid.Options,
+defaclnamespace?: PgCatalog.Types.Oid.Options,
+defaclobjtype?: PgCatalog.Types.Char.Options,
+defaclacl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -8069,11 +8684,18 @@ initprivsDescending = "initprivs DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Objoid?: PgCatalog.Types.Oid.Options,
-Classoid?: PgCatalog.Types.Oid.Options,
-Objsubid?: PgCatalog.Types.Int4.Options,
-Privtype?: PgCatalog.Types.Char.Options,
-Initprivs?: PgCatalog.Types.AclitemArray.Options
+ objoid?: PgCatalog.Types.Oid.Options,
+classoid?: PgCatalog.Types.Oid.Options,
+objsubid?: PgCatalog.Types.Int4.Options,
+privtype?: PgCatalog.Types.Char.Options,
+initprivs?: PgCatalog.Types.AclitemArray.Options
+};
+export type ModifyOptions = {
+ objoid?: PgCatalog.Types.Oid.Options,
+classoid?: PgCatalog.Types.Oid.Options,
+objsubid?: PgCatalog.Types.Int4.Options,
+privtype?: PgCatalog.Types.Char.Options,
+initprivs?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Objoid: {
@@ -8123,11 +8745,18 @@ labelDescending = "label DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Objoid?: PgCatalog.Types.Oid.Options,
-Classoid?: PgCatalog.Types.Oid.Options,
-Objsubid?: PgCatalog.Types.Int4.Options,
-Provider?: PgCatalog.Types.Text.Options,
-Label?: PgCatalog.Types.Text.Options
+ objoid?: PgCatalog.Types.Oid.Options,
+classoid?: PgCatalog.Types.Oid.Options,
+objsubid?: PgCatalog.Types.Int4.Options,
+provider?: PgCatalog.Types.Text.Options,
+label?: PgCatalog.Types.Text.Options
+};
+export type ModifyOptions = {
+ objoid?: PgCatalog.Types.Oid.Options,
+classoid?: PgCatalog.Types.Oid.Options,
+objsubid?: PgCatalog.Types.Int4.Options,
+provider?: PgCatalog.Types.Text.Options,
+label?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Objoid: {
@@ -8175,10 +8804,16 @@ labelDescending = "label DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Objoid?: PgCatalog.Types.Oid.Options,
-Classoid?: PgCatalog.Types.Oid.Options,
-Provider?: PgCatalog.Types.Text.Options,
-Label?: PgCatalog.Types.Text.Options
+ objoid?: PgCatalog.Types.Oid.Options,
+classoid?: PgCatalog.Types.Oid.Options,
+provider?: PgCatalog.Types.Text.Options,
+label?: PgCatalog.Types.Text.Options
+};
+export type ModifyOptions = {
+ objoid?: PgCatalog.Types.Oid.Options,
+classoid?: PgCatalog.Types.Oid.Options,
+provider?: PgCatalog.Types.Text.Options,
+label?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Objoid: {
@@ -8238,18 +8873,32 @@ collversionDescending = "collversion DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Collname?: PgCatalog.Types.Name.Options,
-Collnamespace?: PgCatalog.Types.Oid.Options,
-Collowner?: PgCatalog.Types.Oid.Options,
-Collprovider?: PgCatalog.Types.Char.Options,
-Collisdeterministic?: PgCatalog.Types.Bool.Options,
-Collencoding?: PgCatalog.Types.Int4.Options,
-Collcollate?: PgCatalog.Types.Text.Options,
-Collctype?: PgCatalog.Types.Text.Options,
-Colliculocale?: PgCatalog.Types.Text.Options,
-Collicurules?: PgCatalog.Types.Text.Options,
-Collversion?: PgCatalog.Types.Text.Options
+ oid?: PgCatalog.Types.Oid.Options,
+collname?: PgCatalog.Types.Name.Options,
+collnamespace?: PgCatalog.Types.Oid.Options,
+collowner?: PgCatalog.Types.Oid.Options,
+collprovider?: PgCatalog.Types.Char.Options,
+collisdeterministic?: PgCatalog.Types.Bool.Options,
+collencoding?: PgCatalog.Types.Int4.Options,
+collcollate?: PgCatalog.Types.Text.Options,
+collctype?: PgCatalog.Types.Text.Options,
+colliculocale?: PgCatalog.Types.Text.Options,
+collicurules?: PgCatalog.Types.Text.Options,
+collversion?: PgCatalog.Types.Text.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+collname?: PgCatalog.Types.Name.Options,
+collnamespace?: PgCatalog.Types.Oid.Options,
+collowner?: PgCatalog.Types.Oid.Options,
+collprovider?: PgCatalog.Types.Char.Options,
+collisdeterministic?: PgCatalog.Types.Bool.Options,
+collencoding?: PgCatalog.Types.Int4.Options,
+collcollate?: PgCatalog.Types.Text.Options,
+collctype?: PgCatalog.Types.Text.Options,
+colliculocale?: PgCatalog.Types.Text.Options,
+collicurules?: PgCatalog.Types.Text.Options,
+collversion?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Oid: {
@@ -8323,9 +8972,14 @@ paraclDescending = "paracl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Parname?: PgCatalog.Types.Text.Options,
-Paracl?: PgCatalog.Types.AclitemArray.Options
+ oid?: PgCatalog.Types.Oid.Options,
+parname?: PgCatalog.Types.Text.Options,
+paracl?: PgCatalog.Types.AclitemArray.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+parname?: PgCatalog.Types.Text.Options,
+paracl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -8373,14 +9027,24 @@ partexprsDescending = "partexprs DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Partrelid?: PgCatalog.Types.Oid.Options,
-Partstrat?: PgCatalog.Types.Char.Options,
-Partnatts?: PgCatalog.Types.Int2.Options,
-Partdefid?: PgCatalog.Types.Oid.Options,
-Partattrs?: PgCatalog.Types.Int2vector.Options,
-Partclass?: PgCatalog.Types.Oidvector.Options,
-Partcollation?: PgCatalog.Types.Oidvector.Options,
-Partexprs?: PgCatalog.Types.PgNodeTree.Options
+ partrelid?: PgCatalog.Types.Oid.Options,
+partstrat?: PgCatalog.Types.Char.Options,
+partnatts?: PgCatalog.Types.Int2.Options,
+partdefid?: PgCatalog.Types.Oid.Options,
+partattrs?: PgCatalog.Types.Int2vector.Options,
+partclass?: PgCatalog.Types.Oidvector.Options,
+partcollation?: PgCatalog.Types.Oidvector.Options,
+partexprs?: PgCatalog.Types.PgNodeTree.Options
+};
+export type ModifyOptions = {
+ partrelid?: PgCatalog.Types.Oid.Options,
+partstrat?: PgCatalog.Types.Char.Options,
+partnatts?: PgCatalog.Types.Int2.Options,
+partdefid?: PgCatalog.Types.Oid.Options,
+partattrs?: PgCatalog.Types.Int2vector.Options,
+partclass?: PgCatalog.Types.Oidvector.Options,
+partcollation?: PgCatalog.Types.Oidvector.Options,
+partexprs?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Partrelid: {
@@ -8446,13 +9110,22 @@ rngsubdiffDescending = "rngsubdiff DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Rngtypid?: PgCatalog.Types.Oid.Options,
-Rngsubtype?: PgCatalog.Types.Oid.Options,
-Rngmultitypid?: PgCatalog.Types.Oid.Options,
-Rngcollation?: PgCatalog.Types.Oid.Options,
-Rngsubopc?: PgCatalog.Types.Oid.Options,
-Rngcanonical?: PgCatalog.Types.Regproc.Options,
-Rngsubdiff?: PgCatalog.Types.Regproc.Options
+ rngtypid?: PgCatalog.Types.Oid.Options,
+rngsubtype?: PgCatalog.Types.Oid.Options,
+rngmultitypid?: PgCatalog.Types.Oid.Options,
+rngcollation?: PgCatalog.Types.Oid.Options,
+rngsubopc?: PgCatalog.Types.Oid.Options,
+rngcanonical?: PgCatalog.Types.Regproc.Options,
+rngsubdiff?: PgCatalog.Types.Regproc.Options
+};
+export type ModifyOptions = {
+ rngtypid?: PgCatalog.Types.Oid.Options,
+rngsubtype?: PgCatalog.Types.Oid.Options,
+rngmultitypid?: PgCatalog.Types.Oid.Options,
+rngcollation?: PgCatalog.Types.Oid.Options,
+rngsubopc?: PgCatalog.Types.Oid.Options,
+rngcanonical?: PgCatalog.Types.Regproc.Options,
+rngsubdiff?: PgCatalog.Types.Regproc.Options
 };
 export const Columns = {
 Rngtypid: {
@@ -8510,11 +9183,18 @@ trftosqlDescending = "trftosql DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Trftype?: PgCatalog.Types.Oid.Options,
-Trflang?: PgCatalog.Types.Oid.Options,
-Trffromsql?: PgCatalog.Types.Regproc.Options,
-Trftosql?: PgCatalog.Types.Regproc.Options
+ oid?: PgCatalog.Types.Oid.Options,
+trftype?: PgCatalog.Types.Oid.Options,
+trflang?: PgCatalog.Types.Oid.Options,
+trffromsql?: PgCatalog.Types.Regproc.Options,
+trftosql?: PgCatalog.Types.Regproc.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+trftype?: PgCatalog.Types.Oid.Options,
+trflang?: PgCatalog.Types.Oid.Options,
+trffromsql?: PgCatalog.Types.Regproc.Options,
+trftosql?: PgCatalog.Types.Regproc.Options
 };
 export const Columns = {
 Oid: {
@@ -8570,14 +9250,24 @@ seqcycleDescending = "seqcycle DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Seqrelid?: PgCatalog.Types.Oid.Options,
-Seqtypid?: PgCatalog.Types.Oid.Options,
-Seqstart?: PgCatalog.Types.Int8.Options,
-Seqincrement?: PgCatalog.Types.Int8.Options,
-Seqmax?: PgCatalog.Types.Int8.Options,
-Seqmin?: PgCatalog.Types.Int8.Options,
-Seqcache?: PgCatalog.Types.Int8.Options,
-Seqcycle?: PgCatalog.Types.Bool.Options
+ seqrelid?: PgCatalog.Types.Oid.Options,
+seqtypid?: PgCatalog.Types.Oid.Options,
+seqstart?: PgCatalog.Types.Int8.Options,
+seqincrement?: PgCatalog.Types.Int8.Options,
+seqmax?: PgCatalog.Types.Int8.Options,
+seqmin?: PgCatalog.Types.Int8.Options,
+seqcache?: PgCatalog.Types.Int8.Options,
+seqcycle?: PgCatalog.Types.Bool.Options
+};
+export type ModifyOptions = {
+ seqrelid?: PgCatalog.Types.Oid.Options,
+seqtypid?: PgCatalog.Types.Oid.Options,
+seqstart?: PgCatalog.Types.Int8.Options,
+seqincrement?: PgCatalog.Types.Int8.Options,
+seqmax?: PgCatalog.Types.Int8.Options,
+seqmin?: PgCatalog.Types.Int8.Options,
+seqcache?: PgCatalog.Types.Int8.Options,
+seqcycle?: PgCatalog.Types.Bool.Options
 };
 export const Columns = {
 Seqrelid: {
@@ -8647,15 +9337,26 @@ pubviarootDescending = "pubviaroot DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Pubname?: PgCatalog.Types.Name.Options,
-Pubowner?: PgCatalog.Types.Oid.Options,
-Puballtables?: PgCatalog.Types.Bool.Options,
-Pubinsert?: PgCatalog.Types.Bool.Options,
-Pubupdate?: PgCatalog.Types.Bool.Options,
-Pubdelete?: PgCatalog.Types.Bool.Options,
-Pubtruncate?: PgCatalog.Types.Bool.Options,
-Pubviaroot?: PgCatalog.Types.Bool.Options
+ oid?: PgCatalog.Types.Oid.Options,
+pubname?: PgCatalog.Types.Name.Options,
+pubowner?: PgCatalog.Types.Oid.Options,
+puballtables?: PgCatalog.Types.Bool.Options,
+pubinsert?: PgCatalog.Types.Bool.Options,
+pubupdate?: PgCatalog.Types.Bool.Options,
+pubdelete?: PgCatalog.Types.Bool.Options,
+pubtruncate?: PgCatalog.Types.Bool.Options,
+pubviaroot?: PgCatalog.Types.Bool.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+pubname?: PgCatalog.Types.Name.Options,
+pubowner?: PgCatalog.Types.Oid.Options,
+puballtables?: PgCatalog.Types.Bool.Options,
+pubinsert?: PgCatalog.Types.Bool.Options,
+pubupdate?: PgCatalog.Types.Bool.Options,
+pubdelete?: PgCatalog.Types.Bool.Options,
+pubtruncate?: PgCatalog.Types.Bool.Options,
+pubviaroot?: PgCatalog.Types.Bool.Options
 };
 export const Columns = {
 Oid: {
@@ -8717,9 +9418,14 @@ pnnspidDescending = "pnnspid DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Pnpubid?: PgCatalog.Types.Oid.Options,
-Pnnspid?: PgCatalog.Types.Oid.Options
+ oid?: PgCatalog.Types.Oid.Options,
+pnpubid?: PgCatalog.Types.Oid.Options,
+pnnspid?: PgCatalog.Types.Oid.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+pnpubid?: PgCatalog.Types.Oid.Options,
+pnnspid?: PgCatalog.Types.Oid.Options
 };
 export const Columns = {
 Oid: {
@@ -8761,11 +9467,18 @@ prattrsDescending = "prattrs DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Oid?: PgCatalog.Types.Oid.Options,
-Prpubid?: PgCatalog.Types.Oid.Options,
-Prrelid?: PgCatalog.Types.Oid.Options,
-Prqual?: PgCatalog.Types.PgNodeTree.Options,
-Prattrs?: PgCatalog.Types.Int2vector.Options
+ oid?: PgCatalog.Types.Oid.Options,
+prpubid?: PgCatalog.Types.Oid.Options,
+prrelid?: PgCatalog.Types.Oid.Options,
+prqual?: PgCatalog.Types.PgNodeTree.Options,
+prattrs?: PgCatalog.Types.Int2vector.Options
+};
+export type ModifyOptions = {
+ oid?: PgCatalog.Types.Oid.Options,
+prpubid?: PgCatalog.Types.Oid.Options,
+prrelid?: PgCatalog.Types.Oid.Options,
+prqual?: PgCatalog.Types.PgNodeTree.Options,
+prattrs?: PgCatalog.Types.Int2vector.Options
 };
 export const Columns = {
 Oid: {
@@ -8813,10 +9526,16 @@ srsublsnDescending = "srsublsn DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Srsubid?: PgCatalog.Types.Oid.Options,
-Srrelid?: PgCatalog.Types.Oid.Options,
-Srsubstate?: PgCatalog.Types.Char.Options,
-Srsublsn?: PgCatalog.Types.PgLsn.Options
+ srsubid?: PgCatalog.Types.Oid.Options,
+srrelid?: PgCatalog.Types.Oid.Options,
+srsubstate?: PgCatalog.Types.Char.Options,
+srsublsn?: PgCatalog.Types.PgLsn.Options
+};
+export type ModifyOptions = {
+ srsubid?: PgCatalog.Types.Oid.Options,
+srrelid?: PgCatalog.Types.Oid.Options,
+srsubstate?: PgCatalog.Types.Char.Options,
+srsublsn?: PgCatalog.Types.PgLsn.Options
 };
 export const Columns = {
 Srsubid: {
@@ -8858,9 +9577,14 @@ dataDescending = "data DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- Loid?: PgCatalog.Types.Oid.Options,
-Pageno?: PgCatalog.Types.Int4.Options,
-Data?: PgCatalog.Types.Bytea.Options
+ loid?: PgCatalog.Types.Oid.Options,
+pageno?: PgCatalog.Types.Int4.Options,
+data?: PgCatalog.Types.Bytea.Options
+};
+export type ModifyOptions = {
+ loid?: PgCatalog.Types.Oid.Options,
+pageno?: PgCatalog.Types.Int4.Options,
+data?: PgCatalog.Types.Bytea.Options
 };
 export const Columns = {
 Loid: {
@@ -10104,13 +10828,22 @@ commentsDescending = "comments DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- FeatureId?: InformationSchema.Types.CharacterData.Options,
-FeatureName?: InformationSchema.Types.CharacterData.Options,
-SubFeatureId?: InformationSchema.Types.CharacterData.Options,
-SubFeatureName?: InformationSchema.Types.CharacterData.Options,
-IsSupported?: InformationSchema.Types.YesOrNo.Options,
-IsVerifiedBy?: InformationSchema.Types.CharacterData.Options,
-Comments?: InformationSchema.Types.CharacterData.Options
+ featureId?: InformationSchema.Types.CharacterData.Options,
+featureName?: InformationSchema.Types.CharacterData.Options,
+subFeatureId?: InformationSchema.Types.CharacterData.Options,
+subFeatureName?: InformationSchema.Types.CharacterData.Options,
+isSupported?: InformationSchema.Types.YesOrNo.Options,
+isVerifiedBy?: InformationSchema.Types.CharacterData.Options,
+comments?: InformationSchema.Types.CharacterData.Options
+};
+export type ModifyOptions = {
+ featureId?: InformationSchema.Types.CharacterData.Options,
+featureName?: InformationSchema.Types.CharacterData.Options,
+subFeatureId?: InformationSchema.Types.CharacterData.Options,
+subFeatureName?: InformationSchema.Types.CharacterData.Options,
+isSupported?: InformationSchema.Types.YesOrNo.Options,
+isVerifiedBy?: InformationSchema.Types.CharacterData.Options,
+comments?: InformationSchema.Types.CharacterData.Options
 };
 export const Columns = {
 FeatureId: {
@@ -10167,11 +10900,18 @@ commentsDescending = "comments DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- ImplementationInfoId?: InformationSchema.Types.CharacterData.Options,
-ImplementationInfoName?: InformationSchema.Types.CharacterData.Options,
-IntegerValue?: InformationSchema.Types.CardinalNumber.Options,
-CharacterValue?: InformationSchema.Types.CharacterData.Options,
-Comments?: InformationSchema.Types.CharacterData.Options
+ implementationInfoId?: InformationSchema.Types.CharacterData.Options,
+implementationInfoName?: InformationSchema.Types.CharacterData.Options,
+integerValue?: InformationSchema.Types.CardinalNumber.Options,
+characterValue?: InformationSchema.Types.CharacterData.Options,
+comments?: InformationSchema.Types.CharacterData.Options
+};
+export type ModifyOptions = {
+ implementationInfoId?: InformationSchema.Types.CharacterData.Options,
+implementationInfoName?: InformationSchema.Types.CharacterData.Options,
+integerValue?: InformationSchema.Types.CardinalNumber.Options,
+characterValue?: InformationSchema.Types.CharacterData.Options,
+comments?: InformationSchema.Types.CharacterData.Options
 };
 export const Columns = {
 ImplementationInfoId: {
@@ -10220,11 +10960,18 @@ commentsDescending = "comments DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- FeatureId?: InformationSchema.Types.CharacterData.Options,
-FeatureName?: InformationSchema.Types.CharacterData.Options,
-IsSupported?: InformationSchema.Types.YesOrNo.Options,
-IsVerifiedBy?: InformationSchema.Types.CharacterData.Options,
-Comments?: InformationSchema.Types.CharacterData.Options
+ featureId?: InformationSchema.Types.CharacterData.Options,
+featureName?: InformationSchema.Types.CharacterData.Options,
+isSupported?: InformationSchema.Types.YesOrNo.Options,
+isVerifiedBy?: InformationSchema.Types.CharacterData.Options,
+comments?: InformationSchema.Types.CharacterData.Options
+};
+export type ModifyOptions = {
+ featureId?: InformationSchema.Types.CharacterData.Options,
+featureName?: InformationSchema.Types.CharacterData.Options,
+isSupported?: InformationSchema.Types.YesOrNo.Options,
+isVerifiedBy?: InformationSchema.Types.CharacterData.Options,
+comments?: InformationSchema.Types.CharacterData.Options
 };
 export const Columns = {
 FeatureId: {
@@ -10271,10 +11018,16 @@ commentsDescending = "comments DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- SizingId?: InformationSchema.Types.CardinalNumber.Options,
-SizingName?: InformationSchema.Types.CharacterData.Options,
-SupportedValue?: InformationSchema.Types.CardinalNumber.Options,
-Comments?: InformationSchema.Types.CharacterData.Options
+ sizingId?: InformationSchema.Types.CardinalNumber.Options,
+sizingName?: InformationSchema.Types.CharacterData.Options,
+supportedValue?: InformationSchema.Types.CardinalNumber.Options,
+comments?: InformationSchema.Types.CharacterData.Options
+};
+export type ModifyOptions = {
+ sizingId?: InformationSchema.Types.CardinalNumber.Options,
+sizingName?: InformationSchema.Types.CharacterData.Options,
+supportedValue?: InformationSchema.Types.CardinalNumber.Options,
+comments?: InformationSchema.Types.CharacterData.Options
 };
 export const Columns = {
 SizingId: {
@@ -10850,9 +11603,14 @@ lastUpdateDescending = "last_update DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- ActorId?: PgCatalog.Types.Int2.Options,
-FilmId?: PgCatalog.Types.Int2.Options,
-LastUpdate?: PgCatalog.Types.Timestamp.Options
+ actorId?: PgCatalog.Types.Int2.Options,
+filmId?: PgCatalog.Types.Int2.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
+};
+export type ModifyOptions = {
+ actorId?: PgCatalog.Types.Int2.Options,
+filmId?: PgCatalog.Types.Int2.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 ActorId: {
@@ -10900,14 +11658,24 @@ lastUpdateDescending = "last_update DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- AddressId?: PgCatalog.Types.Int4.Options,
-Address?: PgCatalog.Types.Varchar.Options,
-Address2?: PgCatalog.Types.Varchar.Options,
-District?: PgCatalog.Types.Varchar.Options,
-CityId?: PgCatalog.Types.Int2.Options,
-PostalCode?: PgCatalog.Types.Varchar.Options,
-Phone?: PgCatalog.Types.Varchar.Options,
-LastUpdate?: PgCatalog.Types.Timestamp.Options
+ addressId?: PgCatalog.Types.Int4.Options,
+address?: PgCatalog.Types.Varchar.Options,
+address2?: PgCatalog.Types.Varchar.Options,
+district?: PgCatalog.Types.Varchar.Options,
+cityId?: PgCatalog.Types.Int2.Options,
+postalCode?: PgCatalog.Types.Varchar.Options,
+phone?: PgCatalog.Types.Varchar.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
+};
+export type ModifyOptions = {
+ addressId?: PgCatalog.Types.Int4.Options,
+address?: PgCatalog.Types.Varchar.Options,
+address2?: PgCatalog.Types.Varchar.Options,
+district?: PgCatalog.Types.Varchar.Options,
+cityId?: PgCatalog.Types.Int2.Options,
+postalCode?: PgCatalog.Types.Varchar.Options,
+phone?: PgCatalog.Types.Varchar.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 AddressId: {
@@ -10967,10 +11735,16 @@ lastUpdateDescending = "last_update DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- CityId?: PgCatalog.Types.Int4.Options,
-City?: PgCatalog.Types.Varchar.Options,
-CountryId?: PgCatalog.Types.Int2.Options,
-LastUpdate?: PgCatalog.Types.Timestamp.Options
+ cityId?: PgCatalog.Types.Int4.Options,
+city?: PgCatalog.Types.Varchar.Options,
+countryId?: PgCatalog.Types.Int2.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
+};
+export type ModifyOptions = {
+ cityId?: PgCatalog.Types.Int4.Options,
+city?: PgCatalog.Types.Varchar.Options,
+countryId?: PgCatalog.Types.Int2.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 CityId: {
@@ -11026,16 +11800,28 @@ activeDescending = "active DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- CustomerId?: PgCatalog.Types.Int4.Options,
-StoreId?: PgCatalog.Types.Int2.Options,
-FirstName?: PgCatalog.Types.Varchar.Options,
-LastName?: PgCatalog.Types.Varchar.Options,
-Email?: PgCatalog.Types.Varchar.Options,
-AddressId?: PgCatalog.Types.Int2.Options,
-Activebool?: PgCatalog.Types.Bool.Options,
-CreateDate?: PgCatalog.Types.Date.Options,
-LastUpdate?: PgCatalog.Types.Timestamp.Options,
-Active?: PgCatalog.Types.Int4.Options
+ customerId?: PgCatalog.Types.Int4.Options,
+storeId?: PgCatalog.Types.Int2.Options,
+firstName?: PgCatalog.Types.Varchar.Options,
+lastName?: PgCatalog.Types.Varchar.Options,
+email?: PgCatalog.Types.Varchar.Options,
+addressId?: PgCatalog.Types.Int2.Options,
+activebool?: PgCatalog.Types.Bool.Options,
+createDate?: PgCatalog.Types.Date.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options,
+active?: PgCatalog.Types.Int4.Options
+};
+export type ModifyOptions = {
+ customerId?: PgCatalog.Types.Int4.Options,
+storeId?: PgCatalog.Types.Int2.Options,
+firstName?: PgCatalog.Types.Varchar.Options,
+lastName?: PgCatalog.Types.Varchar.Options,
+email?: PgCatalog.Types.Varchar.Options,
+addressId?: PgCatalog.Types.Int2.Options,
+activebool?: PgCatalog.Types.Bool.Options,
+createDate?: PgCatalog.Types.Date.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options,
+active?: PgCatalog.Types.Int4.Options
 };
 export const Columns = {
 CustomerId: {
@@ -11103,10 +11889,16 @@ lastUpdateDescending = "last_update DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- ActorId?: PgCatalog.Types.Int4.Options,
-FirstName?: PgCatalog.Types.Varchar.Options,
-LastName?: PgCatalog.Types.Varchar.Options,
-LastUpdate?: PgCatalog.Types.Timestamp.Options
+ actorId?: PgCatalog.Types.Int4.Options,
+firstName?: PgCatalog.Types.Varchar.Options,
+lastName?: PgCatalog.Types.Varchar.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
+};
+export type ModifyOptions = {
+ actorId?: PgCatalog.Types.Int4.Options,
+firstName?: PgCatalog.Types.Varchar.Options,
+lastName?: PgCatalog.Types.Varchar.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 ActorId: {
@@ -11148,9 +11940,14 @@ lastUpdateDescending = "last_update DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- FilmId?: PgCatalog.Types.Int2.Options,
-CategoryId?: PgCatalog.Types.Int2.Options,
-LastUpdate?: PgCatalog.Types.Timestamp.Options
+ filmId?: PgCatalog.Types.Int2.Options,
+categoryId?: PgCatalog.Types.Int2.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
+};
+export type ModifyOptions = {
+ filmId?: PgCatalog.Types.Int2.Options,
+categoryId?: PgCatalog.Types.Int2.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 FilmId: {
@@ -11190,10 +11987,16 @@ lastUpdateDescending = "last_update DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- InventoryId?: PgCatalog.Types.Int4.Options,
-FilmId?: PgCatalog.Types.Int2.Options,
-StoreId?: PgCatalog.Types.Int2.Options,
-LastUpdate?: PgCatalog.Types.Timestamp.Options
+ inventoryId?: PgCatalog.Types.Int4.Options,
+filmId?: PgCatalog.Types.Int2.Options,
+storeId?: PgCatalog.Types.Int2.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
+};
+export type ModifyOptions = {
+ inventoryId?: PgCatalog.Types.Int4.Options,
+filmId?: PgCatalog.Types.Int2.Options,
+storeId?: PgCatalog.Types.Int2.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 InventoryId: {
@@ -11235,9 +12038,14 @@ lastUpdateDescending = "last_update DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- CategoryId?: PgCatalog.Types.Int4.Options,
-Name?: PgCatalog.Types.Varchar.Options,
-LastUpdate?: PgCatalog.Types.Timestamp.Options
+ categoryId?: PgCatalog.Types.Int4.Options,
+name?: PgCatalog.Types.Varchar.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
+};
+export type ModifyOptions = {
+ categoryId?: PgCatalog.Types.Int4.Options,
+name?: PgCatalog.Types.Varchar.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 CategoryId: {
@@ -11275,9 +12083,14 @@ lastUpdateDescending = "last_update DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- CountryId?: PgCatalog.Types.Int4.Options,
-Country?: PgCatalog.Types.Varchar.Options,
-LastUpdate?: PgCatalog.Types.Timestamp.Options
+ countryId?: PgCatalog.Types.Int4.Options,
+country?: PgCatalog.Types.Varchar.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
+};
+export type ModifyOptions = {
+ countryId?: PgCatalog.Types.Int4.Options,
+country?: PgCatalog.Types.Varchar.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 CountryId: {
@@ -11315,9 +12128,14 @@ lastUpdateDescending = "last_update DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- LanguageId?: PgCatalog.Types.Int4.Options,
-Name?: PgCatalog.Types.Bpchar.Options,
-LastUpdate?: PgCatalog.Types.Timestamp.Options
+ languageId?: PgCatalog.Types.Int4.Options,
+name?: PgCatalog.Types.Bpchar.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
+};
+export type ModifyOptions = {
+ languageId?: PgCatalog.Types.Int4.Options,
+name?: PgCatalog.Types.Bpchar.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 LanguageId: {
@@ -11363,13 +12181,22 @@ lastUpdateDescending = "last_update DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- RentalId?: PgCatalog.Types.Int4.Options,
-RentalDate?: PgCatalog.Types.Timestamp.Options,
-InventoryId?: PgCatalog.Types.Int4.Options,
-CustomerId?: PgCatalog.Types.Int2.Options,
-ReturnDate?: PgCatalog.Types.Timestamp.Options,
-StaffId?: PgCatalog.Types.Int2.Options,
-LastUpdate?: PgCatalog.Types.Timestamp.Options
+ rentalId?: PgCatalog.Types.Int4.Options,
+rentalDate?: PgCatalog.Types.Timestamp.Options,
+inventoryId?: PgCatalog.Types.Int4.Options,
+customerId?: PgCatalog.Types.Int2.Options,
+returnDate?: PgCatalog.Types.Timestamp.Options,
+staffId?: PgCatalog.Types.Int2.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
+};
+export type ModifyOptions = {
+ rentalId?: PgCatalog.Types.Int4.Options,
+rentalDate?: PgCatalog.Types.Timestamp.Options,
+inventoryId?: PgCatalog.Types.Int4.Options,
+customerId?: PgCatalog.Types.Int2.Options,
+returnDate?: PgCatalog.Types.Timestamp.Options,
+staffId?: PgCatalog.Types.Int2.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 RentalId: {
@@ -11439,17 +12266,30 @@ pictureDescending = "picture DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- StaffId?: PgCatalog.Types.Int4.Options,
-FirstName?: PgCatalog.Types.Varchar.Options,
-LastName?: PgCatalog.Types.Varchar.Options,
-AddressId?: PgCatalog.Types.Int2.Options,
-Email?: PgCatalog.Types.Varchar.Options,
-StoreId?: PgCatalog.Types.Int2.Options,
-Active?: PgCatalog.Types.Bool.Options,
-Username?: PgCatalog.Types.Varchar.Options,
-Password?: PgCatalog.Types.Varchar.Options,
-LastUpdate?: PgCatalog.Types.Timestamp.Options,
-Picture?: PgCatalog.Types.Bytea.Options
+ staffId?: PgCatalog.Types.Int4.Options,
+firstName?: PgCatalog.Types.Varchar.Options,
+lastName?: PgCatalog.Types.Varchar.Options,
+addressId?: PgCatalog.Types.Int2.Options,
+email?: PgCatalog.Types.Varchar.Options,
+storeId?: PgCatalog.Types.Int2.Options,
+active?: PgCatalog.Types.Bool.Options,
+username?: PgCatalog.Types.Varchar.Options,
+password?: PgCatalog.Types.Varchar.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options,
+picture?: PgCatalog.Types.Bytea.Options
+};
+export type ModifyOptions = {
+ staffId?: PgCatalog.Types.Int4.Options,
+firstName?: PgCatalog.Types.Varchar.Options,
+lastName?: PgCatalog.Types.Varchar.Options,
+addressId?: PgCatalog.Types.Int2.Options,
+email?: PgCatalog.Types.Varchar.Options,
+storeId?: PgCatalog.Types.Int2.Options,
+active?: PgCatalog.Types.Bool.Options,
+username?: PgCatalog.Types.Varchar.Options,
+password?: PgCatalog.Types.Varchar.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options,
+picture?: PgCatalog.Types.Bytea.Options
 };
 export const Columns = {
 StaffId: {
@@ -11521,10 +12361,16 @@ lastUpdateDescending = "last_update DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- StoreId?: PgCatalog.Types.Int4.Options,
-ManagerStaffId?: PgCatalog.Types.Int2.Options,
-AddressId?: PgCatalog.Types.Int2.Options,
-LastUpdate?: PgCatalog.Types.Timestamp.Options
+ storeId?: PgCatalog.Types.Int4.Options,
+managerStaffId?: PgCatalog.Types.Int2.Options,
+addressId?: PgCatalog.Types.Int2.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
+};
+export type ModifyOptions = {
+ storeId?: PgCatalog.Types.Int4.Options,
+managerStaffId?: PgCatalog.Types.Int2.Options,
+addressId?: PgCatalog.Types.Int2.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 StoreId: {
@@ -11572,12 +12418,20 @@ paymentDateDescending = "payment_date DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- PaymentId?: PgCatalog.Types.Int4.Options,
-CustomerId?: PgCatalog.Types.Int2.Options,
-StaffId?: PgCatalog.Types.Int2.Options,
-RentalId?: PgCatalog.Types.Int4.Options,
-Amount?: PgCatalog.Types.Numeric.Options,
-PaymentDate?: PgCatalog.Types.Timestamp.Options
+ paymentId?: PgCatalog.Types.Int4.Options,
+customerId?: PgCatalog.Types.Int2.Options,
+staffId?: PgCatalog.Types.Int2.Options,
+rentalId?: PgCatalog.Types.Int4.Options,
+amount?: PgCatalog.Types.Numeric.Options,
+paymentDate?: PgCatalog.Types.Timestamp.Options
+};
+export type ModifyOptions = {
+ paymentId?: PgCatalog.Types.Int4.Options,
+customerId?: PgCatalog.Types.Int2.Options,
+staffId?: PgCatalog.Types.Int2.Options,
+rentalId?: PgCatalog.Types.Int4.Options,
+amount?: PgCatalog.Types.Numeric.Options,
+paymentDate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 PaymentId: {
@@ -11647,19 +12501,34 @@ fulltextDescending = "fulltext DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- FilmId?: PgCatalog.Types.Int4.Options,
-Title?: PgCatalog.Types.Varchar.Options,
-Description?: PgCatalog.Types.Text.Options,
-ReleaseYear?: Public.Types.Year.Options,
-LanguageId?: PgCatalog.Types.Int2.Options,
-RentalDuration?: PgCatalog.Types.Int2.Options,
-RentalRate?: PgCatalog.Types.Numeric.Options,
-Length?: PgCatalog.Types.Int2.Options,
-ReplacementCost?: PgCatalog.Types.Numeric.Options,
-Rating?: Public.Types.MpaaRating.Options,
-LastUpdate?: PgCatalog.Types.Timestamp.Options,
-SpecialFeatures?: PgCatalog.Types.TextArray.Options,
-Fulltext?: PgCatalog.Types.Tsvector.Options
+ filmId?: PgCatalog.Types.Int4.Options,
+title?: PgCatalog.Types.Varchar.Options,
+description?: PgCatalog.Types.Text.Options,
+releaseYear?: Public.Types.Year.Options,
+languageId?: PgCatalog.Types.Int2.Options,
+rentalDuration?: PgCatalog.Types.Int2.Options,
+rentalRate?: PgCatalog.Types.Numeric.Options,
+length?: PgCatalog.Types.Int2.Options,
+replacementCost?: PgCatalog.Types.Numeric.Options,
+rating?: Public.Types.MpaaRating.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options,
+specialFeatures?: PgCatalog.Types.TextArray.Options,
+fulltext?: PgCatalog.Types.Tsvector.Options
+};
+export type ModifyOptions = {
+ filmId?: PgCatalog.Types.Int4.Options,
+title?: PgCatalog.Types.Varchar.Options,
+description?: PgCatalog.Types.Text.Options,
+releaseYear?: Public.Types.Year.Options,
+languageId?: PgCatalog.Types.Int2.Options,
+rentalDuration?: PgCatalog.Types.Int2.Options,
+rentalRate?: PgCatalog.Types.Numeric.Options,
+length?: PgCatalog.Types.Int2.Options,
+replacementCost?: PgCatalog.Types.Numeric.Options,
+rating?: Public.Types.MpaaRating.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options,
+specialFeatures?: PgCatalog.Types.TextArray.Options,
+fulltext?: PgCatalog.Types.Tsvector.Options
 };
 export const Columns = {
 FilmId: {
@@ -37156,387 +38025,321 @@ export namespace Results {
 export namespace PgCatalog {
 export namespace Types {
 export namespace Bool {
-// ZZ-Bool
 
       export type Options = never;
     
 }
 export namespace Bytea {
-// ZZ-Bytea
 
       export type Options = never;
     
 }
 export namespace Char {
-// ZZ-Char
 
       export type Options = never;
     
 }
 export namespace Name {
-// ZZ-Name
 
       export type Options = never;
     
 }
 export namespace Int8 {
-// ZZ-Int8
 
       export type Options = never;
     
 }
 export namespace Int2 {
-// ZZ-Int2
 
       export type Options = never;
     
 }
 export namespace Int2vector {
-// ZZ-Int2vector
 
       export type Options = never;
     
 }
 export namespace Int4 {
-// ZZ-Int4
 
       export type Options = never;
     
 }
 export namespace Regproc {
-// ZZ-Regproc
 
       export type Options = never;
     
 }
 export namespace Text {
-// ZZ-Text
 
       export type Options = never;
     
 }
 export namespace Oid {
-// ZZ-Oid
 
       export type Options = never;
     
 }
 export namespace Tid {
-// ZZ-Tid
 
       export type Options = never;
     
 }
 export namespace Xid {
-// ZZ-Xid
 
       export type Options = never;
     
 }
 export namespace Cid {
-// ZZ-Cid
 
       export type Options = never;
     
 }
 export namespace Oidvector {
-// ZZ-Oidvector
 export type Options = never;
 }
 export namespace PgType {
-// ZZ-PgType
 export type Options = never;
 }
 export namespace PgAttribute {
-// ZZ-PgAttribute
 export type Options = never;
 }
 export namespace PgProc {
-// ZZ-PgProc
 export type Options = never;
 }
 export namespace PgClass {
-// ZZ-PgClass
 export type Options = never;
 }
 export namespace Json {
-// ZZ-Json
 
       export type Options = never;
     
 }
 export namespace Xml {
-// ZZ-Xml
 
       export type Options = never;
     
 }
 export namespace PgNodeTree {
-// ZZ-PgNodeTree
 
       export type Options = never;
     
 }
 export namespace PgNdistinct {
-// ZZ-PgNdistinct
 
       export type Options = never;
     
 }
 export namespace PgDependencies {
-// ZZ-PgDependencies
 
       export type Options = never;
     
 }
 export namespace PgMcvList {
-// ZZ-PgMcvList
 
       export type Options = never;
     
 }
 export namespace PgDdlCommand {
-// ZZ-PgDdlCommand
 
       export type Options = never;
     
 }
 export namespace Xid8 {
-// ZZ-Xid8
 
       export type Options = never;
     
 }
 export namespace Point {
-// ZZ-Point
 
       export type Options = never;
     
 }
 export namespace Lseg {
-// ZZ-Lseg
 
       export type Options = never;
     
 }
 export namespace Path {
-// ZZ-Path
 
       export type Options = never;
     
 }
 export namespace Box {
-// ZZ-Box
 
       export type Options = never;
     
 }
 export namespace Polygon {
-// ZZ-Polygon
 
       export type Options = never;
     
 }
 export namespace Line {
-// ZZ-Line
 
       export type Options = never;
     
 }
 export namespace Float4 {
-// ZZ-Float4
 
       export type Options = never;
     
 }
 export namespace Float8 {
-// ZZ-Float8
 
       export type Options = never;
     
 }
 export namespace Unknown {
-// ZZ-Unknown
 
       export type Options = never;
     
 }
 export namespace Circle {
-// ZZ-Circle
 
       export type Options = never;
     
 }
 export namespace Money {
-// ZZ-Money
 
       export type Options = never;
     
 }
 export namespace Macaddr {
-// ZZ-Macaddr
 
       export type Options = never;
     
 }
 export namespace Inet {
-// ZZ-Inet
 
       export type Options = never;
     
 }
 export namespace Cidr {
-// ZZ-Cidr
 
       export type Options = never;
     
 }
 export namespace Macaddr8 {
-// ZZ-Macaddr8
 
       export type Options = never;
     
 }
 export namespace Aclitem {
-// ZZ-Aclitem
 
       export type Options = never;
     
 }
 export namespace Bpchar {
-// ZZ-Bpchar
 
       export type Options = never;
     
 }
 export namespace Varchar {
-// ZZ-Varchar
 
       export type Options = never;
     
 }
 export namespace Date {
-// ZZ-Date
 
       export type Options = never;
     
 }
 export namespace Time {
-// ZZ-Time
 
       export type Options = never;
     
 }
 export namespace Timestamp {
-// ZZ-Timestamp
 
       export type Options = never;
     
 }
 export namespace Timestamptz {
-// ZZ-Timestamptz
 
       export type Options = never;
     
 }
 export namespace Interval {
-// ZZ-Interval
 
       export type Options = never;
     
 }
 export namespace Timetz {
-// ZZ-Timetz
 
       export type Options = never;
     
 }
 export namespace Bit {
-// ZZ-Bit
 
       export type Options = never;
     
 }
 export namespace Varbit {
-// ZZ-Varbit
 
       export type Options = never;
     
 }
 export namespace Numeric {
-// ZZ-Numeric
 
       export type Options = never;
     
 }
 export namespace Refcursor {
-// ZZ-Refcursor
 
       export type Options = never;
     
 }
 export namespace Regprocedure {
-// ZZ-Regprocedure
 
       export type Options = never;
     
 }
 export namespace Regoper {
-// ZZ-Regoper
 
       export type Options = never;
     
 }
 export namespace Regoperator {
-// ZZ-Regoperator
 
       export type Options = never;
     
 }
 export namespace Regclass {
-// ZZ-Regclass
 
       export type Options = never;
     
 }
 export namespace Regcollation {
-// ZZ-Regcollation
 
       export type Options = never;
     
 }
 export namespace Regtype {
-// ZZ-Regtype
 
       export type Options = never;
     
 }
 export namespace Regrole {
-// ZZ-Regrole
 
       export type Options = never;
     
 }
 export namespace Regnamespace {
-// ZZ-Regnamespace
 
       export type Options = never;
     
 }
 export namespace Uuid {
-// ZZ-Uuid
 
       export type Options = never;
     
 }
 export namespace PgLsn {
-// ZZ-PgLsn
 
       export type Options = never;
     
 }
 export namespace Tsvector {
-// ZZ-Tsvector
 
        /**
          * Fulltext queries have different parsers that turn your query search
@@ -37547,8 +38350,8 @@ export namespace Tsvector {
          */
         export enum FulltextParser {
         Default = "to_tsquery",
-        Plain = "plainto_tsquerty",
-        Phrase = "phraseto_tsquyer",
+        Plain = "plainto_tsquery",
+        Phrase = "phraseto_tsquery",
         Web = "websearch_to_tsquery",
         }
         export type Options = {
@@ -37558,13 +38361,11 @@ export namespace Tsvector {
             
 }
 export namespace Gtsvector {
-// ZZ-Gtsvector
 
       export type Options = never;
     
 }
 export namespace Tsquery {
-// ZZ-Tsquery
 
        /**
          * Fulltext queries have different parsers that turn your query search
@@ -37575,8 +38376,8 @@ export namespace Tsquery {
          */
         export enum FulltextParser {
         Default = "to_tsquery",
-        Plain = "plainto_tsquerty",
-        Phrase = "phraseto_tsquyer",
+        Plain = "plainto_tsquery",
+        Phrase = "phraseto_tsquery",
         Web = "websearch_to_tsquery",
         }
         export type Options = {
@@ -37586,2173 +38387,1652 @@ export namespace Tsquery {
             
 }
 export namespace Regconfig {
-// ZZ-Regconfig
 
       export type Options = never;
     
 }
 export namespace Regdictionary {
-// ZZ-Regdictionary
 
       export type Options = never;
     
 }
 export namespace Jsonb {
-// ZZ-Jsonb
 
       export type Options = never;
     
 }
 export namespace Jsonpath {
-// ZZ-Jsonpath
 
       export type Options = never;
     
 }
 export namespace TxidSnapshot {
-// ZZ-TxidSnapshot
 
       export type Options = never;
     
 }
 export namespace PgSnapshot {
-// ZZ-PgSnapshot
 
       export type Options = never;
     
 }
 export namespace Int4range {
-// ZZ-Int4range
 
       export type Options = never;
     
 }
 export namespace Numrange {
-// ZZ-Numrange
 
       export type Options = never;
     
 }
 export namespace Tsrange {
-// ZZ-Tsrange
 
       export type Options = never;
     
 }
 export namespace Tstzrange {
-// ZZ-Tstzrange
 
       export type Options = never;
     
 }
 export namespace Daterange {
-// ZZ-Daterange
 
       export type Options = never;
     
 }
 export namespace Int8range {
-// ZZ-Int8range
 
       export type Options = never;
     
 }
 export namespace Int4multirange {
-// ZZ-Int4multirange
 
       export type Options = never;
     
 }
 export namespace Nummultirange {
-// ZZ-Nummultirange
 
       export type Options = never;
     
 }
 export namespace Tsmultirange {
-// ZZ-Tsmultirange
 
       export type Options = never;
     
 }
 export namespace Tstzmultirange {
-// ZZ-Tstzmultirange
 
       export type Options = never;
     
 }
 export namespace Datemultirange {
-// ZZ-Datemultirange
 
       export type Options = never;
     
 }
 export namespace Int8multirange {
-// ZZ-Int8multirange
 
       export type Options = never;
     
 }
 export namespace Record {
-// ZZ-Record
 
       export type Options = never;
     
 }
 export namespace RecordArray {
-// ZZ-RecordArray
 export type Options = never;
 }
 export namespace Cstring {
-// ZZ-Cstring
 
       export type Options = never;
     
 }
 export namespace Any {
-// ZZ-Any
 
       export type Options = never;
     
 }
 export namespace Anyarray {
-// ZZ-Anyarray
 
       export type Options = never;
     
 }
 export namespace Void {
-// ZZ-Void
 
       export type Options = never;
     
 }
 export namespace Trigger {
-// ZZ-Trigger
 
       export type Options = never;
     
 }
 export namespace EventTrigger {
-// ZZ-EventTrigger
 
       export type Options = never;
     
 }
 export namespace LanguageHandler {
-// ZZ-LanguageHandler
 
       export type Options = never;
     
 }
 export namespace Internal {
-// ZZ-Internal
 
       export type Options = never;
     
 }
 export namespace Anyelement {
-// ZZ-Anyelement
 
       export type Options = never;
     
 }
 export namespace Anynonarray {
-// ZZ-Anynonarray
 
       export type Options = never;
     
 }
 export namespace Anyenum {
-// ZZ-Anyenum
 
       export type Options = never;
     
 }
 export namespace FdwHandler {
-// ZZ-FdwHandler
 
       export type Options = never;
     
 }
 export namespace IndexAmHandler {
-// ZZ-IndexAmHandler
 
       export type Options = never;
     
 }
 export namespace TsmHandler {
-// ZZ-TsmHandler
 
       export type Options = never;
     
 }
 export namespace TableAmHandler {
-// ZZ-TableAmHandler
 
       export type Options = never;
     
 }
 export namespace Anyrange {
-// ZZ-Anyrange
 
       export type Options = never;
     
 }
 export namespace Anycompatible {
-// ZZ-Anycompatible
 
       export type Options = never;
     
 }
 export namespace Anycompatiblearray {
-// ZZ-Anycompatiblearray
 
       export type Options = never;
     
 }
 export namespace Anycompatiblenonarray {
-// ZZ-Anycompatiblenonarray
 
       export type Options = never;
     
 }
 export namespace Anycompatiblerange {
-// ZZ-Anycompatiblerange
 
       export type Options = never;
     
 }
 export namespace Anymultirange {
-// ZZ-Anymultirange
 
       export type Options = never;
     
 }
 export namespace Anycompatiblemultirange {
-// ZZ-Anycompatiblemultirange
 
       export type Options = never;
     
 }
 export namespace PgBrinBloomSummary {
-// ZZ-PgBrinBloomSummary
 
       export type Options = never;
     
 }
 export namespace PgBrinMinmaxMultiSummary {
-// ZZ-PgBrinMinmaxMultiSummary
 
       export type Options = never;
     
 }
 export namespace BoolArray {
-// ZZ-BoolArray
 export type Options = never;
 }
 export namespace ByteaArray {
-// ZZ-ByteaArray
 export type Options = never;
 }
 export namespace CharArray {
-// ZZ-CharArray
 export type Options = never;
 }
 export namespace NameArray {
-// ZZ-NameArray
 export type Options = never;
 }
 export namespace Int8Array {
-// ZZ-Int8Array
 export type Options = never;
 }
 export namespace Int2Array {
-// ZZ-Int2Array
 export type Options = never;
 }
 export namespace Int2vectorArray {
-// ZZ-Int2vectorArray
 export type Options = never;
 }
 export namespace Int4Array {
-// ZZ-Int4Array
 export type Options = never;
 }
 export namespace RegprocArray {
-// ZZ-RegprocArray
 export type Options = never;
 }
 export namespace TextArray {
-// ZZ-TextArray
 export type Options = never;
 }
 export namespace OidArray {
-// ZZ-OidArray
 export type Options = never;
 }
 export namespace TidArray {
-// ZZ-TidArray
 export type Options = never;
 }
 export namespace XidArray {
-// ZZ-XidArray
 export type Options = never;
 }
 export namespace CidArray {
-// ZZ-CidArray
 export type Options = never;
 }
 export namespace OidvectorArray {
-// ZZ-OidvectorArray
 export type Options = never;
 }
 export namespace PgTypeArray {
-// ZZ-PgTypeArray
 export type Options = never;
 }
 export namespace PgAttributeArray {
-// ZZ-PgAttributeArray
 export type Options = never;
 }
 export namespace PgProcArray {
-// ZZ-PgProcArray
 export type Options = never;
 }
 export namespace PgClassArray {
-// ZZ-PgClassArray
 export type Options = never;
 }
 export namespace JsonArray {
-// ZZ-JsonArray
 export type Options = never;
 }
 export namespace XmlArray {
-// ZZ-XmlArray
 export type Options = never;
 }
 export namespace Xid8Array {
-// ZZ-Xid8Array
 export type Options = never;
 }
 export namespace PointArray {
-// ZZ-PointArray
 export type Options = never;
 }
 export namespace LsegArray {
-// ZZ-LsegArray
 export type Options = never;
 }
 export namespace PathArray {
-// ZZ-PathArray
 export type Options = never;
 }
 export namespace BoxArray {
-// ZZ-BoxArray
 export type Options = never;
 }
 export namespace PolygonArray {
-// ZZ-PolygonArray
 export type Options = never;
 }
 export namespace LineArray {
-// ZZ-LineArray
 export type Options = never;
 }
 export namespace Float4Array {
-// ZZ-Float4Array
 export type Options = never;
 }
 export namespace Float8Array {
-// ZZ-Float8Array
 export type Options = never;
 }
 export namespace CircleArray {
-// ZZ-CircleArray
 export type Options = never;
 }
 export namespace MoneyArray {
-// ZZ-MoneyArray
 export type Options = never;
 }
 export namespace MacaddrArray {
-// ZZ-MacaddrArray
 export type Options = never;
 }
 export namespace InetArray {
-// ZZ-InetArray
 export type Options = never;
 }
 export namespace CidrArray {
-// ZZ-CidrArray
 export type Options = never;
 }
 export namespace Macaddr8Array {
-// ZZ-Macaddr8Array
 export type Options = never;
 }
 export namespace AclitemArray {
-// ZZ-AclitemArray
 export type Options = never;
 }
 export namespace BpcharArray {
-// ZZ-BpcharArray
 export type Options = never;
 }
 export namespace VarcharArray {
-// ZZ-VarcharArray
 export type Options = never;
 }
 export namespace DateArray {
-// ZZ-DateArray
 export type Options = never;
 }
 export namespace TimeArray {
-// ZZ-TimeArray
 export type Options = never;
 }
 export namespace TimestampArray {
-// ZZ-TimestampArray
 export type Options = never;
 }
 export namespace TimestamptzArray {
-// ZZ-TimestamptzArray
 export type Options = never;
 }
 export namespace IntervalArray {
-// ZZ-IntervalArray
 export type Options = never;
 }
 export namespace TimetzArray {
-// ZZ-TimetzArray
 export type Options = never;
 }
 export namespace BitArray {
-// ZZ-BitArray
 export type Options = never;
 }
 export namespace VarbitArray {
-// ZZ-VarbitArray
 export type Options = never;
 }
 export namespace NumericArray {
-// ZZ-NumericArray
 export type Options = never;
 }
 export namespace RefcursorArray {
-// ZZ-RefcursorArray
 export type Options = never;
 }
 export namespace RegprocedureArray {
-// ZZ-RegprocedureArray
 export type Options = never;
 }
 export namespace RegoperArray {
-// ZZ-RegoperArray
 export type Options = never;
 }
 export namespace RegoperatorArray {
-// ZZ-RegoperatorArray
 export type Options = never;
 }
 export namespace RegclassArray {
-// ZZ-RegclassArray
 export type Options = never;
 }
 export namespace RegcollationArray {
-// ZZ-RegcollationArray
 export type Options = never;
 }
 export namespace RegtypeArray {
-// ZZ-RegtypeArray
 export type Options = never;
 }
 export namespace RegroleArray {
-// ZZ-RegroleArray
 export type Options = never;
 }
 export namespace RegnamespaceArray {
-// ZZ-RegnamespaceArray
 export type Options = never;
 }
 export namespace UuidArray {
-// ZZ-UuidArray
 export type Options = never;
 }
 export namespace PgLsnArray {
-// ZZ-PgLsnArray
 export type Options = never;
 }
 export namespace TsvectorArray {
-// ZZ-TsvectorArray
 export type Options = never;
 }
 export namespace GtsvectorArray {
-// ZZ-GtsvectorArray
 export type Options = never;
 }
 export namespace TsqueryArray {
-// ZZ-TsqueryArray
 export type Options = never;
 }
 export namespace RegconfigArray {
-// ZZ-RegconfigArray
 export type Options = never;
 }
 export namespace RegdictionaryArray {
-// ZZ-RegdictionaryArray
 export type Options = never;
 }
 export namespace JsonbArray {
-// ZZ-JsonbArray
 export type Options = never;
 }
 export namespace JsonpathArray {
-// ZZ-JsonpathArray
 export type Options = never;
 }
 export namespace TxidSnapshotArray {
-// ZZ-TxidSnapshotArray
 export type Options = never;
 }
 export namespace PgSnapshotArray {
-// ZZ-PgSnapshotArray
 export type Options = never;
 }
 export namespace Int4rangeArray {
-// ZZ-Int4rangeArray
 export type Options = never;
 }
 export namespace NumrangeArray {
-// ZZ-NumrangeArray
 export type Options = never;
 }
 export namespace TsrangeArray {
-// ZZ-TsrangeArray
 export type Options = never;
 }
 export namespace TstzrangeArray {
-// ZZ-TstzrangeArray
 export type Options = never;
 }
 export namespace DaterangeArray {
-// ZZ-DaterangeArray
 export type Options = never;
 }
 export namespace Int8rangeArray {
-// ZZ-Int8rangeArray
 export type Options = never;
 }
 export namespace Int4multirangeArray {
-// ZZ-Int4multirangeArray
 export type Options = never;
 }
 export namespace NummultirangeArray {
-// ZZ-NummultirangeArray
 export type Options = never;
 }
 export namespace TsmultirangeArray {
-// ZZ-TsmultirangeArray
 export type Options = never;
 }
 export namespace TstzmultirangeArray {
-// ZZ-TstzmultirangeArray
 export type Options = never;
 }
 export namespace DatemultirangeArray {
-// ZZ-DatemultirangeArray
 export type Options = never;
 }
 export namespace Int8multirangeArray {
-// ZZ-Int8multirangeArray
 export type Options = never;
 }
 export namespace CstringArray {
-// ZZ-CstringArray
 export type Options = never;
 }
 export namespace PgAttrdef {
-// ZZ-PgAttrdef
 export type Options = never;
 }
 export namespace PgAttrdefArray {
-// ZZ-PgAttrdefArray
 export type Options = never;
 }
 export namespace PgConstraint {
-// ZZ-PgConstraint
 export type Options = never;
 }
 export namespace PgConstraintArray {
-// ZZ-PgConstraintArray
 export type Options = never;
 }
 export namespace PgInherits {
-// ZZ-PgInherits
 export type Options = never;
 }
 export namespace PgInheritsArray {
-// ZZ-PgInheritsArray
 export type Options = never;
 }
 export namespace PgIndex {
-// ZZ-PgIndex
 export type Options = never;
 }
 export namespace PgIndexArray {
-// ZZ-PgIndexArray
 export type Options = never;
 }
 export namespace PgOperator {
-// ZZ-PgOperator
 export type Options = never;
 }
 export namespace PgOperatorArray {
-// ZZ-PgOperatorArray
 export type Options = never;
 }
 export namespace PgOpfamily {
-// ZZ-PgOpfamily
 export type Options = never;
 }
 export namespace PgOpfamilyArray {
-// ZZ-PgOpfamilyArray
 export type Options = never;
 }
 export namespace PgOpclass {
-// ZZ-PgOpclass
 export type Options = never;
 }
 export namespace PgOpclassArray {
-// ZZ-PgOpclassArray
 export type Options = never;
 }
 export namespace PgAm {
-// ZZ-PgAm
 export type Options = never;
 }
 export namespace PgAmArray {
-// ZZ-PgAmArray
 export type Options = never;
 }
 export namespace PgAmop {
-// ZZ-PgAmop
 export type Options = never;
 }
 export namespace PgAmopArray {
-// ZZ-PgAmopArray
 export type Options = never;
 }
 export namespace PgAmproc {
-// ZZ-PgAmproc
 export type Options = never;
 }
 export namespace PgAmprocArray {
-// ZZ-PgAmprocArray
 export type Options = never;
 }
 export namespace PgLanguage {
-// ZZ-PgLanguage
 export type Options = never;
 }
 export namespace PgLanguageArray {
-// ZZ-PgLanguageArray
 export type Options = never;
 }
 export namespace PgLargeobjectMetadata {
-// ZZ-PgLargeobjectMetadata
 export type Options = never;
 }
 export namespace PgLargeobjectMetadataArray {
-// ZZ-PgLargeobjectMetadataArray
 export type Options = never;
 }
 export namespace PgLargeobject {
-// ZZ-PgLargeobject
 export type Options = never;
 }
 export namespace PgLargeobjectArray {
-// ZZ-PgLargeobjectArray
 export type Options = never;
 }
 export namespace PgAggregate {
-// ZZ-PgAggregate
 export type Options = never;
 }
 export namespace PgAggregateArray {
-// ZZ-PgAggregateArray
 export type Options = never;
 }
 export namespace PgStatistic {
-// ZZ-PgStatistic
 export type Options = never;
 }
 export namespace PgStatisticArray {
-// ZZ-PgStatisticArray
 export type Options = never;
 }
 export namespace PgStatisticExt {
-// ZZ-PgStatisticExt
 export type Options = never;
 }
 export namespace PgStatisticExtArray {
-// ZZ-PgStatisticExtArray
 export type Options = never;
 }
 export namespace PgStatisticExtData {
-// ZZ-PgStatisticExtData
 export type Options = never;
 }
 export namespace PgStatisticExtDataArray {
-// ZZ-PgStatisticExtDataArray
 export type Options = never;
 }
 export namespace PgRewrite {
-// ZZ-PgRewrite
 export type Options = never;
 }
 export namespace PgRewriteArray {
-// ZZ-PgRewriteArray
 export type Options = never;
 }
 export namespace PgTrigger {
-// ZZ-PgTrigger
 export type Options = never;
 }
 export namespace PgTriggerArray {
-// ZZ-PgTriggerArray
 export type Options = never;
 }
 export namespace PgEventTrigger {
-// ZZ-PgEventTrigger
 export type Options = never;
 }
 export namespace PgEventTriggerArray {
-// ZZ-PgEventTriggerArray
 export type Options = never;
 }
 export namespace PgDescription {
-// ZZ-PgDescription
 export type Options = never;
 }
 export namespace PgDescriptionArray {
-// ZZ-PgDescriptionArray
 export type Options = never;
 }
 export namespace PgCast {
-// ZZ-PgCast
 export type Options = never;
 }
 export namespace PgCastArray {
-// ZZ-PgCastArray
 export type Options = never;
 }
 export namespace PgEnum {
-// ZZ-PgEnum
 export type Options = never;
 }
 export namespace PgEnumArray {
-// ZZ-PgEnumArray
 export type Options = never;
 }
 export namespace PgNamespace {
-// ZZ-PgNamespace
 export type Options = never;
 }
 export namespace PgNamespaceArray {
-// ZZ-PgNamespaceArray
 export type Options = never;
 }
 export namespace PgConversion {
-// ZZ-PgConversion
 export type Options = never;
 }
 export namespace PgConversionArray {
-// ZZ-PgConversionArray
 export type Options = never;
 }
 export namespace PgDepend {
-// ZZ-PgDepend
 export type Options = never;
 }
 export namespace PgDependArray {
-// ZZ-PgDependArray
 export type Options = never;
 }
 export namespace PgDatabase {
-// ZZ-PgDatabase
 export type Options = never;
 }
 export namespace PgDatabaseArray {
-// ZZ-PgDatabaseArray
 export type Options = never;
 }
 export namespace PgDbRoleSetting {
-// ZZ-PgDbRoleSetting
 export type Options = never;
 }
 export namespace PgDbRoleSettingArray {
-// ZZ-PgDbRoleSettingArray
 export type Options = never;
 }
 export namespace PgTablespace {
-// ZZ-PgTablespace
 export type Options = never;
 }
 export namespace PgTablespaceArray {
-// ZZ-PgTablespaceArray
 export type Options = never;
 }
 export namespace PgAuthid {
-// ZZ-PgAuthid
 export type Options = never;
 }
 export namespace PgAuthidArray {
-// ZZ-PgAuthidArray
 export type Options = never;
 }
 export namespace PgAuthMembers {
-// ZZ-PgAuthMembers
 export type Options = never;
 }
 export namespace PgAuthMembersArray {
-// ZZ-PgAuthMembersArray
 export type Options = never;
 }
 export namespace PgShdepend {
-// ZZ-PgShdepend
 export type Options = never;
 }
 export namespace PgShdependArray {
-// ZZ-PgShdependArray
 export type Options = never;
 }
 export namespace PgShdescription {
-// ZZ-PgShdescription
 export type Options = never;
 }
 export namespace PgShdescriptionArray {
-// ZZ-PgShdescriptionArray
 export type Options = never;
 }
 export namespace PgTsConfig {
-// ZZ-PgTsConfig
 export type Options = never;
 }
 export namespace PgTsConfigArray {
-// ZZ-PgTsConfigArray
 export type Options = never;
 }
 export namespace PgTsConfigMap {
-// ZZ-PgTsConfigMap
 export type Options = never;
 }
 export namespace PgTsConfigMapArray {
-// ZZ-PgTsConfigMapArray
 export type Options = never;
 }
 export namespace PgTsDict {
-// ZZ-PgTsDict
 export type Options = never;
 }
 export namespace PgTsDictArray {
-// ZZ-PgTsDictArray
 export type Options = never;
 }
 export namespace PgTsParser {
-// ZZ-PgTsParser
 export type Options = never;
 }
 export namespace PgTsParserArray {
-// ZZ-PgTsParserArray
 export type Options = never;
 }
 export namespace PgTsTemplate {
-// ZZ-PgTsTemplate
 export type Options = never;
 }
 export namespace PgTsTemplateArray {
-// ZZ-PgTsTemplateArray
 export type Options = never;
 }
 export namespace PgExtension {
-// ZZ-PgExtension
 export type Options = never;
 }
 export namespace PgExtensionArray {
-// ZZ-PgExtensionArray
 export type Options = never;
 }
 export namespace PgForeignDataWrapper {
-// ZZ-PgForeignDataWrapper
 export type Options = never;
 }
 export namespace PgForeignDataWrapperArray {
-// ZZ-PgForeignDataWrapperArray
 export type Options = never;
 }
 export namespace PgForeignServer {
-// ZZ-PgForeignServer
 export type Options = never;
 }
 export namespace PgForeignServerArray {
-// ZZ-PgForeignServerArray
 export type Options = never;
 }
 export namespace PgUserMapping {
-// ZZ-PgUserMapping
 export type Options = never;
 }
 export namespace PgUserMappingArray {
-// ZZ-PgUserMappingArray
 export type Options = never;
 }
 export namespace PgForeignTable {
-// ZZ-PgForeignTable
 export type Options = never;
 }
 export namespace PgForeignTableArray {
-// ZZ-PgForeignTableArray
 export type Options = never;
 }
 export namespace PgPolicy {
-// ZZ-PgPolicy
 export type Options = never;
 }
 export namespace PgPolicyArray {
-// ZZ-PgPolicyArray
 export type Options = never;
 }
 export namespace PgReplicationOrigin {
-// ZZ-PgReplicationOrigin
 export type Options = never;
 }
 export namespace PgReplicationOriginArray {
-// ZZ-PgReplicationOriginArray
 export type Options = never;
 }
 export namespace PgDefaultAcl {
-// ZZ-PgDefaultAcl
 export type Options = never;
 }
 export namespace PgDefaultAclArray {
-// ZZ-PgDefaultAclArray
 export type Options = never;
 }
 export namespace PgInitPrivs {
-// ZZ-PgInitPrivs
 export type Options = never;
 }
 export namespace PgInitPrivsArray {
-// ZZ-PgInitPrivsArray
 export type Options = never;
 }
 export namespace PgSeclabel {
-// ZZ-PgSeclabel
 export type Options = never;
 }
 export namespace PgSeclabelArray {
-// ZZ-PgSeclabelArray
 export type Options = never;
 }
 export namespace PgShseclabel {
-// ZZ-PgShseclabel
 export type Options = never;
 }
 export namespace PgShseclabelArray {
-// ZZ-PgShseclabelArray
 export type Options = never;
 }
 export namespace PgCollation {
-// ZZ-PgCollation
 export type Options = never;
 }
 export namespace PgCollationArray {
-// ZZ-PgCollationArray
 export type Options = never;
 }
 export namespace PgParameterAcl {
-// ZZ-PgParameterAcl
 export type Options = never;
 }
 export namespace PgParameterAclArray {
-// ZZ-PgParameterAclArray
 export type Options = never;
 }
 export namespace PgPartitionedTable {
-// ZZ-PgPartitionedTable
 export type Options = never;
 }
 export namespace PgPartitionedTableArray {
-// ZZ-PgPartitionedTableArray
 export type Options = never;
 }
 export namespace PgRange {
-// ZZ-PgRange
 export type Options = never;
 }
 export namespace PgRangeArray {
-// ZZ-PgRangeArray
 export type Options = never;
 }
 export namespace PgTransform {
-// ZZ-PgTransform
 export type Options = never;
 }
 export namespace PgTransformArray {
-// ZZ-PgTransformArray
 export type Options = never;
 }
 export namespace PgSequence {
-// ZZ-PgSequence
 export type Options = never;
 }
 export namespace PgSequenceArray {
-// ZZ-PgSequenceArray
 export type Options = never;
 }
 export namespace PgPublication {
-// ZZ-PgPublication
 export type Options = never;
 }
 export namespace PgPublicationArray {
-// ZZ-PgPublicationArray
 export type Options = never;
 }
 export namespace PgPublicationNamespace {
-// ZZ-PgPublicationNamespace
 export type Options = never;
 }
 export namespace PgPublicationNamespaceArray {
-// ZZ-PgPublicationNamespaceArray
 export type Options = never;
 }
 export namespace PgPublicationRel {
-// ZZ-PgPublicationRel
 export type Options = never;
 }
 export namespace PgPublicationRelArray {
-// ZZ-PgPublicationRelArray
 export type Options = never;
 }
 export namespace PgSubscription {
-// ZZ-PgSubscription
 export type Options = never;
 }
 export namespace PgSubscriptionArray {
-// ZZ-PgSubscriptionArray
 export type Options = never;
 }
 export namespace PgSubscriptionRel {
-// ZZ-PgSubscriptionRel
 export type Options = never;
 }
 export namespace PgSubscriptionRelArray {
-// ZZ-PgSubscriptionRelArray
 export type Options = never;
 }
 export namespace PgRoles {
-// ZZ-PgRoles
 export type Options = never;
 }
 export namespace PgRolesArray {
-// ZZ-PgRolesArray
 export type Options = never;
 }
 export namespace PgShadow {
-// ZZ-PgShadow
 export type Options = never;
 }
 export namespace PgShadowArray {
-// ZZ-PgShadowArray
 export type Options = never;
 }
 export namespace PgGroup {
-// ZZ-PgGroup
 export type Options = never;
 }
 export namespace PgGroupArray {
-// ZZ-PgGroupArray
 export type Options = never;
 }
 export namespace PgUser {
-// ZZ-PgUser
 export type Options = never;
 }
 export namespace PgUserArray {
-// ZZ-PgUserArray
 export type Options = never;
 }
 export namespace PgPolicies {
-// ZZ-PgPolicies
 export type Options = never;
 }
 export namespace PgPoliciesArray {
-// ZZ-PgPoliciesArray
 export type Options = never;
 }
 export namespace PgRules {
-// ZZ-PgRules
 export type Options = never;
 }
 export namespace PgRulesArray {
-// ZZ-PgRulesArray
 export type Options = never;
 }
 export namespace PgViews {
-// ZZ-PgViews
 export type Options = never;
 }
 export namespace PgViewsArray {
-// ZZ-PgViewsArray
 export type Options = never;
 }
 export namespace PgTables {
-// ZZ-PgTables
 export type Options = never;
 }
 export namespace PgTablesArray {
-// ZZ-PgTablesArray
 export type Options = never;
 }
 export namespace PgMatviews {
-// ZZ-PgMatviews
 export type Options = never;
 }
 export namespace PgMatviewsArray {
-// ZZ-PgMatviewsArray
 export type Options = never;
 }
 export namespace PgIndexes {
-// ZZ-PgIndexes
 export type Options = never;
 }
 export namespace PgIndexesArray {
-// ZZ-PgIndexesArray
 export type Options = never;
 }
 export namespace PgSequences {
-// ZZ-PgSequences
 export type Options = never;
 }
 export namespace PgSequencesArray {
-// ZZ-PgSequencesArray
 export type Options = never;
 }
 export namespace PgStats {
-// ZZ-PgStats
 export type Options = never;
 }
 export namespace PgStatsArray {
-// ZZ-PgStatsArray
 export type Options = never;
 }
 export namespace PgStatsExt {
-// ZZ-PgStatsExt
 export type Options = never;
 }
 export namespace PgStatsExtArray {
-// ZZ-PgStatsExtArray
 export type Options = never;
 }
 export namespace PgStatsExtExprs {
-// ZZ-PgStatsExtExprs
 export type Options = never;
 }
 export namespace PgStatsExtExprsArray {
-// ZZ-PgStatsExtExprsArray
 export type Options = never;
 }
 export namespace PgPublicationTables {
-// ZZ-PgPublicationTables
 export type Options = never;
 }
 export namespace PgPublicationTablesArray {
-// ZZ-PgPublicationTablesArray
 export type Options = never;
 }
 export namespace PgLocks {
-// ZZ-PgLocks
 export type Options = never;
 }
 export namespace PgLocksArray {
-// ZZ-PgLocksArray
 export type Options = never;
 }
 export namespace PgCursors {
-// ZZ-PgCursors
 export type Options = never;
 }
 export namespace PgCursorsArray {
-// ZZ-PgCursorsArray
 export type Options = never;
 }
 export namespace PgAvailableExtensions {
-// ZZ-PgAvailableExtensions
 export type Options = never;
 }
 export namespace PgAvailableExtensionsArray {
-// ZZ-PgAvailableExtensionsArray
 export type Options = never;
 }
 export namespace PgAvailableExtensionVersions {
-// ZZ-PgAvailableExtensionVersions
 export type Options = never;
 }
 export namespace PgAvailableExtensionVersionsArray {
-// ZZ-PgAvailableExtensionVersionsArray
 export type Options = never;
 }
 export namespace PgPreparedXacts {
-// ZZ-PgPreparedXacts
 export type Options = never;
 }
 export namespace PgPreparedXactsArray {
-// ZZ-PgPreparedXactsArray
 export type Options = never;
 }
 export namespace PgPreparedStatements {
-// ZZ-PgPreparedStatements
 export type Options = never;
 }
 export namespace PgPreparedStatementsArray {
-// ZZ-PgPreparedStatementsArray
 export type Options = never;
 }
 export namespace PgSeclabels {
-// ZZ-PgSeclabels
 export type Options = never;
 }
 export namespace PgSeclabelsArray {
-// ZZ-PgSeclabelsArray
 export type Options = never;
 }
 export namespace PgSettings {
-// ZZ-PgSettings
 export type Options = never;
 }
 export namespace PgSettingsArray {
-// ZZ-PgSettingsArray
 export type Options = never;
 }
 export namespace PgFileSettings {
-// ZZ-PgFileSettings
 export type Options = never;
 }
 export namespace PgFileSettingsArray {
-// ZZ-PgFileSettingsArray
 export type Options = never;
 }
 export namespace PgHbaFileRules {
-// ZZ-PgHbaFileRules
 export type Options = never;
 }
 export namespace PgHbaFileRulesArray {
-// ZZ-PgHbaFileRulesArray
 export type Options = never;
 }
 export namespace PgIdentFileMappings {
-// ZZ-PgIdentFileMappings
 export type Options = never;
 }
 export namespace PgIdentFileMappingsArray {
-// ZZ-PgIdentFileMappingsArray
 export type Options = never;
 }
 export namespace PgTimezoneAbbrevs {
-// ZZ-PgTimezoneAbbrevs
 export type Options = never;
 }
 export namespace PgTimezoneAbbrevsArray {
-// ZZ-PgTimezoneAbbrevsArray
 export type Options = never;
 }
 export namespace PgTimezoneNames {
-// ZZ-PgTimezoneNames
 export type Options = never;
 }
 export namespace PgTimezoneNamesArray {
-// ZZ-PgTimezoneNamesArray
 export type Options = never;
 }
 export namespace PgConfig {
-// ZZ-PgConfig
 export type Options = never;
 }
 export namespace PgConfigArray {
-// ZZ-PgConfigArray
 export type Options = never;
 }
 export namespace PgShmemAllocations {
-// ZZ-PgShmemAllocations
 export type Options = never;
 }
 export namespace PgShmemAllocationsArray {
-// ZZ-PgShmemAllocationsArray
 export type Options = never;
 }
 export namespace PgBackendMemoryContexts {
-// ZZ-PgBackendMemoryContexts
 export type Options = never;
 }
 export namespace PgBackendMemoryContextsArray {
-// ZZ-PgBackendMemoryContextsArray
 export type Options = never;
 }
 export namespace PgStatAllTables {
-// ZZ-PgStatAllTables
 export type Options = never;
 }
 export namespace PgStatAllTablesArray {
-// ZZ-PgStatAllTablesArray
 export type Options = never;
 }
 export namespace PgStatXactAllTables {
-// ZZ-PgStatXactAllTables
 export type Options = never;
 }
 export namespace PgStatXactAllTablesArray {
-// ZZ-PgStatXactAllTablesArray
 export type Options = never;
 }
 export namespace PgStatSysTables {
-// ZZ-PgStatSysTables
 export type Options = never;
 }
 export namespace PgStatSysTablesArray {
-// ZZ-PgStatSysTablesArray
 export type Options = never;
 }
 export namespace PgStatXactSysTables {
-// ZZ-PgStatXactSysTables
 export type Options = never;
 }
 export namespace PgStatXactSysTablesArray {
-// ZZ-PgStatXactSysTablesArray
 export type Options = never;
 }
 export namespace PgStatUserTables {
-// ZZ-PgStatUserTables
 export type Options = never;
 }
 export namespace PgStatUserTablesArray {
-// ZZ-PgStatUserTablesArray
 export type Options = never;
 }
 export namespace PgStatXactUserTables {
-// ZZ-PgStatXactUserTables
 export type Options = never;
 }
 export namespace PgStatXactUserTablesArray {
-// ZZ-PgStatXactUserTablesArray
 export type Options = never;
 }
 export namespace PgStatioAllTables {
-// ZZ-PgStatioAllTables
 export type Options = never;
 }
 export namespace PgStatioAllTablesArray {
-// ZZ-PgStatioAllTablesArray
 export type Options = never;
 }
 export namespace PgStatioSysTables {
-// ZZ-PgStatioSysTables
 export type Options = never;
 }
 export namespace PgStatioSysTablesArray {
-// ZZ-PgStatioSysTablesArray
 export type Options = never;
 }
 export namespace PgStatioUserTables {
-// ZZ-PgStatioUserTables
 export type Options = never;
 }
 export namespace PgStatioUserTablesArray {
-// ZZ-PgStatioUserTablesArray
 export type Options = never;
 }
 export namespace PgStatAllIndexes {
-// ZZ-PgStatAllIndexes
 export type Options = never;
 }
 export namespace PgStatAllIndexesArray {
-// ZZ-PgStatAllIndexesArray
 export type Options = never;
 }
 export namespace PgStatSysIndexes {
-// ZZ-PgStatSysIndexes
 export type Options = never;
 }
 export namespace PgStatSysIndexesArray {
-// ZZ-PgStatSysIndexesArray
 export type Options = never;
 }
 export namespace PgStatUserIndexes {
-// ZZ-PgStatUserIndexes
 export type Options = never;
 }
 export namespace PgStatUserIndexesArray {
-// ZZ-PgStatUserIndexesArray
 export type Options = never;
 }
 export namespace PgStatioAllIndexes {
-// ZZ-PgStatioAllIndexes
 export type Options = never;
 }
 export namespace PgStatioAllIndexesArray {
-// ZZ-PgStatioAllIndexesArray
 export type Options = never;
 }
 export namespace PgStatioSysIndexes {
-// ZZ-PgStatioSysIndexes
 export type Options = never;
 }
 export namespace PgStatioSysIndexesArray {
-// ZZ-PgStatioSysIndexesArray
 export type Options = never;
 }
 export namespace PgStatioUserIndexes {
-// ZZ-PgStatioUserIndexes
 export type Options = never;
 }
 export namespace PgStatioUserIndexesArray {
-// ZZ-PgStatioUserIndexesArray
 export type Options = never;
 }
 export namespace PgStatioAllSequences {
-// ZZ-PgStatioAllSequences
 export type Options = never;
 }
 export namespace PgStatioAllSequencesArray {
-// ZZ-PgStatioAllSequencesArray
 export type Options = never;
 }
 export namespace PgStatioSysSequences {
-// ZZ-PgStatioSysSequences
 export type Options = never;
 }
 export namespace PgStatioSysSequencesArray {
-// ZZ-PgStatioSysSequencesArray
 export type Options = never;
 }
 export namespace PgStatioUserSequences {
-// ZZ-PgStatioUserSequences
 export type Options = never;
 }
 export namespace PgStatioUserSequencesArray {
-// ZZ-PgStatioUserSequencesArray
 export type Options = never;
 }
 export namespace PgStatActivity {
-// ZZ-PgStatActivity
 export type Options = never;
 }
 export namespace PgStatActivityArray {
-// ZZ-PgStatActivityArray
 export type Options = never;
 }
 export namespace PgStatReplication {
-// ZZ-PgStatReplication
 export type Options = never;
 }
 export namespace PgStatReplicationArray {
-// ZZ-PgStatReplicationArray
 export type Options = never;
 }
 export namespace PgStatSlru {
-// ZZ-PgStatSlru
 export type Options = never;
 }
 export namespace PgStatSlruArray {
-// ZZ-PgStatSlruArray
 export type Options = never;
 }
 export namespace PgStatWalReceiver {
-// ZZ-PgStatWalReceiver
 export type Options = never;
 }
 export namespace PgStatWalReceiverArray {
-// ZZ-PgStatWalReceiverArray
 export type Options = never;
 }
 export namespace PgStatRecoveryPrefetch {
-// ZZ-PgStatRecoveryPrefetch
 export type Options = never;
 }
 export namespace PgStatRecoveryPrefetchArray {
-// ZZ-PgStatRecoveryPrefetchArray
 export type Options = never;
 }
 export namespace PgStatSubscription {
-// ZZ-PgStatSubscription
 export type Options = never;
 }
 export namespace PgStatSubscriptionArray {
-// ZZ-PgStatSubscriptionArray
 export type Options = never;
 }
 export namespace PgStatSsl {
-// ZZ-PgStatSsl
 export type Options = never;
 }
 export namespace PgStatSslArray {
-// ZZ-PgStatSslArray
 export type Options = never;
 }
 export namespace PgStatGssapi {
-// ZZ-PgStatGssapi
 export type Options = never;
 }
 export namespace PgStatGssapiArray {
-// ZZ-PgStatGssapiArray
 export type Options = never;
 }
 export namespace PgReplicationSlots {
-// ZZ-PgReplicationSlots
 export type Options = never;
 }
 export namespace PgReplicationSlotsArray {
-// ZZ-PgReplicationSlotsArray
 export type Options = never;
 }
 export namespace PgStatReplicationSlots {
-// ZZ-PgStatReplicationSlots
 export type Options = never;
 }
 export namespace PgStatReplicationSlotsArray {
-// ZZ-PgStatReplicationSlotsArray
 export type Options = never;
 }
 export namespace PgStatDatabase {
-// ZZ-PgStatDatabase
 export type Options = never;
 }
 export namespace PgStatDatabaseArray {
-// ZZ-PgStatDatabaseArray
 export type Options = never;
 }
 export namespace PgStatDatabaseConflicts {
-// ZZ-PgStatDatabaseConflicts
 export type Options = never;
 }
 export namespace PgStatDatabaseConflictsArray {
-// ZZ-PgStatDatabaseConflictsArray
 export type Options = never;
 }
 export namespace PgStatUserFunctions {
-// ZZ-PgStatUserFunctions
 export type Options = never;
 }
 export namespace PgStatUserFunctionsArray {
-// ZZ-PgStatUserFunctionsArray
 export type Options = never;
 }
 export namespace PgStatXactUserFunctions {
-// ZZ-PgStatXactUserFunctions
 export type Options = never;
 }
 export namespace PgStatXactUserFunctionsArray {
-// ZZ-PgStatXactUserFunctionsArray
 export type Options = never;
 }
 export namespace PgStatArchiver {
-// ZZ-PgStatArchiver
 export type Options = never;
 }
 export namespace PgStatArchiverArray {
-// ZZ-PgStatArchiverArray
 export type Options = never;
 }
 export namespace PgStatBgwriter {
-// ZZ-PgStatBgwriter
 export type Options = never;
 }
 export namespace PgStatBgwriterArray {
-// ZZ-PgStatBgwriterArray
 export type Options = never;
 }
 export namespace PgStatIo {
-// ZZ-PgStatIo
 export type Options = never;
 }
 export namespace PgStatIoArray {
-// ZZ-PgStatIoArray
 export type Options = never;
 }
 export namespace PgStatWal {
-// ZZ-PgStatWal
 export type Options = never;
 }
 export namespace PgStatWalArray {
-// ZZ-PgStatWalArray
 export type Options = never;
 }
 export namespace PgStatProgressAnalyze {
-// ZZ-PgStatProgressAnalyze
 export type Options = never;
 }
 export namespace PgStatProgressAnalyzeArray {
-// ZZ-PgStatProgressAnalyzeArray
 export type Options = never;
 }
 export namespace PgStatProgressVacuum {
-// ZZ-PgStatProgressVacuum
 export type Options = never;
 }
 export namespace PgStatProgressVacuumArray {
-// ZZ-PgStatProgressVacuumArray
 export type Options = never;
 }
 export namespace PgStatProgressCluster {
-// ZZ-PgStatProgressCluster
 export type Options = never;
 }
 export namespace PgStatProgressClusterArray {
-// ZZ-PgStatProgressClusterArray
 export type Options = never;
 }
 export namespace PgStatProgressCreateIndex {
-// ZZ-PgStatProgressCreateIndex
 export type Options = never;
 }
 export namespace PgStatProgressCreateIndexArray {
-// ZZ-PgStatProgressCreateIndexArray
 export type Options = never;
 }
 export namespace PgStatProgressBasebackup {
-// ZZ-PgStatProgressBasebackup
 export type Options = never;
 }
 export namespace PgStatProgressBasebackupArray {
-// ZZ-PgStatProgressBasebackupArray
 export type Options = never;
 }
 export namespace PgStatProgressCopy {
-// ZZ-PgStatProgressCopy
 export type Options = never;
 }
 export namespace PgStatProgressCopyArray {
-// ZZ-PgStatProgressCopyArray
 export type Options = never;
 }
 export namespace PgUserMappings {
-// ZZ-PgUserMappings
 export type Options = never;
 }
 export namespace PgUserMappingsArray {
-// ZZ-PgUserMappingsArray
 export type Options = never;
 }
 export namespace PgReplicationOriginStatus {
-// ZZ-PgReplicationOriginStatus
 export type Options = never;
 }
 export namespace PgReplicationOriginStatusArray {
-// ZZ-PgReplicationOriginStatusArray
 export type Options = never;
 }
 export namespace PgStatSubscriptionStats {
-// ZZ-PgStatSubscriptionStats
 export type Options = never;
 }
 export namespace PgStatSubscriptionStatsArray {
-// ZZ-PgStatSubscriptionStatsArray
 export type Options = never;
 }
 export namespace PgProcOidIndex {
-// ZZ-PgProcOidIndex
 export type Options = never;
 }
 export namespace PgProcPronameArgsNspIndex {
-// ZZ-PgProcPronameArgsNspIndex
 export type Options = never;
 }
 export namespace PgTypeOidIndex {
-// ZZ-PgTypeOidIndex
 export type Options = never;
 }
 export namespace PgTypeTypnameNspIndex {
-// ZZ-PgTypeTypnameNspIndex
 export type Options = never;
 }
 export namespace PgAttributeRelidAttnamIndex {
-// ZZ-PgAttributeRelidAttnamIndex
 export type Options = never;
 }
 export namespace PgAttributeRelidAttnumIndex {
-// ZZ-PgAttributeRelidAttnumIndex
 export type Options = never;
 }
 export namespace PgClassOidIndex {
-// ZZ-PgClassOidIndex
 export type Options = never;
 }
 export namespace PgClassRelnameNspIndex {
-// ZZ-PgClassRelnameNspIndex
 export type Options = never;
 }
 export namespace PgClassTblspcRelfilenodeIndex {
-// ZZ-PgClassTblspcRelfilenodeIndex
 export type Options = never;
 }
 export namespace PgAttrdefAdrelidAdnumIndex {
-// ZZ-PgAttrdefAdrelidAdnumIndex
 export type Options = never;
 }
 export namespace PgAttrdefOidIndex {
-// ZZ-PgAttrdefOidIndex
 export type Options = never;
 }
 export namespace PgConstraintConnameNspIndex {
-// ZZ-PgConstraintConnameNspIndex
 export type Options = never;
 }
 export namespace PgConstraintConrelidContypidConnameIndex {
-// ZZ-PgConstraintConrelidContypidConnameIndex
 export type Options = never;
 }
 export namespace PgConstraintContypidIndex {
-// ZZ-PgConstraintContypidIndex
 export type Options = never;
 }
 export namespace PgConstraintOidIndex {
-// ZZ-PgConstraintOidIndex
 export type Options = never;
 }
 export namespace PgConstraintConparentidIndex {
-// ZZ-PgConstraintConparentidIndex
 export type Options = never;
 }
 export namespace PgInheritsRelidSeqnoIndex {
-// ZZ-PgInheritsRelidSeqnoIndex
 export type Options = never;
 }
 export namespace PgInheritsParentIndex {
-// ZZ-PgInheritsParentIndex
 export type Options = never;
 }
 export namespace PgIndexIndrelidIndex {
-// ZZ-PgIndexIndrelidIndex
 export type Options = never;
 }
 export namespace PgIndexIndexrelidIndex {
-// ZZ-PgIndexIndexrelidIndex
 export type Options = never;
 }
 export namespace PgOperatorOidIndex {
-// ZZ-PgOperatorOidIndex
 export type Options = never;
 }
 export namespace PgOperatorOprnameLRNIndex {
-// ZZ-PgOperatorOprnameLRNIndex
 export type Options = never;
 }
 export namespace PgOpfamilyAmNameNspIndex {
-// ZZ-PgOpfamilyAmNameNspIndex
 export type Options = never;
 }
 export namespace PgOpfamilyOidIndex {
-// ZZ-PgOpfamilyOidIndex
 export type Options = never;
 }
 export namespace PgOpclassAmNameNspIndex {
-// ZZ-PgOpclassAmNameNspIndex
 export type Options = never;
 }
 export namespace PgOpclassOidIndex {
-// ZZ-PgOpclassOidIndex
 export type Options = never;
 }
 export namespace PgAmNameIndex {
-// ZZ-PgAmNameIndex
 export type Options = never;
 }
 export namespace PgAmOidIndex {
-// ZZ-PgAmOidIndex
 export type Options = never;
 }
 export namespace PgAmopFamStratIndex {
-// ZZ-PgAmopFamStratIndex
 export type Options = never;
 }
 export namespace PgAmopOprFamIndex {
-// ZZ-PgAmopOprFamIndex
 export type Options = never;
 }
 export namespace PgAmopOidIndex {
-// ZZ-PgAmopOidIndex
 export type Options = never;
 }
 export namespace PgAmprocFamProcIndex {
-// ZZ-PgAmprocFamProcIndex
 export type Options = never;
 }
 export namespace PgAmprocOidIndex {
-// ZZ-PgAmprocOidIndex
 export type Options = never;
 }
 export namespace PgLanguageNameIndex {
-// ZZ-PgLanguageNameIndex
 export type Options = never;
 }
 export namespace PgLanguageOidIndex {
-// ZZ-PgLanguageOidIndex
 export type Options = never;
 }
 export namespace PgLargeobjectMetadataOidIndex {
-// ZZ-PgLargeobjectMetadataOidIndex
 export type Options = never;
 }
 export namespace PgLargeobjectLoidPnIndex {
-// ZZ-PgLargeobjectLoidPnIndex
 export type Options = never;
 }
 export namespace PgAggregateFnoidIndex {
-// ZZ-PgAggregateFnoidIndex
 export type Options = never;
 }
 export namespace PgStatisticRelidAttInhIndex {
-// ZZ-PgStatisticRelidAttInhIndex
 export type Options = never;
 }
 export namespace PgStatisticExtOidIndex {
-// ZZ-PgStatisticExtOidIndex
 export type Options = never;
 }
 export namespace PgStatisticExtNameIndex {
-// ZZ-PgStatisticExtNameIndex
 export type Options = never;
 }
 export namespace PgStatisticExtRelidIndex {
-// ZZ-PgStatisticExtRelidIndex
 export type Options = never;
 }
 export namespace PgStatisticExtDataStxoidInhIndex {
-// ZZ-PgStatisticExtDataStxoidInhIndex
 export type Options = never;
 }
 export namespace PgRewriteOidIndex {
-// ZZ-PgRewriteOidIndex
 export type Options = never;
 }
 export namespace PgRewriteRelRulenameIndex {
-// ZZ-PgRewriteRelRulenameIndex
 export type Options = never;
 }
 export namespace PgTriggerTgconstraintIndex {
-// ZZ-PgTriggerTgconstraintIndex
 export type Options = never;
 }
 export namespace PgTriggerTgrelidTgnameIndex {
-// ZZ-PgTriggerTgrelidTgnameIndex
 export type Options = never;
 }
 export namespace PgTriggerOidIndex {
-// ZZ-PgTriggerOidIndex
 export type Options = never;
 }
 export namespace PgEventTriggerEvtnameIndex {
-// ZZ-PgEventTriggerEvtnameIndex
 export type Options = never;
 }
 export namespace PgEventTriggerOidIndex {
-// ZZ-PgEventTriggerOidIndex
 export type Options = never;
 }
 export namespace PgDescriptionOCOIndex {
-// ZZ-PgDescriptionOCOIndex
 export type Options = never;
 }
 export namespace PgCastOidIndex {
-// ZZ-PgCastOidIndex
 export type Options = never;
 }
 export namespace PgCastSourceTargetIndex {
-// ZZ-PgCastSourceTargetIndex
 export type Options = never;
 }
 export namespace PgEnumOidIndex {
-// ZZ-PgEnumOidIndex
 export type Options = never;
 }
 export namespace PgEnumTypidLabelIndex {
-// ZZ-PgEnumTypidLabelIndex
 export type Options = never;
 }
 export namespace PgEnumTypidSortorderIndex {
-// ZZ-PgEnumTypidSortorderIndex
 export type Options = never;
 }
 export namespace PgNamespaceNspnameIndex {
-// ZZ-PgNamespaceNspnameIndex
 export type Options = never;
 }
 export namespace PgNamespaceOidIndex {
-// ZZ-PgNamespaceOidIndex
 export type Options = never;
 }
 export namespace PgConversionDefaultIndex {
-// ZZ-PgConversionDefaultIndex
 export type Options = never;
 }
 export namespace PgConversionNameNspIndex {
-// ZZ-PgConversionNameNspIndex
 export type Options = never;
 }
 export namespace PgConversionOidIndex {
-// ZZ-PgConversionOidIndex
 export type Options = never;
 }
 export namespace PgDependDependerIndex {
-// ZZ-PgDependDependerIndex
 export type Options = never;
 }
 export namespace PgDependReferenceIndex {
-// ZZ-PgDependReferenceIndex
 export type Options = never;
 }
 export namespace PgDatabaseDatnameIndex {
-// ZZ-PgDatabaseDatnameIndex
 export type Options = never;
 }
 export namespace PgDatabaseOidIndex {
-// ZZ-PgDatabaseOidIndex
 export type Options = never;
 }
 export namespace PgDbRoleSettingDatabaseidRolIndex {
-// ZZ-PgDbRoleSettingDatabaseidRolIndex
 export type Options = never;
 }
 export namespace PgTablespaceOidIndex {
-// ZZ-PgTablespaceOidIndex
 export type Options = never;
 }
 export namespace PgTablespaceSpcnameIndex {
-// ZZ-PgTablespaceSpcnameIndex
 export type Options = never;
 }
 export namespace PgAuthidRolnameIndex {
-// ZZ-PgAuthidRolnameIndex
 export type Options = never;
 }
 export namespace PgAuthidOidIndex {
-// ZZ-PgAuthidOidIndex
 export type Options = never;
 }
 export namespace PgAuthMembersOidIndex {
-// ZZ-PgAuthMembersOidIndex
 export type Options = never;
 }
 export namespace PgAuthMembersRoleMemberIndex {
-// ZZ-PgAuthMembersRoleMemberIndex
 export type Options = never;
 }
 export namespace PgAuthMembersMemberRoleIndex {
-// ZZ-PgAuthMembersMemberRoleIndex
 export type Options = never;
 }
 export namespace PgAuthMembersGrantorIndex {
-// ZZ-PgAuthMembersGrantorIndex
 export type Options = never;
 }
 export namespace PgShdependDependerIndex {
-// ZZ-PgShdependDependerIndex
 export type Options = never;
 }
 export namespace PgShdependReferenceIndex {
-// ZZ-PgShdependReferenceIndex
 export type Options = never;
 }
 export namespace PgShdescriptionOCIndex {
-// ZZ-PgShdescriptionOCIndex
 export type Options = never;
 }
 export namespace PgTsConfigCfgnameIndex {
-// ZZ-PgTsConfigCfgnameIndex
 export type Options = never;
 }
 export namespace PgTsConfigOidIndex {
-// ZZ-PgTsConfigOidIndex
 export type Options = never;
 }
 export namespace PgTsConfigMapIndex {
-// ZZ-PgTsConfigMapIndex
 export type Options = never;
 }
 export namespace PgTsDictDictnameIndex {
-// ZZ-PgTsDictDictnameIndex
 export type Options = never;
 }
 export namespace PgTsDictOidIndex {
-// ZZ-PgTsDictOidIndex
 export type Options = never;
 }
 export namespace PgTsParserPrsnameIndex {
-// ZZ-PgTsParserPrsnameIndex
 export type Options = never;
 }
 export namespace PgTsParserOidIndex {
-// ZZ-PgTsParserOidIndex
 export type Options = never;
 }
 export namespace PgTsTemplateTmplnameIndex {
-// ZZ-PgTsTemplateTmplnameIndex
 export type Options = never;
 }
 export namespace PgTsTemplateOidIndex {
-// ZZ-PgTsTemplateOidIndex
 export type Options = never;
 }
 export namespace PgExtensionOidIndex {
-// ZZ-PgExtensionOidIndex
 export type Options = never;
 }
 export namespace PgExtensionNameIndex {
-// ZZ-PgExtensionNameIndex
 export type Options = never;
 }
 export namespace PgForeignDataWrapperOidIndex {
-// ZZ-PgForeignDataWrapperOidIndex
 export type Options = never;
 }
 export namespace PgForeignDataWrapperNameIndex {
-// ZZ-PgForeignDataWrapperNameIndex
 export type Options = never;
 }
 export namespace PgForeignServerOidIndex {
-// ZZ-PgForeignServerOidIndex
 export type Options = never;
 }
 export namespace PgForeignServerNameIndex {
-// ZZ-PgForeignServerNameIndex
 export type Options = never;
 }
 export namespace PgUserMappingOidIndex {
-// ZZ-PgUserMappingOidIndex
 export type Options = never;
 }
 export namespace PgUserMappingUserServerIndex {
-// ZZ-PgUserMappingUserServerIndex
 export type Options = never;
 }
 export namespace PgForeignTableRelidIndex {
-// ZZ-PgForeignTableRelidIndex
 export type Options = never;
 }
 export namespace PgPolicyOidIndex {
-// ZZ-PgPolicyOidIndex
 export type Options = never;
 }
 export namespace PgPolicyPolrelidPolnameIndex {
-// ZZ-PgPolicyPolrelidPolnameIndex
 export type Options = never;
 }
 export namespace PgReplicationOriginRoiidentIndex {
-// ZZ-PgReplicationOriginRoiidentIndex
 export type Options = never;
 }
 export namespace PgReplicationOriginRonameIndex {
-// ZZ-PgReplicationOriginRonameIndex
 export type Options = never;
 }
 export namespace PgDefaultAclRoleNspObjIndex {
-// ZZ-PgDefaultAclRoleNspObjIndex
 export type Options = never;
 }
 export namespace PgDefaultAclOidIndex {
-// ZZ-PgDefaultAclOidIndex
 export type Options = never;
 }
 export namespace PgInitPrivsOCOIndex {
-// ZZ-PgInitPrivsOCOIndex
 export type Options = never;
 }
 export namespace PgSeclabelObjectIndex {
-// ZZ-PgSeclabelObjectIndex
 export type Options = never;
 }
 export namespace PgShseclabelObjectIndex {
-// ZZ-PgShseclabelObjectIndex
 export type Options = never;
 }
 export namespace PgCollationNameEncNspIndex {
-// ZZ-PgCollationNameEncNspIndex
 export type Options = never;
 }
 export namespace PgCollationOidIndex {
-// ZZ-PgCollationOidIndex
 export type Options = never;
 }
 export namespace PgParameterAclParnameIndex {
-// ZZ-PgParameterAclParnameIndex
 export type Options = never;
 }
 export namespace PgParameterAclOidIndex {
-// ZZ-PgParameterAclOidIndex
 export type Options = never;
 }
 export namespace PgPartitionedTablePartrelidIndex {
-// ZZ-PgPartitionedTablePartrelidIndex
 export type Options = never;
 }
 export namespace PgRangeRngtypidIndex {
-// ZZ-PgRangeRngtypidIndex
 export type Options = never;
 }
 export namespace PgRangeRngmultitypidIndex {
-// ZZ-PgRangeRngmultitypidIndex
 export type Options = never;
 }
 export namespace PgTransformOidIndex {
-// ZZ-PgTransformOidIndex
 export type Options = never;
 }
 export namespace PgTransformTypeLangIndex {
-// ZZ-PgTransformTypeLangIndex
 export type Options = never;
 }
 export namespace PgSequenceSeqrelidIndex {
-// ZZ-PgSequenceSeqrelidIndex
 export type Options = never;
 }
 export namespace PgPublicationOidIndex {
-// ZZ-PgPublicationOidIndex
 export type Options = never;
 }
 export namespace PgPublicationPubnameIndex {
-// ZZ-PgPublicationPubnameIndex
 export type Options = never;
 }
 export namespace PgPublicationNamespaceOidIndex {
-// ZZ-PgPublicationNamespaceOidIndex
 export type Options = never;
 }
 export namespace PgPublicationNamespacePnnspidPnpubidIndex {
-// ZZ-PgPublicationNamespacePnnspidPnpubidIndex
 export type Options = never;
 }
 export namespace PgPublicationRelOidIndex {
-// ZZ-PgPublicationRelOidIndex
 export type Options = never;
 }
 export namespace PgPublicationRelPrrelidPrpubidIndex {
-// ZZ-PgPublicationRelPrrelidPrpubidIndex
 export type Options = never;
 }
 export namespace PgPublicationRelPrpubidIndex {
-// ZZ-PgPublicationRelPrpubidIndex
 export type Options = never;
 }
 export namespace PgSubscriptionOidIndex {
-// ZZ-PgSubscriptionOidIndex
 export type Options = never;
 }
 export namespace PgSubscriptionSubnameIndex {
-// ZZ-PgSubscriptionSubnameIndex
 export type Options = never;
 }
 export namespace PgSubscriptionRelSrrelidSrsubidIndex {
-// ZZ-PgSubscriptionRelSrrelidSrsubidIndex
 export type Options = never;
 }
 }
@@ -39892,585 +40172,442 @@ export namespace PgLargeobject {
 export namespace InformationSchema {
 export namespace Types {
 export namespace CardinalNumber {
-// ZZ-CardinalNumber
 
       export type Options = never;
     
 }
 export namespace CardinalNumberArray {
-// ZZ-CardinalNumberArray
 export type Options = never;
 }
 export namespace CharacterData {
-// ZZ-CharacterData
 
       export type Options = never;
     
 }
 export namespace CharacterDataArray {
-// ZZ-CharacterDataArray
 export type Options = never;
 }
 export namespace SqlIdentifier {
-// ZZ-SqlIdentifier
 
       export type Options = never;
     
 }
 export namespace SqlIdentifierArray {
-// ZZ-SqlIdentifierArray
 export type Options = never;
 }
 export namespace InformationSchemaCatalogName {
-// ZZ-InformationSchemaCatalogName
 export type Options = never;
 }
 export namespace InformationSchemaCatalogNameArray {
-// ZZ-InformationSchemaCatalogNameArray
 export type Options = never;
 }
 export namespace TimeStamp {
-// ZZ-TimeStamp
 
       export type Options = never;
     
 }
 export namespace TimeStampArray {
-// ZZ-TimeStampArray
 export type Options = never;
 }
 export namespace YesOrNo {
-// ZZ-YesOrNo
 
       export type Options = never;
     
 }
 export namespace YesOrNoArray {
-// ZZ-YesOrNoArray
 export type Options = never;
 }
 export namespace ApplicableRoles {
-// ZZ-ApplicableRoles
 export type Options = never;
 }
 export namespace ApplicableRolesArray {
-// ZZ-ApplicableRolesArray
 export type Options = never;
 }
 export namespace AdministrableRoleAuthorizations {
-// ZZ-AdministrableRoleAuthorizations
 export type Options = never;
 }
 export namespace AdministrableRoleAuthorizationsArray {
-// ZZ-AdministrableRoleAuthorizationsArray
 export type Options = never;
 }
 export namespace Attributes {
-// ZZ-Attributes
 export type Options = never;
 }
 export namespace AttributesArray {
-// ZZ-AttributesArray
 export type Options = never;
 }
 export namespace CharacterSets {
-// ZZ-CharacterSets
 export type Options = never;
 }
 export namespace CharacterSetsArray {
-// ZZ-CharacterSetsArray
 export type Options = never;
 }
 export namespace CheckConstraintRoutineUsage {
-// ZZ-CheckConstraintRoutineUsage
 export type Options = never;
 }
 export namespace CheckConstraintRoutineUsageArray {
-// ZZ-CheckConstraintRoutineUsageArray
 export type Options = never;
 }
 export namespace CheckConstraints {
-// ZZ-CheckConstraints
 export type Options = never;
 }
 export namespace CheckConstraintsArray {
-// ZZ-CheckConstraintsArray
 export type Options = never;
 }
 export namespace Collations {
-// ZZ-Collations
 export type Options = never;
 }
 export namespace CollationsArray {
-// ZZ-CollationsArray
 export type Options = never;
 }
 export namespace CollationCharacterSetApplicability {
-// ZZ-CollationCharacterSetApplicability
 export type Options = never;
 }
 export namespace CollationCharacterSetApplicabilityArray {
-// ZZ-CollationCharacterSetApplicabilityArray
 export type Options = never;
 }
 export namespace ColumnColumnUsage {
-// ZZ-ColumnColumnUsage
 export type Options = never;
 }
 export namespace ColumnColumnUsageArray {
-// ZZ-ColumnColumnUsageArray
 export type Options = never;
 }
 export namespace ColumnDomainUsage {
-// ZZ-ColumnDomainUsage
 export type Options = never;
 }
 export namespace ColumnDomainUsageArray {
-// ZZ-ColumnDomainUsageArray
 export type Options = never;
 }
 export namespace ColumnPrivileges {
-// ZZ-ColumnPrivileges
 export type Options = never;
 }
 export namespace ColumnPrivilegesArray {
-// ZZ-ColumnPrivilegesArray
 export type Options = never;
 }
 export namespace ColumnUdtUsage {
-// ZZ-ColumnUdtUsage
 export type Options = never;
 }
 export namespace ColumnUdtUsageArray {
-// ZZ-ColumnUdtUsageArray
 export type Options = never;
 }
 export namespace Columns {
-// ZZ-Columns
 export type Options = never;
 }
 export namespace ColumnsArray {
-// ZZ-ColumnsArray
 export type Options = never;
 }
 export namespace ConstraintColumnUsage {
-// ZZ-ConstraintColumnUsage
 export type Options = never;
 }
 export namespace ConstraintColumnUsageArray {
-// ZZ-ConstraintColumnUsageArray
 export type Options = never;
 }
 export namespace ConstraintTableUsage {
-// ZZ-ConstraintTableUsage
 export type Options = never;
 }
 export namespace ConstraintTableUsageArray {
-// ZZ-ConstraintTableUsageArray
 export type Options = never;
 }
 export namespace DomainConstraints {
-// ZZ-DomainConstraints
 export type Options = never;
 }
 export namespace DomainConstraintsArray {
-// ZZ-DomainConstraintsArray
 export type Options = never;
 }
 export namespace DomainUdtUsage {
-// ZZ-DomainUdtUsage
 export type Options = never;
 }
 export namespace DomainUdtUsageArray {
-// ZZ-DomainUdtUsageArray
 export type Options = never;
 }
 export namespace Domains {
-// ZZ-Domains
 export type Options = never;
 }
 export namespace DomainsArray {
-// ZZ-DomainsArray
 export type Options = never;
 }
 export namespace EnabledRoles {
-// ZZ-EnabledRoles
 export type Options = never;
 }
 export namespace EnabledRolesArray {
-// ZZ-EnabledRolesArray
 export type Options = never;
 }
 export namespace KeyColumnUsage {
-// ZZ-KeyColumnUsage
 export type Options = never;
 }
 export namespace KeyColumnUsageArray {
-// ZZ-KeyColumnUsageArray
 export type Options = never;
 }
 export namespace Parameters {
-// ZZ-Parameters
 export type Options = never;
 }
 export namespace ParametersArray {
-// ZZ-ParametersArray
 export type Options = never;
 }
 export namespace ReferentialConstraints {
-// ZZ-ReferentialConstraints
 export type Options = never;
 }
 export namespace ReferentialConstraintsArray {
-// ZZ-ReferentialConstraintsArray
 export type Options = never;
 }
 export namespace RoleColumnGrants {
-// ZZ-RoleColumnGrants
 export type Options = never;
 }
 export namespace RoleColumnGrantsArray {
-// ZZ-RoleColumnGrantsArray
 export type Options = never;
 }
 export namespace RoutineColumnUsage {
-// ZZ-RoutineColumnUsage
 export type Options = never;
 }
 export namespace RoutineColumnUsageArray {
-// ZZ-RoutineColumnUsageArray
 export type Options = never;
 }
 export namespace RoutinePrivileges {
-// ZZ-RoutinePrivileges
 export type Options = never;
 }
 export namespace RoutinePrivilegesArray {
-// ZZ-RoutinePrivilegesArray
 export type Options = never;
 }
 export namespace RoleRoutineGrants {
-// ZZ-RoleRoutineGrants
 export type Options = never;
 }
 export namespace RoleRoutineGrantsArray {
-// ZZ-RoleRoutineGrantsArray
 export type Options = never;
 }
 export namespace RoutineRoutineUsage {
-// ZZ-RoutineRoutineUsage
 export type Options = never;
 }
 export namespace RoutineRoutineUsageArray {
-// ZZ-RoutineRoutineUsageArray
 export type Options = never;
 }
 export namespace RoutineSequenceUsage {
-// ZZ-RoutineSequenceUsage
 export type Options = never;
 }
 export namespace RoutineSequenceUsageArray {
-// ZZ-RoutineSequenceUsageArray
 export type Options = never;
 }
 export namespace RoutineTableUsage {
-// ZZ-RoutineTableUsage
 export type Options = never;
 }
 export namespace RoutineTableUsageArray {
-// ZZ-RoutineTableUsageArray
 export type Options = never;
 }
 export namespace Routines {
-// ZZ-Routines
 export type Options = never;
 }
 export namespace RoutinesArray {
-// ZZ-RoutinesArray
 export type Options = never;
 }
 export namespace Schemata {
-// ZZ-Schemata
 export type Options = never;
 }
 export namespace SchemataArray {
-// ZZ-SchemataArray
 export type Options = never;
 }
 export namespace Sequences {
-// ZZ-Sequences
 export type Options = never;
 }
 export namespace SequencesArray {
-// ZZ-SequencesArray
 export type Options = never;
 }
 export namespace SqlFeatures {
-// ZZ-SqlFeatures
 export type Options = never;
 }
 export namespace SqlFeaturesArray {
-// ZZ-SqlFeaturesArray
 export type Options = never;
 }
 export namespace SqlImplementationInfo {
-// ZZ-SqlImplementationInfo
 export type Options = never;
 }
 export namespace SqlImplementationInfoArray {
-// ZZ-SqlImplementationInfoArray
 export type Options = never;
 }
 export namespace SqlParts {
-// ZZ-SqlParts
 export type Options = never;
 }
 export namespace SqlPartsArray {
-// ZZ-SqlPartsArray
 export type Options = never;
 }
 export namespace SqlSizing {
-// ZZ-SqlSizing
 export type Options = never;
 }
 export namespace SqlSizingArray {
-// ZZ-SqlSizingArray
 export type Options = never;
 }
 export namespace TableConstraints {
-// ZZ-TableConstraints
 export type Options = never;
 }
 export namespace TableConstraintsArray {
-// ZZ-TableConstraintsArray
 export type Options = never;
 }
 export namespace TablePrivileges {
-// ZZ-TablePrivileges
 export type Options = never;
 }
 export namespace TablePrivilegesArray {
-// ZZ-TablePrivilegesArray
 export type Options = never;
 }
 export namespace RoleTableGrants {
-// ZZ-RoleTableGrants
 export type Options = never;
 }
 export namespace RoleTableGrantsArray {
-// ZZ-RoleTableGrantsArray
 export type Options = never;
 }
 export namespace Tables {
-// ZZ-Tables
 export type Options = never;
 }
 export namespace TablesArray {
-// ZZ-TablesArray
 export type Options = never;
 }
 export namespace Transforms {
-// ZZ-Transforms
 export type Options = never;
 }
 export namespace TransformsArray {
-// ZZ-TransformsArray
 export type Options = never;
 }
 export namespace TriggeredUpdateColumns {
-// ZZ-TriggeredUpdateColumns
 export type Options = never;
 }
 export namespace TriggeredUpdateColumnsArray {
-// ZZ-TriggeredUpdateColumnsArray
 export type Options = never;
 }
 export namespace Triggers {
-// ZZ-Triggers
 export type Options = never;
 }
 export namespace TriggersArray {
-// ZZ-TriggersArray
 export type Options = never;
 }
 export namespace UdtPrivileges {
-// ZZ-UdtPrivileges
 export type Options = never;
 }
 export namespace UdtPrivilegesArray {
-// ZZ-UdtPrivilegesArray
 export type Options = never;
 }
 export namespace RoleUdtGrants {
-// ZZ-RoleUdtGrants
 export type Options = never;
 }
 export namespace RoleUdtGrantsArray {
-// ZZ-RoleUdtGrantsArray
 export type Options = never;
 }
 export namespace UsagePrivileges {
-// ZZ-UsagePrivileges
 export type Options = never;
 }
 export namespace UsagePrivilegesArray {
-// ZZ-UsagePrivilegesArray
 export type Options = never;
 }
 export namespace RoleUsageGrants {
-// ZZ-RoleUsageGrants
 export type Options = never;
 }
 export namespace RoleUsageGrantsArray {
-// ZZ-RoleUsageGrantsArray
 export type Options = never;
 }
 export namespace UserDefinedTypes {
-// ZZ-UserDefinedTypes
 export type Options = never;
 }
 export namespace UserDefinedTypesArray {
-// ZZ-UserDefinedTypesArray
 export type Options = never;
 }
 export namespace ViewColumnUsage {
-// ZZ-ViewColumnUsage
 export type Options = never;
 }
 export namespace ViewColumnUsageArray {
-// ZZ-ViewColumnUsageArray
 export type Options = never;
 }
 export namespace ViewRoutineUsage {
-// ZZ-ViewRoutineUsage
 export type Options = never;
 }
 export namespace ViewRoutineUsageArray {
-// ZZ-ViewRoutineUsageArray
 export type Options = never;
 }
 export namespace ViewTableUsage {
-// ZZ-ViewTableUsage
 export type Options = never;
 }
 export namespace ViewTableUsageArray {
-// ZZ-ViewTableUsageArray
 export type Options = never;
 }
 export namespace Views {
-// ZZ-Views
 export type Options = never;
 }
 export namespace ViewsArray {
-// ZZ-ViewsArray
 export type Options = never;
 }
 export namespace DataTypePrivileges {
-// ZZ-DataTypePrivileges
 export type Options = never;
 }
 export namespace DataTypePrivilegesArray {
-// ZZ-DataTypePrivilegesArray
 export type Options = never;
 }
 export namespace ElementTypes {
-// ZZ-ElementTypes
 export type Options = never;
 }
 export namespace ElementTypesArray {
-// ZZ-ElementTypesArray
 export type Options = never;
 }
 export namespace PgForeignTableColumns {
-// ZZ-PgForeignTableColumns
 export type Options = never;
 }
 export namespace ColumnOptions {
-// ZZ-ColumnOptions
 export type Options = never;
 }
 export namespace ColumnOptionsArray {
-// ZZ-ColumnOptionsArray
 export type Options = never;
 }
 export namespace PgForeignDataWrappers {
-// ZZ-PgForeignDataWrappers
 export type Options = never;
 }
 export namespace ForeignDataWrapperOptions {
-// ZZ-ForeignDataWrapperOptions
 export type Options = never;
 }
 export namespace ForeignDataWrapperOptionsArray {
-// ZZ-ForeignDataWrapperOptionsArray
 export type Options = never;
 }
 export namespace ForeignDataWrappers {
-// ZZ-ForeignDataWrappers
 export type Options = never;
 }
 export namespace ForeignDataWrappersArray {
-// ZZ-ForeignDataWrappersArray
 export type Options = never;
 }
 export namespace PgForeignServers {
-// ZZ-PgForeignServers
 export type Options = never;
 }
 export namespace ForeignServerOptions {
-// ZZ-ForeignServerOptions
 export type Options = never;
 }
 export namespace ForeignServerOptionsArray {
-// ZZ-ForeignServerOptionsArray
 export type Options = never;
 }
 export namespace ForeignServers {
-// ZZ-ForeignServers
 export type Options = never;
 }
 export namespace ForeignServersArray {
-// ZZ-ForeignServersArray
 export type Options = never;
 }
 export namespace PgForeignTables {
-// ZZ-PgForeignTables
 export type Options = never;
 }
 export namespace ForeignTableOptions {
-// ZZ-ForeignTableOptions
 export type Options = never;
 }
 export namespace ForeignTableOptionsArray {
-// ZZ-ForeignTableOptionsArray
 export type Options = never;
 }
 export namespace ForeignTables {
-// ZZ-ForeignTables
 export type Options = never;
 }
 export namespace ForeignTablesArray {
-// ZZ-ForeignTablesArray
 export type Options = never;
 }
 export namespace PgUserMappings {
-// ZZ-PgUserMappings
 export type Options = never;
 }
 export namespace UserMappingOptions {
-// ZZ-UserMappingOptions
 export type Options = never;
 }
 export namespace UserMappingOptionsArray {
-// ZZ-UserMappingOptionsArray
 export type Options = never;
 }
 export namespace UserMappings {
-// ZZ-UserMappings
 export type Options = never;
 }
 export namespace UserMappingsArray {
-// ZZ-UserMappingsArray
 export type Options = never;
 }
 }
@@ -40490,370 +40627,283 @@ export namespace SqlSizing {
 export namespace Public {
 export namespace Types {
 export namespace MpaaRating {
-// ZZ-MpaaRating
 
       export type Options = never;
     
 }
 export namespace MpaaRatingArray {
-// ZZ-MpaaRatingArray
 export type Options = never;
 }
 export namespace Year {
-// ZZ-Year
 
       export type Options = never;
     
 }
 export namespace YearArray {
-// ZZ-YearArray
 export type Options = never;
 }
 export namespace Customer {
-// ZZ-Customer
 export type Options = never;
 }
 export namespace CustomerArray {
-// ZZ-CustomerArray
 export type Options = never;
 }
 export namespace Actor {
-// ZZ-Actor
 export type Options = never;
 }
 export namespace ActorArray {
-// ZZ-ActorArray
 export type Options = never;
 }
 export namespace Category {
-// ZZ-Category
 export type Options = never;
 }
 export namespace CategoryArray {
-// ZZ-CategoryArray
 export type Options = never;
 }
 export namespace Film {
-// ZZ-Film
 export type Options = never;
 }
 export namespace FilmArray {
-// ZZ-FilmArray
 export type Options = never;
 }
 export namespace FilmActor {
-// ZZ-FilmActor
 export type Options = never;
 }
 export namespace FilmActorArray {
-// ZZ-FilmActorArray
 export type Options = never;
 }
 export namespace FilmCategory {
-// ZZ-FilmCategory
 export type Options = never;
 }
 export namespace FilmCategoryArray {
-// ZZ-FilmCategoryArray
 export type Options = never;
 }
 export namespace ActorInfo {
-// ZZ-ActorInfo
 export type Options = never;
 }
 export namespace ActorInfoArray {
-// ZZ-ActorInfoArray
 export type Options = never;
 }
 export namespace Address {
-// ZZ-Address
 export type Options = never;
 }
 export namespace AddressArray {
-// ZZ-AddressArray
 export type Options = never;
 }
 export namespace City {
-// ZZ-City
 export type Options = never;
 }
 export namespace CityArray {
-// ZZ-CityArray
 export type Options = never;
 }
 export namespace Country {
-// ZZ-Country
 export type Options = never;
 }
 export namespace CountryArray {
-// ZZ-CountryArray
 export type Options = never;
 }
 export namespace CustomerList {
-// ZZ-CustomerList
 export type Options = never;
 }
 export namespace CustomerListArray {
-// ZZ-CustomerListArray
 export type Options = never;
 }
 export namespace FilmList {
-// ZZ-FilmList
 export type Options = never;
 }
 export namespace FilmListArray {
-// ZZ-FilmListArray
 export type Options = never;
 }
 export namespace Inventory {
-// ZZ-Inventory
 export type Options = never;
 }
 export namespace InventoryArray {
-// ZZ-InventoryArray
 export type Options = never;
 }
 export namespace Language {
-// ZZ-Language
 export type Options = never;
 }
 export namespace LanguageArray {
-// ZZ-LanguageArray
 export type Options = never;
 }
 export namespace NicerButSlowerFilmList {
-// ZZ-NicerButSlowerFilmList
 export type Options = never;
 }
 export namespace NicerButSlowerFilmListArray {
-// ZZ-NicerButSlowerFilmListArray
 export type Options = never;
 }
 export namespace Payment {
-// ZZ-Payment
 export type Options = never;
 }
 export namespace PaymentArray {
-// ZZ-PaymentArray
 export type Options = never;
 }
 export namespace Rental {
-// ZZ-Rental
 export type Options = never;
 }
 export namespace RentalArray {
-// ZZ-RentalArray
 export type Options = never;
 }
 export namespace SalesByFilmCategory {
-// ZZ-SalesByFilmCategory
 export type Options = never;
 }
 export namespace SalesByFilmCategoryArray {
-// ZZ-SalesByFilmCategoryArray
 export type Options = never;
 }
 export namespace Staff {
-// ZZ-Staff
 export type Options = never;
 }
 export namespace StaffArray {
-// ZZ-StaffArray
 export type Options = never;
 }
 export namespace Store {
-// ZZ-Store
 export type Options = never;
 }
 export namespace StoreArray {
-// ZZ-StoreArray
 export type Options = never;
 }
 export namespace SalesByStore {
-// ZZ-SalesByStore
 export type Options = never;
 }
 export namespace SalesByStoreArray {
-// ZZ-SalesByStoreArray
 export type Options = never;
 }
 export namespace StaffList {
-// ZZ-StaffList
 export type Options = never;
 }
 export namespace StaffListArray {
-// ZZ-StaffListArray
 export type Options = never;
 }
 export namespace ActorPkey {
-// ZZ-ActorPkey
 export type Options = never;
 }
 export namespace AddressPkey {
-// ZZ-AddressPkey
 export type Options = never;
 }
 export namespace CategoryPkey {
-// ZZ-CategoryPkey
 export type Options = never;
 }
 export namespace CityPkey {
-// ZZ-CityPkey
 export type Options = never;
 }
 export namespace CountryPkey {
-// ZZ-CountryPkey
 export type Options = never;
 }
 export namespace CustomerPkey {
-// ZZ-CustomerPkey
 export type Options = never;
 }
 export namespace FilmActorPkey {
-// ZZ-FilmActorPkey
 export type Options = never;
 }
 export namespace FilmCategoryPkey {
-// ZZ-FilmCategoryPkey
 export type Options = never;
 }
 export namespace FilmPkey {
-// ZZ-FilmPkey
 export type Options = never;
 }
 export namespace InventoryPkey {
-// ZZ-InventoryPkey
 export type Options = never;
 }
 export namespace LanguagePkey {
-// ZZ-LanguagePkey
 export type Options = never;
 }
 export namespace PaymentPkey {
-// ZZ-PaymentPkey
 export type Options = never;
 }
 export namespace RentalPkey {
-// ZZ-RentalPkey
 export type Options = never;
 }
 export namespace StaffPkey {
-// ZZ-StaffPkey
 export type Options = never;
 }
 export namespace StorePkey {
-// ZZ-StorePkey
 export type Options = never;
 }
 export namespace FilmFulltextIdx {
-// ZZ-FilmFulltextIdx
 export type Options = never;
 }
 export namespace IdxActorLastName {
-// ZZ-IdxActorLastName
 export type Options = never;
 }
 export namespace IdxFkAddressId {
-// ZZ-IdxFkAddressId
 export type Options = never;
 }
 export namespace IdxFkCityId {
-// ZZ-IdxFkCityId
 export type Options = never;
 }
 export namespace IdxFkCountryId {
-// ZZ-IdxFkCountryId
 export type Options = never;
 }
 export namespace IdxFkCustomerId {
-// ZZ-IdxFkCustomerId
 export type Options = never;
 }
 export namespace IdxFkFilmId {
-// ZZ-IdxFkFilmId
 export type Options = never;
 }
 export namespace IdxFkInventoryId {
-// ZZ-IdxFkInventoryId
 export type Options = never;
 }
 export namespace IdxFkLanguageId {
-// ZZ-IdxFkLanguageId
 export type Options = never;
 }
 export namespace IdxFkRentalId {
-// ZZ-IdxFkRentalId
 export type Options = never;
 }
 export namespace IdxFkStaffId {
-// ZZ-IdxFkStaffId
 export type Options = never;
 }
 export namespace IdxFkStoreId {
-// ZZ-IdxFkStoreId
 export type Options = never;
 }
 export namespace IdxLastName {
-// ZZ-IdxLastName
 export type Options = never;
 }
 export namespace IdxStoreIdFilmId {
-// ZZ-IdxStoreIdFilmId
 export type Options = never;
 }
 export namespace IdxTitle {
-// ZZ-IdxTitle
 export type Options = never;
 }
 export namespace IdxUnqManagerStaffId {
-// ZZ-IdxUnqManagerStaffId
 export type Options = never;
 }
 export namespace IdxUnqRentalRentalDateInventoryIdCustomerId {
-// ZZ-IdxUnqRentalRentalDateInventoryIdCustomerId
 export type Options = never;
 }
 }
 export namespace Procedures {
 export namespace FilmInStock {
 export namespace Parameters {
-// ZZ-Parameters
 export type Options = never;
 }
 }
 export namespace FilmNotInStock {
 export namespace Parameters {
-// ZZ-Parameters
 export type Options = never;
 }
 }
 export namespace GetCustomerBalance {
 export namespace Parameters {
-// ZZ-Parameters
 export type Options = never;
 }
 }
 export namespace InventoryHeldByCustomer {
 export namespace Parameters {
-// ZZ-Parameters
 export type Options = never;
 }
 }
 export namespace InventoryInStock {
 export namespace Parameters {
-// ZZ-Parameters
 export type Options = never;
 }
 }
 export namespace LastDay {
 export namespace Parameters {
-// ZZ-Parameters
 export type Options = never;
 }
 }
 export namespace RewardsReport {
 export namespace Parameters {
-// ZZ-Parameters
 export type Options = never;
 }
 }
@@ -40894,171 +40944,129 @@ export namespace Film {
 export namespace PgToast {
 export namespace Types {
 export namespace PgToast_23225Index {
-// ZZ-PgToast_23225Index
 export type Options = never;
 }
 export namespace PgToast_23311Index {
-// ZZ-PgToast_23311Index
 export type Options = never;
 }
 export namespace PgToast_1255Index {
-// ZZ-PgToast_1255Index
 export type Options = never;
 }
 export namespace PgToast_1247Index {
-// ZZ-PgToast_1247Index
 export type Options = never;
 }
 export namespace PgToast_2604Index {
-// ZZ-PgToast_2604Index
 export type Options = never;
 }
 export namespace PgToast_2606Index {
-// ZZ-PgToast_2606Index
 export type Options = never;
 }
 export namespace PgToast_2612Index {
-// ZZ-PgToast_2612Index
 export type Options = never;
 }
 export namespace PgToast_2600Index {
-// ZZ-PgToast_2600Index
 export type Options = never;
 }
 export namespace PgToast_2619Index {
-// ZZ-PgToast_2619Index
 export type Options = never;
 }
 export namespace PgToast_3381Index {
-// ZZ-PgToast_3381Index
 export type Options = never;
 }
 export namespace PgToast_3429Index {
-// ZZ-PgToast_3429Index
 export type Options = never;
 }
 export namespace PgToast_2618Index {
-// ZZ-PgToast_2618Index
 export type Options = never;
 }
 export namespace PgToast_2620Index {
-// ZZ-PgToast_2620Index
 export type Options = never;
 }
 export namespace PgToast_3466Index {
-// ZZ-PgToast_3466Index
 export type Options = never;
 }
 export namespace PgToast_2609Index {
-// ZZ-PgToast_2609Index
 export type Options = never;
 }
 export namespace PgToast_2615Index {
-// ZZ-PgToast_2615Index
 export type Options = never;
 }
 export namespace PgToast_1262Index {
-// ZZ-PgToast_1262Index
 export type Options = never;
 }
 export namespace PgToast_2964Index {
-// ZZ-PgToast_2964Index
 export type Options = never;
 }
 export namespace PgToast_1213Index {
-// ZZ-PgToast_1213Index
 export type Options = never;
 }
 export namespace PgToast_1260Index {
-// ZZ-PgToast_1260Index
 export type Options = never;
 }
 export namespace PgToast_2396Index {
-// ZZ-PgToast_2396Index
 export type Options = never;
 }
 export namespace PgToast_3600Index {
-// ZZ-PgToast_3600Index
 export type Options = never;
 }
 export namespace PgToast_3079Index {
-// ZZ-PgToast_3079Index
 export type Options = never;
 }
 export namespace PgToast_2328Index {
-// ZZ-PgToast_2328Index
 export type Options = never;
 }
 export namespace PgToast_1417Index {
-// ZZ-PgToast_1417Index
 export type Options = never;
 }
 export namespace PgToast_1418Index {
-// ZZ-PgToast_1418Index
 export type Options = never;
 }
 export namespace PgToast_3118Index {
-// ZZ-PgToast_3118Index
 export type Options = never;
 }
 export namespace PgToast_3256Index {
-// ZZ-PgToast_3256Index
 export type Options = never;
 }
 export namespace PgToast_6000Index {
-// ZZ-PgToast_6000Index
 export type Options = never;
 }
 export namespace PgToast_826Index {
-// ZZ-PgToast_826Index
 export type Options = never;
 }
 export namespace PgToast_3394Index {
-// ZZ-PgToast_3394Index
 export type Options = never;
 }
 export namespace PgToast_3596Index {
-// ZZ-PgToast_3596Index
 export type Options = never;
 }
 export namespace PgToast_3592Index {
-// ZZ-PgToast_3592Index
 export type Options = never;
 }
 export namespace PgToast_3456Index {
-// ZZ-PgToast_3456Index
 export type Options = never;
 }
 export namespace PgToast_6243Index {
-// ZZ-PgToast_6243Index
 export type Options = never;
 }
 export namespace PgToast_3350Index {
-// ZZ-PgToast_3350Index
 export type Options = never;
 }
 export namespace PgToast_6106Index {
-// ZZ-PgToast_6106Index
 export type Options = never;
 }
 export namespace PgToast_6100Index {
-// ZZ-PgToast_6100Index
 export type Options = never;
 }
 export namespace PgToast_13658Index {
-// ZZ-PgToast_13658Index
 export type Options = never;
 }
 export namespace PgToast_13663Index {
-// ZZ-PgToast_13663Index
 export type Options = never;
 }
 export namespace PgToast_13668Index {
-// ZZ-PgToast_13668Index
 export type Options = never;
 }
 export namespace PgToast_13673Index {
-// ZZ-PgToast_13673Index
 export type Options = never;
 }
 }
@@ -41070,7 +41078,6 @@ export namespace Tables {
 export namespace Scripts {
 export namespace MovieListing {
 export namespace Results {
-// ZZ-Results
 export type Options = never;
 }
 }
@@ -41078,35 +41085,29 @@ export namespace Sample {
 export namespace Film {
 export namespace Rated {
 export namespace Results {
-// ZZ-Results
 export type Options = never;
 }
 export namespace Parameters {
-// ZZ-Parameters
 export type Options = never;
 }
 }
 export namespace Tally {
 export namespace Results {
-// ZZ-Results
 export type Options = never;
 }
 }
 }
 export namespace Pick {
 export namespace Results {
-// ZZ-Results
 export type Options = never;
 }
 export namespace Parameters {
-// ZZ-Parameters
 export type Options = never;
 }
 }
 }
 export namespace Tally {
 export namespace Results {
-// ZZ-Results
 export type Options = never;
 }
 }
@@ -43095,7 +43096,7 @@ async call(parameters : Public.Procedures.RewardsReport.Parameters) {
             }
         
 
-async create(values: Public.Tables.FilmActor.Values): Promise<Public.Types.FilmActor>{
+async create(values: Partial<Public.Types.FilmActor>, options?: Public.Tables.FilmActor.Options): Promise<Public.Types.FilmActor>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -43160,7 +43161,7 @@ const response = await sql`
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
-async update(parameters: Public.Types.FilmActorPkey, values: Partial<Public.Tables.FilmActor.Values>) : Promise<Public.Types.FilmActor>{
+async update(parameters: Public.Types.FilmActorPkey, values: Partial<Public.Tables.FilmActor.Values>, options?: Public.Tables.FilmActor.ModifyOptions) : Promise<Public.Types.FilmActor>{
 
       console.assert(parameters);
       console.assert(values);
@@ -43178,7 +43179,7 @@ const response = await sql`
     RETURNING actor_id,film_id,last_update`
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async delete(parameters: Public.Types.FilmActorPkey) {
+async delete(parameters: Public.Types.FilmActorPkey, options?: Public.Tables.FilmActor.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -43224,7 +43225,7 @@ const response = await sql`
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 
-async update(parameters: Public.Types.IdxFkFilmId, values: Partial<Public.Tables.FilmActor.Values>) : Promise<Public.Types.FilmActor[]>{
+async update(parameters: Public.Types.IdxFkFilmId, values: Partial<Public.Tables.FilmActor.Values>, options?: Public.Tables.FilmActor.ModifyOptions) : Promise<Public.Types.FilmActor[]>{
 
       console.assert(parameters);
       console.assert(values);
@@ -43242,7 +43243,7 @@ const response = await sql`
     RETURNING actor_id,film_id,last_update`
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
-async delete(parameters: Public.Types.IdxFkFilmId) {
+async delete(parameters: Public.Types.IdxFkFilmId, options?: Public.Tables.FilmActor.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -43268,7 +43269,7 @@ async delete(parameters: Public.Types.IdxFkFilmId) {
             }
         
 
-async create(values: Public.Tables.Address.Values): Promise<Public.Types.Address>{
+async create(values: Partial<Public.Types.Address>, options?: Public.Tables.Address.Options): Promise<Public.Types.Address>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -43346,7 +43347,7 @@ const response = await sql`
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
-async update(parameters: Public.Types.AddressPkey, values: Partial<Public.Tables.Address.Values>) : Promise<Public.Types.Address>{
+async update(parameters: Public.Types.AddressPkey, values: Partial<Public.Tables.Address.Values>, options?: Public.Tables.Address.ModifyOptions) : Promise<Public.Types.Address>{
 
       console.assert(parameters);
       console.assert(values);
@@ -43364,7 +43365,7 @@ const response = await sql`
     RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async delete(parameters: Public.Types.AddressPkey) {
+async delete(parameters: Public.Types.AddressPkey, options?: Public.Tables.Address.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -43410,7 +43411,7 @@ const response = await sql`
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 
-async update(parameters: Public.Types.IdxFkCityId, values: Partial<Public.Tables.Address.Values>) : Promise<Public.Types.Address[]>{
+async update(parameters: Public.Types.IdxFkCityId, values: Partial<Public.Tables.Address.Values>, options?: Public.Tables.Address.ModifyOptions) : Promise<Public.Types.Address[]>{
 
       console.assert(parameters);
       console.assert(values);
@@ -43428,7 +43429,7 @@ const response = await sql`
     RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))
 }
-async delete(parameters: Public.Types.IdxFkCityId) {
+async delete(parameters: Public.Types.IdxFkCityId, options?: Public.Tables.Address.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -43454,7 +43455,7 @@ async delete(parameters: Public.Types.IdxFkCityId) {
             }
         
 
-async create(values: Public.Tables.City.Values): Promise<Public.Types.City>{
+async create(values: Partial<Public.Types.City>, options?: Public.Tables.City.Options): Promise<Public.Types.City>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -43532,7 +43533,7 @@ const response = await sql`
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
-async update(parameters: Public.Types.CityPkey, values: Partial<Public.Tables.City.Values>) : Promise<Public.Types.City>{
+async update(parameters: Public.Types.CityPkey, values: Partial<Public.Tables.City.Values>, options?: Public.Tables.City.ModifyOptions) : Promise<Public.Types.City>{
 
       console.assert(parameters);
       console.assert(values);
@@ -43550,7 +43551,7 @@ const response = await sql`
     RETURNING city_id,city,country_id,last_update`
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async delete(parameters: Public.Types.CityPkey) {
+async delete(parameters: Public.Types.CityPkey, options?: Public.Tables.City.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -43596,7 +43597,7 @@ const response = await sql`
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 
-async update(parameters: Public.Types.IdxFkCountryId, values: Partial<Public.Tables.City.Values>) : Promise<Public.Types.City[]>{
+async update(parameters: Public.Types.IdxFkCountryId, values: Partial<Public.Tables.City.Values>, options?: Public.Tables.City.ModifyOptions) : Promise<Public.Types.City[]>{
 
       console.assert(parameters);
       console.assert(values);
@@ -43614,7 +43615,7 @@ const response = await sql`
     RETURNING city_id,city,country_id,last_update`
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
-async delete(parameters: Public.Types.IdxFkCountryId) {
+async delete(parameters: Public.Types.IdxFkCountryId, options?: Public.Tables.City.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -43640,7 +43641,7 @@ async delete(parameters: Public.Types.IdxFkCountryId) {
             }
         
 
-async create(values: Public.Tables.Customer.Values): Promise<Public.Types.Customer>{
+async create(values: Partial<Public.Types.Customer>, options?: Public.Tables.Customer.Options): Promise<Public.Types.Customer>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -43718,7 +43719,7 @@ const response = await sql`
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))[0]
 }
 
-async update(parameters: Public.Types.CustomerPkey, values: Partial<Public.Tables.Customer.Values>) : Promise<Public.Types.Customer>{
+async update(parameters: Public.Types.CustomerPkey, values: Partial<Public.Tables.Customer.Values>, options?: Public.Tables.Customer.ModifyOptions) : Promise<Public.Types.Customer>{
 
       console.assert(parameters);
       console.assert(values);
@@ -43736,7 +43737,7 @@ const response = await sql`
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))[0]
 }
-async delete(parameters: Public.Types.CustomerPkey) {
+async delete(parameters: Public.Types.CustomerPkey, options?: Public.Tables.Customer.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -43782,7 +43783,7 @@ const response = await sql`
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
 
-async update(parameters: Public.Types.IdxFkAddressId, values: Partial<Public.Tables.Customer.Values>) : Promise<Public.Types.Customer[]>{
+async update(parameters: Public.Types.IdxFkAddressId, values: Partial<Public.Tables.Customer.Values>, options?: Public.Tables.Customer.ModifyOptions) : Promise<Public.Types.Customer[]>{
 
       console.assert(parameters);
       console.assert(values);
@@ -43800,7 +43801,7 @@ const response = await sql`
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
-async delete(parameters: Public.Types.IdxFkAddressId) {
+async delete(parameters: Public.Types.IdxFkAddressId, options?: Public.Tables.Customer.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -43846,7 +43847,7 @@ const response = await sql`
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
 
-async update(parameters: Public.Types.IdxFkStoreId, values: Partial<Public.Tables.Customer.Values>) : Promise<Public.Types.Customer[]>{
+async update(parameters: Public.Types.IdxFkStoreId, values: Partial<Public.Tables.Customer.Values>, options?: Public.Tables.Customer.ModifyOptions) : Promise<Public.Types.Customer[]>{
 
       console.assert(parameters);
       console.assert(values);
@@ -43864,7 +43865,7 @@ const response = await sql`
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
-async delete(parameters: Public.Types.IdxFkStoreId) {
+async delete(parameters: Public.Types.IdxFkStoreId, options?: Public.Tables.Customer.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -43910,7 +43911,7 @@ const response = await sql`
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
 
-async update(parameters: Public.Types.IdxLastName, values: Partial<Public.Tables.Customer.Values>) : Promise<Public.Types.Customer[]>{
+async update(parameters: Public.Types.IdxLastName, values: Partial<Public.Tables.Customer.Values>, options?: Public.Tables.Customer.ModifyOptions) : Promise<Public.Types.Customer[]>{
 
       console.assert(parameters);
       console.assert(values);
@@ -43928,7 +43929,7 @@ const response = await sql`
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
-async delete(parameters: Public.Types.IdxLastName) {
+async delete(parameters: Public.Types.IdxLastName, options?: Public.Tables.Customer.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -43954,7 +43955,7 @@ async delete(parameters: Public.Types.IdxLastName) {
             }
         
 
-async create(values: Public.Tables.Actor.Values): Promise<Public.Types.Actor>{
+async create(values: Partial<Public.Types.Actor>, options?: Public.Tables.Actor.Options): Promise<Public.Types.Actor>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -44032,7 +44033,7 @@ const response = await sql`
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
-async update(parameters: Public.Types.ActorPkey, values: Partial<Public.Tables.Actor.Values>) : Promise<Public.Types.Actor>{
+async update(parameters: Public.Types.ActorPkey, values: Partial<Public.Tables.Actor.Values>, options?: Public.Tables.Actor.ModifyOptions) : Promise<Public.Types.Actor>{
 
       console.assert(parameters);
       console.assert(values);
@@ -44050,7 +44051,7 @@ const response = await sql`
     RETURNING actor_id,first_name,last_name,last_update`
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async delete(parameters: Public.Types.ActorPkey) {
+async delete(parameters: Public.Types.ActorPkey, options?: Public.Tables.Actor.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -44096,7 +44097,7 @@ const response = await sql`
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 
-async update(parameters: Public.Types.IdxActorLastName, values: Partial<Public.Tables.Actor.Values>) : Promise<Public.Types.Actor[]>{
+async update(parameters: Public.Types.IdxActorLastName, values: Partial<Public.Tables.Actor.Values>, options?: Public.Tables.Actor.ModifyOptions) : Promise<Public.Types.Actor[]>{
 
       console.assert(parameters);
       console.assert(values);
@@ -44114,7 +44115,7 @@ const response = await sql`
     RETURNING actor_id,first_name,last_name,last_update`
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))
 }
-async delete(parameters: Public.Types.IdxActorLastName) {
+async delete(parameters: Public.Types.IdxActorLastName, options?: Public.Tables.Actor.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -44140,7 +44141,7 @@ async delete(parameters: Public.Types.IdxActorLastName) {
             }
         
 
-async create(values: Public.Tables.FilmCategory.Values): Promise<Public.Types.FilmCategory>{
+async create(values: Partial<Public.Types.FilmCategory>, options?: Public.Tables.FilmCategory.Options): Promise<Public.Types.FilmCategory>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -44205,7 +44206,7 @@ const response = await sql`
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undefinedIsNull(r.category_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
-async update(parameters: Public.Types.FilmCategoryPkey, values: Partial<Public.Tables.FilmCategory.Values>) : Promise<Public.Types.FilmCategory>{
+async update(parameters: Public.Types.FilmCategoryPkey, values: Partial<Public.Tables.FilmCategory.Values>, options?: Public.Tables.FilmCategory.ModifyOptions) : Promise<Public.Types.FilmCategory>{
 
       console.assert(parameters);
       console.assert(values);
@@ -44223,7 +44224,7 @@ const response = await sql`
     RETURNING film_id,category_id,last_update`
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undefinedIsNull(r.category_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async delete(parameters: Public.Types.FilmCategoryPkey) {
+async delete(parameters: Public.Types.FilmCategoryPkey, options?: Public.Tables.FilmCategory.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -44249,7 +44250,7 @@ public get ByPrimaryKey(){ return this.FilmCategoryPkey };
             }
         
 
-async create(values: Public.Tables.Inventory.Values): Promise<Public.Types.Inventory>{
+async create(values: Partial<Public.Types.Inventory>, options?: Public.Tables.Inventory.Options): Promise<Public.Types.Inventory>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -44327,7 +44328,7 @@ const response = await sql`
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
-async update(parameters: Public.Types.InventoryPkey, values: Partial<Public.Tables.Inventory.Values>) : Promise<Public.Types.Inventory>{
+async update(parameters: Public.Types.InventoryPkey, values: Partial<Public.Tables.Inventory.Values>, options?: Public.Tables.Inventory.ModifyOptions) : Promise<Public.Types.Inventory>{
 
       console.assert(parameters);
       console.assert(values);
@@ -44345,7 +44346,7 @@ const response = await sql`
     RETURNING inventory_id,film_id,store_id,last_update`
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async delete(parameters: Public.Types.InventoryPkey) {
+async delete(parameters: Public.Types.InventoryPkey, options?: Public.Tables.Inventory.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -44391,7 +44392,7 @@ const response = await sql`
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 
-async update(parameters: Public.Types.IdxStoreIdFilmId, values: Partial<Public.Tables.Inventory.Values>) : Promise<Public.Types.Inventory[]>{
+async update(parameters: Public.Types.IdxStoreIdFilmId, values: Partial<Public.Tables.Inventory.Values>, options?: Public.Tables.Inventory.ModifyOptions) : Promise<Public.Types.Inventory[]>{
 
       console.assert(parameters);
       console.assert(values);
@@ -44409,7 +44410,7 @@ const response = await sql`
     RETURNING inventory_id,film_id,store_id,last_update`
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
-async delete(parameters: Public.Types.IdxStoreIdFilmId) {
+async delete(parameters: Public.Types.IdxStoreIdFilmId, options?: Public.Tables.Inventory.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -44435,7 +44436,7 @@ async delete(parameters: Public.Types.IdxStoreIdFilmId) {
             }
         
 
-async create(values: Public.Tables.Category.Values): Promise<Public.Types.Category>{
+async create(values: Partial<Public.Types.Category>, options?: Public.Tables.Category.Options): Promise<Public.Types.Category>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -44513,7 +44514,7 @@ const response = await sql`
 return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
-async update(parameters: Public.Types.CategoryPkey, values: Partial<Public.Tables.Category.Values>) : Promise<Public.Types.Category>{
+async update(parameters: Public.Types.CategoryPkey, values: Partial<Public.Tables.Category.Values>, options?: Public.Tables.Category.ModifyOptions) : Promise<Public.Types.Category>{
 
       console.assert(parameters);
       console.assert(values);
@@ -44531,7 +44532,7 @@ const response = await sql`
     RETURNING category_id,name,last_update`
 return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async delete(parameters: Public.Types.CategoryPkey) {
+async delete(parameters: Public.Types.CategoryPkey, options?: Public.Tables.Category.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -44557,7 +44558,7 @@ public get ByPrimaryKey(){ return this.CategoryPkey };
             }
         
 
-async create(values: Public.Tables.Country.Values): Promise<Public.Types.Country>{
+async create(values: Partial<Public.Types.Country>, options?: Public.Tables.Country.Options): Promise<Public.Types.Country>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -44635,7 +44636,7 @@ const response = await sql`
 return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
-async update(parameters: Public.Types.CountryPkey, values: Partial<Public.Tables.Country.Values>) : Promise<Public.Types.Country>{
+async update(parameters: Public.Types.CountryPkey, values: Partial<Public.Tables.Country.Values>, options?: Public.Tables.Country.ModifyOptions) : Promise<Public.Types.Country>{
 
       console.assert(parameters);
       console.assert(values);
@@ -44653,7 +44654,7 @@ const response = await sql`
     RETURNING country_id,country,last_update`
 return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async delete(parameters: Public.Types.CountryPkey) {
+async delete(parameters: Public.Types.CountryPkey, options?: Public.Tables.Country.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -44679,7 +44680,7 @@ public get ByPrimaryKey(){ return this.CountryPkey };
             }
         
 
-async create(values: Public.Tables.Language.Values): Promise<Public.Types.Language>{
+async create(values: Partial<Public.Types.Language>, options?: Public.Tables.Language.Options): Promise<Public.Types.Language>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -44757,7 +44758,7 @@ const response = await sql`
 return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
-async update(parameters: Public.Types.LanguagePkey, values: Partial<Public.Tables.Language.Values>) : Promise<Public.Types.Language>{
+async update(parameters: Public.Types.LanguagePkey, values: Partial<Public.Tables.Language.Values>, options?: Public.Tables.Language.ModifyOptions) : Promise<Public.Types.Language>{
 
       console.assert(parameters);
       console.assert(values);
@@ -44775,7 +44776,7 @@ const response = await sql`
     RETURNING language_id,name,last_update`
 return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async delete(parameters: Public.Types.LanguagePkey) {
+async delete(parameters: Public.Types.LanguagePkey, options?: Public.Tables.Language.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -44801,7 +44802,7 @@ public get ByPrimaryKey(){ return this.LanguagePkey };
             }
         
 
-async create(values: Public.Tables.Rental.Values): Promise<Public.Types.Rental>{
+async create(values: Partial<Public.Types.Rental>, options?: Public.Tables.Rental.Options): Promise<Public.Types.Rental>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -44879,7 +44880,7 @@ const response = await sql`
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
-async update(parameters: Public.Types.RentalPkey, values: Partial<Public.Tables.Rental.Values>) : Promise<Public.Types.Rental>{
+async update(parameters: Public.Types.RentalPkey, values: Partial<Public.Tables.Rental.Values>, options?: Public.Tables.Rental.ModifyOptions) : Promise<Public.Types.Rental>{
 
       console.assert(parameters);
       console.assert(values);
@@ -44897,7 +44898,7 @@ const response = await sql`
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async delete(parameters: Public.Types.RentalPkey) {
+async delete(parameters: Public.Types.RentalPkey, options?: Public.Tables.Rental.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -44943,7 +44944,7 @@ const response = await sql`
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 
-async update(parameters: Public.Types.IdxFkInventoryId, values: Partial<Public.Tables.Rental.Values>) : Promise<Public.Types.Rental[]>{
+async update(parameters: Public.Types.IdxFkInventoryId, values: Partial<Public.Tables.Rental.Values>, options?: Public.Tables.Rental.ModifyOptions) : Promise<Public.Types.Rental[]>{
 
       console.assert(parameters);
       console.assert(values);
@@ -44961,7 +44962,7 @@ const response = await sql`
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
-async delete(parameters: Public.Types.IdxFkInventoryId) {
+async delete(parameters: Public.Types.IdxFkInventoryId, options?: Public.Tables.Rental.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -45007,7 +45008,7 @@ const response = await sql`
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
-async update(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, values: Partial<Public.Tables.Rental.Values>) : Promise<Public.Types.Rental>{
+async update(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, values: Partial<Public.Tables.Rental.Values>, options?: Public.Tables.Rental.ModifyOptions) : Promise<Public.Types.Rental>{
 
       console.assert(parameters);
       console.assert(values);
@@ -45025,7 +45026,7 @@ const response = await sql`
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async delete(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId) {
+async delete(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, options?: Public.Tables.Rental.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -45051,7 +45052,7 @@ async delete(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerI
             }
         
 
-async create(values: Public.Tables.Staff.Values): Promise<Public.Types.Staff>{
+async create(values: Partial<Public.Types.Staff>, options?: Public.Tables.Staff.Options): Promise<Public.Types.Staff>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -45129,7 +45130,7 @@ const response = await sql`
 return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))[0]
 }
 
-async update(parameters: Public.Types.StaffPkey, values: Partial<Public.Tables.Staff.Values>) : Promise<Public.Types.Staff>{
+async update(parameters: Public.Types.StaffPkey, values: Partial<Public.Tables.Staff.Values>, options?: Public.Tables.Staff.ModifyOptions) : Promise<Public.Types.Staff>{
 
       console.assert(parameters);
       console.assert(values);
@@ -45147,7 +45148,7 @@ const response = await sql`
     RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture`
 return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))[0]
 }
-async delete(parameters: Public.Types.StaffPkey) {
+async delete(parameters: Public.Types.StaffPkey, options?: Public.Tables.Staff.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -45173,7 +45174,7 @@ public get ByPrimaryKey(){ return this.StaffPkey };
             }
         
 
-async create(values: Public.Tables.Store.Values): Promise<Public.Types.Store>{
+async create(values: Partial<Public.Types.Store>, options?: Public.Tables.Store.Options): Promise<Public.Types.Store>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -45251,7 +45252,7 @@ const response = await sql`
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
-async update(parameters: Public.Types.StorePkey, values: Partial<Public.Tables.Store.Values>) : Promise<Public.Types.Store>{
+async update(parameters: Public.Types.StorePkey, values: Partial<Public.Tables.Store.Values>, options?: Public.Tables.Store.ModifyOptions) : Promise<Public.Types.Store>{
 
       console.assert(parameters);
       console.assert(values);
@@ -45269,7 +45270,7 @@ const response = await sql`
     RETURNING store_id,manager_staff_id,address_id,last_update`
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async delete(parameters: Public.Types.StorePkey) {
+async delete(parameters: Public.Types.StorePkey, options?: Public.Tables.Store.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -45315,7 +45316,7 @@ const response = await sql`
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
-async update(parameters: Public.Types.IdxUnqManagerStaffId, values: Partial<Public.Tables.Store.Values>) : Promise<Public.Types.Store>{
+async update(parameters: Public.Types.IdxUnqManagerStaffId, values: Partial<Public.Tables.Store.Values>, options?: Public.Tables.Store.ModifyOptions) : Promise<Public.Types.Store>{
 
       console.assert(parameters);
       console.assert(values);
@@ -45333,7 +45334,7 @@ const response = await sql`
     RETURNING store_id,manager_staff_id,address_id,last_update`
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-async delete(parameters: Public.Types.IdxUnqManagerStaffId) {
+async delete(parameters: Public.Types.IdxUnqManagerStaffId, options?: Public.Tables.Store.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -45359,7 +45360,7 @@ async delete(parameters: Public.Types.IdxUnqManagerStaffId) {
             }
         
 
-async create(values: Public.Tables.Payment.Values): Promise<Public.Types.Payment>{
+async create(values: Partial<Public.Types.Payment>, options?: Public.Tables.Payment.Options): Promise<Public.Types.Payment>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -45437,7 +45438,7 @@ const response = await sql`
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))[0]
 }
 
-async update(parameters: Public.Types.PaymentPkey, values: Partial<Public.Tables.Payment.Values>) : Promise<Public.Types.Payment>{
+async update(parameters: Public.Types.PaymentPkey, values: Partial<Public.Tables.Payment.Values>, options?: Public.Tables.Payment.ModifyOptions) : Promise<Public.Types.Payment>{
 
       console.assert(parameters);
       console.assert(values);
@@ -45455,7 +45456,7 @@ const response = await sql`
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))[0]
 }
-async delete(parameters: Public.Types.PaymentPkey) {
+async delete(parameters: Public.Types.PaymentPkey, options?: Public.Tables.Payment.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -45501,7 +45502,7 @@ const response = await sql`
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
 
-async update(parameters: Public.Types.IdxFkCustomerId, values: Partial<Public.Tables.Payment.Values>) : Promise<Public.Types.Payment[]>{
+async update(parameters: Public.Types.IdxFkCustomerId, values: Partial<Public.Tables.Payment.Values>, options?: Public.Tables.Payment.ModifyOptions) : Promise<Public.Types.Payment[]>{
 
       console.assert(parameters);
       console.assert(values);
@@ -45519,7 +45520,7 @@ const response = await sql`
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
-async delete(parameters: Public.Types.IdxFkCustomerId) {
+async delete(parameters: Public.Types.IdxFkCustomerId, options?: Public.Tables.Payment.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -45565,7 +45566,7 @@ const response = await sql`
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
 
-async update(parameters: Public.Types.IdxFkRentalId, values: Partial<Public.Tables.Payment.Values>) : Promise<Public.Types.Payment[]>{
+async update(parameters: Public.Types.IdxFkRentalId, values: Partial<Public.Tables.Payment.Values>, options?: Public.Tables.Payment.ModifyOptions) : Promise<Public.Types.Payment[]>{
 
       console.assert(parameters);
       console.assert(values);
@@ -45583,7 +45584,7 @@ const response = await sql`
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
-async delete(parameters: Public.Types.IdxFkRentalId) {
+async delete(parameters: Public.Types.IdxFkRentalId, options?: Public.Tables.Payment.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -45629,7 +45630,7 @@ const response = await sql`
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
 
-async update(parameters: Public.Types.IdxFkStaffId, values: Partial<Public.Tables.Payment.Values>) : Promise<Public.Types.Payment[]>{
+async update(parameters: Public.Types.IdxFkStaffId, values: Partial<Public.Tables.Payment.Values>, options?: Public.Tables.Payment.ModifyOptions) : Promise<Public.Types.Payment[]>{
 
       console.assert(parameters);
       console.assert(values);
@@ -45647,7 +45648,7 @@ const response = await sql`
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
-async delete(parameters: Public.Types.IdxFkStaffId) {
+async delete(parameters: Public.Types.IdxFkStaffId, options?: Public.Tables.Payment.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -45673,7 +45674,7 @@ async delete(parameters: Public.Types.IdxFkStaffId) {
             }
         
 
-async create(values: Public.Tables.Film.Values): Promise<Public.Types.Film>{
+async create(values: Partial<Public.Types.Film>, options?: Public.Tables.Film.Options): Promise<Public.Types.Film>{
 
       const sql = this.database.context.sql;
       const typed = sql.typed as unknown as PostgresTypecasts;
@@ -45751,7 +45752,7 @@ const response = await sql`
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))[0]
 }
 
-async update(parameters: Public.Types.FilmPkey, values: Partial<Public.Tables.Film.Values>) : Promise<Public.Types.Film>{
+async update(parameters: Public.Types.FilmPkey, values: Partial<Public.Tables.Film.Values>, options?: Public.Tables.Film.ModifyOptions) : Promise<Public.Types.Film>{
 
       console.assert(parameters);
       console.assert(values);
@@ -45769,7 +45770,7 @@ const response = await sql`
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))[0]
 }
-async delete(parameters: Public.Types.FilmPkey) {
+async delete(parameters: Public.Types.FilmPkey, options?: Public.Tables.Film.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -45807,7 +45808,7 @@ const response = await sql`
     FROM
       public.film 
     WHERE
-      fulltext @@ to_tsquery(${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3614](parameters.fulltext) })
+      fulltext @@ ${sql.unsafe(`${options?.fulltext?.queryParser ?? "to_tsquery"}`)}(${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3614](parameters.fulltext) })
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
@@ -45815,7 +45816,7 @@ const response = await sql`
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
 
-async update(parameters: Public.Types.FilmFulltextIdx, values: Partial<Public.Tables.Film.Values>) : Promise<Public.Types.Film[]>{
+async update(parameters: Public.Types.FilmFulltextIdx, values: Partial<Public.Tables.Film.Values>, options?: Public.Tables.Film.ModifyOptions) : Promise<Public.Types.Film[]>{
 
       console.assert(parameters);
       console.assert(values);
@@ -45829,11 +45830,11 @@ const response = await sql`
     SET
       film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[23192](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[23180](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
     WHERE
-      fulltext @@ to_tsquery(${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3614](parameters.fulltext) })
+      fulltext @@ ${sql.unsafe(`${options?.fulltext?.queryParser ?? "to_tsquery"}`)}(${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3614](parameters.fulltext) })
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
-async delete(parameters: Public.Types.FilmFulltextIdx) {
+async delete(parameters: Public.Types.FilmFulltextIdx, options?: Public.Tables.Film.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -45842,7 +45843,7 @@ async delete(parameters: Public.Types.FilmFulltextIdx) {
     DELETE FROM 
       public.film 
     WHERE
-      fulltext @@ to_tsquery(${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3614](parameters.fulltext) })
+      fulltext @@ ${sql.unsafe(`${options?.fulltext?.queryParser ?? "to_tsquery"}`)}(${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3614](parameters.fulltext) })
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`
  return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
@@ -45879,7 +45880,7 @@ const response = await sql`
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
 
-async update(parameters: Public.Types.IdxFkLanguageId, values: Partial<Public.Tables.Film.Values>) : Promise<Public.Types.Film[]>{
+async update(parameters: Public.Types.IdxFkLanguageId, values: Partial<Public.Tables.Film.Values>, options?: Public.Tables.Film.ModifyOptions) : Promise<Public.Types.Film[]>{
 
       console.assert(parameters);
       console.assert(values);
@@ -45897,7 +45898,7 @@ const response = await sql`
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
-async delete(parameters: Public.Types.IdxFkLanguageId) {
+async delete(parameters: Public.Types.IdxFkLanguageId, options?: Public.Tables.Film.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;
@@ -45943,7 +45944,7 @@ const response = await sql`
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
 
-async update(parameters: Public.Types.IdxTitle, values: Partial<Public.Tables.Film.Values>) : Promise<Public.Types.Film[]>{
+async update(parameters: Public.Types.IdxTitle, values: Partial<Public.Tables.Film.Values>, options?: Public.Tables.Film.ModifyOptions) : Promise<Public.Types.Film[]>{
 
       console.assert(parameters);
       console.assert(values);
@@ -45961,7 +45962,7 @@ const response = await sql`
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
-async delete(parameters: Public.Types.IdxTitle) {
+async delete(parameters: Public.Types.IdxTitle, options?: Public.Tables.Film.ModifyOptions) {
  console.assert(parameters);
  const sql = this.database.context.sql;
  const typed = sql.typed as unknown as PostgresTypecasts;

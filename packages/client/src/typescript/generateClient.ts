@@ -169,6 +169,7 @@ export async function generateClient(context: GenerationContext) {
         // creating can be an upsert, so you can pass with and
         // without a primary key
         const valuesType = `Partial<${node.table.type.typescriptNamespacedName}>`;
+        const optionType = `${node.table.typescriptNamespacedName}.Options`;
         const returnType = `${node.table.type.typescriptNamespacedName}`;
         const valuesPick = node.table.allColumns
           .map(
@@ -177,10 +178,11 @@ export async function generateClient(context: GenerationContext) {
           )
           .join(",");
         return `
-          public async create(values: ${valuesType}) : Promise<${returnType}|undefined> {
-            const response = await this.client.invoke<never, ${valuesType}, ${returnType}, never>({
+          public async create(values: ${valuesType}, options?: ${optionType}) : Promise<${returnType}|undefined> {
+            const response = await this.client.invoke<never, ${valuesType}, ${returnType}, ${optionType}>({
               operation: "${node.typescriptNamespacedPropertyName}",
-              values: {${valuesPick}}
+              values: {${valuesPick}},
+              options
             });
             return ${returnParsedRow(node.table)};
           }
@@ -213,6 +215,7 @@ export async function generateClient(context: GenerationContext) {
       before: async (_: GenerationContext, node) => {
         // will return a single row on a unique index
         const parametersType = node.index.type.typescriptNamespacedName;
+        const optionType = `${node.index.table.typescriptNamespacedName}.Options`;
         const valuesType = `Partial<${node.index.table.type.typescriptNamespacedName}>`;
         const resultType = node.index.unique
           ? `${node.index.table.type.typescriptNamespacedName} | undefined`
@@ -231,11 +234,12 @@ export async function generateClient(context: GenerationContext) {
           .join(",");
         const generationBuffer = [
           `
-          public async ${node.typescriptPropertyName}(parameters: ${parametersType}, values: ${valuesType}) {
-            const response = await this.client.invoke<${parametersType}, ${valuesType}, ${resultType}, never>({
+          public async ${node.typescriptPropertyName}(parameters: ${parametersType}, values: ${valuesType}, options?: ${optionType}) {
+            const response = await this.client.invoke<${parametersType}, ${valuesType}, ${resultType}, ${optionType}>({
               operation: "${node.typescriptNamespacedPropertyName}",
               parameters: {${parametersPick}},
-              values: {${valuesPick}}
+              values: {${valuesPick}},
+              options
             });
         `,
         ];

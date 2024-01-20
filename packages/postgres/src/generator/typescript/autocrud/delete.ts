@@ -1,9 +1,5 @@
 import { postgresToTypescript, sqlPredicate } from "./shared";
-import {
-  PARAMETERS,
-  DeleteOperationNode,
-  GenerationContext,
-} from "@embracesql/shared";
+import { DeleteOperationNode, GenerationContext } from "@embracesql/shared";
 
 /**
  * AutoCRUD deletes rows by index.
@@ -15,7 +11,7 @@ import {
  */
 export const DeleteOperation = {
   async before(context: GenerationContext, node: DeleteOperationNode) {
-    const parameters = `${PARAMETERS}: ${node.index.type.typescriptNamespacedName}`;
+    const parameters = `parameters: ${node.index.type.typescriptNamespacedName}`;
     const options = `options?: ${node.index.table.typescriptNamespacedName}.ModifyOptions`;
     const sqlColumnNames = node.index.table.type.attributes
       .map((a) => a.name)
@@ -26,7 +22,7 @@ export const DeleteOperation = {
     DELETE FROM 
       ${node.index.table.databaseName} 
     WHERE
-      ${sqlPredicate(context, node.index, PARAMETERS)}
+      ${sqlPredicate(context, node.index, "parameters")}
     RETURNING ${sqlColumnNames}`;
 
     return [

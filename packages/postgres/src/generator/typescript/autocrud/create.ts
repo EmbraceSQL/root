@@ -1,22 +1,17 @@
 import { postgresToTypescript, postgresValueExpression } from "./shared";
-import {
-  CreateOperationNode,
-  GenerationContext,
-  VALUES,
-} from "@embracesql/shared";
-import { camelCase } from "change-case";
+import { CreateOperationNode, GenerationContext } from "@embracesql/shared";
 
 /**
  * AutoCRUD creates or upserts a row by table.
  */
 export const CreateOperation = {
   async before(context: GenerationContext, node: CreateOperationNode) {
+    const valuesType = `Partial<${node.table.type.typescriptNamespacedName}>`;
+    const optionType = `${node.table.typescriptNamespacedName}.Options`;
     const generationBuffer = [""];
 
     generationBuffer.push(
-      `async create(${camelCase(VALUES)}: ${
-        node.table.typescriptNamespacedName
-      }.Values): Promise<${node.table.type.typescriptNamespacedName}>{`,
+      `async create(values: ${valuesType}, options?: ${optionType}): Promise<${node.table.type.typescriptNamespacedName}>{`,
     );
     generationBuffer.push(
       `
@@ -38,16 +33,14 @@ export const CreateOperation = {
       node.table.columnsInPrimaryKey.every((c) => c.hasDefault)
     ) {
       generationBuffer.push(`
-      if (!${
-        node.table.typescriptNamespacedName
-      }.includesPrimaryKey(${camelCase(VALUES)})) {
+      if (!${node.table.typescriptNamespacedName}.includesPrimaryKey(values)) {
       `);
       const sql = `
       --
       INSERT INTO
         ${node.table.databaseName} (${sqlColumnNamesWithoutPrimaryKey})
       VALUES (${node.table.columnsNotInPrimaryKey
-        .map((a) => postgresValueExpression(context, a, VALUES))
+        .map((a) => postgresValueExpression(context, a, "values"))
         .join(",")})
       RETURNING
         ${allSqlColumnNames}
@@ -67,7 +60,7 @@ export const CreateOperation = {
     INSERT INTO
       ${node.table.databaseName} (${allSqlColumnNames})
     VALUES (${node.table.type.attributes
-      .map((a) => postgresValueExpression(context, a, VALUES))
+      .map((a) => postgresValueExpression(context, a, "values"))
       .join(",")})
     ON CONFLICT (${node.table.columnsInPrimaryKey
       .map((a) => a.name)

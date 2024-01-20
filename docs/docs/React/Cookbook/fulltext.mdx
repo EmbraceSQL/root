@@ -1,0 +1,39 @@
+import SQLScript from "!!raw-loader!../../../../var/data/dvdrental/sql/movie_listing.sql";
+import ReactSource from "!!raw-loader!../../../../samples/next/src/app/fulltext/page.tsx";
+import CodeBlock from "@theme/CodeBlock";
+import GenerateSource from "!!raw-loader!../../../../samples/next/bin/generate";
+
+# Full Text Search
+
+Let's do full text search. In this example the `public.film` table has a `fulltext tsvector NOT NULL`
+column maintained by a trigger containing the film title and description.
+
+EmbraceSQL understands tsvector types in indexes, you just pass in the search string.
+
+
+## Requirements
+
+Make sure you are read as specified in the [Cookbook](./).
+
+## Steps
+
+### Generate Code
+
+Now that there is a SQL Script - regenerate from the database. If you are already
+running NextJS, it'll hot reload.
+
+<CodeBlock language="shell" >
+  {GenerateSource}
+</CodeBlock>
+
+### Code React
+
+EmbraceSQL provides a convenient change/state hook to attach to inputs. Lots
+of other approaches are possible here, but this is a one liner.
+
+Hook into the `public.film` table via index. That's it -- full text search
+with a table result.
+
+<CodeBlock language="tsx" title="src/app/by_index/page.tsx" >
+  {ReactSource}
+</CodeBlock>
