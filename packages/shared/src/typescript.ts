@@ -50,4 +50,11 @@ export interface GeneratesTypeScript {
    * Generate code that defines the right hand side of a `type =` statement.
    */
   typescriptTypeDefinition(context: GenerationContext): string;
+  /**
+   * Generate wrapping code for the right hand side of a WHERE values predicate.
+   */
+  postgresWrapReadParameter(
+    context: GenerationContext,
+    expression: string,
+  ): string;
 }

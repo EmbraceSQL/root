@@ -19,3 +19,4 @@ export function operatorFor(postgres_name: string) {
 
 registerOperatorOverride("gin_trgm_ops", "%");
 registerOperatorOverride("gist_trgm_ops", "%");
+registerOperatorOverride("tsvector_ops", "@@");

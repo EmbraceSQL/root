@@ -291,4 +291,12 @@ describe("The database can AutoCRUD", () => {
     );
     expect(nullAgain.address2).toBeNull();
   });
+  describe("fulltext search", () => {
+    it("with default tsvector parsing", async () => {
+      const films = await database.Public.Tables.Film.FilmFulltextIdx.read({
+        fulltext: "lumberjack & car",
+      });
+      expect(films.length).toBeGreaterThan(0);
+    });
+  });
 });

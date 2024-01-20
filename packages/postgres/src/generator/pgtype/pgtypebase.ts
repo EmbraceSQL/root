@@ -143,22 +143,8 @@ export class PGTypeBase extends PGCatalogType {
           catalog.typname,
           "",
         );
-      case "tsvector":
-        return new PGTypeText(
-          catalog.oid,
-          catalog.nspname,
-          catalog.typname,
-          "",
-        );
       case "gtsvector":
         return new PGTypeTextArray(
-          catalog.oid,
-          catalog.nspname,
-          catalog.typname,
-          "",
-        );
-      case "tsquery":
-        return new PGTypeText(
           catalog.oid,
           catalog.nspname,
           catalog.typname,

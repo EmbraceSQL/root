@@ -66,6 +66,17 @@ export class PGCatalogType implements GeneratesTypeScript {
   }
 
   /**
+   * Wrap a a WHERE predicate right hand side parameter expression
+   * with additional postgres side function calls.
+   *
+   * Really useful for full text search.
+   */
+  postgresWrapReadParameter(context: GenerationContext, expression: string) {
+    console.assert(context);
+    return expression;
+  }
+
+  /**
    * Given a value, turn it into postgres protocol serialization format
    * for use with the postgres driver.
    */
@@ -87,12 +98,19 @@ export class PGCatalogType implements GeneratesTypeScript {
   }
 
   /**
+   * Override this to change the postgres type id of the serialized result.
+   */
+  get toOID() {
+    return this.oid;
+  }
+
+  /**
    * Build up the postgres type casting capability. This is used by the postgres
    * driver to go to and from the database.
    */
   postgresTypecast(context: Context): PostgresTypecast {
     return {
-      to: this.oid,
+      to: this.toOID,
       from: [this.oid],
       serialize: (x) => this.serializeToPostgres(context, x),
       parse: (x) => this.parseFromPostgres(context, x),

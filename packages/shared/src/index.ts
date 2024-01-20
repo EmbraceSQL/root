@@ -190,3 +190,17 @@ export enum Sort {
 export type PossiblyEmpty<T> = {
   [K in keyof T]: T[K] | undefined;
 };
+
+/**
+ * Fulltext queries have different parsers that turn your query search
+ * text into a runnable search in the database.
+ *
+ * For PostgreSQL these are documented at:
+ * https://www.postgresql.org/docs/current/textsearch-controls.html#TEXTSEARCH-HEADLINE
+ */
+export enum FulltextParser {
+  Default,
+  Plain,
+  Phrase,
+  Web,
+}

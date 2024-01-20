@@ -416,6 +416,12 @@ export class AbstractTypeNode extends ContainerNode {
   typescriptTypeDefinition(context: GenerationContext) {
     return this.parser?.typescriptTypeDefinition(context);
   }
+
+  postgresWrapReadParameter(context: GenerationContext, expression: string) {
+    return (
+      this.parser?.postgresWrapReadParameter(context, expression) ?? expression
+    );
+  }
 }
 
 /**
@@ -425,7 +431,7 @@ export class TypeNode extends AbstractTypeNode {
   constructor(
     name: string,
     types: TypesNode,
-    public id: string | number,
+    id: string | number,
     comment: string,
     parser: GeneratesTypeScript,
   ) {

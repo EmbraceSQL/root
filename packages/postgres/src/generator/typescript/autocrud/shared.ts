@@ -101,10 +101,9 @@ export function sqlPredicate(
   return node.type.attributes
     .map(
       (a, i) =>
-        `${a.name} ${node.operators[i]} ${postgresValueExpression(
+        `${a.name} ${node.operators[i]} ${a.type.postgresWrapReadParameter(
           context,
-          a,
-          holder,
+          postgresValueExpression(context, a, holder),
         )}`,
     )
     .join(" AND ");
