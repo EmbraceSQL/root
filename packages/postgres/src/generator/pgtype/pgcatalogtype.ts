@@ -116,4 +116,14 @@ export class PGCatalogType implements GeneratesTypeScript {
       parse: (x) => this.parseFromPostgres(context, x),
     };
   }
+
+  /**
+   * Build up code to provide additional type options.
+   */
+  typescriptTypeOptions(context: Context): string {
+    console.assert(context);
+    return `
+      export type Options = never;
+    `;
+  }
 }

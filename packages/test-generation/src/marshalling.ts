@@ -3568,6 +3568,37 @@ stavalues5Descending = "stavalues5 DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Starelid?: PgCatalog.Types.Oid.Options,
+Staattnum?: PgCatalog.Types.Int2.Options,
+Stainherit?: PgCatalog.Types.Bool.Options,
+Stanullfrac?: PgCatalog.Types.Float4.Options,
+Stawidth?: PgCatalog.Types.Int4.Options,
+Stadistinct?: PgCatalog.Types.Float4.Options,
+Stakind1?: PgCatalog.Types.Int2.Options,
+Stakind2?: PgCatalog.Types.Int2.Options,
+Stakind3?: PgCatalog.Types.Int2.Options,
+Stakind4?: PgCatalog.Types.Int2.Options,
+Stakind5?: PgCatalog.Types.Int2.Options,
+Staop1?: PgCatalog.Types.Oid.Options,
+Staop2?: PgCatalog.Types.Oid.Options,
+Staop3?: PgCatalog.Types.Oid.Options,
+Staop4?: PgCatalog.Types.Oid.Options,
+Staop5?: PgCatalog.Types.Oid.Options,
+Stacoll1?: PgCatalog.Types.Oid.Options,
+Stacoll2?: PgCatalog.Types.Oid.Options,
+Stacoll3?: PgCatalog.Types.Oid.Options,
+Stacoll4?: PgCatalog.Types.Oid.Options,
+Stacoll5?: PgCatalog.Types.Oid.Options,
+Stanumbers1?: PgCatalog.Types.Float4Array.Options,
+Stanumbers2?: PgCatalog.Types.Float4Array.Options,
+Stanumbers3?: PgCatalog.Types.Float4Array.Options,
+Stanumbers4?: PgCatalog.Types.Float4Array.Options,
+Stanumbers5?: PgCatalog.Types.Float4Array.Options,
+Stavalues1?: PgCatalog.Types.Anyarray.Options,
+Stavalues2?: PgCatalog.Types.Anyarray.Options,
+Stavalues3?: PgCatalog.Types.Anyarray.Options,
+Stavalues4?: PgCatalog.Types.Anyarray.Options,
+Stavalues5?: PgCatalog.Types.Anyarray.Options
 };
 export const Columns = {
 Starelid: {
@@ -3775,6 +3806,38 @@ typaclDescending = "typacl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Typname?: PgCatalog.Types.Name.Options,
+Typnamespace?: PgCatalog.Types.Oid.Options,
+Typowner?: PgCatalog.Types.Oid.Options,
+Typlen?: PgCatalog.Types.Int2.Options,
+Typbyval?: PgCatalog.Types.Bool.Options,
+Typtype?: PgCatalog.Types.Char.Options,
+Typcategory?: PgCatalog.Types.Char.Options,
+Typispreferred?: PgCatalog.Types.Bool.Options,
+Typisdefined?: PgCatalog.Types.Bool.Options,
+Typdelim?: PgCatalog.Types.Char.Options,
+Typrelid?: PgCatalog.Types.Oid.Options,
+Typsubscript?: PgCatalog.Types.Regproc.Options,
+Typelem?: PgCatalog.Types.Oid.Options,
+Typarray?: PgCatalog.Types.Oid.Options,
+Typinput?: PgCatalog.Types.Regproc.Options,
+Typoutput?: PgCatalog.Types.Regproc.Options,
+Typreceive?: PgCatalog.Types.Regproc.Options,
+Typsend?: PgCatalog.Types.Regproc.Options,
+Typmodin?: PgCatalog.Types.Regproc.Options,
+Typmodout?: PgCatalog.Types.Regproc.Options,
+Typanalyze?: PgCatalog.Types.Regproc.Options,
+Typalign?: PgCatalog.Types.Char.Options,
+Typstorage?: PgCatalog.Types.Char.Options,
+Typnotnull?: PgCatalog.Types.Bool.Options,
+Typbasetype?: PgCatalog.Types.Oid.Options,
+Typtypmod?: PgCatalog.Types.Int4.Options,
+Typndims?: PgCatalog.Types.Int4.Options,
+Typcollation?: PgCatalog.Types.Oid.Options,
+Typdefaultbin?: PgCatalog.Types.PgNodeTree.Options,
+Typdefault?: PgCatalog.Types.Text.Options,
+Typacl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -3928,6 +3991,9 @@ ftoptionsDescending = "ftoptions DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Ftrelid?: PgCatalog.Types.Oid.Options,
+Ftserver?: PgCatalog.Types.Oid.Options,
+Ftoptions?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Ftrelid: {
@@ -3983,6 +4049,18 @@ rolvaliduntilDescending = "rolvaliduntil DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Rolname?: PgCatalog.Types.Name.Options,
+Rolsuper?: PgCatalog.Types.Bool.Options,
+Rolinherit?: PgCatalog.Types.Bool.Options,
+Rolcreaterole?: PgCatalog.Types.Bool.Options,
+Rolcreatedb?: PgCatalog.Types.Bool.Options,
+Rolcanlogin?: PgCatalog.Types.Bool.Options,
+Rolreplication?: PgCatalog.Types.Bool.Options,
+Rolbypassrls?: PgCatalog.Types.Bool.Options,
+Rolconnlimit?: PgCatalog.Types.Int4.Options,
+Rolpassword?: PgCatalog.Types.Text.Options,
+Rolvaliduntil?: PgCatalog.Types.Timestamptz.Options
 };
 export const Columns = {
 Oid: {
@@ -4062,6 +4140,12 @@ stxdexprDescending = "stxdexpr DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Stxoid?: PgCatalog.Types.Oid.Options,
+Stxdinherit?: PgCatalog.Types.Bool.Options,
+Stxdndistinct?: PgCatalog.Types.PgNdistinct.Options,
+Stxddependencies?: PgCatalog.Types.PgDependencies.Options,
+Stxdmcv?: PgCatalog.Types.PgMcvList.Options,
+Stxdexpr?: PgCatalog.Types.PgStatisticArray.Options
 };
 export const Columns = {
 Stxoid: {
@@ -4113,6 +4197,10 @@ umoptionsDescending = "umoptions DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Umuser?: PgCatalog.Types.Oid.Options,
+Umserver?: PgCatalog.Types.Oid.Options,
+Umoptions?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Oid: {
@@ -4182,6 +4270,23 @@ suboriginDescending = "suborigin DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Subdbid?: PgCatalog.Types.Oid.Options,
+Subskiplsn?: PgCatalog.Types.PgLsn.Options,
+Subname?: PgCatalog.Types.Name.Options,
+Subowner?: PgCatalog.Types.Oid.Options,
+Subenabled?: PgCatalog.Types.Bool.Options,
+Subbinary?: PgCatalog.Types.Bool.Options,
+Substream?: PgCatalog.Types.Char.Options,
+Subtwophasestate?: PgCatalog.Types.Char.Options,
+Subdisableonerr?: PgCatalog.Types.Bool.Options,
+Subpasswordrequired?: PgCatalog.Types.Bool.Options,
+Subrunasowner?: PgCatalog.Types.Bool.Options,
+Subconninfo?: PgCatalog.Types.Text.Options,
+Subslotname?: PgCatalog.Types.Name.Options,
+Subsynccommit?: PgCatalog.Types.Text.Options,
+Subpublications?: PgCatalog.Types.TextArray.Options,
+Suborigin?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Oid: {
@@ -4321,6 +4426,32 @@ attmissingvalDescending = "attmissingval DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Attrelid?: PgCatalog.Types.Oid.Options,
+Attname?: PgCatalog.Types.Name.Options,
+Atttypid?: PgCatalog.Types.Oid.Options,
+Attlen?: PgCatalog.Types.Int2.Options,
+Attnum?: PgCatalog.Types.Int2.Options,
+Attcacheoff?: PgCatalog.Types.Int4.Options,
+Atttypmod?: PgCatalog.Types.Int4.Options,
+Attndims?: PgCatalog.Types.Int2.Options,
+Attbyval?: PgCatalog.Types.Bool.Options,
+Attalign?: PgCatalog.Types.Char.Options,
+Attstorage?: PgCatalog.Types.Char.Options,
+Attcompression?: PgCatalog.Types.Char.Options,
+Attnotnull?: PgCatalog.Types.Bool.Options,
+Atthasdef?: PgCatalog.Types.Bool.Options,
+Atthasmissing?: PgCatalog.Types.Bool.Options,
+Attidentity?: PgCatalog.Types.Char.Options,
+Attgenerated?: PgCatalog.Types.Char.Options,
+Attisdropped?: PgCatalog.Types.Bool.Options,
+Attislocal?: PgCatalog.Types.Bool.Options,
+Attinhcount?: PgCatalog.Types.Int2.Options,
+Attstattarget?: PgCatalog.Types.Int2.Options,
+Attcollation?: PgCatalog.Types.Oid.Options,
+Attacl?: PgCatalog.Types.AclitemArray.Options,
+Attoptions?: PgCatalog.Types.TextArray.Options,
+Attfdwoptions?: PgCatalog.Types.TextArray.Options,
+Attmissingval?: PgCatalog.Types.Anyarray.Options
 };
 export const Columns = {
 Attrelid: {
@@ -4504,6 +4635,36 @@ proaclDescending = "proacl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Proname?: PgCatalog.Types.Name.Options,
+Pronamespace?: PgCatalog.Types.Oid.Options,
+Proowner?: PgCatalog.Types.Oid.Options,
+Prolang?: PgCatalog.Types.Oid.Options,
+Procost?: PgCatalog.Types.Float4.Options,
+Prorows?: PgCatalog.Types.Float4.Options,
+Provariadic?: PgCatalog.Types.Oid.Options,
+Prosupport?: PgCatalog.Types.Regproc.Options,
+Prokind?: PgCatalog.Types.Char.Options,
+Prosecdef?: PgCatalog.Types.Bool.Options,
+Proleakproof?: PgCatalog.Types.Bool.Options,
+Proisstrict?: PgCatalog.Types.Bool.Options,
+Proretset?: PgCatalog.Types.Bool.Options,
+Provolatile?: PgCatalog.Types.Char.Options,
+Proparallel?: PgCatalog.Types.Char.Options,
+Pronargs?: PgCatalog.Types.Int2.Options,
+Pronargdefaults?: PgCatalog.Types.Int2.Options,
+Prorettype?: PgCatalog.Types.Oid.Options,
+Proargtypes?: PgCatalog.Types.Oidvector.Options,
+Proallargtypes?: PgCatalog.Types.OidArray.Options,
+Proargmodes?: PgCatalog.Types.CharArray.Options,
+Proargnames?: PgCatalog.Types.TextArray.Options,
+Proargdefaults?: PgCatalog.Types.PgNodeTree.Options,
+Protrftypes?: PgCatalog.Types.OidArray.Options,
+Prosrc?: PgCatalog.Types.Text.Options,
+Probin?: PgCatalog.Types.Text.Options,
+Prosqlbody?: PgCatalog.Types.PgNodeTree.Options,
+Proconfig?: PgCatalog.Types.TextArray.Options,
+Proacl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -4709,6 +4870,39 @@ relpartboundDescending = "relpartbound DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Relname?: PgCatalog.Types.Name.Options,
+Relnamespace?: PgCatalog.Types.Oid.Options,
+Reltype?: PgCatalog.Types.Oid.Options,
+Reloftype?: PgCatalog.Types.Oid.Options,
+Relowner?: PgCatalog.Types.Oid.Options,
+Relam?: PgCatalog.Types.Oid.Options,
+Relfilenode?: PgCatalog.Types.Oid.Options,
+Reltablespace?: PgCatalog.Types.Oid.Options,
+Relpages?: PgCatalog.Types.Int4.Options,
+Reltuples?: PgCatalog.Types.Float4.Options,
+Relallvisible?: PgCatalog.Types.Int4.Options,
+Reltoastrelid?: PgCatalog.Types.Oid.Options,
+Relhasindex?: PgCatalog.Types.Bool.Options,
+Relisshared?: PgCatalog.Types.Bool.Options,
+Relpersistence?: PgCatalog.Types.Char.Options,
+Relkind?: PgCatalog.Types.Char.Options,
+Relnatts?: PgCatalog.Types.Int2.Options,
+Relchecks?: PgCatalog.Types.Int2.Options,
+Relhasrules?: PgCatalog.Types.Bool.Options,
+Relhastriggers?: PgCatalog.Types.Bool.Options,
+Relhassubclass?: PgCatalog.Types.Bool.Options,
+Relrowsecurity?: PgCatalog.Types.Bool.Options,
+Relforcerowsecurity?: PgCatalog.Types.Bool.Options,
+Relispopulated?: PgCatalog.Types.Bool.Options,
+Relreplident?: PgCatalog.Types.Char.Options,
+Relispartition?: PgCatalog.Types.Bool.Options,
+Relrewrite?: PgCatalog.Types.Oid.Options,
+Relfrozenxid?: PgCatalog.Types.Xid.Options,
+Relminmxid?: PgCatalog.Types.Xid.Options,
+Relacl?: PgCatalog.Types.AclitemArray.Options,
+Reloptions?: PgCatalog.Types.TextArray.Options,
+Relpartbound?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Oid: {
@@ -4868,6 +5062,10 @@ adbinDescending = "adbin DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Adrelid?: PgCatalog.Types.Oid.Options,
+Adnum?: PgCatalog.Types.Int2.Options,
+Adbin?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Oid: {
@@ -4955,6 +5153,32 @@ conbinDescending = "conbin DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Conname?: PgCatalog.Types.Name.Options,
+Connamespace?: PgCatalog.Types.Oid.Options,
+Contype?: PgCatalog.Types.Char.Options,
+Condeferrable?: PgCatalog.Types.Bool.Options,
+Condeferred?: PgCatalog.Types.Bool.Options,
+Convalidated?: PgCatalog.Types.Bool.Options,
+Conrelid?: PgCatalog.Types.Oid.Options,
+Contypid?: PgCatalog.Types.Oid.Options,
+Conindid?: PgCatalog.Types.Oid.Options,
+Conparentid?: PgCatalog.Types.Oid.Options,
+Confrelid?: PgCatalog.Types.Oid.Options,
+Confupdtype?: PgCatalog.Types.Char.Options,
+Confdeltype?: PgCatalog.Types.Char.Options,
+Confmatchtype?: PgCatalog.Types.Char.Options,
+Conislocal?: PgCatalog.Types.Bool.Options,
+Coninhcount?: PgCatalog.Types.Int2.Options,
+Connoinherit?: PgCatalog.Types.Bool.Options,
+Conkey?: PgCatalog.Types.Int2Array.Options,
+Confkey?: PgCatalog.Types.Int2Array.Options,
+Conpfeqop?: PgCatalog.Types.OidArray.Options,
+Conppeqop?: PgCatalog.Types.OidArray.Options,
+Conffeqop?: PgCatalog.Types.OidArray.Options,
+Confdelsetcols?: PgCatalog.Types.Int2Array.Options,
+Conexclop?: PgCatalog.Types.OidArray.Options,
+Conbin?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Oid: {
@@ -5086,6 +5310,10 @@ inhdetachpendingDescending = "inhdetachpending DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Inhrelid?: PgCatalog.Types.Oid.Options,
+Inhparent?: PgCatalog.Types.Oid.Options,
+Inhseqno?: PgCatalog.Types.Int4.Options,
+Inhdetachpending?: PgCatalog.Types.Bool.Options
 };
 export const Columns = {
 Inhrelid: {
@@ -5163,6 +5391,27 @@ indpredDescending = "indpred DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Indexrelid?: PgCatalog.Types.Oid.Options,
+Indrelid?: PgCatalog.Types.Oid.Options,
+Indnatts?: PgCatalog.Types.Int2.Options,
+Indnkeyatts?: PgCatalog.Types.Int2.Options,
+Indisunique?: PgCatalog.Types.Bool.Options,
+Indnullsnotdistinct?: PgCatalog.Types.Bool.Options,
+Indisprimary?: PgCatalog.Types.Bool.Options,
+Indisexclusion?: PgCatalog.Types.Bool.Options,
+Indimmediate?: PgCatalog.Types.Bool.Options,
+Indisclustered?: PgCatalog.Types.Bool.Options,
+Indisvalid?: PgCatalog.Types.Bool.Options,
+Indcheckxmin?: PgCatalog.Types.Bool.Options,
+Indisready?: PgCatalog.Types.Bool.Options,
+Indislive?: PgCatalog.Types.Bool.Options,
+Indisreplident?: PgCatalog.Types.Bool.Options,
+Indkey?: PgCatalog.Types.Int2vector.Options,
+Indcollation?: PgCatalog.Types.Oidvector.Options,
+Indclass?: PgCatalog.Types.Oidvector.Options,
+Indoption?: PgCatalog.Types.Int2vector.Options,
+Indexprs?: PgCatalog.Types.PgNodeTree.Options,
+Indpred?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Indexrelid: {
@@ -5296,6 +5545,21 @@ oprjoinDescending = "oprjoin DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Oprname?: PgCatalog.Types.Name.Options,
+Oprnamespace?: PgCatalog.Types.Oid.Options,
+Oprowner?: PgCatalog.Types.Oid.Options,
+Oprkind?: PgCatalog.Types.Char.Options,
+Oprcanmerge?: PgCatalog.Types.Bool.Options,
+Oprcanhash?: PgCatalog.Types.Bool.Options,
+Oprleft?: PgCatalog.Types.Oid.Options,
+Oprright?: PgCatalog.Types.Oid.Options,
+Oprresult?: PgCatalog.Types.Oid.Options,
+Oprcom?: PgCatalog.Types.Oid.Options,
+Oprnegate?: PgCatalog.Types.Oid.Options,
+Oprcode?: PgCatalog.Types.Regproc.Options,
+Oprrest?: PgCatalog.Types.Regproc.Options,
+Oprjoin?: PgCatalog.Types.Regproc.Options
 };
 export const Columns = {
 Oid: {
@@ -5385,6 +5649,11 @@ opfownerDescending = "opfowner DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Opfmethod?: PgCatalog.Types.Oid.Options,
+Opfname?: PgCatalog.Types.Name.Options,
+Opfnamespace?: PgCatalog.Types.Oid.Options,
+Opfowner?: PgCatalog.Types.Oid.Options
 };
 export const Columns = {
 Oid: {
@@ -5442,6 +5711,15 @@ opckeytypeDescending = "opckeytype DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Opcmethod?: PgCatalog.Types.Oid.Options,
+Opcname?: PgCatalog.Types.Name.Options,
+Opcnamespace?: PgCatalog.Types.Oid.Options,
+Opcowner?: PgCatalog.Types.Oid.Options,
+Opcfamily?: PgCatalog.Types.Oid.Options,
+Opcintype?: PgCatalog.Types.Oid.Options,
+Opcdefault?: PgCatalog.Types.Bool.Options,
+Opckeytype?: PgCatalog.Types.Oid.Options
 };
 export const Columns = {
 Oid: {
@@ -5505,6 +5783,10 @@ amtypeDescending = "amtype DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Amname?: PgCatalog.Types.Name.Options,
+Amhandler?: PgCatalog.Types.Regproc.Options,
+Amtype?: PgCatalog.Types.Char.Options
 };
 export const Columns = {
 Oid: {
@@ -5558,6 +5840,15 @@ amopsortfamilyDescending = "amopsortfamily DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Amopfamily?: PgCatalog.Types.Oid.Options,
+Amoplefttype?: PgCatalog.Types.Oid.Options,
+Amoprighttype?: PgCatalog.Types.Oid.Options,
+Amopstrategy?: PgCatalog.Types.Int2.Options,
+Amoppurpose?: PgCatalog.Types.Char.Options,
+Amopopr?: PgCatalog.Types.Oid.Options,
+Amopmethod?: PgCatalog.Types.Oid.Options,
+Amopsortfamily?: PgCatalog.Types.Oid.Options
 };
 export const Columns = {
 Oid: {
@@ -5625,6 +5916,12 @@ amprocDescending = "amproc DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Amprocfamily?: PgCatalog.Types.Oid.Options,
+Amproclefttype?: PgCatalog.Types.Oid.Options,
+Amprocrighttype?: PgCatalog.Types.Oid.Options,
+Amprocnum?: PgCatalog.Types.Int2.Options,
+Amproc?: PgCatalog.Types.Regproc.Options
 };
 export const Columns = {
 Oid: {
@@ -5686,6 +5983,15 @@ lanaclDescending = "lanacl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Lanname?: PgCatalog.Types.Name.Options,
+Lanowner?: PgCatalog.Types.Oid.Options,
+Lanispl?: PgCatalog.Types.Bool.Options,
+Lanpltrusted?: PgCatalog.Types.Bool.Options,
+Lanplcallfoid?: PgCatalog.Types.Oid.Options,
+Laninline?: PgCatalog.Types.Oid.Options,
+Lanvalidator?: PgCatalog.Types.Oid.Options,
+Lanacl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -5747,6 +6053,9 @@ lomaclDescending = "lomacl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Lomowner?: PgCatalog.Types.Oid.Options,
+Lomacl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -5822,6 +6131,28 @@ aggminitvalDescending = "aggminitval DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Aggfnoid?: PgCatalog.Types.Regproc.Options,
+Aggkind?: PgCatalog.Types.Char.Options,
+Aggnumdirectargs?: PgCatalog.Types.Int2.Options,
+Aggtransfn?: PgCatalog.Types.Regproc.Options,
+Aggfinalfn?: PgCatalog.Types.Regproc.Options,
+Aggcombinefn?: PgCatalog.Types.Regproc.Options,
+Aggserialfn?: PgCatalog.Types.Regproc.Options,
+Aggdeserialfn?: PgCatalog.Types.Regproc.Options,
+Aggmtransfn?: PgCatalog.Types.Regproc.Options,
+Aggminvtransfn?: PgCatalog.Types.Regproc.Options,
+Aggmfinalfn?: PgCatalog.Types.Regproc.Options,
+Aggfinalextra?: PgCatalog.Types.Bool.Options,
+Aggmfinalextra?: PgCatalog.Types.Bool.Options,
+Aggfinalmodify?: PgCatalog.Types.Char.Options,
+Aggmfinalmodify?: PgCatalog.Types.Char.Options,
+Aggsortop?: PgCatalog.Types.Oid.Options,
+Aggtranstype?: PgCatalog.Types.Oid.Options,
+Aggtransspace?: PgCatalog.Types.Int4.Options,
+Aggmtranstype?: PgCatalog.Types.Oid.Options,
+Aggmtransspace?: PgCatalog.Types.Int4.Options,
+Agginitval?: PgCatalog.Types.Text.Options,
+Aggminitval?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Aggfnoid: {
@@ -5947,6 +6278,15 @@ stxexprsDescending = "stxexprs DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Stxrelid?: PgCatalog.Types.Oid.Options,
+Stxname?: PgCatalog.Types.Name.Options,
+Stxnamespace?: PgCatalog.Types.Oid.Options,
+Stxowner?: PgCatalog.Types.Oid.Options,
+Stxstattarget?: PgCatalog.Types.Int4.Options,
+Stxkeys?: PgCatalog.Types.Int2vector.Options,
+Stxkind?: PgCatalog.Types.CharArray.Options,
+Stxexprs?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Oid: {
@@ -6018,6 +6358,14 @@ evActionDescending = "ev_action DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Rulename?: PgCatalog.Types.Name.Options,
+EvClass?: PgCatalog.Types.Oid.Options,
+EvType?: PgCatalog.Types.Char.Options,
+EvEnabled?: PgCatalog.Types.Char.Options,
+IsInstead?: PgCatalog.Types.Bool.Options,
+EvQual?: PgCatalog.Types.PgNodeTree.Options,
+EvAction?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Oid: {
@@ -6107,6 +6455,25 @@ tgnewtableDescending = "tgnewtable DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Tgrelid?: PgCatalog.Types.Oid.Options,
+Tgparentid?: PgCatalog.Types.Oid.Options,
+Tgname?: PgCatalog.Types.Name.Options,
+Tgfoid?: PgCatalog.Types.Oid.Options,
+Tgtype?: PgCatalog.Types.Int2.Options,
+Tgenabled?: PgCatalog.Types.Char.Options,
+Tgisinternal?: PgCatalog.Types.Bool.Options,
+Tgconstrrelid?: PgCatalog.Types.Oid.Options,
+Tgconstrindid?: PgCatalog.Types.Oid.Options,
+Tgconstraint?: PgCatalog.Types.Oid.Options,
+Tgdeferrable?: PgCatalog.Types.Bool.Options,
+Tginitdeferred?: PgCatalog.Types.Bool.Options,
+Tgnargs?: PgCatalog.Types.Int2.Options,
+Tgattr?: PgCatalog.Types.Int2vector.Options,
+Tgargs?: PgCatalog.Types.Bytea.Options,
+Tgqual?: PgCatalog.Types.PgNodeTree.Options,
+Tgoldtable?: PgCatalog.Types.Name.Options,
+Tgnewtable?: PgCatalog.Types.Name.Options
 };
 export const Columns = {
 Oid: {
@@ -6216,6 +6583,13 @@ evttagsDescending = "evttags DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Evtname?: PgCatalog.Types.Name.Options,
+Evtevent?: PgCatalog.Types.Name.Options,
+Evtowner?: PgCatalog.Types.Oid.Options,
+Evtfoid?: PgCatalog.Types.Oid.Options,
+Evtenabled?: PgCatalog.Types.Char.Options,
+Evttags?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Oid: {
@@ -6271,6 +6645,10 @@ descriptionDescending = "description DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Objoid?: PgCatalog.Types.Oid.Options,
+Classoid?: PgCatalog.Types.Oid.Options,
+Objsubid?: PgCatalog.Types.Int4.Options,
+Description?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Objoid: {
@@ -6318,6 +6696,12 @@ castmethodDescending = "castmethod DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Castsource?: PgCatalog.Types.Oid.Options,
+Casttarget?: PgCatalog.Types.Oid.Options,
+Castfunc?: PgCatalog.Types.Oid.Options,
+Castcontext?: PgCatalog.Types.Char.Options,
+Castmethod?: PgCatalog.Types.Char.Options
 };
 export const Columns = {
 Oid: {
@@ -6369,6 +6753,10 @@ enumlabelDescending = "enumlabel DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Enumtypid?: PgCatalog.Types.Oid.Options,
+Enumsortorder?: PgCatalog.Types.Float4.Options,
+Enumlabel?: PgCatalog.Types.Name.Options
 };
 export const Columns = {
 Oid: {
@@ -6412,6 +6800,10 @@ nspaclDescending = "nspacl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Nspname?: PgCatalog.Types.Name.Options,
+Nspowner?: PgCatalog.Types.Oid.Options,
+Nspacl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -6463,6 +6855,14 @@ condefaultDescending = "condefault DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Conname?: PgCatalog.Types.Name.Options,
+Connamespace?: PgCatalog.Types.Oid.Options,
+Conowner?: PgCatalog.Types.Oid.Options,
+Conforencoding?: PgCatalog.Types.Int4.Options,
+Contoencoding?: PgCatalog.Types.Int4.Options,
+Conproc?: PgCatalog.Types.Regproc.Options,
+Condefault?: PgCatalog.Types.Bool.Options
 };
 export const Columns = {
 Oid: {
@@ -6528,6 +6928,13 @@ deptypeDescending = "deptype DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Classid?: PgCatalog.Types.Oid.Options,
+Objid?: PgCatalog.Types.Oid.Options,
+Objsubid?: PgCatalog.Types.Int4.Options,
+Refclassid?: PgCatalog.Types.Oid.Options,
+Refobjid?: PgCatalog.Types.Oid.Options,
+Refobjsubid?: PgCatalog.Types.Int4.Options,
+Deptype?: PgCatalog.Types.Char.Options
 };
 export const Columns = {
 Classid: {
@@ -6608,6 +7015,23 @@ dataclDescending = "datacl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Datname?: PgCatalog.Types.Name.Options,
+Datdba?: PgCatalog.Types.Oid.Options,
+Encoding?: PgCatalog.Types.Int4.Options,
+Datlocprovider?: PgCatalog.Types.Char.Options,
+Datistemplate?: PgCatalog.Types.Bool.Options,
+Datallowconn?: PgCatalog.Types.Bool.Options,
+Datconnlimit?: PgCatalog.Types.Int4.Options,
+Datfrozenxid?: PgCatalog.Types.Xid.Options,
+Datminmxid?: PgCatalog.Types.Xid.Options,
+Dattablespace?: PgCatalog.Types.Oid.Options,
+Datcollate?: PgCatalog.Types.Text.Options,
+Datctype?: PgCatalog.Types.Text.Options,
+Daticulocale?: PgCatalog.Types.Text.Options,
+Daticurules?: PgCatalog.Types.Text.Options,
+Datcollversion?: PgCatalog.Types.Text.Options,
+Datacl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -6701,6 +7125,9 @@ setconfigDescending = "setconfig DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Setdatabase?: PgCatalog.Types.Oid.Options,
+Setrole?: PgCatalog.Types.Oid.Options,
+Setconfig?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Setdatabase: {
@@ -6742,6 +7169,11 @@ spcoptionsDescending = "spcoptions DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Spcname?: PgCatalog.Types.Name.Options,
+Spcowner?: PgCatalog.Types.Oid.Options,
+Spcacl?: PgCatalog.Types.AclitemArray.Options,
+Spcoptions?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Oid: {
@@ -6795,6 +7227,13 @@ setOptionDescending = "set_option DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Roleid?: PgCatalog.Types.Oid.Options,
+Member?: PgCatalog.Types.Oid.Options,
+Grantor?: PgCatalog.Types.Oid.Options,
+AdminOption?: PgCatalog.Types.Bool.Options,
+InheritOption?: PgCatalog.Types.Bool.Options,
+SetOption?: PgCatalog.Types.Bool.Options
 };
 export const Columns = {
 Oid: {
@@ -6856,6 +7295,13 @@ deptypeDescending = "deptype DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Dbid?: PgCatalog.Types.Oid.Options,
+Classid?: PgCatalog.Types.Oid.Options,
+Objid?: PgCatalog.Types.Oid.Options,
+Objsubid?: PgCatalog.Types.Int4.Options,
+Refclassid?: PgCatalog.Types.Oid.Options,
+Refobjid?: PgCatalog.Types.Oid.Options,
+Deptype?: PgCatalog.Types.Char.Options
 };
 export const Columns = {
 Dbid: {
@@ -6908,6 +7354,9 @@ descriptionDescending = "description DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Objoid?: PgCatalog.Types.Oid.Options,
+Classoid?: PgCatalog.Types.Oid.Options,
+Description?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Objoid: {
@@ -6949,6 +7398,11 @@ cfgparserDescending = "cfgparser DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Cfgname?: PgCatalog.Types.Name.Options,
+Cfgnamespace?: PgCatalog.Types.Oid.Options,
+Cfgowner?: PgCatalog.Types.Oid.Options,
+Cfgparser?: PgCatalog.Types.Oid.Options
 };
 export const Columns = {
 Oid: {
@@ -6996,6 +7450,10 @@ mapdictDescending = "mapdict DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Mapcfg?: PgCatalog.Types.Oid.Options,
+Maptokentype?: PgCatalog.Types.Int4.Options,
+Mapseqno?: PgCatalog.Types.Int4.Options,
+Mapdict?: PgCatalog.Types.Oid.Options
 };
 export const Columns = {
 Mapcfg: {
@@ -7043,6 +7501,12 @@ dictinitoptionDescending = "dictinitoption DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Dictname?: PgCatalog.Types.Name.Options,
+Dictnamespace?: PgCatalog.Types.Oid.Options,
+Dictowner?: PgCatalog.Types.Oid.Options,
+Dicttemplate?: PgCatalog.Types.Oid.Options,
+Dictinitoption?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Oid: {
@@ -7102,6 +7566,14 @@ prslextypeDescending = "prslextype DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Prsname?: PgCatalog.Types.Name.Options,
+Prsnamespace?: PgCatalog.Types.Oid.Options,
+Prsstart?: PgCatalog.Types.Regproc.Options,
+Prstoken?: PgCatalog.Types.Regproc.Options,
+Prsend?: PgCatalog.Types.Regproc.Options,
+Prsheadline?: PgCatalog.Types.Regproc.Options,
+Prslextype?: PgCatalog.Types.Regproc.Options
 };
 export const Columns = {
 Oid: {
@@ -7163,6 +7635,11 @@ tmpllexizeDescending = "tmpllexize DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Tmplname?: PgCatalog.Types.Name.Options,
+Tmplnamespace?: PgCatalog.Types.Oid.Options,
+Tmplinit?: PgCatalog.Types.Regproc.Options,
+Tmpllexize?: PgCatalog.Types.Regproc.Options
 };
 export const Columns = {
 Oid: {
@@ -7218,6 +7695,14 @@ extconditionDescending = "extcondition DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Extname?: PgCatalog.Types.Name.Options,
+Extowner?: PgCatalog.Types.Oid.Options,
+Extnamespace?: PgCatalog.Types.Oid.Options,
+Extrelocatable?: PgCatalog.Types.Bool.Options,
+Extversion?: PgCatalog.Types.Text.Options,
+Extconfig?: PgCatalog.Types.OidArray.Options,
+Extcondition?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Oid: {
@@ -7283,6 +7768,13 @@ fdwoptionsDescending = "fdwoptions DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Fdwname?: PgCatalog.Types.Name.Options,
+Fdwowner?: PgCatalog.Types.Oid.Options,
+Fdwhandler?: PgCatalog.Types.Oid.Options,
+Fdwvalidator?: PgCatalog.Types.Oid.Options,
+Fdwacl?: PgCatalog.Types.AclitemArray.Options,
+Fdwoptions?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Oid: {
@@ -7346,6 +7838,14 @@ srvoptionsDescending = "srvoptions DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Srvname?: PgCatalog.Types.Name.Options,
+Srvowner?: PgCatalog.Types.Oid.Options,
+Srvfdw?: PgCatalog.Types.Oid.Options,
+Srvtype?: PgCatalog.Types.Text.Options,
+Srvversion?: PgCatalog.Types.Text.Options,
+Srvacl?: PgCatalog.Types.AclitemArray.Options,
+Srvoptions?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Oid: {
@@ -7413,6 +7913,14 @@ polwithcheckDescending = "polwithcheck DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Polname?: PgCatalog.Types.Name.Options,
+Polrelid?: PgCatalog.Types.Oid.Options,
+Polcmd?: PgCatalog.Types.Char.Options,
+Polpermissive?: PgCatalog.Types.Bool.Options,
+Polroles?: PgCatalog.Types.OidArray.Options,
+Polqual?: PgCatalog.Types.PgNodeTree.Options,
+Polwithcheck?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Oid: {
@@ -7468,6 +7976,8 @@ ronameDescending = "roname DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Roident?: PgCatalog.Types.Oid.Options,
+Roname?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Roident: {
@@ -7505,6 +8015,11 @@ defaclaclDescending = "defaclacl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Defaclrole?: PgCatalog.Types.Oid.Options,
+Defaclnamespace?: PgCatalog.Types.Oid.Options,
+Defaclobjtype?: PgCatalog.Types.Char.Options,
+Defaclacl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -7554,6 +8069,11 @@ initprivsDescending = "initprivs DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Objoid?: PgCatalog.Types.Oid.Options,
+Classoid?: PgCatalog.Types.Oid.Options,
+Objsubid?: PgCatalog.Types.Int4.Options,
+Privtype?: PgCatalog.Types.Char.Options,
+Initprivs?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Objoid: {
@@ -7603,6 +8123,11 @@ labelDescending = "label DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Objoid?: PgCatalog.Types.Oid.Options,
+Classoid?: PgCatalog.Types.Oid.Options,
+Objsubid?: PgCatalog.Types.Int4.Options,
+Provider?: PgCatalog.Types.Text.Options,
+Label?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Objoid: {
@@ -7650,6 +8175,10 @@ labelDescending = "label DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Objoid?: PgCatalog.Types.Oid.Options,
+Classoid?: PgCatalog.Types.Oid.Options,
+Provider?: PgCatalog.Types.Text.Options,
+Label?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Objoid: {
@@ -7709,6 +8238,18 @@ collversionDescending = "collversion DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Collname?: PgCatalog.Types.Name.Options,
+Collnamespace?: PgCatalog.Types.Oid.Options,
+Collowner?: PgCatalog.Types.Oid.Options,
+Collprovider?: PgCatalog.Types.Char.Options,
+Collisdeterministic?: PgCatalog.Types.Bool.Options,
+Collencoding?: PgCatalog.Types.Int4.Options,
+Collcollate?: PgCatalog.Types.Text.Options,
+Collctype?: PgCatalog.Types.Text.Options,
+Colliculocale?: PgCatalog.Types.Text.Options,
+Collicurules?: PgCatalog.Types.Text.Options,
+Collversion?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Oid: {
@@ -7782,6 +8323,9 @@ paraclDescending = "paracl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Parname?: PgCatalog.Types.Text.Options,
+Paracl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -7829,6 +8373,14 @@ partexprsDescending = "partexprs DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Partrelid?: PgCatalog.Types.Oid.Options,
+Partstrat?: PgCatalog.Types.Char.Options,
+Partnatts?: PgCatalog.Types.Int2.Options,
+Partdefid?: PgCatalog.Types.Oid.Options,
+Partattrs?: PgCatalog.Types.Int2vector.Options,
+Partclass?: PgCatalog.Types.Oidvector.Options,
+Partcollation?: PgCatalog.Types.Oidvector.Options,
+Partexprs?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Partrelid: {
@@ -7894,6 +8446,13 @@ rngsubdiffDescending = "rngsubdiff DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Rngtypid?: PgCatalog.Types.Oid.Options,
+Rngsubtype?: PgCatalog.Types.Oid.Options,
+Rngmultitypid?: PgCatalog.Types.Oid.Options,
+Rngcollation?: PgCatalog.Types.Oid.Options,
+Rngsubopc?: PgCatalog.Types.Oid.Options,
+Rngcanonical?: PgCatalog.Types.Regproc.Options,
+Rngsubdiff?: PgCatalog.Types.Regproc.Options
 };
 export const Columns = {
 Rngtypid: {
@@ -7951,6 +8510,11 @@ trftosqlDescending = "trftosql DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Trftype?: PgCatalog.Types.Oid.Options,
+Trflang?: PgCatalog.Types.Oid.Options,
+Trffromsql?: PgCatalog.Types.Regproc.Options,
+Trftosql?: PgCatalog.Types.Regproc.Options
 };
 export const Columns = {
 Oid: {
@@ -8006,6 +8570,14 @@ seqcycleDescending = "seqcycle DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Seqrelid?: PgCatalog.Types.Oid.Options,
+Seqtypid?: PgCatalog.Types.Oid.Options,
+Seqstart?: PgCatalog.Types.Int8.Options,
+Seqincrement?: PgCatalog.Types.Int8.Options,
+Seqmax?: PgCatalog.Types.Int8.Options,
+Seqmin?: PgCatalog.Types.Int8.Options,
+Seqcache?: PgCatalog.Types.Int8.Options,
+Seqcycle?: PgCatalog.Types.Bool.Options
 };
 export const Columns = {
 Seqrelid: {
@@ -8075,6 +8647,15 @@ pubviarootDescending = "pubviaroot DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Pubname?: PgCatalog.Types.Name.Options,
+Pubowner?: PgCatalog.Types.Oid.Options,
+Puballtables?: PgCatalog.Types.Bool.Options,
+Pubinsert?: PgCatalog.Types.Bool.Options,
+Pubupdate?: PgCatalog.Types.Bool.Options,
+Pubdelete?: PgCatalog.Types.Bool.Options,
+Pubtruncate?: PgCatalog.Types.Bool.Options,
+Pubviaroot?: PgCatalog.Types.Bool.Options
 };
 export const Columns = {
 Oid: {
@@ -8136,6 +8717,9 @@ pnnspidDescending = "pnnspid DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Pnpubid?: PgCatalog.Types.Oid.Options,
+Pnnspid?: PgCatalog.Types.Oid.Options
 };
 export const Columns = {
 Oid: {
@@ -8177,6 +8761,11 @@ prattrsDescending = "prattrs DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Oid?: PgCatalog.Types.Oid.Options,
+Prpubid?: PgCatalog.Types.Oid.Options,
+Prrelid?: PgCatalog.Types.Oid.Options,
+Prqual?: PgCatalog.Types.PgNodeTree.Options,
+Prattrs?: PgCatalog.Types.Int2vector.Options
 };
 export const Columns = {
 Oid: {
@@ -8224,6 +8813,10 @@ srsublsnDescending = "srsublsn DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Srsubid?: PgCatalog.Types.Oid.Options,
+Srrelid?: PgCatalog.Types.Oid.Options,
+Srsubstate?: PgCatalog.Types.Char.Options,
+Srsublsn?: PgCatalog.Types.PgLsn.Options
 };
 export const Columns = {
 Srsubid: {
@@ -8265,6 +8858,9 @@ dataDescending = "data DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Loid?: PgCatalog.Types.Oid.Options,
+Pageno?: PgCatalog.Types.Int4.Options,
+Data?: PgCatalog.Types.Bytea.Options
 };
 export const Columns = {
 Loid: {
@@ -9508,6 +10104,13 @@ commentsDescending = "comments DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ FeatureId?: InformationSchema.Types.CharacterData.Options,
+FeatureName?: InformationSchema.Types.CharacterData.Options,
+SubFeatureId?: InformationSchema.Types.CharacterData.Options,
+SubFeatureName?: InformationSchema.Types.CharacterData.Options,
+IsSupported?: InformationSchema.Types.YesOrNo.Options,
+IsVerifiedBy?: InformationSchema.Types.CharacterData.Options,
+Comments?: InformationSchema.Types.CharacterData.Options
 };
 export const Columns = {
 FeatureId: {
@@ -9564,6 +10167,11 @@ commentsDescending = "comments DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ ImplementationInfoId?: InformationSchema.Types.CharacterData.Options,
+ImplementationInfoName?: InformationSchema.Types.CharacterData.Options,
+IntegerValue?: InformationSchema.Types.CardinalNumber.Options,
+CharacterValue?: InformationSchema.Types.CharacterData.Options,
+Comments?: InformationSchema.Types.CharacterData.Options
 };
 export const Columns = {
 ImplementationInfoId: {
@@ -9612,6 +10220,11 @@ commentsDescending = "comments DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ FeatureId?: InformationSchema.Types.CharacterData.Options,
+FeatureName?: InformationSchema.Types.CharacterData.Options,
+IsSupported?: InformationSchema.Types.YesOrNo.Options,
+IsVerifiedBy?: InformationSchema.Types.CharacterData.Options,
+Comments?: InformationSchema.Types.CharacterData.Options
 };
 export const Columns = {
 FeatureId: {
@@ -9658,6 +10271,10 @@ commentsDescending = "comments DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ SizingId?: InformationSchema.Types.CardinalNumber.Options,
+SizingName?: InformationSchema.Types.CharacterData.Options,
+SupportedValue?: InformationSchema.Types.CardinalNumber.Options,
+Comments?: InformationSchema.Types.CharacterData.Options
 };
 export const Columns = {
 SizingId: {
@@ -10307,6 +10924,7 @@ slugIdDescending = "slug_id DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ SlugId?: PgCatalog.Types.Int4.Options
 };
 export const Columns = {
 SlugId: {
@@ -10597,6 +11215,8 @@ answerDescending = "answer DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Question?: PgCatalog.Types.Text.Options,
+Answer?: Api.Types.Answer.Options
 };
 export const Columns = {
 Question: {
@@ -10633,6 +11253,11 @@ rawOffsetDescending = "raw_offset DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ CountryCode?: PgCatalog.Types.Text.Options,
+TimeZone?: PgCatalog.Types.Text.Options,
+GmtOffset?: PgCatalog.Types.Float4.Options,
+DstOffset?: PgCatalog.Types.Float4.Options,
+RawOffset?: PgCatalog.Types.Float4.Options
 };
 export const Columns = {
 CountryCode: {
@@ -10675,6 +11300,8 @@ pointDescending = "point DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Id?: PgCatalog.Types.Uuid.Options,
+Point?: PgCatalog.Types.Point.Options
 };
 export const Columns = {
 Id: {
@@ -10706,6 +11333,8 @@ lineDescending = "line DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Id?: PgCatalog.Types.Uuid.Options,
+Line?: PgCatalog.Types.Line.Options
 };
 export const Columns = {
 Id: {
@@ -10737,6 +11366,8 @@ lineSegmentDescending = "line_segment DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Id?: PgCatalog.Types.Uuid.Options,
+LineSegment?: PgCatalog.Types.Lseg.Options
 };
 export const Columns = {
 Id: {
@@ -10768,6 +11399,8 @@ boxDescending = "box DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Id?: PgCatalog.Types.Uuid.Options,
+Box?: PgCatalog.Types.Box.Options
 };
 export const Columns = {
 Id: {
@@ -10799,6 +11432,8 @@ pathDescending = "path DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Id?: PgCatalog.Types.Uuid.Options,
+Path?: PgCatalog.Types.Path.Options
 };
 export const Columns = {
 Id: {
@@ -10830,6 +11465,8 @@ polygonDescending = "polygon DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Id?: PgCatalog.Types.Uuid.Options,
+Polygon?: PgCatalog.Types.Polygon.Options
 };
 export const Columns = {
 Id: {
@@ -10861,6 +11498,8 @@ circleDescending = "circle DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
+ Id?: PgCatalog.Types.Uuid.Options,
+Circle?: PgCatalog.Types.Circle.Options
 };
 export const Columns = {
 Id: {
@@ -37118,6 +37757,4205 @@ export namespace PgToast_13673Index {
  export function equals(l: PgToast.Types.PgToast_13673Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
+}
+}
+export namespace Procedures {
+}
+export namespace Tables {
+}
+}
+// Type Options
+export namespace PgCatalog {
+export namespace Types {
+export namespace Bool {
+// ZZ-Bool
+
+      export type Options = never;
+    
+}
+export namespace Bytea {
+// ZZ-Bytea
+
+      export type Options = never;
+    
+}
+export namespace Char {
+// ZZ-Char
+
+      export type Options = never;
+    
+}
+export namespace Name {
+// ZZ-Name
+
+      export type Options = never;
+    
+}
+export namespace Int8 {
+// ZZ-Int8
+
+      export type Options = never;
+    
+}
+export namespace Int2 {
+// ZZ-Int2
+
+      export type Options = never;
+    
+}
+export namespace Int2vector {
+// ZZ-Int2vector
+
+      export type Options = never;
+    
+}
+export namespace Int4 {
+// ZZ-Int4
+
+      export type Options = never;
+    
+}
+export namespace Regproc {
+// ZZ-Regproc
+
+      export type Options = never;
+    
+}
+export namespace Text {
+// ZZ-Text
+
+      export type Options = never;
+    
+}
+export namespace Oid {
+// ZZ-Oid
+
+      export type Options = never;
+    
+}
+export namespace Tid {
+// ZZ-Tid
+
+      export type Options = never;
+    
+}
+export namespace Xid {
+// ZZ-Xid
+
+      export type Options = never;
+    
+}
+export namespace Cid {
+// ZZ-Cid
+
+      export type Options = never;
+    
+}
+export namespace Oidvector {
+// ZZ-Oidvector
+export type Options = never;
+}
+export namespace PgType {
+// ZZ-PgType
+export type Options = never;
+}
+export namespace PgAttribute {
+// ZZ-PgAttribute
+export type Options = never;
+}
+export namespace PgProc {
+// ZZ-PgProc
+export type Options = never;
+}
+export namespace PgClass {
+// ZZ-PgClass
+export type Options = never;
+}
+export namespace Json {
+// ZZ-Json
+
+      export type Options = never;
+    
+}
+export namespace Xml {
+// ZZ-Xml
+
+      export type Options = never;
+    
+}
+export namespace PgNodeTree {
+// ZZ-PgNodeTree
+
+      export type Options = never;
+    
+}
+export namespace PgNdistinct {
+// ZZ-PgNdistinct
+
+      export type Options = never;
+    
+}
+export namespace PgDependencies {
+// ZZ-PgDependencies
+
+      export type Options = never;
+    
+}
+export namespace PgMcvList {
+// ZZ-PgMcvList
+
+      export type Options = never;
+    
+}
+export namespace PgDdlCommand {
+// ZZ-PgDdlCommand
+
+      export type Options = never;
+    
+}
+export namespace Xid8 {
+// ZZ-Xid8
+
+      export type Options = never;
+    
+}
+export namespace Point {
+// ZZ-Point
+
+      export type Options = never;
+    
+}
+export namespace Lseg {
+// ZZ-Lseg
+
+      export type Options = never;
+    
+}
+export namespace Path {
+// ZZ-Path
+
+      export type Options = never;
+    
+}
+export namespace Box {
+// ZZ-Box
+
+      export type Options = never;
+    
+}
+export namespace Polygon {
+// ZZ-Polygon
+
+      export type Options = never;
+    
+}
+export namespace Line {
+// ZZ-Line
+
+      export type Options = never;
+    
+}
+export namespace Float4 {
+// ZZ-Float4
+
+      export type Options = never;
+    
+}
+export namespace Float8 {
+// ZZ-Float8
+
+      export type Options = never;
+    
+}
+export namespace Unknown {
+// ZZ-Unknown
+
+      export type Options = never;
+    
+}
+export namespace Circle {
+// ZZ-Circle
+
+      export type Options = never;
+    
+}
+export namespace Money {
+// ZZ-Money
+
+      export type Options = never;
+    
+}
+export namespace Macaddr {
+// ZZ-Macaddr
+
+      export type Options = never;
+    
+}
+export namespace Inet {
+// ZZ-Inet
+
+      export type Options = never;
+    
+}
+export namespace Cidr {
+// ZZ-Cidr
+
+      export type Options = never;
+    
+}
+export namespace Macaddr8 {
+// ZZ-Macaddr8
+
+      export type Options = never;
+    
+}
+export namespace Aclitem {
+// ZZ-Aclitem
+
+      export type Options = never;
+    
+}
+export namespace Bpchar {
+// ZZ-Bpchar
+
+      export type Options = never;
+    
+}
+export namespace Varchar {
+// ZZ-Varchar
+
+      export type Options = never;
+    
+}
+export namespace Date {
+// ZZ-Date
+
+      export type Options = never;
+    
+}
+export namespace Time {
+// ZZ-Time
+
+      export type Options = never;
+    
+}
+export namespace Timestamp {
+// ZZ-Timestamp
+
+      export type Options = never;
+    
+}
+export namespace Timestamptz {
+// ZZ-Timestamptz
+
+      export type Options = never;
+    
+}
+export namespace Interval {
+// ZZ-Interval
+
+      export type Options = never;
+    
+}
+export namespace Timetz {
+// ZZ-Timetz
+
+      export type Options = never;
+    
+}
+export namespace Bit {
+// ZZ-Bit
+
+      export type Options = never;
+    
+}
+export namespace Varbit {
+// ZZ-Varbit
+
+      export type Options = never;
+    
+}
+export namespace Numeric {
+// ZZ-Numeric
+
+      export type Options = never;
+    
+}
+export namespace Refcursor {
+// ZZ-Refcursor
+
+      export type Options = never;
+    
+}
+export namespace Regprocedure {
+// ZZ-Regprocedure
+
+      export type Options = never;
+    
+}
+export namespace Regoper {
+// ZZ-Regoper
+
+      export type Options = never;
+    
+}
+export namespace Regoperator {
+// ZZ-Regoperator
+
+      export type Options = never;
+    
+}
+export namespace Regclass {
+// ZZ-Regclass
+
+      export type Options = never;
+    
+}
+export namespace Regcollation {
+// ZZ-Regcollation
+
+      export type Options = never;
+    
+}
+export namespace Regtype {
+// ZZ-Regtype
+
+      export type Options = never;
+    
+}
+export namespace Regrole {
+// ZZ-Regrole
+
+      export type Options = never;
+    
+}
+export namespace Regnamespace {
+// ZZ-Regnamespace
+
+      export type Options = never;
+    
+}
+export namespace Uuid {
+// ZZ-Uuid
+
+      export type Options = never;
+    
+}
+export namespace PgLsn {
+// ZZ-PgLsn
+
+      export type Options = never;
+    
+}
+export namespace Tsvector {
+// ZZ-Tsvector
+
+       /**
+         * Fulltext queries have different parsers that turn your query search
+         * text into a runnable search in the database.
+         *
+         * For PostgreSQL these are documented at:
+         * https://www.postgresql.org/docs/current/textsearch-controls.html#TEXTSEARCH-HEADLINE
+         */
+        export enum FulltextParser {
+        Default = "to_tsquery",
+        Plain = "plainto_tsquerty",
+        Phrase = "phraseto_tsquyer",
+        Web = "websearch_to_tsquery",
+        }
+        export type Options = {
+            queryParser?: FulltextParser;
+        }
+        
+            
+}
+export namespace Gtsvector {
+// ZZ-Gtsvector
+
+      export type Options = never;
+    
+}
+export namespace Tsquery {
+// ZZ-Tsquery
+
+       /**
+         * Fulltext queries have different parsers that turn your query search
+         * text into a runnable search in the database.
+         *
+         * For PostgreSQL these are documented at:
+         * https://www.postgresql.org/docs/current/textsearch-controls.html#TEXTSEARCH-HEADLINE
+         */
+        export enum FulltextParser {
+        Default = "to_tsquery",
+        Plain = "plainto_tsquerty",
+        Phrase = "phraseto_tsquyer",
+        Web = "websearch_to_tsquery",
+        }
+        export type Options = {
+            queryParser?: FulltextParser;
+        }
+        
+            
+}
+export namespace Regconfig {
+// ZZ-Regconfig
+
+      export type Options = never;
+    
+}
+export namespace Regdictionary {
+// ZZ-Regdictionary
+
+      export type Options = never;
+    
+}
+export namespace Jsonb {
+// ZZ-Jsonb
+
+      export type Options = never;
+    
+}
+export namespace Jsonpath {
+// ZZ-Jsonpath
+
+      export type Options = never;
+    
+}
+export namespace TxidSnapshot {
+// ZZ-TxidSnapshot
+
+      export type Options = never;
+    
+}
+export namespace PgSnapshot {
+// ZZ-PgSnapshot
+
+      export type Options = never;
+    
+}
+export namespace Int4range {
+// ZZ-Int4range
+
+      export type Options = never;
+    
+}
+export namespace Numrange {
+// ZZ-Numrange
+
+      export type Options = never;
+    
+}
+export namespace Tsrange {
+// ZZ-Tsrange
+
+      export type Options = never;
+    
+}
+export namespace Tstzrange {
+// ZZ-Tstzrange
+
+      export type Options = never;
+    
+}
+export namespace Daterange {
+// ZZ-Daterange
+
+      export type Options = never;
+    
+}
+export namespace Int8range {
+// ZZ-Int8range
+
+      export type Options = never;
+    
+}
+export namespace Int4multirange {
+// ZZ-Int4multirange
+
+      export type Options = never;
+    
+}
+export namespace Nummultirange {
+// ZZ-Nummultirange
+
+      export type Options = never;
+    
+}
+export namespace Tsmultirange {
+// ZZ-Tsmultirange
+
+      export type Options = never;
+    
+}
+export namespace Tstzmultirange {
+// ZZ-Tstzmultirange
+
+      export type Options = never;
+    
+}
+export namespace Datemultirange {
+// ZZ-Datemultirange
+
+      export type Options = never;
+    
+}
+export namespace Int8multirange {
+// ZZ-Int8multirange
+
+      export type Options = never;
+    
+}
+export namespace Record {
+// ZZ-Record
+
+      export type Options = never;
+    
+}
+export namespace RecordArray {
+// ZZ-RecordArray
+export type Options = never;
+}
+export namespace Cstring {
+// ZZ-Cstring
+
+      export type Options = never;
+    
+}
+export namespace Any {
+// ZZ-Any
+
+      export type Options = never;
+    
+}
+export namespace Anyarray {
+// ZZ-Anyarray
+
+      export type Options = never;
+    
+}
+export namespace Void {
+// ZZ-Void
+
+      export type Options = never;
+    
+}
+export namespace Trigger {
+// ZZ-Trigger
+
+      export type Options = never;
+    
+}
+export namespace EventTrigger {
+// ZZ-EventTrigger
+
+      export type Options = never;
+    
+}
+export namespace LanguageHandler {
+// ZZ-LanguageHandler
+
+      export type Options = never;
+    
+}
+export namespace Internal {
+// ZZ-Internal
+
+      export type Options = never;
+    
+}
+export namespace Anyelement {
+// ZZ-Anyelement
+
+      export type Options = never;
+    
+}
+export namespace Anynonarray {
+// ZZ-Anynonarray
+
+      export type Options = never;
+    
+}
+export namespace Anyenum {
+// ZZ-Anyenum
+
+      export type Options = never;
+    
+}
+export namespace FdwHandler {
+// ZZ-FdwHandler
+
+      export type Options = never;
+    
+}
+export namespace IndexAmHandler {
+// ZZ-IndexAmHandler
+
+      export type Options = never;
+    
+}
+export namespace TsmHandler {
+// ZZ-TsmHandler
+
+      export type Options = never;
+    
+}
+export namespace TableAmHandler {
+// ZZ-TableAmHandler
+
+      export type Options = never;
+    
+}
+export namespace Anyrange {
+// ZZ-Anyrange
+
+      export type Options = never;
+    
+}
+export namespace Anycompatible {
+// ZZ-Anycompatible
+
+      export type Options = never;
+    
+}
+export namespace Anycompatiblearray {
+// ZZ-Anycompatiblearray
+
+      export type Options = never;
+    
+}
+export namespace Anycompatiblenonarray {
+// ZZ-Anycompatiblenonarray
+
+      export type Options = never;
+    
+}
+export namespace Anycompatiblerange {
+// ZZ-Anycompatiblerange
+
+      export type Options = never;
+    
+}
+export namespace Anymultirange {
+// ZZ-Anymultirange
+
+      export type Options = never;
+    
+}
+export namespace Anycompatiblemultirange {
+// ZZ-Anycompatiblemultirange
+
+      export type Options = never;
+    
+}
+export namespace PgBrinBloomSummary {
+// ZZ-PgBrinBloomSummary
+
+      export type Options = never;
+    
+}
+export namespace PgBrinMinmaxMultiSummary {
+// ZZ-PgBrinMinmaxMultiSummary
+
+      export type Options = never;
+    
+}
+export namespace BoolArray {
+// ZZ-BoolArray
+export type Options = never;
+}
+export namespace ByteaArray {
+// ZZ-ByteaArray
+export type Options = never;
+}
+export namespace CharArray {
+// ZZ-CharArray
+export type Options = never;
+}
+export namespace NameArray {
+// ZZ-NameArray
+export type Options = never;
+}
+export namespace Int8Array {
+// ZZ-Int8Array
+export type Options = never;
+}
+export namespace Int2Array {
+// ZZ-Int2Array
+export type Options = never;
+}
+export namespace Int2vectorArray {
+// ZZ-Int2vectorArray
+export type Options = never;
+}
+export namespace Int4Array {
+// ZZ-Int4Array
+export type Options = never;
+}
+export namespace RegprocArray {
+// ZZ-RegprocArray
+export type Options = never;
+}
+export namespace TextArray {
+// ZZ-TextArray
+export type Options = never;
+}
+export namespace OidArray {
+// ZZ-OidArray
+export type Options = never;
+}
+export namespace TidArray {
+// ZZ-TidArray
+export type Options = never;
+}
+export namespace XidArray {
+// ZZ-XidArray
+export type Options = never;
+}
+export namespace CidArray {
+// ZZ-CidArray
+export type Options = never;
+}
+export namespace OidvectorArray {
+// ZZ-OidvectorArray
+export type Options = never;
+}
+export namespace PgTypeArray {
+// ZZ-PgTypeArray
+export type Options = never;
+}
+export namespace PgAttributeArray {
+// ZZ-PgAttributeArray
+export type Options = never;
+}
+export namespace PgProcArray {
+// ZZ-PgProcArray
+export type Options = never;
+}
+export namespace PgClassArray {
+// ZZ-PgClassArray
+export type Options = never;
+}
+export namespace JsonArray {
+// ZZ-JsonArray
+export type Options = never;
+}
+export namespace XmlArray {
+// ZZ-XmlArray
+export type Options = never;
+}
+export namespace Xid8Array {
+// ZZ-Xid8Array
+export type Options = never;
+}
+export namespace PointArray {
+// ZZ-PointArray
+export type Options = never;
+}
+export namespace LsegArray {
+// ZZ-LsegArray
+export type Options = never;
+}
+export namespace PathArray {
+// ZZ-PathArray
+export type Options = never;
+}
+export namespace BoxArray {
+// ZZ-BoxArray
+export type Options = never;
+}
+export namespace PolygonArray {
+// ZZ-PolygonArray
+export type Options = never;
+}
+export namespace LineArray {
+// ZZ-LineArray
+export type Options = never;
+}
+export namespace Float4Array {
+// ZZ-Float4Array
+export type Options = never;
+}
+export namespace Float8Array {
+// ZZ-Float8Array
+export type Options = never;
+}
+export namespace CircleArray {
+// ZZ-CircleArray
+export type Options = never;
+}
+export namespace MoneyArray {
+// ZZ-MoneyArray
+export type Options = never;
+}
+export namespace MacaddrArray {
+// ZZ-MacaddrArray
+export type Options = never;
+}
+export namespace InetArray {
+// ZZ-InetArray
+export type Options = never;
+}
+export namespace CidrArray {
+// ZZ-CidrArray
+export type Options = never;
+}
+export namespace Macaddr8Array {
+// ZZ-Macaddr8Array
+export type Options = never;
+}
+export namespace AclitemArray {
+// ZZ-AclitemArray
+export type Options = never;
+}
+export namespace BpcharArray {
+// ZZ-BpcharArray
+export type Options = never;
+}
+export namespace VarcharArray {
+// ZZ-VarcharArray
+export type Options = never;
+}
+export namespace DateArray {
+// ZZ-DateArray
+export type Options = never;
+}
+export namespace TimeArray {
+// ZZ-TimeArray
+export type Options = never;
+}
+export namespace TimestampArray {
+// ZZ-TimestampArray
+export type Options = never;
+}
+export namespace TimestamptzArray {
+// ZZ-TimestamptzArray
+export type Options = never;
+}
+export namespace IntervalArray {
+// ZZ-IntervalArray
+export type Options = never;
+}
+export namespace TimetzArray {
+// ZZ-TimetzArray
+export type Options = never;
+}
+export namespace BitArray {
+// ZZ-BitArray
+export type Options = never;
+}
+export namespace VarbitArray {
+// ZZ-VarbitArray
+export type Options = never;
+}
+export namespace NumericArray {
+// ZZ-NumericArray
+export type Options = never;
+}
+export namespace RefcursorArray {
+// ZZ-RefcursorArray
+export type Options = never;
+}
+export namespace RegprocedureArray {
+// ZZ-RegprocedureArray
+export type Options = never;
+}
+export namespace RegoperArray {
+// ZZ-RegoperArray
+export type Options = never;
+}
+export namespace RegoperatorArray {
+// ZZ-RegoperatorArray
+export type Options = never;
+}
+export namespace RegclassArray {
+// ZZ-RegclassArray
+export type Options = never;
+}
+export namespace RegcollationArray {
+// ZZ-RegcollationArray
+export type Options = never;
+}
+export namespace RegtypeArray {
+// ZZ-RegtypeArray
+export type Options = never;
+}
+export namespace RegroleArray {
+// ZZ-RegroleArray
+export type Options = never;
+}
+export namespace RegnamespaceArray {
+// ZZ-RegnamespaceArray
+export type Options = never;
+}
+export namespace UuidArray {
+// ZZ-UuidArray
+export type Options = never;
+}
+export namespace PgLsnArray {
+// ZZ-PgLsnArray
+export type Options = never;
+}
+export namespace TsvectorArray {
+// ZZ-TsvectorArray
+export type Options = never;
+}
+export namespace GtsvectorArray {
+// ZZ-GtsvectorArray
+export type Options = never;
+}
+export namespace TsqueryArray {
+// ZZ-TsqueryArray
+export type Options = never;
+}
+export namespace RegconfigArray {
+// ZZ-RegconfigArray
+export type Options = never;
+}
+export namespace RegdictionaryArray {
+// ZZ-RegdictionaryArray
+export type Options = never;
+}
+export namespace JsonbArray {
+// ZZ-JsonbArray
+export type Options = never;
+}
+export namespace JsonpathArray {
+// ZZ-JsonpathArray
+export type Options = never;
+}
+export namespace TxidSnapshotArray {
+// ZZ-TxidSnapshotArray
+export type Options = never;
+}
+export namespace PgSnapshotArray {
+// ZZ-PgSnapshotArray
+export type Options = never;
+}
+export namespace Int4rangeArray {
+// ZZ-Int4rangeArray
+export type Options = never;
+}
+export namespace NumrangeArray {
+// ZZ-NumrangeArray
+export type Options = never;
+}
+export namespace TsrangeArray {
+// ZZ-TsrangeArray
+export type Options = never;
+}
+export namespace TstzrangeArray {
+// ZZ-TstzrangeArray
+export type Options = never;
+}
+export namespace DaterangeArray {
+// ZZ-DaterangeArray
+export type Options = never;
+}
+export namespace Int8rangeArray {
+// ZZ-Int8rangeArray
+export type Options = never;
+}
+export namespace Int4multirangeArray {
+// ZZ-Int4multirangeArray
+export type Options = never;
+}
+export namespace NummultirangeArray {
+// ZZ-NummultirangeArray
+export type Options = never;
+}
+export namespace TsmultirangeArray {
+// ZZ-TsmultirangeArray
+export type Options = never;
+}
+export namespace TstzmultirangeArray {
+// ZZ-TstzmultirangeArray
+export type Options = never;
+}
+export namespace DatemultirangeArray {
+// ZZ-DatemultirangeArray
+export type Options = never;
+}
+export namespace Int8multirangeArray {
+// ZZ-Int8multirangeArray
+export type Options = never;
+}
+export namespace CstringArray {
+// ZZ-CstringArray
+export type Options = never;
+}
+export namespace PgAttrdef {
+// ZZ-PgAttrdef
+export type Options = never;
+}
+export namespace PgAttrdefArray {
+// ZZ-PgAttrdefArray
+export type Options = never;
+}
+export namespace PgConstraint {
+// ZZ-PgConstraint
+export type Options = never;
+}
+export namespace PgConstraintArray {
+// ZZ-PgConstraintArray
+export type Options = never;
+}
+export namespace PgInherits {
+// ZZ-PgInherits
+export type Options = never;
+}
+export namespace PgInheritsArray {
+// ZZ-PgInheritsArray
+export type Options = never;
+}
+export namespace PgIndex {
+// ZZ-PgIndex
+export type Options = never;
+}
+export namespace PgIndexArray {
+// ZZ-PgIndexArray
+export type Options = never;
+}
+export namespace PgOperator {
+// ZZ-PgOperator
+export type Options = never;
+}
+export namespace PgOperatorArray {
+// ZZ-PgOperatorArray
+export type Options = never;
+}
+export namespace PgOpfamily {
+// ZZ-PgOpfamily
+export type Options = never;
+}
+export namespace PgOpfamilyArray {
+// ZZ-PgOpfamilyArray
+export type Options = never;
+}
+export namespace PgOpclass {
+// ZZ-PgOpclass
+export type Options = never;
+}
+export namespace PgOpclassArray {
+// ZZ-PgOpclassArray
+export type Options = never;
+}
+export namespace PgAm {
+// ZZ-PgAm
+export type Options = never;
+}
+export namespace PgAmArray {
+// ZZ-PgAmArray
+export type Options = never;
+}
+export namespace PgAmop {
+// ZZ-PgAmop
+export type Options = never;
+}
+export namespace PgAmopArray {
+// ZZ-PgAmopArray
+export type Options = never;
+}
+export namespace PgAmproc {
+// ZZ-PgAmproc
+export type Options = never;
+}
+export namespace PgAmprocArray {
+// ZZ-PgAmprocArray
+export type Options = never;
+}
+export namespace PgLanguage {
+// ZZ-PgLanguage
+export type Options = never;
+}
+export namespace PgLanguageArray {
+// ZZ-PgLanguageArray
+export type Options = never;
+}
+export namespace PgLargeobjectMetadata {
+// ZZ-PgLargeobjectMetadata
+export type Options = never;
+}
+export namespace PgLargeobjectMetadataArray {
+// ZZ-PgLargeobjectMetadataArray
+export type Options = never;
+}
+export namespace PgLargeobject {
+// ZZ-PgLargeobject
+export type Options = never;
+}
+export namespace PgLargeobjectArray {
+// ZZ-PgLargeobjectArray
+export type Options = never;
+}
+export namespace PgAggregate {
+// ZZ-PgAggregate
+export type Options = never;
+}
+export namespace PgAggregateArray {
+// ZZ-PgAggregateArray
+export type Options = never;
+}
+export namespace PgStatistic {
+// ZZ-PgStatistic
+export type Options = never;
+}
+export namespace PgStatisticArray {
+// ZZ-PgStatisticArray
+export type Options = never;
+}
+export namespace PgStatisticExt {
+// ZZ-PgStatisticExt
+export type Options = never;
+}
+export namespace PgStatisticExtArray {
+// ZZ-PgStatisticExtArray
+export type Options = never;
+}
+export namespace PgStatisticExtData {
+// ZZ-PgStatisticExtData
+export type Options = never;
+}
+export namespace PgStatisticExtDataArray {
+// ZZ-PgStatisticExtDataArray
+export type Options = never;
+}
+export namespace PgRewrite {
+// ZZ-PgRewrite
+export type Options = never;
+}
+export namespace PgRewriteArray {
+// ZZ-PgRewriteArray
+export type Options = never;
+}
+export namespace PgTrigger {
+// ZZ-PgTrigger
+export type Options = never;
+}
+export namespace PgTriggerArray {
+// ZZ-PgTriggerArray
+export type Options = never;
+}
+export namespace PgEventTrigger {
+// ZZ-PgEventTrigger
+export type Options = never;
+}
+export namespace PgEventTriggerArray {
+// ZZ-PgEventTriggerArray
+export type Options = never;
+}
+export namespace PgDescription {
+// ZZ-PgDescription
+export type Options = never;
+}
+export namespace PgDescriptionArray {
+// ZZ-PgDescriptionArray
+export type Options = never;
+}
+export namespace PgCast {
+// ZZ-PgCast
+export type Options = never;
+}
+export namespace PgCastArray {
+// ZZ-PgCastArray
+export type Options = never;
+}
+export namespace PgEnum {
+// ZZ-PgEnum
+export type Options = never;
+}
+export namespace PgEnumArray {
+// ZZ-PgEnumArray
+export type Options = never;
+}
+export namespace PgNamespace {
+// ZZ-PgNamespace
+export type Options = never;
+}
+export namespace PgNamespaceArray {
+// ZZ-PgNamespaceArray
+export type Options = never;
+}
+export namespace PgConversion {
+// ZZ-PgConversion
+export type Options = never;
+}
+export namespace PgConversionArray {
+// ZZ-PgConversionArray
+export type Options = never;
+}
+export namespace PgDepend {
+// ZZ-PgDepend
+export type Options = never;
+}
+export namespace PgDependArray {
+// ZZ-PgDependArray
+export type Options = never;
+}
+export namespace PgDatabase {
+// ZZ-PgDatabase
+export type Options = never;
+}
+export namespace PgDatabaseArray {
+// ZZ-PgDatabaseArray
+export type Options = never;
+}
+export namespace PgDbRoleSetting {
+// ZZ-PgDbRoleSetting
+export type Options = never;
+}
+export namespace PgDbRoleSettingArray {
+// ZZ-PgDbRoleSettingArray
+export type Options = never;
+}
+export namespace PgTablespace {
+// ZZ-PgTablespace
+export type Options = never;
+}
+export namespace PgTablespaceArray {
+// ZZ-PgTablespaceArray
+export type Options = never;
+}
+export namespace PgAuthid {
+// ZZ-PgAuthid
+export type Options = never;
+}
+export namespace PgAuthidArray {
+// ZZ-PgAuthidArray
+export type Options = never;
+}
+export namespace PgAuthMembers {
+// ZZ-PgAuthMembers
+export type Options = never;
+}
+export namespace PgAuthMembersArray {
+// ZZ-PgAuthMembersArray
+export type Options = never;
+}
+export namespace PgShdepend {
+// ZZ-PgShdepend
+export type Options = never;
+}
+export namespace PgShdependArray {
+// ZZ-PgShdependArray
+export type Options = never;
+}
+export namespace PgShdescription {
+// ZZ-PgShdescription
+export type Options = never;
+}
+export namespace PgShdescriptionArray {
+// ZZ-PgShdescriptionArray
+export type Options = never;
+}
+export namespace PgTsConfig {
+// ZZ-PgTsConfig
+export type Options = never;
+}
+export namespace PgTsConfigArray {
+// ZZ-PgTsConfigArray
+export type Options = never;
+}
+export namespace PgTsConfigMap {
+// ZZ-PgTsConfigMap
+export type Options = never;
+}
+export namespace PgTsConfigMapArray {
+// ZZ-PgTsConfigMapArray
+export type Options = never;
+}
+export namespace PgTsDict {
+// ZZ-PgTsDict
+export type Options = never;
+}
+export namespace PgTsDictArray {
+// ZZ-PgTsDictArray
+export type Options = never;
+}
+export namespace PgTsParser {
+// ZZ-PgTsParser
+export type Options = never;
+}
+export namespace PgTsParserArray {
+// ZZ-PgTsParserArray
+export type Options = never;
+}
+export namespace PgTsTemplate {
+// ZZ-PgTsTemplate
+export type Options = never;
+}
+export namespace PgTsTemplateArray {
+// ZZ-PgTsTemplateArray
+export type Options = never;
+}
+export namespace PgExtension {
+// ZZ-PgExtension
+export type Options = never;
+}
+export namespace PgExtensionArray {
+// ZZ-PgExtensionArray
+export type Options = never;
+}
+export namespace PgForeignDataWrapper {
+// ZZ-PgForeignDataWrapper
+export type Options = never;
+}
+export namespace PgForeignDataWrapperArray {
+// ZZ-PgForeignDataWrapperArray
+export type Options = never;
+}
+export namespace PgForeignServer {
+// ZZ-PgForeignServer
+export type Options = never;
+}
+export namespace PgForeignServerArray {
+// ZZ-PgForeignServerArray
+export type Options = never;
+}
+export namespace PgUserMapping {
+// ZZ-PgUserMapping
+export type Options = never;
+}
+export namespace PgUserMappingArray {
+// ZZ-PgUserMappingArray
+export type Options = never;
+}
+export namespace PgForeignTable {
+// ZZ-PgForeignTable
+export type Options = never;
+}
+export namespace PgForeignTableArray {
+// ZZ-PgForeignTableArray
+export type Options = never;
+}
+export namespace PgPolicy {
+// ZZ-PgPolicy
+export type Options = never;
+}
+export namespace PgPolicyArray {
+// ZZ-PgPolicyArray
+export type Options = never;
+}
+export namespace PgReplicationOrigin {
+// ZZ-PgReplicationOrigin
+export type Options = never;
+}
+export namespace PgReplicationOriginArray {
+// ZZ-PgReplicationOriginArray
+export type Options = never;
+}
+export namespace PgDefaultAcl {
+// ZZ-PgDefaultAcl
+export type Options = never;
+}
+export namespace PgDefaultAclArray {
+// ZZ-PgDefaultAclArray
+export type Options = never;
+}
+export namespace PgInitPrivs {
+// ZZ-PgInitPrivs
+export type Options = never;
+}
+export namespace PgInitPrivsArray {
+// ZZ-PgInitPrivsArray
+export type Options = never;
+}
+export namespace PgSeclabel {
+// ZZ-PgSeclabel
+export type Options = never;
+}
+export namespace PgSeclabelArray {
+// ZZ-PgSeclabelArray
+export type Options = never;
+}
+export namespace PgShseclabel {
+// ZZ-PgShseclabel
+export type Options = never;
+}
+export namespace PgShseclabelArray {
+// ZZ-PgShseclabelArray
+export type Options = never;
+}
+export namespace PgCollation {
+// ZZ-PgCollation
+export type Options = never;
+}
+export namespace PgCollationArray {
+// ZZ-PgCollationArray
+export type Options = never;
+}
+export namespace PgParameterAcl {
+// ZZ-PgParameterAcl
+export type Options = never;
+}
+export namespace PgParameterAclArray {
+// ZZ-PgParameterAclArray
+export type Options = never;
+}
+export namespace PgPartitionedTable {
+// ZZ-PgPartitionedTable
+export type Options = never;
+}
+export namespace PgPartitionedTableArray {
+// ZZ-PgPartitionedTableArray
+export type Options = never;
+}
+export namespace PgRange {
+// ZZ-PgRange
+export type Options = never;
+}
+export namespace PgRangeArray {
+// ZZ-PgRangeArray
+export type Options = never;
+}
+export namespace PgTransform {
+// ZZ-PgTransform
+export type Options = never;
+}
+export namespace PgTransformArray {
+// ZZ-PgTransformArray
+export type Options = never;
+}
+export namespace PgSequence {
+// ZZ-PgSequence
+export type Options = never;
+}
+export namespace PgSequenceArray {
+// ZZ-PgSequenceArray
+export type Options = never;
+}
+export namespace PgPublication {
+// ZZ-PgPublication
+export type Options = never;
+}
+export namespace PgPublicationArray {
+// ZZ-PgPublicationArray
+export type Options = never;
+}
+export namespace PgPublicationNamespace {
+// ZZ-PgPublicationNamespace
+export type Options = never;
+}
+export namespace PgPublicationNamespaceArray {
+// ZZ-PgPublicationNamespaceArray
+export type Options = never;
+}
+export namespace PgPublicationRel {
+// ZZ-PgPublicationRel
+export type Options = never;
+}
+export namespace PgPublicationRelArray {
+// ZZ-PgPublicationRelArray
+export type Options = never;
+}
+export namespace PgSubscription {
+// ZZ-PgSubscription
+export type Options = never;
+}
+export namespace PgSubscriptionArray {
+// ZZ-PgSubscriptionArray
+export type Options = never;
+}
+export namespace PgSubscriptionRel {
+// ZZ-PgSubscriptionRel
+export type Options = never;
+}
+export namespace PgSubscriptionRelArray {
+// ZZ-PgSubscriptionRelArray
+export type Options = never;
+}
+export namespace PgRoles {
+// ZZ-PgRoles
+export type Options = never;
+}
+export namespace PgRolesArray {
+// ZZ-PgRolesArray
+export type Options = never;
+}
+export namespace PgShadow {
+// ZZ-PgShadow
+export type Options = never;
+}
+export namespace PgShadowArray {
+// ZZ-PgShadowArray
+export type Options = never;
+}
+export namespace PgGroup {
+// ZZ-PgGroup
+export type Options = never;
+}
+export namespace PgGroupArray {
+// ZZ-PgGroupArray
+export type Options = never;
+}
+export namespace PgUser {
+// ZZ-PgUser
+export type Options = never;
+}
+export namespace PgUserArray {
+// ZZ-PgUserArray
+export type Options = never;
+}
+export namespace PgPolicies {
+// ZZ-PgPolicies
+export type Options = never;
+}
+export namespace PgPoliciesArray {
+// ZZ-PgPoliciesArray
+export type Options = never;
+}
+export namespace PgRules {
+// ZZ-PgRules
+export type Options = never;
+}
+export namespace PgRulesArray {
+// ZZ-PgRulesArray
+export type Options = never;
+}
+export namespace PgViews {
+// ZZ-PgViews
+export type Options = never;
+}
+export namespace PgViewsArray {
+// ZZ-PgViewsArray
+export type Options = never;
+}
+export namespace PgTables {
+// ZZ-PgTables
+export type Options = never;
+}
+export namespace PgTablesArray {
+// ZZ-PgTablesArray
+export type Options = never;
+}
+export namespace PgMatviews {
+// ZZ-PgMatviews
+export type Options = never;
+}
+export namespace PgMatviewsArray {
+// ZZ-PgMatviewsArray
+export type Options = never;
+}
+export namespace PgIndexes {
+// ZZ-PgIndexes
+export type Options = never;
+}
+export namespace PgIndexesArray {
+// ZZ-PgIndexesArray
+export type Options = never;
+}
+export namespace PgSequences {
+// ZZ-PgSequences
+export type Options = never;
+}
+export namespace PgSequencesArray {
+// ZZ-PgSequencesArray
+export type Options = never;
+}
+export namespace PgStats {
+// ZZ-PgStats
+export type Options = never;
+}
+export namespace PgStatsArray {
+// ZZ-PgStatsArray
+export type Options = never;
+}
+export namespace PgStatsExt {
+// ZZ-PgStatsExt
+export type Options = never;
+}
+export namespace PgStatsExtArray {
+// ZZ-PgStatsExtArray
+export type Options = never;
+}
+export namespace PgStatsExtExprs {
+// ZZ-PgStatsExtExprs
+export type Options = never;
+}
+export namespace PgStatsExtExprsArray {
+// ZZ-PgStatsExtExprsArray
+export type Options = never;
+}
+export namespace PgPublicationTables {
+// ZZ-PgPublicationTables
+export type Options = never;
+}
+export namespace PgPublicationTablesArray {
+// ZZ-PgPublicationTablesArray
+export type Options = never;
+}
+export namespace PgLocks {
+// ZZ-PgLocks
+export type Options = never;
+}
+export namespace PgLocksArray {
+// ZZ-PgLocksArray
+export type Options = never;
+}
+export namespace PgCursors {
+// ZZ-PgCursors
+export type Options = never;
+}
+export namespace PgCursorsArray {
+// ZZ-PgCursorsArray
+export type Options = never;
+}
+export namespace PgAvailableExtensions {
+// ZZ-PgAvailableExtensions
+export type Options = never;
+}
+export namespace PgAvailableExtensionsArray {
+// ZZ-PgAvailableExtensionsArray
+export type Options = never;
+}
+export namespace PgAvailableExtensionVersions {
+// ZZ-PgAvailableExtensionVersions
+export type Options = never;
+}
+export namespace PgAvailableExtensionVersionsArray {
+// ZZ-PgAvailableExtensionVersionsArray
+export type Options = never;
+}
+export namespace PgPreparedXacts {
+// ZZ-PgPreparedXacts
+export type Options = never;
+}
+export namespace PgPreparedXactsArray {
+// ZZ-PgPreparedXactsArray
+export type Options = never;
+}
+export namespace PgPreparedStatements {
+// ZZ-PgPreparedStatements
+export type Options = never;
+}
+export namespace PgPreparedStatementsArray {
+// ZZ-PgPreparedStatementsArray
+export type Options = never;
+}
+export namespace PgSeclabels {
+// ZZ-PgSeclabels
+export type Options = never;
+}
+export namespace PgSeclabelsArray {
+// ZZ-PgSeclabelsArray
+export type Options = never;
+}
+export namespace PgSettings {
+// ZZ-PgSettings
+export type Options = never;
+}
+export namespace PgSettingsArray {
+// ZZ-PgSettingsArray
+export type Options = never;
+}
+export namespace PgFileSettings {
+// ZZ-PgFileSettings
+export type Options = never;
+}
+export namespace PgFileSettingsArray {
+// ZZ-PgFileSettingsArray
+export type Options = never;
+}
+export namespace PgHbaFileRules {
+// ZZ-PgHbaFileRules
+export type Options = never;
+}
+export namespace PgHbaFileRulesArray {
+// ZZ-PgHbaFileRulesArray
+export type Options = never;
+}
+export namespace PgIdentFileMappings {
+// ZZ-PgIdentFileMappings
+export type Options = never;
+}
+export namespace PgIdentFileMappingsArray {
+// ZZ-PgIdentFileMappingsArray
+export type Options = never;
+}
+export namespace PgTimezoneAbbrevs {
+// ZZ-PgTimezoneAbbrevs
+export type Options = never;
+}
+export namespace PgTimezoneAbbrevsArray {
+// ZZ-PgTimezoneAbbrevsArray
+export type Options = never;
+}
+export namespace PgTimezoneNames {
+// ZZ-PgTimezoneNames
+export type Options = never;
+}
+export namespace PgTimezoneNamesArray {
+// ZZ-PgTimezoneNamesArray
+export type Options = never;
+}
+export namespace PgConfig {
+// ZZ-PgConfig
+export type Options = never;
+}
+export namespace PgConfigArray {
+// ZZ-PgConfigArray
+export type Options = never;
+}
+export namespace PgShmemAllocations {
+// ZZ-PgShmemAllocations
+export type Options = never;
+}
+export namespace PgShmemAllocationsArray {
+// ZZ-PgShmemAllocationsArray
+export type Options = never;
+}
+export namespace PgBackendMemoryContexts {
+// ZZ-PgBackendMemoryContexts
+export type Options = never;
+}
+export namespace PgBackendMemoryContextsArray {
+// ZZ-PgBackendMemoryContextsArray
+export type Options = never;
+}
+export namespace PgStatAllTables {
+// ZZ-PgStatAllTables
+export type Options = never;
+}
+export namespace PgStatAllTablesArray {
+// ZZ-PgStatAllTablesArray
+export type Options = never;
+}
+export namespace PgStatXactAllTables {
+// ZZ-PgStatXactAllTables
+export type Options = never;
+}
+export namespace PgStatXactAllTablesArray {
+// ZZ-PgStatXactAllTablesArray
+export type Options = never;
+}
+export namespace PgStatSysTables {
+// ZZ-PgStatSysTables
+export type Options = never;
+}
+export namespace PgStatSysTablesArray {
+// ZZ-PgStatSysTablesArray
+export type Options = never;
+}
+export namespace PgStatXactSysTables {
+// ZZ-PgStatXactSysTables
+export type Options = never;
+}
+export namespace PgStatXactSysTablesArray {
+// ZZ-PgStatXactSysTablesArray
+export type Options = never;
+}
+export namespace PgStatUserTables {
+// ZZ-PgStatUserTables
+export type Options = never;
+}
+export namespace PgStatUserTablesArray {
+// ZZ-PgStatUserTablesArray
+export type Options = never;
+}
+export namespace PgStatXactUserTables {
+// ZZ-PgStatXactUserTables
+export type Options = never;
+}
+export namespace PgStatXactUserTablesArray {
+// ZZ-PgStatXactUserTablesArray
+export type Options = never;
+}
+export namespace PgStatioAllTables {
+// ZZ-PgStatioAllTables
+export type Options = never;
+}
+export namespace PgStatioAllTablesArray {
+// ZZ-PgStatioAllTablesArray
+export type Options = never;
+}
+export namespace PgStatioSysTables {
+// ZZ-PgStatioSysTables
+export type Options = never;
+}
+export namespace PgStatioSysTablesArray {
+// ZZ-PgStatioSysTablesArray
+export type Options = never;
+}
+export namespace PgStatioUserTables {
+// ZZ-PgStatioUserTables
+export type Options = never;
+}
+export namespace PgStatioUserTablesArray {
+// ZZ-PgStatioUserTablesArray
+export type Options = never;
+}
+export namespace PgStatAllIndexes {
+// ZZ-PgStatAllIndexes
+export type Options = never;
+}
+export namespace PgStatAllIndexesArray {
+// ZZ-PgStatAllIndexesArray
+export type Options = never;
+}
+export namespace PgStatSysIndexes {
+// ZZ-PgStatSysIndexes
+export type Options = never;
+}
+export namespace PgStatSysIndexesArray {
+// ZZ-PgStatSysIndexesArray
+export type Options = never;
+}
+export namespace PgStatUserIndexes {
+// ZZ-PgStatUserIndexes
+export type Options = never;
+}
+export namespace PgStatUserIndexesArray {
+// ZZ-PgStatUserIndexesArray
+export type Options = never;
+}
+export namespace PgStatioAllIndexes {
+// ZZ-PgStatioAllIndexes
+export type Options = never;
+}
+export namespace PgStatioAllIndexesArray {
+// ZZ-PgStatioAllIndexesArray
+export type Options = never;
+}
+export namespace PgStatioSysIndexes {
+// ZZ-PgStatioSysIndexes
+export type Options = never;
+}
+export namespace PgStatioSysIndexesArray {
+// ZZ-PgStatioSysIndexesArray
+export type Options = never;
+}
+export namespace PgStatioUserIndexes {
+// ZZ-PgStatioUserIndexes
+export type Options = never;
+}
+export namespace PgStatioUserIndexesArray {
+// ZZ-PgStatioUserIndexesArray
+export type Options = never;
+}
+export namespace PgStatioAllSequences {
+// ZZ-PgStatioAllSequences
+export type Options = never;
+}
+export namespace PgStatioAllSequencesArray {
+// ZZ-PgStatioAllSequencesArray
+export type Options = never;
+}
+export namespace PgStatioSysSequences {
+// ZZ-PgStatioSysSequences
+export type Options = never;
+}
+export namespace PgStatioSysSequencesArray {
+// ZZ-PgStatioSysSequencesArray
+export type Options = never;
+}
+export namespace PgStatioUserSequences {
+// ZZ-PgStatioUserSequences
+export type Options = never;
+}
+export namespace PgStatioUserSequencesArray {
+// ZZ-PgStatioUserSequencesArray
+export type Options = never;
+}
+export namespace PgStatActivity {
+// ZZ-PgStatActivity
+export type Options = never;
+}
+export namespace PgStatActivityArray {
+// ZZ-PgStatActivityArray
+export type Options = never;
+}
+export namespace PgStatReplication {
+// ZZ-PgStatReplication
+export type Options = never;
+}
+export namespace PgStatReplicationArray {
+// ZZ-PgStatReplicationArray
+export type Options = never;
+}
+export namespace PgStatSlru {
+// ZZ-PgStatSlru
+export type Options = never;
+}
+export namespace PgStatSlruArray {
+// ZZ-PgStatSlruArray
+export type Options = never;
+}
+export namespace PgStatWalReceiver {
+// ZZ-PgStatWalReceiver
+export type Options = never;
+}
+export namespace PgStatWalReceiverArray {
+// ZZ-PgStatWalReceiverArray
+export type Options = never;
+}
+export namespace PgStatRecoveryPrefetch {
+// ZZ-PgStatRecoveryPrefetch
+export type Options = never;
+}
+export namespace PgStatRecoveryPrefetchArray {
+// ZZ-PgStatRecoveryPrefetchArray
+export type Options = never;
+}
+export namespace PgStatSubscription {
+// ZZ-PgStatSubscription
+export type Options = never;
+}
+export namespace PgStatSubscriptionArray {
+// ZZ-PgStatSubscriptionArray
+export type Options = never;
+}
+export namespace PgStatSsl {
+// ZZ-PgStatSsl
+export type Options = never;
+}
+export namespace PgStatSslArray {
+// ZZ-PgStatSslArray
+export type Options = never;
+}
+export namespace PgStatGssapi {
+// ZZ-PgStatGssapi
+export type Options = never;
+}
+export namespace PgStatGssapiArray {
+// ZZ-PgStatGssapiArray
+export type Options = never;
+}
+export namespace PgReplicationSlots {
+// ZZ-PgReplicationSlots
+export type Options = never;
+}
+export namespace PgReplicationSlotsArray {
+// ZZ-PgReplicationSlotsArray
+export type Options = never;
+}
+export namespace PgStatReplicationSlots {
+// ZZ-PgStatReplicationSlots
+export type Options = never;
+}
+export namespace PgStatReplicationSlotsArray {
+// ZZ-PgStatReplicationSlotsArray
+export type Options = never;
+}
+export namespace PgStatDatabase {
+// ZZ-PgStatDatabase
+export type Options = never;
+}
+export namespace PgStatDatabaseArray {
+// ZZ-PgStatDatabaseArray
+export type Options = never;
+}
+export namespace PgStatDatabaseConflicts {
+// ZZ-PgStatDatabaseConflicts
+export type Options = never;
+}
+export namespace PgStatDatabaseConflictsArray {
+// ZZ-PgStatDatabaseConflictsArray
+export type Options = never;
+}
+export namespace PgStatUserFunctions {
+// ZZ-PgStatUserFunctions
+export type Options = never;
+}
+export namespace PgStatUserFunctionsArray {
+// ZZ-PgStatUserFunctionsArray
+export type Options = never;
+}
+export namespace PgStatXactUserFunctions {
+// ZZ-PgStatXactUserFunctions
+export type Options = never;
+}
+export namespace PgStatXactUserFunctionsArray {
+// ZZ-PgStatXactUserFunctionsArray
+export type Options = never;
+}
+export namespace PgStatArchiver {
+// ZZ-PgStatArchiver
+export type Options = never;
+}
+export namespace PgStatArchiverArray {
+// ZZ-PgStatArchiverArray
+export type Options = never;
+}
+export namespace PgStatBgwriter {
+// ZZ-PgStatBgwriter
+export type Options = never;
+}
+export namespace PgStatBgwriterArray {
+// ZZ-PgStatBgwriterArray
+export type Options = never;
+}
+export namespace PgStatIo {
+// ZZ-PgStatIo
+export type Options = never;
+}
+export namespace PgStatIoArray {
+// ZZ-PgStatIoArray
+export type Options = never;
+}
+export namespace PgStatWal {
+// ZZ-PgStatWal
+export type Options = never;
+}
+export namespace PgStatWalArray {
+// ZZ-PgStatWalArray
+export type Options = never;
+}
+export namespace PgStatProgressAnalyze {
+// ZZ-PgStatProgressAnalyze
+export type Options = never;
+}
+export namespace PgStatProgressAnalyzeArray {
+// ZZ-PgStatProgressAnalyzeArray
+export type Options = never;
+}
+export namespace PgStatProgressVacuum {
+// ZZ-PgStatProgressVacuum
+export type Options = never;
+}
+export namespace PgStatProgressVacuumArray {
+// ZZ-PgStatProgressVacuumArray
+export type Options = never;
+}
+export namespace PgStatProgressCluster {
+// ZZ-PgStatProgressCluster
+export type Options = never;
+}
+export namespace PgStatProgressClusterArray {
+// ZZ-PgStatProgressClusterArray
+export type Options = never;
+}
+export namespace PgStatProgressCreateIndex {
+// ZZ-PgStatProgressCreateIndex
+export type Options = never;
+}
+export namespace PgStatProgressCreateIndexArray {
+// ZZ-PgStatProgressCreateIndexArray
+export type Options = never;
+}
+export namespace PgStatProgressBasebackup {
+// ZZ-PgStatProgressBasebackup
+export type Options = never;
+}
+export namespace PgStatProgressBasebackupArray {
+// ZZ-PgStatProgressBasebackupArray
+export type Options = never;
+}
+export namespace PgStatProgressCopy {
+// ZZ-PgStatProgressCopy
+export type Options = never;
+}
+export namespace PgStatProgressCopyArray {
+// ZZ-PgStatProgressCopyArray
+export type Options = never;
+}
+export namespace PgUserMappings {
+// ZZ-PgUserMappings
+export type Options = never;
+}
+export namespace PgUserMappingsArray {
+// ZZ-PgUserMappingsArray
+export type Options = never;
+}
+export namespace PgReplicationOriginStatus {
+// ZZ-PgReplicationOriginStatus
+export type Options = never;
+}
+export namespace PgReplicationOriginStatusArray {
+// ZZ-PgReplicationOriginStatusArray
+export type Options = never;
+}
+export namespace PgStatSubscriptionStats {
+// ZZ-PgStatSubscriptionStats
+export type Options = never;
+}
+export namespace PgStatSubscriptionStatsArray {
+// ZZ-PgStatSubscriptionStatsArray
+export type Options = never;
+}
+export namespace PgProcOidIndex {
+// ZZ-PgProcOidIndex
+export type Options = never;
+}
+export namespace PgProcPronameArgsNspIndex {
+// ZZ-PgProcPronameArgsNspIndex
+export type Options = never;
+}
+export namespace PgTypeOidIndex {
+// ZZ-PgTypeOidIndex
+export type Options = never;
+}
+export namespace PgTypeTypnameNspIndex {
+// ZZ-PgTypeTypnameNspIndex
+export type Options = never;
+}
+export namespace PgAttributeRelidAttnamIndex {
+// ZZ-PgAttributeRelidAttnamIndex
+export type Options = never;
+}
+export namespace PgAttributeRelidAttnumIndex {
+// ZZ-PgAttributeRelidAttnumIndex
+export type Options = never;
+}
+export namespace PgClassOidIndex {
+// ZZ-PgClassOidIndex
+export type Options = never;
+}
+export namespace PgClassRelnameNspIndex {
+// ZZ-PgClassRelnameNspIndex
+export type Options = never;
+}
+export namespace PgClassTblspcRelfilenodeIndex {
+// ZZ-PgClassTblspcRelfilenodeIndex
+export type Options = never;
+}
+export namespace PgAttrdefAdrelidAdnumIndex {
+// ZZ-PgAttrdefAdrelidAdnumIndex
+export type Options = never;
+}
+export namespace PgAttrdefOidIndex {
+// ZZ-PgAttrdefOidIndex
+export type Options = never;
+}
+export namespace PgConstraintConnameNspIndex {
+// ZZ-PgConstraintConnameNspIndex
+export type Options = never;
+}
+export namespace PgConstraintConrelidContypidConnameIndex {
+// ZZ-PgConstraintConrelidContypidConnameIndex
+export type Options = never;
+}
+export namespace PgConstraintContypidIndex {
+// ZZ-PgConstraintContypidIndex
+export type Options = never;
+}
+export namespace PgConstraintOidIndex {
+// ZZ-PgConstraintOidIndex
+export type Options = never;
+}
+export namespace PgConstraintConparentidIndex {
+// ZZ-PgConstraintConparentidIndex
+export type Options = never;
+}
+export namespace PgInheritsRelidSeqnoIndex {
+// ZZ-PgInheritsRelidSeqnoIndex
+export type Options = never;
+}
+export namespace PgInheritsParentIndex {
+// ZZ-PgInheritsParentIndex
+export type Options = never;
+}
+export namespace PgIndexIndrelidIndex {
+// ZZ-PgIndexIndrelidIndex
+export type Options = never;
+}
+export namespace PgIndexIndexrelidIndex {
+// ZZ-PgIndexIndexrelidIndex
+export type Options = never;
+}
+export namespace PgOperatorOidIndex {
+// ZZ-PgOperatorOidIndex
+export type Options = never;
+}
+export namespace PgOperatorOprnameLRNIndex {
+// ZZ-PgOperatorOprnameLRNIndex
+export type Options = never;
+}
+export namespace PgOpfamilyAmNameNspIndex {
+// ZZ-PgOpfamilyAmNameNspIndex
+export type Options = never;
+}
+export namespace PgOpfamilyOidIndex {
+// ZZ-PgOpfamilyOidIndex
+export type Options = never;
+}
+export namespace PgOpclassAmNameNspIndex {
+// ZZ-PgOpclassAmNameNspIndex
+export type Options = never;
+}
+export namespace PgOpclassOidIndex {
+// ZZ-PgOpclassOidIndex
+export type Options = never;
+}
+export namespace PgAmNameIndex {
+// ZZ-PgAmNameIndex
+export type Options = never;
+}
+export namespace PgAmOidIndex {
+// ZZ-PgAmOidIndex
+export type Options = never;
+}
+export namespace PgAmopFamStratIndex {
+// ZZ-PgAmopFamStratIndex
+export type Options = never;
+}
+export namespace PgAmopOprFamIndex {
+// ZZ-PgAmopOprFamIndex
+export type Options = never;
+}
+export namespace PgAmopOidIndex {
+// ZZ-PgAmopOidIndex
+export type Options = never;
+}
+export namespace PgAmprocFamProcIndex {
+// ZZ-PgAmprocFamProcIndex
+export type Options = never;
+}
+export namespace PgAmprocOidIndex {
+// ZZ-PgAmprocOidIndex
+export type Options = never;
+}
+export namespace PgLanguageNameIndex {
+// ZZ-PgLanguageNameIndex
+export type Options = never;
+}
+export namespace PgLanguageOidIndex {
+// ZZ-PgLanguageOidIndex
+export type Options = never;
+}
+export namespace PgLargeobjectMetadataOidIndex {
+// ZZ-PgLargeobjectMetadataOidIndex
+export type Options = never;
+}
+export namespace PgLargeobjectLoidPnIndex {
+// ZZ-PgLargeobjectLoidPnIndex
+export type Options = never;
+}
+export namespace PgAggregateFnoidIndex {
+// ZZ-PgAggregateFnoidIndex
+export type Options = never;
+}
+export namespace PgStatisticRelidAttInhIndex {
+// ZZ-PgStatisticRelidAttInhIndex
+export type Options = never;
+}
+export namespace PgStatisticExtOidIndex {
+// ZZ-PgStatisticExtOidIndex
+export type Options = never;
+}
+export namespace PgStatisticExtNameIndex {
+// ZZ-PgStatisticExtNameIndex
+export type Options = never;
+}
+export namespace PgStatisticExtRelidIndex {
+// ZZ-PgStatisticExtRelidIndex
+export type Options = never;
+}
+export namespace PgStatisticExtDataStxoidInhIndex {
+// ZZ-PgStatisticExtDataStxoidInhIndex
+export type Options = never;
+}
+export namespace PgRewriteOidIndex {
+// ZZ-PgRewriteOidIndex
+export type Options = never;
+}
+export namespace PgRewriteRelRulenameIndex {
+// ZZ-PgRewriteRelRulenameIndex
+export type Options = never;
+}
+export namespace PgTriggerTgconstraintIndex {
+// ZZ-PgTriggerTgconstraintIndex
+export type Options = never;
+}
+export namespace PgTriggerTgrelidTgnameIndex {
+// ZZ-PgTriggerTgrelidTgnameIndex
+export type Options = never;
+}
+export namespace PgTriggerOidIndex {
+// ZZ-PgTriggerOidIndex
+export type Options = never;
+}
+export namespace PgEventTriggerEvtnameIndex {
+// ZZ-PgEventTriggerEvtnameIndex
+export type Options = never;
+}
+export namespace PgEventTriggerOidIndex {
+// ZZ-PgEventTriggerOidIndex
+export type Options = never;
+}
+export namespace PgDescriptionOCOIndex {
+// ZZ-PgDescriptionOCOIndex
+export type Options = never;
+}
+export namespace PgCastOidIndex {
+// ZZ-PgCastOidIndex
+export type Options = never;
+}
+export namespace PgCastSourceTargetIndex {
+// ZZ-PgCastSourceTargetIndex
+export type Options = never;
+}
+export namespace PgEnumOidIndex {
+// ZZ-PgEnumOidIndex
+export type Options = never;
+}
+export namespace PgEnumTypidLabelIndex {
+// ZZ-PgEnumTypidLabelIndex
+export type Options = never;
+}
+export namespace PgEnumTypidSortorderIndex {
+// ZZ-PgEnumTypidSortorderIndex
+export type Options = never;
+}
+export namespace PgNamespaceNspnameIndex {
+// ZZ-PgNamespaceNspnameIndex
+export type Options = never;
+}
+export namespace PgNamespaceOidIndex {
+// ZZ-PgNamespaceOidIndex
+export type Options = never;
+}
+export namespace PgConversionDefaultIndex {
+// ZZ-PgConversionDefaultIndex
+export type Options = never;
+}
+export namespace PgConversionNameNspIndex {
+// ZZ-PgConversionNameNspIndex
+export type Options = never;
+}
+export namespace PgConversionOidIndex {
+// ZZ-PgConversionOidIndex
+export type Options = never;
+}
+export namespace PgDependDependerIndex {
+// ZZ-PgDependDependerIndex
+export type Options = never;
+}
+export namespace PgDependReferenceIndex {
+// ZZ-PgDependReferenceIndex
+export type Options = never;
+}
+export namespace PgDatabaseDatnameIndex {
+// ZZ-PgDatabaseDatnameIndex
+export type Options = never;
+}
+export namespace PgDatabaseOidIndex {
+// ZZ-PgDatabaseOidIndex
+export type Options = never;
+}
+export namespace PgDbRoleSettingDatabaseidRolIndex {
+// ZZ-PgDbRoleSettingDatabaseidRolIndex
+export type Options = never;
+}
+export namespace PgTablespaceOidIndex {
+// ZZ-PgTablespaceOidIndex
+export type Options = never;
+}
+export namespace PgTablespaceSpcnameIndex {
+// ZZ-PgTablespaceSpcnameIndex
+export type Options = never;
+}
+export namespace PgAuthidRolnameIndex {
+// ZZ-PgAuthidRolnameIndex
+export type Options = never;
+}
+export namespace PgAuthidOidIndex {
+// ZZ-PgAuthidOidIndex
+export type Options = never;
+}
+export namespace PgAuthMembersOidIndex {
+// ZZ-PgAuthMembersOidIndex
+export type Options = never;
+}
+export namespace PgAuthMembersRoleMemberIndex {
+// ZZ-PgAuthMembersRoleMemberIndex
+export type Options = never;
+}
+export namespace PgAuthMembersMemberRoleIndex {
+// ZZ-PgAuthMembersMemberRoleIndex
+export type Options = never;
+}
+export namespace PgAuthMembersGrantorIndex {
+// ZZ-PgAuthMembersGrantorIndex
+export type Options = never;
+}
+export namespace PgShdependDependerIndex {
+// ZZ-PgShdependDependerIndex
+export type Options = never;
+}
+export namespace PgShdependReferenceIndex {
+// ZZ-PgShdependReferenceIndex
+export type Options = never;
+}
+export namespace PgShdescriptionOCIndex {
+// ZZ-PgShdescriptionOCIndex
+export type Options = never;
+}
+export namespace PgTsConfigCfgnameIndex {
+// ZZ-PgTsConfigCfgnameIndex
+export type Options = never;
+}
+export namespace PgTsConfigOidIndex {
+// ZZ-PgTsConfigOidIndex
+export type Options = never;
+}
+export namespace PgTsConfigMapIndex {
+// ZZ-PgTsConfigMapIndex
+export type Options = never;
+}
+export namespace PgTsDictDictnameIndex {
+// ZZ-PgTsDictDictnameIndex
+export type Options = never;
+}
+export namespace PgTsDictOidIndex {
+// ZZ-PgTsDictOidIndex
+export type Options = never;
+}
+export namespace PgTsParserPrsnameIndex {
+// ZZ-PgTsParserPrsnameIndex
+export type Options = never;
+}
+export namespace PgTsParserOidIndex {
+// ZZ-PgTsParserOidIndex
+export type Options = never;
+}
+export namespace PgTsTemplateTmplnameIndex {
+// ZZ-PgTsTemplateTmplnameIndex
+export type Options = never;
+}
+export namespace PgTsTemplateOidIndex {
+// ZZ-PgTsTemplateOidIndex
+export type Options = never;
+}
+export namespace PgExtensionOidIndex {
+// ZZ-PgExtensionOidIndex
+export type Options = never;
+}
+export namespace PgExtensionNameIndex {
+// ZZ-PgExtensionNameIndex
+export type Options = never;
+}
+export namespace PgForeignDataWrapperOidIndex {
+// ZZ-PgForeignDataWrapperOidIndex
+export type Options = never;
+}
+export namespace PgForeignDataWrapperNameIndex {
+// ZZ-PgForeignDataWrapperNameIndex
+export type Options = never;
+}
+export namespace PgForeignServerOidIndex {
+// ZZ-PgForeignServerOidIndex
+export type Options = never;
+}
+export namespace PgForeignServerNameIndex {
+// ZZ-PgForeignServerNameIndex
+export type Options = never;
+}
+export namespace PgUserMappingOidIndex {
+// ZZ-PgUserMappingOidIndex
+export type Options = never;
+}
+export namespace PgUserMappingUserServerIndex {
+// ZZ-PgUserMappingUserServerIndex
+export type Options = never;
+}
+export namespace PgForeignTableRelidIndex {
+// ZZ-PgForeignTableRelidIndex
+export type Options = never;
+}
+export namespace PgPolicyOidIndex {
+// ZZ-PgPolicyOidIndex
+export type Options = never;
+}
+export namespace PgPolicyPolrelidPolnameIndex {
+// ZZ-PgPolicyPolrelidPolnameIndex
+export type Options = never;
+}
+export namespace PgReplicationOriginRoiidentIndex {
+// ZZ-PgReplicationOriginRoiidentIndex
+export type Options = never;
+}
+export namespace PgReplicationOriginRonameIndex {
+// ZZ-PgReplicationOriginRonameIndex
+export type Options = never;
+}
+export namespace PgDefaultAclRoleNspObjIndex {
+// ZZ-PgDefaultAclRoleNspObjIndex
+export type Options = never;
+}
+export namespace PgDefaultAclOidIndex {
+// ZZ-PgDefaultAclOidIndex
+export type Options = never;
+}
+export namespace PgInitPrivsOCOIndex {
+// ZZ-PgInitPrivsOCOIndex
+export type Options = never;
+}
+export namespace PgSeclabelObjectIndex {
+// ZZ-PgSeclabelObjectIndex
+export type Options = never;
+}
+export namespace PgShseclabelObjectIndex {
+// ZZ-PgShseclabelObjectIndex
+export type Options = never;
+}
+export namespace PgCollationNameEncNspIndex {
+// ZZ-PgCollationNameEncNspIndex
+export type Options = never;
+}
+export namespace PgCollationOidIndex {
+// ZZ-PgCollationOidIndex
+export type Options = never;
+}
+export namespace PgParameterAclParnameIndex {
+// ZZ-PgParameterAclParnameIndex
+export type Options = never;
+}
+export namespace PgParameterAclOidIndex {
+// ZZ-PgParameterAclOidIndex
+export type Options = never;
+}
+export namespace PgPartitionedTablePartrelidIndex {
+// ZZ-PgPartitionedTablePartrelidIndex
+export type Options = never;
+}
+export namespace PgRangeRngtypidIndex {
+// ZZ-PgRangeRngtypidIndex
+export type Options = never;
+}
+export namespace PgRangeRngmultitypidIndex {
+// ZZ-PgRangeRngmultitypidIndex
+export type Options = never;
+}
+export namespace PgTransformOidIndex {
+// ZZ-PgTransformOidIndex
+export type Options = never;
+}
+export namespace PgTransformTypeLangIndex {
+// ZZ-PgTransformTypeLangIndex
+export type Options = never;
+}
+export namespace PgSequenceSeqrelidIndex {
+// ZZ-PgSequenceSeqrelidIndex
+export type Options = never;
+}
+export namespace PgPublicationOidIndex {
+// ZZ-PgPublicationOidIndex
+export type Options = never;
+}
+export namespace PgPublicationPubnameIndex {
+// ZZ-PgPublicationPubnameIndex
+export type Options = never;
+}
+export namespace PgPublicationNamespaceOidIndex {
+// ZZ-PgPublicationNamespaceOidIndex
+export type Options = never;
+}
+export namespace PgPublicationNamespacePnnspidPnpubidIndex {
+// ZZ-PgPublicationNamespacePnnspidPnpubidIndex
+export type Options = never;
+}
+export namespace PgPublicationRelOidIndex {
+// ZZ-PgPublicationRelOidIndex
+export type Options = never;
+}
+export namespace PgPublicationRelPrrelidPrpubidIndex {
+// ZZ-PgPublicationRelPrrelidPrpubidIndex
+export type Options = never;
+}
+export namespace PgPublicationRelPrpubidIndex {
+// ZZ-PgPublicationRelPrpubidIndex
+export type Options = never;
+}
+export namespace PgSubscriptionOidIndex {
+// ZZ-PgSubscriptionOidIndex
+export type Options = never;
+}
+export namespace PgSubscriptionSubnameIndex {
+// ZZ-PgSubscriptionSubnameIndex
+export type Options = never;
+}
+export namespace PgSubscriptionRelSrrelidSrsubidIndex {
+// ZZ-PgSubscriptionRelSrrelidSrsubidIndex
+export type Options = never;
+}
+}
+export namespace Procedures {
+}
+export namespace Tables {
+export namespace PgStatistic {
+}
+export namespace PgType {
+}
+export namespace PgForeignTable {
+}
+export namespace PgAuthid {
+}
+export namespace PgStatisticExtData {
+}
+export namespace PgUserMapping {
+}
+export namespace PgSubscription {
+}
+export namespace PgAttribute {
+}
+export namespace PgProc {
+}
+export namespace PgClass {
+}
+export namespace PgAttrdef {
+}
+export namespace PgConstraint {
+}
+export namespace PgInherits {
+}
+export namespace PgIndex {
+}
+export namespace PgOperator {
+}
+export namespace PgOpfamily {
+}
+export namespace PgOpclass {
+}
+export namespace PgAm {
+}
+export namespace PgAmop {
+}
+export namespace PgAmproc {
+}
+export namespace PgLanguage {
+}
+export namespace PgLargeobjectMetadata {
+}
+export namespace PgAggregate {
+}
+export namespace PgStatisticExt {
+}
+export namespace PgRewrite {
+}
+export namespace PgTrigger {
+}
+export namespace PgEventTrigger {
+}
+export namespace PgDescription {
+}
+export namespace PgCast {
+}
+export namespace PgEnum {
+}
+export namespace PgNamespace {
+}
+export namespace PgConversion {
+}
+export namespace PgDepend {
+}
+export namespace PgDatabase {
+}
+export namespace PgDbRoleSetting {
+}
+export namespace PgTablespace {
+}
+export namespace PgAuthMembers {
+}
+export namespace PgShdepend {
+}
+export namespace PgShdescription {
+}
+export namespace PgTsConfig {
+}
+export namespace PgTsConfigMap {
+}
+export namespace PgTsDict {
+}
+export namespace PgTsParser {
+}
+export namespace PgTsTemplate {
+}
+export namespace PgExtension {
+}
+export namespace PgForeignDataWrapper {
+}
+export namespace PgForeignServer {
+}
+export namespace PgPolicy {
+}
+export namespace PgReplicationOrigin {
+}
+export namespace PgDefaultAcl {
+}
+export namespace PgInitPrivs {
+}
+export namespace PgSeclabel {
+}
+export namespace PgShseclabel {
+}
+export namespace PgCollation {
+}
+export namespace PgParameterAcl {
+}
+export namespace PgPartitionedTable {
+}
+export namespace PgRange {
+}
+export namespace PgTransform {
+}
+export namespace PgSequence {
+}
+export namespace PgPublication {
+}
+export namespace PgPublicationNamespace {
+}
+export namespace PgPublicationRel {
+}
+export namespace PgSubscriptionRel {
+}
+export namespace PgLargeobject {
+}
+}
+}
+export namespace InformationSchema {
+export namespace Types {
+export namespace CardinalNumber {
+// ZZ-CardinalNumber
+
+      export type Options = never;
+    
+}
+export namespace CardinalNumberArray {
+// ZZ-CardinalNumberArray
+export type Options = never;
+}
+export namespace CharacterData {
+// ZZ-CharacterData
+
+      export type Options = never;
+    
+}
+export namespace CharacterDataArray {
+// ZZ-CharacterDataArray
+export type Options = never;
+}
+export namespace SqlIdentifier {
+// ZZ-SqlIdentifier
+
+      export type Options = never;
+    
+}
+export namespace SqlIdentifierArray {
+// ZZ-SqlIdentifierArray
+export type Options = never;
+}
+export namespace InformationSchemaCatalogName {
+// ZZ-InformationSchemaCatalogName
+export type Options = never;
+}
+export namespace InformationSchemaCatalogNameArray {
+// ZZ-InformationSchemaCatalogNameArray
+export type Options = never;
+}
+export namespace TimeStamp {
+// ZZ-TimeStamp
+
+      export type Options = never;
+    
+}
+export namespace TimeStampArray {
+// ZZ-TimeStampArray
+export type Options = never;
+}
+export namespace YesOrNo {
+// ZZ-YesOrNo
+
+      export type Options = never;
+    
+}
+export namespace YesOrNoArray {
+// ZZ-YesOrNoArray
+export type Options = never;
+}
+export namespace ApplicableRoles {
+// ZZ-ApplicableRoles
+export type Options = never;
+}
+export namespace ApplicableRolesArray {
+// ZZ-ApplicableRolesArray
+export type Options = never;
+}
+export namespace AdministrableRoleAuthorizations {
+// ZZ-AdministrableRoleAuthorizations
+export type Options = never;
+}
+export namespace AdministrableRoleAuthorizationsArray {
+// ZZ-AdministrableRoleAuthorizationsArray
+export type Options = never;
+}
+export namespace Attributes {
+// ZZ-Attributes
+export type Options = never;
+}
+export namespace AttributesArray {
+// ZZ-AttributesArray
+export type Options = never;
+}
+export namespace CharacterSets {
+// ZZ-CharacterSets
+export type Options = never;
+}
+export namespace CharacterSetsArray {
+// ZZ-CharacterSetsArray
+export type Options = never;
+}
+export namespace CheckConstraintRoutineUsage {
+// ZZ-CheckConstraintRoutineUsage
+export type Options = never;
+}
+export namespace CheckConstraintRoutineUsageArray {
+// ZZ-CheckConstraintRoutineUsageArray
+export type Options = never;
+}
+export namespace CheckConstraints {
+// ZZ-CheckConstraints
+export type Options = never;
+}
+export namespace CheckConstraintsArray {
+// ZZ-CheckConstraintsArray
+export type Options = never;
+}
+export namespace Collations {
+// ZZ-Collations
+export type Options = never;
+}
+export namespace CollationsArray {
+// ZZ-CollationsArray
+export type Options = never;
+}
+export namespace CollationCharacterSetApplicability {
+// ZZ-CollationCharacterSetApplicability
+export type Options = never;
+}
+export namespace CollationCharacterSetApplicabilityArray {
+// ZZ-CollationCharacterSetApplicabilityArray
+export type Options = never;
+}
+export namespace ColumnColumnUsage {
+// ZZ-ColumnColumnUsage
+export type Options = never;
+}
+export namespace ColumnColumnUsageArray {
+// ZZ-ColumnColumnUsageArray
+export type Options = never;
+}
+export namespace ColumnDomainUsage {
+// ZZ-ColumnDomainUsage
+export type Options = never;
+}
+export namespace ColumnDomainUsageArray {
+// ZZ-ColumnDomainUsageArray
+export type Options = never;
+}
+export namespace ColumnPrivileges {
+// ZZ-ColumnPrivileges
+export type Options = never;
+}
+export namespace ColumnPrivilegesArray {
+// ZZ-ColumnPrivilegesArray
+export type Options = never;
+}
+export namespace ColumnUdtUsage {
+// ZZ-ColumnUdtUsage
+export type Options = never;
+}
+export namespace ColumnUdtUsageArray {
+// ZZ-ColumnUdtUsageArray
+export type Options = never;
+}
+export namespace Columns {
+// ZZ-Columns
+export type Options = never;
+}
+export namespace ColumnsArray {
+// ZZ-ColumnsArray
+export type Options = never;
+}
+export namespace ConstraintColumnUsage {
+// ZZ-ConstraintColumnUsage
+export type Options = never;
+}
+export namespace ConstraintColumnUsageArray {
+// ZZ-ConstraintColumnUsageArray
+export type Options = never;
+}
+export namespace ConstraintTableUsage {
+// ZZ-ConstraintTableUsage
+export type Options = never;
+}
+export namespace ConstraintTableUsageArray {
+// ZZ-ConstraintTableUsageArray
+export type Options = never;
+}
+export namespace DomainConstraints {
+// ZZ-DomainConstraints
+export type Options = never;
+}
+export namespace DomainConstraintsArray {
+// ZZ-DomainConstraintsArray
+export type Options = never;
+}
+export namespace DomainUdtUsage {
+// ZZ-DomainUdtUsage
+export type Options = never;
+}
+export namespace DomainUdtUsageArray {
+// ZZ-DomainUdtUsageArray
+export type Options = never;
+}
+export namespace Domains {
+// ZZ-Domains
+export type Options = never;
+}
+export namespace DomainsArray {
+// ZZ-DomainsArray
+export type Options = never;
+}
+export namespace EnabledRoles {
+// ZZ-EnabledRoles
+export type Options = never;
+}
+export namespace EnabledRolesArray {
+// ZZ-EnabledRolesArray
+export type Options = never;
+}
+export namespace KeyColumnUsage {
+// ZZ-KeyColumnUsage
+export type Options = never;
+}
+export namespace KeyColumnUsageArray {
+// ZZ-KeyColumnUsageArray
+export type Options = never;
+}
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+export namespace ParametersArray {
+// ZZ-ParametersArray
+export type Options = never;
+}
+export namespace ReferentialConstraints {
+// ZZ-ReferentialConstraints
+export type Options = never;
+}
+export namespace ReferentialConstraintsArray {
+// ZZ-ReferentialConstraintsArray
+export type Options = never;
+}
+export namespace RoleColumnGrants {
+// ZZ-RoleColumnGrants
+export type Options = never;
+}
+export namespace RoleColumnGrantsArray {
+// ZZ-RoleColumnGrantsArray
+export type Options = never;
+}
+export namespace RoutineColumnUsage {
+// ZZ-RoutineColumnUsage
+export type Options = never;
+}
+export namespace RoutineColumnUsageArray {
+// ZZ-RoutineColumnUsageArray
+export type Options = never;
+}
+export namespace RoutinePrivileges {
+// ZZ-RoutinePrivileges
+export type Options = never;
+}
+export namespace RoutinePrivilegesArray {
+// ZZ-RoutinePrivilegesArray
+export type Options = never;
+}
+export namespace RoleRoutineGrants {
+// ZZ-RoleRoutineGrants
+export type Options = never;
+}
+export namespace RoleRoutineGrantsArray {
+// ZZ-RoleRoutineGrantsArray
+export type Options = never;
+}
+export namespace RoutineRoutineUsage {
+// ZZ-RoutineRoutineUsage
+export type Options = never;
+}
+export namespace RoutineRoutineUsageArray {
+// ZZ-RoutineRoutineUsageArray
+export type Options = never;
+}
+export namespace RoutineSequenceUsage {
+// ZZ-RoutineSequenceUsage
+export type Options = never;
+}
+export namespace RoutineSequenceUsageArray {
+// ZZ-RoutineSequenceUsageArray
+export type Options = never;
+}
+export namespace RoutineTableUsage {
+// ZZ-RoutineTableUsage
+export type Options = never;
+}
+export namespace RoutineTableUsageArray {
+// ZZ-RoutineTableUsageArray
+export type Options = never;
+}
+export namespace Routines {
+// ZZ-Routines
+export type Options = never;
+}
+export namespace RoutinesArray {
+// ZZ-RoutinesArray
+export type Options = never;
+}
+export namespace Schemata {
+// ZZ-Schemata
+export type Options = never;
+}
+export namespace SchemataArray {
+// ZZ-SchemataArray
+export type Options = never;
+}
+export namespace Sequences {
+// ZZ-Sequences
+export type Options = never;
+}
+export namespace SequencesArray {
+// ZZ-SequencesArray
+export type Options = never;
+}
+export namespace SqlFeatures {
+// ZZ-SqlFeatures
+export type Options = never;
+}
+export namespace SqlFeaturesArray {
+// ZZ-SqlFeaturesArray
+export type Options = never;
+}
+export namespace SqlImplementationInfo {
+// ZZ-SqlImplementationInfo
+export type Options = never;
+}
+export namespace SqlImplementationInfoArray {
+// ZZ-SqlImplementationInfoArray
+export type Options = never;
+}
+export namespace SqlParts {
+// ZZ-SqlParts
+export type Options = never;
+}
+export namespace SqlPartsArray {
+// ZZ-SqlPartsArray
+export type Options = never;
+}
+export namespace SqlSizing {
+// ZZ-SqlSizing
+export type Options = never;
+}
+export namespace SqlSizingArray {
+// ZZ-SqlSizingArray
+export type Options = never;
+}
+export namespace TableConstraints {
+// ZZ-TableConstraints
+export type Options = never;
+}
+export namespace TableConstraintsArray {
+// ZZ-TableConstraintsArray
+export type Options = never;
+}
+export namespace TablePrivileges {
+// ZZ-TablePrivileges
+export type Options = never;
+}
+export namespace TablePrivilegesArray {
+// ZZ-TablePrivilegesArray
+export type Options = never;
+}
+export namespace RoleTableGrants {
+// ZZ-RoleTableGrants
+export type Options = never;
+}
+export namespace RoleTableGrantsArray {
+// ZZ-RoleTableGrantsArray
+export type Options = never;
+}
+export namespace Tables {
+// ZZ-Tables
+export type Options = never;
+}
+export namespace TablesArray {
+// ZZ-TablesArray
+export type Options = never;
+}
+export namespace Transforms {
+// ZZ-Transforms
+export type Options = never;
+}
+export namespace TransformsArray {
+// ZZ-TransformsArray
+export type Options = never;
+}
+export namespace TriggeredUpdateColumns {
+// ZZ-TriggeredUpdateColumns
+export type Options = never;
+}
+export namespace TriggeredUpdateColumnsArray {
+// ZZ-TriggeredUpdateColumnsArray
+export type Options = never;
+}
+export namespace Triggers {
+// ZZ-Triggers
+export type Options = never;
+}
+export namespace TriggersArray {
+// ZZ-TriggersArray
+export type Options = never;
+}
+export namespace UdtPrivileges {
+// ZZ-UdtPrivileges
+export type Options = never;
+}
+export namespace UdtPrivilegesArray {
+// ZZ-UdtPrivilegesArray
+export type Options = never;
+}
+export namespace RoleUdtGrants {
+// ZZ-RoleUdtGrants
+export type Options = never;
+}
+export namespace RoleUdtGrantsArray {
+// ZZ-RoleUdtGrantsArray
+export type Options = never;
+}
+export namespace UsagePrivileges {
+// ZZ-UsagePrivileges
+export type Options = never;
+}
+export namespace UsagePrivilegesArray {
+// ZZ-UsagePrivilegesArray
+export type Options = never;
+}
+export namespace RoleUsageGrants {
+// ZZ-RoleUsageGrants
+export type Options = never;
+}
+export namespace RoleUsageGrantsArray {
+// ZZ-RoleUsageGrantsArray
+export type Options = never;
+}
+export namespace UserDefinedTypes {
+// ZZ-UserDefinedTypes
+export type Options = never;
+}
+export namespace UserDefinedTypesArray {
+// ZZ-UserDefinedTypesArray
+export type Options = never;
+}
+export namespace ViewColumnUsage {
+// ZZ-ViewColumnUsage
+export type Options = never;
+}
+export namespace ViewColumnUsageArray {
+// ZZ-ViewColumnUsageArray
+export type Options = never;
+}
+export namespace ViewRoutineUsage {
+// ZZ-ViewRoutineUsage
+export type Options = never;
+}
+export namespace ViewRoutineUsageArray {
+// ZZ-ViewRoutineUsageArray
+export type Options = never;
+}
+export namespace ViewTableUsage {
+// ZZ-ViewTableUsage
+export type Options = never;
+}
+export namespace ViewTableUsageArray {
+// ZZ-ViewTableUsageArray
+export type Options = never;
+}
+export namespace Views {
+// ZZ-Views
+export type Options = never;
+}
+export namespace ViewsArray {
+// ZZ-ViewsArray
+export type Options = never;
+}
+export namespace DataTypePrivileges {
+// ZZ-DataTypePrivileges
+export type Options = never;
+}
+export namespace DataTypePrivilegesArray {
+// ZZ-DataTypePrivilegesArray
+export type Options = never;
+}
+export namespace ElementTypes {
+// ZZ-ElementTypes
+export type Options = never;
+}
+export namespace ElementTypesArray {
+// ZZ-ElementTypesArray
+export type Options = never;
+}
+export namespace PgForeignTableColumns {
+// ZZ-PgForeignTableColumns
+export type Options = never;
+}
+export namespace ColumnOptions {
+// ZZ-ColumnOptions
+export type Options = never;
+}
+export namespace ColumnOptionsArray {
+// ZZ-ColumnOptionsArray
+export type Options = never;
+}
+export namespace PgForeignDataWrappers {
+// ZZ-PgForeignDataWrappers
+export type Options = never;
+}
+export namespace ForeignDataWrapperOptions {
+// ZZ-ForeignDataWrapperOptions
+export type Options = never;
+}
+export namespace ForeignDataWrapperOptionsArray {
+// ZZ-ForeignDataWrapperOptionsArray
+export type Options = never;
+}
+export namespace ForeignDataWrappers {
+// ZZ-ForeignDataWrappers
+export type Options = never;
+}
+export namespace ForeignDataWrappersArray {
+// ZZ-ForeignDataWrappersArray
+export type Options = never;
+}
+export namespace PgForeignServers {
+// ZZ-PgForeignServers
+export type Options = never;
+}
+export namespace ForeignServerOptions {
+// ZZ-ForeignServerOptions
+export type Options = never;
+}
+export namespace ForeignServerOptionsArray {
+// ZZ-ForeignServerOptionsArray
+export type Options = never;
+}
+export namespace ForeignServers {
+// ZZ-ForeignServers
+export type Options = never;
+}
+export namespace ForeignServersArray {
+// ZZ-ForeignServersArray
+export type Options = never;
+}
+export namespace PgForeignTables {
+// ZZ-PgForeignTables
+export type Options = never;
+}
+export namespace ForeignTableOptions {
+// ZZ-ForeignTableOptions
+export type Options = never;
+}
+export namespace ForeignTableOptionsArray {
+// ZZ-ForeignTableOptionsArray
+export type Options = never;
+}
+export namespace ForeignTables {
+// ZZ-ForeignTables
+export type Options = never;
+}
+export namespace ForeignTablesArray {
+// ZZ-ForeignTablesArray
+export type Options = never;
+}
+export namespace PgUserMappings {
+// ZZ-PgUserMappings
+export type Options = never;
+}
+export namespace UserMappingOptions {
+// ZZ-UserMappingOptions
+export type Options = never;
+}
+export namespace UserMappingOptionsArray {
+// ZZ-UserMappingOptionsArray
+export type Options = never;
+}
+export namespace UserMappings {
+// ZZ-UserMappings
+export type Options = never;
+}
+export namespace UserMappingsArray {
+// ZZ-UserMappingsArray
+export type Options = never;
+}
+}
+export namespace Procedures {
+}
+export namespace Tables {
+export namespace SqlFeatures {
+}
+export namespace SqlImplementationInfo {
+}
+export namespace SqlParts {
+}
+export namespace SqlSizing {
+}
+}
+}
+export namespace Public {
+export namespace Types {
+export namespace CubeArray {
+// ZZ-CubeArray
+export type Options = never;
+}
+export namespace Cube {
+// ZZ-Cube
+
+      export type Options = never;
+    
+}
+export namespace Gtrgm {
+// ZZ-Gtrgm
+
+      export type Options = never;
+    
+}
+export namespace GtrgmArray {
+// ZZ-GtrgmArray
+export type Options = never;
+}
+export namespace Slug {
+// ZZ-Slug
+export type Options = never;
+}
+export namespace SlugArray {
+// ZZ-SlugArray
+export type Options = never;
+}
+export namespace SlugPkey {
+// ZZ-SlugPkey
+export type Options = never;
+}
+}
+export namespace Procedures {
+export namespace CubeIn {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace Cube_9c45 {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace Cube_2e6d {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeOut {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeEq {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeNe {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeLt {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeGt {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeLe {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeGe {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeCmp {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeContains {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeContained {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeOverlap {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeUnion {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeInter {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeSize {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeSubset {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeDistance {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace DistanceChebyshev {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace DistanceTaxicab {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeDim {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeLlCoord {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeUrCoord {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeCoord {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeCoordLlur {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeA5b3 {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace Cube_0aec {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace Cube_2834 {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeE72c {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeIsPoint {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeEnlarge {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace GCubeConsistent {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace GCubePenalty {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace GCubePicksplit {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace GCubeUnion {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace GCubeSame {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace GCubeDistance {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeRecv {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace CubeSend {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace SetLimit {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace ShowLimit {
+}
+export namespace ShowTrgm {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace Similarity {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace SimilarityOp {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace WordSimilarity {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace WordSimilarityOp {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace WordSimilarityCommutatorOp {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace SimilarityDist {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace WordSimilarityDistOp {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace WordSimilarityDistCommutatorOp {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace GtrgmIn {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace GtrgmOut {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace GtrgmConsistent {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace GtrgmDistance {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace GtrgmCompress {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace GtrgmDecompress {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace GtrgmPenalty {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace GtrgmPicksplit {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace GtrgmUnion {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace GtrgmSame {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace GinExtractValueTrgm {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace GinExtractQueryTrgm {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace GinTrgmConsistent {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace GinTrgmTriconsistent {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace StrictWordSimilarity {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace StrictWordSimilarityOp {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace StrictWordSimilarityCommutatorOp {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace StrictWordSimilarityDistOp {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace StrictWordSimilarityDistCommutatorOp {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace GtrgmOptions {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+}
+export namespace Tables {
+export namespace Slug {
+}
+}
+}
+export namespace Api {
+export namespace Types {
+export namespace EchoType {
+// ZZ-EchoType
+export type Options = never;
+}
+export namespace EchoTypeArray {
+// ZZ-EchoTypeArray
+export type Options = never;
+}
+export namespace EchoTypeNested {
+// ZZ-EchoTypeNested
+export type Options = never;
+}
+export namespace EchoTypeNestedArray {
+// ZZ-EchoTypeNestedArray
+export type Options = never;
+}
+export namespace Answer {
+// ZZ-Answer
+
+      export type Options = never;
+    
+}
+export namespace AnswerArray {
+// ZZ-AnswerArray
+export type Options = never;
+}
+export namespace QAndA {
+// ZZ-QAndA
+export type Options = never;
+}
+export namespace QAndAArray {
+// ZZ-QAndAArray
+export type Options = never;
+}
+export namespace Timezones {
+// ZZ-Timezones
+export type Options = never;
+}
+export namespace TimezonesArray {
+// ZZ-TimezonesArray
+export type Options = never;
+}
+export namespace Points {
+// ZZ-Points
+export type Options = never;
+}
+export namespace PointsArray {
+// ZZ-PointsArray
+export type Options = never;
+}
+export namespace Lines {
+// ZZ-Lines
+export type Options = never;
+}
+export namespace LinesArray {
+// ZZ-LinesArray
+export type Options = never;
+}
+export namespace LineSegments {
+// ZZ-LineSegments
+export type Options = never;
+}
+export namespace LineSegmentsArray {
+// ZZ-LineSegmentsArray
+export type Options = never;
+}
+export namespace Boxes {
+// ZZ-Boxes
+export type Options = never;
+}
+export namespace BoxesArray {
+// ZZ-BoxesArray
+export type Options = never;
+}
+export namespace Paths {
+// ZZ-Paths
+export type Options = never;
+}
+export namespace PathsArray {
+// ZZ-PathsArray
+export type Options = never;
+}
+export namespace Polygons {
+// ZZ-Polygons
+export type Options = never;
+}
+export namespace PolygonsArray {
+// ZZ-PolygonsArray
+export type Options = never;
+}
+export namespace Circles {
+// ZZ-Circles
+export type Options = never;
+}
+export namespace CirclesArray {
+// ZZ-CirclesArray
+export type Options = never;
+}
+export namespace QAndAAnswer {
+// ZZ-QAndAAnswer
+export type Options = never;
+}
+export namespace TrgmIdxGist {
+// ZZ-TrgmIdxGist
+export type Options = never;
+}
+export namespace TrgmIdxGin {
+// ZZ-TrgmIdxGin
+export type Options = never;
+}
+export namespace PointsPkey {
+// ZZ-PointsPkey
+export type Options = never;
+}
+export namespace LinesPkey {
+// ZZ-LinesPkey
+export type Options = never;
+}
+export namespace LineSegmentsPkey {
+// ZZ-LineSegmentsPkey
+export type Options = never;
+}
+export namespace BoxesPkey {
+// ZZ-BoxesPkey
+export type Options = never;
+}
+export namespace PathsPkey {
+// ZZ-PathsPkey
+export type Options = never;
+}
+export namespace PolygonsPkey {
+// ZZ-PolygonsPkey
+export type Options = never;
+}
+export namespace CirclesPkey {
+// ZZ-CirclesPkey
+export type Options = never;
+}
+export namespace EchoTable {
+// ZZ-EchoTable
+export type Options = never;
+}
+}
+export namespace Procedures {
+export namespace Echo {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace EchoSet {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace EchoTable {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace EchoType {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace EchoTypeArray {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace EchoTypeNested {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace EchoTypeSet {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+export namespace EchoAnswer {
+export namespace Parameters {
+// ZZ-Parameters
+export type Options = never;
+}
+}
+}
+export namespace Tables {
+export namespace QAndA {
+}
+export namespace Timezones {
+}
+export namespace Points {
+}
+export namespace Lines {
+}
+export namespace LineSegments {
+}
+export namespace Boxes {
+}
+export namespace Paths {
+}
+export namespace Polygons {
+}
+export namespace Circles {
+}
+}
+}
+export namespace PgToast {
+export namespace Types {
+export namespace PgToast_23688Index {
+// ZZ-PgToast_23688Index
+export type Options = never;
+}
+export namespace PgToast_23694Index {
+// ZZ-PgToast_23694Index
+export type Options = never;
+}
+export namespace PgToast_23725Index {
+// ZZ-PgToast_23725Index
+export type Options = never;
+}
+export namespace PgToast_23733Index {
+// ZZ-PgToast_23733Index
+export type Options = never;
+}
+export namespace PgToast_1255Index {
+// ZZ-PgToast_1255Index
+export type Options = never;
+}
+export namespace PgToast_1247Index {
+// ZZ-PgToast_1247Index
+export type Options = never;
+}
+export namespace PgToast_2604Index {
+// ZZ-PgToast_2604Index
+export type Options = never;
+}
+export namespace PgToast_2606Index {
+// ZZ-PgToast_2606Index
+export type Options = never;
+}
+export namespace PgToast_2612Index {
+// ZZ-PgToast_2612Index
+export type Options = never;
+}
+export namespace PgToast_2600Index {
+// ZZ-PgToast_2600Index
+export type Options = never;
+}
+export namespace PgToast_2619Index {
+// ZZ-PgToast_2619Index
+export type Options = never;
+}
+export namespace PgToast_3381Index {
+// ZZ-PgToast_3381Index
+export type Options = never;
+}
+export namespace PgToast_3429Index {
+// ZZ-PgToast_3429Index
+export type Options = never;
+}
+export namespace PgToast_2618Index {
+// ZZ-PgToast_2618Index
+export type Options = never;
+}
+export namespace PgToast_2620Index {
+// ZZ-PgToast_2620Index
+export type Options = never;
+}
+export namespace PgToast_3466Index {
+// ZZ-PgToast_3466Index
+export type Options = never;
+}
+export namespace PgToast_2609Index {
+// ZZ-PgToast_2609Index
+export type Options = never;
+}
+export namespace PgToast_2615Index {
+// ZZ-PgToast_2615Index
+export type Options = never;
+}
+export namespace PgToast_1262Index {
+// ZZ-PgToast_1262Index
+export type Options = never;
+}
+export namespace PgToast_2964Index {
+// ZZ-PgToast_2964Index
+export type Options = never;
+}
+export namespace PgToast_1213Index {
+// ZZ-PgToast_1213Index
+export type Options = never;
+}
+export namespace PgToast_1260Index {
+// ZZ-PgToast_1260Index
+export type Options = never;
+}
+export namespace PgToast_2396Index {
+// ZZ-PgToast_2396Index
+export type Options = never;
+}
+export namespace PgToast_3600Index {
+// ZZ-PgToast_3600Index
+export type Options = never;
+}
+export namespace PgToast_3079Index {
+// ZZ-PgToast_3079Index
+export type Options = never;
+}
+export namespace PgToast_2328Index {
+// ZZ-PgToast_2328Index
+export type Options = never;
+}
+export namespace PgToast_1417Index {
+// ZZ-PgToast_1417Index
+export type Options = never;
+}
+export namespace PgToast_1418Index {
+// ZZ-PgToast_1418Index
+export type Options = never;
+}
+export namespace PgToast_3118Index {
+// ZZ-PgToast_3118Index
+export type Options = never;
+}
+export namespace PgToast_3256Index {
+// ZZ-PgToast_3256Index
+export type Options = never;
+}
+export namespace PgToast_6000Index {
+// ZZ-PgToast_6000Index
+export type Options = never;
+}
+export namespace PgToast_826Index {
+// ZZ-PgToast_826Index
+export type Options = never;
+}
+export namespace PgToast_3394Index {
+// ZZ-PgToast_3394Index
+export type Options = never;
+}
+export namespace PgToast_3596Index {
+// ZZ-PgToast_3596Index
+export type Options = never;
+}
+export namespace PgToast_3592Index {
+// ZZ-PgToast_3592Index
+export type Options = never;
+}
+export namespace PgToast_3456Index {
+// ZZ-PgToast_3456Index
+export type Options = never;
+}
+export namespace PgToast_6243Index {
+// ZZ-PgToast_6243Index
+export type Options = never;
+}
+export namespace PgToast_3350Index {
+// ZZ-PgToast_3350Index
+export type Options = never;
+}
+export namespace PgToast_6106Index {
+// ZZ-PgToast_6106Index
+export type Options = never;
+}
+export namespace PgToast_6100Index {
+// ZZ-PgToast_6100Index
+export type Options = never;
+}
+export namespace PgToast_13658Index {
+// ZZ-PgToast_13658Index
+export type Options = never;
+}
+export namespace PgToast_13663Index {
+// ZZ-PgToast_13663Index
+export type Options = never;
+}
+export namespace PgToast_13668Index {
+// ZZ-PgToast_13668Index
+export type Options = never;
+}
+export namespace PgToast_13673Index {
+// ZZ-PgToast_13673Index
+export type Options = never;
 }
 }
 export namespace Procedures {

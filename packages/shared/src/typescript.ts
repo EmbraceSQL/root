@@ -57,4 +57,8 @@ export interface GeneratesTypeScript {
     context: GenerationContext,
     expression: string,
   ): string;
+  /**
+   * Generate type options used in SQL generation.
+   */
+  typescriptTypeOptions(context: GenerationContext): string;
 }

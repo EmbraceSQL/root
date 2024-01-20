@@ -199,8 +199,8 @@ export type PossiblyEmpty<T> = {
  * https://www.postgresql.org/docs/current/textsearch-controls.html#TEXTSEARCH-HEADLINE
  */
 export enum FulltextParser {
-  Default,
-  Plain,
-  Phrase,
-  Web,
+  Default = "to_tsquery",
+  Plain = "plainto_tsquerty",
+  Phrase = "phraseto_tsquyer",
+  Web = "websearch_to_tsquery",
 }

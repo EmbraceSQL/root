@@ -399,7 +399,7 @@ export class AbstractTypeNode extends ContainerNode {
     parent: ContainerNode,
     public id: string | number,
     public comment: string,
-    private parser?: GeneratesTypeScript,
+    public parser?: GeneratesTypeScript,
   ) {
     super(name, kind, parent);
   }
@@ -420,6 +420,13 @@ export class AbstractTypeNode extends ContainerNode {
   postgresWrapReadParameter(context: GenerationContext, expression: string) {
     return (
       this.parser?.postgresWrapReadParameter(context, expression) ?? expression
+    );
+  }
+
+  typescriptTypeOptions(context: GenerationContext) {
+    return (
+      this.parser?.typescriptTypeOptions(context) ??
+      `export type Options = never;`
     );
   }
 }
@@ -470,6 +477,10 @@ export class ArrayTypeNode extends AbstractTypeNode {
     } else {
       throw new Error(`${this.memberType} could not resolve type of element`);
     }
+  }
+
+  postgresWrapReadParameter(context: GenerationContext, expression: string) {
+    return expression;
   }
 
   typescriptNullOrUndefined(context: GenerationContext) {
@@ -913,6 +924,14 @@ export class DomainTypeNode extends AbstractTypeNode {
     console.assert(context);
     // base type type parser
     return `return ${this.baseType?.typescriptNamespacedName}.parse(from);`;
+  }
+
+  postgresWrapReadParameter(context: GenerationContext, expression: string) {
+    return this.baseType!.postgresWrapReadParameter(context, expression);
+  }
+
+  typescriptTypeOptions(context: GenerationContext) {
+    return this.baseType!.typescriptTypeOptions(context);
   }
 }
 

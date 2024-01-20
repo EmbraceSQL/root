@@ -4,6 +4,7 @@ import { emptyTypescriptRow } from "./autocrud/shared";
 import { generatePrimaryKeyPickers } from "./generatePrimaryKeyPickers";
 import { generateTypeComparison } from "./generateTypeComparison";
 import { generateTypeGuards } from "./generateTypeGuards";
+import { generateTypeOptions } from "./generateTypeOptions";
 import { generateTypeParsers } from "./generateTypeParsers";
 import {
   ASTKind,
@@ -176,6 +177,12 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
               `export ${sortOptions(node.allColumns)};`,
               `export type Options = ReadOptions & {`,
               ` sort?: SortOptions[],`,
+              ` ${node.allColumns
+                .map(
+                  (c) =>
+                    `${c.typescriptName}?: ${c.type.typescriptNamespacedName}.Options`,
+                )
+                .join(",\n")}`,
               `};`,
               // a convenient metadata constant for all columns
               await columnMetadata(context, node.type),
@@ -251,6 +258,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
   generationBuffer.push(await generatePrimaryKeyPickers(context));
   generationBuffer.push(await generateTypeGuards(context));
   generationBuffer.push(await generateTypeComparison(context));
+  generationBuffer.push(await generateTypeOptions(context));
 
   return generationBuffer.join("\n");
 };
