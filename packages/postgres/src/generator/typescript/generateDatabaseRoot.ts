@@ -68,7 +68,8 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
 
             // generated database class starts here
             `export class Database extends PostgresDatabase implements HasDatabase { `,
-            `get database() { return this};`,
+            `get database() { return this };`,
+            `get settings() { return this.context.settings as Settings };`,
             `
           /**
            * Connect to your database server via URL, and return 

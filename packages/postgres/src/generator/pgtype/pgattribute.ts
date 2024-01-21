@@ -1,7 +1,4 @@
-import { Context } from "../../context";
 import { groupBy } from "../../util";
-import { cleanIdentifierForTypescript } from "@embracesql/shared";
-import { camelCase } from "change-case";
 import path from "path";
 import { Sql } from "postgres";
 import { fileURLToPath } from "url";
@@ -72,36 +69,5 @@ export class PGAttribute {
 
   get name() {
     return this.attribute.attname;
-  }
-
-  get typescriptName() {
-    // camel case -- this is a 'property like'
-    return `${camelCase(cleanIdentifierForTypescript(this.attribute.attname))}`;
-  }
-
-  get postgresName() {
-    return this.attribute.attname;
-  }
-
-  /**
-   * Render a code generation string that will create a postgres 'right hand side'
-   * of an equals value expression for this attribute.
-   *
-   * This will create an expression that will self equal for undefined on the
-   * parameterHolder in calling typescript -- allows partial updates.
-   *
-   */
-  postgresValueExpression(
-    context: Context,
-    parameterHolder = "parameters",
-    selfEqual = true,
-  ) {
-    const postgresType = context.resolveType(this.attribute.atttypid);
-    const undefinedExpression = selfEqual
-      ? `sql("${this.postgresName}")`
-      : "sql`DEFAULT`";
-    const valueExpression = `typed[${postgresType.oid}](${parameterHolder}.${this.typescriptName})`;
-    const combinedExpression = `${parameterHolder}.${this.typescriptName} === undefined ? ${undefinedExpression} : ${valueExpression}`;
-    return `\${ ${combinedExpression} }`;
   }
 }

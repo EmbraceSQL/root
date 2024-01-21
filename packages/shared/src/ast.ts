@@ -72,6 +72,7 @@ export enum ASTKind {
   ArrayType,
   Results,
   Parameters,
+  Setting,
 }
 
 interface DatabaseNamed {
@@ -144,6 +145,7 @@ export type ASTKindMap = {
   [ASTKind.ArrayType]: ArrayTypeNode;
   [ASTKind.Results]: ResultsNode;
   [ASTKind.Parameters]: ParametersNode;
+  [ASTKind.Setting]: SettingNode;
 };
 
 /**
@@ -303,6 +305,12 @@ export class DatabaseNode extends ContainerNode {
 
   constructor(public name: string) {
     super(name, ASTKind.Database);
+  }
+
+  get settings() {
+    return this.children.filter<SettingNode>((n): n is SettingNode =>
+      isNodeType(n, ASTKind.Setting),
+    );
   }
 
   registerType(id: string | number, type: AbstractTypeNode) {
@@ -956,5 +964,18 @@ export class ParametersNode extends NamedASTNode {
     public type: CompositeTypeNode,
   ) {
     super(PARAMETERS, ASTKind.Parameters, parent);
+  }
+}
+
+/**
+ * An individual setting.
+ */
+export class SettingNode extends NamedASTNode {
+  constructor(
+    name: string,
+    public setting: string,
+    public database: DatabaseNode,
+  ) {
+    super(name, ASTKind.Setting, database);
   }
 }

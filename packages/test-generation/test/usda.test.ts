@@ -39,5 +39,19 @@ describe("EmbraceSQL Can", () => {
         );
       expect(films.length).toBeGreaterThan(0);
     });
+    it("with explicit configuration", async () => {
+      const films =
+        await database.Public.Tables.DataSrc.DataSrcTitleFulltext.read(
+          {
+            title: "carbohydrate & constituents",
+          },
+          {
+            title: {
+              configuration: "pg_catalog.english",
+            },
+          },
+        );
+      expect(films.length).toBeGreaterThan(0);
+    });
   });
 });

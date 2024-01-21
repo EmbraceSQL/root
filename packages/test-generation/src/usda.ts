@@ -10491,47 +10491,47 @@ export type PrimaryKey = Public.Types.DatsrclnPkey;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_81204Index = {
+export type PgToast_30676Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_81213Index = {
+export type PgToast_30685Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_81218Index = {
+export type PgToast_30690Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_81223Index = {
+export type PgToast_30695Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_81228Index = {
+export type PgToast_30700Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_81233Index = {
+export type PgToast_30705Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_81238Index = {
+export type PgToast_30710Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_81243Index = {
+export type PgToast_30715Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_81248Index = {
+export type PgToast_30720Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -23320,11 +23320,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_81204Index {
+export namespace PgToast_30676Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_81204Index.is(from)) {
+if (PgToast.Types.PgToast_30676Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -23335,11 +23335,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_81213Index {
+export namespace PgToast_30685Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_81213Index.is(from)) {
+if (PgToast.Types.PgToast_30685Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -23350,11 +23350,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_81218Index {
+export namespace PgToast_30690Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_81218Index.is(from)) {
+if (PgToast.Types.PgToast_30690Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -23365,11 +23365,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_81223Index {
+export namespace PgToast_30695Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_81223Index.is(from)) {
+if (PgToast.Types.PgToast_30695Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -23380,11 +23380,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_81228Index {
+export namespace PgToast_30700Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_81228Index.is(from)) {
+if (PgToast.Types.PgToast_30700Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -23395,11 +23395,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_81233Index {
+export namespace PgToast_30705Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_81233Index.is(from)) {
+if (PgToast.Types.PgToast_30705Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -23410,11 +23410,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_81238Index {
+export namespace PgToast_30710Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_81238Index.is(from)) {
+if (PgToast.Types.PgToast_30710Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -23425,11 +23425,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_81243Index {
+export namespace PgToast_30715Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_81243Index.is(from)) {
+if (PgToast.Types.PgToast_30715Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -23440,11 +23440,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_81248Index {
+export namespace PgToast_30720Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_81248Index.is(from)) {
+if (PgToast.Types.PgToast_30720Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -29471,72 +29471,72 @@ export namespace Datsrcln {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_81204Index {
-export function is(value: any) : value is PgToast.Types.PgToast_81204Index {
+export namespace PgToast_30676Index {
+export function is(value: any) : value is PgToast.Types.PgToast_30676Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_81213Index {
-export function is(value: any) : value is PgToast.Types.PgToast_81213Index {
+export namespace PgToast_30685Index {
+export function is(value: any) : value is PgToast.Types.PgToast_30685Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_81218Index {
-export function is(value: any) : value is PgToast.Types.PgToast_81218Index {
+export namespace PgToast_30690Index {
+export function is(value: any) : value is PgToast.Types.PgToast_30690Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_81223Index {
-export function is(value: any) : value is PgToast.Types.PgToast_81223Index {
+export namespace PgToast_30695Index {
+export function is(value: any) : value is PgToast.Types.PgToast_30695Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_81228Index {
-export function is(value: any) : value is PgToast.Types.PgToast_81228Index {
+export namespace PgToast_30700Index {
+export function is(value: any) : value is PgToast.Types.PgToast_30700Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_81233Index {
-export function is(value: any) : value is PgToast.Types.PgToast_81233Index {
+export namespace PgToast_30705Index {
+export function is(value: any) : value is PgToast.Types.PgToast_30705Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_81238Index {
-export function is(value: any) : value is PgToast.Types.PgToast_81238Index {
+export namespace PgToast_30710Index {
+export function is(value: any) : value is PgToast.Types.PgToast_30710Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_81243Index {
-export function is(value: any) : value is PgToast.Types.PgToast_81243Index {
+export namespace PgToast_30715Index {
+export function is(value: any) : value is PgToast.Types.PgToast_30715Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_81248Index {
-export function is(value: any) : value is PgToast.Types.PgToast_81248Index {
+export namespace PgToast_30720Index {
+export function is(value: any) : value is PgToast.Types.PgToast_30720Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -33891,48 +33891,48 @@ export namespace Datsrcln {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_81204Index {
- export function equals(l: PgToast.Types.PgToast_81204Index|undefined, r: unknown) {
+export namespace PgToast_30676Index {
+ export function equals(l: PgToast.Types.PgToast_30676Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_81213Index {
- export function equals(l: PgToast.Types.PgToast_81213Index|undefined, r: unknown) {
+export namespace PgToast_30685Index {
+ export function equals(l: PgToast.Types.PgToast_30685Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_81218Index {
- export function equals(l: PgToast.Types.PgToast_81218Index|undefined, r: unknown) {
+export namespace PgToast_30690Index {
+ export function equals(l: PgToast.Types.PgToast_30690Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_81223Index {
- export function equals(l: PgToast.Types.PgToast_81223Index|undefined, r: unknown) {
+export namespace PgToast_30695Index {
+ export function equals(l: PgToast.Types.PgToast_30695Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_81228Index {
- export function equals(l: PgToast.Types.PgToast_81228Index|undefined, r: unknown) {
+export namespace PgToast_30700Index {
+ export function equals(l: PgToast.Types.PgToast_30700Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_81233Index {
- export function equals(l: PgToast.Types.PgToast_81233Index|undefined, r: unknown) {
+export namespace PgToast_30705Index {
+ export function equals(l: PgToast.Types.PgToast_30705Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_81238Index {
- export function equals(l: PgToast.Types.PgToast_81238Index|undefined, r: unknown) {
+export namespace PgToast_30710Index {
+ export function equals(l: PgToast.Types.PgToast_30710Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_81243Index {
- export function equals(l: PgToast.Types.PgToast_81243Index|undefined, r: unknown) {
+export namespace PgToast_30715Index {
+ export function equals(l: PgToast.Types.PgToast_30715Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_81248Index {
- export function equals(l: PgToast.Types.PgToast_81248Index|undefined, r: unknown) {
+export namespace PgToast_30720Index {
+ export function equals(l: PgToast.Types.PgToast_30720Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -35181,6 +35181,7 @@ export namespace Tsvector {
         }
         export type Options = {
             queryParser?: FulltextParser;
+            configuration?: string;
         }
         
             
@@ -35207,6 +35208,7 @@ export namespace Tsquery {
         }
         export type Options = {
             queryParser?: FulltextParser;
+            configuration?: string;
         }
         
             
@@ -50960,6 +50962,7 @@ export namespace Title {
         }
         export type Options = {
             queryParser?: FulltextParser;
+            configuration?: string;
         }
         
             
@@ -51176,7 +51179,7 @@ export namespace Datsrcln {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_81204Index {
+export namespace PgToast_30676Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -51192,7 +51195,7 @@ export type Options = {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_81213Index {
+export namespace PgToast_30685Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -51208,7 +51211,7 @@ export type Options = {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_81218Index {
+export namespace PgToast_30690Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -51224,7 +51227,7 @@ export type Options = {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_81223Index {
+export namespace PgToast_30695Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -51240,7 +51243,7 @@ export type Options = {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_81228Index {
+export namespace PgToast_30700Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -51256,7 +51259,7 @@ export type Options = {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_81233Index {
+export namespace PgToast_30705Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -51272,7 +51275,7 @@ export type Options = {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_81238Index {
+export namespace PgToast_30710Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -51288,7 +51291,7 @@ export type Options = {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_81243Index {
+export namespace PgToast_30715Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -51304,7 +51307,7 @@ export type Options = {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_81248Index {
+export namespace PgToast_30720Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -51965,6 +51968,368 @@ export namespace Procedures {
 }
 export namespace Tables {
 }
+}
+export type Settings = {
+allowInPlaceTablespaces: string;
+allowSystemTableMods: string;
+applicationName: string;
+archiveCleanupCommand: string;
+archiveCommand: string;
+archiveLibrary: string;
+archiveMode: string;
+archiveTimeout: string;
+arrayNulls: string;
+authenticationTimeout: string;
+autovacuum: string;
+autovacuumAnalyzeScaleFactor: string;
+autovacuumAnalyzeThreshold: string;
+autovacuumFreezeMaxAge: string;
+autovacuumMaxWorkers: string;
+autovacuumMultixactFreezeMaxAge: string;
+autovacuumNaptime: string;
+autovacuumVacuumCostDelay: string;
+autovacuumVacuumCostLimit: string;
+autovacuumVacuumInsertScaleFactor: string;
+autovacuumVacuumInsertThreshold: string;
+autovacuumVacuumScaleFactor: string;
+autovacuumVacuumThreshold: string;
+autovacuumWorkMem: string;
+backendFlushAfter: string;
+backslashQuote: string;
+backtraceFunctions: string;
+bgwriterDelay: string;
+bgwriterFlushAfter: string;
+bgwriterLruMaxpages: string;
+bgwriterLruMultiplier: string;
+blockSize: string;
+bonjour: string;
+bonjourName: string;
+byteaOutput: string;
+checkFunctionBodies: string;
+checkpointCompletionTarget: string;
+checkpointFlushAfter: string;
+checkpointTimeout: string;
+checkpointWarning: string;
+clientConnectionCheckInterval: string;
+clientEncoding: string;
+clientMinMessages: string;
+clusterName: string;
+commitDelay: string;
+commitSiblings: string;
+computeQueryId: string;
+configFile: string;
+constraintExclusion: string;
+cpuIndexTupleCost: string;
+cpuOperatorCost: string;
+cpuTupleCost: string;
+createroleSelfGrant: string;
+cursorTupleFraction: string;
+dataChecksums: string;
+dataDirectory: string;
+dataDirectoryMode: string;
+dataSyncRetry: string;
+dateStyle: string;
+dbUserNamespace: string;
+deadlockTimeout: string;
+debugAssertions: string;
+debugDiscardCaches: string;
+debugIoDirect: string;
+debugLogicalReplicationStreaming: string;
+debugParallelQuery: string;
+debugPrettyPrint: string;
+debugPrintParse: string;
+debugPrintPlan: string;
+debugPrintRewritten: string;
+defaultStatisticsTarget: string;
+defaultTableAccessMethod: string;
+defaultTablespace: string;
+defaultTextSearchConfig: string;
+defaultToastCompression: string;
+defaultTransactionDeferrable: string;
+defaultTransactionIsolation: string;
+defaultTransactionReadOnly: string;
+dynamicLibraryPath: string;
+dynamicSharedMemoryType: string;
+effectiveCacheSize: string;
+effectiveIoConcurrency: string;
+enableAsyncAppend: string;
+enableBitmapscan: string;
+enableGathermerge: string;
+enableHashagg: string;
+enableHashjoin: string;
+enableIncrementalSort: string;
+enableIndexonlyscan: string;
+enableIndexscan: string;
+enableMaterial: string;
+enableMemoize: string;
+enableMergejoin: string;
+enableNestloop: string;
+enableParallelAppend: string;
+enableParallelHash: string;
+enablePartitionPruning: string;
+enablePartitionwiseAggregate: string;
+enablePartitionwiseJoin: string;
+enablePresortedAggregate: string;
+enableSeqscan: string;
+enableSort: string;
+enableTidscan: string;
+escapeStringWarning: string;
+eventSource: string;
+exitOnError: string;
+externalPidFile: string;
+extraFloatDigits: string;
+fromCollapseLimit: string;
+fsync: string;
+fullPageWrites: string;
+geqo: string;
+geqoEffort: string;
+geqoGenerations: string;
+geqoPoolSize: string;
+geqoSeed: string;
+geqoSelectionBias: string;
+geqoThreshold: string;
+ginFuzzySearchLimit: string;
+ginPendingListLimit: string;
+gssAcceptDelegation: string;
+hashMemMultiplier: string;
+hbaFile: string;
+hotStandby: string;
+hotStandbyFeedback: string;
+hugePageSize: string;
+hugePages: string;
+icuValidationLevel: string;
+identFile: string;
+idleInTransactionSessionTimeout: string;
+idleSessionTimeout: string;
+ignoreChecksumFailure: string;
+ignoreInvalidPages: string;
+ignoreSystemIndexes: string;
+inHotStandby: string;
+integerDatetimes: string;
+intervalStyle: string;
+jit: string;
+jitAboveCost: string;
+jitDebuggingSupport: string;
+jitDumpBitcode: string;
+jitExpressions: string;
+jitInlineAboveCost: string;
+jitOptimizeAboveCost: string;
+jitProfilingSupport: string;
+jitProvider: string;
+jitTupleDeforming: string;
+joinCollapseLimit: string;
+krbCaseinsUsers: string;
+krbServerKeyfile: string;
+lcMessages: string;
+lcMonetary: string;
+lcNumeric: string;
+lcTime: string;
+listenAddresses: string;
+loCompatPrivileges: string;
+localPreloadLibraries: string;
+lockTimeout: string;
+logAutovacuumMinDuration: string;
+logCheckpoints: string;
+logConnections: string;
+logDestination: string;
+logDirectory: string;
+logDisconnections: string;
+logDuration: string;
+logErrorVerbosity: string;
+logExecutorStats: string;
+logFileMode: string;
+logFilename: string;
+logHostname: string;
+logLinePrefix: string;
+logLockWaits: string;
+logMinDurationSample: string;
+logMinDurationStatement: string;
+logMinErrorStatement: string;
+logMinMessages: string;
+logParameterMaxLength: string;
+logParameterMaxLengthOnError: string;
+logParserStats: string;
+logPlannerStats: string;
+logRecoveryConflictWaits: string;
+logReplicationCommands: string;
+logRotationAge: string;
+logRotationSize: string;
+logStartupProgressInterval: string;
+logStatement: string;
+logStatementSampleRate: string;
+logStatementStats: string;
+logTempFiles: string;
+logTimezone: string;
+logTransactionSampleRate: string;
+logTruncateOnRotation: string;
+loggingCollector: string;
+logicalDecodingWorkMem: string;
+maintenanceIoConcurrency: string;
+maintenanceWorkMem: string;
+maxConnections: string;
+maxFilesPerProcess: string;
+maxFunctionArgs: string;
+maxIdentifierLength: string;
+maxIndexKeys: string;
+maxLocksPerTransaction: string;
+maxLogicalReplicationWorkers: string;
+maxParallelApplyWorkersPerSubscription: string;
+maxParallelMaintenanceWorkers: string;
+maxParallelWorkers: string;
+maxParallelWorkersPerGather: string;
+maxPredLocksPerPage: string;
+maxPredLocksPerRelation: string;
+maxPredLocksPerTransaction: string;
+maxPreparedTransactions: string;
+maxReplicationSlots: string;
+maxSlotWalKeepSize: string;
+maxStackDepth: string;
+maxStandbyArchiveDelay: string;
+maxStandbyStreamingDelay: string;
+maxSyncWorkersPerSubscription: string;
+maxWalSenders: string;
+maxWalSize: string;
+maxWorkerProcesses: string;
+minDynamicSharedMemory: string;
+minParallelIndexScanSize: string;
+minParallelTableScanSize: string;
+minWalSize: string;
+oldSnapshotThreshold: string;
+parallelLeaderParticipation: string;
+parallelSetupCost: string;
+parallelTupleCost: string;
+passwordEncryption: string;
+planCacheMode: string;
+port: string;
+postAuthDelay: string;
+preAuthDelay: string;
+primaryConninfo: string;
+primarySlotName: string;
+quoteAllIdentifiers: string;
+randomPageCost: string;
+recoveryEndCommand: string;
+recoveryInitSyncMethod: string;
+recoveryMinApplyDelay: string;
+recoveryPrefetch: string;
+recoveryTarget: string;
+recoveryTargetAction: string;
+recoveryTargetInclusive: string;
+recoveryTargetLsn: string;
+recoveryTargetName: string;
+recoveryTargetTime: string;
+recoveryTargetTimeline: string;
+recoveryTargetXid: string;
+recursiveWorktableFactor: string;
+removeTempFilesAfterCrash: string;
+reservedConnections: string;
+restartAfterCrash: string;
+restoreCommand: string;
+rowSecurity: string;
+scramIterations: string;
+searchPath: string;
+segmentSize: string;
+sendAbortForCrash: string;
+sendAbortForKill: string;
+seqPageCost: string;
+serverEncoding: string;
+serverVersion: string;
+serverVersionNum: string;
+sessionPreloadLibraries: string;
+sessionReplicationRole: string;
+sharedBuffers: string;
+sharedMemorySize: string;
+sharedMemorySizeInHugePages: string;
+sharedMemoryType: string;
+sharedPreloadLibraries: string;
+ssl: string;
+sslCaFile: string;
+sslCertFile: string;
+sslCiphers: string;
+sslCrlDir: string;
+sslCrlFile: string;
+sslDhParamsFile: string;
+sslEcdhCurve: string;
+sslKeyFile: string;
+sslLibrary: string;
+sslMaxProtocolVersion: string;
+sslMinProtocolVersion: string;
+sslPassphraseCommand: string;
+sslPassphraseCommandSupportsReload: string;
+sslPreferServerCiphers: string;
+standardConformingStrings: string;
+statementTimeout: string;
+statsFetchConsistency: string;
+superuserReservedConnections: string;
+synchronizeSeqscans: string;
+synchronousCommit: string;
+synchronousStandbyNames: string;
+syslogFacility: string;
+syslogIdent: string;
+syslogSequenceNumbers: string;
+syslogSplitMessages: string;
+tcpKeepalivesCount: string;
+tcpKeepalivesIdle: string;
+tcpKeepalivesInterval: string;
+tcpUserTimeout: string;
+tempBuffers: string;
+tempFileLimit: string;
+tempTablespaces: string;
+timeZone: string;
+timezoneAbbreviations: string;
+traceNotify: string;
+traceRecoveryMessages: string;
+traceSort: string;
+trackActivities: string;
+trackActivityQuerySize: string;
+trackCommitTimestamp: string;
+trackCounts: string;
+trackFunctions: string;
+trackIoTiming: string;
+trackWalIoTiming: string;
+transactionDeferrable: string;
+transactionIsolation: string;
+transactionReadOnly: string;
+transformNullEquals: string;
+unixSocketDirectories: string;
+unixSocketGroup: string;
+unixSocketPermissions: string;
+updateProcessTitle: string;
+vacuumBufferUsageLimit: string;
+vacuumCostDelay: string;
+vacuumCostLimit: string;
+vacuumCostPageDirty: string;
+vacuumCostPageHit: string;
+vacuumCostPageMiss: string;
+vacuumFailsafeAge: string;
+vacuumFreezeMinAge: string;
+vacuumFreezeTableAge: string;
+vacuumMultixactFailsafeAge: string;
+vacuumMultixactFreezeMinAge: string;
+vacuumMultixactFreezeTableAge: string;
+walBlockSize: string;
+walBuffers: string;
+walCompression: string;
+walConsistencyChecking: string;
+walDecodeBufferSize: string;
+walInitZero: string;
+walKeepSize: string;
+walLevel: string;
+walLogHints: string;
+walReceiverCreateTempSlot: string;
+walReceiverStatusInterval: string;
+walReceiverTimeout: string;
+walRecycle: string;
+walRetrieveRetryInterval: string;
+walSegmentSize: string;
+walSenderTimeout: string;
+walSkipThreshold: string;
+walSyncMethod: string;
+walWriterDelay: string;
+walWriterFlushAfter: string;
+workMem: string;
+xmlbinary: string;
+xmloption: string;
+zeroDamagedPages: string;
 }
 
             import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
@@ -53442,96 +53807,96 @@ export namespace Tables {
 ["InformationSchema.Types.UserMappings"]: Typecast
 [13823]: Typecast;
 ["InformationSchema.Types.UserMappingsArray"]: Typecast
-[81206]: Typecast;
+[30678]: Typecast;
 ["Public.Types.DataSrc"]: Typecast
-[81205]: Typecast;
+[30677]: Typecast;
 ["Public.Types.DataSrcArray"]: Typecast
-[81212]: Typecast;
+[30684]: Typecast;
 ["Public.Types.Datsrcln"]: Typecast
-[81211]: Typecast;
+[30683]: Typecast;
 ["Public.Types.DatsrclnArray"]: Typecast
-[81215]: Typecast;
+[30687]: Typecast;
 ["Public.Types.DerivCd"]: Typecast
-[81214]: Typecast;
+[30686]: Typecast;
 ["Public.Types.DerivCdArray"]: Typecast
-[81220]: Typecast;
+[30692]: Typecast;
 ["Public.Types.FdGroup"]: Typecast
-[81219]: Typecast;
+[30691]: Typecast;
 ["Public.Types.FdGroupArray"]: Typecast
-[81225]: Typecast;
+[30697]: Typecast;
 ["Public.Types.FoodDes"]: Typecast
-[81224]: Typecast;
+[30696]: Typecast;
 ["Public.Types.FoodDesArray"]: Typecast
-[81230]: Typecast;
+[30702]: Typecast;
 ["Public.Types.Footnote"]: Typecast
-[81229]: Typecast;
+[30701]: Typecast;
 ["Public.Types.FootnoteArray"]: Typecast
-[81235]: Typecast;
+[30707]: Typecast;
 ["Public.Types.NutData"]: Typecast
-[81234]: Typecast;
+[30706]: Typecast;
 ["Public.Types.NutDataArray"]: Typecast
-[81240]: Typecast;
+[30712]: Typecast;
 ["Public.Types.NutrDef"]: Typecast
-[81239]: Typecast;
+[30711]: Typecast;
 ["Public.Types.NutrDefArray"]: Typecast
-[81245]: Typecast;
+[30717]: Typecast;
 ["Public.Types.SrcCd"]: Typecast
-[81244]: Typecast;
+[30716]: Typecast;
 ["Public.Types.SrcCdArray"]: Typecast
-[81250]: Typecast;
+[30722]: Typecast;
 ["Public.Types.Weight"]: Typecast
-[81249]: Typecast;
+[30721]: Typecast;
 ["Public.Types.WeightArray"]: Typecast
-[81209]: Typecast;
+[30681]: Typecast;
 ["Public.Types.DataSrcTitleFulltext"]: Typecast
-[81253]: Typecast;
+[30725]: Typecast;
 ["Public.Types.DataSrcPkey"]: Typecast
-[81255]: Typecast;
+[30727]: Typecast;
 ["Public.Types.DatsrclnPkey"]: Typecast
-[81257]: Typecast;
+[30729]: Typecast;
 ["Public.Types.DerivCdPkey"]: Typecast
-[81259]: Typecast;
+[30731]: Typecast;
 ["Public.Types.FdGroupPkey"]: Typecast
-[81261]: Typecast;
+[30733]: Typecast;
 ["Public.Types.FoodDesPkey"]: Typecast
-[81263]: Typecast;
+[30735]: Typecast;
 ["Public.Types.NutDataPkey"]: Typecast
-[81265]: Typecast;
+[30737]: Typecast;
 ["Public.Types.NutrDefPkey"]: Typecast
-[81267]: Typecast;
+[30739]: Typecast;
 ["Public.Types.SrcCdPkey"]: Typecast
-[81269]: Typecast;
+[30741]: Typecast;
 ["Public.Types.WeightPkey"]: Typecast
-[81271]: Typecast;
+[30743]: Typecast;
 ["Public.Types.DatsrclnDatasrcIdIdx"]: Typecast
-[81272]: Typecast;
+[30744]: Typecast;
 ["Public.Types.FoodDesFdgrpCdIdx"]: Typecast
-[81273]: Typecast;
+[30745]: Typecast;
 ["Public.Types.FootnoteNdbNoIdx"]: Typecast
-[81274]: Typecast;
+[30746]: Typecast;
 ["Public.Types.NutDataDerivCdIdx"]: Typecast
-[81275]: Typecast;
+[30747]: Typecast;
 ["Public.Types.NutDataNutrNoIdx"]: Typecast
-[81276]: Typecast;
+[30748]: Typecast;
 ["Public.Types.NutDataSrcCdIdx"]: Typecast
-[81208]: Typecast;
-["PgToast.Types.PgToast_81204Index"]: Typecast
-[81217]: Typecast;
-["PgToast.Types.PgToast_81213Index"]: Typecast
-[81222]: Typecast;
-["PgToast.Types.PgToast_81218Index"]: Typecast
-[81227]: Typecast;
-["PgToast.Types.PgToast_81223Index"]: Typecast
-[81232]: Typecast;
-["PgToast.Types.PgToast_81228Index"]: Typecast
-[81237]: Typecast;
-["PgToast.Types.PgToast_81233Index"]: Typecast
-[81242]: Typecast;
-["PgToast.Types.PgToast_81238Index"]: Typecast
-[81247]: Typecast;
-["PgToast.Types.PgToast_81243Index"]: Typecast
-[81252]: Typecast;
-["PgToast.Types.PgToast_81248Index"]: Typecast
+[30680]: Typecast;
+["PgToast.Types.PgToast_30676Index"]: Typecast
+[30689]: Typecast;
+["PgToast.Types.PgToast_30685Index"]: Typecast
+[30694]: Typecast;
+["PgToast.Types.PgToast_30690Index"]: Typecast
+[30699]: Typecast;
+["PgToast.Types.PgToast_30695Index"]: Typecast
+[30704]: Typecast;
+["PgToast.Types.PgToast_30700Index"]: Typecast
+[30709]: Typecast;
+["PgToast.Types.PgToast_30705Index"]: Typecast
+[30714]: Typecast;
+["PgToast.Types.PgToast_30710Index"]: Typecast
+[30719]: Typecast;
+["PgToast.Types.PgToast_30715Index"]: Typecast
+[30724]: Typecast;
+["PgToast.Types.PgToast_30720Index"]: Typecast
 [2837]: Typecast;
 ["PgToast.Types.PgToast_1255Index"]: Typecast
 [4172]: Typecast;
@@ -53619,7 +53984,8 @@ export namespace Tables {
             }
           
 export class Database extends PostgresDatabase implements HasDatabase { 
-get database() { return this};
+get database() { return this };
+get settings() { return this.context.settings as Settings };
 
           /**
            * Connect to your database server via URL, and return 
@@ -54853,7 +55219,7 @@ const response = await sql`
     FROM
       public.data_src 
     WHERE
-      title @@ ${sql.unsafe(`${options?.title?.queryParser ?? "to_tsquery"}`)}(${ parameters.title === undefined ? sql`DEFAULT` : typed[3614](parameters.title) })
+      title @@ ${sql.unsafe(`${options?.title?.queryParser ?? "to_tsquery"}`)}(${options?.title?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.title === undefined ? sql`DEFAULT` : typed[3614](parameters.title) })
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
@@ -54875,7 +55241,7 @@ const response = await sql`
     SET
       datasrc_id = ${ values.datasrcId === undefined ? sql`datasrc_id` : typed[1042](values.datasrcId) } , authors = ${ values.authors === undefined ? sql`authors` : typed[25](values.authors) } , title = ${ values.title === undefined ? sql`title` : typed[25](values.title) } , year = ${ values.year === undefined ? sql`year` : typed[23](values.year) } , journal = ${ values.journal === undefined ? sql`journal` : typed[25](values.journal) } , vol_city = ${ values.volCity === undefined ? sql`vol_city` : typed[25](values.volCity) } , issue_state = ${ values.issueState === undefined ? sql`issue_state` : typed[25](values.issueState) } , start_page = ${ values.startPage === undefined ? sql`start_page` : typed[25](values.startPage) } , end_page = ${ values.endPage === undefined ? sql`end_page` : typed[25](values.endPage) } 
     WHERE
-      title @@ ${sql.unsafe(`${options?.title?.queryParser ?? "to_tsquery"}`)}(${ parameters.title === undefined ? sql`DEFAULT` : typed[3614](parameters.title) })
+      title @@ ${sql.unsafe(`${options?.title?.queryParser ?? "to_tsquery"}`)}(${options?.title?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.title === undefined ? sql`DEFAULT` : typed[3614](parameters.title) })
     RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`
 return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
 }
@@ -54888,7 +55254,7 @@ async delete(parameters: Public.Types.DataSrcTitleFulltext, options?: Public.Typ
     DELETE FROM 
       public.data_src 
     WHERE
-      title @@ ${sql.unsafe(`${options?.title?.queryParser ?? "to_tsquery"}`)}(${ parameters.title === undefined ? sql`DEFAULT` : typed[3614](parameters.title) })
+      title @@ ${sql.unsafe(`${options?.title?.queryParser ?? "to_tsquery"}`)}(${options?.title?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.title === undefined ? sql`DEFAULT` : typed[3614](parameters.title) })
     RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`
  return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
 }

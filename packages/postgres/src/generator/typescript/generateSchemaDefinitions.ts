@@ -2,6 +2,7 @@ import { GenerationContext } from "..";
 import { asDocComment } from "../../util";
 import { emptyTypescriptRow } from "./autocrud/shared";
 import { generatePrimaryKeyPickers } from "./generatePrimaryKeyPickers";
+import { generateSettings } from "./generateSettings";
 import { generateTypeComparison } from "./generateTypeComparison";
 import { generateTypeGuards } from "./generateTypeGuards";
 import { generateTypeOptions } from "./generateTypeOptions";
@@ -122,13 +123,6 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
       ...context,
       skipSchemas: [],
       handlers: {
-        [ASTKind.Database]: {
-          before: async () => {
-            return [
-              // schema wide shared
-            ].join("\n");
-          },
-        },
         [ASTKind.Schema]: NamespaceVisitor,
         [ASTKind.Types]: NamespaceVisitor,
         [ASTKind.Type]: TypeDefiner,
@@ -253,6 +247,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
   generationBuffer.push(await generateTypeGuards(context));
   generationBuffer.push(await generateTypeComparison(context));
   generationBuffer.push(await generateTypeOptions(context));
+  generationBuffer.push(await generateSettings(context));
 
   return generationBuffer.join("\n");
 };

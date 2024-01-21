@@ -70,10 +70,6 @@ export class PGTypeComposite extends PGCatalogType {
     return this.attributes[attnum - 1];
   }
 
-  get sqlColumns() {
-    return this.attributes.map((a) => a.postgresName).join(",");
-  }
-
   get postgresToTypescript() {
     // snippet will pick resultset fields to type map
     const attributes = this.attributes.map(

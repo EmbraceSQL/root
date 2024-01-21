@@ -13,7 +13,9 @@ export class PGTypeTsVector extends PGTypeText {
     expression: string,
   ): string {
     console.assert(context);
-    return `\${sql.unsafe(\`\${${context.currentSymbolName}?.queryParser ?? "to_tsquery"}\`)}(${expression})`;
+    const parser = `\`\${${context.currentSymbolName}?.queryParser ?? "to_tsquery"}\``;
+    const configuration = `\${${context.currentSymbolName}?.configuration ?? this.database.settings.defaultTextSearchConfig}`;
+    return `\${sql.unsafe(${parser})}(${configuration}, ${expression})`;
   }
 
   /**
@@ -46,6 +48,7 @@ export class PGTypeTsVector extends PGTypeText {
         }
         export type Options = {
             queryParser?: FulltextParser;
+            configuration?: string;
         }
         
             `,

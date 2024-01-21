@@ -1,6 +1,7 @@
 import { PGIndexes } from "./generator/pgtype/pgindex";
 import { PGNamespace } from "./generator/pgtype/pgnamespace";
 import { PGProcs } from "./generator/pgtype/pgproc/pgproc";
+import { PGSettings } from "./generator/pgtype/pgsettings";
 import { PGTables } from "./generator/pgtype/pgtable";
 import { PGTypes } from "./generator/pgtype/pgtype";
 import { loadScriptsAST } from "./generator/scripts";
@@ -138,6 +139,9 @@ export const initializeContext = async (
     ...props,
     database,
   };
+  // settings from the database
+  const settings = await PGSettings.factory(sql);
+  settings.loadAST(generationContext);
 
   // start off with the types grouped into namespaces, types will be
   // referenced by other objects -- tables, indexes, procs, views...
@@ -259,6 +263,9 @@ export const initializeContext = async (
     namespaces,
     currentNamespace: "",
     database,
+    settings: Object.fromEntries(
+      database.settings.map((s) => [s.typescriptPropertyName, s.setting]),
+    ),
   };
 
   // expand out the type resolvers for all types -- these are used by
