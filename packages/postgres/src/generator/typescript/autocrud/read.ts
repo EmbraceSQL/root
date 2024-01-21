@@ -14,7 +14,8 @@ import {
 export const ReadOperation = {
   async before(context: GenerationContext, node: ReadOperationNode) {
     const parameters = `${PARAMETERS}: ${node.index.type.typescriptNamespacedName}`;
-    const options = `options?: ${node.index.table.typescriptNamespacedName}.Options`;
+    const optionType = `${node.index.type.typescriptNamespacedName}.Options & ${node.index.table.typescriptNamespacedName}.Options`;
+    const options = `options?: ${optionType}`;
     const returns = node.index.unique
       ? `Promise<${node.index.table.type.typescriptNamespacedName}>`
       : `Promise<${node.index.table.type.typescriptNamespacedName}[]>`;

@@ -35,7 +35,7 @@ WHERE
 -- they are very type like those, so let's just synthesize
 UNION ALL
 SELECT 
-    indexrelid oid, -- oid are database uniqe, so this will not collide with type oids
+    indexrelid oid, -- oid are database unique, so this will not collide with type oids
     relname typname,
     (
         SELECT

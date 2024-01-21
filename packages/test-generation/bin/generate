@@ -16,3 +16,7 @@ embracesqlcli generate node --database postgres://postgres:postgres@localhost/ma
 # and some GIS
 echo nyc
 embracesqlcli generate node --database postgres://postgres:postgres@localhost/nyc > ./src/nyc.ts
+
+# and some food from usda
+echo usda
+embracesqlcli generate node --database postgres://postgres:postgres@localhost/usda > ./src/usda.ts

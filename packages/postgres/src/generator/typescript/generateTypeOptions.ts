@@ -35,7 +35,31 @@ export async function generateTypeOptions(context: GenerationContext) {
     [ASTKind.Types]: NamespaceVisitor,
     [ASTKind.Type]: TypeOptionEntry,
     [ASTKind.Enum]: TypeOptionEntry,
-    [ASTKind.CompositeType]: TypeOptionEntry,
+    [ASTKind.CompositeType]: {
+      before: NamespaceVisitor.before,
+      after: async (context, node) => {
+        return [
+          `export type Options = {`,
+          ` ${node.attributes
+            .map(
+              (a) =>
+                `${a.typescriptPropertyName}?: ${a.type.typescriptNamespacedName}.Options`,
+            )
+            .join(",\n")}`,
+          `}`,
+          await NamespaceVisitor.after(context, node),
+        ].join("\n");
+      },
+    },
+    [ASTKind.Attribute]: {
+      before: async (context: GenerationContext, node) => {
+        return [
+          `export namespace ${node.typescriptName} {`,
+          `${node.type.typescriptTypeOptions(context)}`,
+          `}`,
+        ].join("\n");
+      },
+    },
     [ASTKind.DomainType]: TypeOptionEntry,
     [ASTKind.ArrayType]: TypeOptionEntry,
   };

@@ -71,9 +71,9 @@ describe("The generator can", () => {
     });
     expect(compiled).toBeTruthy();
   });
-  it("create TypeScript Database for marshalling sample", async () => {
+  it("create TypeScript Database for usda sample", async () => {
     context = await initializeContext(
-      "postgres://postgres:postgres@localhost/marshalling",
+      "postgres://postgres:postgres@localhost/usda",
     );
     const source = await generateDatabaseRoot(context);
     const compiled = ts.transpileModule(source, {

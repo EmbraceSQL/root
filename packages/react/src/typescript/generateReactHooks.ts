@@ -72,6 +72,7 @@ export const generateReactHooks = async (context: GenerationContext) => {
     [ASTKind.Schema]: NamespaceVisitor,
     [ASTKind.Table]: {
       before: async (context, node) => {
+        const optionType = `${node.typescriptNamespacedName}.Options`;
         return [
           await NamespaceVisitor.before(context, node),
           // the 'just one row' hook
@@ -95,12 +96,12 @@ export const generateReactHooks = async (context: GenerationContext) => {
              )`,
           `}`,
           // the 'all the rows' hook'
-          `export function useRows(options?: ${node.typescriptNamespacedName}.Options) {`,
+          `export function useRows(options?: ${optionType}) {`,
           `const client = useEmbraceSQLClient<EmbraceSQLClient>();`,
           `return useEmbraceSQLRows<never,`,
           `  Partial<${node.type.typescriptNamespacedName}>, `,
           `  ${node.type.typescriptNamespacedName},`,
-          `  ${node.typescriptNamespacedName}.Options> (`,
+          `  ${optionType}> (`,
           `
                {
                  parameters: NEVER,
@@ -125,12 +126,9 @@ export const generateReactHooks = async (context: GenerationContext) => {
       before: async (_, node) => {
         const rowTypeName = `${node.table.type.typescriptNamespacedName}`;
         const hookName = node.unique ? `useEmbraceSQLRow` : `useEmbraceSQLRows`;
-        const optionsGeneric = node.unique
-          ? ``
-          : `, ${node.table.typescriptNamespacedName}.Options`;
-        const optionsParameter = node.unique
-          ? ``
-          : `, options?: ${node.table.typescriptNamespacedName}.Options`;
+        const optionType = `${node.type.typescriptNamespacedName}.Options & ${node.table.typescriptNamespacedName}.Options`;
+        const optionsGeneric = node.unique ? `` : `, ${optionType}`;
+        const optionsParameter = node.unique ? `` : `, options?: ${optionType}`;
         const usesOptions = node.unique ? `` : `options,`;
         return [
           `export function use${node.typescriptName}(parameters: ${node.type.typescriptNamespacedName} ${optionsParameter}) {`,

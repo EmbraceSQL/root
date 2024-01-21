@@ -12,7 +12,8 @@ import { DeleteOperationNode, GenerationContext } from "@embracesql/shared";
 export const DeleteOperation = {
   async before(context: GenerationContext, node: DeleteOperationNode) {
     const parameters = `parameters: ${node.index.type.typescriptNamespacedName}`;
-    const options = `options?: ${node.index.table.typescriptNamespacedName}.ModifyOptions`;
+    const optionType = `${node.index.type.typescriptNamespacedName}.Options & ${node.index.table.typescriptNamespacedName}.Options`;
+    const options = `options?: ${optionType}`;
     const sqlColumnNames = node.index.table.type.attributes
       .map((a) => a.name)
       .join(",");

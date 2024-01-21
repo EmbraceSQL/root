@@ -177,20 +177,6 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
               `export ${sortOptions(node.allColumns)};`,
               `export type Options = ReadOptions & {`,
               ` sort?: SortOptions[],`,
-              ` ${node.allColumns
-                .map(
-                  (c) =>
-                    `${c.typescriptPropertyName}?: ${c.type.typescriptNamespacedName}.Options`,
-                )
-                .join(",\n")}`,
-              `};`,
-              `export type ModifyOptions = {`,
-              ` ${node.allColumns
-                .map(
-                  (c) =>
-                    `${c.typescriptPropertyName}?: ${c.type.typescriptNamespacedName}.Options`,
-                )
-                .join(",\n")}`,
               `};`,
               // a convenient metadata constant for all columns
               await columnMetadata(context, node.type),

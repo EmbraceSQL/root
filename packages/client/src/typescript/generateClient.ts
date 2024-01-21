@@ -46,7 +46,7 @@ const IndexOperation = {
     const resultType = node.index.unique
       ? `${node.index.table.type.typescriptNamespacedName} | undefined`
       : `${node.index.table.type.typescriptNamespacedName}[] | undefined`;
-    const optionType = `${node.index.table.typescriptNamespacedName}.Options`;
+    const optionType = `${node.index.type.typescriptNamespacedName}.Options & ${node.index.table.typescriptNamespacedName}.Options`;
     const parametersPick = node.index.type.attributes
       .map(
         (c) =>

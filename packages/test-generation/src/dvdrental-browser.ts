@@ -3568,70 +3568,6 @@ stavalues5Descending = "stavalues5 DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- starelid?: PgCatalog.Types.Oid.Options,
-staattnum?: PgCatalog.Types.Int2.Options,
-stainherit?: PgCatalog.Types.Bool.Options,
-stanullfrac?: PgCatalog.Types.Float4.Options,
-stawidth?: PgCatalog.Types.Int4.Options,
-stadistinct?: PgCatalog.Types.Float4.Options,
-stakind1?: PgCatalog.Types.Int2.Options,
-stakind2?: PgCatalog.Types.Int2.Options,
-stakind3?: PgCatalog.Types.Int2.Options,
-stakind4?: PgCatalog.Types.Int2.Options,
-stakind5?: PgCatalog.Types.Int2.Options,
-staop1?: PgCatalog.Types.Oid.Options,
-staop2?: PgCatalog.Types.Oid.Options,
-staop3?: PgCatalog.Types.Oid.Options,
-staop4?: PgCatalog.Types.Oid.Options,
-staop5?: PgCatalog.Types.Oid.Options,
-stacoll1?: PgCatalog.Types.Oid.Options,
-stacoll2?: PgCatalog.Types.Oid.Options,
-stacoll3?: PgCatalog.Types.Oid.Options,
-stacoll4?: PgCatalog.Types.Oid.Options,
-stacoll5?: PgCatalog.Types.Oid.Options,
-stanumbers1?: PgCatalog.Types.Float4Array.Options,
-stanumbers2?: PgCatalog.Types.Float4Array.Options,
-stanumbers3?: PgCatalog.Types.Float4Array.Options,
-stanumbers4?: PgCatalog.Types.Float4Array.Options,
-stanumbers5?: PgCatalog.Types.Float4Array.Options,
-stavalues1?: PgCatalog.Types.Anyarray.Options,
-stavalues2?: PgCatalog.Types.Anyarray.Options,
-stavalues3?: PgCatalog.Types.Anyarray.Options,
-stavalues4?: PgCatalog.Types.Anyarray.Options,
-stavalues5?: PgCatalog.Types.Anyarray.Options
-};
-export type ModifyOptions = {
- starelid?: PgCatalog.Types.Oid.Options,
-staattnum?: PgCatalog.Types.Int2.Options,
-stainherit?: PgCatalog.Types.Bool.Options,
-stanullfrac?: PgCatalog.Types.Float4.Options,
-stawidth?: PgCatalog.Types.Int4.Options,
-stadistinct?: PgCatalog.Types.Float4.Options,
-stakind1?: PgCatalog.Types.Int2.Options,
-stakind2?: PgCatalog.Types.Int2.Options,
-stakind3?: PgCatalog.Types.Int2.Options,
-stakind4?: PgCatalog.Types.Int2.Options,
-stakind5?: PgCatalog.Types.Int2.Options,
-staop1?: PgCatalog.Types.Oid.Options,
-staop2?: PgCatalog.Types.Oid.Options,
-staop3?: PgCatalog.Types.Oid.Options,
-staop4?: PgCatalog.Types.Oid.Options,
-staop5?: PgCatalog.Types.Oid.Options,
-stacoll1?: PgCatalog.Types.Oid.Options,
-stacoll2?: PgCatalog.Types.Oid.Options,
-stacoll3?: PgCatalog.Types.Oid.Options,
-stacoll4?: PgCatalog.Types.Oid.Options,
-stacoll5?: PgCatalog.Types.Oid.Options,
-stanumbers1?: PgCatalog.Types.Float4Array.Options,
-stanumbers2?: PgCatalog.Types.Float4Array.Options,
-stanumbers3?: PgCatalog.Types.Float4Array.Options,
-stanumbers4?: PgCatalog.Types.Float4Array.Options,
-stanumbers5?: PgCatalog.Types.Float4Array.Options,
-stavalues1?: PgCatalog.Types.Anyarray.Options,
-stavalues2?: PgCatalog.Types.Anyarray.Options,
-stavalues3?: PgCatalog.Types.Anyarray.Options,
-stavalues4?: PgCatalog.Types.Anyarray.Options,
-stavalues5?: PgCatalog.Types.Anyarray.Options
 };
 export const Columns = {
 Starelid: {
@@ -3839,72 +3775,6 @@ typaclDescending = "typacl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-typname?: PgCatalog.Types.Name.Options,
-typnamespace?: PgCatalog.Types.Oid.Options,
-typowner?: PgCatalog.Types.Oid.Options,
-typlen?: PgCatalog.Types.Int2.Options,
-typbyval?: PgCatalog.Types.Bool.Options,
-typtype?: PgCatalog.Types.Char.Options,
-typcategory?: PgCatalog.Types.Char.Options,
-typispreferred?: PgCatalog.Types.Bool.Options,
-typisdefined?: PgCatalog.Types.Bool.Options,
-typdelim?: PgCatalog.Types.Char.Options,
-typrelid?: PgCatalog.Types.Oid.Options,
-typsubscript?: PgCatalog.Types.Regproc.Options,
-typelem?: PgCatalog.Types.Oid.Options,
-typarray?: PgCatalog.Types.Oid.Options,
-typinput?: PgCatalog.Types.Regproc.Options,
-typoutput?: PgCatalog.Types.Regproc.Options,
-typreceive?: PgCatalog.Types.Regproc.Options,
-typsend?: PgCatalog.Types.Regproc.Options,
-typmodin?: PgCatalog.Types.Regproc.Options,
-typmodout?: PgCatalog.Types.Regproc.Options,
-typanalyze?: PgCatalog.Types.Regproc.Options,
-typalign?: PgCatalog.Types.Char.Options,
-typstorage?: PgCatalog.Types.Char.Options,
-typnotnull?: PgCatalog.Types.Bool.Options,
-typbasetype?: PgCatalog.Types.Oid.Options,
-typtypmod?: PgCatalog.Types.Int4.Options,
-typndims?: PgCatalog.Types.Int4.Options,
-typcollation?: PgCatalog.Types.Oid.Options,
-typdefaultbin?: PgCatalog.Types.PgNodeTree.Options,
-typdefault?: PgCatalog.Types.Text.Options,
-typacl?: PgCatalog.Types.AclitemArray.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-typname?: PgCatalog.Types.Name.Options,
-typnamespace?: PgCatalog.Types.Oid.Options,
-typowner?: PgCatalog.Types.Oid.Options,
-typlen?: PgCatalog.Types.Int2.Options,
-typbyval?: PgCatalog.Types.Bool.Options,
-typtype?: PgCatalog.Types.Char.Options,
-typcategory?: PgCatalog.Types.Char.Options,
-typispreferred?: PgCatalog.Types.Bool.Options,
-typisdefined?: PgCatalog.Types.Bool.Options,
-typdelim?: PgCatalog.Types.Char.Options,
-typrelid?: PgCatalog.Types.Oid.Options,
-typsubscript?: PgCatalog.Types.Regproc.Options,
-typelem?: PgCatalog.Types.Oid.Options,
-typarray?: PgCatalog.Types.Oid.Options,
-typinput?: PgCatalog.Types.Regproc.Options,
-typoutput?: PgCatalog.Types.Regproc.Options,
-typreceive?: PgCatalog.Types.Regproc.Options,
-typsend?: PgCatalog.Types.Regproc.Options,
-typmodin?: PgCatalog.Types.Regproc.Options,
-typmodout?: PgCatalog.Types.Regproc.Options,
-typanalyze?: PgCatalog.Types.Regproc.Options,
-typalign?: PgCatalog.Types.Char.Options,
-typstorage?: PgCatalog.Types.Char.Options,
-typnotnull?: PgCatalog.Types.Bool.Options,
-typbasetype?: PgCatalog.Types.Oid.Options,
-typtypmod?: PgCatalog.Types.Int4.Options,
-typndims?: PgCatalog.Types.Int4.Options,
-typcollation?: PgCatalog.Types.Oid.Options,
-typdefaultbin?: PgCatalog.Types.PgNodeTree.Options,
-typdefault?: PgCatalog.Types.Text.Options,
-typacl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -4058,14 +3928,6 @@ ftoptionsDescending = "ftoptions DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- ftrelid?: PgCatalog.Types.Oid.Options,
-ftserver?: PgCatalog.Types.Oid.Options,
-ftoptions?: PgCatalog.Types.TextArray.Options
-};
-export type ModifyOptions = {
- ftrelid?: PgCatalog.Types.Oid.Options,
-ftserver?: PgCatalog.Types.Oid.Options,
-ftoptions?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Ftrelid: {
@@ -4121,32 +3983,6 @@ rolvaliduntilDescending = "rolvaliduntil DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-rolname?: PgCatalog.Types.Name.Options,
-rolsuper?: PgCatalog.Types.Bool.Options,
-rolinherit?: PgCatalog.Types.Bool.Options,
-rolcreaterole?: PgCatalog.Types.Bool.Options,
-rolcreatedb?: PgCatalog.Types.Bool.Options,
-rolcanlogin?: PgCatalog.Types.Bool.Options,
-rolreplication?: PgCatalog.Types.Bool.Options,
-rolbypassrls?: PgCatalog.Types.Bool.Options,
-rolconnlimit?: PgCatalog.Types.Int4.Options,
-rolpassword?: PgCatalog.Types.Text.Options,
-rolvaliduntil?: PgCatalog.Types.Timestamptz.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-rolname?: PgCatalog.Types.Name.Options,
-rolsuper?: PgCatalog.Types.Bool.Options,
-rolinherit?: PgCatalog.Types.Bool.Options,
-rolcreaterole?: PgCatalog.Types.Bool.Options,
-rolcreatedb?: PgCatalog.Types.Bool.Options,
-rolcanlogin?: PgCatalog.Types.Bool.Options,
-rolreplication?: PgCatalog.Types.Bool.Options,
-rolbypassrls?: PgCatalog.Types.Bool.Options,
-rolconnlimit?: PgCatalog.Types.Int4.Options,
-rolpassword?: PgCatalog.Types.Text.Options,
-rolvaliduntil?: PgCatalog.Types.Timestamptz.Options
 };
 export const Columns = {
 Oid: {
@@ -4226,20 +4062,6 @@ stxdexprDescending = "stxdexpr DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- stxoid?: PgCatalog.Types.Oid.Options,
-stxdinherit?: PgCatalog.Types.Bool.Options,
-stxdndistinct?: PgCatalog.Types.PgNdistinct.Options,
-stxddependencies?: PgCatalog.Types.PgDependencies.Options,
-stxdmcv?: PgCatalog.Types.PgMcvList.Options,
-stxdexpr?: PgCatalog.Types.PgStatisticArray.Options
-};
-export type ModifyOptions = {
- stxoid?: PgCatalog.Types.Oid.Options,
-stxdinherit?: PgCatalog.Types.Bool.Options,
-stxdndistinct?: PgCatalog.Types.PgNdistinct.Options,
-stxddependencies?: PgCatalog.Types.PgDependencies.Options,
-stxdmcv?: PgCatalog.Types.PgMcvList.Options,
-stxdexpr?: PgCatalog.Types.PgStatisticArray.Options
 };
 export const Columns = {
 Stxoid: {
@@ -4291,16 +4113,6 @@ umoptionsDescending = "umoptions DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-umuser?: PgCatalog.Types.Oid.Options,
-umserver?: PgCatalog.Types.Oid.Options,
-umoptions?: PgCatalog.Types.TextArray.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-umuser?: PgCatalog.Types.Oid.Options,
-umserver?: PgCatalog.Types.Oid.Options,
-umoptions?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Oid: {
@@ -4370,42 +4182,6 @@ suboriginDescending = "suborigin DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-subdbid?: PgCatalog.Types.Oid.Options,
-subskiplsn?: PgCatalog.Types.PgLsn.Options,
-subname?: PgCatalog.Types.Name.Options,
-subowner?: PgCatalog.Types.Oid.Options,
-subenabled?: PgCatalog.Types.Bool.Options,
-subbinary?: PgCatalog.Types.Bool.Options,
-substream?: PgCatalog.Types.Char.Options,
-subtwophasestate?: PgCatalog.Types.Char.Options,
-subdisableonerr?: PgCatalog.Types.Bool.Options,
-subpasswordrequired?: PgCatalog.Types.Bool.Options,
-subrunasowner?: PgCatalog.Types.Bool.Options,
-subconninfo?: PgCatalog.Types.Text.Options,
-subslotname?: PgCatalog.Types.Name.Options,
-subsynccommit?: PgCatalog.Types.Text.Options,
-subpublications?: PgCatalog.Types.TextArray.Options,
-suborigin?: PgCatalog.Types.Text.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-subdbid?: PgCatalog.Types.Oid.Options,
-subskiplsn?: PgCatalog.Types.PgLsn.Options,
-subname?: PgCatalog.Types.Name.Options,
-subowner?: PgCatalog.Types.Oid.Options,
-subenabled?: PgCatalog.Types.Bool.Options,
-subbinary?: PgCatalog.Types.Bool.Options,
-substream?: PgCatalog.Types.Char.Options,
-subtwophasestate?: PgCatalog.Types.Char.Options,
-subdisableonerr?: PgCatalog.Types.Bool.Options,
-subpasswordrequired?: PgCatalog.Types.Bool.Options,
-subrunasowner?: PgCatalog.Types.Bool.Options,
-subconninfo?: PgCatalog.Types.Text.Options,
-subslotname?: PgCatalog.Types.Name.Options,
-subsynccommit?: PgCatalog.Types.Text.Options,
-subpublications?: PgCatalog.Types.TextArray.Options,
-suborigin?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Oid: {
@@ -4545,60 +4321,6 @@ attmissingvalDescending = "attmissingval DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- attrelid?: PgCatalog.Types.Oid.Options,
-attname?: PgCatalog.Types.Name.Options,
-atttypid?: PgCatalog.Types.Oid.Options,
-attlen?: PgCatalog.Types.Int2.Options,
-attnum?: PgCatalog.Types.Int2.Options,
-attcacheoff?: PgCatalog.Types.Int4.Options,
-atttypmod?: PgCatalog.Types.Int4.Options,
-attndims?: PgCatalog.Types.Int2.Options,
-attbyval?: PgCatalog.Types.Bool.Options,
-attalign?: PgCatalog.Types.Char.Options,
-attstorage?: PgCatalog.Types.Char.Options,
-attcompression?: PgCatalog.Types.Char.Options,
-attnotnull?: PgCatalog.Types.Bool.Options,
-atthasdef?: PgCatalog.Types.Bool.Options,
-atthasmissing?: PgCatalog.Types.Bool.Options,
-attidentity?: PgCatalog.Types.Char.Options,
-attgenerated?: PgCatalog.Types.Char.Options,
-attisdropped?: PgCatalog.Types.Bool.Options,
-attislocal?: PgCatalog.Types.Bool.Options,
-attinhcount?: PgCatalog.Types.Int2.Options,
-attstattarget?: PgCatalog.Types.Int2.Options,
-attcollation?: PgCatalog.Types.Oid.Options,
-attacl?: PgCatalog.Types.AclitemArray.Options,
-attoptions?: PgCatalog.Types.TextArray.Options,
-attfdwoptions?: PgCatalog.Types.TextArray.Options,
-attmissingval?: PgCatalog.Types.Anyarray.Options
-};
-export type ModifyOptions = {
- attrelid?: PgCatalog.Types.Oid.Options,
-attname?: PgCatalog.Types.Name.Options,
-atttypid?: PgCatalog.Types.Oid.Options,
-attlen?: PgCatalog.Types.Int2.Options,
-attnum?: PgCatalog.Types.Int2.Options,
-attcacheoff?: PgCatalog.Types.Int4.Options,
-atttypmod?: PgCatalog.Types.Int4.Options,
-attndims?: PgCatalog.Types.Int2.Options,
-attbyval?: PgCatalog.Types.Bool.Options,
-attalign?: PgCatalog.Types.Char.Options,
-attstorage?: PgCatalog.Types.Char.Options,
-attcompression?: PgCatalog.Types.Char.Options,
-attnotnull?: PgCatalog.Types.Bool.Options,
-atthasdef?: PgCatalog.Types.Bool.Options,
-atthasmissing?: PgCatalog.Types.Bool.Options,
-attidentity?: PgCatalog.Types.Char.Options,
-attgenerated?: PgCatalog.Types.Char.Options,
-attisdropped?: PgCatalog.Types.Bool.Options,
-attislocal?: PgCatalog.Types.Bool.Options,
-attinhcount?: PgCatalog.Types.Int2.Options,
-attstattarget?: PgCatalog.Types.Int2.Options,
-attcollation?: PgCatalog.Types.Oid.Options,
-attacl?: PgCatalog.Types.AclitemArray.Options,
-attoptions?: PgCatalog.Types.TextArray.Options,
-attfdwoptions?: PgCatalog.Types.TextArray.Options,
-attmissingval?: PgCatalog.Types.Anyarray.Options
 };
 export const Columns = {
 Attrelid: {
@@ -4782,68 +4504,6 @@ proaclDescending = "proacl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-proname?: PgCatalog.Types.Name.Options,
-pronamespace?: PgCatalog.Types.Oid.Options,
-proowner?: PgCatalog.Types.Oid.Options,
-prolang?: PgCatalog.Types.Oid.Options,
-procost?: PgCatalog.Types.Float4.Options,
-prorows?: PgCatalog.Types.Float4.Options,
-provariadic?: PgCatalog.Types.Oid.Options,
-prosupport?: PgCatalog.Types.Regproc.Options,
-prokind?: PgCatalog.Types.Char.Options,
-prosecdef?: PgCatalog.Types.Bool.Options,
-proleakproof?: PgCatalog.Types.Bool.Options,
-proisstrict?: PgCatalog.Types.Bool.Options,
-proretset?: PgCatalog.Types.Bool.Options,
-provolatile?: PgCatalog.Types.Char.Options,
-proparallel?: PgCatalog.Types.Char.Options,
-pronargs?: PgCatalog.Types.Int2.Options,
-pronargdefaults?: PgCatalog.Types.Int2.Options,
-prorettype?: PgCatalog.Types.Oid.Options,
-proargtypes?: PgCatalog.Types.Oidvector.Options,
-proallargtypes?: PgCatalog.Types.OidArray.Options,
-proargmodes?: PgCatalog.Types.CharArray.Options,
-proargnames?: PgCatalog.Types.TextArray.Options,
-proargdefaults?: PgCatalog.Types.PgNodeTree.Options,
-protrftypes?: PgCatalog.Types.OidArray.Options,
-prosrc?: PgCatalog.Types.Text.Options,
-probin?: PgCatalog.Types.Text.Options,
-prosqlbody?: PgCatalog.Types.PgNodeTree.Options,
-proconfig?: PgCatalog.Types.TextArray.Options,
-proacl?: PgCatalog.Types.AclitemArray.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-proname?: PgCatalog.Types.Name.Options,
-pronamespace?: PgCatalog.Types.Oid.Options,
-proowner?: PgCatalog.Types.Oid.Options,
-prolang?: PgCatalog.Types.Oid.Options,
-procost?: PgCatalog.Types.Float4.Options,
-prorows?: PgCatalog.Types.Float4.Options,
-provariadic?: PgCatalog.Types.Oid.Options,
-prosupport?: PgCatalog.Types.Regproc.Options,
-prokind?: PgCatalog.Types.Char.Options,
-prosecdef?: PgCatalog.Types.Bool.Options,
-proleakproof?: PgCatalog.Types.Bool.Options,
-proisstrict?: PgCatalog.Types.Bool.Options,
-proretset?: PgCatalog.Types.Bool.Options,
-provolatile?: PgCatalog.Types.Char.Options,
-proparallel?: PgCatalog.Types.Char.Options,
-pronargs?: PgCatalog.Types.Int2.Options,
-pronargdefaults?: PgCatalog.Types.Int2.Options,
-prorettype?: PgCatalog.Types.Oid.Options,
-proargtypes?: PgCatalog.Types.Oidvector.Options,
-proallargtypes?: PgCatalog.Types.OidArray.Options,
-proargmodes?: PgCatalog.Types.CharArray.Options,
-proargnames?: PgCatalog.Types.TextArray.Options,
-proargdefaults?: PgCatalog.Types.PgNodeTree.Options,
-protrftypes?: PgCatalog.Types.OidArray.Options,
-prosrc?: PgCatalog.Types.Text.Options,
-probin?: PgCatalog.Types.Text.Options,
-prosqlbody?: PgCatalog.Types.PgNodeTree.Options,
-proconfig?: PgCatalog.Types.TextArray.Options,
-proacl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -5049,74 +4709,6 @@ relpartboundDescending = "relpartbound DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-relname?: PgCatalog.Types.Name.Options,
-relnamespace?: PgCatalog.Types.Oid.Options,
-reltype?: PgCatalog.Types.Oid.Options,
-reloftype?: PgCatalog.Types.Oid.Options,
-relowner?: PgCatalog.Types.Oid.Options,
-relam?: PgCatalog.Types.Oid.Options,
-relfilenode?: PgCatalog.Types.Oid.Options,
-reltablespace?: PgCatalog.Types.Oid.Options,
-relpages?: PgCatalog.Types.Int4.Options,
-reltuples?: PgCatalog.Types.Float4.Options,
-relallvisible?: PgCatalog.Types.Int4.Options,
-reltoastrelid?: PgCatalog.Types.Oid.Options,
-relhasindex?: PgCatalog.Types.Bool.Options,
-relisshared?: PgCatalog.Types.Bool.Options,
-relpersistence?: PgCatalog.Types.Char.Options,
-relkind?: PgCatalog.Types.Char.Options,
-relnatts?: PgCatalog.Types.Int2.Options,
-relchecks?: PgCatalog.Types.Int2.Options,
-relhasrules?: PgCatalog.Types.Bool.Options,
-relhastriggers?: PgCatalog.Types.Bool.Options,
-relhassubclass?: PgCatalog.Types.Bool.Options,
-relrowsecurity?: PgCatalog.Types.Bool.Options,
-relforcerowsecurity?: PgCatalog.Types.Bool.Options,
-relispopulated?: PgCatalog.Types.Bool.Options,
-relreplident?: PgCatalog.Types.Char.Options,
-relispartition?: PgCatalog.Types.Bool.Options,
-relrewrite?: PgCatalog.Types.Oid.Options,
-relfrozenxid?: PgCatalog.Types.Xid.Options,
-relminmxid?: PgCatalog.Types.Xid.Options,
-relacl?: PgCatalog.Types.AclitemArray.Options,
-reloptions?: PgCatalog.Types.TextArray.Options,
-relpartbound?: PgCatalog.Types.PgNodeTree.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-relname?: PgCatalog.Types.Name.Options,
-relnamespace?: PgCatalog.Types.Oid.Options,
-reltype?: PgCatalog.Types.Oid.Options,
-reloftype?: PgCatalog.Types.Oid.Options,
-relowner?: PgCatalog.Types.Oid.Options,
-relam?: PgCatalog.Types.Oid.Options,
-relfilenode?: PgCatalog.Types.Oid.Options,
-reltablespace?: PgCatalog.Types.Oid.Options,
-relpages?: PgCatalog.Types.Int4.Options,
-reltuples?: PgCatalog.Types.Float4.Options,
-relallvisible?: PgCatalog.Types.Int4.Options,
-reltoastrelid?: PgCatalog.Types.Oid.Options,
-relhasindex?: PgCatalog.Types.Bool.Options,
-relisshared?: PgCatalog.Types.Bool.Options,
-relpersistence?: PgCatalog.Types.Char.Options,
-relkind?: PgCatalog.Types.Char.Options,
-relnatts?: PgCatalog.Types.Int2.Options,
-relchecks?: PgCatalog.Types.Int2.Options,
-relhasrules?: PgCatalog.Types.Bool.Options,
-relhastriggers?: PgCatalog.Types.Bool.Options,
-relhassubclass?: PgCatalog.Types.Bool.Options,
-relrowsecurity?: PgCatalog.Types.Bool.Options,
-relforcerowsecurity?: PgCatalog.Types.Bool.Options,
-relispopulated?: PgCatalog.Types.Bool.Options,
-relreplident?: PgCatalog.Types.Char.Options,
-relispartition?: PgCatalog.Types.Bool.Options,
-relrewrite?: PgCatalog.Types.Oid.Options,
-relfrozenxid?: PgCatalog.Types.Xid.Options,
-relminmxid?: PgCatalog.Types.Xid.Options,
-relacl?: PgCatalog.Types.AclitemArray.Options,
-reloptions?: PgCatalog.Types.TextArray.Options,
-relpartbound?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Oid: {
@@ -5276,16 +4868,6 @@ adbinDescending = "adbin DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-adrelid?: PgCatalog.Types.Oid.Options,
-adnum?: PgCatalog.Types.Int2.Options,
-adbin?: PgCatalog.Types.PgNodeTree.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-adrelid?: PgCatalog.Types.Oid.Options,
-adnum?: PgCatalog.Types.Int2.Options,
-adbin?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Oid: {
@@ -5373,60 +4955,6 @@ conbinDescending = "conbin DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-conname?: PgCatalog.Types.Name.Options,
-connamespace?: PgCatalog.Types.Oid.Options,
-contype?: PgCatalog.Types.Char.Options,
-condeferrable?: PgCatalog.Types.Bool.Options,
-condeferred?: PgCatalog.Types.Bool.Options,
-convalidated?: PgCatalog.Types.Bool.Options,
-conrelid?: PgCatalog.Types.Oid.Options,
-contypid?: PgCatalog.Types.Oid.Options,
-conindid?: PgCatalog.Types.Oid.Options,
-conparentid?: PgCatalog.Types.Oid.Options,
-confrelid?: PgCatalog.Types.Oid.Options,
-confupdtype?: PgCatalog.Types.Char.Options,
-confdeltype?: PgCatalog.Types.Char.Options,
-confmatchtype?: PgCatalog.Types.Char.Options,
-conislocal?: PgCatalog.Types.Bool.Options,
-coninhcount?: PgCatalog.Types.Int2.Options,
-connoinherit?: PgCatalog.Types.Bool.Options,
-conkey?: PgCatalog.Types.Int2Array.Options,
-confkey?: PgCatalog.Types.Int2Array.Options,
-conpfeqop?: PgCatalog.Types.OidArray.Options,
-conppeqop?: PgCatalog.Types.OidArray.Options,
-conffeqop?: PgCatalog.Types.OidArray.Options,
-confdelsetcols?: PgCatalog.Types.Int2Array.Options,
-conexclop?: PgCatalog.Types.OidArray.Options,
-conbin?: PgCatalog.Types.PgNodeTree.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-conname?: PgCatalog.Types.Name.Options,
-connamespace?: PgCatalog.Types.Oid.Options,
-contype?: PgCatalog.Types.Char.Options,
-condeferrable?: PgCatalog.Types.Bool.Options,
-condeferred?: PgCatalog.Types.Bool.Options,
-convalidated?: PgCatalog.Types.Bool.Options,
-conrelid?: PgCatalog.Types.Oid.Options,
-contypid?: PgCatalog.Types.Oid.Options,
-conindid?: PgCatalog.Types.Oid.Options,
-conparentid?: PgCatalog.Types.Oid.Options,
-confrelid?: PgCatalog.Types.Oid.Options,
-confupdtype?: PgCatalog.Types.Char.Options,
-confdeltype?: PgCatalog.Types.Char.Options,
-confmatchtype?: PgCatalog.Types.Char.Options,
-conislocal?: PgCatalog.Types.Bool.Options,
-coninhcount?: PgCatalog.Types.Int2.Options,
-connoinherit?: PgCatalog.Types.Bool.Options,
-conkey?: PgCatalog.Types.Int2Array.Options,
-confkey?: PgCatalog.Types.Int2Array.Options,
-conpfeqop?: PgCatalog.Types.OidArray.Options,
-conppeqop?: PgCatalog.Types.OidArray.Options,
-conffeqop?: PgCatalog.Types.OidArray.Options,
-confdelsetcols?: PgCatalog.Types.Int2Array.Options,
-conexclop?: PgCatalog.Types.OidArray.Options,
-conbin?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Oid: {
@@ -5558,16 +5086,6 @@ inhdetachpendingDescending = "inhdetachpending DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- inhrelid?: PgCatalog.Types.Oid.Options,
-inhparent?: PgCatalog.Types.Oid.Options,
-inhseqno?: PgCatalog.Types.Int4.Options,
-inhdetachpending?: PgCatalog.Types.Bool.Options
-};
-export type ModifyOptions = {
- inhrelid?: PgCatalog.Types.Oid.Options,
-inhparent?: PgCatalog.Types.Oid.Options,
-inhseqno?: PgCatalog.Types.Int4.Options,
-inhdetachpending?: PgCatalog.Types.Bool.Options
 };
 export const Columns = {
 Inhrelid: {
@@ -5645,50 +5163,6 @@ indpredDescending = "indpred DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- indexrelid?: PgCatalog.Types.Oid.Options,
-indrelid?: PgCatalog.Types.Oid.Options,
-indnatts?: PgCatalog.Types.Int2.Options,
-indnkeyatts?: PgCatalog.Types.Int2.Options,
-indisunique?: PgCatalog.Types.Bool.Options,
-indnullsnotdistinct?: PgCatalog.Types.Bool.Options,
-indisprimary?: PgCatalog.Types.Bool.Options,
-indisexclusion?: PgCatalog.Types.Bool.Options,
-indimmediate?: PgCatalog.Types.Bool.Options,
-indisclustered?: PgCatalog.Types.Bool.Options,
-indisvalid?: PgCatalog.Types.Bool.Options,
-indcheckxmin?: PgCatalog.Types.Bool.Options,
-indisready?: PgCatalog.Types.Bool.Options,
-indislive?: PgCatalog.Types.Bool.Options,
-indisreplident?: PgCatalog.Types.Bool.Options,
-indkey?: PgCatalog.Types.Int2vector.Options,
-indcollation?: PgCatalog.Types.Oidvector.Options,
-indclass?: PgCatalog.Types.Oidvector.Options,
-indoption?: PgCatalog.Types.Int2vector.Options,
-indexprs?: PgCatalog.Types.PgNodeTree.Options,
-indpred?: PgCatalog.Types.PgNodeTree.Options
-};
-export type ModifyOptions = {
- indexrelid?: PgCatalog.Types.Oid.Options,
-indrelid?: PgCatalog.Types.Oid.Options,
-indnatts?: PgCatalog.Types.Int2.Options,
-indnkeyatts?: PgCatalog.Types.Int2.Options,
-indisunique?: PgCatalog.Types.Bool.Options,
-indnullsnotdistinct?: PgCatalog.Types.Bool.Options,
-indisprimary?: PgCatalog.Types.Bool.Options,
-indisexclusion?: PgCatalog.Types.Bool.Options,
-indimmediate?: PgCatalog.Types.Bool.Options,
-indisclustered?: PgCatalog.Types.Bool.Options,
-indisvalid?: PgCatalog.Types.Bool.Options,
-indcheckxmin?: PgCatalog.Types.Bool.Options,
-indisready?: PgCatalog.Types.Bool.Options,
-indislive?: PgCatalog.Types.Bool.Options,
-indisreplident?: PgCatalog.Types.Bool.Options,
-indkey?: PgCatalog.Types.Int2vector.Options,
-indcollation?: PgCatalog.Types.Oidvector.Options,
-indclass?: PgCatalog.Types.Oidvector.Options,
-indoption?: PgCatalog.Types.Int2vector.Options,
-indexprs?: PgCatalog.Types.PgNodeTree.Options,
-indpred?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Indexrelid: {
@@ -5822,38 +5296,6 @@ oprjoinDescending = "oprjoin DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-oprname?: PgCatalog.Types.Name.Options,
-oprnamespace?: PgCatalog.Types.Oid.Options,
-oprowner?: PgCatalog.Types.Oid.Options,
-oprkind?: PgCatalog.Types.Char.Options,
-oprcanmerge?: PgCatalog.Types.Bool.Options,
-oprcanhash?: PgCatalog.Types.Bool.Options,
-oprleft?: PgCatalog.Types.Oid.Options,
-oprright?: PgCatalog.Types.Oid.Options,
-oprresult?: PgCatalog.Types.Oid.Options,
-oprcom?: PgCatalog.Types.Oid.Options,
-oprnegate?: PgCatalog.Types.Oid.Options,
-oprcode?: PgCatalog.Types.Regproc.Options,
-oprrest?: PgCatalog.Types.Regproc.Options,
-oprjoin?: PgCatalog.Types.Regproc.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-oprname?: PgCatalog.Types.Name.Options,
-oprnamespace?: PgCatalog.Types.Oid.Options,
-oprowner?: PgCatalog.Types.Oid.Options,
-oprkind?: PgCatalog.Types.Char.Options,
-oprcanmerge?: PgCatalog.Types.Bool.Options,
-oprcanhash?: PgCatalog.Types.Bool.Options,
-oprleft?: PgCatalog.Types.Oid.Options,
-oprright?: PgCatalog.Types.Oid.Options,
-oprresult?: PgCatalog.Types.Oid.Options,
-oprcom?: PgCatalog.Types.Oid.Options,
-oprnegate?: PgCatalog.Types.Oid.Options,
-oprcode?: PgCatalog.Types.Regproc.Options,
-oprrest?: PgCatalog.Types.Regproc.Options,
-oprjoin?: PgCatalog.Types.Regproc.Options
 };
 export const Columns = {
 Oid: {
@@ -5943,18 +5385,6 @@ opfownerDescending = "opfowner DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-opfmethod?: PgCatalog.Types.Oid.Options,
-opfname?: PgCatalog.Types.Name.Options,
-opfnamespace?: PgCatalog.Types.Oid.Options,
-opfowner?: PgCatalog.Types.Oid.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-opfmethod?: PgCatalog.Types.Oid.Options,
-opfname?: PgCatalog.Types.Name.Options,
-opfnamespace?: PgCatalog.Types.Oid.Options,
-opfowner?: PgCatalog.Types.Oid.Options
 };
 export const Columns = {
 Oid: {
@@ -6012,26 +5442,6 @@ opckeytypeDescending = "opckeytype DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-opcmethod?: PgCatalog.Types.Oid.Options,
-opcname?: PgCatalog.Types.Name.Options,
-opcnamespace?: PgCatalog.Types.Oid.Options,
-opcowner?: PgCatalog.Types.Oid.Options,
-opcfamily?: PgCatalog.Types.Oid.Options,
-opcintype?: PgCatalog.Types.Oid.Options,
-opcdefault?: PgCatalog.Types.Bool.Options,
-opckeytype?: PgCatalog.Types.Oid.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-opcmethod?: PgCatalog.Types.Oid.Options,
-opcname?: PgCatalog.Types.Name.Options,
-opcnamespace?: PgCatalog.Types.Oid.Options,
-opcowner?: PgCatalog.Types.Oid.Options,
-opcfamily?: PgCatalog.Types.Oid.Options,
-opcintype?: PgCatalog.Types.Oid.Options,
-opcdefault?: PgCatalog.Types.Bool.Options,
-opckeytype?: PgCatalog.Types.Oid.Options
 };
 export const Columns = {
 Oid: {
@@ -6095,16 +5505,6 @@ amtypeDescending = "amtype DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-amname?: PgCatalog.Types.Name.Options,
-amhandler?: PgCatalog.Types.Regproc.Options,
-amtype?: PgCatalog.Types.Char.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-amname?: PgCatalog.Types.Name.Options,
-amhandler?: PgCatalog.Types.Regproc.Options,
-amtype?: PgCatalog.Types.Char.Options
 };
 export const Columns = {
 Oid: {
@@ -6158,26 +5558,6 @@ amopsortfamilyDescending = "amopsortfamily DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-amopfamily?: PgCatalog.Types.Oid.Options,
-amoplefttype?: PgCatalog.Types.Oid.Options,
-amoprighttype?: PgCatalog.Types.Oid.Options,
-amopstrategy?: PgCatalog.Types.Int2.Options,
-amoppurpose?: PgCatalog.Types.Char.Options,
-amopopr?: PgCatalog.Types.Oid.Options,
-amopmethod?: PgCatalog.Types.Oid.Options,
-amopsortfamily?: PgCatalog.Types.Oid.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-amopfamily?: PgCatalog.Types.Oid.Options,
-amoplefttype?: PgCatalog.Types.Oid.Options,
-amoprighttype?: PgCatalog.Types.Oid.Options,
-amopstrategy?: PgCatalog.Types.Int2.Options,
-amoppurpose?: PgCatalog.Types.Char.Options,
-amopopr?: PgCatalog.Types.Oid.Options,
-amopmethod?: PgCatalog.Types.Oid.Options,
-amopsortfamily?: PgCatalog.Types.Oid.Options
 };
 export const Columns = {
 Oid: {
@@ -6245,20 +5625,6 @@ amprocDescending = "amproc DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-amprocfamily?: PgCatalog.Types.Oid.Options,
-amproclefttype?: PgCatalog.Types.Oid.Options,
-amprocrighttype?: PgCatalog.Types.Oid.Options,
-amprocnum?: PgCatalog.Types.Int2.Options,
-amproc?: PgCatalog.Types.Regproc.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-amprocfamily?: PgCatalog.Types.Oid.Options,
-amproclefttype?: PgCatalog.Types.Oid.Options,
-amprocrighttype?: PgCatalog.Types.Oid.Options,
-amprocnum?: PgCatalog.Types.Int2.Options,
-amproc?: PgCatalog.Types.Regproc.Options
 };
 export const Columns = {
 Oid: {
@@ -6320,26 +5686,6 @@ lanaclDescending = "lanacl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-lanname?: PgCatalog.Types.Name.Options,
-lanowner?: PgCatalog.Types.Oid.Options,
-lanispl?: PgCatalog.Types.Bool.Options,
-lanpltrusted?: PgCatalog.Types.Bool.Options,
-lanplcallfoid?: PgCatalog.Types.Oid.Options,
-laninline?: PgCatalog.Types.Oid.Options,
-lanvalidator?: PgCatalog.Types.Oid.Options,
-lanacl?: PgCatalog.Types.AclitemArray.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-lanname?: PgCatalog.Types.Name.Options,
-lanowner?: PgCatalog.Types.Oid.Options,
-lanispl?: PgCatalog.Types.Bool.Options,
-lanpltrusted?: PgCatalog.Types.Bool.Options,
-lanplcallfoid?: PgCatalog.Types.Oid.Options,
-laninline?: PgCatalog.Types.Oid.Options,
-lanvalidator?: PgCatalog.Types.Oid.Options,
-lanacl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -6401,14 +5747,6 @@ lomaclDescending = "lomacl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-lomowner?: PgCatalog.Types.Oid.Options,
-lomacl?: PgCatalog.Types.AclitemArray.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-lomowner?: PgCatalog.Types.Oid.Options,
-lomacl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -6484,52 +5822,6 @@ aggminitvalDescending = "aggminitval DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- aggfnoid?: PgCatalog.Types.Regproc.Options,
-aggkind?: PgCatalog.Types.Char.Options,
-aggnumdirectargs?: PgCatalog.Types.Int2.Options,
-aggtransfn?: PgCatalog.Types.Regproc.Options,
-aggfinalfn?: PgCatalog.Types.Regproc.Options,
-aggcombinefn?: PgCatalog.Types.Regproc.Options,
-aggserialfn?: PgCatalog.Types.Regproc.Options,
-aggdeserialfn?: PgCatalog.Types.Regproc.Options,
-aggmtransfn?: PgCatalog.Types.Regproc.Options,
-aggminvtransfn?: PgCatalog.Types.Regproc.Options,
-aggmfinalfn?: PgCatalog.Types.Regproc.Options,
-aggfinalextra?: PgCatalog.Types.Bool.Options,
-aggmfinalextra?: PgCatalog.Types.Bool.Options,
-aggfinalmodify?: PgCatalog.Types.Char.Options,
-aggmfinalmodify?: PgCatalog.Types.Char.Options,
-aggsortop?: PgCatalog.Types.Oid.Options,
-aggtranstype?: PgCatalog.Types.Oid.Options,
-aggtransspace?: PgCatalog.Types.Int4.Options,
-aggmtranstype?: PgCatalog.Types.Oid.Options,
-aggmtransspace?: PgCatalog.Types.Int4.Options,
-agginitval?: PgCatalog.Types.Text.Options,
-aggminitval?: PgCatalog.Types.Text.Options
-};
-export type ModifyOptions = {
- aggfnoid?: PgCatalog.Types.Regproc.Options,
-aggkind?: PgCatalog.Types.Char.Options,
-aggnumdirectargs?: PgCatalog.Types.Int2.Options,
-aggtransfn?: PgCatalog.Types.Regproc.Options,
-aggfinalfn?: PgCatalog.Types.Regproc.Options,
-aggcombinefn?: PgCatalog.Types.Regproc.Options,
-aggserialfn?: PgCatalog.Types.Regproc.Options,
-aggdeserialfn?: PgCatalog.Types.Regproc.Options,
-aggmtransfn?: PgCatalog.Types.Regproc.Options,
-aggminvtransfn?: PgCatalog.Types.Regproc.Options,
-aggmfinalfn?: PgCatalog.Types.Regproc.Options,
-aggfinalextra?: PgCatalog.Types.Bool.Options,
-aggmfinalextra?: PgCatalog.Types.Bool.Options,
-aggfinalmodify?: PgCatalog.Types.Char.Options,
-aggmfinalmodify?: PgCatalog.Types.Char.Options,
-aggsortop?: PgCatalog.Types.Oid.Options,
-aggtranstype?: PgCatalog.Types.Oid.Options,
-aggtransspace?: PgCatalog.Types.Int4.Options,
-aggmtranstype?: PgCatalog.Types.Oid.Options,
-aggmtransspace?: PgCatalog.Types.Int4.Options,
-agginitval?: PgCatalog.Types.Text.Options,
-aggminitval?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Aggfnoid: {
@@ -6655,26 +5947,6 @@ stxexprsDescending = "stxexprs DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-stxrelid?: PgCatalog.Types.Oid.Options,
-stxname?: PgCatalog.Types.Name.Options,
-stxnamespace?: PgCatalog.Types.Oid.Options,
-stxowner?: PgCatalog.Types.Oid.Options,
-stxstattarget?: PgCatalog.Types.Int4.Options,
-stxkeys?: PgCatalog.Types.Int2vector.Options,
-stxkind?: PgCatalog.Types.CharArray.Options,
-stxexprs?: PgCatalog.Types.PgNodeTree.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-stxrelid?: PgCatalog.Types.Oid.Options,
-stxname?: PgCatalog.Types.Name.Options,
-stxnamespace?: PgCatalog.Types.Oid.Options,
-stxowner?: PgCatalog.Types.Oid.Options,
-stxstattarget?: PgCatalog.Types.Int4.Options,
-stxkeys?: PgCatalog.Types.Int2vector.Options,
-stxkind?: PgCatalog.Types.CharArray.Options,
-stxexprs?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Oid: {
@@ -6746,24 +6018,6 @@ evActionDescending = "ev_action DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-rulename?: PgCatalog.Types.Name.Options,
-evClass?: PgCatalog.Types.Oid.Options,
-evType?: PgCatalog.Types.Char.Options,
-evEnabled?: PgCatalog.Types.Char.Options,
-isInstead?: PgCatalog.Types.Bool.Options,
-evQual?: PgCatalog.Types.PgNodeTree.Options,
-evAction?: PgCatalog.Types.PgNodeTree.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-rulename?: PgCatalog.Types.Name.Options,
-evClass?: PgCatalog.Types.Oid.Options,
-evType?: PgCatalog.Types.Char.Options,
-evEnabled?: PgCatalog.Types.Char.Options,
-isInstead?: PgCatalog.Types.Bool.Options,
-evQual?: PgCatalog.Types.PgNodeTree.Options,
-evAction?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Oid: {
@@ -6853,46 +6107,6 @@ tgnewtableDescending = "tgnewtable DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-tgrelid?: PgCatalog.Types.Oid.Options,
-tgparentid?: PgCatalog.Types.Oid.Options,
-tgname?: PgCatalog.Types.Name.Options,
-tgfoid?: PgCatalog.Types.Oid.Options,
-tgtype?: PgCatalog.Types.Int2.Options,
-tgenabled?: PgCatalog.Types.Char.Options,
-tgisinternal?: PgCatalog.Types.Bool.Options,
-tgconstrrelid?: PgCatalog.Types.Oid.Options,
-tgconstrindid?: PgCatalog.Types.Oid.Options,
-tgconstraint?: PgCatalog.Types.Oid.Options,
-tgdeferrable?: PgCatalog.Types.Bool.Options,
-tginitdeferred?: PgCatalog.Types.Bool.Options,
-tgnargs?: PgCatalog.Types.Int2.Options,
-tgattr?: PgCatalog.Types.Int2vector.Options,
-tgargs?: PgCatalog.Types.Bytea.Options,
-tgqual?: PgCatalog.Types.PgNodeTree.Options,
-tgoldtable?: PgCatalog.Types.Name.Options,
-tgnewtable?: PgCatalog.Types.Name.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-tgrelid?: PgCatalog.Types.Oid.Options,
-tgparentid?: PgCatalog.Types.Oid.Options,
-tgname?: PgCatalog.Types.Name.Options,
-tgfoid?: PgCatalog.Types.Oid.Options,
-tgtype?: PgCatalog.Types.Int2.Options,
-tgenabled?: PgCatalog.Types.Char.Options,
-tgisinternal?: PgCatalog.Types.Bool.Options,
-tgconstrrelid?: PgCatalog.Types.Oid.Options,
-tgconstrindid?: PgCatalog.Types.Oid.Options,
-tgconstraint?: PgCatalog.Types.Oid.Options,
-tgdeferrable?: PgCatalog.Types.Bool.Options,
-tginitdeferred?: PgCatalog.Types.Bool.Options,
-tgnargs?: PgCatalog.Types.Int2.Options,
-tgattr?: PgCatalog.Types.Int2vector.Options,
-tgargs?: PgCatalog.Types.Bytea.Options,
-tgqual?: PgCatalog.Types.PgNodeTree.Options,
-tgoldtable?: PgCatalog.Types.Name.Options,
-tgnewtable?: PgCatalog.Types.Name.Options
 };
 export const Columns = {
 Oid: {
@@ -7002,22 +6216,6 @@ evttagsDescending = "evttags DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-evtname?: PgCatalog.Types.Name.Options,
-evtevent?: PgCatalog.Types.Name.Options,
-evtowner?: PgCatalog.Types.Oid.Options,
-evtfoid?: PgCatalog.Types.Oid.Options,
-evtenabled?: PgCatalog.Types.Char.Options,
-evttags?: PgCatalog.Types.TextArray.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-evtname?: PgCatalog.Types.Name.Options,
-evtevent?: PgCatalog.Types.Name.Options,
-evtowner?: PgCatalog.Types.Oid.Options,
-evtfoid?: PgCatalog.Types.Oid.Options,
-evtenabled?: PgCatalog.Types.Char.Options,
-evttags?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Oid: {
@@ -7073,16 +6271,6 @@ descriptionDescending = "description DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- objoid?: PgCatalog.Types.Oid.Options,
-classoid?: PgCatalog.Types.Oid.Options,
-objsubid?: PgCatalog.Types.Int4.Options,
-description?: PgCatalog.Types.Text.Options
-};
-export type ModifyOptions = {
- objoid?: PgCatalog.Types.Oid.Options,
-classoid?: PgCatalog.Types.Oid.Options,
-objsubid?: PgCatalog.Types.Int4.Options,
-description?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Objoid: {
@@ -7130,20 +6318,6 @@ castmethodDescending = "castmethod DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-castsource?: PgCatalog.Types.Oid.Options,
-casttarget?: PgCatalog.Types.Oid.Options,
-castfunc?: PgCatalog.Types.Oid.Options,
-castcontext?: PgCatalog.Types.Char.Options,
-castmethod?: PgCatalog.Types.Char.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-castsource?: PgCatalog.Types.Oid.Options,
-casttarget?: PgCatalog.Types.Oid.Options,
-castfunc?: PgCatalog.Types.Oid.Options,
-castcontext?: PgCatalog.Types.Char.Options,
-castmethod?: PgCatalog.Types.Char.Options
 };
 export const Columns = {
 Oid: {
@@ -7195,16 +6369,6 @@ enumlabelDescending = "enumlabel DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-enumtypid?: PgCatalog.Types.Oid.Options,
-enumsortorder?: PgCatalog.Types.Float4.Options,
-enumlabel?: PgCatalog.Types.Name.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-enumtypid?: PgCatalog.Types.Oid.Options,
-enumsortorder?: PgCatalog.Types.Float4.Options,
-enumlabel?: PgCatalog.Types.Name.Options
 };
 export const Columns = {
 Oid: {
@@ -7248,16 +6412,6 @@ nspaclDescending = "nspacl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-nspname?: PgCatalog.Types.Name.Options,
-nspowner?: PgCatalog.Types.Oid.Options,
-nspacl?: PgCatalog.Types.AclitemArray.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-nspname?: PgCatalog.Types.Name.Options,
-nspowner?: PgCatalog.Types.Oid.Options,
-nspacl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -7309,24 +6463,6 @@ condefaultDescending = "condefault DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-conname?: PgCatalog.Types.Name.Options,
-connamespace?: PgCatalog.Types.Oid.Options,
-conowner?: PgCatalog.Types.Oid.Options,
-conforencoding?: PgCatalog.Types.Int4.Options,
-contoencoding?: PgCatalog.Types.Int4.Options,
-conproc?: PgCatalog.Types.Regproc.Options,
-condefault?: PgCatalog.Types.Bool.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-conname?: PgCatalog.Types.Name.Options,
-connamespace?: PgCatalog.Types.Oid.Options,
-conowner?: PgCatalog.Types.Oid.Options,
-conforencoding?: PgCatalog.Types.Int4.Options,
-contoencoding?: PgCatalog.Types.Int4.Options,
-conproc?: PgCatalog.Types.Regproc.Options,
-condefault?: PgCatalog.Types.Bool.Options
 };
 export const Columns = {
 Oid: {
@@ -7392,22 +6528,6 @@ deptypeDescending = "deptype DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- classid?: PgCatalog.Types.Oid.Options,
-objid?: PgCatalog.Types.Oid.Options,
-objsubid?: PgCatalog.Types.Int4.Options,
-refclassid?: PgCatalog.Types.Oid.Options,
-refobjid?: PgCatalog.Types.Oid.Options,
-refobjsubid?: PgCatalog.Types.Int4.Options,
-deptype?: PgCatalog.Types.Char.Options
-};
-export type ModifyOptions = {
- classid?: PgCatalog.Types.Oid.Options,
-objid?: PgCatalog.Types.Oid.Options,
-objsubid?: PgCatalog.Types.Int4.Options,
-refclassid?: PgCatalog.Types.Oid.Options,
-refobjid?: PgCatalog.Types.Oid.Options,
-refobjsubid?: PgCatalog.Types.Int4.Options,
-deptype?: PgCatalog.Types.Char.Options
 };
 export const Columns = {
 Classid: {
@@ -7488,42 +6608,6 @@ dataclDescending = "datacl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-datname?: PgCatalog.Types.Name.Options,
-datdba?: PgCatalog.Types.Oid.Options,
-encoding?: PgCatalog.Types.Int4.Options,
-datlocprovider?: PgCatalog.Types.Char.Options,
-datistemplate?: PgCatalog.Types.Bool.Options,
-datallowconn?: PgCatalog.Types.Bool.Options,
-datconnlimit?: PgCatalog.Types.Int4.Options,
-datfrozenxid?: PgCatalog.Types.Xid.Options,
-datminmxid?: PgCatalog.Types.Xid.Options,
-dattablespace?: PgCatalog.Types.Oid.Options,
-datcollate?: PgCatalog.Types.Text.Options,
-datctype?: PgCatalog.Types.Text.Options,
-daticulocale?: PgCatalog.Types.Text.Options,
-daticurules?: PgCatalog.Types.Text.Options,
-datcollversion?: PgCatalog.Types.Text.Options,
-datacl?: PgCatalog.Types.AclitemArray.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-datname?: PgCatalog.Types.Name.Options,
-datdba?: PgCatalog.Types.Oid.Options,
-encoding?: PgCatalog.Types.Int4.Options,
-datlocprovider?: PgCatalog.Types.Char.Options,
-datistemplate?: PgCatalog.Types.Bool.Options,
-datallowconn?: PgCatalog.Types.Bool.Options,
-datconnlimit?: PgCatalog.Types.Int4.Options,
-datfrozenxid?: PgCatalog.Types.Xid.Options,
-datminmxid?: PgCatalog.Types.Xid.Options,
-dattablespace?: PgCatalog.Types.Oid.Options,
-datcollate?: PgCatalog.Types.Text.Options,
-datctype?: PgCatalog.Types.Text.Options,
-daticulocale?: PgCatalog.Types.Text.Options,
-daticurules?: PgCatalog.Types.Text.Options,
-datcollversion?: PgCatalog.Types.Text.Options,
-datacl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -7617,14 +6701,6 @@ setconfigDescending = "setconfig DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- setdatabase?: PgCatalog.Types.Oid.Options,
-setrole?: PgCatalog.Types.Oid.Options,
-setconfig?: PgCatalog.Types.TextArray.Options
-};
-export type ModifyOptions = {
- setdatabase?: PgCatalog.Types.Oid.Options,
-setrole?: PgCatalog.Types.Oid.Options,
-setconfig?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Setdatabase: {
@@ -7666,18 +6742,6 @@ spcoptionsDescending = "spcoptions DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-spcname?: PgCatalog.Types.Name.Options,
-spcowner?: PgCatalog.Types.Oid.Options,
-spcacl?: PgCatalog.Types.AclitemArray.Options,
-spcoptions?: PgCatalog.Types.TextArray.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-spcname?: PgCatalog.Types.Name.Options,
-spcowner?: PgCatalog.Types.Oid.Options,
-spcacl?: PgCatalog.Types.AclitemArray.Options,
-spcoptions?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Oid: {
@@ -7731,22 +6795,6 @@ setOptionDescending = "set_option DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-roleid?: PgCatalog.Types.Oid.Options,
-member?: PgCatalog.Types.Oid.Options,
-grantor?: PgCatalog.Types.Oid.Options,
-adminOption?: PgCatalog.Types.Bool.Options,
-inheritOption?: PgCatalog.Types.Bool.Options,
-setOption?: PgCatalog.Types.Bool.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-roleid?: PgCatalog.Types.Oid.Options,
-member?: PgCatalog.Types.Oid.Options,
-grantor?: PgCatalog.Types.Oid.Options,
-adminOption?: PgCatalog.Types.Bool.Options,
-inheritOption?: PgCatalog.Types.Bool.Options,
-setOption?: PgCatalog.Types.Bool.Options
 };
 export const Columns = {
 Oid: {
@@ -7808,22 +6856,6 @@ deptypeDescending = "deptype DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- dbid?: PgCatalog.Types.Oid.Options,
-classid?: PgCatalog.Types.Oid.Options,
-objid?: PgCatalog.Types.Oid.Options,
-objsubid?: PgCatalog.Types.Int4.Options,
-refclassid?: PgCatalog.Types.Oid.Options,
-refobjid?: PgCatalog.Types.Oid.Options,
-deptype?: PgCatalog.Types.Char.Options
-};
-export type ModifyOptions = {
- dbid?: PgCatalog.Types.Oid.Options,
-classid?: PgCatalog.Types.Oid.Options,
-objid?: PgCatalog.Types.Oid.Options,
-objsubid?: PgCatalog.Types.Int4.Options,
-refclassid?: PgCatalog.Types.Oid.Options,
-refobjid?: PgCatalog.Types.Oid.Options,
-deptype?: PgCatalog.Types.Char.Options
 };
 export const Columns = {
 Dbid: {
@@ -7876,14 +6908,6 @@ descriptionDescending = "description DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- objoid?: PgCatalog.Types.Oid.Options,
-classoid?: PgCatalog.Types.Oid.Options,
-description?: PgCatalog.Types.Text.Options
-};
-export type ModifyOptions = {
- objoid?: PgCatalog.Types.Oid.Options,
-classoid?: PgCatalog.Types.Oid.Options,
-description?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Objoid: {
@@ -7925,18 +6949,6 @@ cfgparserDescending = "cfgparser DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-cfgname?: PgCatalog.Types.Name.Options,
-cfgnamespace?: PgCatalog.Types.Oid.Options,
-cfgowner?: PgCatalog.Types.Oid.Options,
-cfgparser?: PgCatalog.Types.Oid.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-cfgname?: PgCatalog.Types.Name.Options,
-cfgnamespace?: PgCatalog.Types.Oid.Options,
-cfgowner?: PgCatalog.Types.Oid.Options,
-cfgparser?: PgCatalog.Types.Oid.Options
 };
 export const Columns = {
 Oid: {
@@ -7984,16 +6996,6 @@ mapdictDescending = "mapdict DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- mapcfg?: PgCatalog.Types.Oid.Options,
-maptokentype?: PgCatalog.Types.Int4.Options,
-mapseqno?: PgCatalog.Types.Int4.Options,
-mapdict?: PgCatalog.Types.Oid.Options
-};
-export type ModifyOptions = {
- mapcfg?: PgCatalog.Types.Oid.Options,
-maptokentype?: PgCatalog.Types.Int4.Options,
-mapseqno?: PgCatalog.Types.Int4.Options,
-mapdict?: PgCatalog.Types.Oid.Options
 };
 export const Columns = {
 Mapcfg: {
@@ -8041,20 +7043,6 @@ dictinitoptionDescending = "dictinitoption DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-dictname?: PgCatalog.Types.Name.Options,
-dictnamespace?: PgCatalog.Types.Oid.Options,
-dictowner?: PgCatalog.Types.Oid.Options,
-dicttemplate?: PgCatalog.Types.Oid.Options,
-dictinitoption?: PgCatalog.Types.Text.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-dictname?: PgCatalog.Types.Name.Options,
-dictnamespace?: PgCatalog.Types.Oid.Options,
-dictowner?: PgCatalog.Types.Oid.Options,
-dicttemplate?: PgCatalog.Types.Oid.Options,
-dictinitoption?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Oid: {
@@ -8114,24 +7102,6 @@ prslextypeDescending = "prslextype DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-prsname?: PgCatalog.Types.Name.Options,
-prsnamespace?: PgCatalog.Types.Oid.Options,
-prsstart?: PgCatalog.Types.Regproc.Options,
-prstoken?: PgCatalog.Types.Regproc.Options,
-prsend?: PgCatalog.Types.Regproc.Options,
-prsheadline?: PgCatalog.Types.Regproc.Options,
-prslextype?: PgCatalog.Types.Regproc.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-prsname?: PgCatalog.Types.Name.Options,
-prsnamespace?: PgCatalog.Types.Oid.Options,
-prsstart?: PgCatalog.Types.Regproc.Options,
-prstoken?: PgCatalog.Types.Regproc.Options,
-prsend?: PgCatalog.Types.Regproc.Options,
-prsheadline?: PgCatalog.Types.Regproc.Options,
-prslextype?: PgCatalog.Types.Regproc.Options
 };
 export const Columns = {
 Oid: {
@@ -8193,18 +7163,6 @@ tmpllexizeDescending = "tmpllexize DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-tmplname?: PgCatalog.Types.Name.Options,
-tmplnamespace?: PgCatalog.Types.Oid.Options,
-tmplinit?: PgCatalog.Types.Regproc.Options,
-tmpllexize?: PgCatalog.Types.Regproc.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-tmplname?: PgCatalog.Types.Name.Options,
-tmplnamespace?: PgCatalog.Types.Oid.Options,
-tmplinit?: PgCatalog.Types.Regproc.Options,
-tmpllexize?: PgCatalog.Types.Regproc.Options
 };
 export const Columns = {
 Oid: {
@@ -8260,24 +7218,6 @@ extconditionDescending = "extcondition DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-extname?: PgCatalog.Types.Name.Options,
-extowner?: PgCatalog.Types.Oid.Options,
-extnamespace?: PgCatalog.Types.Oid.Options,
-extrelocatable?: PgCatalog.Types.Bool.Options,
-extversion?: PgCatalog.Types.Text.Options,
-extconfig?: PgCatalog.Types.OidArray.Options,
-extcondition?: PgCatalog.Types.TextArray.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-extname?: PgCatalog.Types.Name.Options,
-extowner?: PgCatalog.Types.Oid.Options,
-extnamespace?: PgCatalog.Types.Oid.Options,
-extrelocatable?: PgCatalog.Types.Bool.Options,
-extversion?: PgCatalog.Types.Text.Options,
-extconfig?: PgCatalog.Types.OidArray.Options,
-extcondition?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Oid: {
@@ -8343,22 +7283,6 @@ fdwoptionsDescending = "fdwoptions DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-fdwname?: PgCatalog.Types.Name.Options,
-fdwowner?: PgCatalog.Types.Oid.Options,
-fdwhandler?: PgCatalog.Types.Oid.Options,
-fdwvalidator?: PgCatalog.Types.Oid.Options,
-fdwacl?: PgCatalog.Types.AclitemArray.Options,
-fdwoptions?: PgCatalog.Types.TextArray.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-fdwname?: PgCatalog.Types.Name.Options,
-fdwowner?: PgCatalog.Types.Oid.Options,
-fdwhandler?: PgCatalog.Types.Oid.Options,
-fdwvalidator?: PgCatalog.Types.Oid.Options,
-fdwacl?: PgCatalog.Types.AclitemArray.Options,
-fdwoptions?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Oid: {
@@ -8422,24 +7346,6 @@ srvoptionsDescending = "srvoptions DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-srvname?: PgCatalog.Types.Name.Options,
-srvowner?: PgCatalog.Types.Oid.Options,
-srvfdw?: PgCatalog.Types.Oid.Options,
-srvtype?: PgCatalog.Types.Text.Options,
-srvversion?: PgCatalog.Types.Text.Options,
-srvacl?: PgCatalog.Types.AclitemArray.Options,
-srvoptions?: PgCatalog.Types.TextArray.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-srvname?: PgCatalog.Types.Name.Options,
-srvowner?: PgCatalog.Types.Oid.Options,
-srvfdw?: PgCatalog.Types.Oid.Options,
-srvtype?: PgCatalog.Types.Text.Options,
-srvversion?: PgCatalog.Types.Text.Options,
-srvacl?: PgCatalog.Types.AclitemArray.Options,
-srvoptions?: PgCatalog.Types.TextArray.Options
 };
 export const Columns = {
 Oid: {
@@ -8507,24 +7413,6 @@ polwithcheckDescending = "polwithcheck DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-polname?: PgCatalog.Types.Name.Options,
-polrelid?: PgCatalog.Types.Oid.Options,
-polcmd?: PgCatalog.Types.Char.Options,
-polpermissive?: PgCatalog.Types.Bool.Options,
-polroles?: PgCatalog.Types.OidArray.Options,
-polqual?: PgCatalog.Types.PgNodeTree.Options,
-polwithcheck?: PgCatalog.Types.PgNodeTree.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-polname?: PgCatalog.Types.Name.Options,
-polrelid?: PgCatalog.Types.Oid.Options,
-polcmd?: PgCatalog.Types.Char.Options,
-polpermissive?: PgCatalog.Types.Bool.Options,
-polroles?: PgCatalog.Types.OidArray.Options,
-polqual?: PgCatalog.Types.PgNodeTree.Options,
-polwithcheck?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Oid: {
@@ -8580,12 +7468,6 @@ ronameDescending = "roname DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- roident?: PgCatalog.Types.Oid.Options,
-roname?: PgCatalog.Types.Text.Options
-};
-export type ModifyOptions = {
- roident?: PgCatalog.Types.Oid.Options,
-roname?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Roident: {
@@ -8623,18 +7505,6 @@ defaclaclDescending = "defaclacl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-defaclrole?: PgCatalog.Types.Oid.Options,
-defaclnamespace?: PgCatalog.Types.Oid.Options,
-defaclobjtype?: PgCatalog.Types.Char.Options,
-defaclacl?: PgCatalog.Types.AclitemArray.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-defaclrole?: PgCatalog.Types.Oid.Options,
-defaclnamespace?: PgCatalog.Types.Oid.Options,
-defaclobjtype?: PgCatalog.Types.Char.Options,
-defaclacl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -8684,18 +7554,6 @@ initprivsDescending = "initprivs DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- objoid?: PgCatalog.Types.Oid.Options,
-classoid?: PgCatalog.Types.Oid.Options,
-objsubid?: PgCatalog.Types.Int4.Options,
-privtype?: PgCatalog.Types.Char.Options,
-initprivs?: PgCatalog.Types.AclitemArray.Options
-};
-export type ModifyOptions = {
- objoid?: PgCatalog.Types.Oid.Options,
-classoid?: PgCatalog.Types.Oid.Options,
-objsubid?: PgCatalog.Types.Int4.Options,
-privtype?: PgCatalog.Types.Char.Options,
-initprivs?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Objoid: {
@@ -8745,18 +7603,6 @@ labelDescending = "label DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- objoid?: PgCatalog.Types.Oid.Options,
-classoid?: PgCatalog.Types.Oid.Options,
-objsubid?: PgCatalog.Types.Int4.Options,
-provider?: PgCatalog.Types.Text.Options,
-label?: PgCatalog.Types.Text.Options
-};
-export type ModifyOptions = {
- objoid?: PgCatalog.Types.Oid.Options,
-classoid?: PgCatalog.Types.Oid.Options,
-objsubid?: PgCatalog.Types.Int4.Options,
-provider?: PgCatalog.Types.Text.Options,
-label?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Objoid: {
@@ -8804,16 +7650,6 @@ labelDescending = "label DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- objoid?: PgCatalog.Types.Oid.Options,
-classoid?: PgCatalog.Types.Oid.Options,
-provider?: PgCatalog.Types.Text.Options,
-label?: PgCatalog.Types.Text.Options
-};
-export type ModifyOptions = {
- objoid?: PgCatalog.Types.Oid.Options,
-classoid?: PgCatalog.Types.Oid.Options,
-provider?: PgCatalog.Types.Text.Options,
-label?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Objoid: {
@@ -8873,32 +7709,6 @@ collversionDescending = "collversion DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-collname?: PgCatalog.Types.Name.Options,
-collnamespace?: PgCatalog.Types.Oid.Options,
-collowner?: PgCatalog.Types.Oid.Options,
-collprovider?: PgCatalog.Types.Char.Options,
-collisdeterministic?: PgCatalog.Types.Bool.Options,
-collencoding?: PgCatalog.Types.Int4.Options,
-collcollate?: PgCatalog.Types.Text.Options,
-collctype?: PgCatalog.Types.Text.Options,
-colliculocale?: PgCatalog.Types.Text.Options,
-collicurules?: PgCatalog.Types.Text.Options,
-collversion?: PgCatalog.Types.Text.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-collname?: PgCatalog.Types.Name.Options,
-collnamespace?: PgCatalog.Types.Oid.Options,
-collowner?: PgCatalog.Types.Oid.Options,
-collprovider?: PgCatalog.Types.Char.Options,
-collisdeterministic?: PgCatalog.Types.Bool.Options,
-collencoding?: PgCatalog.Types.Int4.Options,
-collcollate?: PgCatalog.Types.Text.Options,
-collctype?: PgCatalog.Types.Text.Options,
-colliculocale?: PgCatalog.Types.Text.Options,
-collicurules?: PgCatalog.Types.Text.Options,
-collversion?: PgCatalog.Types.Text.Options
 };
 export const Columns = {
 Oid: {
@@ -8972,14 +7782,6 @@ paraclDescending = "paracl DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-parname?: PgCatalog.Types.Text.Options,
-paracl?: PgCatalog.Types.AclitemArray.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-parname?: PgCatalog.Types.Text.Options,
-paracl?: PgCatalog.Types.AclitemArray.Options
 };
 export const Columns = {
 Oid: {
@@ -9027,24 +7829,6 @@ partexprsDescending = "partexprs DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- partrelid?: PgCatalog.Types.Oid.Options,
-partstrat?: PgCatalog.Types.Char.Options,
-partnatts?: PgCatalog.Types.Int2.Options,
-partdefid?: PgCatalog.Types.Oid.Options,
-partattrs?: PgCatalog.Types.Int2vector.Options,
-partclass?: PgCatalog.Types.Oidvector.Options,
-partcollation?: PgCatalog.Types.Oidvector.Options,
-partexprs?: PgCatalog.Types.PgNodeTree.Options
-};
-export type ModifyOptions = {
- partrelid?: PgCatalog.Types.Oid.Options,
-partstrat?: PgCatalog.Types.Char.Options,
-partnatts?: PgCatalog.Types.Int2.Options,
-partdefid?: PgCatalog.Types.Oid.Options,
-partattrs?: PgCatalog.Types.Int2vector.Options,
-partclass?: PgCatalog.Types.Oidvector.Options,
-partcollation?: PgCatalog.Types.Oidvector.Options,
-partexprs?: PgCatalog.Types.PgNodeTree.Options
 };
 export const Columns = {
 Partrelid: {
@@ -9110,22 +7894,6 @@ rngsubdiffDescending = "rngsubdiff DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- rngtypid?: PgCatalog.Types.Oid.Options,
-rngsubtype?: PgCatalog.Types.Oid.Options,
-rngmultitypid?: PgCatalog.Types.Oid.Options,
-rngcollation?: PgCatalog.Types.Oid.Options,
-rngsubopc?: PgCatalog.Types.Oid.Options,
-rngcanonical?: PgCatalog.Types.Regproc.Options,
-rngsubdiff?: PgCatalog.Types.Regproc.Options
-};
-export type ModifyOptions = {
- rngtypid?: PgCatalog.Types.Oid.Options,
-rngsubtype?: PgCatalog.Types.Oid.Options,
-rngmultitypid?: PgCatalog.Types.Oid.Options,
-rngcollation?: PgCatalog.Types.Oid.Options,
-rngsubopc?: PgCatalog.Types.Oid.Options,
-rngcanonical?: PgCatalog.Types.Regproc.Options,
-rngsubdiff?: PgCatalog.Types.Regproc.Options
 };
 export const Columns = {
 Rngtypid: {
@@ -9183,18 +7951,6 @@ trftosqlDescending = "trftosql DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-trftype?: PgCatalog.Types.Oid.Options,
-trflang?: PgCatalog.Types.Oid.Options,
-trffromsql?: PgCatalog.Types.Regproc.Options,
-trftosql?: PgCatalog.Types.Regproc.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-trftype?: PgCatalog.Types.Oid.Options,
-trflang?: PgCatalog.Types.Oid.Options,
-trffromsql?: PgCatalog.Types.Regproc.Options,
-trftosql?: PgCatalog.Types.Regproc.Options
 };
 export const Columns = {
 Oid: {
@@ -9250,24 +8006,6 @@ seqcycleDescending = "seqcycle DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- seqrelid?: PgCatalog.Types.Oid.Options,
-seqtypid?: PgCatalog.Types.Oid.Options,
-seqstart?: PgCatalog.Types.Int8.Options,
-seqincrement?: PgCatalog.Types.Int8.Options,
-seqmax?: PgCatalog.Types.Int8.Options,
-seqmin?: PgCatalog.Types.Int8.Options,
-seqcache?: PgCatalog.Types.Int8.Options,
-seqcycle?: PgCatalog.Types.Bool.Options
-};
-export type ModifyOptions = {
- seqrelid?: PgCatalog.Types.Oid.Options,
-seqtypid?: PgCatalog.Types.Oid.Options,
-seqstart?: PgCatalog.Types.Int8.Options,
-seqincrement?: PgCatalog.Types.Int8.Options,
-seqmax?: PgCatalog.Types.Int8.Options,
-seqmin?: PgCatalog.Types.Int8.Options,
-seqcache?: PgCatalog.Types.Int8.Options,
-seqcycle?: PgCatalog.Types.Bool.Options
 };
 export const Columns = {
 Seqrelid: {
@@ -9337,26 +8075,6 @@ pubviarootDescending = "pubviaroot DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-pubname?: PgCatalog.Types.Name.Options,
-pubowner?: PgCatalog.Types.Oid.Options,
-puballtables?: PgCatalog.Types.Bool.Options,
-pubinsert?: PgCatalog.Types.Bool.Options,
-pubupdate?: PgCatalog.Types.Bool.Options,
-pubdelete?: PgCatalog.Types.Bool.Options,
-pubtruncate?: PgCatalog.Types.Bool.Options,
-pubviaroot?: PgCatalog.Types.Bool.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-pubname?: PgCatalog.Types.Name.Options,
-pubowner?: PgCatalog.Types.Oid.Options,
-puballtables?: PgCatalog.Types.Bool.Options,
-pubinsert?: PgCatalog.Types.Bool.Options,
-pubupdate?: PgCatalog.Types.Bool.Options,
-pubdelete?: PgCatalog.Types.Bool.Options,
-pubtruncate?: PgCatalog.Types.Bool.Options,
-pubviaroot?: PgCatalog.Types.Bool.Options
 };
 export const Columns = {
 Oid: {
@@ -9418,14 +8136,6 @@ pnnspidDescending = "pnnspid DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-pnpubid?: PgCatalog.Types.Oid.Options,
-pnnspid?: PgCatalog.Types.Oid.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-pnpubid?: PgCatalog.Types.Oid.Options,
-pnnspid?: PgCatalog.Types.Oid.Options
 };
 export const Columns = {
 Oid: {
@@ -9467,18 +8177,6 @@ prattrsDescending = "prattrs DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- oid?: PgCatalog.Types.Oid.Options,
-prpubid?: PgCatalog.Types.Oid.Options,
-prrelid?: PgCatalog.Types.Oid.Options,
-prqual?: PgCatalog.Types.PgNodeTree.Options,
-prattrs?: PgCatalog.Types.Int2vector.Options
-};
-export type ModifyOptions = {
- oid?: PgCatalog.Types.Oid.Options,
-prpubid?: PgCatalog.Types.Oid.Options,
-prrelid?: PgCatalog.Types.Oid.Options,
-prqual?: PgCatalog.Types.PgNodeTree.Options,
-prattrs?: PgCatalog.Types.Int2vector.Options
 };
 export const Columns = {
 Oid: {
@@ -9526,16 +8224,6 @@ srsublsnDescending = "srsublsn DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- srsubid?: PgCatalog.Types.Oid.Options,
-srrelid?: PgCatalog.Types.Oid.Options,
-srsubstate?: PgCatalog.Types.Char.Options,
-srsublsn?: PgCatalog.Types.PgLsn.Options
-};
-export type ModifyOptions = {
- srsubid?: PgCatalog.Types.Oid.Options,
-srrelid?: PgCatalog.Types.Oid.Options,
-srsubstate?: PgCatalog.Types.Char.Options,
-srsublsn?: PgCatalog.Types.PgLsn.Options
 };
 export const Columns = {
 Srsubid: {
@@ -9577,14 +8265,6 @@ dataDescending = "data DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- loid?: PgCatalog.Types.Oid.Options,
-pageno?: PgCatalog.Types.Int4.Options,
-data?: PgCatalog.Types.Bytea.Options
-};
-export type ModifyOptions = {
- loid?: PgCatalog.Types.Oid.Options,
-pageno?: PgCatalog.Types.Int4.Options,
-data?: PgCatalog.Types.Bytea.Options
 };
 export const Columns = {
 Loid: {
@@ -10828,22 +9508,6 @@ commentsDescending = "comments DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- featureId?: InformationSchema.Types.CharacterData.Options,
-featureName?: InformationSchema.Types.CharacterData.Options,
-subFeatureId?: InformationSchema.Types.CharacterData.Options,
-subFeatureName?: InformationSchema.Types.CharacterData.Options,
-isSupported?: InformationSchema.Types.YesOrNo.Options,
-isVerifiedBy?: InformationSchema.Types.CharacterData.Options,
-comments?: InformationSchema.Types.CharacterData.Options
-};
-export type ModifyOptions = {
- featureId?: InformationSchema.Types.CharacterData.Options,
-featureName?: InformationSchema.Types.CharacterData.Options,
-subFeatureId?: InformationSchema.Types.CharacterData.Options,
-subFeatureName?: InformationSchema.Types.CharacterData.Options,
-isSupported?: InformationSchema.Types.YesOrNo.Options,
-isVerifiedBy?: InformationSchema.Types.CharacterData.Options,
-comments?: InformationSchema.Types.CharacterData.Options
 };
 export const Columns = {
 FeatureId: {
@@ -10900,18 +9564,6 @@ commentsDescending = "comments DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- implementationInfoId?: InformationSchema.Types.CharacterData.Options,
-implementationInfoName?: InformationSchema.Types.CharacterData.Options,
-integerValue?: InformationSchema.Types.CardinalNumber.Options,
-characterValue?: InformationSchema.Types.CharacterData.Options,
-comments?: InformationSchema.Types.CharacterData.Options
-};
-export type ModifyOptions = {
- implementationInfoId?: InformationSchema.Types.CharacterData.Options,
-implementationInfoName?: InformationSchema.Types.CharacterData.Options,
-integerValue?: InformationSchema.Types.CardinalNumber.Options,
-characterValue?: InformationSchema.Types.CharacterData.Options,
-comments?: InformationSchema.Types.CharacterData.Options
 };
 export const Columns = {
 ImplementationInfoId: {
@@ -10960,18 +9612,6 @@ commentsDescending = "comments DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- featureId?: InformationSchema.Types.CharacterData.Options,
-featureName?: InformationSchema.Types.CharacterData.Options,
-isSupported?: InformationSchema.Types.YesOrNo.Options,
-isVerifiedBy?: InformationSchema.Types.CharacterData.Options,
-comments?: InformationSchema.Types.CharacterData.Options
-};
-export type ModifyOptions = {
- featureId?: InformationSchema.Types.CharacterData.Options,
-featureName?: InformationSchema.Types.CharacterData.Options,
-isSupported?: InformationSchema.Types.YesOrNo.Options,
-isVerifiedBy?: InformationSchema.Types.CharacterData.Options,
-comments?: InformationSchema.Types.CharacterData.Options
 };
 export const Columns = {
 FeatureId: {
@@ -11018,16 +9658,6 @@ commentsDescending = "comments DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- sizingId?: InformationSchema.Types.CardinalNumber.Options,
-sizingName?: InformationSchema.Types.CharacterData.Options,
-supportedValue?: InformationSchema.Types.CardinalNumber.Options,
-comments?: InformationSchema.Types.CharacterData.Options
-};
-export type ModifyOptions = {
- sizingId?: InformationSchema.Types.CardinalNumber.Options,
-sizingName?: InformationSchema.Types.CharacterData.Options,
-supportedValue?: InformationSchema.Types.CardinalNumber.Options,
-comments?: InformationSchema.Types.CharacterData.Options
 };
 export const Columns = {
 SizingId: {
@@ -11603,14 +10233,6 @@ lastUpdateDescending = "last_update DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- actorId?: PgCatalog.Types.Int2.Options,
-filmId?: PgCatalog.Types.Int2.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options
-};
-export type ModifyOptions = {
- actorId?: PgCatalog.Types.Int2.Options,
-filmId?: PgCatalog.Types.Int2.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 ActorId: {
@@ -11658,24 +10280,6 @@ lastUpdateDescending = "last_update DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- addressId?: PgCatalog.Types.Int4.Options,
-address?: PgCatalog.Types.Varchar.Options,
-address2?: PgCatalog.Types.Varchar.Options,
-district?: PgCatalog.Types.Varchar.Options,
-cityId?: PgCatalog.Types.Int2.Options,
-postalCode?: PgCatalog.Types.Varchar.Options,
-phone?: PgCatalog.Types.Varchar.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options
-};
-export type ModifyOptions = {
- addressId?: PgCatalog.Types.Int4.Options,
-address?: PgCatalog.Types.Varchar.Options,
-address2?: PgCatalog.Types.Varchar.Options,
-district?: PgCatalog.Types.Varchar.Options,
-cityId?: PgCatalog.Types.Int2.Options,
-postalCode?: PgCatalog.Types.Varchar.Options,
-phone?: PgCatalog.Types.Varchar.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 AddressId: {
@@ -11735,16 +10339,6 @@ lastUpdateDescending = "last_update DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- cityId?: PgCatalog.Types.Int4.Options,
-city?: PgCatalog.Types.Varchar.Options,
-countryId?: PgCatalog.Types.Int2.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options
-};
-export type ModifyOptions = {
- cityId?: PgCatalog.Types.Int4.Options,
-city?: PgCatalog.Types.Varchar.Options,
-countryId?: PgCatalog.Types.Int2.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 CityId: {
@@ -11800,28 +10394,6 @@ activeDescending = "active DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- customerId?: PgCatalog.Types.Int4.Options,
-storeId?: PgCatalog.Types.Int2.Options,
-firstName?: PgCatalog.Types.Varchar.Options,
-lastName?: PgCatalog.Types.Varchar.Options,
-email?: PgCatalog.Types.Varchar.Options,
-addressId?: PgCatalog.Types.Int2.Options,
-activebool?: PgCatalog.Types.Bool.Options,
-createDate?: PgCatalog.Types.Date.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options,
-active?: PgCatalog.Types.Int4.Options
-};
-export type ModifyOptions = {
- customerId?: PgCatalog.Types.Int4.Options,
-storeId?: PgCatalog.Types.Int2.Options,
-firstName?: PgCatalog.Types.Varchar.Options,
-lastName?: PgCatalog.Types.Varchar.Options,
-email?: PgCatalog.Types.Varchar.Options,
-addressId?: PgCatalog.Types.Int2.Options,
-activebool?: PgCatalog.Types.Bool.Options,
-createDate?: PgCatalog.Types.Date.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options,
-active?: PgCatalog.Types.Int4.Options
 };
 export const Columns = {
 CustomerId: {
@@ -11889,16 +10461,6 @@ lastUpdateDescending = "last_update DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- actorId?: PgCatalog.Types.Int4.Options,
-firstName?: PgCatalog.Types.Varchar.Options,
-lastName?: PgCatalog.Types.Varchar.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options
-};
-export type ModifyOptions = {
- actorId?: PgCatalog.Types.Int4.Options,
-firstName?: PgCatalog.Types.Varchar.Options,
-lastName?: PgCatalog.Types.Varchar.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 ActorId: {
@@ -11940,14 +10502,6 @@ lastUpdateDescending = "last_update DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- filmId?: PgCatalog.Types.Int2.Options,
-categoryId?: PgCatalog.Types.Int2.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options
-};
-export type ModifyOptions = {
- filmId?: PgCatalog.Types.Int2.Options,
-categoryId?: PgCatalog.Types.Int2.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 FilmId: {
@@ -11987,16 +10541,6 @@ lastUpdateDescending = "last_update DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- inventoryId?: PgCatalog.Types.Int4.Options,
-filmId?: PgCatalog.Types.Int2.Options,
-storeId?: PgCatalog.Types.Int2.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options
-};
-export type ModifyOptions = {
- inventoryId?: PgCatalog.Types.Int4.Options,
-filmId?: PgCatalog.Types.Int2.Options,
-storeId?: PgCatalog.Types.Int2.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 InventoryId: {
@@ -12038,14 +10582,6 @@ lastUpdateDescending = "last_update DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- categoryId?: PgCatalog.Types.Int4.Options,
-name?: PgCatalog.Types.Varchar.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options
-};
-export type ModifyOptions = {
- categoryId?: PgCatalog.Types.Int4.Options,
-name?: PgCatalog.Types.Varchar.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 CategoryId: {
@@ -12083,14 +10619,6 @@ lastUpdateDescending = "last_update DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- countryId?: PgCatalog.Types.Int4.Options,
-country?: PgCatalog.Types.Varchar.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options
-};
-export type ModifyOptions = {
- countryId?: PgCatalog.Types.Int4.Options,
-country?: PgCatalog.Types.Varchar.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 CountryId: {
@@ -12128,14 +10656,6 @@ lastUpdateDescending = "last_update DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- languageId?: PgCatalog.Types.Int4.Options,
-name?: PgCatalog.Types.Bpchar.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options
-};
-export type ModifyOptions = {
- languageId?: PgCatalog.Types.Int4.Options,
-name?: PgCatalog.Types.Bpchar.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 LanguageId: {
@@ -12181,22 +10701,6 @@ lastUpdateDescending = "last_update DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- rentalId?: PgCatalog.Types.Int4.Options,
-rentalDate?: PgCatalog.Types.Timestamp.Options,
-inventoryId?: PgCatalog.Types.Int4.Options,
-customerId?: PgCatalog.Types.Int2.Options,
-returnDate?: PgCatalog.Types.Timestamp.Options,
-staffId?: PgCatalog.Types.Int2.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options
-};
-export type ModifyOptions = {
- rentalId?: PgCatalog.Types.Int4.Options,
-rentalDate?: PgCatalog.Types.Timestamp.Options,
-inventoryId?: PgCatalog.Types.Int4.Options,
-customerId?: PgCatalog.Types.Int2.Options,
-returnDate?: PgCatalog.Types.Timestamp.Options,
-staffId?: PgCatalog.Types.Int2.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 RentalId: {
@@ -12266,30 +10770,6 @@ pictureDescending = "picture DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- staffId?: PgCatalog.Types.Int4.Options,
-firstName?: PgCatalog.Types.Varchar.Options,
-lastName?: PgCatalog.Types.Varchar.Options,
-addressId?: PgCatalog.Types.Int2.Options,
-email?: PgCatalog.Types.Varchar.Options,
-storeId?: PgCatalog.Types.Int2.Options,
-active?: PgCatalog.Types.Bool.Options,
-username?: PgCatalog.Types.Varchar.Options,
-password?: PgCatalog.Types.Varchar.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options,
-picture?: PgCatalog.Types.Bytea.Options
-};
-export type ModifyOptions = {
- staffId?: PgCatalog.Types.Int4.Options,
-firstName?: PgCatalog.Types.Varchar.Options,
-lastName?: PgCatalog.Types.Varchar.Options,
-addressId?: PgCatalog.Types.Int2.Options,
-email?: PgCatalog.Types.Varchar.Options,
-storeId?: PgCatalog.Types.Int2.Options,
-active?: PgCatalog.Types.Bool.Options,
-username?: PgCatalog.Types.Varchar.Options,
-password?: PgCatalog.Types.Varchar.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options,
-picture?: PgCatalog.Types.Bytea.Options
 };
 export const Columns = {
 StaffId: {
@@ -12361,16 +10841,6 @@ lastUpdateDescending = "last_update DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- storeId?: PgCatalog.Types.Int4.Options,
-managerStaffId?: PgCatalog.Types.Int2.Options,
-addressId?: PgCatalog.Types.Int2.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options
-};
-export type ModifyOptions = {
- storeId?: PgCatalog.Types.Int4.Options,
-managerStaffId?: PgCatalog.Types.Int2.Options,
-addressId?: PgCatalog.Types.Int2.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 StoreId: {
@@ -12418,20 +10888,6 @@ paymentDateDescending = "payment_date DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- paymentId?: PgCatalog.Types.Int4.Options,
-customerId?: PgCatalog.Types.Int2.Options,
-staffId?: PgCatalog.Types.Int2.Options,
-rentalId?: PgCatalog.Types.Int4.Options,
-amount?: PgCatalog.Types.Numeric.Options,
-paymentDate?: PgCatalog.Types.Timestamp.Options
-};
-export type ModifyOptions = {
- paymentId?: PgCatalog.Types.Int4.Options,
-customerId?: PgCatalog.Types.Int2.Options,
-staffId?: PgCatalog.Types.Int2.Options,
-rentalId?: PgCatalog.Types.Int4.Options,
-amount?: PgCatalog.Types.Numeric.Options,
-paymentDate?: PgCatalog.Types.Timestamp.Options
 };
 export const Columns = {
 PaymentId: {
@@ -12501,34 +10957,6 @@ fulltextDescending = "fulltext DESC",
 };
 export type Options = ReadOptions & {
  sort?: SortOptions[],
- filmId?: PgCatalog.Types.Int4.Options,
-title?: PgCatalog.Types.Varchar.Options,
-description?: PgCatalog.Types.Text.Options,
-releaseYear?: Public.Types.Year.Options,
-languageId?: PgCatalog.Types.Int2.Options,
-rentalDuration?: PgCatalog.Types.Int2.Options,
-rentalRate?: PgCatalog.Types.Numeric.Options,
-length?: PgCatalog.Types.Int2.Options,
-replacementCost?: PgCatalog.Types.Numeric.Options,
-rating?: Public.Types.MpaaRating.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options,
-specialFeatures?: PgCatalog.Types.TextArray.Options,
-fulltext?: PgCatalog.Types.Tsvector.Options
-};
-export type ModifyOptions = {
- filmId?: PgCatalog.Types.Int4.Options,
-title?: PgCatalog.Types.Varchar.Options,
-description?: PgCatalog.Types.Text.Options,
-releaseYear?: Public.Types.Year.Options,
-languageId?: PgCatalog.Types.Int2.Options,
-rentalDuration?: PgCatalog.Types.Int2.Options,
-rentalRate?: PgCatalog.Types.Numeric.Options,
-length?: PgCatalog.Types.Int2.Options,
-replacementCost?: PgCatalog.Types.Numeric.Options,
-rating?: Public.Types.MpaaRating.Options,
-lastUpdate?: PgCatalog.Types.Timestamp.Options,
-specialFeatures?: PgCatalog.Types.TextArray.Options,
-fulltext?: PgCatalog.Types.Tsvector.Options
 };
 export const Columns = {
 FilmId: {
@@ -12594,12 +11022,12 @@ export type PrimaryKey = Public.Types.FilmPkey;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_23225Index = {
+export type PgToast_79479Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_23311Index = {
+export type PgToast_79565Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -26408,11 +24836,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_23225Index {
+export namespace PgToast_79479Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_23225Index.is(from)) {
+if (PgToast.Types.PgToast_79479Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26423,11 +24851,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_23311Index {
+export namespace PgToast_79565Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_23311Index.is(from)) {
+if (PgToast.Types.PgToast_79565Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -33039,16 +31467,16 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_23225Index {
-export function is(value: any) : value is PgToast.Types.PgToast_23225Index {
+export namespace PgToast_79479Index {
+export function is(value: any) : value is PgToast.Types.PgToast_79479Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_23311Index {
-export function is(value: any) : value is PgToast.Types.PgToast_23311Index {
+export namespace PgToast_79565Index {
+export function is(value: any) : value is PgToast.Types.PgToast_79565Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -37754,13 +36182,13 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_23225Index {
- export function equals(l: PgToast.Types.PgToast_23225Index|undefined, r: unknown) {
+export namespace PgToast_79479Index {
+ export function equals(l: PgToast.Types.PgToast_79479Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_23311Index {
- export function equals(l: PgToast.Types.PgToast_23311Index|undefined, r: unknown) {
+export namespace PgToast_79565Index {
+ export function equals(l: PgToast.Types.PgToast_79565Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -38098,16 +36526,720 @@ export namespace Oidvector {
 export type Options = never;
 }
 export namespace PgType {
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Typname {
+
+      export type Options = never;
+    
+}
+export namespace Typnamespace {
+
+      export type Options = never;
+    
+}
+export namespace Typowner {
+
+      export type Options = never;
+    
+}
+export namespace Typlen {
+
+      export type Options = never;
+    
+}
+export namespace Typbyval {
+
+      export type Options = never;
+    
+}
+export namespace Typtype {
+
+      export type Options = never;
+    
+}
+export namespace Typcategory {
+
+      export type Options = never;
+    
+}
+export namespace Typispreferred {
+
+      export type Options = never;
+    
+}
+export namespace Typisdefined {
+
+      export type Options = never;
+    
+}
+export namespace Typdelim {
+
+      export type Options = never;
+    
+}
+export namespace Typrelid {
+
+      export type Options = never;
+    
+}
+export namespace Typsubscript {
+
+      export type Options = never;
+    
+}
+export namespace Typelem {
+
+      export type Options = never;
+    
+}
+export namespace Typarray {
+
+      export type Options = never;
+    
+}
+export namespace Typinput {
+
+      export type Options = never;
+    
+}
+export namespace Typoutput {
+
+      export type Options = never;
+    
+}
+export namespace Typreceive {
+
+      export type Options = never;
+    
+}
+export namespace Typsend {
+
+      export type Options = never;
+    
+}
+export namespace Typmodin {
+
+      export type Options = never;
+    
+}
+export namespace Typmodout {
+
+      export type Options = never;
+    
+}
+export namespace Typanalyze {
+
+      export type Options = never;
+    
+}
+export namespace Typalign {
+
+      export type Options = never;
+    
+}
+export namespace Typstorage {
+
+      export type Options = never;
+    
+}
+export namespace Typnotnull {
+
+      export type Options = never;
+    
+}
+export namespace Typbasetype {
+
+      export type Options = never;
+    
+}
+export namespace Typtypmod {
+
+      export type Options = never;
+    
+}
+export namespace Typndims {
+
+      export type Options = never;
+    
+}
+export namespace Typcollation {
+
+      export type Options = never;
+    
+}
+export namespace Typdefaultbin {
+
+      export type Options = never;
+    
+}
+export namespace Typdefault {
+
+      export type Options = never;
+    
+}
+export namespace Typacl {
 export type Options = never;
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+typname?: PgCatalog.Types.Name.Options,
+typnamespace?: PgCatalog.Types.Oid.Options,
+typowner?: PgCatalog.Types.Oid.Options,
+typlen?: PgCatalog.Types.Int2.Options,
+typbyval?: PgCatalog.Types.Bool.Options,
+typtype?: PgCatalog.Types.Char.Options,
+typcategory?: PgCatalog.Types.Char.Options,
+typispreferred?: PgCatalog.Types.Bool.Options,
+typisdefined?: PgCatalog.Types.Bool.Options,
+typdelim?: PgCatalog.Types.Char.Options,
+typrelid?: PgCatalog.Types.Oid.Options,
+typsubscript?: PgCatalog.Types.Regproc.Options,
+typelem?: PgCatalog.Types.Oid.Options,
+typarray?: PgCatalog.Types.Oid.Options,
+typinput?: PgCatalog.Types.Regproc.Options,
+typoutput?: PgCatalog.Types.Regproc.Options,
+typreceive?: PgCatalog.Types.Regproc.Options,
+typsend?: PgCatalog.Types.Regproc.Options,
+typmodin?: PgCatalog.Types.Regproc.Options,
+typmodout?: PgCatalog.Types.Regproc.Options,
+typanalyze?: PgCatalog.Types.Regproc.Options,
+typalign?: PgCatalog.Types.Char.Options,
+typstorage?: PgCatalog.Types.Char.Options,
+typnotnull?: PgCatalog.Types.Bool.Options,
+typbasetype?: PgCatalog.Types.Oid.Options,
+typtypmod?: PgCatalog.Types.Int4.Options,
+typndims?: PgCatalog.Types.Int4.Options,
+typcollation?: PgCatalog.Types.Oid.Options,
+typdefaultbin?: PgCatalog.Types.PgNodeTree.Options,
+typdefault?: PgCatalog.Types.Text.Options,
+typacl?: PgCatalog.Types.AclitemArray.Options
+}
 }
 export namespace PgAttribute {
+export namespace Attrelid {
+
+      export type Options = never;
+    
+}
+export namespace Attname {
+
+      export type Options = never;
+    
+}
+export namespace Atttypid {
+
+      export type Options = never;
+    
+}
+export namespace Attlen {
+
+      export type Options = never;
+    
+}
+export namespace Attnum {
+
+      export type Options = never;
+    
+}
+export namespace Attcacheoff {
+
+      export type Options = never;
+    
+}
+export namespace Atttypmod {
+
+      export type Options = never;
+    
+}
+export namespace Attndims {
+
+      export type Options = never;
+    
+}
+export namespace Attbyval {
+
+      export type Options = never;
+    
+}
+export namespace Attalign {
+
+      export type Options = never;
+    
+}
+export namespace Attstorage {
+
+      export type Options = never;
+    
+}
+export namespace Attcompression {
+
+      export type Options = never;
+    
+}
+export namespace Attnotnull {
+
+      export type Options = never;
+    
+}
+export namespace Atthasdef {
+
+      export type Options = never;
+    
+}
+export namespace Atthasmissing {
+
+      export type Options = never;
+    
+}
+export namespace Attidentity {
+
+      export type Options = never;
+    
+}
+export namespace Attgenerated {
+
+      export type Options = never;
+    
+}
+export namespace Attisdropped {
+
+      export type Options = never;
+    
+}
+export namespace Attislocal {
+
+      export type Options = never;
+    
+}
+export namespace Attinhcount {
+
+      export type Options = never;
+    
+}
+export namespace Attstattarget {
+
+      export type Options = never;
+    
+}
+export namespace Attcollation {
+
+      export type Options = never;
+    
+}
+export namespace Attacl {
 export type Options = never;
+}
+export namespace Attoptions {
+export type Options = never;
+}
+export namespace Attfdwoptions {
+export type Options = never;
+}
+export namespace Attmissingval {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ attrelid?: PgCatalog.Types.Oid.Options,
+attname?: PgCatalog.Types.Name.Options,
+atttypid?: PgCatalog.Types.Oid.Options,
+attlen?: PgCatalog.Types.Int2.Options,
+attnum?: PgCatalog.Types.Int2.Options,
+attcacheoff?: PgCatalog.Types.Int4.Options,
+atttypmod?: PgCatalog.Types.Int4.Options,
+attndims?: PgCatalog.Types.Int2.Options,
+attbyval?: PgCatalog.Types.Bool.Options,
+attalign?: PgCatalog.Types.Char.Options,
+attstorage?: PgCatalog.Types.Char.Options,
+attcompression?: PgCatalog.Types.Char.Options,
+attnotnull?: PgCatalog.Types.Bool.Options,
+atthasdef?: PgCatalog.Types.Bool.Options,
+atthasmissing?: PgCatalog.Types.Bool.Options,
+attidentity?: PgCatalog.Types.Char.Options,
+attgenerated?: PgCatalog.Types.Char.Options,
+attisdropped?: PgCatalog.Types.Bool.Options,
+attislocal?: PgCatalog.Types.Bool.Options,
+attinhcount?: PgCatalog.Types.Int2.Options,
+attstattarget?: PgCatalog.Types.Int2.Options,
+attcollation?: PgCatalog.Types.Oid.Options,
+attacl?: PgCatalog.Types.AclitemArray.Options,
+attoptions?: PgCatalog.Types.TextArray.Options,
+attfdwoptions?: PgCatalog.Types.TextArray.Options,
+attmissingval?: PgCatalog.Types.Anyarray.Options
+}
 }
 export namespace PgProc {
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Proname {
+
+      export type Options = never;
+    
+}
+export namespace Pronamespace {
+
+      export type Options = never;
+    
+}
+export namespace Proowner {
+
+      export type Options = never;
+    
+}
+export namespace Prolang {
+
+      export type Options = never;
+    
+}
+export namespace Procost {
+
+      export type Options = never;
+    
+}
+export namespace Prorows {
+
+      export type Options = never;
+    
+}
+export namespace Provariadic {
+
+      export type Options = never;
+    
+}
+export namespace Prosupport {
+
+      export type Options = never;
+    
+}
+export namespace Prokind {
+
+      export type Options = never;
+    
+}
+export namespace Prosecdef {
+
+      export type Options = never;
+    
+}
+export namespace Proleakproof {
+
+      export type Options = never;
+    
+}
+export namespace Proisstrict {
+
+      export type Options = never;
+    
+}
+export namespace Proretset {
+
+      export type Options = never;
+    
+}
+export namespace Provolatile {
+
+      export type Options = never;
+    
+}
+export namespace Proparallel {
+
+      export type Options = never;
+    
+}
+export namespace Pronargs {
+
+      export type Options = never;
+    
+}
+export namespace Pronargdefaults {
+
+      export type Options = never;
+    
+}
+export namespace Prorettype {
+
+      export type Options = never;
+    
+}
+export namespace Proargtypes {
 export type Options = never;
 }
-export namespace PgClass {
+export namespace Proallargtypes {
 export type Options = never;
+}
+export namespace Proargmodes {
+export type Options = never;
+}
+export namespace Proargnames {
+export type Options = never;
+}
+export namespace Proargdefaults {
+
+      export type Options = never;
+    
+}
+export namespace Protrftypes {
+export type Options = never;
+}
+export namespace Prosrc {
+
+      export type Options = never;
+    
+}
+export namespace Probin {
+
+      export type Options = never;
+    
+}
+export namespace Prosqlbody {
+
+      export type Options = never;
+    
+}
+export namespace Proconfig {
+export type Options = never;
+}
+export namespace Proacl {
+export type Options = never;
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+proname?: PgCatalog.Types.Name.Options,
+pronamespace?: PgCatalog.Types.Oid.Options,
+proowner?: PgCatalog.Types.Oid.Options,
+prolang?: PgCatalog.Types.Oid.Options,
+procost?: PgCatalog.Types.Float4.Options,
+prorows?: PgCatalog.Types.Float4.Options,
+provariadic?: PgCatalog.Types.Oid.Options,
+prosupport?: PgCatalog.Types.Regproc.Options,
+prokind?: PgCatalog.Types.Char.Options,
+prosecdef?: PgCatalog.Types.Bool.Options,
+proleakproof?: PgCatalog.Types.Bool.Options,
+proisstrict?: PgCatalog.Types.Bool.Options,
+proretset?: PgCatalog.Types.Bool.Options,
+provolatile?: PgCatalog.Types.Char.Options,
+proparallel?: PgCatalog.Types.Char.Options,
+pronargs?: PgCatalog.Types.Int2.Options,
+pronargdefaults?: PgCatalog.Types.Int2.Options,
+prorettype?: PgCatalog.Types.Oid.Options,
+proargtypes?: PgCatalog.Types.Oidvector.Options,
+proallargtypes?: PgCatalog.Types.OidArray.Options,
+proargmodes?: PgCatalog.Types.CharArray.Options,
+proargnames?: PgCatalog.Types.TextArray.Options,
+proargdefaults?: PgCatalog.Types.PgNodeTree.Options,
+protrftypes?: PgCatalog.Types.OidArray.Options,
+prosrc?: PgCatalog.Types.Text.Options,
+probin?: PgCatalog.Types.Text.Options,
+prosqlbody?: PgCatalog.Types.PgNodeTree.Options,
+proconfig?: PgCatalog.Types.TextArray.Options,
+proacl?: PgCatalog.Types.AclitemArray.Options
+}
+}
+export namespace PgClass {
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Relname {
+
+      export type Options = never;
+    
+}
+export namespace Relnamespace {
+
+      export type Options = never;
+    
+}
+export namespace Reltype {
+
+      export type Options = never;
+    
+}
+export namespace Reloftype {
+
+      export type Options = never;
+    
+}
+export namespace Relowner {
+
+      export type Options = never;
+    
+}
+export namespace Relam {
+
+      export type Options = never;
+    
+}
+export namespace Relfilenode {
+
+      export type Options = never;
+    
+}
+export namespace Reltablespace {
+
+      export type Options = never;
+    
+}
+export namespace Relpages {
+
+      export type Options = never;
+    
+}
+export namespace Reltuples {
+
+      export type Options = never;
+    
+}
+export namespace Relallvisible {
+
+      export type Options = never;
+    
+}
+export namespace Reltoastrelid {
+
+      export type Options = never;
+    
+}
+export namespace Relhasindex {
+
+      export type Options = never;
+    
+}
+export namespace Relisshared {
+
+      export type Options = never;
+    
+}
+export namespace Relpersistence {
+
+      export type Options = never;
+    
+}
+export namespace Relkind {
+
+      export type Options = never;
+    
+}
+export namespace Relnatts {
+
+      export type Options = never;
+    
+}
+export namespace Relchecks {
+
+      export type Options = never;
+    
+}
+export namespace Relhasrules {
+
+      export type Options = never;
+    
+}
+export namespace Relhastriggers {
+
+      export type Options = never;
+    
+}
+export namespace Relhassubclass {
+
+      export type Options = never;
+    
+}
+export namespace Relrowsecurity {
+
+      export type Options = never;
+    
+}
+export namespace Relforcerowsecurity {
+
+      export type Options = never;
+    
+}
+export namespace Relispopulated {
+
+      export type Options = never;
+    
+}
+export namespace Relreplident {
+
+      export type Options = never;
+    
+}
+export namespace Relispartition {
+
+      export type Options = never;
+    
+}
+export namespace Relrewrite {
+
+      export type Options = never;
+    
+}
+export namespace Relfrozenxid {
+
+      export type Options = never;
+    
+}
+export namespace Relminmxid {
+
+      export type Options = never;
+    
+}
+export namespace Relacl {
+export type Options = never;
+}
+export namespace Reloptions {
+export type Options = never;
+}
+export namespace Relpartbound {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+relname?: PgCatalog.Types.Name.Options,
+relnamespace?: PgCatalog.Types.Oid.Options,
+reltype?: PgCatalog.Types.Oid.Options,
+reloftype?: PgCatalog.Types.Oid.Options,
+relowner?: PgCatalog.Types.Oid.Options,
+relam?: PgCatalog.Types.Oid.Options,
+relfilenode?: PgCatalog.Types.Oid.Options,
+reltablespace?: PgCatalog.Types.Oid.Options,
+relpages?: PgCatalog.Types.Int4.Options,
+reltuples?: PgCatalog.Types.Float4.Options,
+relallvisible?: PgCatalog.Types.Int4.Options,
+reltoastrelid?: PgCatalog.Types.Oid.Options,
+relhasindex?: PgCatalog.Types.Bool.Options,
+relisshared?: PgCatalog.Types.Bool.Options,
+relpersistence?: PgCatalog.Types.Char.Options,
+relkind?: PgCatalog.Types.Char.Options,
+relnatts?: PgCatalog.Types.Int2.Options,
+relchecks?: PgCatalog.Types.Int2.Options,
+relhasrules?: PgCatalog.Types.Bool.Options,
+relhastriggers?: PgCatalog.Types.Bool.Options,
+relhassubclass?: PgCatalog.Types.Bool.Options,
+relrowsecurity?: PgCatalog.Types.Bool.Options,
+relforcerowsecurity?: PgCatalog.Types.Bool.Options,
+relispopulated?: PgCatalog.Types.Bool.Options,
+relreplident?: PgCatalog.Types.Char.Options,
+relispartition?: PgCatalog.Types.Bool.Options,
+relrewrite?: PgCatalog.Types.Oid.Options,
+relfrozenxid?: PgCatalog.Types.Xid.Options,
+relminmxid?: PgCatalog.Types.Xid.Options,
+relacl?: PgCatalog.Types.AclitemArray.Options,
+reloptions?: PgCatalog.Types.TextArray.Options,
+relpartbound?: PgCatalog.Types.PgNodeTree.Options
+}
 }
 export namespace Json {
 
@@ -38848,1192 +37980,9970 @@ export namespace CstringArray {
 export type Options = never;
 }
 export namespace PgAttrdef {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Adrelid {
+
+      export type Options = never;
+    
+}
+export namespace Adnum {
+
+      export type Options = never;
+    
+}
+export namespace Adbin {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+adrelid?: PgCatalog.Types.Oid.Options,
+adnum?: PgCatalog.Types.Int2.Options,
+adbin?: PgCatalog.Types.PgNodeTree.Options
+}
 }
 export namespace PgAttrdefArray {
 export type Options = never;
 }
 export namespace PgConstraint {
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Conname {
+
+      export type Options = never;
+    
+}
+export namespace Connamespace {
+
+      export type Options = never;
+    
+}
+export namespace Contype {
+
+      export type Options = never;
+    
+}
+export namespace Condeferrable {
+
+      export type Options = never;
+    
+}
+export namespace Condeferred {
+
+      export type Options = never;
+    
+}
+export namespace Convalidated {
+
+      export type Options = never;
+    
+}
+export namespace Conrelid {
+
+      export type Options = never;
+    
+}
+export namespace Contypid {
+
+      export type Options = never;
+    
+}
+export namespace Conindid {
+
+      export type Options = never;
+    
+}
+export namespace Conparentid {
+
+      export type Options = never;
+    
+}
+export namespace Confrelid {
+
+      export type Options = never;
+    
+}
+export namespace Confupdtype {
+
+      export type Options = never;
+    
+}
+export namespace Confdeltype {
+
+      export type Options = never;
+    
+}
+export namespace Confmatchtype {
+
+      export type Options = never;
+    
+}
+export namespace Conislocal {
+
+      export type Options = never;
+    
+}
+export namespace Coninhcount {
+
+      export type Options = never;
+    
+}
+export namespace Connoinherit {
+
+      export type Options = never;
+    
+}
+export namespace Conkey {
 export type Options = never;
+}
+export namespace Confkey {
+export type Options = never;
+}
+export namespace Conpfeqop {
+export type Options = never;
+}
+export namespace Conppeqop {
+export type Options = never;
+}
+export namespace Conffeqop {
+export type Options = never;
+}
+export namespace Confdelsetcols {
+export type Options = never;
+}
+export namespace Conexclop {
+export type Options = never;
+}
+export namespace Conbin {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+conname?: PgCatalog.Types.Name.Options,
+connamespace?: PgCatalog.Types.Oid.Options,
+contype?: PgCatalog.Types.Char.Options,
+condeferrable?: PgCatalog.Types.Bool.Options,
+condeferred?: PgCatalog.Types.Bool.Options,
+convalidated?: PgCatalog.Types.Bool.Options,
+conrelid?: PgCatalog.Types.Oid.Options,
+contypid?: PgCatalog.Types.Oid.Options,
+conindid?: PgCatalog.Types.Oid.Options,
+conparentid?: PgCatalog.Types.Oid.Options,
+confrelid?: PgCatalog.Types.Oid.Options,
+confupdtype?: PgCatalog.Types.Char.Options,
+confdeltype?: PgCatalog.Types.Char.Options,
+confmatchtype?: PgCatalog.Types.Char.Options,
+conislocal?: PgCatalog.Types.Bool.Options,
+coninhcount?: PgCatalog.Types.Int2.Options,
+connoinherit?: PgCatalog.Types.Bool.Options,
+conkey?: PgCatalog.Types.Int2Array.Options,
+confkey?: PgCatalog.Types.Int2Array.Options,
+conpfeqop?: PgCatalog.Types.OidArray.Options,
+conppeqop?: PgCatalog.Types.OidArray.Options,
+conffeqop?: PgCatalog.Types.OidArray.Options,
+confdelsetcols?: PgCatalog.Types.Int2Array.Options,
+conexclop?: PgCatalog.Types.OidArray.Options,
+conbin?: PgCatalog.Types.PgNodeTree.Options
+}
 }
 export namespace PgConstraintArray {
 export type Options = never;
 }
 export namespace PgInherits {
-export type Options = never;
+export namespace Inhrelid {
+
+      export type Options = never;
+    
+}
+export namespace Inhparent {
+
+      export type Options = never;
+    
+}
+export namespace Inhseqno {
+
+      export type Options = never;
+    
+}
+export namespace Inhdetachpending {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ inhrelid?: PgCatalog.Types.Oid.Options,
+inhparent?: PgCatalog.Types.Oid.Options,
+inhseqno?: PgCatalog.Types.Int4.Options,
+inhdetachpending?: PgCatalog.Types.Bool.Options
+}
 }
 export namespace PgInheritsArray {
 export type Options = never;
 }
 export namespace PgIndex {
+export namespace Indexrelid {
+
+      export type Options = never;
+    
+}
+export namespace Indrelid {
+
+      export type Options = never;
+    
+}
+export namespace Indnatts {
+
+      export type Options = never;
+    
+}
+export namespace Indnkeyatts {
+
+      export type Options = never;
+    
+}
+export namespace Indisunique {
+
+      export type Options = never;
+    
+}
+export namespace Indnullsnotdistinct {
+
+      export type Options = never;
+    
+}
+export namespace Indisprimary {
+
+      export type Options = never;
+    
+}
+export namespace Indisexclusion {
+
+      export type Options = never;
+    
+}
+export namespace Indimmediate {
+
+      export type Options = never;
+    
+}
+export namespace Indisclustered {
+
+      export type Options = never;
+    
+}
+export namespace Indisvalid {
+
+      export type Options = never;
+    
+}
+export namespace Indcheckxmin {
+
+      export type Options = never;
+    
+}
+export namespace Indisready {
+
+      export type Options = never;
+    
+}
+export namespace Indislive {
+
+      export type Options = never;
+    
+}
+export namespace Indisreplident {
+
+      export type Options = never;
+    
+}
+export namespace Indkey {
+
+      export type Options = never;
+    
+}
+export namespace Indcollation {
 export type Options = never;
+}
+export namespace Indclass {
+export type Options = never;
+}
+export namespace Indoption {
+
+      export type Options = never;
+    
+}
+export namespace Indexprs {
+
+      export type Options = never;
+    
+}
+export namespace Indpred {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ indexrelid?: PgCatalog.Types.Oid.Options,
+indrelid?: PgCatalog.Types.Oid.Options,
+indnatts?: PgCatalog.Types.Int2.Options,
+indnkeyatts?: PgCatalog.Types.Int2.Options,
+indisunique?: PgCatalog.Types.Bool.Options,
+indnullsnotdistinct?: PgCatalog.Types.Bool.Options,
+indisprimary?: PgCatalog.Types.Bool.Options,
+indisexclusion?: PgCatalog.Types.Bool.Options,
+indimmediate?: PgCatalog.Types.Bool.Options,
+indisclustered?: PgCatalog.Types.Bool.Options,
+indisvalid?: PgCatalog.Types.Bool.Options,
+indcheckxmin?: PgCatalog.Types.Bool.Options,
+indisready?: PgCatalog.Types.Bool.Options,
+indislive?: PgCatalog.Types.Bool.Options,
+indisreplident?: PgCatalog.Types.Bool.Options,
+indkey?: PgCatalog.Types.Int2vector.Options,
+indcollation?: PgCatalog.Types.Oidvector.Options,
+indclass?: PgCatalog.Types.Oidvector.Options,
+indoption?: PgCatalog.Types.Int2vector.Options,
+indexprs?: PgCatalog.Types.PgNodeTree.Options,
+indpred?: PgCatalog.Types.PgNodeTree.Options
+}
 }
 export namespace PgIndexArray {
 export type Options = never;
 }
 export namespace PgOperator {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Oprname {
+
+      export type Options = never;
+    
+}
+export namespace Oprnamespace {
+
+      export type Options = never;
+    
+}
+export namespace Oprowner {
+
+      export type Options = never;
+    
+}
+export namespace Oprkind {
+
+      export type Options = never;
+    
+}
+export namespace Oprcanmerge {
+
+      export type Options = never;
+    
+}
+export namespace Oprcanhash {
+
+      export type Options = never;
+    
+}
+export namespace Oprleft {
+
+      export type Options = never;
+    
+}
+export namespace Oprright {
+
+      export type Options = never;
+    
+}
+export namespace Oprresult {
+
+      export type Options = never;
+    
+}
+export namespace Oprcom {
+
+      export type Options = never;
+    
+}
+export namespace Oprnegate {
+
+      export type Options = never;
+    
+}
+export namespace Oprcode {
+
+      export type Options = never;
+    
+}
+export namespace Oprrest {
+
+      export type Options = never;
+    
+}
+export namespace Oprjoin {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+oprname?: PgCatalog.Types.Name.Options,
+oprnamespace?: PgCatalog.Types.Oid.Options,
+oprowner?: PgCatalog.Types.Oid.Options,
+oprkind?: PgCatalog.Types.Char.Options,
+oprcanmerge?: PgCatalog.Types.Bool.Options,
+oprcanhash?: PgCatalog.Types.Bool.Options,
+oprleft?: PgCatalog.Types.Oid.Options,
+oprright?: PgCatalog.Types.Oid.Options,
+oprresult?: PgCatalog.Types.Oid.Options,
+oprcom?: PgCatalog.Types.Oid.Options,
+oprnegate?: PgCatalog.Types.Oid.Options,
+oprcode?: PgCatalog.Types.Regproc.Options,
+oprrest?: PgCatalog.Types.Regproc.Options,
+oprjoin?: PgCatalog.Types.Regproc.Options
+}
 }
 export namespace PgOperatorArray {
 export type Options = never;
 }
 export namespace PgOpfamily {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Opfmethod {
+
+      export type Options = never;
+    
+}
+export namespace Opfname {
+
+      export type Options = never;
+    
+}
+export namespace Opfnamespace {
+
+      export type Options = never;
+    
+}
+export namespace Opfowner {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+opfmethod?: PgCatalog.Types.Oid.Options,
+opfname?: PgCatalog.Types.Name.Options,
+opfnamespace?: PgCatalog.Types.Oid.Options,
+opfowner?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgOpfamilyArray {
 export type Options = never;
 }
 export namespace PgOpclass {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Opcmethod {
+
+      export type Options = never;
+    
+}
+export namespace Opcname {
+
+      export type Options = never;
+    
+}
+export namespace Opcnamespace {
+
+      export type Options = never;
+    
+}
+export namespace Opcowner {
+
+      export type Options = never;
+    
+}
+export namespace Opcfamily {
+
+      export type Options = never;
+    
+}
+export namespace Opcintype {
+
+      export type Options = never;
+    
+}
+export namespace Opcdefault {
+
+      export type Options = never;
+    
+}
+export namespace Opckeytype {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+opcmethod?: PgCatalog.Types.Oid.Options,
+opcname?: PgCatalog.Types.Name.Options,
+opcnamespace?: PgCatalog.Types.Oid.Options,
+opcowner?: PgCatalog.Types.Oid.Options,
+opcfamily?: PgCatalog.Types.Oid.Options,
+opcintype?: PgCatalog.Types.Oid.Options,
+opcdefault?: PgCatalog.Types.Bool.Options,
+opckeytype?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgOpclassArray {
 export type Options = never;
 }
 export namespace PgAm {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Amname {
+
+      export type Options = never;
+    
+}
+export namespace Amhandler {
+
+      export type Options = never;
+    
+}
+export namespace Amtype {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+amname?: PgCatalog.Types.Name.Options,
+amhandler?: PgCatalog.Types.Regproc.Options,
+amtype?: PgCatalog.Types.Char.Options
+}
 }
 export namespace PgAmArray {
 export type Options = never;
 }
 export namespace PgAmop {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Amopfamily {
+
+      export type Options = never;
+    
+}
+export namespace Amoplefttype {
+
+      export type Options = never;
+    
+}
+export namespace Amoprighttype {
+
+      export type Options = never;
+    
+}
+export namespace Amopstrategy {
+
+      export type Options = never;
+    
+}
+export namespace Amoppurpose {
+
+      export type Options = never;
+    
+}
+export namespace Amopopr {
+
+      export type Options = never;
+    
+}
+export namespace Amopmethod {
+
+      export type Options = never;
+    
+}
+export namespace Amopsortfamily {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+amopfamily?: PgCatalog.Types.Oid.Options,
+amoplefttype?: PgCatalog.Types.Oid.Options,
+amoprighttype?: PgCatalog.Types.Oid.Options,
+amopstrategy?: PgCatalog.Types.Int2.Options,
+amoppurpose?: PgCatalog.Types.Char.Options,
+amopopr?: PgCatalog.Types.Oid.Options,
+amopmethod?: PgCatalog.Types.Oid.Options,
+amopsortfamily?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgAmopArray {
 export type Options = never;
 }
 export namespace PgAmproc {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Amprocfamily {
+
+      export type Options = never;
+    
+}
+export namespace Amproclefttype {
+
+      export type Options = never;
+    
+}
+export namespace Amprocrighttype {
+
+      export type Options = never;
+    
+}
+export namespace Amprocnum {
+
+      export type Options = never;
+    
+}
+export namespace Amproc {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+amprocfamily?: PgCatalog.Types.Oid.Options,
+amproclefttype?: PgCatalog.Types.Oid.Options,
+amprocrighttype?: PgCatalog.Types.Oid.Options,
+amprocnum?: PgCatalog.Types.Int2.Options,
+amproc?: PgCatalog.Types.Regproc.Options
+}
 }
 export namespace PgAmprocArray {
 export type Options = never;
 }
 export namespace PgLanguage {
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Lanname {
+
+      export type Options = never;
+    
+}
+export namespace Lanowner {
+
+      export type Options = never;
+    
+}
+export namespace Lanispl {
+
+      export type Options = never;
+    
+}
+export namespace Lanpltrusted {
+
+      export type Options = never;
+    
+}
+export namespace Lanplcallfoid {
+
+      export type Options = never;
+    
+}
+export namespace Laninline {
+
+      export type Options = never;
+    
+}
+export namespace Lanvalidator {
+
+      export type Options = never;
+    
+}
+export namespace Lanacl {
 export type Options = never;
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+lanname?: PgCatalog.Types.Name.Options,
+lanowner?: PgCatalog.Types.Oid.Options,
+lanispl?: PgCatalog.Types.Bool.Options,
+lanpltrusted?: PgCatalog.Types.Bool.Options,
+lanplcallfoid?: PgCatalog.Types.Oid.Options,
+laninline?: PgCatalog.Types.Oid.Options,
+lanvalidator?: PgCatalog.Types.Oid.Options,
+lanacl?: PgCatalog.Types.AclitemArray.Options
+}
 }
 export namespace PgLanguageArray {
 export type Options = never;
 }
 export namespace PgLargeobjectMetadata {
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Lomowner {
+
+      export type Options = never;
+    
+}
+export namespace Lomacl {
 export type Options = never;
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+lomowner?: PgCatalog.Types.Oid.Options,
+lomacl?: PgCatalog.Types.AclitemArray.Options
+}
 }
 export namespace PgLargeobjectMetadataArray {
 export type Options = never;
 }
 export namespace PgLargeobject {
-export type Options = never;
+export namespace Loid {
+
+      export type Options = never;
+    
+}
+export namespace Pageno {
+
+      export type Options = never;
+    
+}
+export namespace Data {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ loid?: PgCatalog.Types.Oid.Options,
+pageno?: PgCatalog.Types.Int4.Options,
+data?: PgCatalog.Types.Bytea.Options
+}
 }
 export namespace PgLargeobjectArray {
 export type Options = never;
 }
 export namespace PgAggregate {
-export type Options = never;
+export namespace Aggfnoid {
+
+      export type Options = never;
+    
+}
+export namespace Aggkind {
+
+      export type Options = never;
+    
+}
+export namespace Aggnumdirectargs {
+
+      export type Options = never;
+    
+}
+export namespace Aggtransfn {
+
+      export type Options = never;
+    
+}
+export namespace Aggfinalfn {
+
+      export type Options = never;
+    
+}
+export namespace Aggcombinefn {
+
+      export type Options = never;
+    
+}
+export namespace Aggserialfn {
+
+      export type Options = never;
+    
+}
+export namespace Aggdeserialfn {
+
+      export type Options = never;
+    
+}
+export namespace Aggmtransfn {
+
+      export type Options = never;
+    
+}
+export namespace Aggminvtransfn {
+
+      export type Options = never;
+    
+}
+export namespace Aggmfinalfn {
+
+      export type Options = never;
+    
+}
+export namespace Aggfinalextra {
+
+      export type Options = never;
+    
+}
+export namespace Aggmfinalextra {
+
+      export type Options = never;
+    
+}
+export namespace Aggfinalmodify {
+
+      export type Options = never;
+    
+}
+export namespace Aggmfinalmodify {
+
+      export type Options = never;
+    
+}
+export namespace Aggsortop {
+
+      export type Options = never;
+    
+}
+export namespace Aggtranstype {
+
+      export type Options = never;
+    
+}
+export namespace Aggtransspace {
+
+      export type Options = never;
+    
+}
+export namespace Aggmtranstype {
+
+      export type Options = never;
+    
+}
+export namespace Aggmtransspace {
+
+      export type Options = never;
+    
+}
+export namespace Agginitval {
+
+      export type Options = never;
+    
+}
+export namespace Aggminitval {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ aggfnoid?: PgCatalog.Types.Regproc.Options,
+aggkind?: PgCatalog.Types.Char.Options,
+aggnumdirectargs?: PgCatalog.Types.Int2.Options,
+aggtransfn?: PgCatalog.Types.Regproc.Options,
+aggfinalfn?: PgCatalog.Types.Regproc.Options,
+aggcombinefn?: PgCatalog.Types.Regproc.Options,
+aggserialfn?: PgCatalog.Types.Regproc.Options,
+aggdeserialfn?: PgCatalog.Types.Regproc.Options,
+aggmtransfn?: PgCatalog.Types.Regproc.Options,
+aggminvtransfn?: PgCatalog.Types.Regproc.Options,
+aggmfinalfn?: PgCatalog.Types.Regproc.Options,
+aggfinalextra?: PgCatalog.Types.Bool.Options,
+aggmfinalextra?: PgCatalog.Types.Bool.Options,
+aggfinalmodify?: PgCatalog.Types.Char.Options,
+aggmfinalmodify?: PgCatalog.Types.Char.Options,
+aggsortop?: PgCatalog.Types.Oid.Options,
+aggtranstype?: PgCatalog.Types.Oid.Options,
+aggtransspace?: PgCatalog.Types.Int4.Options,
+aggmtranstype?: PgCatalog.Types.Oid.Options,
+aggmtransspace?: PgCatalog.Types.Int4.Options,
+agginitval?: PgCatalog.Types.Text.Options,
+aggminitval?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgAggregateArray {
 export type Options = never;
 }
 export namespace PgStatistic {
+export namespace Starelid {
+
+      export type Options = never;
+    
+}
+export namespace Staattnum {
+
+      export type Options = never;
+    
+}
+export namespace Stainherit {
+
+      export type Options = never;
+    
+}
+export namespace Stanullfrac {
+
+      export type Options = never;
+    
+}
+export namespace Stawidth {
+
+      export type Options = never;
+    
+}
+export namespace Stadistinct {
+
+      export type Options = never;
+    
+}
+export namespace Stakind1 {
+
+      export type Options = never;
+    
+}
+export namespace Stakind2 {
+
+      export type Options = never;
+    
+}
+export namespace Stakind3 {
+
+      export type Options = never;
+    
+}
+export namespace Stakind4 {
+
+      export type Options = never;
+    
+}
+export namespace Stakind5 {
+
+      export type Options = never;
+    
+}
+export namespace Staop1 {
+
+      export type Options = never;
+    
+}
+export namespace Staop2 {
+
+      export type Options = never;
+    
+}
+export namespace Staop3 {
+
+      export type Options = never;
+    
+}
+export namespace Staop4 {
+
+      export type Options = never;
+    
+}
+export namespace Staop5 {
+
+      export type Options = never;
+    
+}
+export namespace Stacoll1 {
+
+      export type Options = never;
+    
+}
+export namespace Stacoll2 {
+
+      export type Options = never;
+    
+}
+export namespace Stacoll3 {
+
+      export type Options = never;
+    
+}
+export namespace Stacoll4 {
+
+      export type Options = never;
+    
+}
+export namespace Stacoll5 {
+
+      export type Options = never;
+    
+}
+export namespace Stanumbers1 {
 export type Options = never;
+}
+export namespace Stanumbers2 {
+export type Options = never;
+}
+export namespace Stanumbers3 {
+export type Options = never;
+}
+export namespace Stanumbers4 {
+export type Options = never;
+}
+export namespace Stanumbers5 {
+export type Options = never;
+}
+export namespace Stavalues1 {
+
+      export type Options = never;
+    
+}
+export namespace Stavalues2 {
+
+      export type Options = never;
+    
+}
+export namespace Stavalues3 {
+
+      export type Options = never;
+    
+}
+export namespace Stavalues4 {
+
+      export type Options = never;
+    
+}
+export namespace Stavalues5 {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ starelid?: PgCatalog.Types.Oid.Options,
+staattnum?: PgCatalog.Types.Int2.Options,
+stainherit?: PgCatalog.Types.Bool.Options,
+stanullfrac?: PgCatalog.Types.Float4.Options,
+stawidth?: PgCatalog.Types.Int4.Options,
+stadistinct?: PgCatalog.Types.Float4.Options,
+stakind1?: PgCatalog.Types.Int2.Options,
+stakind2?: PgCatalog.Types.Int2.Options,
+stakind3?: PgCatalog.Types.Int2.Options,
+stakind4?: PgCatalog.Types.Int2.Options,
+stakind5?: PgCatalog.Types.Int2.Options,
+staop1?: PgCatalog.Types.Oid.Options,
+staop2?: PgCatalog.Types.Oid.Options,
+staop3?: PgCatalog.Types.Oid.Options,
+staop4?: PgCatalog.Types.Oid.Options,
+staop5?: PgCatalog.Types.Oid.Options,
+stacoll1?: PgCatalog.Types.Oid.Options,
+stacoll2?: PgCatalog.Types.Oid.Options,
+stacoll3?: PgCatalog.Types.Oid.Options,
+stacoll4?: PgCatalog.Types.Oid.Options,
+stacoll5?: PgCatalog.Types.Oid.Options,
+stanumbers1?: PgCatalog.Types.Float4Array.Options,
+stanumbers2?: PgCatalog.Types.Float4Array.Options,
+stanumbers3?: PgCatalog.Types.Float4Array.Options,
+stanumbers4?: PgCatalog.Types.Float4Array.Options,
+stanumbers5?: PgCatalog.Types.Float4Array.Options,
+stavalues1?: PgCatalog.Types.Anyarray.Options,
+stavalues2?: PgCatalog.Types.Anyarray.Options,
+stavalues3?: PgCatalog.Types.Anyarray.Options,
+stavalues4?: PgCatalog.Types.Anyarray.Options,
+stavalues5?: PgCatalog.Types.Anyarray.Options
+}
 }
 export namespace PgStatisticArray {
 export type Options = never;
 }
 export namespace PgStatisticExt {
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Stxrelid {
+
+      export type Options = never;
+    
+}
+export namespace Stxname {
+
+      export type Options = never;
+    
+}
+export namespace Stxnamespace {
+
+      export type Options = never;
+    
+}
+export namespace Stxowner {
+
+      export type Options = never;
+    
+}
+export namespace Stxstattarget {
+
+      export type Options = never;
+    
+}
+export namespace Stxkeys {
+
+      export type Options = never;
+    
+}
+export namespace Stxkind {
 export type Options = never;
+}
+export namespace Stxexprs {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+stxrelid?: PgCatalog.Types.Oid.Options,
+stxname?: PgCatalog.Types.Name.Options,
+stxnamespace?: PgCatalog.Types.Oid.Options,
+stxowner?: PgCatalog.Types.Oid.Options,
+stxstattarget?: PgCatalog.Types.Int4.Options,
+stxkeys?: PgCatalog.Types.Int2vector.Options,
+stxkind?: PgCatalog.Types.CharArray.Options,
+stxexprs?: PgCatalog.Types.PgNodeTree.Options
+}
 }
 export namespace PgStatisticExtArray {
 export type Options = never;
 }
 export namespace PgStatisticExtData {
+export namespace Stxoid {
+
+      export type Options = never;
+    
+}
+export namespace Stxdinherit {
+
+      export type Options = never;
+    
+}
+export namespace Stxdndistinct {
+
+      export type Options = never;
+    
+}
+export namespace Stxddependencies {
+
+      export type Options = never;
+    
+}
+export namespace Stxdmcv {
+
+      export type Options = never;
+    
+}
+export namespace Stxdexpr {
 export type Options = never;
+}
+export type Options = {
+ stxoid?: PgCatalog.Types.Oid.Options,
+stxdinherit?: PgCatalog.Types.Bool.Options,
+stxdndistinct?: PgCatalog.Types.PgNdistinct.Options,
+stxddependencies?: PgCatalog.Types.PgDependencies.Options,
+stxdmcv?: PgCatalog.Types.PgMcvList.Options,
+stxdexpr?: PgCatalog.Types.PgStatisticArray.Options
+}
 }
 export namespace PgStatisticExtDataArray {
 export type Options = never;
 }
 export namespace PgRewrite {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Rulename {
+
+      export type Options = never;
+    
+}
+export namespace EvClass {
+
+      export type Options = never;
+    
+}
+export namespace EvType {
+
+      export type Options = never;
+    
+}
+export namespace EvEnabled {
+
+      export type Options = never;
+    
+}
+export namespace IsInstead {
+
+      export type Options = never;
+    
+}
+export namespace EvQual {
+
+      export type Options = never;
+    
+}
+export namespace EvAction {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+rulename?: PgCatalog.Types.Name.Options,
+evClass?: PgCatalog.Types.Oid.Options,
+evType?: PgCatalog.Types.Char.Options,
+evEnabled?: PgCatalog.Types.Char.Options,
+isInstead?: PgCatalog.Types.Bool.Options,
+evQual?: PgCatalog.Types.PgNodeTree.Options,
+evAction?: PgCatalog.Types.PgNodeTree.Options
+}
 }
 export namespace PgRewriteArray {
 export type Options = never;
 }
 export namespace PgTrigger {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Tgrelid {
+
+      export type Options = never;
+    
+}
+export namespace Tgparentid {
+
+      export type Options = never;
+    
+}
+export namespace Tgname {
+
+      export type Options = never;
+    
+}
+export namespace Tgfoid {
+
+      export type Options = never;
+    
+}
+export namespace Tgtype {
+
+      export type Options = never;
+    
+}
+export namespace Tgenabled {
+
+      export type Options = never;
+    
+}
+export namespace Tgisinternal {
+
+      export type Options = never;
+    
+}
+export namespace Tgconstrrelid {
+
+      export type Options = never;
+    
+}
+export namespace Tgconstrindid {
+
+      export type Options = never;
+    
+}
+export namespace Tgconstraint {
+
+      export type Options = never;
+    
+}
+export namespace Tgdeferrable {
+
+      export type Options = never;
+    
+}
+export namespace Tginitdeferred {
+
+      export type Options = never;
+    
+}
+export namespace Tgnargs {
+
+      export type Options = never;
+    
+}
+export namespace Tgattr {
+
+      export type Options = never;
+    
+}
+export namespace Tgargs {
+
+      export type Options = never;
+    
+}
+export namespace Tgqual {
+
+      export type Options = never;
+    
+}
+export namespace Tgoldtable {
+
+      export type Options = never;
+    
+}
+export namespace Tgnewtable {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+tgrelid?: PgCatalog.Types.Oid.Options,
+tgparentid?: PgCatalog.Types.Oid.Options,
+tgname?: PgCatalog.Types.Name.Options,
+tgfoid?: PgCatalog.Types.Oid.Options,
+tgtype?: PgCatalog.Types.Int2.Options,
+tgenabled?: PgCatalog.Types.Char.Options,
+tgisinternal?: PgCatalog.Types.Bool.Options,
+tgconstrrelid?: PgCatalog.Types.Oid.Options,
+tgconstrindid?: PgCatalog.Types.Oid.Options,
+tgconstraint?: PgCatalog.Types.Oid.Options,
+tgdeferrable?: PgCatalog.Types.Bool.Options,
+tginitdeferred?: PgCatalog.Types.Bool.Options,
+tgnargs?: PgCatalog.Types.Int2.Options,
+tgattr?: PgCatalog.Types.Int2vector.Options,
+tgargs?: PgCatalog.Types.Bytea.Options,
+tgqual?: PgCatalog.Types.PgNodeTree.Options,
+tgoldtable?: PgCatalog.Types.Name.Options,
+tgnewtable?: PgCatalog.Types.Name.Options
+}
 }
 export namespace PgTriggerArray {
 export type Options = never;
 }
 export namespace PgEventTrigger {
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Evtname {
+
+      export type Options = never;
+    
+}
+export namespace Evtevent {
+
+      export type Options = never;
+    
+}
+export namespace Evtowner {
+
+      export type Options = never;
+    
+}
+export namespace Evtfoid {
+
+      export type Options = never;
+    
+}
+export namespace Evtenabled {
+
+      export type Options = never;
+    
+}
+export namespace Evttags {
 export type Options = never;
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+evtname?: PgCatalog.Types.Name.Options,
+evtevent?: PgCatalog.Types.Name.Options,
+evtowner?: PgCatalog.Types.Oid.Options,
+evtfoid?: PgCatalog.Types.Oid.Options,
+evtenabled?: PgCatalog.Types.Char.Options,
+evttags?: PgCatalog.Types.TextArray.Options
+}
 }
 export namespace PgEventTriggerArray {
 export type Options = never;
 }
 export namespace PgDescription {
-export type Options = never;
+export namespace Objoid {
+
+      export type Options = never;
+    
+}
+export namespace Classoid {
+
+      export type Options = never;
+    
+}
+export namespace Objsubid {
+
+      export type Options = never;
+    
+}
+export namespace Description {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ objoid?: PgCatalog.Types.Oid.Options,
+classoid?: PgCatalog.Types.Oid.Options,
+objsubid?: PgCatalog.Types.Int4.Options,
+description?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgDescriptionArray {
 export type Options = never;
 }
 export namespace PgCast {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Castsource {
+
+      export type Options = never;
+    
+}
+export namespace Casttarget {
+
+      export type Options = never;
+    
+}
+export namespace Castfunc {
+
+      export type Options = never;
+    
+}
+export namespace Castcontext {
+
+      export type Options = never;
+    
+}
+export namespace Castmethod {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+castsource?: PgCatalog.Types.Oid.Options,
+casttarget?: PgCatalog.Types.Oid.Options,
+castfunc?: PgCatalog.Types.Oid.Options,
+castcontext?: PgCatalog.Types.Char.Options,
+castmethod?: PgCatalog.Types.Char.Options
+}
 }
 export namespace PgCastArray {
 export type Options = never;
 }
 export namespace PgEnum {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Enumtypid {
+
+      export type Options = never;
+    
+}
+export namespace Enumsortorder {
+
+      export type Options = never;
+    
+}
+export namespace Enumlabel {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+enumtypid?: PgCatalog.Types.Oid.Options,
+enumsortorder?: PgCatalog.Types.Float4.Options,
+enumlabel?: PgCatalog.Types.Name.Options
+}
 }
 export namespace PgEnumArray {
 export type Options = never;
 }
 export namespace PgNamespace {
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Nspname {
+
+      export type Options = never;
+    
+}
+export namespace Nspowner {
+
+      export type Options = never;
+    
+}
+export namespace Nspacl {
 export type Options = never;
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+nspname?: PgCatalog.Types.Name.Options,
+nspowner?: PgCatalog.Types.Oid.Options,
+nspacl?: PgCatalog.Types.AclitemArray.Options
+}
 }
 export namespace PgNamespaceArray {
 export type Options = never;
 }
 export namespace PgConversion {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Conname {
+
+      export type Options = never;
+    
+}
+export namespace Connamespace {
+
+      export type Options = never;
+    
+}
+export namespace Conowner {
+
+      export type Options = never;
+    
+}
+export namespace Conforencoding {
+
+      export type Options = never;
+    
+}
+export namespace Contoencoding {
+
+      export type Options = never;
+    
+}
+export namespace Conproc {
+
+      export type Options = never;
+    
+}
+export namespace Condefault {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+conname?: PgCatalog.Types.Name.Options,
+connamespace?: PgCatalog.Types.Oid.Options,
+conowner?: PgCatalog.Types.Oid.Options,
+conforencoding?: PgCatalog.Types.Int4.Options,
+contoencoding?: PgCatalog.Types.Int4.Options,
+conproc?: PgCatalog.Types.Regproc.Options,
+condefault?: PgCatalog.Types.Bool.Options
+}
 }
 export namespace PgConversionArray {
 export type Options = never;
 }
 export namespace PgDepend {
-export type Options = never;
+export namespace Classid {
+
+      export type Options = never;
+    
+}
+export namespace Objid {
+
+      export type Options = never;
+    
+}
+export namespace Objsubid {
+
+      export type Options = never;
+    
+}
+export namespace Refclassid {
+
+      export type Options = never;
+    
+}
+export namespace Refobjid {
+
+      export type Options = never;
+    
+}
+export namespace Refobjsubid {
+
+      export type Options = never;
+    
+}
+export namespace Deptype {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ classid?: PgCatalog.Types.Oid.Options,
+objid?: PgCatalog.Types.Oid.Options,
+objsubid?: PgCatalog.Types.Int4.Options,
+refclassid?: PgCatalog.Types.Oid.Options,
+refobjid?: PgCatalog.Types.Oid.Options,
+refobjsubid?: PgCatalog.Types.Int4.Options,
+deptype?: PgCatalog.Types.Char.Options
+}
 }
 export namespace PgDependArray {
 export type Options = never;
 }
 export namespace PgDatabase {
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Datname {
+
+      export type Options = never;
+    
+}
+export namespace Datdba {
+
+      export type Options = never;
+    
+}
+export namespace Encoding {
+
+      export type Options = never;
+    
+}
+export namespace Datlocprovider {
+
+      export type Options = never;
+    
+}
+export namespace Datistemplate {
+
+      export type Options = never;
+    
+}
+export namespace Datallowconn {
+
+      export type Options = never;
+    
+}
+export namespace Datconnlimit {
+
+      export type Options = never;
+    
+}
+export namespace Datfrozenxid {
+
+      export type Options = never;
+    
+}
+export namespace Datminmxid {
+
+      export type Options = never;
+    
+}
+export namespace Dattablespace {
+
+      export type Options = never;
+    
+}
+export namespace Datcollate {
+
+      export type Options = never;
+    
+}
+export namespace Datctype {
+
+      export type Options = never;
+    
+}
+export namespace Daticulocale {
+
+      export type Options = never;
+    
+}
+export namespace Daticurules {
+
+      export type Options = never;
+    
+}
+export namespace Datcollversion {
+
+      export type Options = never;
+    
+}
+export namespace Datacl {
 export type Options = never;
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+datname?: PgCatalog.Types.Name.Options,
+datdba?: PgCatalog.Types.Oid.Options,
+encoding?: PgCatalog.Types.Int4.Options,
+datlocprovider?: PgCatalog.Types.Char.Options,
+datistemplate?: PgCatalog.Types.Bool.Options,
+datallowconn?: PgCatalog.Types.Bool.Options,
+datconnlimit?: PgCatalog.Types.Int4.Options,
+datfrozenxid?: PgCatalog.Types.Xid.Options,
+datminmxid?: PgCatalog.Types.Xid.Options,
+dattablespace?: PgCatalog.Types.Oid.Options,
+datcollate?: PgCatalog.Types.Text.Options,
+datctype?: PgCatalog.Types.Text.Options,
+daticulocale?: PgCatalog.Types.Text.Options,
+daticurules?: PgCatalog.Types.Text.Options,
+datcollversion?: PgCatalog.Types.Text.Options,
+datacl?: PgCatalog.Types.AclitemArray.Options
+}
 }
 export namespace PgDatabaseArray {
 export type Options = never;
 }
 export namespace PgDbRoleSetting {
+export namespace Setdatabase {
+
+      export type Options = never;
+    
+}
+export namespace Setrole {
+
+      export type Options = never;
+    
+}
+export namespace Setconfig {
 export type Options = never;
+}
+export type Options = {
+ setdatabase?: PgCatalog.Types.Oid.Options,
+setrole?: PgCatalog.Types.Oid.Options,
+setconfig?: PgCatalog.Types.TextArray.Options
+}
 }
 export namespace PgDbRoleSettingArray {
 export type Options = never;
 }
 export namespace PgTablespace {
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Spcname {
+
+      export type Options = never;
+    
+}
+export namespace Spcowner {
+
+      export type Options = never;
+    
+}
+export namespace Spcacl {
 export type Options = never;
+}
+export namespace Spcoptions {
+export type Options = never;
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+spcname?: PgCatalog.Types.Name.Options,
+spcowner?: PgCatalog.Types.Oid.Options,
+spcacl?: PgCatalog.Types.AclitemArray.Options,
+spcoptions?: PgCatalog.Types.TextArray.Options
+}
 }
 export namespace PgTablespaceArray {
 export type Options = never;
 }
 export namespace PgAuthid {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Rolname {
+
+      export type Options = never;
+    
+}
+export namespace Rolsuper {
+
+      export type Options = never;
+    
+}
+export namespace Rolinherit {
+
+      export type Options = never;
+    
+}
+export namespace Rolcreaterole {
+
+      export type Options = never;
+    
+}
+export namespace Rolcreatedb {
+
+      export type Options = never;
+    
+}
+export namespace Rolcanlogin {
+
+      export type Options = never;
+    
+}
+export namespace Rolreplication {
+
+      export type Options = never;
+    
+}
+export namespace Rolbypassrls {
+
+      export type Options = never;
+    
+}
+export namespace Rolconnlimit {
+
+      export type Options = never;
+    
+}
+export namespace Rolpassword {
+
+      export type Options = never;
+    
+}
+export namespace Rolvaliduntil {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+rolname?: PgCatalog.Types.Name.Options,
+rolsuper?: PgCatalog.Types.Bool.Options,
+rolinherit?: PgCatalog.Types.Bool.Options,
+rolcreaterole?: PgCatalog.Types.Bool.Options,
+rolcreatedb?: PgCatalog.Types.Bool.Options,
+rolcanlogin?: PgCatalog.Types.Bool.Options,
+rolreplication?: PgCatalog.Types.Bool.Options,
+rolbypassrls?: PgCatalog.Types.Bool.Options,
+rolconnlimit?: PgCatalog.Types.Int4.Options,
+rolpassword?: PgCatalog.Types.Text.Options,
+rolvaliduntil?: PgCatalog.Types.Timestamptz.Options
+}
 }
 export namespace PgAuthidArray {
 export type Options = never;
 }
 export namespace PgAuthMembers {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Roleid {
+
+      export type Options = never;
+    
+}
+export namespace Member {
+
+      export type Options = never;
+    
+}
+export namespace Grantor {
+
+      export type Options = never;
+    
+}
+export namespace AdminOption {
+
+      export type Options = never;
+    
+}
+export namespace InheritOption {
+
+      export type Options = never;
+    
+}
+export namespace SetOption {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+roleid?: PgCatalog.Types.Oid.Options,
+member?: PgCatalog.Types.Oid.Options,
+grantor?: PgCatalog.Types.Oid.Options,
+adminOption?: PgCatalog.Types.Bool.Options,
+inheritOption?: PgCatalog.Types.Bool.Options,
+setOption?: PgCatalog.Types.Bool.Options
+}
 }
 export namespace PgAuthMembersArray {
 export type Options = never;
 }
 export namespace PgShdepend {
-export type Options = never;
+export namespace Dbid {
+
+      export type Options = never;
+    
+}
+export namespace Classid {
+
+      export type Options = never;
+    
+}
+export namespace Objid {
+
+      export type Options = never;
+    
+}
+export namespace Objsubid {
+
+      export type Options = never;
+    
+}
+export namespace Refclassid {
+
+      export type Options = never;
+    
+}
+export namespace Refobjid {
+
+      export type Options = never;
+    
+}
+export namespace Deptype {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ dbid?: PgCatalog.Types.Oid.Options,
+classid?: PgCatalog.Types.Oid.Options,
+objid?: PgCatalog.Types.Oid.Options,
+objsubid?: PgCatalog.Types.Int4.Options,
+refclassid?: PgCatalog.Types.Oid.Options,
+refobjid?: PgCatalog.Types.Oid.Options,
+deptype?: PgCatalog.Types.Char.Options
+}
 }
 export namespace PgShdependArray {
 export type Options = never;
 }
 export namespace PgShdescription {
-export type Options = never;
+export namespace Objoid {
+
+      export type Options = never;
+    
+}
+export namespace Classoid {
+
+      export type Options = never;
+    
+}
+export namespace Description {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ objoid?: PgCatalog.Types.Oid.Options,
+classoid?: PgCatalog.Types.Oid.Options,
+description?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgShdescriptionArray {
 export type Options = never;
 }
 export namespace PgTsConfig {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Cfgname {
+
+      export type Options = never;
+    
+}
+export namespace Cfgnamespace {
+
+      export type Options = never;
+    
+}
+export namespace Cfgowner {
+
+      export type Options = never;
+    
+}
+export namespace Cfgparser {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+cfgname?: PgCatalog.Types.Name.Options,
+cfgnamespace?: PgCatalog.Types.Oid.Options,
+cfgowner?: PgCatalog.Types.Oid.Options,
+cfgparser?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgTsConfigArray {
 export type Options = never;
 }
 export namespace PgTsConfigMap {
-export type Options = never;
+export namespace Mapcfg {
+
+      export type Options = never;
+    
+}
+export namespace Maptokentype {
+
+      export type Options = never;
+    
+}
+export namespace Mapseqno {
+
+      export type Options = never;
+    
+}
+export namespace Mapdict {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ mapcfg?: PgCatalog.Types.Oid.Options,
+maptokentype?: PgCatalog.Types.Int4.Options,
+mapseqno?: PgCatalog.Types.Int4.Options,
+mapdict?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgTsConfigMapArray {
 export type Options = never;
 }
 export namespace PgTsDict {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Dictname {
+
+      export type Options = never;
+    
+}
+export namespace Dictnamespace {
+
+      export type Options = never;
+    
+}
+export namespace Dictowner {
+
+      export type Options = never;
+    
+}
+export namespace Dicttemplate {
+
+      export type Options = never;
+    
+}
+export namespace Dictinitoption {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+dictname?: PgCatalog.Types.Name.Options,
+dictnamespace?: PgCatalog.Types.Oid.Options,
+dictowner?: PgCatalog.Types.Oid.Options,
+dicttemplate?: PgCatalog.Types.Oid.Options,
+dictinitoption?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgTsDictArray {
 export type Options = never;
 }
 export namespace PgTsParser {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Prsname {
+
+      export type Options = never;
+    
+}
+export namespace Prsnamespace {
+
+      export type Options = never;
+    
+}
+export namespace Prsstart {
+
+      export type Options = never;
+    
+}
+export namespace Prstoken {
+
+      export type Options = never;
+    
+}
+export namespace Prsend {
+
+      export type Options = never;
+    
+}
+export namespace Prsheadline {
+
+      export type Options = never;
+    
+}
+export namespace Prslextype {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+prsname?: PgCatalog.Types.Name.Options,
+prsnamespace?: PgCatalog.Types.Oid.Options,
+prsstart?: PgCatalog.Types.Regproc.Options,
+prstoken?: PgCatalog.Types.Regproc.Options,
+prsend?: PgCatalog.Types.Regproc.Options,
+prsheadline?: PgCatalog.Types.Regproc.Options,
+prslextype?: PgCatalog.Types.Regproc.Options
+}
 }
 export namespace PgTsParserArray {
 export type Options = never;
 }
 export namespace PgTsTemplate {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Tmplname {
+
+      export type Options = never;
+    
+}
+export namespace Tmplnamespace {
+
+      export type Options = never;
+    
+}
+export namespace Tmplinit {
+
+      export type Options = never;
+    
+}
+export namespace Tmpllexize {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+tmplname?: PgCatalog.Types.Name.Options,
+tmplnamespace?: PgCatalog.Types.Oid.Options,
+tmplinit?: PgCatalog.Types.Regproc.Options,
+tmpllexize?: PgCatalog.Types.Regproc.Options
+}
 }
 export namespace PgTsTemplateArray {
 export type Options = never;
 }
 export namespace PgExtension {
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Extname {
+
+      export type Options = never;
+    
+}
+export namespace Extowner {
+
+      export type Options = never;
+    
+}
+export namespace Extnamespace {
+
+      export type Options = never;
+    
+}
+export namespace Extrelocatable {
+
+      export type Options = never;
+    
+}
+export namespace Extversion {
+
+      export type Options = never;
+    
+}
+export namespace Extconfig {
 export type Options = never;
+}
+export namespace Extcondition {
+export type Options = never;
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+extname?: PgCatalog.Types.Name.Options,
+extowner?: PgCatalog.Types.Oid.Options,
+extnamespace?: PgCatalog.Types.Oid.Options,
+extrelocatable?: PgCatalog.Types.Bool.Options,
+extversion?: PgCatalog.Types.Text.Options,
+extconfig?: PgCatalog.Types.OidArray.Options,
+extcondition?: PgCatalog.Types.TextArray.Options
+}
 }
 export namespace PgExtensionArray {
 export type Options = never;
 }
 export namespace PgForeignDataWrapper {
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Fdwname {
+
+      export type Options = never;
+    
+}
+export namespace Fdwowner {
+
+      export type Options = never;
+    
+}
+export namespace Fdwhandler {
+
+      export type Options = never;
+    
+}
+export namespace Fdwvalidator {
+
+      export type Options = never;
+    
+}
+export namespace Fdwacl {
 export type Options = never;
+}
+export namespace Fdwoptions {
+export type Options = never;
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+fdwname?: PgCatalog.Types.Name.Options,
+fdwowner?: PgCatalog.Types.Oid.Options,
+fdwhandler?: PgCatalog.Types.Oid.Options,
+fdwvalidator?: PgCatalog.Types.Oid.Options,
+fdwacl?: PgCatalog.Types.AclitemArray.Options,
+fdwoptions?: PgCatalog.Types.TextArray.Options
+}
 }
 export namespace PgForeignDataWrapperArray {
 export type Options = never;
 }
 export namespace PgForeignServer {
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Srvname {
+
+      export type Options = never;
+    
+}
+export namespace Srvowner {
+
+      export type Options = never;
+    
+}
+export namespace Srvfdw {
+
+      export type Options = never;
+    
+}
+export namespace Srvtype {
+
+      export type Options = never;
+    
+}
+export namespace Srvversion {
+
+      export type Options = never;
+    
+}
+export namespace Srvacl {
 export type Options = never;
+}
+export namespace Srvoptions {
+export type Options = never;
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+srvname?: PgCatalog.Types.Name.Options,
+srvowner?: PgCatalog.Types.Oid.Options,
+srvfdw?: PgCatalog.Types.Oid.Options,
+srvtype?: PgCatalog.Types.Text.Options,
+srvversion?: PgCatalog.Types.Text.Options,
+srvacl?: PgCatalog.Types.AclitemArray.Options,
+srvoptions?: PgCatalog.Types.TextArray.Options
+}
 }
 export namespace PgForeignServerArray {
 export type Options = never;
 }
 export namespace PgUserMapping {
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Umuser {
+
+      export type Options = never;
+    
+}
+export namespace Umserver {
+
+      export type Options = never;
+    
+}
+export namespace Umoptions {
 export type Options = never;
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+umuser?: PgCatalog.Types.Oid.Options,
+umserver?: PgCatalog.Types.Oid.Options,
+umoptions?: PgCatalog.Types.TextArray.Options
+}
 }
 export namespace PgUserMappingArray {
 export type Options = never;
 }
 export namespace PgForeignTable {
+export namespace Ftrelid {
+
+      export type Options = never;
+    
+}
+export namespace Ftserver {
+
+      export type Options = never;
+    
+}
+export namespace Ftoptions {
 export type Options = never;
+}
+export type Options = {
+ ftrelid?: PgCatalog.Types.Oid.Options,
+ftserver?: PgCatalog.Types.Oid.Options,
+ftoptions?: PgCatalog.Types.TextArray.Options
+}
 }
 export namespace PgForeignTableArray {
 export type Options = never;
 }
 export namespace PgPolicy {
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Polname {
+
+      export type Options = never;
+    
+}
+export namespace Polrelid {
+
+      export type Options = never;
+    
+}
+export namespace Polcmd {
+
+      export type Options = never;
+    
+}
+export namespace Polpermissive {
+
+      export type Options = never;
+    
+}
+export namespace Polroles {
 export type Options = never;
+}
+export namespace Polqual {
+
+      export type Options = never;
+    
+}
+export namespace Polwithcheck {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+polname?: PgCatalog.Types.Name.Options,
+polrelid?: PgCatalog.Types.Oid.Options,
+polcmd?: PgCatalog.Types.Char.Options,
+polpermissive?: PgCatalog.Types.Bool.Options,
+polroles?: PgCatalog.Types.OidArray.Options,
+polqual?: PgCatalog.Types.PgNodeTree.Options,
+polwithcheck?: PgCatalog.Types.PgNodeTree.Options
+}
 }
 export namespace PgPolicyArray {
 export type Options = never;
 }
 export namespace PgReplicationOrigin {
-export type Options = never;
+export namespace Roident {
+
+      export type Options = never;
+    
+}
+export namespace Roname {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ roident?: PgCatalog.Types.Oid.Options,
+roname?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgReplicationOriginArray {
 export type Options = never;
 }
 export namespace PgDefaultAcl {
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Defaclrole {
+
+      export type Options = never;
+    
+}
+export namespace Defaclnamespace {
+
+      export type Options = never;
+    
+}
+export namespace Defaclobjtype {
+
+      export type Options = never;
+    
+}
+export namespace Defaclacl {
 export type Options = never;
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+defaclrole?: PgCatalog.Types.Oid.Options,
+defaclnamespace?: PgCatalog.Types.Oid.Options,
+defaclobjtype?: PgCatalog.Types.Char.Options,
+defaclacl?: PgCatalog.Types.AclitemArray.Options
+}
 }
 export namespace PgDefaultAclArray {
 export type Options = never;
 }
 export namespace PgInitPrivs {
+export namespace Objoid {
+
+      export type Options = never;
+    
+}
+export namespace Classoid {
+
+      export type Options = never;
+    
+}
+export namespace Objsubid {
+
+      export type Options = never;
+    
+}
+export namespace Privtype {
+
+      export type Options = never;
+    
+}
+export namespace Initprivs {
 export type Options = never;
+}
+export type Options = {
+ objoid?: PgCatalog.Types.Oid.Options,
+classoid?: PgCatalog.Types.Oid.Options,
+objsubid?: PgCatalog.Types.Int4.Options,
+privtype?: PgCatalog.Types.Char.Options,
+initprivs?: PgCatalog.Types.AclitemArray.Options
+}
 }
 export namespace PgInitPrivsArray {
 export type Options = never;
 }
 export namespace PgSeclabel {
-export type Options = never;
+export namespace Objoid {
+
+      export type Options = never;
+    
+}
+export namespace Classoid {
+
+      export type Options = never;
+    
+}
+export namespace Objsubid {
+
+      export type Options = never;
+    
+}
+export namespace Provider {
+
+      export type Options = never;
+    
+}
+export namespace Label {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ objoid?: PgCatalog.Types.Oid.Options,
+classoid?: PgCatalog.Types.Oid.Options,
+objsubid?: PgCatalog.Types.Int4.Options,
+provider?: PgCatalog.Types.Text.Options,
+label?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgSeclabelArray {
 export type Options = never;
 }
 export namespace PgShseclabel {
-export type Options = never;
+export namespace Objoid {
+
+      export type Options = never;
+    
+}
+export namespace Classoid {
+
+      export type Options = never;
+    
+}
+export namespace Provider {
+
+      export type Options = never;
+    
+}
+export namespace Label {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ objoid?: PgCatalog.Types.Oid.Options,
+classoid?: PgCatalog.Types.Oid.Options,
+provider?: PgCatalog.Types.Text.Options,
+label?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgShseclabelArray {
 export type Options = never;
 }
 export namespace PgCollation {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Collname {
+
+      export type Options = never;
+    
+}
+export namespace Collnamespace {
+
+      export type Options = never;
+    
+}
+export namespace Collowner {
+
+      export type Options = never;
+    
+}
+export namespace Collprovider {
+
+      export type Options = never;
+    
+}
+export namespace Collisdeterministic {
+
+      export type Options = never;
+    
+}
+export namespace Collencoding {
+
+      export type Options = never;
+    
+}
+export namespace Collcollate {
+
+      export type Options = never;
+    
+}
+export namespace Collctype {
+
+      export type Options = never;
+    
+}
+export namespace Colliculocale {
+
+      export type Options = never;
+    
+}
+export namespace Collicurules {
+
+      export type Options = never;
+    
+}
+export namespace Collversion {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+collname?: PgCatalog.Types.Name.Options,
+collnamespace?: PgCatalog.Types.Oid.Options,
+collowner?: PgCatalog.Types.Oid.Options,
+collprovider?: PgCatalog.Types.Char.Options,
+collisdeterministic?: PgCatalog.Types.Bool.Options,
+collencoding?: PgCatalog.Types.Int4.Options,
+collcollate?: PgCatalog.Types.Text.Options,
+collctype?: PgCatalog.Types.Text.Options,
+colliculocale?: PgCatalog.Types.Text.Options,
+collicurules?: PgCatalog.Types.Text.Options,
+collversion?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgCollationArray {
 export type Options = never;
 }
 export namespace PgParameterAcl {
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Parname {
+
+      export type Options = never;
+    
+}
+export namespace Paracl {
 export type Options = never;
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+parname?: PgCatalog.Types.Text.Options,
+paracl?: PgCatalog.Types.AclitemArray.Options
+}
 }
 export namespace PgParameterAclArray {
 export type Options = never;
 }
 export namespace PgPartitionedTable {
+export namespace Partrelid {
+
+      export type Options = never;
+    
+}
+export namespace Partstrat {
+
+      export type Options = never;
+    
+}
+export namespace Partnatts {
+
+      export type Options = never;
+    
+}
+export namespace Partdefid {
+
+      export type Options = never;
+    
+}
+export namespace Partattrs {
+
+      export type Options = never;
+    
+}
+export namespace Partclass {
 export type Options = never;
+}
+export namespace Partcollation {
+export type Options = never;
+}
+export namespace Partexprs {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ partrelid?: PgCatalog.Types.Oid.Options,
+partstrat?: PgCatalog.Types.Char.Options,
+partnatts?: PgCatalog.Types.Int2.Options,
+partdefid?: PgCatalog.Types.Oid.Options,
+partattrs?: PgCatalog.Types.Int2vector.Options,
+partclass?: PgCatalog.Types.Oidvector.Options,
+partcollation?: PgCatalog.Types.Oidvector.Options,
+partexprs?: PgCatalog.Types.PgNodeTree.Options
+}
 }
 export namespace PgPartitionedTableArray {
 export type Options = never;
 }
 export namespace PgRange {
-export type Options = never;
+export namespace Rngtypid {
+
+      export type Options = never;
+    
+}
+export namespace Rngsubtype {
+
+      export type Options = never;
+    
+}
+export namespace Rngmultitypid {
+
+      export type Options = never;
+    
+}
+export namespace Rngcollation {
+
+      export type Options = never;
+    
+}
+export namespace Rngsubopc {
+
+      export type Options = never;
+    
+}
+export namespace Rngcanonical {
+
+      export type Options = never;
+    
+}
+export namespace Rngsubdiff {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ rngtypid?: PgCatalog.Types.Oid.Options,
+rngsubtype?: PgCatalog.Types.Oid.Options,
+rngmultitypid?: PgCatalog.Types.Oid.Options,
+rngcollation?: PgCatalog.Types.Oid.Options,
+rngsubopc?: PgCatalog.Types.Oid.Options,
+rngcanonical?: PgCatalog.Types.Regproc.Options,
+rngsubdiff?: PgCatalog.Types.Regproc.Options
+}
 }
 export namespace PgRangeArray {
 export type Options = never;
 }
 export namespace PgTransform {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Trftype {
+
+      export type Options = never;
+    
+}
+export namespace Trflang {
+
+      export type Options = never;
+    
+}
+export namespace Trffromsql {
+
+      export type Options = never;
+    
+}
+export namespace Trftosql {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+trftype?: PgCatalog.Types.Oid.Options,
+trflang?: PgCatalog.Types.Oid.Options,
+trffromsql?: PgCatalog.Types.Regproc.Options,
+trftosql?: PgCatalog.Types.Regproc.Options
+}
 }
 export namespace PgTransformArray {
 export type Options = never;
 }
 export namespace PgSequence {
-export type Options = never;
+export namespace Seqrelid {
+
+      export type Options = never;
+    
+}
+export namespace Seqtypid {
+
+      export type Options = never;
+    
+}
+export namespace Seqstart {
+
+      export type Options = never;
+    
+}
+export namespace Seqincrement {
+
+      export type Options = never;
+    
+}
+export namespace Seqmax {
+
+      export type Options = never;
+    
+}
+export namespace Seqmin {
+
+      export type Options = never;
+    
+}
+export namespace Seqcache {
+
+      export type Options = never;
+    
+}
+export namespace Seqcycle {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ seqrelid?: PgCatalog.Types.Oid.Options,
+seqtypid?: PgCatalog.Types.Oid.Options,
+seqstart?: PgCatalog.Types.Int8.Options,
+seqincrement?: PgCatalog.Types.Int8.Options,
+seqmax?: PgCatalog.Types.Int8.Options,
+seqmin?: PgCatalog.Types.Int8.Options,
+seqcache?: PgCatalog.Types.Int8.Options,
+seqcycle?: PgCatalog.Types.Bool.Options
+}
 }
 export namespace PgSequenceArray {
 export type Options = never;
 }
 export namespace PgPublication {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Pubname {
+
+      export type Options = never;
+    
+}
+export namespace Pubowner {
+
+      export type Options = never;
+    
+}
+export namespace Puballtables {
+
+      export type Options = never;
+    
+}
+export namespace Pubinsert {
+
+      export type Options = never;
+    
+}
+export namespace Pubupdate {
+
+      export type Options = never;
+    
+}
+export namespace Pubdelete {
+
+      export type Options = never;
+    
+}
+export namespace Pubtruncate {
+
+      export type Options = never;
+    
+}
+export namespace Pubviaroot {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+pubname?: PgCatalog.Types.Name.Options,
+pubowner?: PgCatalog.Types.Oid.Options,
+puballtables?: PgCatalog.Types.Bool.Options,
+pubinsert?: PgCatalog.Types.Bool.Options,
+pubupdate?: PgCatalog.Types.Bool.Options,
+pubdelete?: PgCatalog.Types.Bool.Options,
+pubtruncate?: PgCatalog.Types.Bool.Options,
+pubviaroot?: PgCatalog.Types.Bool.Options
+}
 }
 export namespace PgPublicationArray {
 export type Options = never;
 }
 export namespace PgPublicationNamespace {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Pnpubid {
+
+      export type Options = never;
+    
+}
+export namespace Pnnspid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+pnpubid?: PgCatalog.Types.Oid.Options,
+pnnspid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgPublicationNamespaceArray {
 export type Options = never;
 }
 export namespace PgPublicationRel {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Prpubid {
+
+      export type Options = never;
+    
+}
+export namespace Prrelid {
+
+      export type Options = never;
+    
+}
+export namespace Prqual {
+
+      export type Options = never;
+    
+}
+export namespace Prattrs {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+prpubid?: PgCatalog.Types.Oid.Options,
+prrelid?: PgCatalog.Types.Oid.Options,
+prqual?: PgCatalog.Types.PgNodeTree.Options,
+prattrs?: PgCatalog.Types.Int2vector.Options
+}
 }
 export namespace PgPublicationRelArray {
 export type Options = never;
 }
 export namespace PgSubscription {
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Subdbid {
+
+      export type Options = never;
+    
+}
+export namespace Subskiplsn {
+
+      export type Options = never;
+    
+}
+export namespace Subname {
+
+      export type Options = never;
+    
+}
+export namespace Subowner {
+
+      export type Options = never;
+    
+}
+export namespace Subenabled {
+
+      export type Options = never;
+    
+}
+export namespace Subbinary {
+
+      export type Options = never;
+    
+}
+export namespace Substream {
+
+      export type Options = never;
+    
+}
+export namespace Subtwophasestate {
+
+      export type Options = never;
+    
+}
+export namespace Subdisableonerr {
+
+      export type Options = never;
+    
+}
+export namespace Subpasswordrequired {
+
+      export type Options = never;
+    
+}
+export namespace Subrunasowner {
+
+      export type Options = never;
+    
+}
+export namespace Subconninfo {
+
+      export type Options = never;
+    
+}
+export namespace Subslotname {
+
+      export type Options = never;
+    
+}
+export namespace Subsynccommit {
+
+      export type Options = never;
+    
+}
+export namespace Subpublications {
 export type Options = never;
+}
+export namespace Suborigin {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+subdbid?: PgCatalog.Types.Oid.Options,
+subskiplsn?: PgCatalog.Types.PgLsn.Options,
+subname?: PgCatalog.Types.Name.Options,
+subowner?: PgCatalog.Types.Oid.Options,
+subenabled?: PgCatalog.Types.Bool.Options,
+subbinary?: PgCatalog.Types.Bool.Options,
+substream?: PgCatalog.Types.Char.Options,
+subtwophasestate?: PgCatalog.Types.Char.Options,
+subdisableonerr?: PgCatalog.Types.Bool.Options,
+subpasswordrequired?: PgCatalog.Types.Bool.Options,
+subrunasowner?: PgCatalog.Types.Bool.Options,
+subconninfo?: PgCatalog.Types.Text.Options,
+subslotname?: PgCatalog.Types.Name.Options,
+subsynccommit?: PgCatalog.Types.Text.Options,
+subpublications?: PgCatalog.Types.TextArray.Options,
+suborigin?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgSubscriptionArray {
 export type Options = never;
 }
 export namespace PgSubscriptionRel {
-export type Options = never;
+export namespace Srsubid {
+
+      export type Options = never;
+    
+}
+export namespace Srrelid {
+
+      export type Options = never;
+    
+}
+export namespace Srsubstate {
+
+      export type Options = never;
+    
+}
+export namespace Srsublsn {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ srsubid?: PgCatalog.Types.Oid.Options,
+srrelid?: PgCatalog.Types.Oid.Options,
+srsubstate?: PgCatalog.Types.Char.Options,
+srsublsn?: PgCatalog.Types.PgLsn.Options
+}
 }
 export namespace PgSubscriptionRelArray {
 export type Options = never;
 }
 export namespace PgRoles {
+export namespace Rolname {
+
+      export type Options = never;
+    
+}
+export namespace Rolsuper {
+
+      export type Options = never;
+    
+}
+export namespace Rolinherit {
+
+      export type Options = never;
+    
+}
+export namespace Rolcreaterole {
+
+      export type Options = never;
+    
+}
+export namespace Rolcreatedb {
+
+      export type Options = never;
+    
+}
+export namespace Rolcanlogin {
+
+      export type Options = never;
+    
+}
+export namespace Rolreplication {
+
+      export type Options = never;
+    
+}
+export namespace Rolconnlimit {
+
+      export type Options = never;
+    
+}
+export namespace Rolpassword {
+
+      export type Options = never;
+    
+}
+export namespace Rolvaliduntil {
+
+      export type Options = never;
+    
+}
+export namespace Rolbypassrls {
+
+      export type Options = never;
+    
+}
+export namespace Rolconfig {
 export type Options = never;
+}
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ rolname?: PgCatalog.Types.Name.Options,
+rolsuper?: PgCatalog.Types.Bool.Options,
+rolinherit?: PgCatalog.Types.Bool.Options,
+rolcreaterole?: PgCatalog.Types.Bool.Options,
+rolcreatedb?: PgCatalog.Types.Bool.Options,
+rolcanlogin?: PgCatalog.Types.Bool.Options,
+rolreplication?: PgCatalog.Types.Bool.Options,
+rolconnlimit?: PgCatalog.Types.Int4.Options,
+rolpassword?: PgCatalog.Types.Text.Options,
+rolvaliduntil?: PgCatalog.Types.Timestamptz.Options,
+rolbypassrls?: PgCatalog.Types.Bool.Options,
+rolconfig?: PgCatalog.Types.TextArray.Options,
+oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgRolesArray {
 export type Options = never;
 }
 export namespace PgShadow {
+export namespace Usename {
+
+      export type Options = never;
+    
+}
+export namespace Usesysid {
+
+      export type Options = never;
+    
+}
+export namespace Usecreatedb {
+
+      export type Options = never;
+    
+}
+export namespace Usesuper {
+
+      export type Options = never;
+    
+}
+export namespace Userepl {
+
+      export type Options = never;
+    
+}
+export namespace Usebypassrls {
+
+      export type Options = never;
+    
+}
+export namespace Passwd {
+
+      export type Options = never;
+    
+}
+export namespace Valuntil {
+
+      export type Options = never;
+    
+}
+export namespace Useconfig {
 export type Options = never;
+}
+export type Options = {
+ usename?: PgCatalog.Types.Name.Options,
+usesysid?: PgCatalog.Types.Oid.Options,
+usecreatedb?: PgCatalog.Types.Bool.Options,
+usesuper?: PgCatalog.Types.Bool.Options,
+userepl?: PgCatalog.Types.Bool.Options,
+usebypassrls?: PgCatalog.Types.Bool.Options,
+passwd?: PgCatalog.Types.Text.Options,
+valuntil?: PgCatalog.Types.Timestamptz.Options,
+useconfig?: PgCatalog.Types.TextArray.Options
+}
 }
 export namespace PgShadowArray {
 export type Options = never;
 }
 export namespace PgGroup {
+export namespace Groname {
+
+      export type Options = never;
+    
+}
+export namespace Grosysid {
+
+      export type Options = never;
+    
+}
+export namespace Grolist {
 export type Options = never;
+}
+export type Options = {
+ groname?: PgCatalog.Types.Name.Options,
+grosysid?: PgCatalog.Types.Oid.Options,
+grolist?: PgCatalog.Types.OidArray.Options
+}
 }
 export namespace PgGroupArray {
 export type Options = never;
 }
 export namespace PgUser {
+export namespace Usename {
+
+      export type Options = never;
+    
+}
+export namespace Usesysid {
+
+      export type Options = never;
+    
+}
+export namespace Usecreatedb {
+
+      export type Options = never;
+    
+}
+export namespace Usesuper {
+
+      export type Options = never;
+    
+}
+export namespace Userepl {
+
+      export type Options = never;
+    
+}
+export namespace Usebypassrls {
+
+      export type Options = never;
+    
+}
+export namespace Passwd {
+
+      export type Options = never;
+    
+}
+export namespace Valuntil {
+
+      export type Options = never;
+    
+}
+export namespace Useconfig {
 export type Options = never;
+}
+export type Options = {
+ usename?: PgCatalog.Types.Name.Options,
+usesysid?: PgCatalog.Types.Oid.Options,
+usecreatedb?: PgCatalog.Types.Bool.Options,
+usesuper?: PgCatalog.Types.Bool.Options,
+userepl?: PgCatalog.Types.Bool.Options,
+usebypassrls?: PgCatalog.Types.Bool.Options,
+passwd?: PgCatalog.Types.Text.Options,
+valuntil?: PgCatalog.Types.Timestamptz.Options,
+useconfig?: PgCatalog.Types.TextArray.Options
+}
 }
 export namespace PgUserArray {
 export type Options = never;
 }
 export namespace PgPolicies {
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Tablename {
+
+      export type Options = never;
+    
+}
+export namespace Policyname {
+
+      export type Options = never;
+    
+}
+export namespace Permissive {
+
+      export type Options = never;
+    
+}
+export namespace Roles {
 export type Options = never;
+}
+export namespace Cmd {
+
+      export type Options = never;
+    
+}
+export namespace Qual {
+
+      export type Options = never;
+    
+}
+export namespace WithCheck {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ schemaname?: PgCatalog.Types.Name.Options,
+tablename?: PgCatalog.Types.Name.Options,
+policyname?: PgCatalog.Types.Name.Options,
+permissive?: PgCatalog.Types.Text.Options,
+roles?: PgCatalog.Types.NameArray.Options,
+cmd?: PgCatalog.Types.Text.Options,
+qual?: PgCatalog.Types.Text.Options,
+withCheck?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgPoliciesArray {
 export type Options = never;
 }
 export namespace PgRules {
-export type Options = never;
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Tablename {
+
+      export type Options = never;
+    
+}
+export namespace Rulename {
+
+      export type Options = never;
+    
+}
+export namespace Definition {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ schemaname?: PgCatalog.Types.Name.Options,
+tablename?: PgCatalog.Types.Name.Options,
+rulename?: PgCatalog.Types.Name.Options,
+definition?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgRulesArray {
 export type Options = never;
 }
 export namespace PgViews {
-export type Options = never;
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Viewname {
+
+      export type Options = never;
+    
+}
+export namespace Viewowner {
+
+      export type Options = never;
+    
+}
+export namespace Definition {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ schemaname?: PgCatalog.Types.Name.Options,
+viewname?: PgCatalog.Types.Name.Options,
+viewowner?: PgCatalog.Types.Name.Options,
+definition?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgViewsArray {
 export type Options = never;
 }
 export namespace PgTables {
-export type Options = never;
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Tablename {
+
+      export type Options = never;
+    
+}
+export namespace Tableowner {
+
+      export type Options = never;
+    
+}
+export namespace Tablespace {
+
+      export type Options = never;
+    
+}
+export namespace Hasindexes {
+
+      export type Options = never;
+    
+}
+export namespace Hasrules {
+
+      export type Options = never;
+    
+}
+export namespace Hastriggers {
+
+      export type Options = never;
+    
+}
+export namespace Rowsecurity {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ schemaname?: PgCatalog.Types.Name.Options,
+tablename?: PgCatalog.Types.Name.Options,
+tableowner?: PgCatalog.Types.Name.Options,
+tablespace?: PgCatalog.Types.Name.Options,
+hasindexes?: PgCatalog.Types.Bool.Options,
+hasrules?: PgCatalog.Types.Bool.Options,
+hastriggers?: PgCatalog.Types.Bool.Options,
+rowsecurity?: PgCatalog.Types.Bool.Options
+}
 }
 export namespace PgTablesArray {
 export type Options = never;
 }
 export namespace PgMatviews {
-export type Options = never;
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Matviewname {
+
+      export type Options = never;
+    
+}
+export namespace Matviewowner {
+
+      export type Options = never;
+    
+}
+export namespace Tablespace {
+
+      export type Options = never;
+    
+}
+export namespace Hasindexes {
+
+      export type Options = never;
+    
+}
+export namespace Ispopulated {
+
+      export type Options = never;
+    
+}
+export namespace Definition {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ schemaname?: PgCatalog.Types.Name.Options,
+matviewname?: PgCatalog.Types.Name.Options,
+matviewowner?: PgCatalog.Types.Name.Options,
+tablespace?: PgCatalog.Types.Name.Options,
+hasindexes?: PgCatalog.Types.Bool.Options,
+ispopulated?: PgCatalog.Types.Bool.Options,
+definition?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgMatviewsArray {
 export type Options = never;
 }
 export namespace PgIndexes {
-export type Options = never;
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Tablename {
+
+      export type Options = never;
+    
+}
+export namespace Indexname {
+
+      export type Options = never;
+    
+}
+export namespace Tablespace {
+
+      export type Options = never;
+    
+}
+export namespace Indexdef {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ schemaname?: PgCatalog.Types.Name.Options,
+tablename?: PgCatalog.Types.Name.Options,
+indexname?: PgCatalog.Types.Name.Options,
+tablespace?: PgCatalog.Types.Name.Options,
+indexdef?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgIndexesArray {
 export type Options = never;
 }
 export namespace PgSequences {
-export type Options = never;
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Sequencename {
+
+      export type Options = never;
+    
+}
+export namespace Sequenceowner {
+
+      export type Options = never;
+    
+}
+export namespace DataType {
+
+      export type Options = never;
+    
+}
+export namespace StartValue {
+
+      export type Options = never;
+    
+}
+export namespace MinValue {
+
+      export type Options = never;
+    
+}
+export namespace MaxValue {
+
+      export type Options = never;
+    
+}
+export namespace IncrementBy {
+
+      export type Options = never;
+    
+}
+export namespace Cycle {
+
+      export type Options = never;
+    
+}
+export namespace CacheSize {
+
+      export type Options = never;
+    
+}
+export namespace LastValue {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ schemaname?: PgCatalog.Types.Name.Options,
+sequencename?: PgCatalog.Types.Name.Options,
+sequenceowner?: PgCatalog.Types.Name.Options,
+dataType?: PgCatalog.Types.Regtype.Options,
+startValue?: PgCatalog.Types.Int8.Options,
+minValue?: PgCatalog.Types.Int8.Options,
+maxValue?: PgCatalog.Types.Int8.Options,
+incrementBy?: PgCatalog.Types.Int8.Options,
+cycle?: PgCatalog.Types.Bool.Options,
+cacheSize?: PgCatalog.Types.Int8.Options,
+lastValue?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgSequencesArray {
 export type Options = never;
 }
 export namespace PgStats {
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Tablename {
+
+      export type Options = never;
+    
+}
+export namespace Attname {
+
+      export type Options = never;
+    
+}
+export namespace Inherited {
+
+      export type Options = never;
+    
+}
+export namespace NullFrac {
+
+      export type Options = never;
+    
+}
+export namespace AvgWidth {
+
+      export type Options = never;
+    
+}
+export namespace NDistinct {
+
+      export type Options = never;
+    
+}
+export namespace MostCommonVals {
+
+      export type Options = never;
+    
+}
+export namespace MostCommonFreqs {
 export type Options = never;
+}
+export namespace HistogramBounds {
+
+      export type Options = never;
+    
+}
+export namespace Correlation {
+
+      export type Options = never;
+    
+}
+export namespace MostCommonElems {
+
+      export type Options = never;
+    
+}
+export namespace MostCommonElemFreqs {
+export type Options = never;
+}
+export namespace ElemCountHistogram {
+export type Options = never;
+}
+export type Options = {
+ schemaname?: PgCatalog.Types.Name.Options,
+tablename?: PgCatalog.Types.Name.Options,
+attname?: PgCatalog.Types.Name.Options,
+inherited?: PgCatalog.Types.Bool.Options,
+nullFrac?: PgCatalog.Types.Float4.Options,
+avgWidth?: PgCatalog.Types.Int4.Options,
+nDistinct?: PgCatalog.Types.Float4.Options,
+mostCommonVals?: PgCatalog.Types.Anyarray.Options,
+mostCommonFreqs?: PgCatalog.Types.Float4Array.Options,
+histogramBounds?: PgCatalog.Types.Anyarray.Options,
+correlation?: PgCatalog.Types.Float4.Options,
+mostCommonElems?: PgCatalog.Types.Anyarray.Options,
+mostCommonElemFreqs?: PgCatalog.Types.Float4Array.Options,
+elemCountHistogram?: PgCatalog.Types.Float4Array.Options
+}
 }
 export namespace PgStatsArray {
 export type Options = never;
 }
 export namespace PgStatsExt {
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Tablename {
+
+      export type Options = never;
+    
+}
+export namespace StatisticsSchemaname {
+
+      export type Options = never;
+    
+}
+export namespace StatisticsName {
+
+      export type Options = never;
+    
+}
+export namespace StatisticsOwner {
+
+      export type Options = never;
+    
+}
+export namespace Attnames {
 export type Options = never;
+}
+export namespace Exprs {
+export type Options = never;
+}
+export namespace Kinds {
+export type Options = never;
+}
+export namespace Inherited {
+
+      export type Options = never;
+    
+}
+export namespace NDistinct {
+
+      export type Options = never;
+    
+}
+export namespace Dependencies {
+
+      export type Options = never;
+    
+}
+export namespace MostCommonVals {
+export type Options = never;
+}
+export namespace MostCommonValNulls {
+export type Options = never;
+}
+export namespace MostCommonFreqs {
+export type Options = never;
+}
+export namespace MostCommonBaseFreqs {
+export type Options = never;
+}
+export type Options = {
+ schemaname?: PgCatalog.Types.Name.Options,
+tablename?: PgCatalog.Types.Name.Options,
+statisticsSchemaname?: PgCatalog.Types.Name.Options,
+statisticsName?: PgCatalog.Types.Name.Options,
+statisticsOwner?: PgCatalog.Types.Name.Options,
+attnames?: PgCatalog.Types.NameArray.Options,
+exprs?: PgCatalog.Types.TextArray.Options,
+kinds?: PgCatalog.Types.CharArray.Options,
+inherited?: PgCatalog.Types.Bool.Options,
+nDistinct?: PgCatalog.Types.PgNdistinct.Options,
+dependencies?: PgCatalog.Types.PgDependencies.Options,
+mostCommonVals?: PgCatalog.Types.TextArray.Options,
+mostCommonValNulls?: PgCatalog.Types.BoolArray.Options,
+mostCommonFreqs?: PgCatalog.Types.Float8Array.Options,
+mostCommonBaseFreqs?: PgCatalog.Types.Float8Array.Options
+}
 }
 export namespace PgStatsExtArray {
 export type Options = never;
 }
 export namespace PgStatsExtExprs {
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Tablename {
+
+      export type Options = never;
+    
+}
+export namespace StatisticsSchemaname {
+
+      export type Options = never;
+    
+}
+export namespace StatisticsName {
+
+      export type Options = never;
+    
+}
+export namespace StatisticsOwner {
+
+      export type Options = never;
+    
+}
+export namespace Expr {
+
+      export type Options = never;
+    
+}
+export namespace Inherited {
+
+      export type Options = never;
+    
+}
+export namespace NullFrac {
+
+      export type Options = never;
+    
+}
+export namespace AvgWidth {
+
+      export type Options = never;
+    
+}
+export namespace NDistinct {
+
+      export type Options = never;
+    
+}
+export namespace MostCommonVals {
+
+      export type Options = never;
+    
+}
+export namespace MostCommonFreqs {
 export type Options = never;
+}
+export namespace HistogramBounds {
+
+      export type Options = never;
+    
+}
+export namespace Correlation {
+
+      export type Options = never;
+    
+}
+export namespace MostCommonElems {
+
+      export type Options = never;
+    
+}
+export namespace MostCommonElemFreqs {
+export type Options = never;
+}
+export namespace ElemCountHistogram {
+export type Options = never;
+}
+export type Options = {
+ schemaname?: PgCatalog.Types.Name.Options,
+tablename?: PgCatalog.Types.Name.Options,
+statisticsSchemaname?: PgCatalog.Types.Name.Options,
+statisticsName?: PgCatalog.Types.Name.Options,
+statisticsOwner?: PgCatalog.Types.Name.Options,
+expr?: PgCatalog.Types.Text.Options,
+inherited?: PgCatalog.Types.Bool.Options,
+nullFrac?: PgCatalog.Types.Float4.Options,
+avgWidth?: PgCatalog.Types.Int4.Options,
+nDistinct?: PgCatalog.Types.Float4.Options,
+mostCommonVals?: PgCatalog.Types.Anyarray.Options,
+mostCommonFreqs?: PgCatalog.Types.Float4Array.Options,
+histogramBounds?: PgCatalog.Types.Anyarray.Options,
+correlation?: PgCatalog.Types.Float4.Options,
+mostCommonElems?: PgCatalog.Types.Anyarray.Options,
+mostCommonElemFreqs?: PgCatalog.Types.Float4Array.Options,
+elemCountHistogram?: PgCatalog.Types.Float4Array.Options
+}
 }
 export namespace PgStatsExtExprsArray {
 export type Options = never;
 }
 export namespace PgPublicationTables {
+export namespace Pubname {
+
+      export type Options = never;
+    
+}
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Tablename {
+
+      export type Options = never;
+    
+}
+export namespace Attnames {
 export type Options = never;
+}
+export namespace Rowfilter {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ pubname?: PgCatalog.Types.Name.Options,
+schemaname?: PgCatalog.Types.Name.Options,
+tablename?: PgCatalog.Types.Name.Options,
+attnames?: PgCatalog.Types.NameArray.Options,
+rowfilter?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgPublicationTablesArray {
 export type Options = never;
 }
 export namespace PgLocks {
-export type Options = never;
+export namespace Locktype {
+
+      export type Options = never;
+    
+}
+export namespace Database {
+
+      export type Options = never;
+    
+}
+export namespace Relation {
+
+      export type Options = never;
+    
+}
+export namespace Page {
+
+      export type Options = never;
+    
+}
+export namespace Tuple {
+
+      export type Options = never;
+    
+}
+export namespace Virtualxid {
+
+      export type Options = never;
+    
+}
+export namespace Transactionid {
+
+      export type Options = never;
+    
+}
+export namespace Classid {
+
+      export type Options = never;
+    
+}
+export namespace Objid {
+
+      export type Options = never;
+    
+}
+export namespace Objsubid {
+
+      export type Options = never;
+    
+}
+export namespace Virtualtransaction {
+
+      export type Options = never;
+    
+}
+export namespace Pid {
+
+      export type Options = never;
+    
+}
+export namespace Mode {
+
+      export type Options = never;
+    
+}
+export namespace Granted {
+
+      export type Options = never;
+    
+}
+export namespace Fastpath {
+
+      export type Options = never;
+    
+}
+export namespace Waitstart {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ locktype?: PgCatalog.Types.Text.Options,
+database?: PgCatalog.Types.Oid.Options,
+relation?: PgCatalog.Types.Oid.Options,
+page?: PgCatalog.Types.Int4.Options,
+tuple?: PgCatalog.Types.Int2.Options,
+virtualxid?: PgCatalog.Types.Text.Options,
+transactionid?: PgCatalog.Types.Xid.Options,
+classid?: PgCatalog.Types.Oid.Options,
+objid?: PgCatalog.Types.Oid.Options,
+objsubid?: PgCatalog.Types.Int2.Options,
+virtualtransaction?: PgCatalog.Types.Text.Options,
+pid?: PgCatalog.Types.Int4.Options,
+mode?: PgCatalog.Types.Text.Options,
+granted?: PgCatalog.Types.Bool.Options,
+fastpath?: PgCatalog.Types.Bool.Options,
+waitstart?: PgCatalog.Types.Timestamptz.Options
+}
 }
 export namespace PgLocksArray {
 export type Options = never;
 }
 export namespace PgCursors {
-export type Options = never;
+export namespace Name {
+
+      export type Options = never;
+    
+}
+export namespace Statement {
+
+      export type Options = never;
+    
+}
+export namespace IsHoldable {
+
+      export type Options = never;
+    
+}
+export namespace IsBinary {
+
+      export type Options = never;
+    
+}
+export namespace IsScrollable {
+
+      export type Options = never;
+    
+}
+export namespace CreationTime {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ name?: PgCatalog.Types.Text.Options,
+statement?: PgCatalog.Types.Text.Options,
+isHoldable?: PgCatalog.Types.Bool.Options,
+isBinary?: PgCatalog.Types.Bool.Options,
+isScrollable?: PgCatalog.Types.Bool.Options,
+creationTime?: PgCatalog.Types.Timestamptz.Options
+}
 }
 export namespace PgCursorsArray {
 export type Options = never;
 }
 export namespace PgAvailableExtensions {
-export type Options = never;
+export namespace Name {
+
+      export type Options = never;
+    
+}
+export namespace DefaultVersion {
+
+      export type Options = never;
+    
+}
+export namespace InstalledVersion {
+
+      export type Options = never;
+    
+}
+export namespace Comment {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ name?: PgCatalog.Types.Name.Options,
+defaultVersion?: PgCatalog.Types.Text.Options,
+installedVersion?: PgCatalog.Types.Text.Options,
+comment?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgAvailableExtensionsArray {
 export type Options = never;
 }
 export namespace PgAvailableExtensionVersions {
+export namespace Name {
+
+      export type Options = never;
+    
+}
+export namespace Version {
+
+      export type Options = never;
+    
+}
+export namespace Installed {
+
+      export type Options = never;
+    
+}
+export namespace Superuser {
+
+      export type Options = never;
+    
+}
+export namespace Trusted {
+
+      export type Options = never;
+    
+}
+export namespace Relocatable {
+
+      export type Options = never;
+    
+}
+export namespace Schema {
+
+      export type Options = never;
+    
+}
+export namespace Requires {
 export type Options = never;
+}
+export namespace Comment {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ name?: PgCatalog.Types.Name.Options,
+version?: PgCatalog.Types.Text.Options,
+installed?: PgCatalog.Types.Bool.Options,
+superuser?: PgCatalog.Types.Bool.Options,
+trusted?: PgCatalog.Types.Bool.Options,
+relocatable?: PgCatalog.Types.Bool.Options,
+schema?: PgCatalog.Types.Name.Options,
+requires?: PgCatalog.Types.NameArray.Options,
+comment?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgAvailableExtensionVersionsArray {
 export type Options = never;
 }
 export namespace PgPreparedXacts {
-export type Options = never;
+export namespace Transaction {
+
+      export type Options = never;
+    
+}
+export namespace Gid {
+
+      export type Options = never;
+    
+}
+export namespace Prepared {
+
+      export type Options = never;
+    
+}
+export namespace Owner {
+
+      export type Options = never;
+    
+}
+export namespace Database {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ transaction?: PgCatalog.Types.Xid.Options,
+gid?: PgCatalog.Types.Text.Options,
+prepared?: PgCatalog.Types.Timestamptz.Options,
+owner?: PgCatalog.Types.Name.Options,
+database?: PgCatalog.Types.Name.Options
+}
 }
 export namespace PgPreparedXactsArray {
 export type Options = never;
 }
 export namespace PgPreparedStatements {
+export namespace Name {
+
+      export type Options = never;
+    
+}
+export namespace Statement {
+
+      export type Options = never;
+    
+}
+export namespace PrepareTime {
+
+      export type Options = never;
+    
+}
+export namespace ParameterTypes {
 export type Options = never;
+}
+export namespace ResultTypes {
+export type Options = never;
+}
+export namespace FromSql {
+
+      export type Options = never;
+    
+}
+export namespace GenericPlans {
+
+      export type Options = never;
+    
+}
+export namespace CustomPlans {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ name?: PgCatalog.Types.Text.Options,
+statement?: PgCatalog.Types.Text.Options,
+prepareTime?: PgCatalog.Types.Timestamptz.Options,
+parameterTypes?: PgCatalog.Types.RegtypeArray.Options,
+resultTypes?: PgCatalog.Types.RegtypeArray.Options,
+fromSql?: PgCatalog.Types.Bool.Options,
+genericPlans?: PgCatalog.Types.Int8.Options,
+customPlans?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgPreparedStatementsArray {
 export type Options = never;
 }
 export namespace PgSeclabels {
-export type Options = never;
+export namespace Objoid {
+
+      export type Options = never;
+    
+}
+export namespace Classoid {
+
+      export type Options = never;
+    
+}
+export namespace Objsubid {
+
+      export type Options = never;
+    
+}
+export namespace Objtype {
+
+      export type Options = never;
+    
+}
+export namespace Objnamespace {
+
+      export type Options = never;
+    
+}
+export namespace Objname {
+
+      export type Options = never;
+    
+}
+export namespace Provider {
+
+      export type Options = never;
+    
+}
+export namespace Label {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ objoid?: PgCatalog.Types.Oid.Options,
+classoid?: PgCatalog.Types.Oid.Options,
+objsubid?: PgCatalog.Types.Int4.Options,
+objtype?: PgCatalog.Types.Text.Options,
+objnamespace?: PgCatalog.Types.Oid.Options,
+objname?: PgCatalog.Types.Text.Options,
+provider?: PgCatalog.Types.Text.Options,
+label?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgSeclabelsArray {
 export type Options = never;
 }
 export namespace PgSettings {
+export namespace Name {
+
+      export type Options = never;
+    
+}
+export namespace Setting {
+
+      export type Options = never;
+    
+}
+export namespace Unit {
+
+      export type Options = never;
+    
+}
+export namespace Category {
+
+      export type Options = never;
+    
+}
+export namespace ShortDesc {
+
+      export type Options = never;
+    
+}
+export namespace ExtraDesc {
+
+      export type Options = never;
+    
+}
+export namespace Context {
+
+      export type Options = never;
+    
+}
+export namespace Vartype {
+
+      export type Options = never;
+    
+}
+export namespace Source {
+
+      export type Options = never;
+    
+}
+export namespace MinVal {
+
+      export type Options = never;
+    
+}
+export namespace MaxVal {
+
+      export type Options = never;
+    
+}
+export namespace Enumvals {
 export type Options = never;
+}
+export namespace BootVal {
+
+      export type Options = never;
+    
+}
+export namespace ResetVal {
+
+      export type Options = never;
+    
+}
+export namespace Sourcefile {
+
+      export type Options = never;
+    
+}
+export namespace Sourceline {
+
+      export type Options = never;
+    
+}
+export namespace PendingRestart {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ name?: PgCatalog.Types.Text.Options,
+setting?: PgCatalog.Types.Text.Options,
+unit?: PgCatalog.Types.Text.Options,
+category?: PgCatalog.Types.Text.Options,
+shortDesc?: PgCatalog.Types.Text.Options,
+extraDesc?: PgCatalog.Types.Text.Options,
+context?: PgCatalog.Types.Text.Options,
+vartype?: PgCatalog.Types.Text.Options,
+source?: PgCatalog.Types.Text.Options,
+minVal?: PgCatalog.Types.Text.Options,
+maxVal?: PgCatalog.Types.Text.Options,
+enumvals?: PgCatalog.Types.TextArray.Options,
+bootVal?: PgCatalog.Types.Text.Options,
+resetVal?: PgCatalog.Types.Text.Options,
+sourcefile?: PgCatalog.Types.Text.Options,
+sourceline?: PgCatalog.Types.Int4.Options,
+pendingRestart?: PgCatalog.Types.Bool.Options
+}
 }
 export namespace PgSettingsArray {
 export type Options = never;
 }
 export namespace PgFileSettings {
-export type Options = never;
+export namespace Sourcefile {
+
+      export type Options = never;
+    
+}
+export namespace Sourceline {
+
+      export type Options = never;
+    
+}
+export namespace Seqno {
+
+      export type Options = never;
+    
+}
+export namespace Name {
+
+      export type Options = never;
+    
+}
+export namespace Setting {
+
+      export type Options = never;
+    
+}
+export namespace Applied {
+
+      export type Options = never;
+    
+}
+export namespace Error {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ sourcefile?: PgCatalog.Types.Text.Options,
+sourceline?: PgCatalog.Types.Int4.Options,
+seqno?: PgCatalog.Types.Int4.Options,
+name?: PgCatalog.Types.Text.Options,
+setting?: PgCatalog.Types.Text.Options,
+applied?: PgCatalog.Types.Bool.Options,
+error?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgFileSettingsArray {
 export type Options = never;
 }
 export namespace PgHbaFileRules {
+export namespace RuleNumber {
+
+      export type Options = never;
+    
+}
+export namespace FileName {
+
+      export type Options = never;
+    
+}
+export namespace LineNumber {
+
+      export type Options = never;
+    
+}
+export namespace Type {
+
+      export type Options = never;
+    
+}
+export namespace Database {
 export type Options = never;
+}
+export namespace UserName {
+export type Options = never;
+}
+export namespace Address {
+
+      export type Options = never;
+    
+}
+export namespace Netmask {
+
+      export type Options = never;
+    
+}
+export namespace AuthMethod {
+
+      export type Options = never;
+    
+}
+export namespace Options {
+export type Options = never;
+}
+export namespace Error {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ ruleNumber?: PgCatalog.Types.Int4.Options,
+fileName?: PgCatalog.Types.Text.Options,
+lineNumber?: PgCatalog.Types.Int4.Options,
+type?: PgCatalog.Types.Text.Options,
+database?: PgCatalog.Types.TextArray.Options,
+userName?: PgCatalog.Types.TextArray.Options,
+address?: PgCatalog.Types.Text.Options,
+netmask?: PgCatalog.Types.Text.Options,
+authMethod?: PgCatalog.Types.Text.Options,
+options?: PgCatalog.Types.TextArray.Options,
+error?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgHbaFileRulesArray {
 export type Options = never;
 }
 export namespace PgIdentFileMappings {
-export type Options = never;
+export namespace MapNumber {
+
+      export type Options = never;
+    
+}
+export namespace FileName {
+
+      export type Options = never;
+    
+}
+export namespace LineNumber {
+
+      export type Options = never;
+    
+}
+export namespace MapName {
+
+      export type Options = never;
+    
+}
+export namespace SysName {
+
+      export type Options = never;
+    
+}
+export namespace PgUsername {
+
+      export type Options = never;
+    
+}
+export namespace Error {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ mapNumber?: PgCatalog.Types.Int4.Options,
+fileName?: PgCatalog.Types.Text.Options,
+lineNumber?: PgCatalog.Types.Int4.Options,
+mapName?: PgCatalog.Types.Text.Options,
+sysName?: PgCatalog.Types.Text.Options,
+pgUsername?: PgCatalog.Types.Text.Options,
+error?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgIdentFileMappingsArray {
 export type Options = never;
 }
 export namespace PgTimezoneAbbrevs {
-export type Options = never;
+export namespace Abbrev {
+
+      export type Options = never;
+    
+}
+export namespace UtcOffset {
+
+      export type Options = never;
+    
+}
+export namespace IsDst {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ abbrev?: PgCatalog.Types.Text.Options,
+utcOffset?: PgCatalog.Types.Interval.Options,
+isDst?: PgCatalog.Types.Bool.Options
+}
 }
 export namespace PgTimezoneAbbrevsArray {
 export type Options = never;
 }
 export namespace PgTimezoneNames {
-export type Options = never;
+export namespace Name {
+
+      export type Options = never;
+    
+}
+export namespace Abbrev {
+
+      export type Options = never;
+    
+}
+export namespace UtcOffset {
+
+      export type Options = never;
+    
+}
+export namespace IsDst {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ name?: PgCatalog.Types.Text.Options,
+abbrev?: PgCatalog.Types.Text.Options,
+utcOffset?: PgCatalog.Types.Interval.Options,
+isDst?: PgCatalog.Types.Bool.Options
+}
 }
 export namespace PgTimezoneNamesArray {
 export type Options = never;
 }
 export namespace PgConfig {
-export type Options = never;
+export namespace Name {
+
+      export type Options = never;
+    
+}
+export namespace Setting {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ name?: PgCatalog.Types.Text.Options,
+setting?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgConfigArray {
 export type Options = never;
 }
 export namespace PgShmemAllocations {
-export type Options = never;
+export namespace Name {
+
+      export type Options = never;
+    
+}
+export namespace Off {
+
+      export type Options = never;
+    
+}
+export namespace Size {
+
+      export type Options = never;
+    
+}
+export namespace AllocatedSize {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ name?: PgCatalog.Types.Text.Options,
+off?: PgCatalog.Types.Int8.Options,
+size?: PgCatalog.Types.Int8.Options,
+allocatedSize?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgShmemAllocationsArray {
 export type Options = never;
 }
 export namespace PgBackendMemoryContexts {
-export type Options = never;
+export namespace Name {
+
+      export type Options = never;
+    
+}
+export namespace Ident {
+
+      export type Options = never;
+    
+}
+export namespace Parent {
+
+      export type Options = never;
+    
+}
+export namespace Level {
+
+      export type Options = never;
+    
+}
+export namespace TotalBytes {
+
+      export type Options = never;
+    
+}
+export namespace TotalNblocks {
+
+      export type Options = never;
+    
+}
+export namespace FreeBytes {
+
+      export type Options = never;
+    
+}
+export namespace FreeChunks {
+
+      export type Options = never;
+    
+}
+export namespace UsedBytes {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ name?: PgCatalog.Types.Text.Options,
+ident?: PgCatalog.Types.Text.Options,
+parent?: PgCatalog.Types.Text.Options,
+level?: PgCatalog.Types.Int4.Options,
+totalBytes?: PgCatalog.Types.Int8.Options,
+totalNblocks?: PgCatalog.Types.Int8.Options,
+freeBytes?: PgCatalog.Types.Int8.Options,
+freeChunks?: PgCatalog.Types.Int8.Options,
+usedBytes?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgBackendMemoryContextsArray {
 export type Options = never;
 }
 export namespace PgStatAllTables {
-export type Options = never;
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Relname {
+
+      export type Options = never;
+    
+}
+export namespace SeqScan {
+
+      export type Options = never;
+    
+}
+export namespace LastSeqScan {
+
+      export type Options = never;
+    
+}
+export namespace SeqTupRead {
+
+      export type Options = never;
+    
+}
+export namespace IdxScan {
+
+      export type Options = never;
+    
+}
+export namespace LastIdxScan {
+
+      export type Options = never;
+    
+}
+export namespace IdxTupFetch {
+
+      export type Options = never;
+    
+}
+export namespace NTupIns {
+
+      export type Options = never;
+    
+}
+export namespace NTupUpd {
+
+      export type Options = never;
+    
+}
+export namespace NTupDel {
+
+      export type Options = never;
+    
+}
+export namespace NTupHotUpd {
+
+      export type Options = never;
+    
+}
+export namespace NTupNewpageUpd {
+
+      export type Options = never;
+    
+}
+export namespace NLiveTup {
+
+      export type Options = never;
+    
+}
+export namespace NDeadTup {
+
+      export type Options = never;
+    
+}
+export namespace NModSinceAnalyze {
+
+      export type Options = never;
+    
+}
+export namespace NInsSinceVacuum {
+
+      export type Options = never;
+    
+}
+export namespace LastVacuum {
+
+      export type Options = never;
+    
+}
+export namespace LastAutovacuum {
+
+      export type Options = never;
+    
+}
+export namespace LastAnalyze {
+
+      export type Options = never;
+    
+}
+export namespace LastAutoanalyze {
+
+      export type Options = never;
+    
+}
+export namespace VacuumCount {
+
+      export type Options = never;
+    
+}
+export namespace AutovacuumCount {
+
+      export type Options = never;
+    
+}
+export namespace AnalyzeCount {
+
+      export type Options = never;
+    
+}
+export namespace AutoanalyzeCount {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ relid?: PgCatalog.Types.Oid.Options,
+schemaname?: PgCatalog.Types.Name.Options,
+relname?: PgCatalog.Types.Name.Options,
+seqScan?: PgCatalog.Types.Int8.Options,
+lastSeqScan?: PgCatalog.Types.Timestamptz.Options,
+seqTupRead?: PgCatalog.Types.Int8.Options,
+idxScan?: PgCatalog.Types.Int8.Options,
+lastIdxScan?: PgCatalog.Types.Timestamptz.Options,
+idxTupFetch?: PgCatalog.Types.Int8.Options,
+nTupIns?: PgCatalog.Types.Int8.Options,
+nTupUpd?: PgCatalog.Types.Int8.Options,
+nTupDel?: PgCatalog.Types.Int8.Options,
+nTupHotUpd?: PgCatalog.Types.Int8.Options,
+nTupNewpageUpd?: PgCatalog.Types.Int8.Options,
+nLiveTup?: PgCatalog.Types.Int8.Options,
+nDeadTup?: PgCatalog.Types.Int8.Options,
+nModSinceAnalyze?: PgCatalog.Types.Int8.Options,
+nInsSinceVacuum?: PgCatalog.Types.Int8.Options,
+lastVacuum?: PgCatalog.Types.Timestamptz.Options,
+lastAutovacuum?: PgCatalog.Types.Timestamptz.Options,
+lastAnalyze?: PgCatalog.Types.Timestamptz.Options,
+lastAutoanalyze?: PgCatalog.Types.Timestamptz.Options,
+vacuumCount?: PgCatalog.Types.Int8.Options,
+autovacuumCount?: PgCatalog.Types.Int8.Options,
+analyzeCount?: PgCatalog.Types.Int8.Options,
+autoanalyzeCount?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatAllTablesArray {
 export type Options = never;
 }
 export namespace PgStatXactAllTables {
-export type Options = never;
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Relname {
+
+      export type Options = never;
+    
+}
+export namespace SeqScan {
+
+      export type Options = never;
+    
+}
+export namespace SeqTupRead {
+
+      export type Options = never;
+    
+}
+export namespace IdxScan {
+
+      export type Options = never;
+    
+}
+export namespace IdxTupFetch {
+
+      export type Options = never;
+    
+}
+export namespace NTupIns {
+
+      export type Options = never;
+    
+}
+export namespace NTupUpd {
+
+      export type Options = never;
+    
+}
+export namespace NTupDel {
+
+      export type Options = never;
+    
+}
+export namespace NTupHotUpd {
+
+      export type Options = never;
+    
+}
+export namespace NTupNewpageUpd {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ relid?: PgCatalog.Types.Oid.Options,
+schemaname?: PgCatalog.Types.Name.Options,
+relname?: PgCatalog.Types.Name.Options,
+seqScan?: PgCatalog.Types.Int8.Options,
+seqTupRead?: PgCatalog.Types.Int8.Options,
+idxScan?: PgCatalog.Types.Int8.Options,
+idxTupFetch?: PgCatalog.Types.Int8.Options,
+nTupIns?: PgCatalog.Types.Int8.Options,
+nTupUpd?: PgCatalog.Types.Int8.Options,
+nTupDel?: PgCatalog.Types.Int8.Options,
+nTupHotUpd?: PgCatalog.Types.Int8.Options,
+nTupNewpageUpd?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatXactAllTablesArray {
 export type Options = never;
 }
 export namespace PgStatSysTables {
-export type Options = never;
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Relname {
+
+      export type Options = never;
+    
+}
+export namespace SeqScan {
+
+      export type Options = never;
+    
+}
+export namespace LastSeqScan {
+
+      export type Options = never;
+    
+}
+export namespace SeqTupRead {
+
+      export type Options = never;
+    
+}
+export namespace IdxScan {
+
+      export type Options = never;
+    
+}
+export namespace LastIdxScan {
+
+      export type Options = never;
+    
+}
+export namespace IdxTupFetch {
+
+      export type Options = never;
+    
+}
+export namespace NTupIns {
+
+      export type Options = never;
+    
+}
+export namespace NTupUpd {
+
+      export type Options = never;
+    
+}
+export namespace NTupDel {
+
+      export type Options = never;
+    
+}
+export namespace NTupHotUpd {
+
+      export type Options = never;
+    
+}
+export namespace NTupNewpageUpd {
+
+      export type Options = never;
+    
+}
+export namespace NLiveTup {
+
+      export type Options = never;
+    
+}
+export namespace NDeadTup {
+
+      export type Options = never;
+    
+}
+export namespace NModSinceAnalyze {
+
+      export type Options = never;
+    
+}
+export namespace NInsSinceVacuum {
+
+      export type Options = never;
+    
+}
+export namespace LastVacuum {
+
+      export type Options = never;
+    
+}
+export namespace LastAutovacuum {
+
+      export type Options = never;
+    
+}
+export namespace LastAnalyze {
+
+      export type Options = never;
+    
+}
+export namespace LastAutoanalyze {
+
+      export type Options = never;
+    
+}
+export namespace VacuumCount {
+
+      export type Options = never;
+    
+}
+export namespace AutovacuumCount {
+
+      export type Options = never;
+    
+}
+export namespace AnalyzeCount {
+
+      export type Options = never;
+    
+}
+export namespace AutoanalyzeCount {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ relid?: PgCatalog.Types.Oid.Options,
+schemaname?: PgCatalog.Types.Name.Options,
+relname?: PgCatalog.Types.Name.Options,
+seqScan?: PgCatalog.Types.Int8.Options,
+lastSeqScan?: PgCatalog.Types.Timestamptz.Options,
+seqTupRead?: PgCatalog.Types.Int8.Options,
+idxScan?: PgCatalog.Types.Int8.Options,
+lastIdxScan?: PgCatalog.Types.Timestamptz.Options,
+idxTupFetch?: PgCatalog.Types.Int8.Options,
+nTupIns?: PgCatalog.Types.Int8.Options,
+nTupUpd?: PgCatalog.Types.Int8.Options,
+nTupDel?: PgCatalog.Types.Int8.Options,
+nTupHotUpd?: PgCatalog.Types.Int8.Options,
+nTupNewpageUpd?: PgCatalog.Types.Int8.Options,
+nLiveTup?: PgCatalog.Types.Int8.Options,
+nDeadTup?: PgCatalog.Types.Int8.Options,
+nModSinceAnalyze?: PgCatalog.Types.Int8.Options,
+nInsSinceVacuum?: PgCatalog.Types.Int8.Options,
+lastVacuum?: PgCatalog.Types.Timestamptz.Options,
+lastAutovacuum?: PgCatalog.Types.Timestamptz.Options,
+lastAnalyze?: PgCatalog.Types.Timestamptz.Options,
+lastAutoanalyze?: PgCatalog.Types.Timestamptz.Options,
+vacuumCount?: PgCatalog.Types.Int8.Options,
+autovacuumCount?: PgCatalog.Types.Int8.Options,
+analyzeCount?: PgCatalog.Types.Int8.Options,
+autoanalyzeCount?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatSysTablesArray {
 export type Options = never;
 }
 export namespace PgStatXactSysTables {
-export type Options = never;
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Relname {
+
+      export type Options = never;
+    
+}
+export namespace SeqScan {
+
+      export type Options = never;
+    
+}
+export namespace SeqTupRead {
+
+      export type Options = never;
+    
+}
+export namespace IdxScan {
+
+      export type Options = never;
+    
+}
+export namespace IdxTupFetch {
+
+      export type Options = never;
+    
+}
+export namespace NTupIns {
+
+      export type Options = never;
+    
+}
+export namespace NTupUpd {
+
+      export type Options = never;
+    
+}
+export namespace NTupDel {
+
+      export type Options = never;
+    
+}
+export namespace NTupHotUpd {
+
+      export type Options = never;
+    
+}
+export namespace NTupNewpageUpd {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ relid?: PgCatalog.Types.Oid.Options,
+schemaname?: PgCatalog.Types.Name.Options,
+relname?: PgCatalog.Types.Name.Options,
+seqScan?: PgCatalog.Types.Int8.Options,
+seqTupRead?: PgCatalog.Types.Int8.Options,
+idxScan?: PgCatalog.Types.Int8.Options,
+idxTupFetch?: PgCatalog.Types.Int8.Options,
+nTupIns?: PgCatalog.Types.Int8.Options,
+nTupUpd?: PgCatalog.Types.Int8.Options,
+nTupDel?: PgCatalog.Types.Int8.Options,
+nTupHotUpd?: PgCatalog.Types.Int8.Options,
+nTupNewpageUpd?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatXactSysTablesArray {
 export type Options = never;
 }
 export namespace PgStatUserTables {
-export type Options = never;
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Relname {
+
+      export type Options = never;
+    
+}
+export namespace SeqScan {
+
+      export type Options = never;
+    
+}
+export namespace LastSeqScan {
+
+      export type Options = never;
+    
+}
+export namespace SeqTupRead {
+
+      export type Options = never;
+    
+}
+export namespace IdxScan {
+
+      export type Options = never;
+    
+}
+export namespace LastIdxScan {
+
+      export type Options = never;
+    
+}
+export namespace IdxTupFetch {
+
+      export type Options = never;
+    
+}
+export namespace NTupIns {
+
+      export type Options = never;
+    
+}
+export namespace NTupUpd {
+
+      export type Options = never;
+    
+}
+export namespace NTupDel {
+
+      export type Options = never;
+    
+}
+export namespace NTupHotUpd {
+
+      export type Options = never;
+    
+}
+export namespace NTupNewpageUpd {
+
+      export type Options = never;
+    
+}
+export namespace NLiveTup {
+
+      export type Options = never;
+    
+}
+export namespace NDeadTup {
+
+      export type Options = never;
+    
+}
+export namespace NModSinceAnalyze {
+
+      export type Options = never;
+    
+}
+export namespace NInsSinceVacuum {
+
+      export type Options = never;
+    
+}
+export namespace LastVacuum {
+
+      export type Options = never;
+    
+}
+export namespace LastAutovacuum {
+
+      export type Options = never;
+    
+}
+export namespace LastAnalyze {
+
+      export type Options = never;
+    
+}
+export namespace LastAutoanalyze {
+
+      export type Options = never;
+    
+}
+export namespace VacuumCount {
+
+      export type Options = never;
+    
+}
+export namespace AutovacuumCount {
+
+      export type Options = never;
+    
+}
+export namespace AnalyzeCount {
+
+      export type Options = never;
+    
+}
+export namespace AutoanalyzeCount {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ relid?: PgCatalog.Types.Oid.Options,
+schemaname?: PgCatalog.Types.Name.Options,
+relname?: PgCatalog.Types.Name.Options,
+seqScan?: PgCatalog.Types.Int8.Options,
+lastSeqScan?: PgCatalog.Types.Timestamptz.Options,
+seqTupRead?: PgCatalog.Types.Int8.Options,
+idxScan?: PgCatalog.Types.Int8.Options,
+lastIdxScan?: PgCatalog.Types.Timestamptz.Options,
+idxTupFetch?: PgCatalog.Types.Int8.Options,
+nTupIns?: PgCatalog.Types.Int8.Options,
+nTupUpd?: PgCatalog.Types.Int8.Options,
+nTupDel?: PgCatalog.Types.Int8.Options,
+nTupHotUpd?: PgCatalog.Types.Int8.Options,
+nTupNewpageUpd?: PgCatalog.Types.Int8.Options,
+nLiveTup?: PgCatalog.Types.Int8.Options,
+nDeadTup?: PgCatalog.Types.Int8.Options,
+nModSinceAnalyze?: PgCatalog.Types.Int8.Options,
+nInsSinceVacuum?: PgCatalog.Types.Int8.Options,
+lastVacuum?: PgCatalog.Types.Timestamptz.Options,
+lastAutovacuum?: PgCatalog.Types.Timestamptz.Options,
+lastAnalyze?: PgCatalog.Types.Timestamptz.Options,
+lastAutoanalyze?: PgCatalog.Types.Timestamptz.Options,
+vacuumCount?: PgCatalog.Types.Int8.Options,
+autovacuumCount?: PgCatalog.Types.Int8.Options,
+analyzeCount?: PgCatalog.Types.Int8.Options,
+autoanalyzeCount?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatUserTablesArray {
 export type Options = never;
 }
 export namespace PgStatXactUserTables {
-export type Options = never;
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Relname {
+
+      export type Options = never;
+    
+}
+export namespace SeqScan {
+
+      export type Options = never;
+    
+}
+export namespace SeqTupRead {
+
+      export type Options = never;
+    
+}
+export namespace IdxScan {
+
+      export type Options = never;
+    
+}
+export namespace IdxTupFetch {
+
+      export type Options = never;
+    
+}
+export namespace NTupIns {
+
+      export type Options = never;
+    
+}
+export namespace NTupUpd {
+
+      export type Options = never;
+    
+}
+export namespace NTupDel {
+
+      export type Options = never;
+    
+}
+export namespace NTupHotUpd {
+
+      export type Options = never;
+    
+}
+export namespace NTupNewpageUpd {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ relid?: PgCatalog.Types.Oid.Options,
+schemaname?: PgCatalog.Types.Name.Options,
+relname?: PgCatalog.Types.Name.Options,
+seqScan?: PgCatalog.Types.Int8.Options,
+seqTupRead?: PgCatalog.Types.Int8.Options,
+idxScan?: PgCatalog.Types.Int8.Options,
+idxTupFetch?: PgCatalog.Types.Int8.Options,
+nTupIns?: PgCatalog.Types.Int8.Options,
+nTupUpd?: PgCatalog.Types.Int8.Options,
+nTupDel?: PgCatalog.Types.Int8.Options,
+nTupHotUpd?: PgCatalog.Types.Int8.Options,
+nTupNewpageUpd?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatXactUserTablesArray {
 export type Options = never;
 }
 export namespace PgStatioAllTables {
-export type Options = never;
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Relname {
+
+      export type Options = never;
+    
+}
+export namespace HeapBlksRead {
+
+      export type Options = never;
+    
+}
+export namespace HeapBlksHit {
+
+      export type Options = never;
+    
+}
+export namespace IdxBlksRead {
+
+      export type Options = never;
+    
+}
+export namespace IdxBlksHit {
+
+      export type Options = never;
+    
+}
+export namespace ToastBlksRead {
+
+      export type Options = never;
+    
+}
+export namespace ToastBlksHit {
+
+      export type Options = never;
+    
+}
+export namespace TidxBlksRead {
+
+      export type Options = never;
+    
+}
+export namespace TidxBlksHit {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ relid?: PgCatalog.Types.Oid.Options,
+schemaname?: PgCatalog.Types.Name.Options,
+relname?: PgCatalog.Types.Name.Options,
+heapBlksRead?: PgCatalog.Types.Int8.Options,
+heapBlksHit?: PgCatalog.Types.Int8.Options,
+idxBlksRead?: PgCatalog.Types.Int8.Options,
+idxBlksHit?: PgCatalog.Types.Int8.Options,
+toastBlksRead?: PgCatalog.Types.Int8.Options,
+toastBlksHit?: PgCatalog.Types.Int8.Options,
+tidxBlksRead?: PgCatalog.Types.Int8.Options,
+tidxBlksHit?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatioAllTablesArray {
 export type Options = never;
 }
 export namespace PgStatioSysTables {
-export type Options = never;
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Relname {
+
+      export type Options = never;
+    
+}
+export namespace HeapBlksRead {
+
+      export type Options = never;
+    
+}
+export namespace HeapBlksHit {
+
+      export type Options = never;
+    
+}
+export namespace IdxBlksRead {
+
+      export type Options = never;
+    
+}
+export namespace IdxBlksHit {
+
+      export type Options = never;
+    
+}
+export namespace ToastBlksRead {
+
+      export type Options = never;
+    
+}
+export namespace ToastBlksHit {
+
+      export type Options = never;
+    
+}
+export namespace TidxBlksRead {
+
+      export type Options = never;
+    
+}
+export namespace TidxBlksHit {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ relid?: PgCatalog.Types.Oid.Options,
+schemaname?: PgCatalog.Types.Name.Options,
+relname?: PgCatalog.Types.Name.Options,
+heapBlksRead?: PgCatalog.Types.Int8.Options,
+heapBlksHit?: PgCatalog.Types.Int8.Options,
+idxBlksRead?: PgCatalog.Types.Int8.Options,
+idxBlksHit?: PgCatalog.Types.Int8.Options,
+toastBlksRead?: PgCatalog.Types.Int8.Options,
+toastBlksHit?: PgCatalog.Types.Int8.Options,
+tidxBlksRead?: PgCatalog.Types.Int8.Options,
+tidxBlksHit?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatioSysTablesArray {
 export type Options = never;
 }
 export namespace PgStatioUserTables {
-export type Options = never;
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Relname {
+
+      export type Options = never;
+    
+}
+export namespace HeapBlksRead {
+
+      export type Options = never;
+    
+}
+export namespace HeapBlksHit {
+
+      export type Options = never;
+    
+}
+export namespace IdxBlksRead {
+
+      export type Options = never;
+    
+}
+export namespace IdxBlksHit {
+
+      export type Options = never;
+    
+}
+export namespace ToastBlksRead {
+
+      export type Options = never;
+    
+}
+export namespace ToastBlksHit {
+
+      export type Options = never;
+    
+}
+export namespace TidxBlksRead {
+
+      export type Options = never;
+    
+}
+export namespace TidxBlksHit {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ relid?: PgCatalog.Types.Oid.Options,
+schemaname?: PgCatalog.Types.Name.Options,
+relname?: PgCatalog.Types.Name.Options,
+heapBlksRead?: PgCatalog.Types.Int8.Options,
+heapBlksHit?: PgCatalog.Types.Int8.Options,
+idxBlksRead?: PgCatalog.Types.Int8.Options,
+idxBlksHit?: PgCatalog.Types.Int8.Options,
+toastBlksRead?: PgCatalog.Types.Int8.Options,
+toastBlksHit?: PgCatalog.Types.Int8.Options,
+tidxBlksRead?: PgCatalog.Types.Int8.Options,
+tidxBlksHit?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatioUserTablesArray {
 export type Options = never;
 }
 export namespace PgStatAllIndexes {
-export type Options = never;
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace Indexrelid {
+
+      export type Options = never;
+    
+}
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Relname {
+
+      export type Options = never;
+    
+}
+export namespace Indexrelname {
+
+      export type Options = never;
+    
+}
+export namespace IdxScan {
+
+      export type Options = never;
+    
+}
+export namespace LastIdxScan {
+
+      export type Options = never;
+    
+}
+export namespace IdxTupRead {
+
+      export type Options = never;
+    
+}
+export namespace IdxTupFetch {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ relid?: PgCatalog.Types.Oid.Options,
+indexrelid?: PgCatalog.Types.Oid.Options,
+schemaname?: PgCatalog.Types.Name.Options,
+relname?: PgCatalog.Types.Name.Options,
+indexrelname?: PgCatalog.Types.Name.Options,
+idxScan?: PgCatalog.Types.Int8.Options,
+lastIdxScan?: PgCatalog.Types.Timestamptz.Options,
+idxTupRead?: PgCatalog.Types.Int8.Options,
+idxTupFetch?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatAllIndexesArray {
 export type Options = never;
 }
 export namespace PgStatSysIndexes {
-export type Options = never;
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace Indexrelid {
+
+      export type Options = never;
+    
+}
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Relname {
+
+      export type Options = never;
+    
+}
+export namespace Indexrelname {
+
+      export type Options = never;
+    
+}
+export namespace IdxScan {
+
+      export type Options = never;
+    
+}
+export namespace LastIdxScan {
+
+      export type Options = never;
+    
+}
+export namespace IdxTupRead {
+
+      export type Options = never;
+    
+}
+export namespace IdxTupFetch {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ relid?: PgCatalog.Types.Oid.Options,
+indexrelid?: PgCatalog.Types.Oid.Options,
+schemaname?: PgCatalog.Types.Name.Options,
+relname?: PgCatalog.Types.Name.Options,
+indexrelname?: PgCatalog.Types.Name.Options,
+idxScan?: PgCatalog.Types.Int8.Options,
+lastIdxScan?: PgCatalog.Types.Timestamptz.Options,
+idxTupRead?: PgCatalog.Types.Int8.Options,
+idxTupFetch?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatSysIndexesArray {
 export type Options = never;
 }
 export namespace PgStatUserIndexes {
-export type Options = never;
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace Indexrelid {
+
+      export type Options = never;
+    
+}
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Relname {
+
+      export type Options = never;
+    
+}
+export namespace Indexrelname {
+
+      export type Options = never;
+    
+}
+export namespace IdxScan {
+
+      export type Options = never;
+    
+}
+export namespace LastIdxScan {
+
+      export type Options = never;
+    
+}
+export namespace IdxTupRead {
+
+      export type Options = never;
+    
+}
+export namespace IdxTupFetch {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ relid?: PgCatalog.Types.Oid.Options,
+indexrelid?: PgCatalog.Types.Oid.Options,
+schemaname?: PgCatalog.Types.Name.Options,
+relname?: PgCatalog.Types.Name.Options,
+indexrelname?: PgCatalog.Types.Name.Options,
+idxScan?: PgCatalog.Types.Int8.Options,
+lastIdxScan?: PgCatalog.Types.Timestamptz.Options,
+idxTupRead?: PgCatalog.Types.Int8.Options,
+idxTupFetch?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatUserIndexesArray {
 export type Options = never;
 }
 export namespace PgStatioAllIndexes {
-export type Options = never;
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace Indexrelid {
+
+      export type Options = never;
+    
+}
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Relname {
+
+      export type Options = never;
+    
+}
+export namespace Indexrelname {
+
+      export type Options = never;
+    
+}
+export namespace IdxBlksRead {
+
+      export type Options = never;
+    
+}
+export namespace IdxBlksHit {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ relid?: PgCatalog.Types.Oid.Options,
+indexrelid?: PgCatalog.Types.Oid.Options,
+schemaname?: PgCatalog.Types.Name.Options,
+relname?: PgCatalog.Types.Name.Options,
+indexrelname?: PgCatalog.Types.Name.Options,
+idxBlksRead?: PgCatalog.Types.Int8.Options,
+idxBlksHit?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatioAllIndexesArray {
 export type Options = never;
 }
 export namespace PgStatioSysIndexes {
-export type Options = never;
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace Indexrelid {
+
+      export type Options = never;
+    
+}
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Relname {
+
+      export type Options = never;
+    
+}
+export namespace Indexrelname {
+
+      export type Options = never;
+    
+}
+export namespace IdxBlksRead {
+
+      export type Options = never;
+    
+}
+export namespace IdxBlksHit {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ relid?: PgCatalog.Types.Oid.Options,
+indexrelid?: PgCatalog.Types.Oid.Options,
+schemaname?: PgCatalog.Types.Name.Options,
+relname?: PgCatalog.Types.Name.Options,
+indexrelname?: PgCatalog.Types.Name.Options,
+idxBlksRead?: PgCatalog.Types.Int8.Options,
+idxBlksHit?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatioSysIndexesArray {
 export type Options = never;
 }
 export namespace PgStatioUserIndexes {
-export type Options = never;
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace Indexrelid {
+
+      export type Options = never;
+    
+}
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Relname {
+
+      export type Options = never;
+    
+}
+export namespace Indexrelname {
+
+      export type Options = never;
+    
+}
+export namespace IdxBlksRead {
+
+      export type Options = never;
+    
+}
+export namespace IdxBlksHit {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ relid?: PgCatalog.Types.Oid.Options,
+indexrelid?: PgCatalog.Types.Oid.Options,
+schemaname?: PgCatalog.Types.Name.Options,
+relname?: PgCatalog.Types.Name.Options,
+indexrelname?: PgCatalog.Types.Name.Options,
+idxBlksRead?: PgCatalog.Types.Int8.Options,
+idxBlksHit?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatioUserIndexesArray {
 export type Options = never;
 }
 export namespace PgStatioAllSequences {
-export type Options = never;
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Relname {
+
+      export type Options = never;
+    
+}
+export namespace BlksRead {
+
+      export type Options = never;
+    
+}
+export namespace BlksHit {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ relid?: PgCatalog.Types.Oid.Options,
+schemaname?: PgCatalog.Types.Name.Options,
+relname?: PgCatalog.Types.Name.Options,
+blksRead?: PgCatalog.Types.Int8.Options,
+blksHit?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatioAllSequencesArray {
 export type Options = never;
 }
 export namespace PgStatioSysSequences {
-export type Options = never;
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Relname {
+
+      export type Options = never;
+    
+}
+export namespace BlksRead {
+
+      export type Options = never;
+    
+}
+export namespace BlksHit {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ relid?: PgCatalog.Types.Oid.Options,
+schemaname?: PgCatalog.Types.Name.Options,
+relname?: PgCatalog.Types.Name.Options,
+blksRead?: PgCatalog.Types.Int8.Options,
+blksHit?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatioSysSequencesArray {
 export type Options = never;
 }
 export namespace PgStatioUserSequences {
-export type Options = never;
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Relname {
+
+      export type Options = never;
+    
+}
+export namespace BlksRead {
+
+      export type Options = never;
+    
+}
+export namespace BlksHit {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ relid?: PgCatalog.Types.Oid.Options,
+schemaname?: PgCatalog.Types.Name.Options,
+relname?: PgCatalog.Types.Name.Options,
+blksRead?: PgCatalog.Types.Int8.Options,
+blksHit?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatioUserSequencesArray {
 export type Options = never;
 }
 export namespace PgStatActivity {
-export type Options = never;
+export namespace Datid {
+
+      export type Options = never;
+    
+}
+export namespace Datname {
+
+      export type Options = never;
+    
+}
+export namespace Pid {
+
+      export type Options = never;
+    
+}
+export namespace LeaderPid {
+
+      export type Options = never;
+    
+}
+export namespace Usesysid {
+
+      export type Options = never;
+    
+}
+export namespace Usename {
+
+      export type Options = never;
+    
+}
+export namespace ApplicationName {
+
+      export type Options = never;
+    
+}
+export namespace ClientAddr {
+
+      export type Options = never;
+    
+}
+export namespace ClientHostname {
+
+      export type Options = never;
+    
+}
+export namespace ClientPort {
+
+      export type Options = never;
+    
+}
+export namespace BackendStart {
+
+      export type Options = never;
+    
+}
+export namespace XactStart {
+
+      export type Options = never;
+    
+}
+export namespace QueryStart {
+
+      export type Options = never;
+    
+}
+export namespace StateChange {
+
+      export type Options = never;
+    
+}
+export namespace WaitEventType {
+
+      export type Options = never;
+    
+}
+export namespace WaitEvent {
+
+      export type Options = never;
+    
+}
+export namespace State {
+
+      export type Options = never;
+    
+}
+export namespace BackendXid {
+
+      export type Options = never;
+    
+}
+export namespace BackendXmin {
+
+      export type Options = never;
+    
+}
+export namespace QueryId {
+
+      export type Options = never;
+    
+}
+export namespace Query {
+
+      export type Options = never;
+    
+}
+export namespace BackendType {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ datid?: PgCatalog.Types.Oid.Options,
+datname?: PgCatalog.Types.Name.Options,
+pid?: PgCatalog.Types.Int4.Options,
+leaderPid?: PgCatalog.Types.Int4.Options,
+usesysid?: PgCatalog.Types.Oid.Options,
+usename?: PgCatalog.Types.Name.Options,
+applicationName?: PgCatalog.Types.Text.Options,
+clientAddr?: PgCatalog.Types.Inet.Options,
+clientHostname?: PgCatalog.Types.Text.Options,
+clientPort?: PgCatalog.Types.Int4.Options,
+backendStart?: PgCatalog.Types.Timestamptz.Options,
+xactStart?: PgCatalog.Types.Timestamptz.Options,
+queryStart?: PgCatalog.Types.Timestamptz.Options,
+stateChange?: PgCatalog.Types.Timestamptz.Options,
+waitEventType?: PgCatalog.Types.Text.Options,
+waitEvent?: PgCatalog.Types.Text.Options,
+state?: PgCatalog.Types.Text.Options,
+backendXid?: PgCatalog.Types.Xid.Options,
+backendXmin?: PgCatalog.Types.Xid.Options,
+queryId?: PgCatalog.Types.Int8.Options,
+query?: PgCatalog.Types.Text.Options,
+backendType?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgStatActivityArray {
 export type Options = never;
 }
 export namespace PgStatReplication {
-export type Options = never;
+export namespace Pid {
+
+      export type Options = never;
+    
+}
+export namespace Usesysid {
+
+      export type Options = never;
+    
+}
+export namespace Usename {
+
+      export type Options = never;
+    
+}
+export namespace ApplicationName {
+
+      export type Options = never;
+    
+}
+export namespace ClientAddr {
+
+      export type Options = never;
+    
+}
+export namespace ClientHostname {
+
+      export type Options = never;
+    
+}
+export namespace ClientPort {
+
+      export type Options = never;
+    
+}
+export namespace BackendStart {
+
+      export type Options = never;
+    
+}
+export namespace BackendXmin {
+
+      export type Options = never;
+    
+}
+export namespace State {
+
+      export type Options = never;
+    
+}
+export namespace SentLsn {
+
+      export type Options = never;
+    
+}
+export namespace WriteLsn {
+
+      export type Options = never;
+    
+}
+export namespace FlushLsn {
+
+      export type Options = never;
+    
+}
+export namespace ReplayLsn {
+
+      export type Options = never;
+    
+}
+export namespace WriteLag {
+
+      export type Options = never;
+    
+}
+export namespace FlushLag {
+
+      export type Options = never;
+    
+}
+export namespace ReplayLag {
+
+      export type Options = never;
+    
+}
+export namespace SyncPriority {
+
+      export type Options = never;
+    
+}
+export namespace SyncState {
+
+      export type Options = never;
+    
+}
+export namespace ReplyTime {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ pid?: PgCatalog.Types.Int4.Options,
+usesysid?: PgCatalog.Types.Oid.Options,
+usename?: PgCatalog.Types.Name.Options,
+applicationName?: PgCatalog.Types.Text.Options,
+clientAddr?: PgCatalog.Types.Inet.Options,
+clientHostname?: PgCatalog.Types.Text.Options,
+clientPort?: PgCatalog.Types.Int4.Options,
+backendStart?: PgCatalog.Types.Timestamptz.Options,
+backendXmin?: PgCatalog.Types.Xid.Options,
+state?: PgCatalog.Types.Text.Options,
+sentLsn?: PgCatalog.Types.PgLsn.Options,
+writeLsn?: PgCatalog.Types.PgLsn.Options,
+flushLsn?: PgCatalog.Types.PgLsn.Options,
+replayLsn?: PgCatalog.Types.PgLsn.Options,
+writeLag?: PgCatalog.Types.Interval.Options,
+flushLag?: PgCatalog.Types.Interval.Options,
+replayLag?: PgCatalog.Types.Interval.Options,
+syncPriority?: PgCatalog.Types.Int4.Options,
+syncState?: PgCatalog.Types.Text.Options,
+replyTime?: PgCatalog.Types.Timestamptz.Options
+}
 }
 export namespace PgStatReplicationArray {
 export type Options = never;
 }
 export namespace PgStatSlru {
-export type Options = never;
+export namespace Name {
+
+      export type Options = never;
+    
+}
+export namespace BlksZeroed {
+
+      export type Options = never;
+    
+}
+export namespace BlksHit {
+
+      export type Options = never;
+    
+}
+export namespace BlksRead {
+
+      export type Options = never;
+    
+}
+export namespace BlksWritten {
+
+      export type Options = never;
+    
+}
+export namespace BlksExists {
+
+      export type Options = never;
+    
+}
+export namespace Flushes {
+
+      export type Options = never;
+    
+}
+export namespace Truncates {
+
+      export type Options = never;
+    
+}
+export namespace StatsReset {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ name?: PgCatalog.Types.Text.Options,
+blksZeroed?: PgCatalog.Types.Int8.Options,
+blksHit?: PgCatalog.Types.Int8.Options,
+blksRead?: PgCatalog.Types.Int8.Options,
+blksWritten?: PgCatalog.Types.Int8.Options,
+blksExists?: PgCatalog.Types.Int8.Options,
+flushes?: PgCatalog.Types.Int8.Options,
+truncates?: PgCatalog.Types.Int8.Options,
+statsReset?: PgCatalog.Types.Timestamptz.Options
+}
 }
 export namespace PgStatSlruArray {
 export type Options = never;
 }
 export namespace PgStatWalReceiver {
-export type Options = never;
+export namespace Pid {
+
+      export type Options = never;
+    
+}
+export namespace Status {
+
+      export type Options = never;
+    
+}
+export namespace ReceiveStartLsn {
+
+      export type Options = never;
+    
+}
+export namespace ReceiveStartTli {
+
+      export type Options = never;
+    
+}
+export namespace WrittenLsn {
+
+      export type Options = never;
+    
+}
+export namespace FlushedLsn {
+
+      export type Options = never;
+    
+}
+export namespace ReceivedTli {
+
+      export type Options = never;
+    
+}
+export namespace LastMsgSendTime {
+
+      export type Options = never;
+    
+}
+export namespace LastMsgReceiptTime {
+
+      export type Options = never;
+    
+}
+export namespace LatestEndLsn {
+
+      export type Options = never;
+    
+}
+export namespace LatestEndTime {
+
+      export type Options = never;
+    
+}
+export namespace SlotName {
+
+      export type Options = never;
+    
+}
+export namespace SenderHost {
+
+      export type Options = never;
+    
+}
+export namespace SenderPort {
+
+      export type Options = never;
+    
+}
+export namespace Conninfo {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ pid?: PgCatalog.Types.Int4.Options,
+status?: PgCatalog.Types.Text.Options,
+receiveStartLsn?: PgCatalog.Types.PgLsn.Options,
+receiveStartTli?: PgCatalog.Types.Int4.Options,
+writtenLsn?: PgCatalog.Types.PgLsn.Options,
+flushedLsn?: PgCatalog.Types.PgLsn.Options,
+receivedTli?: PgCatalog.Types.Int4.Options,
+lastMsgSendTime?: PgCatalog.Types.Timestamptz.Options,
+lastMsgReceiptTime?: PgCatalog.Types.Timestamptz.Options,
+latestEndLsn?: PgCatalog.Types.PgLsn.Options,
+latestEndTime?: PgCatalog.Types.Timestamptz.Options,
+slotName?: PgCatalog.Types.Text.Options,
+senderHost?: PgCatalog.Types.Text.Options,
+senderPort?: PgCatalog.Types.Int4.Options,
+conninfo?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgStatWalReceiverArray {
 export type Options = never;
 }
 export namespace PgStatRecoveryPrefetch {
-export type Options = never;
+export namespace StatsReset {
+
+      export type Options = never;
+    
+}
+export namespace Prefetch {
+
+      export type Options = never;
+    
+}
+export namespace Hit {
+
+      export type Options = never;
+    
+}
+export namespace SkipInit {
+
+      export type Options = never;
+    
+}
+export namespace SkipNew {
+
+      export type Options = never;
+    
+}
+export namespace SkipFpw {
+
+      export type Options = never;
+    
+}
+export namespace SkipRep {
+
+      export type Options = never;
+    
+}
+export namespace WalDistance {
+
+      export type Options = never;
+    
+}
+export namespace BlockDistance {
+
+      export type Options = never;
+    
+}
+export namespace IoDepth {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ statsReset?: PgCatalog.Types.Timestamptz.Options,
+prefetch?: PgCatalog.Types.Int8.Options,
+hit?: PgCatalog.Types.Int8.Options,
+skipInit?: PgCatalog.Types.Int8.Options,
+skipNew?: PgCatalog.Types.Int8.Options,
+skipFpw?: PgCatalog.Types.Int8.Options,
+skipRep?: PgCatalog.Types.Int8.Options,
+walDistance?: PgCatalog.Types.Int4.Options,
+blockDistance?: PgCatalog.Types.Int4.Options,
+ioDepth?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgStatRecoveryPrefetchArray {
 export type Options = never;
 }
 export namespace PgStatSubscription {
-export type Options = never;
+export namespace Subid {
+
+      export type Options = never;
+    
+}
+export namespace Subname {
+
+      export type Options = never;
+    
+}
+export namespace Pid {
+
+      export type Options = never;
+    
+}
+export namespace LeaderPid {
+
+      export type Options = never;
+    
+}
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace ReceivedLsn {
+
+      export type Options = never;
+    
+}
+export namespace LastMsgSendTime {
+
+      export type Options = never;
+    
+}
+export namespace LastMsgReceiptTime {
+
+      export type Options = never;
+    
+}
+export namespace LatestEndLsn {
+
+      export type Options = never;
+    
+}
+export namespace LatestEndTime {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ subid?: PgCatalog.Types.Oid.Options,
+subname?: PgCatalog.Types.Name.Options,
+pid?: PgCatalog.Types.Int4.Options,
+leaderPid?: PgCatalog.Types.Int4.Options,
+relid?: PgCatalog.Types.Oid.Options,
+receivedLsn?: PgCatalog.Types.PgLsn.Options,
+lastMsgSendTime?: PgCatalog.Types.Timestamptz.Options,
+lastMsgReceiptTime?: PgCatalog.Types.Timestamptz.Options,
+latestEndLsn?: PgCatalog.Types.PgLsn.Options,
+latestEndTime?: PgCatalog.Types.Timestamptz.Options
+}
 }
 export namespace PgStatSubscriptionArray {
 export type Options = never;
 }
 export namespace PgStatSsl {
-export type Options = never;
+export namespace Pid {
+
+      export type Options = never;
+    
+}
+export namespace Ssl {
+
+      export type Options = never;
+    
+}
+export namespace Version {
+
+      export type Options = never;
+    
+}
+export namespace Cipher {
+
+      export type Options = never;
+    
+}
+export namespace Bits {
+
+      export type Options = never;
+    
+}
+export namespace ClientDn {
+
+      export type Options = never;
+    
+}
+export namespace ClientSerial {
+
+      export type Options = never;
+    
+}
+export namespace IssuerDn {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ pid?: PgCatalog.Types.Int4.Options,
+ssl?: PgCatalog.Types.Bool.Options,
+version?: PgCatalog.Types.Text.Options,
+cipher?: PgCatalog.Types.Text.Options,
+bits?: PgCatalog.Types.Int4.Options,
+clientDn?: PgCatalog.Types.Text.Options,
+clientSerial?: PgCatalog.Types.Numeric.Options,
+issuerDn?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgStatSslArray {
 export type Options = never;
 }
 export namespace PgStatGssapi {
-export type Options = never;
+export namespace Pid {
+
+      export type Options = never;
+    
+}
+export namespace GssAuthenticated {
+
+      export type Options = never;
+    
+}
+export namespace Principal {
+
+      export type Options = never;
+    
+}
+export namespace Encrypted {
+
+      export type Options = never;
+    
+}
+export namespace CredentialsDelegated {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ pid?: PgCatalog.Types.Int4.Options,
+gssAuthenticated?: PgCatalog.Types.Bool.Options,
+principal?: PgCatalog.Types.Text.Options,
+encrypted?: PgCatalog.Types.Bool.Options,
+credentialsDelegated?: PgCatalog.Types.Bool.Options
+}
 }
 export namespace PgStatGssapiArray {
 export type Options = never;
 }
 export namespace PgReplicationSlots {
-export type Options = never;
+export namespace SlotName {
+
+      export type Options = never;
+    
+}
+export namespace Plugin {
+
+      export type Options = never;
+    
+}
+export namespace SlotType {
+
+      export type Options = never;
+    
+}
+export namespace Datoid {
+
+      export type Options = never;
+    
+}
+export namespace Database {
+
+      export type Options = never;
+    
+}
+export namespace Temporary {
+
+      export type Options = never;
+    
+}
+export namespace Active {
+
+      export type Options = never;
+    
+}
+export namespace ActivePid {
+
+      export type Options = never;
+    
+}
+export namespace Xmin {
+
+      export type Options = never;
+    
+}
+export namespace CatalogXmin {
+
+      export type Options = never;
+    
+}
+export namespace RestartLsn {
+
+      export type Options = never;
+    
+}
+export namespace ConfirmedFlushLsn {
+
+      export type Options = never;
+    
+}
+export namespace WalStatus {
+
+      export type Options = never;
+    
+}
+export namespace SafeWalSize {
+
+      export type Options = never;
+    
+}
+export namespace TwoPhase {
+
+      export type Options = never;
+    
+}
+export namespace Conflicting {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ slotName?: PgCatalog.Types.Name.Options,
+plugin?: PgCatalog.Types.Name.Options,
+slotType?: PgCatalog.Types.Text.Options,
+datoid?: PgCatalog.Types.Oid.Options,
+database?: PgCatalog.Types.Name.Options,
+temporary?: PgCatalog.Types.Bool.Options,
+active?: PgCatalog.Types.Bool.Options,
+activePid?: PgCatalog.Types.Int4.Options,
+xmin?: PgCatalog.Types.Xid.Options,
+catalogXmin?: PgCatalog.Types.Xid.Options,
+restartLsn?: PgCatalog.Types.PgLsn.Options,
+confirmedFlushLsn?: PgCatalog.Types.PgLsn.Options,
+walStatus?: PgCatalog.Types.Text.Options,
+safeWalSize?: PgCatalog.Types.Int8.Options,
+twoPhase?: PgCatalog.Types.Bool.Options,
+conflicting?: PgCatalog.Types.Bool.Options
+}
 }
 export namespace PgReplicationSlotsArray {
 export type Options = never;
 }
 export namespace PgStatReplicationSlots {
-export type Options = never;
+export namespace SlotName {
+
+      export type Options = never;
+    
+}
+export namespace SpillTxns {
+
+      export type Options = never;
+    
+}
+export namespace SpillCount {
+
+      export type Options = never;
+    
+}
+export namespace SpillBytes {
+
+      export type Options = never;
+    
+}
+export namespace StreamTxns {
+
+      export type Options = never;
+    
+}
+export namespace StreamCount {
+
+      export type Options = never;
+    
+}
+export namespace StreamBytes {
+
+      export type Options = never;
+    
+}
+export namespace TotalTxns {
+
+      export type Options = never;
+    
+}
+export namespace TotalBytes {
+
+      export type Options = never;
+    
+}
+export namespace StatsReset {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ slotName?: PgCatalog.Types.Text.Options,
+spillTxns?: PgCatalog.Types.Int8.Options,
+spillCount?: PgCatalog.Types.Int8.Options,
+spillBytes?: PgCatalog.Types.Int8.Options,
+streamTxns?: PgCatalog.Types.Int8.Options,
+streamCount?: PgCatalog.Types.Int8.Options,
+streamBytes?: PgCatalog.Types.Int8.Options,
+totalTxns?: PgCatalog.Types.Int8.Options,
+totalBytes?: PgCatalog.Types.Int8.Options,
+statsReset?: PgCatalog.Types.Timestamptz.Options
+}
 }
 export namespace PgStatReplicationSlotsArray {
 export type Options = never;
 }
 export namespace PgStatDatabase {
-export type Options = never;
+export namespace Datid {
+
+      export type Options = never;
+    
+}
+export namespace Datname {
+
+      export type Options = never;
+    
+}
+export namespace Numbackends {
+
+      export type Options = never;
+    
+}
+export namespace XactCommit {
+
+      export type Options = never;
+    
+}
+export namespace XactRollback {
+
+      export type Options = never;
+    
+}
+export namespace BlksRead {
+
+      export type Options = never;
+    
+}
+export namespace BlksHit {
+
+      export type Options = never;
+    
+}
+export namespace TupReturned {
+
+      export type Options = never;
+    
+}
+export namespace TupFetched {
+
+      export type Options = never;
+    
+}
+export namespace TupInserted {
+
+      export type Options = never;
+    
+}
+export namespace TupUpdated {
+
+      export type Options = never;
+    
+}
+export namespace TupDeleted {
+
+      export type Options = never;
+    
+}
+export namespace Conflicts {
+
+      export type Options = never;
+    
+}
+export namespace TempFiles {
+
+      export type Options = never;
+    
+}
+export namespace TempBytes {
+
+      export type Options = never;
+    
+}
+export namespace Deadlocks {
+
+      export type Options = never;
+    
+}
+export namespace ChecksumFailures {
+
+      export type Options = never;
+    
+}
+export namespace ChecksumLastFailure {
+
+      export type Options = never;
+    
+}
+export namespace BlkReadTime {
+
+      export type Options = never;
+    
+}
+export namespace BlkWriteTime {
+
+      export type Options = never;
+    
+}
+export namespace SessionTime {
+
+      export type Options = never;
+    
+}
+export namespace ActiveTime {
+
+      export type Options = never;
+    
+}
+export namespace IdleInTransactionTime {
+
+      export type Options = never;
+    
+}
+export namespace Sessions {
+
+      export type Options = never;
+    
+}
+export namespace SessionsAbandoned {
+
+      export type Options = never;
+    
+}
+export namespace SessionsFatal {
+
+      export type Options = never;
+    
+}
+export namespace SessionsKilled {
+
+      export type Options = never;
+    
+}
+export namespace StatsReset {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ datid?: PgCatalog.Types.Oid.Options,
+datname?: PgCatalog.Types.Name.Options,
+numbackends?: PgCatalog.Types.Int4.Options,
+xactCommit?: PgCatalog.Types.Int8.Options,
+xactRollback?: PgCatalog.Types.Int8.Options,
+blksRead?: PgCatalog.Types.Int8.Options,
+blksHit?: PgCatalog.Types.Int8.Options,
+tupReturned?: PgCatalog.Types.Int8.Options,
+tupFetched?: PgCatalog.Types.Int8.Options,
+tupInserted?: PgCatalog.Types.Int8.Options,
+tupUpdated?: PgCatalog.Types.Int8.Options,
+tupDeleted?: PgCatalog.Types.Int8.Options,
+conflicts?: PgCatalog.Types.Int8.Options,
+tempFiles?: PgCatalog.Types.Int8.Options,
+tempBytes?: PgCatalog.Types.Int8.Options,
+deadlocks?: PgCatalog.Types.Int8.Options,
+checksumFailures?: PgCatalog.Types.Int8.Options,
+checksumLastFailure?: PgCatalog.Types.Timestamptz.Options,
+blkReadTime?: PgCatalog.Types.Float8.Options,
+blkWriteTime?: PgCatalog.Types.Float8.Options,
+sessionTime?: PgCatalog.Types.Float8.Options,
+activeTime?: PgCatalog.Types.Float8.Options,
+idleInTransactionTime?: PgCatalog.Types.Float8.Options,
+sessions?: PgCatalog.Types.Int8.Options,
+sessionsAbandoned?: PgCatalog.Types.Int8.Options,
+sessionsFatal?: PgCatalog.Types.Int8.Options,
+sessionsKilled?: PgCatalog.Types.Int8.Options,
+statsReset?: PgCatalog.Types.Timestamptz.Options
+}
 }
 export namespace PgStatDatabaseArray {
 export type Options = never;
 }
 export namespace PgStatDatabaseConflicts {
-export type Options = never;
+export namespace Datid {
+
+      export type Options = never;
+    
+}
+export namespace Datname {
+
+      export type Options = never;
+    
+}
+export namespace ConflTablespace {
+
+      export type Options = never;
+    
+}
+export namespace ConflLock {
+
+      export type Options = never;
+    
+}
+export namespace ConflSnapshot {
+
+      export type Options = never;
+    
+}
+export namespace ConflBufferpin {
+
+      export type Options = never;
+    
+}
+export namespace ConflDeadlock {
+
+      export type Options = never;
+    
+}
+export namespace ConflActiveLogicalslot {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ datid?: PgCatalog.Types.Oid.Options,
+datname?: PgCatalog.Types.Name.Options,
+conflTablespace?: PgCatalog.Types.Int8.Options,
+conflLock?: PgCatalog.Types.Int8.Options,
+conflSnapshot?: PgCatalog.Types.Int8.Options,
+conflBufferpin?: PgCatalog.Types.Int8.Options,
+conflDeadlock?: PgCatalog.Types.Int8.Options,
+conflActiveLogicalslot?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatDatabaseConflictsArray {
 export type Options = never;
 }
 export namespace PgStatUserFunctions {
-export type Options = never;
+export namespace Funcid {
+
+      export type Options = never;
+    
+}
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Funcname {
+
+      export type Options = never;
+    
+}
+export namespace Calls {
+
+      export type Options = never;
+    
+}
+export namespace TotalTime {
+
+      export type Options = never;
+    
+}
+export namespace SelfTime {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ funcid?: PgCatalog.Types.Oid.Options,
+schemaname?: PgCatalog.Types.Name.Options,
+funcname?: PgCatalog.Types.Name.Options,
+calls?: PgCatalog.Types.Int8.Options,
+totalTime?: PgCatalog.Types.Float8.Options,
+selfTime?: PgCatalog.Types.Float8.Options
+}
 }
 export namespace PgStatUserFunctionsArray {
 export type Options = never;
 }
 export namespace PgStatXactUserFunctions {
-export type Options = never;
+export namespace Funcid {
+
+      export type Options = never;
+    
+}
+export namespace Schemaname {
+
+      export type Options = never;
+    
+}
+export namespace Funcname {
+
+      export type Options = never;
+    
+}
+export namespace Calls {
+
+      export type Options = never;
+    
+}
+export namespace TotalTime {
+
+      export type Options = never;
+    
+}
+export namespace SelfTime {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ funcid?: PgCatalog.Types.Oid.Options,
+schemaname?: PgCatalog.Types.Name.Options,
+funcname?: PgCatalog.Types.Name.Options,
+calls?: PgCatalog.Types.Int8.Options,
+totalTime?: PgCatalog.Types.Float8.Options,
+selfTime?: PgCatalog.Types.Float8.Options
+}
 }
 export namespace PgStatXactUserFunctionsArray {
 export type Options = never;
 }
 export namespace PgStatArchiver {
-export type Options = never;
+export namespace ArchivedCount {
+
+      export type Options = never;
+    
+}
+export namespace LastArchivedWal {
+
+      export type Options = never;
+    
+}
+export namespace LastArchivedTime {
+
+      export type Options = never;
+    
+}
+export namespace FailedCount {
+
+      export type Options = never;
+    
+}
+export namespace LastFailedWal {
+
+      export type Options = never;
+    
+}
+export namespace LastFailedTime {
+
+      export type Options = never;
+    
+}
+export namespace StatsReset {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ archivedCount?: PgCatalog.Types.Int8.Options,
+lastArchivedWal?: PgCatalog.Types.Text.Options,
+lastArchivedTime?: PgCatalog.Types.Timestamptz.Options,
+failedCount?: PgCatalog.Types.Int8.Options,
+lastFailedWal?: PgCatalog.Types.Text.Options,
+lastFailedTime?: PgCatalog.Types.Timestamptz.Options,
+statsReset?: PgCatalog.Types.Timestamptz.Options
+}
 }
 export namespace PgStatArchiverArray {
 export type Options = never;
 }
 export namespace PgStatBgwriter {
-export type Options = never;
+export namespace CheckpointsTimed {
+
+      export type Options = never;
+    
+}
+export namespace CheckpointsReq {
+
+      export type Options = never;
+    
+}
+export namespace CheckpointWriteTime {
+
+      export type Options = never;
+    
+}
+export namespace CheckpointSyncTime {
+
+      export type Options = never;
+    
+}
+export namespace BuffersCheckpoint {
+
+      export type Options = never;
+    
+}
+export namespace BuffersClean {
+
+      export type Options = never;
+    
+}
+export namespace MaxwrittenClean {
+
+      export type Options = never;
+    
+}
+export namespace BuffersBackend {
+
+      export type Options = never;
+    
+}
+export namespace BuffersBackendFsync {
+
+      export type Options = never;
+    
+}
+export namespace BuffersAlloc {
+
+      export type Options = never;
+    
+}
+export namespace StatsReset {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ checkpointsTimed?: PgCatalog.Types.Int8.Options,
+checkpointsReq?: PgCatalog.Types.Int8.Options,
+checkpointWriteTime?: PgCatalog.Types.Float8.Options,
+checkpointSyncTime?: PgCatalog.Types.Float8.Options,
+buffersCheckpoint?: PgCatalog.Types.Int8.Options,
+buffersClean?: PgCatalog.Types.Int8.Options,
+maxwrittenClean?: PgCatalog.Types.Int8.Options,
+buffersBackend?: PgCatalog.Types.Int8.Options,
+buffersBackendFsync?: PgCatalog.Types.Int8.Options,
+buffersAlloc?: PgCatalog.Types.Int8.Options,
+statsReset?: PgCatalog.Types.Timestamptz.Options
+}
 }
 export namespace PgStatBgwriterArray {
 export type Options = never;
 }
 export namespace PgStatIo {
-export type Options = never;
+export namespace BackendType {
+
+      export type Options = never;
+    
+}
+export namespace Object {
+
+      export type Options = never;
+    
+}
+export namespace Context {
+
+      export type Options = never;
+    
+}
+export namespace Reads {
+
+      export type Options = never;
+    
+}
+export namespace ReadTime {
+
+      export type Options = never;
+    
+}
+export namespace Writes {
+
+      export type Options = never;
+    
+}
+export namespace WriteTime {
+
+      export type Options = never;
+    
+}
+export namespace Writebacks {
+
+      export type Options = never;
+    
+}
+export namespace WritebackTime {
+
+      export type Options = never;
+    
+}
+export namespace Extends {
+
+      export type Options = never;
+    
+}
+export namespace ExtendTime {
+
+      export type Options = never;
+    
+}
+export namespace OpBytes {
+
+      export type Options = never;
+    
+}
+export namespace Hits {
+
+      export type Options = never;
+    
+}
+export namespace Evictions {
+
+      export type Options = never;
+    
+}
+export namespace Reuses {
+
+      export type Options = never;
+    
+}
+export namespace Fsyncs {
+
+      export type Options = never;
+    
+}
+export namespace FsyncTime {
+
+      export type Options = never;
+    
+}
+export namespace StatsReset {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ backendType?: PgCatalog.Types.Text.Options,
+object?: PgCatalog.Types.Text.Options,
+context?: PgCatalog.Types.Text.Options,
+reads?: PgCatalog.Types.Int8.Options,
+readTime?: PgCatalog.Types.Float8.Options,
+writes?: PgCatalog.Types.Int8.Options,
+writeTime?: PgCatalog.Types.Float8.Options,
+writebacks?: PgCatalog.Types.Int8.Options,
+writebackTime?: PgCatalog.Types.Float8.Options,
+extends?: PgCatalog.Types.Int8.Options,
+extendTime?: PgCatalog.Types.Float8.Options,
+opBytes?: PgCatalog.Types.Int8.Options,
+hits?: PgCatalog.Types.Int8.Options,
+evictions?: PgCatalog.Types.Int8.Options,
+reuses?: PgCatalog.Types.Int8.Options,
+fsyncs?: PgCatalog.Types.Int8.Options,
+fsyncTime?: PgCatalog.Types.Float8.Options,
+statsReset?: PgCatalog.Types.Timestamptz.Options
+}
 }
 export namespace PgStatIoArray {
 export type Options = never;
 }
 export namespace PgStatWal {
-export type Options = never;
+export namespace WalRecords {
+
+      export type Options = never;
+    
+}
+export namespace WalFpi {
+
+      export type Options = never;
+    
+}
+export namespace WalBytes {
+
+      export type Options = never;
+    
+}
+export namespace WalBuffersFull {
+
+      export type Options = never;
+    
+}
+export namespace WalWrite {
+
+      export type Options = never;
+    
+}
+export namespace WalSync {
+
+      export type Options = never;
+    
+}
+export namespace WalWriteTime {
+
+      export type Options = never;
+    
+}
+export namespace WalSyncTime {
+
+      export type Options = never;
+    
+}
+export namespace StatsReset {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ walRecords?: PgCatalog.Types.Int8.Options,
+walFpi?: PgCatalog.Types.Int8.Options,
+walBytes?: PgCatalog.Types.Numeric.Options,
+walBuffersFull?: PgCatalog.Types.Int8.Options,
+walWrite?: PgCatalog.Types.Int8.Options,
+walSync?: PgCatalog.Types.Int8.Options,
+walWriteTime?: PgCatalog.Types.Float8.Options,
+walSyncTime?: PgCatalog.Types.Float8.Options,
+statsReset?: PgCatalog.Types.Timestamptz.Options
+}
 }
 export namespace PgStatWalArray {
 export type Options = never;
 }
 export namespace PgStatProgressAnalyze {
-export type Options = never;
+export namespace Pid {
+
+      export type Options = never;
+    
+}
+export namespace Datid {
+
+      export type Options = never;
+    
+}
+export namespace Datname {
+
+      export type Options = never;
+    
+}
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace Phase {
+
+      export type Options = never;
+    
+}
+export namespace SampleBlksTotal {
+
+      export type Options = never;
+    
+}
+export namespace SampleBlksScanned {
+
+      export type Options = never;
+    
+}
+export namespace ExtStatsTotal {
+
+      export type Options = never;
+    
+}
+export namespace ExtStatsComputed {
+
+      export type Options = never;
+    
+}
+export namespace ChildTablesTotal {
+
+      export type Options = never;
+    
+}
+export namespace ChildTablesDone {
+
+      export type Options = never;
+    
+}
+export namespace CurrentChildTableRelid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ pid?: PgCatalog.Types.Int4.Options,
+datid?: PgCatalog.Types.Oid.Options,
+datname?: PgCatalog.Types.Name.Options,
+relid?: PgCatalog.Types.Oid.Options,
+phase?: PgCatalog.Types.Text.Options,
+sampleBlksTotal?: PgCatalog.Types.Int8.Options,
+sampleBlksScanned?: PgCatalog.Types.Int8.Options,
+extStatsTotal?: PgCatalog.Types.Int8.Options,
+extStatsComputed?: PgCatalog.Types.Int8.Options,
+childTablesTotal?: PgCatalog.Types.Int8.Options,
+childTablesDone?: PgCatalog.Types.Int8.Options,
+currentChildTableRelid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgStatProgressAnalyzeArray {
 export type Options = never;
 }
 export namespace PgStatProgressVacuum {
-export type Options = never;
+export namespace Pid {
+
+      export type Options = never;
+    
+}
+export namespace Datid {
+
+      export type Options = never;
+    
+}
+export namespace Datname {
+
+      export type Options = never;
+    
+}
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace Phase {
+
+      export type Options = never;
+    
+}
+export namespace HeapBlksTotal {
+
+      export type Options = never;
+    
+}
+export namespace HeapBlksScanned {
+
+      export type Options = never;
+    
+}
+export namespace HeapBlksVacuumed {
+
+      export type Options = never;
+    
+}
+export namespace IndexVacuumCount {
+
+      export type Options = never;
+    
+}
+export namespace MaxDeadTuples {
+
+      export type Options = never;
+    
+}
+export namespace NumDeadTuples {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ pid?: PgCatalog.Types.Int4.Options,
+datid?: PgCatalog.Types.Oid.Options,
+datname?: PgCatalog.Types.Name.Options,
+relid?: PgCatalog.Types.Oid.Options,
+phase?: PgCatalog.Types.Text.Options,
+heapBlksTotal?: PgCatalog.Types.Int8.Options,
+heapBlksScanned?: PgCatalog.Types.Int8.Options,
+heapBlksVacuumed?: PgCatalog.Types.Int8.Options,
+indexVacuumCount?: PgCatalog.Types.Int8.Options,
+maxDeadTuples?: PgCatalog.Types.Int8.Options,
+numDeadTuples?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatProgressVacuumArray {
 export type Options = never;
 }
 export namespace PgStatProgressCluster {
-export type Options = never;
+export namespace Pid {
+
+      export type Options = never;
+    
+}
+export namespace Datid {
+
+      export type Options = never;
+    
+}
+export namespace Datname {
+
+      export type Options = never;
+    
+}
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace Command {
+
+      export type Options = never;
+    
+}
+export namespace Phase {
+
+      export type Options = never;
+    
+}
+export namespace ClusterIndexRelid {
+
+      export type Options = never;
+    
+}
+export namespace HeapTuplesScanned {
+
+      export type Options = never;
+    
+}
+export namespace HeapTuplesWritten {
+
+      export type Options = never;
+    
+}
+export namespace HeapBlksTotal {
+
+      export type Options = never;
+    
+}
+export namespace HeapBlksScanned {
+
+      export type Options = never;
+    
+}
+export namespace IndexRebuildCount {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ pid?: PgCatalog.Types.Int4.Options,
+datid?: PgCatalog.Types.Oid.Options,
+datname?: PgCatalog.Types.Name.Options,
+relid?: PgCatalog.Types.Oid.Options,
+command?: PgCatalog.Types.Text.Options,
+phase?: PgCatalog.Types.Text.Options,
+clusterIndexRelid?: PgCatalog.Types.Oid.Options,
+heapTuplesScanned?: PgCatalog.Types.Int8.Options,
+heapTuplesWritten?: PgCatalog.Types.Int8.Options,
+heapBlksTotal?: PgCatalog.Types.Int8.Options,
+heapBlksScanned?: PgCatalog.Types.Int8.Options,
+indexRebuildCount?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatProgressClusterArray {
 export type Options = never;
 }
 export namespace PgStatProgressCreateIndex {
-export type Options = never;
+export namespace Pid {
+
+      export type Options = never;
+    
+}
+export namespace Datid {
+
+      export type Options = never;
+    
+}
+export namespace Datname {
+
+      export type Options = never;
+    
+}
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace IndexRelid {
+
+      export type Options = never;
+    
+}
+export namespace Command {
+
+      export type Options = never;
+    
+}
+export namespace Phase {
+
+      export type Options = never;
+    
+}
+export namespace LockersTotal {
+
+      export type Options = never;
+    
+}
+export namespace LockersDone {
+
+      export type Options = never;
+    
+}
+export namespace CurrentLockerPid {
+
+      export type Options = never;
+    
+}
+export namespace BlocksTotal {
+
+      export type Options = never;
+    
+}
+export namespace BlocksDone {
+
+      export type Options = never;
+    
+}
+export namespace TuplesTotal {
+
+      export type Options = never;
+    
+}
+export namespace TuplesDone {
+
+      export type Options = never;
+    
+}
+export namespace PartitionsTotal {
+
+      export type Options = never;
+    
+}
+export namespace PartitionsDone {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ pid?: PgCatalog.Types.Int4.Options,
+datid?: PgCatalog.Types.Oid.Options,
+datname?: PgCatalog.Types.Name.Options,
+relid?: PgCatalog.Types.Oid.Options,
+indexRelid?: PgCatalog.Types.Oid.Options,
+command?: PgCatalog.Types.Text.Options,
+phase?: PgCatalog.Types.Text.Options,
+lockersTotal?: PgCatalog.Types.Int8.Options,
+lockersDone?: PgCatalog.Types.Int8.Options,
+currentLockerPid?: PgCatalog.Types.Int8.Options,
+blocksTotal?: PgCatalog.Types.Int8.Options,
+blocksDone?: PgCatalog.Types.Int8.Options,
+tuplesTotal?: PgCatalog.Types.Int8.Options,
+tuplesDone?: PgCatalog.Types.Int8.Options,
+partitionsTotal?: PgCatalog.Types.Int8.Options,
+partitionsDone?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatProgressCreateIndexArray {
 export type Options = never;
 }
 export namespace PgStatProgressBasebackup {
-export type Options = never;
+export namespace Pid {
+
+      export type Options = never;
+    
+}
+export namespace Phase {
+
+      export type Options = never;
+    
+}
+export namespace BackupTotal {
+
+      export type Options = never;
+    
+}
+export namespace BackupStreamed {
+
+      export type Options = never;
+    
+}
+export namespace TablespacesTotal {
+
+      export type Options = never;
+    
+}
+export namespace TablespacesStreamed {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ pid?: PgCatalog.Types.Int4.Options,
+phase?: PgCatalog.Types.Text.Options,
+backupTotal?: PgCatalog.Types.Int8.Options,
+backupStreamed?: PgCatalog.Types.Int8.Options,
+tablespacesTotal?: PgCatalog.Types.Int8.Options,
+tablespacesStreamed?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatProgressBasebackupArray {
 export type Options = never;
 }
 export namespace PgStatProgressCopy {
-export type Options = never;
+export namespace Pid {
+
+      export type Options = never;
+    
+}
+export namespace Datid {
+
+      export type Options = never;
+    
+}
+export namespace Datname {
+
+      export type Options = never;
+    
+}
+export namespace Relid {
+
+      export type Options = never;
+    
+}
+export namespace Command {
+
+      export type Options = never;
+    
+}
+export namespace Type {
+
+      export type Options = never;
+    
+}
+export namespace BytesProcessed {
+
+      export type Options = never;
+    
+}
+export namespace BytesTotal {
+
+      export type Options = never;
+    
+}
+export namespace TuplesProcessed {
+
+      export type Options = never;
+    
+}
+export namespace TuplesExcluded {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ pid?: PgCatalog.Types.Int4.Options,
+datid?: PgCatalog.Types.Oid.Options,
+datname?: PgCatalog.Types.Name.Options,
+relid?: PgCatalog.Types.Oid.Options,
+command?: PgCatalog.Types.Text.Options,
+type?: PgCatalog.Types.Text.Options,
+bytesProcessed?: PgCatalog.Types.Int8.Options,
+bytesTotal?: PgCatalog.Types.Int8.Options,
+tuplesProcessed?: PgCatalog.Types.Int8.Options,
+tuplesExcluded?: PgCatalog.Types.Int8.Options
+}
 }
 export namespace PgStatProgressCopyArray {
 export type Options = never;
 }
 export namespace PgUserMappings {
+export namespace Umid {
+
+      export type Options = never;
+    
+}
+export namespace Srvid {
+
+      export type Options = never;
+    
+}
+export namespace Srvname {
+
+      export type Options = never;
+    
+}
+export namespace Umuser {
+
+      export type Options = never;
+    
+}
+export namespace Usename {
+
+      export type Options = never;
+    
+}
+export namespace Umoptions {
 export type Options = never;
+}
+export type Options = {
+ umid?: PgCatalog.Types.Oid.Options,
+srvid?: PgCatalog.Types.Oid.Options,
+srvname?: PgCatalog.Types.Name.Options,
+umuser?: PgCatalog.Types.Oid.Options,
+usename?: PgCatalog.Types.Name.Options,
+umoptions?: PgCatalog.Types.TextArray.Options
+}
 }
 export namespace PgUserMappingsArray {
 export type Options = never;
 }
 export namespace PgReplicationOriginStatus {
-export type Options = never;
+export namespace LocalId {
+
+      export type Options = never;
+    
+}
+export namespace ExternalId {
+
+      export type Options = never;
+    
+}
+export namespace RemoteLsn {
+
+      export type Options = never;
+    
+}
+export namespace LocalLsn {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ localId?: PgCatalog.Types.Oid.Options,
+externalId?: PgCatalog.Types.Text.Options,
+remoteLsn?: PgCatalog.Types.PgLsn.Options,
+localLsn?: PgCatalog.Types.PgLsn.Options
+}
 }
 export namespace PgReplicationOriginStatusArray {
 export type Options = never;
 }
 export namespace PgStatSubscriptionStats {
-export type Options = never;
+export namespace Subid {
+
+      export type Options = never;
+    
+}
+export namespace Subname {
+
+      export type Options = never;
+    
+}
+export namespace ApplyErrorCount {
+
+      export type Options = never;
+    
+}
+export namespace SyncErrorCount {
+
+      export type Options = never;
+    
+}
+export namespace StatsReset {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ subid?: PgCatalog.Types.Oid.Options,
+subname?: PgCatalog.Types.Name.Options,
+applyErrorCount?: PgCatalog.Types.Int8.Options,
+syncErrorCount?: PgCatalog.Types.Int8.Options,
+statsReset?: PgCatalog.Types.Timestamptz.Options
+}
 }
 export namespace PgStatSubscriptionStatsArray {
 export type Options = never;
 }
 export namespace PgProcOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgProcPronameArgsNspIndex {
+export namespace Proname {
+
+      export type Options = never;
+    
+}
+export namespace Proargtypes {
 export type Options = never;
+}
+export namespace Pronamespace {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ proname?: PgCatalog.Types.Name.Options,
+proargtypes?: PgCatalog.Types.Oidvector.Options,
+pronamespace?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgTypeOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgTypeTypnameNspIndex {
-export type Options = never;
+export namespace Typname {
+
+      export type Options = never;
+    
+}
+export namespace Typnamespace {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ typname?: PgCatalog.Types.Name.Options,
+typnamespace?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgAttributeRelidAttnamIndex {
-export type Options = never;
+export namespace Attrelid {
+
+      export type Options = never;
+    
+}
+export namespace Attname {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ attrelid?: PgCatalog.Types.Oid.Options,
+attname?: PgCatalog.Types.Name.Options
+}
 }
 export namespace PgAttributeRelidAttnumIndex {
-export type Options = never;
+export namespace Attrelid {
+
+      export type Options = never;
+    
+}
+export namespace Attnum {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ attrelid?: PgCatalog.Types.Oid.Options,
+attnum?: PgCatalog.Types.Int2.Options
+}
 }
 export namespace PgClassOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgClassRelnameNspIndex {
-export type Options = never;
+export namespace Relname {
+
+      export type Options = never;
+    
+}
+export namespace Relnamespace {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ relname?: PgCatalog.Types.Name.Options,
+relnamespace?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgClassTblspcRelfilenodeIndex {
-export type Options = never;
+export namespace Reltablespace {
+
+      export type Options = never;
+    
+}
+export namespace Relfilenode {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ reltablespace?: PgCatalog.Types.Oid.Options,
+relfilenode?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgAttrdefAdrelidAdnumIndex {
-export type Options = never;
+export namespace Adrelid {
+
+      export type Options = never;
+    
+}
+export namespace Adnum {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ adrelid?: PgCatalog.Types.Oid.Options,
+adnum?: PgCatalog.Types.Int2.Options
+}
 }
 export namespace PgAttrdefOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgConstraintConnameNspIndex {
-export type Options = never;
+export namespace Conname {
+
+      export type Options = never;
+    
+}
+export namespace Connamespace {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ conname?: PgCatalog.Types.Name.Options,
+connamespace?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgConstraintConrelidContypidConnameIndex {
-export type Options = never;
+export namespace Conrelid {
+
+      export type Options = never;
+    
+}
+export namespace Contypid {
+
+      export type Options = never;
+    
+}
+export namespace Conname {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ conrelid?: PgCatalog.Types.Oid.Options,
+contypid?: PgCatalog.Types.Oid.Options,
+conname?: PgCatalog.Types.Name.Options
+}
 }
 export namespace PgConstraintContypidIndex {
-export type Options = never;
+export namespace Contypid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ contypid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgConstraintOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgConstraintConparentidIndex {
-export type Options = never;
+export namespace Conparentid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ conparentid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgInheritsRelidSeqnoIndex {
-export type Options = never;
+export namespace Inhrelid {
+
+      export type Options = never;
+    
+}
+export namespace Inhseqno {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ inhrelid?: PgCatalog.Types.Oid.Options,
+inhseqno?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgInheritsParentIndex {
-export type Options = never;
+export namespace Inhparent {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ inhparent?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgIndexIndrelidIndex {
-export type Options = never;
+export namespace Indrelid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ indrelid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgIndexIndexrelidIndex {
-export type Options = never;
+export namespace Indexrelid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ indexrelid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgOperatorOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgOperatorOprnameLRNIndex {
-export type Options = never;
+export namespace Oprname {
+
+      export type Options = never;
+    
+}
+export namespace Oprleft {
+
+      export type Options = never;
+    
+}
+export namespace Oprright {
+
+      export type Options = never;
+    
+}
+export namespace Oprnamespace {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oprname?: PgCatalog.Types.Name.Options,
+oprleft?: PgCatalog.Types.Oid.Options,
+oprright?: PgCatalog.Types.Oid.Options,
+oprnamespace?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgOpfamilyAmNameNspIndex {
-export type Options = never;
+export namespace Opfmethod {
+
+      export type Options = never;
+    
+}
+export namespace Opfname {
+
+      export type Options = never;
+    
+}
+export namespace Opfnamespace {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ opfmethod?: PgCatalog.Types.Oid.Options,
+opfname?: PgCatalog.Types.Name.Options,
+opfnamespace?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgOpfamilyOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgOpclassAmNameNspIndex {
-export type Options = never;
+export namespace Opcmethod {
+
+      export type Options = never;
+    
+}
+export namespace Opcname {
+
+      export type Options = never;
+    
+}
+export namespace Opcnamespace {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ opcmethod?: PgCatalog.Types.Oid.Options,
+opcname?: PgCatalog.Types.Name.Options,
+opcnamespace?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgOpclassOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgAmNameIndex {
-export type Options = never;
+export namespace Amname {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ amname?: PgCatalog.Types.Name.Options
+}
 }
 export namespace PgAmOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgAmopFamStratIndex {
-export type Options = never;
+export namespace Amopfamily {
+
+      export type Options = never;
+    
+}
+export namespace Amoplefttype {
+
+      export type Options = never;
+    
+}
+export namespace Amoprighttype {
+
+      export type Options = never;
+    
+}
+export namespace Amopstrategy {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ amopfamily?: PgCatalog.Types.Oid.Options,
+amoplefttype?: PgCatalog.Types.Oid.Options,
+amoprighttype?: PgCatalog.Types.Oid.Options,
+amopstrategy?: PgCatalog.Types.Int2.Options
+}
 }
 export namespace PgAmopOprFamIndex {
-export type Options = never;
+export namespace Amopopr {
+
+      export type Options = never;
+    
+}
+export namespace Amoppurpose {
+
+      export type Options = never;
+    
+}
+export namespace Amopfamily {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ amopopr?: PgCatalog.Types.Oid.Options,
+amoppurpose?: PgCatalog.Types.Char.Options,
+amopfamily?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgAmopOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgAmprocFamProcIndex {
-export type Options = never;
+export namespace Amprocfamily {
+
+      export type Options = never;
+    
+}
+export namespace Amproclefttype {
+
+      export type Options = never;
+    
+}
+export namespace Amprocrighttype {
+
+      export type Options = never;
+    
+}
+export namespace Amprocnum {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ amprocfamily?: PgCatalog.Types.Oid.Options,
+amproclefttype?: PgCatalog.Types.Oid.Options,
+amprocrighttype?: PgCatalog.Types.Oid.Options,
+amprocnum?: PgCatalog.Types.Int2.Options
+}
 }
 export namespace PgAmprocOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgLanguageNameIndex {
-export type Options = never;
+export namespace Lanname {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ lanname?: PgCatalog.Types.Name.Options
+}
 }
 export namespace PgLanguageOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgLargeobjectMetadataOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgLargeobjectLoidPnIndex {
-export type Options = never;
+export namespace Loid {
+
+      export type Options = never;
+    
+}
+export namespace Pageno {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ loid?: PgCatalog.Types.Oid.Options,
+pageno?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgAggregateFnoidIndex {
-export type Options = never;
+export namespace Aggfnoid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ aggfnoid?: PgCatalog.Types.Regproc.Options
+}
 }
 export namespace PgStatisticRelidAttInhIndex {
-export type Options = never;
+export namespace Starelid {
+
+      export type Options = never;
+    
+}
+export namespace Staattnum {
+
+      export type Options = never;
+    
+}
+export namespace Stainherit {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ starelid?: PgCatalog.Types.Oid.Options,
+staattnum?: PgCatalog.Types.Int2.Options,
+stainherit?: PgCatalog.Types.Bool.Options
+}
 }
 export namespace PgStatisticExtOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgStatisticExtNameIndex {
-export type Options = never;
+export namespace Stxname {
+
+      export type Options = never;
+    
+}
+export namespace Stxnamespace {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ stxname?: PgCatalog.Types.Name.Options,
+stxnamespace?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgStatisticExtRelidIndex {
-export type Options = never;
+export namespace Stxrelid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ stxrelid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgStatisticExtDataStxoidInhIndex {
-export type Options = never;
+export namespace Stxoid {
+
+      export type Options = never;
+    
+}
+export namespace Stxdinherit {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ stxoid?: PgCatalog.Types.Oid.Options,
+stxdinherit?: PgCatalog.Types.Bool.Options
+}
 }
 export namespace PgRewriteOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgRewriteRelRulenameIndex {
-export type Options = never;
+export namespace EvClass {
+
+      export type Options = never;
+    
+}
+export namespace Rulename {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ evClass?: PgCatalog.Types.Oid.Options,
+rulename?: PgCatalog.Types.Name.Options
+}
 }
 export namespace PgTriggerTgconstraintIndex {
-export type Options = never;
+export namespace Tgconstraint {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ tgconstraint?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgTriggerTgrelidTgnameIndex {
-export type Options = never;
+export namespace Tgrelid {
+
+      export type Options = never;
+    
+}
+export namespace Tgname {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ tgrelid?: PgCatalog.Types.Oid.Options,
+tgname?: PgCatalog.Types.Name.Options
+}
 }
 export namespace PgTriggerOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgEventTriggerEvtnameIndex {
-export type Options = never;
+export namespace Evtname {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ evtname?: PgCatalog.Types.Name.Options
+}
 }
 export namespace PgEventTriggerOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgDescriptionOCOIndex {
-export type Options = never;
+export namespace Objoid {
+
+      export type Options = never;
+    
+}
+export namespace Classoid {
+
+      export type Options = never;
+    
+}
+export namespace Objsubid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ objoid?: PgCatalog.Types.Oid.Options,
+classoid?: PgCatalog.Types.Oid.Options,
+objsubid?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgCastOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgCastSourceTargetIndex {
-export type Options = never;
+export namespace Castsource {
+
+      export type Options = never;
+    
+}
+export namespace Casttarget {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ castsource?: PgCatalog.Types.Oid.Options,
+casttarget?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgEnumOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgEnumTypidLabelIndex {
-export type Options = never;
+export namespace Enumtypid {
+
+      export type Options = never;
+    
+}
+export namespace Enumlabel {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ enumtypid?: PgCatalog.Types.Oid.Options,
+enumlabel?: PgCatalog.Types.Name.Options
+}
 }
 export namespace PgEnumTypidSortorderIndex {
-export type Options = never;
+export namespace Enumtypid {
+
+      export type Options = never;
+    
+}
+export namespace Enumsortorder {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ enumtypid?: PgCatalog.Types.Oid.Options,
+enumsortorder?: PgCatalog.Types.Float4.Options
+}
 }
 export namespace PgNamespaceNspnameIndex {
-export type Options = never;
+export namespace Nspname {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ nspname?: PgCatalog.Types.Name.Options
+}
 }
 export namespace PgNamespaceOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgConversionDefaultIndex {
-export type Options = never;
+export namespace Connamespace {
+
+      export type Options = never;
+    
+}
+export namespace Conforencoding {
+
+      export type Options = never;
+    
+}
+export namespace Contoencoding {
+
+      export type Options = never;
+    
+}
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ connamespace?: PgCatalog.Types.Oid.Options,
+conforencoding?: PgCatalog.Types.Int4.Options,
+contoencoding?: PgCatalog.Types.Int4.Options,
+oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgConversionNameNspIndex {
-export type Options = never;
+export namespace Conname {
+
+      export type Options = never;
+    
+}
+export namespace Connamespace {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ conname?: PgCatalog.Types.Name.Options,
+connamespace?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgConversionOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgDependDependerIndex {
-export type Options = never;
+export namespace Classid {
+
+      export type Options = never;
+    
+}
+export namespace Objid {
+
+      export type Options = never;
+    
+}
+export namespace Objsubid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ classid?: PgCatalog.Types.Oid.Options,
+objid?: PgCatalog.Types.Oid.Options,
+objsubid?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgDependReferenceIndex {
-export type Options = never;
+export namespace Refclassid {
+
+      export type Options = never;
+    
+}
+export namespace Refobjid {
+
+      export type Options = never;
+    
+}
+export namespace Refobjsubid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ refclassid?: PgCatalog.Types.Oid.Options,
+refobjid?: PgCatalog.Types.Oid.Options,
+refobjsubid?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgDatabaseDatnameIndex {
-export type Options = never;
+export namespace Datname {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ datname?: PgCatalog.Types.Name.Options
+}
 }
 export namespace PgDatabaseOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgDbRoleSettingDatabaseidRolIndex {
-export type Options = never;
+export namespace Setdatabase {
+
+      export type Options = never;
+    
+}
+export namespace Setrole {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ setdatabase?: PgCatalog.Types.Oid.Options,
+setrole?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgTablespaceOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgTablespaceSpcnameIndex {
-export type Options = never;
+export namespace Spcname {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ spcname?: PgCatalog.Types.Name.Options
+}
 }
 export namespace PgAuthidRolnameIndex {
-export type Options = never;
+export namespace Rolname {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ rolname?: PgCatalog.Types.Name.Options
+}
 }
 export namespace PgAuthidOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgAuthMembersOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgAuthMembersRoleMemberIndex {
-export type Options = never;
+export namespace Roleid {
+
+      export type Options = never;
+    
+}
+export namespace Member {
+
+      export type Options = never;
+    
+}
+export namespace Grantor {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ roleid?: PgCatalog.Types.Oid.Options,
+member?: PgCatalog.Types.Oid.Options,
+grantor?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgAuthMembersMemberRoleIndex {
-export type Options = never;
+export namespace Member {
+
+      export type Options = never;
+    
+}
+export namespace Roleid {
+
+      export type Options = never;
+    
+}
+export namespace Grantor {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ member?: PgCatalog.Types.Oid.Options,
+roleid?: PgCatalog.Types.Oid.Options,
+grantor?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgAuthMembersGrantorIndex {
-export type Options = never;
+export namespace Grantor {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ grantor?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgShdependDependerIndex {
-export type Options = never;
+export namespace Dbid {
+
+      export type Options = never;
+    
+}
+export namespace Classid {
+
+      export type Options = never;
+    
+}
+export namespace Objid {
+
+      export type Options = never;
+    
+}
+export namespace Objsubid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ dbid?: PgCatalog.Types.Oid.Options,
+classid?: PgCatalog.Types.Oid.Options,
+objid?: PgCatalog.Types.Oid.Options,
+objsubid?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgShdependReferenceIndex {
-export type Options = never;
+export namespace Refclassid {
+
+      export type Options = never;
+    
+}
+export namespace Refobjid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ refclassid?: PgCatalog.Types.Oid.Options,
+refobjid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgShdescriptionOCIndex {
-export type Options = never;
+export namespace Objoid {
+
+      export type Options = never;
+    
+}
+export namespace Classoid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ objoid?: PgCatalog.Types.Oid.Options,
+classoid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgTsConfigCfgnameIndex {
-export type Options = never;
+export namespace Cfgname {
+
+      export type Options = never;
+    
+}
+export namespace Cfgnamespace {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ cfgname?: PgCatalog.Types.Name.Options,
+cfgnamespace?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgTsConfigOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgTsConfigMapIndex {
-export type Options = never;
+export namespace Mapcfg {
+
+      export type Options = never;
+    
+}
+export namespace Maptokentype {
+
+      export type Options = never;
+    
+}
+export namespace Mapseqno {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ mapcfg?: PgCatalog.Types.Oid.Options,
+maptokentype?: PgCatalog.Types.Int4.Options,
+mapseqno?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgTsDictDictnameIndex {
-export type Options = never;
+export namespace Dictname {
+
+      export type Options = never;
+    
+}
+export namespace Dictnamespace {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ dictname?: PgCatalog.Types.Name.Options,
+dictnamespace?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgTsDictOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgTsParserPrsnameIndex {
-export type Options = never;
+export namespace Prsname {
+
+      export type Options = never;
+    
+}
+export namespace Prsnamespace {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ prsname?: PgCatalog.Types.Name.Options,
+prsnamespace?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgTsParserOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgTsTemplateTmplnameIndex {
-export type Options = never;
+export namespace Tmplname {
+
+      export type Options = never;
+    
+}
+export namespace Tmplnamespace {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ tmplname?: PgCatalog.Types.Name.Options,
+tmplnamespace?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgTsTemplateOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgExtensionOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgExtensionNameIndex {
-export type Options = never;
+export namespace Extname {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ extname?: PgCatalog.Types.Name.Options
+}
 }
 export namespace PgForeignDataWrapperOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgForeignDataWrapperNameIndex {
-export type Options = never;
+export namespace Fdwname {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ fdwname?: PgCatalog.Types.Name.Options
+}
 }
 export namespace PgForeignServerOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgForeignServerNameIndex {
-export type Options = never;
+export namespace Srvname {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ srvname?: PgCatalog.Types.Name.Options
+}
 }
 export namespace PgUserMappingOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgUserMappingUserServerIndex {
-export type Options = never;
+export namespace Umuser {
+
+      export type Options = never;
+    
+}
+export namespace Umserver {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ umuser?: PgCatalog.Types.Oid.Options,
+umserver?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgForeignTableRelidIndex {
-export type Options = never;
+export namespace Ftrelid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ ftrelid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgPolicyOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgPolicyPolrelidPolnameIndex {
-export type Options = never;
+export namespace Polrelid {
+
+      export type Options = never;
+    
+}
+export namespace Polname {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ polrelid?: PgCatalog.Types.Oid.Options,
+polname?: PgCatalog.Types.Name.Options
+}
 }
 export namespace PgReplicationOriginRoiidentIndex {
-export type Options = never;
+export namespace Roident {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ roident?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgReplicationOriginRonameIndex {
-export type Options = never;
+export namespace Roname {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ roname?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgDefaultAclRoleNspObjIndex {
-export type Options = never;
+export namespace Defaclrole {
+
+      export type Options = never;
+    
+}
+export namespace Defaclnamespace {
+
+      export type Options = never;
+    
+}
+export namespace Defaclobjtype {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ defaclrole?: PgCatalog.Types.Oid.Options,
+defaclnamespace?: PgCatalog.Types.Oid.Options,
+defaclobjtype?: PgCatalog.Types.Char.Options
+}
 }
 export namespace PgDefaultAclOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgInitPrivsOCOIndex {
-export type Options = never;
+export namespace Objoid {
+
+      export type Options = never;
+    
+}
+export namespace Classoid {
+
+      export type Options = never;
+    
+}
+export namespace Objsubid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ objoid?: PgCatalog.Types.Oid.Options,
+classoid?: PgCatalog.Types.Oid.Options,
+objsubid?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgSeclabelObjectIndex {
-export type Options = never;
+export namespace Objoid {
+
+      export type Options = never;
+    
+}
+export namespace Classoid {
+
+      export type Options = never;
+    
+}
+export namespace Objsubid {
+
+      export type Options = never;
+    
+}
+export namespace Provider {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ objoid?: PgCatalog.Types.Oid.Options,
+classoid?: PgCatalog.Types.Oid.Options,
+objsubid?: PgCatalog.Types.Int4.Options,
+provider?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgShseclabelObjectIndex {
-export type Options = never;
+export namespace Objoid {
+
+      export type Options = never;
+    
+}
+export namespace Classoid {
+
+      export type Options = never;
+    
+}
+export namespace Provider {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ objoid?: PgCatalog.Types.Oid.Options,
+classoid?: PgCatalog.Types.Oid.Options,
+provider?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgCollationNameEncNspIndex {
-export type Options = never;
+export namespace Collname {
+
+      export type Options = never;
+    
+}
+export namespace Collencoding {
+
+      export type Options = never;
+    
+}
+export namespace Collnamespace {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ collname?: PgCatalog.Types.Name.Options,
+collencoding?: PgCatalog.Types.Int4.Options,
+collnamespace?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgCollationOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgParameterAclParnameIndex {
-export type Options = never;
+export namespace Parname {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ parname?: PgCatalog.Types.Text.Options
+}
 }
 export namespace PgParameterAclOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgPartitionedTablePartrelidIndex {
-export type Options = never;
+export namespace Partrelid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ partrelid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgRangeRngtypidIndex {
-export type Options = never;
+export namespace Rngtypid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ rngtypid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgRangeRngmultitypidIndex {
-export type Options = never;
+export namespace Rngmultitypid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ rngmultitypid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgTransformOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgTransformTypeLangIndex {
-export type Options = never;
+export namespace Trftype {
+
+      export type Options = never;
+    
+}
+export namespace Trflang {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ trftype?: PgCatalog.Types.Oid.Options,
+trflang?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgSequenceSeqrelidIndex {
-export type Options = never;
+export namespace Seqrelid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ seqrelid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgPublicationOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgPublicationPubnameIndex {
-export type Options = never;
+export namespace Pubname {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ pubname?: PgCatalog.Types.Name.Options
+}
 }
 export namespace PgPublicationNamespaceOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgPublicationNamespacePnnspidPnpubidIndex {
-export type Options = never;
+export namespace Pnnspid {
+
+      export type Options = never;
+    
+}
+export namespace Pnpubid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ pnnspid?: PgCatalog.Types.Oid.Options,
+pnpubid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgPublicationRelOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgPublicationRelPrrelidPrpubidIndex {
-export type Options = never;
+export namespace Prrelid {
+
+      export type Options = never;
+    
+}
+export namespace Prpubid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ prrelid?: PgCatalog.Types.Oid.Options,
+prpubid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgPublicationRelPrpubidIndex {
-export type Options = never;
+export namespace Prpubid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ prpubid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgSubscriptionOidIndex {
-export type Options = never;
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options
+}
 }
 export namespace PgSubscriptionSubnameIndex {
-export type Options = never;
+export namespace Subdbid {
+
+      export type Options = never;
+    
+}
+export namespace Subname {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ subdbid?: PgCatalog.Types.Oid.Options,
+subname?: PgCatalog.Types.Name.Options
+}
 }
 export namespace PgSubscriptionRelSrrelidSrsubidIndex {
-export type Options = never;
+export namespace Srrelid {
+
+      export type Options = never;
+    
+}
+export namespace Srsubid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ srrelid?: PgCatalog.Types.Oid.Options,
+srsubid?: PgCatalog.Types.Oid.Options
+}
 }
 }
 export namespace Procedures {
@@ -40196,7 +48106,14 @@ export namespace SqlIdentifierArray {
 export type Options = never;
 }
 export namespace InformationSchemaCatalogName {
-export type Options = never;
+export namespace CatalogName {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ catalogName?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace InformationSchemaCatalogNameArray {
 export type Options = never;
@@ -40218,394 +48135,4628 @@ export namespace YesOrNoArray {
 export type Options = never;
 }
 export namespace ApplicableRoles {
-export type Options = never;
+export namespace Grantee {
+
+      export type Options = never;
+    
+}
+export namespace RoleName {
+
+      export type Options = never;
+    
+}
+export namespace IsGrantable {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ grantee?: InformationSchema.Types.SqlIdentifier.Options,
+roleName?: InformationSchema.Types.SqlIdentifier.Options,
+isGrantable?: InformationSchema.Types.YesOrNo.Options
+}
 }
 export namespace ApplicableRolesArray {
 export type Options = never;
 }
 export namespace AdministrableRoleAuthorizations {
-export type Options = never;
+export namespace Grantee {
+
+      export type Options = never;
+    
+}
+export namespace RoleName {
+
+      export type Options = never;
+    
+}
+export namespace IsGrantable {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ grantee?: InformationSchema.Types.SqlIdentifier.Options,
+roleName?: InformationSchema.Types.SqlIdentifier.Options,
+isGrantable?: InformationSchema.Types.YesOrNo.Options
+}
 }
 export namespace AdministrableRoleAuthorizationsArray {
 export type Options = never;
 }
 export namespace Attributes {
-export type Options = never;
+export namespace UdtCatalog {
+
+      export type Options = never;
+    
+}
+export namespace UdtSchema {
+
+      export type Options = never;
+    
+}
+export namespace UdtName {
+
+      export type Options = never;
+    
+}
+export namespace AttributeName {
+
+      export type Options = never;
+    
+}
+export namespace OrdinalPosition {
+
+      export type Options = never;
+    
+}
+export namespace AttributeDefault {
+
+      export type Options = never;
+    
+}
+export namespace IsNullable {
+
+      export type Options = never;
+    
+}
+export namespace DataType {
+
+      export type Options = never;
+    
+}
+export namespace CharacterMaximumLength {
+
+      export type Options = never;
+    
+}
+export namespace CharacterOctetLength {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetCatalog {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetSchema {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetName {
+
+      export type Options = never;
+    
+}
+export namespace CollationCatalog {
+
+      export type Options = never;
+    
+}
+export namespace CollationSchema {
+
+      export type Options = never;
+    
+}
+export namespace CollationName {
+
+      export type Options = never;
+    
+}
+export namespace NumericPrecision {
+
+      export type Options = never;
+    
+}
+export namespace NumericPrecisionRadix {
+
+      export type Options = never;
+    
+}
+export namespace NumericScale {
+
+      export type Options = never;
+    
+}
+export namespace DatetimePrecision {
+
+      export type Options = never;
+    
+}
+export namespace IntervalType {
+
+      export type Options = never;
+    
+}
+export namespace IntervalPrecision {
+
+      export type Options = never;
+    
+}
+export namespace AttributeUdtCatalog {
+
+      export type Options = never;
+    
+}
+export namespace AttributeUdtSchema {
+
+      export type Options = never;
+    
+}
+export namespace AttributeUdtName {
+
+      export type Options = never;
+    
+}
+export namespace ScopeCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ScopeSchema {
+
+      export type Options = never;
+    
+}
+export namespace ScopeName {
+
+      export type Options = never;
+    
+}
+export namespace MaximumCardinality {
+
+      export type Options = never;
+    
+}
+export namespace DtdIdentifier {
+
+      export type Options = never;
+    
+}
+export namespace IsDerivedReferenceAttribute {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
+udtName?: InformationSchema.Types.SqlIdentifier.Options,
+attributeName?: InformationSchema.Types.SqlIdentifier.Options,
+ordinalPosition?: InformationSchema.Types.CardinalNumber.Options,
+attributeDefault?: InformationSchema.Types.CharacterData.Options,
+isNullable?: InformationSchema.Types.YesOrNo.Options,
+dataType?: InformationSchema.Types.CharacterData.Options,
+characterMaximumLength?: InformationSchema.Types.CardinalNumber.Options,
+characterOctetLength?: InformationSchema.Types.CardinalNumber.Options,
+characterSetCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+characterSetSchema?: InformationSchema.Types.SqlIdentifier.Options,
+characterSetName?: InformationSchema.Types.SqlIdentifier.Options,
+collationCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+collationSchema?: InformationSchema.Types.SqlIdentifier.Options,
+collationName?: InformationSchema.Types.SqlIdentifier.Options,
+numericPrecision?: InformationSchema.Types.CardinalNumber.Options,
+numericPrecisionRadix?: InformationSchema.Types.CardinalNumber.Options,
+numericScale?: InformationSchema.Types.CardinalNumber.Options,
+datetimePrecision?: InformationSchema.Types.CardinalNumber.Options,
+intervalType?: InformationSchema.Types.CharacterData.Options,
+intervalPrecision?: InformationSchema.Types.CardinalNumber.Options,
+attributeUdtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+attributeUdtSchema?: InformationSchema.Types.SqlIdentifier.Options,
+attributeUdtName?: InformationSchema.Types.SqlIdentifier.Options,
+scopeCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+scopeSchema?: InformationSchema.Types.SqlIdentifier.Options,
+scopeName?: InformationSchema.Types.SqlIdentifier.Options,
+maximumCardinality?: InformationSchema.Types.CardinalNumber.Options,
+dtdIdentifier?: InformationSchema.Types.SqlIdentifier.Options,
+isDerivedReferenceAttribute?: InformationSchema.Types.YesOrNo.Options
+}
 }
 export namespace AttributesArray {
 export type Options = never;
 }
 export namespace CharacterSets {
-export type Options = never;
+export namespace CharacterSetCatalog {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetSchema {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetName {
+
+      export type Options = never;
+    
+}
+export namespace CharacterRepertoire {
+
+      export type Options = never;
+    
+}
+export namespace FormOfUse {
+
+      export type Options = never;
+    
+}
+export namespace DefaultCollateCatalog {
+
+      export type Options = never;
+    
+}
+export namespace DefaultCollateSchema {
+
+      export type Options = never;
+    
+}
+export namespace DefaultCollateName {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ characterSetCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+characterSetSchema?: InformationSchema.Types.SqlIdentifier.Options,
+characterSetName?: InformationSchema.Types.SqlIdentifier.Options,
+characterRepertoire?: InformationSchema.Types.SqlIdentifier.Options,
+formOfUse?: InformationSchema.Types.SqlIdentifier.Options,
+defaultCollateCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+defaultCollateSchema?: InformationSchema.Types.SqlIdentifier.Options,
+defaultCollateName?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace CharacterSetsArray {
 export type Options = never;
 }
 export namespace CheckConstraintRoutineUsage {
-export type Options = never;
+export namespace ConstraintCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ConstraintSchema {
+
+      export type Options = never;
+    
+}
+export namespace ConstraintName {
+
+      export type Options = never;
+    
+}
+export namespace SpecificCatalog {
+
+      export type Options = never;
+    
+}
+export namespace SpecificSchema {
+
+      export type Options = never;
+    
+}
+export namespace SpecificName {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
+constraintName?: InformationSchema.Types.SqlIdentifier.Options,
+specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
+specificName?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace CheckConstraintRoutineUsageArray {
 export type Options = never;
 }
 export namespace CheckConstraints {
-export type Options = never;
+export namespace ConstraintCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ConstraintSchema {
+
+      export type Options = never;
+    
+}
+export namespace ConstraintName {
+
+      export type Options = never;
+    
+}
+export namespace CheckClause {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
+constraintName?: InformationSchema.Types.SqlIdentifier.Options,
+checkClause?: InformationSchema.Types.CharacterData.Options
+}
 }
 export namespace CheckConstraintsArray {
 export type Options = never;
 }
 export namespace Collations {
-export type Options = never;
+export namespace CollationCatalog {
+
+      export type Options = never;
+    
+}
+export namespace CollationSchema {
+
+      export type Options = never;
+    
+}
+export namespace CollationName {
+
+      export type Options = never;
+    
+}
+export namespace PadAttribute {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ collationCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+collationSchema?: InformationSchema.Types.SqlIdentifier.Options,
+collationName?: InformationSchema.Types.SqlIdentifier.Options,
+padAttribute?: InformationSchema.Types.CharacterData.Options
+}
 }
 export namespace CollationsArray {
 export type Options = never;
 }
 export namespace CollationCharacterSetApplicability {
-export type Options = never;
+export namespace CollationCatalog {
+
+      export type Options = never;
+    
+}
+export namespace CollationSchema {
+
+      export type Options = never;
+    
+}
+export namespace CollationName {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetCatalog {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetSchema {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetName {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ collationCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+collationSchema?: InformationSchema.Types.SqlIdentifier.Options,
+collationName?: InformationSchema.Types.SqlIdentifier.Options,
+characterSetCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+characterSetSchema?: InformationSchema.Types.SqlIdentifier.Options,
+characterSetName?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace CollationCharacterSetApplicabilityArray {
 export type Options = never;
 }
 export namespace ColumnColumnUsage {
-export type Options = never;
+export namespace TableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TableSchema {
+
+      export type Options = never;
+    
+}
+export namespace TableName {
+
+      export type Options = never;
+    
+}
+export namespace ColumnName {
+
+      export type Options = never;
+    
+}
+export namespace DependentColumn {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+tableName?: InformationSchema.Types.SqlIdentifier.Options,
+columnName?: InformationSchema.Types.SqlIdentifier.Options,
+dependentColumn?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace ColumnColumnUsageArray {
 export type Options = never;
 }
 export namespace ColumnDomainUsage {
-export type Options = never;
+export namespace DomainCatalog {
+
+      export type Options = never;
+    
+}
+export namespace DomainSchema {
+
+      export type Options = never;
+    
+}
+export namespace DomainName {
+
+      export type Options = never;
+    
+}
+export namespace TableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TableSchema {
+
+      export type Options = never;
+    
+}
+export namespace TableName {
+
+      export type Options = never;
+    
+}
+export namespace ColumnName {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ domainCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+domainSchema?: InformationSchema.Types.SqlIdentifier.Options,
+domainName?: InformationSchema.Types.SqlIdentifier.Options,
+tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+tableName?: InformationSchema.Types.SqlIdentifier.Options,
+columnName?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace ColumnDomainUsageArray {
 export type Options = never;
 }
 export namespace ColumnPrivileges {
-export type Options = never;
+export namespace Grantor {
+
+      export type Options = never;
+    
+}
+export namespace Grantee {
+
+      export type Options = never;
+    
+}
+export namespace TableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TableSchema {
+
+      export type Options = never;
+    
+}
+export namespace TableName {
+
+      export type Options = never;
+    
+}
+export namespace ColumnName {
+
+      export type Options = never;
+    
+}
+export namespace PrivilegeType {
+
+      export type Options = never;
+    
+}
+export namespace IsGrantable {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ grantor?: InformationSchema.Types.SqlIdentifier.Options,
+grantee?: InformationSchema.Types.SqlIdentifier.Options,
+tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+tableName?: InformationSchema.Types.SqlIdentifier.Options,
+columnName?: InformationSchema.Types.SqlIdentifier.Options,
+privilegeType?: InformationSchema.Types.CharacterData.Options,
+isGrantable?: InformationSchema.Types.YesOrNo.Options
+}
 }
 export namespace ColumnPrivilegesArray {
 export type Options = never;
 }
 export namespace ColumnUdtUsage {
-export type Options = never;
+export namespace UdtCatalog {
+
+      export type Options = never;
+    
+}
+export namespace UdtSchema {
+
+      export type Options = never;
+    
+}
+export namespace UdtName {
+
+      export type Options = never;
+    
+}
+export namespace TableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TableSchema {
+
+      export type Options = never;
+    
+}
+export namespace TableName {
+
+      export type Options = never;
+    
+}
+export namespace ColumnName {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
+udtName?: InformationSchema.Types.SqlIdentifier.Options,
+tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+tableName?: InformationSchema.Types.SqlIdentifier.Options,
+columnName?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace ColumnUdtUsageArray {
 export type Options = never;
 }
 export namespace Columns {
-export type Options = never;
+export namespace TableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TableSchema {
+
+      export type Options = never;
+    
+}
+export namespace TableName {
+
+      export type Options = never;
+    
+}
+export namespace ColumnName {
+
+      export type Options = never;
+    
+}
+export namespace OrdinalPosition {
+
+      export type Options = never;
+    
+}
+export namespace ColumnDefault {
+
+      export type Options = never;
+    
+}
+export namespace IsNullable {
+
+      export type Options = never;
+    
+}
+export namespace DataType {
+
+      export type Options = never;
+    
+}
+export namespace CharacterMaximumLength {
+
+      export type Options = never;
+    
+}
+export namespace CharacterOctetLength {
+
+      export type Options = never;
+    
+}
+export namespace NumericPrecision {
+
+      export type Options = never;
+    
+}
+export namespace NumericPrecisionRadix {
+
+      export type Options = never;
+    
+}
+export namespace NumericScale {
+
+      export type Options = never;
+    
+}
+export namespace DatetimePrecision {
+
+      export type Options = never;
+    
+}
+export namespace IntervalType {
+
+      export type Options = never;
+    
+}
+export namespace IntervalPrecision {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetCatalog {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetSchema {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetName {
+
+      export type Options = never;
+    
+}
+export namespace CollationCatalog {
+
+      export type Options = never;
+    
+}
+export namespace CollationSchema {
+
+      export type Options = never;
+    
+}
+export namespace CollationName {
+
+      export type Options = never;
+    
+}
+export namespace DomainCatalog {
+
+      export type Options = never;
+    
+}
+export namespace DomainSchema {
+
+      export type Options = never;
+    
+}
+export namespace DomainName {
+
+      export type Options = never;
+    
+}
+export namespace UdtCatalog {
+
+      export type Options = never;
+    
+}
+export namespace UdtSchema {
+
+      export type Options = never;
+    
+}
+export namespace UdtName {
+
+      export type Options = never;
+    
+}
+export namespace ScopeCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ScopeSchema {
+
+      export type Options = never;
+    
+}
+export namespace ScopeName {
+
+      export type Options = never;
+    
+}
+export namespace MaximumCardinality {
+
+      export type Options = never;
+    
+}
+export namespace DtdIdentifier {
+
+      export type Options = never;
+    
+}
+export namespace IsSelfReferencing {
+
+      export type Options = never;
+    
+}
+export namespace IsIdentity {
+
+      export type Options = never;
+    
+}
+export namespace IdentityGeneration {
+
+      export type Options = never;
+    
+}
+export namespace IdentityStart {
+
+      export type Options = never;
+    
+}
+export namespace IdentityIncrement {
+
+      export type Options = never;
+    
+}
+export namespace IdentityMaximum {
+
+      export type Options = never;
+    
+}
+export namespace IdentityMinimum {
+
+      export type Options = never;
+    
+}
+export namespace IdentityCycle {
+
+      export type Options = never;
+    
+}
+export namespace IsGenerated {
+
+      export type Options = never;
+    
+}
+export namespace GenerationExpression {
+
+      export type Options = never;
+    
+}
+export namespace IsUpdatable {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+tableName?: InformationSchema.Types.SqlIdentifier.Options,
+columnName?: InformationSchema.Types.SqlIdentifier.Options,
+ordinalPosition?: InformationSchema.Types.CardinalNumber.Options,
+columnDefault?: InformationSchema.Types.CharacterData.Options,
+isNullable?: InformationSchema.Types.YesOrNo.Options,
+dataType?: InformationSchema.Types.CharacterData.Options,
+characterMaximumLength?: InformationSchema.Types.CardinalNumber.Options,
+characterOctetLength?: InformationSchema.Types.CardinalNumber.Options,
+numericPrecision?: InformationSchema.Types.CardinalNumber.Options,
+numericPrecisionRadix?: InformationSchema.Types.CardinalNumber.Options,
+numericScale?: InformationSchema.Types.CardinalNumber.Options,
+datetimePrecision?: InformationSchema.Types.CardinalNumber.Options,
+intervalType?: InformationSchema.Types.CharacterData.Options,
+intervalPrecision?: InformationSchema.Types.CardinalNumber.Options,
+characterSetCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+characterSetSchema?: InformationSchema.Types.SqlIdentifier.Options,
+characterSetName?: InformationSchema.Types.SqlIdentifier.Options,
+collationCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+collationSchema?: InformationSchema.Types.SqlIdentifier.Options,
+collationName?: InformationSchema.Types.SqlIdentifier.Options,
+domainCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+domainSchema?: InformationSchema.Types.SqlIdentifier.Options,
+domainName?: InformationSchema.Types.SqlIdentifier.Options,
+udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
+udtName?: InformationSchema.Types.SqlIdentifier.Options,
+scopeCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+scopeSchema?: InformationSchema.Types.SqlIdentifier.Options,
+scopeName?: InformationSchema.Types.SqlIdentifier.Options,
+maximumCardinality?: InformationSchema.Types.CardinalNumber.Options,
+dtdIdentifier?: InformationSchema.Types.SqlIdentifier.Options,
+isSelfReferencing?: InformationSchema.Types.YesOrNo.Options,
+isIdentity?: InformationSchema.Types.YesOrNo.Options,
+identityGeneration?: InformationSchema.Types.CharacterData.Options,
+identityStart?: InformationSchema.Types.CharacterData.Options,
+identityIncrement?: InformationSchema.Types.CharacterData.Options,
+identityMaximum?: InformationSchema.Types.CharacterData.Options,
+identityMinimum?: InformationSchema.Types.CharacterData.Options,
+identityCycle?: InformationSchema.Types.YesOrNo.Options,
+isGenerated?: InformationSchema.Types.CharacterData.Options,
+generationExpression?: InformationSchema.Types.CharacterData.Options,
+isUpdatable?: InformationSchema.Types.YesOrNo.Options
+}
 }
 export namespace ColumnsArray {
 export type Options = never;
 }
 export namespace ConstraintColumnUsage {
-export type Options = never;
+export namespace TableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TableSchema {
+
+      export type Options = never;
+    
+}
+export namespace TableName {
+
+      export type Options = never;
+    
+}
+export namespace ColumnName {
+
+      export type Options = never;
+    
+}
+export namespace ConstraintCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ConstraintSchema {
+
+      export type Options = never;
+    
+}
+export namespace ConstraintName {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+tableName?: InformationSchema.Types.SqlIdentifier.Options,
+columnName?: InformationSchema.Types.SqlIdentifier.Options,
+constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
+constraintName?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace ConstraintColumnUsageArray {
 export type Options = never;
 }
 export namespace ConstraintTableUsage {
-export type Options = never;
+export namespace TableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TableSchema {
+
+      export type Options = never;
+    
+}
+export namespace TableName {
+
+      export type Options = never;
+    
+}
+export namespace ConstraintCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ConstraintSchema {
+
+      export type Options = never;
+    
+}
+export namespace ConstraintName {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+tableName?: InformationSchema.Types.SqlIdentifier.Options,
+constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
+constraintName?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace ConstraintTableUsageArray {
 export type Options = never;
 }
 export namespace DomainConstraints {
-export type Options = never;
+export namespace ConstraintCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ConstraintSchema {
+
+      export type Options = never;
+    
+}
+export namespace ConstraintName {
+
+      export type Options = never;
+    
+}
+export namespace DomainCatalog {
+
+      export type Options = never;
+    
+}
+export namespace DomainSchema {
+
+      export type Options = never;
+    
+}
+export namespace DomainName {
+
+      export type Options = never;
+    
+}
+export namespace IsDeferrable {
+
+      export type Options = never;
+    
+}
+export namespace InitiallyDeferred {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
+constraintName?: InformationSchema.Types.SqlIdentifier.Options,
+domainCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+domainSchema?: InformationSchema.Types.SqlIdentifier.Options,
+domainName?: InformationSchema.Types.SqlIdentifier.Options,
+isDeferrable?: InformationSchema.Types.YesOrNo.Options,
+initiallyDeferred?: InformationSchema.Types.YesOrNo.Options
+}
 }
 export namespace DomainConstraintsArray {
 export type Options = never;
 }
 export namespace DomainUdtUsage {
-export type Options = never;
+export namespace UdtCatalog {
+
+      export type Options = never;
+    
+}
+export namespace UdtSchema {
+
+      export type Options = never;
+    
+}
+export namespace UdtName {
+
+      export type Options = never;
+    
+}
+export namespace DomainCatalog {
+
+      export type Options = never;
+    
+}
+export namespace DomainSchema {
+
+      export type Options = never;
+    
+}
+export namespace DomainName {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
+udtName?: InformationSchema.Types.SqlIdentifier.Options,
+domainCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+domainSchema?: InformationSchema.Types.SqlIdentifier.Options,
+domainName?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace DomainUdtUsageArray {
 export type Options = never;
 }
 export namespace Domains {
-export type Options = never;
+export namespace DomainCatalog {
+
+      export type Options = never;
+    
+}
+export namespace DomainSchema {
+
+      export type Options = never;
+    
+}
+export namespace DomainName {
+
+      export type Options = never;
+    
+}
+export namespace DataType {
+
+      export type Options = never;
+    
+}
+export namespace CharacterMaximumLength {
+
+      export type Options = never;
+    
+}
+export namespace CharacterOctetLength {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetCatalog {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetSchema {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetName {
+
+      export type Options = never;
+    
+}
+export namespace CollationCatalog {
+
+      export type Options = never;
+    
+}
+export namespace CollationSchema {
+
+      export type Options = never;
+    
+}
+export namespace CollationName {
+
+      export type Options = never;
+    
+}
+export namespace NumericPrecision {
+
+      export type Options = never;
+    
+}
+export namespace NumericPrecisionRadix {
+
+      export type Options = never;
+    
+}
+export namespace NumericScale {
+
+      export type Options = never;
+    
+}
+export namespace DatetimePrecision {
+
+      export type Options = never;
+    
+}
+export namespace IntervalType {
+
+      export type Options = never;
+    
+}
+export namespace IntervalPrecision {
+
+      export type Options = never;
+    
+}
+export namespace DomainDefault {
+
+      export type Options = never;
+    
+}
+export namespace UdtCatalog {
+
+      export type Options = never;
+    
+}
+export namespace UdtSchema {
+
+      export type Options = never;
+    
+}
+export namespace UdtName {
+
+      export type Options = never;
+    
+}
+export namespace ScopeCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ScopeSchema {
+
+      export type Options = never;
+    
+}
+export namespace ScopeName {
+
+      export type Options = never;
+    
+}
+export namespace MaximumCardinality {
+
+      export type Options = never;
+    
+}
+export namespace DtdIdentifier {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ domainCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+domainSchema?: InformationSchema.Types.SqlIdentifier.Options,
+domainName?: InformationSchema.Types.SqlIdentifier.Options,
+dataType?: InformationSchema.Types.CharacterData.Options,
+characterMaximumLength?: InformationSchema.Types.CardinalNumber.Options,
+characterOctetLength?: InformationSchema.Types.CardinalNumber.Options,
+characterSetCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+characterSetSchema?: InformationSchema.Types.SqlIdentifier.Options,
+characterSetName?: InformationSchema.Types.SqlIdentifier.Options,
+collationCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+collationSchema?: InformationSchema.Types.SqlIdentifier.Options,
+collationName?: InformationSchema.Types.SqlIdentifier.Options,
+numericPrecision?: InformationSchema.Types.CardinalNumber.Options,
+numericPrecisionRadix?: InformationSchema.Types.CardinalNumber.Options,
+numericScale?: InformationSchema.Types.CardinalNumber.Options,
+datetimePrecision?: InformationSchema.Types.CardinalNumber.Options,
+intervalType?: InformationSchema.Types.CharacterData.Options,
+intervalPrecision?: InformationSchema.Types.CardinalNumber.Options,
+domainDefault?: InformationSchema.Types.CharacterData.Options,
+udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
+udtName?: InformationSchema.Types.SqlIdentifier.Options,
+scopeCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+scopeSchema?: InformationSchema.Types.SqlIdentifier.Options,
+scopeName?: InformationSchema.Types.SqlIdentifier.Options,
+maximumCardinality?: InformationSchema.Types.CardinalNumber.Options,
+dtdIdentifier?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace DomainsArray {
 export type Options = never;
 }
 export namespace EnabledRoles {
-export type Options = never;
+export namespace RoleName {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ roleName?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace EnabledRolesArray {
 export type Options = never;
 }
 export namespace KeyColumnUsage {
-export type Options = never;
+export namespace ConstraintCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ConstraintSchema {
+
+      export type Options = never;
+    
+}
+export namespace ConstraintName {
+
+      export type Options = never;
+    
+}
+export namespace TableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TableSchema {
+
+      export type Options = never;
+    
+}
+export namespace TableName {
+
+      export type Options = never;
+    
+}
+export namespace ColumnName {
+
+      export type Options = never;
+    
+}
+export namespace OrdinalPosition {
+
+      export type Options = never;
+    
+}
+export namespace PositionInUniqueConstraint {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
+constraintName?: InformationSchema.Types.SqlIdentifier.Options,
+tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+tableName?: InformationSchema.Types.SqlIdentifier.Options,
+columnName?: InformationSchema.Types.SqlIdentifier.Options,
+ordinalPosition?: InformationSchema.Types.CardinalNumber.Options,
+positionInUniqueConstraint?: InformationSchema.Types.CardinalNumber.Options
+}
 }
 export namespace KeyColumnUsageArray {
 export type Options = never;
 }
 export namespace Parameters {
-export type Options = never;
+export namespace SpecificCatalog {
+
+      export type Options = never;
+    
+}
+export namespace SpecificSchema {
+
+      export type Options = never;
+    
+}
+export namespace SpecificName {
+
+      export type Options = never;
+    
+}
+export namespace OrdinalPosition {
+
+      export type Options = never;
+    
+}
+export namespace ParameterMode {
+
+      export type Options = never;
+    
+}
+export namespace IsResult {
+
+      export type Options = never;
+    
+}
+export namespace AsLocator {
+
+      export type Options = never;
+    
+}
+export namespace ParameterName {
+
+      export type Options = never;
+    
+}
+export namespace DataType {
+
+      export type Options = never;
+    
+}
+export namespace CharacterMaximumLength {
+
+      export type Options = never;
+    
+}
+export namespace CharacterOctetLength {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetCatalog {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetSchema {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetName {
+
+      export type Options = never;
+    
+}
+export namespace CollationCatalog {
+
+      export type Options = never;
+    
+}
+export namespace CollationSchema {
+
+      export type Options = never;
+    
+}
+export namespace CollationName {
+
+      export type Options = never;
+    
+}
+export namespace NumericPrecision {
+
+      export type Options = never;
+    
+}
+export namespace NumericPrecisionRadix {
+
+      export type Options = never;
+    
+}
+export namespace NumericScale {
+
+      export type Options = never;
+    
+}
+export namespace DatetimePrecision {
+
+      export type Options = never;
+    
+}
+export namespace IntervalType {
+
+      export type Options = never;
+    
+}
+export namespace IntervalPrecision {
+
+      export type Options = never;
+    
+}
+export namespace UdtCatalog {
+
+      export type Options = never;
+    
+}
+export namespace UdtSchema {
+
+      export type Options = never;
+    
+}
+export namespace UdtName {
+
+      export type Options = never;
+    
+}
+export namespace ScopeCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ScopeSchema {
+
+      export type Options = never;
+    
+}
+export namespace ScopeName {
+
+      export type Options = never;
+    
+}
+export namespace MaximumCardinality {
+
+      export type Options = never;
+    
+}
+export namespace DtdIdentifier {
+
+      export type Options = never;
+    
+}
+export namespace ParameterDefault {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
+specificName?: InformationSchema.Types.SqlIdentifier.Options,
+ordinalPosition?: InformationSchema.Types.CardinalNumber.Options,
+parameterMode?: InformationSchema.Types.CharacterData.Options,
+isResult?: InformationSchema.Types.YesOrNo.Options,
+asLocator?: InformationSchema.Types.YesOrNo.Options,
+parameterName?: InformationSchema.Types.SqlIdentifier.Options,
+dataType?: InformationSchema.Types.CharacterData.Options,
+characterMaximumLength?: InformationSchema.Types.CardinalNumber.Options,
+characterOctetLength?: InformationSchema.Types.CardinalNumber.Options,
+characterSetCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+characterSetSchema?: InformationSchema.Types.SqlIdentifier.Options,
+characterSetName?: InformationSchema.Types.SqlIdentifier.Options,
+collationCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+collationSchema?: InformationSchema.Types.SqlIdentifier.Options,
+collationName?: InformationSchema.Types.SqlIdentifier.Options,
+numericPrecision?: InformationSchema.Types.CardinalNumber.Options,
+numericPrecisionRadix?: InformationSchema.Types.CardinalNumber.Options,
+numericScale?: InformationSchema.Types.CardinalNumber.Options,
+datetimePrecision?: InformationSchema.Types.CardinalNumber.Options,
+intervalType?: InformationSchema.Types.CharacterData.Options,
+intervalPrecision?: InformationSchema.Types.CardinalNumber.Options,
+udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
+udtName?: InformationSchema.Types.SqlIdentifier.Options,
+scopeCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+scopeSchema?: InformationSchema.Types.SqlIdentifier.Options,
+scopeName?: InformationSchema.Types.SqlIdentifier.Options,
+maximumCardinality?: InformationSchema.Types.CardinalNumber.Options,
+dtdIdentifier?: InformationSchema.Types.SqlIdentifier.Options,
+parameterDefault?: InformationSchema.Types.CharacterData.Options
+}
 }
 export namespace ParametersArray {
 export type Options = never;
 }
 export namespace ReferentialConstraints {
-export type Options = never;
+export namespace ConstraintCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ConstraintSchema {
+
+      export type Options = never;
+    
+}
+export namespace ConstraintName {
+
+      export type Options = never;
+    
+}
+export namespace UniqueConstraintCatalog {
+
+      export type Options = never;
+    
+}
+export namespace UniqueConstraintSchema {
+
+      export type Options = never;
+    
+}
+export namespace UniqueConstraintName {
+
+      export type Options = never;
+    
+}
+export namespace MatchOption {
+
+      export type Options = never;
+    
+}
+export namespace UpdateRule {
+
+      export type Options = never;
+    
+}
+export namespace DeleteRule {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
+constraintName?: InformationSchema.Types.SqlIdentifier.Options,
+uniqueConstraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+uniqueConstraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
+uniqueConstraintName?: InformationSchema.Types.SqlIdentifier.Options,
+matchOption?: InformationSchema.Types.CharacterData.Options,
+updateRule?: InformationSchema.Types.CharacterData.Options,
+deleteRule?: InformationSchema.Types.CharacterData.Options
+}
 }
 export namespace ReferentialConstraintsArray {
 export type Options = never;
 }
 export namespace RoleColumnGrants {
-export type Options = never;
+export namespace Grantor {
+
+      export type Options = never;
+    
+}
+export namespace Grantee {
+
+      export type Options = never;
+    
+}
+export namespace TableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TableSchema {
+
+      export type Options = never;
+    
+}
+export namespace TableName {
+
+      export type Options = never;
+    
+}
+export namespace ColumnName {
+
+      export type Options = never;
+    
+}
+export namespace PrivilegeType {
+
+      export type Options = never;
+    
+}
+export namespace IsGrantable {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ grantor?: InformationSchema.Types.SqlIdentifier.Options,
+grantee?: InformationSchema.Types.SqlIdentifier.Options,
+tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+tableName?: InformationSchema.Types.SqlIdentifier.Options,
+columnName?: InformationSchema.Types.SqlIdentifier.Options,
+privilegeType?: InformationSchema.Types.CharacterData.Options,
+isGrantable?: InformationSchema.Types.YesOrNo.Options
+}
 }
 export namespace RoleColumnGrantsArray {
 export type Options = never;
 }
 export namespace RoutineColumnUsage {
-export type Options = never;
+export namespace SpecificCatalog {
+
+      export type Options = never;
+    
+}
+export namespace SpecificSchema {
+
+      export type Options = never;
+    
+}
+export namespace SpecificName {
+
+      export type Options = never;
+    
+}
+export namespace RoutineCatalog {
+
+      export type Options = never;
+    
+}
+export namespace RoutineSchema {
+
+      export type Options = never;
+    
+}
+export namespace RoutineName {
+
+      export type Options = never;
+    
+}
+export namespace TableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TableSchema {
+
+      export type Options = never;
+    
+}
+export namespace TableName {
+
+      export type Options = never;
+    
+}
+export namespace ColumnName {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
+specificName?: InformationSchema.Types.SqlIdentifier.Options,
+routineCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+routineSchema?: InformationSchema.Types.SqlIdentifier.Options,
+routineName?: InformationSchema.Types.SqlIdentifier.Options,
+tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+tableName?: InformationSchema.Types.SqlIdentifier.Options,
+columnName?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace RoutineColumnUsageArray {
 export type Options = never;
 }
 export namespace RoutinePrivileges {
-export type Options = never;
+export namespace Grantor {
+
+      export type Options = never;
+    
+}
+export namespace Grantee {
+
+      export type Options = never;
+    
+}
+export namespace SpecificCatalog {
+
+      export type Options = never;
+    
+}
+export namespace SpecificSchema {
+
+      export type Options = never;
+    
+}
+export namespace SpecificName {
+
+      export type Options = never;
+    
+}
+export namespace RoutineCatalog {
+
+      export type Options = never;
+    
+}
+export namespace RoutineSchema {
+
+      export type Options = never;
+    
+}
+export namespace RoutineName {
+
+      export type Options = never;
+    
+}
+export namespace PrivilegeType {
+
+      export type Options = never;
+    
+}
+export namespace IsGrantable {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ grantor?: InformationSchema.Types.SqlIdentifier.Options,
+grantee?: InformationSchema.Types.SqlIdentifier.Options,
+specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
+specificName?: InformationSchema.Types.SqlIdentifier.Options,
+routineCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+routineSchema?: InformationSchema.Types.SqlIdentifier.Options,
+routineName?: InformationSchema.Types.SqlIdentifier.Options,
+privilegeType?: InformationSchema.Types.CharacterData.Options,
+isGrantable?: InformationSchema.Types.YesOrNo.Options
+}
 }
 export namespace RoutinePrivilegesArray {
 export type Options = never;
 }
 export namespace RoleRoutineGrants {
-export type Options = never;
+export namespace Grantor {
+
+      export type Options = never;
+    
+}
+export namespace Grantee {
+
+      export type Options = never;
+    
+}
+export namespace SpecificCatalog {
+
+      export type Options = never;
+    
+}
+export namespace SpecificSchema {
+
+      export type Options = never;
+    
+}
+export namespace SpecificName {
+
+      export type Options = never;
+    
+}
+export namespace RoutineCatalog {
+
+      export type Options = never;
+    
+}
+export namespace RoutineSchema {
+
+      export type Options = never;
+    
+}
+export namespace RoutineName {
+
+      export type Options = never;
+    
+}
+export namespace PrivilegeType {
+
+      export type Options = never;
+    
+}
+export namespace IsGrantable {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ grantor?: InformationSchema.Types.SqlIdentifier.Options,
+grantee?: InformationSchema.Types.SqlIdentifier.Options,
+specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
+specificName?: InformationSchema.Types.SqlIdentifier.Options,
+routineCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+routineSchema?: InformationSchema.Types.SqlIdentifier.Options,
+routineName?: InformationSchema.Types.SqlIdentifier.Options,
+privilegeType?: InformationSchema.Types.CharacterData.Options,
+isGrantable?: InformationSchema.Types.YesOrNo.Options
+}
 }
 export namespace RoleRoutineGrantsArray {
 export type Options = never;
 }
 export namespace RoutineRoutineUsage {
-export type Options = never;
+export namespace SpecificCatalog {
+
+      export type Options = never;
+    
+}
+export namespace SpecificSchema {
+
+      export type Options = never;
+    
+}
+export namespace SpecificName {
+
+      export type Options = never;
+    
+}
+export namespace RoutineCatalog {
+
+      export type Options = never;
+    
+}
+export namespace RoutineSchema {
+
+      export type Options = never;
+    
+}
+export namespace RoutineName {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
+specificName?: InformationSchema.Types.SqlIdentifier.Options,
+routineCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+routineSchema?: InformationSchema.Types.SqlIdentifier.Options,
+routineName?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace RoutineRoutineUsageArray {
 export type Options = never;
 }
 export namespace RoutineSequenceUsage {
-export type Options = never;
+export namespace SpecificCatalog {
+
+      export type Options = never;
+    
+}
+export namespace SpecificSchema {
+
+      export type Options = never;
+    
+}
+export namespace SpecificName {
+
+      export type Options = never;
+    
+}
+export namespace RoutineCatalog {
+
+      export type Options = never;
+    
+}
+export namespace RoutineSchema {
+
+      export type Options = never;
+    
+}
+export namespace RoutineName {
+
+      export type Options = never;
+    
+}
+export namespace SequenceCatalog {
+
+      export type Options = never;
+    
+}
+export namespace SequenceSchema {
+
+      export type Options = never;
+    
+}
+export namespace SequenceName {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
+specificName?: InformationSchema.Types.SqlIdentifier.Options,
+routineCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+routineSchema?: InformationSchema.Types.SqlIdentifier.Options,
+routineName?: InformationSchema.Types.SqlIdentifier.Options,
+sequenceCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+sequenceSchema?: InformationSchema.Types.SqlIdentifier.Options,
+sequenceName?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace RoutineSequenceUsageArray {
 export type Options = never;
 }
 export namespace RoutineTableUsage {
-export type Options = never;
+export namespace SpecificCatalog {
+
+      export type Options = never;
+    
+}
+export namespace SpecificSchema {
+
+      export type Options = never;
+    
+}
+export namespace SpecificName {
+
+      export type Options = never;
+    
+}
+export namespace RoutineCatalog {
+
+      export type Options = never;
+    
+}
+export namespace RoutineSchema {
+
+      export type Options = never;
+    
+}
+export namespace RoutineName {
+
+      export type Options = never;
+    
+}
+export namespace TableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TableSchema {
+
+      export type Options = never;
+    
+}
+export namespace TableName {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
+specificName?: InformationSchema.Types.SqlIdentifier.Options,
+routineCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+routineSchema?: InformationSchema.Types.SqlIdentifier.Options,
+routineName?: InformationSchema.Types.SqlIdentifier.Options,
+tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+tableName?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace RoutineTableUsageArray {
 export type Options = never;
 }
 export namespace Routines {
-export type Options = never;
+export namespace SpecificCatalog {
+
+      export type Options = never;
+    
+}
+export namespace SpecificSchema {
+
+      export type Options = never;
+    
+}
+export namespace SpecificName {
+
+      export type Options = never;
+    
+}
+export namespace RoutineCatalog {
+
+      export type Options = never;
+    
+}
+export namespace RoutineSchema {
+
+      export type Options = never;
+    
+}
+export namespace RoutineName {
+
+      export type Options = never;
+    
+}
+export namespace RoutineType {
+
+      export type Options = never;
+    
+}
+export namespace ModuleCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ModuleSchema {
+
+      export type Options = never;
+    
+}
+export namespace ModuleName {
+
+      export type Options = never;
+    
+}
+export namespace UdtCatalog {
+
+      export type Options = never;
+    
+}
+export namespace UdtSchema {
+
+      export type Options = never;
+    
+}
+export namespace UdtName {
+
+      export type Options = never;
+    
+}
+export namespace DataType {
+
+      export type Options = never;
+    
+}
+export namespace CharacterMaximumLength {
+
+      export type Options = never;
+    
+}
+export namespace CharacterOctetLength {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetCatalog {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetSchema {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetName {
+
+      export type Options = never;
+    
+}
+export namespace CollationCatalog {
+
+      export type Options = never;
+    
+}
+export namespace CollationSchema {
+
+      export type Options = never;
+    
+}
+export namespace CollationName {
+
+      export type Options = never;
+    
+}
+export namespace NumericPrecision {
+
+      export type Options = never;
+    
+}
+export namespace NumericPrecisionRadix {
+
+      export type Options = never;
+    
+}
+export namespace NumericScale {
+
+      export type Options = never;
+    
+}
+export namespace DatetimePrecision {
+
+      export type Options = never;
+    
+}
+export namespace IntervalType {
+
+      export type Options = never;
+    
+}
+export namespace IntervalPrecision {
+
+      export type Options = never;
+    
+}
+export namespace TypeUdtCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TypeUdtSchema {
+
+      export type Options = never;
+    
+}
+export namespace TypeUdtName {
+
+      export type Options = never;
+    
+}
+export namespace ScopeCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ScopeSchema {
+
+      export type Options = never;
+    
+}
+export namespace ScopeName {
+
+      export type Options = never;
+    
+}
+export namespace MaximumCardinality {
+
+      export type Options = never;
+    
+}
+export namespace DtdIdentifier {
+
+      export type Options = never;
+    
+}
+export namespace RoutineBody {
+
+      export type Options = never;
+    
+}
+export namespace RoutineDefinition {
+
+      export type Options = never;
+    
+}
+export namespace ExternalName {
+
+      export type Options = never;
+    
+}
+export namespace ExternalLanguage {
+
+      export type Options = never;
+    
+}
+export namespace ParameterStyle {
+
+      export type Options = never;
+    
+}
+export namespace IsDeterministic {
+
+      export type Options = never;
+    
+}
+export namespace SqlDataAccess {
+
+      export type Options = never;
+    
+}
+export namespace IsNullCall {
+
+      export type Options = never;
+    
+}
+export namespace SqlPath {
+
+      export type Options = never;
+    
+}
+export namespace SchemaLevelRoutine {
+
+      export type Options = never;
+    
+}
+export namespace MaxDynamicResultSets {
+
+      export type Options = never;
+    
+}
+export namespace IsUserDefinedCast {
+
+      export type Options = never;
+    
+}
+export namespace IsImplicitlyInvocable {
+
+      export type Options = never;
+    
+}
+export namespace SecurityType {
+
+      export type Options = never;
+    
+}
+export namespace ToSqlSpecificCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ToSqlSpecificSchema {
+
+      export type Options = never;
+    
+}
+export namespace ToSqlSpecificName {
+
+      export type Options = never;
+    
+}
+export namespace AsLocator {
+
+      export type Options = never;
+    
+}
+export namespace Created {
+
+      export type Options = never;
+    
+}
+export namespace LastAltered {
+
+      export type Options = never;
+    
+}
+export namespace NewSavepointLevel {
+
+      export type Options = never;
+    
+}
+export namespace IsUdtDependent {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastFromDataType {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastAsLocator {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastCharMaxLength {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastCharOctetLength {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastCharSetCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastCharSetSchema {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastCharSetName {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastCollationCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastCollationSchema {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastCollationName {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastNumericPrecision {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastNumericPrecisionRadix {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastNumericScale {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastDatetimePrecision {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastIntervalType {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastIntervalPrecision {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastTypeUdtCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastTypeUdtSchema {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastTypeUdtName {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastScopeCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastScopeSchema {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastScopeName {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastMaximumCardinality {
+
+      export type Options = never;
+    
+}
+export namespace ResultCastDtdIdentifier {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
+specificName?: InformationSchema.Types.SqlIdentifier.Options,
+routineCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+routineSchema?: InformationSchema.Types.SqlIdentifier.Options,
+routineName?: InformationSchema.Types.SqlIdentifier.Options,
+routineType?: InformationSchema.Types.CharacterData.Options,
+moduleCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+moduleSchema?: InformationSchema.Types.SqlIdentifier.Options,
+moduleName?: InformationSchema.Types.SqlIdentifier.Options,
+udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
+udtName?: InformationSchema.Types.SqlIdentifier.Options,
+dataType?: InformationSchema.Types.CharacterData.Options,
+characterMaximumLength?: InformationSchema.Types.CardinalNumber.Options,
+characterOctetLength?: InformationSchema.Types.CardinalNumber.Options,
+characterSetCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+characterSetSchema?: InformationSchema.Types.SqlIdentifier.Options,
+characterSetName?: InformationSchema.Types.SqlIdentifier.Options,
+collationCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+collationSchema?: InformationSchema.Types.SqlIdentifier.Options,
+collationName?: InformationSchema.Types.SqlIdentifier.Options,
+numericPrecision?: InformationSchema.Types.CardinalNumber.Options,
+numericPrecisionRadix?: InformationSchema.Types.CardinalNumber.Options,
+numericScale?: InformationSchema.Types.CardinalNumber.Options,
+datetimePrecision?: InformationSchema.Types.CardinalNumber.Options,
+intervalType?: InformationSchema.Types.CharacterData.Options,
+intervalPrecision?: InformationSchema.Types.CardinalNumber.Options,
+typeUdtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+typeUdtSchema?: InformationSchema.Types.SqlIdentifier.Options,
+typeUdtName?: InformationSchema.Types.SqlIdentifier.Options,
+scopeCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+scopeSchema?: InformationSchema.Types.SqlIdentifier.Options,
+scopeName?: InformationSchema.Types.SqlIdentifier.Options,
+maximumCardinality?: InformationSchema.Types.CardinalNumber.Options,
+dtdIdentifier?: InformationSchema.Types.SqlIdentifier.Options,
+routineBody?: InformationSchema.Types.CharacterData.Options,
+routineDefinition?: InformationSchema.Types.CharacterData.Options,
+externalName?: InformationSchema.Types.CharacterData.Options,
+externalLanguage?: InformationSchema.Types.CharacterData.Options,
+parameterStyle?: InformationSchema.Types.CharacterData.Options,
+isDeterministic?: InformationSchema.Types.YesOrNo.Options,
+sqlDataAccess?: InformationSchema.Types.CharacterData.Options,
+isNullCall?: InformationSchema.Types.YesOrNo.Options,
+sqlPath?: InformationSchema.Types.CharacterData.Options,
+schemaLevelRoutine?: InformationSchema.Types.YesOrNo.Options,
+maxDynamicResultSets?: InformationSchema.Types.CardinalNumber.Options,
+isUserDefinedCast?: InformationSchema.Types.YesOrNo.Options,
+isImplicitlyInvocable?: InformationSchema.Types.YesOrNo.Options,
+securityType?: InformationSchema.Types.CharacterData.Options,
+toSqlSpecificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+toSqlSpecificSchema?: InformationSchema.Types.SqlIdentifier.Options,
+toSqlSpecificName?: InformationSchema.Types.SqlIdentifier.Options,
+asLocator?: InformationSchema.Types.YesOrNo.Options,
+created?: InformationSchema.Types.TimeStamp.Options,
+lastAltered?: InformationSchema.Types.TimeStamp.Options,
+newSavepointLevel?: InformationSchema.Types.YesOrNo.Options,
+isUdtDependent?: InformationSchema.Types.YesOrNo.Options,
+resultCastFromDataType?: InformationSchema.Types.CharacterData.Options,
+resultCastAsLocator?: InformationSchema.Types.YesOrNo.Options,
+resultCastCharMaxLength?: InformationSchema.Types.CardinalNumber.Options,
+resultCastCharOctetLength?: InformationSchema.Types.CardinalNumber.Options,
+resultCastCharSetCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+resultCastCharSetSchema?: InformationSchema.Types.SqlIdentifier.Options,
+resultCastCharSetName?: InformationSchema.Types.SqlIdentifier.Options,
+resultCastCollationCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+resultCastCollationSchema?: InformationSchema.Types.SqlIdentifier.Options,
+resultCastCollationName?: InformationSchema.Types.SqlIdentifier.Options,
+resultCastNumericPrecision?: InformationSchema.Types.CardinalNumber.Options,
+resultCastNumericPrecisionRadix?: InformationSchema.Types.CardinalNumber.Options,
+resultCastNumericScale?: InformationSchema.Types.CardinalNumber.Options,
+resultCastDatetimePrecision?: InformationSchema.Types.CardinalNumber.Options,
+resultCastIntervalType?: InformationSchema.Types.CharacterData.Options,
+resultCastIntervalPrecision?: InformationSchema.Types.CardinalNumber.Options,
+resultCastTypeUdtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+resultCastTypeUdtSchema?: InformationSchema.Types.SqlIdentifier.Options,
+resultCastTypeUdtName?: InformationSchema.Types.SqlIdentifier.Options,
+resultCastScopeCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+resultCastScopeSchema?: InformationSchema.Types.SqlIdentifier.Options,
+resultCastScopeName?: InformationSchema.Types.SqlIdentifier.Options,
+resultCastMaximumCardinality?: InformationSchema.Types.CardinalNumber.Options,
+resultCastDtdIdentifier?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace RoutinesArray {
 export type Options = never;
 }
 export namespace Schemata {
-export type Options = never;
+export namespace CatalogName {
+
+      export type Options = never;
+    
+}
+export namespace SchemaName {
+
+      export type Options = never;
+    
+}
+export namespace SchemaOwner {
+
+      export type Options = never;
+    
+}
+export namespace DefaultCharacterSetCatalog {
+
+      export type Options = never;
+    
+}
+export namespace DefaultCharacterSetSchema {
+
+      export type Options = never;
+    
+}
+export namespace DefaultCharacterSetName {
+
+      export type Options = never;
+    
+}
+export namespace SqlPath {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ catalogName?: InformationSchema.Types.SqlIdentifier.Options,
+schemaName?: InformationSchema.Types.SqlIdentifier.Options,
+schemaOwner?: InformationSchema.Types.SqlIdentifier.Options,
+defaultCharacterSetCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+defaultCharacterSetSchema?: InformationSchema.Types.SqlIdentifier.Options,
+defaultCharacterSetName?: InformationSchema.Types.SqlIdentifier.Options,
+sqlPath?: InformationSchema.Types.CharacterData.Options
+}
 }
 export namespace SchemataArray {
 export type Options = never;
 }
 export namespace Sequences {
-export type Options = never;
+export namespace SequenceCatalog {
+
+      export type Options = never;
+    
+}
+export namespace SequenceSchema {
+
+      export type Options = never;
+    
+}
+export namespace SequenceName {
+
+      export type Options = never;
+    
+}
+export namespace DataType {
+
+      export type Options = never;
+    
+}
+export namespace NumericPrecision {
+
+      export type Options = never;
+    
+}
+export namespace NumericPrecisionRadix {
+
+      export type Options = never;
+    
+}
+export namespace NumericScale {
+
+      export type Options = never;
+    
+}
+export namespace StartValue {
+
+      export type Options = never;
+    
+}
+export namespace MinimumValue {
+
+      export type Options = never;
+    
+}
+export namespace MaximumValue {
+
+      export type Options = never;
+    
+}
+export namespace Increment {
+
+      export type Options = never;
+    
+}
+export namespace CycleOption {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ sequenceCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+sequenceSchema?: InformationSchema.Types.SqlIdentifier.Options,
+sequenceName?: InformationSchema.Types.SqlIdentifier.Options,
+dataType?: InformationSchema.Types.CharacterData.Options,
+numericPrecision?: InformationSchema.Types.CardinalNumber.Options,
+numericPrecisionRadix?: InformationSchema.Types.CardinalNumber.Options,
+numericScale?: InformationSchema.Types.CardinalNumber.Options,
+startValue?: InformationSchema.Types.CharacterData.Options,
+minimumValue?: InformationSchema.Types.CharacterData.Options,
+maximumValue?: InformationSchema.Types.CharacterData.Options,
+increment?: InformationSchema.Types.CharacterData.Options,
+cycleOption?: InformationSchema.Types.YesOrNo.Options
+}
 }
 export namespace SequencesArray {
 export type Options = never;
 }
 export namespace SqlFeatures {
-export type Options = never;
+export namespace FeatureId {
+
+      export type Options = never;
+    
+}
+export namespace FeatureName {
+
+      export type Options = never;
+    
+}
+export namespace SubFeatureId {
+
+      export type Options = never;
+    
+}
+export namespace SubFeatureName {
+
+      export type Options = never;
+    
+}
+export namespace IsSupported {
+
+      export type Options = never;
+    
+}
+export namespace IsVerifiedBy {
+
+      export type Options = never;
+    
+}
+export namespace Comments {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ featureId?: InformationSchema.Types.CharacterData.Options,
+featureName?: InformationSchema.Types.CharacterData.Options,
+subFeatureId?: InformationSchema.Types.CharacterData.Options,
+subFeatureName?: InformationSchema.Types.CharacterData.Options,
+isSupported?: InformationSchema.Types.YesOrNo.Options,
+isVerifiedBy?: InformationSchema.Types.CharacterData.Options,
+comments?: InformationSchema.Types.CharacterData.Options
+}
 }
 export namespace SqlFeaturesArray {
 export type Options = never;
 }
 export namespace SqlImplementationInfo {
-export type Options = never;
+export namespace ImplementationInfoId {
+
+      export type Options = never;
+    
+}
+export namespace ImplementationInfoName {
+
+      export type Options = never;
+    
+}
+export namespace IntegerValue {
+
+      export type Options = never;
+    
+}
+export namespace CharacterValue {
+
+      export type Options = never;
+    
+}
+export namespace Comments {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ implementationInfoId?: InformationSchema.Types.CharacterData.Options,
+implementationInfoName?: InformationSchema.Types.CharacterData.Options,
+integerValue?: InformationSchema.Types.CardinalNumber.Options,
+characterValue?: InformationSchema.Types.CharacterData.Options,
+comments?: InformationSchema.Types.CharacterData.Options
+}
 }
 export namespace SqlImplementationInfoArray {
 export type Options = never;
 }
 export namespace SqlParts {
-export type Options = never;
+export namespace FeatureId {
+
+      export type Options = never;
+    
+}
+export namespace FeatureName {
+
+      export type Options = never;
+    
+}
+export namespace IsSupported {
+
+      export type Options = never;
+    
+}
+export namespace IsVerifiedBy {
+
+      export type Options = never;
+    
+}
+export namespace Comments {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ featureId?: InformationSchema.Types.CharacterData.Options,
+featureName?: InformationSchema.Types.CharacterData.Options,
+isSupported?: InformationSchema.Types.YesOrNo.Options,
+isVerifiedBy?: InformationSchema.Types.CharacterData.Options,
+comments?: InformationSchema.Types.CharacterData.Options
+}
 }
 export namespace SqlPartsArray {
 export type Options = never;
 }
 export namespace SqlSizing {
-export type Options = never;
+export namespace SizingId {
+
+      export type Options = never;
+    
+}
+export namespace SizingName {
+
+      export type Options = never;
+    
+}
+export namespace SupportedValue {
+
+      export type Options = never;
+    
+}
+export namespace Comments {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ sizingId?: InformationSchema.Types.CardinalNumber.Options,
+sizingName?: InformationSchema.Types.CharacterData.Options,
+supportedValue?: InformationSchema.Types.CardinalNumber.Options,
+comments?: InformationSchema.Types.CharacterData.Options
+}
 }
 export namespace SqlSizingArray {
 export type Options = never;
 }
 export namespace TableConstraints {
-export type Options = never;
+export namespace ConstraintCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ConstraintSchema {
+
+      export type Options = never;
+    
+}
+export namespace ConstraintName {
+
+      export type Options = never;
+    
+}
+export namespace TableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TableSchema {
+
+      export type Options = never;
+    
+}
+export namespace TableName {
+
+      export type Options = never;
+    
+}
+export namespace ConstraintType {
+
+      export type Options = never;
+    
+}
+export namespace IsDeferrable {
+
+      export type Options = never;
+    
+}
+export namespace InitiallyDeferred {
+
+      export type Options = never;
+    
+}
+export namespace Enforced {
+
+      export type Options = never;
+    
+}
+export namespace NullsDistinct {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
+constraintName?: InformationSchema.Types.SqlIdentifier.Options,
+tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+tableName?: InformationSchema.Types.SqlIdentifier.Options,
+constraintType?: InformationSchema.Types.CharacterData.Options,
+isDeferrable?: InformationSchema.Types.YesOrNo.Options,
+initiallyDeferred?: InformationSchema.Types.YesOrNo.Options,
+enforced?: InformationSchema.Types.YesOrNo.Options,
+nullsDistinct?: InformationSchema.Types.YesOrNo.Options
+}
 }
 export namespace TableConstraintsArray {
 export type Options = never;
 }
 export namespace TablePrivileges {
-export type Options = never;
+export namespace Grantor {
+
+      export type Options = never;
+    
+}
+export namespace Grantee {
+
+      export type Options = never;
+    
+}
+export namespace TableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TableSchema {
+
+      export type Options = never;
+    
+}
+export namespace TableName {
+
+      export type Options = never;
+    
+}
+export namespace PrivilegeType {
+
+      export type Options = never;
+    
+}
+export namespace IsGrantable {
+
+      export type Options = never;
+    
+}
+export namespace WithHierarchy {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ grantor?: InformationSchema.Types.SqlIdentifier.Options,
+grantee?: InformationSchema.Types.SqlIdentifier.Options,
+tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+tableName?: InformationSchema.Types.SqlIdentifier.Options,
+privilegeType?: InformationSchema.Types.CharacterData.Options,
+isGrantable?: InformationSchema.Types.YesOrNo.Options,
+withHierarchy?: InformationSchema.Types.YesOrNo.Options
+}
 }
 export namespace TablePrivilegesArray {
 export type Options = never;
 }
 export namespace RoleTableGrants {
-export type Options = never;
+export namespace Grantor {
+
+      export type Options = never;
+    
+}
+export namespace Grantee {
+
+      export type Options = never;
+    
+}
+export namespace TableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TableSchema {
+
+      export type Options = never;
+    
+}
+export namespace TableName {
+
+      export type Options = never;
+    
+}
+export namespace PrivilegeType {
+
+      export type Options = never;
+    
+}
+export namespace IsGrantable {
+
+      export type Options = never;
+    
+}
+export namespace WithHierarchy {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ grantor?: InformationSchema.Types.SqlIdentifier.Options,
+grantee?: InformationSchema.Types.SqlIdentifier.Options,
+tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+tableName?: InformationSchema.Types.SqlIdentifier.Options,
+privilegeType?: InformationSchema.Types.CharacterData.Options,
+isGrantable?: InformationSchema.Types.YesOrNo.Options,
+withHierarchy?: InformationSchema.Types.YesOrNo.Options
+}
 }
 export namespace RoleTableGrantsArray {
 export type Options = never;
 }
 export namespace Tables {
-export type Options = never;
+export namespace TableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TableSchema {
+
+      export type Options = never;
+    
+}
+export namespace TableName {
+
+      export type Options = never;
+    
+}
+export namespace TableType {
+
+      export type Options = never;
+    
+}
+export namespace SelfReferencingColumnName {
+
+      export type Options = never;
+    
+}
+export namespace ReferenceGeneration {
+
+      export type Options = never;
+    
+}
+export namespace UserDefinedTypeCatalog {
+
+      export type Options = never;
+    
+}
+export namespace UserDefinedTypeSchema {
+
+      export type Options = never;
+    
+}
+export namespace UserDefinedTypeName {
+
+      export type Options = never;
+    
+}
+export namespace IsInsertableInto {
+
+      export type Options = never;
+    
+}
+export namespace IsTyped {
+
+      export type Options = never;
+    
+}
+export namespace CommitAction {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+tableName?: InformationSchema.Types.SqlIdentifier.Options,
+tableType?: InformationSchema.Types.CharacterData.Options,
+selfReferencingColumnName?: InformationSchema.Types.SqlIdentifier.Options,
+referenceGeneration?: InformationSchema.Types.CharacterData.Options,
+userDefinedTypeCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+userDefinedTypeSchema?: InformationSchema.Types.SqlIdentifier.Options,
+userDefinedTypeName?: InformationSchema.Types.SqlIdentifier.Options,
+isInsertableInto?: InformationSchema.Types.YesOrNo.Options,
+isTyped?: InformationSchema.Types.YesOrNo.Options,
+commitAction?: InformationSchema.Types.CharacterData.Options
+}
 }
 export namespace TablesArray {
 export type Options = never;
 }
 export namespace Transforms {
-export type Options = never;
+export namespace UdtCatalog {
+
+      export type Options = never;
+    
+}
+export namespace UdtSchema {
+
+      export type Options = never;
+    
+}
+export namespace UdtName {
+
+      export type Options = never;
+    
+}
+export namespace SpecificCatalog {
+
+      export type Options = never;
+    
+}
+export namespace SpecificSchema {
+
+      export type Options = never;
+    
+}
+export namespace SpecificName {
+
+      export type Options = never;
+    
+}
+export namespace GroupName {
+
+      export type Options = never;
+    
+}
+export namespace TransformType {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
+udtName?: InformationSchema.Types.SqlIdentifier.Options,
+specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
+specificName?: InformationSchema.Types.SqlIdentifier.Options,
+groupName?: InformationSchema.Types.SqlIdentifier.Options,
+transformType?: InformationSchema.Types.CharacterData.Options
+}
 }
 export namespace TransformsArray {
 export type Options = never;
 }
 export namespace TriggeredUpdateColumns {
-export type Options = never;
+export namespace TriggerCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TriggerSchema {
+
+      export type Options = never;
+    
+}
+export namespace TriggerName {
+
+      export type Options = never;
+    
+}
+export namespace EventObjectCatalog {
+
+      export type Options = never;
+    
+}
+export namespace EventObjectSchema {
+
+      export type Options = never;
+    
+}
+export namespace EventObjectTable {
+
+      export type Options = never;
+    
+}
+export namespace EventObjectColumn {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ triggerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+triggerSchema?: InformationSchema.Types.SqlIdentifier.Options,
+triggerName?: InformationSchema.Types.SqlIdentifier.Options,
+eventObjectCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+eventObjectSchema?: InformationSchema.Types.SqlIdentifier.Options,
+eventObjectTable?: InformationSchema.Types.SqlIdentifier.Options,
+eventObjectColumn?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace TriggeredUpdateColumnsArray {
 export type Options = never;
 }
 export namespace Triggers {
-export type Options = never;
+export namespace TriggerCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TriggerSchema {
+
+      export type Options = never;
+    
+}
+export namespace TriggerName {
+
+      export type Options = never;
+    
+}
+export namespace EventManipulation {
+
+      export type Options = never;
+    
+}
+export namespace EventObjectCatalog {
+
+      export type Options = never;
+    
+}
+export namespace EventObjectSchema {
+
+      export type Options = never;
+    
+}
+export namespace EventObjectTable {
+
+      export type Options = never;
+    
+}
+export namespace ActionOrder {
+
+      export type Options = never;
+    
+}
+export namespace ActionCondition {
+
+      export type Options = never;
+    
+}
+export namespace ActionStatement {
+
+      export type Options = never;
+    
+}
+export namespace ActionOrientation {
+
+      export type Options = never;
+    
+}
+export namespace ActionTiming {
+
+      export type Options = never;
+    
+}
+export namespace ActionReferenceOldTable {
+
+      export type Options = never;
+    
+}
+export namespace ActionReferenceNewTable {
+
+      export type Options = never;
+    
+}
+export namespace ActionReferenceOldRow {
+
+      export type Options = never;
+    
+}
+export namespace ActionReferenceNewRow {
+
+      export type Options = never;
+    
+}
+export namespace Created {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ triggerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+triggerSchema?: InformationSchema.Types.SqlIdentifier.Options,
+triggerName?: InformationSchema.Types.SqlIdentifier.Options,
+eventManipulation?: InformationSchema.Types.CharacterData.Options,
+eventObjectCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+eventObjectSchema?: InformationSchema.Types.SqlIdentifier.Options,
+eventObjectTable?: InformationSchema.Types.SqlIdentifier.Options,
+actionOrder?: InformationSchema.Types.CardinalNumber.Options,
+actionCondition?: InformationSchema.Types.CharacterData.Options,
+actionStatement?: InformationSchema.Types.CharacterData.Options,
+actionOrientation?: InformationSchema.Types.CharacterData.Options,
+actionTiming?: InformationSchema.Types.CharacterData.Options,
+actionReferenceOldTable?: InformationSchema.Types.SqlIdentifier.Options,
+actionReferenceNewTable?: InformationSchema.Types.SqlIdentifier.Options,
+actionReferenceOldRow?: InformationSchema.Types.SqlIdentifier.Options,
+actionReferenceNewRow?: InformationSchema.Types.SqlIdentifier.Options,
+created?: InformationSchema.Types.TimeStamp.Options
+}
 }
 export namespace TriggersArray {
 export type Options = never;
 }
 export namespace UdtPrivileges {
-export type Options = never;
+export namespace Grantor {
+
+      export type Options = never;
+    
+}
+export namespace Grantee {
+
+      export type Options = never;
+    
+}
+export namespace UdtCatalog {
+
+      export type Options = never;
+    
+}
+export namespace UdtSchema {
+
+      export type Options = never;
+    
+}
+export namespace UdtName {
+
+      export type Options = never;
+    
+}
+export namespace PrivilegeType {
+
+      export type Options = never;
+    
+}
+export namespace IsGrantable {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ grantor?: InformationSchema.Types.SqlIdentifier.Options,
+grantee?: InformationSchema.Types.SqlIdentifier.Options,
+udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
+udtName?: InformationSchema.Types.SqlIdentifier.Options,
+privilegeType?: InformationSchema.Types.CharacterData.Options,
+isGrantable?: InformationSchema.Types.YesOrNo.Options
+}
 }
 export namespace UdtPrivilegesArray {
 export type Options = never;
 }
 export namespace RoleUdtGrants {
-export type Options = never;
+export namespace Grantor {
+
+      export type Options = never;
+    
+}
+export namespace Grantee {
+
+      export type Options = never;
+    
+}
+export namespace UdtCatalog {
+
+      export type Options = never;
+    
+}
+export namespace UdtSchema {
+
+      export type Options = never;
+    
+}
+export namespace UdtName {
+
+      export type Options = never;
+    
+}
+export namespace PrivilegeType {
+
+      export type Options = never;
+    
+}
+export namespace IsGrantable {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ grantor?: InformationSchema.Types.SqlIdentifier.Options,
+grantee?: InformationSchema.Types.SqlIdentifier.Options,
+udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
+udtName?: InformationSchema.Types.SqlIdentifier.Options,
+privilegeType?: InformationSchema.Types.CharacterData.Options,
+isGrantable?: InformationSchema.Types.YesOrNo.Options
+}
 }
 export namespace RoleUdtGrantsArray {
 export type Options = never;
 }
 export namespace UsagePrivileges {
-export type Options = never;
+export namespace Grantor {
+
+      export type Options = never;
+    
+}
+export namespace Grantee {
+
+      export type Options = never;
+    
+}
+export namespace ObjectCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ObjectSchema {
+
+      export type Options = never;
+    
+}
+export namespace ObjectName {
+
+      export type Options = never;
+    
+}
+export namespace ObjectType {
+
+      export type Options = never;
+    
+}
+export namespace PrivilegeType {
+
+      export type Options = never;
+    
+}
+export namespace IsGrantable {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ grantor?: InformationSchema.Types.SqlIdentifier.Options,
+grantee?: InformationSchema.Types.SqlIdentifier.Options,
+objectCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+objectSchema?: InformationSchema.Types.SqlIdentifier.Options,
+objectName?: InformationSchema.Types.SqlIdentifier.Options,
+objectType?: InformationSchema.Types.CharacterData.Options,
+privilegeType?: InformationSchema.Types.CharacterData.Options,
+isGrantable?: InformationSchema.Types.YesOrNo.Options
+}
 }
 export namespace UsagePrivilegesArray {
 export type Options = never;
 }
 export namespace RoleUsageGrants {
-export type Options = never;
+export namespace Grantor {
+
+      export type Options = never;
+    
+}
+export namespace Grantee {
+
+      export type Options = never;
+    
+}
+export namespace ObjectCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ObjectSchema {
+
+      export type Options = never;
+    
+}
+export namespace ObjectName {
+
+      export type Options = never;
+    
+}
+export namespace ObjectType {
+
+      export type Options = never;
+    
+}
+export namespace PrivilegeType {
+
+      export type Options = never;
+    
+}
+export namespace IsGrantable {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ grantor?: InformationSchema.Types.SqlIdentifier.Options,
+grantee?: InformationSchema.Types.SqlIdentifier.Options,
+objectCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+objectSchema?: InformationSchema.Types.SqlIdentifier.Options,
+objectName?: InformationSchema.Types.SqlIdentifier.Options,
+objectType?: InformationSchema.Types.CharacterData.Options,
+privilegeType?: InformationSchema.Types.CharacterData.Options,
+isGrantable?: InformationSchema.Types.YesOrNo.Options
+}
 }
 export namespace RoleUsageGrantsArray {
 export type Options = never;
 }
 export namespace UserDefinedTypes {
-export type Options = never;
+export namespace UserDefinedTypeCatalog {
+
+      export type Options = never;
+    
+}
+export namespace UserDefinedTypeSchema {
+
+      export type Options = never;
+    
+}
+export namespace UserDefinedTypeName {
+
+      export type Options = never;
+    
+}
+export namespace UserDefinedTypeCategory {
+
+      export type Options = never;
+    
+}
+export namespace IsInstantiable {
+
+      export type Options = never;
+    
+}
+export namespace IsFinal {
+
+      export type Options = never;
+    
+}
+export namespace OrderingForm {
+
+      export type Options = never;
+    
+}
+export namespace OrderingCategory {
+
+      export type Options = never;
+    
+}
+export namespace OrderingRoutineCatalog {
+
+      export type Options = never;
+    
+}
+export namespace OrderingRoutineSchema {
+
+      export type Options = never;
+    
+}
+export namespace OrderingRoutineName {
+
+      export type Options = never;
+    
+}
+export namespace ReferenceType {
+
+      export type Options = never;
+    
+}
+export namespace DataType {
+
+      export type Options = never;
+    
+}
+export namespace CharacterMaximumLength {
+
+      export type Options = never;
+    
+}
+export namespace CharacterOctetLength {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetCatalog {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetSchema {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetName {
+
+      export type Options = never;
+    
+}
+export namespace CollationCatalog {
+
+      export type Options = never;
+    
+}
+export namespace CollationSchema {
+
+      export type Options = never;
+    
+}
+export namespace CollationName {
+
+      export type Options = never;
+    
+}
+export namespace NumericPrecision {
+
+      export type Options = never;
+    
+}
+export namespace NumericPrecisionRadix {
+
+      export type Options = never;
+    
+}
+export namespace NumericScale {
+
+      export type Options = never;
+    
+}
+export namespace DatetimePrecision {
+
+      export type Options = never;
+    
+}
+export namespace IntervalType {
+
+      export type Options = never;
+    
+}
+export namespace IntervalPrecision {
+
+      export type Options = never;
+    
+}
+export namespace SourceDtdIdentifier {
+
+      export type Options = never;
+    
+}
+export namespace RefDtdIdentifier {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ userDefinedTypeCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+userDefinedTypeSchema?: InformationSchema.Types.SqlIdentifier.Options,
+userDefinedTypeName?: InformationSchema.Types.SqlIdentifier.Options,
+userDefinedTypeCategory?: InformationSchema.Types.CharacterData.Options,
+isInstantiable?: InformationSchema.Types.YesOrNo.Options,
+isFinal?: InformationSchema.Types.YesOrNo.Options,
+orderingForm?: InformationSchema.Types.CharacterData.Options,
+orderingCategory?: InformationSchema.Types.CharacterData.Options,
+orderingRoutineCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+orderingRoutineSchema?: InformationSchema.Types.SqlIdentifier.Options,
+orderingRoutineName?: InformationSchema.Types.SqlIdentifier.Options,
+referenceType?: InformationSchema.Types.CharacterData.Options,
+dataType?: InformationSchema.Types.CharacterData.Options,
+characterMaximumLength?: InformationSchema.Types.CardinalNumber.Options,
+characterOctetLength?: InformationSchema.Types.CardinalNumber.Options,
+characterSetCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+characterSetSchema?: InformationSchema.Types.SqlIdentifier.Options,
+characterSetName?: InformationSchema.Types.SqlIdentifier.Options,
+collationCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+collationSchema?: InformationSchema.Types.SqlIdentifier.Options,
+collationName?: InformationSchema.Types.SqlIdentifier.Options,
+numericPrecision?: InformationSchema.Types.CardinalNumber.Options,
+numericPrecisionRadix?: InformationSchema.Types.CardinalNumber.Options,
+numericScale?: InformationSchema.Types.CardinalNumber.Options,
+datetimePrecision?: InformationSchema.Types.CardinalNumber.Options,
+intervalType?: InformationSchema.Types.CharacterData.Options,
+intervalPrecision?: InformationSchema.Types.CardinalNumber.Options,
+sourceDtdIdentifier?: InformationSchema.Types.SqlIdentifier.Options,
+refDtdIdentifier?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace UserDefinedTypesArray {
 export type Options = never;
 }
 export namespace ViewColumnUsage {
-export type Options = never;
+export namespace ViewCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ViewSchema {
+
+      export type Options = never;
+    
+}
+export namespace ViewName {
+
+      export type Options = never;
+    
+}
+export namespace TableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TableSchema {
+
+      export type Options = never;
+    
+}
+export namespace TableName {
+
+      export type Options = never;
+    
+}
+export namespace ColumnName {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ viewCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+viewSchema?: InformationSchema.Types.SqlIdentifier.Options,
+viewName?: InformationSchema.Types.SqlIdentifier.Options,
+tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+tableName?: InformationSchema.Types.SqlIdentifier.Options,
+columnName?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace ViewColumnUsageArray {
 export type Options = never;
 }
 export namespace ViewRoutineUsage {
-export type Options = never;
+export namespace TableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TableSchema {
+
+      export type Options = never;
+    
+}
+export namespace TableName {
+
+      export type Options = never;
+    
+}
+export namespace SpecificCatalog {
+
+      export type Options = never;
+    
+}
+export namespace SpecificSchema {
+
+      export type Options = never;
+    
+}
+export namespace SpecificName {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+tableName?: InformationSchema.Types.SqlIdentifier.Options,
+specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
+specificName?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace ViewRoutineUsageArray {
 export type Options = never;
 }
 export namespace ViewTableUsage {
-export type Options = never;
+export namespace ViewCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ViewSchema {
+
+      export type Options = never;
+    
+}
+export namespace ViewName {
+
+      export type Options = never;
+    
+}
+export namespace TableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TableSchema {
+
+      export type Options = never;
+    
+}
+export namespace TableName {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ viewCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+viewSchema?: InformationSchema.Types.SqlIdentifier.Options,
+viewName?: InformationSchema.Types.SqlIdentifier.Options,
+tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+tableName?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace ViewTableUsageArray {
 export type Options = never;
 }
 export namespace Views {
-export type Options = never;
+export namespace TableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TableSchema {
+
+      export type Options = never;
+    
+}
+export namespace TableName {
+
+      export type Options = never;
+    
+}
+export namespace ViewDefinition {
+
+      export type Options = never;
+    
+}
+export namespace CheckOption {
+
+      export type Options = never;
+    
+}
+export namespace IsUpdatable {
+
+      export type Options = never;
+    
+}
+export namespace IsInsertableInto {
+
+      export type Options = never;
+    
+}
+export namespace IsTriggerUpdatable {
+
+      export type Options = never;
+    
+}
+export namespace IsTriggerDeletable {
+
+      export type Options = never;
+    
+}
+export namespace IsTriggerInsertableInto {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+tableName?: InformationSchema.Types.SqlIdentifier.Options,
+viewDefinition?: InformationSchema.Types.CharacterData.Options,
+checkOption?: InformationSchema.Types.CharacterData.Options,
+isUpdatable?: InformationSchema.Types.YesOrNo.Options,
+isInsertableInto?: InformationSchema.Types.YesOrNo.Options,
+isTriggerUpdatable?: InformationSchema.Types.YesOrNo.Options,
+isTriggerDeletable?: InformationSchema.Types.YesOrNo.Options,
+isTriggerInsertableInto?: InformationSchema.Types.YesOrNo.Options
+}
 }
 export namespace ViewsArray {
 export type Options = never;
 }
 export namespace DataTypePrivileges {
-export type Options = never;
+export namespace ObjectCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ObjectSchema {
+
+      export type Options = never;
+    
+}
+export namespace ObjectName {
+
+      export type Options = never;
+    
+}
+export namespace ObjectType {
+
+      export type Options = never;
+    
+}
+export namespace DtdIdentifier {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ objectCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+objectSchema?: InformationSchema.Types.SqlIdentifier.Options,
+objectName?: InformationSchema.Types.SqlIdentifier.Options,
+objectType?: InformationSchema.Types.CharacterData.Options,
+dtdIdentifier?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace DataTypePrivilegesArray {
 export type Options = never;
 }
 export namespace ElementTypes {
-export type Options = never;
+export namespace ObjectCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ObjectSchema {
+
+      export type Options = never;
+    
+}
+export namespace ObjectName {
+
+      export type Options = never;
+    
+}
+export namespace ObjectType {
+
+      export type Options = never;
+    
+}
+export namespace CollectionTypeIdentifier {
+
+      export type Options = never;
+    
+}
+export namespace DataType {
+
+      export type Options = never;
+    
+}
+export namespace CharacterMaximumLength {
+
+      export type Options = never;
+    
+}
+export namespace CharacterOctetLength {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetCatalog {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetSchema {
+
+      export type Options = never;
+    
+}
+export namespace CharacterSetName {
+
+      export type Options = never;
+    
+}
+export namespace CollationCatalog {
+
+      export type Options = never;
+    
+}
+export namespace CollationSchema {
+
+      export type Options = never;
+    
+}
+export namespace CollationName {
+
+      export type Options = never;
+    
+}
+export namespace NumericPrecision {
+
+      export type Options = never;
+    
+}
+export namespace NumericPrecisionRadix {
+
+      export type Options = never;
+    
+}
+export namespace NumericScale {
+
+      export type Options = never;
+    
+}
+export namespace DatetimePrecision {
+
+      export type Options = never;
+    
+}
+export namespace IntervalType {
+
+      export type Options = never;
+    
+}
+export namespace IntervalPrecision {
+
+      export type Options = never;
+    
+}
+export namespace DomainDefault {
+
+      export type Options = never;
+    
+}
+export namespace UdtCatalog {
+
+      export type Options = never;
+    
+}
+export namespace UdtSchema {
+
+      export type Options = never;
+    
+}
+export namespace UdtName {
+
+      export type Options = never;
+    
+}
+export namespace ScopeCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ScopeSchema {
+
+      export type Options = never;
+    
+}
+export namespace ScopeName {
+
+      export type Options = never;
+    
+}
+export namespace MaximumCardinality {
+
+      export type Options = never;
+    
+}
+export namespace DtdIdentifier {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ objectCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+objectSchema?: InformationSchema.Types.SqlIdentifier.Options,
+objectName?: InformationSchema.Types.SqlIdentifier.Options,
+objectType?: InformationSchema.Types.CharacterData.Options,
+collectionTypeIdentifier?: InformationSchema.Types.SqlIdentifier.Options,
+dataType?: InformationSchema.Types.CharacterData.Options,
+characterMaximumLength?: InformationSchema.Types.CardinalNumber.Options,
+characterOctetLength?: InformationSchema.Types.CardinalNumber.Options,
+characterSetCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+characterSetSchema?: InformationSchema.Types.SqlIdentifier.Options,
+characterSetName?: InformationSchema.Types.SqlIdentifier.Options,
+collationCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+collationSchema?: InformationSchema.Types.SqlIdentifier.Options,
+collationName?: InformationSchema.Types.SqlIdentifier.Options,
+numericPrecision?: InformationSchema.Types.CardinalNumber.Options,
+numericPrecisionRadix?: InformationSchema.Types.CardinalNumber.Options,
+numericScale?: InformationSchema.Types.CardinalNumber.Options,
+datetimePrecision?: InformationSchema.Types.CardinalNumber.Options,
+intervalType?: InformationSchema.Types.CharacterData.Options,
+intervalPrecision?: InformationSchema.Types.CardinalNumber.Options,
+domainDefault?: InformationSchema.Types.CharacterData.Options,
+udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
+udtName?: InformationSchema.Types.SqlIdentifier.Options,
+scopeCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+scopeSchema?: InformationSchema.Types.SqlIdentifier.Options,
+scopeName?: InformationSchema.Types.SqlIdentifier.Options,
+maximumCardinality?: InformationSchema.Types.CardinalNumber.Options,
+dtdIdentifier?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace ElementTypesArray {
 export type Options = never;
 }
 export namespace PgForeignTableColumns {
+export namespace Nspname {
+
+      export type Options = never;
+    
+}
+export namespace Relname {
+
+      export type Options = never;
+    
+}
+export namespace Attname {
+
+      export type Options = never;
+    
+}
+export namespace Attfdwoptions {
 export type Options = never;
 }
+export type Options = {
+ nspname?: PgCatalog.Types.Name.Options,
+relname?: PgCatalog.Types.Name.Options,
+attname?: PgCatalog.Types.Name.Options,
+attfdwoptions?: PgCatalog.Types.TextArray.Options
+}
+}
 export namespace ColumnOptions {
-export type Options = never;
+export namespace TableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace TableSchema {
+
+      export type Options = never;
+    
+}
+export namespace TableName {
+
+      export type Options = never;
+    
+}
+export namespace ColumnName {
+
+      export type Options = never;
+    
+}
+export namespace OptionName {
+
+      export type Options = never;
+    
+}
+export namespace OptionValue {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+tableName?: InformationSchema.Types.SqlIdentifier.Options,
+columnName?: InformationSchema.Types.SqlIdentifier.Options,
+optionName?: InformationSchema.Types.SqlIdentifier.Options,
+optionValue?: InformationSchema.Types.CharacterData.Options
+}
 }
 export namespace ColumnOptionsArray {
 export type Options = never;
 }
 export namespace PgForeignDataWrappers {
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Fdwowner {
+
+      export type Options = never;
+    
+}
+export namespace Fdwoptions {
 export type Options = never;
 }
+export namespace ForeignDataWrapperCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ForeignDataWrapperName {
+
+      export type Options = never;
+    
+}
+export namespace AuthorizationIdentifier {
+
+      export type Options = never;
+    
+}
+export namespace ForeignDataWrapperLanguage {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+fdwowner?: PgCatalog.Types.Oid.Options,
+fdwoptions?: PgCatalog.Types.TextArray.Options,
+foreignDataWrapperCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+foreignDataWrapperName?: InformationSchema.Types.SqlIdentifier.Options,
+authorizationIdentifier?: InformationSchema.Types.SqlIdentifier.Options,
+foreignDataWrapperLanguage?: InformationSchema.Types.CharacterData.Options
+}
+}
 export namespace ForeignDataWrapperOptions {
-export type Options = never;
+export namespace ForeignDataWrapperCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ForeignDataWrapperName {
+
+      export type Options = never;
+    
+}
+export namespace OptionName {
+
+      export type Options = never;
+    
+}
+export namespace OptionValue {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ foreignDataWrapperCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+foreignDataWrapperName?: InformationSchema.Types.SqlIdentifier.Options,
+optionName?: InformationSchema.Types.SqlIdentifier.Options,
+optionValue?: InformationSchema.Types.CharacterData.Options
+}
 }
 export namespace ForeignDataWrapperOptionsArray {
 export type Options = never;
 }
 export namespace ForeignDataWrappers {
-export type Options = never;
+export namespace ForeignDataWrapperCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ForeignDataWrapperName {
+
+      export type Options = never;
+    
+}
+export namespace AuthorizationIdentifier {
+
+      export type Options = never;
+    
+}
+export namespace LibraryName {
+
+      export type Options = never;
+    
+}
+export namespace ForeignDataWrapperLanguage {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ foreignDataWrapperCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+foreignDataWrapperName?: InformationSchema.Types.SqlIdentifier.Options,
+authorizationIdentifier?: InformationSchema.Types.SqlIdentifier.Options,
+libraryName?: InformationSchema.Types.CharacterData.Options,
+foreignDataWrapperLanguage?: InformationSchema.Types.CharacterData.Options
+}
 }
 export namespace ForeignDataWrappersArray {
 export type Options = never;
 }
 export namespace PgForeignServers {
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Srvoptions {
 export type Options = never;
 }
+export namespace ForeignServerCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ForeignServerName {
+
+      export type Options = never;
+    
+}
+export namespace ForeignDataWrapperCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ForeignDataWrapperName {
+
+      export type Options = never;
+    
+}
+export namespace ForeignServerType {
+
+      export type Options = never;
+    
+}
+export namespace ForeignServerVersion {
+
+      export type Options = never;
+    
+}
+export namespace AuthorizationIdentifier {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+srvoptions?: PgCatalog.Types.TextArray.Options,
+foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+foreignServerName?: InformationSchema.Types.SqlIdentifier.Options,
+foreignDataWrapperCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+foreignDataWrapperName?: InformationSchema.Types.SqlIdentifier.Options,
+foreignServerType?: InformationSchema.Types.CharacterData.Options,
+foreignServerVersion?: InformationSchema.Types.CharacterData.Options,
+authorizationIdentifier?: InformationSchema.Types.SqlIdentifier.Options
+}
+}
 export namespace ForeignServerOptions {
-export type Options = never;
+export namespace ForeignServerCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ForeignServerName {
+
+      export type Options = never;
+    
+}
+export namespace OptionName {
+
+      export type Options = never;
+    
+}
+export namespace OptionValue {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+foreignServerName?: InformationSchema.Types.SqlIdentifier.Options,
+optionName?: InformationSchema.Types.SqlIdentifier.Options,
+optionValue?: InformationSchema.Types.CharacterData.Options
+}
 }
 export namespace ForeignServerOptionsArray {
 export type Options = never;
 }
 export namespace ForeignServers {
-export type Options = never;
+export namespace ForeignServerCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ForeignServerName {
+
+      export type Options = never;
+    
+}
+export namespace ForeignDataWrapperCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ForeignDataWrapperName {
+
+      export type Options = never;
+    
+}
+export namespace ForeignServerType {
+
+      export type Options = never;
+    
+}
+export namespace ForeignServerVersion {
+
+      export type Options = never;
+    
+}
+export namespace AuthorizationIdentifier {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+foreignServerName?: InformationSchema.Types.SqlIdentifier.Options,
+foreignDataWrapperCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+foreignDataWrapperName?: InformationSchema.Types.SqlIdentifier.Options,
+foreignServerType?: InformationSchema.Types.CharacterData.Options,
+foreignServerVersion?: InformationSchema.Types.CharacterData.Options,
+authorizationIdentifier?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace ForeignServersArray {
 export type Options = never;
 }
 export namespace PgForeignTables {
+export namespace ForeignTableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ForeignTableSchema {
+
+      export type Options = never;
+    
+}
+export namespace ForeignTableName {
+
+      export type Options = never;
+    
+}
+export namespace Ftoptions {
 export type Options = never;
 }
+export namespace ForeignServerCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ForeignServerName {
+
+      export type Options = never;
+    
+}
+export namespace AuthorizationIdentifier {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ foreignTableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+foreignTableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+foreignTableName?: InformationSchema.Types.SqlIdentifier.Options,
+ftoptions?: PgCatalog.Types.TextArray.Options,
+foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+foreignServerName?: InformationSchema.Types.SqlIdentifier.Options,
+authorizationIdentifier?: InformationSchema.Types.SqlIdentifier.Options
+}
+}
 export namespace ForeignTableOptions {
-export type Options = never;
+export namespace ForeignTableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ForeignTableSchema {
+
+      export type Options = never;
+    
+}
+export namespace ForeignTableName {
+
+      export type Options = never;
+    
+}
+export namespace OptionName {
+
+      export type Options = never;
+    
+}
+export namespace OptionValue {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ foreignTableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+foreignTableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+foreignTableName?: InformationSchema.Types.SqlIdentifier.Options,
+optionName?: InformationSchema.Types.SqlIdentifier.Options,
+optionValue?: InformationSchema.Types.CharacterData.Options
+}
 }
 export namespace ForeignTableOptionsArray {
 export type Options = never;
 }
 export namespace ForeignTables {
-export type Options = never;
+export namespace ForeignTableCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ForeignTableSchema {
+
+      export type Options = never;
+    
+}
+export namespace ForeignTableName {
+
+      export type Options = never;
+    
+}
+export namespace ForeignServerCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ForeignServerName {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ foreignTableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+foreignTableSchema?: InformationSchema.Types.SqlIdentifier.Options,
+foreignTableName?: InformationSchema.Types.SqlIdentifier.Options,
+foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+foreignServerName?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace ForeignTablesArray {
 export type Options = never;
 }
 export namespace PgUserMappings {
+export namespace Oid {
+
+      export type Options = never;
+    
+}
+export namespace Umoptions {
 export type Options = never;
 }
+export namespace Umuser {
+
+      export type Options = never;
+    
+}
+export namespace AuthorizationIdentifier {
+
+      export type Options = never;
+    
+}
+export namespace ForeignServerCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ForeignServerName {
+
+      export type Options = never;
+    
+}
+export namespace Srvowner {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ oid?: PgCatalog.Types.Oid.Options,
+umoptions?: PgCatalog.Types.TextArray.Options,
+umuser?: PgCatalog.Types.Oid.Options,
+authorizationIdentifier?: InformationSchema.Types.SqlIdentifier.Options,
+foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+foreignServerName?: InformationSchema.Types.SqlIdentifier.Options,
+srvowner?: InformationSchema.Types.SqlIdentifier.Options
+}
+}
 export namespace UserMappingOptions {
-export type Options = never;
+export namespace AuthorizationIdentifier {
+
+      export type Options = never;
+    
+}
+export namespace ForeignServerCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ForeignServerName {
+
+      export type Options = never;
+    
+}
+export namespace OptionName {
+
+      export type Options = never;
+    
+}
+export namespace OptionValue {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ authorizationIdentifier?: InformationSchema.Types.SqlIdentifier.Options,
+foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+foreignServerName?: InformationSchema.Types.SqlIdentifier.Options,
+optionName?: InformationSchema.Types.SqlIdentifier.Options,
+optionValue?: InformationSchema.Types.CharacterData.Options
+}
 }
 export namespace UserMappingOptionsArray {
 export type Options = never;
 }
 export namespace UserMappings {
-export type Options = never;
+export namespace AuthorizationIdentifier {
+
+      export type Options = never;
+    
+}
+export namespace ForeignServerCatalog {
+
+      export type Options = never;
+    
+}
+export namespace ForeignServerName {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ authorizationIdentifier?: InformationSchema.Types.SqlIdentifier.Options,
+foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
+foreignServerName?: InformationSchema.Types.SqlIdentifier.Options
+}
 }
 export namespace UserMappingsArray {
 export type Options = never;
@@ -40643,268 +52794,1415 @@ export namespace YearArray {
 export type Options = never;
 }
 export namespace Customer {
-export type Options = never;
+export namespace CustomerId {
+
+      export type Options = never;
+    
+}
+export namespace StoreId {
+
+      export type Options = never;
+    
+}
+export namespace FirstName {
+
+      export type Options = never;
+    
+}
+export namespace LastName {
+
+      export type Options = never;
+    
+}
+export namespace Email {
+
+      export type Options = never;
+    
+}
+export namespace AddressId {
+
+      export type Options = never;
+    
+}
+export namespace Activebool {
+
+      export type Options = never;
+    
+}
+export namespace CreateDate {
+
+      export type Options = never;
+    
+}
+export namespace LastUpdate {
+
+      export type Options = never;
+    
+}
+export namespace Active {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ customerId?: PgCatalog.Types.Int4.Options,
+storeId?: PgCatalog.Types.Int2.Options,
+firstName?: PgCatalog.Types.Varchar.Options,
+lastName?: PgCatalog.Types.Varchar.Options,
+email?: PgCatalog.Types.Varchar.Options,
+addressId?: PgCatalog.Types.Int2.Options,
+activebool?: PgCatalog.Types.Bool.Options,
+createDate?: PgCatalog.Types.Date.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options,
+active?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace CustomerArray {
 export type Options = never;
 }
 export namespace Actor {
-export type Options = never;
+export namespace ActorId {
+
+      export type Options = never;
+    
+}
+export namespace FirstName {
+
+      export type Options = never;
+    
+}
+export namespace LastName {
+
+      export type Options = never;
+    
+}
+export namespace LastUpdate {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ actorId?: PgCatalog.Types.Int4.Options,
+firstName?: PgCatalog.Types.Varchar.Options,
+lastName?: PgCatalog.Types.Varchar.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
+}
 }
 export namespace ActorArray {
 export type Options = never;
 }
 export namespace Category {
-export type Options = never;
+export namespace CategoryId {
+
+      export type Options = never;
+    
+}
+export namespace Name {
+
+      export type Options = never;
+    
+}
+export namespace LastUpdate {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ categoryId?: PgCatalog.Types.Int4.Options,
+name?: PgCatalog.Types.Varchar.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
+}
 }
 export namespace CategoryArray {
 export type Options = never;
 }
 export namespace Film {
+export namespace FilmId {
+
+      export type Options = never;
+    
+}
+export namespace Title {
+
+      export type Options = never;
+    
+}
+export namespace Description {
+
+      export type Options = never;
+    
+}
+export namespace ReleaseYear {
+
+      export type Options = never;
+    
+}
+export namespace LanguageId {
+
+      export type Options = never;
+    
+}
+export namespace RentalDuration {
+
+      export type Options = never;
+    
+}
+export namespace RentalRate {
+
+      export type Options = never;
+    
+}
+export namespace Length {
+
+      export type Options = never;
+    
+}
+export namespace ReplacementCost {
+
+      export type Options = never;
+    
+}
+export namespace Rating {
+
+      export type Options = never;
+    
+}
+export namespace LastUpdate {
+
+      export type Options = never;
+    
+}
+export namespace SpecialFeatures {
 export type Options = never;
+}
+export namespace Fulltext {
+
+       /**
+         * Fulltext queries have different parsers that turn your query search
+         * text into a runnable search in the database.
+         *
+         * For PostgreSQL these are documented at:
+         * https://www.postgresql.org/docs/current/textsearch-controls.html#TEXTSEARCH-HEADLINE
+         */
+        export enum FulltextParser {
+        Default = "to_tsquery",
+        Plain = "plainto_tsquery",
+        Phrase = "phraseto_tsquery",
+        Web = "websearch_to_tsquery",
+        }
+        export type Options = {
+            queryParser?: FulltextParser;
+        }
+        
+            
+}
+export type Options = {
+ filmId?: PgCatalog.Types.Int4.Options,
+title?: PgCatalog.Types.Varchar.Options,
+description?: PgCatalog.Types.Text.Options,
+releaseYear?: Public.Types.Year.Options,
+languageId?: PgCatalog.Types.Int2.Options,
+rentalDuration?: PgCatalog.Types.Int2.Options,
+rentalRate?: PgCatalog.Types.Numeric.Options,
+length?: PgCatalog.Types.Int2.Options,
+replacementCost?: PgCatalog.Types.Numeric.Options,
+rating?: Public.Types.MpaaRating.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options,
+specialFeatures?: PgCatalog.Types.TextArray.Options,
+fulltext?: PgCatalog.Types.Tsvector.Options
+}
 }
 export namespace FilmArray {
 export type Options = never;
 }
 export namespace FilmActor {
-export type Options = never;
+export namespace ActorId {
+
+      export type Options = never;
+    
+}
+export namespace FilmId {
+
+      export type Options = never;
+    
+}
+export namespace LastUpdate {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ actorId?: PgCatalog.Types.Int2.Options,
+filmId?: PgCatalog.Types.Int2.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
+}
 }
 export namespace FilmActorArray {
 export type Options = never;
 }
 export namespace FilmCategory {
-export type Options = never;
+export namespace FilmId {
+
+      export type Options = never;
+    
+}
+export namespace CategoryId {
+
+      export type Options = never;
+    
+}
+export namespace LastUpdate {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ filmId?: PgCatalog.Types.Int2.Options,
+categoryId?: PgCatalog.Types.Int2.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
+}
 }
 export namespace FilmCategoryArray {
 export type Options = never;
 }
 export namespace ActorInfo {
-export type Options = never;
+export namespace ActorId {
+
+      export type Options = never;
+    
+}
+export namespace FirstName {
+
+      export type Options = never;
+    
+}
+export namespace LastName {
+
+      export type Options = never;
+    
+}
+export namespace FilmInfo {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ actorId?: PgCatalog.Types.Int4.Options,
+firstName?: PgCatalog.Types.Varchar.Options,
+lastName?: PgCatalog.Types.Varchar.Options,
+filmInfo?: PgCatalog.Types.Text.Options
+}
 }
 export namespace ActorInfoArray {
 export type Options = never;
 }
 export namespace Address {
-export type Options = never;
+export namespace AddressId {
+
+      export type Options = never;
+    
+}
+export namespace Address {
+
+      export type Options = never;
+    
+}
+export namespace Address2 {
+
+      export type Options = never;
+    
+}
+export namespace District {
+
+      export type Options = never;
+    
+}
+export namespace CityId {
+
+      export type Options = never;
+    
+}
+export namespace PostalCode {
+
+      export type Options = never;
+    
+}
+export namespace Phone {
+
+      export type Options = never;
+    
+}
+export namespace LastUpdate {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ addressId?: PgCatalog.Types.Int4.Options,
+address?: PgCatalog.Types.Varchar.Options,
+address2?: PgCatalog.Types.Varchar.Options,
+district?: PgCatalog.Types.Varchar.Options,
+cityId?: PgCatalog.Types.Int2.Options,
+postalCode?: PgCatalog.Types.Varchar.Options,
+phone?: PgCatalog.Types.Varchar.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
+}
 }
 export namespace AddressArray {
 export type Options = never;
 }
 export namespace City {
-export type Options = never;
+export namespace CityId {
+
+      export type Options = never;
+    
+}
+export namespace City {
+
+      export type Options = never;
+    
+}
+export namespace CountryId {
+
+      export type Options = never;
+    
+}
+export namespace LastUpdate {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ cityId?: PgCatalog.Types.Int4.Options,
+city?: PgCatalog.Types.Varchar.Options,
+countryId?: PgCatalog.Types.Int2.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
+}
 }
 export namespace CityArray {
 export type Options = never;
 }
 export namespace Country {
-export type Options = never;
+export namespace CountryId {
+
+      export type Options = never;
+    
+}
+export namespace Country {
+
+      export type Options = never;
+    
+}
+export namespace LastUpdate {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ countryId?: PgCatalog.Types.Int4.Options,
+country?: PgCatalog.Types.Varchar.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
+}
 }
 export namespace CountryArray {
 export type Options = never;
 }
 export namespace CustomerList {
-export type Options = never;
+export namespace Id {
+
+      export type Options = never;
+    
+}
+export namespace Name {
+
+      export type Options = never;
+    
+}
+export namespace Address {
+
+      export type Options = never;
+    
+}
+export namespace ZipCode {
+
+      export type Options = never;
+    
+}
+export namespace Phone {
+
+      export type Options = never;
+    
+}
+export namespace City {
+
+      export type Options = never;
+    
+}
+export namespace Country {
+
+      export type Options = never;
+    
+}
+export namespace Notes {
+
+      export type Options = never;
+    
+}
+export namespace Sid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ id?: PgCatalog.Types.Int4.Options,
+name?: PgCatalog.Types.Text.Options,
+address?: PgCatalog.Types.Varchar.Options,
+zipCode?: PgCatalog.Types.Varchar.Options,
+phone?: PgCatalog.Types.Varchar.Options,
+city?: PgCatalog.Types.Varchar.Options,
+country?: PgCatalog.Types.Varchar.Options,
+notes?: PgCatalog.Types.Text.Options,
+sid?: PgCatalog.Types.Int2.Options
+}
 }
 export namespace CustomerListArray {
 export type Options = never;
 }
 export namespace FilmList {
-export type Options = never;
+export namespace Fid {
+
+      export type Options = never;
+    
+}
+export namespace Title {
+
+      export type Options = never;
+    
+}
+export namespace Description {
+
+      export type Options = never;
+    
+}
+export namespace Category {
+
+      export type Options = never;
+    
+}
+export namespace Price {
+
+      export type Options = never;
+    
+}
+export namespace Length {
+
+      export type Options = never;
+    
+}
+export namespace Rating {
+
+      export type Options = never;
+    
+}
+export namespace Actors {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ fid?: PgCatalog.Types.Int4.Options,
+title?: PgCatalog.Types.Varchar.Options,
+description?: PgCatalog.Types.Text.Options,
+category?: PgCatalog.Types.Varchar.Options,
+price?: PgCatalog.Types.Numeric.Options,
+length?: PgCatalog.Types.Int2.Options,
+rating?: Public.Types.MpaaRating.Options,
+actors?: PgCatalog.Types.Text.Options
+}
 }
 export namespace FilmListArray {
 export type Options = never;
 }
 export namespace Inventory {
-export type Options = never;
+export namespace InventoryId {
+
+      export type Options = never;
+    
+}
+export namespace FilmId {
+
+      export type Options = never;
+    
+}
+export namespace StoreId {
+
+      export type Options = never;
+    
+}
+export namespace LastUpdate {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ inventoryId?: PgCatalog.Types.Int4.Options,
+filmId?: PgCatalog.Types.Int2.Options,
+storeId?: PgCatalog.Types.Int2.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
+}
 }
 export namespace InventoryArray {
 export type Options = never;
 }
 export namespace Language {
-export type Options = never;
+export namespace LanguageId {
+
+      export type Options = never;
+    
+}
+export namespace Name {
+
+      export type Options = never;
+    
+}
+export namespace LastUpdate {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ languageId?: PgCatalog.Types.Int4.Options,
+name?: PgCatalog.Types.Bpchar.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
+}
 }
 export namespace LanguageArray {
 export type Options = never;
 }
 export namespace NicerButSlowerFilmList {
-export type Options = never;
+export namespace Fid {
+
+      export type Options = never;
+    
+}
+export namespace Title {
+
+      export type Options = never;
+    
+}
+export namespace Description {
+
+      export type Options = never;
+    
+}
+export namespace Category {
+
+      export type Options = never;
+    
+}
+export namespace Price {
+
+      export type Options = never;
+    
+}
+export namespace Length {
+
+      export type Options = never;
+    
+}
+export namespace Rating {
+
+      export type Options = never;
+    
+}
+export namespace Actors {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ fid?: PgCatalog.Types.Int4.Options,
+title?: PgCatalog.Types.Varchar.Options,
+description?: PgCatalog.Types.Text.Options,
+category?: PgCatalog.Types.Varchar.Options,
+price?: PgCatalog.Types.Numeric.Options,
+length?: PgCatalog.Types.Int2.Options,
+rating?: Public.Types.MpaaRating.Options,
+actors?: PgCatalog.Types.Text.Options
+}
 }
 export namespace NicerButSlowerFilmListArray {
 export type Options = never;
 }
 export namespace Payment {
-export type Options = never;
+export namespace PaymentId {
+
+      export type Options = never;
+    
+}
+export namespace CustomerId {
+
+      export type Options = never;
+    
+}
+export namespace StaffId {
+
+      export type Options = never;
+    
+}
+export namespace RentalId {
+
+      export type Options = never;
+    
+}
+export namespace Amount {
+
+      export type Options = never;
+    
+}
+export namespace PaymentDate {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ paymentId?: PgCatalog.Types.Int4.Options,
+customerId?: PgCatalog.Types.Int2.Options,
+staffId?: PgCatalog.Types.Int2.Options,
+rentalId?: PgCatalog.Types.Int4.Options,
+amount?: PgCatalog.Types.Numeric.Options,
+paymentDate?: PgCatalog.Types.Timestamp.Options
+}
 }
 export namespace PaymentArray {
 export type Options = never;
 }
 export namespace Rental {
-export type Options = never;
+export namespace RentalId {
+
+      export type Options = never;
+    
+}
+export namespace RentalDate {
+
+      export type Options = never;
+    
+}
+export namespace InventoryId {
+
+      export type Options = never;
+    
+}
+export namespace CustomerId {
+
+      export type Options = never;
+    
+}
+export namespace ReturnDate {
+
+      export type Options = never;
+    
+}
+export namespace StaffId {
+
+      export type Options = never;
+    
+}
+export namespace LastUpdate {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ rentalId?: PgCatalog.Types.Int4.Options,
+rentalDate?: PgCatalog.Types.Timestamp.Options,
+inventoryId?: PgCatalog.Types.Int4.Options,
+customerId?: PgCatalog.Types.Int2.Options,
+returnDate?: PgCatalog.Types.Timestamp.Options,
+staffId?: PgCatalog.Types.Int2.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
+}
 }
 export namespace RentalArray {
 export type Options = never;
 }
 export namespace SalesByFilmCategory {
-export type Options = never;
+export namespace Category {
+
+      export type Options = never;
+    
+}
+export namespace TotalSales {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ category?: PgCatalog.Types.Varchar.Options,
+totalSales?: PgCatalog.Types.Numeric.Options
+}
 }
 export namespace SalesByFilmCategoryArray {
 export type Options = never;
 }
 export namespace Staff {
-export type Options = never;
+export namespace StaffId {
+
+      export type Options = never;
+    
+}
+export namespace FirstName {
+
+      export type Options = never;
+    
+}
+export namespace LastName {
+
+      export type Options = never;
+    
+}
+export namespace AddressId {
+
+      export type Options = never;
+    
+}
+export namespace Email {
+
+      export type Options = never;
+    
+}
+export namespace StoreId {
+
+      export type Options = never;
+    
+}
+export namespace Active {
+
+      export type Options = never;
+    
+}
+export namespace Username {
+
+      export type Options = never;
+    
+}
+export namespace Password {
+
+      export type Options = never;
+    
+}
+export namespace LastUpdate {
+
+      export type Options = never;
+    
+}
+export namespace Picture {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ staffId?: PgCatalog.Types.Int4.Options,
+firstName?: PgCatalog.Types.Varchar.Options,
+lastName?: PgCatalog.Types.Varchar.Options,
+addressId?: PgCatalog.Types.Int2.Options,
+email?: PgCatalog.Types.Varchar.Options,
+storeId?: PgCatalog.Types.Int2.Options,
+active?: PgCatalog.Types.Bool.Options,
+username?: PgCatalog.Types.Varchar.Options,
+password?: PgCatalog.Types.Varchar.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options,
+picture?: PgCatalog.Types.Bytea.Options
+}
 }
 export namespace StaffArray {
 export type Options = never;
 }
 export namespace Store {
-export type Options = never;
+export namespace StoreId {
+
+      export type Options = never;
+    
+}
+export namespace ManagerStaffId {
+
+      export type Options = never;
+    
+}
+export namespace AddressId {
+
+      export type Options = never;
+    
+}
+export namespace LastUpdate {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ storeId?: PgCatalog.Types.Int4.Options,
+managerStaffId?: PgCatalog.Types.Int2.Options,
+addressId?: PgCatalog.Types.Int2.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options
+}
 }
 export namespace StoreArray {
 export type Options = never;
 }
 export namespace SalesByStore {
-export type Options = never;
+export namespace Store {
+
+      export type Options = never;
+    
+}
+export namespace Manager {
+
+      export type Options = never;
+    
+}
+export namespace TotalSales {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ store?: PgCatalog.Types.Text.Options,
+manager?: PgCatalog.Types.Text.Options,
+totalSales?: PgCatalog.Types.Numeric.Options
+}
 }
 export namespace SalesByStoreArray {
 export type Options = never;
 }
 export namespace StaffList {
-export type Options = never;
+export namespace Id {
+
+      export type Options = never;
+    
+}
+export namespace Name {
+
+      export type Options = never;
+    
+}
+export namespace Address {
+
+      export type Options = never;
+    
+}
+export namespace ZipCode {
+
+      export type Options = never;
+    
+}
+export namespace Phone {
+
+      export type Options = never;
+    
+}
+export namespace City {
+
+      export type Options = never;
+    
+}
+export namespace Country {
+
+      export type Options = never;
+    
+}
+export namespace Sid {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ id?: PgCatalog.Types.Int4.Options,
+name?: PgCatalog.Types.Text.Options,
+address?: PgCatalog.Types.Varchar.Options,
+zipCode?: PgCatalog.Types.Varchar.Options,
+phone?: PgCatalog.Types.Varchar.Options,
+city?: PgCatalog.Types.Varchar.Options,
+country?: PgCatalog.Types.Varchar.Options,
+sid?: PgCatalog.Types.Int2.Options
+}
 }
 export namespace StaffListArray {
 export type Options = never;
 }
 export namespace ActorPkey {
-export type Options = never;
+export namespace ActorId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ actorId?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace AddressPkey {
-export type Options = never;
+export namespace AddressId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ addressId?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace CategoryPkey {
-export type Options = never;
+export namespace CategoryId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ categoryId?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace CityPkey {
-export type Options = never;
+export namespace CityId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ cityId?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace CountryPkey {
-export type Options = never;
+export namespace CountryId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ countryId?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace CustomerPkey {
-export type Options = never;
+export namespace CustomerId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ customerId?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace FilmActorPkey {
-export type Options = never;
+export namespace ActorId {
+
+      export type Options = never;
+    
+}
+export namespace FilmId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ actorId?: PgCatalog.Types.Int2.Options,
+filmId?: PgCatalog.Types.Int2.Options
+}
 }
 export namespace FilmCategoryPkey {
-export type Options = never;
+export namespace FilmId {
+
+      export type Options = never;
+    
+}
+export namespace CategoryId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ filmId?: PgCatalog.Types.Int2.Options,
+categoryId?: PgCatalog.Types.Int2.Options
+}
 }
 export namespace FilmPkey {
-export type Options = never;
+export namespace FilmId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ filmId?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace InventoryPkey {
-export type Options = never;
+export namespace InventoryId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ inventoryId?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace LanguagePkey {
-export type Options = never;
+export namespace LanguageId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ languageId?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PaymentPkey {
-export type Options = never;
+export namespace PaymentId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ paymentId?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace RentalPkey {
-export type Options = never;
+export namespace RentalId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ rentalId?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace StaffPkey {
-export type Options = never;
+export namespace StaffId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ staffId?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace StorePkey {
-export type Options = never;
+export namespace StoreId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ storeId?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace FilmFulltextIdx {
-export type Options = never;
+export namespace Fulltext {
+
+       /**
+         * Fulltext queries have different parsers that turn your query search
+         * text into a runnable search in the database.
+         *
+         * For PostgreSQL these are documented at:
+         * https://www.postgresql.org/docs/current/textsearch-controls.html#TEXTSEARCH-HEADLINE
+         */
+        export enum FulltextParser {
+        Default = "to_tsquery",
+        Plain = "plainto_tsquery",
+        Phrase = "phraseto_tsquery",
+        Web = "websearch_to_tsquery",
+        }
+        export type Options = {
+            queryParser?: FulltextParser;
+        }
+        
+            
+}
+export type Options = {
+ fulltext?: PgCatalog.Types.Tsvector.Options
+}
 }
 export namespace IdxActorLastName {
-export type Options = never;
+export namespace LastName {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ lastName?: PgCatalog.Types.Varchar.Options
+}
 }
 export namespace IdxFkAddressId {
-export type Options = never;
+export namespace AddressId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ addressId?: PgCatalog.Types.Int2.Options
+}
 }
 export namespace IdxFkCityId {
-export type Options = never;
+export namespace CityId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ cityId?: PgCatalog.Types.Int2.Options
+}
 }
 export namespace IdxFkCountryId {
-export type Options = never;
+export namespace CountryId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ countryId?: PgCatalog.Types.Int2.Options
+}
 }
 export namespace IdxFkCustomerId {
-export type Options = never;
+export namespace CustomerId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ customerId?: PgCatalog.Types.Int2.Options
+}
 }
 export namespace IdxFkFilmId {
-export type Options = never;
+export namespace FilmId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ filmId?: PgCatalog.Types.Int2.Options
+}
 }
 export namespace IdxFkInventoryId {
-export type Options = never;
+export namespace InventoryId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ inventoryId?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace IdxFkLanguageId {
-export type Options = never;
+export namespace LanguageId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ languageId?: PgCatalog.Types.Int2.Options
+}
 }
 export namespace IdxFkRentalId {
-export type Options = never;
+export namespace RentalId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ rentalId?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace IdxFkStaffId {
-export type Options = never;
+export namespace StaffId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ staffId?: PgCatalog.Types.Int2.Options
+}
 }
 export namespace IdxFkStoreId {
-export type Options = never;
+export namespace StoreId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ storeId?: PgCatalog.Types.Int2.Options
+}
 }
 export namespace IdxLastName {
-export type Options = never;
+export namespace LastName {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ lastName?: PgCatalog.Types.Varchar.Options
+}
 }
 export namespace IdxStoreIdFilmId {
-export type Options = never;
+export namespace StoreId {
+
+      export type Options = never;
+    
+}
+export namespace FilmId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ storeId?: PgCatalog.Types.Int2.Options,
+filmId?: PgCatalog.Types.Int2.Options
+}
 }
 export namespace IdxTitle {
-export type Options = never;
+export namespace Title {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ title?: PgCatalog.Types.Varchar.Options
+}
 }
 export namespace IdxUnqManagerStaffId {
-export type Options = never;
+export namespace ManagerStaffId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ managerStaffId?: PgCatalog.Types.Int2.Options
+}
 }
 export namespace IdxUnqRentalRentalDateInventoryIdCustomerId {
-export type Options = never;
+export namespace RentalDate {
+
+      export type Options = never;
+    
+}
+export namespace InventoryId {
+
+      export type Options = never;
+    
+}
+export namespace CustomerId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ rentalDate?: PgCatalog.Types.Timestamp.Options,
+inventoryId?: PgCatalog.Types.Int4.Options,
+customerId?: PgCatalog.Types.Int2.Options
+}
 }
 }
 export namespace Procedures {
 export namespace FilmInStock {
 export namespace Parameters {
-export type Options = never;
+export namespace PFilmId {
+
+      export type Options = never;
+    
+}
+export namespace PStoreId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ pFilmId?: PgCatalog.Types.Int4.Options,
+pStoreId?: PgCatalog.Types.Int4.Options
+}
 }
 }
 export namespace FilmNotInStock {
 export namespace Parameters {
-export type Options = never;
+export namespace PFilmId {
+
+      export type Options = never;
+    
+}
+export namespace PStoreId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ pFilmId?: PgCatalog.Types.Int4.Options,
+pStoreId?: PgCatalog.Types.Int4.Options
+}
 }
 }
 export namespace GetCustomerBalance {
 export namespace Parameters {
-export type Options = never;
+export namespace PCustomerId {
+
+      export type Options = never;
+    
+}
+export namespace PEffectiveDate {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ pCustomerId?: PgCatalog.Types.Int4.Options,
+pEffectiveDate?: PgCatalog.Types.Timestamp.Options
+}
 }
 }
 export namespace InventoryHeldByCustomer {
 export namespace Parameters {
-export type Options = never;
+export namespace PInventoryId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ pInventoryId?: PgCatalog.Types.Int4.Options
+}
 }
 }
 export namespace InventoryInStock {
 export namespace Parameters {
-export type Options = never;
+export namespace PInventoryId {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ pInventoryId?: PgCatalog.Types.Int4.Options
+}
 }
 }
 export namespace LastDay {
 export namespace Parameters {
-export type Options = never;
+export namespace Argument_0 {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ argument_0?: PgCatalog.Types.Timestamp.Options
+}
 }
 }
 export namespace RewardsReport {
 export namespace Parameters {
-export type Options = never;
+export namespace MinMonthlyPurchases {
+
+      export type Options = never;
+    
+}
+export namespace MinDollarAmountPurchased {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ minMonthlyPurchases?: PgCatalog.Types.Int4.Options,
+minDollarAmountPurchased?: PgCatalog.Types.Numeric.Options
+}
 }
 }
 }
@@ -40943,131 +54241,677 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_23225Index {
-export type Options = never;
+export namespace PgToast_79479Index {
+export namespace ChunkId {
+
+      export type Options = never;
+    
 }
-export namespace PgToast_23311Index {
-export type Options = never;
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
+}
+export namespace PgToast_79565Index {
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_1255Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_1247Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_2604Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_2606Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_2612Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_2600Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_2619Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_3381Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_3429Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_2618Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_2620Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_3466Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_2609Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_2615Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_1262Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_2964Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_1213Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_1260Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_2396Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_3600Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_3079Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_2328Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_1417Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_1418Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_3118Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_3256Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_6000Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_826Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_3394Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_3596Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_3592Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_3456Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_6243Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_3350Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_6106Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_6100Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_13658Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_13663Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_13668Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 export namespace PgToast_13673Index {
-export type Options = never;
+export namespace ChunkId {
+
+      export type Options = never;
+    
+}
+export namespace ChunkSeq {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ chunkId?: PgCatalog.Types.Oid.Options,
+chunkSeq?: PgCatalog.Types.Int4.Options
+}
 }
 }
 export namespace Procedures {
@@ -41078,37 +54922,280 @@ export namespace Tables {
 export namespace Scripts {
 export namespace MovieListing {
 export namespace Results {
+export namespace FilmId {
+
+      export type Options = never;
+    
+}
+export namespace Title {
+
+      export type Options = never;
+    
+}
+export namespace ReleaseYear {
+
+      export type Options = never;
+    
+}
+export namespace Rating {
+
+      export type Options = never;
+    
+}
+export namespace Actors {
 export type Options = never;
+}
+export type Options = {
+ filmId?: PgCatalog.Types.Int4.Options,
+title?: PgCatalog.Types.Varchar.Options,
+releaseYear?: PgCatalog.Types.Int4.Options,
+rating?: Public.Types.MpaaRating.Options,
+actors?: PgCatalog.Types.TextArray.Options
+}
 }
 }
 export namespace Sample {
 export namespace Film {
 export namespace Rated {
 export namespace Results {
+export namespace FilmId {
+
+      export type Options = never;
+    
+}
+export namespace Title {
+
+      export type Options = never;
+    
+}
+export namespace Description {
+
+      export type Options = never;
+    
+}
+export namespace ReleaseYear {
+
+      export type Options = never;
+    
+}
+export namespace LanguageId {
+
+      export type Options = never;
+    
+}
+export namespace RentalDuration {
+
+      export type Options = never;
+    
+}
+export namespace RentalRate {
+
+      export type Options = never;
+    
+}
+export namespace Length {
+
+      export type Options = never;
+    
+}
+export namespace ReplacementCost {
+
+      export type Options = never;
+    
+}
+export namespace Rating {
+
+      export type Options = never;
+    
+}
+export namespace LastUpdate {
+
+      export type Options = never;
+    
+}
+export namespace SpecialFeatures {
 export type Options = never;
 }
+export namespace Fulltext {
+
+       /**
+         * Fulltext queries have different parsers that turn your query search
+         * text into a runnable search in the database.
+         *
+         * For PostgreSQL these are documented at:
+         * https://www.postgresql.org/docs/current/textsearch-controls.html#TEXTSEARCH-HEADLINE
+         */
+        export enum FulltextParser {
+        Default = "to_tsquery",
+        Plain = "plainto_tsquery",
+        Phrase = "phraseto_tsquery",
+        Web = "websearch_to_tsquery",
+        }
+        export type Options = {
+            queryParser?: FulltextParser;
+        }
+        
+            
+}
+export type Options = {
+ filmId?: PgCatalog.Types.Int4.Options,
+title?: PgCatalog.Types.Varchar.Options,
+description?: PgCatalog.Types.Text.Options,
+releaseYear?: PgCatalog.Types.Int4.Options,
+languageId?: PgCatalog.Types.Int2.Options,
+rentalDuration?: PgCatalog.Types.Int2.Options,
+rentalRate?: PgCatalog.Types.Numeric.Options,
+length?: PgCatalog.Types.Int2.Options,
+replacementCost?: PgCatalog.Types.Numeric.Options,
+rating?: Public.Types.MpaaRating.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options,
+specialFeatures?: PgCatalog.Types.TextArray.Options,
+fulltext?: PgCatalog.Types.Tsvector.Options
+}
+}
 export namespace Parameters {
-export type Options = never;
+export namespace Argument_1 {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ argument_1?: Public.Types.MpaaRating.Options
+}
 }
 }
 export namespace Tally {
 export namespace Results {
-export type Options = never;
+export namespace Count {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ count?: PgCatalog.Types.Int8.Options
+}
 }
 }
 }
 export namespace Pick {
 export namespace Results {
+export namespace FilmId {
+
+      export type Options = never;
+    
+}
+export namespace Title {
+
+      export type Options = never;
+    
+}
+export namespace Description {
+
+      export type Options = never;
+    
+}
+export namespace ReleaseYear {
+
+      export type Options = never;
+    
+}
+export namespace LanguageId {
+
+      export type Options = never;
+    
+}
+export namespace RentalDuration {
+
+      export type Options = never;
+    
+}
+export namespace RentalRate {
+
+      export type Options = never;
+    
+}
+export namespace Length {
+
+      export type Options = never;
+    
+}
+export namespace ReplacementCost {
+
+      export type Options = never;
+    
+}
+export namespace Rating {
+
+      export type Options = never;
+    
+}
+export namespace LastUpdate {
+
+      export type Options = never;
+    
+}
+export namespace SpecialFeatures {
 export type Options = never;
 }
+export namespace Fulltext {
+
+       /**
+         * Fulltext queries have different parsers that turn your query search
+         * text into a runnable search in the database.
+         *
+         * For PostgreSQL these are documented at:
+         * https://www.postgresql.org/docs/current/textsearch-controls.html#TEXTSEARCH-HEADLINE
+         */
+        export enum FulltextParser {
+        Default = "to_tsquery",
+        Plain = "plainto_tsquery",
+        Phrase = "phraseto_tsquery",
+        Web = "websearch_to_tsquery",
+        }
+        export type Options = {
+            queryParser?: FulltextParser;
+        }
+        
+            
+}
+export type Options = {
+ filmId?: PgCatalog.Types.Int4.Options,
+title?: PgCatalog.Types.Varchar.Options,
+description?: PgCatalog.Types.Text.Options,
+releaseYear?: PgCatalog.Types.Int4.Options,
+languageId?: PgCatalog.Types.Int2.Options,
+rentalDuration?: PgCatalog.Types.Int2.Options,
+rentalRate?: PgCatalog.Types.Numeric.Options,
+length?: PgCatalog.Types.Int2.Options,
+replacementCost?: PgCatalog.Types.Numeric.Options,
+rating?: Public.Types.MpaaRating.Options,
+lastUpdate?: PgCatalog.Types.Timestamp.Options,
+specialFeatures?: PgCatalog.Types.TextArray.Options,
+fulltext?: PgCatalog.Types.Tsvector.Options
+}
+}
 export namespace Parameters {
-export type Options = never;
+export namespace Argument_1 {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ argument_1?: PgCatalog.Types.Text.Options
+}
 }
 }
 }
 export namespace Tally {
 export namespace Results {
-export type Options = never;
+export namespace Count {
+
+      export type Options = never;
+    
+}
+export type Options = {
+ count?: PgCatalog.Types.Int8.Options
+}
 }
 }
 }
