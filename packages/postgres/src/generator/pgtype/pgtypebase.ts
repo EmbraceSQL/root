@@ -1,4 +1,5 @@
 import { PGTypeBool } from "./base/bool";
+import { PGTypeNever } from "./base/never";
 import { PGTypeBigInt, PGTypeBytea, PGTypeNumber } from "./base/number";
 import { PGTypeText, PGTypeTextArray } from "./base/text";
 import { PGTypeUri } from "./base/uri";
@@ -209,12 +210,10 @@ export class PGTypeBase extends PGCatalogType {
               "",
             );
           default:
-            // TODO: handle types
-            return new PGTypeText(
+            return new PGTypeNever(
               catalog.oid,
               catalog.nspname,
               catalog.typname,
-              `FIXME: ${catalog.typname} did not resolve to a base type`,
             );
         }
     }

@@ -194,25 +194,13 @@ export type Json = JSONObject;
 
 export type Xml = string;
 
-/**
- * FIXME: pg_node_tree did not resolve to a base type
- */
-export type PgNodeTree = string;
+export type PgNodeTree = never;
 
-/**
- * FIXME: pg_ndistinct did not resolve to a base type
- */
-export type PgNdistinct = string;
+export type PgNdistinct = never;
 
-/**
- * FIXME: pg_dependencies did not resolve to a base type
- */
-export type PgDependencies = string;
+export type PgDependencies = never;
 
-/**
- * FIXME: pg_mcv_list did not resolve to a base type
- */
-export type PgMcvList = string;
+export type PgMcvList = never;
 
 export type PgDdlCommand = unknown;
 
@@ -308,15 +296,9 @@ export type Jsonb = JSONObject;
 
 export type Jsonpath = string;
 
-/**
- * FIXME: txid_snapshot did not resolve to a base type
- */
-export type TxidSnapshot = string;
+export type TxidSnapshot = never;
 
-/**
- * FIXME: pg_snapshot did not resolve to a base type
- */
-export type PgSnapshot = string;
+export type PgSnapshot = never;
 
 export type Int4range = [PgCatalog.Types.Int4, PgCatalog.Types.Int4];
 
@@ -392,15 +374,9 @@ export type Anymultirange = unknown;
 
 export type Anycompatiblemultirange = unknown;
 
-/**
- * FIXME: pg_brin_bloom_summary did not resolve to a base type
- */
-export type PgBrinBloomSummary = string;
+export type PgBrinBloomSummary = never;
 
-/**
- * FIXME: pg_brin_minmax_multi_summary did not resolve to a base type
- */
-export type PgBrinMinmaxMultiSummary = string;
+export type PgBrinMinmaxMultiSummary = never;
 
 export type BoolArray = 
      Array<PgCatalog.Types.Bool>
@@ -9686,55 +9662,37 @@ type FieldNamesType = typeof FieldNames[number];
 export namespace Public {
 export namespace Types {
 
-/**
- * FIXME: spheroid did not resolve to a base type
- */
-export type Spheroid = string;
+export type Spheroid = never;
 
 export type SpheroidArray = 
      Array<Public.Types.Spheroid>
     ;
 
-/**
- * FIXME: geometry did not resolve to a base type
- */
-export type Geometry = string;
+export type Geometry = never;
 
 export type GeometryArray = 
      Array<Public.Types.Geometry>
     ;
 
-/**
- * FIXME: box3d did not resolve to a base type
- */
-export type Box3d = string;
+export type Box3d = never;
 
 export type Box3dArray = 
      Array<Public.Types.Box3d>
     ;
 
-/**
- * FIXME: box2d did not resolve to a base type
- */
-export type Box2d = string;
+export type Box2d = never;
 
 export type Box2dArray = 
      Array<Public.Types.Box2d>
     ;
 
-/**
- * FIXME: box2df did not resolve to a base type
- */
-export type Box2df = string;
+export type Box2df = never;
 
 export type Box2dfArray = 
      Array<Public.Types.Box2df>
     ;
 
-/**
- * FIXME: gidx did not resolve to a base type
- */
-export type Gidx = string;
+export type Gidx = never;
 
 export type GidxArray = 
      Array<Public.Types.Gidx>
@@ -9771,10 +9729,7 @@ export type ValidDetailArray =
      Array<Public.Types.ValidDetail>
     ;
 
-/**
- * FIXME: geography did not resolve to a base type
- */
-export type Geography = string;
+export type Geography = never;
 
 export type GeographyArray = 
      Array<Public.Types.Geography>
@@ -16875,10 +16830,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 
@@ -16889,10 +16841,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 
@@ -16903,10 +16852,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 
@@ -16917,10 +16863,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 
@@ -17626,10 +17569,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 
@@ -17640,10 +17580,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 
@@ -18051,10 +17988,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 
@@ -18065,10 +17999,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 
@@ -28396,10 +28327,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 
@@ -28422,10 +28350,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 
@@ -28448,10 +28373,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 
@@ -28474,10 +28396,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 
@@ -28500,10 +28419,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 
@@ -28526,10 +28442,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 
@@ -28637,10 +28550,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 

@@ -194,25 +194,13 @@ export type Json = JSONObject;
 
 export type Xml = string;
 
-/**
- * FIXME: pg_node_tree did not resolve to a base type
- */
-export type PgNodeTree = string;
+export type PgNodeTree = never;
 
-/**
- * FIXME: pg_ndistinct did not resolve to a base type
- */
-export type PgNdistinct = string;
+export type PgNdistinct = never;
 
-/**
- * FIXME: pg_dependencies did not resolve to a base type
- */
-export type PgDependencies = string;
+export type PgDependencies = never;
 
-/**
- * FIXME: pg_mcv_list did not resolve to a base type
- */
-export type PgMcvList = string;
+export type PgMcvList = never;
 
 export type PgDdlCommand = unknown;
 
@@ -308,15 +296,9 @@ export type Jsonb = JSONObject;
 
 export type Jsonpath = string;
 
-/**
- * FIXME: txid_snapshot did not resolve to a base type
- */
-export type TxidSnapshot = string;
+export type TxidSnapshot = never;
 
-/**
- * FIXME: pg_snapshot did not resolve to a base type
- */
-export type PgSnapshot = string;
+export type PgSnapshot = never;
 
 export type Int4range = [PgCatalog.Types.Int4, PgCatalog.Types.Int4];
 
@@ -392,15 +374,9 @@ export type Anymultirange = unknown;
 
 export type Anycompatiblemultirange = unknown;
 
-/**
- * FIXME: pg_brin_bloom_summary did not resolve to a base type
- */
-export type PgBrinBloomSummary = string;
+export type PgBrinBloomSummary = never;
 
-/**
- * FIXME: pg_brin_minmax_multi_summary did not resolve to a base type
- */
-export type PgBrinMinmaxMultiSummary = string;
+export type PgBrinMinmaxMultiSummary = never;
 
 export type BoolArray = 
      Array<PgCatalog.Types.Bool>
@@ -9814,12 +9790,12 @@ export type PrimaryKey = Public.Types.ChecklistItemPkey;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_80004Index = {
+export type PgToast_29476Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_80013Index = {
+export type PgToast_29485Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -10478,10 +10454,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 
@@ -10492,10 +10465,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 
@@ -10506,10 +10476,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 
@@ -10520,10 +10487,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 
@@ -11229,10 +11193,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 
@@ -11243,10 +11204,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 
@@ -11654,10 +11612,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 
@@ -11668,10 +11623,7 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if (typeof from === "string") {
-        return from;
-      }
-      throw new Error(`from is not a string`, {cause: from});
+      return from;
     
 }
 
@@ -22114,11 +22066,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_80004Index {
+export namespace PgToast_29476Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_80004Index.is(from)) {
+if (PgToast.Types.PgToast_29476Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -22129,11 +22081,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_80013Index {
+export namespace PgToast_29485Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_80013Index.is(from)) {
+if (PgToast.Types.PgToast_29485Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -27687,16 +27639,16 @@ export namespace ChecklistItem {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_80004Index {
-export function is(value: any) : value is PgToast.Types.PgToast_80004Index {
+export namespace PgToast_29476Index {
+export function is(value: any) : value is PgToast.Types.PgToast_29476Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_80013Index {
-export function is(value: any) : value is PgToast.Types.PgToast_80013Index {
+export namespace PgToast_29485Index {
+export function is(value: any) : value is PgToast.Types.PgToast_29485Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -31890,13 +31842,13 @@ export namespace ChecklistItem {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_80004Index {
- export function equals(l: PgToast.Types.PgToast_80004Index|undefined, r: unknown) {
+export namespace PgToast_29476Index {
+ export function equals(l: PgToast.Types.PgToast_29476Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_80013Index {
- export function equals(l: PgToast.Types.PgToast_80013Index|undefined, r: unknown) {
+export namespace PgToast_29485Index {
+ export function equals(l: PgToast.Types.PgToast_29485Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -33145,6 +33097,7 @@ export namespace Tsvector {
         }
         export type Options = {
             queryParser?: FulltextParser;
+            configuration?: string;
         }
         
             
@@ -33171,6 +33124,7 @@ export namespace Tsquery {
         }
         export type Options = {
             queryParser?: FulltextParser;
+            configuration?: string;
         }
         
             
@@ -48538,7 +48492,7 @@ export namespace ChecklistItem {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_80004Index {
+export namespace PgToast_29476Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -48554,7 +48508,7 @@ export type Options = {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_80013Index {
+export namespace PgToast_29485Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -49215,6 +49169,368 @@ export namespace Procedures {
 }
 export namespace Tables {
 }
+}
+export type Settings = {
+allowInPlaceTablespaces: string;
+allowSystemTableMods: string;
+applicationName: string;
+archiveCleanupCommand: string;
+archiveCommand: string;
+archiveLibrary: string;
+archiveMode: string;
+archiveTimeout: string;
+arrayNulls: string;
+authenticationTimeout: string;
+autovacuum: string;
+autovacuumAnalyzeScaleFactor: string;
+autovacuumAnalyzeThreshold: string;
+autovacuumFreezeMaxAge: string;
+autovacuumMaxWorkers: string;
+autovacuumMultixactFreezeMaxAge: string;
+autovacuumNaptime: string;
+autovacuumVacuumCostDelay: string;
+autovacuumVacuumCostLimit: string;
+autovacuumVacuumInsertScaleFactor: string;
+autovacuumVacuumInsertThreshold: string;
+autovacuumVacuumScaleFactor: string;
+autovacuumVacuumThreshold: string;
+autovacuumWorkMem: string;
+backendFlushAfter: string;
+backslashQuote: string;
+backtraceFunctions: string;
+bgwriterDelay: string;
+bgwriterFlushAfter: string;
+bgwriterLruMaxpages: string;
+bgwriterLruMultiplier: string;
+blockSize: string;
+bonjour: string;
+bonjourName: string;
+byteaOutput: string;
+checkFunctionBodies: string;
+checkpointCompletionTarget: string;
+checkpointFlushAfter: string;
+checkpointTimeout: string;
+checkpointWarning: string;
+clientConnectionCheckInterval: string;
+clientEncoding: string;
+clientMinMessages: string;
+clusterName: string;
+commitDelay: string;
+commitSiblings: string;
+computeQueryId: string;
+configFile: string;
+constraintExclusion: string;
+cpuIndexTupleCost: string;
+cpuOperatorCost: string;
+cpuTupleCost: string;
+createroleSelfGrant: string;
+cursorTupleFraction: string;
+dataChecksums: string;
+dataDirectory: string;
+dataDirectoryMode: string;
+dataSyncRetry: string;
+dateStyle: string;
+dbUserNamespace: string;
+deadlockTimeout: string;
+debugAssertions: string;
+debugDiscardCaches: string;
+debugIoDirect: string;
+debugLogicalReplicationStreaming: string;
+debugParallelQuery: string;
+debugPrettyPrint: string;
+debugPrintParse: string;
+debugPrintPlan: string;
+debugPrintRewritten: string;
+defaultStatisticsTarget: string;
+defaultTableAccessMethod: string;
+defaultTablespace: string;
+defaultTextSearchConfig: string;
+defaultToastCompression: string;
+defaultTransactionDeferrable: string;
+defaultTransactionIsolation: string;
+defaultTransactionReadOnly: string;
+dynamicLibraryPath: string;
+dynamicSharedMemoryType: string;
+effectiveCacheSize: string;
+effectiveIoConcurrency: string;
+enableAsyncAppend: string;
+enableBitmapscan: string;
+enableGathermerge: string;
+enableHashagg: string;
+enableHashjoin: string;
+enableIncrementalSort: string;
+enableIndexonlyscan: string;
+enableIndexscan: string;
+enableMaterial: string;
+enableMemoize: string;
+enableMergejoin: string;
+enableNestloop: string;
+enableParallelAppend: string;
+enableParallelHash: string;
+enablePartitionPruning: string;
+enablePartitionwiseAggregate: string;
+enablePartitionwiseJoin: string;
+enablePresortedAggregate: string;
+enableSeqscan: string;
+enableSort: string;
+enableTidscan: string;
+escapeStringWarning: string;
+eventSource: string;
+exitOnError: string;
+externalPidFile: string;
+extraFloatDigits: string;
+fromCollapseLimit: string;
+fsync: string;
+fullPageWrites: string;
+geqo: string;
+geqoEffort: string;
+geqoGenerations: string;
+geqoPoolSize: string;
+geqoSeed: string;
+geqoSelectionBias: string;
+geqoThreshold: string;
+ginFuzzySearchLimit: string;
+ginPendingListLimit: string;
+gssAcceptDelegation: string;
+hashMemMultiplier: string;
+hbaFile: string;
+hotStandby: string;
+hotStandbyFeedback: string;
+hugePageSize: string;
+hugePages: string;
+icuValidationLevel: string;
+identFile: string;
+idleInTransactionSessionTimeout: string;
+idleSessionTimeout: string;
+ignoreChecksumFailure: string;
+ignoreInvalidPages: string;
+ignoreSystemIndexes: string;
+inHotStandby: string;
+integerDatetimes: string;
+intervalStyle: string;
+jit: string;
+jitAboveCost: string;
+jitDebuggingSupport: string;
+jitDumpBitcode: string;
+jitExpressions: string;
+jitInlineAboveCost: string;
+jitOptimizeAboveCost: string;
+jitProfilingSupport: string;
+jitProvider: string;
+jitTupleDeforming: string;
+joinCollapseLimit: string;
+krbCaseinsUsers: string;
+krbServerKeyfile: string;
+lcMessages: string;
+lcMonetary: string;
+lcNumeric: string;
+lcTime: string;
+listenAddresses: string;
+loCompatPrivileges: string;
+localPreloadLibraries: string;
+lockTimeout: string;
+logAutovacuumMinDuration: string;
+logCheckpoints: string;
+logConnections: string;
+logDestination: string;
+logDirectory: string;
+logDisconnections: string;
+logDuration: string;
+logErrorVerbosity: string;
+logExecutorStats: string;
+logFileMode: string;
+logFilename: string;
+logHostname: string;
+logLinePrefix: string;
+logLockWaits: string;
+logMinDurationSample: string;
+logMinDurationStatement: string;
+logMinErrorStatement: string;
+logMinMessages: string;
+logParameterMaxLength: string;
+logParameterMaxLengthOnError: string;
+logParserStats: string;
+logPlannerStats: string;
+logRecoveryConflictWaits: string;
+logReplicationCommands: string;
+logRotationAge: string;
+logRotationSize: string;
+logStartupProgressInterval: string;
+logStatement: string;
+logStatementSampleRate: string;
+logStatementStats: string;
+logTempFiles: string;
+logTimezone: string;
+logTransactionSampleRate: string;
+logTruncateOnRotation: string;
+loggingCollector: string;
+logicalDecodingWorkMem: string;
+maintenanceIoConcurrency: string;
+maintenanceWorkMem: string;
+maxConnections: string;
+maxFilesPerProcess: string;
+maxFunctionArgs: string;
+maxIdentifierLength: string;
+maxIndexKeys: string;
+maxLocksPerTransaction: string;
+maxLogicalReplicationWorkers: string;
+maxParallelApplyWorkersPerSubscription: string;
+maxParallelMaintenanceWorkers: string;
+maxParallelWorkers: string;
+maxParallelWorkersPerGather: string;
+maxPredLocksPerPage: string;
+maxPredLocksPerRelation: string;
+maxPredLocksPerTransaction: string;
+maxPreparedTransactions: string;
+maxReplicationSlots: string;
+maxSlotWalKeepSize: string;
+maxStackDepth: string;
+maxStandbyArchiveDelay: string;
+maxStandbyStreamingDelay: string;
+maxSyncWorkersPerSubscription: string;
+maxWalSenders: string;
+maxWalSize: string;
+maxWorkerProcesses: string;
+minDynamicSharedMemory: string;
+minParallelIndexScanSize: string;
+minParallelTableScanSize: string;
+minWalSize: string;
+oldSnapshotThreshold: string;
+parallelLeaderParticipation: string;
+parallelSetupCost: string;
+parallelTupleCost: string;
+passwordEncryption: string;
+planCacheMode: string;
+port: string;
+postAuthDelay: string;
+preAuthDelay: string;
+primaryConninfo: string;
+primarySlotName: string;
+quoteAllIdentifiers: string;
+randomPageCost: string;
+recoveryEndCommand: string;
+recoveryInitSyncMethod: string;
+recoveryMinApplyDelay: string;
+recoveryPrefetch: string;
+recoveryTarget: string;
+recoveryTargetAction: string;
+recoveryTargetInclusive: string;
+recoveryTargetLsn: string;
+recoveryTargetName: string;
+recoveryTargetTime: string;
+recoveryTargetTimeline: string;
+recoveryTargetXid: string;
+recursiveWorktableFactor: string;
+removeTempFilesAfterCrash: string;
+reservedConnections: string;
+restartAfterCrash: string;
+restoreCommand: string;
+rowSecurity: string;
+scramIterations: string;
+searchPath: string;
+segmentSize: string;
+sendAbortForCrash: string;
+sendAbortForKill: string;
+seqPageCost: string;
+serverEncoding: string;
+serverVersion: string;
+serverVersionNum: string;
+sessionPreloadLibraries: string;
+sessionReplicationRole: string;
+sharedBuffers: string;
+sharedMemorySize: string;
+sharedMemorySizeInHugePages: string;
+sharedMemoryType: string;
+sharedPreloadLibraries: string;
+ssl: string;
+sslCaFile: string;
+sslCertFile: string;
+sslCiphers: string;
+sslCrlDir: string;
+sslCrlFile: string;
+sslDhParamsFile: string;
+sslEcdhCurve: string;
+sslKeyFile: string;
+sslLibrary: string;
+sslMaxProtocolVersion: string;
+sslMinProtocolVersion: string;
+sslPassphraseCommand: string;
+sslPassphraseCommandSupportsReload: string;
+sslPreferServerCiphers: string;
+standardConformingStrings: string;
+statementTimeout: string;
+statsFetchConsistency: string;
+superuserReservedConnections: string;
+synchronizeSeqscans: string;
+synchronousCommit: string;
+synchronousStandbyNames: string;
+syslogFacility: string;
+syslogIdent: string;
+syslogSequenceNumbers: string;
+syslogSplitMessages: string;
+tcpKeepalivesCount: string;
+tcpKeepalivesIdle: string;
+tcpKeepalivesInterval: string;
+tcpUserTimeout: string;
+tempBuffers: string;
+tempFileLimit: string;
+tempTablespaces: string;
+timeZone: string;
+timezoneAbbreviations: string;
+traceNotify: string;
+traceRecoveryMessages: string;
+traceSort: string;
+trackActivities: string;
+trackActivityQuerySize: string;
+trackCommitTimestamp: string;
+trackCounts: string;
+trackFunctions: string;
+trackIoTiming: string;
+trackWalIoTiming: string;
+transactionDeferrable: string;
+transactionIsolation: string;
+transactionReadOnly: string;
+transformNullEquals: string;
+unixSocketDirectories: string;
+unixSocketGroup: string;
+unixSocketPermissions: string;
+updateProcessTitle: string;
+vacuumBufferUsageLimit: string;
+vacuumCostDelay: string;
+vacuumCostLimit: string;
+vacuumCostPageDirty: string;
+vacuumCostPageHit: string;
+vacuumCostPageMiss: string;
+vacuumFailsafeAge: string;
+vacuumFreezeMinAge: string;
+vacuumFreezeTableAge: string;
+vacuumMultixactFailsafeAge: string;
+vacuumMultixactFreezeMinAge: string;
+vacuumMultixactFreezeTableAge: string;
+walBlockSize: string;
+walBuffers: string;
+walCompression: string;
+walConsistencyChecking: string;
+walDecodeBufferSize: string;
+walInitZero: string;
+walKeepSize: string;
+walLevel: string;
+walLogHints: string;
+walReceiverCreateTempSlot: string;
+walReceiverStatusInterval: string;
+walReceiverTimeout: string;
+walRecycle: string;
+walRetrieveRetryInterval: string;
+walSegmentSize: string;
+walSenderTimeout: string;
+walSkipThreshold: string;
+walSyncMethod: string;
+walWriterDelay: string;
+walWriterFlushAfter: string;
+workMem: string;
+xmlbinary: string;
+xmloption: string;
+zeroDamagedPages: string;
 }
 
             import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
@@ -50692,24 +51008,24 @@ export namespace Tables {
 ["InformationSchema.Types.UserMappings"]: Typecast
 [13823]: Typecast;
 ["InformationSchema.Types.UserMappingsArray"]: Typecast
-[80006]: Typecast;
+[29478]: Typecast;
 ["Public.Types.Checklist"]: Typecast
-[80005]: Typecast;
+[29477]: Typecast;
 ["Public.Types.ChecklistArray"]: Typecast
-[80015]: Typecast;
+[29487]: Typecast;
 ["Public.Types.ChecklistItem"]: Typecast
-[80014]: Typecast;
+[29486]: Typecast;
 ["Public.Types.ChecklistItemArray"]: Typecast
-[80011]: Typecast;
+[29483]: Typecast;
 ["Public.Types.ChecklistPkey"]: Typecast
-[80021]: Typecast;
+[29493]: Typecast;
 ["Public.Types.ChecklistItemPkey"]: Typecast
-[80028]: Typecast;
+[29500]: Typecast;
 ["Public.Types.ChecklistItemParent"]: Typecast
-[80010]: Typecast;
-["PgToast.Types.PgToast_80004Index"]: Typecast
-[80020]: Typecast;
-["PgToast.Types.PgToast_80013Index"]: Typecast
+[29482]: Typecast;
+["PgToast.Types.PgToast_29476Index"]: Typecast
+[29492]: Typecast;
+["PgToast.Types.PgToast_29485Index"]: Typecast
 [2837]: Typecast;
 ["PgToast.Types.PgToast_1255Index"]: Typecast
 [4172]: Typecast;
@@ -50797,7 +51113,8 @@ export namespace Tables {
             }
           
 export class Database extends PostgresDatabase implements HasDatabase { 
-get database() { return this};
+get database() { return this };
+get settings() { return this.context.settings as Settings };
 
           /**
            * Connect to your database server via URL, and return 
