@@ -1,4 +1,5 @@
 import { Context } from "../../../context";
+import { PGTypeText } from "../base/text";
 import { PGCatalogType } from "../pgcatalogtype";
 import { registerOverride } from "./_overrides";
 import { GenerationContext } from "@embracesql/shared";
@@ -44,6 +45,6 @@ registerOverride("timestamptz", PGDate);
 registerOverride("timestamp", PGDate);
 registerOverride("date", PGDate);
 
-// TODO: gonna need a real JS 'time' type
-registerOverride("time", PGDate);
-registerOverride("timetz", PGDate);
+// who uses 'time' ?
+registerOverride("time", PGTypeText);
+registerOverride("timetz", PGTypeText);

@@ -244,7 +244,7 @@ export type Varchar = string;
 
 export type Date = JsDate;
 
-export type Time = JsDate;
+export type Time = string;
 
 export type Timestamp = JsDate;
 
@@ -252,7 +252,7 @@ export type Timestamptz = JsDate;
 
 export type Interval = number;
 
-export type Timetz = JsDate;
+export type Timetz = string;
 
 export type Bit = boolean;
 
@@ -12218,8 +12218,10 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if ((from as unknown) instanceof JsDate) return from as Date;
-      return new JsDate(from as string);
+      if (typeof from === "string") {
+        return from;
+      }
+      throw new Error(`from is not a string`, {cause: from});
     
 }
 
@@ -12271,8 +12273,10 @@ export function parse(from: unknown) {
 // Type
 if (from === null || from === undefined) return null;
 
-      if ((from as unknown) instanceof JsDate) return from as Date;
-      return new JsDate(from as string);
+      if (typeof from === "string") {
+        return from;
+      }
+      throw new Error(`from is not a string`, {cause: from});
     
 }
 
