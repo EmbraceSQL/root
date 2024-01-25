@@ -17,7 +17,7 @@
         import { Geometry } from "@embracesql/shared";
     
 
-            import { Tables, Table, Column, Index, Procedures, Procedure } from "@embracesql/shared";
+            import { Schema, Tables, Table, Column, Index, Procedures, Procedure } from "@embracesql/shared";
             import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
             import postgres from "postgres";
           
@@ -1841,41 +1841,62 @@ get settings() { return this.context.settings as Settings };
         
         
 
-          public Public = new class implements HasDatabase {
+            get Public() { return new Public(this); }
+            
+
+            get Api() { return new Api(this); }
+            
+
+            get PgToast() { return new PgToast(this); }
+            
+}
+
+          export class Public implements Schema, HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "public";
             }
         
 get Procedures () { return new Public.Procedures(this)} 
 get Tables () { return new Public.Tables(this)} 
-}(this)
+}
 
-          public Api = new class implements HasDatabase {
+          export class Api implements Schema, HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "api";
             }
         
 get Procedures () { return new Api.Procedures(this)} 
 get Tables () { return new Api.Tables(this)} 
-}(this)
+}
 
-          public PgToast = new class implements HasDatabase {
+          export class PgToast implements Schema, HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
             }
+
+            get name() {
+              return "pg_toast";
+            }
         
 get Procedures () { return new PgToast.Procedures(this)} 
 get Tables () { return new PgToast.Tables(this)} 
-}(this)
 }
 export namespace Public {
 
@@ -1891,13 +1912,13 @@ export namespace Public {
               return "Procedures";
             }
 
-            /**
-             * Every procedure in this schema.
-             */
-            get procedures() {
-              return [
-                new Public.Procedures.CubeIn(this),new Public.Procedures.Cube_9c45(this),new Public.Procedures.Cube_2e6d(this),new Public.Procedures.CubeOut(this),new Public.Procedures.CubeEq(this),new Public.Procedures.CubeNe(this),new Public.Procedures.CubeLt(this),new Public.Procedures.CubeGt(this),new Public.Procedures.CubeLe(this),new Public.Procedures.CubeGe(this),new Public.Procedures.CubeCmp(this),new Public.Procedures.CubeContains(this),new Public.Procedures.CubeContained(this),new Public.Procedures.CubeOverlap(this),new Public.Procedures.CubeUnion(this),new Public.Procedures.CubeInter(this),new Public.Procedures.CubeSize(this),new Public.Procedures.CubeSubset(this),new Public.Procedures.CubeDistance(this),new Public.Procedures.DistanceChebyshev(this),new Public.Procedures.DistanceTaxicab(this),new Public.Procedures.CubeDim(this),new Public.Procedures.CubeLlCoord(this),new Public.Procedures.CubeUrCoord(this),new Public.Procedures.CubeCoord(this),new Public.Procedures.CubeCoordLlur(this),new Public.Procedures.CubeA5b3(this),new Public.Procedures.Cube_0aec(this),new Public.Procedures.Cube_7bfd(this),new Public.Procedures.CubeF584(this),new Public.Procedures.CubeIsPoint(this),new Public.Procedures.CubeEnlarge(this),new Public.Procedures.GCubeConsistent(this),new Public.Procedures.GCubePenalty(this),new Public.Procedures.GCubePicksplit(this),new Public.Procedures.GCubeUnion(this),new Public.Procedures.GCubeSame(this),new Public.Procedures.GCubeDistance(this),new Public.Procedures.CubeRecv(this),new Public.Procedures.CubeSend(this),new Public.Procedures.SetLimit(this),new Public.Procedures.ShowLimit(this),new Public.Procedures.ShowTrgm(this),new Public.Procedures.Similarity(this),new Public.Procedures.SimilarityOp(this),new Public.Procedures.WordSimilarity(this),new Public.Procedures.WordSimilarityOp(this),new Public.Procedures.WordSimilarityCommutatorOp(this),new Public.Procedures.SimilarityDist(this),new Public.Procedures.WordSimilarityDistOp(this),new Public.Procedures.WordSimilarityDistCommutatorOp(this),new Public.Procedures.GtrgmIn(this),new Public.Procedures.GtrgmOut(this),new Public.Procedures.GtrgmConsistent(this),new Public.Procedures.GtrgmDistance(this),new Public.Procedures.GtrgmCompress(this),new Public.Procedures.GtrgmDecompress(this),new Public.Procedures.GtrgmPenalty(this),new Public.Procedures.GtrgmPicksplit(this),new Public.Procedures.GtrgmUnion(this),new Public.Procedures.GtrgmSame(this),new Public.Procedures.GinExtractValueTrgm(this),new Public.Procedures.GinExtractQueryTrgm(this),new Public.Procedures.GinTrgmConsistent(this),new Public.Procedures.GinTrgmTriconsistent(this),new Public.Procedures.StrictWordSimilarity(this),new Public.Procedures.StrictWordSimilarityOp(this),new Public.Procedures.StrictWordSimilarityCommutatorOp(this),new Public.Procedures.StrictWordSimilarityDistOp(this),new Public.Procedures.StrictWordSimilarityDistCommutatorOp(this),new Public.Procedures.GtrgmOptions(this)
-              ];
+            *[Symbol.iterator](): IterableIterator<Procedure> {
+                const all : Procedure[] = [
+                  new Public.Procedures.CubeIn(this),new Public.Procedures.Cube_9c45(this),new Public.Procedures.Cube_2e6d(this),new Public.Procedures.CubeOut(this),new Public.Procedures.CubeEq(this),new Public.Procedures.CubeNe(this),new Public.Procedures.CubeLt(this),new Public.Procedures.CubeGt(this),new Public.Procedures.CubeLe(this),new Public.Procedures.CubeGe(this),new Public.Procedures.CubeCmp(this),new Public.Procedures.CubeContains(this),new Public.Procedures.CubeContained(this),new Public.Procedures.CubeOverlap(this),new Public.Procedures.CubeUnion(this),new Public.Procedures.CubeInter(this),new Public.Procedures.CubeSize(this),new Public.Procedures.CubeSubset(this),new Public.Procedures.CubeDistance(this),new Public.Procedures.DistanceChebyshev(this),new Public.Procedures.DistanceTaxicab(this),new Public.Procedures.CubeDim(this),new Public.Procedures.CubeLlCoord(this),new Public.Procedures.CubeUrCoord(this),new Public.Procedures.CubeCoord(this),new Public.Procedures.CubeCoordLlur(this),new Public.Procedures.CubeA5b3(this),new Public.Procedures.Cube_0aec(this),new Public.Procedures.Cube_7bfd(this),new Public.Procedures.CubeF584(this),new Public.Procedures.CubeIsPoint(this),new Public.Procedures.CubeEnlarge(this),new Public.Procedures.GCubeConsistent(this),new Public.Procedures.GCubePenalty(this),new Public.Procedures.GCubePicksplit(this),new Public.Procedures.GCubeUnion(this),new Public.Procedures.GCubeSame(this),new Public.Procedures.GCubeDistance(this),new Public.Procedures.CubeRecv(this),new Public.Procedures.CubeSend(this),new Public.Procedures.SetLimit(this),new Public.Procedures.ShowLimit(this),new Public.Procedures.ShowTrgm(this),new Public.Procedures.Similarity(this),new Public.Procedures.SimilarityOp(this),new Public.Procedures.WordSimilarity(this),new Public.Procedures.WordSimilarityOp(this),new Public.Procedures.WordSimilarityCommutatorOp(this),new Public.Procedures.SimilarityDist(this),new Public.Procedures.WordSimilarityDistOp(this),new Public.Procedures.WordSimilarityDistCommutatorOp(this),new Public.Procedures.GtrgmIn(this),new Public.Procedures.GtrgmOut(this),new Public.Procedures.GtrgmConsistent(this),new Public.Procedures.GtrgmDistance(this),new Public.Procedures.GtrgmCompress(this),new Public.Procedures.GtrgmDecompress(this),new Public.Procedures.GtrgmPenalty(this),new Public.Procedures.GtrgmPicksplit(this),new Public.Procedures.GtrgmUnion(this),new Public.Procedures.GtrgmSame(this),new Public.Procedures.GinExtractValueTrgm(this),new Public.Procedures.GinExtractQueryTrgm(this),new Public.Procedures.GinTrgmConsistent(this),new Public.Procedures.GinTrgmTriconsistent(this),new Public.Procedures.StrictWordSimilarity(this),new Public.Procedures.StrictWordSimilarityOp(this),new Public.Procedures.StrictWordSimilarityCommutatorOp(this),new Public.Procedures.StrictWordSimilarityDistOp(this),new Public.Procedures.StrictWordSimilarityDistCommutatorOp(this),new Public.Procedures.GtrgmOptions(this)
+                ];
+                for (const procedure of all) {
+                    yield procedure;
+                }
             }
         
 get CubeIn () { return new Public.Procedures.CubeIn(this)} 
@@ -1987,13 +2008,13 @@ export namespace Api {
               return "Procedures";
             }
 
-            /**
-             * Every procedure in this schema.
-             */
-            get procedures() {
-              return [
-                new Api.Procedures.Echo(this),new Api.Procedures.EchoSet(this),new Api.Procedures.EchoTable(this),new Api.Procedures.EchoType(this),new Api.Procedures.EchoTypeArray(this),new Api.Procedures.EchoTypeNested(this),new Api.Procedures.EchoTypeSet(this),new Api.Procedures.EchoAnswer(this)
-              ];
+            *[Symbol.iterator](): IterableIterator<Procedure> {
+                const all : Procedure[] = [
+                  new Api.Procedures.Echo(this),new Api.Procedures.EchoSet(this),new Api.Procedures.EchoTable(this),new Api.Procedures.EchoType(this),new Api.Procedures.EchoTypeArray(this),new Api.Procedures.EchoTypeNested(this),new Api.Procedures.EchoTypeSet(this),new Api.Procedures.EchoAnswer(this)
+                ];
+                for (const procedure of all) {
+                    yield procedure;
+                }
             }
         
 get Echo () { return new Api.Procedures.Echo(this)} 
@@ -2020,13 +2041,13 @@ export namespace PgToast {
               return "Procedures";
             }
 
-            /**
-             * Every procedure in this schema.
-             */
-            get procedures() {
-              return [
-                
-              ];
+            *[Symbol.iterator](): IterableIterator<Procedure> {
+                const all : Procedure[] = [
+                  
+                ];
+                for (const procedure of all) {
+                    yield procedure;
+                }
             }
         
 }
@@ -3715,13 +3736,13 @@ export namespace Public {
               return "Tables";
             }
 
-            /**
-             * Every table in this schema.
-             */
-            get tables() {
-              return [
-                new Public.Tables.Slug(this)
-              ];
+            *[Symbol.iterator](): IterableIterator<Table> {
+                const all : Table[] = [
+                  new Public.Tables.Slug(this)
+                ];
+                for (const table of all) {
+                    yield table;
+                }
             }
         
 get Slug () { return new Public.Tables.Slug(this)} 
@@ -3741,13 +3762,13 @@ export namespace Api {
               return "Tables";
             }
 
-            /**
-             * Every table in this schema.
-             */
-            get tables() {
-              return [
-                new Api.Tables.QAndA(this),new Api.Tables.Timezones(this),new Api.Tables.Points(this),new Api.Tables.Lines(this),new Api.Tables.LineSegments(this),new Api.Tables.Boxes(this),new Api.Tables.Paths(this),new Api.Tables.Polygons(this),new Api.Tables.Circles(this)
-              ];
+            *[Symbol.iterator](): IterableIterator<Table> {
+                const all : Table[] = [
+                  new Api.Tables.QAndA(this),new Api.Tables.Timezones(this),new Api.Tables.Points(this),new Api.Tables.Lines(this),new Api.Tables.LineSegments(this),new Api.Tables.Boxes(this),new Api.Tables.Paths(this),new Api.Tables.Polygons(this),new Api.Tables.Circles(this)
+                ];
+                for (const table of all) {
+                    yield table;
+                }
             }
         
 get QAndA () { return new Api.Tables.QAndA(this)} 
@@ -3775,13 +3796,13 @@ export namespace PgToast {
               return "Tables";
             }
 
-            /**
-             * Every table in this schema.
-             */
-            get tables() {
-              return [
-                
-              ];
+            *[Symbol.iterator](): IterableIterator<Table> {
+                const all : Table[] = [
+                  
+                ];
+                for (const table of all) {
+                    yield table;
+                }
             }
         
 }
@@ -3801,18 +3822,12 @@ export namespace Tables {
               return "slug";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "slug_id", type: "pg_catalog.int4"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.Slug.SlugPkey(this)
@@ -3887,18 +3902,12 @@ export namespace Tables {
               return "q_and_a";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "question", type: "pg_catalog.text"},{name: "answer", type: "api.answer"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Api.Tables.QAndA.QAndAAnswer(this)
@@ -3956,18 +3965,12 @@ get QAndAAnswer () { return new Api.Tables.QAndA.QAndAAnswer(this)}
               return "timezones";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "country_code", type: "pg_catalog.text"},{name: "time_zone", type: "pg_catalog.text"},{name: "gmt_offset", type: "pg_catalog.float4"},{name: "dst_offset", type: "pg_catalog.float4"},{name: "raw_offset", type: "pg_catalog.float4"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Api.Tables.Timezones.TrgmIdxGist(this),new Api.Tables.Timezones.TrgmIdxGin(this)
@@ -4027,18 +4030,12 @@ get TrgmIdxGin () { return new Api.Tables.Timezones.TrgmIdxGin(this)}
               return "points";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "id", type: "pg_catalog.uuid"},{name: "point", type: "pg_catalog.point"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Api.Tables.Points.PointsPkey(this)
@@ -4109,18 +4106,12 @@ get PointsPkey () { return new Api.Tables.Points.PointsPkey(this)}
               return "lines";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "id", type: "pg_catalog.uuid"},{name: "line", type: "pg_catalog.line"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Api.Tables.Lines.LinesPkey(this)
@@ -4191,18 +4182,12 @@ get LinesPkey () { return new Api.Tables.Lines.LinesPkey(this)}
               return "line_segments";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "id", type: "pg_catalog.uuid"},{name: "line_segment", type: "pg_catalog.lseg"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Api.Tables.LineSegments.LineSegmentsPkey(this)
@@ -4273,18 +4258,12 @@ get LineSegmentsPkey () { return new Api.Tables.LineSegments.LineSegmentsPkey(th
               return "boxes";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "id", type: "pg_catalog.uuid"},{name: "box", type: "pg_catalog.box"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Api.Tables.Boxes.BoxesPkey(this)
@@ -4355,18 +4334,12 @@ get BoxesPkey () { return new Api.Tables.Boxes.BoxesPkey(this)}
               return "paths";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "id", type: "pg_catalog.uuid"},{name: "path", type: "pg_catalog.path"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Api.Tables.Paths.PathsPkey(this)
@@ -4437,18 +4410,12 @@ get PathsPkey () { return new Api.Tables.Paths.PathsPkey(this)}
               return "polygons";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "id", type: "pg_catalog.uuid"},{name: "polygon", type: "pg_catalog.polygon"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Api.Tables.Polygons.PolygonsPkey(this)
@@ -4519,18 +4486,12 @@ get PolygonsPkey () { return new Api.Tables.Polygons.PolygonsPkey(this)}
               return "circles";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "id", type: "pg_catalog.uuid"},{name: "circle", type: "pg_catalog.circle"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Api.Tables.Circles.CirclesPkey(this)
@@ -4610,9 +4571,6 @@ export namespace Slug {
               return "slug_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "slug_id", type: "pg_catalog.int4"}
@@ -4692,9 +4650,6 @@ export namespace QAndA {
               return "q_and_a_answer";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "answer", type: "api.answer"}
@@ -4770,9 +4725,6 @@ export namespace Timezones {
               return "trgm_idx_gist";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "time_zone", type: "pg_catalog.text"}
@@ -4846,9 +4798,6 @@ async delete(parameters: Api.Types.TrgmIdxGist, options?: Api.Types.TrgmIdxGist.
               return "trgm_idx_gin";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "time_zone", type: "pg_catalog.text"}
@@ -4924,9 +4873,6 @@ export namespace Points {
               return "points_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "id", type: "pg_catalog.uuid"}
@@ -5002,9 +4948,6 @@ export namespace Lines {
               return "lines_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "id", type: "pg_catalog.uuid"}
@@ -5080,9 +5023,6 @@ export namespace LineSegments {
               return "line_segments_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "id", type: "pg_catalog.uuid"}
@@ -5158,9 +5098,6 @@ export namespace Boxes {
               return "boxes_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "id", type: "pg_catalog.uuid"}
@@ -5236,9 +5173,6 @@ export namespace Paths {
               return "paths_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "id", type: "pg_catalog.uuid"}
@@ -5314,9 +5248,6 @@ export namespace Polygons {
               return "polygons_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "id", type: "pg_catalog.uuid"}
@@ -5392,9 +5323,6 @@ export namespace Circles {
               return "circles_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "id", type: "pg_catalog.uuid"}

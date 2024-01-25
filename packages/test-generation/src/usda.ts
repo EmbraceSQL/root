@@ -17,7 +17,7 @@
         import { Geometry } from "@embracesql/shared";
     
 
-            import { Tables, Table, Column, Index, Procedures, Procedure } from "@embracesql/shared";
+            import { Schema, Tables, Table, Column, Index, Procedures, Procedure } from "@embracesql/shared";
             import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
             import postgres from "postgres";
           
@@ -1683,17 +1683,24 @@ get settings() { return this.context.settings as Settings };
         
         
 
-          public Public = new class implements HasDatabase {
+            get Public() { return new Public(this); }
+            
+}
+
+          export class Public implements Schema, HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
             }
+
+            get name() {
+              return "public";
+            }
         
 get Procedures () { return new Public.Procedures(this)} 
 get Tables () { return new Public.Tables(this)} 
-}(this)
 }
 export namespace Public {
 
@@ -1709,13 +1716,13 @@ export namespace Public {
               return "Procedures";
             }
 
-            /**
-             * Every procedure in this schema.
-             */
-            get procedures() {
-              return [
-                
-              ];
+            *[Symbol.iterator](): IterableIterator<Procedure> {
+                const all : Procedure[] = [
+                  
+                ];
+                for (const procedure of all) {
+                    yield procedure;
+                }
             }
         
 }
@@ -1738,13 +1745,13 @@ export namespace Public {
               return "Tables";
             }
 
-            /**
-             * Every table in this schema.
-             */
-            get tables() {
-              return [
-                new Public.Tables.NutData(this),new Public.Tables.SrcCd(this),new Public.Tables.Footnote(this),new Public.Tables.NutrDef(this),new Public.Tables.DerivCd(this),new Public.Tables.FdGroup(this),new Public.Tables.Weight(this),new Public.Tables.FoodDes(this),new Public.Tables.DataSrc(this),new Public.Tables.Datsrcln(this)
-              ];
+            *[Symbol.iterator](): IterableIterator<Table> {
+                const all : Table[] = [
+                  new Public.Tables.NutData(this),new Public.Tables.SrcCd(this),new Public.Tables.Footnote(this),new Public.Tables.NutrDef(this),new Public.Tables.DerivCd(this),new Public.Tables.FdGroup(this),new Public.Tables.Weight(this),new Public.Tables.FoodDes(this),new Public.Tables.DataSrc(this),new Public.Tables.Datsrcln(this)
+                ];
+                for (const table of all) {
+                    yield table;
+                }
             }
         
 get NutData () { return new Public.Tables.NutData(this)} 
@@ -1774,18 +1781,12 @@ export namespace Tables {
               return "nut_data";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "nutr_no", type: "pg_catalog.bpchar"},{name: "nutr_val", type: "pg_catalog.float8"},{name: "num_data_pts", type: "pg_catalog.float8"},{name: "std_error", type: "pg_catalog.float8"},{name: "src_cd", type: "pg_catalog.int4"},{name: "deriv_cd", type: "pg_catalog.text"},{name: "ref_ndb_no", type: "pg_catalog.bpchar"},{name: "add_nutr_mark", type: "pg_catalog.bpchar"},{name: "num_studies", type: "pg_catalog.int4"},{name: "min", type: "pg_catalog.float8"},{name: "max", type: "pg_catalog.float8"},{name: "df", type: "pg_catalog.int4"},{name: "low_eb", type: "pg_catalog.float8"},{name: "up_eb", type: "pg_catalog.float8"},{name: "stat_cmt", type: "pg_catalog.text"},{name: "cc", type: "pg_catalog.bpchar"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.NutData.NutDataPkey(this),new Public.Tables.NutData.NutDataDerivCdIdx(this),new Public.Tables.NutData.NutDataNutrNoIdx(this),new Public.Tables.NutData.NutDataSrcCdIdx(this)
@@ -1849,18 +1850,12 @@ get NutDataSrcCdIdx () { return new Public.Tables.NutData.NutDataSrcCdIdx(this)}
               return "src_cd";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "src_cd", type: "pg_catalog.int4"},{name: "srccd_desc", type: "pg_catalog.text"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.SrcCd.SrcCdPkey(this)
@@ -1918,18 +1913,12 @@ get SrcCdPkey () { return new Public.Tables.SrcCd.SrcCdPkey(this)}
               return "footnote";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "footnt_no", type: "pg_catalog.bpchar"},{name: "footnt_typ", type: "pg_catalog.bpchar"},{name: "nutr_no", type: "pg_catalog.bpchar"},{name: "footnt_txt", type: "pg_catalog.text"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.Footnote.FootnoteNdbNoIdx(this)
@@ -1987,18 +1976,12 @@ get FootnoteNdbNoIdx () { return new Public.Tables.Footnote.FootnoteNdbNoIdx(thi
               return "nutr_def";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "nutr_no", type: "pg_catalog.bpchar"},{name: "units", type: "pg_catalog.text"},{name: "tagname", type: "pg_catalog.text"},{name: "nutrdesc", type: "pg_catalog.text"},{name: "num_dec", type: "pg_catalog.int2"},{name: "sr_order", type: "pg_catalog.int4"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.NutrDef.NutrDefPkey(this)
@@ -2056,18 +2039,12 @@ get NutrDefPkey () { return new Public.Tables.NutrDef.NutrDefPkey(this)}
               return "deriv_cd";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "deriv_cd", type: "pg_catalog.text"},{name: "derivcd_desc", type: "pg_catalog.text"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.DerivCd.DerivCdPkey(this)
@@ -2125,18 +2102,12 @@ get DerivCdPkey () { return new Public.Tables.DerivCd.DerivCdPkey(this)}
               return "fd_group";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "fdgrp_cd", type: "pg_catalog.bpchar"},{name: "fddrp_desc", type: "pg_catalog.text"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.FdGroup.FdGroupPkey(this)
@@ -2194,18 +2165,12 @@ get FdGroupPkey () { return new Public.Tables.FdGroup.FdGroupPkey(this)}
               return "weight";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "seq", type: "pg_catalog.bpchar"},{name: "amount", type: "pg_catalog.float8"},{name: "msre_desc", type: "pg_catalog.text"},{name: "gm_wgt", type: "pg_catalog.float8"},{name: "num_data_pts", type: "pg_catalog.int4"},{name: "std_dev", type: "pg_catalog.float8"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.Weight.WeightPkey(this)
@@ -2263,18 +2228,12 @@ get WeightPkey () { return new Public.Tables.Weight.WeightPkey(this)}
               return "food_des";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "fdgrp_cd", type: "pg_catalog.bpchar"},{name: "long_desc", type: "pg_catalog.text"},{name: "shrt_desc", type: "pg_catalog.text"},{name: "comname", type: "pg_catalog.text"},{name: "manufacname", type: "pg_catalog.text"},{name: "survey", type: "pg_catalog.bpchar"},{name: "ref_desc", type: "pg_catalog.text"},{name: "refuse", type: "pg_catalog.int4"},{name: "sciname", type: "pg_catalog.text"},{name: "n_factor", type: "pg_catalog.float8"},{name: "pro_factor", type: "pg_catalog.float8"},{name: "fat_factor", type: "pg_catalog.float8"},{name: "cho_factor", type: "pg_catalog.float8"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.FoodDes.FoodDesPkey(this),new Public.Tables.FoodDes.FoodDesFdgrpCdIdx(this)
@@ -2334,18 +2293,12 @@ get FoodDesFdgrpCdIdx () { return new Public.Tables.FoodDes.FoodDesFdgrpCdIdx(th
               return "data_src";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "datasrc_id", type: "pg_catalog.bpchar"},{name: "authors", type: "pg_catalog.text"},{name: "title", type: "pg_catalog.text"},{name: "year", type: "pg_catalog.int4"},{name: "journal", type: "pg_catalog.text"},{name: "vol_city", type: "pg_catalog.text"},{name: "issue_state", type: "pg_catalog.text"},{name: "start_page", type: "pg_catalog.text"},{name: "end_page", type: "pg_catalog.text"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.DataSrc.DataSrcTitleFulltext(this),new Public.Tables.DataSrc.DataSrcPkey(this)
@@ -2405,18 +2358,12 @@ get DataSrcPkey () { return new Public.Tables.DataSrc.DataSrcPkey(this)}
               return "datsrcln";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "nutr_no", type: "pg_catalog.bpchar"},{name: "datasrc_id", type: "pg_catalog.bpchar"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.Datsrcln.DatsrclnPkey(this),new Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx(this)
@@ -2481,9 +2428,6 @@ export namespace NutData {
               return "nut_data_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "nutr_no", type: "pg_catalog.bpchar"}
@@ -2557,9 +2501,6 @@ async delete(parameters: Public.Types.NutDataPkey, options?: Public.Types.NutDat
               return "nut_data_deriv_cd_idx";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "deriv_cd", type: "pg_catalog.text"}
@@ -2633,9 +2574,6 @@ async delete(parameters: Public.Types.NutDataDerivCdIdx, options?: Public.Types.
               return "nut_data_nutr_no_idx";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "nutr_no", type: "pg_catalog.bpchar"}
@@ -2709,9 +2647,6 @@ async delete(parameters: Public.Types.NutDataNutrNoIdx, options?: Public.Types.N
               return "nut_data_src_cd_idx";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "src_cd", type: "pg_catalog.int4"}
@@ -2787,9 +2722,6 @@ export namespace SrcCd {
               return "src_cd_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "src_cd", type: "pg_catalog.int4"}
@@ -2865,9 +2797,6 @@ export namespace Footnote {
               return "footnote_ndb_no_idx";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "nutr_no", type: "pg_catalog.bpchar"}
@@ -2943,9 +2872,6 @@ export namespace NutrDef {
               return "nutr_def_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "nutr_no", type: "pg_catalog.bpchar"}
@@ -3021,9 +2947,6 @@ export namespace DerivCd {
               return "deriv_cd_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "deriv_cd", type: "pg_catalog.text"}
@@ -3099,9 +3022,6 @@ export namespace FdGroup {
               return "fd_group_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "fdgrp_cd", type: "pg_catalog.bpchar"}
@@ -3177,9 +3097,6 @@ export namespace Weight {
               return "weight_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "seq", type: "pg_catalog.bpchar"}
@@ -3255,9 +3172,6 @@ export namespace FoodDes {
               return "food_des_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "ndb_no", type: "pg_catalog.bpchar"}
@@ -3331,9 +3245,6 @@ async delete(parameters: Public.Types.FoodDesPkey, options?: Public.Types.FoodDe
               return "food_des_fdgrp_cd_idx";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "fdgrp_cd", type: "pg_catalog.bpchar"}
@@ -3409,9 +3320,6 @@ export namespace DataSrc {
               return "data_src_title_fulltext";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "title", type: "pg_catalog.tsvector"}
@@ -3485,9 +3393,6 @@ async delete(parameters: Public.Types.DataSrcTitleFulltext, options?: Public.Typ
               return "data_src_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "datasrc_id", type: "pg_catalog.bpchar"}
@@ -3563,9 +3468,6 @@ export namespace Datsrcln {
               return "datsrcln_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "nutr_no", type: "pg_catalog.bpchar"},{name: "datasrc_id", type: "pg_catalog.bpchar"}
@@ -3639,9 +3541,6 @@ async delete(parameters: Public.Types.DatsrclnPkey, options?: Public.Types.Datsr
               return "datsrcln_datasrc_id_idx";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "datasrc_id", type: "pg_catalog.bpchar"}

@@ -17,7 +17,7 @@
         import { Geometry } from "@embracesql/shared";
     
 
-            import { Tables, Table, Column, Index, Procedures, Procedure } from "@embracesql/shared";
+            import { Schema, Tables, Table, Column, Index, Procedures, Procedure } from "@embracesql/shared";
             import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
             import postgres from "postgres";
           
@@ -1785,17 +1785,8 @@ get settings() { return this.context.settings as Settings };
         
         
 
-          public Public = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-get Procedures () { return new Public.Procedures(this)} 
-get Tables () { return new Public.Tables(this)} 
-}(this)
+            get Public() { return new Public(this); }
+            
 
           public Scripts = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
@@ -1964,6 +1955,22 @@ FROM
 }(this)
 }(this)
 }
+
+          export class Public implements Schema, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "public";
+            }
+        
+get Procedures () { return new Public.Procedures(this)} 
+get Tables () { return new Public.Tables(this)} 
+}
 export namespace Public {
 
           export class Procedures implements Procedures, HasDatabase {
@@ -1978,13 +1985,13 @@ export namespace Public {
               return "Procedures";
             }
 
-            /**
-             * Every procedure in this schema.
-             */
-            get procedures() {
-              return [
-                new Public.Procedures.FilmInStock(this),new Public.Procedures.FilmNotInStock(this),new Public.Procedures.GetCustomerBalance(this),new Public.Procedures.InventoryHeldByCustomer(this),new Public.Procedures.InventoryInStock(this),new Public.Procedures.LastDay(this),new Public.Procedures.RewardsReport(this)
-              ];
+            *[Symbol.iterator](): IterableIterator<Procedure> {
+                const all : Procedure[] = [
+                  new Public.Procedures.FilmInStock(this),new Public.Procedures.FilmNotInStock(this),new Public.Procedures.GetCustomerBalance(this),new Public.Procedures.InventoryHeldByCustomer(this),new Public.Procedures.InventoryInStock(this),new Public.Procedures.LastDay(this),new Public.Procedures.RewardsReport(this)
+                ];
+                for (const procedure of all) {
+                    yield procedure;
+                }
             }
         
 get FilmInStock () { return new Public.Procedures.FilmInStock(this)} 
@@ -2159,13 +2166,13 @@ export namespace Public {
               return "Tables";
             }
 
-            /**
-             * Every table in this schema.
-             */
-            get tables() {
-              return [
-                new Public.Tables.FilmActor(this),new Public.Tables.Address(this),new Public.Tables.City(this),new Public.Tables.Customer(this),new Public.Tables.Actor(this),new Public.Tables.FilmCategory(this),new Public.Tables.Inventory(this),new Public.Tables.Category(this),new Public.Tables.Country(this),new Public.Tables.Language(this),new Public.Tables.Rental(this),new Public.Tables.Staff(this),new Public.Tables.Store(this),new Public.Tables.Payment(this),new Public.Tables.Film(this)
-              ];
+            *[Symbol.iterator](): IterableIterator<Table> {
+                const all : Table[] = [
+                  new Public.Tables.FilmActor(this),new Public.Tables.Address(this),new Public.Tables.City(this),new Public.Tables.Customer(this),new Public.Tables.Actor(this),new Public.Tables.FilmCategory(this),new Public.Tables.Inventory(this),new Public.Tables.Category(this),new Public.Tables.Country(this),new Public.Tables.Language(this),new Public.Tables.Rental(this),new Public.Tables.Staff(this),new Public.Tables.Store(this),new Public.Tables.Payment(this),new Public.Tables.Film(this)
+                ];
+                for (const table of all) {
+                    yield table;
+                }
             }
         
 get FilmActor () { return new Public.Tables.FilmActor(this)} 
@@ -2200,18 +2207,12 @@ export namespace Tables {
               return "film_actor";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "actor_id", type: "pg_catalog.int2"},{name: "film_id", type: "pg_catalog.int2"},{name: "last_update", type: "pg_catalog.timestamp"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.FilmActor.FilmActorPkey(this),new Public.Tables.FilmActor.IdxFkFilmId(this)
@@ -2271,18 +2272,12 @@ get IdxFkFilmId () { return new Public.Tables.FilmActor.IdxFkFilmId(this)}
               return "address";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "address_id", type: "pg_catalog.int4"},{name: "address", type: "pg_catalog.varchar"},{name: "address2", type: "pg_catalog.varchar"},{name: "district", type: "pg_catalog.varchar"},{name: "city_id", type: "pg_catalog.int2"},{name: "postal_code", type: "pg_catalog.varchar"},{name: "phone", type: "pg_catalog.varchar"},{name: "last_update", type: "pg_catalog.timestamp"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.Address.AddressPkey(this),new Public.Tables.Address.IdxFkCityId(this)
@@ -2355,18 +2350,12 @@ get IdxFkCityId () { return new Public.Tables.Address.IdxFkCityId(this)}
               return "city";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "city_id", type: "pg_catalog.int4"},{name: "city", type: "pg_catalog.varchar"},{name: "country_id", type: "pg_catalog.int2"},{name: "last_update", type: "pg_catalog.timestamp"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.City.CityPkey(this),new Public.Tables.City.IdxFkCountryId(this)
@@ -2439,18 +2428,12 @@ get IdxFkCountryId () { return new Public.Tables.City.IdxFkCountryId(this)}
               return "customer";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "customer_id", type: "pg_catalog.int4"},{name: "store_id", type: "pg_catalog.int2"},{name: "first_name", type: "pg_catalog.varchar"},{name: "last_name", type: "pg_catalog.varchar"},{name: "email", type: "pg_catalog.varchar"},{name: "address_id", type: "pg_catalog.int2"},{name: "activebool", type: "pg_catalog.bool"},{name: "create_date", type: "pg_catalog.date"},{name: "last_update", type: "pg_catalog.timestamp"},{name: "active", type: "pg_catalog.int4"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.Customer.CustomerPkey(this),new Public.Tables.Customer.IdxFkAddressId(this),new Public.Tables.Customer.IdxFkStoreId(this),new Public.Tables.Customer.IdxLastName(this)
@@ -2527,18 +2510,12 @@ get IdxLastName () { return new Public.Tables.Customer.IdxLastName(this)}
               return "actor";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "actor_id", type: "pg_catalog.int4"},{name: "first_name", type: "pg_catalog.varchar"},{name: "last_name", type: "pg_catalog.varchar"},{name: "last_update", type: "pg_catalog.timestamp"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.Actor.ActorPkey(this),new Public.Tables.Actor.IdxActorLastName(this)
@@ -2611,18 +2588,12 @@ get IdxActorLastName () { return new Public.Tables.Actor.IdxActorLastName(this)}
               return "film_category";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "film_id", type: "pg_catalog.int2"},{name: "category_id", type: "pg_catalog.int2"},{name: "last_update", type: "pg_catalog.timestamp"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.FilmCategory.FilmCategoryPkey(this)
@@ -2680,18 +2651,12 @@ get FilmCategoryPkey () { return new Public.Tables.FilmCategory.FilmCategoryPkey
               return "inventory";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "inventory_id", type: "pg_catalog.int4"},{name: "film_id", type: "pg_catalog.int2"},{name: "store_id", type: "pg_catalog.int2"},{name: "last_update", type: "pg_catalog.timestamp"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.Inventory.InventoryPkey(this),new Public.Tables.Inventory.IdxStoreIdFilmId(this)
@@ -2764,18 +2729,12 @@ get IdxStoreIdFilmId () { return new Public.Tables.Inventory.IdxStoreIdFilmId(th
               return "category";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "category_id", type: "pg_catalog.int4"},{name: "name", type: "pg_catalog.varchar"},{name: "last_update", type: "pg_catalog.timestamp"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.Category.CategoryPkey(this)
@@ -2846,18 +2805,12 @@ get CategoryPkey () { return new Public.Tables.Category.CategoryPkey(this)}
               return "country";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "country_id", type: "pg_catalog.int4"},{name: "country", type: "pg_catalog.varchar"},{name: "last_update", type: "pg_catalog.timestamp"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.Country.CountryPkey(this)
@@ -2928,18 +2881,12 @@ get CountryPkey () { return new Public.Tables.Country.CountryPkey(this)}
               return "language";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "language_id", type: "pg_catalog.int4"},{name: "name", type: "pg_catalog.bpchar"},{name: "last_update", type: "pg_catalog.timestamp"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.Language.LanguagePkey(this)
@@ -3010,18 +2957,12 @@ get LanguagePkey () { return new Public.Tables.Language.LanguagePkey(this)}
               return "rental";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "rental_id", type: "pg_catalog.int4"},{name: "rental_date", type: "pg_catalog.timestamp"},{name: "inventory_id", type: "pg_catalog.int4"},{name: "customer_id", type: "pg_catalog.int2"},{name: "return_date", type: "pg_catalog.timestamp"},{name: "staff_id", type: "pg_catalog.int2"},{name: "last_update", type: "pg_catalog.timestamp"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.Rental.RentalPkey(this),new Public.Tables.Rental.IdxFkInventoryId(this),new Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId(this)
@@ -3096,18 +3037,12 @@ get IdxUnqRentalRentalDateInventoryIdCustomerId () { return new Public.Tables.Re
               return "staff";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "staff_id", type: "pg_catalog.int4"},{name: "first_name", type: "pg_catalog.varchar"},{name: "last_name", type: "pg_catalog.varchar"},{name: "address_id", type: "pg_catalog.int2"},{name: "email", type: "pg_catalog.varchar"},{name: "store_id", type: "pg_catalog.int2"},{name: "active", type: "pg_catalog.bool"},{name: "username", type: "pg_catalog.varchar"},{name: "password", type: "pg_catalog.varchar"},{name: "last_update", type: "pg_catalog.timestamp"},{name: "picture", type: "pg_catalog.bytea"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.Staff.StaffPkey(this)
@@ -3178,18 +3113,12 @@ get StaffPkey () { return new Public.Tables.Staff.StaffPkey(this)}
               return "store";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "store_id", type: "pg_catalog.int4"},{name: "manager_staff_id", type: "pg_catalog.int2"},{name: "address_id", type: "pg_catalog.int2"},{name: "last_update", type: "pg_catalog.timestamp"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.Store.StorePkey(this),new Public.Tables.Store.IdxUnqManagerStaffId(this)
@@ -3262,18 +3191,12 @@ get IdxUnqManagerStaffId () { return new Public.Tables.Store.IdxUnqManagerStaffI
               return "payment";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "payment_id", type: "pg_catalog.int4"},{name: "customer_id", type: "pg_catalog.int2"},{name: "staff_id", type: "pg_catalog.int2"},{name: "rental_id", type: "pg_catalog.int4"},{name: "amount", type: "pg_catalog.numeric"},{name: "payment_date", type: "pg_catalog.timestamp"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.Payment.PaymentPkey(this),new Public.Tables.Payment.IdxFkCustomerId(this),new Public.Tables.Payment.IdxFkRentalId(this),new Public.Tables.Payment.IdxFkStaffId(this)
@@ -3350,18 +3273,12 @@ get IdxFkStaffId () { return new Public.Tables.Payment.IdxFkStaffId(this)}
               return "film";
             }
 
-            /**
-             * Every column in the table.
-             */
             get columns() {
               return [
                 {name: "film_id", type: "pg_catalog.int4"},{name: "title", type: "pg_catalog.varchar"},{name: "description", type: "pg_catalog.text"},{name: "release_year", type: "public.year"},{name: "language_id", type: "pg_catalog.int2"},{name: "rental_duration", type: "pg_catalog.int2"},{name: "rental_rate", type: "pg_catalog.numeric"},{name: "length", type: "pg_catalog.int2"},{name: "replacement_cost", type: "pg_catalog.numeric"},{name: "rating", type: "public.mpaa_rating"},{name: "last_update", type: "pg_catalog.timestamp"},{name: "special_features", type: "pg_catalog._text_array"},{name: "fulltext", type: "pg_catalog.tsvector"}
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
             get indexes() {
               return [
                 new Public.Tables.Film.FilmPkey(this),new Public.Tables.Film.FilmFulltextIdx(this),new Public.Tables.Film.IdxFkLanguageId(this),new Public.Tables.Film.IdxTitle(this)
@@ -3443,9 +3360,6 @@ export namespace FilmActor {
               return "film_actor_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "actor_id", type: "pg_catalog.int2"},{name: "film_id", type: "pg_catalog.int2"}
@@ -3519,9 +3433,6 @@ async delete(parameters: Public.Types.FilmActorPkey, options?: Public.Types.Film
               return "idx_fk_film_id";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "film_id", type: "pg_catalog.int2"}
@@ -3597,9 +3508,6 @@ export namespace Address {
               return "address_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "address_id", type: "pg_catalog.int4"}
@@ -3673,9 +3581,6 @@ async delete(parameters: Public.Types.AddressPkey, options?: Public.Types.Addres
               return "idx_fk_city_id";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "city_id", type: "pg_catalog.int2"}
@@ -3751,9 +3656,6 @@ export namespace City {
               return "city_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "city_id", type: "pg_catalog.int4"}
@@ -3827,9 +3729,6 @@ async delete(parameters: Public.Types.CityPkey, options?: Public.Types.CityPkey.
               return "idx_fk_country_id";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "country_id", type: "pg_catalog.int2"}
@@ -3905,9 +3804,6 @@ export namespace Customer {
               return "customer_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "customer_id", type: "pg_catalog.int4"}
@@ -3981,9 +3877,6 @@ async delete(parameters: Public.Types.CustomerPkey, options?: Public.Types.Custo
               return "idx_fk_address_id";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "address_id", type: "pg_catalog.int2"}
@@ -4057,9 +3950,6 @@ async delete(parameters: Public.Types.IdxFkAddressId, options?: Public.Types.Idx
               return "idx_fk_store_id";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "store_id", type: "pg_catalog.int2"}
@@ -4133,9 +4023,6 @@ async delete(parameters: Public.Types.IdxFkStoreId, options?: Public.Types.IdxFk
               return "idx_last_name";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "last_name", type: "pg_catalog.varchar"}
@@ -4211,9 +4098,6 @@ export namespace Actor {
               return "actor_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "actor_id", type: "pg_catalog.int4"}
@@ -4287,9 +4171,6 @@ async delete(parameters: Public.Types.ActorPkey, options?: Public.Types.ActorPke
               return "idx_actor_last_name";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "last_name", type: "pg_catalog.varchar"}
@@ -4365,9 +4246,6 @@ export namespace FilmCategory {
               return "film_category_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "film_id", type: "pg_catalog.int2"},{name: "category_id", type: "pg_catalog.int2"}
@@ -4443,9 +4321,6 @@ export namespace Inventory {
               return "inventory_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "inventory_id", type: "pg_catalog.int4"}
@@ -4519,9 +4394,6 @@ async delete(parameters: Public.Types.InventoryPkey, options?: Public.Types.Inve
               return "idx_store_id_film_id";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "store_id", type: "pg_catalog.int2"},{name: "film_id", type: "pg_catalog.int2"}
@@ -4597,9 +4469,6 @@ export namespace Category {
               return "category_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "category_id", type: "pg_catalog.int4"}
@@ -4675,9 +4544,6 @@ export namespace Country {
               return "country_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "country_id", type: "pg_catalog.int4"}
@@ -4753,9 +4619,6 @@ export namespace Language {
               return "language_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "language_id", type: "pg_catalog.int4"}
@@ -4831,9 +4694,6 @@ export namespace Rental {
               return "rental_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "rental_id", type: "pg_catalog.int4"}
@@ -4907,9 +4767,6 @@ async delete(parameters: Public.Types.RentalPkey, options?: Public.Types.RentalP
               return "idx_fk_inventory_id";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "inventory_id", type: "pg_catalog.int4"}
@@ -4983,9 +4840,6 @@ async delete(parameters: Public.Types.IdxFkInventoryId, options?: Public.Types.I
               return "idx_unq_rental_rental_date_inventory_id_customer_id";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "rental_date", type: "pg_catalog.timestamp"},{name: "inventory_id", type: "pg_catalog.int4"},{name: "customer_id", type: "pg_catalog.int2"}
@@ -5061,9 +4915,6 @@ export namespace Staff {
               return "staff_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "staff_id", type: "pg_catalog.int4"}
@@ -5139,9 +4990,6 @@ export namespace Store {
               return "store_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "store_id", type: "pg_catalog.int4"}
@@ -5215,9 +5063,6 @@ async delete(parameters: Public.Types.StorePkey, options?: Public.Types.StorePke
               return "idx_unq_manager_staff_id";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "manager_staff_id", type: "pg_catalog.int2"}
@@ -5293,9 +5138,6 @@ export namespace Payment {
               return "payment_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "payment_id", type: "pg_catalog.int4"}
@@ -5369,9 +5211,6 @@ async delete(parameters: Public.Types.PaymentPkey, options?: Public.Types.Paymen
               return "idx_fk_customer_id";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "customer_id", type: "pg_catalog.int2"}
@@ -5445,9 +5284,6 @@ async delete(parameters: Public.Types.IdxFkCustomerId, options?: Public.Types.Id
               return "idx_fk_rental_id";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "rental_id", type: "pg_catalog.int4"}
@@ -5521,9 +5357,6 @@ async delete(parameters: Public.Types.IdxFkRentalId, options?: Public.Types.IdxF
               return "idx_fk_staff_id";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "staff_id", type: "pg_catalog.int2"}
@@ -5599,9 +5432,6 @@ export namespace Film {
               return "film_pkey";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "film_id", type: "pg_catalog.int4"}
@@ -5675,9 +5505,6 @@ async delete(parameters: Public.Types.FilmPkey, options?: Public.Types.FilmPkey.
               return "film_fulltext_idx";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "fulltext", type: "pg_catalog.tsvector"}
@@ -5751,9 +5578,6 @@ async delete(parameters: Public.Types.FilmFulltextIdx, options?: Public.Types.Fi
               return "idx_fk_language_id";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "language_id", type: "pg_catalog.int2"}
@@ -5827,9 +5651,6 @@ async delete(parameters: Public.Types.IdxFkLanguageId, options?: Public.Types.Id
               return "idx_title";
             }
 
-            /**
-             * Every column in the index.
-             */
             get columns() {
               return [
                 {name: "title", type: "pg_catalog.varchar"}

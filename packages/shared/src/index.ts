@@ -193,11 +193,29 @@ export type PossiblyEmpty<T> = {
 };
 
 /**
+ * Database schema containing database objects.
+ */
+export interface Schema {
+  /**
+   * Name as stated in the database.
+   */
+  name: string;
+
+  /**
+   * All procedures in this schema.
+   */
+  Procedures: Procedures;
+
+  /**
+   * All tables in this schema.
+   */
+  Tables: Tables;
+}
+
+/**
  * Grouping of procedures.
  */
-export interface Procedures {
-  procedures: Procedure[];
-}
+export interface Procedures extends Iterable<Procedure> {}
 
 /**
  * Callable procedure or function in the database.
@@ -212,12 +230,7 @@ export interface Procedure {
 /**
  * Grouping of tables.
  */
-export interface Tables {
-  /**
-   * Tables included in this grouping.
-   */
-  tables: Table[];
-}
+export interface Tables extends Iterable<Table> {}
 
 /**
  * An individual Table.
@@ -230,11 +243,11 @@ export interface Table {
   /**
    * Columns included in the table.
    */
-  columns: Column[];
+  Columns: Column[];
   /**
    * Every index on the table.
    */
-  indexes: Index[];
+  Indexes: Index[];
 }
 
 /**
@@ -248,7 +261,7 @@ export interface Index {
   /**
    * Columns included in the index.
    */
-  columns: Column[];
+  Columns: Column[];
 }
 
 /**

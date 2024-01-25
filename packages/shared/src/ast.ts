@@ -368,6 +368,10 @@ export class SchemaNode extends ContainerNode {
     ) as ProceduresNode;
   }
 
+  get tables() {
+    return this.children.find((c) => c.kind === ASTKind.Tables) as TablesNode;
+  }
+
   async visit(context: GenerationContext): Promise<string> {
     if (context?.skipSchemas?.includes(this.name)) {
       return "";

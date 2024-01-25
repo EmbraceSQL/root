@@ -55,7 +55,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
               // starting off with all the imports, append to this list
               // and it will be the final output
               `
-            import { Tables, Table, Column, Index, Procedures, Procedure } from "@embracesql/shared";
+            import { Schema, Tables, Table, Column, Index, Procedures, Procedure } from "@embracesql/shared";
             import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
             import postgres from "postgres";
           `,
@@ -92,7 +92,13 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
             ].join("\n");
           },
         },
-        [ASTKind.Schema]: NestedNamedClassVisitor,
+        [ASTKind.Schema]: {
+          before: async (_, node) => {
+            return `
+            get ${node.typescriptName}() { return new ${node.typescriptNamespacedName}(this); }
+            `;
+          },
+        },
         [ASTKind.Scripts]: NestedNamedClassVisitor,
         [ASTKind.ScriptFolder]: NestedNamedClassVisitor,
         [ASTKind.Script]: {
@@ -140,6 +146,32 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
           },
           after: NestedNamedClassVisitor.after,
         },
+      },
+    }),
+    // schema collects in database objects
+    await context.database.visit({
+      ...context,
+      handlers: {
+        [ASTKind.Schema]: {
+          before: async (_, node) => {
+            return `
+          export class ${node.typescriptName} implements Schema, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "${node.name}";
+            }
+        `;
+          },
+          after: async () => {
+            return `}`;
+          },
+        },
         [ASTKind.Procedures]: {
           before: async (_, node) => {
             return [
@@ -178,15 +210,15 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
               return "${node.name}";
             }
 
-            /**
-             * Every procedure in this schema.
-             */
-            get procedures() {
-              return [
-                ${node.procedures
-                  .map((t) => `new ${t.typescriptNamespacedName}(this)`)
-                  .join(",")}
-              ];
+            *[Symbol.iterator](): IterableIterator<Procedure> {
+                const all : Procedure[] = [
+                  ${node.procedures
+                    .map((t) => `new ${t.typescriptNamespacedName}(this)`)
+                    .join(",")}
+                ];
+                for (const procedure of all) {
+                    yield procedure;
+                }
             }
         `;
           },
@@ -293,15 +325,15 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
               return "${node.name}";
             }
 
-            /**
-             * Every table in this schema.
-             */
-            get tables() {
-              return [
-                ${node.tables
-                  .map((t) => `new ${t.typescriptNamespacedName}(this)`)
-                  .join(",")}
-              ];
+            *[Symbol.iterator](): IterableIterator<Table> {
+                const all : Table[] = [
+                  ${node.tables
+                    .map((t) => `new ${t.typescriptNamespacedName}(this)`)
+                    .join(",")}
+                ];
+                for (const table of all) {
+                    yield table;
+                }
             }
         `;
           },
@@ -340,10 +372,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
               return "${node.name}";
             }
 
-            /**
-             * Every column in the table.
-             */
-            get columns() {
+            get Columns() {
               return [
                 ${node.type.attributes
                   .map(
@@ -354,10 +383,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
               ];
             }
             
-            /**
-             * Every index on the table.
-             */
-            get indexes() {
+            get Indexes() {
               return [
                 ${node.indexes
                   .map((i) => `new ${i.typescriptNamespacedName}(this)`)
@@ -408,10 +434,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
               return "${node.name}";
             }
 
-            /**
-             * Every column in the index.
-             */
-            get columns() {
+            get Columns() {
               return [
                 ${node.type.attributes
                   .map(
