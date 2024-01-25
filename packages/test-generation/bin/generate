@@ -2,21 +2,23 @@
 set -exo pipefail
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-# dvdrental examples
+# dvdrental examples -- skipping some schemas for speed/size
+SKIP_SCHEMAS="--skipSchemas pg_toast pg_catalog information_schema"
 echo dvdrental
-embracesqlcli generate node --database postgres://postgres:postgres@localhost/dvdrental --sqlScriptsFrom ${SCRIPT_DIR}/../../../var/data/dvdrental/sql > src/dvdrental.ts
-embracesqlcli generate express --database postgres://postgres:postgres@localhost/dvdrental --sqlScriptsFrom ${SCRIPT_DIR}/../../../var/data/dvdrental/sql > src/dvdrental-express.ts
-embracesqlcli generate client --database postgres://postgres:postgres@localhost/dvdrental --sqlScriptsFrom ${SCRIPT_DIR}/../../../var/data/dvdrental/sql > src/dvdrental-browser.ts
-embracesqlcli generate react --database postgres://postgres:postgres@localhost/dvdrental --sqlScriptsFrom ${SCRIPT_DIR}/../../../var/data/dvdrental/sql > src/dvdrental-react.ts
+embracesqlcli generate node --database postgres://postgres:postgres@localhost/dvdrental ${SKIP_SCHEMAS}  --sqlScriptsFrom ${SCRIPT_DIR}/../../../var/data/dvdrental/sql > src/dvdrental.ts
+embracesqlcli generate express --database postgres://postgres:postgres@localhost/dvdrental ${SKIP_SCHEMAS} --sqlScriptsFrom ${SCRIPT_DIR}/../../../var/data/dvdrental/sql > src/dvdrental-express.ts
+embracesqlcli generate client --database postgres://postgres:postgres@localhost/dvdrental ${SKIP_SCHEMAS} --sqlScriptsFrom ${SCRIPT_DIR}/../../../var/data/dvdrental/sql > src/dvdrental-browser.ts
+embracesqlcli generate react --database postgres://postgres:postgres@localhost/dvdrental ${SKIP_SCHEMAS} --sqlScriptsFrom ${SCRIPT_DIR}/../../../var/data/dvdrental/sql > src/dvdrental-react.ts
 
 # marshalling samples -- these are just to test typescript<->postgres conversions
+# gonna keep all the schemas here
 echo marshalling
 embracesqlcli generate node --database postgres://postgres:postgres@localhost/marshalling > ./src/marshalling.ts
 
 # and some GIS
 echo nyc
-embracesqlcli generate node --database postgres://postgres:postgres@localhost/nyc > ./src/nyc.ts
+embracesqlcli generate node --database postgres://postgres:postgres@localhost/nyc ${SKIP_SCHEMAS} > ./src/nyc.ts
 
 # and some food from usda
 echo usda
-embracesqlcli generate node --database postgres://postgres:postgres@localhost/usda > ./src/usda.ts
+embracesqlcli generate node --database postgres://postgres:postgres@localhost/usda  ${SKIP_SCHEMAS} > ./src/usda.ts
