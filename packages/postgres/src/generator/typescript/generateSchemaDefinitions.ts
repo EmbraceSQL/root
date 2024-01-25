@@ -83,27 +83,7 @@ async function columnMetadata(context: GC, type: CompositeTypeNode) {
 export const generateSchemaDefinitions = async (context: GenerationContext) => {
   // a place to store all the types
   // buffer up generated code here
-  const generationBuffer = [
-    `
-        // ⚠️ generated - do not modify ⚠️
-
-        /**
-         * These types are node/browser isomorphic and are used by all other
-         * EmbraceSQL generated code.
-         */
-        /* eslint-disable @typescript-eslint/no-explicit-any */
-        /* eslint-disable @typescript-eslint/no-empty-interface */
-        /* eslint-disable @typescript-eslint/no-namespace */
-        /* eslint-disable @typescript-eslint/no-unused-vars */
-        /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
-        /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
-        /* @typescript-eslint/no-redundant-type-constituents */
-        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
-        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
-        import { Geometry } from "@embracesql/shared";
-
-    `,
-  ];
+  const generationBuffer = [""];
 
   const TypeDefiner = {
     before: async (context: GC, node: AbstractTypeNode) => {

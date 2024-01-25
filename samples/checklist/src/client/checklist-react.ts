@@ -1,3 +1,524 @@
+// begin fetch client
+import { EmbraceSQLClient as BaseClient, EmbraceSQLClientProps, HasClient } from "@embracesql/client";
+
+  export class EmbraceSQLClient extends BaseClient {
+    constructor(props: EmbraceSQLClientProps) {
+      super(props);
+    }
+
+  
+
+          public Public = new class extends HasClient {
+        
+
+          public Procedures = new class extends HasClient {
+        
+}(this)
+
+          public Tables = new class extends HasClient {
+        
+
+          public Checklist = new class extends HasClient {
+        
+
+          public async create(values: Partial<Public.Types.Checklist>, options?: Public.Tables.Checklist.Options) : Promise<Public.Types.Checklist|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Checklist>, Public.Types.Checklist, Public.Tables.Checklist.Options>({
+              operation: "Public.Tables.Checklist.create",
+              values: {id: values.id,name: values.name,createdAt: values.createdAt},
+              options
+            });
+            return (
+    nullIsUndefined<Public.Types.Checklist>(Public.Types.Checklist.parse(response.results))
+  )
+  ;
+          }
+        
+
+          public async all(options?: Public.Tables.Checklist.Options) : Promise<Public.Types.Checklist[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Checklist[], Public.Tables.Checklist.Options>({
+              operation: "Public.Tables.Checklist.all",
+              options
+            });
+            return (
+    response.results
+      ?.map(Public.Types.Checklist.parse)
+      .map(nullIsUndefined<Public.Types.Checklist>)
+      .filter((x): x is Public.Types.Checklist => x !== undefined) ?? []
+  )
+  ;
+          }
+        
+
+          public ChecklistPkey = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.ChecklistPkey, options?: Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options) {
+            const response = await this.client.invoke<Public.Types.ChecklistPkey, never, Public.Types.Checklist | undefined, Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options>({
+              operation: "Public.Tables.Checklist.ChecklistPkey.read",
+              parameters: {id: parameters.id},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Checklist>(Public.Types.Checklist.parse(response.results))
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.ChecklistPkey, values: Partial<Public.Types.Checklist>, options?: Public.Tables.Checklist.Options) {
+            const response = await this.client.invoke<Public.Types.ChecklistPkey, Partial<Public.Types.Checklist>, Public.Types.Checklist | undefined, Public.Tables.Checklist.Options>({
+              operation: "Public.Tables.Checklist.ChecklistPkey.update",
+              parameters: {id: parameters.id},
+              values: {id: values.id,name: values.name,createdAt: values.createdAt},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Checklist>(Public.Types.Checklist.parse(response.results))
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.ChecklistPkey, options?: Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options) {
+            const response = await this.client.invoke<Public.Types.ChecklistPkey, never, Public.Types.Checklist | undefined, Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options>({
+              operation: "Public.Tables.Checklist.ChecklistPkey.delete",
+              parameters: {id: parameters.id},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Checklist>(Public.Types.Checklist.parse(response.results))
+  )
+  ;
+}
+}(this)
+public get ByPrimaryKey(){ return this.ChecklistPkey };
+}(this)
+
+          public ChecklistItem = new class extends HasClient {
+        
+
+          public async create(values: Partial<Public.Types.ChecklistItem>, options?: Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.ChecklistItem>, Public.Types.ChecklistItem, Public.Tables.ChecklistItem.Options>({
+              operation: "Public.Tables.ChecklistItem.create",
+              values: {id: values.id,checklistId: values.checklistId,title: values.title,checked: values.checked,createdAt: values.createdAt},
+              options
+            });
+            return (
+    nullIsUndefined<Public.Types.ChecklistItem>(Public.Types.ChecklistItem.parse(response.results))
+  )
+  ;
+          }
+        
+
+          public async all(options?: Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem[]> {
+            const response = await this.client.invoke<never, never, Public.Types.ChecklistItem[], Public.Tables.ChecklistItem.Options>({
+              operation: "Public.Tables.ChecklistItem.all",
+              options
+            });
+            return (
+    response.results
+      ?.map(Public.Types.ChecklistItem.parse)
+      .map(nullIsUndefined<Public.Types.ChecklistItem>)
+      .filter((x): x is Public.Types.ChecklistItem => x !== undefined) ?? []
+  )
+  ;
+          }
+        
+
+          public ChecklistItemPkey = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.ChecklistItemPkey, options?: Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options) {
+            const response = await this.client.invoke<Public.Types.ChecklistItemPkey, never, Public.Types.ChecklistItem | undefined, Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options>({
+              operation: "Public.Tables.ChecklistItem.ChecklistItemPkey.read",
+              parameters: {id: parameters.id},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.ChecklistItem>(Public.Types.ChecklistItem.parse(response.results))
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.ChecklistItemPkey, values: Partial<Public.Types.ChecklistItem>, options?: Public.Tables.ChecklistItem.Options) {
+            const response = await this.client.invoke<Public.Types.ChecklistItemPkey, Partial<Public.Types.ChecklistItem>, Public.Types.ChecklistItem | undefined, Public.Tables.ChecklistItem.Options>({
+              operation: "Public.Tables.ChecklistItem.ChecklistItemPkey.update",
+              parameters: {id: parameters.id},
+              values: {id: values.id,checklistId: values.checklistId,title: values.title,checked: values.checked,createdAt: values.createdAt},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.ChecklistItem>(Public.Types.ChecklistItem.parse(response.results))
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.ChecklistItemPkey, options?: Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options) {
+            const response = await this.client.invoke<Public.Types.ChecklistItemPkey, never, Public.Types.ChecklistItem | undefined, Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options>({
+              operation: "Public.Tables.ChecklistItem.ChecklistItemPkey.delete",
+              parameters: {id: parameters.id},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.ChecklistItem>(Public.Types.ChecklistItem.parse(response.results))
+  )
+  ;
+}
+}(this)
+public get ByPrimaryKey(){ return this.ChecklistItemPkey };
+
+          public ChecklistItemParent = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.ChecklistItemParent, options?: Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options) {
+            const response = await this.client.invoke<Public.Types.ChecklistItemParent, never, Public.Types.ChecklistItem[] | undefined, Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options>({
+              operation: "Public.Tables.ChecklistItem.ChecklistItemParent.read",
+              parameters: {checklistId: parameters.checklistId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.ChecklistItem.parse)
+      .map(nullIsUndefined<Public.Types.ChecklistItem>)
+      .filter((x): x is Public.Types.ChecklistItem => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.ChecklistItemParent, values: Partial<Public.Types.ChecklistItem>, options?: Public.Tables.ChecklistItem.Options) {
+            const response = await this.client.invoke<Public.Types.ChecklistItemParent, Partial<Public.Types.ChecklistItem>, Public.Types.ChecklistItem[] | undefined, Public.Tables.ChecklistItem.Options>({
+              operation: "Public.Tables.ChecklistItem.ChecklistItemParent.update",
+              parameters: {checklistId: parameters.checklistId},
+              values: {id: values.id,checklistId: values.checklistId,title: values.title,checked: values.checked,createdAt: values.createdAt},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.ChecklistItem.parse)
+      .map(nullIsUndefined<Public.Types.ChecklistItem>)
+      .filter((x): x is Public.Types.ChecklistItem => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.ChecklistItemParent, options?: Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options) {
+            const response = await this.client.invoke<Public.Types.ChecklistItemParent, never, Public.Types.ChecklistItem[] | undefined, Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options>({
+              operation: "Public.Tables.ChecklistItem.ChecklistItemParent.delete",
+              parameters: {checklistId: parameters.checklistId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.ChecklistItem.parse)
+      .map(nullIsUndefined<Public.Types.ChecklistItem>)
+      .filter((x): x is Public.Types.ChecklistItem => x !== undefined) ?? []
+  )
+  ;
+}
+}(this)
+
+}(this)
+}(this)
+}(this)
+
+          public PgToast = new class extends HasClient {
+        
+
+          public Procedures = new class extends HasClient {
+        
+}(this)
+
+          public Tables = new class extends HasClient {
+        
+}(this)
+}(this)
+}
+import React from "react";
+export { EmbraceSQLProvider } from "@embracesql/react";
+import { useEmbraceSQLClient, useEmbraceSQLRow, useEmbraceSQLRows, useEmbraceSQLImmutableRows, useEmbraceSQLImmutable, ChangeEvent, Row as IsRow, RowBase, RowCallback, GeneratedRowProps } from "@embracesql/react";
+export namespace Public {
+export namespace Procedures {
+}
+export namespace Tables {
+export namespace Checklist {
+export type Row = IsRow<Public.Types.Checklist>;
+export class RowImplementation
+ extends RowBase<Public.Types.Checklist>
+ implements Row {
+   constructor(row: Public.Types.Checklist, 
+     changeCallback: RowCallback<Public.Types.Checklist>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get id() { return this._value.id;}
+get changeId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Uuid.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    id: parsedValue as Public.Types.Checklist["id"],
+    });
+  };
+}
+get name() { return this._value.name;}
+get changeName() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Text.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    name: parsedValue as Public.Types.Checklist["name"],
+    });
+  };
+}
+get createdAt() { return this._value.createdAt;}
+get changeCreatedAt() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    createdAt: parsedValue as Public.Types.Checklist["createdAt"],
+    });
+  };
+}
+}
+}
+export namespace ChecklistItem {
+export type Row = IsRow<Public.Types.ChecklistItem>;
+export class RowImplementation
+ extends RowBase<Public.Types.ChecklistItem>
+ implements Row {
+   constructor(row: Public.Types.ChecklistItem, 
+     changeCallback: RowCallback<Public.Types.ChecklistItem>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get id() { return this._value.id;}
+get changeId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Uuid.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    id: parsedValue as Public.Types.ChecklistItem["id"],
+    });
+  };
+}
+get checklistId() { return this._value.checklistId;}
+get changeChecklistId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Uuid.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    checklistId: parsedValue as Public.Types.ChecklistItem["checklistId"],
+    });
+  };
+}
+get title() { return this._value.title;}
+get changeTitle() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Text.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    title: parsedValue as Public.Types.ChecklistItem["title"],
+    });
+  };
+}
+get checked() { return this._value.checked;}
+get changeChecked() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Bool.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    checked: parsedValue as Public.Types.ChecklistItem["checked"],
+    });
+  };
+}
+get createdAt() { return this._value.createdAt;}
+get changeCreatedAt() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    createdAt: parsedValue as Public.Types.ChecklistItem["createdAt"],
+    });
+  };
+}
+}
+}
+}
+}
+export namespace PgToast {
+export namespace Procedures {
+}
+export namespace Tables {
+}
+}
+
+export namespace Public {
+export namespace Procedures {
+}
+export namespace Tables {
+export namespace Checklist {
+export function useRow(props: GeneratedRowProps<Public.Tables.Checklist.Values>) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLRow<PrimaryKey,
+  Partial<Public.Types.Checklist>, 
+  Public.Types.Checklist> (
+
+               {
+                 parameters: props.values as unknown as PrimaryKey,
+                 readOperation: client.Public.Tables.Checklist.ByPrimaryKey.read.bind(client),
+                 upsertOperation: client.Public.Tables.Checklist.create.bind(client),
+                 deleteOperation: client.Public.Tables.Checklist.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Checklist.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Checklist.RowImplementation,
+                 rowEquals: Public.Types.Checklist.equals,
+                 emptyRow: Public.Tables.Checklist.emptyRow,
+                 createIfNotExists: props.createIfNotExists,
+               }
+             )
+}
+export function useRows(options?: Public.Tables.Checklist.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<never,
+  Partial<Public.Types.Checklist>, 
+  Public.Types.Checklist,
+  Public.Tables.Checklist.Options> (
+
+               {
+                 parameters: NEVER,
+                 options,
+                 readOperation: client.Public.Tables.Checklist.all.bind(client),
+                 upsertOperation: client.Public.Tables.Checklist.create.bind(client),
+                 deleteOperation: client.Public.Tables.Checklist.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Checklist.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Checklist.RowImplementation,
+                 rowEquals: Public.Types.Checklist.equals,
+                 emptyRow: Public.Tables.Checklist.emptyRow
+               }
+             )
+}
+export namespace Id {
+}
+export namespace Name {
+}
+export namespace CreatedAt {
+}
+export function useChecklistPkey(parameters: Public.Types.ChecklistPkey ) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRow<Public.Types.ChecklistPkey, Partial<Public.Types.Checklist>,  Public.Types.Checklist >(
+               {
+                 readOperation: client.Public.Tables.Checklist.ChecklistPkey.read.bind(client),
+                 parameters,
+                 
+                 upsertOperation: client.Public.Tables.Checklist.create.bind(client),
+                 deleteOperation: client.Public.Tables.Checklist.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Checklist.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Checklist.RowImplementation,
+                 rowEquals: Public.Types.Checklist.equals,
+                 emptyRow: Public.Tables.Checklist.emptyRow
+               }
+             )
+}
+}
+export namespace ChecklistItem {
+export function useRow(props: GeneratedRowProps<Public.Tables.ChecklistItem.Values>) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLRow<PrimaryKey,
+  Partial<Public.Types.ChecklistItem>, 
+  Public.Types.ChecklistItem> (
+
+               {
+                 parameters: props.values as unknown as PrimaryKey,
+                 readOperation: client.Public.Tables.ChecklistItem.ByPrimaryKey.read.bind(client),
+                 upsertOperation: client.Public.Tables.ChecklistItem.create.bind(client),
+                 deleteOperation: client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
+                 RowImplementation: Public.Tables.ChecklistItem.RowImplementation,
+                 rowEquals: Public.Types.ChecklistItem.equals,
+                 emptyRow: Public.Tables.ChecklistItem.emptyRow,
+                 createIfNotExists: props.createIfNotExists,
+               }
+             )
+}
+export function useRows(options?: Public.Tables.ChecklistItem.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<never,
+  Partial<Public.Types.ChecklistItem>, 
+  Public.Types.ChecklistItem,
+  Public.Tables.ChecklistItem.Options> (
+
+               {
+                 parameters: NEVER,
+                 options,
+                 readOperation: client.Public.Tables.ChecklistItem.all.bind(client),
+                 upsertOperation: client.Public.Tables.ChecklistItem.create.bind(client),
+                 deleteOperation: client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
+                 RowImplementation: Public.Tables.ChecklistItem.RowImplementation,
+                 rowEquals: Public.Types.ChecklistItem.equals,
+                 emptyRow: Public.Tables.ChecklistItem.emptyRow
+               }
+             )
+}
+export namespace Id {
+}
+export namespace ChecklistId {
+}
+export namespace Title {
+}
+export namespace Checked {
+}
+export namespace CreatedAt {
+}
+export function useChecklistItemPkey(parameters: Public.Types.ChecklistItemPkey ) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRow<Public.Types.ChecklistItemPkey, Partial<Public.Types.ChecklistItem>,  Public.Types.ChecklistItem >(
+               {
+                 readOperation: client.Public.Tables.ChecklistItem.ChecklistItemPkey.read.bind(client),
+                 parameters,
+                 
+                 upsertOperation: client.Public.Tables.ChecklistItem.create.bind(client),
+                 deleteOperation: client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
+                 RowImplementation: Public.Tables.ChecklistItem.RowImplementation,
+                 rowEquals: Public.Types.ChecklistItem.equals,
+                 emptyRow: Public.Tables.ChecklistItem.emptyRow
+               }
+             )
+}
+export function useChecklistItemParent(parameters: Public.Types.ChecklistItemParent , options?: Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<Public.Types.ChecklistItemParent, Partial<Public.Types.ChecklistItem>,  Public.Types.ChecklistItem , Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options>(
+               {
+                 readOperation: client.Public.Tables.ChecklistItem.ChecklistItemParent.read.bind(client),
+                 parameters,
+                 options,
+                 upsertOperation: client.Public.Tables.ChecklistItem.create.bind(client),
+                 deleteOperation: client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
+                 RowImplementation: Public.Tables.ChecklistItem.RowImplementation,
+                 rowEquals: Public.Types.ChecklistItem.equals,
+                 emptyRow: Public.Tables.ChecklistItem.emptyRow
+               }
+             )
+}
+}
+}
+}
+export namespace PgToast {
+export namespace Procedures {
+}
+export namespace Tables {
+}
+}
+// End React generated section
 
         // ⚠️ generated - do not modify ⚠️
 
@@ -49536,524 +50057,3 @@ xmlbinary: string;
 xmloption: string;
 zeroDamagedPages: string;
 }
-// begin fetch client
-import { EmbraceSQLClient as BaseClient, EmbraceSQLClientProps, HasClient } from "@embracesql/client";
-
-  export class EmbraceSQLClient extends BaseClient {
-    constructor(props: EmbraceSQLClientProps) {
-      super(props);
-    }
-
-  
-
-          public Public = new class extends HasClient {
-        
-
-          public Procedures = new class extends HasClient {
-        
-}(this)
-
-          public Tables = new class extends HasClient {
-        
-
-          public Checklist = new class extends HasClient {
-        
-
-          public async create(values: Partial<Public.Types.Checklist>, options?: Public.Tables.Checklist.Options) : Promise<Public.Types.Checklist|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Checklist>, Public.Types.Checklist, Public.Tables.Checklist.Options>({
-              operation: "Public.Tables.Checklist.create",
-              values: {id: values.id,name: values.name,createdAt: values.createdAt},
-              options
-            });
-            return (
-    nullIsUndefined<Public.Types.Checklist>(Public.Types.Checklist.parse(response.results))
-  )
-  ;
-          }
-        
-
-          public async all(options?: Public.Tables.Checklist.Options) : Promise<Public.Types.Checklist[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Checklist[], Public.Tables.Checklist.Options>({
-              operation: "Public.Tables.Checklist.all",
-              options
-            });
-            return (
-    response.results
-      ?.map(Public.Types.Checklist.parse)
-      .map(nullIsUndefined<Public.Types.Checklist>)
-      .filter((x): x is Public.Types.Checklist => x !== undefined) ?? []
-  )
-  ;
-          }
-        
-
-          public ChecklistPkey = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.ChecklistPkey, options?: Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options) {
-            const response = await this.client.invoke<Public.Types.ChecklistPkey, never, Public.Types.Checklist | undefined, Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options>({
-              operation: "Public.Tables.Checklist.ChecklistPkey.read",
-              parameters: {id: parameters.id},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Checklist>(Public.Types.Checklist.parse(response.results))
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.ChecklistPkey, values: Partial<Public.Types.Checklist>, options?: Public.Tables.Checklist.Options) {
-            const response = await this.client.invoke<Public.Types.ChecklistPkey, Partial<Public.Types.Checklist>, Public.Types.Checklist | undefined, Public.Tables.Checklist.Options>({
-              operation: "Public.Tables.Checklist.ChecklistPkey.update",
-              parameters: {id: parameters.id},
-              values: {id: values.id,name: values.name,createdAt: values.createdAt},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Checklist>(Public.Types.Checklist.parse(response.results))
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.ChecklistPkey, options?: Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options) {
-            const response = await this.client.invoke<Public.Types.ChecklistPkey, never, Public.Types.Checklist | undefined, Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options>({
-              operation: "Public.Tables.Checklist.ChecklistPkey.delete",
-              parameters: {id: parameters.id},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Checklist>(Public.Types.Checklist.parse(response.results))
-  )
-  ;
-}
-}(this)
-public get ByPrimaryKey(){ return this.ChecklistPkey };
-}(this)
-
-          public ChecklistItem = new class extends HasClient {
-        
-
-          public async create(values: Partial<Public.Types.ChecklistItem>, options?: Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.ChecklistItem>, Public.Types.ChecklistItem, Public.Tables.ChecklistItem.Options>({
-              operation: "Public.Tables.ChecklistItem.create",
-              values: {id: values.id,checklistId: values.checklistId,title: values.title,checked: values.checked,createdAt: values.createdAt},
-              options
-            });
-            return (
-    nullIsUndefined<Public.Types.ChecklistItem>(Public.Types.ChecklistItem.parse(response.results))
-  )
-  ;
-          }
-        
-
-          public async all(options?: Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem[]> {
-            const response = await this.client.invoke<never, never, Public.Types.ChecklistItem[], Public.Tables.ChecklistItem.Options>({
-              operation: "Public.Tables.ChecklistItem.all",
-              options
-            });
-            return (
-    response.results
-      ?.map(Public.Types.ChecklistItem.parse)
-      .map(nullIsUndefined<Public.Types.ChecklistItem>)
-      .filter((x): x is Public.Types.ChecklistItem => x !== undefined) ?? []
-  )
-  ;
-          }
-        
-
-          public ChecklistItemPkey = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.ChecklistItemPkey, options?: Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options) {
-            const response = await this.client.invoke<Public.Types.ChecklistItemPkey, never, Public.Types.ChecklistItem | undefined, Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options>({
-              operation: "Public.Tables.ChecklistItem.ChecklistItemPkey.read",
-              parameters: {id: parameters.id},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.ChecklistItem>(Public.Types.ChecklistItem.parse(response.results))
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.ChecklistItemPkey, values: Partial<Public.Types.ChecklistItem>, options?: Public.Tables.ChecklistItem.Options) {
-            const response = await this.client.invoke<Public.Types.ChecklistItemPkey, Partial<Public.Types.ChecklistItem>, Public.Types.ChecklistItem | undefined, Public.Tables.ChecklistItem.Options>({
-              operation: "Public.Tables.ChecklistItem.ChecklistItemPkey.update",
-              parameters: {id: parameters.id},
-              values: {id: values.id,checklistId: values.checklistId,title: values.title,checked: values.checked,createdAt: values.createdAt},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.ChecklistItem>(Public.Types.ChecklistItem.parse(response.results))
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.ChecklistItemPkey, options?: Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options) {
-            const response = await this.client.invoke<Public.Types.ChecklistItemPkey, never, Public.Types.ChecklistItem | undefined, Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options>({
-              operation: "Public.Tables.ChecklistItem.ChecklistItemPkey.delete",
-              parameters: {id: parameters.id},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.ChecklistItem>(Public.Types.ChecklistItem.parse(response.results))
-  )
-  ;
-}
-}(this)
-public get ByPrimaryKey(){ return this.ChecklistItemPkey };
-
-          public ChecklistItemParent = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.ChecklistItemParent, options?: Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options) {
-            const response = await this.client.invoke<Public.Types.ChecklistItemParent, never, Public.Types.ChecklistItem[] | undefined, Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options>({
-              operation: "Public.Tables.ChecklistItem.ChecklistItemParent.read",
-              parameters: {checklistId: parameters.checklistId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.ChecklistItem.parse)
-      .map(nullIsUndefined<Public.Types.ChecklistItem>)
-      .filter((x): x is Public.Types.ChecklistItem => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.ChecklistItemParent, values: Partial<Public.Types.ChecklistItem>, options?: Public.Tables.ChecklistItem.Options) {
-            const response = await this.client.invoke<Public.Types.ChecklistItemParent, Partial<Public.Types.ChecklistItem>, Public.Types.ChecklistItem[] | undefined, Public.Tables.ChecklistItem.Options>({
-              operation: "Public.Tables.ChecklistItem.ChecklistItemParent.update",
-              parameters: {checklistId: parameters.checklistId},
-              values: {id: values.id,checklistId: values.checklistId,title: values.title,checked: values.checked,createdAt: values.createdAt},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.ChecklistItem.parse)
-      .map(nullIsUndefined<Public.Types.ChecklistItem>)
-      .filter((x): x is Public.Types.ChecklistItem => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.ChecklistItemParent, options?: Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options) {
-            const response = await this.client.invoke<Public.Types.ChecklistItemParent, never, Public.Types.ChecklistItem[] | undefined, Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options>({
-              operation: "Public.Tables.ChecklistItem.ChecklistItemParent.delete",
-              parameters: {checklistId: parameters.checklistId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.ChecklistItem.parse)
-      .map(nullIsUndefined<Public.Types.ChecklistItem>)
-      .filter((x): x is Public.Types.ChecklistItem => x !== undefined) ?? []
-  )
-  ;
-}
-}(this)
-
-}(this)
-}(this)
-}(this)
-
-          public PgToast = new class extends HasClient {
-        
-
-          public Procedures = new class extends HasClient {
-        
-}(this)
-
-          public Tables = new class extends HasClient {
-        
-}(this)
-}(this)
-}
-import React from "react";
-export { EmbraceSQLProvider } from "@embracesql/react";
-import { useEmbraceSQLClient, useEmbraceSQLRow, useEmbraceSQLRows, useEmbraceSQLImmutableRows, useEmbraceSQLImmutable, ChangeEvent, Row as IsRow, RowBase, RowCallback, GeneratedRowProps } from "@embracesql/react";
-export namespace Public {
-export namespace Procedures {
-}
-export namespace Tables {
-export namespace Checklist {
-export type Row = IsRow<Public.Types.Checklist>;
-export class RowImplementation
- extends RowBase<Public.Types.Checklist>
- implements Row {
-   constructor(row: Public.Types.Checklist, 
-     changeCallback: RowCallback<Public.Types.Checklist>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get id() { return this._value.id;}
-get changeId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Uuid.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    id: parsedValue as Public.Types.Checklist["id"],
-    });
-  };
-}
-get name() { return this._value.name;}
-get changeName() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Text.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    name: parsedValue as Public.Types.Checklist["name"],
-    });
-  };
-}
-get createdAt() { return this._value.createdAt;}
-get changeCreatedAt() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    createdAt: parsedValue as Public.Types.Checklist["createdAt"],
-    });
-  };
-}
-}
-}
-export namespace ChecklistItem {
-export type Row = IsRow<Public.Types.ChecklistItem>;
-export class RowImplementation
- extends RowBase<Public.Types.ChecklistItem>
- implements Row {
-   constructor(row: Public.Types.ChecklistItem, 
-     changeCallback: RowCallback<Public.Types.ChecklistItem>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get id() { return this._value.id;}
-get changeId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Uuid.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    id: parsedValue as Public.Types.ChecklistItem["id"],
-    });
-  };
-}
-get checklistId() { return this._value.checklistId;}
-get changeChecklistId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Uuid.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    checklistId: parsedValue as Public.Types.ChecklistItem["checklistId"],
-    });
-  };
-}
-get title() { return this._value.title;}
-get changeTitle() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Text.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    title: parsedValue as Public.Types.ChecklistItem["title"],
-    });
-  };
-}
-get checked() { return this._value.checked;}
-get changeChecked() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Bool.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    checked: parsedValue as Public.Types.ChecklistItem["checked"],
-    });
-  };
-}
-get createdAt() { return this._value.createdAt;}
-get changeCreatedAt() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    createdAt: parsedValue as Public.Types.ChecklistItem["createdAt"],
-    });
-  };
-}
-}
-}
-}
-}
-export namespace PgToast {
-export namespace Procedures {
-}
-export namespace Tables {
-}
-}
-
-export namespace Public {
-export namespace Procedures {
-}
-export namespace Tables {
-export namespace Checklist {
-export function useRow(props: GeneratedRowProps<Public.Tables.Checklist.Values>) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLRow<PrimaryKey,
-  Partial<Public.Types.Checklist>, 
-  Public.Types.Checklist> (
-
-               {
-                 parameters: props.values as unknown as PrimaryKey,
-                 readOperation: client.Public.Tables.Checklist.ByPrimaryKey.read.bind(client),
-                 upsertOperation: client.Public.Tables.Checklist.create.bind(client),
-                 deleteOperation: client.Public.Tables.Checklist.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Checklist.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Checklist.RowImplementation,
-                 rowEquals: Public.Types.Checklist.equals,
-                 emptyRow: Public.Tables.Checklist.emptyRow,
-                 createIfNotExists: props.createIfNotExists,
-               }
-             )
-}
-export function useRows(options?: Public.Tables.Checklist.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<never,
-  Partial<Public.Types.Checklist>, 
-  Public.Types.Checklist,
-  Public.Tables.Checklist.Options> (
-
-               {
-                 parameters: NEVER,
-                 options,
-                 readOperation: client.Public.Tables.Checklist.all.bind(client),
-                 upsertOperation: client.Public.Tables.Checklist.create.bind(client),
-                 deleteOperation: client.Public.Tables.Checklist.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Checklist.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Checklist.RowImplementation,
-                 rowEquals: Public.Types.Checklist.equals,
-                 emptyRow: Public.Tables.Checklist.emptyRow
-               }
-             )
-}
-export namespace Id {
-}
-export namespace Name {
-}
-export namespace CreatedAt {
-}
-export function useChecklistPkey(parameters: Public.Types.ChecklistPkey ) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.ChecklistPkey, Partial<Public.Types.Checklist>,  Public.Types.Checklist >(
-               {
-                 readOperation: client.Public.Tables.Checklist.ChecklistPkey.read.bind(client),
-                 parameters,
-                 
-                 upsertOperation: client.Public.Tables.Checklist.create.bind(client),
-                 deleteOperation: client.Public.Tables.Checklist.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Checklist.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Checklist.RowImplementation,
-                 rowEquals: Public.Types.Checklist.equals,
-                 emptyRow: Public.Tables.Checklist.emptyRow
-               }
-             )
-}
-}
-export namespace ChecklistItem {
-export function useRow(props: GeneratedRowProps<Public.Tables.ChecklistItem.Values>) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLRow<PrimaryKey,
-  Partial<Public.Types.ChecklistItem>, 
-  Public.Types.ChecklistItem> (
-
-               {
-                 parameters: props.values as unknown as PrimaryKey,
-                 readOperation: client.Public.Tables.ChecklistItem.ByPrimaryKey.read.bind(client),
-                 upsertOperation: client.Public.Tables.ChecklistItem.create.bind(client),
-                 deleteOperation: client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
-                 RowImplementation: Public.Tables.ChecklistItem.RowImplementation,
-                 rowEquals: Public.Types.ChecklistItem.equals,
-                 emptyRow: Public.Tables.ChecklistItem.emptyRow,
-                 createIfNotExists: props.createIfNotExists,
-               }
-             )
-}
-export function useRows(options?: Public.Tables.ChecklistItem.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<never,
-  Partial<Public.Types.ChecklistItem>, 
-  Public.Types.ChecklistItem,
-  Public.Tables.ChecklistItem.Options> (
-
-               {
-                 parameters: NEVER,
-                 options,
-                 readOperation: client.Public.Tables.ChecklistItem.all.bind(client),
-                 upsertOperation: client.Public.Tables.ChecklistItem.create.bind(client),
-                 deleteOperation: client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
-                 RowImplementation: Public.Tables.ChecklistItem.RowImplementation,
-                 rowEquals: Public.Types.ChecklistItem.equals,
-                 emptyRow: Public.Tables.ChecklistItem.emptyRow
-               }
-             )
-}
-export namespace Id {
-}
-export namespace ChecklistId {
-}
-export namespace Title {
-}
-export namespace Checked {
-}
-export namespace CreatedAt {
-}
-export function useChecklistItemPkey(parameters: Public.Types.ChecklistItemPkey ) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.ChecklistItemPkey, Partial<Public.Types.ChecklistItem>,  Public.Types.ChecklistItem >(
-               {
-                 readOperation: client.Public.Tables.ChecklistItem.ChecklistItemPkey.read.bind(client),
-                 parameters,
-                 
-                 upsertOperation: client.Public.Tables.ChecklistItem.create.bind(client),
-                 deleteOperation: client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
-                 RowImplementation: Public.Tables.ChecklistItem.RowImplementation,
-                 rowEquals: Public.Types.ChecklistItem.equals,
-                 emptyRow: Public.Tables.ChecklistItem.emptyRow
-               }
-             )
-}
-export function useChecklistItemParent(parameters: Public.Types.ChecklistItemParent , options?: Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.ChecklistItemParent, Partial<Public.Types.ChecklistItem>,  Public.Types.ChecklistItem , Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options>(
-               {
-                 readOperation: client.Public.Tables.ChecklistItem.ChecklistItemParent.read.bind(client),
-                 parameters,
-                 options,
-                 upsertOperation: client.Public.Tables.ChecklistItem.create.bind(client),
-                 deleteOperation: client.Public.Tables.ChecklistItem.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.ChecklistItem.primaryKeyFrom,
-                 RowImplementation: Public.Tables.ChecklistItem.RowImplementation,
-                 rowEquals: Public.Types.ChecklistItem.equals,
-                 emptyRow: Public.Tables.ChecklistItem.emptyRow
-               }
-             )
-}
-}
-}
-}
-export namespace PgToast {
-export namespace Procedures {
-}
-export namespace Tables {
-}
-}
-// End React generated section

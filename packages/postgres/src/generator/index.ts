@@ -1,6 +1,7 @@
 import { Context } from "../context";
 import { GenerationContext as GC } from "@embracesql/shared";
 
+export * from "./typescript/generateHeader";
 export { generateDatabaseRoot } from "./typescript/generateDatabaseRoot";
 export { generateOperationDispatcher } from "./typescript/generateOperationDispatcher";
 export { generateSchemaDefinitions } from "./typescript/generateSchemaDefinitions";

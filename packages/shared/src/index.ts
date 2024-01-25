@@ -191,3 +191,76 @@ export enum Sort {
 export type PossiblyEmpty<T> = {
   [K in keyof T]: T[K] | undefined;
 };
+
+/**
+ * Grouping of procedures.
+ */
+export interface Procedures {
+  procedures: Procedure[];
+}
+
+/**
+ * Callable procedure or function in the database.
+ */
+export interface Procedure {
+  /**
+   * Name as stated in the database.
+   */
+  name: string;
+}
+
+/**
+ * Grouping of tables.
+ */
+export interface Tables {
+  /**
+   * Tables included in this grouping.
+   */
+  tables: Table[];
+}
+
+/**
+ * An individual Table.
+ */
+export interface Table {
+  /**
+   * Name as stated in the database.
+   */
+  name: string;
+  /**
+   * Columns included in the table.
+   */
+  columns: Column[];
+  /**
+   * Every index on the table.
+   */
+  indexes: Index[];
+}
+
+/**
+ * Index on an individual table.
+ */
+export interface Index {
+  /**
+   * Name as stated in the database.
+   */
+  name: string;
+  /**
+   * Columns included in the index.
+   */
+  columns: Column[];
+}
+
+/**
+ * Column on an individual Table or Index.
+ */
+export interface Column {
+  /**
+   * Name as stated in the database.
+   */
+  name: string;
+  /**
+   * Database defined type, expressed in database type names.
+   */
+  type: string;
+}

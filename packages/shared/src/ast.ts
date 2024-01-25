@@ -122,7 +122,7 @@ export type ASTKindMap = {
   [ASTKind.Database]: DatabaseNode;
   [ASTKind.Schema]: SchemaNode;
   [ASTKind.Table]: TableNode;
-  [ASTKind.Tables]: TableNode;
+  [ASTKind.Tables]: TablesNode;
   [ASTKind.Column]: ColumnNode;
   [ASTKind.Index]: IndexNode;
   [ASTKind.Types]: TypesNode;
@@ -412,6 +412,14 @@ export class AbstractTypeNode extends ContainerNode {
     super(name, kind, parent);
   }
 
+  get schema() {
+    return this.lookUpTo(ASTKind.Schema);
+  }
+
+  get databaseName() {
+    return `${this.schema?.name}.${this.name}`;
+  }
+
   typescriptTypeParser(context: GenerationContext) {
     return this.parser?.typescriptTypeParser(context);
   }
@@ -531,6 +539,12 @@ export class TablesNode extends ContainerNode {
   constructor(public schema: SchemaNode) {
     super("Tables", ASTKind.Tables, schema);
   }
+
+  get tables() {
+    return this.children.filter<TableNode>((n): n is TableNode =>
+      isNodeType(n, ASTKind.Table),
+    );
+  }
 }
 
 /**
@@ -588,6 +602,12 @@ export class TableNode extends ContainerNode implements DatabaseNamed {
   get allColumns(): ColumnNode[] {
     return this.children.filter<ColumnNode>((n): n is ColumnNode =>
       isNodeType(n, ASTKind.Column),
+    );
+  }
+
+  get indexes() {
+    return this.children.filter<IndexNode>((n): n is IndexNode =>
+      isNodeType(n, ASTKind.Index),
     );
   }
 }

@@ -10,6 +10,7 @@ import {
   CompositeTypeNode,
   GenerationContext,
   NamedASTNode,
+  NamespaceVisitor,
 } from "@embracesql/shared";
 
 /**
@@ -44,33 +45,35 @@ const NestedNamedClassVisitor = {
  * proc or query you want to call!
  */
 export const generateDatabaseRoot = async (context: GenerationContext) => {
-  return await context.database.visit({
-    ...context,
-    handlers: {
-      [ASTKind.Database]: {
-        before: async () => {
-          return [
-            // starting off with all the imports, append to this list
-            // and it will be the final output
-            `
+  return [
+    await context.database.visit({
+      ...context,
+      handlers: {
+        [ASTKind.Database]: {
+          before: async () => {
+            return [
+              // starting off with all the imports, append to this list
+              // and it will be the final output
+              `
+            import { Tables, Table, Column, Index } from "@embracesql/shared";
             import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
             import postgres from "postgres";
           `,
-            // include all schemas -- need those built in types
-            await generateTypecastMap({ ...context, skipSchemas: [] }),
-            // common database interface
-            `
+              // include all schemas -- need those built in types
+              await generateTypecastMap({ ...context, skipSchemas: [] }),
+              // common database interface
+              `
             interface HasDatabase {
               database: Database;
             }
           `,
-            // typecast map for postgres driver codec.
+              // typecast map for postgres driver codec.
 
-            // generated database class starts here
-            `export class Database extends PostgresDatabase implements HasDatabase { `,
-            `get database() { return this };`,
-            `get settings() { return this.context.settings as Settings };`,
-            `
+              // generated database class starts here
+              `export class Database extends PostgresDatabase implements HasDatabase { `,
+              `get database() { return this };`,
+              `get settings() { return this.context.settings as Settings };`,
+              `
           /**
            * Connect to your database server via URL, and return 
            * a fully typed database you can use to access it.
@@ -80,49 +83,50 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
           }
         
         `,
-          ].join("\n");
+            ].join("\n");
+          },
+          after: async () => {
+            return [
+              // database class end
+              `}`,
+            ].join("\n");
+          },
         },
-        after: async () => {
-          return [
-            // database class end
-            `}`,
-          ].join("\n");
-        },
-      },
-      [ASTKind.Schema]: NestedNamedClassVisitor,
-      [ASTKind.Scripts]: NestedNamedClassVisitor,
-      [ASTKind.ScriptFolder]: NestedNamedClassVisitor,
-      [ASTKind.Script]: {
-        before: async (context, node) => {
-          const parameterPasses = node.parametersType?.attributes?.length
-            ? ", [" +
-              node.parametersType.attributes
-                .map((a) => `parameters.${a.typescriptPropertyName}`)
-                .join(",") +
-              "]"
-            : "";
-          // just a bit of escaping of the passsed sql script
-          const preparedSql = node.script.replace("`", "\\`");
+        [ASTKind.Schema]: NestedNamedClassVisitor,
+        [ASTKind.Scripts]: NestedNamedClassVisitor,
+        [ASTKind.ScriptFolder]: NestedNamedClassVisitor,
+        [ASTKind.Script]: {
+          before: async (context, node) => {
+            const parameterPasses = node.parametersType?.attributes?.length
+              ? ", [" +
+                node.parametersType.attributes
+                  .map((a) => `parameters.${a.typescriptPropertyName}`)
+                  .join(",") +
+                "]"
+              : "";
+            // just a bit of escaping of the passsed sql script
+            const preparedSql = node.script.replace("`", "\\`");
 
-          // pick results fields and add in null handling
-          // this will need to account for alias types
-          const resultsFinalType = node.resultsType;
-          // this is a bit over defensive programming -- scripts always
-          // come back with composite types
-          const attributes = (resultsFinalType as CompositeTypeNode).attributes
-            ? (resultsFinalType as CompositeTypeNode).attributes.map(
-                (c) =>
-                  `${c.typescriptPropertyName}: undefinedIsNull(${c.type.typescriptNamespacedName}.parse(r.${c.name}))`,
-              )
-            : [];
-          // and here is the really defensive part...
-          console.assert(attributes.length);
-          const parameters = node.parametersType
-            ? `parameters: ${node.parametersType.typescriptNamespacedName}`
-            : "";
-          return [
-            await NestedNamedClassVisitor.before(context, node),
-            `
+            // pick results fields and add in null handling
+            // this will need to account for alias types
+            const resultsFinalType = node.resultsType;
+            // this is a bit over defensive programming -- scripts always
+            // come back with composite types
+            const attributes = (resultsFinalType as CompositeTypeNode)
+              .attributes
+              ? (resultsFinalType as CompositeTypeNode).attributes.map(
+                  (c) =>
+                    `${c.typescriptPropertyName}: undefinedIsNull(${c.type.typescriptNamespacedName}.parse(r.${c.name}))`,
+                )
+              : [];
+            // and here is the really defensive part...
+            console.assert(attributes.length);
+            const parameters = node.parametersType
+              ? `parameters: ${node.parametersType.typescriptNamespacedName}`
+              : "";
+            return [
+              await NestedNamedClassVisitor.before(context, node),
+              `
           async call (${parameters}) {
             const sql = this.database.context.sql;
             const response = await sql.unsafe(\`
@@ -132,51 +136,51 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
             return response.map(r => ({ ${attributes.join(",")} }));
           }
         `,
-          ].join("\n");
+            ].join("\n");
+          },
+          after: NestedNamedClassVisitor.after,
         },
-        after: NestedNamedClassVisitor.after,
-      },
-      [ASTKind.Procedures]: NestedNamedClassVisitor,
-      [ASTKind.Procedure]: {
-        before: async (_, node) => {
-          // turn parameters into the postgres driver escape sequence
-          // this is making a string interpolation with string interpoplation
-          const parameterExpressions =
-            node.parametersType?.attributes
-              .map(
-                (a) =>
-                  (a.named ? `${a.name} =>` : ``) +
-                  ` \${ typed[${a.type.id}](undefinedIsNull(parameters.${a.typescriptPropertyName})) }`,
-              )
-              .join(",") ?? "";
-          const resultType = `${node.resultsType?.typescriptNamespacedName}`;
-          // if there is a composite -- pseudo -- return type, this will
-          // need to call back into the sql driver to parse the results
-          const parseResult = node.isPseudoType
-            ? `
+        [ASTKind.Procedures]: NestedNamedClassVisitor,
+        [ASTKind.Procedure]: {
+          before: async (_, node) => {
+            // turn parameters into the postgres driver escape sequence
+            // this is making a string interpolation with string interpoplation
+            const parameterExpressions =
+              node.parametersType?.attributes
+                .map(
+                  (a) =>
+                    (a.named ? `${a.name} =>` : ``) +
+                    ` \${ typed[${a.type.id}](undefinedIsNull(parameters.${a.typescriptPropertyName})) }`,
+                )
+                .join(",") ?? "";
+            const resultType = `${node.resultsType?.typescriptNamespacedName}`;
+            // if there is a composite -- pseudo -- return type, this will
+            // need to call back into the sql driver to parse the results
+            const parseResult = node.isPseudoType
+              ? `
             const parseResult = (context: Context, result: unknown) => {
               return context.procTypes[${node.id}].parseFromPostgresIfPseudoType(context, result) as unknown as ${node.resultsType?.typescriptNamespacedName};
             };
           `
-            : `
+              : `
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
               return ${resultType}.parse(result);
             };
           `;
-          // function call start, passing in parameters
-          const parameters = node.parametersType
-            ? `parameters : ${node.parametersType?.typescriptNamespacedName}`
-            : ``;
-          return [
-            await NestedNamedClassVisitor.before(context, node),
-            `async call(${parameters}) {`,
-            `  ${parseResult}`,
-            `  const sql = this.database.context.sql;`,
-            `  const typed = sql.typed as unknown as PostgresTypecasts;`,
-            `  const response = await sql\`SELECT ${node.databaseName}(${parameterExpressions})\``,
-            `  const results = response;`,
-            `
+            // function call start, passing in parameters
+            const parameters = node.parametersType
+              ? `parameters : ${node.parametersType?.typescriptNamespacedName}`
+              : ``;
+            return [
+              await NestedNamedClassVisitor.before(context, node),
+              `async call(${parameters}) {`,
+              `  ${parseResult}`,
+              `  const sql = this.database.context.sql;`,
+              `  const typed = sql.typed as unknown as PostgresTypecasts;`,
+              `  const response = await sql\`SELECT ${node.databaseName}(${parameterExpressions})\``,
+              `  const results = response;`,
+              `
               const responseBody = ( ${(() => {
                 // table cast of a defined type
                 if (node.returnsMany) {
@@ -187,32 +191,181 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
               })()} );
               return responseBody;
            `,
-            `}`,
-          ].join("\n");
+              `}`,
+            ].join("\n");
+          },
+          after: NestedNamedClassVisitor.after,
         },
-        after: NestedNamedClassVisitor.after,
-      },
-      // tables and indexes host AutoCRUD
-      [ASTKind.Tables]: NestedNamedClassVisitor,
-      [ASTKind.Table]: NestedNamedClassVisitor,
-      [ASTKind.Index]: {
-        before: NestedNamedClassVisitor.before,
-        after: async (context, node) => {
-          return [
-            await NestedNamedClassVisitor.after(context, node),
-            node.primaryKey
-              ? `public get ${BY_PRIMARY_KEY}(){ return this.${node.typescriptName} };`
-              : ``,
-          ].join("\n");
+        [ASTKind.Tables]: {
+          before: async (_, node) => {
+            return [
+              `get ${node.typescriptName} () { return new ${node.typescriptNamespacedName}(this)} `,
+            ].join("\n");
+          },
         },
       },
+    }),
+    // tables collection holder
+    await context.database.visit({
+      ...context,
+      handlers: {
+        [ASTKind.Schema]: NamespaceVisitor,
+        [ASTKind.Tables]: {
+          before: async (_, node) => {
+            return `
+          export class Tables implements Tables, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
 
-      // C R U D - AutoCRUD!
-      [ASTKind.CreateOperation]: CreateOperation,
-      [ASTKind.ReadOperation]: ReadOperation,
-      [ASTKind.AllOperation]: AllOperation,
-      [ASTKind.UpdateOperation]: UpdateOperation,
-      [ASTKind.DeleteOperation]: DeleteOperation,
-    },
-  });
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "${node.name}";
+            }
+
+            /**
+             * Every table in this schema.
+             */
+            get tables() {
+              return [
+                ${node.tables
+                  .map((t) => `new ${t.typescriptNamespacedName}(this)`)
+                  .join(",")}
+              ];
+            }
+        `;
+          },
+          after: async () => {
+            return `}`;
+          },
+        },
+        [ASTKind.Table]: {
+          before: async (_, node) => {
+            return [
+              `get ${node.typescriptName} () { return new ${node.typescriptNamespacedName}(this)} `,
+            ].join("\n");
+          },
+        },
+      },
+    }),
+
+    // table and table operations
+    await context.database.visit({
+      ...context,
+      handlers: {
+        [ASTKind.Schema]: NamespaceVisitor,
+        [ASTKind.Tables]: NamespaceVisitor,
+        [ASTKind.Table]: {
+          before: async (_, node) => {
+            return `
+          export class ${node.typescriptName} implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "${node.name}";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                ${node.type.attributes
+                  .map(
+                    (a) =>
+                      `{name: "${a.name}", type: "${a.type.databaseName}"}`,
+                  )
+                  .join(",")}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                ${node.indexes
+                  .map((i) => `new ${i.typescriptNamespacedName}(this)`)
+                  .join(",")}
+              ];
+            }
+        `;
+          },
+          after: async () => {
+            return `}`;
+          },
+        },
+        [ASTKind.Index]: {
+          before: async (context, node) => {
+            return [
+              node.primaryKey
+                ? `public get ${BY_PRIMARY_KEY} () { return new ${node.typescriptNamespacedName}(this)}`
+                : ``,
+              `get ${node.typescriptName} () { return new ${node.typescriptNamespacedName}(this)} `,
+            ].join("\n");
+          },
+        },
+
+        // C R U D - AutoCRUD!
+        [ASTKind.CreateOperation]: CreateOperation,
+        [ASTKind.AllOperation]: AllOperation,
+      },
+    }),
+    // index and index operations
+    await context.database.visit({
+      ...context,
+      handlers: {
+        [ASTKind.Schema]: NamespaceVisitor,
+        [ASTKind.Tables]: NamespaceVisitor,
+        [ASTKind.Table]: NamespaceVisitor,
+        [ASTKind.Index]: {
+          before: async (_, node) => {
+            return `
+          export class ${node.typescriptName} implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "${node.name}";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                ${node.type.attributes
+                  .map(
+                    (a) =>
+                      `{name: "${a.name}", type: "${a.type.databaseName}"}`,
+                  )
+                  .join(",")}
+              ];
+            }
+        `;
+          },
+          after: async () => {
+            return `}`;
+          },
+        },
+
+        // C R U D - AutoCRUD!
+        // well - R U D - these are by index :)
+        [ASTKind.ReadOperation]: ReadOperation,
+        [ASTKind.UpdateOperation]: UpdateOperation,
+        [ASTKind.DeleteOperation]: DeleteOperation,
+      },
+    }),
+  ].join("\n");
 };

@@ -2,7 +2,7 @@
 import { Command } from "@commander-js/extra-typings";
 import { generateClient } from "@embracesql/client";
 import { generateExpressApp } from "@embracesql/express/src/typescript/generateExpressApp";
-import { initializeContext } from "@embracesql/postgres";
+import { generateHeader, initializeContext } from "@embracesql/postgres";
 import {
   generateDatabaseRoot,
   generateOperationDispatcher,
@@ -68,9 +68,11 @@ addOptions(
     sqlScriptsFrom: options.sqlScriptsFrom,
     skipSchemas: options.skipSchemas,
   };
-  generationBuffer.push(await generateSchemaDefinitions(combinedContext));
+
+  generationBuffer.push(await generateHeader(combinedContext));
   generationBuffer.push(await generateDatabaseRoot(combinedContext));
   generationBuffer.push(await generateOperationDispatcher(combinedContext));
+  generationBuffer.push(await generateSchemaDefinitions(combinedContext));
   process.stdout.write(await formatSource(generationBuffer.join("\n")));
   await context.sql.end();
 });
@@ -89,10 +91,11 @@ addOptions(
     skipSchemas: options.skipSchemas,
   };
 
-  generationBuffer.push(await generateSchemaDefinitions(combinedContext));
+  generationBuffer.push(await generateHeader(combinedContext));
   generationBuffer.push(await generateDatabaseRoot(combinedContext));
   generationBuffer.push(await generateOperationDispatcher(combinedContext));
   generationBuffer.push(await generateExpressApp());
+  generationBuffer.push(await generateSchemaDefinitions(combinedContext));
   process.stdout.write(await formatSource(generationBuffer.join("\n")));
   await context.sql.end();
 });
@@ -109,8 +112,9 @@ addOptions(
     skipSchemas: options.skipSchemas,
   };
 
-  generationBuffer.push(await generateSchemaDefinitions(combinedContext));
+  generationBuffer.push(await generateHeader(combinedContext));
   generationBuffer.push(await generateClient(combinedContext));
+  generationBuffer.push(await generateSchemaDefinitions(combinedContext));
   process.stdout.write(await formatSource(generationBuffer.join("\n")));
   await context.sql.end();
 });
@@ -127,9 +131,10 @@ addOptions(
     skipSchemas: options.skipSchemas,
   };
 
-  generationBuffer.push(await generateSchemaDefinitions(combinedContext));
+  generationBuffer.push(await generateHeader(combinedContext));
   generationBuffer.push(await generateClient(combinedContext));
   generationBuffer.push(await generateReactComponents(combinedContext));
+  generationBuffer.push(await generateSchemaDefinitions(combinedContext));
   process.stdout.write(await formatSource(generationBuffer.join("\n")));
   await context.sql.end();
 });

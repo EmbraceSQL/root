@@ -1,4 +1,2156 @@
 
+            import { Tables, Table, Column, Index } from "@embracesql/shared";
+            import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
+            import postgres from "postgres";
+          
+
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        type ArgumentToPostgres = any;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        type ArgumentFromPostgres = any;
+        type Typecast = (x: ArgumentToPostgres) => ArgumentFromPostgres;
+        export interface PostgresTypecasts { 
+      
+[16]: Typecast;
+["PgCatalog.Types.Bool"]: Typecast
+[17]: Typecast;
+["PgCatalog.Types.Bytea"]: Typecast
+[18]: Typecast;
+["PgCatalog.Types.Char"]: Typecast
+[19]: Typecast;
+["PgCatalog.Types.Name"]: Typecast
+[20]: Typecast;
+["PgCatalog.Types.Int8"]: Typecast
+[21]: Typecast;
+["PgCatalog.Types.Int2"]: Typecast
+[22]: Typecast;
+["PgCatalog.Types.Int2vector"]: Typecast
+[23]: Typecast;
+["PgCatalog.Types.Int4"]: Typecast
+[24]: Typecast;
+["PgCatalog.Types.Regproc"]: Typecast
+[25]: Typecast;
+["PgCatalog.Types.Text"]: Typecast
+[26]: Typecast;
+["PgCatalog.Types.Oid"]: Typecast
+[27]: Typecast;
+["PgCatalog.Types.Tid"]: Typecast
+[28]: Typecast;
+["PgCatalog.Types.Xid"]: Typecast
+[29]: Typecast;
+["PgCatalog.Types.Cid"]: Typecast
+[30]: Typecast;
+["PgCatalog.Types.Oidvector"]: Typecast
+[71]: Typecast;
+["PgCatalog.Types.PgType"]: Typecast
+[75]: Typecast;
+["PgCatalog.Types.PgAttribute"]: Typecast
+[81]: Typecast;
+["PgCatalog.Types.PgProc"]: Typecast
+[83]: Typecast;
+["PgCatalog.Types.PgClass"]: Typecast
+[114]: Typecast;
+["PgCatalog.Types.Json"]: Typecast
+[142]: Typecast;
+["PgCatalog.Types.Xml"]: Typecast
+[194]: Typecast;
+["PgCatalog.Types.PgNodeTree"]: Typecast
+[3361]: Typecast;
+["PgCatalog.Types.PgNdistinct"]: Typecast
+[3402]: Typecast;
+["PgCatalog.Types.PgDependencies"]: Typecast
+[5017]: Typecast;
+["PgCatalog.Types.PgMcvList"]: Typecast
+[32]: Typecast;
+["PgCatalog.Types.PgDdlCommand"]: Typecast
+[5069]: Typecast;
+["PgCatalog.Types.Xid8"]: Typecast
+[600]: Typecast;
+["PgCatalog.Types.Point"]: Typecast
+[601]: Typecast;
+["PgCatalog.Types.Lseg"]: Typecast
+[602]: Typecast;
+["PgCatalog.Types.Path"]: Typecast
+[603]: Typecast;
+["PgCatalog.Types.Box"]: Typecast
+[604]: Typecast;
+["PgCatalog.Types.Polygon"]: Typecast
+[628]: Typecast;
+["PgCatalog.Types.Line"]: Typecast
+[700]: Typecast;
+["PgCatalog.Types.Float4"]: Typecast
+[701]: Typecast;
+["PgCatalog.Types.Float8"]: Typecast
+[705]: Typecast;
+["PgCatalog.Types.Unknown"]: Typecast
+[718]: Typecast;
+["PgCatalog.Types.Circle"]: Typecast
+[790]: Typecast;
+["PgCatalog.Types.Money"]: Typecast
+[829]: Typecast;
+["PgCatalog.Types.Macaddr"]: Typecast
+[869]: Typecast;
+["PgCatalog.Types.Inet"]: Typecast
+[650]: Typecast;
+["PgCatalog.Types.Cidr"]: Typecast
+[774]: Typecast;
+["PgCatalog.Types.Macaddr8"]: Typecast
+[1033]: Typecast;
+["PgCatalog.Types.Aclitem"]: Typecast
+[1042]: Typecast;
+["PgCatalog.Types.Bpchar"]: Typecast
+[1043]: Typecast;
+["PgCatalog.Types.Varchar"]: Typecast
+[1082]: Typecast;
+["PgCatalog.Types.Date"]: Typecast
+[1083]: Typecast;
+["PgCatalog.Types.Time"]: Typecast
+[1114]: Typecast;
+["PgCatalog.Types.Timestamp"]: Typecast
+[1184]: Typecast;
+["PgCatalog.Types.Timestamptz"]: Typecast
+[1186]: Typecast;
+["PgCatalog.Types.Interval"]: Typecast
+[1266]: Typecast;
+["PgCatalog.Types.Timetz"]: Typecast
+[1560]: Typecast;
+["PgCatalog.Types.Bit"]: Typecast
+[1562]: Typecast;
+["PgCatalog.Types.Varbit"]: Typecast
+[1700]: Typecast;
+["PgCatalog.Types.Numeric"]: Typecast
+[1790]: Typecast;
+["PgCatalog.Types.Refcursor"]: Typecast
+[2202]: Typecast;
+["PgCatalog.Types.Regprocedure"]: Typecast
+[2203]: Typecast;
+["PgCatalog.Types.Regoper"]: Typecast
+[2204]: Typecast;
+["PgCatalog.Types.Regoperator"]: Typecast
+[2205]: Typecast;
+["PgCatalog.Types.Regclass"]: Typecast
+[4191]: Typecast;
+["PgCatalog.Types.Regcollation"]: Typecast
+[2206]: Typecast;
+["PgCatalog.Types.Regtype"]: Typecast
+[4096]: Typecast;
+["PgCatalog.Types.Regrole"]: Typecast
+[4089]: Typecast;
+["PgCatalog.Types.Regnamespace"]: Typecast
+[2950]: Typecast;
+["PgCatalog.Types.Uuid"]: Typecast
+[3220]: Typecast;
+["PgCatalog.Types.PgLsn"]: Typecast
+[3614]: Typecast;
+["PgCatalog.Types.Tsvector"]: Typecast
+[3642]: Typecast;
+["PgCatalog.Types.Gtsvector"]: Typecast
+[3615]: Typecast;
+["PgCatalog.Types.Tsquery"]: Typecast
+[3734]: Typecast;
+["PgCatalog.Types.Regconfig"]: Typecast
+[3769]: Typecast;
+["PgCatalog.Types.Regdictionary"]: Typecast
+[3802]: Typecast;
+["PgCatalog.Types.Jsonb"]: Typecast
+[4072]: Typecast;
+["PgCatalog.Types.Jsonpath"]: Typecast
+[2970]: Typecast;
+["PgCatalog.Types.TxidSnapshot"]: Typecast
+[5038]: Typecast;
+["PgCatalog.Types.PgSnapshot"]: Typecast
+[3904]: Typecast;
+["PgCatalog.Types.Int4range"]: Typecast
+[3906]: Typecast;
+["PgCatalog.Types.Numrange"]: Typecast
+[3908]: Typecast;
+["PgCatalog.Types.Tsrange"]: Typecast
+[3910]: Typecast;
+["PgCatalog.Types.Tstzrange"]: Typecast
+[3912]: Typecast;
+["PgCatalog.Types.Daterange"]: Typecast
+[3926]: Typecast;
+["PgCatalog.Types.Int8range"]: Typecast
+[4451]: Typecast;
+["PgCatalog.Types.Int4multirange"]: Typecast
+[4532]: Typecast;
+["PgCatalog.Types.Nummultirange"]: Typecast
+[4533]: Typecast;
+["PgCatalog.Types.Tsmultirange"]: Typecast
+[4534]: Typecast;
+["PgCatalog.Types.Tstzmultirange"]: Typecast
+[4535]: Typecast;
+["PgCatalog.Types.Datemultirange"]: Typecast
+[4536]: Typecast;
+["PgCatalog.Types.Int8multirange"]: Typecast
+[2249]: Typecast;
+["PgCatalog.Types.Record"]: Typecast
+[2287]: Typecast;
+["PgCatalog.Types.RecordArray"]: Typecast
+[2275]: Typecast;
+["PgCatalog.Types.Cstring"]: Typecast
+[2276]: Typecast;
+["PgCatalog.Types.Any"]: Typecast
+[2277]: Typecast;
+["PgCatalog.Types.Anyarray"]: Typecast
+[2278]: Typecast;
+["PgCatalog.Types.Void"]: Typecast
+[2279]: Typecast;
+["PgCatalog.Types.Trigger"]: Typecast
+[3838]: Typecast;
+["PgCatalog.Types.EventTrigger"]: Typecast
+[2280]: Typecast;
+["PgCatalog.Types.LanguageHandler"]: Typecast
+[2281]: Typecast;
+["PgCatalog.Types.Internal"]: Typecast
+[2283]: Typecast;
+["PgCatalog.Types.Anyelement"]: Typecast
+[2776]: Typecast;
+["PgCatalog.Types.Anynonarray"]: Typecast
+[3500]: Typecast;
+["PgCatalog.Types.Anyenum"]: Typecast
+[3115]: Typecast;
+["PgCatalog.Types.FdwHandler"]: Typecast
+[325]: Typecast;
+["PgCatalog.Types.IndexAmHandler"]: Typecast
+[3310]: Typecast;
+["PgCatalog.Types.TsmHandler"]: Typecast
+[269]: Typecast;
+["PgCatalog.Types.TableAmHandler"]: Typecast
+[3831]: Typecast;
+["PgCatalog.Types.Anyrange"]: Typecast
+[5077]: Typecast;
+["PgCatalog.Types.Anycompatible"]: Typecast
+[5078]: Typecast;
+["PgCatalog.Types.Anycompatiblearray"]: Typecast
+[5079]: Typecast;
+["PgCatalog.Types.Anycompatiblenonarray"]: Typecast
+[5080]: Typecast;
+["PgCatalog.Types.Anycompatiblerange"]: Typecast
+[4537]: Typecast;
+["PgCatalog.Types.Anymultirange"]: Typecast
+[4538]: Typecast;
+["PgCatalog.Types.Anycompatiblemultirange"]: Typecast
+[4600]: Typecast;
+["PgCatalog.Types.PgBrinBloomSummary"]: Typecast
+[4601]: Typecast;
+["PgCatalog.Types.PgBrinMinmaxMultiSummary"]: Typecast
+[1000]: Typecast;
+["PgCatalog.Types.BoolArray"]: Typecast
+[1001]: Typecast;
+["PgCatalog.Types.ByteaArray"]: Typecast
+[1002]: Typecast;
+["PgCatalog.Types.CharArray"]: Typecast
+[1003]: Typecast;
+["PgCatalog.Types.NameArray"]: Typecast
+[1016]: Typecast;
+["PgCatalog.Types.Int8Array"]: Typecast
+[1005]: Typecast;
+["PgCatalog.Types.Int2Array"]: Typecast
+[1006]: Typecast;
+["PgCatalog.Types.Int2vectorArray"]: Typecast
+[1007]: Typecast;
+["PgCatalog.Types.Int4Array"]: Typecast
+[1008]: Typecast;
+["PgCatalog.Types.RegprocArray"]: Typecast
+[1009]: Typecast;
+["PgCatalog.Types.TextArray"]: Typecast
+[1028]: Typecast;
+["PgCatalog.Types.OidArray"]: Typecast
+[1010]: Typecast;
+["PgCatalog.Types.TidArray"]: Typecast
+[1011]: Typecast;
+["PgCatalog.Types.XidArray"]: Typecast
+[1012]: Typecast;
+["PgCatalog.Types.CidArray"]: Typecast
+[1013]: Typecast;
+["PgCatalog.Types.OidvectorArray"]: Typecast
+[210]: Typecast;
+["PgCatalog.Types.PgTypeArray"]: Typecast
+[270]: Typecast;
+["PgCatalog.Types.PgAttributeArray"]: Typecast
+[272]: Typecast;
+["PgCatalog.Types.PgProcArray"]: Typecast
+[273]: Typecast;
+["PgCatalog.Types.PgClassArray"]: Typecast
+[199]: Typecast;
+["PgCatalog.Types.JsonArray"]: Typecast
+[143]: Typecast;
+["PgCatalog.Types.XmlArray"]: Typecast
+[271]: Typecast;
+["PgCatalog.Types.Xid8Array"]: Typecast
+[1017]: Typecast;
+["PgCatalog.Types.PointArray"]: Typecast
+[1018]: Typecast;
+["PgCatalog.Types.LsegArray"]: Typecast
+[1019]: Typecast;
+["PgCatalog.Types.PathArray"]: Typecast
+[1020]: Typecast;
+["PgCatalog.Types.BoxArray"]: Typecast
+[1027]: Typecast;
+["PgCatalog.Types.PolygonArray"]: Typecast
+[629]: Typecast;
+["PgCatalog.Types.LineArray"]: Typecast
+[1021]: Typecast;
+["PgCatalog.Types.Float4Array"]: Typecast
+[1022]: Typecast;
+["PgCatalog.Types.Float8Array"]: Typecast
+[719]: Typecast;
+["PgCatalog.Types.CircleArray"]: Typecast
+[791]: Typecast;
+["PgCatalog.Types.MoneyArray"]: Typecast
+[1040]: Typecast;
+["PgCatalog.Types.MacaddrArray"]: Typecast
+[1041]: Typecast;
+["PgCatalog.Types.InetArray"]: Typecast
+[651]: Typecast;
+["PgCatalog.Types.CidrArray"]: Typecast
+[775]: Typecast;
+["PgCatalog.Types.Macaddr8Array"]: Typecast
+[1034]: Typecast;
+["PgCatalog.Types.AclitemArray"]: Typecast
+[1014]: Typecast;
+["PgCatalog.Types.BpcharArray"]: Typecast
+[1015]: Typecast;
+["PgCatalog.Types.VarcharArray"]: Typecast
+[1182]: Typecast;
+["PgCatalog.Types.DateArray"]: Typecast
+[1183]: Typecast;
+["PgCatalog.Types.TimeArray"]: Typecast
+[1115]: Typecast;
+["PgCatalog.Types.TimestampArray"]: Typecast
+[1185]: Typecast;
+["PgCatalog.Types.TimestamptzArray"]: Typecast
+[1187]: Typecast;
+["PgCatalog.Types.IntervalArray"]: Typecast
+[1270]: Typecast;
+["PgCatalog.Types.TimetzArray"]: Typecast
+[1561]: Typecast;
+["PgCatalog.Types.BitArray"]: Typecast
+[1563]: Typecast;
+["PgCatalog.Types.VarbitArray"]: Typecast
+[1231]: Typecast;
+["PgCatalog.Types.NumericArray"]: Typecast
+[2201]: Typecast;
+["PgCatalog.Types.RefcursorArray"]: Typecast
+[2207]: Typecast;
+["PgCatalog.Types.RegprocedureArray"]: Typecast
+[2208]: Typecast;
+["PgCatalog.Types.RegoperArray"]: Typecast
+[2209]: Typecast;
+["PgCatalog.Types.RegoperatorArray"]: Typecast
+[2210]: Typecast;
+["PgCatalog.Types.RegclassArray"]: Typecast
+[4192]: Typecast;
+["PgCatalog.Types.RegcollationArray"]: Typecast
+[2211]: Typecast;
+["PgCatalog.Types.RegtypeArray"]: Typecast
+[4097]: Typecast;
+["PgCatalog.Types.RegroleArray"]: Typecast
+[4090]: Typecast;
+["PgCatalog.Types.RegnamespaceArray"]: Typecast
+[2951]: Typecast;
+["PgCatalog.Types.UuidArray"]: Typecast
+[3221]: Typecast;
+["PgCatalog.Types.PgLsnArray"]: Typecast
+[3643]: Typecast;
+["PgCatalog.Types.TsvectorArray"]: Typecast
+[3644]: Typecast;
+["PgCatalog.Types.GtsvectorArray"]: Typecast
+[3645]: Typecast;
+["PgCatalog.Types.TsqueryArray"]: Typecast
+[3735]: Typecast;
+["PgCatalog.Types.RegconfigArray"]: Typecast
+[3770]: Typecast;
+["PgCatalog.Types.RegdictionaryArray"]: Typecast
+[3807]: Typecast;
+["PgCatalog.Types.JsonbArray"]: Typecast
+[4073]: Typecast;
+["PgCatalog.Types.JsonpathArray"]: Typecast
+[2949]: Typecast;
+["PgCatalog.Types.TxidSnapshotArray"]: Typecast
+[5039]: Typecast;
+["PgCatalog.Types.PgSnapshotArray"]: Typecast
+[3905]: Typecast;
+["PgCatalog.Types.Int4rangeArray"]: Typecast
+[3907]: Typecast;
+["PgCatalog.Types.NumrangeArray"]: Typecast
+[3909]: Typecast;
+["PgCatalog.Types.TsrangeArray"]: Typecast
+[3911]: Typecast;
+["PgCatalog.Types.TstzrangeArray"]: Typecast
+[3913]: Typecast;
+["PgCatalog.Types.DaterangeArray"]: Typecast
+[3927]: Typecast;
+["PgCatalog.Types.Int8rangeArray"]: Typecast
+[6150]: Typecast;
+["PgCatalog.Types.Int4multirangeArray"]: Typecast
+[6151]: Typecast;
+["PgCatalog.Types.NummultirangeArray"]: Typecast
+[6152]: Typecast;
+["PgCatalog.Types.TsmultirangeArray"]: Typecast
+[6153]: Typecast;
+["PgCatalog.Types.TstzmultirangeArray"]: Typecast
+[6155]: Typecast;
+["PgCatalog.Types.DatemultirangeArray"]: Typecast
+[6157]: Typecast;
+["PgCatalog.Types.Int8multirangeArray"]: Typecast
+[1263]: Typecast;
+["PgCatalog.Types.CstringArray"]: Typecast
+[10001]: Typecast;
+["PgCatalog.Types.PgAttrdef"]: Typecast
+[10000]: Typecast;
+["PgCatalog.Types.PgAttrdefArray"]: Typecast
+[10003]: Typecast;
+["PgCatalog.Types.PgConstraint"]: Typecast
+[10002]: Typecast;
+["PgCatalog.Types.PgConstraintArray"]: Typecast
+[10005]: Typecast;
+["PgCatalog.Types.PgInherits"]: Typecast
+[10004]: Typecast;
+["PgCatalog.Types.PgInheritsArray"]: Typecast
+[10007]: Typecast;
+["PgCatalog.Types.PgIndex"]: Typecast
+[10006]: Typecast;
+["PgCatalog.Types.PgIndexArray"]: Typecast
+[10009]: Typecast;
+["PgCatalog.Types.PgOperator"]: Typecast
+[10008]: Typecast;
+["PgCatalog.Types.PgOperatorArray"]: Typecast
+[10011]: Typecast;
+["PgCatalog.Types.PgOpfamily"]: Typecast
+[10010]: Typecast;
+["PgCatalog.Types.PgOpfamilyArray"]: Typecast
+[10013]: Typecast;
+["PgCatalog.Types.PgOpclass"]: Typecast
+[10012]: Typecast;
+["PgCatalog.Types.PgOpclassArray"]: Typecast
+[10015]: Typecast;
+["PgCatalog.Types.PgAm"]: Typecast
+[10014]: Typecast;
+["PgCatalog.Types.PgAmArray"]: Typecast
+[10017]: Typecast;
+["PgCatalog.Types.PgAmop"]: Typecast
+[10016]: Typecast;
+["PgCatalog.Types.PgAmopArray"]: Typecast
+[10019]: Typecast;
+["PgCatalog.Types.PgAmproc"]: Typecast
+[10018]: Typecast;
+["PgCatalog.Types.PgAmprocArray"]: Typecast
+[10021]: Typecast;
+["PgCatalog.Types.PgLanguage"]: Typecast
+[10020]: Typecast;
+["PgCatalog.Types.PgLanguageArray"]: Typecast
+[10023]: Typecast;
+["PgCatalog.Types.PgLargeobjectMetadata"]: Typecast
+[10022]: Typecast;
+["PgCatalog.Types.PgLargeobjectMetadataArray"]: Typecast
+[10025]: Typecast;
+["PgCatalog.Types.PgLargeobject"]: Typecast
+[10024]: Typecast;
+["PgCatalog.Types.PgLargeobjectArray"]: Typecast
+[10027]: Typecast;
+["PgCatalog.Types.PgAggregate"]: Typecast
+[10026]: Typecast;
+["PgCatalog.Types.PgAggregateArray"]: Typecast
+[10029]: Typecast;
+["PgCatalog.Types.PgStatistic"]: Typecast
+[10028]: Typecast;
+["PgCatalog.Types.PgStatisticArray"]: Typecast
+[10031]: Typecast;
+["PgCatalog.Types.PgStatisticExt"]: Typecast
+[10030]: Typecast;
+["PgCatalog.Types.PgStatisticExtArray"]: Typecast
+[10033]: Typecast;
+["PgCatalog.Types.PgStatisticExtData"]: Typecast
+[10032]: Typecast;
+["PgCatalog.Types.PgStatisticExtDataArray"]: Typecast
+[10035]: Typecast;
+["PgCatalog.Types.PgRewrite"]: Typecast
+[10034]: Typecast;
+["PgCatalog.Types.PgRewriteArray"]: Typecast
+[10037]: Typecast;
+["PgCatalog.Types.PgTrigger"]: Typecast
+[10036]: Typecast;
+["PgCatalog.Types.PgTriggerArray"]: Typecast
+[10039]: Typecast;
+["PgCatalog.Types.PgEventTrigger"]: Typecast
+[10038]: Typecast;
+["PgCatalog.Types.PgEventTriggerArray"]: Typecast
+[10041]: Typecast;
+["PgCatalog.Types.PgDescription"]: Typecast
+[10040]: Typecast;
+["PgCatalog.Types.PgDescriptionArray"]: Typecast
+[10043]: Typecast;
+["PgCatalog.Types.PgCast"]: Typecast
+[10042]: Typecast;
+["PgCatalog.Types.PgCastArray"]: Typecast
+[10045]: Typecast;
+["PgCatalog.Types.PgEnum"]: Typecast
+[10044]: Typecast;
+["PgCatalog.Types.PgEnumArray"]: Typecast
+[10047]: Typecast;
+["PgCatalog.Types.PgNamespace"]: Typecast
+[10046]: Typecast;
+["PgCatalog.Types.PgNamespaceArray"]: Typecast
+[10049]: Typecast;
+["PgCatalog.Types.PgConversion"]: Typecast
+[10048]: Typecast;
+["PgCatalog.Types.PgConversionArray"]: Typecast
+[10051]: Typecast;
+["PgCatalog.Types.PgDepend"]: Typecast
+[10050]: Typecast;
+["PgCatalog.Types.PgDependArray"]: Typecast
+[1248]: Typecast;
+["PgCatalog.Types.PgDatabase"]: Typecast
+[10052]: Typecast;
+["PgCatalog.Types.PgDatabaseArray"]: Typecast
+[10054]: Typecast;
+["PgCatalog.Types.PgDbRoleSetting"]: Typecast
+[10053]: Typecast;
+["PgCatalog.Types.PgDbRoleSettingArray"]: Typecast
+[10056]: Typecast;
+["PgCatalog.Types.PgTablespace"]: Typecast
+[10055]: Typecast;
+["PgCatalog.Types.PgTablespaceArray"]: Typecast
+[2842]: Typecast;
+["PgCatalog.Types.PgAuthid"]: Typecast
+[10057]: Typecast;
+["PgCatalog.Types.PgAuthidArray"]: Typecast
+[2843]: Typecast;
+["PgCatalog.Types.PgAuthMembers"]: Typecast
+[10058]: Typecast;
+["PgCatalog.Types.PgAuthMembersArray"]: Typecast
+[10060]: Typecast;
+["PgCatalog.Types.PgShdepend"]: Typecast
+[10059]: Typecast;
+["PgCatalog.Types.PgShdependArray"]: Typecast
+[10062]: Typecast;
+["PgCatalog.Types.PgShdescription"]: Typecast
+[10061]: Typecast;
+["PgCatalog.Types.PgShdescriptionArray"]: Typecast
+[10064]: Typecast;
+["PgCatalog.Types.PgTsConfig"]: Typecast
+[10063]: Typecast;
+["PgCatalog.Types.PgTsConfigArray"]: Typecast
+[10066]: Typecast;
+["PgCatalog.Types.PgTsConfigMap"]: Typecast
+[10065]: Typecast;
+["PgCatalog.Types.PgTsConfigMapArray"]: Typecast
+[10068]: Typecast;
+["PgCatalog.Types.PgTsDict"]: Typecast
+[10067]: Typecast;
+["PgCatalog.Types.PgTsDictArray"]: Typecast
+[10070]: Typecast;
+["PgCatalog.Types.PgTsParser"]: Typecast
+[10069]: Typecast;
+["PgCatalog.Types.PgTsParserArray"]: Typecast
+[10072]: Typecast;
+["PgCatalog.Types.PgTsTemplate"]: Typecast
+[10071]: Typecast;
+["PgCatalog.Types.PgTsTemplateArray"]: Typecast
+[10074]: Typecast;
+["PgCatalog.Types.PgExtension"]: Typecast
+[10073]: Typecast;
+["PgCatalog.Types.PgExtensionArray"]: Typecast
+[10076]: Typecast;
+["PgCatalog.Types.PgForeignDataWrapper"]: Typecast
+[10075]: Typecast;
+["PgCatalog.Types.PgForeignDataWrapperArray"]: Typecast
+[10078]: Typecast;
+["PgCatalog.Types.PgForeignServer"]: Typecast
+[10077]: Typecast;
+["PgCatalog.Types.PgForeignServerArray"]: Typecast
+[10080]: Typecast;
+["PgCatalog.Types.PgUserMapping"]: Typecast
+[10079]: Typecast;
+["PgCatalog.Types.PgUserMappingArray"]: Typecast
+[10082]: Typecast;
+["PgCatalog.Types.PgForeignTable"]: Typecast
+[10081]: Typecast;
+["PgCatalog.Types.PgForeignTableArray"]: Typecast
+[10084]: Typecast;
+["PgCatalog.Types.PgPolicy"]: Typecast
+[10083]: Typecast;
+["PgCatalog.Types.PgPolicyArray"]: Typecast
+[10086]: Typecast;
+["PgCatalog.Types.PgReplicationOrigin"]: Typecast
+[10085]: Typecast;
+["PgCatalog.Types.PgReplicationOriginArray"]: Typecast
+[10088]: Typecast;
+["PgCatalog.Types.PgDefaultAcl"]: Typecast
+[10087]: Typecast;
+["PgCatalog.Types.PgDefaultAclArray"]: Typecast
+[10090]: Typecast;
+["PgCatalog.Types.PgInitPrivs"]: Typecast
+[10089]: Typecast;
+["PgCatalog.Types.PgInitPrivsArray"]: Typecast
+[10092]: Typecast;
+["PgCatalog.Types.PgSeclabel"]: Typecast
+[10091]: Typecast;
+["PgCatalog.Types.PgSeclabelArray"]: Typecast
+[4066]: Typecast;
+["PgCatalog.Types.PgShseclabel"]: Typecast
+[10093]: Typecast;
+["PgCatalog.Types.PgShseclabelArray"]: Typecast
+[10095]: Typecast;
+["PgCatalog.Types.PgCollation"]: Typecast
+[10094]: Typecast;
+["PgCatalog.Types.PgCollationArray"]: Typecast
+[10097]: Typecast;
+["PgCatalog.Types.PgParameterAcl"]: Typecast
+[10096]: Typecast;
+["PgCatalog.Types.PgParameterAclArray"]: Typecast
+[10099]: Typecast;
+["PgCatalog.Types.PgPartitionedTable"]: Typecast
+[10098]: Typecast;
+["PgCatalog.Types.PgPartitionedTableArray"]: Typecast
+[10101]: Typecast;
+["PgCatalog.Types.PgRange"]: Typecast
+[10100]: Typecast;
+["PgCatalog.Types.PgRangeArray"]: Typecast
+[10103]: Typecast;
+["PgCatalog.Types.PgTransform"]: Typecast
+[10102]: Typecast;
+["PgCatalog.Types.PgTransformArray"]: Typecast
+[10105]: Typecast;
+["PgCatalog.Types.PgSequence"]: Typecast
+[10104]: Typecast;
+["PgCatalog.Types.PgSequenceArray"]: Typecast
+[10107]: Typecast;
+["PgCatalog.Types.PgPublication"]: Typecast
+[10106]: Typecast;
+["PgCatalog.Types.PgPublicationArray"]: Typecast
+[10109]: Typecast;
+["PgCatalog.Types.PgPublicationNamespace"]: Typecast
+[10108]: Typecast;
+["PgCatalog.Types.PgPublicationNamespaceArray"]: Typecast
+[10111]: Typecast;
+["PgCatalog.Types.PgPublicationRel"]: Typecast
+[10110]: Typecast;
+["PgCatalog.Types.PgPublicationRelArray"]: Typecast
+[6101]: Typecast;
+["PgCatalog.Types.PgSubscription"]: Typecast
+[10112]: Typecast;
+["PgCatalog.Types.PgSubscriptionArray"]: Typecast
+[10114]: Typecast;
+["PgCatalog.Types.PgSubscriptionRel"]: Typecast
+[10113]: Typecast;
+["PgCatalog.Types.PgSubscriptionRelArray"]: Typecast
+[12002]: Typecast;
+["PgCatalog.Types.PgRoles"]: Typecast
+[12001]: Typecast;
+["PgCatalog.Types.PgRolesArray"]: Typecast
+[12007]: Typecast;
+["PgCatalog.Types.PgShadow"]: Typecast
+[12006]: Typecast;
+["PgCatalog.Types.PgShadowArray"]: Typecast
+[12012]: Typecast;
+["PgCatalog.Types.PgGroup"]: Typecast
+[12011]: Typecast;
+["PgCatalog.Types.PgGroupArray"]: Typecast
+[12016]: Typecast;
+["PgCatalog.Types.PgUser"]: Typecast
+[12015]: Typecast;
+["PgCatalog.Types.PgUserArray"]: Typecast
+[12020]: Typecast;
+["PgCatalog.Types.PgPolicies"]: Typecast
+[12019]: Typecast;
+["PgCatalog.Types.PgPoliciesArray"]: Typecast
+[12025]: Typecast;
+["PgCatalog.Types.PgRules"]: Typecast
+[12024]: Typecast;
+["PgCatalog.Types.PgRulesArray"]: Typecast
+[12030]: Typecast;
+["PgCatalog.Types.PgViews"]: Typecast
+[12029]: Typecast;
+["PgCatalog.Types.PgViewsArray"]: Typecast
+[12035]: Typecast;
+["PgCatalog.Types.PgTables"]: Typecast
+[12034]: Typecast;
+["PgCatalog.Types.PgTablesArray"]: Typecast
+[12040]: Typecast;
+["PgCatalog.Types.PgMatviews"]: Typecast
+[12039]: Typecast;
+["PgCatalog.Types.PgMatviewsArray"]: Typecast
+[12045]: Typecast;
+["PgCatalog.Types.PgIndexes"]: Typecast
+[12044]: Typecast;
+["PgCatalog.Types.PgIndexesArray"]: Typecast
+[12050]: Typecast;
+["PgCatalog.Types.PgSequences"]: Typecast
+[12049]: Typecast;
+["PgCatalog.Types.PgSequencesArray"]: Typecast
+[12055]: Typecast;
+["PgCatalog.Types.PgStats"]: Typecast
+[12054]: Typecast;
+["PgCatalog.Types.PgStatsArray"]: Typecast
+[12060]: Typecast;
+["PgCatalog.Types.PgStatsExt"]: Typecast
+[12059]: Typecast;
+["PgCatalog.Types.PgStatsExtArray"]: Typecast
+[12065]: Typecast;
+["PgCatalog.Types.PgStatsExtExprs"]: Typecast
+[12064]: Typecast;
+["PgCatalog.Types.PgStatsExtExprsArray"]: Typecast
+[12070]: Typecast;
+["PgCatalog.Types.PgPublicationTables"]: Typecast
+[12069]: Typecast;
+["PgCatalog.Types.PgPublicationTablesArray"]: Typecast
+[12075]: Typecast;
+["PgCatalog.Types.PgLocks"]: Typecast
+[12074]: Typecast;
+["PgCatalog.Types.PgLocksArray"]: Typecast
+[12079]: Typecast;
+["PgCatalog.Types.PgCursors"]: Typecast
+[12078]: Typecast;
+["PgCatalog.Types.PgCursorsArray"]: Typecast
+[12083]: Typecast;
+["PgCatalog.Types.PgAvailableExtensions"]: Typecast
+[12082]: Typecast;
+["PgCatalog.Types.PgAvailableExtensionsArray"]: Typecast
+[12087]: Typecast;
+["PgCatalog.Types.PgAvailableExtensionVersions"]: Typecast
+[12086]: Typecast;
+["PgCatalog.Types.PgAvailableExtensionVersionsArray"]: Typecast
+[12092]: Typecast;
+["PgCatalog.Types.PgPreparedXacts"]: Typecast
+[12091]: Typecast;
+["PgCatalog.Types.PgPreparedXactsArray"]: Typecast
+[12097]: Typecast;
+["PgCatalog.Types.PgPreparedStatements"]: Typecast
+[12096]: Typecast;
+["PgCatalog.Types.PgPreparedStatementsArray"]: Typecast
+[12101]: Typecast;
+["PgCatalog.Types.PgSeclabels"]: Typecast
+[12100]: Typecast;
+["PgCatalog.Types.PgSeclabelsArray"]: Typecast
+[12106]: Typecast;
+["PgCatalog.Types.PgSettings"]: Typecast
+[12105]: Typecast;
+["PgCatalog.Types.PgSettingsArray"]: Typecast
+[12112]: Typecast;
+["PgCatalog.Types.PgFileSettings"]: Typecast
+[12111]: Typecast;
+["PgCatalog.Types.PgFileSettingsArray"]: Typecast
+[12116]: Typecast;
+["PgCatalog.Types.PgHbaFileRules"]: Typecast
+[12115]: Typecast;
+["PgCatalog.Types.PgHbaFileRulesArray"]: Typecast
+[12120]: Typecast;
+["PgCatalog.Types.PgIdentFileMappings"]: Typecast
+[12119]: Typecast;
+["PgCatalog.Types.PgIdentFileMappingsArray"]: Typecast
+[12124]: Typecast;
+["PgCatalog.Types.PgTimezoneAbbrevs"]: Typecast
+[12123]: Typecast;
+["PgCatalog.Types.PgTimezoneAbbrevsArray"]: Typecast
+[12128]: Typecast;
+["PgCatalog.Types.PgTimezoneNames"]: Typecast
+[12127]: Typecast;
+["PgCatalog.Types.PgTimezoneNamesArray"]: Typecast
+[12132]: Typecast;
+["PgCatalog.Types.PgConfig"]: Typecast
+[12131]: Typecast;
+["PgCatalog.Types.PgConfigArray"]: Typecast
+[12136]: Typecast;
+["PgCatalog.Types.PgShmemAllocations"]: Typecast
+[12135]: Typecast;
+["PgCatalog.Types.PgShmemAllocationsArray"]: Typecast
+[12140]: Typecast;
+["PgCatalog.Types.PgBackendMemoryContexts"]: Typecast
+[12139]: Typecast;
+["PgCatalog.Types.PgBackendMemoryContextsArray"]: Typecast
+[12144]: Typecast;
+["PgCatalog.Types.PgStatAllTables"]: Typecast
+[12143]: Typecast;
+["PgCatalog.Types.PgStatAllTablesArray"]: Typecast
+[12149]: Typecast;
+["PgCatalog.Types.PgStatXactAllTables"]: Typecast
+[12148]: Typecast;
+["PgCatalog.Types.PgStatXactAllTablesArray"]: Typecast
+[12154]: Typecast;
+["PgCatalog.Types.PgStatSysTables"]: Typecast
+[12153]: Typecast;
+["PgCatalog.Types.PgStatSysTablesArray"]: Typecast
+[12159]: Typecast;
+["PgCatalog.Types.PgStatXactSysTables"]: Typecast
+[12158]: Typecast;
+["PgCatalog.Types.PgStatXactSysTablesArray"]: Typecast
+[12163]: Typecast;
+["PgCatalog.Types.PgStatUserTables"]: Typecast
+[12162]: Typecast;
+["PgCatalog.Types.PgStatUserTablesArray"]: Typecast
+[12168]: Typecast;
+["PgCatalog.Types.PgStatXactUserTables"]: Typecast
+[12167]: Typecast;
+["PgCatalog.Types.PgStatXactUserTablesArray"]: Typecast
+[12172]: Typecast;
+["PgCatalog.Types.PgStatioAllTables"]: Typecast
+[12171]: Typecast;
+["PgCatalog.Types.PgStatioAllTablesArray"]: Typecast
+[12177]: Typecast;
+["PgCatalog.Types.PgStatioSysTables"]: Typecast
+[12176]: Typecast;
+["PgCatalog.Types.PgStatioSysTablesArray"]: Typecast
+[12181]: Typecast;
+["PgCatalog.Types.PgStatioUserTables"]: Typecast
+[12180]: Typecast;
+["PgCatalog.Types.PgStatioUserTablesArray"]: Typecast
+[12185]: Typecast;
+["PgCatalog.Types.PgStatAllIndexes"]: Typecast
+[12184]: Typecast;
+["PgCatalog.Types.PgStatAllIndexesArray"]: Typecast
+[12190]: Typecast;
+["PgCatalog.Types.PgStatSysIndexes"]: Typecast
+[12189]: Typecast;
+["PgCatalog.Types.PgStatSysIndexesArray"]: Typecast
+[12194]: Typecast;
+["PgCatalog.Types.PgStatUserIndexes"]: Typecast
+[12193]: Typecast;
+["PgCatalog.Types.PgStatUserIndexesArray"]: Typecast
+[12198]: Typecast;
+["PgCatalog.Types.PgStatioAllIndexes"]: Typecast
+[12197]: Typecast;
+["PgCatalog.Types.PgStatioAllIndexesArray"]: Typecast
+[12203]: Typecast;
+["PgCatalog.Types.PgStatioSysIndexes"]: Typecast
+[12202]: Typecast;
+["PgCatalog.Types.PgStatioSysIndexesArray"]: Typecast
+[12207]: Typecast;
+["PgCatalog.Types.PgStatioUserIndexes"]: Typecast
+[12206]: Typecast;
+["PgCatalog.Types.PgStatioUserIndexesArray"]: Typecast
+[12211]: Typecast;
+["PgCatalog.Types.PgStatioAllSequences"]: Typecast
+[12210]: Typecast;
+["PgCatalog.Types.PgStatioAllSequencesArray"]: Typecast
+[12216]: Typecast;
+["PgCatalog.Types.PgStatioSysSequences"]: Typecast
+[12215]: Typecast;
+["PgCatalog.Types.PgStatioSysSequencesArray"]: Typecast
+[12220]: Typecast;
+["PgCatalog.Types.PgStatioUserSequences"]: Typecast
+[12219]: Typecast;
+["PgCatalog.Types.PgStatioUserSequencesArray"]: Typecast
+[12224]: Typecast;
+["PgCatalog.Types.PgStatActivity"]: Typecast
+[12223]: Typecast;
+["PgCatalog.Types.PgStatActivityArray"]: Typecast
+[12229]: Typecast;
+["PgCatalog.Types.PgStatReplication"]: Typecast
+[12228]: Typecast;
+["PgCatalog.Types.PgStatReplicationArray"]: Typecast
+[12234]: Typecast;
+["PgCatalog.Types.PgStatSlru"]: Typecast
+[12233]: Typecast;
+["PgCatalog.Types.PgStatSlruArray"]: Typecast
+[12238]: Typecast;
+["PgCatalog.Types.PgStatWalReceiver"]: Typecast
+[12237]: Typecast;
+["PgCatalog.Types.PgStatWalReceiverArray"]: Typecast
+[12242]: Typecast;
+["PgCatalog.Types.PgStatRecoveryPrefetch"]: Typecast
+[12241]: Typecast;
+["PgCatalog.Types.PgStatRecoveryPrefetchArray"]: Typecast
+[12246]: Typecast;
+["PgCatalog.Types.PgStatSubscription"]: Typecast
+[12245]: Typecast;
+["PgCatalog.Types.PgStatSubscriptionArray"]: Typecast
+[12251]: Typecast;
+["PgCatalog.Types.PgStatSsl"]: Typecast
+[12250]: Typecast;
+["PgCatalog.Types.PgStatSslArray"]: Typecast
+[12255]: Typecast;
+["PgCatalog.Types.PgStatGssapi"]: Typecast
+[12254]: Typecast;
+["PgCatalog.Types.PgStatGssapiArray"]: Typecast
+[12259]: Typecast;
+["PgCatalog.Types.PgReplicationSlots"]: Typecast
+[12258]: Typecast;
+["PgCatalog.Types.PgReplicationSlotsArray"]: Typecast
+[12264]: Typecast;
+["PgCatalog.Types.PgStatReplicationSlots"]: Typecast
+[12263]: Typecast;
+["PgCatalog.Types.PgStatReplicationSlotsArray"]: Typecast
+[12268]: Typecast;
+["PgCatalog.Types.PgStatDatabase"]: Typecast
+[12267]: Typecast;
+["PgCatalog.Types.PgStatDatabaseArray"]: Typecast
+[12273]: Typecast;
+["PgCatalog.Types.PgStatDatabaseConflicts"]: Typecast
+[12272]: Typecast;
+["PgCatalog.Types.PgStatDatabaseConflictsArray"]: Typecast
+[12277]: Typecast;
+["PgCatalog.Types.PgStatUserFunctions"]: Typecast
+[12276]: Typecast;
+["PgCatalog.Types.PgStatUserFunctionsArray"]: Typecast
+[12282]: Typecast;
+["PgCatalog.Types.PgStatXactUserFunctions"]: Typecast
+[12281]: Typecast;
+["PgCatalog.Types.PgStatXactUserFunctionsArray"]: Typecast
+[12287]: Typecast;
+["PgCatalog.Types.PgStatArchiver"]: Typecast
+[12286]: Typecast;
+["PgCatalog.Types.PgStatArchiverArray"]: Typecast
+[12291]: Typecast;
+["PgCatalog.Types.PgStatBgwriter"]: Typecast
+[12290]: Typecast;
+["PgCatalog.Types.PgStatBgwriterArray"]: Typecast
+[12295]: Typecast;
+["PgCatalog.Types.PgStatIo"]: Typecast
+[12294]: Typecast;
+["PgCatalog.Types.PgStatIoArray"]: Typecast
+[12299]: Typecast;
+["PgCatalog.Types.PgStatWal"]: Typecast
+[12298]: Typecast;
+["PgCatalog.Types.PgStatWalArray"]: Typecast
+[12303]: Typecast;
+["PgCatalog.Types.PgStatProgressAnalyze"]: Typecast
+[12302]: Typecast;
+["PgCatalog.Types.PgStatProgressAnalyzeArray"]: Typecast
+[12308]: Typecast;
+["PgCatalog.Types.PgStatProgressVacuum"]: Typecast
+[12307]: Typecast;
+["PgCatalog.Types.PgStatProgressVacuumArray"]: Typecast
+[12313]: Typecast;
+["PgCatalog.Types.PgStatProgressCluster"]: Typecast
+[12312]: Typecast;
+["PgCatalog.Types.PgStatProgressClusterArray"]: Typecast
+[12318]: Typecast;
+["PgCatalog.Types.PgStatProgressCreateIndex"]: Typecast
+[12317]: Typecast;
+["PgCatalog.Types.PgStatProgressCreateIndexArray"]: Typecast
+[12323]: Typecast;
+["PgCatalog.Types.PgStatProgressBasebackup"]: Typecast
+[12322]: Typecast;
+["PgCatalog.Types.PgStatProgressBasebackupArray"]: Typecast
+[12328]: Typecast;
+["PgCatalog.Types.PgStatProgressCopy"]: Typecast
+[12327]: Typecast;
+["PgCatalog.Types.PgStatProgressCopyArray"]: Typecast
+[12333]: Typecast;
+["PgCatalog.Types.PgUserMappings"]: Typecast
+[12332]: Typecast;
+["PgCatalog.Types.PgUserMappingsArray"]: Typecast
+[12338]: Typecast;
+["PgCatalog.Types.PgReplicationOriginStatus"]: Typecast
+[12337]: Typecast;
+["PgCatalog.Types.PgReplicationOriginStatusArray"]: Typecast
+[12342]: Typecast;
+["PgCatalog.Types.PgStatSubscriptionStats"]: Typecast
+[12341]: Typecast;
+["PgCatalog.Types.PgStatSubscriptionStatsArray"]: Typecast
+[2690]: Typecast;
+["PgCatalog.Types.PgProcOidIndex"]: Typecast
+[2691]: Typecast;
+["PgCatalog.Types.PgProcPronameArgsNspIndex"]: Typecast
+[2703]: Typecast;
+["PgCatalog.Types.PgTypeOidIndex"]: Typecast
+[2704]: Typecast;
+["PgCatalog.Types.PgTypeTypnameNspIndex"]: Typecast
+[2658]: Typecast;
+["PgCatalog.Types.PgAttributeRelidAttnamIndex"]: Typecast
+[2659]: Typecast;
+["PgCatalog.Types.PgAttributeRelidAttnumIndex"]: Typecast
+[2662]: Typecast;
+["PgCatalog.Types.PgClassOidIndex"]: Typecast
+[2663]: Typecast;
+["PgCatalog.Types.PgClassRelnameNspIndex"]: Typecast
+[3455]: Typecast;
+["PgCatalog.Types.PgClassTblspcRelfilenodeIndex"]: Typecast
+[2656]: Typecast;
+["PgCatalog.Types.PgAttrdefAdrelidAdnumIndex"]: Typecast
+[2657]: Typecast;
+["PgCatalog.Types.PgAttrdefOidIndex"]: Typecast
+[2664]: Typecast;
+["PgCatalog.Types.PgConstraintConnameNspIndex"]: Typecast
+[2665]: Typecast;
+["PgCatalog.Types.PgConstraintConrelidContypidConnameIndex"]: Typecast
+[2666]: Typecast;
+["PgCatalog.Types.PgConstraintContypidIndex"]: Typecast
+[2667]: Typecast;
+["PgCatalog.Types.PgConstraintOidIndex"]: Typecast
+[2579]: Typecast;
+["PgCatalog.Types.PgConstraintConparentidIndex"]: Typecast
+[2680]: Typecast;
+["PgCatalog.Types.PgInheritsRelidSeqnoIndex"]: Typecast
+[2187]: Typecast;
+["PgCatalog.Types.PgInheritsParentIndex"]: Typecast
+[2678]: Typecast;
+["PgCatalog.Types.PgIndexIndrelidIndex"]: Typecast
+[2679]: Typecast;
+["PgCatalog.Types.PgIndexIndexrelidIndex"]: Typecast
+[2688]: Typecast;
+["PgCatalog.Types.PgOperatorOidIndex"]: Typecast
+[2689]: Typecast;
+["PgCatalog.Types.PgOperatorOprnameLRNIndex"]: Typecast
+[2754]: Typecast;
+["PgCatalog.Types.PgOpfamilyAmNameNspIndex"]: Typecast
+[2755]: Typecast;
+["PgCatalog.Types.PgOpfamilyOidIndex"]: Typecast
+[2686]: Typecast;
+["PgCatalog.Types.PgOpclassAmNameNspIndex"]: Typecast
+[2687]: Typecast;
+["PgCatalog.Types.PgOpclassOidIndex"]: Typecast
+[2651]: Typecast;
+["PgCatalog.Types.PgAmNameIndex"]: Typecast
+[2652]: Typecast;
+["PgCatalog.Types.PgAmOidIndex"]: Typecast
+[2653]: Typecast;
+["PgCatalog.Types.PgAmopFamStratIndex"]: Typecast
+[2654]: Typecast;
+["PgCatalog.Types.PgAmopOprFamIndex"]: Typecast
+[2756]: Typecast;
+["PgCatalog.Types.PgAmopOidIndex"]: Typecast
+[2655]: Typecast;
+["PgCatalog.Types.PgAmprocFamProcIndex"]: Typecast
+[2757]: Typecast;
+["PgCatalog.Types.PgAmprocOidIndex"]: Typecast
+[2681]: Typecast;
+["PgCatalog.Types.PgLanguageNameIndex"]: Typecast
+[2682]: Typecast;
+["PgCatalog.Types.PgLanguageOidIndex"]: Typecast
+[2996]: Typecast;
+["PgCatalog.Types.PgLargeobjectMetadataOidIndex"]: Typecast
+[2683]: Typecast;
+["PgCatalog.Types.PgLargeobjectLoidPnIndex"]: Typecast
+[2650]: Typecast;
+["PgCatalog.Types.PgAggregateFnoidIndex"]: Typecast
+[2696]: Typecast;
+["PgCatalog.Types.PgStatisticRelidAttInhIndex"]: Typecast
+[3380]: Typecast;
+["PgCatalog.Types.PgStatisticExtOidIndex"]: Typecast
+[3997]: Typecast;
+["PgCatalog.Types.PgStatisticExtNameIndex"]: Typecast
+[3379]: Typecast;
+["PgCatalog.Types.PgStatisticExtRelidIndex"]: Typecast
+[3433]: Typecast;
+["PgCatalog.Types.PgStatisticExtDataStxoidInhIndex"]: Typecast
+[2692]: Typecast;
+["PgCatalog.Types.PgRewriteOidIndex"]: Typecast
+[2693]: Typecast;
+["PgCatalog.Types.PgRewriteRelRulenameIndex"]: Typecast
+[2699]: Typecast;
+["PgCatalog.Types.PgTriggerTgconstraintIndex"]: Typecast
+[2701]: Typecast;
+["PgCatalog.Types.PgTriggerTgrelidTgnameIndex"]: Typecast
+[2702]: Typecast;
+["PgCatalog.Types.PgTriggerOidIndex"]: Typecast
+[3467]: Typecast;
+["PgCatalog.Types.PgEventTriggerEvtnameIndex"]: Typecast
+[3468]: Typecast;
+["PgCatalog.Types.PgEventTriggerOidIndex"]: Typecast
+[2675]: Typecast;
+["PgCatalog.Types.PgDescriptionOCOIndex"]: Typecast
+[2660]: Typecast;
+["PgCatalog.Types.PgCastOidIndex"]: Typecast
+[2661]: Typecast;
+["PgCatalog.Types.PgCastSourceTargetIndex"]: Typecast
+[3502]: Typecast;
+["PgCatalog.Types.PgEnumOidIndex"]: Typecast
+[3503]: Typecast;
+["PgCatalog.Types.PgEnumTypidLabelIndex"]: Typecast
+[3534]: Typecast;
+["PgCatalog.Types.PgEnumTypidSortorderIndex"]: Typecast
+[2684]: Typecast;
+["PgCatalog.Types.PgNamespaceNspnameIndex"]: Typecast
+[2685]: Typecast;
+["PgCatalog.Types.PgNamespaceOidIndex"]: Typecast
+[2668]: Typecast;
+["PgCatalog.Types.PgConversionDefaultIndex"]: Typecast
+[2669]: Typecast;
+["PgCatalog.Types.PgConversionNameNspIndex"]: Typecast
+[2670]: Typecast;
+["PgCatalog.Types.PgConversionOidIndex"]: Typecast
+[2673]: Typecast;
+["PgCatalog.Types.PgDependDependerIndex"]: Typecast
+[2674]: Typecast;
+["PgCatalog.Types.PgDependReferenceIndex"]: Typecast
+[2671]: Typecast;
+["PgCatalog.Types.PgDatabaseDatnameIndex"]: Typecast
+[2672]: Typecast;
+["PgCatalog.Types.PgDatabaseOidIndex"]: Typecast
+[2965]: Typecast;
+["PgCatalog.Types.PgDbRoleSettingDatabaseidRolIndex"]: Typecast
+[2697]: Typecast;
+["PgCatalog.Types.PgTablespaceOidIndex"]: Typecast
+[2698]: Typecast;
+["PgCatalog.Types.PgTablespaceSpcnameIndex"]: Typecast
+[2676]: Typecast;
+["PgCatalog.Types.PgAuthidRolnameIndex"]: Typecast
+[2677]: Typecast;
+["PgCatalog.Types.PgAuthidOidIndex"]: Typecast
+[6303]: Typecast;
+["PgCatalog.Types.PgAuthMembersOidIndex"]: Typecast
+[2694]: Typecast;
+["PgCatalog.Types.PgAuthMembersRoleMemberIndex"]: Typecast
+[2695]: Typecast;
+["PgCatalog.Types.PgAuthMembersMemberRoleIndex"]: Typecast
+[6302]: Typecast;
+["PgCatalog.Types.PgAuthMembersGrantorIndex"]: Typecast
+[1232]: Typecast;
+["PgCatalog.Types.PgShdependDependerIndex"]: Typecast
+[1233]: Typecast;
+["PgCatalog.Types.PgShdependReferenceIndex"]: Typecast
+[2397]: Typecast;
+["PgCatalog.Types.PgShdescriptionOCIndex"]: Typecast
+[3608]: Typecast;
+["PgCatalog.Types.PgTsConfigCfgnameIndex"]: Typecast
+[3712]: Typecast;
+["PgCatalog.Types.PgTsConfigOidIndex"]: Typecast
+[3609]: Typecast;
+["PgCatalog.Types.PgTsConfigMapIndex"]: Typecast
+[3604]: Typecast;
+["PgCatalog.Types.PgTsDictDictnameIndex"]: Typecast
+[3605]: Typecast;
+["PgCatalog.Types.PgTsDictOidIndex"]: Typecast
+[3606]: Typecast;
+["PgCatalog.Types.PgTsParserPrsnameIndex"]: Typecast
+[3607]: Typecast;
+["PgCatalog.Types.PgTsParserOidIndex"]: Typecast
+[3766]: Typecast;
+["PgCatalog.Types.PgTsTemplateTmplnameIndex"]: Typecast
+[3767]: Typecast;
+["PgCatalog.Types.PgTsTemplateOidIndex"]: Typecast
+[3080]: Typecast;
+["PgCatalog.Types.PgExtensionOidIndex"]: Typecast
+[3081]: Typecast;
+["PgCatalog.Types.PgExtensionNameIndex"]: Typecast
+[112]: Typecast;
+["PgCatalog.Types.PgForeignDataWrapperOidIndex"]: Typecast
+[548]: Typecast;
+["PgCatalog.Types.PgForeignDataWrapperNameIndex"]: Typecast
+[113]: Typecast;
+["PgCatalog.Types.PgForeignServerOidIndex"]: Typecast
+[549]: Typecast;
+["PgCatalog.Types.PgForeignServerNameIndex"]: Typecast
+[174]: Typecast;
+["PgCatalog.Types.PgUserMappingOidIndex"]: Typecast
+[175]: Typecast;
+["PgCatalog.Types.PgUserMappingUserServerIndex"]: Typecast
+[3119]: Typecast;
+["PgCatalog.Types.PgForeignTableRelidIndex"]: Typecast
+[3257]: Typecast;
+["PgCatalog.Types.PgPolicyOidIndex"]: Typecast
+[3258]: Typecast;
+["PgCatalog.Types.PgPolicyPolrelidPolnameIndex"]: Typecast
+[6001]: Typecast;
+["PgCatalog.Types.PgReplicationOriginRoiidentIndex"]: Typecast
+[6002]: Typecast;
+["PgCatalog.Types.PgReplicationOriginRonameIndex"]: Typecast
+[827]: Typecast;
+["PgCatalog.Types.PgDefaultAclRoleNspObjIndex"]: Typecast
+[828]: Typecast;
+["PgCatalog.Types.PgDefaultAclOidIndex"]: Typecast
+[3395]: Typecast;
+["PgCatalog.Types.PgInitPrivsOCOIndex"]: Typecast
+[3597]: Typecast;
+["PgCatalog.Types.PgSeclabelObjectIndex"]: Typecast
+[3593]: Typecast;
+["PgCatalog.Types.PgShseclabelObjectIndex"]: Typecast
+[3164]: Typecast;
+["PgCatalog.Types.PgCollationNameEncNspIndex"]: Typecast
+[3085]: Typecast;
+["PgCatalog.Types.PgCollationOidIndex"]: Typecast
+[6246]: Typecast;
+["PgCatalog.Types.PgParameterAclParnameIndex"]: Typecast
+[6247]: Typecast;
+["PgCatalog.Types.PgParameterAclOidIndex"]: Typecast
+[3351]: Typecast;
+["PgCatalog.Types.PgPartitionedTablePartrelidIndex"]: Typecast
+[3542]: Typecast;
+["PgCatalog.Types.PgRangeRngtypidIndex"]: Typecast
+[2228]: Typecast;
+["PgCatalog.Types.PgRangeRngmultitypidIndex"]: Typecast
+[3574]: Typecast;
+["PgCatalog.Types.PgTransformOidIndex"]: Typecast
+[3575]: Typecast;
+["PgCatalog.Types.PgTransformTypeLangIndex"]: Typecast
+[5002]: Typecast;
+["PgCatalog.Types.PgSequenceSeqrelidIndex"]: Typecast
+[6110]: Typecast;
+["PgCatalog.Types.PgPublicationOidIndex"]: Typecast
+[6111]: Typecast;
+["PgCatalog.Types.PgPublicationPubnameIndex"]: Typecast
+[6238]: Typecast;
+["PgCatalog.Types.PgPublicationNamespaceOidIndex"]: Typecast
+[6239]: Typecast;
+["PgCatalog.Types.PgPublicationNamespacePnnspidPnpubidIndex"]: Typecast
+[6112]: Typecast;
+["PgCatalog.Types.PgPublicationRelOidIndex"]: Typecast
+[6113]: Typecast;
+["PgCatalog.Types.PgPublicationRelPrrelidPrpubidIndex"]: Typecast
+[6116]: Typecast;
+["PgCatalog.Types.PgPublicationRelPrpubidIndex"]: Typecast
+[6114]: Typecast;
+["PgCatalog.Types.PgSubscriptionOidIndex"]: Typecast
+[6115]: Typecast;
+["PgCatalog.Types.PgSubscriptionSubnameIndex"]: Typecast
+[6117]: Typecast;
+["PgCatalog.Types.PgSubscriptionRelSrrelidSrsubidIndex"]: Typecast
+[13488]: Typecast;
+["InformationSchema.Types.CardinalNumber"]: Typecast
+[13487]: Typecast;
+["InformationSchema.Types.CardinalNumberArray"]: Typecast
+[13491]: Typecast;
+["InformationSchema.Types.CharacterData"]: Typecast
+[13490]: Typecast;
+["InformationSchema.Types.CharacterDataArray"]: Typecast
+[13493]: Typecast;
+["InformationSchema.Types.SqlIdentifier"]: Typecast
+[13492]: Typecast;
+["InformationSchema.Types.SqlIdentifierArray"]: Typecast
+[13496]: Typecast;
+["InformationSchema.Types.InformationSchemaCatalogName"]: Typecast
+[13495]: Typecast;
+["InformationSchema.Types.InformationSchemaCatalogNameArray"]: Typecast
+[13499]: Typecast;
+["InformationSchema.Types.TimeStamp"]: Typecast
+[13498]: Typecast;
+["InformationSchema.Types.TimeStampArray"]: Typecast
+[13501]: Typecast;
+["InformationSchema.Types.YesOrNo"]: Typecast
+[13500]: Typecast;
+["InformationSchema.Types.YesOrNoArray"]: Typecast
+[13505]: Typecast;
+["InformationSchema.Types.ApplicableRoles"]: Typecast
+[13504]: Typecast;
+["InformationSchema.Types.ApplicableRolesArray"]: Typecast
+[13510]: Typecast;
+["InformationSchema.Types.AdministrableRoleAuthorizations"]: Typecast
+[13509]: Typecast;
+["InformationSchema.Types.AdministrableRoleAuthorizationsArray"]: Typecast
+[13514]: Typecast;
+["InformationSchema.Types.Attributes"]: Typecast
+[13513]: Typecast;
+["InformationSchema.Types.AttributesArray"]: Typecast
+[13519]: Typecast;
+["InformationSchema.Types.CharacterSets"]: Typecast
+[13518]: Typecast;
+["InformationSchema.Types.CharacterSetsArray"]: Typecast
+[13524]: Typecast;
+["InformationSchema.Types.CheckConstraintRoutineUsage"]: Typecast
+[13523]: Typecast;
+["InformationSchema.Types.CheckConstraintRoutineUsageArray"]: Typecast
+[13529]: Typecast;
+["InformationSchema.Types.CheckConstraints"]: Typecast
+[13528]: Typecast;
+["InformationSchema.Types.CheckConstraintsArray"]: Typecast
+[13534]: Typecast;
+["InformationSchema.Types.Collations"]: Typecast
+[13533]: Typecast;
+["InformationSchema.Types.CollationsArray"]: Typecast
+[13539]: Typecast;
+["InformationSchema.Types.CollationCharacterSetApplicability"]: Typecast
+[13538]: Typecast;
+["InformationSchema.Types.CollationCharacterSetApplicabilityArray"]: Typecast
+[13544]: Typecast;
+["InformationSchema.Types.ColumnColumnUsage"]: Typecast
+[13543]: Typecast;
+["InformationSchema.Types.ColumnColumnUsageArray"]: Typecast
+[13549]: Typecast;
+["InformationSchema.Types.ColumnDomainUsage"]: Typecast
+[13548]: Typecast;
+["InformationSchema.Types.ColumnDomainUsageArray"]: Typecast
+[13554]: Typecast;
+["InformationSchema.Types.ColumnPrivileges"]: Typecast
+[13553]: Typecast;
+["InformationSchema.Types.ColumnPrivilegesArray"]: Typecast
+[13559]: Typecast;
+["InformationSchema.Types.ColumnUdtUsage"]: Typecast
+[13558]: Typecast;
+["InformationSchema.Types.ColumnUdtUsageArray"]: Typecast
+[13564]: Typecast;
+["InformationSchema.Types.Columns"]: Typecast
+[13563]: Typecast;
+["InformationSchema.Types.ColumnsArray"]: Typecast
+[13569]: Typecast;
+["InformationSchema.Types.ConstraintColumnUsage"]: Typecast
+[13568]: Typecast;
+["InformationSchema.Types.ConstraintColumnUsageArray"]: Typecast
+[13574]: Typecast;
+["InformationSchema.Types.ConstraintTableUsage"]: Typecast
+[13573]: Typecast;
+["InformationSchema.Types.ConstraintTableUsageArray"]: Typecast
+[13579]: Typecast;
+["InformationSchema.Types.DomainConstraints"]: Typecast
+[13578]: Typecast;
+["InformationSchema.Types.DomainConstraintsArray"]: Typecast
+[13584]: Typecast;
+["InformationSchema.Types.DomainUdtUsage"]: Typecast
+[13583]: Typecast;
+["InformationSchema.Types.DomainUdtUsageArray"]: Typecast
+[13589]: Typecast;
+["InformationSchema.Types.Domains"]: Typecast
+[13588]: Typecast;
+["InformationSchema.Types.DomainsArray"]: Typecast
+[13594]: Typecast;
+["InformationSchema.Types.EnabledRoles"]: Typecast
+[13593]: Typecast;
+["InformationSchema.Types.EnabledRolesArray"]: Typecast
+[13598]: Typecast;
+["InformationSchema.Types.KeyColumnUsage"]: Typecast
+[13597]: Typecast;
+["InformationSchema.Types.KeyColumnUsageArray"]: Typecast
+[13603]: Typecast;
+["InformationSchema.Types.Parameters"]: Typecast
+[13602]: Typecast;
+["InformationSchema.Types.ParametersArray"]: Typecast
+[13608]: Typecast;
+["InformationSchema.Types.ReferentialConstraints"]: Typecast
+[13607]: Typecast;
+["InformationSchema.Types.ReferentialConstraintsArray"]: Typecast
+[13613]: Typecast;
+["InformationSchema.Types.RoleColumnGrants"]: Typecast
+[13612]: Typecast;
+["InformationSchema.Types.RoleColumnGrantsArray"]: Typecast
+[13617]: Typecast;
+["InformationSchema.Types.RoutineColumnUsage"]: Typecast
+[13616]: Typecast;
+["InformationSchema.Types.RoutineColumnUsageArray"]: Typecast
+[13622]: Typecast;
+["InformationSchema.Types.RoutinePrivileges"]: Typecast
+[13621]: Typecast;
+["InformationSchema.Types.RoutinePrivilegesArray"]: Typecast
+[13627]: Typecast;
+["InformationSchema.Types.RoleRoutineGrants"]: Typecast
+[13626]: Typecast;
+["InformationSchema.Types.RoleRoutineGrantsArray"]: Typecast
+[13631]: Typecast;
+["InformationSchema.Types.RoutineRoutineUsage"]: Typecast
+[13630]: Typecast;
+["InformationSchema.Types.RoutineRoutineUsageArray"]: Typecast
+[13636]: Typecast;
+["InformationSchema.Types.RoutineSequenceUsage"]: Typecast
+[13635]: Typecast;
+["InformationSchema.Types.RoutineSequenceUsageArray"]: Typecast
+[13641]: Typecast;
+["InformationSchema.Types.RoutineTableUsage"]: Typecast
+[13640]: Typecast;
+["InformationSchema.Types.RoutineTableUsageArray"]: Typecast
+[13646]: Typecast;
+["InformationSchema.Types.Routines"]: Typecast
+[13645]: Typecast;
+["InformationSchema.Types.RoutinesArray"]: Typecast
+[13651]: Typecast;
+["InformationSchema.Types.Schemata"]: Typecast
+[13650]: Typecast;
+["InformationSchema.Types.SchemataArray"]: Typecast
+[13655]: Typecast;
+["InformationSchema.Types.Sequences"]: Typecast
+[13654]: Typecast;
+["InformationSchema.Types.SequencesArray"]: Typecast
+[13660]: Typecast;
+["InformationSchema.Types.SqlFeatures"]: Typecast
+[13659]: Typecast;
+["InformationSchema.Types.SqlFeaturesArray"]: Typecast
+[13665]: Typecast;
+["InformationSchema.Types.SqlImplementationInfo"]: Typecast
+[13664]: Typecast;
+["InformationSchema.Types.SqlImplementationInfoArray"]: Typecast
+[13670]: Typecast;
+["InformationSchema.Types.SqlParts"]: Typecast
+[13669]: Typecast;
+["InformationSchema.Types.SqlPartsArray"]: Typecast
+[13675]: Typecast;
+["InformationSchema.Types.SqlSizing"]: Typecast
+[13674]: Typecast;
+["InformationSchema.Types.SqlSizingArray"]: Typecast
+[13680]: Typecast;
+["InformationSchema.Types.TableConstraints"]: Typecast
+[13679]: Typecast;
+["InformationSchema.Types.TableConstraintsArray"]: Typecast
+[13685]: Typecast;
+["InformationSchema.Types.TablePrivileges"]: Typecast
+[13684]: Typecast;
+["InformationSchema.Types.TablePrivilegesArray"]: Typecast
+[13690]: Typecast;
+["InformationSchema.Types.RoleTableGrants"]: Typecast
+[13689]: Typecast;
+["InformationSchema.Types.RoleTableGrantsArray"]: Typecast
+[13694]: Typecast;
+["InformationSchema.Types.Tables"]: Typecast
+[13693]: Typecast;
+["InformationSchema.Types.TablesArray"]: Typecast
+[13699]: Typecast;
+["InformationSchema.Types.Transforms"]: Typecast
+[13698]: Typecast;
+["InformationSchema.Types.TransformsArray"]: Typecast
+[13704]: Typecast;
+["InformationSchema.Types.TriggeredUpdateColumns"]: Typecast
+[13703]: Typecast;
+["InformationSchema.Types.TriggeredUpdateColumnsArray"]: Typecast
+[13709]: Typecast;
+["InformationSchema.Types.Triggers"]: Typecast
+[13708]: Typecast;
+["InformationSchema.Types.TriggersArray"]: Typecast
+[13714]: Typecast;
+["InformationSchema.Types.UdtPrivileges"]: Typecast
+[13713]: Typecast;
+["InformationSchema.Types.UdtPrivilegesArray"]: Typecast
+[13719]: Typecast;
+["InformationSchema.Types.RoleUdtGrants"]: Typecast
+[13718]: Typecast;
+["InformationSchema.Types.RoleUdtGrantsArray"]: Typecast
+[13723]: Typecast;
+["InformationSchema.Types.UsagePrivileges"]: Typecast
+[13722]: Typecast;
+["InformationSchema.Types.UsagePrivilegesArray"]: Typecast
+[13728]: Typecast;
+["InformationSchema.Types.RoleUsageGrants"]: Typecast
+[13727]: Typecast;
+["InformationSchema.Types.RoleUsageGrantsArray"]: Typecast
+[13732]: Typecast;
+["InformationSchema.Types.UserDefinedTypes"]: Typecast
+[13731]: Typecast;
+["InformationSchema.Types.UserDefinedTypesArray"]: Typecast
+[13737]: Typecast;
+["InformationSchema.Types.ViewColumnUsage"]: Typecast
+[13736]: Typecast;
+["InformationSchema.Types.ViewColumnUsageArray"]: Typecast
+[13742]: Typecast;
+["InformationSchema.Types.ViewRoutineUsage"]: Typecast
+[13741]: Typecast;
+["InformationSchema.Types.ViewRoutineUsageArray"]: Typecast
+[13747]: Typecast;
+["InformationSchema.Types.ViewTableUsage"]: Typecast
+[13746]: Typecast;
+["InformationSchema.Types.ViewTableUsageArray"]: Typecast
+[13752]: Typecast;
+["InformationSchema.Types.Views"]: Typecast
+[13751]: Typecast;
+["InformationSchema.Types.ViewsArray"]: Typecast
+[13757]: Typecast;
+["InformationSchema.Types.DataTypePrivileges"]: Typecast
+[13756]: Typecast;
+["InformationSchema.Types.DataTypePrivilegesArray"]: Typecast
+[13762]: Typecast;
+["InformationSchema.Types.ElementTypes"]: Typecast
+[13761]: Typecast;
+["InformationSchema.Types.ElementTypesArray"]: Typecast
+[13767]: Typecast;
+["InformationSchema.Types.PgForeignTableColumns"]: Typecast
+[13772]: Typecast;
+["InformationSchema.Types.ColumnOptions"]: Typecast
+[13771]: Typecast;
+["InformationSchema.Types.ColumnOptionsArray"]: Typecast
+[13776]: Typecast;
+["InformationSchema.Types.PgForeignDataWrappers"]: Typecast
+[13780]: Typecast;
+["InformationSchema.Types.ForeignDataWrapperOptions"]: Typecast
+[13779]: Typecast;
+["InformationSchema.Types.ForeignDataWrapperOptionsArray"]: Typecast
+[13784]: Typecast;
+["InformationSchema.Types.ForeignDataWrappers"]: Typecast
+[13783]: Typecast;
+["InformationSchema.Types.ForeignDataWrappersArray"]: Typecast
+[13788]: Typecast;
+["InformationSchema.Types.PgForeignServers"]: Typecast
+[13793]: Typecast;
+["InformationSchema.Types.ForeignServerOptions"]: Typecast
+[13792]: Typecast;
+["InformationSchema.Types.ForeignServerOptionsArray"]: Typecast
+[13797]: Typecast;
+["InformationSchema.Types.ForeignServers"]: Typecast
+[13796]: Typecast;
+["InformationSchema.Types.ForeignServersArray"]: Typecast
+[13801]: Typecast;
+["InformationSchema.Types.PgForeignTables"]: Typecast
+[13806]: Typecast;
+["InformationSchema.Types.ForeignTableOptions"]: Typecast
+[13805]: Typecast;
+["InformationSchema.Types.ForeignTableOptionsArray"]: Typecast
+[13810]: Typecast;
+["InformationSchema.Types.ForeignTables"]: Typecast
+[13809]: Typecast;
+["InformationSchema.Types.ForeignTablesArray"]: Typecast
+[13814]: Typecast;
+["InformationSchema.Types.PgUserMappings"]: Typecast
+[13819]: Typecast;
+["InformationSchema.Types.UserMappingOptions"]: Typecast
+[13818]: Typecast;
+["InformationSchema.Types.UserMappingOptionsArray"]: Typecast
+[13824]: Typecast;
+["InformationSchema.Types.UserMappings"]: Typecast
+[13823]: Typecast;
+["InformationSchema.Types.UserMappingsArray"]: Typecast
+[29478]: Typecast;
+["Public.Types.Checklist"]: Typecast
+[29477]: Typecast;
+["Public.Types.ChecklistArray"]: Typecast
+[29487]: Typecast;
+["Public.Types.ChecklistItem"]: Typecast
+[29486]: Typecast;
+["Public.Types.ChecklistItemArray"]: Typecast
+[29483]: Typecast;
+["Public.Types.ChecklistPkey"]: Typecast
+[29493]: Typecast;
+["Public.Types.ChecklistItemPkey"]: Typecast
+[29500]: Typecast;
+["Public.Types.ChecklistItemParent"]: Typecast
+[29482]: Typecast;
+["PgToast.Types.PgToast_29476Index"]: Typecast
+[29492]: Typecast;
+["PgToast.Types.PgToast_29485Index"]: Typecast
+[2837]: Typecast;
+["PgToast.Types.PgToast_1255Index"]: Typecast
+[4172]: Typecast;
+["PgToast.Types.PgToast_1247Index"]: Typecast
+[2831]: Typecast;
+["PgToast.Types.PgToast_2604Index"]: Typecast
+[2833]: Typecast;
+["PgToast.Types.PgToast_2606Index"]: Typecast
+[4158]: Typecast;
+["PgToast.Types.PgToast_2612Index"]: Typecast
+[4160]: Typecast;
+["PgToast.Types.PgToast_2600Index"]: Typecast
+[2841]: Typecast;
+["PgToast.Types.PgToast_2619Index"]: Typecast
+[3440]: Typecast;
+["PgToast.Types.PgToast_3381Index"]: Typecast
+[3431]: Typecast;
+["PgToast.Types.PgToast_3429Index"]: Typecast
+[2839]: Typecast;
+["PgToast.Types.PgToast_2618Index"]: Typecast
+[2337]: Typecast;
+["PgToast.Types.PgToast_2620Index"]: Typecast
+[4146]: Typecast;
+["PgToast.Types.PgToast_3466Index"]: Typecast
+[2835]: Typecast;
+["PgToast.Types.PgToast_2609Index"]: Typecast
+[4164]: Typecast;
+["PgToast.Types.PgToast_2615Index"]: Typecast
+[4178]: Typecast;
+["PgToast.Types.PgToast_1262Index"]: Typecast
+[2967]: Typecast;
+["PgToast.Types.PgToast_2964Index"]: Typecast
+[4186]: Typecast;
+["PgToast.Types.PgToast_1213Index"]: Typecast
+[4176]: Typecast;
+["PgToast.Types.PgToast_1260Index"]: Typecast
+[2847]: Typecast;
+["PgToast.Types.PgToast_2396Index"]: Typecast
+[4170]: Typecast;
+["PgToast.Types.PgToast_3600Index"]: Typecast
+[4148]: Typecast;
+["PgToast.Types.PgToast_3079Index"]: Typecast
+[4150]: Typecast;
+["PgToast.Types.PgToast_2328Index"]: Typecast
+[4152]: Typecast;
+["PgToast.Types.PgToast_1417Index"]: Typecast
+[4174]: Typecast;
+["PgToast.Types.PgToast_1418Index"]: Typecast
+[4154]: Typecast;
+["PgToast.Types.PgToast_3118Index"]: Typecast
+[4168]: Typecast;
+["PgToast.Types.PgToast_3256Index"]: Typecast
+[4182]: Typecast;
+["PgToast.Types.PgToast_6000Index"]: Typecast
+[4144]: Typecast;
+["PgToast.Types.PgToast_826Index"]: Typecast
+[4156]: Typecast;
+["PgToast.Types.PgToast_3394Index"]: Typecast
+[3599]: Typecast;
+["PgToast.Types.PgToast_3596Index"]: Typecast
+[4061]: Typecast;
+["PgToast.Types.PgToast_3592Index"]: Typecast
+[6176]: Typecast;
+["PgToast.Types.PgToast_3456Index"]: Typecast
+[6245]: Typecast;
+["PgToast.Types.PgToast_6243Index"]: Typecast
+[4166]: Typecast;
+["PgToast.Types.PgToast_3350Index"]: Typecast
+[6229]: Typecast;
+["PgToast.Types.PgToast_6106Index"]: Typecast
+[4184]: Typecast;
+["PgToast.Types.PgToast_6100Index"]: Typecast
+[13662]: Typecast;
+["PgToast.Types.PgToast_13658Index"]: Typecast
+[13667]: Typecast;
+["PgToast.Types.PgToast_13663Index"]: Typecast
+[13672]: Typecast;
+["PgToast.Types.PgToast_13668Index"]: Typecast
+[13677]: Typecast;
+["PgToast.Types.PgToast_13673Index"]: Typecast
+}
+
+            interface HasDatabase {
+              database: Database;
+            }
+          
+export class Database extends PostgresDatabase implements HasDatabase { 
+get database() { return this };
+get settings() { return this.context.settings as Settings };
+
+          /**
+           * Connect to your database server via URL, and return 
+           * a fully typed database you can use to access it.
+           */
+          static async connect(postgresUrl: string, props?: postgres.Options<never>) {
+              return new Database(await initializeContext(postgresUrl, props));
+          }
+        
+        
+
+          public Public = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+
+          public Procedures = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+}(this)
+get Tables () { return new Public.Tables(this)} 
+}(this)
+
+          public PgToast = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+
+          public Procedures = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+}(this)
+get Tables () { return new PgToast.Tables(this)} 
+}(this)
+}
+export namespace Public {
+
+          export class Tables implements Tables, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "Tables";
+            }
+
+            /**
+             * Every table in this schema.
+             */
+            get tables() {
+              return [
+                new Public.Tables.Checklist(this),new Public.Tables.ChecklistItem(this)
+              ];
+            }
+        
+get Checklist () { return new Public.Tables.Checklist(this)} 
+get ChecklistItem () { return new Public.Tables.ChecklistItem(this)} 
+}
+}
+export namespace PgToast {
+
+          export class Tables implements Tables, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "Tables";
+            }
+
+            /**
+             * Every table in this schema.
+             */
+            get tables() {
+              return [
+                
+              ];
+            }
+        
+}
+}
+export namespace Public {
+export namespace Tables {
+
+          export class Checklist implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "checklist";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                {name: "id", type: "pg_catalog.uuid"},{name: "name", type: "pg_catalog.text"},{name: "created_at", type: "pg_catalog.timestamp"}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                new Public.Tables.Checklist.ChecklistPkey(this)
+              ];
+            }
+        
+
+async create(values: Partial<Public.Types.Checklist>, options?: Public.Tables.Checklist.Options): Promise<Public.Types.Checklist>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+
+      if (!Public.Tables.Checklist.includesPrimaryKey(values)) {
+      
+const response = await sql`
+      --
+      INSERT INTO
+        public.checklist (name,created_at)
+      VALUES (${ values.name === undefined ? sql`DEFAULT` : typed[25](values.name) },${ values.createdAt === undefined ? sql`DEFAULT` : typed[1114](values.createdAt) })
+      RETURNING
+        id,name,created_at
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
+}
+const response = await sql`
+    INSERT INTO
+      public.checklist (id,name,created_at)
+    VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.name === undefined ? sql`DEFAULT` : typed[25](values.name) },${ values.createdAt === undefined ? sql`DEFAULT` : typed[1114](values.createdAt) })
+    ON CONFLICT (id) DO UPDATE
+    SET
+      name = EXCLUDED.name,created_at = EXCLUDED.created_at
+    RETURNING
+      id,name,created_at
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
+}
+async all(options?: Public.Tables.Checklist.Options) : Promise<Public.Types.Checklist[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      id,name,created_at 
+    FROM
+      public.checklist 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))
+}
+public get ByPrimaryKey () { return new Public.Tables.Checklist.ChecklistPkey(this)}
+get ChecklistPkey () { return new Public.Tables.Checklist.ChecklistPkey(this)} 
+}
+
+          export class ChecklistItem implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "checklist_item";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                {name: "id", type: "pg_catalog.uuid"},{name: "checklist_id", type: "pg_catalog.uuid"},{name: "title", type: "pg_catalog.text"},{name: "checked", type: "pg_catalog.bool"},{name: "created_at", type: "pg_catalog.timestamp"}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                new Public.Tables.ChecklistItem.ChecklistItemPkey(this),new Public.Tables.ChecklistItem.ChecklistItemParent(this)
+              ];
+            }
+        
+
+async create(values: Partial<Public.Types.ChecklistItem>, options?: Public.Tables.ChecklistItem.Options): Promise<Public.Types.ChecklistItem>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+
+      if (!Public.Tables.ChecklistItem.includesPrimaryKey(values)) {
+      
+const response = await sql`
+      --
+      INSERT INTO
+        public.checklist_item (checklist_id,title,checked,created_at)
+      VALUES (${ values.checklistId === undefined ? sql`DEFAULT` : typed[2950](values.checklistId) },${ values.title === undefined ? sql`DEFAULT` : typed[25](values.title) },${ values.checked === undefined ? sql`DEFAULT` : typed[16](values.checked) },${ values.createdAt === undefined ? sql`DEFAULT` : typed[1114](values.createdAt) })
+      RETURNING
+        id,checklist_id,title,checked,created_at
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
+}
+const response = await sql`
+    INSERT INTO
+      public.checklist_item (id,checklist_id,title,checked,created_at)
+    VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.checklistId === undefined ? sql`DEFAULT` : typed[2950](values.checklistId) },${ values.title === undefined ? sql`DEFAULT` : typed[25](values.title) },${ values.checked === undefined ? sql`DEFAULT` : typed[16](values.checked) },${ values.createdAt === undefined ? sql`DEFAULT` : typed[1114](values.createdAt) })
+    ON CONFLICT (id) DO UPDATE
+    SET
+      checklist_id = EXCLUDED.checklist_id,title = EXCLUDED.title,checked = EXCLUDED.checked,created_at = EXCLUDED.created_at
+    RETURNING
+      id,checklist_id,title,checked,created_at
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
+}
+async all(options?: Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      id,checklist_id,title,checked,created_at 
+    FROM
+      public.checklist_item 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))
+}
+public get ByPrimaryKey () { return new Public.Tables.ChecklistItem.ChecklistItemPkey(this)}
+get ChecklistItemPkey () { return new Public.Tables.ChecklistItem.ChecklistItemPkey(this)} 
+
+get ChecklistItemParent () { return new Public.Tables.ChecklistItem.ChecklistItemParent(this)} 
+}
+}
+}
+export namespace PgToast {
+export namespace Tables {
+}
+}
+export namespace Public {
+export namespace Tables {
+export namespace Checklist {
+
+          export class ChecklistPkey implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "checklist_pkey";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "id", type: "pg_catalog.uuid"}
+              ];
+            }
+        
+async read(parameters: Public.Types.ChecklistPkey, options?: Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options) : Promise<Public.Types.Checklist>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      id,name,created_at 
+    FROM
+      public.checklist 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
+}
+
+async update(parameters: Public.Types.ChecklistPkey, values: Partial<Public.Tables.Checklist.Values>, options?: Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options) : Promise<Public.Types.Checklist>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      public.checklist 
+    SET
+      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , name = ${ values.name === undefined ? sql`name` : typed[25](values.name) } , created_at = ${ values.createdAt === undefined ? sql`created_at` : typed[1114](values.createdAt) } 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    RETURNING id,name,created_at`
+return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
+}
+async delete(parameters: Public.Types.ChecklistPkey, options?: Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      public.checklist 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    RETURNING id,name,created_at`
+ return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
+}
+}
+}
+export namespace ChecklistItem {
+
+          export class ChecklistItemPkey implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "checklist_item_pkey";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "id", type: "pg_catalog.uuid"}
+              ];
+            }
+        
+async read(parameters: Public.Types.ChecklistItemPkey, options?: Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      id,checklist_id,title,checked,created_at 
+    FROM
+      public.checklist_item 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
+}
+
+async update(parameters: Public.Types.ChecklistItemPkey, values: Partial<Public.Tables.ChecklistItem.Values>, options?: Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      public.checklist_item 
+    SET
+      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , checklist_id = ${ values.checklistId === undefined ? sql`checklist_id` : typed[2950](values.checklistId) } , title = ${ values.title === undefined ? sql`title` : typed[25](values.title) } , checked = ${ values.checked === undefined ? sql`checked` : typed[16](values.checked) } , created_at = ${ values.createdAt === undefined ? sql`created_at` : typed[1114](values.createdAt) } 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    RETURNING id,checklist_id,title,checked,created_at`
+return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
+}
+async delete(parameters: Public.Types.ChecklistItemPkey, options?: Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      public.checklist_item 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    RETURNING id,checklist_id,title,checked,created_at`
+ return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
+}
+}
+
+          export class ChecklistItemParent implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "checklist_item_parent";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "checklist_id", type: "pg_catalog.uuid"}
+              ];
+            }
+        
+async read(parameters: Public.Types.ChecklistItemParent, options?: Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem[]>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      id,checklist_id,title,checked,created_at 
+    FROM
+      public.checklist_item 
+    WHERE
+      checklist_id = ${ parameters.checklistId === undefined ? sql`DEFAULT` : typed[2950](parameters.checklistId) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))
+}
+
+async update(parameters: Public.Types.ChecklistItemParent, values: Partial<Public.Tables.ChecklistItem.Values>, options?: Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem[]>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      public.checklist_item 
+    SET
+      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , checklist_id = ${ values.checklistId === undefined ? sql`checklist_id` : typed[2950](values.checklistId) } , title = ${ values.title === undefined ? sql`title` : typed[25](values.title) } , checked = ${ values.checked === undefined ? sql`checked` : typed[16](values.checked) } , created_at = ${ values.createdAt === undefined ? sql`created_at` : typed[1114](values.createdAt) } 
+    WHERE
+      checklist_id = ${ parameters.checklistId === undefined ? sql`DEFAULT` : typed[2950](parameters.checklistId) }
+    RETURNING id,checklist_id,title,checked,created_at`
+return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))
+}
+async delete(parameters: Public.Types.ChecklistItemParent, options?: Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      public.checklist_item 
+    WHERE
+      checklist_id = ${ parameters.checklistId === undefined ? sql`DEFAULT` : typed[2950](parameters.checklistId) }
+    RETURNING id,checklist_id,title,checked,created_at`
+ return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))
+}
+}
+}
+}
+}
+export namespace PgToast {
+export namespace Tables {
+}
+}
+
+          // begin - operation dispatch map
+          import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
+          export class OperationDispatcher {
+            private dispatchMap: Record<string, OperationDispatchMethod>;
+            constructor(private database: Database){
+              this.dispatchMap = {
+
+          
+"Public.Tables.Checklist.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Checklist.create(request.values as Public.Tables.Checklist.Values),
+
+             "Public.Tables.Checklist.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.Checklist.all(request.options as Public.Tables.Checklist.Options),
+            
+"Public.Tables.Checklist.ChecklistPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Checklist.ChecklistPkey.read(request.parameters as Public.Types.ChecklistPkey,request.options as Public.Tables.Checklist.Options),
+"Public.Tables.Checklist.ChecklistPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Checklist.ChecklistPkey.update(request.parameters as Public.Types.ChecklistPkey,request.values as Partial<Public.Tables.Checklist.Values>),
+"Public.Tables.Checklist.ChecklistPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Checklist.ChecklistPkey.delete(request.parameters as Public.Types.ChecklistPkey),
+"Public.Tables.ChecklistItem.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.ChecklistItem.create(request.values as Public.Tables.ChecklistItem.Values),
+
+             "Public.Tables.ChecklistItem.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.ChecklistItem.all(request.options as Public.Tables.ChecklistItem.Options),
+            
+"Public.Tables.ChecklistItem.ChecklistItemPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemPkey.read(request.parameters as Public.Types.ChecklistItemPkey,request.options as Public.Tables.ChecklistItem.Options),
+"Public.Tables.ChecklistItem.ChecklistItemPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemPkey.update(request.parameters as Public.Types.ChecklistItemPkey,request.values as Partial<Public.Tables.ChecklistItem.Values>),
+"Public.Tables.ChecklistItem.ChecklistItemPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemPkey.delete(request.parameters as Public.Types.ChecklistItemPkey),
+"Public.Tables.ChecklistItem.ChecklistItemParent.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemParent.read(request.parameters as Public.Types.ChecklistItemParent,request.options as Public.Tables.ChecklistItem.Options),
+"Public.Tables.ChecklistItem.ChecklistItemParent.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemParent.update(request.parameters as Public.Types.ChecklistItemParent,request.values as Partial<Public.Tables.ChecklistItem.Values>),
+"Public.Tables.ChecklistItem.ChecklistItemParent.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemParent.delete(request.parameters as Public.Types.ChecklistItemParent),
+}
+}
+
+            async dispatch(request: EmbraceSQLRequest<object, object, object>) {
+              if (!this.dispatchMap[request.operation]) {
+                throw new Error(`${request.operation} not available`);
+              }
+              return this.dispatchMap[request.operation](request);
+            }
+            
+}
+// Begin Express generated section
+import {EmbraceSQLExpress} from "@embracesql/express"
+
+  export const EmbraceSQLExpressApp = async (postgresUrl: string, database?: Database) => {
+    const dispatchToDatabase = database ?? await Database.connect(postgresUrl);
+    const dispatcher = new OperationDispatcher(dispatchToDatabase);
+    return EmbraceSQLExpress(dispatcher);
+  }
+  
+// End Express generated section
+
         // ⚠️ generated - do not modify ⚠️
 
         /**
@@ -49536,2014 +51688,3 @@ xmlbinary: string;
 xmloption: string;
 zeroDamagedPages: string;
 }
-
-            import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
-            import postgres from "postgres";
-          
-
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        type ArgumentToPostgres = any;
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        type ArgumentFromPostgres = any;
-        type Typecast = (x: ArgumentToPostgres) => ArgumentFromPostgres;
-        export interface PostgresTypecasts { 
-      
-[16]: Typecast;
-["PgCatalog.Types.Bool"]: Typecast
-[17]: Typecast;
-["PgCatalog.Types.Bytea"]: Typecast
-[18]: Typecast;
-["PgCatalog.Types.Char"]: Typecast
-[19]: Typecast;
-["PgCatalog.Types.Name"]: Typecast
-[20]: Typecast;
-["PgCatalog.Types.Int8"]: Typecast
-[21]: Typecast;
-["PgCatalog.Types.Int2"]: Typecast
-[22]: Typecast;
-["PgCatalog.Types.Int2vector"]: Typecast
-[23]: Typecast;
-["PgCatalog.Types.Int4"]: Typecast
-[24]: Typecast;
-["PgCatalog.Types.Regproc"]: Typecast
-[25]: Typecast;
-["PgCatalog.Types.Text"]: Typecast
-[26]: Typecast;
-["PgCatalog.Types.Oid"]: Typecast
-[27]: Typecast;
-["PgCatalog.Types.Tid"]: Typecast
-[28]: Typecast;
-["PgCatalog.Types.Xid"]: Typecast
-[29]: Typecast;
-["PgCatalog.Types.Cid"]: Typecast
-[30]: Typecast;
-["PgCatalog.Types.Oidvector"]: Typecast
-[71]: Typecast;
-["PgCatalog.Types.PgType"]: Typecast
-[75]: Typecast;
-["PgCatalog.Types.PgAttribute"]: Typecast
-[81]: Typecast;
-["PgCatalog.Types.PgProc"]: Typecast
-[83]: Typecast;
-["PgCatalog.Types.PgClass"]: Typecast
-[114]: Typecast;
-["PgCatalog.Types.Json"]: Typecast
-[142]: Typecast;
-["PgCatalog.Types.Xml"]: Typecast
-[194]: Typecast;
-["PgCatalog.Types.PgNodeTree"]: Typecast
-[3361]: Typecast;
-["PgCatalog.Types.PgNdistinct"]: Typecast
-[3402]: Typecast;
-["PgCatalog.Types.PgDependencies"]: Typecast
-[5017]: Typecast;
-["PgCatalog.Types.PgMcvList"]: Typecast
-[32]: Typecast;
-["PgCatalog.Types.PgDdlCommand"]: Typecast
-[5069]: Typecast;
-["PgCatalog.Types.Xid8"]: Typecast
-[600]: Typecast;
-["PgCatalog.Types.Point"]: Typecast
-[601]: Typecast;
-["PgCatalog.Types.Lseg"]: Typecast
-[602]: Typecast;
-["PgCatalog.Types.Path"]: Typecast
-[603]: Typecast;
-["PgCatalog.Types.Box"]: Typecast
-[604]: Typecast;
-["PgCatalog.Types.Polygon"]: Typecast
-[628]: Typecast;
-["PgCatalog.Types.Line"]: Typecast
-[700]: Typecast;
-["PgCatalog.Types.Float4"]: Typecast
-[701]: Typecast;
-["PgCatalog.Types.Float8"]: Typecast
-[705]: Typecast;
-["PgCatalog.Types.Unknown"]: Typecast
-[718]: Typecast;
-["PgCatalog.Types.Circle"]: Typecast
-[790]: Typecast;
-["PgCatalog.Types.Money"]: Typecast
-[829]: Typecast;
-["PgCatalog.Types.Macaddr"]: Typecast
-[869]: Typecast;
-["PgCatalog.Types.Inet"]: Typecast
-[650]: Typecast;
-["PgCatalog.Types.Cidr"]: Typecast
-[774]: Typecast;
-["PgCatalog.Types.Macaddr8"]: Typecast
-[1033]: Typecast;
-["PgCatalog.Types.Aclitem"]: Typecast
-[1042]: Typecast;
-["PgCatalog.Types.Bpchar"]: Typecast
-[1043]: Typecast;
-["PgCatalog.Types.Varchar"]: Typecast
-[1082]: Typecast;
-["PgCatalog.Types.Date"]: Typecast
-[1083]: Typecast;
-["PgCatalog.Types.Time"]: Typecast
-[1114]: Typecast;
-["PgCatalog.Types.Timestamp"]: Typecast
-[1184]: Typecast;
-["PgCatalog.Types.Timestamptz"]: Typecast
-[1186]: Typecast;
-["PgCatalog.Types.Interval"]: Typecast
-[1266]: Typecast;
-["PgCatalog.Types.Timetz"]: Typecast
-[1560]: Typecast;
-["PgCatalog.Types.Bit"]: Typecast
-[1562]: Typecast;
-["PgCatalog.Types.Varbit"]: Typecast
-[1700]: Typecast;
-["PgCatalog.Types.Numeric"]: Typecast
-[1790]: Typecast;
-["PgCatalog.Types.Refcursor"]: Typecast
-[2202]: Typecast;
-["PgCatalog.Types.Regprocedure"]: Typecast
-[2203]: Typecast;
-["PgCatalog.Types.Regoper"]: Typecast
-[2204]: Typecast;
-["PgCatalog.Types.Regoperator"]: Typecast
-[2205]: Typecast;
-["PgCatalog.Types.Regclass"]: Typecast
-[4191]: Typecast;
-["PgCatalog.Types.Regcollation"]: Typecast
-[2206]: Typecast;
-["PgCatalog.Types.Regtype"]: Typecast
-[4096]: Typecast;
-["PgCatalog.Types.Regrole"]: Typecast
-[4089]: Typecast;
-["PgCatalog.Types.Regnamespace"]: Typecast
-[2950]: Typecast;
-["PgCatalog.Types.Uuid"]: Typecast
-[3220]: Typecast;
-["PgCatalog.Types.PgLsn"]: Typecast
-[3614]: Typecast;
-["PgCatalog.Types.Tsvector"]: Typecast
-[3642]: Typecast;
-["PgCatalog.Types.Gtsvector"]: Typecast
-[3615]: Typecast;
-["PgCatalog.Types.Tsquery"]: Typecast
-[3734]: Typecast;
-["PgCatalog.Types.Regconfig"]: Typecast
-[3769]: Typecast;
-["PgCatalog.Types.Regdictionary"]: Typecast
-[3802]: Typecast;
-["PgCatalog.Types.Jsonb"]: Typecast
-[4072]: Typecast;
-["PgCatalog.Types.Jsonpath"]: Typecast
-[2970]: Typecast;
-["PgCatalog.Types.TxidSnapshot"]: Typecast
-[5038]: Typecast;
-["PgCatalog.Types.PgSnapshot"]: Typecast
-[3904]: Typecast;
-["PgCatalog.Types.Int4range"]: Typecast
-[3906]: Typecast;
-["PgCatalog.Types.Numrange"]: Typecast
-[3908]: Typecast;
-["PgCatalog.Types.Tsrange"]: Typecast
-[3910]: Typecast;
-["PgCatalog.Types.Tstzrange"]: Typecast
-[3912]: Typecast;
-["PgCatalog.Types.Daterange"]: Typecast
-[3926]: Typecast;
-["PgCatalog.Types.Int8range"]: Typecast
-[4451]: Typecast;
-["PgCatalog.Types.Int4multirange"]: Typecast
-[4532]: Typecast;
-["PgCatalog.Types.Nummultirange"]: Typecast
-[4533]: Typecast;
-["PgCatalog.Types.Tsmultirange"]: Typecast
-[4534]: Typecast;
-["PgCatalog.Types.Tstzmultirange"]: Typecast
-[4535]: Typecast;
-["PgCatalog.Types.Datemultirange"]: Typecast
-[4536]: Typecast;
-["PgCatalog.Types.Int8multirange"]: Typecast
-[2249]: Typecast;
-["PgCatalog.Types.Record"]: Typecast
-[2287]: Typecast;
-["PgCatalog.Types.RecordArray"]: Typecast
-[2275]: Typecast;
-["PgCatalog.Types.Cstring"]: Typecast
-[2276]: Typecast;
-["PgCatalog.Types.Any"]: Typecast
-[2277]: Typecast;
-["PgCatalog.Types.Anyarray"]: Typecast
-[2278]: Typecast;
-["PgCatalog.Types.Void"]: Typecast
-[2279]: Typecast;
-["PgCatalog.Types.Trigger"]: Typecast
-[3838]: Typecast;
-["PgCatalog.Types.EventTrigger"]: Typecast
-[2280]: Typecast;
-["PgCatalog.Types.LanguageHandler"]: Typecast
-[2281]: Typecast;
-["PgCatalog.Types.Internal"]: Typecast
-[2283]: Typecast;
-["PgCatalog.Types.Anyelement"]: Typecast
-[2776]: Typecast;
-["PgCatalog.Types.Anynonarray"]: Typecast
-[3500]: Typecast;
-["PgCatalog.Types.Anyenum"]: Typecast
-[3115]: Typecast;
-["PgCatalog.Types.FdwHandler"]: Typecast
-[325]: Typecast;
-["PgCatalog.Types.IndexAmHandler"]: Typecast
-[3310]: Typecast;
-["PgCatalog.Types.TsmHandler"]: Typecast
-[269]: Typecast;
-["PgCatalog.Types.TableAmHandler"]: Typecast
-[3831]: Typecast;
-["PgCatalog.Types.Anyrange"]: Typecast
-[5077]: Typecast;
-["PgCatalog.Types.Anycompatible"]: Typecast
-[5078]: Typecast;
-["PgCatalog.Types.Anycompatiblearray"]: Typecast
-[5079]: Typecast;
-["PgCatalog.Types.Anycompatiblenonarray"]: Typecast
-[5080]: Typecast;
-["PgCatalog.Types.Anycompatiblerange"]: Typecast
-[4537]: Typecast;
-["PgCatalog.Types.Anymultirange"]: Typecast
-[4538]: Typecast;
-["PgCatalog.Types.Anycompatiblemultirange"]: Typecast
-[4600]: Typecast;
-["PgCatalog.Types.PgBrinBloomSummary"]: Typecast
-[4601]: Typecast;
-["PgCatalog.Types.PgBrinMinmaxMultiSummary"]: Typecast
-[1000]: Typecast;
-["PgCatalog.Types.BoolArray"]: Typecast
-[1001]: Typecast;
-["PgCatalog.Types.ByteaArray"]: Typecast
-[1002]: Typecast;
-["PgCatalog.Types.CharArray"]: Typecast
-[1003]: Typecast;
-["PgCatalog.Types.NameArray"]: Typecast
-[1016]: Typecast;
-["PgCatalog.Types.Int8Array"]: Typecast
-[1005]: Typecast;
-["PgCatalog.Types.Int2Array"]: Typecast
-[1006]: Typecast;
-["PgCatalog.Types.Int2vectorArray"]: Typecast
-[1007]: Typecast;
-["PgCatalog.Types.Int4Array"]: Typecast
-[1008]: Typecast;
-["PgCatalog.Types.RegprocArray"]: Typecast
-[1009]: Typecast;
-["PgCatalog.Types.TextArray"]: Typecast
-[1028]: Typecast;
-["PgCatalog.Types.OidArray"]: Typecast
-[1010]: Typecast;
-["PgCatalog.Types.TidArray"]: Typecast
-[1011]: Typecast;
-["PgCatalog.Types.XidArray"]: Typecast
-[1012]: Typecast;
-["PgCatalog.Types.CidArray"]: Typecast
-[1013]: Typecast;
-["PgCatalog.Types.OidvectorArray"]: Typecast
-[210]: Typecast;
-["PgCatalog.Types.PgTypeArray"]: Typecast
-[270]: Typecast;
-["PgCatalog.Types.PgAttributeArray"]: Typecast
-[272]: Typecast;
-["PgCatalog.Types.PgProcArray"]: Typecast
-[273]: Typecast;
-["PgCatalog.Types.PgClassArray"]: Typecast
-[199]: Typecast;
-["PgCatalog.Types.JsonArray"]: Typecast
-[143]: Typecast;
-["PgCatalog.Types.XmlArray"]: Typecast
-[271]: Typecast;
-["PgCatalog.Types.Xid8Array"]: Typecast
-[1017]: Typecast;
-["PgCatalog.Types.PointArray"]: Typecast
-[1018]: Typecast;
-["PgCatalog.Types.LsegArray"]: Typecast
-[1019]: Typecast;
-["PgCatalog.Types.PathArray"]: Typecast
-[1020]: Typecast;
-["PgCatalog.Types.BoxArray"]: Typecast
-[1027]: Typecast;
-["PgCatalog.Types.PolygonArray"]: Typecast
-[629]: Typecast;
-["PgCatalog.Types.LineArray"]: Typecast
-[1021]: Typecast;
-["PgCatalog.Types.Float4Array"]: Typecast
-[1022]: Typecast;
-["PgCatalog.Types.Float8Array"]: Typecast
-[719]: Typecast;
-["PgCatalog.Types.CircleArray"]: Typecast
-[791]: Typecast;
-["PgCatalog.Types.MoneyArray"]: Typecast
-[1040]: Typecast;
-["PgCatalog.Types.MacaddrArray"]: Typecast
-[1041]: Typecast;
-["PgCatalog.Types.InetArray"]: Typecast
-[651]: Typecast;
-["PgCatalog.Types.CidrArray"]: Typecast
-[775]: Typecast;
-["PgCatalog.Types.Macaddr8Array"]: Typecast
-[1034]: Typecast;
-["PgCatalog.Types.AclitemArray"]: Typecast
-[1014]: Typecast;
-["PgCatalog.Types.BpcharArray"]: Typecast
-[1015]: Typecast;
-["PgCatalog.Types.VarcharArray"]: Typecast
-[1182]: Typecast;
-["PgCatalog.Types.DateArray"]: Typecast
-[1183]: Typecast;
-["PgCatalog.Types.TimeArray"]: Typecast
-[1115]: Typecast;
-["PgCatalog.Types.TimestampArray"]: Typecast
-[1185]: Typecast;
-["PgCatalog.Types.TimestamptzArray"]: Typecast
-[1187]: Typecast;
-["PgCatalog.Types.IntervalArray"]: Typecast
-[1270]: Typecast;
-["PgCatalog.Types.TimetzArray"]: Typecast
-[1561]: Typecast;
-["PgCatalog.Types.BitArray"]: Typecast
-[1563]: Typecast;
-["PgCatalog.Types.VarbitArray"]: Typecast
-[1231]: Typecast;
-["PgCatalog.Types.NumericArray"]: Typecast
-[2201]: Typecast;
-["PgCatalog.Types.RefcursorArray"]: Typecast
-[2207]: Typecast;
-["PgCatalog.Types.RegprocedureArray"]: Typecast
-[2208]: Typecast;
-["PgCatalog.Types.RegoperArray"]: Typecast
-[2209]: Typecast;
-["PgCatalog.Types.RegoperatorArray"]: Typecast
-[2210]: Typecast;
-["PgCatalog.Types.RegclassArray"]: Typecast
-[4192]: Typecast;
-["PgCatalog.Types.RegcollationArray"]: Typecast
-[2211]: Typecast;
-["PgCatalog.Types.RegtypeArray"]: Typecast
-[4097]: Typecast;
-["PgCatalog.Types.RegroleArray"]: Typecast
-[4090]: Typecast;
-["PgCatalog.Types.RegnamespaceArray"]: Typecast
-[2951]: Typecast;
-["PgCatalog.Types.UuidArray"]: Typecast
-[3221]: Typecast;
-["PgCatalog.Types.PgLsnArray"]: Typecast
-[3643]: Typecast;
-["PgCatalog.Types.TsvectorArray"]: Typecast
-[3644]: Typecast;
-["PgCatalog.Types.GtsvectorArray"]: Typecast
-[3645]: Typecast;
-["PgCatalog.Types.TsqueryArray"]: Typecast
-[3735]: Typecast;
-["PgCatalog.Types.RegconfigArray"]: Typecast
-[3770]: Typecast;
-["PgCatalog.Types.RegdictionaryArray"]: Typecast
-[3807]: Typecast;
-["PgCatalog.Types.JsonbArray"]: Typecast
-[4073]: Typecast;
-["PgCatalog.Types.JsonpathArray"]: Typecast
-[2949]: Typecast;
-["PgCatalog.Types.TxidSnapshotArray"]: Typecast
-[5039]: Typecast;
-["PgCatalog.Types.PgSnapshotArray"]: Typecast
-[3905]: Typecast;
-["PgCatalog.Types.Int4rangeArray"]: Typecast
-[3907]: Typecast;
-["PgCatalog.Types.NumrangeArray"]: Typecast
-[3909]: Typecast;
-["PgCatalog.Types.TsrangeArray"]: Typecast
-[3911]: Typecast;
-["PgCatalog.Types.TstzrangeArray"]: Typecast
-[3913]: Typecast;
-["PgCatalog.Types.DaterangeArray"]: Typecast
-[3927]: Typecast;
-["PgCatalog.Types.Int8rangeArray"]: Typecast
-[6150]: Typecast;
-["PgCatalog.Types.Int4multirangeArray"]: Typecast
-[6151]: Typecast;
-["PgCatalog.Types.NummultirangeArray"]: Typecast
-[6152]: Typecast;
-["PgCatalog.Types.TsmultirangeArray"]: Typecast
-[6153]: Typecast;
-["PgCatalog.Types.TstzmultirangeArray"]: Typecast
-[6155]: Typecast;
-["PgCatalog.Types.DatemultirangeArray"]: Typecast
-[6157]: Typecast;
-["PgCatalog.Types.Int8multirangeArray"]: Typecast
-[1263]: Typecast;
-["PgCatalog.Types.CstringArray"]: Typecast
-[10001]: Typecast;
-["PgCatalog.Types.PgAttrdef"]: Typecast
-[10000]: Typecast;
-["PgCatalog.Types.PgAttrdefArray"]: Typecast
-[10003]: Typecast;
-["PgCatalog.Types.PgConstraint"]: Typecast
-[10002]: Typecast;
-["PgCatalog.Types.PgConstraintArray"]: Typecast
-[10005]: Typecast;
-["PgCatalog.Types.PgInherits"]: Typecast
-[10004]: Typecast;
-["PgCatalog.Types.PgInheritsArray"]: Typecast
-[10007]: Typecast;
-["PgCatalog.Types.PgIndex"]: Typecast
-[10006]: Typecast;
-["PgCatalog.Types.PgIndexArray"]: Typecast
-[10009]: Typecast;
-["PgCatalog.Types.PgOperator"]: Typecast
-[10008]: Typecast;
-["PgCatalog.Types.PgOperatorArray"]: Typecast
-[10011]: Typecast;
-["PgCatalog.Types.PgOpfamily"]: Typecast
-[10010]: Typecast;
-["PgCatalog.Types.PgOpfamilyArray"]: Typecast
-[10013]: Typecast;
-["PgCatalog.Types.PgOpclass"]: Typecast
-[10012]: Typecast;
-["PgCatalog.Types.PgOpclassArray"]: Typecast
-[10015]: Typecast;
-["PgCatalog.Types.PgAm"]: Typecast
-[10014]: Typecast;
-["PgCatalog.Types.PgAmArray"]: Typecast
-[10017]: Typecast;
-["PgCatalog.Types.PgAmop"]: Typecast
-[10016]: Typecast;
-["PgCatalog.Types.PgAmopArray"]: Typecast
-[10019]: Typecast;
-["PgCatalog.Types.PgAmproc"]: Typecast
-[10018]: Typecast;
-["PgCatalog.Types.PgAmprocArray"]: Typecast
-[10021]: Typecast;
-["PgCatalog.Types.PgLanguage"]: Typecast
-[10020]: Typecast;
-["PgCatalog.Types.PgLanguageArray"]: Typecast
-[10023]: Typecast;
-["PgCatalog.Types.PgLargeobjectMetadata"]: Typecast
-[10022]: Typecast;
-["PgCatalog.Types.PgLargeobjectMetadataArray"]: Typecast
-[10025]: Typecast;
-["PgCatalog.Types.PgLargeobject"]: Typecast
-[10024]: Typecast;
-["PgCatalog.Types.PgLargeobjectArray"]: Typecast
-[10027]: Typecast;
-["PgCatalog.Types.PgAggregate"]: Typecast
-[10026]: Typecast;
-["PgCatalog.Types.PgAggregateArray"]: Typecast
-[10029]: Typecast;
-["PgCatalog.Types.PgStatistic"]: Typecast
-[10028]: Typecast;
-["PgCatalog.Types.PgStatisticArray"]: Typecast
-[10031]: Typecast;
-["PgCatalog.Types.PgStatisticExt"]: Typecast
-[10030]: Typecast;
-["PgCatalog.Types.PgStatisticExtArray"]: Typecast
-[10033]: Typecast;
-["PgCatalog.Types.PgStatisticExtData"]: Typecast
-[10032]: Typecast;
-["PgCatalog.Types.PgStatisticExtDataArray"]: Typecast
-[10035]: Typecast;
-["PgCatalog.Types.PgRewrite"]: Typecast
-[10034]: Typecast;
-["PgCatalog.Types.PgRewriteArray"]: Typecast
-[10037]: Typecast;
-["PgCatalog.Types.PgTrigger"]: Typecast
-[10036]: Typecast;
-["PgCatalog.Types.PgTriggerArray"]: Typecast
-[10039]: Typecast;
-["PgCatalog.Types.PgEventTrigger"]: Typecast
-[10038]: Typecast;
-["PgCatalog.Types.PgEventTriggerArray"]: Typecast
-[10041]: Typecast;
-["PgCatalog.Types.PgDescription"]: Typecast
-[10040]: Typecast;
-["PgCatalog.Types.PgDescriptionArray"]: Typecast
-[10043]: Typecast;
-["PgCatalog.Types.PgCast"]: Typecast
-[10042]: Typecast;
-["PgCatalog.Types.PgCastArray"]: Typecast
-[10045]: Typecast;
-["PgCatalog.Types.PgEnum"]: Typecast
-[10044]: Typecast;
-["PgCatalog.Types.PgEnumArray"]: Typecast
-[10047]: Typecast;
-["PgCatalog.Types.PgNamespace"]: Typecast
-[10046]: Typecast;
-["PgCatalog.Types.PgNamespaceArray"]: Typecast
-[10049]: Typecast;
-["PgCatalog.Types.PgConversion"]: Typecast
-[10048]: Typecast;
-["PgCatalog.Types.PgConversionArray"]: Typecast
-[10051]: Typecast;
-["PgCatalog.Types.PgDepend"]: Typecast
-[10050]: Typecast;
-["PgCatalog.Types.PgDependArray"]: Typecast
-[1248]: Typecast;
-["PgCatalog.Types.PgDatabase"]: Typecast
-[10052]: Typecast;
-["PgCatalog.Types.PgDatabaseArray"]: Typecast
-[10054]: Typecast;
-["PgCatalog.Types.PgDbRoleSetting"]: Typecast
-[10053]: Typecast;
-["PgCatalog.Types.PgDbRoleSettingArray"]: Typecast
-[10056]: Typecast;
-["PgCatalog.Types.PgTablespace"]: Typecast
-[10055]: Typecast;
-["PgCatalog.Types.PgTablespaceArray"]: Typecast
-[2842]: Typecast;
-["PgCatalog.Types.PgAuthid"]: Typecast
-[10057]: Typecast;
-["PgCatalog.Types.PgAuthidArray"]: Typecast
-[2843]: Typecast;
-["PgCatalog.Types.PgAuthMembers"]: Typecast
-[10058]: Typecast;
-["PgCatalog.Types.PgAuthMembersArray"]: Typecast
-[10060]: Typecast;
-["PgCatalog.Types.PgShdepend"]: Typecast
-[10059]: Typecast;
-["PgCatalog.Types.PgShdependArray"]: Typecast
-[10062]: Typecast;
-["PgCatalog.Types.PgShdescription"]: Typecast
-[10061]: Typecast;
-["PgCatalog.Types.PgShdescriptionArray"]: Typecast
-[10064]: Typecast;
-["PgCatalog.Types.PgTsConfig"]: Typecast
-[10063]: Typecast;
-["PgCatalog.Types.PgTsConfigArray"]: Typecast
-[10066]: Typecast;
-["PgCatalog.Types.PgTsConfigMap"]: Typecast
-[10065]: Typecast;
-["PgCatalog.Types.PgTsConfigMapArray"]: Typecast
-[10068]: Typecast;
-["PgCatalog.Types.PgTsDict"]: Typecast
-[10067]: Typecast;
-["PgCatalog.Types.PgTsDictArray"]: Typecast
-[10070]: Typecast;
-["PgCatalog.Types.PgTsParser"]: Typecast
-[10069]: Typecast;
-["PgCatalog.Types.PgTsParserArray"]: Typecast
-[10072]: Typecast;
-["PgCatalog.Types.PgTsTemplate"]: Typecast
-[10071]: Typecast;
-["PgCatalog.Types.PgTsTemplateArray"]: Typecast
-[10074]: Typecast;
-["PgCatalog.Types.PgExtension"]: Typecast
-[10073]: Typecast;
-["PgCatalog.Types.PgExtensionArray"]: Typecast
-[10076]: Typecast;
-["PgCatalog.Types.PgForeignDataWrapper"]: Typecast
-[10075]: Typecast;
-["PgCatalog.Types.PgForeignDataWrapperArray"]: Typecast
-[10078]: Typecast;
-["PgCatalog.Types.PgForeignServer"]: Typecast
-[10077]: Typecast;
-["PgCatalog.Types.PgForeignServerArray"]: Typecast
-[10080]: Typecast;
-["PgCatalog.Types.PgUserMapping"]: Typecast
-[10079]: Typecast;
-["PgCatalog.Types.PgUserMappingArray"]: Typecast
-[10082]: Typecast;
-["PgCatalog.Types.PgForeignTable"]: Typecast
-[10081]: Typecast;
-["PgCatalog.Types.PgForeignTableArray"]: Typecast
-[10084]: Typecast;
-["PgCatalog.Types.PgPolicy"]: Typecast
-[10083]: Typecast;
-["PgCatalog.Types.PgPolicyArray"]: Typecast
-[10086]: Typecast;
-["PgCatalog.Types.PgReplicationOrigin"]: Typecast
-[10085]: Typecast;
-["PgCatalog.Types.PgReplicationOriginArray"]: Typecast
-[10088]: Typecast;
-["PgCatalog.Types.PgDefaultAcl"]: Typecast
-[10087]: Typecast;
-["PgCatalog.Types.PgDefaultAclArray"]: Typecast
-[10090]: Typecast;
-["PgCatalog.Types.PgInitPrivs"]: Typecast
-[10089]: Typecast;
-["PgCatalog.Types.PgInitPrivsArray"]: Typecast
-[10092]: Typecast;
-["PgCatalog.Types.PgSeclabel"]: Typecast
-[10091]: Typecast;
-["PgCatalog.Types.PgSeclabelArray"]: Typecast
-[4066]: Typecast;
-["PgCatalog.Types.PgShseclabel"]: Typecast
-[10093]: Typecast;
-["PgCatalog.Types.PgShseclabelArray"]: Typecast
-[10095]: Typecast;
-["PgCatalog.Types.PgCollation"]: Typecast
-[10094]: Typecast;
-["PgCatalog.Types.PgCollationArray"]: Typecast
-[10097]: Typecast;
-["PgCatalog.Types.PgParameterAcl"]: Typecast
-[10096]: Typecast;
-["PgCatalog.Types.PgParameterAclArray"]: Typecast
-[10099]: Typecast;
-["PgCatalog.Types.PgPartitionedTable"]: Typecast
-[10098]: Typecast;
-["PgCatalog.Types.PgPartitionedTableArray"]: Typecast
-[10101]: Typecast;
-["PgCatalog.Types.PgRange"]: Typecast
-[10100]: Typecast;
-["PgCatalog.Types.PgRangeArray"]: Typecast
-[10103]: Typecast;
-["PgCatalog.Types.PgTransform"]: Typecast
-[10102]: Typecast;
-["PgCatalog.Types.PgTransformArray"]: Typecast
-[10105]: Typecast;
-["PgCatalog.Types.PgSequence"]: Typecast
-[10104]: Typecast;
-["PgCatalog.Types.PgSequenceArray"]: Typecast
-[10107]: Typecast;
-["PgCatalog.Types.PgPublication"]: Typecast
-[10106]: Typecast;
-["PgCatalog.Types.PgPublicationArray"]: Typecast
-[10109]: Typecast;
-["PgCatalog.Types.PgPublicationNamespace"]: Typecast
-[10108]: Typecast;
-["PgCatalog.Types.PgPublicationNamespaceArray"]: Typecast
-[10111]: Typecast;
-["PgCatalog.Types.PgPublicationRel"]: Typecast
-[10110]: Typecast;
-["PgCatalog.Types.PgPublicationRelArray"]: Typecast
-[6101]: Typecast;
-["PgCatalog.Types.PgSubscription"]: Typecast
-[10112]: Typecast;
-["PgCatalog.Types.PgSubscriptionArray"]: Typecast
-[10114]: Typecast;
-["PgCatalog.Types.PgSubscriptionRel"]: Typecast
-[10113]: Typecast;
-["PgCatalog.Types.PgSubscriptionRelArray"]: Typecast
-[12002]: Typecast;
-["PgCatalog.Types.PgRoles"]: Typecast
-[12001]: Typecast;
-["PgCatalog.Types.PgRolesArray"]: Typecast
-[12007]: Typecast;
-["PgCatalog.Types.PgShadow"]: Typecast
-[12006]: Typecast;
-["PgCatalog.Types.PgShadowArray"]: Typecast
-[12012]: Typecast;
-["PgCatalog.Types.PgGroup"]: Typecast
-[12011]: Typecast;
-["PgCatalog.Types.PgGroupArray"]: Typecast
-[12016]: Typecast;
-["PgCatalog.Types.PgUser"]: Typecast
-[12015]: Typecast;
-["PgCatalog.Types.PgUserArray"]: Typecast
-[12020]: Typecast;
-["PgCatalog.Types.PgPolicies"]: Typecast
-[12019]: Typecast;
-["PgCatalog.Types.PgPoliciesArray"]: Typecast
-[12025]: Typecast;
-["PgCatalog.Types.PgRules"]: Typecast
-[12024]: Typecast;
-["PgCatalog.Types.PgRulesArray"]: Typecast
-[12030]: Typecast;
-["PgCatalog.Types.PgViews"]: Typecast
-[12029]: Typecast;
-["PgCatalog.Types.PgViewsArray"]: Typecast
-[12035]: Typecast;
-["PgCatalog.Types.PgTables"]: Typecast
-[12034]: Typecast;
-["PgCatalog.Types.PgTablesArray"]: Typecast
-[12040]: Typecast;
-["PgCatalog.Types.PgMatviews"]: Typecast
-[12039]: Typecast;
-["PgCatalog.Types.PgMatviewsArray"]: Typecast
-[12045]: Typecast;
-["PgCatalog.Types.PgIndexes"]: Typecast
-[12044]: Typecast;
-["PgCatalog.Types.PgIndexesArray"]: Typecast
-[12050]: Typecast;
-["PgCatalog.Types.PgSequences"]: Typecast
-[12049]: Typecast;
-["PgCatalog.Types.PgSequencesArray"]: Typecast
-[12055]: Typecast;
-["PgCatalog.Types.PgStats"]: Typecast
-[12054]: Typecast;
-["PgCatalog.Types.PgStatsArray"]: Typecast
-[12060]: Typecast;
-["PgCatalog.Types.PgStatsExt"]: Typecast
-[12059]: Typecast;
-["PgCatalog.Types.PgStatsExtArray"]: Typecast
-[12065]: Typecast;
-["PgCatalog.Types.PgStatsExtExprs"]: Typecast
-[12064]: Typecast;
-["PgCatalog.Types.PgStatsExtExprsArray"]: Typecast
-[12070]: Typecast;
-["PgCatalog.Types.PgPublicationTables"]: Typecast
-[12069]: Typecast;
-["PgCatalog.Types.PgPublicationTablesArray"]: Typecast
-[12075]: Typecast;
-["PgCatalog.Types.PgLocks"]: Typecast
-[12074]: Typecast;
-["PgCatalog.Types.PgLocksArray"]: Typecast
-[12079]: Typecast;
-["PgCatalog.Types.PgCursors"]: Typecast
-[12078]: Typecast;
-["PgCatalog.Types.PgCursorsArray"]: Typecast
-[12083]: Typecast;
-["PgCatalog.Types.PgAvailableExtensions"]: Typecast
-[12082]: Typecast;
-["PgCatalog.Types.PgAvailableExtensionsArray"]: Typecast
-[12087]: Typecast;
-["PgCatalog.Types.PgAvailableExtensionVersions"]: Typecast
-[12086]: Typecast;
-["PgCatalog.Types.PgAvailableExtensionVersionsArray"]: Typecast
-[12092]: Typecast;
-["PgCatalog.Types.PgPreparedXacts"]: Typecast
-[12091]: Typecast;
-["PgCatalog.Types.PgPreparedXactsArray"]: Typecast
-[12097]: Typecast;
-["PgCatalog.Types.PgPreparedStatements"]: Typecast
-[12096]: Typecast;
-["PgCatalog.Types.PgPreparedStatementsArray"]: Typecast
-[12101]: Typecast;
-["PgCatalog.Types.PgSeclabels"]: Typecast
-[12100]: Typecast;
-["PgCatalog.Types.PgSeclabelsArray"]: Typecast
-[12106]: Typecast;
-["PgCatalog.Types.PgSettings"]: Typecast
-[12105]: Typecast;
-["PgCatalog.Types.PgSettingsArray"]: Typecast
-[12112]: Typecast;
-["PgCatalog.Types.PgFileSettings"]: Typecast
-[12111]: Typecast;
-["PgCatalog.Types.PgFileSettingsArray"]: Typecast
-[12116]: Typecast;
-["PgCatalog.Types.PgHbaFileRules"]: Typecast
-[12115]: Typecast;
-["PgCatalog.Types.PgHbaFileRulesArray"]: Typecast
-[12120]: Typecast;
-["PgCatalog.Types.PgIdentFileMappings"]: Typecast
-[12119]: Typecast;
-["PgCatalog.Types.PgIdentFileMappingsArray"]: Typecast
-[12124]: Typecast;
-["PgCatalog.Types.PgTimezoneAbbrevs"]: Typecast
-[12123]: Typecast;
-["PgCatalog.Types.PgTimezoneAbbrevsArray"]: Typecast
-[12128]: Typecast;
-["PgCatalog.Types.PgTimezoneNames"]: Typecast
-[12127]: Typecast;
-["PgCatalog.Types.PgTimezoneNamesArray"]: Typecast
-[12132]: Typecast;
-["PgCatalog.Types.PgConfig"]: Typecast
-[12131]: Typecast;
-["PgCatalog.Types.PgConfigArray"]: Typecast
-[12136]: Typecast;
-["PgCatalog.Types.PgShmemAllocations"]: Typecast
-[12135]: Typecast;
-["PgCatalog.Types.PgShmemAllocationsArray"]: Typecast
-[12140]: Typecast;
-["PgCatalog.Types.PgBackendMemoryContexts"]: Typecast
-[12139]: Typecast;
-["PgCatalog.Types.PgBackendMemoryContextsArray"]: Typecast
-[12144]: Typecast;
-["PgCatalog.Types.PgStatAllTables"]: Typecast
-[12143]: Typecast;
-["PgCatalog.Types.PgStatAllTablesArray"]: Typecast
-[12149]: Typecast;
-["PgCatalog.Types.PgStatXactAllTables"]: Typecast
-[12148]: Typecast;
-["PgCatalog.Types.PgStatXactAllTablesArray"]: Typecast
-[12154]: Typecast;
-["PgCatalog.Types.PgStatSysTables"]: Typecast
-[12153]: Typecast;
-["PgCatalog.Types.PgStatSysTablesArray"]: Typecast
-[12159]: Typecast;
-["PgCatalog.Types.PgStatXactSysTables"]: Typecast
-[12158]: Typecast;
-["PgCatalog.Types.PgStatXactSysTablesArray"]: Typecast
-[12163]: Typecast;
-["PgCatalog.Types.PgStatUserTables"]: Typecast
-[12162]: Typecast;
-["PgCatalog.Types.PgStatUserTablesArray"]: Typecast
-[12168]: Typecast;
-["PgCatalog.Types.PgStatXactUserTables"]: Typecast
-[12167]: Typecast;
-["PgCatalog.Types.PgStatXactUserTablesArray"]: Typecast
-[12172]: Typecast;
-["PgCatalog.Types.PgStatioAllTables"]: Typecast
-[12171]: Typecast;
-["PgCatalog.Types.PgStatioAllTablesArray"]: Typecast
-[12177]: Typecast;
-["PgCatalog.Types.PgStatioSysTables"]: Typecast
-[12176]: Typecast;
-["PgCatalog.Types.PgStatioSysTablesArray"]: Typecast
-[12181]: Typecast;
-["PgCatalog.Types.PgStatioUserTables"]: Typecast
-[12180]: Typecast;
-["PgCatalog.Types.PgStatioUserTablesArray"]: Typecast
-[12185]: Typecast;
-["PgCatalog.Types.PgStatAllIndexes"]: Typecast
-[12184]: Typecast;
-["PgCatalog.Types.PgStatAllIndexesArray"]: Typecast
-[12190]: Typecast;
-["PgCatalog.Types.PgStatSysIndexes"]: Typecast
-[12189]: Typecast;
-["PgCatalog.Types.PgStatSysIndexesArray"]: Typecast
-[12194]: Typecast;
-["PgCatalog.Types.PgStatUserIndexes"]: Typecast
-[12193]: Typecast;
-["PgCatalog.Types.PgStatUserIndexesArray"]: Typecast
-[12198]: Typecast;
-["PgCatalog.Types.PgStatioAllIndexes"]: Typecast
-[12197]: Typecast;
-["PgCatalog.Types.PgStatioAllIndexesArray"]: Typecast
-[12203]: Typecast;
-["PgCatalog.Types.PgStatioSysIndexes"]: Typecast
-[12202]: Typecast;
-["PgCatalog.Types.PgStatioSysIndexesArray"]: Typecast
-[12207]: Typecast;
-["PgCatalog.Types.PgStatioUserIndexes"]: Typecast
-[12206]: Typecast;
-["PgCatalog.Types.PgStatioUserIndexesArray"]: Typecast
-[12211]: Typecast;
-["PgCatalog.Types.PgStatioAllSequences"]: Typecast
-[12210]: Typecast;
-["PgCatalog.Types.PgStatioAllSequencesArray"]: Typecast
-[12216]: Typecast;
-["PgCatalog.Types.PgStatioSysSequences"]: Typecast
-[12215]: Typecast;
-["PgCatalog.Types.PgStatioSysSequencesArray"]: Typecast
-[12220]: Typecast;
-["PgCatalog.Types.PgStatioUserSequences"]: Typecast
-[12219]: Typecast;
-["PgCatalog.Types.PgStatioUserSequencesArray"]: Typecast
-[12224]: Typecast;
-["PgCatalog.Types.PgStatActivity"]: Typecast
-[12223]: Typecast;
-["PgCatalog.Types.PgStatActivityArray"]: Typecast
-[12229]: Typecast;
-["PgCatalog.Types.PgStatReplication"]: Typecast
-[12228]: Typecast;
-["PgCatalog.Types.PgStatReplicationArray"]: Typecast
-[12234]: Typecast;
-["PgCatalog.Types.PgStatSlru"]: Typecast
-[12233]: Typecast;
-["PgCatalog.Types.PgStatSlruArray"]: Typecast
-[12238]: Typecast;
-["PgCatalog.Types.PgStatWalReceiver"]: Typecast
-[12237]: Typecast;
-["PgCatalog.Types.PgStatWalReceiverArray"]: Typecast
-[12242]: Typecast;
-["PgCatalog.Types.PgStatRecoveryPrefetch"]: Typecast
-[12241]: Typecast;
-["PgCatalog.Types.PgStatRecoveryPrefetchArray"]: Typecast
-[12246]: Typecast;
-["PgCatalog.Types.PgStatSubscription"]: Typecast
-[12245]: Typecast;
-["PgCatalog.Types.PgStatSubscriptionArray"]: Typecast
-[12251]: Typecast;
-["PgCatalog.Types.PgStatSsl"]: Typecast
-[12250]: Typecast;
-["PgCatalog.Types.PgStatSslArray"]: Typecast
-[12255]: Typecast;
-["PgCatalog.Types.PgStatGssapi"]: Typecast
-[12254]: Typecast;
-["PgCatalog.Types.PgStatGssapiArray"]: Typecast
-[12259]: Typecast;
-["PgCatalog.Types.PgReplicationSlots"]: Typecast
-[12258]: Typecast;
-["PgCatalog.Types.PgReplicationSlotsArray"]: Typecast
-[12264]: Typecast;
-["PgCatalog.Types.PgStatReplicationSlots"]: Typecast
-[12263]: Typecast;
-["PgCatalog.Types.PgStatReplicationSlotsArray"]: Typecast
-[12268]: Typecast;
-["PgCatalog.Types.PgStatDatabase"]: Typecast
-[12267]: Typecast;
-["PgCatalog.Types.PgStatDatabaseArray"]: Typecast
-[12273]: Typecast;
-["PgCatalog.Types.PgStatDatabaseConflicts"]: Typecast
-[12272]: Typecast;
-["PgCatalog.Types.PgStatDatabaseConflictsArray"]: Typecast
-[12277]: Typecast;
-["PgCatalog.Types.PgStatUserFunctions"]: Typecast
-[12276]: Typecast;
-["PgCatalog.Types.PgStatUserFunctionsArray"]: Typecast
-[12282]: Typecast;
-["PgCatalog.Types.PgStatXactUserFunctions"]: Typecast
-[12281]: Typecast;
-["PgCatalog.Types.PgStatXactUserFunctionsArray"]: Typecast
-[12287]: Typecast;
-["PgCatalog.Types.PgStatArchiver"]: Typecast
-[12286]: Typecast;
-["PgCatalog.Types.PgStatArchiverArray"]: Typecast
-[12291]: Typecast;
-["PgCatalog.Types.PgStatBgwriter"]: Typecast
-[12290]: Typecast;
-["PgCatalog.Types.PgStatBgwriterArray"]: Typecast
-[12295]: Typecast;
-["PgCatalog.Types.PgStatIo"]: Typecast
-[12294]: Typecast;
-["PgCatalog.Types.PgStatIoArray"]: Typecast
-[12299]: Typecast;
-["PgCatalog.Types.PgStatWal"]: Typecast
-[12298]: Typecast;
-["PgCatalog.Types.PgStatWalArray"]: Typecast
-[12303]: Typecast;
-["PgCatalog.Types.PgStatProgressAnalyze"]: Typecast
-[12302]: Typecast;
-["PgCatalog.Types.PgStatProgressAnalyzeArray"]: Typecast
-[12308]: Typecast;
-["PgCatalog.Types.PgStatProgressVacuum"]: Typecast
-[12307]: Typecast;
-["PgCatalog.Types.PgStatProgressVacuumArray"]: Typecast
-[12313]: Typecast;
-["PgCatalog.Types.PgStatProgressCluster"]: Typecast
-[12312]: Typecast;
-["PgCatalog.Types.PgStatProgressClusterArray"]: Typecast
-[12318]: Typecast;
-["PgCatalog.Types.PgStatProgressCreateIndex"]: Typecast
-[12317]: Typecast;
-["PgCatalog.Types.PgStatProgressCreateIndexArray"]: Typecast
-[12323]: Typecast;
-["PgCatalog.Types.PgStatProgressBasebackup"]: Typecast
-[12322]: Typecast;
-["PgCatalog.Types.PgStatProgressBasebackupArray"]: Typecast
-[12328]: Typecast;
-["PgCatalog.Types.PgStatProgressCopy"]: Typecast
-[12327]: Typecast;
-["PgCatalog.Types.PgStatProgressCopyArray"]: Typecast
-[12333]: Typecast;
-["PgCatalog.Types.PgUserMappings"]: Typecast
-[12332]: Typecast;
-["PgCatalog.Types.PgUserMappingsArray"]: Typecast
-[12338]: Typecast;
-["PgCatalog.Types.PgReplicationOriginStatus"]: Typecast
-[12337]: Typecast;
-["PgCatalog.Types.PgReplicationOriginStatusArray"]: Typecast
-[12342]: Typecast;
-["PgCatalog.Types.PgStatSubscriptionStats"]: Typecast
-[12341]: Typecast;
-["PgCatalog.Types.PgStatSubscriptionStatsArray"]: Typecast
-[2690]: Typecast;
-["PgCatalog.Types.PgProcOidIndex"]: Typecast
-[2691]: Typecast;
-["PgCatalog.Types.PgProcPronameArgsNspIndex"]: Typecast
-[2703]: Typecast;
-["PgCatalog.Types.PgTypeOidIndex"]: Typecast
-[2704]: Typecast;
-["PgCatalog.Types.PgTypeTypnameNspIndex"]: Typecast
-[2658]: Typecast;
-["PgCatalog.Types.PgAttributeRelidAttnamIndex"]: Typecast
-[2659]: Typecast;
-["PgCatalog.Types.PgAttributeRelidAttnumIndex"]: Typecast
-[2662]: Typecast;
-["PgCatalog.Types.PgClassOidIndex"]: Typecast
-[2663]: Typecast;
-["PgCatalog.Types.PgClassRelnameNspIndex"]: Typecast
-[3455]: Typecast;
-["PgCatalog.Types.PgClassTblspcRelfilenodeIndex"]: Typecast
-[2656]: Typecast;
-["PgCatalog.Types.PgAttrdefAdrelidAdnumIndex"]: Typecast
-[2657]: Typecast;
-["PgCatalog.Types.PgAttrdefOidIndex"]: Typecast
-[2664]: Typecast;
-["PgCatalog.Types.PgConstraintConnameNspIndex"]: Typecast
-[2665]: Typecast;
-["PgCatalog.Types.PgConstraintConrelidContypidConnameIndex"]: Typecast
-[2666]: Typecast;
-["PgCatalog.Types.PgConstraintContypidIndex"]: Typecast
-[2667]: Typecast;
-["PgCatalog.Types.PgConstraintOidIndex"]: Typecast
-[2579]: Typecast;
-["PgCatalog.Types.PgConstraintConparentidIndex"]: Typecast
-[2680]: Typecast;
-["PgCatalog.Types.PgInheritsRelidSeqnoIndex"]: Typecast
-[2187]: Typecast;
-["PgCatalog.Types.PgInheritsParentIndex"]: Typecast
-[2678]: Typecast;
-["PgCatalog.Types.PgIndexIndrelidIndex"]: Typecast
-[2679]: Typecast;
-["PgCatalog.Types.PgIndexIndexrelidIndex"]: Typecast
-[2688]: Typecast;
-["PgCatalog.Types.PgOperatorOidIndex"]: Typecast
-[2689]: Typecast;
-["PgCatalog.Types.PgOperatorOprnameLRNIndex"]: Typecast
-[2754]: Typecast;
-["PgCatalog.Types.PgOpfamilyAmNameNspIndex"]: Typecast
-[2755]: Typecast;
-["PgCatalog.Types.PgOpfamilyOidIndex"]: Typecast
-[2686]: Typecast;
-["PgCatalog.Types.PgOpclassAmNameNspIndex"]: Typecast
-[2687]: Typecast;
-["PgCatalog.Types.PgOpclassOidIndex"]: Typecast
-[2651]: Typecast;
-["PgCatalog.Types.PgAmNameIndex"]: Typecast
-[2652]: Typecast;
-["PgCatalog.Types.PgAmOidIndex"]: Typecast
-[2653]: Typecast;
-["PgCatalog.Types.PgAmopFamStratIndex"]: Typecast
-[2654]: Typecast;
-["PgCatalog.Types.PgAmopOprFamIndex"]: Typecast
-[2756]: Typecast;
-["PgCatalog.Types.PgAmopOidIndex"]: Typecast
-[2655]: Typecast;
-["PgCatalog.Types.PgAmprocFamProcIndex"]: Typecast
-[2757]: Typecast;
-["PgCatalog.Types.PgAmprocOidIndex"]: Typecast
-[2681]: Typecast;
-["PgCatalog.Types.PgLanguageNameIndex"]: Typecast
-[2682]: Typecast;
-["PgCatalog.Types.PgLanguageOidIndex"]: Typecast
-[2996]: Typecast;
-["PgCatalog.Types.PgLargeobjectMetadataOidIndex"]: Typecast
-[2683]: Typecast;
-["PgCatalog.Types.PgLargeobjectLoidPnIndex"]: Typecast
-[2650]: Typecast;
-["PgCatalog.Types.PgAggregateFnoidIndex"]: Typecast
-[2696]: Typecast;
-["PgCatalog.Types.PgStatisticRelidAttInhIndex"]: Typecast
-[3380]: Typecast;
-["PgCatalog.Types.PgStatisticExtOidIndex"]: Typecast
-[3997]: Typecast;
-["PgCatalog.Types.PgStatisticExtNameIndex"]: Typecast
-[3379]: Typecast;
-["PgCatalog.Types.PgStatisticExtRelidIndex"]: Typecast
-[3433]: Typecast;
-["PgCatalog.Types.PgStatisticExtDataStxoidInhIndex"]: Typecast
-[2692]: Typecast;
-["PgCatalog.Types.PgRewriteOidIndex"]: Typecast
-[2693]: Typecast;
-["PgCatalog.Types.PgRewriteRelRulenameIndex"]: Typecast
-[2699]: Typecast;
-["PgCatalog.Types.PgTriggerTgconstraintIndex"]: Typecast
-[2701]: Typecast;
-["PgCatalog.Types.PgTriggerTgrelidTgnameIndex"]: Typecast
-[2702]: Typecast;
-["PgCatalog.Types.PgTriggerOidIndex"]: Typecast
-[3467]: Typecast;
-["PgCatalog.Types.PgEventTriggerEvtnameIndex"]: Typecast
-[3468]: Typecast;
-["PgCatalog.Types.PgEventTriggerOidIndex"]: Typecast
-[2675]: Typecast;
-["PgCatalog.Types.PgDescriptionOCOIndex"]: Typecast
-[2660]: Typecast;
-["PgCatalog.Types.PgCastOidIndex"]: Typecast
-[2661]: Typecast;
-["PgCatalog.Types.PgCastSourceTargetIndex"]: Typecast
-[3502]: Typecast;
-["PgCatalog.Types.PgEnumOidIndex"]: Typecast
-[3503]: Typecast;
-["PgCatalog.Types.PgEnumTypidLabelIndex"]: Typecast
-[3534]: Typecast;
-["PgCatalog.Types.PgEnumTypidSortorderIndex"]: Typecast
-[2684]: Typecast;
-["PgCatalog.Types.PgNamespaceNspnameIndex"]: Typecast
-[2685]: Typecast;
-["PgCatalog.Types.PgNamespaceOidIndex"]: Typecast
-[2668]: Typecast;
-["PgCatalog.Types.PgConversionDefaultIndex"]: Typecast
-[2669]: Typecast;
-["PgCatalog.Types.PgConversionNameNspIndex"]: Typecast
-[2670]: Typecast;
-["PgCatalog.Types.PgConversionOidIndex"]: Typecast
-[2673]: Typecast;
-["PgCatalog.Types.PgDependDependerIndex"]: Typecast
-[2674]: Typecast;
-["PgCatalog.Types.PgDependReferenceIndex"]: Typecast
-[2671]: Typecast;
-["PgCatalog.Types.PgDatabaseDatnameIndex"]: Typecast
-[2672]: Typecast;
-["PgCatalog.Types.PgDatabaseOidIndex"]: Typecast
-[2965]: Typecast;
-["PgCatalog.Types.PgDbRoleSettingDatabaseidRolIndex"]: Typecast
-[2697]: Typecast;
-["PgCatalog.Types.PgTablespaceOidIndex"]: Typecast
-[2698]: Typecast;
-["PgCatalog.Types.PgTablespaceSpcnameIndex"]: Typecast
-[2676]: Typecast;
-["PgCatalog.Types.PgAuthidRolnameIndex"]: Typecast
-[2677]: Typecast;
-["PgCatalog.Types.PgAuthidOidIndex"]: Typecast
-[6303]: Typecast;
-["PgCatalog.Types.PgAuthMembersOidIndex"]: Typecast
-[2694]: Typecast;
-["PgCatalog.Types.PgAuthMembersRoleMemberIndex"]: Typecast
-[2695]: Typecast;
-["PgCatalog.Types.PgAuthMembersMemberRoleIndex"]: Typecast
-[6302]: Typecast;
-["PgCatalog.Types.PgAuthMembersGrantorIndex"]: Typecast
-[1232]: Typecast;
-["PgCatalog.Types.PgShdependDependerIndex"]: Typecast
-[1233]: Typecast;
-["PgCatalog.Types.PgShdependReferenceIndex"]: Typecast
-[2397]: Typecast;
-["PgCatalog.Types.PgShdescriptionOCIndex"]: Typecast
-[3608]: Typecast;
-["PgCatalog.Types.PgTsConfigCfgnameIndex"]: Typecast
-[3712]: Typecast;
-["PgCatalog.Types.PgTsConfigOidIndex"]: Typecast
-[3609]: Typecast;
-["PgCatalog.Types.PgTsConfigMapIndex"]: Typecast
-[3604]: Typecast;
-["PgCatalog.Types.PgTsDictDictnameIndex"]: Typecast
-[3605]: Typecast;
-["PgCatalog.Types.PgTsDictOidIndex"]: Typecast
-[3606]: Typecast;
-["PgCatalog.Types.PgTsParserPrsnameIndex"]: Typecast
-[3607]: Typecast;
-["PgCatalog.Types.PgTsParserOidIndex"]: Typecast
-[3766]: Typecast;
-["PgCatalog.Types.PgTsTemplateTmplnameIndex"]: Typecast
-[3767]: Typecast;
-["PgCatalog.Types.PgTsTemplateOidIndex"]: Typecast
-[3080]: Typecast;
-["PgCatalog.Types.PgExtensionOidIndex"]: Typecast
-[3081]: Typecast;
-["PgCatalog.Types.PgExtensionNameIndex"]: Typecast
-[112]: Typecast;
-["PgCatalog.Types.PgForeignDataWrapperOidIndex"]: Typecast
-[548]: Typecast;
-["PgCatalog.Types.PgForeignDataWrapperNameIndex"]: Typecast
-[113]: Typecast;
-["PgCatalog.Types.PgForeignServerOidIndex"]: Typecast
-[549]: Typecast;
-["PgCatalog.Types.PgForeignServerNameIndex"]: Typecast
-[174]: Typecast;
-["PgCatalog.Types.PgUserMappingOidIndex"]: Typecast
-[175]: Typecast;
-["PgCatalog.Types.PgUserMappingUserServerIndex"]: Typecast
-[3119]: Typecast;
-["PgCatalog.Types.PgForeignTableRelidIndex"]: Typecast
-[3257]: Typecast;
-["PgCatalog.Types.PgPolicyOidIndex"]: Typecast
-[3258]: Typecast;
-["PgCatalog.Types.PgPolicyPolrelidPolnameIndex"]: Typecast
-[6001]: Typecast;
-["PgCatalog.Types.PgReplicationOriginRoiidentIndex"]: Typecast
-[6002]: Typecast;
-["PgCatalog.Types.PgReplicationOriginRonameIndex"]: Typecast
-[827]: Typecast;
-["PgCatalog.Types.PgDefaultAclRoleNspObjIndex"]: Typecast
-[828]: Typecast;
-["PgCatalog.Types.PgDefaultAclOidIndex"]: Typecast
-[3395]: Typecast;
-["PgCatalog.Types.PgInitPrivsOCOIndex"]: Typecast
-[3597]: Typecast;
-["PgCatalog.Types.PgSeclabelObjectIndex"]: Typecast
-[3593]: Typecast;
-["PgCatalog.Types.PgShseclabelObjectIndex"]: Typecast
-[3164]: Typecast;
-["PgCatalog.Types.PgCollationNameEncNspIndex"]: Typecast
-[3085]: Typecast;
-["PgCatalog.Types.PgCollationOidIndex"]: Typecast
-[6246]: Typecast;
-["PgCatalog.Types.PgParameterAclParnameIndex"]: Typecast
-[6247]: Typecast;
-["PgCatalog.Types.PgParameterAclOidIndex"]: Typecast
-[3351]: Typecast;
-["PgCatalog.Types.PgPartitionedTablePartrelidIndex"]: Typecast
-[3542]: Typecast;
-["PgCatalog.Types.PgRangeRngtypidIndex"]: Typecast
-[2228]: Typecast;
-["PgCatalog.Types.PgRangeRngmultitypidIndex"]: Typecast
-[3574]: Typecast;
-["PgCatalog.Types.PgTransformOidIndex"]: Typecast
-[3575]: Typecast;
-["PgCatalog.Types.PgTransformTypeLangIndex"]: Typecast
-[5002]: Typecast;
-["PgCatalog.Types.PgSequenceSeqrelidIndex"]: Typecast
-[6110]: Typecast;
-["PgCatalog.Types.PgPublicationOidIndex"]: Typecast
-[6111]: Typecast;
-["PgCatalog.Types.PgPublicationPubnameIndex"]: Typecast
-[6238]: Typecast;
-["PgCatalog.Types.PgPublicationNamespaceOidIndex"]: Typecast
-[6239]: Typecast;
-["PgCatalog.Types.PgPublicationNamespacePnnspidPnpubidIndex"]: Typecast
-[6112]: Typecast;
-["PgCatalog.Types.PgPublicationRelOidIndex"]: Typecast
-[6113]: Typecast;
-["PgCatalog.Types.PgPublicationRelPrrelidPrpubidIndex"]: Typecast
-[6116]: Typecast;
-["PgCatalog.Types.PgPublicationRelPrpubidIndex"]: Typecast
-[6114]: Typecast;
-["PgCatalog.Types.PgSubscriptionOidIndex"]: Typecast
-[6115]: Typecast;
-["PgCatalog.Types.PgSubscriptionSubnameIndex"]: Typecast
-[6117]: Typecast;
-["PgCatalog.Types.PgSubscriptionRelSrrelidSrsubidIndex"]: Typecast
-[13488]: Typecast;
-["InformationSchema.Types.CardinalNumber"]: Typecast
-[13487]: Typecast;
-["InformationSchema.Types.CardinalNumberArray"]: Typecast
-[13491]: Typecast;
-["InformationSchema.Types.CharacterData"]: Typecast
-[13490]: Typecast;
-["InformationSchema.Types.CharacterDataArray"]: Typecast
-[13493]: Typecast;
-["InformationSchema.Types.SqlIdentifier"]: Typecast
-[13492]: Typecast;
-["InformationSchema.Types.SqlIdentifierArray"]: Typecast
-[13496]: Typecast;
-["InformationSchema.Types.InformationSchemaCatalogName"]: Typecast
-[13495]: Typecast;
-["InformationSchema.Types.InformationSchemaCatalogNameArray"]: Typecast
-[13499]: Typecast;
-["InformationSchema.Types.TimeStamp"]: Typecast
-[13498]: Typecast;
-["InformationSchema.Types.TimeStampArray"]: Typecast
-[13501]: Typecast;
-["InformationSchema.Types.YesOrNo"]: Typecast
-[13500]: Typecast;
-["InformationSchema.Types.YesOrNoArray"]: Typecast
-[13505]: Typecast;
-["InformationSchema.Types.ApplicableRoles"]: Typecast
-[13504]: Typecast;
-["InformationSchema.Types.ApplicableRolesArray"]: Typecast
-[13510]: Typecast;
-["InformationSchema.Types.AdministrableRoleAuthorizations"]: Typecast
-[13509]: Typecast;
-["InformationSchema.Types.AdministrableRoleAuthorizationsArray"]: Typecast
-[13514]: Typecast;
-["InformationSchema.Types.Attributes"]: Typecast
-[13513]: Typecast;
-["InformationSchema.Types.AttributesArray"]: Typecast
-[13519]: Typecast;
-["InformationSchema.Types.CharacterSets"]: Typecast
-[13518]: Typecast;
-["InformationSchema.Types.CharacterSetsArray"]: Typecast
-[13524]: Typecast;
-["InformationSchema.Types.CheckConstraintRoutineUsage"]: Typecast
-[13523]: Typecast;
-["InformationSchema.Types.CheckConstraintRoutineUsageArray"]: Typecast
-[13529]: Typecast;
-["InformationSchema.Types.CheckConstraints"]: Typecast
-[13528]: Typecast;
-["InformationSchema.Types.CheckConstraintsArray"]: Typecast
-[13534]: Typecast;
-["InformationSchema.Types.Collations"]: Typecast
-[13533]: Typecast;
-["InformationSchema.Types.CollationsArray"]: Typecast
-[13539]: Typecast;
-["InformationSchema.Types.CollationCharacterSetApplicability"]: Typecast
-[13538]: Typecast;
-["InformationSchema.Types.CollationCharacterSetApplicabilityArray"]: Typecast
-[13544]: Typecast;
-["InformationSchema.Types.ColumnColumnUsage"]: Typecast
-[13543]: Typecast;
-["InformationSchema.Types.ColumnColumnUsageArray"]: Typecast
-[13549]: Typecast;
-["InformationSchema.Types.ColumnDomainUsage"]: Typecast
-[13548]: Typecast;
-["InformationSchema.Types.ColumnDomainUsageArray"]: Typecast
-[13554]: Typecast;
-["InformationSchema.Types.ColumnPrivileges"]: Typecast
-[13553]: Typecast;
-["InformationSchema.Types.ColumnPrivilegesArray"]: Typecast
-[13559]: Typecast;
-["InformationSchema.Types.ColumnUdtUsage"]: Typecast
-[13558]: Typecast;
-["InformationSchema.Types.ColumnUdtUsageArray"]: Typecast
-[13564]: Typecast;
-["InformationSchema.Types.Columns"]: Typecast
-[13563]: Typecast;
-["InformationSchema.Types.ColumnsArray"]: Typecast
-[13569]: Typecast;
-["InformationSchema.Types.ConstraintColumnUsage"]: Typecast
-[13568]: Typecast;
-["InformationSchema.Types.ConstraintColumnUsageArray"]: Typecast
-[13574]: Typecast;
-["InformationSchema.Types.ConstraintTableUsage"]: Typecast
-[13573]: Typecast;
-["InformationSchema.Types.ConstraintTableUsageArray"]: Typecast
-[13579]: Typecast;
-["InformationSchema.Types.DomainConstraints"]: Typecast
-[13578]: Typecast;
-["InformationSchema.Types.DomainConstraintsArray"]: Typecast
-[13584]: Typecast;
-["InformationSchema.Types.DomainUdtUsage"]: Typecast
-[13583]: Typecast;
-["InformationSchema.Types.DomainUdtUsageArray"]: Typecast
-[13589]: Typecast;
-["InformationSchema.Types.Domains"]: Typecast
-[13588]: Typecast;
-["InformationSchema.Types.DomainsArray"]: Typecast
-[13594]: Typecast;
-["InformationSchema.Types.EnabledRoles"]: Typecast
-[13593]: Typecast;
-["InformationSchema.Types.EnabledRolesArray"]: Typecast
-[13598]: Typecast;
-["InformationSchema.Types.KeyColumnUsage"]: Typecast
-[13597]: Typecast;
-["InformationSchema.Types.KeyColumnUsageArray"]: Typecast
-[13603]: Typecast;
-["InformationSchema.Types.Parameters"]: Typecast
-[13602]: Typecast;
-["InformationSchema.Types.ParametersArray"]: Typecast
-[13608]: Typecast;
-["InformationSchema.Types.ReferentialConstraints"]: Typecast
-[13607]: Typecast;
-["InformationSchema.Types.ReferentialConstraintsArray"]: Typecast
-[13613]: Typecast;
-["InformationSchema.Types.RoleColumnGrants"]: Typecast
-[13612]: Typecast;
-["InformationSchema.Types.RoleColumnGrantsArray"]: Typecast
-[13617]: Typecast;
-["InformationSchema.Types.RoutineColumnUsage"]: Typecast
-[13616]: Typecast;
-["InformationSchema.Types.RoutineColumnUsageArray"]: Typecast
-[13622]: Typecast;
-["InformationSchema.Types.RoutinePrivileges"]: Typecast
-[13621]: Typecast;
-["InformationSchema.Types.RoutinePrivilegesArray"]: Typecast
-[13627]: Typecast;
-["InformationSchema.Types.RoleRoutineGrants"]: Typecast
-[13626]: Typecast;
-["InformationSchema.Types.RoleRoutineGrantsArray"]: Typecast
-[13631]: Typecast;
-["InformationSchema.Types.RoutineRoutineUsage"]: Typecast
-[13630]: Typecast;
-["InformationSchema.Types.RoutineRoutineUsageArray"]: Typecast
-[13636]: Typecast;
-["InformationSchema.Types.RoutineSequenceUsage"]: Typecast
-[13635]: Typecast;
-["InformationSchema.Types.RoutineSequenceUsageArray"]: Typecast
-[13641]: Typecast;
-["InformationSchema.Types.RoutineTableUsage"]: Typecast
-[13640]: Typecast;
-["InformationSchema.Types.RoutineTableUsageArray"]: Typecast
-[13646]: Typecast;
-["InformationSchema.Types.Routines"]: Typecast
-[13645]: Typecast;
-["InformationSchema.Types.RoutinesArray"]: Typecast
-[13651]: Typecast;
-["InformationSchema.Types.Schemata"]: Typecast
-[13650]: Typecast;
-["InformationSchema.Types.SchemataArray"]: Typecast
-[13655]: Typecast;
-["InformationSchema.Types.Sequences"]: Typecast
-[13654]: Typecast;
-["InformationSchema.Types.SequencesArray"]: Typecast
-[13660]: Typecast;
-["InformationSchema.Types.SqlFeatures"]: Typecast
-[13659]: Typecast;
-["InformationSchema.Types.SqlFeaturesArray"]: Typecast
-[13665]: Typecast;
-["InformationSchema.Types.SqlImplementationInfo"]: Typecast
-[13664]: Typecast;
-["InformationSchema.Types.SqlImplementationInfoArray"]: Typecast
-[13670]: Typecast;
-["InformationSchema.Types.SqlParts"]: Typecast
-[13669]: Typecast;
-["InformationSchema.Types.SqlPartsArray"]: Typecast
-[13675]: Typecast;
-["InformationSchema.Types.SqlSizing"]: Typecast
-[13674]: Typecast;
-["InformationSchema.Types.SqlSizingArray"]: Typecast
-[13680]: Typecast;
-["InformationSchema.Types.TableConstraints"]: Typecast
-[13679]: Typecast;
-["InformationSchema.Types.TableConstraintsArray"]: Typecast
-[13685]: Typecast;
-["InformationSchema.Types.TablePrivileges"]: Typecast
-[13684]: Typecast;
-["InformationSchema.Types.TablePrivilegesArray"]: Typecast
-[13690]: Typecast;
-["InformationSchema.Types.RoleTableGrants"]: Typecast
-[13689]: Typecast;
-["InformationSchema.Types.RoleTableGrantsArray"]: Typecast
-[13694]: Typecast;
-["InformationSchema.Types.Tables"]: Typecast
-[13693]: Typecast;
-["InformationSchema.Types.TablesArray"]: Typecast
-[13699]: Typecast;
-["InformationSchema.Types.Transforms"]: Typecast
-[13698]: Typecast;
-["InformationSchema.Types.TransformsArray"]: Typecast
-[13704]: Typecast;
-["InformationSchema.Types.TriggeredUpdateColumns"]: Typecast
-[13703]: Typecast;
-["InformationSchema.Types.TriggeredUpdateColumnsArray"]: Typecast
-[13709]: Typecast;
-["InformationSchema.Types.Triggers"]: Typecast
-[13708]: Typecast;
-["InformationSchema.Types.TriggersArray"]: Typecast
-[13714]: Typecast;
-["InformationSchema.Types.UdtPrivileges"]: Typecast
-[13713]: Typecast;
-["InformationSchema.Types.UdtPrivilegesArray"]: Typecast
-[13719]: Typecast;
-["InformationSchema.Types.RoleUdtGrants"]: Typecast
-[13718]: Typecast;
-["InformationSchema.Types.RoleUdtGrantsArray"]: Typecast
-[13723]: Typecast;
-["InformationSchema.Types.UsagePrivileges"]: Typecast
-[13722]: Typecast;
-["InformationSchema.Types.UsagePrivilegesArray"]: Typecast
-[13728]: Typecast;
-["InformationSchema.Types.RoleUsageGrants"]: Typecast
-[13727]: Typecast;
-["InformationSchema.Types.RoleUsageGrantsArray"]: Typecast
-[13732]: Typecast;
-["InformationSchema.Types.UserDefinedTypes"]: Typecast
-[13731]: Typecast;
-["InformationSchema.Types.UserDefinedTypesArray"]: Typecast
-[13737]: Typecast;
-["InformationSchema.Types.ViewColumnUsage"]: Typecast
-[13736]: Typecast;
-["InformationSchema.Types.ViewColumnUsageArray"]: Typecast
-[13742]: Typecast;
-["InformationSchema.Types.ViewRoutineUsage"]: Typecast
-[13741]: Typecast;
-["InformationSchema.Types.ViewRoutineUsageArray"]: Typecast
-[13747]: Typecast;
-["InformationSchema.Types.ViewTableUsage"]: Typecast
-[13746]: Typecast;
-["InformationSchema.Types.ViewTableUsageArray"]: Typecast
-[13752]: Typecast;
-["InformationSchema.Types.Views"]: Typecast
-[13751]: Typecast;
-["InformationSchema.Types.ViewsArray"]: Typecast
-[13757]: Typecast;
-["InformationSchema.Types.DataTypePrivileges"]: Typecast
-[13756]: Typecast;
-["InformationSchema.Types.DataTypePrivilegesArray"]: Typecast
-[13762]: Typecast;
-["InformationSchema.Types.ElementTypes"]: Typecast
-[13761]: Typecast;
-["InformationSchema.Types.ElementTypesArray"]: Typecast
-[13767]: Typecast;
-["InformationSchema.Types.PgForeignTableColumns"]: Typecast
-[13772]: Typecast;
-["InformationSchema.Types.ColumnOptions"]: Typecast
-[13771]: Typecast;
-["InformationSchema.Types.ColumnOptionsArray"]: Typecast
-[13776]: Typecast;
-["InformationSchema.Types.PgForeignDataWrappers"]: Typecast
-[13780]: Typecast;
-["InformationSchema.Types.ForeignDataWrapperOptions"]: Typecast
-[13779]: Typecast;
-["InformationSchema.Types.ForeignDataWrapperOptionsArray"]: Typecast
-[13784]: Typecast;
-["InformationSchema.Types.ForeignDataWrappers"]: Typecast
-[13783]: Typecast;
-["InformationSchema.Types.ForeignDataWrappersArray"]: Typecast
-[13788]: Typecast;
-["InformationSchema.Types.PgForeignServers"]: Typecast
-[13793]: Typecast;
-["InformationSchema.Types.ForeignServerOptions"]: Typecast
-[13792]: Typecast;
-["InformationSchema.Types.ForeignServerOptionsArray"]: Typecast
-[13797]: Typecast;
-["InformationSchema.Types.ForeignServers"]: Typecast
-[13796]: Typecast;
-["InformationSchema.Types.ForeignServersArray"]: Typecast
-[13801]: Typecast;
-["InformationSchema.Types.PgForeignTables"]: Typecast
-[13806]: Typecast;
-["InformationSchema.Types.ForeignTableOptions"]: Typecast
-[13805]: Typecast;
-["InformationSchema.Types.ForeignTableOptionsArray"]: Typecast
-[13810]: Typecast;
-["InformationSchema.Types.ForeignTables"]: Typecast
-[13809]: Typecast;
-["InformationSchema.Types.ForeignTablesArray"]: Typecast
-[13814]: Typecast;
-["InformationSchema.Types.PgUserMappings"]: Typecast
-[13819]: Typecast;
-["InformationSchema.Types.UserMappingOptions"]: Typecast
-[13818]: Typecast;
-["InformationSchema.Types.UserMappingOptionsArray"]: Typecast
-[13824]: Typecast;
-["InformationSchema.Types.UserMappings"]: Typecast
-[13823]: Typecast;
-["InformationSchema.Types.UserMappingsArray"]: Typecast
-[29478]: Typecast;
-["Public.Types.Checklist"]: Typecast
-[29477]: Typecast;
-["Public.Types.ChecklistArray"]: Typecast
-[29487]: Typecast;
-["Public.Types.ChecklistItem"]: Typecast
-[29486]: Typecast;
-["Public.Types.ChecklistItemArray"]: Typecast
-[29483]: Typecast;
-["Public.Types.ChecklistPkey"]: Typecast
-[29493]: Typecast;
-["Public.Types.ChecklistItemPkey"]: Typecast
-[29500]: Typecast;
-["Public.Types.ChecklistItemParent"]: Typecast
-[29482]: Typecast;
-["PgToast.Types.PgToast_29476Index"]: Typecast
-[29492]: Typecast;
-["PgToast.Types.PgToast_29485Index"]: Typecast
-[2837]: Typecast;
-["PgToast.Types.PgToast_1255Index"]: Typecast
-[4172]: Typecast;
-["PgToast.Types.PgToast_1247Index"]: Typecast
-[2831]: Typecast;
-["PgToast.Types.PgToast_2604Index"]: Typecast
-[2833]: Typecast;
-["PgToast.Types.PgToast_2606Index"]: Typecast
-[4158]: Typecast;
-["PgToast.Types.PgToast_2612Index"]: Typecast
-[4160]: Typecast;
-["PgToast.Types.PgToast_2600Index"]: Typecast
-[2841]: Typecast;
-["PgToast.Types.PgToast_2619Index"]: Typecast
-[3440]: Typecast;
-["PgToast.Types.PgToast_3381Index"]: Typecast
-[3431]: Typecast;
-["PgToast.Types.PgToast_3429Index"]: Typecast
-[2839]: Typecast;
-["PgToast.Types.PgToast_2618Index"]: Typecast
-[2337]: Typecast;
-["PgToast.Types.PgToast_2620Index"]: Typecast
-[4146]: Typecast;
-["PgToast.Types.PgToast_3466Index"]: Typecast
-[2835]: Typecast;
-["PgToast.Types.PgToast_2609Index"]: Typecast
-[4164]: Typecast;
-["PgToast.Types.PgToast_2615Index"]: Typecast
-[4178]: Typecast;
-["PgToast.Types.PgToast_1262Index"]: Typecast
-[2967]: Typecast;
-["PgToast.Types.PgToast_2964Index"]: Typecast
-[4186]: Typecast;
-["PgToast.Types.PgToast_1213Index"]: Typecast
-[4176]: Typecast;
-["PgToast.Types.PgToast_1260Index"]: Typecast
-[2847]: Typecast;
-["PgToast.Types.PgToast_2396Index"]: Typecast
-[4170]: Typecast;
-["PgToast.Types.PgToast_3600Index"]: Typecast
-[4148]: Typecast;
-["PgToast.Types.PgToast_3079Index"]: Typecast
-[4150]: Typecast;
-["PgToast.Types.PgToast_2328Index"]: Typecast
-[4152]: Typecast;
-["PgToast.Types.PgToast_1417Index"]: Typecast
-[4174]: Typecast;
-["PgToast.Types.PgToast_1418Index"]: Typecast
-[4154]: Typecast;
-["PgToast.Types.PgToast_3118Index"]: Typecast
-[4168]: Typecast;
-["PgToast.Types.PgToast_3256Index"]: Typecast
-[4182]: Typecast;
-["PgToast.Types.PgToast_6000Index"]: Typecast
-[4144]: Typecast;
-["PgToast.Types.PgToast_826Index"]: Typecast
-[4156]: Typecast;
-["PgToast.Types.PgToast_3394Index"]: Typecast
-[3599]: Typecast;
-["PgToast.Types.PgToast_3596Index"]: Typecast
-[4061]: Typecast;
-["PgToast.Types.PgToast_3592Index"]: Typecast
-[6176]: Typecast;
-["PgToast.Types.PgToast_3456Index"]: Typecast
-[6245]: Typecast;
-["PgToast.Types.PgToast_6243Index"]: Typecast
-[4166]: Typecast;
-["PgToast.Types.PgToast_3350Index"]: Typecast
-[6229]: Typecast;
-["PgToast.Types.PgToast_6106Index"]: Typecast
-[4184]: Typecast;
-["PgToast.Types.PgToast_6100Index"]: Typecast
-[13662]: Typecast;
-["PgToast.Types.PgToast_13658Index"]: Typecast
-[13667]: Typecast;
-["PgToast.Types.PgToast_13663Index"]: Typecast
-[13672]: Typecast;
-["PgToast.Types.PgToast_13668Index"]: Typecast
-[13677]: Typecast;
-["PgToast.Types.PgToast_13673Index"]: Typecast
-}
-
-            interface HasDatabase {
-              database: Database;
-            }
-          
-export class Database extends PostgresDatabase implements HasDatabase { 
-get database() { return this };
-get settings() { return this.context.settings as Settings };
-
-          /**
-           * Connect to your database server via URL, and return 
-           * a fully typed database you can use to access it.
-           */
-          static async connect(postgresUrl: string, props?: postgres.Options<never>) {
-              return new Database(await initializeContext(postgresUrl, props));
-          }
-        
-        
-
-          public Public = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-          public Procedures = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-}(this)
-
-          public Tables = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-          public Checklist = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-async create(values: Partial<Public.Types.Checklist>, options?: Public.Tables.Checklist.Options): Promise<Public.Types.Checklist>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-
-      if (!Public.Tables.Checklist.includesPrimaryKey(values)) {
-      
-const response = await sql`
-      --
-      INSERT INTO
-        public.checklist (name,created_at)
-      VALUES (${ values.name === undefined ? sql`DEFAULT` : typed[25](values.name) },${ values.createdAt === undefined ? sql`DEFAULT` : typed[1114](values.createdAt) })
-      RETURNING
-        id,name,created_at
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
-}
-const response = await sql`
-    INSERT INTO
-      public.checklist (id,name,created_at)
-    VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.name === undefined ? sql`DEFAULT` : typed[25](values.name) },${ values.createdAt === undefined ? sql`DEFAULT` : typed[1114](values.createdAt) })
-    ON CONFLICT (id) DO UPDATE
-    SET
-      name = EXCLUDED.name,created_at = EXCLUDED.created_at
-    RETURNING
-      id,name,created_at
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
-}
-async all(options?: Public.Tables.Checklist.Options) : Promise<Public.Types.Checklist[]>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    SELECT 
-      id,name,created_at 
-    FROM
-      public.checklist 
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))
-}
-
-          public ChecklistPkey = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Public.Types.ChecklistPkey, options?: Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options) : Promise<Public.Types.Checklist>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      id,name,created_at 
-    FROM
-      public.checklist 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
-}
-
-async update(parameters: Public.Types.ChecklistPkey, values: Partial<Public.Tables.Checklist.Values>, options?: Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options) : Promise<Public.Types.Checklist>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      public.checklist 
-    SET
-      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , name = ${ values.name === undefined ? sql`name` : typed[25](values.name) } , created_at = ${ values.createdAt === undefined ? sql`created_at` : typed[1114](values.createdAt) } 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,name,created_at`
-return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
-}
-async delete(parameters: Public.Types.ChecklistPkey, options?: Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      public.checklist 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,name,created_at`
- return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
-}
-}(this)
-public get ByPrimaryKey(){ return this.ChecklistPkey };
-}(this)
-
-          public ChecklistItem = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-async create(values: Partial<Public.Types.ChecklistItem>, options?: Public.Tables.ChecklistItem.Options): Promise<Public.Types.ChecklistItem>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-
-      if (!Public.Tables.ChecklistItem.includesPrimaryKey(values)) {
-      
-const response = await sql`
-      --
-      INSERT INTO
-        public.checklist_item (checklist_id,title,checked,created_at)
-      VALUES (${ values.checklistId === undefined ? sql`DEFAULT` : typed[2950](values.checklistId) },${ values.title === undefined ? sql`DEFAULT` : typed[25](values.title) },${ values.checked === undefined ? sql`DEFAULT` : typed[16](values.checked) },${ values.createdAt === undefined ? sql`DEFAULT` : typed[1114](values.createdAt) })
-      RETURNING
-        id,checklist_id,title,checked,created_at
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
-}
-const response = await sql`
-    INSERT INTO
-      public.checklist_item (id,checklist_id,title,checked,created_at)
-    VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.checklistId === undefined ? sql`DEFAULT` : typed[2950](values.checklistId) },${ values.title === undefined ? sql`DEFAULT` : typed[25](values.title) },${ values.checked === undefined ? sql`DEFAULT` : typed[16](values.checked) },${ values.createdAt === undefined ? sql`DEFAULT` : typed[1114](values.createdAt) })
-    ON CONFLICT (id) DO UPDATE
-    SET
-      checklist_id = EXCLUDED.checklist_id,title = EXCLUDED.title,checked = EXCLUDED.checked,created_at = EXCLUDED.created_at
-    RETURNING
-      id,checklist_id,title,checked,created_at
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
-}
-async all(options?: Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem[]>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    SELECT 
-      id,checklist_id,title,checked,created_at 
-    FROM
-      public.checklist_item 
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))
-}
-
-          public ChecklistItemPkey = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Public.Types.ChecklistItemPkey, options?: Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      id,checklist_id,title,checked,created_at 
-    FROM
-      public.checklist_item 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
-}
-
-async update(parameters: Public.Types.ChecklistItemPkey, values: Partial<Public.Tables.ChecklistItem.Values>, options?: Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      public.checklist_item 
-    SET
-      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , checklist_id = ${ values.checklistId === undefined ? sql`checklist_id` : typed[2950](values.checklistId) } , title = ${ values.title === undefined ? sql`title` : typed[25](values.title) } , checked = ${ values.checked === undefined ? sql`checked` : typed[16](values.checked) } , created_at = ${ values.createdAt === undefined ? sql`created_at` : typed[1114](values.createdAt) } 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,checklist_id,title,checked,created_at`
-return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
-}
-async delete(parameters: Public.Types.ChecklistItemPkey, options?: Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      public.checklist_item 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,checklist_id,title,checked,created_at`
- return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
-}
-}(this)
-public get ByPrimaryKey(){ return this.ChecklistItemPkey };
-
-          public ChecklistItemParent = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Public.Types.ChecklistItemParent, options?: Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem[]>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      id,checklist_id,title,checked,created_at 
-    FROM
-      public.checklist_item 
-    WHERE
-      checklist_id = ${ parameters.checklistId === undefined ? sql`DEFAULT` : typed[2950](parameters.checklistId) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))
-}
-
-async update(parameters: Public.Types.ChecklistItemParent, values: Partial<Public.Tables.ChecklistItem.Values>, options?: Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem[]>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      public.checklist_item 
-    SET
-      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , checklist_id = ${ values.checklistId === undefined ? sql`checklist_id` : typed[2950](values.checklistId) } , title = ${ values.title === undefined ? sql`title` : typed[25](values.title) } , checked = ${ values.checked === undefined ? sql`checked` : typed[16](values.checked) } , created_at = ${ values.createdAt === undefined ? sql`created_at` : typed[1114](values.createdAt) } 
-    WHERE
-      checklist_id = ${ parameters.checklistId === undefined ? sql`DEFAULT` : typed[2950](parameters.checklistId) }
-    RETURNING id,checklist_id,title,checked,created_at`
-return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))
-}
-async delete(parameters: Public.Types.ChecklistItemParent, options?: Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      public.checklist_item 
-    WHERE
-      checklist_id = ${ parameters.checklistId === undefined ? sql`DEFAULT` : typed[2950](parameters.checklistId) }
-    RETURNING id,checklist_id,title,checked,created_at`
- return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))
-}
-}(this)
-
-}(this)
-}(this)
-}(this)
-
-          public PgToast = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-          public Procedures = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-}(this)
-
-          public Tables = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-}(this)
-}(this)
-}
-
-          // begin - operation dispatch map
-          import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
-          export class OperationDispatcher {
-            private dispatchMap: Record<string, OperationDispatchMethod>;
-            constructor(private database: Database){
-              this.dispatchMap = {
-
-          
-"Public.Tables.Checklist.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Checklist.create(request.values as Public.Tables.Checklist.Values),
-
-             "Public.Tables.Checklist.all": async (request: EmbraceSQLRequest<object, object, object>) =>
-              database.Public.Tables.Checklist.all(request.options as Public.Tables.Checklist.Options),
-            
-"Public.Tables.Checklist.ChecklistPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Checklist.ChecklistPkey.read(request.parameters as Public.Types.ChecklistPkey,request.options as Public.Tables.Checklist.Options),
-"Public.Tables.Checklist.ChecklistPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Checklist.ChecklistPkey.update(request.parameters as Public.Types.ChecklistPkey,request.values as Partial<Public.Tables.Checklist.Values>),
-"Public.Tables.Checklist.ChecklistPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Checklist.ChecklistPkey.delete(request.parameters as Public.Types.ChecklistPkey),
-"Public.Tables.ChecklistItem.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.ChecklistItem.create(request.values as Public.Tables.ChecklistItem.Values),
-
-             "Public.Tables.ChecklistItem.all": async (request: EmbraceSQLRequest<object, object, object>) =>
-              database.Public.Tables.ChecklistItem.all(request.options as Public.Tables.ChecklistItem.Options),
-            
-"Public.Tables.ChecklistItem.ChecklistItemPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemPkey.read(request.parameters as Public.Types.ChecklistItemPkey,request.options as Public.Tables.ChecklistItem.Options),
-"Public.Tables.ChecklistItem.ChecklistItemPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemPkey.update(request.parameters as Public.Types.ChecklistItemPkey,request.values as Partial<Public.Tables.ChecklistItem.Values>),
-"Public.Tables.ChecklistItem.ChecklistItemPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemPkey.delete(request.parameters as Public.Types.ChecklistItemPkey),
-"Public.Tables.ChecklistItem.ChecklistItemParent.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemParent.read(request.parameters as Public.Types.ChecklistItemParent,request.options as Public.Tables.ChecklistItem.Options),
-"Public.Tables.ChecklistItem.ChecklistItemParent.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemParent.update(request.parameters as Public.Types.ChecklistItemParent,request.values as Partial<Public.Tables.ChecklistItem.Values>),
-"Public.Tables.ChecklistItem.ChecklistItemParent.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.ChecklistItem.ChecklistItemParent.delete(request.parameters as Public.Types.ChecklistItemParent),
-}
-}
-
-            async dispatch(request: EmbraceSQLRequest<object, object, object>) {
-              if (!this.dispatchMap[request.operation]) {
-                throw new Error(`${request.operation} not available`);
-              }
-              return this.dispatchMap[request.operation](request);
-            }
-            
-}
-// Begin Express generated section
-import {EmbraceSQLExpress} from "@embracesql/express"
-
-  export const EmbraceSQLExpressApp = async (postgresUrl: string, database?: Database) => {
-    const dispatchToDatabase = database ?? await Database.connect(postgresUrl);
-    const dispatcher = new OperationDispatcher(dispatchToDatabase);
-    return EmbraceSQLExpress(dispatcher);
-  }
-  
-// End Express generated section

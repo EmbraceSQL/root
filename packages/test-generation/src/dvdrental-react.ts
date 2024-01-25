@@ -1,3 +1,5289 @@
+// begin fetch client
+import { EmbraceSQLClient as BaseClient, EmbraceSQLClientProps, HasClient } from "@embracesql/client";
+
+  export class EmbraceSQLClient extends BaseClient {
+    constructor(props: EmbraceSQLClientProps) {
+      super(props);
+    }
+
+  
+
+          public Public = new class extends HasClient {
+        
+
+          public Procedures = new class extends HasClient {
+        
+
+          public FilmInStock = new class extends HasClient {
+        
+
+          public async call(parameters: Public.Procedures.FilmInStock.Parameters) : Promise<PgCatalog.Types.Int4[]> {
+            const response = await this.client.invoke<Public.Procedures.FilmInStock.Parameters, never, PgCatalog.Types.Int4[], never>({
+              operation: "Public.Procedures.FilmInStock.call",
+              parameters,
+            });
+        
+return response.results?.map(r => PgCatalog.Types.Int4.parse(r)) as PgCatalog.Types.Int4[] ?? [];
+}
+}(this)
+
+          public FilmNotInStock = new class extends HasClient {
+        
+
+          public async call(parameters: Public.Procedures.FilmNotInStock.Parameters) : Promise<PgCatalog.Types.Int4[]> {
+            const response = await this.client.invoke<Public.Procedures.FilmNotInStock.Parameters, never, PgCatalog.Types.Int4[], never>({
+              operation: "Public.Procedures.FilmNotInStock.call",
+              parameters,
+            });
+        
+return response.results?.map(r => PgCatalog.Types.Int4.parse(r)) as PgCatalog.Types.Int4[] ?? [];
+}
+}(this)
+
+          public GetCustomerBalance = new class extends HasClient {
+        
+
+          public async call(parameters: Public.Procedures.GetCustomerBalance.Parameters) : Promise<PgCatalog.Types.Numeric | undefined> {
+            const response = await this.client.invoke<Public.Procedures.GetCustomerBalance.Parameters, never, PgCatalog.Types.Numeric | undefined, never>({
+              operation: "Public.Procedures.GetCustomerBalance.call",
+              parameters,
+            });
+        
+return response.results ? nullIsUndefined(PgCatalog.Types.Numeric.parse(response.results)) : undefined;
+}
+}(this)
+
+          public InventoryHeldByCustomer = new class extends HasClient {
+        
+
+          public async call(parameters: Public.Procedures.InventoryHeldByCustomer.Parameters) : Promise<PgCatalog.Types.Int4 | undefined> {
+            const response = await this.client.invoke<Public.Procedures.InventoryHeldByCustomer.Parameters, never, PgCatalog.Types.Int4 | undefined, never>({
+              operation: "Public.Procedures.InventoryHeldByCustomer.call",
+              parameters,
+            });
+        
+return response.results ? nullIsUndefined(PgCatalog.Types.Int4.parse(response.results)) : undefined;
+}
+}(this)
+
+          public InventoryInStock = new class extends HasClient {
+        
+
+          public async call(parameters: Public.Procedures.InventoryInStock.Parameters) : Promise<PgCatalog.Types.Bool | undefined> {
+            const response = await this.client.invoke<Public.Procedures.InventoryInStock.Parameters, never, PgCatalog.Types.Bool | undefined, never>({
+              operation: "Public.Procedures.InventoryInStock.call",
+              parameters,
+            });
+        
+return response.results ? nullIsUndefined(PgCatalog.Types.Bool.parse(response.results)) : undefined;
+}
+}(this)
+
+          public LastDay = new class extends HasClient {
+        
+
+          public async call(parameters: Public.Procedures.LastDay.Parameters) : Promise<PgCatalog.Types.Date | undefined> {
+            const response = await this.client.invoke<Public.Procedures.LastDay.Parameters, never, PgCatalog.Types.Date | undefined, never>({
+              operation: "Public.Procedures.LastDay.call",
+              parameters,
+            });
+        
+return response.results ? nullIsUndefined(PgCatalog.Types.Date.parse(response.results)) : undefined;
+}
+}(this)
+
+          public RewardsReport = new class extends HasClient {
+        
+
+          public async call(parameters: Public.Procedures.RewardsReport.Parameters) : Promise<Public.Types.Customer[]> {
+            const response = await this.client.invoke<Public.Procedures.RewardsReport.Parameters, never, Public.Types.Customer[], never>({
+              operation: "Public.Procedures.RewardsReport.call",
+              parameters,
+            });
+        
+return response.results?.map(r => Public.Types.Customer.parse(r)) as Public.Types.Customer[] ?? [];
+}
+}(this)
+}(this)
+
+          public Tables = new class extends HasClient {
+        
+
+          public FilmActor = new class extends HasClient {
+        
+
+          public async create(values: Partial<Public.Types.FilmActor>, options?: Public.Tables.FilmActor.Options) : Promise<Public.Types.FilmActor|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.FilmActor>, Public.Types.FilmActor, Public.Tables.FilmActor.Options>({
+              operation: "Public.Tables.FilmActor.create",
+              values: {actorId: values.actorId,filmId: values.filmId,lastUpdate: values.lastUpdate},
+              options
+            });
+            return (
+    nullIsUndefined<Public.Types.FilmActor>(Public.Types.FilmActor.parse(response.results))
+  )
+  ;
+          }
+        
+
+          public async all(options?: Public.Tables.FilmActor.Options) : Promise<Public.Types.FilmActor[]> {
+            const response = await this.client.invoke<never, never, Public.Types.FilmActor[], Public.Tables.FilmActor.Options>({
+              operation: "Public.Tables.FilmActor.all",
+              options
+            });
+            return (
+    response.results
+      ?.map(Public.Types.FilmActor.parse)
+      .map(nullIsUndefined<Public.Types.FilmActor>)
+      .filter((x): x is Public.Types.FilmActor => x !== undefined) ?? []
+  )
+  ;
+          }
+        
+
+          public FilmActorPkey = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.FilmActorPkey, options?: Public.Types.FilmActorPkey.Options & Public.Tables.FilmActor.Options) {
+            const response = await this.client.invoke<Public.Types.FilmActorPkey, never, Public.Types.FilmActor | undefined, Public.Types.FilmActorPkey.Options & Public.Tables.FilmActor.Options>({
+              operation: "Public.Tables.FilmActor.FilmActorPkey.read",
+              parameters: {actorId: parameters.actorId,filmId: parameters.filmId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.FilmActor>(Public.Types.FilmActor.parse(response.results))
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.FilmActorPkey, values: Partial<Public.Types.FilmActor>, options?: Public.Tables.FilmActor.Options) {
+            const response = await this.client.invoke<Public.Types.FilmActorPkey, Partial<Public.Types.FilmActor>, Public.Types.FilmActor | undefined, Public.Tables.FilmActor.Options>({
+              operation: "Public.Tables.FilmActor.FilmActorPkey.update",
+              parameters: {actorId: parameters.actorId,filmId: parameters.filmId},
+              values: {actorId: values.actorId,filmId: values.filmId,lastUpdate: values.lastUpdate},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.FilmActor>(Public.Types.FilmActor.parse(response.results))
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.FilmActorPkey, options?: Public.Types.FilmActorPkey.Options & Public.Tables.FilmActor.Options) {
+            const response = await this.client.invoke<Public.Types.FilmActorPkey, never, Public.Types.FilmActor | undefined, Public.Types.FilmActorPkey.Options & Public.Tables.FilmActor.Options>({
+              operation: "Public.Tables.FilmActor.FilmActorPkey.delete",
+              parameters: {actorId: parameters.actorId,filmId: parameters.filmId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.FilmActor>(Public.Types.FilmActor.parse(response.results))
+  )
+  ;
+}
+}(this)
+public get ByPrimaryKey(){ return this.FilmActorPkey };
+
+          public IdxFkFilmId = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.IdxFkFilmId, options?: Public.Types.IdxFkFilmId.Options & Public.Tables.FilmActor.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkFilmId, never, Public.Types.FilmActor[] | undefined, Public.Types.IdxFkFilmId.Options & Public.Tables.FilmActor.Options>({
+              operation: "Public.Tables.FilmActor.IdxFkFilmId.read",
+              parameters: {filmId: parameters.filmId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.FilmActor.parse)
+      .map(nullIsUndefined<Public.Types.FilmActor>)
+      .filter((x): x is Public.Types.FilmActor => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.IdxFkFilmId, values: Partial<Public.Types.FilmActor>, options?: Public.Tables.FilmActor.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkFilmId, Partial<Public.Types.FilmActor>, Public.Types.FilmActor[] | undefined, Public.Tables.FilmActor.Options>({
+              operation: "Public.Tables.FilmActor.IdxFkFilmId.update",
+              parameters: {filmId: parameters.filmId},
+              values: {actorId: values.actorId,filmId: values.filmId,lastUpdate: values.lastUpdate},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.FilmActor.parse)
+      .map(nullIsUndefined<Public.Types.FilmActor>)
+      .filter((x): x is Public.Types.FilmActor => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.IdxFkFilmId, options?: Public.Types.IdxFkFilmId.Options & Public.Tables.FilmActor.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkFilmId, never, Public.Types.FilmActor[] | undefined, Public.Types.IdxFkFilmId.Options & Public.Tables.FilmActor.Options>({
+              operation: "Public.Tables.FilmActor.IdxFkFilmId.delete",
+              parameters: {filmId: parameters.filmId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.FilmActor.parse)
+      .map(nullIsUndefined<Public.Types.FilmActor>)
+      .filter((x): x is Public.Types.FilmActor => x !== undefined) ?? []
+  )
+  ;
+}
+}(this)
+
+}(this)
+
+          public Address = new class extends HasClient {
+        
+
+          public async create(values: Partial<Public.Types.Address>, options?: Public.Tables.Address.Options) : Promise<Public.Types.Address|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Address>, Public.Types.Address, Public.Tables.Address.Options>({
+              operation: "Public.Tables.Address.create",
+              values: {addressId: values.addressId,address: values.address,address2: values.address2,district: values.district,cityId: values.cityId,postalCode: values.postalCode,phone: values.phone,lastUpdate: values.lastUpdate},
+              options
+            });
+            return (
+    nullIsUndefined<Public.Types.Address>(Public.Types.Address.parse(response.results))
+  )
+  ;
+          }
+        
+
+          public async all(options?: Public.Tables.Address.Options) : Promise<Public.Types.Address[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Address[], Public.Tables.Address.Options>({
+              operation: "Public.Tables.Address.all",
+              options
+            });
+            return (
+    response.results
+      ?.map(Public.Types.Address.parse)
+      .map(nullIsUndefined<Public.Types.Address>)
+      .filter((x): x is Public.Types.Address => x !== undefined) ?? []
+  )
+  ;
+          }
+        
+
+          public AddressPkey = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.AddressPkey, options?: Public.Types.AddressPkey.Options & Public.Tables.Address.Options) {
+            const response = await this.client.invoke<Public.Types.AddressPkey, never, Public.Types.Address | undefined, Public.Types.AddressPkey.Options & Public.Tables.Address.Options>({
+              operation: "Public.Tables.Address.AddressPkey.read",
+              parameters: {addressId: parameters.addressId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Address>(Public.Types.Address.parse(response.results))
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.AddressPkey, values: Partial<Public.Types.Address>, options?: Public.Tables.Address.Options) {
+            const response = await this.client.invoke<Public.Types.AddressPkey, Partial<Public.Types.Address>, Public.Types.Address | undefined, Public.Tables.Address.Options>({
+              operation: "Public.Tables.Address.AddressPkey.update",
+              parameters: {addressId: parameters.addressId},
+              values: {addressId: values.addressId,address: values.address,address2: values.address2,district: values.district,cityId: values.cityId,postalCode: values.postalCode,phone: values.phone,lastUpdate: values.lastUpdate},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Address>(Public.Types.Address.parse(response.results))
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.AddressPkey, options?: Public.Types.AddressPkey.Options & Public.Tables.Address.Options) {
+            const response = await this.client.invoke<Public.Types.AddressPkey, never, Public.Types.Address | undefined, Public.Types.AddressPkey.Options & Public.Tables.Address.Options>({
+              operation: "Public.Tables.Address.AddressPkey.delete",
+              parameters: {addressId: parameters.addressId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Address>(Public.Types.Address.parse(response.results))
+  )
+  ;
+}
+}(this)
+public get ByPrimaryKey(){ return this.AddressPkey };
+
+          public IdxFkCityId = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.IdxFkCityId, options?: Public.Types.IdxFkCityId.Options & Public.Tables.Address.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkCityId, never, Public.Types.Address[] | undefined, Public.Types.IdxFkCityId.Options & Public.Tables.Address.Options>({
+              operation: "Public.Tables.Address.IdxFkCityId.read",
+              parameters: {cityId: parameters.cityId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Address.parse)
+      .map(nullIsUndefined<Public.Types.Address>)
+      .filter((x): x is Public.Types.Address => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.IdxFkCityId, values: Partial<Public.Types.Address>, options?: Public.Tables.Address.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkCityId, Partial<Public.Types.Address>, Public.Types.Address[] | undefined, Public.Tables.Address.Options>({
+              operation: "Public.Tables.Address.IdxFkCityId.update",
+              parameters: {cityId: parameters.cityId},
+              values: {addressId: values.addressId,address: values.address,address2: values.address2,district: values.district,cityId: values.cityId,postalCode: values.postalCode,phone: values.phone,lastUpdate: values.lastUpdate},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Address.parse)
+      .map(nullIsUndefined<Public.Types.Address>)
+      .filter((x): x is Public.Types.Address => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.IdxFkCityId, options?: Public.Types.IdxFkCityId.Options & Public.Tables.Address.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkCityId, never, Public.Types.Address[] | undefined, Public.Types.IdxFkCityId.Options & Public.Tables.Address.Options>({
+              operation: "Public.Tables.Address.IdxFkCityId.delete",
+              parameters: {cityId: parameters.cityId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Address.parse)
+      .map(nullIsUndefined<Public.Types.Address>)
+      .filter((x): x is Public.Types.Address => x !== undefined) ?? []
+  )
+  ;
+}
+}(this)
+
+}(this)
+
+          public City = new class extends HasClient {
+        
+
+          public async create(values: Partial<Public.Types.City>, options?: Public.Tables.City.Options) : Promise<Public.Types.City|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.City>, Public.Types.City, Public.Tables.City.Options>({
+              operation: "Public.Tables.City.create",
+              values: {cityId: values.cityId,city: values.city,countryId: values.countryId,lastUpdate: values.lastUpdate},
+              options
+            });
+            return (
+    nullIsUndefined<Public.Types.City>(Public.Types.City.parse(response.results))
+  )
+  ;
+          }
+        
+
+          public async all(options?: Public.Tables.City.Options) : Promise<Public.Types.City[]> {
+            const response = await this.client.invoke<never, never, Public.Types.City[], Public.Tables.City.Options>({
+              operation: "Public.Tables.City.all",
+              options
+            });
+            return (
+    response.results
+      ?.map(Public.Types.City.parse)
+      .map(nullIsUndefined<Public.Types.City>)
+      .filter((x): x is Public.Types.City => x !== undefined) ?? []
+  )
+  ;
+          }
+        
+
+          public CityPkey = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.CityPkey, options?: Public.Types.CityPkey.Options & Public.Tables.City.Options) {
+            const response = await this.client.invoke<Public.Types.CityPkey, never, Public.Types.City | undefined, Public.Types.CityPkey.Options & Public.Tables.City.Options>({
+              operation: "Public.Tables.City.CityPkey.read",
+              parameters: {cityId: parameters.cityId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.City>(Public.Types.City.parse(response.results))
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.CityPkey, values: Partial<Public.Types.City>, options?: Public.Tables.City.Options) {
+            const response = await this.client.invoke<Public.Types.CityPkey, Partial<Public.Types.City>, Public.Types.City | undefined, Public.Tables.City.Options>({
+              operation: "Public.Tables.City.CityPkey.update",
+              parameters: {cityId: parameters.cityId},
+              values: {cityId: values.cityId,city: values.city,countryId: values.countryId,lastUpdate: values.lastUpdate},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.City>(Public.Types.City.parse(response.results))
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.CityPkey, options?: Public.Types.CityPkey.Options & Public.Tables.City.Options) {
+            const response = await this.client.invoke<Public.Types.CityPkey, never, Public.Types.City | undefined, Public.Types.CityPkey.Options & Public.Tables.City.Options>({
+              operation: "Public.Tables.City.CityPkey.delete",
+              parameters: {cityId: parameters.cityId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.City>(Public.Types.City.parse(response.results))
+  )
+  ;
+}
+}(this)
+public get ByPrimaryKey(){ return this.CityPkey };
+
+          public IdxFkCountryId = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.IdxFkCountryId, options?: Public.Types.IdxFkCountryId.Options & Public.Tables.City.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkCountryId, never, Public.Types.City[] | undefined, Public.Types.IdxFkCountryId.Options & Public.Tables.City.Options>({
+              operation: "Public.Tables.City.IdxFkCountryId.read",
+              parameters: {countryId: parameters.countryId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.City.parse)
+      .map(nullIsUndefined<Public.Types.City>)
+      .filter((x): x is Public.Types.City => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.IdxFkCountryId, values: Partial<Public.Types.City>, options?: Public.Tables.City.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkCountryId, Partial<Public.Types.City>, Public.Types.City[] | undefined, Public.Tables.City.Options>({
+              operation: "Public.Tables.City.IdxFkCountryId.update",
+              parameters: {countryId: parameters.countryId},
+              values: {cityId: values.cityId,city: values.city,countryId: values.countryId,lastUpdate: values.lastUpdate},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.City.parse)
+      .map(nullIsUndefined<Public.Types.City>)
+      .filter((x): x is Public.Types.City => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.IdxFkCountryId, options?: Public.Types.IdxFkCountryId.Options & Public.Tables.City.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkCountryId, never, Public.Types.City[] | undefined, Public.Types.IdxFkCountryId.Options & Public.Tables.City.Options>({
+              operation: "Public.Tables.City.IdxFkCountryId.delete",
+              parameters: {countryId: parameters.countryId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.City.parse)
+      .map(nullIsUndefined<Public.Types.City>)
+      .filter((x): x is Public.Types.City => x !== undefined) ?? []
+  )
+  ;
+}
+}(this)
+
+}(this)
+
+          public Customer = new class extends HasClient {
+        
+
+          public async create(values: Partial<Public.Types.Customer>, options?: Public.Tables.Customer.Options) : Promise<Public.Types.Customer|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Customer>, Public.Types.Customer, Public.Tables.Customer.Options>({
+              operation: "Public.Tables.Customer.create",
+              values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active},
+              options
+            });
+            return (
+    nullIsUndefined<Public.Types.Customer>(Public.Types.Customer.parse(response.results))
+  )
+  ;
+          }
+        
+
+          public async all(options?: Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Customer[], Public.Tables.Customer.Options>({
+              operation: "Public.Tables.Customer.all",
+              options
+            });
+            return (
+    response.results
+      ?.map(Public.Types.Customer.parse)
+      .map(nullIsUndefined<Public.Types.Customer>)
+      .filter((x): x is Public.Types.Customer => x !== undefined) ?? []
+  )
+  ;
+          }
+        
+
+          public CustomerPkey = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.CustomerPkey, options?: Public.Types.CustomerPkey.Options & Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.CustomerPkey, never, Public.Types.Customer | undefined, Public.Types.CustomerPkey.Options & Public.Tables.Customer.Options>({
+              operation: "Public.Tables.Customer.CustomerPkey.read",
+              parameters: {customerId: parameters.customerId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Customer>(Public.Types.Customer.parse(response.results))
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.CustomerPkey, values: Partial<Public.Types.Customer>, options?: Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.CustomerPkey, Partial<Public.Types.Customer>, Public.Types.Customer | undefined, Public.Tables.Customer.Options>({
+              operation: "Public.Tables.Customer.CustomerPkey.update",
+              parameters: {customerId: parameters.customerId},
+              values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Customer>(Public.Types.Customer.parse(response.results))
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.CustomerPkey, options?: Public.Types.CustomerPkey.Options & Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.CustomerPkey, never, Public.Types.Customer | undefined, Public.Types.CustomerPkey.Options & Public.Tables.Customer.Options>({
+              operation: "Public.Tables.Customer.CustomerPkey.delete",
+              parameters: {customerId: parameters.customerId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Customer>(Public.Types.Customer.parse(response.results))
+  )
+  ;
+}
+}(this)
+public get ByPrimaryKey(){ return this.CustomerPkey };
+
+          public IdxFkAddressId = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.IdxFkAddressId, options?: Public.Types.IdxFkAddressId.Options & Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkAddressId, never, Public.Types.Customer[] | undefined, Public.Types.IdxFkAddressId.Options & Public.Tables.Customer.Options>({
+              operation: "Public.Tables.Customer.IdxFkAddressId.read",
+              parameters: {addressId: parameters.addressId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Customer.parse)
+      .map(nullIsUndefined<Public.Types.Customer>)
+      .filter((x): x is Public.Types.Customer => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.IdxFkAddressId, values: Partial<Public.Types.Customer>, options?: Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkAddressId, Partial<Public.Types.Customer>, Public.Types.Customer[] | undefined, Public.Tables.Customer.Options>({
+              operation: "Public.Tables.Customer.IdxFkAddressId.update",
+              parameters: {addressId: parameters.addressId},
+              values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Customer.parse)
+      .map(nullIsUndefined<Public.Types.Customer>)
+      .filter((x): x is Public.Types.Customer => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.IdxFkAddressId, options?: Public.Types.IdxFkAddressId.Options & Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkAddressId, never, Public.Types.Customer[] | undefined, Public.Types.IdxFkAddressId.Options & Public.Tables.Customer.Options>({
+              operation: "Public.Tables.Customer.IdxFkAddressId.delete",
+              parameters: {addressId: parameters.addressId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Customer.parse)
+      .map(nullIsUndefined<Public.Types.Customer>)
+      .filter((x): x is Public.Types.Customer => x !== undefined) ?? []
+  )
+  ;
+}
+}(this)
+
+
+          public IdxFkStoreId = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.IdxFkStoreId, options?: Public.Types.IdxFkStoreId.Options & Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkStoreId, never, Public.Types.Customer[] | undefined, Public.Types.IdxFkStoreId.Options & Public.Tables.Customer.Options>({
+              operation: "Public.Tables.Customer.IdxFkStoreId.read",
+              parameters: {storeId: parameters.storeId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Customer.parse)
+      .map(nullIsUndefined<Public.Types.Customer>)
+      .filter((x): x is Public.Types.Customer => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.IdxFkStoreId, values: Partial<Public.Types.Customer>, options?: Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkStoreId, Partial<Public.Types.Customer>, Public.Types.Customer[] | undefined, Public.Tables.Customer.Options>({
+              operation: "Public.Tables.Customer.IdxFkStoreId.update",
+              parameters: {storeId: parameters.storeId},
+              values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Customer.parse)
+      .map(nullIsUndefined<Public.Types.Customer>)
+      .filter((x): x is Public.Types.Customer => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.IdxFkStoreId, options?: Public.Types.IdxFkStoreId.Options & Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkStoreId, never, Public.Types.Customer[] | undefined, Public.Types.IdxFkStoreId.Options & Public.Tables.Customer.Options>({
+              operation: "Public.Tables.Customer.IdxFkStoreId.delete",
+              parameters: {storeId: parameters.storeId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Customer.parse)
+      .map(nullIsUndefined<Public.Types.Customer>)
+      .filter((x): x is Public.Types.Customer => x !== undefined) ?? []
+  )
+  ;
+}
+}(this)
+
+
+          public IdxLastName = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.IdxLastName, options?: Public.Types.IdxLastName.Options & Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.IdxLastName, never, Public.Types.Customer[] | undefined, Public.Types.IdxLastName.Options & Public.Tables.Customer.Options>({
+              operation: "Public.Tables.Customer.IdxLastName.read",
+              parameters: {lastName: parameters.lastName},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Customer.parse)
+      .map(nullIsUndefined<Public.Types.Customer>)
+      .filter((x): x is Public.Types.Customer => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.IdxLastName, values: Partial<Public.Types.Customer>, options?: Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.IdxLastName, Partial<Public.Types.Customer>, Public.Types.Customer[] | undefined, Public.Tables.Customer.Options>({
+              operation: "Public.Tables.Customer.IdxLastName.update",
+              parameters: {lastName: parameters.lastName},
+              values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Customer.parse)
+      .map(nullIsUndefined<Public.Types.Customer>)
+      .filter((x): x is Public.Types.Customer => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.IdxLastName, options?: Public.Types.IdxLastName.Options & Public.Tables.Customer.Options) {
+            const response = await this.client.invoke<Public.Types.IdxLastName, never, Public.Types.Customer[] | undefined, Public.Types.IdxLastName.Options & Public.Tables.Customer.Options>({
+              operation: "Public.Tables.Customer.IdxLastName.delete",
+              parameters: {lastName: parameters.lastName},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Customer.parse)
+      .map(nullIsUndefined<Public.Types.Customer>)
+      .filter((x): x is Public.Types.Customer => x !== undefined) ?? []
+  )
+  ;
+}
+}(this)
+
+}(this)
+
+          public Actor = new class extends HasClient {
+        
+
+          public async create(values: Partial<Public.Types.Actor>, options?: Public.Tables.Actor.Options) : Promise<Public.Types.Actor|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Actor>, Public.Types.Actor, Public.Tables.Actor.Options>({
+              operation: "Public.Tables.Actor.create",
+              values: {actorId: values.actorId,firstName: values.firstName,lastName: values.lastName,lastUpdate: values.lastUpdate},
+              options
+            });
+            return (
+    nullIsUndefined<Public.Types.Actor>(Public.Types.Actor.parse(response.results))
+  )
+  ;
+          }
+        
+
+          public async all(options?: Public.Tables.Actor.Options) : Promise<Public.Types.Actor[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Actor[], Public.Tables.Actor.Options>({
+              operation: "Public.Tables.Actor.all",
+              options
+            });
+            return (
+    response.results
+      ?.map(Public.Types.Actor.parse)
+      .map(nullIsUndefined<Public.Types.Actor>)
+      .filter((x): x is Public.Types.Actor => x !== undefined) ?? []
+  )
+  ;
+          }
+        
+
+          public ActorPkey = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.ActorPkey, options?: Public.Types.ActorPkey.Options & Public.Tables.Actor.Options) {
+            const response = await this.client.invoke<Public.Types.ActorPkey, never, Public.Types.Actor | undefined, Public.Types.ActorPkey.Options & Public.Tables.Actor.Options>({
+              operation: "Public.Tables.Actor.ActorPkey.read",
+              parameters: {actorId: parameters.actorId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Actor>(Public.Types.Actor.parse(response.results))
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.ActorPkey, values: Partial<Public.Types.Actor>, options?: Public.Tables.Actor.Options) {
+            const response = await this.client.invoke<Public.Types.ActorPkey, Partial<Public.Types.Actor>, Public.Types.Actor | undefined, Public.Tables.Actor.Options>({
+              operation: "Public.Tables.Actor.ActorPkey.update",
+              parameters: {actorId: parameters.actorId},
+              values: {actorId: values.actorId,firstName: values.firstName,lastName: values.lastName,lastUpdate: values.lastUpdate},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Actor>(Public.Types.Actor.parse(response.results))
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.ActorPkey, options?: Public.Types.ActorPkey.Options & Public.Tables.Actor.Options) {
+            const response = await this.client.invoke<Public.Types.ActorPkey, never, Public.Types.Actor | undefined, Public.Types.ActorPkey.Options & Public.Tables.Actor.Options>({
+              operation: "Public.Tables.Actor.ActorPkey.delete",
+              parameters: {actorId: parameters.actorId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Actor>(Public.Types.Actor.parse(response.results))
+  )
+  ;
+}
+}(this)
+public get ByPrimaryKey(){ return this.ActorPkey };
+
+          public IdxActorLastName = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.IdxActorLastName, options?: Public.Types.IdxActorLastName.Options & Public.Tables.Actor.Options) {
+            const response = await this.client.invoke<Public.Types.IdxActorLastName, never, Public.Types.Actor[] | undefined, Public.Types.IdxActorLastName.Options & Public.Tables.Actor.Options>({
+              operation: "Public.Tables.Actor.IdxActorLastName.read",
+              parameters: {lastName: parameters.lastName},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Actor.parse)
+      .map(nullIsUndefined<Public.Types.Actor>)
+      .filter((x): x is Public.Types.Actor => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.IdxActorLastName, values: Partial<Public.Types.Actor>, options?: Public.Tables.Actor.Options) {
+            const response = await this.client.invoke<Public.Types.IdxActorLastName, Partial<Public.Types.Actor>, Public.Types.Actor[] | undefined, Public.Tables.Actor.Options>({
+              operation: "Public.Tables.Actor.IdxActorLastName.update",
+              parameters: {lastName: parameters.lastName},
+              values: {actorId: values.actorId,firstName: values.firstName,lastName: values.lastName,lastUpdate: values.lastUpdate},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Actor.parse)
+      .map(nullIsUndefined<Public.Types.Actor>)
+      .filter((x): x is Public.Types.Actor => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.IdxActorLastName, options?: Public.Types.IdxActorLastName.Options & Public.Tables.Actor.Options) {
+            const response = await this.client.invoke<Public.Types.IdxActorLastName, never, Public.Types.Actor[] | undefined, Public.Types.IdxActorLastName.Options & Public.Tables.Actor.Options>({
+              operation: "Public.Tables.Actor.IdxActorLastName.delete",
+              parameters: {lastName: parameters.lastName},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Actor.parse)
+      .map(nullIsUndefined<Public.Types.Actor>)
+      .filter((x): x is Public.Types.Actor => x !== undefined) ?? []
+  )
+  ;
+}
+}(this)
+
+}(this)
+
+          public FilmCategory = new class extends HasClient {
+        
+
+          public async create(values: Partial<Public.Types.FilmCategory>, options?: Public.Tables.FilmCategory.Options) : Promise<Public.Types.FilmCategory|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.FilmCategory>, Public.Types.FilmCategory, Public.Tables.FilmCategory.Options>({
+              operation: "Public.Tables.FilmCategory.create",
+              values: {filmId: values.filmId,categoryId: values.categoryId,lastUpdate: values.lastUpdate},
+              options
+            });
+            return (
+    nullIsUndefined<Public.Types.FilmCategory>(Public.Types.FilmCategory.parse(response.results))
+  )
+  ;
+          }
+        
+
+          public async all(options?: Public.Tables.FilmCategory.Options) : Promise<Public.Types.FilmCategory[]> {
+            const response = await this.client.invoke<never, never, Public.Types.FilmCategory[], Public.Tables.FilmCategory.Options>({
+              operation: "Public.Tables.FilmCategory.all",
+              options
+            });
+            return (
+    response.results
+      ?.map(Public.Types.FilmCategory.parse)
+      .map(nullIsUndefined<Public.Types.FilmCategory>)
+      .filter((x): x is Public.Types.FilmCategory => x !== undefined) ?? []
+  )
+  ;
+          }
+        
+
+          public FilmCategoryPkey = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.FilmCategoryPkey, options?: Public.Types.FilmCategoryPkey.Options & Public.Tables.FilmCategory.Options) {
+            const response = await this.client.invoke<Public.Types.FilmCategoryPkey, never, Public.Types.FilmCategory | undefined, Public.Types.FilmCategoryPkey.Options & Public.Tables.FilmCategory.Options>({
+              operation: "Public.Tables.FilmCategory.FilmCategoryPkey.read",
+              parameters: {filmId: parameters.filmId,categoryId: parameters.categoryId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.FilmCategory>(Public.Types.FilmCategory.parse(response.results))
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.FilmCategoryPkey, values: Partial<Public.Types.FilmCategory>, options?: Public.Tables.FilmCategory.Options) {
+            const response = await this.client.invoke<Public.Types.FilmCategoryPkey, Partial<Public.Types.FilmCategory>, Public.Types.FilmCategory | undefined, Public.Tables.FilmCategory.Options>({
+              operation: "Public.Tables.FilmCategory.FilmCategoryPkey.update",
+              parameters: {filmId: parameters.filmId,categoryId: parameters.categoryId},
+              values: {filmId: values.filmId,categoryId: values.categoryId,lastUpdate: values.lastUpdate},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.FilmCategory>(Public.Types.FilmCategory.parse(response.results))
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.FilmCategoryPkey, options?: Public.Types.FilmCategoryPkey.Options & Public.Tables.FilmCategory.Options) {
+            const response = await this.client.invoke<Public.Types.FilmCategoryPkey, never, Public.Types.FilmCategory | undefined, Public.Types.FilmCategoryPkey.Options & Public.Tables.FilmCategory.Options>({
+              operation: "Public.Tables.FilmCategory.FilmCategoryPkey.delete",
+              parameters: {filmId: parameters.filmId,categoryId: parameters.categoryId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.FilmCategory>(Public.Types.FilmCategory.parse(response.results))
+  )
+  ;
+}
+}(this)
+public get ByPrimaryKey(){ return this.FilmCategoryPkey };
+}(this)
+
+          public Inventory = new class extends HasClient {
+        
+
+          public async create(values: Partial<Public.Types.Inventory>, options?: Public.Tables.Inventory.Options) : Promise<Public.Types.Inventory|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Inventory>, Public.Types.Inventory, Public.Tables.Inventory.Options>({
+              operation: "Public.Tables.Inventory.create",
+              values: {inventoryId: values.inventoryId,filmId: values.filmId,storeId: values.storeId,lastUpdate: values.lastUpdate},
+              options
+            });
+            return (
+    nullIsUndefined<Public.Types.Inventory>(Public.Types.Inventory.parse(response.results))
+  )
+  ;
+          }
+        
+
+          public async all(options?: Public.Tables.Inventory.Options) : Promise<Public.Types.Inventory[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Inventory[], Public.Tables.Inventory.Options>({
+              operation: "Public.Tables.Inventory.all",
+              options
+            });
+            return (
+    response.results
+      ?.map(Public.Types.Inventory.parse)
+      .map(nullIsUndefined<Public.Types.Inventory>)
+      .filter((x): x is Public.Types.Inventory => x !== undefined) ?? []
+  )
+  ;
+          }
+        
+
+          public InventoryPkey = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.InventoryPkey, options?: Public.Types.InventoryPkey.Options & Public.Tables.Inventory.Options) {
+            const response = await this.client.invoke<Public.Types.InventoryPkey, never, Public.Types.Inventory | undefined, Public.Types.InventoryPkey.Options & Public.Tables.Inventory.Options>({
+              operation: "Public.Tables.Inventory.InventoryPkey.read",
+              parameters: {inventoryId: parameters.inventoryId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Inventory>(Public.Types.Inventory.parse(response.results))
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.InventoryPkey, values: Partial<Public.Types.Inventory>, options?: Public.Tables.Inventory.Options) {
+            const response = await this.client.invoke<Public.Types.InventoryPkey, Partial<Public.Types.Inventory>, Public.Types.Inventory | undefined, Public.Tables.Inventory.Options>({
+              operation: "Public.Tables.Inventory.InventoryPkey.update",
+              parameters: {inventoryId: parameters.inventoryId},
+              values: {inventoryId: values.inventoryId,filmId: values.filmId,storeId: values.storeId,lastUpdate: values.lastUpdate},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Inventory>(Public.Types.Inventory.parse(response.results))
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.InventoryPkey, options?: Public.Types.InventoryPkey.Options & Public.Tables.Inventory.Options) {
+            const response = await this.client.invoke<Public.Types.InventoryPkey, never, Public.Types.Inventory | undefined, Public.Types.InventoryPkey.Options & Public.Tables.Inventory.Options>({
+              operation: "Public.Tables.Inventory.InventoryPkey.delete",
+              parameters: {inventoryId: parameters.inventoryId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Inventory>(Public.Types.Inventory.parse(response.results))
+  )
+  ;
+}
+}(this)
+public get ByPrimaryKey(){ return this.InventoryPkey };
+
+          public IdxStoreIdFilmId = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.IdxStoreIdFilmId, options?: Public.Types.IdxStoreIdFilmId.Options & Public.Tables.Inventory.Options) {
+            const response = await this.client.invoke<Public.Types.IdxStoreIdFilmId, never, Public.Types.Inventory[] | undefined, Public.Types.IdxStoreIdFilmId.Options & Public.Tables.Inventory.Options>({
+              operation: "Public.Tables.Inventory.IdxStoreIdFilmId.read",
+              parameters: {storeId: parameters.storeId,filmId: parameters.filmId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Inventory.parse)
+      .map(nullIsUndefined<Public.Types.Inventory>)
+      .filter((x): x is Public.Types.Inventory => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.IdxStoreIdFilmId, values: Partial<Public.Types.Inventory>, options?: Public.Tables.Inventory.Options) {
+            const response = await this.client.invoke<Public.Types.IdxStoreIdFilmId, Partial<Public.Types.Inventory>, Public.Types.Inventory[] | undefined, Public.Tables.Inventory.Options>({
+              operation: "Public.Tables.Inventory.IdxStoreIdFilmId.update",
+              parameters: {storeId: parameters.storeId,filmId: parameters.filmId},
+              values: {inventoryId: values.inventoryId,filmId: values.filmId,storeId: values.storeId,lastUpdate: values.lastUpdate},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Inventory.parse)
+      .map(nullIsUndefined<Public.Types.Inventory>)
+      .filter((x): x is Public.Types.Inventory => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.IdxStoreIdFilmId, options?: Public.Types.IdxStoreIdFilmId.Options & Public.Tables.Inventory.Options) {
+            const response = await this.client.invoke<Public.Types.IdxStoreIdFilmId, never, Public.Types.Inventory[] | undefined, Public.Types.IdxStoreIdFilmId.Options & Public.Tables.Inventory.Options>({
+              operation: "Public.Tables.Inventory.IdxStoreIdFilmId.delete",
+              parameters: {storeId: parameters.storeId,filmId: parameters.filmId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Inventory.parse)
+      .map(nullIsUndefined<Public.Types.Inventory>)
+      .filter((x): x is Public.Types.Inventory => x !== undefined) ?? []
+  )
+  ;
+}
+}(this)
+
+}(this)
+
+          public Category = new class extends HasClient {
+        
+
+          public async create(values: Partial<Public.Types.Category>, options?: Public.Tables.Category.Options) : Promise<Public.Types.Category|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Category>, Public.Types.Category, Public.Tables.Category.Options>({
+              operation: "Public.Tables.Category.create",
+              values: {categoryId: values.categoryId,name: values.name,lastUpdate: values.lastUpdate},
+              options
+            });
+            return (
+    nullIsUndefined<Public.Types.Category>(Public.Types.Category.parse(response.results))
+  )
+  ;
+          }
+        
+
+          public async all(options?: Public.Tables.Category.Options) : Promise<Public.Types.Category[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Category[], Public.Tables.Category.Options>({
+              operation: "Public.Tables.Category.all",
+              options
+            });
+            return (
+    response.results
+      ?.map(Public.Types.Category.parse)
+      .map(nullIsUndefined<Public.Types.Category>)
+      .filter((x): x is Public.Types.Category => x !== undefined) ?? []
+  )
+  ;
+          }
+        
+
+          public CategoryPkey = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.CategoryPkey, options?: Public.Types.CategoryPkey.Options & Public.Tables.Category.Options) {
+            const response = await this.client.invoke<Public.Types.CategoryPkey, never, Public.Types.Category | undefined, Public.Types.CategoryPkey.Options & Public.Tables.Category.Options>({
+              operation: "Public.Tables.Category.CategoryPkey.read",
+              parameters: {categoryId: parameters.categoryId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Category>(Public.Types.Category.parse(response.results))
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.CategoryPkey, values: Partial<Public.Types.Category>, options?: Public.Tables.Category.Options) {
+            const response = await this.client.invoke<Public.Types.CategoryPkey, Partial<Public.Types.Category>, Public.Types.Category | undefined, Public.Tables.Category.Options>({
+              operation: "Public.Tables.Category.CategoryPkey.update",
+              parameters: {categoryId: parameters.categoryId},
+              values: {categoryId: values.categoryId,name: values.name,lastUpdate: values.lastUpdate},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Category>(Public.Types.Category.parse(response.results))
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.CategoryPkey, options?: Public.Types.CategoryPkey.Options & Public.Tables.Category.Options) {
+            const response = await this.client.invoke<Public.Types.CategoryPkey, never, Public.Types.Category | undefined, Public.Types.CategoryPkey.Options & Public.Tables.Category.Options>({
+              operation: "Public.Tables.Category.CategoryPkey.delete",
+              parameters: {categoryId: parameters.categoryId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Category>(Public.Types.Category.parse(response.results))
+  )
+  ;
+}
+}(this)
+public get ByPrimaryKey(){ return this.CategoryPkey };
+}(this)
+
+          public Country = new class extends HasClient {
+        
+
+          public async create(values: Partial<Public.Types.Country>, options?: Public.Tables.Country.Options) : Promise<Public.Types.Country|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Country>, Public.Types.Country, Public.Tables.Country.Options>({
+              operation: "Public.Tables.Country.create",
+              values: {countryId: values.countryId,country: values.country,lastUpdate: values.lastUpdate},
+              options
+            });
+            return (
+    nullIsUndefined<Public.Types.Country>(Public.Types.Country.parse(response.results))
+  )
+  ;
+          }
+        
+
+          public async all(options?: Public.Tables.Country.Options) : Promise<Public.Types.Country[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Country[], Public.Tables.Country.Options>({
+              operation: "Public.Tables.Country.all",
+              options
+            });
+            return (
+    response.results
+      ?.map(Public.Types.Country.parse)
+      .map(nullIsUndefined<Public.Types.Country>)
+      .filter((x): x is Public.Types.Country => x !== undefined) ?? []
+  )
+  ;
+          }
+        
+
+          public CountryPkey = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.CountryPkey, options?: Public.Types.CountryPkey.Options & Public.Tables.Country.Options) {
+            const response = await this.client.invoke<Public.Types.CountryPkey, never, Public.Types.Country | undefined, Public.Types.CountryPkey.Options & Public.Tables.Country.Options>({
+              operation: "Public.Tables.Country.CountryPkey.read",
+              parameters: {countryId: parameters.countryId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Country>(Public.Types.Country.parse(response.results))
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.CountryPkey, values: Partial<Public.Types.Country>, options?: Public.Tables.Country.Options) {
+            const response = await this.client.invoke<Public.Types.CountryPkey, Partial<Public.Types.Country>, Public.Types.Country | undefined, Public.Tables.Country.Options>({
+              operation: "Public.Tables.Country.CountryPkey.update",
+              parameters: {countryId: parameters.countryId},
+              values: {countryId: values.countryId,country: values.country,lastUpdate: values.lastUpdate},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Country>(Public.Types.Country.parse(response.results))
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.CountryPkey, options?: Public.Types.CountryPkey.Options & Public.Tables.Country.Options) {
+            const response = await this.client.invoke<Public.Types.CountryPkey, never, Public.Types.Country | undefined, Public.Types.CountryPkey.Options & Public.Tables.Country.Options>({
+              operation: "Public.Tables.Country.CountryPkey.delete",
+              parameters: {countryId: parameters.countryId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Country>(Public.Types.Country.parse(response.results))
+  )
+  ;
+}
+}(this)
+public get ByPrimaryKey(){ return this.CountryPkey };
+}(this)
+
+          public Language = new class extends HasClient {
+        
+
+          public async create(values: Partial<Public.Types.Language>, options?: Public.Tables.Language.Options) : Promise<Public.Types.Language|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Language>, Public.Types.Language, Public.Tables.Language.Options>({
+              operation: "Public.Tables.Language.create",
+              values: {languageId: values.languageId,name: values.name,lastUpdate: values.lastUpdate},
+              options
+            });
+            return (
+    nullIsUndefined<Public.Types.Language>(Public.Types.Language.parse(response.results))
+  )
+  ;
+          }
+        
+
+          public async all(options?: Public.Tables.Language.Options) : Promise<Public.Types.Language[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Language[], Public.Tables.Language.Options>({
+              operation: "Public.Tables.Language.all",
+              options
+            });
+            return (
+    response.results
+      ?.map(Public.Types.Language.parse)
+      .map(nullIsUndefined<Public.Types.Language>)
+      .filter((x): x is Public.Types.Language => x !== undefined) ?? []
+  )
+  ;
+          }
+        
+
+          public LanguagePkey = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.LanguagePkey, options?: Public.Types.LanguagePkey.Options & Public.Tables.Language.Options) {
+            const response = await this.client.invoke<Public.Types.LanguagePkey, never, Public.Types.Language | undefined, Public.Types.LanguagePkey.Options & Public.Tables.Language.Options>({
+              operation: "Public.Tables.Language.LanguagePkey.read",
+              parameters: {languageId: parameters.languageId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Language>(Public.Types.Language.parse(response.results))
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.LanguagePkey, values: Partial<Public.Types.Language>, options?: Public.Tables.Language.Options) {
+            const response = await this.client.invoke<Public.Types.LanguagePkey, Partial<Public.Types.Language>, Public.Types.Language | undefined, Public.Tables.Language.Options>({
+              operation: "Public.Tables.Language.LanguagePkey.update",
+              parameters: {languageId: parameters.languageId},
+              values: {languageId: values.languageId,name: values.name,lastUpdate: values.lastUpdate},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Language>(Public.Types.Language.parse(response.results))
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.LanguagePkey, options?: Public.Types.LanguagePkey.Options & Public.Tables.Language.Options) {
+            const response = await this.client.invoke<Public.Types.LanguagePkey, never, Public.Types.Language | undefined, Public.Types.LanguagePkey.Options & Public.Tables.Language.Options>({
+              operation: "Public.Tables.Language.LanguagePkey.delete",
+              parameters: {languageId: parameters.languageId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Language>(Public.Types.Language.parse(response.results))
+  )
+  ;
+}
+}(this)
+public get ByPrimaryKey(){ return this.LanguagePkey };
+}(this)
+
+          public Rental = new class extends HasClient {
+        
+
+          public async create(values: Partial<Public.Types.Rental>, options?: Public.Tables.Rental.Options) : Promise<Public.Types.Rental|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Rental>, Public.Types.Rental, Public.Tables.Rental.Options>({
+              operation: "Public.Tables.Rental.create",
+              values: {rentalId: values.rentalId,rentalDate: values.rentalDate,inventoryId: values.inventoryId,customerId: values.customerId,returnDate: values.returnDate,staffId: values.staffId,lastUpdate: values.lastUpdate},
+              options
+            });
+            return (
+    nullIsUndefined<Public.Types.Rental>(Public.Types.Rental.parse(response.results))
+  )
+  ;
+          }
+        
+
+          public async all(options?: Public.Tables.Rental.Options) : Promise<Public.Types.Rental[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Rental[], Public.Tables.Rental.Options>({
+              operation: "Public.Tables.Rental.all",
+              options
+            });
+            return (
+    response.results
+      ?.map(Public.Types.Rental.parse)
+      .map(nullIsUndefined<Public.Types.Rental>)
+      .filter((x): x is Public.Types.Rental => x !== undefined) ?? []
+  )
+  ;
+          }
+        
+
+          public RentalPkey = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.RentalPkey, options?: Public.Types.RentalPkey.Options & Public.Tables.Rental.Options) {
+            const response = await this.client.invoke<Public.Types.RentalPkey, never, Public.Types.Rental | undefined, Public.Types.RentalPkey.Options & Public.Tables.Rental.Options>({
+              operation: "Public.Tables.Rental.RentalPkey.read",
+              parameters: {rentalId: parameters.rentalId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Rental>(Public.Types.Rental.parse(response.results))
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.RentalPkey, values: Partial<Public.Types.Rental>, options?: Public.Tables.Rental.Options) {
+            const response = await this.client.invoke<Public.Types.RentalPkey, Partial<Public.Types.Rental>, Public.Types.Rental | undefined, Public.Tables.Rental.Options>({
+              operation: "Public.Tables.Rental.RentalPkey.update",
+              parameters: {rentalId: parameters.rentalId},
+              values: {rentalId: values.rentalId,rentalDate: values.rentalDate,inventoryId: values.inventoryId,customerId: values.customerId,returnDate: values.returnDate,staffId: values.staffId,lastUpdate: values.lastUpdate},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Rental>(Public.Types.Rental.parse(response.results))
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.RentalPkey, options?: Public.Types.RentalPkey.Options & Public.Tables.Rental.Options) {
+            const response = await this.client.invoke<Public.Types.RentalPkey, never, Public.Types.Rental | undefined, Public.Types.RentalPkey.Options & Public.Tables.Rental.Options>({
+              operation: "Public.Tables.Rental.RentalPkey.delete",
+              parameters: {rentalId: parameters.rentalId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Rental>(Public.Types.Rental.parse(response.results))
+  )
+  ;
+}
+}(this)
+public get ByPrimaryKey(){ return this.RentalPkey };
+
+          public IdxFkInventoryId = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.IdxFkInventoryId, options?: Public.Types.IdxFkInventoryId.Options & Public.Tables.Rental.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkInventoryId, never, Public.Types.Rental[] | undefined, Public.Types.IdxFkInventoryId.Options & Public.Tables.Rental.Options>({
+              operation: "Public.Tables.Rental.IdxFkInventoryId.read",
+              parameters: {inventoryId: parameters.inventoryId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Rental.parse)
+      .map(nullIsUndefined<Public.Types.Rental>)
+      .filter((x): x is Public.Types.Rental => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.IdxFkInventoryId, values: Partial<Public.Types.Rental>, options?: Public.Tables.Rental.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkInventoryId, Partial<Public.Types.Rental>, Public.Types.Rental[] | undefined, Public.Tables.Rental.Options>({
+              operation: "Public.Tables.Rental.IdxFkInventoryId.update",
+              parameters: {inventoryId: parameters.inventoryId},
+              values: {rentalId: values.rentalId,rentalDate: values.rentalDate,inventoryId: values.inventoryId,customerId: values.customerId,returnDate: values.returnDate,staffId: values.staffId,lastUpdate: values.lastUpdate},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Rental.parse)
+      .map(nullIsUndefined<Public.Types.Rental>)
+      .filter((x): x is Public.Types.Rental => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.IdxFkInventoryId, options?: Public.Types.IdxFkInventoryId.Options & Public.Tables.Rental.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkInventoryId, never, Public.Types.Rental[] | undefined, Public.Types.IdxFkInventoryId.Options & Public.Tables.Rental.Options>({
+              operation: "Public.Tables.Rental.IdxFkInventoryId.delete",
+              parameters: {inventoryId: parameters.inventoryId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Rental.parse)
+      .map(nullIsUndefined<Public.Types.Rental>)
+      .filter((x): x is Public.Types.Rental => x !== undefined) ?? []
+  )
+  ;
+}
+}(this)
+
+
+          public IdxUnqRentalRentalDateInventoryIdCustomerId = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, options?: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId.Options & Public.Tables.Rental.Options) {
+            const response = await this.client.invoke<Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, never, Public.Types.Rental | undefined, Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId.Options & Public.Tables.Rental.Options>({
+              operation: "Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.read",
+              parameters: {rentalDate: parameters.rentalDate,inventoryId: parameters.inventoryId,customerId: parameters.customerId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Rental>(Public.Types.Rental.parse(response.results))
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, values: Partial<Public.Types.Rental>, options?: Public.Tables.Rental.Options) {
+            const response = await this.client.invoke<Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, Partial<Public.Types.Rental>, Public.Types.Rental | undefined, Public.Tables.Rental.Options>({
+              operation: "Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.update",
+              parameters: {rentalDate: parameters.rentalDate,inventoryId: parameters.inventoryId,customerId: parameters.customerId},
+              values: {rentalId: values.rentalId,rentalDate: values.rentalDate,inventoryId: values.inventoryId,customerId: values.customerId,returnDate: values.returnDate,staffId: values.staffId,lastUpdate: values.lastUpdate},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Rental>(Public.Types.Rental.parse(response.results))
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, options?: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId.Options & Public.Tables.Rental.Options) {
+            const response = await this.client.invoke<Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, never, Public.Types.Rental | undefined, Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId.Options & Public.Tables.Rental.Options>({
+              operation: "Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.delete",
+              parameters: {rentalDate: parameters.rentalDate,inventoryId: parameters.inventoryId,customerId: parameters.customerId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Rental>(Public.Types.Rental.parse(response.results))
+  )
+  ;
+}
+}(this)
+
+}(this)
+
+          public Staff = new class extends HasClient {
+        
+
+          public async create(values: Partial<Public.Types.Staff>, options?: Public.Tables.Staff.Options) : Promise<Public.Types.Staff|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Staff>, Public.Types.Staff, Public.Tables.Staff.Options>({
+              operation: "Public.Tables.Staff.create",
+              values: {staffId: values.staffId,firstName: values.firstName,lastName: values.lastName,addressId: values.addressId,email: values.email,storeId: values.storeId,active: values.active,username: values.username,password: values.password,lastUpdate: values.lastUpdate,picture: values.picture},
+              options
+            });
+            return (
+    nullIsUndefined<Public.Types.Staff>(Public.Types.Staff.parse(response.results))
+  )
+  ;
+          }
+        
+
+          public async all(options?: Public.Tables.Staff.Options) : Promise<Public.Types.Staff[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Staff[], Public.Tables.Staff.Options>({
+              operation: "Public.Tables.Staff.all",
+              options
+            });
+            return (
+    response.results
+      ?.map(Public.Types.Staff.parse)
+      .map(nullIsUndefined<Public.Types.Staff>)
+      .filter((x): x is Public.Types.Staff => x !== undefined) ?? []
+  )
+  ;
+          }
+        
+
+          public StaffPkey = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.StaffPkey, options?: Public.Types.StaffPkey.Options & Public.Tables.Staff.Options) {
+            const response = await this.client.invoke<Public.Types.StaffPkey, never, Public.Types.Staff | undefined, Public.Types.StaffPkey.Options & Public.Tables.Staff.Options>({
+              operation: "Public.Tables.Staff.StaffPkey.read",
+              parameters: {staffId: parameters.staffId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Staff>(Public.Types.Staff.parse(response.results))
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.StaffPkey, values: Partial<Public.Types.Staff>, options?: Public.Tables.Staff.Options) {
+            const response = await this.client.invoke<Public.Types.StaffPkey, Partial<Public.Types.Staff>, Public.Types.Staff | undefined, Public.Tables.Staff.Options>({
+              operation: "Public.Tables.Staff.StaffPkey.update",
+              parameters: {staffId: parameters.staffId},
+              values: {staffId: values.staffId,firstName: values.firstName,lastName: values.lastName,addressId: values.addressId,email: values.email,storeId: values.storeId,active: values.active,username: values.username,password: values.password,lastUpdate: values.lastUpdate,picture: values.picture},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Staff>(Public.Types.Staff.parse(response.results))
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.StaffPkey, options?: Public.Types.StaffPkey.Options & Public.Tables.Staff.Options) {
+            const response = await this.client.invoke<Public.Types.StaffPkey, never, Public.Types.Staff | undefined, Public.Types.StaffPkey.Options & Public.Tables.Staff.Options>({
+              operation: "Public.Tables.Staff.StaffPkey.delete",
+              parameters: {staffId: parameters.staffId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Staff>(Public.Types.Staff.parse(response.results))
+  )
+  ;
+}
+}(this)
+public get ByPrimaryKey(){ return this.StaffPkey };
+}(this)
+
+          public Store = new class extends HasClient {
+        
+
+          public async create(values: Partial<Public.Types.Store>, options?: Public.Tables.Store.Options) : Promise<Public.Types.Store|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Store>, Public.Types.Store, Public.Tables.Store.Options>({
+              operation: "Public.Tables.Store.create",
+              values: {storeId: values.storeId,managerStaffId: values.managerStaffId,addressId: values.addressId,lastUpdate: values.lastUpdate},
+              options
+            });
+            return (
+    nullIsUndefined<Public.Types.Store>(Public.Types.Store.parse(response.results))
+  )
+  ;
+          }
+        
+
+          public async all(options?: Public.Tables.Store.Options) : Promise<Public.Types.Store[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Store[], Public.Tables.Store.Options>({
+              operation: "Public.Tables.Store.all",
+              options
+            });
+            return (
+    response.results
+      ?.map(Public.Types.Store.parse)
+      .map(nullIsUndefined<Public.Types.Store>)
+      .filter((x): x is Public.Types.Store => x !== undefined) ?? []
+  )
+  ;
+          }
+        
+
+          public StorePkey = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.StorePkey, options?: Public.Types.StorePkey.Options & Public.Tables.Store.Options) {
+            const response = await this.client.invoke<Public.Types.StorePkey, never, Public.Types.Store | undefined, Public.Types.StorePkey.Options & Public.Tables.Store.Options>({
+              operation: "Public.Tables.Store.StorePkey.read",
+              parameters: {storeId: parameters.storeId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Store>(Public.Types.Store.parse(response.results))
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.StorePkey, values: Partial<Public.Types.Store>, options?: Public.Tables.Store.Options) {
+            const response = await this.client.invoke<Public.Types.StorePkey, Partial<Public.Types.Store>, Public.Types.Store | undefined, Public.Tables.Store.Options>({
+              operation: "Public.Tables.Store.StorePkey.update",
+              parameters: {storeId: parameters.storeId},
+              values: {storeId: values.storeId,managerStaffId: values.managerStaffId,addressId: values.addressId,lastUpdate: values.lastUpdate},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Store>(Public.Types.Store.parse(response.results))
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.StorePkey, options?: Public.Types.StorePkey.Options & Public.Tables.Store.Options) {
+            const response = await this.client.invoke<Public.Types.StorePkey, never, Public.Types.Store | undefined, Public.Types.StorePkey.Options & Public.Tables.Store.Options>({
+              operation: "Public.Tables.Store.StorePkey.delete",
+              parameters: {storeId: parameters.storeId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Store>(Public.Types.Store.parse(response.results))
+  )
+  ;
+}
+}(this)
+public get ByPrimaryKey(){ return this.StorePkey };
+
+          public IdxUnqManagerStaffId = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.IdxUnqManagerStaffId, options?: Public.Types.IdxUnqManagerStaffId.Options & Public.Tables.Store.Options) {
+            const response = await this.client.invoke<Public.Types.IdxUnqManagerStaffId, never, Public.Types.Store | undefined, Public.Types.IdxUnqManagerStaffId.Options & Public.Tables.Store.Options>({
+              operation: "Public.Tables.Store.IdxUnqManagerStaffId.read",
+              parameters: {managerStaffId: parameters.managerStaffId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Store>(Public.Types.Store.parse(response.results))
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.IdxUnqManagerStaffId, values: Partial<Public.Types.Store>, options?: Public.Tables.Store.Options) {
+            const response = await this.client.invoke<Public.Types.IdxUnqManagerStaffId, Partial<Public.Types.Store>, Public.Types.Store | undefined, Public.Tables.Store.Options>({
+              operation: "Public.Tables.Store.IdxUnqManagerStaffId.update",
+              parameters: {managerStaffId: parameters.managerStaffId},
+              values: {storeId: values.storeId,managerStaffId: values.managerStaffId,addressId: values.addressId,lastUpdate: values.lastUpdate},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Store>(Public.Types.Store.parse(response.results))
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.IdxUnqManagerStaffId, options?: Public.Types.IdxUnqManagerStaffId.Options & Public.Tables.Store.Options) {
+            const response = await this.client.invoke<Public.Types.IdxUnqManagerStaffId, never, Public.Types.Store | undefined, Public.Types.IdxUnqManagerStaffId.Options & Public.Tables.Store.Options>({
+              operation: "Public.Tables.Store.IdxUnqManagerStaffId.delete",
+              parameters: {managerStaffId: parameters.managerStaffId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Store>(Public.Types.Store.parse(response.results))
+  )
+  ;
+}
+}(this)
+
+}(this)
+
+          public Payment = new class extends HasClient {
+        
+
+          public async create(values: Partial<Public.Types.Payment>, options?: Public.Tables.Payment.Options) : Promise<Public.Types.Payment|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Payment>, Public.Types.Payment, Public.Tables.Payment.Options>({
+              operation: "Public.Tables.Payment.create",
+              values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate},
+              options
+            });
+            return (
+    nullIsUndefined<Public.Types.Payment>(Public.Types.Payment.parse(response.results))
+  )
+  ;
+          }
+        
+
+          public async all(options?: Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Payment[], Public.Tables.Payment.Options>({
+              operation: "Public.Tables.Payment.all",
+              options
+            });
+            return (
+    response.results
+      ?.map(Public.Types.Payment.parse)
+      .map(nullIsUndefined<Public.Types.Payment>)
+      .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
+  )
+  ;
+          }
+        
+
+          public PaymentPkey = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.PaymentPkey, options?: Public.Types.PaymentPkey.Options & Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.PaymentPkey, never, Public.Types.Payment | undefined, Public.Types.PaymentPkey.Options & Public.Tables.Payment.Options>({
+              operation: "Public.Tables.Payment.PaymentPkey.read",
+              parameters: {paymentId: parameters.paymentId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Payment>(Public.Types.Payment.parse(response.results))
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.PaymentPkey, values: Partial<Public.Types.Payment>, options?: Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.PaymentPkey, Partial<Public.Types.Payment>, Public.Types.Payment | undefined, Public.Tables.Payment.Options>({
+              operation: "Public.Tables.Payment.PaymentPkey.update",
+              parameters: {paymentId: parameters.paymentId},
+              values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Payment>(Public.Types.Payment.parse(response.results))
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.PaymentPkey, options?: Public.Types.PaymentPkey.Options & Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.PaymentPkey, never, Public.Types.Payment | undefined, Public.Types.PaymentPkey.Options & Public.Tables.Payment.Options>({
+              operation: "Public.Tables.Payment.PaymentPkey.delete",
+              parameters: {paymentId: parameters.paymentId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Payment>(Public.Types.Payment.parse(response.results))
+  )
+  ;
+}
+}(this)
+public get ByPrimaryKey(){ return this.PaymentPkey };
+
+          public IdxFkCustomerId = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.IdxFkCustomerId, options?: Public.Types.IdxFkCustomerId.Options & Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkCustomerId, never, Public.Types.Payment[] | undefined, Public.Types.IdxFkCustomerId.Options & Public.Tables.Payment.Options>({
+              operation: "Public.Tables.Payment.IdxFkCustomerId.read",
+              parameters: {customerId: parameters.customerId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Payment.parse)
+      .map(nullIsUndefined<Public.Types.Payment>)
+      .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.IdxFkCustomerId, values: Partial<Public.Types.Payment>, options?: Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkCustomerId, Partial<Public.Types.Payment>, Public.Types.Payment[] | undefined, Public.Tables.Payment.Options>({
+              operation: "Public.Tables.Payment.IdxFkCustomerId.update",
+              parameters: {customerId: parameters.customerId},
+              values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Payment.parse)
+      .map(nullIsUndefined<Public.Types.Payment>)
+      .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.IdxFkCustomerId, options?: Public.Types.IdxFkCustomerId.Options & Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkCustomerId, never, Public.Types.Payment[] | undefined, Public.Types.IdxFkCustomerId.Options & Public.Tables.Payment.Options>({
+              operation: "Public.Tables.Payment.IdxFkCustomerId.delete",
+              parameters: {customerId: parameters.customerId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Payment.parse)
+      .map(nullIsUndefined<Public.Types.Payment>)
+      .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
+  )
+  ;
+}
+}(this)
+
+
+          public IdxFkRentalId = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.IdxFkRentalId, options?: Public.Types.IdxFkRentalId.Options & Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkRentalId, never, Public.Types.Payment[] | undefined, Public.Types.IdxFkRentalId.Options & Public.Tables.Payment.Options>({
+              operation: "Public.Tables.Payment.IdxFkRentalId.read",
+              parameters: {rentalId: parameters.rentalId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Payment.parse)
+      .map(nullIsUndefined<Public.Types.Payment>)
+      .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.IdxFkRentalId, values: Partial<Public.Types.Payment>, options?: Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkRentalId, Partial<Public.Types.Payment>, Public.Types.Payment[] | undefined, Public.Tables.Payment.Options>({
+              operation: "Public.Tables.Payment.IdxFkRentalId.update",
+              parameters: {rentalId: parameters.rentalId},
+              values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Payment.parse)
+      .map(nullIsUndefined<Public.Types.Payment>)
+      .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.IdxFkRentalId, options?: Public.Types.IdxFkRentalId.Options & Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkRentalId, never, Public.Types.Payment[] | undefined, Public.Types.IdxFkRentalId.Options & Public.Tables.Payment.Options>({
+              operation: "Public.Tables.Payment.IdxFkRentalId.delete",
+              parameters: {rentalId: parameters.rentalId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Payment.parse)
+      .map(nullIsUndefined<Public.Types.Payment>)
+      .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
+  )
+  ;
+}
+}(this)
+
+
+          public IdxFkStaffId = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.IdxFkStaffId, options?: Public.Types.IdxFkStaffId.Options & Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkStaffId, never, Public.Types.Payment[] | undefined, Public.Types.IdxFkStaffId.Options & Public.Tables.Payment.Options>({
+              operation: "Public.Tables.Payment.IdxFkStaffId.read",
+              parameters: {staffId: parameters.staffId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Payment.parse)
+      .map(nullIsUndefined<Public.Types.Payment>)
+      .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.IdxFkStaffId, values: Partial<Public.Types.Payment>, options?: Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkStaffId, Partial<Public.Types.Payment>, Public.Types.Payment[] | undefined, Public.Tables.Payment.Options>({
+              operation: "Public.Tables.Payment.IdxFkStaffId.update",
+              parameters: {staffId: parameters.staffId},
+              values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Payment.parse)
+      .map(nullIsUndefined<Public.Types.Payment>)
+      .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.IdxFkStaffId, options?: Public.Types.IdxFkStaffId.Options & Public.Tables.Payment.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkStaffId, never, Public.Types.Payment[] | undefined, Public.Types.IdxFkStaffId.Options & Public.Tables.Payment.Options>({
+              operation: "Public.Tables.Payment.IdxFkStaffId.delete",
+              parameters: {staffId: parameters.staffId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Payment.parse)
+      .map(nullIsUndefined<Public.Types.Payment>)
+      .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
+  )
+  ;
+}
+}(this)
+
+}(this)
+
+          public Film = new class extends HasClient {
+        
+
+          public async create(values: Partial<Public.Types.Film>, options?: Public.Tables.Film.Options) : Promise<Public.Types.Film|undefined> {
+            const response = await this.client.invoke<never, Partial<Public.Types.Film>, Public.Types.Film, Public.Tables.Film.Options>({
+              operation: "Public.Tables.Film.create",
+              values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext},
+              options
+            });
+            return (
+    nullIsUndefined<Public.Types.Film>(Public.Types.Film.parse(response.results))
+  )
+  ;
+          }
+        
+
+          public async all(options?: Public.Tables.Film.Options) : Promise<Public.Types.Film[]> {
+            const response = await this.client.invoke<never, never, Public.Types.Film[], Public.Tables.Film.Options>({
+              operation: "Public.Tables.Film.all",
+              options
+            });
+            return (
+    response.results
+      ?.map(Public.Types.Film.parse)
+      .map(nullIsUndefined<Public.Types.Film>)
+      .filter((x): x is Public.Types.Film => x !== undefined) ?? []
+  )
+  ;
+          }
+        
+
+          public FilmPkey = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.FilmPkey, options?: Public.Types.FilmPkey.Options & Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.FilmPkey, never, Public.Types.Film | undefined, Public.Types.FilmPkey.Options & Public.Tables.Film.Options>({
+              operation: "Public.Tables.Film.FilmPkey.read",
+              parameters: {filmId: parameters.filmId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Film>(Public.Types.Film.parse(response.results))
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.FilmPkey, values: Partial<Public.Types.Film>, options?: Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.FilmPkey, Partial<Public.Types.Film>, Public.Types.Film | undefined, Public.Tables.Film.Options>({
+              operation: "Public.Tables.Film.FilmPkey.update",
+              parameters: {filmId: parameters.filmId},
+              values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Film>(Public.Types.Film.parse(response.results))
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.FilmPkey, options?: Public.Types.FilmPkey.Options & Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.FilmPkey, never, Public.Types.Film | undefined, Public.Types.FilmPkey.Options & Public.Tables.Film.Options>({
+              operation: "Public.Tables.Film.FilmPkey.delete",
+              parameters: {filmId: parameters.filmId},
+              options
+            });
+        
+return (
+    nullIsUndefined<Public.Types.Film>(Public.Types.Film.parse(response.results))
+  )
+  ;
+}
+}(this)
+public get ByPrimaryKey(){ return this.FilmPkey };
+
+          public FilmFulltextIdx = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.FilmFulltextIdx, options?: Public.Types.FilmFulltextIdx.Options & Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.FilmFulltextIdx, never, Public.Types.Film[] | undefined, Public.Types.FilmFulltextIdx.Options & Public.Tables.Film.Options>({
+              operation: "Public.Tables.Film.FilmFulltextIdx.read",
+              parameters: {fulltext: parameters.fulltext},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Film.parse)
+      .map(nullIsUndefined<Public.Types.Film>)
+      .filter((x): x is Public.Types.Film => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.FilmFulltextIdx, values: Partial<Public.Types.Film>, options?: Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.FilmFulltextIdx, Partial<Public.Types.Film>, Public.Types.Film[] | undefined, Public.Tables.Film.Options>({
+              operation: "Public.Tables.Film.FilmFulltextIdx.update",
+              parameters: {fulltext: parameters.fulltext},
+              values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Film.parse)
+      .map(nullIsUndefined<Public.Types.Film>)
+      .filter((x): x is Public.Types.Film => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.FilmFulltextIdx, options?: Public.Types.FilmFulltextIdx.Options & Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.FilmFulltextIdx, never, Public.Types.Film[] | undefined, Public.Types.FilmFulltextIdx.Options & Public.Tables.Film.Options>({
+              operation: "Public.Tables.Film.FilmFulltextIdx.delete",
+              parameters: {fulltext: parameters.fulltext},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Film.parse)
+      .map(nullIsUndefined<Public.Types.Film>)
+      .filter((x): x is Public.Types.Film => x !== undefined) ?? []
+  )
+  ;
+}
+}(this)
+
+
+          public IdxFkLanguageId = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.IdxFkLanguageId, options?: Public.Types.IdxFkLanguageId.Options & Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkLanguageId, never, Public.Types.Film[] | undefined, Public.Types.IdxFkLanguageId.Options & Public.Tables.Film.Options>({
+              operation: "Public.Tables.Film.IdxFkLanguageId.read",
+              parameters: {languageId: parameters.languageId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Film.parse)
+      .map(nullIsUndefined<Public.Types.Film>)
+      .filter((x): x is Public.Types.Film => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.IdxFkLanguageId, values: Partial<Public.Types.Film>, options?: Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkLanguageId, Partial<Public.Types.Film>, Public.Types.Film[] | undefined, Public.Tables.Film.Options>({
+              operation: "Public.Tables.Film.IdxFkLanguageId.update",
+              parameters: {languageId: parameters.languageId},
+              values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Film.parse)
+      .map(nullIsUndefined<Public.Types.Film>)
+      .filter((x): x is Public.Types.Film => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.IdxFkLanguageId, options?: Public.Types.IdxFkLanguageId.Options & Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.IdxFkLanguageId, never, Public.Types.Film[] | undefined, Public.Types.IdxFkLanguageId.Options & Public.Tables.Film.Options>({
+              operation: "Public.Tables.Film.IdxFkLanguageId.delete",
+              parameters: {languageId: parameters.languageId},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Film.parse)
+      .map(nullIsUndefined<Public.Types.Film>)
+      .filter((x): x is Public.Types.Film => x !== undefined) ?? []
+  )
+  ;
+}
+}(this)
+
+
+          public IdxTitle = new class extends HasClient {
+        
+
+          public async read(parameters: Public.Types.IdxTitle, options?: Public.Types.IdxTitle.Options & Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.IdxTitle, never, Public.Types.Film[] | undefined, Public.Types.IdxTitle.Options & Public.Tables.Film.Options>({
+              operation: "Public.Tables.Film.IdxTitle.read",
+              parameters: {title: parameters.title},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Film.parse)
+      .map(nullIsUndefined<Public.Types.Film>)
+      .filter((x): x is Public.Types.Film => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async update(parameters: Public.Types.IdxTitle, values: Partial<Public.Types.Film>, options?: Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.IdxTitle, Partial<Public.Types.Film>, Public.Types.Film[] | undefined, Public.Tables.Film.Options>({
+              operation: "Public.Tables.Film.IdxTitle.update",
+              parameters: {title: parameters.title},
+              values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Film.parse)
+      .map(nullIsUndefined<Public.Types.Film>)
+      .filter((x): x is Public.Types.Film => x !== undefined) ?? []
+  )
+  ;
+}
+
+          public async delete(parameters: Public.Types.IdxTitle, options?: Public.Types.IdxTitle.Options & Public.Tables.Film.Options) {
+            const response = await this.client.invoke<Public.Types.IdxTitle, never, Public.Types.Film[] | undefined, Public.Types.IdxTitle.Options & Public.Tables.Film.Options>({
+              operation: "Public.Tables.Film.IdxTitle.delete",
+              parameters: {title: parameters.title},
+              options
+            });
+        
+return (
+    response.results
+      ?.map(Public.Types.Film.parse)
+      .map(nullIsUndefined<Public.Types.Film>)
+      .filter((x): x is Public.Types.Film => x !== undefined) ?? []
+  )
+  ;
+}
+}(this)
+
+}(this)
+}(this)
+}(this)
+
+          public PgToast = new class extends HasClient {
+        
+
+          public Procedures = new class extends HasClient {
+        
+}(this)
+
+          public Tables = new class extends HasClient {
+        
+}(this)
+}(this)
+
+          public Scripts = new class extends HasClient {
+        
+
+          public MovieListing = new class extends HasClient {
+        
+
+          public async call() : Promise<Scripts.MovieListing.Results[]> {
+            const response = await this.client.invoke<never, never, Scripts.MovieListing.Results[], never>({
+              operation: "Scripts.MovieListing.call",
+            });
+        
+return response.results?.map(r => Scripts.MovieListing.Results.parse(r)) as Scripts.MovieListing.Results[] ?? [];
+}
+}(this)
+
+          public Sample = new class extends HasClient {
+        
+
+          public Film = new class extends HasClient {
+        
+
+          public Rated = new class extends HasClient {
+        
+
+          public async call(parameters: Scripts.Sample.Film.Rated.Parameters) : Promise<Scripts.Sample.Film.Rated.Results[]> {
+            const response = await this.client.invoke<Scripts.Sample.Film.Rated.Parameters, never, Scripts.Sample.Film.Rated.Results[], never>({
+              operation: "Scripts.Sample.Film.Rated.call",
+              parameters,
+            });
+        
+return response.results?.map(r => Scripts.Sample.Film.Rated.Results.parse(r)) as Scripts.Sample.Film.Rated.Results[] ?? [];
+}
+}(this)
+
+          public Tally = new class extends HasClient {
+        
+
+          public async call() : Promise<Scripts.Sample.Film.Tally.Results[]> {
+            const response = await this.client.invoke<never, never, Scripts.Sample.Film.Tally.Results[], never>({
+              operation: "Scripts.Sample.Film.Tally.call",
+            });
+        
+return response.results?.map(r => Scripts.Sample.Film.Tally.Results.parse(r)) as Scripts.Sample.Film.Tally.Results[] ?? [];
+}
+}(this)
+}(this)
+
+          public Pick = new class extends HasClient {
+        
+
+          public async call(parameters: Scripts.Sample.Pick.Parameters) : Promise<Scripts.Sample.Pick.Results[]> {
+            const response = await this.client.invoke<Scripts.Sample.Pick.Parameters, never, Scripts.Sample.Pick.Results[], never>({
+              operation: "Scripts.Sample.Pick.call",
+              parameters,
+            });
+        
+return response.results?.map(r => Scripts.Sample.Pick.Results.parse(r)) as Scripts.Sample.Pick.Results[] ?? [];
+}
+}(this)
+}(this)
+
+          public Tally = new class extends HasClient {
+        
+
+          public async call() : Promise<Scripts.Tally.Results[]> {
+            const response = await this.client.invoke<never, never, Scripts.Tally.Results[], never>({
+              operation: "Scripts.Tally.call",
+            });
+        
+return response.results?.map(r => Scripts.Tally.Results.parse(r)) as Scripts.Tally.Results[] ?? [];
+}
+}(this)
+}(this)
+}
+import React from "react";
+export { EmbraceSQLProvider } from "@embracesql/react";
+import { useEmbraceSQLClient, useEmbraceSQLRow, useEmbraceSQLRows, useEmbraceSQLImmutableRows, useEmbraceSQLImmutable, ChangeEvent, Row as IsRow, RowBase, RowCallback, GeneratedRowProps } from "@embracesql/react";
+export namespace Public {
+export namespace Procedures {
+export namespace FilmInStock {
+}
+export namespace FilmNotInStock {
+}
+export namespace GetCustomerBalance {
+}
+export namespace InventoryHeldByCustomer {
+}
+export namespace InventoryInStock {
+}
+export namespace LastDay {
+}
+export namespace RewardsReport {
+export type Row = IsRow<Public.Types.Customer>;
+export class RowImplementation
+ extends RowBase<Public.Types.Customer>
+ implements Row {
+   constructor(row: Public.Types.Customer, 
+     changeCallback: RowCallback<Public.Types.Customer>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get customerId() { return this._value.customerId;}
+get changeCustomerId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    customerId: parsedValue as Public.Types.Customer["customerId"],
+    });
+  };
+}
+get storeId() { return this._value.storeId;}
+get changeStoreId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    storeId: parsedValue as Public.Types.Customer["storeId"],
+    });
+  };
+}
+get firstName() { return this._value.firstName;}
+get changeFirstName() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    firstName: parsedValue as Public.Types.Customer["firstName"],
+    });
+  };
+}
+get lastName() { return this._value.lastName;}
+get changeLastName() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    lastName: parsedValue as Public.Types.Customer["lastName"],
+    });
+  };
+}
+get email() { return this._value.email;}
+get changeEmail() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    email: parsedValue as Public.Types.Customer["email"],
+    });
+  };
+}
+get addressId() { return this._value.addressId;}
+get changeAddressId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    addressId: parsedValue as Public.Types.Customer["addressId"],
+    });
+  };
+}
+get activebool() { return this._value.activebool;}
+get changeActivebool() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Bool.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    activebool: parsedValue as Public.Types.Customer["activebool"],
+    });
+  };
+}
+get createDate() { return this._value.createDate;}
+get changeCreateDate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Date.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    createDate: parsedValue as Public.Types.Customer["createDate"],
+    });
+  };
+}
+get lastUpdate() { return this._value.lastUpdate;}
+get changeLastUpdate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    lastUpdate: parsedValue as Public.Types.Customer["lastUpdate"],
+    });
+  };
+}
+get active() { return this._value.active;}
+get changeActive() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    active: parsedValue as Public.Types.Customer["active"],
+    });
+  };
+}
+}
+}
+}
+export namespace Tables {
+export namespace FilmActor {
+export type Row = IsRow<Public.Types.FilmActor>;
+export class RowImplementation
+ extends RowBase<Public.Types.FilmActor>
+ implements Row {
+   constructor(row: Public.Types.FilmActor, 
+     changeCallback: RowCallback<Public.Types.FilmActor>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get actorId() { return this._value.actorId;}
+get changeActorId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    actorId: parsedValue as Public.Types.FilmActor["actorId"],
+    });
+  };
+}
+get filmId() { return this._value.filmId;}
+get changeFilmId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    filmId: parsedValue as Public.Types.FilmActor["filmId"],
+    });
+  };
+}
+get lastUpdate() { return this._value.lastUpdate;}
+get changeLastUpdate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    lastUpdate: parsedValue as Public.Types.FilmActor["lastUpdate"],
+    });
+  };
+}
+}
+}
+export namespace Address {
+export type Row = IsRow<Public.Types.Address>;
+export class RowImplementation
+ extends RowBase<Public.Types.Address>
+ implements Row {
+   constructor(row: Public.Types.Address, 
+     changeCallback: RowCallback<Public.Types.Address>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get addressId() { return this._value.addressId;}
+get changeAddressId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    addressId: parsedValue as Public.Types.Address["addressId"],
+    });
+  };
+}
+get address() { return this._value.address;}
+get changeAddress() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    address: parsedValue as Public.Types.Address["address"],
+    });
+  };
+}
+get address2() { return this._value.address2;}
+get changeAddress2() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    address2: parsedValue as Public.Types.Address["address2"],
+    });
+  };
+}
+get district() { return this._value.district;}
+get changeDistrict() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    district: parsedValue as Public.Types.Address["district"],
+    });
+  };
+}
+get cityId() { return this._value.cityId;}
+get changeCityId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    cityId: parsedValue as Public.Types.Address["cityId"],
+    });
+  };
+}
+get postalCode() { return this._value.postalCode;}
+get changePostalCode() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    postalCode: parsedValue as Public.Types.Address["postalCode"],
+    });
+  };
+}
+get phone() { return this._value.phone;}
+get changePhone() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    phone: parsedValue as Public.Types.Address["phone"],
+    });
+  };
+}
+get lastUpdate() { return this._value.lastUpdate;}
+get changeLastUpdate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    lastUpdate: parsedValue as Public.Types.Address["lastUpdate"],
+    });
+  };
+}
+}
+}
+export namespace City {
+export type Row = IsRow<Public.Types.City>;
+export class RowImplementation
+ extends RowBase<Public.Types.City>
+ implements Row {
+   constructor(row: Public.Types.City, 
+     changeCallback: RowCallback<Public.Types.City>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get cityId() { return this._value.cityId;}
+get changeCityId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    cityId: parsedValue as Public.Types.City["cityId"],
+    });
+  };
+}
+get city() { return this._value.city;}
+get changeCity() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    city: parsedValue as Public.Types.City["city"],
+    });
+  };
+}
+get countryId() { return this._value.countryId;}
+get changeCountryId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    countryId: parsedValue as Public.Types.City["countryId"],
+    });
+  };
+}
+get lastUpdate() { return this._value.lastUpdate;}
+get changeLastUpdate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    lastUpdate: parsedValue as Public.Types.City["lastUpdate"],
+    });
+  };
+}
+}
+}
+export namespace Customer {
+export type Row = IsRow<Public.Types.Customer>;
+export class RowImplementation
+ extends RowBase<Public.Types.Customer>
+ implements Row {
+   constructor(row: Public.Types.Customer, 
+     changeCallback: RowCallback<Public.Types.Customer>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get customerId() { return this._value.customerId;}
+get changeCustomerId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    customerId: parsedValue as Public.Types.Customer["customerId"],
+    });
+  };
+}
+get storeId() { return this._value.storeId;}
+get changeStoreId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    storeId: parsedValue as Public.Types.Customer["storeId"],
+    });
+  };
+}
+get firstName() { return this._value.firstName;}
+get changeFirstName() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    firstName: parsedValue as Public.Types.Customer["firstName"],
+    });
+  };
+}
+get lastName() { return this._value.lastName;}
+get changeLastName() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    lastName: parsedValue as Public.Types.Customer["lastName"],
+    });
+  };
+}
+get email() { return this._value.email;}
+get changeEmail() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    email: parsedValue as Public.Types.Customer["email"],
+    });
+  };
+}
+get addressId() { return this._value.addressId;}
+get changeAddressId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    addressId: parsedValue as Public.Types.Customer["addressId"],
+    });
+  };
+}
+get activebool() { return this._value.activebool;}
+get changeActivebool() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Bool.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    activebool: parsedValue as Public.Types.Customer["activebool"],
+    });
+  };
+}
+get createDate() { return this._value.createDate;}
+get changeCreateDate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Date.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    createDate: parsedValue as Public.Types.Customer["createDate"],
+    });
+  };
+}
+get lastUpdate() { return this._value.lastUpdate;}
+get changeLastUpdate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    lastUpdate: parsedValue as Public.Types.Customer["lastUpdate"],
+    });
+  };
+}
+get active() { return this._value.active;}
+get changeActive() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    active: parsedValue as Public.Types.Customer["active"],
+    });
+  };
+}
+}
+}
+export namespace Actor {
+export type Row = IsRow<Public.Types.Actor>;
+export class RowImplementation
+ extends RowBase<Public.Types.Actor>
+ implements Row {
+   constructor(row: Public.Types.Actor, 
+     changeCallback: RowCallback<Public.Types.Actor>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get actorId() { return this._value.actorId;}
+get changeActorId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    actorId: parsedValue as Public.Types.Actor["actorId"],
+    });
+  };
+}
+get firstName() { return this._value.firstName;}
+get changeFirstName() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    firstName: parsedValue as Public.Types.Actor["firstName"],
+    });
+  };
+}
+get lastName() { return this._value.lastName;}
+get changeLastName() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    lastName: parsedValue as Public.Types.Actor["lastName"],
+    });
+  };
+}
+get lastUpdate() { return this._value.lastUpdate;}
+get changeLastUpdate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    lastUpdate: parsedValue as Public.Types.Actor["lastUpdate"],
+    });
+  };
+}
+}
+}
+export namespace FilmCategory {
+export type Row = IsRow<Public.Types.FilmCategory>;
+export class RowImplementation
+ extends RowBase<Public.Types.FilmCategory>
+ implements Row {
+   constructor(row: Public.Types.FilmCategory, 
+     changeCallback: RowCallback<Public.Types.FilmCategory>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get filmId() { return this._value.filmId;}
+get changeFilmId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    filmId: parsedValue as Public.Types.FilmCategory["filmId"],
+    });
+  };
+}
+get categoryId() { return this._value.categoryId;}
+get changeCategoryId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    categoryId: parsedValue as Public.Types.FilmCategory["categoryId"],
+    });
+  };
+}
+get lastUpdate() { return this._value.lastUpdate;}
+get changeLastUpdate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    lastUpdate: parsedValue as Public.Types.FilmCategory["lastUpdate"],
+    });
+  };
+}
+}
+}
+export namespace Inventory {
+export type Row = IsRow<Public.Types.Inventory>;
+export class RowImplementation
+ extends RowBase<Public.Types.Inventory>
+ implements Row {
+   constructor(row: Public.Types.Inventory, 
+     changeCallback: RowCallback<Public.Types.Inventory>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get inventoryId() { return this._value.inventoryId;}
+get changeInventoryId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    inventoryId: parsedValue as Public.Types.Inventory["inventoryId"],
+    });
+  };
+}
+get filmId() { return this._value.filmId;}
+get changeFilmId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    filmId: parsedValue as Public.Types.Inventory["filmId"],
+    });
+  };
+}
+get storeId() { return this._value.storeId;}
+get changeStoreId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    storeId: parsedValue as Public.Types.Inventory["storeId"],
+    });
+  };
+}
+get lastUpdate() { return this._value.lastUpdate;}
+get changeLastUpdate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    lastUpdate: parsedValue as Public.Types.Inventory["lastUpdate"],
+    });
+  };
+}
+}
+}
+export namespace Category {
+export type Row = IsRow<Public.Types.Category>;
+export class RowImplementation
+ extends RowBase<Public.Types.Category>
+ implements Row {
+   constructor(row: Public.Types.Category, 
+     changeCallback: RowCallback<Public.Types.Category>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get categoryId() { return this._value.categoryId;}
+get changeCategoryId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    categoryId: parsedValue as Public.Types.Category["categoryId"],
+    });
+  };
+}
+get name() { return this._value.name;}
+get changeName() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    name: parsedValue as Public.Types.Category["name"],
+    });
+  };
+}
+get lastUpdate() { return this._value.lastUpdate;}
+get changeLastUpdate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    lastUpdate: parsedValue as Public.Types.Category["lastUpdate"],
+    });
+  };
+}
+}
+}
+export namespace Country {
+export type Row = IsRow<Public.Types.Country>;
+export class RowImplementation
+ extends RowBase<Public.Types.Country>
+ implements Row {
+   constructor(row: Public.Types.Country, 
+     changeCallback: RowCallback<Public.Types.Country>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get countryId() { return this._value.countryId;}
+get changeCountryId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    countryId: parsedValue as Public.Types.Country["countryId"],
+    });
+  };
+}
+get country() { return this._value.country;}
+get changeCountry() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    country: parsedValue as Public.Types.Country["country"],
+    });
+  };
+}
+get lastUpdate() { return this._value.lastUpdate;}
+get changeLastUpdate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    lastUpdate: parsedValue as Public.Types.Country["lastUpdate"],
+    });
+  };
+}
+}
+}
+export namespace Language {
+export type Row = IsRow<Public.Types.Language>;
+export class RowImplementation
+ extends RowBase<Public.Types.Language>
+ implements Row {
+   constructor(row: Public.Types.Language, 
+     changeCallback: RowCallback<Public.Types.Language>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get languageId() { return this._value.languageId;}
+get changeLanguageId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    languageId: parsedValue as Public.Types.Language["languageId"],
+    });
+  };
+}
+get name() { return this._value.name;}
+get changeName() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Bpchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    name: parsedValue as Public.Types.Language["name"],
+    });
+  };
+}
+get lastUpdate() { return this._value.lastUpdate;}
+get changeLastUpdate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    lastUpdate: parsedValue as Public.Types.Language["lastUpdate"],
+    });
+  };
+}
+}
+}
+export namespace Rental {
+export type Row = IsRow<Public.Types.Rental>;
+export class RowImplementation
+ extends RowBase<Public.Types.Rental>
+ implements Row {
+   constructor(row: Public.Types.Rental, 
+     changeCallback: RowCallback<Public.Types.Rental>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get rentalId() { return this._value.rentalId;}
+get changeRentalId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    rentalId: parsedValue as Public.Types.Rental["rentalId"],
+    });
+  };
+}
+get rentalDate() { return this._value.rentalDate;}
+get changeRentalDate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    rentalDate: parsedValue as Public.Types.Rental["rentalDate"],
+    });
+  };
+}
+get inventoryId() { return this._value.inventoryId;}
+get changeInventoryId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    inventoryId: parsedValue as Public.Types.Rental["inventoryId"],
+    });
+  };
+}
+get customerId() { return this._value.customerId;}
+get changeCustomerId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    customerId: parsedValue as Public.Types.Rental["customerId"],
+    });
+  };
+}
+get returnDate() { return this._value.returnDate;}
+get changeReturnDate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    returnDate: parsedValue as Public.Types.Rental["returnDate"],
+    });
+  };
+}
+get staffId() { return this._value.staffId;}
+get changeStaffId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    staffId: parsedValue as Public.Types.Rental["staffId"],
+    });
+  };
+}
+get lastUpdate() { return this._value.lastUpdate;}
+get changeLastUpdate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    lastUpdate: parsedValue as Public.Types.Rental["lastUpdate"],
+    });
+  };
+}
+}
+}
+export namespace Staff {
+export type Row = IsRow<Public.Types.Staff>;
+export class RowImplementation
+ extends RowBase<Public.Types.Staff>
+ implements Row {
+   constructor(row: Public.Types.Staff, 
+     changeCallback: RowCallback<Public.Types.Staff>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get staffId() { return this._value.staffId;}
+get changeStaffId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    staffId: parsedValue as Public.Types.Staff["staffId"],
+    });
+  };
+}
+get firstName() { return this._value.firstName;}
+get changeFirstName() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    firstName: parsedValue as Public.Types.Staff["firstName"],
+    });
+  };
+}
+get lastName() { return this._value.lastName;}
+get changeLastName() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    lastName: parsedValue as Public.Types.Staff["lastName"],
+    });
+  };
+}
+get addressId() { return this._value.addressId;}
+get changeAddressId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    addressId: parsedValue as Public.Types.Staff["addressId"],
+    });
+  };
+}
+get email() { return this._value.email;}
+get changeEmail() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    email: parsedValue as Public.Types.Staff["email"],
+    });
+  };
+}
+get storeId() { return this._value.storeId;}
+get changeStoreId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    storeId: parsedValue as Public.Types.Staff["storeId"],
+    });
+  };
+}
+get active() { return this._value.active;}
+get changeActive() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Bool.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    active: parsedValue as Public.Types.Staff["active"],
+    });
+  };
+}
+get username() { return this._value.username;}
+get changeUsername() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    username: parsedValue as Public.Types.Staff["username"],
+    });
+  };
+}
+get password() { return this._value.password;}
+get changePassword() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    password: parsedValue as Public.Types.Staff["password"],
+    });
+  };
+}
+get lastUpdate() { return this._value.lastUpdate;}
+get changeLastUpdate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    lastUpdate: parsedValue as Public.Types.Staff["lastUpdate"],
+    });
+  };
+}
+get picture() { return this._value.picture;}
+get changePicture() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Bytea.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    picture: parsedValue as Public.Types.Staff["picture"],
+    });
+  };
+}
+}
+}
+export namespace Store {
+export type Row = IsRow<Public.Types.Store>;
+export class RowImplementation
+ extends RowBase<Public.Types.Store>
+ implements Row {
+   constructor(row: Public.Types.Store, 
+     changeCallback: RowCallback<Public.Types.Store>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get storeId() { return this._value.storeId;}
+get changeStoreId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    storeId: parsedValue as Public.Types.Store["storeId"],
+    });
+  };
+}
+get managerStaffId() { return this._value.managerStaffId;}
+get changeManagerStaffId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    managerStaffId: parsedValue as Public.Types.Store["managerStaffId"],
+    });
+  };
+}
+get addressId() { return this._value.addressId;}
+get changeAddressId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    addressId: parsedValue as Public.Types.Store["addressId"],
+    });
+  };
+}
+get lastUpdate() { return this._value.lastUpdate;}
+get changeLastUpdate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    lastUpdate: parsedValue as Public.Types.Store["lastUpdate"],
+    });
+  };
+}
+}
+}
+export namespace Payment {
+export type Row = IsRow<Public.Types.Payment>;
+export class RowImplementation
+ extends RowBase<Public.Types.Payment>
+ implements Row {
+   constructor(row: Public.Types.Payment, 
+     changeCallback: RowCallback<Public.Types.Payment>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get paymentId() { return this._value.paymentId;}
+get changePaymentId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    paymentId: parsedValue as Public.Types.Payment["paymentId"],
+    });
+  };
+}
+get customerId() { return this._value.customerId;}
+get changeCustomerId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    customerId: parsedValue as Public.Types.Payment["customerId"],
+    });
+  };
+}
+get staffId() { return this._value.staffId;}
+get changeStaffId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    staffId: parsedValue as Public.Types.Payment["staffId"],
+    });
+  };
+}
+get rentalId() { return this._value.rentalId;}
+get changeRentalId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    rentalId: parsedValue as Public.Types.Payment["rentalId"],
+    });
+  };
+}
+get amount() { return this._value.amount;}
+get changeAmount() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Numeric.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    amount: parsedValue as Public.Types.Payment["amount"],
+    });
+  };
+}
+get paymentDate() { return this._value.paymentDate;}
+get changePaymentDate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    paymentDate: parsedValue as Public.Types.Payment["paymentDate"],
+    });
+  };
+}
+}
+}
+export namespace Film {
+export type Row = IsRow<Public.Types.Film>;
+export class RowImplementation
+ extends RowBase<Public.Types.Film>
+ implements Row {
+   constructor(row: Public.Types.Film, 
+     changeCallback: RowCallback<Public.Types.Film>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get filmId() { return this._value.filmId;}
+get changeFilmId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    filmId: parsedValue as Public.Types.Film["filmId"],
+    });
+  };
+}
+get title() { return this._value.title;}
+get changeTitle() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    title: parsedValue as Public.Types.Film["title"],
+    });
+  };
+}
+get description() { return this._value.description;}
+get changeDescription() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Text.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    description: parsedValue as Public.Types.Film["description"],
+    });
+  };
+}
+get releaseYear() { return this._value.releaseYear;}
+get changeReleaseYear() {
+  return (event: ChangeEvent) => {
+    const parsedValue = Public.Types.Year.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    releaseYear: parsedValue as Public.Types.Film["releaseYear"],
+    });
+  };
+}
+get languageId() { return this._value.languageId;}
+get changeLanguageId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    languageId: parsedValue as Public.Types.Film["languageId"],
+    });
+  };
+}
+get rentalDuration() { return this._value.rentalDuration;}
+get changeRentalDuration() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    rentalDuration: parsedValue as Public.Types.Film["rentalDuration"],
+    });
+  };
+}
+get rentalRate() { return this._value.rentalRate;}
+get changeRentalRate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Numeric.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    rentalRate: parsedValue as Public.Types.Film["rentalRate"],
+    });
+  };
+}
+get length() { return this._value.length;}
+get changeLength() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    length: parsedValue as Public.Types.Film["length"],
+    });
+  };
+}
+get replacementCost() { return this._value.replacementCost;}
+get changeReplacementCost() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Numeric.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    replacementCost: parsedValue as Public.Types.Film["replacementCost"],
+    });
+  };
+}
+get rating() { return this._value.rating;}
+get changeRating() {
+  return (event: ChangeEvent) => {
+    const parsedValue = Public.Types.MpaaRating.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    rating: parsedValue as Public.Types.Film["rating"],
+    });
+  };
+}
+get lastUpdate() { return this._value.lastUpdate;}
+get changeLastUpdate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    lastUpdate: parsedValue as Public.Types.Film["lastUpdate"],
+    });
+  };
+}
+get specialFeatures() { return this._value.specialFeatures;}
+get changeSpecialFeatures() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.TextArray.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    specialFeatures: parsedValue as Public.Types.Film["specialFeatures"],
+    });
+  };
+}
+get fulltext() { return this._value.fulltext;}
+get changeFulltext() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Tsvector.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    fulltext: parsedValue as Public.Types.Film["fulltext"],
+    });
+  };
+}
+}
+}
+}
+}
+export namespace PgToast {
+export namespace Procedures {
+}
+export namespace Tables {
+}
+}
+export namespace Scripts {
+export namespace MovieListing {
+export type Row = IsRow<Scripts.MovieListing.Results>;
+export class RowImplementation
+ extends RowBase<Scripts.MovieListing.Results>
+ implements Row {
+   constructor(row: Scripts.MovieListing.Results, 
+     changeCallback: RowCallback<Scripts.MovieListing.Results>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get filmId() { return this._value.filmId;}
+get changeFilmId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    filmId: parsedValue as Scripts.MovieListing.Results["filmId"],
+    });
+  };
+}
+get title() { return this._value.title;}
+get changeTitle() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    title: parsedValue as Scripts.MovieListing.Results["title"],
+    });
+  };
+}
+get releaseYear() { return this._value.releaseYear;}
+get changeReleaseYear() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    releaseYear: parsedValue as Scripts.MovieListing.Results["releaseYear"],
+    });
+  };
+}
+get rating() { return this._value.rating;}
+get changeRating() {
+  return (event: ChangeEvent) => {
+    const parsedValue = Public.Types.MpaaRating.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    rating: parsedValue as Scripts.MovieListing.Results["rating"],
+    });
+  };
+}
+get actors() { return this._value.actors;}
+get changeActors() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.TextArray.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    actors: parsedValue as Scripts.MovieListing.Results["actors"],
+    });
+  };
+}
+}
+}
+export namespace Sample {
+export namespace Film {
+export namespace Rated {
+export type Row = IsRow<Scripts.Sample.Film.Rated.Results>;
+export class RowImplementation
+ extends RowBase<Scripts.Sample.Film.Rated.Results>
+ implements Row {
+   constructor(row: Scripts.Sample.Film.Rated.Results, 
+     changeCallback: RowCallback<Scripts.Sample.Film.Rated.Results>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get filmId() { return this._value.filmId;}
+get changeFilmId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    filmId: parsedValue as Scripts.Sample.Film.Rated.Results["filmId"],
+    });
+  };
+}
+get title() { return this._value.title;}
+get changeTitle() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    title: parsedValue as Scripts.Sample.Film.Rated.Results["title"],
+    });
+  };
+}
+get description() { return this._value.description;}
+get changeDescription() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Text.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    description: parsedValue as Scripts.Sample.Film.Rated.Results["description"],
+    });
+  };
+}
+get releaseYear() { return this._value.releaseYear;}
+get changeReleaseYear() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    releaseYear: parsedValue as Scripts.Sample.Film.Rated.Results["releaseYear"],
+    });
+  };
+}
+get languageId() { return this._value.languageId;}
+get changeLanguageId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    languageId: parsedValue as Scripts.Sample.Film.Rated.Results["languageId"],
+    });
+  };
+}
+get rentalDuration() { return this._value.rentalDuration;}
+get changeRentalDuration() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    rentalDuration: parsedValue as Scripts.Sample.Film.Rated.Results["rentalDuration"],
+    });
+  };
+}
+get rentalRate() { return this._value.rentalRate;}
+get changeRentalRate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Numeric.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    rentalRate: parsedValue as Scripts.Sample.Film.Rated.Results["rentalRate"],
+    });
+  };
+}
+get length() { return this._value.length;}
+get changeLength() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    length: parsedValue as Scripts.Sample.Film.Rated.Results["length"],
+    });
+  };
+}
+get replacementCost() { return this._value.replacementCost;}
+get changeReplacementCost() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Numeric.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    replacementCost: parsedValue as Scripts.Sample.Film.Rated.Results["replacementCost"],
+    });
+  };
+}
+get rating() { return this._value.rating;}
+get changeRating() {
+  return (event: ChangeEvent) => {
+    const parsedValue = Public.Types.MpaaRating.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    rating: parsedValue as Scripts.Sample.Film.Rated.Results["rating"],
+    });
+  };
+}
+get lastUpdate() { return this._value.lastUpdate;}
+get changeLastUpdate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    lastUpdate: parsedValue as Scripts.Sample.Film.Rated.Results["lastUpdate"],
+    });
+  };
+}
+get specialFeatures() { return this._value.specialFeatures;}
+get changeSpecialFeatures() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.TextArray.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    specialFeatures: parsedValue as Scripts.Sample.Film.Rated.Results["specialFeatures"],
+    });
+  };
+}
+get fulltext() { return this._value.fulltext;}
+get changeFulltext() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Tsvector.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    fulltext: parsedValue as Scripts.Sample.Film.Rated.Results["fulltext"],
+    });
+  };
+}
+}
+}
+export namespace Tally {
+export type Row = IsRow<Scripts.Sample.Film.Tally.Results>;
+export class RowImplementation
+ extends RowBase<Scripts.Sample.Film.Tally.Results>
+ implements Row {
+   constructor(row: Scripts.Sample.Film.Tally.Results, 
+     changeCallback: RowCallback<Scripts.Sample.Film.Tally.Results>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get count() { return this._value.count;}
+get changeCount() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int8.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    count: parsedValue as Scripts.Sample.Film.Tally.Results["count"],
+    });
+  };
+}
+}
+}
+}
+export namespace Pick {
+export type Row = IsRow<Scripts.Sample.Pick.Results>;
+export class RowImplementation
+ extends RowBase<Scripts.Sample.Pick.Results>
+ implements Row {
+   constructor(row: Scripts.Sample.Pick.Results, 
+     changeCallback: RowCallback<Scripts.Sample.Pick.Results>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get filmId() { return this._value.filmId;}
+get changeFilmId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    filmId: parsedValue as Scripts.Sample.Pick.Results["filmId"],
+    });
+  };
+}
+get title() { return this._value.title;}
+get changeTitle() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    title: parsedValue as Scripts.Sample.Pick.Results["title"],
+    });
+  };
+}
+get description() { return this._value.description;}
+get changeDescription() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Text.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    description: parsedValue as Scripts.Sample.Pick.Results["description"],
+    });
+  };
+}
+get releaseYear() { return this._value.releaseYear;}
+get changeReleaseYear() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    releaseYear: parsedValue as Scripts.Sample.Pick.Results["releaseYear"],
+    });
+  };
+}
+get languageId() { return this._value.languageId;}
+get changeLanguageId() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    languageId: parsedValue as Scripts.Sample.Pick.Results["languageId"],
+    });
+  };
+}
+get rentalDuration() { return this._value.rentalDuration;}
+get changeRentalDuration() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    rentalDuration: parsedValue as Scripts.Sample.Pick.Results["rentalDuration"],
+    });
+  };
+}
+get rentalRate() { return this._value.rentalRate;}
+get changeRentalRate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Numeric.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    rentalRate: parsedValue as Scripts.Sample.Pick.Results["rentalRate"],
+    });
+  };
+}
+get length() { return this._value.length;}
+get changeLength() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    length: parsedValue as Scripts.Sample.Pick.Results["length"],
+    });
+  };
+}
+get replacementCost() { return this._value.replacementCost;}
+get changeReplacementCost() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Numeric.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    replacementCost: parsedValue as Scripts.Sample.Pick.Results["replacementCost"],
+    });
+  };
+}
+get rating() { return this._value.rating;}
+get changeRating() {
+  return (event: ChangeEvent) => {
+    const parsedValue = Public.Types.MpaaRating.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    rating: parsedValue as Scripts.Sample.Pick.Results["rating"],
+    });
+  };
+}
+get lastUpdate() { return this._value.lastUpdate;}
+get changeLastUpdate() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    lastUpdate: parsedValue as Scripts.Sample.Pick.Results["lastUpdate"],
+    });
+  };
+}
+get specialFeatures() { return this._value.specialFeatures;}
+get changeSpecialFeatures() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.TextArray.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    specialFeatures: parsedValue as Scripts.Sample.Pick.Results["specialFeatures"],
+    });
+  };
+}
+get fulltext() { return this._value.fulltext;}
+get changeFulltext() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Tsvector.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    fulltext: parsedValue as Scripts.Sample.Pick.Results["fulltext"],
+    });
+  };
+}
+}
+}
+}
+export namespace Tally {
+export type Row = IsRow<Scripts.Tally.Results>;
+export class RowImplementation
+ extends RowBase<Scripts.Tally.Results>
+ implements Row {
+   constructor(row: Scripts.Tally.Results, 
+     changeCallback: RowCallback<Scripts.Tally.Results>, 
+     rowNumberInResultset: number) {
+     super(row, changeCallback, rowNumberInResultset);
+   }
+get count() { return this._value.count;}
+get changeCount() {
+  return (event: ChangeEvent) => {
+    const parsedValue = PgCatalog.Types.Int8.parse(event.target.value);
+    void this.changeCallback({
+      ...this.value,
+    count: parsedValue as Scripts.Tally.Results["count"],
+    });
+  };
+}
+}
+}
+}
+
+export namespace Public {
+export namespace Procedures {
+export namespace FilmInStock {
+export function useFilmInStock(parameters: Parameters) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLImmutable<Parameters, PgCatalog.Types.Int4[]>(
+               {
+                 readOperation: client.Public.Procedures.FilmInStock.call.bind(client),
+                 parameters,
+               }
+             )
+}
+}
+export namespace FilmNotInStock {
+export function useFilmNotInStock(parameters: Parameters) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLImmutable<Parameters, PgCatalog.Types.Int4[]>(
+               {
+                 readOperation: client.Public.Procedures.FilmNotInStock.call.bind(client),
+                 parameters,
+               }
+             )
+}
+}
+export namespace GetCustomerBalance {
+export function useGetCustomerBalance(parameters: Parameters) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLImmutable<Parameters, PgCatalog.Types.Numeric|undefined>(
+               {
+                 readOperation: client.Public.Procedures.GetCustomerBalance.call.bind(client),
+                 parameters,
+               }
+             )
+}
+}
+export namespace InventoryHeldByCustomer {
+export function useInventoryHeldByCustomer(parameters: Parameters) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLImmutable<Parameters, PgCatalog.Types.Int4|undefined>(
+               {
+                 readOperation: client.Public.Procedures.InventoryHeldByCustomer.call.bind(client),
+                 parameters,
+               }
+             )
+}
+}
+export namespace InventoryInStock {
+export function useInventoryInStock(parameters: Parameters) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLImmutable<Parameters, PgCatalog.Types.Bool|undefined>(
+               {
+                 readOperation: client.Public.Procedures.InventoryInStock.call.bind(client),
+                 parameters,
+               }
+             )
+}
+}
+export namespace LastDay {
+export function useLastDay(parameters: Parameters) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLImmutable<Parameters, PgCatalog.Types.Date|undefined>(
+               {
+                 readOperation: client.Public.Procedures.LastDay.call.bind(client),
+                 parameters,
+               }
+             )
+}
+}
+export namespace RewardsReport {
+export function useRewardsReport(parameters: Parameters) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLImmutableRows<Parameters, Public.Types.Customer>(
+               {
+                 readOperation: client.Public.Procedures.RewardsReport.call.bind(client),
+                 parameters,
+                 RowImplementation: Public.Procedures.RewardsReport.RowImplementation,
+               }
+             )
+}
+}
+}
+export namespace Tables {
+export namespace FilmActor {
+export function useRow(props: GeneratedRowProps<Public.Tables.FilmActor.Values>) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLRow<PrimaryKey,
+  Partial<Public.Types.FilmActor>, 
+  Public.Types.FilmActor> (
+
+               {
+                 parameters: props.values as unknown as PrimaryKey,
+                 readOperation: client.Public.Tables.FilmActor.ByPrimaryKey.read.bind(client),
+                 upsertOperation: client.Public.Tables.FilmActor.create.bind(client),
+                 deleteOperation: client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
+                 RowImplementation: Public.Tables.FilmActor.RowImplementation,
+                 rowEquals: Public.Types.FilmActor.equals,
+                 emptyRow: Public.Tables.FilmActor.emptyRow,
+                 createIfNotExists: props.createIfNotExists,
+               }
+             )
+}
+export function useRows(options?: Public.Tables.FilmActor.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<never,
+  Partial<Public.Types.FilmActor>, 
+  Public.Types.FilmActor,
+  Public.Tables.FilmActor.Options> (
+
+               {
+                 parameters: NEVER,
+                 options,
+                 readOperation: client.Public.Tables.FilmActor.all.bind(client),
+                 upsertOperation: client.Public.Tables.FilmActor.create.bind(client),
+                 deleteOperation: client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
+                 RowImplementation: Public.Tables.FilmActor.RowImplementation,
+                 rowEquals: Public.Types.FilmActor.equals,
+                 emptyRow: Public.Tables.FilmActor.emptyRow
+               }
+             )
+}
+export namespace ActorId {
+}
+export namespace FilmId {
+}
+export namespace LastUpdate {
+}
+export function useFilmActorPkey(parameters: Public.Types.FilmActorPkey ) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRow<Public.Types.FilmActorPkey, Partial<Public.Types.FilmActor>,  Public.Types.FilmActor >(
+               {
+                 readOperation: client.Public.Tables.FilmActor.FilmActorPkey.read.bind(client),
+                 parameters,
+                 
+                 upsertOperation: client.Public.Tables.FilmActor.create.bind(client),
+                 deleteOperation: client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
+                 RowImplementation: Public.Tables.FilmActor.RowImplementation,
+                 rowEquals: Public.Types.FilmActor.equals,
+                 emptyRow: Public.Tables.FilmActor.emptyRow
+               }
+             )
+}
+export function useIdxFkFilmId(parameters: Public.Types.IdxFkFilmId , options?: Public.Types.IdxFkFilmId.Options & Public.Tables.FilmActor.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<Public.Types.IdxFkFilmId, Partial<Public.Types.FilmActor>,  Public.Types.FilmActor , Public.Types.IdxFkFilmId.Options & Public.Tables.FilmActor.Options>(
+               {
+                 readOperation: client.Public.Tables.FilmActor.IdxFkFilmId.read.bind(client),
+                 parameters,
+                 options,
+                 upsertOperation: client.Public.Tables.FilmActor.create.bind(client),
+                 deleteOperation: client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
+                 RowImplementation: Public.Tables.FilmActor.RowImplementation,
+                 rowEquals: Public.Types.FilmActor.equals,
+                 emptyRow: Public.Tables.FilmActor.emptyRow
+               }
+             )
+}
+}
+export namespace Address {
+export function useRow(props: GeneratedRowProps<Public.Tables.Address.Values>) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLRow<PrimaryKey,
+  Partial<Public.Types.Address>, 
+  Public.Types.Address> (
+
+               {
+                 parameters: props.values as unknown as PrimaryKey,
+                 readOperation: client.Public.Tables.Address.ByPrimaryKey.read.bind(client),
+                 upsertOperation: client.Public.Tables.Address.create.bind(client),
+                 deleteOperation: client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Address.RowImplementation,
+                 rowEquals: Public.Types.Address.equals,
+                 emptyRow: Public.Tables.Address.emptyRow,
+                 createIfNotExists: props.createIfNotExists,
+               }
+             )
+}
+export function useRows(options?: Public.Tables.Address.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<never,
+  Partial<Public.Types.Address>, 
+  Public.Types.Address,
+  Public.Tables.Address.Options> (
+
+               {
+                 parameters: NEVER,
+                 options,
+                 readOperation: client.Public.Tables.Address.all.bind(client),
+                 upsertOperation: client.Public.Tables.Address.create.bind(client),
+                 deleteOperation: client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Address.RowImplementation,
+                 rowEquals: Public.Types.Address.equals,
+                 emptyRow: Public.Tables.Address.emptyRow
+               }
+             )
+}
+export namespace AddressId {
+}
+export namespace Address {
+}
+export namespace Address2 {
+}
+export namespace District {
+}
+export namespace CityId {
+}
+export namespace PostalCode {
+}
+export namespace Phone {
+}
+export namespace LastUpdate {
+}
+export function useAddressPkey(parameters: Public.Types.AddressPkey ) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRow<Public.Types.AddressPkey, Partial<Public.Types.Address>,  Public.Types.Address >(
+               {
+                 readOperation: client.Public.Tables.Address.AddressPkey.read.bind(client),
+                 parameters,
+                 
+                 upsertOperation: client.Public.Tables.Address.create.bind(client),
+                 deleteOperation: client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Address.RowImplementation,
+                 rowEquals: Public.Types.Address.equals,
+                 emptyRow: Public.Tables.Address.emptyRow
+               }
+             )
+}
+export function useIdxFkCityId(parameters: Public.Types.IdxFkCityId , options?: Public.Types.IdxFkCityId.Options & Public.Tables.Address.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<Public.Types.IdxFkCityId, Partial<Public.Types.Address>,  Public.Types.Address , Public.Types.IdxFkCityId.Options & Public.Tables.Address.Options>(
+               {
+                 readOperation: client.Public.Tables.Address.IdxFkCityId.read.bind(client),
+                 parameters,
+                 options,
+                 upsertOperation: client.Public.Tables.Address.create.bind(client),
+                 deleteOperation: client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Address.RowImplementation,
+                 rowEquals: Public.Types.Address.equals,
+                 emptyRow: Public.Tables.Address.emptyRow
+               }
+             )
+}
+}
+export namespace City {
+export function useRow(props: GeneratedRowProps<Public.Tables.City.Values>) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLRow<PrimaryKey,
+  Partial<Public.Types.City>, 
+  Public.Types.City> (
+
+               {
+                 parameters: props.values as unknown as PrimaryKey,
+                 readOperation: client.Public.Tables.City.ByPrimaryKey.read.bind(client),
+                 upsertOperation: client.Public.Tables.City.create.bind(client),
+                 deleteOperation: client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
+                 RowImplementation: Public.Tables.City.RowImplementation,
+                 rowEquals: Public.Types.City.equals,
+                 emptyRow: Public.Tables.City.emptyRow,
+                 createIfNotExists: props.createIfNotExists,
+               }
+             )
+}
+export function useRows(options?: Public.Tables.City.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<never,
+  Partial<Public.Types.City>, 
+  Public.Types.City,
+  Public.Tables.City.Options> (
+
+               {
+                 parameters: NEVER,
+                 options,
+                 readOperation: client.Public.Tables.City.all.bind(client),
+                 upsertOperation: client.Public.Tables.City.create.bind(client),
+                 deleteOperation: client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
+                 RowImplementation: Public.Tables.City.RowImplementation,
+                 rowEquals: Public.Types.City.equals,
+                 emptyRow: Public.Tables.City.emptyRow
+               }
+             )
+}
+export namespace CityId {
+}
+export namespace City {
+}
+export namespace CountryId {
+}
+export namespace LastUpdate {
+}
+export function useCityPkey(parameters: Public.Types.CityPkey ) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRow<Public.Types.CityPkey, Partial<Public.Types.City>,  Public.Types.City >(
+               {
+                 readOperation: client.Public.Tables.City.CityPkey.read.bind(client),
+                 parameters,
+                 
+                 upsertOperation: client.Public.Tables.City.create.bind(client),
+                 deleteOperation: client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
+                 RowImplementation: Public.Tables.City.RowImplementation,
+                 rowEquals: Public.Types.City.equals,
+                 emptyRow: Public.Tables.City.emptyRow
+               }
+             )
+}
+export function useIdxFkCountryId(parameters: Public.Types.IdxFkCountryId , options?: Public.Types.IdxFkCountryId.Options & Public.Tables.City.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<Public.Types.IdxFkCountryId, Partial<Public.Types.City>,  Public.Types.City , Public.Types.IdxFkCountryId.Options & Public.Tables.City.Options>(
+               {
+                 readOperation: client.Public.Tables.City.IdxFkCountryId.read.bind(client),
+                 parameters,
+                 options,
+                 upsertOperation: client.Public.Tables.City.create.bind(client),
+                 deleteOperation: client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
+                 RowImplementation: Public.Tables.City.RowImplementation,
+                 rowEquals: Public.Types.City.equals,
+                 emptyRow: Public.Tables.City.emptyRow
+               }
+             )
+}
+}
+export namespace Customer {
+export function useRow(props: GeneratedRowProps<Public.Tables.Customer.Values>) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLRow<PrimaryKey,
+  Partial<Public.Types.Customer>, 
+  Public.Types.Customer> (
+
+               {
+                 parameters: props.values as unknown as PrimaryKey,
+                 readOperation: client.Public.Tables.Customer.ByPrimaryKey.read.bind(client),
+                 upsertOperation: client.Public.Tables.Customer.create.bind(client),
+                 deleteOperation: client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Customer.RowImplementation,
+                 rowEquals: Public.Types.Customer.equals,
+                 emptyRow: Public.Tables.Customer.emptyRow,
+                 createIfNotExists: props.createIfNotExists,
+               }
+             )
+}
+export function useRows(options?: Public.Tables.Customer.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<never,
+  Partial<Public.Types.Customer>, 
+  Public.Types.Customer,
+  Public.Tables.Customer.Options> (
+
+               {
+                 parameters: NEVER,
+                 options,
+                 readOperation: client.Public.Tables.Customer.all.bind(client),
+                 upsertOperation: client.Public.Tables.Customer.create.bind(client),
+                 deleteOperation: client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Customer.RowImplementation,
+                 rowEquals: Public.Types.Customer.equals,
+                 emptyRow: Public.Tables.Customer.emptyRow
+               }
+             )
+}
+export namespace CustomerId {
+}
+export namespace StoreId {
+}
+export namespace FirstName {
+}
+export namespace LastName {
+}
+export namespace Email {
+}
+export namespace AddressId {
+}
+export namespace Activebool {
+}
+export namespace CreateDate {
+}
+export namespace LastUpdate {
+}
+export namespace Active {
+}
+export function useCustomerPkey(parameters: Public.Types.CustomerPkey ) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRow<Public.Types.CustomerPkey, Partial<Public.Types.Customer>,  Public.Types.Customer >(
+               {
+                 readOperation: client.Public.Tables.Customer.CustomerPkey.read.bind(client),
+                 parameters,
+                 
+                 upsertOperation: client.Public.Tables.Customer.create.bind(client),
+                 deleteOperation: client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Customer.RowImplementation,
+                 rowEquals: Public.Types.Customer.equals,
+                 emptyRow: Public.Tables.Customer.emptyRow
+               }
+             )
+}
+export function useIdxFkAddressId(parameters: Public.Types.IdxFkAddressId , options?: Public.Types.IdxFkAddressId.Options & Public.Tables.Customer.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<Public.Types.IdxFkAddressId, Partial<Public.Types.Customer>,  Public.Types.Customer , Public.Types.IdxFkAddressId.Options & Public.Tables.Customer.Options>(
+               {
+                 readOperation: client.Public.Tables.Customer.IdxFkAddressId.read.bind(client),
+                 parameters,
+                 options,
+                 upsertOperation: client.Public.Tables.Customer.create.bind(client),
+                 deleteOperation: client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Customer.RowImplementation,
+                 rowEquals: Public.Types.Customer.equals,
+                 emptyRow: Public.Tables.Customer.emptyRow
+               }
+             )
+}
+export function useIdxFkStoreId(parameters: Public.Types.IdxFkStoreId , options?: Public.Types.IdxFkStoreId.Options & Public.Tables.Customer.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<Public.Types.IdxFkStoreId, Partial<Public.Types.Customer>,  Public.Types.Customer , Public.Types.IdxFkStoreId.Options & Public.Tables.Customer.Options>(
+               {
+                 readOperation: client.Public.Tables.Customer.IdxFkStoreId.read.bind(client),
+                 parameters,
+                 options,
+                 upsertOperation: client.Public.Tables.Customer.create.bind(client),
+                 deleteOperation: client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Customer.RowImplementation,
+                 rowEquals: Public.Types.Customer.equals,
+                 emptyRow: Public.Tables.Customer.emptyRow
+               }
+             )
+}
+export function useIdxLastName(parameters: Public.Types.IdxLastName , options?: Public.Types.IdxLastName.Options & Public.Tables.Customer.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<Public.Types.IdxLastName, Partial<Public.Types.Customer>,  Public.Types.Customer , Public.Types.IdxLastName.Options & Public.Tables.Customer.Options>(
+               {
+                 readOperation: client.Public.Tables.Customer.IdxLastName.read.bind(client),
+                 parameters,
+                 options,
+                 upsertOperation: client.Public.Tables.Customer.create.bind(client),
+                 deleteOperation: client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Customer.RowImplementation,
+                 rowEquals: Public.Types.Customer.equals,
+                 emptyRow: Public.Tables.Customer.emptyRow
+               }
+             )
+}
+}
+export namespace Actor {
+export function useRow(props: GeneratedRowProps<Public.Tables.Actor.Values>) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLRow<PrimaryKey,
+  Partial<Public.Types.Actor>, 
+  Public.Types.Actor> (
+
+               {
+                 parameters: props.values as unknown as PrimaryKey,
+                 readOperation: client.Public.Tables.Actor.ByPrimaryKey.read.bind(client),
+                 upsertOperation: client.Public.Tables.Actor.create.bind(client),
+                 deleteOperation: client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Actor.RowImplementation,
+                 rowEquals: Public.Types.Actor.equals,
+                 emptyRow: Public.Tables.Actor.emptyRow,
+                 createIfNotExists: props.createIfNotExists,
+               }
+             )
+}
+export function useRows(options?: Public.Tables.Actor.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<never,
+  Partial<Public.Types.Actor>, 
+  Public.Types.Actor,
+  Public.Tables.Actor.Options> (
+
+               {
+                 parameters: NEVER,
+                 options,
+                 readOperation: client.Public.Tables.Actor.all.bind(client),
+                 upsertOperation: client.Public.Tables.Actor.create.bind(client),
+                 deleteOperation: client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Actor.RowImplementation,
+                 rowEquals: Public.Types.Actor.equals,
+                 emptyRow: Public.Tables.Actor.emptyRow
+               }
+             )
+}
+export namespace ActorId {
+}
+export namespace FirstName {
+}
+export namespace LastName {
+}
+export namespace LastUpdate {
+}
+export function useActorPkey(parameters: Public.Types.ActorPkey ) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRow<Public.Types.ActorPkey, Partial<Public.Types.Actor>,  Public.Types.Actor >(
+               {
+                 readOperation: client.Public.Tables.Actor.ActorPkey.read.bind(client),
+                 parameters,
+                 
+                 upsertOperation: client.Public.Tables.Actor.create.bind(client),
+                 deleteOperation: client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Actor.RowImplementation,
+                 rowEquals: Public.Types.Actor.equals,
+                 emptyRow: Public.Tables.Actor.emptyRow
+               }
+             )
+}
+export function useIdxActorLastName(parameters: Public.Types.IdxActorLastName , options?: Public.Types.IdxActorLastName.Options & Public.Tables.Actor.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<Public.Types.IdxActorLastName, Partial<Public.Types.Actor>,  Public.Types.Actor , Public.Types.IdxActorLastName.Options & Public.Tables.Actor.Options>(
+               {
+                 readOperation: client.Public.Tables.Actor.IdxActorLastName.read.bind(client),
+                 parameters,
+                 options,
+                 upsertOperation: client.Public.Tables.Actor.create.bind(client),
+                 deleteOperation: client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Actor.RowImplementation,
+                 rowEquals: Public.Types.Actor.equals,
+                 emptyRow: Public.Tables.Actor.emptyRow
+               }
+             )
+}
+}
+export namespace FilmCategory {
+export function useRow(props: GeneratedRowProps<Public.Tables.FilmCategory.Values>) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLRow<PrimaryKey,
+  Partial<Public.Types.FilmCategory>, 
+  Public.Types.FilmCategory> (
+
+               {
+                 parameters: props.values as unknown as PrimaryKey,
+                 readOperation: client.Public.Tables.FilmCategory.ByPrimaryKey.read.bind(client),
+                 upsertOperation: client.Public.Tables.FilmCategory.create.bind(client),
+                 deleteOperation: client.Public.Tables.FilmCategory.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.FilmCategory.primaryKeyFrom,
+                 RowImplementation: Public.Tables.FilmCategory.RowImplementation,
+                 rowEquals: Public.Types.FilmCategory.equals,
+                 emptyRow: Public.Tables.FilmCategory.emptyRow,
+                 createIfNotExists: props.createIfNotExists,
+               }
+             )
+}
+export function useRows(options?: Public.Tables.FilmCategory.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<never,
+  Partial<Public.Types.FilmCategory>, 
+  Public.Types.FilmCategory,
+  Public.Tables.FilmCategory.Options> (
+
+               {
+                 parameters: NEVER,
+                 options,
+                 readOperation: client.Public.Tables.FilmCategory.all.bind(client),
+                 upsertOperation: client.Public.Tables.FilmCategory.create.bind(client),
+                 deleteOperation: client.Public.Tables.FilmCategory.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.FilmCategory.primaryKeyFrom,
+                 RowImplementation: Public.Tables.FilmCategory.RowImplementation,
+                 rowEquals: Public.Types.FilmCategory.equals,
+                 emptyRow: Public.Tables.FilmCategory.emptyRow
+               }
+             )
+}
+export namespace FilmId {
+}
+export namespace CategoryId {
+}
+export namespace LastUpdate {
+}
+export function useFilmCategoryPkey(parameters: Public.Types.FilmCategoryPkey ) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRow<Public.Types.FilmCategoryPkey, Partial<Public.Types.FilmCategory>,  Public.Types.FilmCategory >(
+               {
+                 readOperation: client.Public.Tables.FilmCategory.FilmCategoryPkey.read.bind(client),
+                 parameters,
+                 
+                 upsertOperation: client.Public.Tables.FilmCategory.create.bind(client),
+                 deleteOperation: client.Public.Tables.FilmCategory.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.FilmCategory.primaryKeyFrom,
+                 RowImplementation: Public.Tables.FilmCategory.RowImplementation,
+                 rowEquals: Public.Types.FilmCategory.equals,
+                 emptyRow: Public.Tables.FilmCategory.emptyRow
+               }
+             )
+}
+}
+export namespace Inventory {
+export function useRow(props: GeneratedRowProps<Public.Tables.Inventory.Values>) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLRow<PrimaryKey,
+  Partial<Public.Types.Inventory>, 
+  Public.Types.Inventory> (
+
+               {
+                 parameters: props.values as unknown as PrimaryKey,
+                 readOperation: client.Public.Tables.Inventory.ByPrimaryKey.read.bind(client),
+                 upsertOperation: client.Public.Tables.Inventory.create.bind(client),
+                 deleteOperation: client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Inventory.RowImplementation,
+                 rowEquals: Public.Types.Inventory.equals,
+                 emptyRow: Public.Tables.Inventory.emptyRow,
+                 createIfNotExists: props.createIfNotExists,
+               }
+             )
+}
+export function useRows(options?: Public.Tables.Inventory.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<never,
+  Partial<Public.Types.Inventory>, 
+  Public.Types.Inventory,
+  Public.Tables.Inventory.Options> (
+
+               {
+                 parameters: NEVER,
+                 options,
+                 readOperation: client.Public.Tables.Inventory.all.bind(client),
+                 upsertOperation: client.Public.Tables.Inventory.create.bind(client),
+                 deleteOperation: client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Inventory.RowImplementation,
+                 rowEquals: Public.Types.Inventory.equals,
+                 emptyRow: Public.Tables.Inventory.emptyRow
+               }
+             )
+}
+export namespace InventoryId {
+}
+export namespace FilmId {
+}
+export namespace StoreId {
+}
+export namespace LastUpdate {
+}
+export function useInventoryPkey(parameters: Public.Types.InventoryPkey ) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRow<Public.Types.InventoryPkey, Partial<Public.Types.Inventory>,  Public.Types.Inventory >(
+               {
+                 readOperation: client.Public.Tables.Inventory.InventoryPkey.read.bind(client),
+                 parameters,
+                 
+                 upsertOperation: client.Public.Tables.Inventory.create.bind(client),
+                 deleteOperation: client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Inventory.RowImplementation,
+                 rowEquals: Public.Types.Inventory.equals,
+                 emptyRow: Public.Tables.Inventory.emptyRow
+               }
+             )
+}
+export function useIdxStoreIdFilmId(parameters: Public.Types.IdxStoreIdFilmId , options?: Public.Types.IdxStoreIdFilmId.Options & Public.Tables.Inventory.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<Public.Types.IdxStoreIdFilmId, Partial<Public.Types.Inventory>,  Public.Types.Inventory , Public.Types.IdxStoreIdFilmId.Options & Public.Tables.Inventory.Options>(
+               {
+                 readOperation: client.Public.Tables.Inventory.IdxStoreIdFilmId.read.bind(client),
+                 parameters,
+                 options,
+                 upsertOperation: client.Public.Tables.Inventory.create.bind(client),
+                 deleteOperation: client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Inventory.RowImplementation,
+                 rowEquals: Public.Types.Inventory.equals,
+                 emptyRow: Public.Tables.Inventory.emptyRow
+               }
+             )
+}
+}
+export namespace Category {
+export function useRow(props: GeneratedRowProps<Public.Tables.Category.Values>) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLRow<PrimaryKey,
+  Partial<Public.Types.Category>, 
+  Public.Types.Category> (
+
+               {
+                 parameters: props.values as unknown as PrimaryKey,
+                 readOperation: client.Public.Tables.Category.ByPrimaryKey.read.bind(client),
+                 upsertOperation: client.Public.Tables.Category.create.bind(client),
+                 deleteOperation: client.Public.Tables.Category.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Category.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Category.RowImplementation,
+                 rowEquals: Public.Types.Category.equals,
+                 emptyRow: Public.Tables.Category.emptyRow,
+                 createIfNotExists: props.createIfNotExists,
+               }
+             )
+}
+export function useRows(options?: Public.Tables.Category.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<never,
+  Partial<Public.Types.Category>, 
+  Public.Types.Category,
+  Public.Tables.Category.Options> (
+
+               {
+                 parameters: NEVER,
+                 options,
+                 readOperation: client.Public.Tables.Category.all.bind(client),
+                 upsertOperation: client.Public.Tables.Category.create.bind(client),
+                 deleteOperation: client.Public.Tables.Category.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Category.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Category.RowImplementation,
+                 rowEquals: Public.Types.Category.equals,
+                 emptyRow: Public.Tables.Category.emptyRow
+               }
+             )
+}
+export namespace CategoryId {
+}
+export namespace Name {
+}
+export namespace LastUpdate {
+}
+export function useCategoryPkey(parameters: Public.Types.CategoryPkey ) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRow<Public.Types.CategoryPkey, Partial<Public.Types.Category>,  Public.Types.Category >(
+               {
+                 readOperation: client.Public.Tables.Category.CategoryPkey.read.bind(client),
+                 parameters,
+                 
+                 upsertOperation: client.Public.Tables.Category.create.bind(client),
+                 deleteOperation: client.Public.Tables.Category.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Category.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Category.RowImplementation,
+                 rowEquals: Public.Types.Category.equals,
+                 emptyRow: Public.Tables.Category.emptyRow
+               }
+             )
+}
+}
+export namespace Country {
+export function useRow(props: GeneratedRowProps<Public.Tables.Country.Values>) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLRow<PrimaryKey,
+  Partial<Public.Types.Country>, 
+  Public.Types.Country> (
+
+               {
+                 parameters: props.values as unknown as PrimaryKey,
+                 readOperation: client.Public.Tables.Country.ByPrimaryKey.read.bind(client),
+                 upsertOperation: client.Public.Tables.Country.create.bind(client),
+                 deleteOperation: client.Public.Tables.Country.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Country.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Country.RowImplementation,
+                 rowEquals: Public.Types.Country.equals,
+                 emptyRow: Public.Tables.Country.emptyRow,
+                 createIfNotExists: props.createIfNotExists,
+               }
+             )
+}
+export function useRows(options?: Public.Tables.Country.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<never,
+  Partial<Public.Types.Country>, 
+  Public.Types.Country,
+  Public.Tables.Country.Options> (
+
+               {
+                 parameters: NEVER,
+                 options,
+                 readOperation: client.Public.Tables.Country.all.bind(client),
+                 upsertOperation: client.Public.Tables.Country.create.bind(client),
+                 deleteOperation: client.Public.Tables.Country.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Country.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Country.RowImplementation,
+                 rowEquals: Public.Types.Country.equals,
+                 emptyRow: Public.Tables.Country.emptyRow
+               }
+             )
+}
+export namespace CountryId {
+}
+export namespace Country {
+}
+export namespace LastUpdate {
+}
+export function useCountryPkey(parameters: Public.Types.CountryPkey ) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRow<Public.Types.CountryPkey, Partial<Public.Types.Country>,  Public.Types.Country >(
+               {
+                 readOperation: client.Public.Tables.Country.CountryPkey.read.bind(client),
+                 parameters,
+                 
+                 upsertOperation: client.Public.Tables.Country.create.bind(client),
+                 deleteOperation: client.Public.Tables.Country.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Country.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Country.RowImplementation,
+                 rowEquals: Public.Types.Country.equals,
+                 emptyRow: Public.Tables.Country.emptyRow
+               }
+             )
+}
+}
+export namespace Language {
+export function useRow(props: GeneratedRowProps<Public.Tables.Language.Values>) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLRow<PrimaryKey,
+  Partial<Public.Types.Language>, 
+  Public.Types.Language> (
+
+               {
+                 parameters: props.values as unknown as PrimaryKey,
+                 readOperation: client.Public.Tables.Language.ByPrimaryKey.read.bind(client),
+                 upsertOperation: client.Public.Tables.Language.create.bind(client),
+                 deleteOperation: client.Public.Tables.Language.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Language.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Language.RowImplementation,
+                 rowEquals: Public.Types.Language.equals,
+                 emptyRow: Public.Tables.Language.emptyRow,
+                 createIfNotExists: props.createIfNotExists,
+               }
+             )
+}
+export function useRows(options?: Public.Tables.Language.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<never,
+  Partial<Public.Types.Language>, 
+  Public.Types.Language,
+  Public.Tables.Language.Options> (
+
+               {
+                 parameters: NEVER,
+                 options,
+                 readOperation: client.Public.Tables.Language.all.bind(client),
+                 upsertOperation: client.Public.Tables.Language.create.bind(client),
+                 deleteOperation: client.Public.Tables.Language.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Language.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Language.RowImplementation,
+                 rowEquals: Public.Types.Language.equals,
+                 emptyRow: Public.Tables.Language.emptyRow
+               }
+             )
+}
+export namespace LanguageId {
+}
+export namespace Name {
+}
+export namespace LastUpdate {
+}
+export function useLanguagePkey(parameters: Public.Types.LanguagePkey ) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRow<Public.Types.LanguagePkey, Partial<Public.Types.Language>,  Public.Types.Language >(
+               {
+                 readOperation: client.Public.Tables.Language.LanguagePkey.read.bind(client),
+                 parameters,
+                 
+                 upsertOperation: client.Public.Tables.Language.create.bind(client),
+                 deleteOperation: client.Public.Tables.Language.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Language.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Language.RowImplementation,
+                 rowEquals: Public.Types.Language.equals,
+                 emptyRow: Public.Tables.Language.emptyRow
+               }
+             )
+}
+}
+export namespace Rental {
+export function useRow(props: GeneratedRowProps<Public.Tables.Rental.Values>) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLRow<PrimaryKey,
+  Partial<Public.Types.Rental>, 
+  Public.Types.Rental> (
+
+               {
+                 parameters: props.values as unknown as PrimaryKey,
+                 readOperation: client.Public.Tables.Rental.ByPrimaryKey.read.bind(client),
+                 upsertOperation: client.Public.Tables.Rental.create.bind(client),
+                 deleteOperation: client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Rental.RowImplementation,
+                 rowEquals: Public.Types.Rental.equals,
+                 emptyRow: Public.Tables.Rental.emptyRow,
+                 createIfNotExists: props.createIfNotExists,
+               }
+             )
+}
+export function useRows(options?: Public.Tables.Rental.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<never,
+  Partial<Public.Types.Rental>, 
+  Public.Types.Rental,
+  Public.Tables.Rental.Options> (
+
+               {
+                 parameters: NEVER,
+                 options,
+                 readOperation: client.Public.Tables.Rental.all.bind(client),
+                 upsertOperation: client.Public.Tables.Rental.create.bind(client),
+                 deleteOperation: client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Rental.RowImplementation,
+                 rowEquals: Public.Types.Rental.equals,
+                 emptyRow: Public.Tables.Rental.emptyRow
+               }
+             )
+}
+export namespace RentalId {
+}
+export namespace RentalDate {
+}
+export namespace InventoryId {
+}
+export namespace CustomerId {
+}
+export namespace ReturnDate {
+}
+export namespace StaffId {
+}
+export namespace LastUpdate {
+}
+export function useRentalPkey(parameters: Public.Types.RentalPkey ) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRow<Public.Types.RentalPkey, Partial<Public.Types.Rental>,  Public.Types.Rental >(
+               {
+                 readOperation: client.Public.Tables.Rental.RentalPkey.read.bind(client),
+                 parameters,
+                 
+                 upsertOperation: client.Public.Tables.Rental.create.bind(client),
+                 deleteOperation: client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Rental.RowImplementation,
+                 rowEquals: Public.Types.Rental.equals,
+                 emptyRow: Public.Tables.Rental.emptyRow
+               }
+             )
+}
+export function useIdxFkInventoryId(parameters: Public.Types.IdxFkInventoryId , options?: Public.Types.IdxFkInventoryId.Options & Public.Tables.Rental.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<Public.Types.IdxFkInventoryId, Partial<Public.Types.Rental>,  Public.Types.Rental , Public.Types.IdxFkInventoryId.Options & Public.Tables.Rental.Options>(
+               {
+                 readOperation: client.Public.Tables.Rental.IdxFkInventoryId.read.bind(client),
+                 parameters,
+                 options,
+                 upsertOperation: client.Public.Tables.Rental.create.bind(client),
+                 deleteOperation: client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Rental.RowImplementation,
+                 rowEquals: Public.Types.Rental.equals,
+                 emptyRow: Public.Tables.Rental.emptyRow
+               }
+             )
+}
+export function useIdxUnqRentalRentalDateInventoryIdCustomerId(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId ) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRow<Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, Partial<Public.Types.Rental>,  Public.Types.Rental >(
+               {
+                 readOperation: client.Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.read.bind(client),
+                 parameters,
+                 
+                 upsertOperation: client.Public.Tables.Rental.create.bind(client),
+                 deleteOperation: client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Rental.RowImplementation,
+                 rowEquals: Public.Types.Rental.equals,
+                 emptyRow: Public.Tables.Rental.emptyRow
+               }
+             )
+}
+}
+export namespace Staff {
+export function useRow(props: GeneratedRowProps<Public.Tables.Staff.Values>) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLRow<PrimaryKey,
+  Partial<Public.Types.Staff>, 
+  Public.Types.Staff> (
+
+               {
+                 parameters: props.values as unknown as PrimaryKey,
+                 readOperation: client.Public.Tables.Staff.ByPrimaryKey.read.bind(client),
+                 upsertOperation: client.Public.Tables.Staff.create.bind(client),
+                 deleteOperation: client.Public.Tables.Staff.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Staff.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Staff.RowImplementation,
+                 rowEquals: Public.Types.Staff.equals,
+                 emptyRow: Public.Tables.Staff.emptyRow,
+                 createIfNotExists: props.createIfNotExists,
+               }
+             )
+}
+export function useRows(options?: Public.Tables.Staff.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<never,
+  Partial<Public.Types.Staff>, 
+  Public.Types.Staff,
+  Public.Tables.Staff.Options> (
+
+               {
+                 parameters: NEVER,
+                 options,
+                 readOperation: client.Public.Tables.Staff.all.bind(client),
+                 upsertOperation: client.Public.Tables.Staff.create.bind(client),
+                 deleteOperation: client.Public.Tables.Staff.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Staff.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Staff.RowImplementation,
+                 rowEquals: Public.Types.Staff.equals,
+                 emptyRow: Public.Tables.Staff.emptyRow
+               }
+             )
+}
+export namespace StaffId {
+}
+export namespace FirstName {
+}
+export namespace LastName {
+}
+export namespace AddressId {
+}
+export namespace Email {
+}
+export namespace StoreId {
+}
+export namespace Active {
+}
+export namespace Username {
+}
+export namespace Password {
+}
+export namespace LastUpdate {
+}
+export namespace Picture {
+}
+export function useStaffPkey(parameters: Public.Types.StaffPkey ) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRow<Public.Types.StaffPkey, Partial<Public.Types.Staff>,  Public.Types.Staff >(
+               {
+                 readOperation: client.Public.Tables.Staff.StaffPkey.read.bind(client),
+                 parameters,
+                 
+                 upsertOperation: client.Public.Tables.Staff.create.bind(client),
+                 deleteOperation: client.Public.Tables.Staff.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Staff.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Staff.RowImplementation,
+                 rowEquals: Public.Types.Staff.equals,
+                 emptyRow: Public.Tables.Staff.emptyRow
+               }
+             )
+}
+}
+export namespace Store {
+export function useRow(props: GeneratedRowProps<Public.Tables.Store.Values>) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLRow<PrimaryKey,
+  Partial<Public.Types.Store>, 
+  Public.Types.Store> (
+
+               {
+                 parameters: props.values as unknown as PrimaryKey,
+                 readOperation: client.Public.Tables.Store.ByPrimaryKey.read.bind(client),
+                 upsertOperation: client.Public.Tables.Store.create.bind(client),
+                 deleteOperation: client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Store.RowImplementation,
+                 rowEquals: Public.Types.Store.equals,
+                 emptyRow: Public.Tables.Store.emptyRow,
+                 createIfNotExists: props.createIfNotExists,
+               }
+             )
+}
+export function useRows(options?: Public.Tables.Store.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<never,
+  Partial<Public.Types.Store>, 
+  Public.Types.Store,
+  Public.Tables.Store.Options> (
+
+               {
+                 parameters: NEVER,
+                 options,
+                 readOperation: client.Public.Tables.Store.all.bind(client),
+                 upsertOperation: client.Public.Tables.Store.create.bind(client),
+                 deleteOperation: client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Store.RowImplementation,
+                 rowEquals: Public.Types.Store.equals,
+                 emptyRow: Public.Tables.Store.emptyRow
+               }
+             )
+}
+export namespace StoreId {
+}
+export namespace ManagerStaffId {
+}
+export namespace AddressId {
+}
+export namespace LastUpdate {
+}
+export function useStorePkey(parameters: Public.Types.StorePkey ) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRow<Public.Types.StorePkey, Partial<Public.Types.Store>,  Public.Types.Store >(
+               {
+                 readOperation: client.Public.Tables.Store.StorePkey.read.bind(client),
+                 parameters,
+                 
+                 upsertOperation: client.Public.Tables.Store.create.bind(client),
+                 deleteOperation: client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Store.RowImplementation,
+                 rowEquals: Public.Types.Store.equals,
+                 emptyRow: Public.Tables.Store.emptyRow
+               }
+             )
+}
+export function useIdxUnqManagerStaffId(parameters: Public.Types.IdxUnqManagerStaffId ) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRow<Public.Types.IdxUnqManagerStaffId, Partial<Public.Types.Store>,  Public.Types.Store >(
+               {
+                 readOperation: client.Public.Tables.Store.IdxUnqManagerStaffId.read.bind(client),
+                 parameters,
+                 
+                 upsertOperation: client.Public.Tables.Store.create.bind(client),
+                 deleteOperation: client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Store.RowImplementation,
+                 rowEquals: Public.Types.Store.equals,
+                 emptyRow: Public.Tables.Store.emptyRow
+               }
+             )
+}
+}
+export namespace Payment {
+export function useRow(props: GeneratedRowProps<Public.Tables.Payment.Values>) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLRow<PrimaryKey,
+  Partial<Public.Types.Payment>, 
+  Public.Types.Payment> (
+
+               {
+                 parameters: props.values as unknown as PrimaryKey,
+                 readOperation: client.Public.Tables.Payment.ByPrimaryKey.read.bind(client),
+                 upsertOperation: client.Public.Tables.Payment.create.bind(client),
+                 deleteOperation: client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Payment.RowImplementation,
+                 rowEquals: Public.Types.Payment.equals,
+                 emptyRow: Public.Tables.Payment.emptyRow,
+                 createIfNotExists: props.createIfNotExists,
+               }
+             )
+}
+export function useRows(options?: Public.Tables.Payment.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<never,
+  Partial<Public.Types.Payment>, 
+  Public.Types.Payment,
+  Public.Tables.Payment.Options> (
+
+               {
+                 parameters: NEVER,
+                 options,
+                 readOperation: client.Public.Tables.Payment.all.bind(client),
+                 upsertOperation: client.Public.Tables.Payment.create.bind(client),
+                 deleteOperation: client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Payment.RowImplementation,
+                 rowEquals: Public.Types.Payment.equals,
+                 emptyRow: Public.Tables.Payment.emptyRow
+               }
+             )
+}
+export namespace PaymentId {
+}
+export namespace CustomerId {
+}
+export namespace StaffId {
+}
+export namespace RentalId {
+}
+export namespace Amount {
+}
+export namespace PaymentDate {
+}
+export function usePaymentPkey(parameters: Public.Types.PaymentPkey ) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRow<Public.Types.PaymentPkey, Partial<Public.Types.Payment>,  Public.Types.Payment >(
+               {
+                 readOperation: client.Public.Tables.Payment.PaymentPkey.read.bind(client),
+                 parameters,
+                 
+                 upsertOperation: client.Public.Tables.Payment.create.bind(client),
+                 deleteOperation: client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Payment.RowImplementation,
+                 rowEquals: Public.Types.Payment.equals,
+                 emptyRow: Public.Tables.Payment.emptyRow
+               }
+             )
+}
+export function useIdxFkCustomerId(parameters: Public.Types.IdxFkCustomerId , options?: Public.Types.IdxFkCustomerId.Options & Public.Tables.Payment.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<Public.Types.IdxFkCustomerId, Partial<Public.Types.Payment>,  Public.Types.Payment , Public.Types.IdxFkCustomerId.Options & Public.Tables.Payment.Options>(
+               {
+                 readOperation: client.Public.Tables.Payment.IdxFkCustomerId.read.bind(client),
+                 parameters,
+                 options,
+                 upsertOperation: client.Public.Tables.Payment.create.bind(client),
+                 deleteOperation: client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Payment.RowImplementation,
+                 rowEquals: Public.Types.Payment.equals,
+                 emptyRow: Public.Tables.Payment.emptyRow
+               }
+             )
+}
+export function useIdxFkRentalId(parameters: Public.Types.IdxFkRentalId , options?: Public.Types.IdxFkRentalId.Options & Public.Tables.Payment.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<Public.Types.IdxFkRentalId, Partial<Public.Types.Payment>,  Public.Types.Payment , Public.Types.IdxFkRentalId.Options & Public.Tables.Payment.Options>(
+               {
+                 readOperation: client.Public.Tables.Payment.IdxFkRentalId.read.bind(client),
+                 parameters,
+                 options,
+                 upsertOperation: client.Public.Tables.Payment.create.bind(client),
+                 deleteOperation: client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Payment.RowImplementation,
+                 rowEquals: Public.Types.Payment.equals,
+                 emptyRow: Public.Tables.Payment.emptyRow
+               }
+             )
+}
+export function useIdxFkStaffId(parameters: Public.Types.IdxFkStaffId , options?: Public.Types.IdxFkStaffId.Options & Public.Tables.Payment.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<Public.Types.IdxFkStaffId, Partial<Public.Types.Payment>,  Public.Types.Payment , Public.Types.IdxFkStaffId.Options & Public.Tables.Payment.Options>(
+               {
+                 readOperation: client.Public.Tables.Payment.IdxFkStaffId.read.bind(client),
+                 parameters,
+                 options,
+                 upsertOperation: client.Public.Tables.Payment.create.bind(client),
+                 deleteOperation: client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Payment.RowImplementation,
+                 rowEquals: Public.Types.Payment.equals,
+                 emptyRow: Public.Tables.Payment.emptyRow
+               }
+             )
+}
+}
+export namespace Film {
+export function useRow(props: GeneratedRowProps<Public.Tables.Film.Values>) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLRow<PrimaryKey,
+  Partial<Public.Types.Film>, 
+  Public.Types.Film> (
+
+               {
+                 parameters: props.values as unknown as PrimaryKey,
+                 readOperation: client.Public.Tables.Film.ByPrimaryKey.read.bind(client),
+                 upsertOperation: client.Public.Tables.Film.create.bind(client),
+                 deleteOperation: client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Film.RowImplementation,
+                 rowEquals: Public.Types.Film.equals,
+                 emptyRow: Public.Tables.Film.emptyRow,
+                 createIfNotExists: props.createIfNotExists,
+               }
+             )
+}
+export function useRows(options?: Public.Tables.Film.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<never,
+  Partial<Public.Types.Film>, 
+  Public.Types.Film,
+  Public.Tables.Film.Options> (
+
+               {
+                 parameters: NEVER,
+                 options,
+                 readOperation: client.Public.Tables.Film.all.bind(client),
+                 upsertOperation: client.Public.Tables.Film.create.bind(client),
+                 deleteOperation: client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Film.RowImplementation,
+                 rowEquals: Public.Types.Film.equals,
+                 emptyRow: Public.Tables.Film.emptyRow
+               }
+             )
+}
+export namespace FilmId {
+}
+export namespace Title {
+}
+export namespace Description {
+}
+export namespace ReleaseYear {
+}
+export namespace LanguageId {
+}
+export namespace RentalDuration {
+}
+export namespace RentalRate {
+}
+export namespace Length {
+}
+export namespace ReplacementCost {
+}
+export namespace Rating {
+}
+export namespace LastUpdate {
+}
+export namespace SpecialFeatures {
+}
+export namespace Fulltext {
+}
+export function useFilmPkey(parameters: Public.Types.FilmPkey ) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRow<Public.Types.FilmPkey, Partial<Public.Types.Film>,  Public.Types.Film >(
+               {
+                 readOperation: client.Public.Tables.Film.FilmPkey.read.bind(client),
+                 parameters,
+                 
+                 upsertOperation: client.Public.Tables.Film.create.bind(client),
+                 deleteOperation: client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Film.RowImplementation,
+                 rowEquals: Public.Types.Film.equals,
+                 emptyRow: Public.Tables.Film.emptyRow
+               }
+             )
+}
+export function useFilmFulltextIdx(parameters: Public.Types.FilmFulltextIdx , options?: Public.Types.FilmFulltextIdx.Options & Public.Tables.Film.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<Public.Types.FilmFulltextIdx, Partial<Public.Types.Film>,  Public.Types.Film , Public.Types.FilmFulltextIdx.Options & Public.Tables.Film.Options>(
+               {
+                 readOperation: client.Public.Tables.Film.FilmFulltextIdx.read.bind(client),
+                 parameters,
+                 options,
+                 upsertOperation: client.Public.Tables.Film.create.bind(client),
+                 deleteOperation: client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Film.RowImplementation,
+                 rowEquals: Public.Types.Film.equals,
+                 emptyRow: Public.Tables.Film.emptyRow
+               }
+             )
+}
+export function useIdxFkLanguageId(parameters: Public.Types.IdxFkLanguageId , options?: Public.Types.IdxFkLanguageId.Options & Public.Tables.Film.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<Public.Types.IdxFkLanguageId, Partial<Public.Types.Film>,  Public.Types.Film , Public.Types.IdxFkLanguageId.Options & Public.Tables.Film.Options>(
+               {
+                 readOperation: client.Public.Tables.Film.IdxFkLanguageId.read.bind(client),
+                 parameters,
+                 options,
+                 upsertOperation: client.Public.Tables.Film.create.bind(client),
+                 deleteOperation: client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Film.RowImplementation,
+                 rowEquals: Public.Types.Film.equals,
+                 emptyRow: Public.Tables.Film.emptyRow
+               }
+             )
+}
+export function useIdxTitle(parameters: Public.Types.IdxTitle , options?: Public.Types.IdxTitle.Options & Public.Tables.Film.Options) {
+const client = useEmbraceSQLClient<EmbraceSQLClient>();
+return useEmbraceSQLRows<Public.Types.IdxTitle, Partial<Public.Types.Film>,  Public.Types.Film , Public.Types.IdxTitle.Options & Public.Tables.Film.Options>(
+               {
+                 readOperation: client.Public.Tables.Film.IdxTitle.read.bind(client),
+                 parameters,
+                 options,
+                 upsertOperation: client.Public.Tables.Film.create.bind(client),
+                 deleteOperation: client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
+                 primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
+                 RowImplementation: Public.Tables.Film.RowImplementation,
+                 rowEquals: Public.Types.Film.equals,
+                 emptyRow: Public.Tables.Film.emptyRow
+               }
+             )
+}
+}
+}
+}
+export namespace PgToast {
+export namespace Procedures {
+}
+export namespace Tables {
+}
+}
+export namespace Scripts {
+export namespace MovieListing {
+export function useMovieListing() {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLImmutableRows<never, Scripts.MovieListing.Results>(
+               {
+                 readOperation: client.Scripts.MovieListing.call.bind(client),
+                 parameters: NEVER,
+                 RowImplementation: Scripts.MovieListing.RowImplementation,
+               }
+             )
+}
+}
+export namespace Sample {
+export namespace Film {
+export namespace Rated {
+export function useRated(parameters: Parameters) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLImmutableRows<Parameters, Scripts.Sample.Film.Rated.Results>(
+               {
+                 readOperation: client.Scripts.Sample.Film.Rated.call.bind(client),
+                 parameters,
+                 RowImplementation: Scripts.Sample.Film.Rated.RowImplementation,
+               }
+             )
+}
+}
+export namespace Tally {
+export function useTally() {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLImmutableRows<never, Scripts.Sample.Film.Tally.Results>(
+               {
+                 readOperation: client.Scripts.Sample.Film.Tally.call.bind(client),
+                 parameters: NEVER,
+                 RowImplementation: Scripts.Sample.Film.Tally.RowImplementation,
+               }
+             )
+}
+}
+}
+export namespace Pick {
+export function usePick(parameters: Parameters) {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLImmutableRows<Parameters, Scripts.Sample.Pick.Results>(
+               {
+                 readOperation: client.Scripts.Sample.Pick.call.bind(client),
+                 parameters,
+                 RowImplementation: Scripts.Sample.Pick.RowImplementation,
+               }
+             )
+}
+}
+}
+export namespace Tally {
+export function useTally() {
+  const client = useEmbraceSQLClient<EmbraceSQLClient>();
+  return useEmbraceSQLImmutableRows<never, Scripts.Tally.Results>(
+               {
+                 readOperation: client.Scripts.Tally.call.bind(client),
+                 parameters: NEVER,
+                 RowImplementation: Scripts.Tally.RowImplementation,
+               }
+             )
+}
+}
+}
+// End React generated section
 
         // ⚠️ generated - do not modify ⚠️
 
@@ -55523,5289 +60809,3 @@ xmlbinary: string;
 xmloption: string;
 zeroDamagedPages: string;
 }
-// begin fetch client
-import { EmbraceSQLClient as BaseClient, EmbraceSQLClientProps, HasClient } from "@embracesql/client";
-
-  export class EmbraceSQLClient extends BaseClient {
-    constructor(props: EmbraceSQLClientProps) {
-      super(props);
-    }
-
-  
-
-          public Public = new class extends HasClient {
-        
-
-          public Procedures = new class extends HasClient {
-        
-
-          public FilmInStock = new class extends HasClient {
-        
-
-          public async call(parameters: Public.Procedures.FilmInStock.Parameters) : Promise<PgCatalog.Types.Int4[]> {
-            const response = await this.client.invoke<Public.Procedures.FilmInStock.Parameters, never, PgCatalog.Types.Int4[], never>({
-              operation: "Public.Procedures.FilmInStock.call",
-              parameters,
-            });
-        
-return response.results?.map(r => PgCatalog.Types.Int4.parse(r)) as PgCatalog.Types.Int4[] ?? [];
-}
-}(this)
-
-          public FilmNotInStock = new class extends HasClient {
-        
-
-          public async call(parameters: Public.Procedures.FilmNotInStock.Parameters) : Promise<PgCatalog.Types.Int4[]> {
-            const response = await this.client.invoke<Public.Procedures.FilmNotInStock.Parameters, never, PgCatalog.Types.Int4[], never>({
-              operation: "Public.Procedures.FilmNotInStock.call",
-              parameters,
-            });
-        
-return response.results?.map(r => PgCatalog.Types.Int4.parse(r)) as PgCatalog.Types.Int4[] ?? [];
-}
-}(this)
-
-          public GetCustomerBalance = new class extends HasClient {
-        
-
-          public async call(parameters: Public.Procedures.GetCustomerBalance.Parameters) : Promise<PgCatalog.Types.Numeric | undefined> {
-            const response = await this.client.invoke<Public.Procedures.GetCustomerBalance.Parameters, never, PgCatalog.Types.Numeric | undefined, never>({
-              operation: "Public.Procedures.GetCustomerBalance.call",
-              parameters,
-            });
-        
-return response.results ? nullIsUndefined(PgCatalog.Types.Numeric.parse(response.results)) : undefined;
-}
-}(this)
-
-          public InventoryHeldByCustomer = new class extends HasClient {
-        
-
-          public async call(parameters: Public.Procedures.InventoryHeldByCustomer.Parameters) : Promise<PgCatalog.Types.Int4 | undefined> {
-            const response = await this.client.invoke<Public.Procedures.InventoryHeldByCustomer.Parameters, never, PgCatalog.Types.Int4 | undefined, never>({
-              operation: "Public.Procedures.InventoryHeldByCustomer.call",
-              parameters,
-            });
-        
-return response.results ? nullIsUndefined(PgCatalog.Types.Int4.parse(response.results)) : undefined;
-}
-}(this)
-
-          public InventoryInStock = new class extends HasClient {
-        
-
-          public async call(parameters: Public.Procedures.InventoryInStock.Parameters) : Promise<PgCatalog.Types.Bool | undefined> {
-            const response = await this.client.invoke<Public.Procedures.InventoryInStock.Parameters, never, PgCatalog.Types.Bool | undefined, never>({
-              operation: "Public.Procedures.InventoryInStock.call",
-              parameters,
-            });
-        
-return response.results ? nullIsUndefined(PgCatalog.Types.Bool.parse(response.results)) : undefined;
-}
-}(this)
-
-          public LastDay = new class extends HasClient {
-        
-
-          public async call(parameters: Public.Procedures.LastDay.Parameters) : Promise<PgCatalog.Types.Date | undefined> {
-            const response = await this.client.invoke<Public.Procedures.LastDay.Parameters, never, PgCatalog.Types.Date | undefined, never>({
-              operation: "Public.Procedures.LastDay.call",
-              parameters,
-            });
-        
-return response.results ? nullIsUndefined(PgCatalog.Types.Date.parse(response.results)) : undefined;
-}
-}(this)
-
-          public RewardsReport = new class extends HasClient {
-        
-
-          public async call(parameters: Public.Procedures.RewardsReport.Parameters) : Promise<Public.Types.Customer[]> {
-            const response = await this.client.invoke<Public.Procedures.RewardsReport.Parameters, never, Public.Types.Customer[], never>({
-              operation: "Public.Procedures.RewardsReport.call",
-              parameters,
-            });
-        
-return response.results?.map(r => Public.Types.Customer.parse(r)) as Public.Types.Customer[] ?? [];
-}
-}(this)
-}(this)
-
-          public Tables = new class extends HasClient {
-        
-
-          public FilmActor = new class extends HasClient {
-        
-
-          public async create(values: Partial<Public.Types.FilmActor>, options?: Public.Tables.FilmActor.Options) : Promise<Public.Types.FilmActor|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.FilmActor>, Public.Types.FilmActor, Public.Tables.FilmActor.Options>({
-              operation: "Public.Tables.FilmActor.create",
-              values: {actorId: values.actorId,filmId: values.filmId,lastUpdate: values.lastUpdate},
-              options
-            });
-            return (
-    nullIsUndefined<Public.Types.FilmActor>(Public.Types.FilmActor.parse(response.results))
-  )
-  ;
-          }
-        
-
-          public async all(options?: Public.Tables.FilmActor.Options) : Promise<Public.Types.FilmActor[]> {
-            const response = await this.client.invoke<never, never, Public.Types.FilmActor[], Public.Tables.FilmActor.Options>({
-              operation: "Public.Tables.FilmActor.all",
-              options
-            });
-            return (
-    response.results
-      ?.map(Public.Types.FilmActor.parse)
-      .map(nullIsUndefined<Public.Types.FilmActor>)
-      .filter((x): x is Public.Types.FilmActor => x !== undefined) ?? []
-  )
-  ;
-          }
-        
-
-          public FilmActorPkey = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.FilmActorPkey, options?: Public.Types.FilmActorPkey.Options & Public.Tables.FilmActor.Options) {
-            const response = await this.client.invoke<Public.Types.FilmActorPkey, never, Public.Types.FilmActor | undefined, Public.Types.FilmActorPkey.Options & Public.Tables.FilmActor.Options>({
-              operation: "Public.Tables.FilmActor.FilmActorPkey.read",
-              parameters: {actorId: parameters.actorId,filmId: parameters.filmId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.FilmActor>(Public.Types.FilmActor.parse(response.results))
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.FilmActorPkey, values: Partial<Public.Types.FilmActor>, options?: Public.Tables.FilmActor.Options) {
-            const response = await this.client.invoke<Public.Types.FilmActorPkey, Partial<Public.Types.FilmActor>, Public.Types.FilmActor | undefined, Public.Tables.FilmActor.Options>({
-              operation: "Public.Tables.FilmActor.FilmActorPkey.update",
-              parameters: {actorId: parameters.actorId,filmId: parameters.filmId},
-              values: {actorId: values.actorId,filmId: values.filmId,lastUpdate: values.lastUpdate},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.FilmActor>(Public.Types.FilmActor.parse(response.results))
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.FilmActorPkey, options?: Public.Types.FilmActorPkey.Options & Public.Tables.FilmActor.Options) {
-            const response = await this.client.invoke<Public.Types.FilmActorPkey, never, Public.Types.FilmActor | undefined, Public.Types.FilmActorPkey.Options & Public.Tables.FilmActor.Options>({
-              operation: "Public.Tables.FilmActor.FilmActorPkey.delete",
-              parameters: {actorId: parameters.actorId,filmId: parameters.filmId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.FilmActor>(Public.Types.FilmActor.parse(response.results))
-  )
-  ;
-}
-}(this)
-public get ByPrimaryKey(){ return this.FilmActorPkey };
-
-          public IdxFkFilmId = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.IdxFkFilmId, options?: Public.Types.IdxFkFilmId.Options & Public.Tables.FilmActor.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkFilmId, never, Public.Types.FilmActor[] | undefined, Public.Types.IdxFkFilmId.Options & Public.Tables.FilmActor.Options>({
-              operation: "Public.Tables.FilmActor.IdxFkFilmId.read",
-              parameters: {filmId: parameters.filmId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.FilmActor.parse)
-      .map(nullIsUndefined<Public.Types.FilmActor>)
-      .filter((x): x is Public.Types.FilmActor => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.IdxFkFilmId, values: Partial<Public.Types.FilmActor>, options?: Public.Tables.FilmActor.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkFilmId, Partial<Public.Types.FilmActor>, Public.Types.FilmActor[] | undefined, Public.Tables.FilmActor.Options>({
-              operation: "Public.Tables.FilmActor.IdxFkFilmId.update",
-              parameters: {filmId: parameters.filmId},
-              values: {actorId: values.actorId,filmId: values.filmId,lastUpdate: values.lastUpdate},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.FilmActor.parse)
-      .map(nullIsUndefined<Public.Types.FilmActor>)
-      .filter((x): x is Public.Types.FilmActor => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.IdxFkFilmId, options?: Public.Types.IdxFkFilmId.Options & Public.Tables.FilmActor.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkFilmId, never, Public.Types.FilmActor[] | undefined, Public.Types.IdxFkFilmId.Options & Public.Tables.FilmActor.Options>({
-              operation: "Public.Tables.FilmActor.IdxFkFilmId.delete",
-              parameters: {filmId: parameters.filmId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.FilmActor.parse)
-      .map(nullIsUndefined<Public.Types.FilmActor>)
-      .filter((x): x is Public.Types.FilmActor => x !== undefined) ?? []
-  )
-  ;
-}
-}(this)
-
-}(this)
-
-          public Address = new class extends HasClient {
-        
-
-          public async create(values: Partial<Public.Types.Address>, options?: Public.Tables.Address.Options) : Promise<Public.Types.Address|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Address>, Public.Types.Address, Public.Tables.Address.Options>({
-              operation: "Public.Tables.Address.create",
-              values: {addressId: values.addressId,address: values.address,address2: values.address2,district: values.district,cityId: values.cityId,postalCode: values.postalCode,phone: values.phone,lastUpdate: values.lastUpdate},
-              options
-            });
-            return (
-    nullIsUndefined<Public.Types.Address>(Public.Types.Address.parse(response.results))
-  )
-  ;
-          }
-        
-
-          public async all(options?: Public.Tables.Address.Options) : Promise<Public.Types.Address[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Address[], Public.Tables.Address.Options>({
-              operation: "Public.Tables.Address.all",
-              options
-            });
-            return (
-    response.results
-      ?.map(Public.Types.Address.parse)
-      .map(nullIsUndefined<Public.Types.Address>)
-      .filter((x): x is Public.Types.Address => x !== undefined) ?? []
-  )
-  ;
-          }
-        
-
-          public AddressPkey = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.AddressPkey, options?: Public.Types.AddressPkey.Options & Public.Tables.Address.Options) {
-            const response = await this.client.invoke<Public.Types.AddressPkey, never, Public.Types.Address | undefined, Public.Types.AddressPkey.Options & Public.Tables.Address.Options>({
-              operation: "Public.Tables.Address.AddressPkey.read",
-              parameters: {addressId: parameters.addressId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Address>(Public.Types.Address.parse(response.results))
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.AddressPkey, values: Partial<Public.Types.Address>, options?: Public.Tables.Address.Options) {
-            const response = await this.client.invoke<Public.Types.AddressPkey, Partial<Public.Types.Address>, Public.Types.Address | undefined, Public.Tables.Address.Options>({
-              operation: "Public.Tables.Address.AddressPkey.update",
-              parameters: {addressId: parameters.addressId},
-              values: {addressId: values.addressId,address: values.address,address2: values.address2,district: values.district,cityId: values.cityId,postalCode: values.postalCode,phone: values.phone,lastUpdate: values.lastUpdate},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Address>(Public.Types.Address.parse(response.results))
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.AddressPkey, options?: Public.Types.AddressPkey.Options & Public.Tables.Address.Options) {
-            const response = await this.client.invoke<Public.Types.AddressPkey, never, Public.Types.Address | undefined, Public.Types.AddressPkey.Options & Public.Tables.Address.Options>({
-              operation: "Public.Tables.Address.AddressPkey.delete",
-              parameters: {addressId: parameters.addressId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Address>(Public.Types.Address.parse(response.results))
-  )
-  ;
-}
-}(this)
-public get ByPrimaryKey(){ return this.AddressPkey };
-
-          public IdxFkCityId = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.IdxFkCityId, options?: Public.Types.IdxFkCityId.Options & Public.Tables.Address.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkCityId, never, Public.Types.Address[] | undefined, Public.Types.IdxFkCityId.Options & Public.Tables.Address.Options>({
-              operation: "Public.Tables.Address.IdxFkCityId.read",
-              parameters: {cityId: parameters.cityId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Address.parse)
-      .map(nullIsUndefined<Public.Types.Address>)
-      .filter((x): x is Public.Types.Address => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.IdxFkCityId, values: Partial<Public.Types.Address>, options?: Public.Tables.Address.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkCityId, Partial<Public.Types.Address>, Public.Types.Address[] | undefined, Public.Tables.Address.Options>({
-              operation: "Public.Tables.Address.IdxFkCityId.update",
-              parameters: {cityId: parameters.cityId},
-              values: {addressId: values.addressId,address: values.address,address2: values.address2,district: values.district,cityId: values.cityId,postalCode: values.postalCode,phone: values.phone,lastUpdate: values.lastUpdate},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Address.parse)
-      .map(nullIsUndefined<Public.Types.Address>)
-      .filter((x): x is Public.Types.Address => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.IdxFkCityId, options?: Public.Types.IdxFkCityId.Options & Public.Tables.Address.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkCityId, never, Public.Types.Address[] | undefined, Public.Types.IdxFkCityId.Options & Public.Tables.Address.Options>({
-              operation: "Public.Tables.Address.IdxFkCityId.delete",
-              parameters: {cityId: parameters.cityId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Address.parse)
-      .map(nullIsUndefined<Public.Types.Address>)
-      .filter((x): x is Public.Types.Address => x !== undefined) ?? []
-  )
-  ;
-}
-}(this)
-
-}(this)
-
-          public City = new class extends HasClient {
-        
-
-          public async create(values: Partial<Public.Types.City>, options?: Public.Tables.City.Options) : Promise<Public.Types.City|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.City>, Public.Types.City, Public.Tables.City.Options>({
-              operation: "Public.Tables.City.create",
-              values: {cityId: values.cityId,city: values.city,countryId: values.countryId,lastUpdate: values.lastUpdate},
-              options
-            });
-            return (
-    nullIsUndefined<Public.Types.City>(Public.Types.City.parse(response.results))
-  )
-  ;
-          }
-        
-
-          public async all(options?: Public.Tables.City.Options) : Promise<Public.Types.City[]> {
-            const response = await this.client.invoke<never, never, Public.Types.City[], Public.Tables.City.Options>({
-              operation: "Public.Tables.City.all",
-              options
-            });
-            return (
-    response.results
-      ?.map(Public.Types.City.parse)
-      .map(nullIsUndefined<Public.Types.City>)
-      .filter((x): x is Public.Types.City => x !== undefined) ?? []
-  )
-  ;
-          }
-        
-
-          public CityPkey = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.CityPkey, options?: Public.Types.CityPkey.Options & Public.Tables.City.Options) {
-            const response = await this.client.invoke<Public.Types.CityPkey, never, Public.Types.City | undefined, Public.Types.CityPkey.Options & Public.Tables.City.Options>({
-              operation: "Public.Tables.City.CityPkey.read",
-              parameters: {cityId: parameters.cityId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.City>(Public.Types.City.parse(response.results))
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.CityPkey, values: Partial<Public.Types.City>, options?: Public.Tables.City.Options) {
-            const response = await this.client.invoke<Public.Types.CityPkey, Partial<Public.Types.City>, Public.Types.City | undefined, Public.Tables.City.Options>({
-              operation: "Public.Tables.City.CityPkey.update",
-              parameters: {cityId: parameters.cityId},
-              values: {cityId: values.cityId,city: values.city,countryId: values.countryId,lastUpdate: values.lastUpdate},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.City>(Public.Types.City.parse(response.results))
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.CityPkey, options?: Public.Types.CityPkey.Options & Public.Tables.City.Options) {
-            const response = await this.client.invoke<Public.Types.CityPkey, never, Public.Types.City | undefined, Public.Types.CityPkey.Options & Public.Tables.City.Options>({
-              operation: "Public.Tables.City.CityPkey.delete",
-              parameters: {cityId: parameters.cityId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.City>(Public.Types.City.parse(response.results))
-  )
-  ;
-}
-}(this)
-public get ByPrimaryKey(){ return this.CityPkey };
-
-          public IdxFkCountryId = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.IdxFkCountryId, options?: Public.Types.IdxFkCountryId.Options & Public.Tables.City.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkCountryId, never, Public.Types.City[] | undefined, Public.Types.IdxFkCountryId.Options & Public.Tables.City.Options>({
-              operation: "Public.Tables.City.IdxFkCountryId.read",
-              parameters: {countryId: parameters.countryId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.City.parse)
-      .map(nullIsUndefined<Public.Types.City>)
-      .filter((x): x is Public.Types.City => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.IdxFkCountryId, values: Partial<Public.Types.City>, options?: Public.Tables.City.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkCountryId, Partial<Public.Types.City>, Public.Types.City[] | undefined, Public.Tables.City.Options>({
-              operation: "Public.Tables.City.IdxFkCountryId.update",
-              parameters: {countryId: parameters.countryId},
-              values: {cityId: values.cityId,city: values.city,countryId: values.countryId,lastUpdate: values.lastUpdate},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.City.parse)
-      .map(nullIsUndefined<Public.Types.City>)
-      .filter((x): x is Public.Types.City => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.IdxFkCountryId, options?: Public.Types.IdxFkCountryId.Options & Public.Tables.City.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkCountryId, never, Public.Types.City[] | undefined, Public.Types.IdxFkCountryId.Options & Public.Tables.City.Options>({
-              operation: "Public.Tables.City.IdxFkCountryId.delete",
-              parameters: {countryId: parameters.countryId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.City.parse)
-      .map(nullIsUndefined<Public.Types.City>)
-      .filter((x): x is Public.Types.City => x !== undefined) ?? []
-  )
-  ;
-}
-}(this)
-
-}(this)
-
-          public Customer = new class extends HasClient {
-        
-
-          public async create(values: Partial<Public.Types.Customer>, options?: Public.Tables.Customer.Options) : Promise<Public.Types.Customer|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Customer>, Public.Types.Customer, Public.Tables.Customer.Options>({
-              operation: "Public.Tables.Customer.create",
-              values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active},
-              options
-            });
-            return (
-    nullIsUndefined<Public.Types.Customer>(Public.Types.Customer.parse(response.results))
-  )
-  ;
-          }
-        
-
-          public async all(options?: Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Customer[], Public.Tables.Customer.Options>({
-              operation: "Public.Tables.Customer.all",
-              options
-            });
-            return (
-    response.results
-      ?.map(Public.Types.Customer.parse)
-      .map(nullIsUndefined<Public.Types.Customer>)
-      .filter((x): x is Public.Types.Customer => x !== undefined) ?? []
-  )
-  ;
-          }
-        
-
-          public CustomerPkey = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.CustomerPkey, options?: Public.Types.CustomerPkey.Options & Public.Tables.Customer.Options) {
-            const response = await this.client.invoke<Public.Types.CustomerPkey, never, Public.Types.Customer | undefined, Public.Types.CustomerPkey.Options & Public.Tables.Customer.Options>({
-              operation: "Public.Tables.Customer.CustomerPkey.read",
-              parameters: {customerId: parameters.customerId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Customer>(Public.Types.Customer.parse(response.results))
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.CustomerPkey, values: Partial<Public.Types.Customer>, options?: Public.Tables.Customer.Options) {
-            const response = await this.client.invoke<Public.Types.CustomerPkey, Partial<Public.Types.Customer>, Public.Types.Customer | undefined, Public.Tables.Customer.Options>({
-              operation: "Public.Tables.Customer.CustomerPkey.update",
-              parameters: {customerId: parameters.customerId},
-              values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Customer>(Public.Types.Customer.parse(response.results))
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.CustomerPkey, options?: Public.Types.CustomerPkey.Options & Public.Tables.Customer.Options) {
-            const response = await this.client.invoke<Public.Types.CustomerPkey, never, Public.Types.Customer | undefined, Public.Types.CustomerPkey.Options & Public.Tables.Customer.Options>({
-              operation: "Public.Tables.Customer.CustomerPkey.delete",
-              parameters: {customerId: parameters.customerId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Customer>(Public.Types.Customer.parse(response.results))
-  )
-  ;
-}
-}(this)
-public get ByPrimaryKey(){ return this.CustomerPkey };
-
-          public IdxFkAddressId = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.IdxFkAddressId, options?: Public.Types.IdxFkAddressId.Options & Public.Tables.Customer.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkAddressId, never, Public.Types.Customer[] | undefined, Public.Types.IdxFkAddressId.Options & Public.Tables.Customer.Options>({
-              operation: "Public.Tables.Customer.IdxFkAddressId.read",
-              parameters: {addressId: parameters.addressId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Customer.parse)
-      .map(nullIsUndefined<Public.Types.Customer>)
-      .filter((x): x is Public.Types.Customer => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.IdxFkAddressId, values: Partial<Public.Types.Customer>, options?: Public.Tables.Customer.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkAddressId, Partial<Public.Types.Customer>, Public.Types.Customer[] | undefined, Public.Tables.Customer.Options>({
-              operation: "Public.Tables.Customer.IdxFkAddressId.update",
-              parameters: {addressId: parameters.addressId},
-              values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Customer.parse)
-      .map(nullIsUndefined<Public.Types.Customer>)
-      .filter((x): x is Public.Types.Customer => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.IdxFkAddressId, options?: Public.Types.IdxFkAddressId.Options & Public.Tables.Customer.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkAddressId, never, Public.Types.Customer[] | undefined, Public.Types.IdxFkAddressId.Options & Public.Tables.Customer.Options>({
-              operation: "Public.Tables.Customer.IdxFkAddressId.delete",
-              parameters: {addressId: parameters.addressId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Customer.parse)
-      .map(nullIsUndefined<Public.Types.Customer>)
-      .filter((x): x is Public.Types.Customer => x !== undefined) ?? []
-  )
-  ;
-}
-}(this)
-
-
-          public IdxFkStoreId = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.IdxFkStoreId, options?: Public.Types.IdxFkStoreId.Options & Public.Tables.Customer.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkStoreId, never, Public.Types.Customer[] | undefined, Public.Types.IdxFkStoreId.Options & Public.Tables.Customer.Options>({
-              operation: "Public.Tables.Customer.IdxFkStoreId.read",
-              parameters: {storeId: parameters.storeId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Customer.parse)
-      .map(nullIsUndefined<Public.Types.Customer>)
-      .filter((x): x is Public.Types.Customer => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.IdxFkStoreId, values: Partial<Public.Types.Customer>, options?: Public.Tables.Customer.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkStoreId, Partial<Public.Types.Customer>, Public.Types.Customer[] | undefined, Public.Tables.Customer.Options>({
-              operation: "Public.Tables.Customer.IdxFkStoreId.update",
-              parameters: {storeId: parameters.storeId},
-              values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Customer.parse)
-      .map(nullIsUndefined<Public.Types.Customer>)
-      .filter((x): x is Public.Types.Customer => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.IdxFkStoreId, options?: Public.Types.IdxFkStoreId.Options & Public.Tables.Customer.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkStoreId, never, Public.Types.Customer[] | undefined, Public.Types.IdxFkStoreId.Options & Public.Tables.Customer.Options>({
-              operation: "Public.Tables.Customer.IdxFkStoreId.delete",
-              parameters: {storeId: parameters.storeId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Customer.parse)
-      .map(nullIsUndefined<Public.Types.Customer>)
-      .filter((x): x is Public.Types.Customer => x !== undefined) ?? []
-  )
-  ;
-}
-}(this)
-
-
-          public IdxLastName = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.IdxLastName, options?: Public.Types.IdxLastName.Options & Public.Tables.Customer.Options) {
-            const response = await this.client.invoke<Public.Types.IdxLastName, never, Public.Types.Customer[] | undefined, Public.Types.IdxLastName.Options & Public.Tables.Customer.Options>({
-              operation: "Public.Tables.Customer.IdxLastName.read",
-              parameters: {lastName: parameters.lastName},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Customer.parse)
-      .map(nullIsUndefined<Public.Types.Customer>)
-      .filter((x): x is Public.Types.Customer => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.IdxLastName, values: Partial<Public.Types.Customer>, options?: Public.Tables.Customer.Options) {
-            const response = await this.client.invoke<Public.Types.IdxLastName, Partial<Public.Types.Customer>, Public.Types.Customer[] | undefined, Public.Tables.Customer.Options>({
-              operation: "Public.Tables.Customer.IdxLastName.update",
-              parameters: {lastName: parameters.lastName},
-              values: {customerId: values.customerId,storeId: values.storeId,firstName: values.firstName,lastName: values.lastName,email: values.email,addressId: values.addressId,activebool: values.activebool,createDate: values.createDate,lastUpdate: values.lastUpdate,active: values.active},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Customer.parse)
-      .map(nullIsUndefined<Public.Types.Customer>)
-      .filter((x): x is Public.Types.Customer => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.IdxLastName, options?: Public.Types.IdxLastName.Options & Public.Tables.Customer.Options) {
-            const response = await this.client.invoke<Public.Types.IdxLastName, never, Public.Types.Customer[] | undefined, Public.Types.IdxLastName.Options & Public.Tables.Customer.Options>({
-              operation: "Public.Tables.Customer.IdxLastName.delete",
-              parameters: {lastName: parameters.lastName},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Customer.parse)
-      .map(nullIsUndefined<Public.Types.Customer>)
-      .filter((x): x is Public.Types.Customer => x !== undefined) ?? []
-  )
-  ;
-}
-}(this)
-
-}(this)
-
-          public Actor = new class extends HasClient {
-        
-
-          public async create(values: Partial<Public.Types.Actor>, options?: Public.Tables.Actor.Options) : Promise<Public.Types.Actor|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Actor>, Public.Types.Actor, Public.Tables.Actor.Options>({
-              operation: "Public.Tables.Actor.create",
-              values: {actorId: values.actorId,firstName: values.firstName,lastName: values.lastName,lastUpdate: values.lastUpdate},
-              options
-            });
-            return (
-    nullIsUndefined<Public.Types.Actor>(Public.Types.Actor.parse(response.results))
-  )
-  ;
-          }
-        
-
-          public async all(options?: Public.Tables.Actor.Options) : Promise<Public.Types.Actor[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Actor[], Public.Tables.Actor.Options>({
-              operation: "Public.Tables.Actor.all",
-              options
-            });
-            return (
-    response.results
-      ?.map(Public.Types.Actor.parse)
-      .map(nullIsUndefined<Public.Types.Actor>)
-      .filter((x): x is Public.Types.Actor => x !== undefined) ?? []
-  )
-  ;
-          }
-        
-
-          public ActorPkey = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.ActorPkey, options?: Public.Types.ActorPkey.Options & Public.Tables.Actor.Options) {
-            const response = await this.client.invoke<Public.Types.ActorPkey, never, Public.Types.Actor | undefined, Public.Types.ActorPkey.Options & Public.Tables.Actor.Options>({
-              operation: "Public.Tables.Actor.ActorPkey.read",
-              parameters: {actorId: parameters.actorId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Actor>(Public.Types.Actor.parse(response.results))
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.ActorPkey, values: Partial<Public.Types.Actor>, options?: Public.Tables.Actor.Options) {
-            const response = await this.client.invoke<Public.Types.ActorPkey, Partial<Public.Types.Actor>, Public.Types.Actor | undefined, Public.Tables.Actor.Options>({
-              operation: "Public.Tables.Actor.ActorPkey.update",
-              parameters: {actorId: parameters.actorId},
-              values: {actorId: values.actorId,firstName: values.firstName,lastName: values.lastName,lastUpdate: values.lastUpdate},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Actor>(Public.Types.Actor.parse(response.results))
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.ActorPkey, options?: Public.Types.ActorPkey.Options & Public.Tables.Actor.Options) {
-            const response = await this.client.invoke<Public.Types.ActorPkey, never, Public.Types.Actor | undefined, Public.Types.ActorPkey.Options & Public.Tables.Actor.Options>({
-              operation: "Public.Tables.Actor.ActorPkey.delete",
-              parameters: {actorId: parameters.actorId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Actor>(Public.Types.Actor.parse(response.results))
-  )
-  ;
-}
-}(this)
-public get ByPrimaryKey(){ return this.ActorPkey };
-
-          public IdxActorLastName = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.IdxActorLastName, options?: Public.Types.IdxActorLastName.Options & Public.Tables.Actor.Options) {
-            const response = await this.client.invoke<Public.Types.IdxActorLastName, never, Public.Types.Actor[] | undefined, Public.Types.IdxActorLastName.Options & Public.Tables.Actor.Options>({
-              operation: "Public.Tables.Actor.IdxActorLastName.read",
-              parameters: {lastName: parameters.lastName},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Actor.parse)
-      .map(nullIsUndefined<Public.Types.Actor>)
-      .filter((x): x is Public.Types.Actor => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.IdxActorLastName, values: Partial<Public.Types.Actor>, options?: Public.Tables.Actor.Options) {
-            const response = await this.client.invoke<Public.Types.IdxActorLastName, Partial<Public.Types.Actor>, Public.Types.Actor[] | undefined, Public.Tables.Actor.Options>({
-              operation: "Public.Tables.Actor.IdxActorLastName.update",
-              parameters: {lastName: parameters.lastName},
-              values: {actorId: values.actorId,firstName: values.firstName,lastName: values.lastName,lastUpdate: values.lastUpdate},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Actor.parse)
-      .map(nullIsUndefined<Public.Types.Actor>)
-      .filter((x): x is Public.Types.Actor => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.IdxActorLastName, options?: Public.Types.IdxActorLastName.Options & Public.Tables.Actor.Options) {
-            const response = await this.client.invoke<Public.Types.IdxActorLastName, never, Public.Types.Actor[] | undefined, Public.Types.IdxActorLastName.Options & Public.Tables.Actor.Options>({
-              operation: "Public.Tables.Actor.IdxActorLastName.delete",
-              parameters: {lastName: parameters.lastName},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Actor.parse)
-      .map(nullIsUndefined<Public.Types.Actor>)
-      .filter((x): x is Public.Types.Actor => x !== undefined) ?? []
-  )
-  ;
-}
-}(this)
-
-}(this)
-
-          public FilmCategory = new class extends HasClient {
-        
-
-          public async create(values: Partial<Public.Types.FilmCategory>, options?: Public.Tables.FilmCategory.Options) : Promise<Public.Types.FilmCategory|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.FilmCategory>, Public.Types.FilmCategory, Public.Tables.FilmCategory.Options>({
-              operation: "Public.Tables.FilmCategory.create",
-              values: {filmId: values.filmId,categoryId: values.categoryId,lastUpdate: values.lastUpdate},
-              options
-            });
-            return (
-    nullIsUndefined<Public.Types.FilmCategory>(Public.Types.FilmCategory.parse(response.results))
-  )
-  ;
-          }
-        
-
-          public async all(options?: Public.Tables.FilmCategory.Options) : Promise<Public.Types.FilmCategory[]> {
-            const response = await this.client.invoke<never, never, Public.Types.FilmCategory[], Public.Tables.FilmCategory.Options>({
-              operation: "Public.Tables.FilmCategory.all",
-              options
-            });
-            return (
-    response.results
-      ?.map(Public.Types.FilmCategory.parse)
-      .map(nullIsUndefined<Public.Types.FilmCategory>)
-      .filter((x): x is Public.Types.FilmCategory => x !== undefined) ?? []
-  )
-  ;
-          }
-        
-
-          public FilmCategoryPkey = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.FilmCategoryPkey, options?: Public.Types.FilmCategoryPkey.Options & Public.Tables.FilmCategory.Options) {
-            const response = await this.client.invoke<Public.Types.FilmCategoryPkey, never, Public.Types.FilmCategory | undefined, Public.Types.FilmCategoryPkey.Options & Public.Tables.FilmCategory.Options>({
-              operation: "Public.Tables.FilmCategory.FilmCategoryPkey.read",
-              parameters: {filmId: parameters.filmId,categoryId: parameters.categoryId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.FilmCategory>(Public.Types.FilmCategory.parse(response.results))
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.FilmCategoryPkey, values: Partial<Public.Types.FilmCategory>, options?: Public.Tables.FilmCategory.Options) {
-            const response = await this.client.invoke<Public.Types.FilmCategoryPkey, Partial<Public.Types.FilmCategory>, Public.Types.FilmCategory | undefined, Public.Tables.FilmCategory.Options>({
-              operation: "Public.Tables.FilmCategory.FilmCategoryPkey.update",
-              parameters: {filmId: parameters.filmId,categoryId: parameters.categoryId},
-              values: {filmId: values.filmId,categoryId: values.categoryId,lastUpdate: values.lastUpdate},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.FilmCategory>(Public.Types.FilmCategory.parse(response.results))
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.FilmCategoryPkey, options?: Public.Types.FilmCategoryPkey.Options & Public.Tables.FilmCategory.Options) {
-            const response = await this.client.invoke<Public.Types.FilmCategoryPkey, never, Public.Types.FilmCategory | undefined, Public.Types.FilmCategoryPkey.Options & Public.Tables.FilmCategory.Options>({
-              operation: "Public.Tables.FilmCategory.FilmCategoryPkey.delete",
-              parameters: {filmId: parameters.filmId,categoryId: parameters.categoryId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.FilmCategory>(Public.Types.FilmCategory.parse(response.results))
-  )
-  ;
-}
-}(this)
-public get ByPrimaryKey(){ return this.FilmCategoryPkey };
-}(this)
-
-          public Inventory = new class extends HasClient {
-        
-
-          public async create(values: Partial<Public.Types.Inventory>, options?: Public.Tables.Inventory.Options) : Promise<Public.Types.Inventory|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Inventory>, Public.Types.Inventory, Public.Tables.Inventory.Options>({
-              operation: "Public.Tables.Inventory.create",
-              values: {inventoryId: values.inventoryId,filmId: values.filmId,storeId: values.storeId,lastUpdate: values.lastUpdate},
-              options
-            });
-            return (
-    nullIsUndefined<Public.Types.Inventory>(Public.Types.Inventory.parse(response.results))
-  )
-  ;
-          }
-        
-
-          public async all(options?: Public.Tables.Inventory.Options) : Promise<Public.Types.Inventory[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Inventory[], Public.Tables.Inventory.Options>({
-              operation: "Public.Tables.Inventory.all",
-              options
-            });
-            return (
-    response.results
-      ?.map(Public.Types.Inventory.parse)
-      .map(nullIsUndefined<Public.Types.Inventory>)
-      .filter((x): x is Public.Types.Inventory => x !== undefined) ?? []
-  )
-  ;
-          }
-        
-
-          public InventoryPkey = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.InventoryPkey, options?: Public.Types.InventoryPkey.Options & Public.Tables.Inventory.Options) {
-            const response = await this.client.invoke<Public.Types.InventoryPkey, never, Public.Types.Inventory | undefined, Public.Types.InventoryPkey.Options & Public.Tables.Inventory.Options>({
-              operation: "Public.Tables.Inventory.InventoryPkey.read",
-              parameters: {inventoryId: parameters.inventoryId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Inventory>(Public.Types.Inventory.parse(response.results))
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.InventoryPkey, values: Partial<Public.Types.Inventory>, options?: Public.Tables.Inventory.Options) {
-            const response = await this.client.invoke<Public.Types.InventoryPkey, Partial<Public.Types.Inventory>, Public.Types.Inventory | undefined, Public.Tables.Inventory.Options>({
-              operation: "Public.Tables.Inventory.InventoryPkey.update",
-              parameters: {inventoryId: parameters.inventoryId},
-              values: {inventoryId: values.inventoryId,filmId: values.filmId,storeId: values.storeId,lastUpdate: values.lastUpdate},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Inventory>(Public.Types.Inventory.parse(response.results))
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.InventoryPkey, options?: Public.Types.InventoryPkey.Options & Public.Tables.Inventory.Options) {
-            const response = await this.client.invoke<Public.Types.InventoryPkey, never, Public.Types.Inventory | undefined, Public.Types.InventoryPkey.Options & Public.Tables.Inventory.Options>({
-              operation: "Public.Tables.Inventory.InventoryPkey.delete",
-              parameters: {inventoryId: parameters.inventoryId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Inventory>(Public.Types.Inventory.parse(response.results))
-  )
-  ;
-}
-}(this)
-public get ByPrimaryKey(){ return this.InventoryPkey };
-
-          public IdxStoreIdFilmId = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.IdxStoreIdFilmId, options?: Public.Types.IdxStoreIdFilmId.Options & Public.Tables.Inventory.Options) {
-            const response = await this.client.invoke<Public.Types.IdxStoreIdFilmId, never, Public.Types.Inventory[] | undefined, Public.Types.IdxStoreIdFilmId.Options & Public.Tables.Inventory.Options>({
-              operation: "Public.Tables.Inventory.IdxStoreIdFilmId.read",
-              parameters: {storeId: parameters.storeId,filmId: parameters.filmId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Inventory.parse)
-      .map(nullIsUndefined<Public.Types.Inventory>)
-      .filter((x): x is Public.Types.Inventory => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.IdxStoreIdFilmId, values: Partial<Public.Types.Inventory>, options?: Public.Tables.Inventory.Options) {
-            const response = await this.client.invoke<Public.Types.IdxStoreIdFilmId, Partial<Public.Types.Inventory>, Public.Types.Inventory[] | undefined, Public.Tables.Inventory.Options>({
-              operation: "Public.Tables.Inventory.IdxStoreIdFilmId.update",
-              parameters: {storeId: parameters.storeId,filmId: parameters.filmId},
-              values: {inventoryId: values.inventoryId,filmId: values.filmId,storeId: values.storeId,lastUpdate: values.lastUpdate},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Inventory.parse)
-      .map(nullIsUndefined<Public.Types.Inventory>)
-      .filter((x): x is Public.Types.Inventory => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.IdxStoreIdFilmId, options?: Public.Types.IdxStoreIdFilmId.Options & Public.Tables.Inventory.Options) {
-            const response = await this.client.invoke<Public.Types.IdxStoreIdFilmId, never, Public.Types.Inventory[] | undefined, Public.Types.IdxStoreIdFilmId.Options & Public.Tables.Inventory.Options>({
-              operation: "Public.Tables.Inventory.IdxStoreIdFilmId.delete",
-              parameters: {storeId: parameters.storeId,filmId: parameters.filmId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Inventory.parse)
-      .map(nullIsUndefined<Public.Types.Inventory>)
-      .filter((x): x is Public.Types.Inventory => x !== undefined) ?? []
-  )
-  ;
-}
-}(this)
-
-}(this)
-
-          public Category = new class extends HasClient {
-        
-
-          public async create(values: Partial<Public.Types.Category>, options?: Public.Tables.Category.Options) : Promise<Public.Types.Category|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Category>, Public.Types.Category, Public.Tables.Category.Options>({
-              operation: "Public.Tables.Category.create",
-              values: {categoryId: values.categoryId,name: values.name,lastUpdate: values.lastUpdate},
-              options
-            });
-            return (
-    nullIsUndefined<Public.Types.Category>(Public.Types.Category.parse(response.results))
-  )
-  ;
-          }
-        
-
-          public async all(options?: Public.Tables.Category.Options) : Promise<Public.Types.Category[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Category[], Public.Tables.Category.Options>({
-              operation: "Public.Tables.Category.all",
-              options
-            });
-            return (
-    response.results
-      ?.map(Public.Types.Category.parse)
-      .map(nullIsUndefined<Public.Types.Category>)
-      .filter((x): x is Public.Types.Category => x !== undefined) ?? []
-  )
-  ;
-          }
-        
-
-          public CategoryPkey = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.CategoryPkey, options?: Public.Types.CategoryPkey.Options & Public.Tables.Category.Options) {
-            const response = await this.client.invoke<Public.Types.CategoryPkey, never, Public.Types.Category | undefined, Public.Types.CategoryPkey.Options & Public.Tables.Category.Options>({
-              operation: "Public.Tables.Category.CategoryPkey.read",
-              parameters: {categoryId: parameters.categoryId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Category>(Public.Types.Category.parse(response.results))
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.CategoryPkey, values: Partial<Public.Types.Category>, options?: Public.Tables.Category.Options) {
-            const response = await this.client.invoke<Public.Types.CategoryPkey, Partial<Public.Types.Category>, Public.Types.Category | undefined, Public.Tables.Category.Options>({
-              operation: "Public.Tables.Category.CategoryPkey.update",
-              parameters: {categoryId: parameters.categoryId},
-              values: {categoryId: values.categoryId,name: values.name,lastUpdate: values.lastUpdate},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Category>(Public.Types.Category.parse(response.results))
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.CategoryPkey, options?: Public.Types.CategoryPkey.Options & Public.Tables.Category.Options) {
-            const response = await this.client.invoke<Public.Types.CategoryPkey, never, Public.Types.Category | undefined, Public.Types.CategoryPkey.Options & Public.Tables.Category.Options>({
-              operation: "Public.Tables.Category.CategoryPkey.delete",
-              parameters: {categoryId: parameters.categoryId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Category>(Public.Types.Category.parse(response.results))
-  )
-  ;
-}
-}(this)
-public get ByPrimaryKey(){ return this.CategoryPkey };
-}(this)
-
-          public Country = new class extends HasClient {
-        
-
-          public async create(values: Partial<Public.Types.Country>, options?: Public.Tables.Country.Options) : Promise<Public.Types.Country|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Country>, Public.Types.Country, Public.Tables.Country.Options>({
-              operation: "Public.Tables.Country.create",
-              values: {countryId: values.countryId,country: values.country,lastUpdate: values.lastUpdate},
-              options
-            });
-            return (
-    nullIsUndefined<Public.Types.Country>(Public.Types.Country.parse(response.results))
-  )
-  ;
-          }
-        
-
-          public async all(options?: Public.Tables.Country.Options) : Promise<Public.Types.Country[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Country[], Public.Tables.Country.Options>({
-              operation: "Public.Tables.Country.all",
-              options
-            });
-            return (
-    response.results
-      ?.map(Public.Types.Country.parse)
-      .map(nullIsUndefined<Public.Types.Country>)
-      .filter((x): x is Public.Types.Country => x !== undefined) ?? []
-  )
-  ;
-          }
-        
-
-          public CountryPkey = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.CountryPkey, options?: Public.Types.CountryPkey.Options & Public.Tables.Country.Options) {
-            const response = await this.client.invoke<Public.Types.CountryPkey, never, Public.Types.Country | undefined, Public.Types.CountryPkey.Options & Public.Tables.Country.Options>({
-              operation: "Public.Tables.Country.CountryPkey.read",
-              parameters: {countryId: parameters.countryId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Country>(Public.Types.Country.parse(response.results))
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.CountryPkey, values: Partial<Public.Types.Country>, options?: Public.Tables.Country.Options) {
-            const response = await this.client.invoke<Public.Types.CountryPkey, Partial<Public.Types.Country>, Public.Types.Country | undefined, Public.Tables.Country.Options>({
-              operation: "Public.Tables.Country.CountryPkey.update",
-              parameters: {countryId: parameters.countryId},
-              values: {countryId: values.countryId,country: values.country,lastUpdate: values.lastUpdate},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Country>(Public.Types.Country.parse(response.results))
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.CountryPkey, options?: Public.Types.CountryPkey.Options & Public.Tables.Country.Options) {
-            const response = await this.client.invoke<Public.Types.CountryPkey, never, Public.Types.Country | undefined, Public.Types.CountryPkey.Options & Public.Tables.Country.Options>({
-              operation: "Public.Tables.Country.CountryPkey.delete",
-              parameters: {countryId: parameters.countryId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Country>(Public.Types.Country.parse(response.results))
-  )
-  ;
-}
-}(this)
-public get ByPrimaryKey(){ return this.CountryPkey };
-}(this)
-
-          public Language = new class extends HasClient {
-        
-
-          public async create(values: Partial<Public.Types.Language>, options?: Public.Tables.Language.Options) : Promise<Public.Types.Language|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Language>, Public.Types.Language, Public.Tables.Language.Options>({
-              operation: "Public.Tables.Language.create",
-              values: {languageId: values.languageId,name: values.name,lastUpdate: values.lastUpdate},
-              options
-            });
-            return (
-    nullIsUndefined<Public.Types.Language>(Public.Types.Language.parse(response.results))
-  )
-  ;
-          }
-        
-
-          public async all(options?: Public.Tables.Language.Options) : Promise<Public.Types.Language[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Language[], Public.Tables.Language.Options>({
-              operation: "Public.Tables.Language.all",
-              options
-            });
-            return (
-    response.results
-      ?.map(Public.Types.Language.parse)
-      .map(nullIsUndefined<Public.Types.Language>)
-      .filter((x): x is Public.Types.Language => x !== undefined) ?? []
-  )
-  ;
-          }
-        
-
-          public LanguagePkey = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.LanguagePkey, options?: Public.Types.LanguagePkey.Options & Public.Tables.Language.Options) {
-            const response = await this.client.invoke<Public.Types.LanguagePkey, never, Public.Types.Language | undefined, Public.Types.LanguagePkey.Options & Public.Tables.Language.Options>({
-              operation: "Public.Tables.Language.LanguagePkey.read",
-              parameters: {languageId: parameters.languageId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Language>(Public.Types.Language.parse(response.results))
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.LanguagePkey, values: Partial<Public.Types.Language>, options?: Public.Tables.Language.Options) {
-            const response = await this.client.invoke<Public.Types.LanguagePkey, Partial<Public.Types.Language>, Public.Types.Language | undefined, Public.Tables.Language.Options>({
-              operation: "Public.Tables.Language.LanguagePkey.update",
-              parameters: {languageId: parameters.languageId},
-              values: {languageId: values.languageId,name: values.name,lastUpdate: values.lastUpdate},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Language>(Public.Types.Language.parse(response.results))
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.LanguagePkey, options?: Public.Types.LanguagePkey.Options & Public.Tables.Language.Options) {
-            const response = await this.client.invoke<Public.Types.LanguagePkey, never, Public.Types.Language | undefined, Public.Types.LanguagePkey.Options & Public.Tables.Language.Options>({
-              operation: "Public.Tables.Language.LanguagePkey.delete",
-              parameters: {languageId: parameters.languageId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Language>(Public.Types.Language.parse(response.results))
-  )
-  ;
-}
-}(this)
-public get ByPrimaryKey(){ return this.LanguagePkey };
-}(this)
-
-          public Rental = new class extends HasClient {
-        
-
-          public async create(values: Partial<Public.Types.Rental>, options?: Public.Tables.Rental.Options) : Promise<Public.Types.Rental|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Rental>, Public.Types.Rental, Public.Tables.Rental.Options>({
-              operation: "Public.Tables.Rental.create",
-              values: {rentalId: values.rentalId,rentalDate: values.rentalDate,inventoryId: values.inventoryId,customerId: values.customerId,returnDate: values.returnDate,staffId: values.staffId,lastUpdate: values.lastUpdate},
-              options
-            });
-            return (
-    nullIsUndefined<Public.Types.Rental>(Public.Types.Rental.parse(response.results))
-  )
-  ;
-          }
-        
-
-          public async all(options?: Public.Tables.Rental.Options) : Promise<Public.Types.Rental[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Rental[], Public.Tables.Rental.Options>({
-              operation: "Public.Tables.Rental.all",
-              options
-            });
-            return (
-    response.results
-      ?.map(Public.Types.Rental.parse)
-      .map(nullIsUndefined<Public.Types.Rental>)
-      .filter((x): x is Public.Types.Rental => x !== undefined) ?? []
-  )
-  ;
-          }
-        
-
-          public RentalPkey = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.RentalPkey, options?: Public.Types.RentalPkey.Options & Public.Tables.Rental.Options) {
-            const response = await this.client.invoke<Public.Types.RentalPkey, never, Public.Types.Rental | undefined, Public.Types.RentalPkey.Options & Public.Tables.Rental.Options>({
-              operation: "Public.Tables.Rental.RentalPkey.read",
-              parameters: {rentalId: parameters.rentalId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Rental>(Public.Types.Rental.parse(response.results))
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.RentalPkey, values: Partial<Public.Types.Rental>, options?: Public.Tables.Rental.Options) {
-            const response = await this.client.invoke<Public.Types.RentalPkey, Partial<Public.Types.Rental>, Public.Types.Rental | undefined, Public.Tables.Rental.Options>({
-              operation: "Public.Tables.Rental.RentalPkey.update",
-              parameters: {rentalId: parameters.rentalId},
-              values: {rentalId: values.rentalId,rentalDate: values.rentalDate,inventoryId: values.inventoryId,customerId: values.customerId,returnDate: values.returnDate,staffId: values.staffId,lastUpdate: values.lastUpdate},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Rental>(Public.Types.Rental.parse(response.results))
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.RentalPkey, options?: Public.Types.RentalPkey.Options & Public.Tables.Rental.Options) {
-            const response = await this.client.invoke<Public.Types.RentalPkey, never, Public.Types.Rental | undefined, Public.Types.RentalPkey.Options & Public.Tables.Rental.Options>({
-              operation: "Public.Tables.Rental.RentalPkey.delete",
-              parameters: {rentalId: parameters.rentalId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Rental>(Public.Types.Rental.parse(response.results))
-  )
-  ;
-}
-}(this)
-public get ByPrimaryKey(){ return this.RentalPkey };
-
-          public IdxFkInventoryId = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.IdxFkInventoryId, options?: Public.Types.IdxFkInventoryId.Options & Public.Tables.Rental.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkInventoryId, never, Public.Types.Rental[] | undefined, Public.Types.IdxFkInventoryId.Options & Public.Tables.Rental.Options>({
-              operation: "Public.Tables.Rental.IdxFkInventoryId.read",
-              parameters: {inventoryId: parameters.inventoryId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Rental.parse)
-      .map(nullIsUndefined<Public.Types.Rental>)
-      .filter((x): x is Public.Types.Rental => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.IdxFkInventoryId, values: Partial<Public.Types.Rental>, options?: Public.Tables.Rental.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkInventoryId, Partial<Public.Types.Rental>, Public.Types.Rental[] | undefined, Public.Tables.Rental.Options>({
-              operation: "Public.Tables.Rental.IdxFkInventoryId.update",
-              parameters: {inventoryId: parameters.inventoryId},
-              values: {rentalId: values.rentalId,rentalDate: values.rentalDate,inventoryId: values.inventoryId,customerId: values.customerId,returnDate: values.returnDate,staffId: values.staffId,lastUpdate: values.lastUpdate},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Rental.parse)
-      .map(nullIsUndefined<Public.Types.Rental>)
-      .filter((x): x is Public.Types.Rental => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.IdxFkInventoryId, options?: Public.Types.IdxFkInventoryId.Options & Public.Tables.Rental.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkInventoryId, never, Public.Types.Rental[] | undefined, Public.Types.IdxFkInventoryId.Options & Public.Tables.Rental.Options>({
-              operation: "Public.Tables.Rental.IdxFkInventoryId.delete",
-              parameters: {inventoryId: parameters.inventoryId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Rental.parse)
-      .map(nullIsUndefined<Public.Types.Rental>)
-      .filter((x): x is Public.Types.Rental => x !== undefined) ?? []
-  )
-  ;
-}
-}(this)
-
-
-          public IdxUnqRentalRentalDateInventoryIdCustomerId = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, options?: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId.Options & Public.Tables.Rental.Options) {
-            const response = await this.client.invoke<Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, never, Public.Types.Rental | undefined, Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId.Options & Public.Tables.Rental.Options>({
-              operation: "Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.read",
-              parameters: {rentalDate: parameters.rentalDate,inventoryId: parameters.inventoryId,customerId: parameters.customerId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Rental>(Public.Types.Rental.parse(response.results))
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, values: Partial<Public.Types.Rental>, options?: Public.Tables.Rental.Options) {
-            const response = await this.client.invoke<Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, Partial<Public.Types.Rental>, Public.Types.Rental | undefined, Public.Tables.Rental.Options>({
-              operation: "Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.update",
-              parameters: {rentalDate: parameters.rentalDate,inventoryId: parameters.inventoryId,customerId: parameters.customerId},
-              values: {rentalId: values.rentalId,rentalDate: values.rentalDate,inventoryId: values.inventoryId,customerId: values.customerId,returnDate: values.returnDate,staffId: values.staffId,lastUpdate: values.lastUpdate},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Rental>(Public.Types.Rental.parse(response.results))
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, options?: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId.Options & Public.Tables.Rental.Options) {
-            const response = await this.client.invoke<Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, never, Public.Types.Rental | undefined, Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId.Options & Public.Tables.Rental.Options>({
-              operation: "Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.delete",
-              parameters: {rentalDate: parameters.rentalDate,inventoryId: parameters.inventoryId,customerId: parameters.customerId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Rental>(Public.Types.Rental.parse(response.results))
-  )
-  ;
-}
-}(this)
-
-}(this)
-
-          public Staff = new class extends HasClient {
-        
-
-          public async create(values: Partial<Public.Types.Staff>, options?: Public.Tables.Staff.Options) : Promise<Public.Types.Staff|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Staff>, Public.Types.Staff, Public.Tables.Staff.Options>({
-              operation: "Public.Tables.Staff.create",
-              values: {staffId: values.staffId,firstName: values.firstName,lastName: values.lastName,addressId: values.addressId,email: values.email,storeId: values.storeId,active: values.active,username: values.username,password: values.password,lastUpdate: values.lastUpdate,picture: values.picture},
-              options
-            });
-            return (
-    nullIsUndefined<Public.Types.Staff>(Public.Types.Staff.parse(response.results))
-  )
-  ;
-          }
-        
-
-          public async all(options?: Public.Tables.Staff.Options) : Promise<Public.Types.Staff[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Staff[], Public.Tables.Staff.Options>({
-              operation: "Public.Tables.Staff.all",
-              options
-            });
-            return (
-    response.results
-      ?.map(Public.Types.Staff.parse)
-      .map(nullIsUndefined<Public.Types.Staff>)
-      .filter((x): x is Public.Types.Staff => x !== undefined) ?? []
-  )
-  ;
-          }
-        
-
-          public StaffPkey = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.StaffPkey, options?: Public.Types.StaffPkey.Options & Public.Tables.Staff.Options) {
-            const response = await this.client.invoke<Public.Types.StaffPkey, never, Public.Types.Staff | undefined, Public.Types.StaffPkey.Options & Public.Tables.Staff.Options>({
-              operation: "Public.Tables.Staff.StaffPkey.read",
-              parameters: {staffId: parameters.staffId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Staff>(Public.Types.Staff.parse(response.results))
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.StaffPkey, values: Partial<Public.Types.Staff>, options?: Public.Tables.Staff.Options) {
-            const response = await this.client.invoke<Public.Types.StaffPkey, Partial<Public.Types.Staff>, Public.Types.Staff | undefined, Public.Tables.Staff.Options>({
-              operation: "Public.Tables.Staff.StaffPkey.update",
-              parameters: {staffId: parameters.staffId},
-              values: {staffId: values.staffId,firstName: values.firstName,lastName: values.lastName,addressId: values.addressId,email: values.email,storeId: values.storeId,active: values.active,username: values.username,password: values.password,lastUpdate: values.lastUpdate,picture: values.picture},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Staff>(Public.Types.Staff.parse(response.results))
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.StaffPkey, options?: Public.Types.StaffPkey.Options & Public.Tables.Staff.Options) {
-            const response = await this.client.invoke<Public.Types.StaffPkey, never, Public.Types.Staff | undefined, Public.Types.StaffPkey.Options & Public.Tables.Staff.Options>({
-              operation: "Public.Tables.Staff.StaffPkey.delete",
-              parameters: {staffId: parameters.staffId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Staff>(Public.Types.Staff.parse(response.results))
-  )
-  ;
-}
-}(this)
-public get ByPrimaryKey(){ return this.StaffPkey };
-}(this)
-
-          public Store = new class extends HasClient {
-        
-
-          public async create(values: Partial<Public.Types.Store>, options?: Public.Tables.Store.Options) : Promise<Public.Types.Store|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Store>, Public.Types.Store, Public.Tables.Store.Options>({
-              operation: "Public.Tables.Store.create",
-              values: {storeId: values.storeId,managerStaffId: values.managerStaffId,addressId: values.addressId,lastUpdate: values.lastUpdate},
-              options
-            });
-            return (
-    nullIsUndefined<Public.Types.Store>(Public.Types.Store.parse(response.results))
-  )
-  ;
-          }
-        
-
-          public async all(options?: Public.Tables.Store.Options) : Promise<Public.Types.Store[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Store[], Public.Tables.Store.Options>({
-              operation: "Public.Tables.Store.all",
-              options
-            });
-            return (
-    response.results
-      ?.map(Public.Types.Store.parse)
-      .map(nullIsUndefined<Public.Types.Store>)
-      .filter((x): x is Public.Types.Store => x !== undefined) ?? []
-  )
-  ;
-          }
-        
-
-          public StorePkey = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.StorePkey, options?: Public.Types.StorePkey.Options & Public.Tables.Store.Options) {
-            const response = await this.client.invoke<Public.Types.StorePkey, never, Public.Types.Store | undefined, Public.Types.StorePkey.Options & Public.Tables.Store.Options>({
-              operation: "Public.Tables.Store.StorePkey.read",
-              parameters: {storeId: parameters.storeId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Store>(Public.Types.Store.parse(response.results))
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.StorePkey, values: Partial<Public.Types.Store>, options?: Public.Tables.Store.Options) {
-            const response = await this.client.invoke<Public.Types.StorePkey, Partial<Public.Types.Store>, Public.Types.Store | undefined, Public.Tables.Store.Options>({
-              operation: "Public.Tables.Store.StorePkey.update",
-              parameters: {storeId: parameters.storeId},
-              values: {storeId: values.storeId,managerStaffId: values.managerStaffId,addressId: values.addressId,lastUpdate: values.lastUpdate},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Store>(Public.Types.Store.parse(response.results))
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.StorePkey, options?: Public.Types.StorePkey.Options & Public.Tables.Store.Options) {
-            const response = await this.client.invoke<Public.Types.StorePkey, never, Public.Types.Store | undefined, Public.Types.StorePkey.Options & Public.Tables.Store.Options>({
-              operation: "Public.Tables.Store.StorePkey.delete",
-              parameters: {storeId: parameters.storeId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Store>(Public.Types.Store.parse(response.results))
-  )
-  ;
-}
-}(this)
-public get ByPrimaryKey(){ return this.StorePkey };
-
-          public IdxUnqManagerStaffId = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.IdxUnqManagerStaffId, options?: Public.Types.IdxUnqManagerStaffId.Options & Public.Tables.Store.Options) {
-            const response = await this.client.invoke<Public.Types.IdxUnqManagerStaffId, never, Public.Types.Store | undefined, Public.Types.IdxUnqManagerStaffId.Options & Public.Tables.Store.Options>({
-              operation: "Public.Tables.Store.IdxUnqManagerStaffId.read",
-              parameters: {managerStaffId: parameters.managerStaffId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Store>(Public.Types.Store.parse(response.results))
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.IdxUnqManagerStaffId, values: Partial<Public.Types.Store>, options?: Public.Tables.Store.Options) {
-            const response = await this.client.invoke<Public.Types.IdxUnqManagerStaffId, Partial<Public.Types.Store>, Public.Types.Store | undefined, Public.Tables.Store.Options>({
-              operation: "Public.Tables.Store.IdxUnqManagerStaffId.update",
-              parameters: {managerStaffId: parameters.managerStaffId},
-              values: {storeId: values.storeId,managerStaffId: values.managerStaffId,addressId: values.addressId,lastUpdate: values.lastUpdate},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Store>(Public.Types.Store.parse(response.results))
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.IdxUnqManagerStaffId, options?: Public.Types.IdxUnqManagerStaffId.Options & Public.Tables.Store.Options) {
-            const response = await this.client.invoke<Public.Types.IdxUnqManagerStaffId, never, Public.Types.Store | undefined, Public.Types.IdxUnqManagerStaffId.Options & Public.Tables.Store.Options>({
-              operation: "Public.Tables.Store.IdxUnqManagerStaffId.delete",
-              parameters: {managerStaffId: parameters.managerStaffId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Store>(Public.Types.Store.parse(response.results))
-  )
-  ;
-}
-}(this)
-
-}(this)
-
-          public Payment = new class extends HasClient {
-        
-
-          public async create(values: Partial<Public.Types.Payment>, options?: Public.Tables.Payment.Options) : Promise<Public.Types.Payment|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Payment>, Public.Types.Payment, Public.Tables.Payment.Options>({
-              operation: "Public.Tables.Payment.create",
-              values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate},
-              options
-            });
-            return (
-    nullIsUndefined<Public.Types.Payment>(Public.Types.Payment.parse(response.results))
-  )
-  ;
-          }
-        
-
-          public async all(options?: Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Payment[], Public.Tables.Payment.Options>({
-              operation: "Public.Tables.Payment.all",
-              options
-            });
-            return (
-    response.results
-      ?.map(Public.Types.Payment.parse)
-      .map(nullIsUndefined<Public.Types.Payment>)
-      .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
-  )
-  ;
-          }
-        
-
-          public PaymentPkey = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.PaymentPkey, options?: Public.Types.PaymentPkey.Options & Public.Tables.Payment.Options) {
-            const response = await this.client.invoke<Public.Types.PaymentPkey, never, Public.Types.Payment | undefined, Public.Types.PaymentPkey.Options & Public.Tables.Payment.Options>({
-              operation: "Public.Tables.Payment.PaymentPkey.read",
-              parameters: {paymentId: parameters.paymentId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Payment>(Public.Types.Payment.parse(response.results))
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.PaymentPkey, values: Partial<Public.Types.Payment>, options?: Public.Tables.Payment.Options) {
-            const response = await this.client.invoke<Public.Types.PaymentPkey, Partial<Public.Types.Payment>, Public.Types.Payment | undefined, Public.Tables.Payment.Options>({
-              operation: "Public.Tables.Payment.PaymentPkey.update",
-              parameters: {paymentId: parameters.paymentId},
-              values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Payment>(Public.Types.Payment.parse(response.results))
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.PaymentPkey, options?: Public.Types.PaymentPkey.Options & Public.Tables.Payment.Options) {
-            const response = await this.client.invoke<Public.Types.PaymentPkey, never, Public.Types.Payment | undefined, Public.Types.PaymentPkey.Options & Public.Tables.Payment.Options>({
-              operation: "Public.Tables.Payment.PaymentPkey.delete",
-              parameters: {paymentId: parameters.paymentId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Payment>(Public.Types.Payment.parse(response.results))
-  )
-  ;
-}
-}(this)
-public get ByPrimaryKey(){ return this.PaymentPkey };
-
-          public IdxFkCustomerId = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.IdxFkCustomerId, options?: Public.Types.IdxFkCustomerId.Options & Public.Tables.Payment.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkCustomerId, never, Public.Types.Payment[] | undefined, Public.Types.IdxFkCustomerId.Options & Public.Tables.Payment.Options>({
-              operation: "Public.Tables.Payment.IdxFkCustomerId.read",
-              parameters: {customerId: parameters.customerId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Payment.parse)
-      .map(nullIsUndefined<Public.Types.Payment>)
-      .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.IdxFkCustomerId, values: Partial<Public.Types.Payment>, options?: Public.Tables.Payment.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkCustomerId, Partial<Public.Types.Payment>, Public.Types.Payment[] | undefined, Public.Tables.Payment.Options>({
-              operation: "Public.Tables.Payment.IdxFkCustomerId.update",
-              parameters: {customerId: parameters.customerId},
-              values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Payment.parse)
-      .map(nullIsUndefined<Public.Types.Payment>)
-      .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.IdxFkCustomerId, options?: Public.Types.IdxFkCustomerId.Options & Public.Tables.Payment.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkCustomerId, never, Public.Types.Payment[] | undefined, Public.Types.IdxFkCustomerId.Options & Public.Tables.Payment.Options>({
-              operation: "Public.Tables.Payment.IdxFkCustomerId.delete",
-              parameters: {customerId: parameters.customerId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Payment.parse)
-      .map(nullIsUndefined<Public.Types.Payment>)
-      .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
-  )
-  ;
-}
-}(this)
-
-
-          public IdxFkRentalId = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.IdxFkRentalId, options?: Public.Types.IdxFkRentalId.Options & Public.Tables.Payment.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkRentalId, never, Public.Types.Payment[] | undefined, Public.Types.IdxFkRentalId.Options & Public.Tables.Payment.Options>({
-              operation: "Public.Tables.Payment.IdxFkRentalId.read",
-              parameters: {rentalId: parameters.rentalId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Payment.parse)
-      .map(nullIsUndefined<Public.Types.Payment>)
-      .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.IdxFkRentalId, values: Partial<Public.Types.Payment>, options?: Public.Tables.Payment.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkRentalId, Partial<Public.Types.Payment>, Public.Types.Payment[] | undefined, Public.Tables.Payment.Options>({
-              operation: "Public.Tables.Payment.IdxFkRentalId.update",
-              parameters: {rentalId: parameters.rentalId},
-              values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Payment.parse)
-      .map(nullIsUndefined<Public.Types.Payment>)
-      .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.IdxFkRentalId, options?: Public.Types.IdxFkRentalId.Options & Public.Tables.Payment.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkRentalId, never, Public.Types.Payment[] | undefined, Public.Types.IdxFkRentalId.Options & Public.Tables.Payment.Options>({
-              operation: "Public.Tables.Payment.IdxFkRentalId.delete",
-              parameters: {rentalId: parameters.rentalId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Payment.parse)
-      .map(nullIsUndefined<Public.Types.Payment>)
-      .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
-  )
-  ;
-}
-}(this)
-
-
-          public IdxFkStaffId = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.IdxFkStaffId, options?: Public.Types.IdxFkStaffId.Options & Public.Tables.Payment.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkStaffId, never, Public.Types.Payment[] | undefined, Public.Types.IdxFkStaffId.Options & Public.Tables.Payment.Options>({
-              operation: "Public.Tables.Payment.IdxFkStaffId.read",
-              parameters: {staffId: parameters.staffId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Payment.parse)
-      .map(nullIsUndefined<Public.Types.Payment>)
-      .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.IdxFkStaffId, values: Partial<Public.Types.Payment>, options?: Public.Tables.Payment.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkStaffId, Partial<Public.Types.Payment>, Public.Types.Payment[] | undefined, Public.Tables.Payment.Options>({
-              operation: "Public.Tables.Payment.IdxFkStaffId.update",
-              parameters: {staffId: parameters.staffId},
-              values: {paymentId: values.paymentId,customerId: values.customerId,staffId: values.staffId,rentalId: values.rentalId,amount: values.amount,paymentDate: values.paymentDate},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Payment.parse)
-      .map(nullIsUndefined<Public.Types.Payment>)
-      .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.IdxFkStaffId, options?: Public.Types.IdxFkStaffId.Options & Public.Tables.Payment.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkStaffId, never, Public.Types.Payment[] | undefined, Public.Types.IdxFkStaffId.Options & Public.Tables.Payment.Options>({
-              operation: "Public.Tables.Payment.IdxFkStaffId.delete",
-              parameters: {staffId: parameters.staffId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Payment.parse)
-      .map(nullIsUndefined<Public.Types.Payment>)
-      .filter((x): x is Public.Types.Payment => x !== undefined) ?? []
-  )
-  ;
-}
-}(this)
-
-}(this)
-
-          public Film = new class extends HasClient {
-        
-
-          public async create(values: Partial<Public.Types.Film>, options?: Public.Tables.Film.Options) : Promise<Public.Types.Film|undefined> {
-            const response = await this.client.invoke<never, Partial<Public.Types.Film>, Public.Types.Film, Public.Tables.Film.Options>({
-              operation: "Public.Tables.Film.create",
-              values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext},
-              options
-            });
-            return (
-    nullIsUndefined<Public.Types.Film>(Public.Types.Film.parse(response.results))
-  )
-  ;
-          }
-        
-
-          public async all(options?: Public.Tables.Film.Options) : Promise<Public.Types.Film[]> {
-            const response = await this.client.invoke<never, never, Public.Types.Film[], Public.Tables.Film.Options>({
-              operation: "Public.Tables.Film.all",
-              options
-            });
-            return (
-    response.results
-      ?.map(Public.Types.Film.parse)
-      .map(nullIsUndefined<Public.Types.Film>)
-      .filter((x): x is Public.Types.Film => x !== undefined) ?? []
-  )
-  ;
-          }
-        
-
-          public FilmPkey = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.FilmPkey, options?: Public.Types.FilmPkey.Options & Public.Tables.Film.Options) {
-            const response = await this.client.invoke<Public.Types.FilmPkey, never, Public.Types.Film | undefined, Public.Types.FilmPkey.Options & Public.Tables.Film.Options>({
-              operation: "Public.Tables.Film.FilmPkey.read",
-              parameters: {filmId: parameters.filmId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Film>(Public.Types.Film.parse(response.results))
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.FilmPkey, values: Partial<Public.Types.Film>, options?: Public.Tables.Film.Options) {
-            const response = await this.client.invoke<Public.Types.FilmPkey, Partial<Public.Types.Film>, Public.Types.Film | undefined, Public.Tables.Film.Options>({
-              operation: "Public.Tables.Film.FilmPkey.update",
-              parameters: {filmId: parameters.filmId},
-              values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Film>(Public.Types.Film.parse(response.results))
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.FilmPkey, options?: Public.Types.FilmPkey.Options & Public.Tables.Film.Options) {
-            const response = await this.client.invoke<Public.Types.FilmPkey, never, Public.Types.Film | undefined, Public.Types.FilmPkey.Options & Public.Tables.Film.Options>({
-              operation: "Public.Tables.Film.FilmPkey.delete",
-              parameters: {filmId: parameters.filmId},
-              options
-            });
-        
-return (
-    nullIsUndefined<Public.Types.Film>(Public.Types.Film.parse(response.results))
-  )
-  ;
-}
-}(this)
-public get ByPrimaryKey(){ return this.FilmPkey };
-
-          public FilmFulltextIdx = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.FilmFulltextIdx, options?: Public.Types.FilmFulltextIdx.Options & Public.Tables.Film.Options) {
-            const response = await this.client.invoke<Public.Types.FilmFulltextIdx, never, Public.Types.Film[] | undefined, Public.Types.FilmFulltextIdx.Options & Public.Tables.Film.Options>({
-              operation: "Public.Tables.Film.FilmFulltextIdx.read",
-              parameters: {fulltext: parameters.fulltext},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Film.parse)
-      .map(nullIsUndefined<Public.Types.Film>)
-      .filter((x): x is Public.Types.Film => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.FilmFulltextIdx, values: Partial<Public.Types.Film>, options?: Public.Tables.Film.Options) {
-            const response = await this.client.invoke<Public.Types.FilmFulltextIdx, Partial<Public.Types.Film>, Public.Types.Film[] | undefined, Public.Tables.Film.Options>({
-              operation: "Public.Tables.Film.FilmFulltextIdx.update",
-              parameters: {fulltext: parameters.fulltext},
-              values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Film.parse)
-      .map(nullIsUndefined<Public.Types.Film>)
-      .filter((x): x is Public.Types.Film => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.FilmFulltextIdx, options?: Public.Types.FilmFulltextIdx.Options & Public.Tables.Film.Options) {
-            const response = await this.client.invoke<Public.Types.FilmFulltextIdx, never, Public.Types.Film[] | undefined, Public.Types.FilmFulltextIdx.Options & Public.Tables.Film.Options>({
-              operation: "Public.Tables.Film.FilmFulltextIdx.delete",
-              parameters: {fulltext: parameters.fulltext},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Film.parse)
-      .map(nullIsUndefined<Public.Types.Film>)
-      .filter((x): x is Public.Types.Film => x !== undefined) ?? []
-  )
-  ;
-}
-}(this)
-
-
-          public IdxFkLanguageId = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.IdxFkLanguageId, options?: Public.Types.IdxFkLanguageId.Options & Public.Tables.Film.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkLanguageId, never, Public.Types.Film[] | undefined, Public.Types.IdxFkLanguageId.Options & Public.Tables.Film.Options>({
-              operation: "Public.Tables.Film.IdxFkLanguageId.read",
-              parameters: {languageId: parameters.languageId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Film.parse)
-      .map(nullIsUndefined<Public.Types.Film>)
-      .filter((x): x is Public.Types.Film => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.IdxFkLanguageId, values: Partial<Public.Types.Film>, options?: Public.Tables.Film.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkLanguageId, Partial<Public.Types.Film>, Public.Types.Film[] | undefined, Public.Tables.Film.Options>({
-              operation: "Public.Tables.Film.IdxFkLanguageId.update",
-              parameters: {languageId: parameters.languageId},
-              values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Film.parse)
-      .map(nullIsUndefined<Public.Types.Film>)
-      .filter((x): x is Public.Types.Film => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.IdxFkLanguageId, options?: Public.Types.IdxFkLanguageId.Options & Public.Tables.Film.Options) {
-            const response = await this.client.invoke<Public.Types.IdxFkLanguageId, never, Public.Types.Film[] | undefined, Public.Types.IdxFkLanguageId.Options & Public.Tables.Film.Options>({
-              operation: "Public.Tables.Film.IdxFkLanguageId.delete",
-              parameters: {languageId: parameters.languageId},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Film.parse)
-      .map(nullIsUndefined<Public.Types.Film>)
-      .filter((x): x is Public.Types.Film => x !== undefined) ?? []
-  )
-  ;
-}
-}(this)
-
-
-          public IdxTitle = new class extends HasClient {
-        
-
-          public async read(parameters: Public.Types.IdxTitle, options?: Public.Types.IdxTitle.Options & Public.Tables.Film.Options) {
-            const response = await this.client.invoke<Public.Types.IdxTitle, never, Public.Types.Film[] | undefined, Public.Types.IdxTitle.Options & Public.Tables.Film.Options>({
-              operation: "Public.Tables.Film.IdxTitle.read",
-              parameters: {title: parameters.title},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Film.parse)
-      .map(nullIsUndefined<Public.Types.Film>)
-      .filter((x): x is Public.Types.Film => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async update(parameters: Public.Types.IdxTitle, values: Partial<Public.Types.Film>, options?: Public.Tables.Film.Options) {
-            const response = await this.client.invoke<Public.Types.IdxTitle, Partial<Public.Types.Film>, Public.Types.Film[] | undefined, Public.Tables.Film.Options>({
-              operation: "Public.Tables.Film.IdxTitle.update",
-              parameters: {title: parameters.title},
-              values: {filmId: values.filmId,title: values.title,description: values.description,releaseYear: values.releaseYear,languageId: values.languageId,rentalDuration: values.rentalDuration,rentalRate: values.rentalRate,length: values.length,replacementCost: values.replacementCost,rating: values.rating,lastUpdate: values.lastUpdate,specialFeatures: values.specialFeatures,fulltext: values.fulltext},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Film.parse)
-      .map(nullIsUndefined<Public.Types.Film>)
-      .filter((x): x is Public.Types.Film => x !== undefined) ?? []
-  )
-  ;
-}
-
-          public async delete(parameters: Public.Types.IdxTitle, options?: Public.Types.IdxTitle.Options & Public.Tables.Film.Options) {
-            const response = await this.client.invoke<Public.Types.IdxTitle, never, Public.Types.Film[] | undefined, Public.Types.IdxTitle.Options & Public.Tables.Film.Options>({
-              operation: "Public.Tables.Film.IdxTitle.delete",
-              parameters: {title: parameters.title},
-              options
-            });
-        
-return (
-    response.results
-      ?.map(Public.Types.Film.parse)
-      .map(nullIsUndefined<Public.Types.Film>)
-      .filter((x): x is Public.Types.Film => x !== undefined) ?? []
-  )
-  ;
-}
-}(this)
-
-}(this)
-}(this)
-}(this)
-
-          public PgToast = new class extends HasClient {
-        
-
-          public Procedures = new class extends HasClient {
-        
-}(this)
-
-          public Tables = new class extends HasClient {
-        
-}(this)
-}(this)
-
-          public Scripts = new class extends HasClient {
-        
-
-          public MovieListing = new class extends HasClient {
-        
-
-          public async call() : Promise<Scripts.MovieListing.Results[]> {
-            const response = await this.client.invoke<never, never, Scripts.MovieListing.Results[], never>({
-              operation: "Scripts.MovieListing.call",
-            });
-        
-return response.results?.map(r => Scripts.MovieListing.Results.parse(r)) as Scripts.MovieListing.Results[] ?? [];
-}
-}(this)
-
-          public Sample = new class extends HasClient {
-        
-
-          public Film = new class extends HasClient {
-        
-
-          public Rated = new class extends HasClient {
-        
-
-          public async call(parameters: Scripts.Sample.Film.Rated.Parameters) : Promise<Scripts.Sample.Film.Rated.Results[]> {
-            const response = await this.client.invoke<Scripts.Sample.Film.Rated.Parameters, never, Scripts.Sample.Film.Rated.Results[], never>({
-              operation: "Scripts.Sample.Film.Rated.call",
-              parameters,
-            });
-        
-return response.results?.map(r => Scripts.Sample.Film.Rated.Results.parse(r)) as Scripts.Sample.Film.Rated.Results[] ?? [];
-}
-}(this)
-
-          public Tally = new class extends HasClient {
-        
-
-          public async call() : Promise<Scripts.Sample.Film.Tally.Results[]> {
-            const response = await this.client.invoke<never, never, Scripts.Sample.Film.Tally.Results[], never>({
-              operation: "Scripts.Sample.Film.Tally.call",
-            });
-        
-return response.results?.map(r => Scripts.Sample.Film.Tally.Results.parse(r)) as Scripts.Sample.Film.Tally.Results[] ?? [];
-}
-}(this)
-}(this)
-
-          public Pick = new class extends HasClient {
-        
-
-          public async call(parameters: Scripts.Sample.Pick.Parameters) : Promise<Scripts.Sample.Pick.Results[]> {
-            const response = await this.client.invoke<Scripts.Sample.Pick.Parameters, never, Scripts.Sample.Pick.Results[], never>({
-              operation: "Scripts.Sample.Pick.call",
-              parameters,
-            });
-        
-return response.results?.map(r => Scripts.Sample.Pick.Results.parse(r)) as Scripts.Sample.Pick.Results[] ?? [];
-}
-}(this)
-}(this)
-
-          public Tally = new class extends HasClient {
-        
-
-          public async call() : Promise<Scripts.Tally.Results[]> {
-            const response = await this.client.invoke<never, never, Scripts.Tally.Results[], never>({
-              operation: "Scripts.Tally.call",
-            });
-        
-return response.results?.map(r => Scripts.Tally.Results.parse(r)) as Scripts.Tally.Results[] ?? [];
-}
-}(this)
-}(this)
-}
-import React from "react";
-export { EmbraceSQLProvider } from "@embracesql/react";
-import { useEmbraceSQLClient, useEmbraceSQLRow, useEmbraceSQLRows, useEmbraceSQLImmutableRows, useEmbraceSQLImmutable, ChangeEvent, Row as IsRow, RowBase, RowCallback, GeneratedRowProps } from "@embracesql/react";
-export namespace Public {
-export namespace Procedures {
-export namespace FilmInStock {
-}
-export namespace FilmNotInStock {
-}
-export namespace GetCustomerBalance {
-}
-export namespace InventoryHeldByCustomer {
-}
-export namespace InventoryInStock {
-}
-export namespace LastDay {
-}
-export namespace RewardsReport {
-export type Row = IsRow<Public.Types.Customer>;
-export class RowImplementation
- extends RowBase<Public.Types.Customer>
- implements Row {
-   constructor(row: Public.Types.Customer, 
-     changeCallback: RowCallback<Public.Types.Customer>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get customerId() { return this._value.customerId;}
-get changeCustomerId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    customerId: parsedValue as Public.Types.Customer["customerId"],
-    });
-  };
-}
-get storeId() { return this._value.storeId;}
-get changeStoreId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    storeId: parsedValue as Public.Types.Customer["storeId"],
-    });
-  };
-}
-get firstName() { return this._value.firstName;}
-get changeFirstName() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    firstName: parsedValue as Public.Types.Customer["firstName"],
-    });
-  };
-}
-get lastName() { return this._value.lastName;}
-get changeLastName() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    lastName: parsedValue as Public.Types.Customer["lastName"],
-    });
-  };
-}
-get email() { return this._value.email;}
-get changeEmail() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    email: parsedValue as Public.Types.Customer["email"],
-    });
-  };
-}
-get addressId() { return this._value.addressId;}
-get changeAddressId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    addressId: parsedValue as Public.Types.Customer["addressId"],
-    });
-  };
-}
-get activebool() { return this._value.activebool;}
-get changeActivebool() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Bool.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    activebool: parsedValue as Public.Types.Customer["activebool"],
-    });
-  };
-}
-get createDate() { return this._value.createDate;}
-get changeCreateDate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Date.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    createDate: parsedValue as Public.Types.Customer["createDate"],
-    });
-  };
-}
-get lastUpdate() { return this._value.lastUpdate;}
-get changeLastUpdate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    lastUpdate: parsedValue as Public.Types.Customer["lastUpdate"],
-    });
-  };
-}
-get active() { return this._value.active;}
-get changeActive() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    active: parsedValue as Public.Types.Customer["active"],
-    });
-  };
-}
-}
-}
-}
-export namespace Tables {
-export namespace FilmActor {
-export type Row = IsRow<Public.Types.FilmActor>;
-export class RowImplementation
- extends RowBase<Public.Types.FilmActor>
- implements Row {
-   constructor(row: Public.Types.FilmActor, 
-     changeCallback: RowCallback<Public.Types.FilmActor>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get actorId() { return this._value.actorId;}
-get changeActorId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    actorId: parsedValue as Public.Types.FilmActor["actorId"],
-    });
-  };
-}
-get filmId() { return this._value.filmId;}
-get changeFilmId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    filmId: parsedValue as Public.Types.FilmActor["filmId"],
-    });
-  };
-}
-get lastUpdate() { return this._value.lastUpdate;}
-get changeLastUpdate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    lastUpdate: parsedValue as Public.Types.FilmActor["lastUpdate"],
-    });
-  };
-}
-}
-}
-export namespace Address {
-export type Row = IsRow<Public.Types.Address>;
-export class RowImplementation
- extends RowBase<Public.Types.Address>
- implements Row {
-   constructor(row: Public.Types.Address, 
-     changeCallback: RowCallback<Public.Types.Address>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get addressId() { return this._value.addressId;}
-get changeAddressId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    addressId: parsedValue as Public.Types.Address["addressId"],
-    });
-  };
-}
-get address() { return this._value.address;}
-get changeAddress() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    address: parsedValue as Public.Types.Address["address"],
-    });
-  };
-}
-get address2() { return this._value.address2;}
-get changeAddress2() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    address2: parsedValue as Public.Types.Address["address2"],
-    });
-  };
-}
-get district() { return this._value.district;}
-get changeDistrict() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    district: parsedValue as Public.Types.Address["district"],
-    });
-  };
-}
-get cityId() { return this._value.cityId;}
-get changeCityId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    cityId: parsedValue as Public.Types.Address["cityId"],
-    });
-  };
-}
-get postalCode() { return this._value.postalCode;}
-get changePostalCode() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    postalCode: parsedValue as Public.Types.Address["postalCode"],
-    });
-  };
-}
-get phone() { return this._value.phone;}
-get changePhone() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    phone: parsedValue as Public.Types.Address["phone"],
-    });
-  };
-}
-get lastUpdate() { return this._value.lastUpdate;}
-get changeLastUpdate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    lastUpdate: parsedValue as Public.Types.Address["lastUpdate"],
-    });
-  };
-}
-}
-}
-export namespace City {
-export type Row = IsRow<Public.Types.City>;
-export class RowImplementation
- extends RowBase<Public.Types.City>
- implements Row {
-   constructor(row: Public.Types.City, 
-     changeCallback: RowCallback<Public.Types.City>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get cityId() { return this._value.cityId;}
-get changeCityId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    cityId: parsedValue as Public.Types.City["cityId"],
-    });
-  };
-}
-get city() { return this._value.city;}
-get changeCity() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    city: parsedValue as Public.Types.City["city"],
-    });
-  };
-}
-get countryId() { return this._value.countryId;}
-get changeCountryId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    countryId: parsedValue as Public.Types.City["countryId"],
-    });
-  };
-}
-get lastUpdate() { return this._value.lastUpdate;}
-get changeLastUpdate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    lastUpdate: parsedValue as Public.Types.City["lastUpdate"],
-    });
-  };
-}
-}
-}
-export namespace Customer {
-export type Row = IsRow<Public.Types.Customer>;
-export class RowImplementation
- extends RowBase<Public.Types.Customer>
- implements Row {
-   constructor(row: Public.Types.Customer, 
-     changeCallback: RowCallback<Public.Types.Customer>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get customerId() { return this._value.customerId;}
-get changeCustomerId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    customerId: parsedValue as Public.Types.Customer["customerId"],
-    });
-  };
-}
-get storeId() { return this._value.storeId;}
-get changeStoreId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    storeId: parsedValue as Public.Types.Customer["storeId"],
-    });
-  };
-}
-get firstName() { return this._value.firstName;}
-get changeFirstName() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    firstName: parsedValue as Public.Types.Customer["firstName"],
-    });
-  };
-}
-get lastName() { return this._value.lastName;}
-get changeLastName() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    lastName: parsedValue as Public.Types.Customer["lastName"],
-    });
-  };
-}
-get email() { return this._value.email;}
-get changeEmail() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    email: parsedValue as Public.Types.Customer["email"],
-    });
-  };
-}
-get addressId() { return this._value.addressId;}
-get changeAddressId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    addressId: parsedValue as Public.Types.Customer["addressId"],
-    });
-  };
-}
-get activebool() { return this._value.activebool;}
-get changeActivebool() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Bool.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    activebool: parsedValue as Public.Types.Customer["activebool"],
-    });
-  };
-}
-get createDate() { return this._value.createDate;}
-get changeCreateDate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Date.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    createDate: parsedValue as Public.Types.Customer["createDate"],
-    });
-  };
-}
-get lastUpdate() { return this._value.lastUpdate;}
-get changeLastUpdate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    lastUpdate: parsedValue as Public.Types.Customer["lastUpdate"],
-    });
-  };
-}
-get active() { return this._value.active;}
-get changeActive() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    active: parsedValue as Public.Types.Customer["active"],
-    });
-  };
-}
-}
-}
-export namespace Actor {
-export type Row = IsRow<Public.Types.Actor>;
-export class RowImplementation
- extends RowBase<Public.Types.Actor>
- implements Row {
-   constructor(row: Public.Types.Actor, 
-     changeCallback: RowCallback<Public.Types.Actor>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get actorId() { return this._value.actorId;}
-get changeActorId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    actorId: parsedValue as Public.Types.Actor["actorId"],
-    });
-  };
-}
-get firstName() { return this._value.firstName;}
-get changeFirstName() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    firstName: parsedValue as Public.Types.Actor["firstName"],
-    });
-  };
-}
-get lastName() { return this._value.lastName;}
-get changeLastName() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    lastName: parsedValue as Public.Types.Actor["lastName"],
-    });
-  };
-}
-get lastUpdate() { return this._value.lastUpdate;}
-get changeLastUpdate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    lastUpdate: parsedValue as Public.Types.Actor["lastUpdate"],
-    });
-  };
-}
-}
-}
-export namespace FilmCategory {
-export type Row = IsRow<Public.Types.FilmCategory>;
-export class RowImplementation
- extends RowBase<Public.Types.FilmCategory>
- implements Row {
-   constructor(row: Public.Types.FilmCategory, 
-     changeCallback: RowCallback<Public.Types.FilmCategory>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get filmId() { return this._value.filmId;}
-get changeFilmId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    filmId: parsedValue as Public.Types.FilmCategory["filmId"],
-    });
-  };
-}
-get categoryId() { return this._value.categoryId;}
-get changeCategoryId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    categoryId: parsedValue as Public.Types.FilmCategory["categoryId"],
-    });
-  };
-}
-get lastUpdate() { return this._value.lastUpdate;}
-get changeLastUpdate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    lastUpdate: parsedValue as Public.Types.FilmCategory["lastUpdate"],
-    });
-  };
-}
-}
-}
-export namespace Inventory {
-export type Row = IsRow<Public.Types.Inventory>;
-export class RowImplementation
- extends RowBase<Public.Types.Inventory>
- implements Row {
-   constructor(row: Public.Types.Inventory, 
-     changeCallback: RowCallback<Public.Types.Inventory>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get inventoryId() { return this._value.inventoryId;}
-get changeInventoryId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    inventoryId: parsedValue as Public.Types.Inventory["inventoryId"],
-    });
-  };
-}
-get filmId() { return this._value.filmId;}
-get changeFilmId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    filmId: parsedValue as Public.Types.Inventory["filmId"],
-    });
-  };
-}
-get storeId() { return this._value.storeId;}
-get changeStoreId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    storeId: parsedValue as Public.Types.Inventory["storeId"],
-    });
-  };
-}
-get lastUpdate() { return this._value.lastUpdate;}
-get changeLastUpdate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    lastUpdate: parsedValue as Public.Types.Inventory["lastUpdate"],
-    });
-  };
-}
-}
-}
-export namespace Category {
-export type Row = IsRow<Public.Types.Category>;
-export class RowImplementation
- extends RowBase<Public.Types.Category>
- implements Row {
-   constructor(row: Public.Types.Category, 
-     changeCallback: RowCallback<Public.Types.Category>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get categoryId() { return this._value.categoryId;}
-get changeCategoryId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    categoryId: parsedValue as Public.Types.Category["categoryId"],
-    });
-  };
-}
-get name() { return this._value.name;}
-get changeName() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    name: parsedValue as Public.Types.Category["name"],
-    });
-  };
-}
-get lastUpdate() { return this._value.lastUpdate;}
-get changeLastUpdate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    lastUpdate: parsedValue as Public.Types.Category["lastUpdate"],
-    });
-  };
-}
-}
-}
-export namespace Country {
-export type Row = IsRow<Public.Types.Country>;
-export class RowImplementation
- extends RowBase<Public.Types.Country>
- implements Row {
-   constructor(row: Public.Types.Country, 
-     changeCallback: RowCallback<Public.Types.Country>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get countryId() { return this._value.countryId;}
-get changeCountryId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    countryId: parsedValue as Public.Types.Country["countryId"],
-    });
-  };
-}
-get country() { return this._value.country;}
-get changeCountry() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    country: parsedValue as Public.Types.Country["country"],
-    });
-  };
-}
-get lastUpdate() { return this._value.lastUpdate;}
-get changeLastUpdate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    lastUpdate: parsedValue as Public.Types.Country["lastUpdate"],
-    });
-  };
-}
-}
-}
-export namespace Language {
-export type Row = IsRow<Public.Types.Language>;
-export class RowImplementation
- extends RowBase<Public.Types.Language>
- implements Row {
-   constructor(row: Public.Types.Language, 
-     changeCallback: RowCallback<Public.Types.Language>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get languageId() { return this._value.languageId;}
-get changeLanguageId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    languageId: parsedValue as Public.Types.Language["languageId"],
-    });
-  };
-}
-get name() { return this._value.name;}
-get changeName() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Bpchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    name: parsedValue as Public.Types.Language["name"],
-    });
-  };
-}
-get lastUpdate() { return this._value.lastUpdate;}
-get changeLastUpdate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    lastUpdate: parsedValue as Public.Types.Language["lastUpdate"],
-    });
-  };
-}
-}
-}
-export namespace Rental {
-export type Row = IsRow<Public.Types.Rental>;
-export class RowImplementation
- extends RowBase<Public.Types.Rental>
- implements Row {
-   constructor(row: Public.Types.Rental, 
-     changeCallback: RowCallback<Public.Types.Rental>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get rentalId() { return this._value.rentalId;}
-get changeRentalId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    rentalId: parsedValue as Public.Types.Rental["rentalId"],
-    });
-  };
-}
-get rentalDate() { return this._value.rentalDate;}
-get changeRentalDate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    rentalDate: parsedValue as Public.Types.Rental["rentalDate"],
-    });
-  };
-}
-get inventoryId() { return this._value.inventoryId;}
-get changeInventoryId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    inventoryId: parsedValue as Public.Types.Rental["inventoryId"],
-    });
-  };
-}
-get customerId() { return this._value.customerId;}
-get changeCustomerId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    customerId: parsedValue as Public.Types.Rental["customerId"],
-    });
-  };
-}
-get returnDate() { return this._value.returnDate;}
-get changeReturnDate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    returnDate: parsedValue as Public.Types.Rental["returnDate"],
-    });
-  };
-}
-get staffId() { return this._value.staffId;}
-get changeStaffId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    staffId: parsedValue as Public.Types.Rental["staffId"],
-    });
-  };
-}
-get lastUpdate() { return this._value.lastUpdate;}
-get changeLastUpdate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    lastUpdate: parsedValue as Public.Types.Rental["lastUpdate"],
-    });
-  };
-}
-}
-}
-export namespace Staff {
-export type Row = IsRow<Public.Types.Staff>;
-export class RowImplementation
- extends RowBase<Public.Types.Staff>
- implements Row {
-   constructor(row: Public.Types.Staff, 
-     changeCallback: RowCallback<Public.Types.Staff>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get staffId() { return this._value.staffId;}
-get changeStaffId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    staffId: parsedValue as Public.Types.Staff["staffId"],
-    });
-  };
-}
-get firstName() { return this._value.firstName;}
-get changeFirstName() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    firstName: parsedValue as Public.Types.Staff["firstName"],
-    });
-  };
-}
-get lastName() { return this._value.lastName;}
-get changeLastName() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    lastName: parsedValue as Public.Types.Staff["lastName"],
-    });
-  };
-}
-get addressId() { return this._value.addressId;}
-get changeAddressId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    addressId: parsedValue as Public.Types.Staff["addressId"],
-    });
-  };
-}
-get email() { return this._value.email;}
-get changeEmail() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    email: parsedValue as Public.Types.Staff["email"],
-    });
-  };
-}
-get storeId() { return this._value.storeId;}
-get changeStoreId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    storeId: parsedValue as Public.Types.Staff["storeId"],
-    });
-  };
-}
-get active() { return this._value.active;}
-get changeActive() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Bool.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    active: parsedValue as Public.Types.Staff["active"],
-    });
-  };
-}
-get username() { return this._value.username;}
-get changeUsername() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    username: parsedValue as Public.Types.Staff["username"],
-    });
-  };
-}
-get password() { return this._value.password;}
-get changePassword() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    password: parsedValue as Public.Types.Staff["password"],
-    });
-  };
-}
-get lastUpdate() { return this._value.lastUpdate;}
-get changeLastUpdate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    lastUpdate: parsedValue as Public.Types.Staff["lastUpdate"],
-    });
-  };
-}
-get picture() { return this._value.picture;}
-get changePicture() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Bytea.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    picture: parsedValue as Public.Types.Staff["picture"],
-    });
-  };
-}
-}
-}
-export namespace Store {
-export type Row = IsRow<Public.Types.Store>;
-export class RowImplementation
- extends RowBase<Public.Types.Store>
- implements Row {
-   constructor(row: Public.Types.Store, 
-     changeCallback: RowCallback<Public.Types.Store>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get storeId() { return this._value.storeId;}
-get changeStoreId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    storeId: parsedValue as Public.Types.Store["storeId"],
-    });
-  };
-}
-get managerStaffId() { return this._value.managerStaffId;}
-get changeManagerStaffId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    managerStaffId: parsedValue as Public.Types.Store["managerStaffId"],
-    });
-  };
-}
-get addressId() { return this._value.addressId;}
-get changeAddressId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    addressId: parsedValue as Public.Types.Store["addressId"],
-    });
-  };
-}
-get lastUpdate() { return this._value.lastUpdate;}
-get changeLastUpdate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    lastUpdate: parsedValue as Public.Types.Store["lastUpdate"],
-    });
-  };
-}
-}
-}
-export namespace Payment {
-export type Row = IsRow<Public.Types.Payment>;
-export class RowImplementation
- extends RowBase<Public.Types.Payment>
- implements Row {
-   constructor(row: Public.Types.Payment, 
-     changeCallback: RowCallback<Public.Types.Payment>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get paymentId() { return this._value.paymentId;}
-get changePaymentId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    paymentId: parsedValue as Public.Types.Payment["paymentId"],
-    });
-  };
-}
-get customerId() { return this._value.customerId;}
-get changeCustomerId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    customerId: parsedValue as Public.Types.Payment["customerId"],
-    });
-  };
-}
-get staffId() { return this._value.staffId;}
-get changeStaffId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    staffId: parsedValue as Public.Types.Payment["staffId"],
-    });
-  };
-}
-get rentalId() { return this._value.rentalId;}
-get changeRentalId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    rentalId: parsedValue as Public.Types.Payment["rentalId"],
-    });
-  };
-}
-get amount() { return this._value.amount;}
-get changeAmount() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Numeric.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    amount: parsedValue as Public.Types.Payment["amount"],
-    });
-  };
-}
-get paymentDate() { return this._value.paymentDate;}
-get changePaymentDate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    paymentDate: parsedValue as Public.Types.Payment["paymentDate"],
-    });
-  };
-}
-}
-}
-export namespace Film {
-export type Row = IsRow<Public.Types.Film>;
-export class RowImplementation
- extends RowBase<Public.Types.Film>
- implements Row {
-   constructor(row: Public.Types.Film, 
-     changeCallback: RowCallback<Public.Types.Film>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get filmId() { return this._value.filmId;}
-get changeFilmId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    filmId: parsedValue as Public.Types.Film["filmId"],
-    });
-  };
-}
-get title() { return this._value.title;}
-get changeTitle() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    title: parsedValue as Public.Types.Film["title"],
-    });
-  };
-}
-get description() { return this._value.description;}
-get changeDescription() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Text.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    description: parsedValue as Public.Types.Film["description"],
-    });
-  };
-}
-get releaseYear() { return this._value.releaseYear;}
-get changeReleaseYear() {
-  return (event: ChangeEvent) => {
-    const parsedValue = Public.Types.Year.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    releaseYear: parsedValue as Public.Types.Film["releaseYear"],
-    });
-  };
-}
-get languageId() { return this._value.languageId;}
-get changeLanguageId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    languageId: parsedValue as Public.Types.Film["languageId"],
-    });
-  };
-}
-get rentalDuration() { return this._value.rentalDuration;}
-get changeRentalDuration() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    rentalDuration: parsedValue as Public.Types.Film["rentalDuration"],
-    });
-  };
-}
-get rentalRate() { return this._value.rentalRate;}
-get changeRentalRate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Numeric.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    rentalRate: parsedValue as Public.Types.Film["rentalRate"],
-    });
-  };
-}
-get length() { return this._value.length;}
-get changeLength() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    length: parsedValue as Public.Types.Film["length"],
-    });
-  };
-}
-get replacementCost() { return this._value.replacementCost;}
-get changeReplacementCost() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Numeric.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    replacementCost: parsedValue as Public.Types.Film["replacementCost"],
-    });
-  };
-}
-get rating() { return this._value.rating;}
-get changeRating() {
-  return (event: ChangeEvent) => {
-    const parsedValue = Public.Types.MpaaRating.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    rating: parsedValue as Public.Types.Film["rating"],
-    });
-  };
-}
-get lastUpdate() { return this._value.lastUpdate;}
-get changeLastUpdate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    lastUpdate: parsedValue as Public.Types.Film["lastUpdate"],
-    });
-  };
-}
-get specialFeatures() { return this._value.specialFeatures;}
-get changeSpecialFeatures() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.TextArray.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    specialFeatures: parsedValue as Public.Types.Film["specialFeatures"],
-    });
-  };
-}
-get fulltext() { return this._value.fulltext;}
-get changeFulltext() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Tsvector.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    fulltext: parsedValue as Public.Types.Film["fulltext"],
-    });
-  };
-}
-}
-}
-}
-}
-export namespace PgToast {
-export namespace Procedures {
-}
-export namespace Tables {
-}
-}
-export namespace Scripts {
-export namespace MovieListing {
-export type Row = IsRow<Scripts.MovieListing.Results>;
-export class RowImplementation
- extends RowBase<Scripts.MovieListing.Results>
- implements Row {
-   constructor(row: Scripts.MovieListing.Results, 
-     changeCallback: RowCallback<Scripts.MovieListing.Results>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get filmId() { return this._value.filmId;}
-get changeFilmId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    filmId: parsedValue as Scripts.MovieListing.Results["filmId"],
-    });
-  };
-}
-get title() { return this._value.title;}
-get changeTitle() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    title: parsedValue as Scripts.MovieListing.Results["title"],
-    });
-  };
-}
-get releaseYear() { return this._value.releaseYear;}
-get changeReleaseYear() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    releaseYear: parsedValue as Scripts.MovieListing.Results["releaseYear"],
-    });
-  };
-}
-get rating() { return this._value.rating;}
-get changeRating() {
-  return (event: ChangeEvent) => {
-    const parsedValue = Public.Types.MpaaRating.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    rating: parsedValue as Scripts.MovieListing.Results["rating"],
-    });
-  };
-}
-get actors() { return this._value.actors;}
-get changeActors() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.TextArray.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    actors: parsedValue as Scripts.MovieListing.Results["actors"],
-    });
-  };
-}
-}
-}
-export namespace Sample {
-export namespace Film {
-export namespace Rated {
-export type Row = IsRow<Scripts.Sample.Film.Rated.Results>;
-export class RowImplementation
- extends RowBase<Scripts.Sample.Film.Rated.Results>
- implements Row {
-   constructor(row: Scripts.Sample.Film.Rated.Results, 
-     changeCallback: RowCallback<Scripts.Sample.Film.Rated.Results>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get filmId() { return this._value.filmId;}
-get changeFilmId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    filmId: parsedValue as Scripts.Sample.Film.Rated.Results["filmId"],
-    });
-  };
-}
-get title() { return this._value.title;}
-get changeTitle() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    title: parsedValue as Scripts.Sample.Film.Rated.Results["title"],
-    });
-  };
-}
-get description() { return this._value.description;}
-get changeDescription() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Text.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    description: parsedValue as Scripts.Sample.Film.Rated.Results["description"],
-    });
-  };
-}
-get releaseYear() { return this._value.releaseYear;}
-get changeReleaseYear() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    releaseYear: parsedValue as Scripts.Sample.Film.Rated.Results["releaseYear"],
-    });
-  };
-}
-get languageId() { return this._value.languageId;}
-get changeLanguageId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    languageId: parsedValue as Scripts.Sample.Film.Rated.Results["languageId"],
-    });
-  };
-}
-get rentalDuration() { return this._value.rentalDuration;}
-get changeRentalDuration() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    rentalDuration: parsedValue as Scripts.Sample.Film.Rated.Results["rentalDuration"],
-    });
-  };
-}
-get rentalRate() { return this._value.rentalRate;}
-get changeRentalRate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Numeric.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    rentalRate: parsedValue as Scripts.Sample.Film.Rated.Results["rentalRate"],
-    });
-  };
-}
-get length() { return this._value.length;}
-get changeLength() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    length: parsedValue as Scripts.Sample.Film.Rated.Results["length"],
-    });
-  };
-}
-get replacementCost() { return this._value.replacementCost;}
-get changeReplacementCost() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Numeric.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    replacementCost: parsedValue as Scripts.Sample.Film.Rated.Results["replacementCost"],
-    });
-  };
-}
-get rating() { return this._value.rating;}
-get changeRating() {
-  return (event: ChangeEvent) => {
-    const parsedValue = Public.Types.MpaaRating.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    rating: parsedValue as Scripts.Sample.Film.Rated.Results["rating"],
-    });
-  };
-}
-get lastUpdate() { return this._value.lastUpdate;}
-get changeLastUpdate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    lastUpdate: parsedValue as Scripts.Sample.Film.Rated.Results["lastUpdate"],
-    });
-  };
-}
-get specialFeatures() { return this._value.specialFeatures;}
-get changeSpecialFeatures() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.TextArray.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    specialFeatures: parsedValue as Scripts.Sample.Film.Rated.Results["specialFeatures"],
-    });
-  };
-}
-get fulltext() { return this._value.fulltext;}
-get changeFulltext() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Tsvector.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    fulltext: parsedValue as Scripts.Sample.Film.Rated.Results["fulltext"],
-    });
-  };
-}
-}
-}
-export namespace Tally {
-export type Row = IsRow<Scripts.Sample.Film.Tally.Results>;
-export class RowImplementation
- extends RowBase<Scripts.Sample.Film.Tally.Results>
- implements Row {
-   constructor(row: Scripts.Sample.Film.Tally.Results, 
-     changeCallback: RowCallback<Scripts.Sample.Film.Tally.Results>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get count() { return this._value.count;}
-get changeCount() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int8.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    count: parsedValue as Scripts.Sample.Film.Tally.Results["count"],
-    });
-  };
-}
-}
-}
-}
-export namespace Pick {
-export type Row = IsRow<Scripts.Sample.Pick.Results>;
-export class RowImplementation
- extends RowBase<Scripts.Sample.Pick.Results>
- implements Row {
-   constructor(row: Scripts.Sample.Pick.Results, 
-     changeCallback: RowCallback<Scripts.Sample.Pick.Results>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get filmId() { return this._value.filmId;}
-get changeFilmId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    filmId: parsedValue as Scripts.Sample.Pick.Results["filmId"],
-    });
-  };
-}
-get title() { return this._value.title;}
-get changeTitle() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Varchar.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    title: parsedValue as Scripts.Sample.Pick.Results["title"],
-    });
-  };
-}
-get description() { return this._value.description;}
-get changeDescription() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Text.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    description: parsedValue as Scripts.Sample.Pick.Results["description"],
-    });
-  };
-}
-get releaseYear() { return this._value.releaseYear;}
-get changeReleaseYear() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int4.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    releaseYear: parsedValue as Scripts.Sample.Pick.Results["releaseYear"],
-    });
-  };
-}
-get languageId() { return this._value.languageId;}
-get changeLanguageId() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    languageId: parsedValue as Scripts.Sample.Pick.Results["languageId"],
-    });
-  };
-}
-get rentalDuration() { return this._value.rentalDuration;}
-get changeRentalDuration() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    rentalDuration: parsedValue as Scripts.Sample.Pick.Results["rentalDuration"],
-    });
-  };
-}
-get rentalRate() { return this._value.rentalRate;}
-get changeRentalRate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Numeric.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    rentalRate: parsedValue as Scripts.Sample.Pick.Results["rentalRate"],
-    });
-  };
-}
-get length() { return this._value.length;}
-get changeLength() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int2.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    length: parsedValue as Scripts.Sample.Pick.Results["length"],
-    });
-  };
-}
-get replacementCost() { return this._value.replacementCost;}
-get changeReplacementCost() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Numeric.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    replacementCost: parsedValue as Scripts.Sample.Pick.Results["replacementCost"],
-    });
-  };
-}
-get rating() { return this._value.rating;}
-get changeRating() {
-  return (event: ChangeEvent) => {
-    const parsedValue = Public.Types.MpaaRating.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    rating: parsedValue as Scripts.Sample.Pick.Results["rating"],
-    });
-  };
-}
-get lastUpdate() { return this._value.lastUpdate;}
-get changeLastUpdate() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Timestamp.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    lastUpdate: parsedValue as Scripts.Sample.Pick.Results["lastUpdate"],
-    });
-  };
-}
-get specialFeatures() { return this._value.specialFeatures;}
-get changeSpecialFeatures() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.TextArray.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    specialFeatures: parsedValue as Scripts.Sample.Pick.Results["specialFeatures"],
-    });
-  };
-}
-get fulltext() { return this._value.fulltext;}
-get changeFulltext() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Tsvector.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    fulltext: parsedValue as Scripts.Sample.Pick.Results["fulltext"],
-    });
-  };
-}
-}
-}
-}
-export namespace Tally {
-export type Row = IsRow<Scripts.Tally.Results>;
-export class RowImplementation
- extends RowBase<Scripts.Tally.Results>
- implements Row {
-   constructor(row: Scripts.Tally.Results, 
-     changeCallback: RowCallback<Scripts.Tally.Results>, 
-     rowNumberInResultset: number) {
-     super(row, changeCallback, rowNumberInResultset);
-   }
-get count() { return this._value.count;}
-get changeCount() {
-  return (event: ChangeEvent) => {
-    const parsedValue = PgCatalog.Types.Int8.parse(event.target.value);
-    void this.changeCallback({
-      ...this.value,
-    count: parsedValue as Scripts.Tally.Results["count"],
-    });
-  };
-}
-}
-}
-}
-
-export namespace Public {
-export namespace Procedures {
-export namespace FilmInStock {
-export function useFilmInStock(parameters: Parameters) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLImmutable<Parameters, PgCatalog.Types.Int4[]>(
-               {
-                 readOperation: client.Public.Procedures.FilmInStock.call.bind(client),
-                 parameters,
-               }
-             )
-}
-}
-export namespace FilmNotInStock {
-export function useFilmNotInStock(parameters: Parameters) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLImmutable<Parameters, PgCatalog.Types.Int4[]>(
-               {
-                 readOperation: client.Public.Procedures.FilmNotInStock.call.bind(client),
-                 parameters,
-               }
-             )
-}
-}
-export namespace GetCustomerBalance {
-export function useGetCustomerBalance(parameters: Parameters) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLImmutable<Parameters, PgCatalog.Types.Numeric|undefined>(
-               {
-                 readOperation: client.Public.Procedures.GetCustomerBalance.call.bind(client),
-                 parameters,
-               }
-             )
-}
-}
-export namespace InventoryHeldByCustomer {
-export function useInventoryHeldByCustomer(parameters: Parameters) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLImmutable<Parameters, PgCatalog.Types.Int4|undefined>(
-               {
-                 readOperation: client.Public.Procedures.InventoryHeldByCustomer.call.bind(client),
-                 parameters,
-               }
-             )
-}
-}
-export namespace InventoryInStock {
-export function useInventoryInStock(parameters: Parameters) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLImmutable<Parameters, PgCatalog.Types.Bool|undefined>(
-               {
-                 readOperation: client.Public.Procedures.InventoryInStock.call.bind(client),
-                 parameters,
-               }
-             )
-}
-}
-export namespace LastDay {
-export function useLastDay(parameters: Parameters) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLImmutable<Parameters, PgCatalog.Types.Date|undefined>(
-               {
-                 readOperation: client.Public.Procedures.LastDay.call.bind(client),
-                 parameters,
-               }
-             )
-}
-}
-export namespace RewardsReport {
-export function useRewardsReport(parameters: Parameters) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLImmutableRows<Parameters, Public.Types.Customer>(
-               {
-                 readOperation: client.Public.Procedures.RewardsReport.call.bind(client),
-                 parameters,
-                 RowImplementation: Public.Procedures.RewardsReport.RowImplementation,
-               }
-             )
-}
-}
-}
-export namespace Tables {
-export namespace FilmActor {
-export function useRow(props: GeneratedRowProps<Public.Tables.FilmActor.Values>) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLRow<PrimaryKey,
-  Partial<Public.Types.FilmActor>, 
-  Public.Types.FilmActor> (
-
-               {
-                 parameters: props.values as unknown as PrimaryKey,
-                 readOperation: client.Public.Tables.FilmActor.ByPrimaryKey.read.bind(client),
-                 upsertOperation: client.Public.Tables.FilmActor.create.bind(client),
-                 deleteOperation: client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
-                 RowImplementation: Public.Tables.FilmActor.RowImplementation,
-                 rowEquals: Public.Types.FilmActor.equals,
-                 emptyRow: Public.Tables.FilmActor.emptyRow,
-                 createIfNotExists: props.createIfNotExists,
-               }
-             )
-}
-export function useRows(options?: Public.Tables.FilmActor.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<never,
-  Partial<Public.Types.FilmActor>, 
-  Public.Types.FilmActor,
-  Public.Tables.FilmActor.Options> (
-
-               {
-                 parameters: NEVER,
-                 options,
-                 readOperation: client.Public.Tables.FilmActor.all.bind(client),
-                 upsertOperation: client.Public.Tables.FilmActor.create.bind(client),
-                 deleteOperation: client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
-                 RowImplementation: Public.Tables.FilmActor.RowImplementation,
-                 rowEquals: Public.Types.FilmActor.equals,
-                 emptyRow: Public.Tables.FilmActor.emptyRow
-               }
-             )
-}
-export namespace ActorId {
-}
-export namespace FilmId {
-}
-export namespace LastUpdate {
-}
-export function useFilmActorPkey(parameters: Public.Types.FilmActorPkey ) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.FilmActorPkey, Partial<Public.Types.FilmActor>,  Public.Types.FilmActor >(
-               {
-                 readOperation: client.Public.Tables.FilmActor.FilmActorPkey.read.bind(client),
-                 parameters,
-                 
-                 upsertOperation: client.Public.Tables.FilmActor.create.bind(client),
-                 deleteOperation: client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
-                 RowImplementation: Public.Tables.FilmActor.RowImplementation,
-                 rowEquals: Public.Types.FilmActor.equals,
-                 emptyRow: Public.Tables.FilmActor.emptyRow
-               }
-             )
-}
-export function useIdxFkFilmId(parameters: Public.Types.IdxFkFilmId , options?: Public.Types.IdxFkFilmId.Options & Public.Tables.FilmActor.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxFkFilmId, Partial<Public.Types.FilmActor>,  Public.Types.FilmActor , Public.Types.IdxFkFilmId.Options & Public.Tables.FilmActor.Options>(
-               {
-                 readOperation: client.Public.Tables.FilmActor.IdxFkFilmId.read.bind(client),
-                 parameters,
-                 options,
-                 upsertOperation: client.Public.Tables.FilmActor.create.bind(client),
-                 deleteOperation: client.Public.Tables.FilmActor.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.FilmActor.primaryKeyFrom,
-                 RowImplementation: Public.Tables.FilmActor.RowImplementation,
-                 rowEquals: Public.Types.FilmActor.equals,
-                 emptyRow: Public.Tables.FilmActor.emptyRow
-               }
-             )
-}
-}
-export namespace Address {
-export function useRow(props: GeneratedRowProps<Public.Tables.Address.Values>) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLRow<PrimaryKey,
-  Partial<Public.Types.Address>, 
-  Public.Types.Address> (
-
-               {
-                 parameters: props.values as unknown as PrimaryKey,
-                 readOperation: client.Public.Tables.Address.ByPrimaryKey.read.bind(client),
-                 upsertOperation: client.Public.Tables.Address.create.bind(client),
-                 deleteOperation: client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Address.RowImplementation,
-                 rowEquals: Public.Types.Address.equals,
-                 emptyRow: Public.Tables.Address.emptyRow,
-                 createIfNotExists: props.createIfNotExists,
-               }
-             )
-}
-export function useRows(options?: Public.Tables.Address.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<never,
-  Partial<Public.Types.Address>, 
-  Public.Types.Address,
-  Public.Tables.Address.Options> (
-
-               {
-                 parameters: NEVER,
-                 options,
-                 readOperation: client.Public.Tables.Address.all.bind(client),
-                 upsertOperation: client.Public.Tables.Address.create.bind(client),
-                 deleteOperation: client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Address.RowImplementation,
-                 rowEquals: Public.Types.Address.equals,
-                 emptyRow: Public.Tables.Address.emptyRow
-               }
-             )
-}
-export namespace AddressId {
-}
-export namespace Address {
-}
-export namespace Address2 {
-}
-export namespace District {
-}
-export namespace CityId {
-}
-export namespace PostalCode {
-}
-export namespace Phone {
-}
-export namespace LastUpdate {
-}
-export function useAddressPkey(parameters: Public.Types.AddressPkey ) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.AddressPkey, Partial<Public.Types.Address>,  Public.Types.Address >(
-               {
-                 readOperation: client.Public.Tables.Address.AddressPkey.read.bind(client),
-                 parameters,
-                 
-                 upsertOperation: client.Public.Tables.Address.create.bind(client),
-                 deleteOperation: client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Address.RowImplementation,
-                 rowEquals: Public.Types.Address.equals,
-                 emptyRow: Public.Tables.Address.emptyRow
-               }
-             )
-}
-export function useIdxFkCityId(parameters: Public.Types.IdxFkCityId , options?: Public.Types.IdxFkCityId.Options & Public.Tables.Address.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxFkCityId, Partial<Public.Types.Address>,  Public.Types.Address , Public.Types.IdxFkCityId.Options & Public.Tables.Address.Options>(
-               {
-                 readOperation: client.Public.Tables.Address.IdxFkCityId.read.bind(client),
-                 parameters,
-                 options,
-                 upsertOperation: client.Public.Tables.Address.create.bind(client),
-                 deleteOperation: client.Public.Tables.Address.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Address.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Address.RowImplementation,
-                 rowEquals: Public.Types.Address.equals,
-                 emptyRow: Public.Tables.Address.emptyRow
-               }
-             )
-}
-}
-export namespace City {
-export function useRow(props: GeneratedRowProps<Public.Tables.City.Values>) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLRow<PrimaryKey,
-  Partial<Public.Types.City>, 
-  Public.Types.City> (
-
-               {
-                 parameters: props.values as unknown as PrimaryKey,
-                 readOperation: client.Public.Tables.City.ByPrimaryKey.read.bind(client),
-                 upsertOperation: client.Public.Tables.City.create.bind(client),
-                 deleteOperation: client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
-                 RowImplementation: Public.Tables.City.RowImplementation,
-                 rowEquals: Public.Types.City.equals,
-                 emptyRow: Public.Tables.City.emptyRow,
-                 createIfNotExists: props.createIfNotExists,
-               }
-             )
-}
-export function useRows(options?: Public.Tables.City.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<never,
-  Partial<Public.Types.City>, 
-  Public.Types.City,
-  Public.Tables.City.Options> (
-
-               {
-                 parameters: NEVER,
-                 options,
-                 readOperation: client.Public.Tables.City.all.bind(client),
-                 upsertOperation: client.Public.Tables.City.create.bind(client),
-                 deleteOperation: client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
-                 RowImplementation: Public.Tables.City.RowImplementation,
-                 rowEquals: Public.Types.City.equals,
-                 emptyRow: Public.Tables.City.emptyRow
-               }
-             )
-}
-export namespace CityId {
-}
-export namespace City {
-}
-export namespace CountryId {
-}
-export namespace LastUpdate {
-}
-export function useCityPkey(parameters: Public.Types.CityPkey ) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.CityPkey, Partial<Public.Types.City>,  Public.Types.City >(
-               {
-                 readOperation: client.Public.Tables.City.CityPkey.read.bind(client),
-                 parameters,
-                 
-                 upsertOperation: client.Public.Tables.City.create.bind(client),
-                 deleteOperation: client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
-                 RowImplementation: Public.Tables.City.RowImplementation,
-                 rowEquals: Public.Types.City.equals,
-                 emptyRow: Public.Tables.City.emptyRow
-               }
-             )
-}
-export function useIdxFkCountryId(parameters: Public.Types.IdxFkCountryId , options?: Public.Types.IdxFkCountryId.Options & Public.Tables.City.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxFkCountryId, Partial<Public.Types.City>,  Public.Types.City , Public.Types.IdxFkCountryId.Options & Public.Tables.City.Options>(
-               {
-                 readOperation: client.Public.Tables.City.IdxFkCountryId.read.bind(client),
-                 parameters,
-                 options,
-                 upsertOperation: client.Public.Tables.City.create.bind(client),
-                 deleteOperation: client.Public.Tables.City.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.City.primaryKeyFrom,
-                 RowImplementation: Public.Tables.City.RowImplementation,
-                 rowEquals: Public.Types.City.equals,
-                 emptyRow: Public.Tables.City.emptyRow
-               }
-             )
-}
-}
-export namespace Customer {
-export function useRow(props: GeneratedRowProps<Public.Tables.Customer.Values>) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLRow<PrimaryKey,
-  Partial<Public.Types.Customer>, 
-  Public.Types.Customer> (
-
-               {
-                 parameters: props.values as unknown as PrimaryKey,
-                 readOperation: client.Public.Tables.Customer.ByPrimaryKey.read.bind(client),
-                 upsertOperation: client.Public.Tables.Customer.create.bind(client),
-                 deleteOperation: client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Customer.RowImplementation,
-                 rowEquals: Public.Types.Customer.equals,
-                 emptyRow: Public.Tables.Customer.emptyRow,
-                 createIfNotExists: props.createIfNotExists,
-               }
-             )
-}
-export function useRows(options?: Public.Tables.Customer.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<never,
-  Partial<Public.Types.Customer>, 
-  Public.Types.Customer,
-  Public.Tables.Customer.Options> (
-
-               {
-                 parameters: NEVER,
-                 options,
-                 readOperation: client.Public.Tables.Customer.all.bind(client),
-                 upsertOperation: client.Public.Tables.Customer.create.bind(client),
-                 deleteOperation: client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Customer.RowImplementation,
-                 rowEquals: Public.Types.Customer.equals,
-                 emptyRow: Public.Tables.Customer.emptyRow
-               }
-             )
-}
-export namespace CustomerId {
-}
-export namespace StoreId {
-}
-export namespace FirstName {
-}
-export namespace LastName {
-}
-export namespace Email {
-}
-export namespace AddressId {
-}
-export namespace Activebool {
-}
-export namespace CreateDate {
-}
-export namespace LastUpdate {
-}
-export namespace Active {
-}
-export function useCustomerPkey(parameters: Public.Types.CustomerPkey ) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.CustomerPkey, Partial<Public.Types.Customer>,  Public.Types.Customer >(
-               {
-                 readOperation: client.Public.Tables.Customer.CustomerPkey.read.bind(client),
-                 parameters,
-                 
-                 upsertOperation: client.Public.Tables.Customer.create.bind(client),
-                 deleteOperation: client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Customer.RowImplementation,
-                 rowEquals: Public.Types.Customer.equals,
-                 emptyRow: Public.Tables.Customer.emptyRow
-               }
-             )
-}
-export function useIdxFkAddressId(parameters: Public.Types.IdxFkAddressId , options?: Public.Types.IdxFkAddressId.Options & Public.Tables.Customer.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxFkAddressId, Partial<Public.Types.Customer>,  Public.Types.Customer , Public.Types.IdxFkAddressId.Options & Public.Tables.Customer.Options>(
-               {
-                 readOperation: client.Public.Tables.Customer.IdxFkAddressId.read.bind(client),
-                 parameters,
-                 options,
-                 upsertOperation: client.Public.Tables.Customer.create.bind(client),
-                 deleteOperation: client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Customer.RowImplementation,
-                 rowEquals: Public.Types.Customer.equals,
-                 emptyRow: Public.Tables.Customer.emptyRow
-               }
-             )
-}
-export function useIdxFkStoreId(parameters: Public.Types.IdxFkStoreId , options?: Public.Types.IdxFkStoreId.Options & Public.Tables.Customer.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxFkStoreId, Partial<Public.Types.Customer>,  Public.Types.Customer , Public.Types.IdxFkStoreId.Options & Public.Tables.Customer.Options>(
-               {
-                 readOperation: client.Public.Tables.Customer.IdxFkStoreId.read.bind(client),
-                 parameters,
-                 options,
-                 upsertOperation: client.Public.Tables.Customer.create.bind(client),
-                 deleteOperation: client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Customer.RowImplementation,
-                 rowEquals: Public.Types.Customer.equals,
-                 emptyRow: Public.Tables.Customer.emptyRow
-               }
-             )
-}
-export function useIdxLastName(parameters: Public.Types.IdxLastName , options?: Public.Types.IdxLastName.Options & Public.Tables.Customer.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxLastName, Partial<Public.Types.Customer>,  Public.Types.Customer , Public.Types.IdxLastName.Options & Public.Tables.Customer.Options>(
-               {
-                 readOperation: client.Public.Tables.Customer.IdxLastName.read.bind(client),
-                 parameters,
-                 options,
-                 upsertOperation: client.Public.Tables.Customer.create.bind(client),
-                 deleteOperation: client.Public.Tables.Customer.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Customer.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Customer.RowImplementation,
-                 rowEquals: Public.Types.Customer.equals,
-                 emptyRow: Public.Tables.Customer.emptyRow
-               }
-             )
-}
-}
-export namespace Actor {
-export function useRow(props: GeneratedRowProps<Public.Tables.Actor.Values>) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLRow<PrimaryKey,
-  Partial<Public.Types.Actor>, 
-  Public.Types.Actor> (
-
-               {
-                 parameters: props.values as unknown as PrimaryKey,
-                 readOperation: client.Public.Tables.Actor.ByPrimaryKey.read.bind(client),
-                 upsertOperation: client.Public.Tables.Actor.create.bind(client),
-                 deleteOperation: client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Actor.RowImplementation,
-                 rowEquals: Public.Types.Actor.equals,
-                 emptyRow: Public.Tables.Actor.emptyRow,
-                 createIfNotExists: props.createIfNotExists,
-               }
-             )
-}
-export function useRows(options?: Public.Tables.Actor.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<never,
-  Partial<Public.Types.Actor>, 
-  Public.Types.Actor,
-  Public.Tables.Actor.Options> (
-
-               {
-                 parameters: NEVER,
-                 options,
-                 readOperation: client.Public.Tables.Actor.all.bind(client),
-                 upsertOperation: client.Public.Tables.Actor.create.bind(client),
-                 deleteOperation: client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Actor.RowImplementation,
-                 rowEquals: Public.Types.Actor.equals,
-                 emptyRow: Public.Tables.Actor.emptyRow
-               }
-             )
-}
-export namespace ActorId {
-}
-export namespace FirstName {
-}
-export namespace LastName {
-}
-export namespace LastUpdate {
-}
-export function useActorPkey(parameters: Public.Types.ActorPkey ) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.ActorPkey, Partial<Public.Types.Actor>,  Public.Types.Actor >(
-               {
-                 readOperation: client.Public.Tables.Actor.ActorPkey.read.bind(client),
-                 parameters,
-                 
-                 upsertOperation: client.Public.Tables.Actor.create.bind(client),
-                 deleteOperation: client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Actor.RowImplementation,
-                 rowEquals: Public.Types.Actor.equals,
-                 emptyRow: Public.Tables.Actor.emptyRow
-               }
-             )
-}
-export function useIdxActorLastName(parameters: Public.Types.IdxActorLastName , options?: Public.Types.IdxActorLastName.Options & Public.Tables.Actor.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxActorLastName, Partial<Public.Types.Actor>,  Public.Types.Actor , Public.Types.IdxActorLastName.Options & Public.Tables.Actor.Options>(
-               {
-                 readOperation: client.Public.Tables.Actor.IdxActorLastName.read.bind(client),
-                 parameters,
-                 options,
-                 upsertOperation: client.Public.Tables.Actor.create.bind(client),
-                 deleteOperation: client.Public.Tables.Actor.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Actor.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Actor.RowImplementation,
-                 rowEquals: Public.Types.Actor.equals,
-                 emptyRow: Public.Tables.Actor.emptyRow
-               }
-             )
-}
-}
-export namespace FilmCategory {
-export function useRow(props: GeneratedRowProps<Public.Tables.FilmCategory.Values>) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLRow<PrimaryKey,
-  Partial<Public.Types.FilmCategory>, 
-  Public.Types.FilmCategory> (
-
-               {
-                 parameters: props.values as unknown as PrimaryKey,
-                 readOperation: client.Public.Tables.FilmCategory.ByPrimaryKey.read.bind(client),
-                 upsertOperation: client.Public.Tables.FilmCategory.create.bind(client),
-                 deleteOperation: client.Public.Tables.FilmCategory.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.FilmCategory.primaryKeyFrom,
-                 RowImplementation: Public.Tables.FilmCategory.RowImplementation,
-                 rowEquals: Public.Types.FilmCategory.equals,
-                 emptyRow: Public.Tables.FilmCategory.emptyRow,
-                 createIfNotExists: props.createIfNotExists,
-               }
-             )
-}
-export function useRows(options?: Public.Tables.FilmCategory.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<never,
-  Partial<Public.Types.FilmCategory>, 
-  Public.Types.FilmCategory,
-  Public.Tables.FilmCategory.Options> (
-
-               {
-                 parameters: NEVER,
-                 options,
-                 readOperation: client.Public.Tables.FilmCategory.all.bind(client),
-                 upsertOperation: client.Public.Tables.FilmCategory.create.bind(client),
-                 deleteOperation: client.Public.Tables.FilmCategory.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.FilmCategory.primaryKeyFrom,
-                 RowImplementation: Public.Tables.FilmCategory.RowImplementation,
-                 rowEquals: Public.Types.FilmCategory.equals,
-                 emptyRow: Public.Tables.FilmCategory.emptyRow
-               }
-             )
-}
-export namespace FilmId {
-}
-export namespace CategoryId {
-}
-export namespace LastUpdate {
-}
-export function useFilmCategoryPkey(parameters: Public.Types.FilmCategoryPkey ) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.FilmCategoryPkey, Partial<Public.Types.FilmCategory>,  Public.Types.FilmCategory >(
-               {
-                 readOperation: client.Public.Tables.FilmCategory.FilmCategoryPkey.read.bind(client),
-                 parameters,
-                 
-                 upsertOperation: client.Public.Tables.FilmCategory.create.bind(client),
-                 deleteOperation: client.Public.Tables.FilmCategory.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.FilmCategory.primaryKeyFrom,
-                 RowImplementation: Public.Tables.FilmCategory.RowImplementation,
-                 rowEquals: Public.Types.FilmCategory.equals,
-                 emptyRow: Public.Tables.FilmCategory.emptyRow
-               }
-             )
-}
-}
-export namespace Inventory {
-export function useRow(props: GeneratedRowProps<Public.Tables.Inventory.Values>) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLRow<PrimaryKey,
-  Partial<Public.Types.Inventory>, 
-  Public.Types.Inventory> (
-
-               {
-                 parameters: props.values as unknown as PrimaryKey,
-                 readOperation: client.Public.Tables.Inventory.ByPrimaryKey.read.bind(client),
-                 upsertOperation: client.Public.Tables.Inventory.create.bind(client),
-                 deleteOperation: client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Inventory.RowImplementation,
-                 rowEquals: Public.Types.Inventory.equals,
-                 emptyRow: Public.Tables.Inventory.emptyRow,
-                 createIfNotExists: props.createIfNotExists,
-               }
-             )
-}
-export function useRows(options?: Public.Tables.Inventory.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<never,
-  Partial<Public.Types.Inventory>, 
-  Public.Types.Inventory,
-  Public.Tables.Inventory.Options> (
-
-               {
-                 parameters: NEVER,
-                 options,
-                 readOperation: client.Public.Tables.Inventory.all.bind(client),
-                 upsertOperation: client.Public.Tables.Inventory.create.bind(client),
-                 deleteOperation: client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Inventory.RowImplementation,
-                 rowEquals: Public.Types.Inventory.equals,
-                 emptyRow: Public.Tables.Inventory.emptyRow
-               }
-             )
-}
-export namespace InventoryId {
-}
-export namespace FilmId {
-}
-export namespace StoreId {
-}
-export namespace LastUpdate {
-}
-export function useInventoryPkey(parameters: Public.Types.InventoryPkey ) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.InventoryPkey, Partial<Public.Types.Inventory>,  Public.Types.Inventory >(
-               {
-                 readOperation: client.Public.Tables.Inventory.InventoryPkey.read.bind(client),
-                 parameters,
-                 
-                 upsertOperation: client.Public.Tables.Inventory.create.bind(client),
-                 deleteOperation: client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Inventory.RowImplementation,
-                 rowEquals: Public.Types.Inventory.equals,
-                 emptyRow: Public.Tables.Inventory.emptyRow
-               }
-             )
-}
-export function useIdxStoreIdFilmId(parameters: Public.Types.IdxStoreIdFilmId , options?: Public.Types.IdxStoreIdFilmId.Options & Public.Tables.Inventory.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxStoreIdFilmId, Partial<Public.Types.Inventory>,  Public.Types.Inventory , Public.Types.IdxStoreIdFilmId.Options & Public.Tables.Inventory.Options>(
-               {
-                 readOperation: client.Public.Tables.Inventory.IdxStoreIdFilmId.read.bind(client),
-                 parameters,
-                 options,
-                 upsertOperation: client.Public.Tables.Inventory.create.bind(client),
-                 deleteOperation: client.Public.Tables.Inventory.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Inventory.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Inventory.RowImplementation,
-                 rowEquals: Public.Types.Inventory.equals,
-                 emptyRow: Public.Tables.Inventory.emptyRow
-               }
-             )
-}
-}
-export namespace Category {
-export function useRow(props: GeneratedRowProps<Public.Tables.Category.Values>) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLRow<PrimaryKey,
-  Partial<Public.Types.Category>, 
-  Public.Types.Category> (
-
-               {
-                 parameters: props.values as unknown as PrimaryKey,
-                 readOperation: client.Public.Tables.Category.ByPrimaryKey.read.bind(client),
-                 upsertOperation: client.Public.Tables.Category.create.bind(client),
-                 deleteOperation: client.Public.Tables.Category.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Category.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Category.RowImplementation,
-                 rowEquals: Public.Types.Category.equals,
-                 emptyRow: Public.Tables.Category.emptyRow,
-                 createIfNotExists: props.createIfNotExists,
-               }
-             )
-}
-export function useRows(options?: Public.Tables.Category.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<never,
-  Partial<Public.Types.Category>, 
-  Public.Types.Category,
-  Public.Tables.Category.Options> (
-
-               {
-                 parameters: NEVER,
-                 options,
-                 readOperation: client.Public.Tables.Category.all.bind(client),
-                 upsertOperation: client.Public.Tables.Category.create.bind(client),
-                 deleteOperation: client.Public.Tables.Category.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Category.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Category.RowImplementation,
-                 rowEquals: Public.Types.Category.equals,
-                 emptyRow: Public.Tables.Category.emptyRow
-               }
-             )
-}
-export namespace CategoryId {
-}
-export namespace Name {
-}
-export namespace LastUpdate {
-}
-export function useCategoryPkey(parameters: Public.Types.CategoryPkey ) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.CategoryPkey, Partial<Public.Types.Category>,  Public.Types.Category >(
-               {
-                 readOperation: client.Public.Tables.Category.CategoryPkey.read.bind(client),
-                 parameters,
-                 
-                 upsertOperation: client.Public.Tables.Category.create.bind(client),
-                 deleteOperation: client.Public.Tables.Category.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Category.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Category.RowImplementation,
-                 rowEquals: Public.Types.Category.equals,
-                 emptyRow: Public.Tables.Category.emptyRow
-               }
-             )
-}
-}
-export namespace Country {
-export function useRow(props: GeneratedRowProps<Public.Tables.Country.Values>) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLRow<PrimaryKey,
-  Partial<Public.Types.Country>, 
-  Public.Types.Country> (
-
-               {
-                 parameters: props.values as unknown as PrimaryKey,
-                 readOperation: client.Public.Tables.Country.ByPrimaryKey.read.bind(client),
-                 upsertOperation: client.Public.Tables.Country.create.bind(client),
-                 deleteOperation: client.Public.Tables.Country.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Country.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Country.RowImplementation,
-                 rowEquals: Public.Types.Country.equals,
-                 emptyRow: Public.Tables.Country.emptyRow,
-                 createIfNotExists: props.createIfNotExists,
-               }
-             )
-}
-export function useRows(options?: Public.Tables.Country.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<never,
-  Partial<Public.Types.Country>, 
-  Public.Types.Country,
-  Public.Tables.Country.Options> (
-
-               {
-                 parameters: NEVER,
-                 options,
-                 readOperation: client.Public.Tables.Country.all.bind(client),
-                 upsertOperation: client.Public.Tables.Country.create.bind(client),
-                 deleteOperation: client.Public.Tables.Country.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Country.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Country.RowImplementation,
-                 rowEquals: Public.Types.Country.equals,
-                 emptyRow: Public.Tables.Country.emptyRow
-               }
-             )
-}
-export namespace CountryId {
-}
-export namespace Country {
-}
-export namespace LastUpdate {
-}
-export function useCountryPkey(parameters: Public.Types.CountryPkey ) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.CountryPkey, Partial<Public.Types.Country>,  Public.Types.Country >(
-               {
-                 readOperation: client.Public.Tables.Country.CountryPkey.read.bind(client),
-                 parameters,
-                 
-                 upsertOperation: client.Public.Tables.Country.create.bind(client),
-                 deleteOperation: client.Public.Tables.Country.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Country.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Country.RowImplementation,
-                 rowEquals: Public.Types.Country.equals,
-                 emptyRow: Public.Tables.Country.emptyRow
-               }
-             )
-}
-}
-export namespace Language {
-export function useRow(props: GeneratedRowProps<Public.Tables.Language.Values>) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLRow<PrimaryKey,
-  Partial<Public.Types.Language>, 
-  Public.Types.Language> (
-
-               {
-                 parameters: props.values as unknown as PrimaryKey,
-                 readOperation: client.Public.Tables.Language.ByPrimaryKey.read.bind(client),
-                 upsertOperation: client.Public.Tables.Language.create.bind(client),
-                 deleteOperation: client.Public.Tables.Language.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Language.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Language.RowImplementation,
-                 rowEquals: Public.Types.Language.equals,
-                 emptyRow: Public.Tables.Language.emptyRow,
-                 createIfNotExists: props.createIfNotExists,
-               }
-             )
-}
-export function useRows(options?: Public.Tables.Language.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<never,
-  Partial<Public.Types.Language>, 
-  Public.Types.Language,
-  Public.Tables.Language.Options> (
-
-               {
-                 parameters: NEVER,
-                 options,
-                 readOperation: client.Public.Tables.Language.all.bind(client),
-                 upsertOperation: client.Public.Tables.Language.create.bind(client),
-                 deleteOperation: client.Public.Tables.Language.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Language.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Language.RowImplementation,
-                 rowEquals: Public.Types.Language.equals,
-                 emptyRow: Public.Tables.Language.emptyRow
-               }
-             )
-}
-export namespace LanguageId {
-}
-export namespace Name {
-}
-export namespace LastUpdate {
-}
-export function useLanguagePkey(parameters: Public.Types.LanguagePkey ) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.LanguagePkey, Partial<Public.Types.Language>,  Public.Types.Language >(
-               {
-                 readOperation: client.Public.Tables.Language.LanguagePkey.read.bind(client),
-                 parameters,
-                 
-                 upsertOperation: client.Public.Tables.Language.create.bind(client),
-                 deleteOperation: client.Public.Tables.Language.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Language.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Language.RowImplementation,
-                 rowEquals: Public.Types.Language.equals,
-                 emptyRow: Public.Tables.Language.emptyRow
-               }
-             )
-}
-}
-export namespace Rental {
-export function useRow(props: GeneratedRowProps<Public.Tables.Rental.Values>) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLRow<PrimaryKey,
-  Partial<Public.Types.Rental>, 
-  Public.Types.Rental> (
-
-               {
-                 parameters: props.values as unknown as PrimaryKey,
-                 readOperation: client.Public.Tables.Rental.ByPrimaryKey.read.bind(client),
-                 upsertOperation: client.Public.Tables.Rental.create.bind(client),
-                 deleteOperation: client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Rental.RowImplementation,
-                 rowEquals: Public.Types.Rental.equals,
-                 emptyRow: Public.Tables.Rental.emptyRow,
-                 createIfNotExists: props.createIfNotExists,
-               }
-             )
-}
-export function useRows(options?: Public.Tables.Rental.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<never,
-  Partial<Public.Types.Rental>, 
-  Public.Types.Rental,
-  Public.Tables.Rental.Options> (
-
-               {
-                 parameters: NEVER,
-                 options,
-                 readOperation: client.Public.Tables.Rental.all.bind(client),
-                 upsertOperation: client.Public.Tables.Rental.create.bind(client),
-                 deleteOperation: client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Rental.RowImplementation,
-                 rowEquals: Public.Types.Rental.equals,
-                 emptyRow: Public.Tables.Rental.emptyRow
-               }
-             )
-}
-export namespace RentalId {
-}
-export namespace RentalDate {
-}
-export namespace InventoryId {
-}
-export namespace CustomerId {
-}
-export namespace ReturnDate {
-}
-export namespace StaffId {
-}
-export namespace LastUpdate {
-}
-export function useRentalPkey(parameters: Public.Types.RentalPkey ) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.RentalPkey, Partial<Public.Types.Rental>,  Public.Types.Rental >(
-               {
-                 readOperation: client.Public.Tables.Rental.RentalPkey.read.bind(client),
-                 parameters,
-                 
-                 upsertOperation: client.Public.Tables.Rental.create.bind(client),
-                 deleteOperation: client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Rental.RowImplementation,
-                 rowEquals: Public.Types.Rental.equals,
-                 emptyRow: Public.Tables.Rental.emptyRow
-               }
-             )
-}
-export function useIdxFkInventoryId(parameters: Public.Types.IdxFkInventoryId , options?: Public.Types.IdxFkInventoryId.Options & Public.Tables.Rental.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxFkInventoryId, Partial<Public.Types.Rental>,  Public.Types.Rental , Public.Types.IdxFkInventoryId.Options & Public.Tables.Rental.Options>(
-               {
-                 readOperation: client.Public.Tables.Rental.IdxFkInventoryId.read.bind(client),
-                 parameters,
-                 options,
-                 upsertOperation: client.Public.Tables.Rental.create.bind(client),
-                 deleteOperation: client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Rental.RowImplementation,
-                 rowEquals: Public.Types.Rental.equals,
-                 emptyRow: Public.Tables.Rental.emptyRow
-               }
-             )
-}
-export function useIdxUnqRentalRentalDateInventoryIdCustomerId(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId ) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, Partial<Public.Types.Rental>,  Public.Types.Rental >(
-               {
-                 readOperation: client.Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId.read.bind(client),
-                 parameters,
-                 
-                 upsertOperation: client.Public.Tables.Rental.create.bind(client),
-                 deleteOperation: client.Public.Tables.Rental.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Rental.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Rental.RowImplementation,
-                 rowEquals: Public.Types.Rental.equals,
-                 emptyRow: Public.Tables.Rental.emptyRow
-               }
-             )
-}
-}
-export namespace Staff {
-export function useRow(props: GeneratedRowProps<Public.Tables.Staff.Values>) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLRow<PrimaryKey,
-  Partial<Public.Types.Staff>, 
-  Public.Types.Staff> (
-
-               {
-                 parameters: props.values as unknown as PrimaryKey,
-                 readOperation: client.Public.Tables.Staff.ByPrimaryKey.read.bind(client),
-                 upsertOperation: client.Public.Tables.Staff.create.bind(client),
-                 deleteOperation: client.Public.Tables.Staff.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Staff.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Staff.RowImplementation,
-                 rowEquals: Public.Types.Staff.equals,
-                 emptyRow: Public.Tables.Staff.emptyRow,
-                 createIfNotExists: props.createIfNotExists,
-               }
-             )
-}
-export function useRows(options?: Public.Tables.Staff.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<never,
-  Partial<Public.Types.Staff>, 
-  Public.Types.Staff,
-  Public.Tables.Staff.Options> (
-
-               {
-                 parameters: NEVER,
-                 options,
-                 readOperation: client.Public.Tables.Staff.all.bind(client),
-                 upsertOperation: client.Public.Tables.Staff.create.bind(client),
-                 deleteOperation: client.Public.Tables.Staff.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Staff.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Staff.RowImplementation,
-                 rowEquals: Public.Types.Staff.equals,
-                 emptyRow: Public.Tables.Staff.emptyRow
-               }
-             )
-}
-export namespace StaffId {
-}
-export namespace FirstName {
-}
-export namespace LastName {
-}
-export namespace AddressId {
-}
-export namespace Email {
-}
-export namespace StoreId {
-}
-export namespace Active {
-}
-export namespace Username {
-}
-export namespace Password {
-}
-export namespace LastUpdate {
-}
-export namespace Picture {
-}
-export function useStaffPkey(parameters: Public.Types.StaffPkey ) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.StaffPkey, Partial<Public.Types.Staff>,  Public.Types.Staff >(
-               {
-                 readOperation: client.Public.Tables.Staff.StaffPkey.read.bind(client),
-                 parameters,
-                 
-                 upsertOperation: client.Public.Tables.Staff.create.bind(client),
-                 deleteOperation: client.Public.Tables.Staff.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Staff.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Staff.RowImplementation,
-                 rowEquals: Public.Types.Staff.equals,
-                 emptyRow: Public.Tables.Staff.emptyRow
-               }
-             )
-}
-}
-export namespace Store {
-export function useRow(props: GeneratedRowProps<Public.Tables.Store.Values>) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLRow<PrimaryKey,
-  Partial<Public.Types.Store>, 
-  Public.Types.Store> (
-
-               {
-                 parameters: props.values as unknown as PrimaryKey,
-                 readOperation: client.Public.Tables.Store.ByPrimaryKey.read.bind(client),
-                 upsertOperation: client.Public.Tables.Store.create.bind(client),
-                 deleteOperation: client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Store.RowImplementation,
-                 rowEquals: Public.Types.Store.equals,
-                 emptyRow: Public.Tables.Store.emptyRow,
-                 createIfNotExists: props.createIfNotExists,
-               }
-             )
-}
-export function useRows(options?: Public.Tables.Store.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<never,
-  Partial<Public.Types.Store>, 
-  Public.Types.Store,
-  Public.Tables.Store.Options> (
-
-               {
-                 parameters: NEVER,
-                 options,
-                 readOperation: client.Public.Tables.Store.all.bind(client),
-                 upsertOperation: client.Public.Tables.Store.create.bind(client),
-                 deleteOperation: client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Store.RowImplementation,
-                 rowEquals: Public.Types.Store.equals,
-                 emptyRow: Public.Tables.Store.emptyRow
-               }
-             )
-}
-export namespace StoreId {
-}
-export namespace ManagerStaffId {
-}
-export namespace AddressId {
-}
-export namespace LastUpdate {
-}
-export function useStorePkey(parameters: Public.Types.StorePkey ) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.StorePkey, Partial<Public.Types.Store>,  Public.Types.Store >(
-               {
-                 readOperation: client.Public.Tables.Store.StorePkey.read.bind(client),
-                 parameters,
-                 
-                 upsertOperation: client.Public.Tables.Store.create.bind(client),
-                 deleteOperation: client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Store.RowImplementation,
-                 rowEquals: Public.Types.Store.equals,
-                 emptyRow: Public.Tables.Store.emptyRow
-               }
-             )
-}
-export function useIdxUnqManagerStaffId(parameters: Public.Types.IdxUnqManagerStaffId ) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.IdxUnqManagerStaffId, Partial<Public.Types.Store>,  Public.Types.Store >(
-               {
-                 readOperation: client.Public.Tables.Store.IdxUnqManagerStaffId.read.bind(client),
-                 parameters,
-                 
-                 upsertOperation: client.Public.Tables.Store.create.bind(client),
-                 deleteOperation: client.Public.Tables.Store.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Store.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Store.RowImplementation,
-                 rowEquals: Public.Types.Store.equals,
-                 emptyRow: Public.Tables.Store.emptyRow
-               }
-             )
-}
-}
-export namespace Payment {
-export function useRow(props: GeneratedRowProps<Public.Tables.Payment.Values>) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLRow<PrimaryKey,
-  Partial<Public.Types.Payment>, 
-  Public.Types.Payment> (
-
-               {
-                 parameters: props.values as unknown as PrimaryKey,
-                 readOperation: client.Public.Tables.Payment.ByPrimaryKey.read.bind(client),
-                 upsertOperation: client.Public.Tables.Payment.create.bind(client),
-                 deleteOperation: client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Payment.RowImplementation,
-                 rowEquals: Public.Types.Payment.equals,
-                 emptyRow: Public.Tables.Payment.emptyRow,
-                 createIfNotExists: props.createIfNotExists,
-               }
-             )
-}
-export function useRows(options?: Public.Tables.Payment.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<never,
-  Partial<Public.Types.Payment>, 
-  Public.Types.Payment,
-  Public.Tables.Payment.Options> (
-
-               {
-                 parameters: NEVER,
-                 options,
-                 readOperation: client.Public.Tables.Payment.all.bind(client),
-                 upsertOperation: client.Public.Tables.Payment.create.bind(client),
-                 deleteOperation: client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Payment.RowImplementation,
-                 rowEquals: Public.Types.Payment.equals,
-                 emptyRow: Public.Tables.Payment.emptyRow
-               }
-             )
-}
-export namespace PaymentId {
-}
-export namespace CustomerId {
-}
-export namespace StaffId {
-}
-export namespace RentalId {
-}
-export namespace Amount {
-}
-export namespace PaymentDate {
-}
-export function usePaymentPkey(parameters: Public.Types.PaymentPkey ) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.PaymentPkey, Partial<Public.Types.Payment>,  Public.Types.Payment >(
-               {
-                 readOperation: client.Public.Tables.Payment.PaymentPkey.read.bind(client),
-                 parameters,
-                 
-                 upsertOperation: client.Public.Tables.Payment.create.bind(client),
-                 deleteOperation: client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Payment.RowImplementation,
-                 rowEquals: Public.Types.Payment.equals,
-                 emptyRow: Public.Tables.Payment.emptyRow
-               }
-             )
-}
-export function useIdxFkCustomerId(parameters: Public.Types.IdxFkCustomerId , options?: Public.Types.IdxFkCustomerId.Options & Public.Tables.Payment.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxFkCustomerId, Partial<Public.Types.Payment>,  Public.Types.Payment , Public.Types.IdxFkCustomerId.Options & Public.Tables.Payment.Options>(
-               {
-                 readOperation: client.Public.Tables.Payment.IdxFkCustomerId.read.bind(client),
-                 parameters,
-                 options,
-                 upsertOperation: client.Public.Tables.Payment.create.bind(client),
-                 deleteOperation: client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Payment.RowImplementation,
-                 rowEquals: Public.Types.Payment.equals,
-                 emptyRow: Public.Tables.Payment.emptyRow
-               }
-             )
-}
-export function useIdxFkRentalId(parameters: Public.Types.IdxFkRentalId , options?: Public.Types.IdxFkRentalId.Options & Public.Tables.Payment.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxFkRentalId, Partial<Public.Types.Payment>,  Public.Types.Payment , Public.Types.IdxFkRentalId.Options & Public.Tables.Payment.Options>(
-               {
-                 readOperation: client.Public.Tables.Payment.IdxFkRentalId.read.bind(client),
-                 parameters,
-                 options,
-                 upsertOperation: client.Public.Tables.Payment.create.bind(client),
-                 deleteOperation: client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Payment.RowImplementation,
-                 rowEquals: Public.Types.Payment.equals,
-                 emptyRow: Public.Tables.Payment.emptyRow
-               }
-             )
-}
-export function useIdxFkStaffId(parameters: Public.Types.IdxFkStaffId , options?: Public.Types.IdxFkStaffId.Options & Public.Tables.Payment.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxFkStaffId, Partial<Public.Types.Payment>,  Public.Types.Payment , Public.Types.IdxFkStaffId.Options & Public.Tables.Payment.Options>(
-               {
-                 readOperation: client.Public.Tables.Payment.IdxFkStaffId.read.bind(client),
-                 parameters,
-                 options,
-                 upsertOperation: client.Public.Tables.Payment.create.bind(client),
-                 deleteOperation: client.Public.Tables.Payment.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Payment.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Payment.RowImplementation,
-                 rowEquals: Public.Types.Payment.equals,
-                 emptyRow: Public.Tables.Payment.emptyRow
-               }
-             )
-}
-}
-export namespace Film {
-export function useRow(props: GeneratedRowProps<Public.Tables.Film.Values>) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLRow<PrimaryKey,
-  Partial<Public.Types.Film>, 
-  Public.Types.Film> (
-
-               {
-                 parameters: props.values as unknown as PrimaryKey,
-                 readOperation: client.Public.Tables.Film.ByPrimaryKey.read.bind(client),
-                 upsertOperation: client.Public.Tables.Film.create.bind(client),
-                 deleteOperation: client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Film.RowImplementation,
-                 rowEquals: Public.Types.Film.equals,
-                 emptyRow: Public.Tables.Film.emptyRow,
-                 createIfNotExists: props.createIfNotExists,
-               }
-             )
-}
-export function useRows(options?: Public.Tables.Film.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<never,
-  Partial<Public.Types.Film>, 
-  Public.Types.Film,
-  Public.Tables.Film.Options> (
-
-               {
-                 parameters: NEVER,
-                 options,
-                 readOperation: client.Public.Tables.Film.all.bind(client),
-                 upsertOperation: client.Public.Tables.Film.create.bind(client),
-                 deleteOperation: client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Film.RowImplementation,
-                 rowEquals: Public.Types.Film.equals,
-                 emptyRow: Public.Tables.Film.emptyRow
-               }
-             )
-}
-export namespace FilmId {
-}
-export namespace Title {
-}
-export namespace Description {
-}
-export namespace ReleaseYear {
-}
-export namespace LanguageId {
-}
-export namespace RentalDuration {
-}
-export namespace RentalRate {
-}
-export namespace Length {
-}
-export namespace ReplacementCost {
-}
-export namespace Rating {
-}
-export namespace LastUpdate {
-}
-export namespace SpecialFeatures {
-}
-export namespace Fulltext {
-}
-export function useFilmPkey(parameters: Public.Types.FilmPkey ) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRow<Public.Types.FilmPkey, Partial<Public.Types.Film>,  Public.Types.Film >(
-               {
-                 readOperation: client.Public.Tables.Film.FilmPkey.read.bind(client),
-                 parameters,
-                 
-                 upsertOperation: client.Public.Tables.Film.create.bind(client),
-                 deleteOperation: client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Film.RowImplementation,
-                 rowEquals: Public.Types.Film.equals,
-                 emptyRow: Public.Tables.Film.emptyRow
-               }
-             )
-}
-export function useFilmFulltextIdx(parameters: Public.Types.FilmFulltextIdx , options?: Public.Types.FilmFulltextIdx.Options & Public.Tables.Film.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.FilmFulltextIdx, Partial<Public.Types.Film>,  Public.Types.Film , Public.Types.FilmFulltextIdx.Options & Public.Tables.Film.Options>(
-               {
-                 readOperation: client.Public.Tables.Film.FilmFulltextIdx.read.bind(client),
-                 parameters,
-                 options,
-                 upsertOperation: client.Public.Tables.Film.create.bind(client),
-                 deleteOperation: client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Film.RowImplementation,
-                 rowEquals: Public.Types.Film.equals,
-                 emptyRow: Public.Tables.Film.emptyRow
-               }
-             )
-}
-export function useIdxFkLanguageId(parameters: Public.Types.IdxFkLanguageId , options?: Public.Types.IdxFkLanguageId.Options & Public.Tables.Film.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxFkLanguageId, Partial<Public.Types.Film>,  Public.Types.Film , Public.Types.IdxFkLanguageId.Options & Public.Tables.Film.Options>(
-               {
-                 readOperation: client.Public.Tables.Film.IdxFkLanguageId.read.bind(client),
-                 parameters,
-                 options,
-                 upsertOperation: client.Public.Tables.Film.create.bind(client),
-                 deleteOperation: client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Film.RowImplementation,
-                 rowEquals: Public.Types.Film.equals,
-                 emptyRow: Public.Tables.Film.emptyRow
-               }
-             )
-}
-export function useIdxTitle(parameters: Public.Types.IdxTitle , options?: Public.Types.IdxTitle.Options & Public.Tables.Film.Options) {
-const client = useEmbraceSQLClient<EmbraceSQLClient>();
-return useEmbraceSQLRows<Public.Types.IdxTitle, Partial<Public.Types.Film>,  Public.Types.Film , Public.Types.IdxTitle.Options & Public.Tables.Film.Options>(
-               {
-                 readOperation: client.Public.Tables.Film.IdxTitle.read.bind(client),
-                 parameters,
-                 options,
-                 upsertOperation: client.Public.Tables.Film.create.bind(client),
-                 deleteOperation: client.Public.Tables.Film.ByPrimaryKey.delete.bind(client),
-                 primaryKeyPicker: Public.Tables.Film.primaryKeyFrom,
-                 RowImplementation: Public.Tables.Film.RowImplementation,
-                 rowEquals: Public.Types.Film.equals,
-                 emptyRow: Public.Tables.Film.emptyRow
-               }
-             )
-}
-}
-}
-}
-export namespace PgToast {
-export namespace Procedures {
-}
-export namespace Tables {
-}
-}
-export namespace Scripts {
-export namespace MovieListing {
-export function useMovieListing() {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLImmutableRows<never, Scripts.MovieListing.Results>(
-               {
-                 readOperation: client.Scripts.MovieListing.call.bind(client),
-                 parameters: NEVER,
-                 RowImplementation: Scripts.MovieListing.RowImplementation,
-               }
-             )
-}
-}
-export namespace Sample {
-export namespace Film {
-export namespace Rated {
-export function useRated(parameters: Parameters) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLImmutableRows<Parameters, Scripts.Sample.Film.Rated.Results>(
-               {
-                 readOperation: client.Scripts.Sample.Film.Rated.call.bind(client),
-                 parameters,
-                 RowImplementation: Scripts.Sample.Film.Rated.RowImplementation,
-               }
-             )
-}
-}
-export namespace Tally {
-export function useTally() {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLImmutableRows<never, Scripts.Sample.Film.Tally.Results>(
-               {
-                 readOperation: client.Scripts.Sample.Film.Tally.call.bind(client),
-                 parameters: NEVER,
-                 RowImplementation: Scripts.Sample.Film.Tally.RowImplementation,
-               }
-             )
-}
-}
-}
-export namespace Pick {
-export function usePick(parameters: Parameters) {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLImmutableRows<Parameters, Scripts.Sample.Pick.Results>(
-               {
-                 readOperation: client.Scripts.Sample.Pick.call.bind(client),
-                 parameters,
-                 RowImplementation: Scripts.Sample.Pick.RowImplementation,
-               }
-             )
-}
-}
-}
-export namespace Tally {
-export function useTally() {
-  const client = useEmbraceSQLClient<EmbraceSQLClient>();
-  return useEmbraceSQLImmutableRows<never, Scripts.Tally.Results>(
-               {
-                 readOperation: client.Scripts.Tally.call.bind(client),
-                 parameters: NEVER,
-                 RowImplementation: Scripts.Tally.RowImplementation,
-               }
-             )
-}
-}
-}
-// End React generated section

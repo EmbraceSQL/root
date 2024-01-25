@@ -1,4 +1,3845 @@
 
+            import { Tables, Table, Column, Index } from "@embracesql/shared";
+            import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
+            import postgres from "postgres";
+          
+
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        type ArgumentToPostgres = any;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        type ArgumentFromPostgres = any;
+        type Typecast = (x: ArgumentToPostgres) => ArgumentFromPostgres;
+        export interface PostgresTypecasts { 
+      
+[16]: Typecast;
+["PgCatalog.Types.Bool"]: Typecast
+[17]: Typecast;
+["PgCatalog.Types.Bytea"]: Typecast
+[18]: Typecast;
+["PgCatalog.Types.Char"]: Typecast
+[19]: Typecast;
+["PgCatalog.Types.Name"]: Typecast
+[20]: Typecast;
+["PgCatalog.Types.Int8"]: Typecast
+[21]: Typecast;
+["PgCatalog.Types.Int2"]: Typecast
+[22]: Typecast;
+["PgCatalog.Types.Int2vector"]: Typecast
+[23]: Typecast;
+["PgCatalog.Types.Int4"]: Typecast
+[24]: Typecast;
+["PgCatalog.Types.Regproc"]: Typecast
+[25]: Typecast;
+["PgCatalog.Types.Text"]: Typecast
+[26]: Typecast;
+["PgCatalog.Types.Oid"]: Typecast
+[27]: Typecast;
+["PgCatalog.Types.Tid"]: Typecast
+[28]: Typecast;
+["PgCatalog.Types.Xid"]: Typecast
+[29]: Typecast;
+["PgCatalog.Types.Cid"]: Typecast
+[30]: Typecast;
+["PgCatalog.Types.Oidvector"]: Typecast
+[71]: Typecast;
+["PgCatalog.Types.PgType"]: Typecast
+[75]: Typecast;
+["PgCatalog.Types.PgAttribute"]: Typecast
+[81]: Typecast;
+["PgCatalog.Types.PgProc"]: Typecast
+[83]: Typecast;
+["PgCatalog.Types.PgClass"]: Typecast
+[114]: Typecast;
+["PgCatalog.Types.Json"]: Typecast
+[142]: Typecast;
+["PgCatalog.Types.Xml"]: Typecast
+[194]: Typecast;
+["PgCatalog.Types.PgNodeTree"]: Typecast
+[3361]: Typecast;
+["PgCatalog.Types.PgNdistinct"]: Typecast
+[3402]: Typecast;
+["PgCatalog.Types.PgDependencies"]: Typecast
+[5017]: Typecast;
+["PgCatalog.Types.PgMcvList"]: Typecast
+[32]: Typecast;
+["PgCatalog.Types.PgDdlCommand"]: Typecast
+[5069]: Typecast;
+["PgCatalog.Types.Xid8"]: Typecast
+[600]: Typecast;
+["PgCatalog.Types.Point"]: Typecast
+[601]: Typecast;
+["PgCatalog.Types.Lseg"]: Typecast
+[602]: Typecast;
+["PgCatalog.Types.Path"]: Typecast
+[603]: Typecast;
+["PgCatalog.Types.Box"]: Typecast
+[604]: Typecast;
+["PgCatalog.Types.Polygon"]: Typecast
+[628]: Typecast;
+["PgCatalog.Types.Line"]: Typecast
+[700]: Typecast;
+["PgCatalog.Types.Float4"]: Typecast
+[701]: Typecast;
+["PgCatalog.Types.Float8"]: Typecast
+[705]: Typecast;
+["PgCatalog.Types.Unknown"]: Typecast
+[718]: Typecast;
+["PgCatalog.Types.Circle"]: Typecast
+[790]: Typecast;
+["PgCatalog.Types.Money"]: Typecast
+[829]: Typecast;
+["PgCatalog.Types.Macaddr"]: Typecast
+[869]: Typecast;
+["PgCatalog.Types.Inet"]: Typecast
+[650]: Typecast;
+["PgCatalog.Types.Cidr"]: Typecast
+[774]: Typecast;
+["PgCatalog.Types.Macaddr8"]: Typecast
+[1033]: Typecast;
+["PgCatalog.Types.Aclitem"]: Typecast
+[1042]: Typecast;
+["PgCatalog.Types.Bpchar"]: Typecast
+[1043]: Typecast;
+["PgCatalog.Types.Varchar"]: Typecast
+[1082]: Typecast;
+["PgCatalog.Types.Date"]: Typecast
+[1083]: Typecast;
+["PgCatalog.Types.Time"]: Typecast
+[1114]: Typecast;
+["PgCatalog.Types.Timestamp"]: Typecast
+[1184]: Typecast;
+["PgCatalog.Types.Timestamptz"]: Typecast
+[1186]: Typecast;
+["PgCatalog.Types.Interval"]: Typecast
+[1266]: Typecast;
+["PgCatalog.Types.Timetz"]: Typecast
+[1560]: Typecast;
+["PgCatalog.Types.Bit"]: Typecast
+[1562]: Typecast;
+["PgCatalog.Types.Varbit"]: Typecast
+[1700]: Typecast;
+["PgCatalog.Types.Numeric"]: Typecast
+[1790]: Typecast;
+["PgCatalog.Types.Refcursor"]: Typecast
+[2202]: Typecast;
+["PgCatalog.Types.Regprocedure"]: Typecast
+[2203]: Typecast;
+["PgCatalog.Types.Regoper"]: Typecast
+[2204]: Typecast;
+["PgCatalog.Types.Regoperator"]: Typecast
+[2205]: Typecast;
+["PgCatalog.Types.Regclass"]: Typecast
+[4191]: Typecast;
+["PgCatalog.Types.Regcollation"]: Typecast
+[2206]: Typecast;
+["PgCatalog.Types.Regtype"]: Typecast
+[4096]: Typecast;
+["PgCatalog.Types.Regrole"]: Typecast
+[4089]: Typecast;
+["PgCatalog.Types.Regnamespace"]: Typecast
+[2950]: Typecast;
+["PgCatalog.Types.Uuid"]: Typecast
+[3220]: Typecast;
+["PgCatalog.Types.PgLsn"]: Typecast
+[3614]: Typecast;
+["PgCatalog.Types.Tsvector"]: Typecast
+[3642]: Typecast;
+["PgCatalog.Types.Gtsvector"]: Typecast
+[3615]: Typecast;
+["PgCatalog.Types.Tsquery"]: Typecast
+[3734]: Typecast;
+["PgCatalog.Types.Regconfig"]: Typecast
+[3769]: Typecast;
+["PgCatalog.Types.Regdictionary"]: Typecast
+[3802]: Typecast;
+["PgCatalog.Types.Jsonb"]: Typecast
+[4072]: Typecast;
+["PgCatalog.Types.Jsonpath"]: Typecast
+[2970]: Typecast;
+["PgCatalog.Types.TxidSnapshot"]: Typecast
+[5038]: Typecast;
+["PgCatalog.Types.PgSnapshot"]: Typecast
+[3904]: Typecast;
+["PgCatalog.Types.Int4range"]: Typecast
+[3906]: Typecast;
+["PgCatalog.Types.Numrange"]: Typecast
+[3908]: Typecast;
+["PgCatalog.Types.Tsrange"]: Typecast
+[3910]: Typecast;
+["PgCatalog.Types.Tstzrange"]: Typecast
+[3912]: Typecast;
+["PgCatalog.Types.Daterange"]: Typecast
+[3926]: Typecast;
+["PgCatalog.Types.Int8range"]: Typecast
+[4451]: Typecast;
+["PgCatalog.Types.Int4multirange"]: Typecast
+[4532]: Typecast;
+["PgCatalog.Types.Nummultirange"]: Typecast
+[4533]: Typecast;
+["PgCatalog.Types.Tsmultirange"]: Typecast
+[4534]: Typecast;
+["PgCatalog.Types.Tstzmultirange"]: Typecast
+[4535]: Typecast;
+["PgCatalog.Types.Datemultirange"]: Typecast
+[4536]: Typecast;
+["PgCatalog.Types.Int8multirange"]: Typecast
+[2249]: Typecast;
+["PgCatalog.Types.Record"]: Typecast
+[2287]: Typecast;
+["PgCatalog.Types.RecordArray"]: Typecast
+[2275]: Typecast;
+["PgCatalog.Types.Cstring"]: Typecast
+[2276]: Typecast;
+["PgCatalog.Types.Any"]: Typecast
+[2277]: Typecast;
+["PgCatalog.Types.Anyarray"]: Typecast
+[2278]: Typecast;
+["PgCatalog.Types.Void"]: Typecast
+[2279]: Typecast;
+["PgCatalog.Types.Trigger"]: Typecast
+[3838]: Typecast;
+["PgCatalog.Types.EventTrigger"]: Typecast
+[2280]: Typecast;
+["PgCatalog.Types.LanguageHandler"]: Typecast
+[2281]: Typecast;
+["PgCatalog.Types.Internal"]: Typecast
+[2283]: Typecast;
+["PgCatalog.Types.Anyelement"]: Typecast
+[2776]: Typecast;
+["PgCatalog.Types.Anynonarray"]: Typecast
+[3500]: Typecast;
+["PgCatalog.Types.Anyenum"]: Typecast
+[3115]: Typecast;
+["PgCatalog.Types.FdwHandler"]: Typecast
+[325]: Typecast;
+["PgCatalog.Types.IndexAmHandler"]: Typecast
+[3310]: Typecast;
+["PgCatalog.Types.TsmHandler"]: Typecast
+[269]: Typecast;
+["PgCatalog.Types.TableAmHandler"]: Typecast
+[3831]: Typecast;
+["PgCatalog.Types.Anyrange"]: Typecast
+[5077]: Typecast;
+["PgCatalog.Types.Anycompatible"]: Typecast
+[5078]: Typecast;
+["PgCatalog.Types.Anycompatiblearray"]: Typecast
+[5079]: Typecast;
+["PgCatalog.Types.Anycompatiblenonarray"]: Typecast
+[5080]: Typecast;
+["PgCatalog.Types.Anycompatiblerange"]: Typecast
+[4537]: Typecast;
+["PgCatalog.Types.Anymultirange"]: Typecast
+[4538]: Typecast;
+["PgCatalog.Types.Anycompatiblemultirange"]: Typecast
+[4600]: Typecast;
+["PgCatalog.Types.PgBrinBloomSummary"]: Typecast
+[4601]: Typecast;
+["PgCatalog.Types.PgBrinMinmaxMultiSummary"]: Typecast
+[1000]: Typecast;
+["PgCatalog.Types.BoolArray"]: Typecast
+[1001]: Typecast;
+["PgCatalog.Types.ByteaArray"]: Typecast
+[1002]: Typecast;
+["PgCatalog.Types.CharArray"]: Typecast
+[1003]: Typecast;
+["PgCatalog.Types.NameArray"]: Typecast
+[1016]: Typecast;
+["PgCatalog.Types.Int8Array"]: Typecast
+[1005]: Typecast;
+["PgCatalog.Types.Int2Array"]: Typecast
+[1006]: Typecast;
+["PgCatalog.Types.Int2vectorArray"]: Typecast
+[1007]: Typecast;
+["PgCatalog.Types.Int4Array"]: Typecast
+[1008]: Typecast;
+["PgCatalog.Types.RegprocArray"]: Typecast
+[1009]: Typecast;
+["PgCatalog.Types.TextArray"]: Typecast
+[1028]: Typecast;
+["PgCatalog.Types.OidArray"]: Typecast
+[1010]: Typecast;
+["PgCatalog.Types.TidArray"]: Typecast
+[1011]: Typecast;
+["PgCatalog.Types.XidArray"]: Typecast
+[1012]: Typecast;
+["PgCatalog.Types.CidArray"]: Typecast
+[1013]: Typecast;
+["PgCatalog.Types.OidvectorArray"]: Typecast
+[210]: Typecast;
+["PgCatalog.Types.PgTypeArray"]: Typecast
+[270]: Typecast;
+["PgCatalog.Types.PgAttributeArray"]: Typecast
+[272]: Typecast;
+["PgCatalog.Types.PgProcArray"]: Typecast
+[273]: Typecast;
+["PgCatalog.Types.PgClassArray"]: Typecast
+[199]: Typecast;
+["PgCatalog.Types.JsonArray"]: Typecast
+[143]: Typecast;
+["PgCatalog.Types.XmlArray"]: Typecast
+[271]: Typecast;
+["PgCatalog.Types.Xid8Array"]: Typecast
+[1017]: Typecast;
+["PgCatalog.Types.PointArray"]: Typecast
+[1018]: Typecast;
+["PgCatalog.Types.LsegArray"]: Typecast
+[1019]: Typecast;
+["PgCatalog.Types.PathArray"]: Typecast
+[1020]: Typecast;
+["PgCatalog.Types.BoxArray"]: Typecast
+[1027]: Typecast;
+["PgCatalog.Types.PolygonArray"]: Typecast
+[629]: Typecast;
+["PgCatalog.Types.LineArray"]: Typecast
+[1021]: Typecast;
+["PgCatalog.Types.Float4Array"]: Typecast
+[1022]: Typecast;
+["PgCatalog.Types.Float8Array"]: Typecast
+[719]: Typecast;
+["PgCatalog.Types.CircleArray"]: Typecast
+[791]: Typecast;
+["PgCatalog.Types.MoneyArray"]: Typecast
+[1040]: Typecast;
+["PgCatalog.Types.MacaddrArray"]: Typecast
+[1041]: Typecast;
+["PgCatalog.Types.InetArray"]: Typecast
+[651]: Typecast;
+["PgCatalog.Types.CidrArray"]: Typecast
+[775]: Typecast;
+["PgCatalog.Types.Macaddr8Array"]: Typecast
+[1034]: Typecast;
+["PgCatalog.Types.AclitemArray"]: Typecast
+[1014]: Typecast;
+["PgCatalog.Types.BpcharArray"]: Typecast
+[1015]: Typecast;
+["PgCatalog.Types.VarcharArray"]: Typecast
+[1182]: Typecast;
+["PgCatalog.Types.DateArray"]: Typecast
+[1183]: Typecast;
+["PgCatalog.Types.TimeArray"]: Typecast
+[1115]: Typecast;
+["PgCatalog.Types.TimestampArray"]: Typecast
+[1185]: Typecast;
+["PgCatalog.Types.TimestamptzArray"]: Typecast
+[1187]: Typecast;
+["PgCatalog.Types.IntervalArray"]: Typecast
+[1270]: Typecast;
+["PgCatalog.Types.TimetzArray"]: Typecast
+[1561]: Typecast;
+["PgCatalog.Types.BitArray"]: Typecast
+[1563]: Typecast;
+["PgCatalog.Types.VarbitArray"]: Typecast
+[1231]: Typecast;
+["PgCatalog.Types.NumericArray"]: Typecast
+[2201]: Typecast;
+["PgCatalog.Types.RefcursorArray"]: Typecast
+[2207]: Typecast;
+["PgCatalog.Types.RegprocedureArray"]: Typecast
+[2208]: Typecast;
+["PgCatalog.Types.RegoperArray"]: Typecast
+[2209]: Typecast;
+["PgCatalog.Types.RegoperatorArray"]: Typecast
+[2210]: Typecast;
+["PgCatalog.Types.RegclassArray"]: Typecast
+[4192]: Typecast;
+["PgCatalog.Types.RegcollationArray"]: Typecast
+[2211]: Typecast;
+["PgCatalog.Types.RegtypeArray"]: Typecast
+[4097]: Typecast;
+["PgCatalog.Types.RegroleArray"]: Typecast
+[4090]: Typecast;
+["PgCatalog.Types.RegnamespaceArray"]: Typecast
+[2951]: Typecast;
+["PgCatalog.Types.UuidArray"]: Typecast
+[3221]: Typecast;
+["PgCatalog.Types.PgLsnArray"]: Typecast
+[3643]: Typecast;
+["PgCatalog.Types.TsvectorArray"]: Typecast
+[3644]: Typecast;
+["PgCatalog.Types.GtsvectorArray"]: Typecast
+[3645]: Typecast;
+["PgCatalog.Types.TsqueryArray"]: Typecast
+[3735]: Typecast;
+["PgCatalog.Types.RegconfigArray"]: Typecast
+[3770]: Typecast;
+["PgCatalog.Types.RegdictionaryArray"]: Typecast
+[3807]: Typecast;
+["PgCatalog.Types.JsonbArray"]: Typecast
+[4073]: Typecast;
+["PgCatalog.Types.JsonpathArray"]: Typecast
+[2949]: Typecast;
+["PgCatalog.Types.TxidSnapshotArray"]: Typecast
+[5039]: Typecast;
+["PgCatalog.Types.PgSnapshotArray"]: Typecast
+[3905]: Typecast;
+["PgCatalog.Types.Int4rangeArray"]: Typecast
+[3907]: Typecast;
+["PgCatalog.Types.NumrangeArray"]: Typecast
+[3909]: Typecast;
+["PgCatalog.Types.TsrangeArray"]: Typecast
+[3911]: Typecast;
+["PgCatalog.Types.TstzrangeArray"]: Typecast
+[3913]: Typecast;
+["PgCatalog.Types.DaterangeArray"]: Typecast
+[3927]: Typecast;
+["PgCatalog.Types.Int8rangeArray"]: Typecast
+[6150]: Typecast;
+["PgCatalog.Types.Int4multirangeArray"]: Typecast
+[6151]: Typecast;
+["PgCatalog.Types.NummultirangeArray"]: Typecast
+[6152]: Typecast;
+["PgCatalog.Types.TsmultirangeArray"]: Typecast
+[6153]: Typecast;
+["PgCatalog.Types.TstzmultirangeArray"]: Typecast
+[6155]: Typecast;
+["PgCatalog.Types.DatemultirangeArray"]: Typecast
+[6157]: Typecast;
+["PgCatalog.Types.Int8multirangeArray"]: Typecast
+[1263]: Typecast;
+["PgCatalog.Types.CstringArray"]: Typecast
+[10001]: Typecast;
+["PgCatalog.Types.PgAttrdef"]: Typecast
+[10000]: Typecast;
+["PgCatalog.Types.PgAttrdefArray"]: Typecast
+[10003]: Typecast;
+["PgCatalog.Types.PgConstraint"]: Typecast
+[10002]: Typecast;
+["PgCatalog.Types.PgConstraintArray"]: Typecast
+[10005]: Typecast;
+["PgCatalog.Types.PgInherits"]: Typecast
+[10004]: Typecast;
+["PgCatalog.Types.PgInheritsArray"]: Typecast
+[10007]: Typecast;
+["PgCatalog.Types.PgIndex"]: Typecast
+[10006]: Typecast;
+["PgCatalog.Types.PgIndexArray"]: Typecast
+[10009]: Typecast;
+["PgCatalog.Types.PgOperator"]: Typecast
+[10008]: Typecast;
+["PgCatalog.Types.PgOperatorArray"]: Typecast
+[10011]: Typecast;
+["PgCatalog.Types.PgOpfamily"]: Typecast
+[10010]: Typecast;
+["PgCatalog.Types.PgOpfamilyArray"]: Typecast
+[10013]: Typecast;
+["PgCatalog.Types.PgOpclass"]: Typecast
+[10012]: Typecast;
+["PgCatalog.Types.PgOpclassArray"]: Typecast
+[10015]: Typecast;
+["PgCatalog.Types.PgAm"]: Typecast
+[10014]: Typecast;
+["PgCatalog.Types.PgAmArray"]: Typecast
+[10017]: Typecast;
+["PgCatalog.Types.PgAmop"]: Typecast
+[10016]: Typecast;
+["PgCatalog.Types.PgAmopArray"]: Typecast
+[10019]: Typecast;
+["PgCatalog.Types.PgAmproc"]: Typecast
+[10018]: Typecast;
+["PgCatalog.Types.PgAmprocArray"]: Typecast
+[10021]: Typecast;
+["PgCatalog.Types.PgLanguage"]: Typecast
+[10020]: Typecast;
+["PgCatalog.Types.PgLanguageArray"]: Typecast
+[10023]: Typecast;
+["PgCatalog.Types.PgLargeobjectMetadata"]: Typecast
+[10022]: Typecast;
+["PgCatalog.Types.PgLargeobjectMetadataArray"]: Typecast
+[10025]: Typecast;
+["PgCatalog.Types.PgLargeobject"]: Typecast
+[10024]: Typecast;
+["PgCatalog.Types.PgLargeobjectArray"]: Typecast
+[10027]: Typecast;
+["PgCatalog.Types.PgAggregate"]: Typecast
+[10026]: Typecast;
+["PgCatalog.Types.PgAggregateArray"]: Typecast
+[10029]: Typecast;
+["PgCatalog.Types.PgStatistic"]: Typecast
+[10028]: Typecast;
+["PgCatalog.Types.PgStatisticArray"]: Typecast
+[10031]: Typecast;
+["PgCatalog.Types.PgStatisticExt"]: Typecast
+[10030]: Typecast;
+["PgCatalog.Types.PgStatisticExtArray"]: Typecast
+[10033]: Typecast;
+["PgCatalog.Types.PgStatisticExtData"]: Typecast
+[10032]: Typecast;
+["PgCatalog.Types.PgStatisticExtDataArray"]: Typecast
+[10035]: Typecast;
+["PgCatalog.Types.PgRewrite"]: Typecast
+[10034]: Typecast;
+["PgCatalog.Types.PgRewriteArray"]: Typecast
+[10037]: Typecast;
+["PgCatalog.Types.PgTrigger"]: Typecast
+[10036]: Typecast;
+["PgCatalog.Types.PgTriggerArray"]: Typecast
+[10039]: Typecast;
+["PgCatalog.Types.PgEventTrigger"]: Typecast
+[10038]: Typecast;
+["PgCatalog.Types.PgEventTriggerArray"]: Typecast
+[10041]: Typecast;
+["PgCatalog.Types.PgDescription"]: Typecast
+[10040]: Typecast;
+["PgCatalog.Types.PgDescriptionArray"]: Typecast
+[10043]: Typecast;
+["PgCatalog.Types.PgCast"]: Typecast
+[10042]: Typecast;
+["PgCatalog.Types.PgCastArray"]: Typecast
+[10045]: Typecast;
+["PgCatalog.Types.PgEnum"]: Typecast
+[10044]: Typecast;
+["PgCatalog.Types.PgEnumArray"]: Typecast
+[10047]: Typecast;
+["PgCatalog.Types.PgNamespace"]: Typecast
+[10046]: Typecast;
+["PgCatalog.Types.PgNamespaceArray"]: Typecast
+[10049]: Typecast;
+["PgCatalog.Types.PgConversion"]: Typecast
+[10048]: Typecast;
+["PgCatalog.Types.PgConversionArray"]: Typecast
+[10051]: Typecast;
+["PgCatalog.Types.PgDepend"]: Typecast
+[10050]: Typecast;
+["PgCatalog.Types.PgDependArray"]: Typecast
+[1248]: Typecast;
+["PgCatalog.Types.PgDatabase"]: Typecast
+[10052]: Typecast;
+["PgCatalog.Types.PgDatabaseArray"]: Typecast
+[10054]: Typecast;
+["PgCatalog.Types.PgDbRoleSetting"]: Typecast
+[10053]: Typecast;
+["PgCatalog.Types.PgDbRoleSettingArray"]: Typecast
+[10056]: Typecast;
+["PgCatalog.Types.PgTablespace"]: Typecast
+[10055]: Typecast;
+["PgCatalog.Types.PgTablespaceArray"]: Typecast
+[2842]: Typecast;
+["PgCatalog.Types.PgAuthid"]: Typecast
+[10057]: Typecast;
+["PgCatalog.Types.PgAuthidArray"]: Typecast
+[2843]: Typecast;
+["PgCatalog.Types.PgAuthMembers"]: Typecast
+[10058]: Typecast;
+["PgCatalog.Types.PgAuthMembersArray"]: Typecast
+[10060]: Typecast;
+["PgCatalog.Types.PgShdepend"]: Typecast
+[10059]: Typecast;
+["PgCatalog.Types.PgShdependArray"]: Typecast
+[10062]: Typecast;
+["PgCatalog.Types.PgShdescription"]: Typecast
+[10061]: Typecast;
+["PgCatalog.Types.PgShdescriptionArray"]: Typecast
+[10064]: Typecast;
+["PgCatalog.Types.PgTsConfig"]: Typecast
+[10063]: Typecast;
+["PgCatalog.Types.PgTsConfigArray"]: Typecast
+[10066]: Typecast;
+["PgCatalog.Types.PgTsConfigMap"]: Typecast
+[10065]: Typecast;
+["PgCatalog.Types.PgTsConfigMapArray"]: Typecast
+[10068]: Typecast;
+["PgCatalog.Types.PgTsDict"]: Typecast
+[10067]: Typecast;
+["PgCatalog.Types.PgTsDictArray"]: Typecast
+[10070]: Typecast;
+["PgCatalog.Types.PgTsParser"]: Typecast
+[10069]: Typecast;
+["PgCatalog.Types.PgTsParserArray"]: Typecast
+[10072]: Typecast;
+["PgCatalog.Types.PgTsTemplate"]: Typecast
+[10071]: Typecast;
+["PgCatalog.Types.PgTsTemplateArray"]: Typecast
+[10074]: Typecast;
+["PgCatalog.Types.PgExtension"]: Typecast
+[10073]: Typecast;
+["PgCatalog.Types.PgExtensionArray"]: Typecast
+[10076]: Typecast;
+["PgCatalog.Types.PgForeignDataWrapper"]: Typecast
+[10075]: Typecast;
+["PgCatalog.Types.PgForeignDataWrapperArray"]: Typecast
+[10078]: Typecast;
+["PgCatalog.Types.PgForeignServer"]: Typecast
+[10077]: Typecast;
+["PgCatalog.Types.PgForeignServerArray"]: Typecast
+[10080]: Typecast;
+["PgCatalog.Types.PgUserMapping"]: Typecast
+[10079]: Typecast;
+["PgCatalog.Types.PgUserMappingArray"]: Typecast
+[10082]: Typecast;
+["PgCatalog.Types.PgForeignTable"]: Typecast
+[10081]: Typecast;
+["PgCatalog.Types.PgForeignTableArray"]: Typecast
+[10084]: Typecast;
+["PgCatalog.Types.PgPolicy"]: Typecast
+[10083]: Typecast;
+["PgCatalog.Types.PgPolicyArray"]: Typecast
+[10086]: Typecast;
+["PgCatalog.Types.PgReplicationOrigin"]: Typecast
+[10085]: Typecast;
+["PgCatalog.Types.PgReplicationOriginArray"]: Typecast
+[10088]: Typecast;
+["PgCatalog.Types.PgDefaultAcl"]: Typecast
+[10087]: Typecast;
+["PgCatalog.Types.PgDefaultAclArray"]: Typecast
+[10090]: Typecast;
+["PgCatalog.Types.PgInitPrivs"]: Typecast
+[10089]: Typecast;
+["PgCatalog.Types.PgInitPrivsArray"]: Typecast
+[10092]: Typecast;
+["PgCatalog.Types.PgSeclabel"]: Typecast
+[10091]: Typecast;
+["PgCatalog.Types.PgSeclabelArray"]: Typecast
+[4066]: Typecast;
+["PgCatalog.Types.PgShseclabel"]: Typecast
+[10093]: Typecast;
+["PgCatalog.Types.PgShseclabelArray"]: Typecast
+[10095]: Typecast;
+["PgCatalog.Types.PgCollation"]: Typecast
+[10094]: Typecast;
+["PgCatalog.Types.PgCollationArray"]: Typecast
+[10097]: Typecast;
+["PgCatalog.Types.PgParameterAcl"]: Typecast
+[10096]: Typecast;
+["PgCatalog.Types.PgParameterAclArray"]: Typecast
+[10099]: Typecast;
+["PgCatalog.Types.PgPartitionedTable"]: Typecast
+[10098]: Typecast;
+["PgCatalog.Types.PgPartitionedTableArray"]: Typecast
+[10101]: Typecast;
+["PgCatalog.Types.PgRange"]: Typecast
+[10100]: Typecast;
+["PgCatalog.Types.PgRangeArray"]: Typecast
+[10103]: Typecast;
+["PgCatalog.Types.PgTransform"]: Typecast
+[10102]: Typecast;
+["PgCatalog.Types.PgTransformArray"]: Typecast
+[10105]: Typecast;
+["PgCatalog.Types.PgSequence"]: Typecast
+[10104]: Typecast;
+["PgCatalog.Types.PgSequenceArray"]: Typecast
+[10107]: Typecast;
+["PgCatalog.Types.PgPublication"]: Typecast
+[10106]: Typecast;
+["PgCatalog.Types.PgPublicationArray"]: Typecast
+[10109]: Typecast;
+["PgCatalog.Types.PgPublicationNamespace"]: Typecast
+[10108]: Typecast;
+["PgCatalog.Types.PgPublicationNamespaceArray"]: Typecast
+[10111]: Typecast;
+["PgCatalog.Types.PgPublicationRel"]: Typecast
+[10110]: Typecast;
+["PgCatalog.Types.PgPublicationRelArray"]: Typecast
+[6101]: Typecast;
+["PgCatalog.Types.PgSubscription"]: Typecast
+[10112]: Typecast;
+["PgCatalog.Types.PgSubscriptionArray"]: Typecast
+[10114]: Typecast;
+["PgCatalog.Types.PgSubscriptionRel"]: Typecast
+[10113]: Typecast;
+["PgCatalog.Types.PgSubscriptionRelArray"]: Typecast
+[12002]: Typecast;
+["PgCatalog.Types.PgRoles"]: Typecast
+[12001]: Typecast;
+["PgCatalog.Types.PgRolesArray"]: Typecast
+[12007]: Typecast;
+["PgCatalog.Types.PgShadow"]: Typecast
+[12006]: Typecast;
+["PgCatalog.Types.PgShadowArray"]: Typecast
+[12012]: Typecast;
+["PgCatalog.Types.PgGroup"]: Typecast
+[12011]: Typecast;
+["PgCatalog.Types.PgGroupArray"]: Typecast
+[12016]: Typecast;
+["PgCatalog.Types.PgUser"]: Typecast
+[12015]: Typecast;
+["PgCatalog.Types.PgUserArray"]: Typecast
+[12020]: Typecast;
+["PgCatalog.Types.PgPolicies"]: Typecast
+[12019]: Typecast;
+["PgCatalog.Types.PgPoliciesArray"]: Typecast
+[12025]: Typecast;
+["PgCatalog.Types.PgRules"]: Typecast
+[12024]: Typecast;
+["PgCatalog.Types.PgRulesArray"]: Typecast
+[12030]: Typecast;
+["PgCatalog.Types.PgViews"]: Typecast
+[12029]: Typecast;
+["PgCatalog.Types.PgViewsArray"]: Typecast
+[12035]: Typecast;
+["PgCatalog.Types.PgTables"]: Typecast
+[12034]: Typecast;
+["PgCatalog.Types.PgTablesArray"]: Typecast
+[12040]: Typecast;
+["PgCatalog.Types.PgMatviews"]: Typecast
+[12039]: Typecast;
+["PgCatalog.Types.PgMatviewsArray"]: Typecast
+[12045]: Typecast;
+["PgCatalog.Types.PgIndexes"]: Typecast
+[12044]: Typecast;
+["PgCatalog.Types.PgIndexesArray"]: Typecast
+[12050]: Typecast;
+["PgCatalog.Types.PgSequences"]: Typecast
+[12049]: Typecast;
+["PgCatalog.Types.PgSequencesArray"]: Typecast
+[12055]: Typecast;
+["PgCatalog.Types.PgStats"]: Typecast
+[12054]: Typecast;
+["PgCatalog.Types.PgStatsArray"]: Typecast
+[12060]: Typecast;
+["PgCatalog.Types.PgStatsExt"]: Typecast
+[12059]: Typecast;
+["PgCatalog.Types.PgStatsExtArray"]: Typecast
+[12065]: Typecast;
+["PgCatalog.Types.PgStatsExtExprs"]: Typecast
+[12064]: Typecast;
+["PgCatalog.Types.PgStatsExtExprsArray"]: Typecast
+[12070]: Typecast;
+["PgCatalog.Types.PgPublicationTables"]: Typecast
+[12069]: Typecast;
+["PgCatalog.Types.PgPublicationTablesArray"]: Typecast
+[12075]: Typecast;
+["PgCatalog.Types.PgLocks"]: Typecast
+[12074]: Typecast;
+["PgCatalog.Types.PgLocksArray"]: Typecast
+[12079]: Typecast;
+["PgCatalog.Types.PgCursors"]: Typecast
+[12078]: Typecast;
+["PgCatalog.Types.PgCursorsArray"]: Typecast
+[12083]: Typecast;
+["PgCatalog.Types.PgAvailableExtensions"]: Typecast
+[12082]: Typecast;
+["PgCatalog.Types.PgAvailableExtensionsArray"]: Typecast
+[12087]: Typecast;
+["PgCatalog.Types.PgAvailableExtensionVersions"]: Typecast
+[12086]: Typecast;
+["PgCatalog.Types.PgAvailableExtensionVersionsArray"]: Typecast
+[12092]: Typecast;
+["PgCatalog.Types.PgPreparedXacts"]: Typecast
+[12091]: Typecast;
+["PgCatalog.Types.PgPreparedXactsArray"]: Typecast
+[12097]: Typecast;
+["PgCatalog.Types.PgPreparedStatements"]: Typecast
+[12096]: Typecast;
+["PgCatalog.Types.PgPreparedStatementsArray"]: Typecast
+[12101]: Typecast;
+["PgCatalog.Types.PgSeclabels"]: Typecast
+[12100]: Typecast;
+["PgCatalog.Types.PgSeclabelsArray"]: Typecast
+[12106]: Typecast;
+["PgCatalog.Types.PgSettings"]: Typecast
+[12105]: Typecast;
+["PgCatalog.Types.PgSettingsArray"]: Typecast
+[12112]: Typecast;
+["PgCatalog.Types.PgFileSettings"]: Typecast
+[12111]: Typecast;
+["PgCatalog.Types.PgFileSettingsArray"]: Typecast
+[12116]: Typecast;
+["PgCatalog.Types.PgHbaFileRules"]: Typecast
+[12115]: Typecast;
+["PgCatalog.Types.PgHbaFileRulesArray"]: Typecast
+[12120]: Typecast;
+["PgCatalog.Types.PgIdentFileMappings"]: Typecast
+[12119]: Typecast;
+["PgCatalog.Types.PgIdentFileMappingsArray"]: Typecast
+[12124]: Typecast;
+["PgCatalog.Types.PgTimezoneAbbrevs"]: Typecast
+[12123]: Typecast;
+["PgCatalog.Types.PgTimezoneAbbrevsArray"]: Typecast
+[12128]: Typecast;
+["PgCatalog.Types.PgTimezoneNames"]: Typecast
+[12127]: Typecast;
+["PgCatalog.Types.PgTimezoneNamesArray"]: Typecast
+[12132]: Typecast;
+["PgCatalog.Types.PgConfig"]: Typecast
+[12131]: Typecast;
+["PgCatalog.Types.PgConfigArray"]: Typecast
+[12136]: Typecast;
+["PgCatalog.Types.PgShmemAllocations"]: Typecast
+[12135]: Typecast;
+["PgCatalog.Types.PgShmemAllocationsArray"]: Typecast
+[12140]: Typecast;
+["PgCatalog.Types.PgBackendMemoryContexts"]: Typecast
+[12139]: Typecast;
+["PgCatalog.Types.PgBackendMemoryContextsArray"]: Typecast
+[12144]: Typecast;
+["PgCatalog.Types.PgStatAllTables"]: Typecast
+[12143]: Typecast;
+["PgCatalog.Types.PgStatAllTablesArray"]: Typecast
+[12149]: Typecast;
+["PgCatalog.Types.PgStatXactAllTables"]: Typecast
+[12148]: Typecast;
+["PgCatalog.Types.PgStatXactAllTablesArray"]: Typecast
+[12154]: Typecast;
+["PgCatalog.Types.PgStatSysTables"]: Typecast
+[12153]: Typecast;
+["PgCatalog.Types.PgStatSysTablesArray"]: Typecast
+[12159]: Typecast;
+["PgCatalog.Types.PgStatXactSysTables"]: Typecast
+[12158]: Typecast;
+["PgCatalog.Types.PgStatXactSysTablesArray"]: Typecast
+[12163]: Typecast;
+["PgCatalog.Types.PgStatUserTables"]: Typecast
+[12162]: Typecast;
+["PgCatalog.Types.PgStatUserTablesArray"]: Typecast
+[12168]: Typecast;
+["PgCatalog.Types.PgStatXactUserTables"]: Typecast
+[12167]: Typecast;
+["PgCatalog.Types.PgStatXactUserTablesArray"]: Typecast
+[12172]: Typecast;
+["PgCatalog.Types.PgStatioAllTables"]: Typecast
+[12171]: Typecast;
+["PgCatalog.Types.PgStatioAllTablesArray"]: Typecast
+[12177]: Typecast;
+["PgCatalog.Types.PgStatioSysTables"]: Typecast
+[12176]: Typecast;
+["PgCatalog.Types.PgStatioSysTablesArray"]: Typecast
+[12181]: Typecast;
+["PgCatalog.Types.PgStatioUserTables"]: Typecast
+[12180]: Typecast;
+["PgCatalog.Types.PgStatioUserTablesArray"]: Typecast
+[12185]: Typecast;
+["PgCatalog.Types.PgStatAllIndexes"]: Typecast
+[12184]: Typecast;
+["PgCatalog.Types.PgStatAllIndexesArray"]: Typecast
+[12190]: Typecast;
+["PgCatalog.Types.PgStatSysIndexes"]: Typecast
+[12189]: Typecast;
+["PgCatalog.Types.PgStatSysIndexesArray"]: Typecast
+[12194]: Typecast;
+["PgCatalog.Types.PgStatUserIndexes"]: Typecast
+[12193]: Typecast;
+["PgCatalog.Types.PgStatUserIndexesArray"]: Typecast
+[12198]: Typecast;
+["PgCatalog.Types.PgStatioAllIndexes"]: Typecast
+[12197]: Typecast;
+["PgCatalog.Types.PgStatioAllIndexesArray"]: Typecast
+[12203]: Typecast;
+["PgCatalog.Types.PgStatioSysIndexes"]: Typecast
+[12202]: Typecast;
+["PgCatalog.Types.PgStatioSysIndexesArray"]: Typecast
+[12207]: Typecast;
+["PgCatalog.Types.PgStatioUserIndexes"]: Typecast
+[12206]: Typecast;
+["PgCatalog.Types.PgStatioUserIndexesArray"]: Typecast
+[12211]: Typecast;
+["PgCatalog.Types.PgStatioAllSequences"]: Typecast
+[12210]: Typecast;
+["PgCatalog.Types.PgStatioAllSequencesArray"]: Typecast
+[12216]: Typecast;
+["PgCatalog.Types.PgStatioSysSequences"]: Typecast
+[12215]: Typecast;
+["PgCatalog.Types.PgStatioSysSequencesArray"]: Typecast
+[12220]: Typecast;
+["PgCatalog.Types.PgStatioUserSequences"]: Typecast
+[12219]: Typecast;
+["PgCatalog.Types.PgStatioUserSequencesArray"]: Typecast
+[12224]: Typecast;
+["PgCatalog.Types.PgStatActivity"]: Typecast
+[12223]: Typecast;
+["PgCatalog.Types.PgStatActivityArray"]: Typecast
+[12229]: Typecast;
+["PgCatalog.Types.PgStatReplication"]: Typecast
+[12228]: Typecast;
+["PgCatalog.Types.PgStatReplicationArray"]: Typecast
+[12234]: Typecast;
+["PgCatalog.Types.PgStatSlru"]: Typecast
+[12233]: Typecast;
+["PgCatalog.Types.PgStatSlruArray"]: Typecast
+[12238]: Typecast;
+["PgCatalog.Types.PgStatWalReceiver"]: Typecast
+[12237]: Typecast;
+["PgCatalog.Types.PgStatWalReceiverArray"]: Typecast
+[12242]: Typecast;
+["PgCatalog.Types.PgStatRecoveryPrefetch"]: Typecast
+[12241]: Typecast;
+["PgCatalog.Types.PgStatRecoveryPrefetchArray"]: Typecast
+[12246]: Typecast;
+["PgCatalog.Types.PgStatSubscription"]: Typecast
+[12245]: Typecast;
+["PgCatalog.Types.PgStatSubscriptionArray"]: Typecast
+[12251]: Typecast;
+["PgCatalog.Types.PgStatSsl"]: Typecast
+[12250]: Typecast;
+["PgCatalog.Types.PgStatSslArray"]: Typecast
+[12255]: Typecast;
+["PgCatalog.Types.PgStatGssapi"]: Typecast
+[12254]: Typecast;
+["PgCatalog.Types.PgStatGssapiArray"]: Typecast
+[12259]: Typecast;
+["PgCatalog.Types.PgReplicationSlots"]: Typecast
+[12258]: Typecast;
+["PgCatalog.Types.PgReplicationSlotsArray"]: Typecast
+[12264]: Typecast;
+["PgCatalog.Types.PgStatReplicationSlots"]: Typecast
+[12263]: Typecast;
+["PgCatalog.Types.PgStatReplicationSlotsArray"]: Typecast
+[12268]: Typecast;
+["PgCatalog.Types.PgStatDatabase"]: Typecast
+[12267]: Typecast;
+["PgCatalog.Types.PgStatDatabaseArray"]: Typecast
+[12273]: Typecast;
+["PgCatalog.Types.PgStatDatabaseConflicts"]: Typecast
+[12272]: Typecast;
+["PgCatalog.Types.PgStatDatabaseConflictsArray"]: Typecast
+[12277]: Typecast;
+["PgCatalog.Types.PgStatUserFunctions"]: Typecast
+[12276]: Typecast;
+["PgCatalog.Types.PgStatUserFunctionsArray"]: Typecast
+[12282]: Typecast;
+["PgCatalog.Types.PgStatXactUserFunctions"]: Typecast
+[12281]: Typecast;
+["PgCatalog.Types.PgStatXactUserFunctionsArray"]: Typecast
+[12287]: Typecast;
+["PgCatalog.Types.PgStatArchiver"]: Typecast
+[12286]: Typecast;
+["PgCatalog.Types.PgStatArchiverArray"]: Typecast
+[12291]: Typecast;
+["PgCatalog.Types.PgStatBgwriter"]: Typecast
+[12290]: Typecast;
+["PgCatalog.Types.PgStatBgwriterArray"]: Typecast
+[12295]: Typecast;
+["PgCatalog.Types.PgStatIo"]: Typecast
+[12294]: Typecast;
+["PgCatalog.Types.PgStatIoArray"]: Typecast
+[12299]: Typecast;
+["PgCatalog.Types.PgStatWal"]: Typecast
+[12298]: Typecast;
+["PgCatalog.Types.PgStatWalArray"]: Typecast
+[12303]: Typecast;
+["PgCatalog.Types.PgStatProgressAnalyze"]: Typecast
+[12302]: Typecast;
+["PgCatalog.Types.PgStatProgressAnalyzeArray"]: Typecast
+[12308]: Typecast;
+["PgCatalog.Types.PgStatProgressVacuum"]: Typecast
+[12307]: Typecast;
+["PgCatalog.Types.PgStatProgressVacuumArray"]: Typecast
+[12313]: Typecast;
+["PgCatalog.Types.PgStatProgressCluster"]: Typecast
+[12312]: Typecast;
+["PgCatalog.Types.PgStatProgressClusterArray"]: Typecast
+[12318]: Typecast;
+["PgCatalog.Types.PgStatProgressCreateIndex"]: Typecast
+[12317]: Typecast;
+["PgCatalog.Types.PgStatProgressCreateIndexArray"]: Typecast
+[12323]: Typecast;
+["PgCatalog.Types.PgStatProgressBasebackup"]: Typecast
+[12322]: Typecast;
+["PgCatalog.Types.PgStatProgressBasebackupArray"]: Typecast
+[12328]: Typecast;
+["PgCatalog.Types.PgStatProgressCopy"]: Typecast
+[12327]: Typecast;
+["PgCatalog.Types.PgStatProgressCopyArray"]: Typecast
+[12333]: Typecast;
+["PgCatalog.Types.PgUserMappings"]: Typecast
+[12332]: Typecast;
+["PgCatalog.Types.PgUserMappingsArray"]: Typecast
+[12338]: Typecast;
+["PgCatalog.Types.PgReplicationOriginStatus"]: Typecast
+[12337]: Typecast;
+["PgCatalog.Types.PgReplicationOriginStatusArray"]: Typecast
+[12342]: Typecast;
+["PgCatalog.Types.PgStatSubscriptionStats"]: Typecast
+[12341]: Typecast;
+["PgCatalog.Types.PgStatSubscriptionStatsArray"]: Typecast
+[2690]: Typecast;
+["PgCatalog.Types.PgProcOidIndex"]: Typecast
+[2691]: Typecast;
+["PgCatalog.Types.PgProcPronameArgsNspIndex"]: Typecast
+[2703]: Typecast;
+["PgCatalog.Types.PgTypeOidIndex"]: Typecast
+[2704]: Typecast;
+["PgCatalog.Types.PgTypeTypnameNspIndex"]: Typecast
+[2658]: Typecast;
+["PgCatalog.Types.PgAttributeRelidAttnamIndex"]: Typecast
+[2659]: Typecast;
+["PgCatalog.Types.PgAttributeRelidAttnumIndex"]: Typecast
+[2662]: Typecast;
+["PgCatalog.Types.PgClassOidIndex"]: Typecast
+[2663]: Typecast;
+["PgCatalog.Types.PgClassRelnameNspIndex"]: Typecast
+[3455]: Typecast;
+["PgCatalog.Types.PgClassTblspcRelfilenodeIndex"]: Typecast
+[2656]: Typecast;
+["PgCatalog.Types.PgAttrdefAdrelidAdnumIndex"]: Typecast
+[2657]: Typecast;
+["PgCatalog.Types.PgAttrdefOidIndex"]: Typecast
+[2664]: Typecast;
+["PgCatalog.Types.PgConstraintConnameNspIndex"]: Typecast
+[2665]: Typecast;
+["PgCatalog.Types.PgConstraintConrelidContypidConnameIndex"]: Typecast
+[2666]: Typecast;
+["PgCatalog.Types.PgConstraintContypidIndex"]: Typecast
+[2667]: Typecast;
+["PgCatalog.Types.PgConstraintOidIndex"]: Typecast
+[2579]: Typecast;
+["PgCatalog.Types.PgConstraintConparentidIndex"]: Typecast
+[2680]: Typecast;
+["PgCatalog.Types.PgInheritsRelidSeqnoIndex"]: Typecast
+[2187]: Typecast;
+["PgCatalog.Types.PgInheritsParentIndex"]: Typecast
+[2678]: Typecast;
+["PgCatalog.Types.PgIndexIndrelidIndex"]: Typecast
+[2679]: Typecast;
+["PgCatalog.Types.PgIndexIndexrelidIndex"]: Typecast
+[2688]: Typecast;
+["PgCatalog.Types.PgOperatorOidIndex"]: Typecast
+[2689]: Typecast;
+["PgCatalog.Types.PgOperatorOprnameLRNIndex"]: Typecast
+[2754]: Typecast;
+["PgCatalog.Types.PgOpfamilyAmNameNspIndex"]: Typecast
+[2755]: Typecast;
+["PgCatalog.Types.PgOpfamilyOidIndex"]: Typecast
+[2686]: Typecast;
+["PgCatalog.Types.PgOpclassAmNameNspIndex"]: Typecast
+[2687]: Typecast;
+["PgCatalog.Types.PgOpclassOidIndex"]: Typecast
+[2651]: Typecast;
+["PgCatalog.Types.PgAmNameIndex"]: Typecast
+[2652]: Typecast;
+["PgCatalog.Types.PgAmOidIndex"]: Typecast
+[2653]: Typecast;
+["PgCatalog.Types.PgAmopFamStratIndex"]: Typecast
+[2654]: Typecast;
+["PgCatalog.Types.PgAmopOprFamIndex"]: Typecast
+[2756]: Typecast;
+["PgCatalog.Types.PgAmopOidIndex"]: Typecast
+[2655]: Typecast;
+["PgCatalog.Types.PgAmprocFamProcIndex"]: Typecast
+[2757]: Typecast;
+["PgCatalog.Types.PgAmprocOidIndex"]: Typecast
+[2681]: Typecast;
+["PgCatalog.Types.PgLanguageNameIndex"]: Typecast
+[2682]: Typecast;
+["PgCatalog.Types.PgLanguageOidIndex"]: Typecast
+[2996]: Typecast;
+["PgCatalog.Types.PgLargeobjectMetadataOidIndex"]: Typecast
+[2683]: Typecast;
+["PgCatalog.Types.PgLargeobjectLoidPnIndex"]: Typecast
+[2650]: Typecast;
+["PgCatalog.Types.PgAggregateFnoidIndex"]: Typecast
+[2696]: Typecast;
+["PgCatalog.Types.PgStatisticRelidAttInhIndex"]: Typecast
+[3380]: Typecast;
+["PgCatalog.Types.PgStatisticExtOidIndex"]: Typecast
+[3997]: Typecast;
+["PgCatalog.Types.PgStatisticExtNameIndex"]: Typecast
+[3379]: Typecast;
+["PgCatalog.Types.PgStatisticExtRelidIndex"]: Typecast
+[3433]: Typecast;
+["PgCatalog.Types.PgStatisticExtDataStxoidInhIndex"]: Typecast
+[2692]: Typecast;
+["PgCatalog.Types.PgRewriteOidIndex"]: Typecast
+[2693]: Typecast;
+["PgCatalog.Types.PgRewriteRelRulenameIndex"]: Typecast
+[2699]: Typecast;
+["PgCatalog.Types.PgTriggerTgconstraintIndex"]: Typecast
+[2701]: Typecast;
+["PgCatalog.Types.PgTriggerTgrelidTgnameIndex"]: Typecast
+[2702]: Typecast;
+["PgCatalog.Types.PgTriggerOidIndex"]: Typecast
+[3467]: Typecast;
+["PgCatalog.Types.PgEventTriggerEvtnameIndex"]: Typecast
+[3468]: Typecast;
+["PgCatalog.Types.PgEventTriggerOidIndex"]: Typecast
+[2675]: Typecast;
+["PgCatalog.Types.PgDescriptionOCOIndex"]: Typecast
+[2660]: Typecast;
+["PgCatalog.Types.PgCastOidIndex"]: Typecast
+[2661]: Typecast;
+["PgCatalog.Types.PgCastSourceTargetIndex"]: Typecast
+[3502]: Typecast;
+["PgCatalog.Types.PgEnumOidIndex"]: Typecast
+[3503]: Typecast;
+["PgCatalog.Types.PgEnumTypidLabelIndex"]: Typecast
+[3534]: Typecast;
+["PgCatalog.Types.PgEnumTypidSortorderIndex"]: Typecast
+[2684]: Typecast;
+["PgCatalog.Types.PgNamespaceNspnameIndex"]: Typecast
+[2685]: Typecast;
+["PgCatalog.Types.PgNamespaceOidIndex"]: Typecast
+[2668]: Typecast;
+["PgCatalog.Types.PgConversionDefaultIndex"]: Typecast
+[2669]: Typecast;
+["PgCatalog.Types.PgConversionNameNspIndex"]: Typecast
+[2670]: Typecast;
+["PgCatalog.Types.PgConversionOidIndex"]: Typecast
+[2673]: Typecast;
+["PgCatalog.Types.PgDependDependerIndex"]: Typecast
+[2674]: Typecast;
+["PgCatalog.Types.PgDependReferenceIndex"]: Typecast
+[2671]: Typecast;
+["PgCatalog.Types.PgDatabaseDatnameIndex"]: Typecast
+[2672]: Typecast;
+["PgCatalog.Types.PgDatabaseOidIndex"]: Typecast
+[2965]: Typecast;
+["PgCatalog.Types.PgDbRoleSettingDatabaseidRolIndex"]: Typecast
+[2697]: Typecast;
+["PgCatalog.Types.PgTablespaceOidIndex"]: Typecast
+[2698]: Typecast;
+["PgCatalog.Types.PgTablespaceSpcnameIndex"]: Typecast
+[2676]: Typecast;
+["PgCatalog.Types.PgAuthidRolnameIndex"]: Typecast
+[2677]: Typecast;
+["PgCatalog.Types.PgAuthidOidIndex"]: Typecast
+[6303]: Typecast;
+["PgCatalog.Types.PgAuthMembersOidIndex"]: Typecast
+[2694]: Typecast;
+["PgCatalog.Types.PgAuthMembersRoleMemberIndex"]: Typecast
+[2695]: Typecast;
+["PgCatalog.Types.PgAuthMembersMemberRoleIndex"]: Typecast
+[6302]: Typecast;
+["PgCatalog.Types.PgAuthMembersGrantorIndex"]: Typecast
+[1232]: Typecast;
+["PgCatalog.Types.PgShdependDependerIndex"]: Typecast
+[1233]: Typecast;
+["PgCatalog.Types.PgShdependReferenceIndex"]: Typecast
+[2397]: Typecast;
+["PgCatalog.Types.PgShdescriptionOCIndex"]: Typecast
+[3608]: Typecast;
+["PgCatalog.Types.PgTsConfigCfgnameIndex"]: Typecast
+[3712]: Typecast;
+["PgCatalog.Types.PgTsConfigOidIndex"]: Typecast
+[3609]: Typecast;
+["PgCatalog.Types.PgTsConfigMapIndex"]: Typecast
+[3604]: Typecast;
+["PgCatalog.Types.PgTsDictDictnameIndex"]: Typecast
+[3605]: Typecast;
+["PgCatalog.Types.PgTsDictOidIndex"]: Typecast
+[3606]: Typecast;
+["PgCatalog.Types.PgTsParserPrsnameIndex"]: Typecast
+[3607]: Typecast;
+["PgCatalog.Types.PgTsParserOidIndex"]: Typecast
+[3766]: Typecast;
+["PgCatalog.Types.PgTsTemplateTmplnameIndex"]: Typecast
+[3767]: Typecast;
+["PgCatalog.Types.PgTsTemplateOidIndex"]: Typecast
+[3080]: Typecast;
+["PgCatalog.Types.PgExtensionOidIndex"]: Typecast
+[3081]: Typecast;
+["PgCatalog.Types.PgExtensionNameIndex"]: Typecast
+[112]: Typecast;
+["PgCatalog.Types.PgForeignDataWrapperOidIndex"]: Typecast
+[548]: Typecast;
+["PgCatalog.Types.PgForeignDataWrapperNameIndex"]: Typecast
+[113]: Typecast;
+["PgCatalog.Types.PgForeignServerOidIndex"]: Typecast
+[549]: Typecast;
+["PgCatalog.Types.PgForeignServerNameIndex"]: Typecast
+[174]: Typecast;
+["PgCatalog.Types.PgUserMappingOidIndex"]: Typecast
+[175]: Typecast;
+["PgCatalog.Types.PgUserMappingUserServerIndex"]: Typecast
+[3119]: Typecast;
+["PgCatalog.Types.PgForeignTableRelidIndex"]: Typecast
+[3257]: Typecast;
+["PgCatalog.Types.PgPolicyOidIndex"]: Typecast
+[3258]: Typecast;
+["PgCatalog.Types.PgPolicyPolrelidPolnameIndex"]: Typecast
+[6001]: Typecast;
+["PgCatalog.Types.PgReplicationOriginRoiidentIndex"]: Typecast
+[6002]: Typecast;
+["PgCatalog.Types.PgReplicationOriginRonameIndex"]: Typecast
+[827]: Typecast;
+["PgCatalog.Types.PgDefaultAclRoleNspObjIndex"]: Typecast
+[828]: Typecast;
+["PgCatalog.Types.PgDefaultAclOidIndex"]: Typecast
+[3395]: Typecast;
+["PgCatalog.Types.PgInitPrivsOCOIndex"]: Typecast
+[3597]: Typecast;
+["PgCatalog.Types.PgSeclabelObjectIndex"]: Typecast
+[3593]: Typecast;
+["PgCatalog.Types.PgShseclabelObjectIndex"]: Typecast
+[3164]: Typecast;
+["PgCatalog.Types.PgCollationNameEncNspIndex"]: Typecast
+[3085]: Typecast;
+["PgCatalog.Types.PgCollationOidIndex"]: Typecast
+[6246]: Typecast;
+["PgCatalog.Types.PgParameterAclParnameIndex"]: Typecast
+[6247]: Typecast;
+["PgCatalog.Types.PgParameterAclOidIndex"]: Typecast
+[3351]: Typecast;
+["PgCatalog.Types.PgPartitionedTablePartrelidIndex"]: Typecast
+[3542]: Typecast;
+["PgCatalog.Types.PgRangeRngtypidIndex"]: Typecast
+[2228]: Typecast;
+["PgCatalog.Types.PgRangeRngmultitypidIndex"]: Typecast
+[3574]: Typecast;
+["PgCatalog.Types.PgTransformOidIndex"]: Typecast
+[3575]: Typecast;
+["PgCatalog.Types.PgTransformTypeLangIndex"]: Typecast
+[5002]: Typecast;
+["PgCatalog.Types.PgSequenceSeqrelidIndex"]: Typecast
+[6110]: Typecast;
+["PgCatalog.Types.PgPublicationOidIndex"]: Typecast
+[6111]: Typecast;
+["PgCatalog.Types.PgPublicationPubnameIndex"]: Typecast
+[6238]: Typecast;
+["PgCatalog.Types.PgPublicationNamespaceOidIndex"]: Typecast
+[6239]: Typecast;
+["PgCatalog.Types.PgPublicationNamespacePnnspidPnpubidIndex"]: Typecast
+[6112]: Typecast;
+["PgCatalog.Types.PgPublicationRelOidIndex"]: Typecast
+[6113]: Typecast;
+["PgCatalog.Types.PgPublicationRelPrrelidPrpubidIndex"]: Typecast
+[6116]: Typecast;
+["PgCatalog.Types.PgPublicationRelPrpubidIndex"]: Typecast
+[6114]: Typecast;
+["PgCatalog.Types.PgSubscriptionOidIndex"]: Typecast
+[6115]: Typecast;
+["PgCatalog.Types.PgSubscriptionSubnameIndex"]: Typecast
+[6117]: Typecast;
+["PgCatalog.Types.PgSubscriptionRelSrrelidSrsubidIndex"]: Typecast
+[13488]: Typecast;
+["InformationSchema.Types.CardinalNumber"]: Typecast
+[13487]: Typecast;
+["InformationSchema.Types.CardinalNumberArray"]: Typecast
+[13491]: Typecast;
+["InformationSchema.Types.CharacterData"]: Typecast
+[13490]: Typecast;
+["InformationSchema.Types.CharacterDataArray"]: Typecast
+[13493]: Typecast;
+["InformationSchema.Types.SqlIdentifier"]: Typecast
+[13492]: Typecast;
+["InformationSchema.Types.SqlIdentifierArray"]: Typecast
+[13496]: Typecast;
+["InformationSchema.Types.InformationSchemaCatalogName"]: Typecast
+[13495]: Typecast;
+["InformationSchema.Types.InformationSchemaCatalogNameArray"]: Typecast
+[13499]: Typecast;
+["InformationSchema.Types.TimeStamp"]: Typecast
+[13498]: Typecast;
+["InformationSchema.Types.TimeStampArray"]: Typecast
+[13501]: Typecast;
+["InformationSchema.Types.YesOrNo"]: Typecast
+[13500]: Typecast;
+["InformationSchema.Types.YesOrNoArray"]: Typecast
+[13505]: Typecast;
+["InformationSchema.Types.ApplicableRoles"]: Typecast
+[13504]: Typecast;
+["InformationSchema.Types.ApplicableRolesArray"]: Typecast
+[13510]: Typecast;
+["InformationSchema.Types.AdministrableRoleAuthorizations"]: Typecast
+[13509]: Typecast;
+["InformationSchema.Types.AdministrableRoleAuthorizationsArray"]: Typecast
+[13514]: Typecast;
+["InformationSchema.Types.Attributes"]: Typecast
+[13513]: Typecast;
+["InformationSchema.Types.AttributesArray"]: Typecast
+[13519]: Typecast;
+["InformationSchema.Types.CharacterSets"]: Typecast
+[13518]: Typecast;
+["InformationSchema.Types.CharacterSetsArray"]: Typecast
+[13524]: Typecast;
+["InformationSchema.Types.CheckConstraintRoutineUsage"]: Typecast
+[13523]: Typecast;
+["InformationSchema.Types.CheckConstraintRoutineUsageArray"]: Typecast
+[13529]: Typecast;
+["InformationSchema.Types.CheckConstraints"]: Typecast
+[13528]: Typecast;
+["InformationSchema.Types.CheckConstraintsArray"]: Typecast
+[13534]: Typecast;
+["InformationSchema.Types.Collations"]: Typecast
+[13533]: Typecast;
+["InformationSchema.Types.CollationsArray"]: Typecast
+[13539]: Typecast;
+["InformationSchema.Types.CollationCharacterSetApplicability"]: Typecast
+[13538]: Typecast;
+["InformationSchema.Types.CollationCharacterSetApplicabilityArray"]: Typecast
+[13544]: Typecast;
+["InformationSchema.Types.ColumnColumnUsage"]: Typecast
+[13543]: Typecast;
+["InformationSchema.Types.ColumnColumnUsageArray"]: Typecast
+[13549]: Typecast;
+["InformationSchema.Types.ColumnDomainUsage"]: Typecast
+[13548]: Typecast;
+["InformationSchema.Types.ColumnDomainUsageArray"]: Typecast
+[13554]: Typecast;
+["InformationSchema.Types.ColumnPrivileges"]: Typecast
+[13553]: Typecast;
+["InformationSchema.Types.ColumnPrivilegesArray"]: Typecast
+[13559]: Typecast;
+["InformationSchema.Types.ColumnUdtUsage"]: Typecast
+[13558]: Typecast;
+["InformationSchema.Types.ColumnUdtUsageArray"]: Typecast
+[13564]: Typecast;
+["InformationSchema.Types.Columns"]: Typecast
+[13563]: Typecast;
+["InformationSchema.Types.ColumnsArray"]: Typecast
+[13569]: Typecast;
+["InformationSchema.Types.ConstraintColumnUsage"]: Typecast
+[13568]: Typecast;
+["InformationSchema.Types.ConstraintColumnUsageArray"]: Typecast
+[13574]: Typecast;
+["InformationSchema.Types.ConstraintTableUsage"]: Typecast
+[13573]: Typecast;
+["InformationSchema.Types.ConstraintTableUsageArray"]: Typecast
+[13579]: Typecast;
+["InformationSchema.Types.DomainConstraints"]: Typecast
+[13578]: Typecast;
+["InformationSchema.Types.DomainConstraintsArray"]: Typecast
+[13584]: Typecast;
+["InformationSchema.Types.DomainUdtUsage"]: Typecast
+[13583]: Typecast;
+["InformationSchema.Types.DomainUdtUsageArray"]: Typecast
+[13589]: Typecast;
+["InformationSchema.Types.Domains"]: Typecast
+[13588]: Typecast;
+["InformationSchema.Types.DomainsArray"]: Typecast
+[13594]: Typecast;
+["InformationSchema.Types.EnabledRoles"]: Typecast
+[13593]: Typecast;
+["InformationSchema.Types.EnabledRolesArray"]: Typecast
+[13598]: Typecast;
+["InformationSchema.Types.KeyColumnUsage"]: Typecast
+[13597]: Typecast;
+["InformationSchema.Types.KeyColumnUsageArray"]: Typecast
+[13603]: Typecast;
+["InformationSchema.Types.Parameters"]: Typecast
+[13602]: Typecast;
+["InformationSchema.Types.ParametersArray"]: Typecast
+[13608]: Typecast;
+["InformationSchema.Types.ReferentialConstraints"]: Typecast
+[13607]: Typecast;
+["InformationSchema.Types.ReferentialConstraintsArray"]: Typecast
+[13613]: Typecast;
+["InformationSchema.Types.RoleColumnGrants"]: Typecast
+[13612]: Typecast;
+["InformationSchema.Types.RoleColumnGrantsArray"]: Typecast
+[13617]: Typecast;
+["InformationSchema.Types.RoutineColumnUsage"]: Typecast
+[13616]: Typecast;
+["InformationSchema.Types.RoutineColumnUsageArray"]: Typecast
+[13622]: Typecast;
+["InformationSchema.Types.RoutinePrivileges"]: Typecast
+[13621]: Typecast;
+["InformationSchema.Types.RoutinePrivilegesArray"]: Typecast
+[13627]: Typecast;
+["InformationSchema.Types.RoleRoutineGrants"]: Typecast
+[13626]: Typecast;
+["InformationSchema.Types.RoleRoutineGrantsArray"]: Typecast
+[13631]: Typecast;
+["InformationSchema.Types.RoutineRoutineUsage"]: Typecast
+[13630]: Typecast;
+["InformationSchema.Types.RoutineRoutineUsageArray"]: Typecast
+[13636]: Typecast;
+["InformationSchema.Types.RoutineSequenceUsage"]: Typecast
+[13635]: Typecast;
+["InformationSchema.Types.RoutineSequenceUsageArray"]: Typecast
+[13641]: Typecast;
+["InformationSchema.Types.RoutineTableUsage"]: Typecast
+[13640]: Typecast;
+["InformationSchema.Types.RoutineTableUsageArray"]: Typecast
+[13646]: Typecast;
+["InformationSchema.Types.Routines"]: Typecast
+[13645]: Typecast;
+["InformationSchema.Types.RoutinesArray"]: Typecast
+[13651]: Typecast;
+["InformationSchema.Types.Schemata"]: Typecast
+[13650]: Typecast;
+["InformationSchema.Types.SchemataArray"]: Typecast
+[13655]: Typecast;
+["InformationSchema.Types.Sequences"]: Typecast
+[13654]: Typecast;
+["InformationSchema.Types.SequencesArray"]: Typecast
+[13660]: Typecast;
+["InformationSchema.Types.SqlFeatures"]: Typecast
+[13659]: Typecast;
+["InformationSchema.Types.SqlFeaturesArray"]: Typecast
+[13665]: Typecast;
+["InformationSchema.Types.SqlImplementationInfo"]: Typecast
+[13664]: Typecast;
+["InformationSchema.Types.SqlImplementationInfoArray"]: Typecast
+[13670]: Typecast;
+["InformationSchema.Types.SqlParts"]: Typecast
+[13669]: Typecast;
+["InformationSchema.Types.SqlPartsArray"]: Typecast
+[13675]: Typecast;
+["InformationSchema.Types.SqlSizing"]: Typecast
+[13674]: Typecast;
+["InformationSchema.Types.SqlSizingArray"]: Typecast
+[13680]: Typecast;
+["InformationSchema.Types.TableConstraints"]: Typecast
+[13679]: Typecast;
+["InformationSchema.Types.TableConstraintsArray"]: Typecast
+[13685]: Typecast;
+["InformationSchema.Types.TablePrivileges"]: Typecast
+[13684]: Typecast;
+["InformationSchema.Types.TablePrivilegesArray"]: Typecast
+[13690]: Typecast;
+["InformationSchema.Types.RoleTableGrants"]: Typecast
+[13689]: Typecast;
+["InformationSchema.Types.RoleTableGrantsArray"]: Typecast
+[13694]: Typecast;
+["InformationSchema.Types.Tables"]: Typecast
+[13693]: Typecast;
+["InformationSchema.Types.TablesArray"]: Typecast
+[13699]: Typecast;
+["InformationSchema.Types.Transforms"]: Typecast
+[13698]: Typecast;
+["InformationSchema.Types.TransformsArray"]: Typecast
+[13704]: Typecast;
+["InformationSchema.Types.TriggeredUpdateColumns"]: Typecast
+[13703]: Typecast;
+["InformationSchema.Types.TriggeredUpdateColumnsArray"]: Typecast
+[13709]: Typecast;
+["InformationSchema.Types.Triggers"]: Typecast
+[13708]: Typecast;
+["InformationSchema.Types.TriggersArray"]: Typecast
+[13714]: Typecast;
+["InformationSchema.Types.UdtPrivileges"]: Typecast
+[13713]: Typecast;
+["InformationSchema.Types.UdtPrivilegesArray"]: Typecast
+[13719]: Typecast;
+["InformationSchema.Types.RoleUdtGrants"]: Typecast
+[13718]: Typecast;
+["InformationSchema.Types.RoleUdtGrantsArray"]: Typecast
+[13723]: Typecast;
+["InformationSchema.Types.UsagePrivileges"]: Typecast
+[13722]: Typecast;
+["InformationSchema.Types.UsagePrivilegesArray"]: Typecast
+[13728]: Typecast;
+["InformationSchema.Types.RoleUsageGrants"]: Typecast
+[13727]: Typecast;
+["InformationSchema.Types.RoleUsageGrantsArray"]: Typecast
+[13732]: Typecast;
+["InformationSchema.Types.UserDefinedTypes"]: Typecast
+[13731]: Typecast;
+["InformationSchema.Types.UserDefinedTypesArray"]: Typecast
+[13737]: Typecast;
+["InformationSchema.Types.ViewColumnUsage"]: Typecast
+[13736]: Typecast;
+["InformationSchema.Types.ViewColumnUsageArray"]: Typecast
+[13742]: Typecast;
+["InformationSchema.Types.ViewRoutineUsage"]: Typecast
+[13741]: Typecast;
+["InformationSchema.Types.ViewRoutineUsageArray"]: Typecast
+[13747]: Typecast;
+["InformationSchema.Types.ViewTableUsage"]: Typecast
+[13746]: Typecast;
+["InformationSchema.Types.ViewTableUsageArray"]: Typecast
+[13752]: Typecast;
+["InformationSchema.Types.Views"]: Typecast
+[13751]: Typecast;
+["InformationSchema.Types.ViewsArray"]: Typecast
+[13757]: Typecast;
+["InformationSchema.Types.DataTypePrivileges"]: Typecast
+[13756]: Typecast;
+["InformationSchema.Types.DataTypePrivilegesArray"]: Typecast
+[13762]: Typecast;
+["InformationSchema.Types.ElementTypes"]: Typecast
+[13761]: Typecast;
+["InformationSchema.Types.ElementTypesArray"]: Typecast
+[13767]: Typecast;
+["InformationSchema.Types.PgForeignTableColumns"]: Typecast
+[13772]: Typecast;
+["InformationSchema.Types.ColumnOptions"]: Typecast
+[13771]: Typecast;
+["InformationSchema.Types.ColumnOptionsArray"]: Typecast
+[13776]: Typecast;
+["InformationSchema.Types.PgForeignDataWrappers"]: Typecast
+[13780]: Typecast;
+["InformationSchema.Types.ForeignDataWrapperOptions"]: Typecast
+[13779]: Typecast;
+["InformationSchema.Types.ForeignDataWrapperOptionsArray"]: Typecast
+[13784]: Typecast;
+["InformationSchema.Types.ForeignDataWrappers"]: Typecast
+[13783]: Typecast;
+["InformationSchema.Types.ForeignDataWrappersArray"]: Typecast
+[13788]: Typecast;
+["InformationSchema.Types.PgForeignServers"]: Typecast
+[13793]: Typecast;
+["InformationSchema.Types.ForeignServerOptions"]: Typecast
+[13792]: Typecast;
+["InformationSchema.Types.ForeignServerOptionsArray"]: Typecast
+[13797]: Typecast;
+["InformationSchema.Types.ForeignServers"]: Typecast
+[13796]: Typecast;
+["InformationSchema.Types.ForeignServersArray"]: Typecast
+[13801]: Typecast;
+["InformationSchema.Types.PgForeignTables"]: Typecast
+[13806]: Typecast;
+["InformationSchema.Types.ForeignTableOptions"]: Typecast
+[13805]: Typecast;
+["InformationSchema.Types.ForeignTableOptionsArray"]: Typecast
+[13810]: Typecast;
+["InformationSchema.Types.ForeignTables"]: Typecast
+[13809]: Typecast;
+["InformationSchema.Types.ForeignTablesArray"]: Typecast
+[13814]: Typecast;
+["InformationSchema.Types.PgUserMappings"]: Typecast
+[13819]: Typecast;
+["InformationSchema.Types.UserMappingOptions"]: Typecast
+[13818]: Typecast;
+["InformationSchema.Types.UserMappingOptionsArray"]: Typecast
+[13824]: Typecast;
+["InformationSchema.Types.UserMappings"]: Typecast
+[13823]: Typecast;
+["InformationSchema.Types.UserMappingsArray"]: Typecast
+[30678]: Typecast;
+["Public.Types.DataSrc"]: Typecast
+[30677]: Typecast;
+["Public.Types.DataSrcArray"]: Typecast
+[30684]: Typecast;
+["Public.Types.Datsrcln"]: Typecast
+[30683]: Typecast;
+["Public.Types.DatsrclnArray"]: Typecast
+[30687]: Typecast;
+["Public.Types.DerivCd"]: Typecast
+[30686]: Typecast;
+["Public.Types.DerivCdArray"]: Typecast
+[30692]: Typecast;
+["Public.Types.FdGroup"]: Typecast
+[30691]: Typecast;
+["Public.Types.FdGroupArray"]: Typecast
+[30697]: Typecast;
+["Public.Types.FoodDes"]: Typecast
+[30696]: Typecast;
+["Public.Types.FoodDesArray"]: Typecast
+[30702]: Typecast;
+["Public.Types.Footnote"]: Typecast
+[30701]: Typecast;
+["Public.Types.FootnoteArray"]: Typecast
+[30707]: Typecast;
+["Public.Types.NutData"]: Typecast
+[30706]: Typecast;
+["Public.Types.NutDataArray"]: Typecast
+[30712]: Typecast;
+["Public.Types.NutrDef"]: Typecast
+[30711]: Typecast;
+["Public.Types.NutrDefArray"]: Typecast
+[30717]: Typecast;
+["Public.Types.SrcCd"]: Typecast
+[30716]: Typecast;
+["Public.Types.SrcCdArray"]: Typecast
+[30722]: Typecast;
+["Public.Types.Weight"]: Typecast
+[30721]: Typecast;
+["Public.Types.WeightArray"]: Typecast
+[30681]: Typecast;
+["Public.Types.DataSrcTitleFulltext"]: Typecast
+[30725]: Typecast;
+["Public.Types.DataSrcPkey"]: Typecast
+[30727]: Typecast;
+["Public.Types.DatsrclnPkey"]: Typecast
+[30729]: Typecast;
+["Public.Types.DerivCdPkey"]: Typecast
+[30731]: Typecast;
+["Public.Types.FdGroupPkey"]: Typecast
+[30733]: Typecast;
+["Public.Types.FoodDesPkey"]: Typecast
+[30735]: Typecast;
+["Public.Types.NutDataPkey"]: Typecast
+[30737]: Typecast;
+["Public.Types.NutrDefPkey"]: Typecast
+[30739]: Typecast;
+["Public.Types.SrcCdPkey"]: Typecast
+[30741]: Typecast;
+["Public.Types.WeightPkey"]: Typecast
+[30743]: Typecast;
+["Public.Types.DatsrclnDatasrcIdIdx"]: Typecast
+[30744]: Typecast;
+["Public.Types.FoodDesFdgrpCdIdx"]: Typecast
+[30745]: Typecast;
+["Public.Types.FootnoteNdbNoIdx"]: Typecast
+[30746]: Typecast;
+["Public.Types.NutDataDerivCdIdx"]: Typecast
+[30747]: Typecast;
+["Public.Types.NutDataNutrNoIdx"]: Typecast
+[30748]: Typecast;
+["Public.Types.NutDataSrcCdIdx"]: Typecast
+[30680]: Typecast;
+["PgToast.Types.PgToast_30676Index"]: Typecast
+[30689]: Typecast;
+["PgToast.Types.PgToast_30685Index"]: Typecast
+[30694]: Typecast;
+["PgToast.Types.PgToast_30690Index"]: Typecast
+[30699]: Typecast;
+["PgToast.Types.PgToast_30695Index"]: Typecast
+[30704]: Typecast;
+["PgToast.Types.PgToast_30700Index"]: Typecast
+[30709]: Typecast;
+["PgToast.Types.PgToast_30705Index"]: Typecast
+[30714]: Typecast;
+["PgToast.Types.PgToast_30710Index"]: Typecast
+[30719]: Typecast;
+["PgToast.Types.PgToast_30715Index"]: Typecast
+[30724]: Typecast;
+["PgToast.Types.PgToast_30720Index"]: Typecast
+[2837]: Typecast;
+["PgToast.Types.PgToast_1255Index"]: Typecast
+[4172]: Typecast;
+["PgToast.Types.PgToast_1247Index"]: Typecast
+[2831]: Typecast;
+["PgToast.Types.PgToast_2604Index"]: Typecast
+[2833]: Typecast;
+["PgToast.Types.PgToast_2606Index"]: Typecast
+[4158]: Typecast;
+["PgToast.Types.PgToast_2612Index"]: Typecast
+[4160]: Typecast;
+["PgToast.Types.PgToast_2600Index"]: Typecast
+[2841]: Typecast;
+["PgToast.Types.PgToast_2619Index"]: Typecast
+[3440]: Typecast;
+["PgToast.Types.PgToast_3381Index"]: Typecast
+[3431]: Typecast;
+["PgToast.Types.PgToast_3429Index"]: Typecast
+[2839]: Typecast;
+["PgToast.Types.PgToast_2618Index"]: Typecast
+[2337]: Typecast;
+["PgToast.Types.PgToast_2620Index"]: Typecast
+[4146]: Typecast;
+["PgToast.Types.PgToast_3466Index"]: Typecast
+[2835]: Typecast;
+["PgToast.Types.PgToast_2609Index"]: Typecast
+[4164]: Typecast;
+["PgToast.Types.PgToast_2615Index"]: Typecast
+[4178]: Typecast;
+["PgToast.Types.PgToast_1262Index"]: Typecast
+[2967]: Typecast;
+["PgToast.Types.PgToast_2964Index"]: Typecast
+[4186]: Typecast;
+["PgToast.Types.PgToast_1213Index"]: Typecast
+[4176]: Typecast;
+["PgToast.Types.PgToast_1260Index"]: Typecast
+[2847]: Typecast;
+["PgToast.Types.PgToast_2396Index"]: Typecast
+[4170]: Typecast;
+["PgToast.Types.PgToast_3600Index"]: Typecast
+[4148]: Typecast;
+["PgToast.Types.PgToast_3079Index"]: Typecast
+[4150]: Typecast;
+["PgToast.Types.PgToast_2328Index"]: Typecast
+[4152]: Typecast;
+["PgToast.Types.PgToast_1417Index"]: Typecast
+[4174]: Typecast;
+["PgToast.Types.PgToast_1418Index"]: Typecast
+[4154]: Typecast;
+["PgToast.Types.PgToast_3118Index"]: Typecast
+[4168]: Typecast;
+["PgToast.Types.PgToast_3256Index"]: Typecast
+[4182]: Typecast;
+["PgToast.Types.PgToast_6000Index"]: Typecast
+[4144]: Typecast;
+["PgToast.Types.PgToast_826Index"]: Typecast
+[4156]: Typecast;
+["PgToast.Types.PgToast_3394Index"]: Typecast
+[3599]: Typecast;
+["PgToast.Types.PgToast_3596Index"]: Typecast
+[4061]: Typecast;
+["PgToast.Types.PgToast_3592Index"]: Typecast
+[6176]: Typecast;
+["PgToast.Types.PgToast_3456Index"]: Typecast
+[6245]: Typecast;
+["PgToast.Types.PgToast_6243Index"]: Typecast
+[4166]: Typecast;
+["PgToast.Types.PgToast_3350Index"]: Typecast
+[6229]: Typecast;
+["PgToast.Types.PgToast_6106Index"]: Typecast
+[4184]: Typecast;
+["PgToast.Types.PgToast_6100Index"]: Typecast
+[13662]: Typecast;
+["PgToast.Types.PgToast_13658Index"]: Typecast
+[13667]: Typecast;
+["PgToast.Types.PgToast_13663Index"]: Typecast
+[13672]: Typecast;
+["PgToast.Types.PgToast_13668Index"]: Typecast
+[13677]: Typecast;
+["PgToast.Types.PgToast_13673Index"]: Typecast
+}
+
+            interface HasDatabase {
+              database: Database;
+            }
+          
+export class Database extends PostgresDatabase implements HasDatabase { 
+get database() { return this };
+get settings() { return this.context.settings as Settings };
+
+          /**
+           * Connect to your database server via URL, and return 
+           * a fully typed database you can use to access it.
+           */
+          static async connect(postgresUrl: string, props?: postgres.Options<never>) {
+              return new Database(await initializeContext(postgresUrl, props));
+          }
+        
+        
+
+          public Public = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+
+          public Procedures = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+}(this)
+get Tables () { return new Public.Tables(this)} 
+}(this)
+
+          public PgToast = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+
+          public Procedures = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+}(this)
+get Tables () { return new PgToast.Tables(this)} 
+}(this)
+}
+export namespace Public {
+
+          export class Tables implements Tables, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "Tables";
+            }
+
+            /**
+             * Every table in this schema.
+             */
+            get tables() {
+              return [
+                new Public.Tables.NutData(this),new Public.Tables.SrcCd(this),new Public.Tables.Footnote(this),new Public.Tables.NutrDef(this),new Public.Tables.DerivCd(this),new Public.Tables.FdGroup(this),new Public.Tables.Weight(this),new Public.Tables.FoodDes(this),new Public.Tables.DataSrc(this),new Public.Tables.Datsrcln(this)
+              ];
+            }
+        
+get NutData () { return new Public.Tables.NutData(this)} 
+get SrcCd () { return new Public.Tables.SrcCd(this)} 
+get Footnote () { return new Public.Tables.Footnote(this)} 
+get NutrDef () { return new Public.Tables.NutrDef(this)} 
+get DerivCd () { return new Public.Tables.DerivCd(this)} 
+get FdGroup () { return new Public.Tables.FdGroup(this)} 
+get Weight () { return new Public.Tables.Weight(this)} 
+get FoodDes () { return new Public.Tables.FoodDes(this)} 
+get DataSrc () { return new Public.Tables.DataSrc(this)} 
+get Datsrcln () { return new Public.Tables.Datsrcln(this)} 
+}
+}
+export namespace PgToast {
+
+          export class Tables implements Tables, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "Tables";
+            }
+
+            /**
+             * Every table in this schema.
+             */
+            get tables() {
+              return [
+                
+              ];
+            }
+        
+}
+}
+export namespace Public {
+export namespace Tables {
+
+          export class NutData implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "nut_data";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "nutr_no", type: "pg_catalog.bpchar"},{name: "nutr_val", type: "pg_catalog.float8"},{name: "num_data_pts", type: "pg_catalog.float8"},{name: "std_error", type: "pg_catalog.float8"},{name: "src_cd", type: "pg_catalog.int4"},{name: "deriv_cd", type: "pg_catalog.text"},{name: "ref_ndb_no", type: "pg_catalog.bpchar"},{name: "add_nutr_mark", type: "pg_catalog.bpchar"},{name: "num_studies", type: "pg_catalog.int4"},{name: "min", type: "pg_catalog.float8"},{name: "max", type: "pg_catalog.float8"},{name: "df", type: "pg_catalog.int4"},{name: "low_eb", type: "pg_catalog.float8"},{name: "up_eb", type: "pg_catalog.float8"},{name: "stat_cmt", type: "pg_catalog.text"},{name: "cc", type: "pg_catalog.bpchar"}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                new Public.Tables.NutData.NutDataPkey(this),new Public.Tables.NutData.NutDataDerivCdIdx(this),new Public.Tables.NutData.NutDataNutrNoIdx(this),new Public.Tables.NutData.NutDataSrcCdIdx(this)
+              ];
+            }
+        
+
+async create(values: Partial<Public.Types.NutData>, options?: Public.Tables.NutData.Options): Promise<Public.Types.NutData>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    INSERT INTO
+      public.nut_data (ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc)
+    VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.nutrNo === undefined ? sql`DEFAULT` : typed[1042](values.nutrNo) },${ values.nutrVal === undefined ? sql`DEFAULT` : typed[701](values.nutrVal) },${ values.numDataPts === undefined ? sql`DEFAULT` : typed[701](values.numDataPts) },${ values.stdError === undefined ? sql`DEFAULT` : typed[701](values.stdError) },${ values.srcCd === undefined ? sql`DEFAULT` : typed[23](values.srcCd) },${ values.derivCd === undefined ? sql`DEFAULT` : typed[25](values.derivCd) },${ values.refNdbNo === undefined ? sql`DEFAULT` : typed[1042](values.refNdbNo) },${ values.addNutrMark === undefined ? sql`DEFAULT` : typed[1042](values.addNutrMark) },${ values.numStudies === undefined ? sql`DEFAULT` : typed[23](values.numStudies) },${ values.min === undefined ? sql`DEFAULT` : typed[701](values.min) },${ values.max === undefined ? sql`DEFAULT` : typed[701](values.max) },${ values.df === undefined ? sql`DEFAULT` : typed[23](values.df) },${ values.lowEb === undefined ? sql`DEFAULT` : typed[701](values.lowEb) },${ values.upEb === undefined ? sql`DEFAULT` : typed[701](values.upEb) },${ values.statCmt === undefined ? sql`DEFAULT` : typed[25](values.statCmt) },${ values.cc === undefined ? sql`DEFAULT` : typed[1042](values.cc) })
+    ON CONFLICT (ndb_no,nutr_no) DO UPDATE
+    SET
+      nutr_val = EXCLUDED.nutr_val,num_data_pts = EXCLUDED.num_data_pts,std_error = EXCLUDED.std_error,src_cd = EXCLUDED.src_cd,deriv_cd = EXCLUDED.deriv_cd,ref_ndb_no = EXCLUDED.ref_ndb_no,add_nutr_mark = EXCLUDED.add_nutr_mark,num_studies = EXCLUDED.num_studies,min = EXCLUDED.min,max = EXCLUDED.max,df = EXCLUDED.df,low_eb = EXCLUDED.low_eb,up_eb = EXCLUDED.up_eb,stat_cmt = EXCLUDED.stat_cmt,cc = EXCLUDED.cc
+    RETURNING
+      ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc
+    `
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))[0]
+}
+async all(options?: Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc 
+    FROM
+      public.nut_data 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
+}
+public get ByPrimaryKey () { return new Public.Tables.NutData.NutDataPkey(this)}
+get NutDataPkey () { return new Public.Tables.NutData.NutDataPkey(this)} 
+
+get NutDataDerivCdIdx () { return new Public.Tables.NutData.NutDataDerivCdIdx(this)} 
+
+get NutDataNutrNoIdx () { return new Public.Tables.NutData.NutDataNutrNoIdx(this)} 
+
+get NutDataSrcCdIdx () { return new Public.Tables.NutData.NutDataSrcCdIdx(this)} 
+}
+
+          export class SrcCd implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "src_cd";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                {name: "src_cd", type: "pg_catalog.int4"},{name: "srccd_desc", type: "pg_catalog.text"}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                new Public.Tables.SrcCd.SrcCdPkey(this)
+              ];
+            }
+        
+
+async create(values: Partial<Public.Types.SrcCd>, options?: Public.Tables.SrcCd.Options): Promise<Public.Types.SrcCd>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    INSERT INTO
+      public.src_cd (src_cd,srccd_desc)
+    VALUES (${ values.srcCd === undefined ? sql`DEFAULT` : typed[23](values.srcCd) },${ values.srccdDesc === undefined ? sql`DEFAULT` : typed[25](values.srccdDesc) })
+    ON CONFLICT (src_cd) DO UPDATE
+    SET
+      srccd_desc = EXCLUDED.srccd_desc
+    RETURNING
+      src_cd,srccd_desc
+    `
+return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))[0]
+}
+async all(options?: Public.Tables.SrcCd.Options) : Promise<Public.Types.SrcCd[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      src_cd,srccd_desc 
+    FROM
+      public.src_cd 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))
+}
+public get ByPrimaryKey () { return new Public.Tables.SrcCd.SrcCdPkey(this)}
+get SrcCdPkey () { return new Public.Tables.SrcCd.SrcCdPkey(this)} 
+}
+
+          export class Footnote implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "footnote";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "footnt_no", type: "pg_catalog.bpchar"},{name: "footnt_typ", type: "pg_catalog.bpchar"},{name: "nutr_no", type: "pg_catalog.bpchar"},{name: "footnt_txt", type: "pg_catalog.text"}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                new Public.Tables.Footnote.FootnoteNdbNoIdx(this)
+              ];
+            }
+        
+
+async create(values: Partial<Public.Types.Footnote>, options?: Public.Tables.Footnote.Options): Promise<Public.Types.Footnote>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    INSERT INTO
+      public.footnote (ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt)
+    VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.footntNo === undefined ? sql`DEFAULT` : typed[1042](values.footntNo) },${ values.footntTyp === undefined ? sql`DEFAULT` : typed[1042](values.footntTyp) },${ values.nutrNo === undefined ? sql`DEFAULT` : typed[1042](values.nutrNo) },${ values.footntTxt === undefined ? sql`DEFAULT` : typed[25](values.footntTxt) })
+    ON CONFLICT () DO UPDATE
+    SET
+      ndb_no = EXCLUDED.ndb_no,footnt_no = EXCLUDED.footnt_no,footnt_typ = EXCLUDED.footnt_typ,nutr_no = EXCLUDED.nutr_no,footnt_txt = EXCLUDED.footnt_txt
+    RETURNING
+      ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt
+    `
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))[0]
+}
+async all(options?: Public.Tables.Footnote.Options) : Promise<Public.Types.Footnote[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt 
+    FROM
+      public.footnote 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))
+}
+
+get FootnoteNdbNoIdx () { return new Public.Tables.Footnote.FootnoteNdbNoIdx(this)} 
+}
+
+          export class NutrDef implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "nutr_def";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                {name: "nutr_no", type: "pg_catalog.bpchar"},{name: "units", type: "pg_catalog.text"},{name: "tagname", type: "pg_catalog.text"},{name: "nutrdesc", type: "pg_catalog.text"},{name: "num_dec", type: "pg_catalog.int2"},{name: "sr_order", type: "pg_catalog.int4"}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                new Public.Tables.NutrDef.NutrDefPkey(this)
+              ];
+            }
+        
+
+async create(values: Partial<Public.Types.NutrDef>, options?: Public.Tables.NutrDef.Options): Promise<Public.Types.NutrDef>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    INSERT INTO
+      public.nutr_def (nutr_no,units,tagname,nutrdesc,num_dec,sr_order)
+    VALUES (${ values.nutrNo === undefined ? sql`DEFAULT` : typed[1042](values.nutrNo) },${ values.units === undefined ? sql`DEFAULT` : typed[25](values.units) },${ values.tagname === undefined ? sql`DEFAULT` : typed[25](values.tagname) },${ values.nutrdesc === undefined ? sql`DEFAULT` : typed[25](values.nutrdesc) },${ values.numDec === undefined ? sql`DEFAULT` : typed[21](values.numDec) },${ values.srOrder === undefined ? sql`DEFAULT` : typed[23](values.srOrder) })
+    ON CONFLICT (nutr_no) DO UPDATE
+    SET
+      units = EXCLUDED.units,tagname = EXCLUDED.tagname,nutrdesc = EXCLUDED.nutrdesc,num_dec = EXCLUDED.num_dec,sr_order = EXCLUDED.sr_order
+    RETURNING
+      nutr_no,units,tagname,nutrdesc,num_dec,sr_order
+    `
+return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))[0]
+}
+async all(options?: Public.Tables.NutrDef.Options) : Promise<Public.Types.NutrDef[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      nutr_no,units,tagname,nutrdesc,num_dec,sr_order 
+    FROM
+      public.nutr_def 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))
+}
+public get ByPrimaryKey () { return new Public.Tables.NutrDef.NutrDefPkey(this)}
+get NutrDefPkey () { return new Public.Tables.NutrDef.NutrDefPkey(this)} 
+}
+
+          export class DerivCd implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "deriv_cd";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                {name: "deriv_cd", type: "pg_catalog.text"},{name: "derivcd_desc", type: "pg_catalog.text"}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                new Public.Tables.DerivCd.DerivCdPkey(this)
+              ];
+            }
+        
+
+async create(values: Partial<Public.Types.DerivCd>, options?: Public.Tables.DerivCd.Options): Promise<Public.Types.DerivCd>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    INSERT INTO
+      public.deriv_cd (deriv_cd,derivcd_desc)
+    VALUES (${ values.derivCd === undefined ? sql`DEFAULT` : typed[25](values.derivCd) },${ values.derivcdDesc === undefined ? sql`DEFAULT` : typed[25](values.derivcdDesc) })
+    ON CONFLICT (deriv_cd) DO UPDATE
+    SET
+      derivcd_desc = EXCLUDED.derivcd_desc
+    RETURNING
+      deriv_cd,derivcd_desc
+    `
+return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))[0]
+}
+async all(options?: Public.Tables.DerivCd.Options) : Promise<Public.Types.DerivCd[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      deriv_cd,derivcd_desc 
+    FROM
+      public.deriv_cd 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))
+}
+public get ByPrimaryKey () { return new Public.Tables.DerivCd.DerivCdPkey(this)}
+get DerivCdPkey () { return new Public.Tables.DerivCd.DerivCdPkey(this)} 
+}
+
+          export class FdGroup implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "fd_group";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                {name: "fdgrp_cd", type: "pg_catalog.bpchar"},{name: "fddrp_desc", type: "pg_catalog.text"}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                new Public.Tables.FdGroup.FdGroupPkey(this)
+              ];
+            }
+        
+
+async create(values: Partial<Public.Types.FdGroup>, options?: Public.Tables.FdGroup.Options): Promise<Public.Types.FdGroup>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    INSERT INTO
+      public.fd_group (fdgrp_cd,fddrp_desc)
+    VALUES (${ values.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](values.fdgrpCd) },${ values.fddrpDesc === undefined ? sql`DEFAULT` : typed[25](values.fddrpDesc) })
+    ON CONFLICT (fdgrp_cd) DO UPDATE
+    SET
+      fddrp_desc = EXCLUDED.fddrp_desc
+    RETURNING
+      fdgrp_cd,fddrp_desc
+    `
+return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))[0]
+}
+async all(options?: Public.Tables.FdGroup.Options) : Promise<Public.Types.FdGroup[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      fdgrp_cd,fddrp_desc 
+    FROM
+      public.fd_group 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))
+}
+public get ByPrimaryKey () { return new Public.Tables.FdGroup.FdGroupPkey(this)}
+get FdGroupPkey () { return new Public.Tables.FdGroup.FdGroupPkey(this)} 
+}
+
+          export class Weight implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "weight";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "seq", type: "pg_catalog.bpchar"},{name: "amount", type: "pg_catalog.float8"},{name: "msre_desc", type: "pg_catalog.text"},{name: "gm_wgt", type: "pg_catalog.float8"},{name: "num_data_pts", type: "pg_catalog.int4"},{name: "std_dev", type: "pg_catalog.float8"}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                new Public.Tables.Weight.WeightPkey(this)
+              ];
+            }
+        
+
+async create(values: Partial<Public.Types.Weight>, options?: Public.Tables.Weight.Options): Promise<Public.Types.Weight>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    INSERT INTO
+      public.weight (ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev)
+    VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.seq === undefined ? sql`DEFAULT` : typed[1042](values.seq) },${ values.amount === undefined ? sql`DEFAULT` : typed[701](values.amount) },${ values.msreDesc === undefined ? sql`DEFAULT` : typed[25](values.msreDesc) },${ values.gmWgt === undefined ? sql`DEFAULT` : typed[701](values.gmWgt) },${ values.numDataPts === undefined ? sql`DEFAULT` : typed[23](values.numDataPts) },${ values.stdDev === undefined ? sql`DEFAULT` : typed[701](values.stdDev) })
+    ON CONFLICT (ndb_no,seq) DO UPDATE
+    SET
+      amount = EXCLUDED.amount,msre_desc = EXCLUDED.msre_desc,gm_wgt = EXCLUDED.gm_wgt,num_data_pts = EXCLUDED.num_data_pts,std_dev = EXCLUDED.std_dev
+    RETURNING
+      ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev
+    `
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))[0]
+}
+async all(options?: Public.Tables.Weight.Options) : Promise<Public.Types.Weight[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev 
+    FROM
+      public.weight 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))
+}
+public get ByPrimaryKey () { return new Public.Tables.Weight.WeightPkey(this)}
+get WeightPkey () { return new Public.Tables.Weight.WeightPkey(this)} 
+}
+
+          export class FoodDes implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "food_des";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "fdgrp_cd", type: "pg_catalog.bpchar"},{name: "long_desc", type: "pg_catalog.text"},{name: "shrt_desc", type: "pg_catalog.text"},{name: "comname", type: "pg_catalog.text"},{name: "manufacname", type: "pg_catalog.text"},{name: "survey", type: "pg_catalog.bpchar"},{name: "ref_desc", type: "pg_catalog.text"},{name: "refuse", type: "pg_catalog.int4"},{name: "sciname", type: "pg_catalog.text"},{name: "n_factor", type: "pg_catalog.float8"},{name: "pro_factor", type: "pg_catalog.float8"},{name: "fat_factor", type: "pg_catalog.float8"},{name: "cho_factor", type: "pg_catalog.float8"}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                new Public.Tables.FoodDes.FoodDesPkey(this),new Public.Tables.FoodDes.FoodDesFdgrpCdIdx(this)
+              ];
+            }
+        
+
+async create(values: Partial<Public.Types.FoodDes>, options?: Public.Tables.FoodDes.Options): Promise<Public.Types.FoodDes>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    INSERT INTO
+      public.food_des (ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor)
+    VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](values.fdgrpCd) },${ values.longDesc === undefined ? sql`DEFAULT` : typed[25](values.longDesc) },${ values.shrtDesc === undefined ? sql`DEFAULT` : typed[25](values.shrtDesc) },${ values.comname === undefined ? sql`DEFAULT` : typed[25](values.comname) },${ values.manufacname === undefined ? sql`DEFAULT` : typed[25](values.manufacname) },${ values.survey === undefined ? sql`DEFAULT` : typed[1042](values.survey) },${ values.refDesc === undefined ? sql`DEFAULT` : typed[25](values.refDesc) },${ values.refuse === undefined ? sql`DEFAULT` : typed[23](values.refuse) },${ values.sciname === undefined ? sql`DEFAULT` : typed[25](values.sciname) },${ values.nFactor === undefined ? sql`DEFAULT` : typed[701](values.nFactor) },${ values.proFactor === undefined ? sql`DEFAULT` : typed[701](values.proFactor) },${ values.fatFactor === undefined ? sql`DEFAULT` : typed[701](values.fatFactor) },${ values.choFactor === undefined ? sql`DEFAULT` : typed[701](values.choFactor) })
+    ON CONFLICT (ndb_no) DO UPDATE
+    SET
+      fdgrp_cd = EXCLUDED.fdgrp_cd,long_desc = EXCLUDED.long_desc,shrt_desc = EXCLUDED.shrt_desc,comname = EXCLUDED.comname,manufacname = EXCLUDED.manufacname,survey = EXCLUDED.survey,ref_desc = EXCLUDED.ref_desc,refuse = EXCLUDED.refuse,sciname = EXCLUDED.sciname,n_factor = EXCLUDED.n_factor,pro_factor = EXCLUDED.pro_factor,fat_factor = EXCLUDED.fat_factor,cho_factor = EXCLUDED.cho_factor
+    RETURNING
+      ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor
+    `
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))[0]
+}
+async all(options?: Public.Tables.FoodDes.Options) : Promise<Public.Types.FoodDes[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor 
+    FROM
+      public.food_des 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))
+}
+public get ByPrimaryKey () { return new Public.Tables.FoodDes.FoodDesPkey(this)}
+get FoodDesPkey () { return new Public.Tables.FoodDes.FoodDesPkey(this)} 
+
+get FoodDesFdgrpCdIdx () { return new Public.Tables.FoodDes.FoodDesFdgrpCdIdx(this)} 
+}
+
+          export class DataSrc implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "data_src";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                {name: "datasrc_id", type: "pg_catalog.bpchar"},{name: "authors", type: "pg_catalog.text"},{name: "title", type: "pg_catalog.text"},{name: "year", type: "pg_catalog.int4"},{name: "journal", type: "pg_catalog.text"},{name: "vol_city", type: "pg_catalog.text"},{name: "issue_state", type: "pg_catalog.text"},{name: "start_page", type: "pg_catalog.text"},{name: "end_page", type: "pg_catalog.text"}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                new Public.Tables.DataSrc.DataSrcTitleFulltext(this),new Public.Tables.DataSrc.DataSrcPkey(this)
+              ];
+            }
+        
+
+async create(values: Partial<Public.Types.DataSrc>, options?: Public.Tables.DataSrc.Options): Promise<Public.Types.DataSrc>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    INSERT INTO
+      public.data_src (datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page)
+    VALUES (${ values.datasrcId === undefined ? sql`DEFAULT` : typed[1042](values.datasrcId) },${ values.authors === undefined ? sql`DEFAULT` : typed[25](values.authors) },${ values.title === undefined ? sql`DEFAULT` : typed[25](values.title) },${ values.year === undefined ? sql`DEFAULT` : typed[23](values.year) },${ values.journal === undefined ? sql`DEFAULT` : typed[25](values.journal) },${ values.volCity === undefined ? sql`DEFAULT` : typed[25](values.volCity) },${ values.issueState === undefined ? sql`DEFAULT` : typed[25](values.issueState) },${ values.startPage === undefined ? sql`DEFAULT` : typed[25](values.startPage) },${ values.endPage === undefined ? sql`DEFAULT` : typed[25](values.endPage) })
+    ON CONFLICT (datasrc_id) DO UPDATE
+    SET
+      authors = EXCLUDED.authors,title = EXCLUDED.title,year = EXCLUDED.year,journal = EXCLUDED.journal,vol_city = EXCLUDED.vol_city,issue_state = EXCLUDED.issue_state,start_page = EXCLUDED.start_page,end_page = EXCLUDED.end_page
+    RETURNING
+      datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page
+    `
+return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))[0]
+}
+async all(options?: Public.Tables.DataSrc.Options) : Promise<Public.Types.DataSrc[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page 
+    FROM
+      public.data_src 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
+}
+
+get DataSrcTitleFulltext () { return new Public.Tables.DataSrc.DataSrcTitleFulltext(this)} 
+public get ByPrimaryKey () { return new Public.Tables.DataSrc.DataSrcPkey(this)}
+get DataSrcPkey () { return new Public.Tables.DataSrc.DataSrcPkey(this)} 
+}
+
+          export class Datsrcln implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "datsrcln";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "nutr_no", type: "pg_catalog.bpchar"},{name: "datasrc_id", type: "pg_catalog.bpchar"}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                new Public.Tables.Datsrcln.DatsrclnPkey(this),new Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx(this)
+              ];
+            }
+        
+
+async create(values: Partial<Public.Types.Datsrcln>, options?: Public.Tables.Datsrcln.Options): Promise<Public.Types.Datsrcln>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    INSERT INTO
+      public.datsrcln (ndb_no,nutr_no,datasrc_id)
+    VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.nutrNo === undefined ? sql`DEFAULT` : typed[1042](values.nutrNo) },${ values.datasrcId === undefined ? sql`DEFAULT` : typed[1042](values.datasrcId) })
+    ON CONFLICT (ndb_no,nutr_no,datasrc_id) DO UPDATE
+    SET
+      
+    RETURNING
+      ndb_no,nutr_no,datasrc_id
+    `
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))[0]
+}
+async all(options?: Public.Tables.Datsrcln.Options) : Promise<Public.Types.Datsrcln[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      ndb_no,nutr_no,datasrc_id 
+    FROM
+      public.datsrcln 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))
+}
+public get ByPrimaryKey () { return new Public.Tables.Datsrcln.DatsrclnPkey(this)}
+get DatsrclnPkey () { return new Public.Tables.Datsrcln.DatsrclnPkey(this)} 
+
+get DatsrclnDatasrcIdIdx () { return new Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx(this)} 
+}
+}
+}
+export namespace PgToast {
+export namespace Tables {
+}
+}
+export namespace Public {
+export namespace Tables {
+export namespace NutData {
+
+          export class NutDataPkey implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "nut_data_pkey";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "nutr_no", type: "pg_catalog.bpchar"}
+              ];
+            }
+        
+async read(parameters: Public.Types.NutDataPkey, options?: Public.Types.NutDataPkey.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc 
+    FROM
+      public.nut_data 
+    WHERE
+      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))[0]
+}
+
+async update(parameters: Public.Types.NutDataPkey, values: Partial<Public.Tables.NutData.Values>, options?: Public.Types.NutDataPkey.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      public.nut_data 
+    SET
+      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , nutr_val = ${ values.nutrVal === undefined ? sql`nutr_val` : typed[701](values.nutrVal) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[701](values.numDataPts) } , std_error = ${ values.stdError === undefined ? sql`std_error` : typed[701](values.stdError) } , src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , ref_ndb_no = ${ values.refNdbNo === undefined ? sql`ref_ndb_no` : typed[1042](values.refNdbNo) } , add_nutr_mark = ${ values.addNutrMark === undefined ? sql`add_nutr_mark` : typed[1042](values.addNutrMark) } , num_studies = ${ values.numStudies === undefined ? sql`num_studies` : typed[23](values.numStudies) } , min = ${ values.min === undefined ? sql`min` : typed[701](values.min) } , max = ${ values.max === undefined ? sql`max` : typed[701](values.max) } , df = ${ values.df === undefined ? sql`df` : typed[23](values.df) } , low_eb = ${ values.lowEb === undefined ? sql`low_eb` : typed[701](values.lowEb) } , up_eb = ${ values.upEb === undefined ? sql`up_eb` : typed[701](values.upEb) } , stat_cmt = ${ values.statCmt === undefined ? sql`stat_cmt` : typed[25](values.statCmt) } , cc = ${ values.cc === undefined ? sql`cc` : typed[1042](values.cc) } 
+    WHERE
+      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))[0]
+}
+async delete(parameters: Public.Types.NutDataPkey, options?: Public.Types.NutDataPkey.Options & Public.Tables.NutData.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      public.nut_data 
+    WHERE
+      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
+ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))[0]
+}
+}
+
+          export class NutDataDerivCdIdx implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "nut_data_deriv_cd_idx";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "deriv_cd", type: "pg_catalog.text"}
+              ];
+            }
+        
+async read(parameters: Public.Types.NutDataDerivCdIdx, options?: Public.Types.NutDataDerivCdIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc 
+    FROM
+      public.nut_data 
+    WHERE
+      deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
+}
+
+async update(parameters: Public.Types.NutDataDerivCdIdx, values: Partial<Public.Tables.NutData.Values>, options?: Public.Types.NutDataDerivCdIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      public.nut_data 
+    SET
+      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , nutr_val = ${ values.nutrVal === undefined ? sql`nutr_val` : typed[701](values.nutrVal) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[701](values.numDataPts) } , std_error = ${ values.stdError === undefined ? sql`std_error` : typed[701](values.stdError) } , src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , ref_ndb_no = ${ values.refNdbNo === undefined ? sql`ref_ndb_no` : typed[1042](values.refNdbNo) } , add_nutr_mark = ${ values.addNutrMark === undefined ? sql`add_nutr_mark` : typed[1042](values.addNutrMark) } , num_studies = ${ values.numStudies === undefined ? sql`num_studies` : typed[23](values.numStudies) } , min = ${ values.min === undefined ? sql`min` : typed[701](values.min) } , max = ${ values.max === undefined ? sql`max` : typed[701](values.max) } , df = ${ values.df === undefined ? sql`df` : typed[23](values.df) } , low_eb = ${ values.lowEb === undefined ? sql`low_eb` : typed[701](values.lowEb) } , up_eb = ${ values.upEb === undefined ? sql`up_eb` : typed[701](values.upEb) } , stat_cmt = ${ values.statCmt === undefined ? sql`stat_cmt` : typed[25](values.statCmt) } , cc = ${ values.cc === undefined ? sql`cc` : typed[1042](values.cc) } 
+    WHERE
+      deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
+}
+async delete(parameters: Public.Types.NutDataDerivCdIdx, options?: Public.Types.NutDataDerivCdIdx.Options & Public.Tables.NutData.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      public.nut_data 
+    WHERE
+      deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
+ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
+}
+}
+
+          export class NutDataNutrNoIdx implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "nut_data_nutr_no_idx";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "nutr_no", type: "pg_catalog.bpchar"}
+              ];
+            }
+        
+async read(parameters: Public.Types.NutDataNutrNoIdx, options?: Public.Types.NutDataNutrNoIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc 
+    FROM
+      public.nut_data 
+    WHERE
+      nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
+}
+
+async update(parameters: Public.Types.NutDataNutrNoIdx, values: Partial<Public.Tables.NutData.Values>, options?: Public.Types.NutDataNutrNoIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      public.nut_data 
+    SET
+      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , nutr_val = ${ values.nutrVal === undefined ? sql`nutr_val` : typed[701](values.nutrVal) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[701](values.numDataPts) } , std_error = ${ values.stdError === undefined ? sql`std_error` : typed[701](values.stdError) } , src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , ref_ndb_no = ${ values.refNdbNo === undefined ? sql`ref_ndb_no` : typed[1042](values.refNdbNo) } , add_nutr_mark = ${ values.addNutrMark === undefined ? sql`add_nutr_mark` : typed[1042](values.addNutrMark) } , num_studies = ${ values.numStudies === undefined ? sql`num_studies` : typed[23](values.numStudies) } , min = ${ values.min === undefined ? sql`min` : typed[701](values.min) } , max = ${ values.max === undefined ? sql`max` : typed[701](values.max) } , df = ${ values.df === undefined ? sql`df` : typed[23](values.df) } , low_eb = ${ values.lowEb === undefined ? sql`low_eb` : typed[701](values.lowEb) } , up_eb = ${ values.upEb === undefined ? sql`up_eb` : typed[701](values.upEb) } , stat_cmt = ${ values.statCmt === undefined ? sql`stat_cmt` : typed[25](values.statCmt) } , cc = ${ values.cc === undefined ? sql`cc` : typed[1042](values.cc) } 
+    WHERE
+      nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
+}
+async delete(parameters: Public.Types.NutDataNutrNoIdx, options?: Public.Types.NutDataNutrNoIdx.Options & Public.Tables.NutData.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      public.nut_data 
+    WHERE
+      nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
+ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
+}
+}
+
+          export class NutDataSrcCdIdx implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "nut_data_src_cd_idx";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "src_cd", type: "pg_catalog.int4"}
+              ];
+            }
+        
+async read(parameters: Public.Types.NutDataSrcCdIdx, options?: Public.Types.NutDataSrcCdIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc 
+    FROM
+      public.nut_data 
+    WHERE
+      src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
+}
+
+async update(parameters: Public.Types.NutDataSrcCdIdx, values: Partial<Public.Tables.NutData.Values>, options?: Public.Types.NutDataSrcCdIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      public.nut_data 
+    SET
+      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , nutr_val = ${ values.nutrVal === undefined ? sql`nutr_val` : typed[701](values.nutrVal) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[701](values.numDataPts) } , std_error = ${ values.stdError === undefined ? sql`std_error` : typed[701](values.stdError) } , src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , ref_ndb_no = ${ values.refNdbNo === undefined ? sql`ref_ndb_no` : typed[1042](values.refNdbNo) } , add_nutr_mark = ${ values.addNutrMark === undefined ? sql`add_nutr_mark` : typed[1042](values.addNutrMark) } , num_studies = ${ values.numStudies === undefined ? sql`num_studies` : typed[23](values.numStudies) } , min = ${ values.min === undefined ? sql`min` : typed[701](values.min) } , max = ${ values.max === undefined ? sql`max` : typed[701](values.max) } , df = ${ values.df === undefined ? sql`df` : typed[23](values.df) } , low_eb = ${ values.lowEb === undefined ? sql`low_eb` : typed[701](values.lowEb) } , up_eb = ${ values.upEb === undefined ? sql`up_eb` : typed[701](values.upEb) } , stat_cmt = ${ values.statCmt === undefined ? sql`stat_cmt` : typed[25](values.statCmt) } , cc = ${ values.cc === undefined ? sql`cc` : typed[1042](values.cc) } 
+    WHERE
+      src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
+}
+async delete(parameters: Public.Types.NutDataSrcCdIdx, options?: Public.Types.NutDataSrcCdIdx.Options & Public.Tables.NutData.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      public.nut_data 
+    WHERE
+      src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
+ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
+}
+}
+}
+export namespace SrcCd {
+
+          export class SrcCdPkey implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "src_cd_pkey";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "src_cd", type: "pg_catalog.int4"}
+              ];
+            }
+        
+async read(parameters: Public.Types.SrcCdPkey, options?: Public.Types.SrcCdPkey.Options & Public.Tables.SrcCd.Options) : Promise<Public.Types.SrcCd>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      src_cd,srccd_desc 
+    FROM
+      public.src_cd 
+    WHERE
+      src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))[0]
+}
+
+async update(parameters: Public.Types.SrcCdPkey, values: Partial<Public.Tables.SrcCd.Values>, options?: Public.Types.SrcCdPkey.Options & Public.Tables.SrcCd.Options) : Promise<Public.Types.SrcCd>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      public.src_cd 
+    SET
+      src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , srccd_desc = ${ values.srccdDesc === undefined ? sql`srccd_desc` : typed[25](values.srccdDesc) } 
+    WHERE
+      src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
+    RETURNING src_cd,srccd_desc`
+return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))[0]
+}
+async delete(parameters: Public.Types.SrcCdPkey, options?: Public.Types.SrcCdPkey.Options & Public.Tables.SrcCd.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      public.src_cd 
+    WHERE
+      src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
+    RETURNING src_cd,srccd_desc`
+ return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))[0]
+}
+}
+}
+export namespace Footnote {
+
+          export class FootnoteNdbNoIdx implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "footnote_ndb_no_idx";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "nutr_no", type: "pg_catalog.bpchar"}
+              ];
+            }
+        
+async read(parameters: Public.Types.FootnoteNdbNoIdx, options?: Public.Types.FootnoteNdbNoIdx.Options & Public.Tables.Footnote.Options) : Promise<Public.Types.Footnote[]>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt 
+    FROM
+      public.footnote 
+    WHERE
+      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))
+}
+
+async update(parameters: Public.Types.FootnoteNdbNoIdx, values: Partial<Public.Tables.Footnote.Values>, options?: Public.Types.FootnoteNdbNoIdx.Options & Public.Tables.Footnote.Options) : Promise<Public.Types.Footnote[]>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      public.footnote 
+    SET
+      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , footnt_no = ${ values.footntNo === undefined ? sql`footnt_no` : typed[1042](values.footntNo) } , footnt_typ = ${ values.footntTyp === undefined ? sql`footnt_typ` : typed[1042](values.footntTyp) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , footnt_txt = ${ values.footntTxt === undefined ? sql`footnt_txt` : typed[25](values.footntTxt) } 
+    WHERE
+      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+    RETURNING ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt`
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))
+}
+async delete(parameters: Public.Types.FootnoteNdbNoIdx, options?: Public.Types.FootnoteNdbNoIdx.Options & Public.Tables.Footnote.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      public.footnote 
+    WHERE
+      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+    RETURNING ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt`
+ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))
+}
+}
+}
+export namespace NutrDef {
+
+          export class NutrDefPkey implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "nutr_def_pkey";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "nutr_no", type: "pg_catalog.bpchar"}
+              ];
+            }
+        
+async read(parameters: Public.Types.NutrDefPkey, options?: Public.Types.NutrDefPkey.Options & Public.Tables.NutrDef.Options) : Promise<Public.Types.NutrDef>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      nutr_no,units,tagname,nutrdesc,num_dec,sr_order 
+    FROM
+      public.nutr_def 
+    WHERE
+      nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))[0]
+}
+
+async update(parameters: Public.Types.NutrDefPkey, values: Partial<Public.Tables.NutrDef.Values>, options?: Public.Types.NutrDefPkey.Options & Public.Tables.NutrDef.Options) : Promise<Public.Types.NutrDef>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      public.nutr_def 
+    SET
+      nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , units = ${ values.units === undefined ? sql`units` : typed[25](values.units) } , tagname = ${ values.tagname === undefined ? sql`tagname` : typed[25](values.tagname) } , nutrdesc = ${ values.nutrdesc === undefined ? sql`nutrdesc` : typed[25](values.nutrdesc) } , num_dec = ${ values.numDec === undefined ? sql`num_dec` : typed[21](values.numDec) } , sr_order = ${ values.srOrder === undefined ? sql`sr_order` : typed[23](values.srOrder) } 
+    WHERE
+      nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+    RETURNING nutr_no,units,tagname,nutrdesc,num_dec,sr_order`
+return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))[0]
+}
+async delete(parameters: Public.Types.NutrDefPkey, options?: Public.Types.NutrDefPkey.Options & Public.Tables.NutrDef.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      public.nutr_def 
+    WHERE
+      nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+    RETURNING nutr_no,units,tagname,nutrdesc,num_dec,sr_order`
+ return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))[0]
+}
+}
+}
+export namespace DerivCd {
+
+          export class DerivCdPkey implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "deriv_cd_pkey";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "deriv_cd", type: "pg_catalog.text"}
+              ];
+            }
+        
+async read(parameters: Public.Types.DerivCdPkey, options?: Public.Types.DerivCdPkey.Options & Public.Tables.DerivCd.Options) : Promise<Public.Types.DerivCd>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      deriv_cd,derivcd_desc 
+    FROM
+      public.deriv_cd 
+    WHERE
+      deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))[0]
+}
+
+async update(parameters: Public.Types.DerivCdPkey, values: Partial<Public.Tables.DerivCd.Values>, options?: Public.Types.DerivCdPkey.Options & Public.Tables.DerivCd.Options) : Promise<Public.Types.DerivCd>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      public.deriv_cd 
+    SET
+      deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , derivcd_desc = ${ values.derivcdDesc === undefined ? sql`derivcd_desc` : typed[25](values.derivcdDesc) } 
+    WHERE
+      deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
+    RETURNING deriv_cd,derivcd_desc`
+return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))[0]
+}
+async delete(parameters: Public.Types.DerivCdPkey, options?: Public.Types.DerivCdPkey.Options & Public.Tables.DerivCd.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      public.deriv_cd 
+    WHERE
+      deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
+    RETURNING deriv_cd,derivcd_desc`
+ return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))[0]
+}
+}
+}
+export namespace FdGroup {
+
+          export class FdGroupPkey implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "fd_group_pkey";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "fdgrp_cd", type: "pg_catalog.bpchar"}
+              ];
+            }
+        
+async read(parameters: Public.Types.FdGroupPkey, options?: Public.Types.FdGroupPkey.Options & Public.Tables.FdGroup.Options) : Promise<Public.Types.FdGroup>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      fdgrp_cd,fddrp_desc 
+    FROM
+      public.fd_group 
+    WHERE
+      fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))[0]
+}
+
+async update(parameters: Public.Types.FdGroupPkey, values: Partial<Public.Tables.FdGroup.Values>, options?: Public.Types.FdGroupPkey.Options & Public.Tables.FdGroup.Options) : Promise<Public.Types.FdGroup>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      public.fd_group 
+    SET
+      fdgrp_cd = ${ values.fdgrpCd === undefined ? sql`fdgrp_cd` : typed[1042](values.fdgrpCd) } , fddrp_desc = ${ values.fddrpDesc === undefined ? sql`fddrp_desc` : typed[25](values.fddrpDesc) } 
+    WHERE
+      fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
+    RETURNING fdgrp_cd,fddrp_desc`
+return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))[0]
+}
+async delete(parameters: Public.Types.FdGroupPkey, options?: Public.Types.FdGroupPkey.Options & Public.Tables.FdGroup.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      public.fd_group 
+    WHERE
+      fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
+    RETURNING fdgrp_cd,fddrp_desc`
+ return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))[0]
+}
+}
+}
+export namespace Weight {
+
+          export class WeightPkey implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "weight_pkey";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "seq", type: "pg_catalog.bpchar"}
+              ];
+            }
+        
+async read(parameters: Public.Types.WeightPkey, options?: Public.Types.WeightPkey.Options & Public.Tables.Weight.Options) : Promise<Public.Types.Weight>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev 
+    FROM
+      public.weight 
+    WHERE
+      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND seq = ${ parameters.seq === undefined ? sql`DEFAULT` : typed[1042](parameters.seq) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))[0]
+}
+
+async update(parameters: Public.Types.WeightPkey, values: Partial<Public.Tables.Weight.Values>, options?: Public.Types.WeightPkey.Options & Public.Tables.Weight.Options) : Promise<Public.Types.Weight>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      public.weight 
+    SET
+      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , seq = ${ values.seq === undefined ? sql`seq` : typed[1042](values.seq) } , amount = ${ values.amount === undefined ? sql`amount` : typed[701](values.amount) } , msre_desc = ${ values.msreDesc === undefined ? sql`msre_desc` : typed[25](values.msreDesc) } , gm_wgt = ${ values.gmWgt === undefined ? sql`gm_wgt` : typed[701](values.gmWgt) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[23](values.numDataPts) } , std_dev = ${ values.stdDev === undefined ? sql`std_dev` : typed[701](values.stdDev) } 
+    WHERE
+      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND seq = ${ parameters.seq === undefined ? sql`DEFAULT` : typed[1042](parameters.seq) }
+    RETURNING ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev`
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))[0]
+}
+async delete(parameters: Public.Types.WeightPkey, options?: Public.Types.WeightPkey.Options & Public.Tables.Weight.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      public.weight 
+    WHERE
+      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND seq = ${ parameters.seq === undefined ? sql`DEFAULT` : typed[1042](parameters.seq) }
+    RETURNING ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev`
+ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))[0]
+}
+}
+}
+export namespace FoodDes {
+
+          export class FoodDesPkey implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "food_des_pkey";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "ndb_no", type: "pg_catalog.bpchar"}
+              ];
+            }
+        
+async read(parameters: Public.Types.FoodDesPkey, options?: Public.Types.FoodDesPkey.Options & Public.Tables.FoodDes.Options) : Promise<Public.Types.FoodDes>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor 
+    FROM
+      public.food_des 
+    WHERE
+      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))[0]
+}
+
+async update(parameters: Public.Types.FoodDesPkey, values: Partial<Public.Tables.FoodDes.Values>, options?: Public.Types.FoodDesPkey.Options & Public.Tables.FoodDes.Options) : Promise<Public.Types.FoodDes>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      public.food_des 
+    SET
+      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , fdgrp_cd = ${ values.fdgrpCd === undefined ? sql`fdgrp_cd` : typed[1042](values.fdgrpCd) } , long_desc = ${ values.longDesc === undefined ? sql`long_desc` : typed[25](values.longDesc) } , shrt_desc = ${ values.shrtDesc === undefined ? sql`shrt_desc` : typed[25](values.shrtDesc) } , comname = ${ values.comname === undefined ? sql`comname` : typed[25](values.comname) } , manufacname = ${ values.manufacname === undefined ? sql`manufacname` : typed[25](values.manufacname) } , survey = ${ values.survey === undefined ? sql`survey` : typed[1042](values.survey) } , ref_desc = ${ values.refDesc === undefined ? sql`ref_desc` : typed[25](values.refDesc) } , refuse = ${ values.refuse === undefined ? sql`refuse` : typed[23](values.refuse) } , sciname = ${ values.sciname === undefined ? sql`sciname` : typed[25](values.sciname) } , n_factor = ${ values.nFactor === undefined ? sql`n_factor` : typed[701](values.nFactor) } , pro_factor = ${ values.proFactor === undefined ? sql`pro_factor` : typed[701](values.proFactor) } , fat_factor = ${ values.fatFactor === undefined ? sql`fat_factor` : typed[701](values.fatFactor) } , cho_factor = ${ values.choFactor === undefined ? sql`cho_factor` : typed[701](values.choFactor) } 
+    WHERE
+      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) }
+    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))[0]
+}
+async delete(parameters: Public.Types.FoodDesPkey, options?: Public.Types.FoodDesPkey.Options & Public.Tables.FoodDes.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      public.food_des 
+    WHERE
+      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) }
+    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`
+ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))[0]
+}
+}
+
+          export class FoodDesFdgrpCdIdx implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "food_des_fdgrp_cd_idx";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "fdgrp_cd", type: "pg_catalog.bpchar"}
+              ];
+            }
+        
+async read(parameters: Public.Types.FoodDesFdgrpCdIdx, options?: Public.Types.FoodDesFdgrpCdIdx.Options & Public.Tables.FoodDes.Options) : Promise<Public.Types.FoodDes[]>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor 
+    FROM
+      public.food_des 
+    WHERE
+      fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))
+}
+
+async update(parameters: Public.Types.FoodDesFdgrpCdIdx, values: Partial<Public.Tables.FoodDes.Values>, options?: Public.Types.FoodDesFdgrpCdIdx.Options & Public.Tables.FoodDes.Options) : Promise<Public.Types.FoodDes[]>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      public.food_des 
+    SET
+      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , fdgrp_cd = ${ values.fdgrpCd === undefined ? sql`fdgrp_cd` : typed[1042](values.fdgrpCd) } , long_desc = ${ values.longDesc === undefined ? sql`long_desc` : typed[25](values.longDesc) } , shrt_desc = ${ values.shrtDesc === undefined ? sql`shrt_desc` : typed[25](values.shrtDesc) } , comname = ${ values.comname === undefined ? sql`comname` : typed[25](values.comname) } , manufacname = ${ values.manufacname === undefined ? sql`manufacname` : typed[25](values.manufacname) } , survey = ${ values.survey === undefined ? sql`survey` : typed[1042](values.survey) } , ref_desc = ${ values.refDesc === undefined ? sql`ref_desc` : typed[25](values.refDesc) } , refuse = ${ values.refuse === undefined ? sql`refuse` : typed[23](values.refuse) } , sciname = ${ values.sciname === undefined ? sql`sciname` : typed[25](values.sciname) } , n_factor = ${ values.nFactor === undefined ? sql`n_factor` : typed[701](values.nFactor) } , pro_factor = ${ values.proFactor === undefined ? sql`pro_factor` : typed[701](values.proFactor) } , fat_factor = ${ values.fatFactor === undefined ? sql`fat_factor` : typed[701](values.fatFactor) } , cho_factor = ${ values.choFactor === undefined ? sql`cho_factor` : typed[701](values.choFactor) } 
+    WHERE
+      fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
+    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))
+}
+async delete(parameters: Public.Types.FoodDesFdgrpCdIdx, options?: Public.Types.FoodDesFdgrpCdIdx.Options & Public.Tables.FoodDes.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      public.food_des 
+    WHERE
+      fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
+    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`
+ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))
+}
+}
+}
+export namespace DataSrc {
+
+          export class DataSrcTitleFulltext implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "data_src_title_fulltext";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "title", type: "pg_catalog.tsvector"}
+              ];
+            }
+        
+async read(parameters: Public.Types.DataSrcTitleFulltext, options?: Public.Types.DataSrcTitleFulltext.Options & Public.Tables.DataSrc.Options) : Promise<Public.Types.DataSrc[]>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page 
+    FROM
+      public.data_src 
+    WHERE
+      title @@ ${sql.unsafe(`${options?.title?.queryParser ?? "to_tsquery"}`)}(${options?.title?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.title === undefined ? sql`DEFAULT` : typed[3614](parameters.title) })
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
+}
+
+async update(parameters: Public.Types.DataSrcTitleFulltext, values: Partial<Public.Tables.DataSrc.Values>, options?: Public.Types.DataSrcTitleFulltext.Options & Public.Tables.DataSrc.Options) : Promise<Public.Types.DataSrc[]>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      public.data_src 
+    SET
+      datasrc_id = ${ values.datasrcId === undefined ? sql`datasrc_id` : typed[1042](values.datasrcId) } , authors = ${ values.authors === undefined ? sql`authors` : typed[25](values.authors) } , title = ${ values.title === undefined ? sql`title` : typed[25](values.title) } , year = ${ values.year === undefined ? sql`year` : typed[23](values.year) } , journal = ${ values.journal === undefined ? sql`journal` : typed[25](values.journal) } , vol_city = ${ values.volCity === undefined ? sql`vol_city` : typed[25](values.volCity) } , issue_state = ${ values.issueState === undefined ? sql`issue_state` : typed[25](values.issueState) } , start_page = ${ values.startPage === undefined ? sql`start_page` : typed[25](values.startPage) } , end_page = ${ values.endPage === undefined ? sql`end_page` : typed[25](values.endPage) } 
+    WHERE
+      title @@ ${sql.unsafe(`${options?.title?.queryParser ?? "to_tsquery"}`)}(${options?.title?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.title === undefined ? sql`DEFAULT` : typed[3614](parameters.title) })
+    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`
+return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
+}
+async delete(parameters: Public.Types.DataSrcTitleFulltext, options?: Public.Types.DataSrcTitleFulltext.Options & Public.Tables.DataSrc.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      public.data_src 
+    WHERE
+      title @@ ${sql.unsafe(`${options?.title?.queryParser ?? "to_tsquery"}`)}(${options?.title?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.title === undefined ? sql`DEFAULT` : typed[3614](parameters.title) })
+    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`
+ return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
+}
+}
+
+          export class DataSrcPkey implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "data_src_pkey";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "datasrc_id", type: "pg_catalog.bpchar"}
+              ];
+            }
+        
+async read(parameters: Public.Types.DataSrcPkey, options?: Public.Types.DataSrcPkey.Options & Public.Tables.DataSrc.Options) : Promise<Public.Types.DataSrc>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page 
+    FROM
+      public.data_src 
+    WHERE
+      datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))[0]
+}
+
+async update(parameters: Public.Types.DataSrcPkey, values: Partial<Public.Tables.DataSrc.Values>, options?: Public.Types.DataSrcPkey.Options & Public.Tables.DataSrc.Options) : Promise<Public.Types.DataSrc>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      public.data_src 
+    SET
+      datasrc_id = ${ values.datasrcId === undefined ? sql`datasrc_id` : typed[1042](values.datasrcId) } , authors = ${ values.authors === undefined ? sql`authors` : typed[25](values.authors) } , title = ${ values.title === undefined ? sql`title` : typed[25](values.title) } , year = ${ values.year === undefined ? sql`year` : typed[23](values.year) } , journal = ${ values.journal === undefined ? sql`journal` : typed[25](values.journal) } , vol_city = ${ values.volCity === undefined ? sql`vol_city` : typed[25](values.volCity) } , issue_state = ${ values.issueState === undefined ? sql`issue_state` : typed[25](values.issueState) } , start_page = ${ values.startPage === undefined ? sql`start_page` : typed[25](values.startPage) } , end_page = ${ values.endPage === undefined ? sql`end_page` : typed[25](values.endPage) } 
+    WHERE
+      datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
+    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`
+return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))[0]
+}
+async delete(parameters: Public.Types.DataSrcPkey, options?: Public.Types.DataSrcPkey.Options & Public.Tables.DataSrc.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      public.data_src 
+    WHERE
+      datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
+    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`
+ return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))[0]
+}
+}
+}
+export namespace Datsrcln {
+
+          export class DatsrclnPkey implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "datsrcln_pkey";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "nutr_no", type: "pg_catalog.bpchar"},{name: "datasrc_id", type: "pg_catalog.bpchar"}
+              ];
+            }
+        
+async read(parameters: Public.Types.DatsrclnPkey, options?: Public.Types.DatsrclnPkey.Options & Public.Tables.Datsrcln.Options) : Promise<Public.Types.Datsrcln>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      ndb_no,nutr_no,datasrc_id 
+    FROM
+      public.datsrcln 
+    WHERE
+      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) } AND datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))[0]
+}
+
+async update(parameters: Public.Types.DatsrclnPkey, values: Partial<Public.Tables.Datsrcln.Values>, options?: Public.Types.DatsrclnPkey.Options & Public.Tables.Datsrcln.Options) : Promise<Public.Types.Datsrcln>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      public.datsrcln 
+    SET
+      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , datasrc_id = ${ values.datasrcId === undefined ? sql`datasrc_id` : typed[1042](values.datasrcId) } 
+    WHERE
+      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) } AND datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
+    RETURNING ndb_no,nutr_no,datasrc_id`
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))[0]
+}
+async delete(parameters: Public.Types.DatsrclnPkey, options?: Public.Types.DatsrclnPkey.Options & Public.Tables.Datsrcln.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      public.datsrcln 
+    WHERE
+      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) } AND datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
+    RETURNING ndb_no,nutr_no,datasrc_id`
+ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))[0]
+}
+}
+
+          export class DatsrclnDatasrcIdIdx implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "datsrcln_datasrc_id_idx";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "datasrc_id", type: "pg_catalog.bpchar"}
+              ];
+            }
+        
+async read(parameters: Public.Types.DatsrclnDatasrcIdIdx, options?: Public.Types.DatsrclnDatasrcIdIdx.Options & Public.Tables.Datsrcln.Options) : Promise<Public.Types.Datsrcln[]>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      ndb_no,nutr_no,datasrc_id 
+    FROM
+      public.datsrcln 
+    WHERE
+      datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))
+}
+
+async update(parameters: Public.Types.DatsrclnDatasrcIdIdx, values: Partial<Public.Tables.Datsrcln.Values>, options?: Public.Types.DatsrclnDatasrcIdIdx.Options & Public.Tables.Datsrcln.Options) : Promise<Public.Types.Datsrcln[]>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      public.datsrcln 
+    SET
+      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , datasrc_id = ${ values.datasrcId === undefined ? sql`datasrc_id` : typed[1042](values.datasrcId) } 
+    WHERE
+      datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
+    RETURNING ndb_no,nutr_no,datasrc_id`
+return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))
+}
+async delete(parameters: Public.Types.DatsrclnDatasrcIdIdx, options?: Public.Types.DatsrclnDatasrcIdIdx.Options & Public.Tables.Datsrcln.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      public.datsrcln 
+    WHERE
+      datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
+    RETURNING ndb_no,nutr_no,datasrc_id`
+ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))
+}
+}
+}
+}
+}
+export namespace PgToast {
+export namespace Tables {
+}
+}
+
+          // begin - operation dispatch map
+          import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
+          export class OperationDispatcher {
+            private dispatchMap: Record<string, OperationDispatchMethod>;
+            constructor(private database: Database){
+              this.dispatchMap = {
+
+          
+"Public.Tables.NutData.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.create(request.values as Public.Tables.NutData.Values),
+
+             "Public.Tables.NutData.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.NutData.all(request.options as Public.Tables.NutData.Options),
+            
+"Public.Tables.NutData.NutDataPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataPkey.read(request.parameters as Public.Types.NutDataPkey,request.options as Public.Tables.NutData.Options),
+"Public.Tables.NutData.NutDataPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataPkey.update(request.parameters as Public.Types.NutDataPkey,request.values as Partial<Public.Tables.NutData.Values>),
+"Public.Tables.NutData.NutDataPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataPkey.delete(request.parameters as Public.Types.NutDataPkey),
+"Public.Tables.NutData.NutDataDerivCdIdx.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataDerivCdIdx.read(request.parameters as Public.Types.NutDataDerivCdIdx,request.options as Public.Tables.NutData.Options),
+"Public.Tables.NutData.NutDataDerivCdIdx.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataDerivCdIdx.update(request.parameters as Public.Types.NutDataDerivCdIdx,request.values as Partial<Public.Tables.NutData.Values>),
+"Public.Tables.NutData.NutDataDerivCdIdx.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataDerivCdIdx.delete(request.parameters as Public.Types.NutDataDerivCdIdx),
+"Public.Tables.NutData.NutDataNutrNoIdx.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataNutrNoIdx.read(request.parameters as Public.Types.NutDataNutrNoIdx,request.options as Public.Tables.NutData.Options),
+"Public.Tables.NutData.NutDataNutrNoIdx.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataNutrNoIdx.update(request.parameters as Public.Types.NutDataNutrNoIdx,request.values as Partial<Public.Tables.NutData.Values>),
+"Public.Tables.NutData.NutDataNutrNoIdx.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataNutrNoIdx.delete(request.parameters as Public.Types.NutDataNutrNoIdx),
+"Public.Tables.NutData.NutDataSrcCdIdx.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataSrcCdIdx.read(request.parameters as Public.Types.NutDataSrcCdIdx,request.options as Public.Tables.NutData.Options),
+"Public.Tables.NutData.NutDataSrcCdIdx.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataSrcCdIdx.update(request.parameters as Public.Types.NutDataSrcCdIdx,request.values as Partial<Public.Tables.NutData.Values>),
+"Public.Tables.NutData.NutDataSrcCdIdx.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataSrcCdIdx.delete(request.parameters as Public.Types.NutDataSrcCdIdx),
+"Public.Tables.SrcCd.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.SrcCd.create(request.values as Public.Tables.SrcCd.Values),
+
+             "Public.Tables.SrcCd.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.SrcCd.all(request.options as Public.Tables.SrcCd.Options),
+            
+"Public.Tables.SrcCd.SrcCdPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.SrcCd.SrcCdPkey.read(request.parameters as Public.Types.SrcCdPkey,request.options as Public.Tables.SrcCd.Options),
+"Public.Tables.SrcCd.SrcCdPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.SrcCd.SrcCdPkey.update(request.parameters as Public.Types.SrcCdPkey,request.values as Partial<Public.Tables.SrcCd.Values>),
+"Public.Tables.SrcCd.SrcCdPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.SrcCd.SrcCdPkey.delete(request.parameters as Public.Types.SrcCdPkey),
+"Public.Tables.Footnote.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Footnote.create(request.values as Public.Tables.Footnote.Values),
+
+             "Public.Tables.Footnote.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.Footnote.all(request.options as Public.Tables.Footnote.Options),
+            
+"Public.Tables.Footnote.FootnoteNdbNoIdx.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Footnote.FootnoteNdbNoIdx.read(request.parameters as Public.Types.FootnoteNdbNoIdx,request.options as Public.Tables.Footnote.Options),
+"Public.Tables.Footnote.FootnoteNdbNoIdx.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Footnote.FootnoteNdbNoIdx.update(request.parameters as Public.Types.FootnoteNdbNoIdx,request.values as Partial<Public.Tables.Footnote.Values>),
+"Public.Tables.Footnote.FootnoteNdbNoIdx.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Footnote.FootnoteNdbNoIdx.delete(request.parameters as Public.Types.FootnoteNdbNoIdx),
+"Public.Tables.NutrDef.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutrDef.create(request.values as Public.Tables.NutrDef.Values),
+
+             "Public.Tables.NutrDef.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.NutrDef.all(request.options as Public.Tables.NutrDef.Options),
+            
+"Public.Tables.NutrDef.NutrDefPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutrDef.NutrDefPkey.read(request.parameters as Public.Types.NutrDefPkey,request.options as Public.Tables.NutrDef.Options),
+"Public.Tables.NutrDef.NutrDefPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutrDef.NutrDefPkey.update(request.parameters as Public.Types.NutrDefPkey,request.values as Partial<Public.Tables.NutrDef.Values>),
+"Public.Tables.NutrDef.NutrDefPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutrDef.NutrDefPkey.delete(request.parameters as Public.Types.NutrDefPkey),
+"Public.Tables.DerivCd.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DerivCd.create(request.values as Public.Tables.DerivCd.Values),
+
+             "Public.Tables.DerivCd.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.DerivCd.all(request.options as Public.Tables.DerivCd.Options),
+            
+"Public.Tables.DerivCd.DerivCdPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DerivCd.DerivCdPkey.read(request.parameters as Public.Types.DerivCdPkey,request.options as Public.Tables.DerivCd.Options),
+"Public.Tables.DerivCd.DerivCdPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DerivCd.DerivCdPkey.update(request.parameters as Public.Types.DerivCdPkey,request.values as Partial<Public.Tables.DerivCd.Values>),
+"Public.Tables.DerivCd.DerivCdPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DerivCd.DerivCdPkey.delete(request.parameters as Public.Types.DerivCdPkey),
+"Public.Tables.FdGroup.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FdGroup.create(request.values as Public.Tables.FdGroup.Values),
+
+             "Public.Tables.FdGroup.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.FdGroup.all(request.options as Public.Tables.FdGroup.Options),
+            
+"Public.Tables.FdGroup.FdGroupPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FdGroup.FdGroupPkey.read(request.parameters as Public.Types.FdGroupPkey,request.options as Public.Tables.FdGroup.Options),
+"Public.Tables.FdGroup.FdGroupPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FdGroup.FdGroupPkey.update(request.parameters as Public.Types.FdGroupPkey,request.values as Partial<Public.Tables.FdGroup.Values>),
+"Public.Tables.FdGroup.FdGroupPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FdGroup.FdGroupPkey.delete(request.parameters as Public.Types.FdGroupPkey),
+"Public.Tables.Weight.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Weight.create(request.values as Public.Tables.Weight.Values),
+
+             "Public.Tables.Weight.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.Weight.all(request.options as Public.Tables.Weight.Options),
+            
+"Public.Tables.Weight.WeightPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Weight.WeightPkey.read(request.parameters as Public.Types.WeightPkey,request.options as Public.Tables.Weight.Options),
+"Public.Tables.Weight.WeightPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Weight.WeightPkey.update(request.parameters as Public.Types.WeightPkey,request.values as Partial<Public.Tables.Weight.Values>),
+"Public.Tables.Weight.WeightPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Weight.WeightPkey.delete(request.parameters as Public.Types.WeightPkey),
+"Public.Tables.FoodDes.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FoodDes.create(request.values as Public.Tables.FoodDes.Values),
+
+             "Public.Tables.FoodDes.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.FoodDes.all(request.options as Public.Tables.FoodDes.Options),
+            
+"Public.Tables.FoodDes.FoodDesPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FoodDes.FoodDesPkey.read(request.parameters as Public.Types.FoodDesPkey,request.options as Public.Tables.FoodDes.Options),
+"Public.Tables.FoodDes.FoodDesPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FoodDes.FoodDesPkey.update(request.parameters as Public.Types.FoodDesPkey,request.values as Partial<Public.Tables.FoodDes.Values>),
+"Public.Tables.FoodDes.FoodDesPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FoodDes.FoodDesPkey.delete(request.parameters as Public.Types.FoodDesPkey),
+"Public.Tables.FoodDes.FoodDesFdgrpCdIdx.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FoodDes.FoodDesFdgrpCdIdx.read(request.parameters as Public.Types.FoodDesFdgrpCdIdx,request.options as Public.Tables.FoodDes.Options),
+"Public.Tables.FoodDes.FoodDesFdgrpCdIdx.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FoodDes.FoodDesFdgrpCdIdx.update(request.parameters as Public.Types.FoodDesFdgrpCdIdx,request.values as Partial<Public.Tables.FoodDes.Values>),
+"Public.Tables.FoodDes.FoodDesFdgrpCdIdx.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FoodDes.FoodDesFdgrpCdIdx.delete(request.parameters as Public.Types.FoodDesFdgrpCdIdx),
+"Public.Tables.DataSrc.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DataSrc.create(request.values as Public.Tables.DataSrc.Values),
+
+             "Public.Tables.DataSrc.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.DataSrc.all(request.options as Public.Tables.DataSrc.Options),
+            
+"Public.Tables.DataSrc.DataSrcTitleFulltext.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DataSrc.DataSrcTitleFulltext.read(request.parameters as Public.Types.DataSrcTitleFulltext,request.options as Public.Tables.DataSrc.Options),
+"Public.Tables.DataSrc.DataSrcTitleFulltext.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DataSrc.DataSrcTitleFulltext.update(request.parameters as Public.Types.DataSrcTitleFulltext,request.values as Partial<Public.Tables.DataSrc.Values>),
+"Public.Tables.DataSrc.DataSrcTitleFulltext.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DataSrc.DataSrcTitleFulltext.delete(request.parameters as Public.Types.DataSrcTitleFulltext),
+"Public.Tables.DataSrc.DataSrcPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DataSrc.DataSrcPkey.read(request.parameters as Public.Types.DataSrcPkey,request.options as Public.Tables.DataSrc.Options),
+"Public.Tables.DataSrc.DataSrcPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DataSrc.DataSrcPkey.update(request.parameters as Public.Types.DataSrcPkey,request.values as Partial<Public.Tables.DataSrc.Values>),
+"Public.Tables.DataSrc.DataSrcPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DataSrc.DataSrcPkey.delete(request.parameters as Public.Types.DataSrcPkey),
+"Public.Tables.Datsrcln.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Datsrcln.create(request.values as Public.Tables.Datsrcln.Values),
+
+             "Public.Tables.Datsrcln.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.Datsrcln.all(request.options as Public.Tables.Datsrcln.Options),
+            
+"Public.Tables.Datsrcln.DatsrclnPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Datsrcln.DatsrclnPkey.read(request.parameters as Public.Types.DatsrclnPkey,request.options as Public.Tables.Datsrcln.Options),
+"Public.Tables.Datsrcln.DatsrclnPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Datsrcln.DatsrclnPkey.update(request.parameters as Public.Types.DatsrclnPkey,request.values as Partial<Public.Tables.Datsrcln.Values>),
+"Public.Tables.Datsrcln.DatsrclnPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Datsrcln.DatsrclnPkey.delete(request.parameters as Public.Types.DatsrclnPkey),
+"Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.read(request.parameters as Public.Types.DatsrclnDatasrcIdIdx,request.options as Public.Tables.Datsrcln.Options),
+"Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.update(request.parameters as Public.Types.DatsrclnDatasrcIdIdx,request.values as Partial<Public.Tables.Datsrcln.Values>),
+"Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.delete(request.parameters as Public.Types.DatsrclnDatasrcIdIdx),
+}
+}
+
+            async dispatch(request: EmbraceSQLRequest<object, object, object>) {
+              if (!this.dispatchMap[request.operation]) {
+                throw new Error(`${request.operation} not available`);
+              }
+              return this.dispatchMap[request.operation](request);
+            }
+            
+}
+
         // ⚠️ generated - do not modify ⚠️
 
         /**
@@ -52286,3322 +56127,4 @@ workMem: string;
 xmlbinary: string;
 xmloption: string;
 zeroDamagedPages: string;
-}
-
-            import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
-            import postgres from "postgres";
-          
-
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        type ArgumentToPostgres = any;
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        type ArgumentFromPostgres = any;
-        type Typecast = (x: ArgumentToPostgres) => ArgumentFromPostgres;
-        export interface PostgresTypecasts { 
-      
-[16]: Typecast;
-["PgCatalog.Types.Bool"]: Typecast
-[17]: Typecast;
-["PgCatalog.Types.Bytea"]: Typecast
-[18]: Typecast;
-["PgCatalog.Types.Char"]: Typecast
-[19]: Typecast;
-["PgCatalog.Types.Name"]: Typecast
-[20]: Typecast;
-["PgCatalog.Types.Int8"]: Typecast
-[21]: Typecast;
-["PgCatalog.Types.Int2"]: Typecast
-[22]: Typecast;
-["PgCatalog.Types.Int2vector"]: Typecast
-[23]: Typecast;
-["PgCatalog.Types.Int4"]: Typecast
-[24]: Typecast;
-["PgCatalog.Types.Regproc"]: Typecast
-[25]: Typecast;
-["PgCatalog.Types.Text"]: Typecast
-[26]: Typecast;
-["PgCatalog.Types.Oid"]: Typecast
-[27]: Typecast;
-["PgCatalog.Types.Tid"]: Typecast
-[28]: Typecast;
-["PgCatalog.Types.Xid"]: Typecast
-[29]: Typecast;
-["PgCatalog.Types.Cid"]: Typecast
-[30]: Typecast;
-["PgCatalog.Types.Oidvector"]: Typecast
-[71]: Typecast;
-["PgCatalog.Types.PgType"]: Typecast
-[75]: Typecast;
-["PgCatalog.Types.PgAttribute"]: Typecast
-[81]: Typecast;
-["PgCatalog.Types.PgProc"]: Typecast
-[83]: Typecast;
-["PgCatalog.Types.PgClass"]: Typecast
-[114]: Typecast;
-["PgCatalog.Types.Json"]: Typecast
-[142]: Typecast;
-["PgCatalog.Types.Xml"]: Typecast
-[194]: Typecast;
-["PgCatalog.Types.PgNodeTree"]: Typecast
-[3361]: Typecast;
-["PgCatalog.Types.PgNdistinct"]: Typecast
-[3402]: Typecast;
-["PgCatalog.Types.PgDependencies"]: Typecast
-[5017]: Typecast;
-["PgCatalog.Types.PgMcvList"]: Typecast
-[32]: Typecast;
-["PgCatalog.Types.PgDdlCommand"]: Typecast
-[5069]: Typecast;
-["PgCatalog.Types.Xid8"]: Typecast
-[600]: Typecast;
-["PgCatalog.Types.Point"]: Typecast
-[601]: Typecast;
-["PgCatalog.Types.Lseg"]: Typecast
-[602]: Typecast;
-["PgCatalog.Types.Path"]: Typecast
-[603]: Typecast;
-["PgCatalog.Types.Box"]: Typecast
-[604]: Typecast;
-["PgCatalog.Types.Polygon"]: Typecast
-[628]: Typecast;
-["PgCatalog.Types.Line"]: Typecast
-[700]: Typecast;
-["PgCatalog.Types.Float4"]: Typecast
-[701]: Typecast;
-["PgCatalog.Types.Float8"]: Typecast
-[705]: Typecast;
-["PgCatalog.Types.Unknown"]: Typecast
-[718]: Typecast;
-["PgCatalog.Types.Circle"]: Typecast
-[790]: Typecast;
-["PgCatalog.Types.Money"]: Typecast
-[829]: Typecast;
-["PgCatalog.Types.Macaddr"]: Typecast
-[869]: Typecast;
-["PgCatalog.Types.Inet"]: Typecast
-[650]: Typecast;
-["PgCatalog.Types.Cidr"]: Typecast
-[774]: Typecast;
-["PgCatalog.Types.Macaddr8"]: Typecast
-[1033]: Typecast;
-["PgCatalog.Types.Aclitem"]: Typecast
-[1042]: Typecast;
-["PgCatalog.Types.Bpchar"]: Typecast
-[1043]: Typecast;
-["PgCatalog.Types.Varchar"]: Typecast
-[1082]: Typecast;
-["PgCatalog.Types.Date"]: Typecast
-[1083]: Typecast;
-["PgCatalog.Types.Time"]: Typecast
-[1114]: Typecast;
-["PgCatalog.Types.Timestamp"]: Typecast
-[1184]: Typecast;
-["PgCatalog.Types.Timestamptz"]: Typecast
-[1186]: Typecast;
-["PgCatalog.Types.Interval"]: Typecast
-[1266]: Typecast;
-["PgCatalog.Types.Timetz"]: Typecast
-[1560]: Typecast;
-["PgCatalog.Types.Bit"]: Typecast
-[1562]: Typecast;
-["PgCatalog.Types.Varbit"]: Typecast
-[1700]: Typecast;
-["PgCatalog.Types.Numeric"]: Typecast
-[1790]: Typecast;
-["PgCatalog.Types.Refcursor"]: Typecast
-[2202]: Typecast;
-["PgCatalog.Types.Regprocedure"]: Typecast
-[2203]: Typecast;
-["PgCatalog.Types.Regoper"]: Typecast
-[2204]: Typecast;
-["PgCatalog.Types.Regoperator"]: Typecast
-[2205]: Typecast;
-["PgCatalog.Types.Regclass"]: Typecast
-[4191]: Typecast;
-["PgCatalog.Types.Regcollation"]: Typecast
-[2206]: Typecast;
-["PgCatalog.Types.Regtype"]: Typecast
-[4096]: Typecast;
-["PgCatalog.Types.Regrole"]: Typecast
-[4089]: Typecast;
-["PgCatalog.Types.Regnamespace"]: Typecast
-[2950]: Typecast;
-["PgCatalog.Types.Uuid"]: Typecast
-[3220]: Typecast;
-["PgCatalog.Types.PgLsn"]: Typecast
-[3614]: Typecast;
-["PgCatalog.Types.Tsvector"]: Typecast
-[3642]: Typecast;
-["PgCatalog.Types.Gtsvector"]: Typecast
-[3615]: Typecast;
-["PgCatalog.Types.Tsquery"]: Typecast
-[3734]: Typecast;
-["PgCatalog.Types.Regconfig"]: Typecast
-[3769]: Typecast;
-["PgCatalog.Types.Regdictionary"]: Typecast
-[3802]: Typecast;
-["PgCatalog.Types.Jsonb"]: Typecast
-[4072]: Typecast;
-["PgCatalog.Types.Jsonpath"]: Typecast
-[2970]: Typecast;
-["PgCatalog.Types.TxidSnapshot"]: Typecast
-[5038]: Typecast;
-["PgCatalog.Types.PgSnapshot"]: Typecast
-[3904]: Typecast;
-["PgCatalog.Types.Int4range"]: Typecast
-[3906]: Typecast;
-["PgCatalog.Types.Numrange"]: Typecast
-[3908]: Typecast;
-["PgCatalog.Types.Tsrange"]: Typecast
-[3910]: Typecast;
-["PgCatalog.Types.Tstzrange"]: Typecast
-[3912]: Typecast;
-["PgCatalog.Types.Daterange"]: Typecast
-[3926]: Typecast;
-["PgCatalog.Types.Int8range"]: Typecast
-[4451]: Typecast;
-["PgCatalog.Types.Int4multirange"]: Typecast
-[4532]: Typecast;
-["PgCatalog.Types.Nummultirange"]: Typecast
-[4533]: Typecast;
-["PgCatalog.Types.Tsmultirange"]: Typecast
-[4534]: Typecast;
-["PgCatalog.Types.Tstzmultirange"]: Typecast
-[4535]: Typecast;
-["PgCatalog.Types.Datemultirange"]: Typecast
-[4536]: Typecast;
-["PgCatalog.Types.Int8multirange"]: Typecast
-[2249]: Typecast;
-["PgCatalog.Types.Record"]: Typecast
-[2287]: Typecast;
-["PgCatalog.Types.RecordArray"]: Typecast
-[2275]: Typecast;
-["PgCatalog.Types.Cstring"]: Typecast
-[2276]: Typecast;
-["PgCatalog.Types.Any"]: Typecast
-[2277]: Typecast;
-["PgCatalog.Types.Anyarray"]: Typecast
-[2278]: Typecast;
-["PgCatalog.Types.Void"]: Typecast
-[2279]: Typecast;
-["PgCatalog.Types.Trigger"]: Typecast
-[3838]: Typecast;
-["PgCatalog.Types.EventTrigger"]: Typecast
-[2280]: Typecast;
-["PgCatalog.Types.LanguageHandler"]: Typecast
-[2281]: Typecast;
-["PgCatalog.Types.Internal"]: Typecast
-[2283]: Typecast;
-["PgCatalog.Types.Anyelement"]: Typecast
-[2776]: Typecast;
-["PgCatalog.Types.Anynonarray"]: Typecast
-[3500]: Typecast;
-["PgCatalog.Types.Anyenum"]: Typecast
-[3115]: Typecast;
-["PgCatalog.Types.FdwHandler"]: Typecast
-[325]: Typecast;
-["PgCatalog.Types.IndexAmHandler"]: Typecast
-[3310]: Typecast;
-["PgCatalog.Types.TsmHandler"]: Typecast
-[269]: Typecast;
-["PgCatalog.Types.TableAmHandler"]: Typecast
-[3831]: Typecast;
-["PgCatalog.Types.Anyrange"]: Typecast
-[5077]: Typecast;
-["PgCatalog.Types.Anycompatible"]: Typecast
-[5078]: Typecast;
-["PgCatalog.Types.Anycompatiblearray"]: Typecast
-[5079]: Typecast;
-["PgCatalog.Types.Anycompatiblenonarray"]: Typecast
-[5080]: Typecast;
-["PgCatalog.Types.Anycompatiblerange"]: Typecast
-[4537]: Typecast;
-["PgCatalog.Types.Anymultirange"]: Typecast
-[4538]: Typecast;
-["PgCatalog.Types.Anycompatiblemultirange"]: Typecast
-[4600]: Typecast;
-["PgCatalog.Types.PgBrinBloomSummary"]: Typecast
-[4601]: Typecast;
-["PgCatalog.Types.PgBrinMinmaxMultiSummary"]: Typecast
-[1000]: Typecast;
-["PgCatalog.Types.BoolArray"]: Typecast
-[1001]: Typecast;
-["PgCatalog.Types.ByteaArray"]: Typecast
-[1002]: Typecast;
-["PgCatalog.Types.CharArray"]: Typecast
-[1003]: Typecast;
-["PgCatalog.Types.NameArray"]: Typecast
-[1016]: Typecast;
-["PgCatalog.Types.Int8Array"]: Typecast
-[1005]: Typecast;
-["PgCatalog.Types.Int2Array"]: Typecast
-[1006]: Typecast;
-["PgCatalog.Types.Int2vectorArray"]: Typecast
-[1007]: Typecast;
-["PgCatalog.Types.Int4Array"]: Typecast
-[1008]: Typecast;
-["PgCatalog.Types.RegprocArray"]: Typecast
-[1009]: Typecast;
-["PgCatalog.Types.TextArray"]: Typecast
-[1028]: Typecast;
-["PgCatalog.Types.OidArray"]: Typecast
-[1010]: Typecast;
-["PgCatalog.Types.TidArray"]: Typecast
-[1011]: Typecast;
-["PgCatalog.Types.XidArray"]: Typecast
-[1012]: Typecast;
-["PgCatalog.Types.CidArray"]: Typecast
-[1013]: Typecast;
-["PgCatalog.Types.OidvectorArray"]: Typecast
-[210]: Typecast;
-["PgCatalog.Types.PgTypeArray"]: Typecast
-[270]: Typecast;
-["PgCatalog.Types.PgAttributeArray"]: Typecast
-[272]: Typecast;
-["PgCatalog.Types.PgProcArray"]: Typecast
-[273]: Typecast;
-["PgCatalog.Types.PgClassArray"]: Typecast
-[199]: Typecast;
-["PgCatalog.Types.JsonArray"]: Typecast
-[143]: Typecast;
-["PgCatalog.Types.XmlArray"]: Typecast
-[271]: Typecast;
-["PgCatalog.Types.Xid8Array"]: Typecast
-[1017]: Typecast;
-["PgCatalog.Types.PointArray"]: Typecast
-[1018]: Typecast;
-["PgCatalog.Types.LsegArray"]: Typecast
-[1019]: Typecast;
-["PgCatalog.Types.PathArray"]: Typecast
-[1020]: Typecast;
-["PgCatalog.Types.BoxArray"]: Typecast
-[1027]: Typecast;
-["PgCatalog.Types.PolygonArray"]: Typecast
-[629]: Typecast;
-["PgCatalog.Types.LineArray"]: Typecast
-[1021]: Typecast;
-["PgCatalog.Types.Float4Array"]: Typecast
-[1022]: Typecast;
-["PgCatalog.Types.Float8Array"]: Typecast
-[719]: Typecast;
-["PgCatalog.Types.CircleArray"]: Typecast
-[791]: Typecast;
-["PgCatalog.Types.MoneyArray"]: Typecast
-[1040]: Typecast;
-["PgCatalog.Types.MacaddrArray"]: Typecast
-[1041]: Typecast;
-["PgCatalog.Types.InetArray"]: Typecast
-[651]: Typecast;
-["PgCatalog.Types.CidrArray"]: Typecast
-[775]: Typecast;
-["PgCatalog.Types.Macaddr8Array"]: Typecast
-[1034]: Typecast;
-["PgCatalog.Types.AclitemArray"]: Typecast
-[1014]: Typecast;
-["PgCatalog.Types.BpcharArray"]: Typecast
-[1015]: Typecast;
-["PgCatalog.Types.VarcharArray"]: Typecast
-[1182]: Typecast;
-["PgCatalog.Types.DateArray"]: Typecast
-[1183]: Typecast;
-["PgCatalog.Types.TimeArray"]: Typecast
-[1115]: Typecast;
-["PgCatalog.Types.TimestampArray"]: Typecast
-[1185]: Typecast;
-["PgCatalog.Types.TimestamptzArray"]: Typecast
-[1187]: Typecast;
-["PgCatalog.Types.IntervalArray"]: Typecast
-[1270]: Typecast;
-["PgCatalog.Types.TimetzArray"]: Typecast
-[1561]: Typecast;
-["PgCatalog.Types.BitArray"]: Typecast
-[1563]: Typecast;
-["PgCatalog.Types.VarbitArray"]: Typecast
-[1231]: Typecast;
-["PgCatalog.Types.NumericArray"]: Typecast
-[2201]: Typecast;
-["PgCatalog.Types.RefcursorArray"]: Typecast
-[2207]: Typecast;
-["PgCatalog.Types.RegprocedureArray"]: Typecast
-[2208]: Typecast;
-["PgCatalog.Types.RegoperArray"]: Typecast
-[2209]: Typecast;
-["PgCatalog.Types.RegoperatorArray"]: Typecast
-[2210]: Typecast;
-["PgCatalog.Types.RegclassArray"]: Typecast
-[4192]: Typecast;
-["PgCatalog.Types.RegcollationArray"]: Typecast
-[2211]: Typecast;
-["PgCatalog.Types.RegtypeArray"]: Typecast
-[4097]: Typecast;
-["PgCatalog.Types.RegroleArray"]: Typecast
-[4090]: Typecast;
-["PgCatalog.Types.RegnamespaceArray"]: Typecast
-[2951]: Typecast;
-["PgCatalog.Types.UuidArray"]: Typecast
-[3221]: Typecast;
-["PgCatalog.Types.PgLsnArray"]: Typecast
-[3643]: Typecast;
-["PgCatalog.Types.TsvectorArray"]: Typecast
-[3644]: Typecast;
-["PgCatalog.Types.GtsvectorArray"]: Typecast
-[3645]: Typecast;
-["PgCatalog.Types.TsqueryArray"]: Typecast
-[3735]: Typecast;
-["PgCatalog.Types.RegconfigArray"]: Typecast
-[3770]: Typecast;
-["PgCatalog.Types.RegdictionaryArray"]: Typecast
-[3807]: Typecast;
-["PgCatalog.Types.JsonbArray"]: Typecast
-[4073]: Typecast;
-["PgCatalog.Types.JsonpathArray"]: Typecast
-[2949]: Typecast;
-["PgCatalog.Types.TxidSnapshotArray"]: Typecast
-[5039]: Typecast;
-["PgCatalog.Types.PgSnapshotArray"]: Typecast
-[3905]: Typecast;
-["PgCatalog.Types.Int4rangeArray"]: Typecast
-[3907]: Typecast;
-["PgCatalog.Types.NumrangeArray"]: Typecast
-[3909]: Typecast;
-["PgCatalog.Types.TsrangeArray"]: Typecast
-[3911]: Typecast;
-["PgCatalog.Types.TstzrangeArray"]: Typecast
-[3913]: Typecast;
-["PgCatalog.Types.DaterangeArray"]: Typecast
-[3927]: Typecast;
-["PgCatalog.Types.Int8rangeArray"]: Typecast
-[6150]: Typecast;
-["PgCatalog.Types.Int4multirangeArray"]: Typecast
-[6151]: Typecast;
-["PgCatalog.Types.NummultirangeArray"]: Typecast
-[6152]: Typecast;
-["PgCatalog.Types.TsmultirangeArray"]: Typecast
-[6153]: Typecast;
-["PgCatalog.Types.TstzmultirangeArray"]: Typecast
-[6155]: Typecast;
-["PgCatalog.Types.DatemultirangeArray"]: Typecast
-[6157]: Typecast;
-["PgCatalog.Types.Int8multirangeArray"]: Typecast
-[1263]: Typecast;
-["PgCatalog.Types.CstringArray"]: Typecast
-[10001]: Typecast;
-["PgCatalog.Types.PgAttrdef"]: Typecast
-[10000]: Typecast;
-["PgCatalog.Types.PgAttrdefArray"]: Typecast
-[10003]: Typecast;
-["PgCatalog.Types.PgConstraint"]: Typecast
-[10002]: Typecast;
-["PgCatalog.Types.PgConstraintArray"]: Typecast
-[10005]: Typecast;
-["PgCatalog.Types.PgInherits"]: Typecast
-[10004]: Typecast;
-["PgCatalog.Types.PgInheritsArray"]: Typecast
-[10007]: Typecast;
-["PgCatalog.Types.PgIndex"]: Typecast
-[10006]: Typecast;
-["PgCatalog.Types.PgIndexArray"]: Typecast
-[10009]: Typecast;
-["PgCatalog.Types.PgOperator"]: Typecast
-[10008]: Typecast;
-["PgCatalog.Types.PgOperatorArray"]: Typecast
-[10011]: Typecast;
-["PgCatalog.Types.PgOpfamily"]: Typecast
-[10010]: Typecast;
-["PgCatalog.Types.PgOpfamilyArray"]: Typecast
-[10013]: Typecast;
-["PgCatalog.Types.PgOpclass"]: Typecast
-[10012]: Typecast;
-["PgCatalog.Types.PgOpclassArray"]: Typecast
-[10015]: Typecast;
-["PgCatalog.Types.PgAm"]: Typecast
-[10014]: Typecast;
-["PgCatalog.Types.PgAmArray"]: Typecast
-[10017]: Typecast;
-["PgCatalog.Types.PgAmop"]: Typecast
-[10016]: Typecast;
-["PgCatalog.Types.PgAmopArray"]: Typecast
-[10019]: Typecast;
-["PgCatalog.Types.PgAmproc"]: Typecast
-[10018]: Typecast;
-["PgCatalog.Types.PgAmprocArray"]: Typecast
-[10021]: Typecast;
-["PgCatalog.Types.PgLanguage"]: Typecast
-[10020]: Typecast;
-["PgCatalog.Types.PgLanguageArray"]: Typecast
-[10023]: Typecast;
-["PgCatalog.Types.PgLargeobjectMetadata"]: Typecast
-[10022]: Typecast;
-["PgCatalog.Types.PgLargeobjectMetadataArray"]: Typecast
-[10025]: Typecast;
-["PgCatalog.Types.PgLargeobject"]: Typecast
-[10024]: Typecast;
-["PgCatalog.Types.PgLargeobjectArray"]: Typecast
-[10027]: Typecast;
-["PgCatalog.Types.PgAggregate"]: Typecast
-[10026]: Typecast;
-["PgCatalog.Types.PgAggregateArray"]: Typecast
-[10029]: Typecast;
-["PgCatalog.Types.PgStatistic"]: Typecast
-[10028]: Typecast;
-["PgCatalog.Types.PgStatisticArray"]: Typecast
-[10031]: Typecast;
-["PgCatalog.Types.PgStatisticExt"]: Typecast
-[10030]: Typecast;
-["PgCatalog.Types.PgStatisticExtArray"]: Typecast
-[10033]: Typecast;
-["PgCatalog.Types.PgStatisticExtData"]: Typecast
-[10032]: Typecast;
-["PgCatalog.Types.PgStatisticExtDataArray"]: Typecast
-[10035]: Typecast;
-["PgCatalog.Types.PgRewrite"]: Typecast
-[10034]: Typecast;
-["PgCatalog.Types.PgRewriteArray"]: Typecast
-[10037]: Typecast;
-["PgCatalog.Types.PgTrigger"]: Typecast
-[10036]: Typecast;
-["PgCatalog.Types.PgTriggerArray"]: Typecast
-[10039]: Typecast;
-["PgCatalog.Types.PgEventTrigger"]: Typecast
-[10038]: Typecast;
-["PgCatalog.Types.PgEventTriggerArray"]: Typecast
-[10041]: Typecast;
-["PgCatalog.Types.PgDescription"]: Typecast
-[10040]: Typecast;
-["PgCatalog.Types.PgDescriptionArray"]: Typecast
-[10043]: Typecast;
-["PgCatalog.Types.PgCast"]: Typecast
-[10042]: Typecast;
-["PgCatalog.Types.PgCastArray"]: Typecast
-[10045]: Typecast;
-["PgCatalog.Types.PgEnum"]: Typecast
-[10044]: Typecast;
-["PgCatalog.Types.PgEnumArray"]: Typecast
-[10047]: Typecast;
-["PgCatalog.Types.PgNamespace"]: Typecast
-[10046]: Typecast;
-["PgCatalog.Types.PgNamespaceArray"]: Typecast
-[10049]: Typecast;
-["PgCatalog.Types.PgConversion"]: Typecast
-[10048]: Typecast;
-["PgCatalog.Types.PgConversionArray"]: Typecast
-[10051]: Typecast;
-["PgCatalog.Types.PgDepend"]: Typecast
-[10050]: Typecast;
-["PgCatalog.Types.PgDependArray"]: Typecast
-[1248]: Typecast;
-["PgCatalog.Types.PgDatabase"]: Typecast
-[10052]: Typecast;
-["PgCatalog.Types.PgDatabaseArray"]: Typecast
-[10054]: Typecast;
-["PgCatalog.Types.PgDbRoleSetting"]: Typecast
-[10053]: Typecast;
-["PgCatalog.Types.PgDbRoleSettingArray"]: Typecast
-[10056]: Typecast;
-["PgCatalog.Types.PgTablespace"]: Typecast
-[10055]: Typecast;
-["PgCatalog.Types.PgTablespaceArray"]: Typecast
-[2842]: Typecast;
-["PgCatalog.Types.PgAuthid"]: Typecast
-[10057]: Typecast;
-["PgCatalog.Types.PgAuthidArray"]: Typecast
-[2843]: Typecast;
-["PgCatalog.Types.PgAuthMembers"]: Typecast
-[10058]: Typecast;
-["PgCatalog.Types.PgAuthMembersArray"]: Typecast
-[10060]: Typecast;
-["PgCatalog.Types.PgShdepend"]: Typecast
-[10059]: Typecast;
-["PgCatalog.Types.PgShdependArray"]: Typecast
-[10062]: Typecast;
-["PgCatalog.Types.PgShdescription"]: Typecast
-[10061]: Typecast;
-["PgCatalog.Types.PgShdescriptionArray"]: Typecast
-[10064]: Typecast;
-["PgCatalog.Types.PgTsConfig"]: Typecast
-[10063]: Typecast;
-["PgCatalog.Types.PgTsConfigArray"]: Typecast
-[10066]: Typecast;
-["PgCatalog.Types.PgTsConfigMap"]: Typecast
-[10065]: Typecast;
-["PgCatalog.Types.PgTsConfigMapArray"]: Typecast
-[10068]: Typecast;
-["PgCatalog.Types.PgTsDict"]: Typecast
-[10067]: Typecast;
-["PgCatalog.Types.PgTsDictArray"]: Typecast
-[10070]: Typecast;
-["PgCatalog.Types.PgTsParser"]: Typecast
-[10069]: Typecast;
-["PgCatalog.Types.PgTsParserArray"]: Typecast
-[10072]: Typecast;
-["PgCatalog.Types.PgTsTemplate"]: Typecast
-[10071]: Typecast;
-["PgCatalog.Types.PgTsTemplateArray"]: Typecast
-[10074]: Typecast;
-["PgCatalog.Types.PgExtension"]: Typecast
-[10073]: Typecast;
-["PgCatalog.Types.PgExtensionArray"]: Typecast
-[10076]: Typecast;
-["PgCatalog.Types.PgForeignDataWrapper"]: Typecast
-[10075]: Typecast;
-["PgCatalog.Types.PgForeignDataWrapperArray"]: Typecast
-[10078]: Typecast;
-["PgCatalog.Types.PgForeignServer"]: Typecast
-[10077]: Typecast;
-["PgCatalog.Types.PgForeignServerArray"]: Typecast
-[10080]: Typecast;
-["PgCatalog.Types.PgUserMapping"]: Typecast
-[10079]: Typecast;
-["PgCatalog.Types.PgUserMappingArray"]: Typecast
-[10082]: Typecast;
-["PgCatalog.Types.PgForeignTable"]: Typecast
-[10081]: Typecast;
-["PgCatalog.Types.PgForeignTableArray"]: Typecast
-[10084]: Typecast;
-["PgCatalog.Types.PgPolicy"]: Typecast
-[10083]: Typecast;
-["PgCatalog.Types.PgPolicyArray"]: Typecast
-[10086]: Typecast;
-["PgCatalog.Types.PgReplicationOrigin"]: Typecast
-[10085]: Typecast;
-["PgCatalog.Types.PgReplicationOriginArray"]: Typecast
-[10088]: Typecast;
-["PgCatalog.Types.PgDefaultAcl"]: Typecast
-[10087]: Typecast;
-["PgCatalog.Types.PgDefaultAclArray"]: Typecast
-[10090]: Typecast;
-["PgCatalog.Types.PgInitPrivs"]: Typecast
-[10089]: Typecast;
-["PgCatalog.Types.PgInitPrivsArray"]: Typecast
-[10092]: Typecast;
-["PgCatalog.Types.PgSeclabel"]: Typecast
-[10091]: Typecast;
-["PgCatalog.Types.PgSeclabelArray"]: Typecast
-[4066]: Typecast;
-["PgCatalog.Types.PgShseclabel"]: Typecast
-[10093]: Typecast;
-["PgCatalog.Types.PgShseclabelArray"]: Typecast
-[10095]: Typecast;
-["PgCatalog.Types.PgCollation"]: Typecast
-[10094]: Typecast;
-["PgCatalog.Types.PgCollationArray"]: Typecast
-[10097]: Typecast;
-["PgCatalog.Types.PgParameterAcl"]: Typecast
-[10096]: Typecast;
-["PgCatalog.Types.PgParameterAclArray"]: Typecast
-[10099]: Typecast;
-["PgCatalog.Types.PgPartitionedTable"]: Typecast
-[10098]: Typecast;
-["PgCatalog.Types.PgPartitionedTableArray"]: Typecast
-[10101]: Typecast;
-["PgCatalog.Types.PgRange"]: Typecast
-[10100]: Typecast;
-["PgCatalog.Types.PgRangeArray"]: Typecast
-[10103]: Typecast;
-["PgCatalog.Types.PgTransform"]: Typecast
-[10102]: Typecast;
-["PgCatalog.Types.PgTransformArray"]: Typecast
-[10105]: Typecast;
-["PgCatalog.Types.PgSequence"]: Typecast
-[10104]: Typecast;
-["PgCatalog.Types.PgSequenceArray"]: Typecast
-[10107]: Typecast;
-["PgCatalog.Types.PgPublication"]: Typecast
-[10106]: Typecast;
-["PgCatalog.Types.PgPublicationArray"]: Typecast
-[10109]: Typecast;
-["PgCatalog.Types.PgPublicationNamespace"]: Typecast
-[10108]: Typecast;
-["PgCatalog.Types.PgPublicationNamespaceArray"]: Typecast
-[10111]: Typecast;
-["PgCatalog.Types.PgPublicationRel"]: Typecast
-[10110]: Typecast;
-["PgCatalog.Types.PgPublicationRelArray"]: Typecast
-[6101]: Typecast;
-["PgCatalog.Types.PgSubscription"]: Typecast
-[10112]: Typecast;
-["PgCatalog.Types.PgSubscriptionArray"]: Typecast
-[10114]: Typecast;
-["PgCatalog.Types.PgSubscriptionRel"]: Typecast
-[10113]: Typecast;
-["PgCatalog.Types.PgSubscriptionRelArray"]: Typecast
-[12002]: Typecast;
-["PgCatalog.Types.PgRoles"]: Typecast
-[12001]: Typecast;
-["PgCatalog.Types.PgRolesArray"]: Typecast
-[12007]: Typecast;
-["PgCatalog.Types.PgShadow"]: Typecast
-[12006]: Typecast;
-["PgCatalog.Types.PgShadowArray"]: Typecast
-[12012]: Typecast;
-["PgCatalog.Types.PgGroup"]: Typecast
-[12011]: Typecast;
-["PgCatalog.Types.PgGroupArray"]: Typecast
-[12016]: Typecast;
-["PgCatalog.Types.PgUser"]: Typecast
-[12015]: Typecast;
-["PgCatalog.Types.PgUserArray"]: Typecast
-[12020]: Typecast;
-["PgCatalog.Types.PgPolicies"]: Typecast
-[12019]: Typecast;
-["PgCatalog.Types.PgPoliciesArray"]: Typecast
-[12025]: Typecast;
-["PgCatalog.Types.PgRules"]: Typecast
-[12024]: Typecast;
-["PgCatalog.Types.PgRulesArray"]: Typecast
-[12030]: Typecast;
-["PgCatalog.Types.PgViews"]: Typecast
-[12029]: Typecast;
-["PgCatalog.Types.PgViewsArray"]: Typecast
-[12035]: Typecast;
-["PgCatalog.Types.PgTables"]: Typecast
-[12034]: Typecast;
-["PgCatalog.Types.PgTablesArray"]: Typecast
-[12040]: Typecast;
-["PgCatalog.Types.PgMatviews"]: Typecast
-[12039]: Typecast;
-["PgCatalog.Types.PgMatviewsArray"]: Typecast
-[12045]: Typecast;
-["PgCatalog.Types.PgIndexes"]: Typecast
-[12044]: Typecast;
-["PgCatalog.Types.PgIndexesArray"]: Typecast
-[12050]: Typecast;
-["PgCatalog.Types.PgSequences"]: Typecast
-[12049]: Typecast;
-["PgCatalog.Types.PgSequencesArray"]: Typecast
-[12055]: Typecast;
-["PgCatalog.Types.PgStats"]: Typecast
-[12054]: Typecast;
-["PgCatalog.Types.PgStatsArray"]: Typecast
-[12060]: Typecast;
-["PgCatalog.Types.PgStatsExt"]: Typecast
-[12059]: Typecast;
-["PgCatalog.Types.PgStatsExtArray"]: Typecast
-[12065]: Typecast;
-["PgCatalog.Types.PgStatsExtExprs"]: Typecast
-[12064]: Typecast;
-["PgCatalog.Types.PgStatsExtExprsArray"]: Typecast
-[12070]: Typecast;
-["PgCatalog.Types.PgPublicationTables"]: Typecast
-[12069]: Typecast;
-["PgCatalog.Types.PgPublicationTablesArray"]: Typecast
-[12075]: Typecast;
-["PgCatalog.Types.PgLocks"]: Typecast
-[12074]: Typecast;
-["PgCatalog.Types.PgLocksArray"]: Typecast
-[12079]: Typecast;
-["PgCatalog.Types.PgCursors"]: Typecast
-[12078]: Typecast;
-["PgCatalog.Types.PgCursorsArray"]: Typecast
-[12083]: Typecast;
-["PgCatalog.Types.PgAvailableExtensions"]: Typecast
-[12082]: Typecast;
-["PgCatalog.Types.PgAvailableExtensionsArray"]: Typecast
-[12087]: Typecast;
-["PgCatalog.Types.PgAvailableExtensionVersions"]: Typecast
-[12086]: Typecast;
-["PgCatalog.Types.PgAvailableExtensionVersionsArray"]: Typecast
-[12092]: Typecast;
-["PgCatalog.Types.PgPreparedXacts"]: Typecast
-[12091]: Typecast;
-["PgCatalog.Types.PgPreparedXactsArray"]: Typecast
-[12097]: Typecast;
-["PgCatalog.Types.PgPreparedStatements"]: Typecast
-[12096]: Typecast;
-["PgCatalog.Types.PgPreparedStatementsArray"]: Typecast
-[12101]: Typecast;
-["PgCatalog.Types.PgSeclabels"]: Typecast
-[12100]: Typecast;
-["PgCatalog.Types.PgSeclabelsArray"]: Typecast
-[12106]: Typecast;
-["PgCatalog.Types.PgSettings"]: Typecast
-[12105]: Typecast;
-["PgCatalog.Types.PgSettingsArray"]: Typecast
-[12112]: Typecast;
-["PgCatalog.Types.PgFileSettings"]: Typecast
-[12111]: Typecast;
-["PgCatalog.Types.PgFileSettingsArray"]: Typecast
-[12116]: Typecast;
-["PgCatalog.Types.PgHbaFileRules"]: Typecast
-[12115]: Typecast;
-["PgCatalog.Types.PgHbaFileRulesArray"]: Typecast
-[12120]: Typecast;
-["PgCatalog.Types.PgIdentFileMappings"]: Typecast
-[12119]: Typecast;
-["PgCatalog.Types.PgIdentFileMappingsArray"]: Typecast
-[12124]: Typecast;
-["PgCatalog.Types.PgTimezoneAbbrevs"]: Typecast
-[12123]: Typecast;
-["PgCatalog.Types.PgTimezoneAbbrevsArray"]: Typecast
-[12128]: Typecast;
-["PgCatalog.Types.PgTimezoneNames"]: Typecast
-[12127]: Typecast;
-["PgCatalog.Types.PgTimezoneNamesArray"]: Typecast
-[12132]: Typecast;
-["PgCatalog.Types.PgConfig"]: Typecast
-[12131]: Typecast;
-["PgCatalog.Types.PgConfigArray"]: Typecast
-[12136]: Typecast;
-["PgCatalog.Types.PgShmemAllocations"]: Typecast
-[12135]: Typecast;
-["PgCatalog.Types.PgShmemAllocationsArray"]: Typecast
-[12140]: Typecast;
-["PgCatalog.Types.PgBackendMemoryContexts"]: Typecast
-[12139]: Typecast;
-["PgCatalog.Types.PgBackendMemoryContextsArray"]: Typecast
-[12144]: Typecast;
-["PgCatalog.Types.PgStatAllTables"]: Typecast
-[12143]: Typecast;
-["PgCatalog.Types.PgStatAllTablesArray"]: Typecast
-[12149]: Typecast;
-["PgCatalog.Types.PgStatXactAllTables"]: Typecast
-[12148]: Typecast;
-["PgCatalog.Types.PgStatXactAllTablesArray"]: Typecast
-[12154]: Typecast;
-["PgCatalog.Types.PgStatSysTables"]: Typecast
-[12153]: Typecast;
-["PgCatalog.Types.PgStatSysTablesArray"]: Typecast
-[12159]: Typecast;
-["PgCatalog.Types.PgStatXactSysTables"]: Typecast
-[12158]: Typecast;
-["PgCatalog.Types.PgStatXactSysTablesArray"]: Typecast
-[12163]: Typecast;
-["PgCatalog.Types.PgStatUserTables"]: Typecast
-[12162]: Typecast;
-["PgCatalog.Types.PgStatUserTablesArray"]: Typecast
-[12168]: Typecast;
-["PgCatalog.Types.PgStatXactUserTables"]: Typecast
-[12167]: Typecast;
-["PgCatalog.Types.PgStatXactUserTablesArray"]: Typecast
-[12172]: Typecast;
-["PgCatalog.Types.PgStatioAllTables"]: Typecast
-[12171]: Typecast;
-["PgCatalog.Types.PgStatioAllTablesArray"]: Typecast
-[12177]: Typecast;
-["PgCatalog.Types.PgStatioSysTables"]: Typecast
-[12176]: Typecast;
-["PgCatalog.Types.PgStatioSysTablesArray"]: Typecast
-[12181]: Typecast;
-["PgCatalog.Types.PgStatioUserTables"]: Typecast
-[12180]: Typecast;
-["PgCatalog.Types.PgStatioUserTablesArray"]: Typecast
-[12185]: Typecast;
-["PgCatalog.Types.PgStatAllIndexes"]: Typecast
-[12184]: Typecast;
-["PgCatalog.Types.PgStatAllIndexesArray"]: Typecast
-[12190]: Typecast;
-["PgCatalog.Types.PgStatSysIndexes"]: Typecast
-[12189]: Typecast;
-["PgCatalog.Types.PgStatSysIndexesArray"]: Typecast
-[12194]: Typecast;
-["PgCatalog.Types.PgStatUserIndexes"]: Typecast
-[12193]: Typecast;
-["PgCatalog.Types.PgStatUserIndexesArray"]: Typecast
-[12198]: Typecast;
-["PgCatalog.Types.PgStatioAllIndexes"]: Typecast
-[12197]: Typecast;
-["PgCatalog.Types.PgStatioAllIndexesArray"]: Typecast
-[12203]: Typecast;
-["PgCatalog.Types.PgStatioSysIndexes"]: Typecast
-[12202]: Typecast;
-["PgCatalog.Types.PgStatioSysIndexesArray"]: Typecast
-[12207]: Typecast;
-["PgCatalog.Types.PgStatioUserIndexes"]: Typecast
-[12206]: Typecast;
-["PgCatalog.Types.PgStatioUserIndexesArray"]: Typecast
-[12211]: Typecast;
-["PgCatalog.Types.PgStatioAllSequences"]: Typecast
-[12210]: Typecast;
-["PgCatalog.Types.PgStatioAllSequencesArray"]: Typecast
-[12216]: Typecast;
-["PgCatalog.Types.PgStatioSysSequences"]: Typecast
-[12215]: Typecast;
-["PgCatalog.Types.PgStatioSysSequencesArray"]: Typecast
-[12220]: Typecast;
-["PgCatalog.Types.PgStatioUserSequences"]: Typecast
-[12219]: Typecast;
-["PgCatalog.Types.PgStatioUserSequencesArray"]: Typecast
-[12224]: Typecast;
-["PgCatalog.Types.PgStatActivity"]: Typecast
-[12223]: Typecast;
-["PgCatalog.Types.PgStatActivityArray"]: Typecast
-[12229]: Typecast;
-["PgCatalog.Types.PgStatReplication"]: Typecast
-[12228]: Typecast;
-["PgCatalog.Types.PgStatReplicationArray"]: Typecast
-[12234]: Typecast;
-["PgCatalog.Types.PgStatSlru"]: Typecast
-[12233]: Typecast;
-["PgCatalog.Types.PgStatSlruArray"]: Typecast
-[12238]: Typecast;
-["PgCatalog.Types.PgStatWalReceiver"]: Typecast
-[12237]: Typecast;
-["PgCatalog.Types.PgStatWalReceiverArray"]: Typecast
-[12242]: Typecast;
-["PgCatalog.Types.PgStatRecoveryPrefetch"]: Typecast
-[12241]: Typecast;
-["PgCatalog.Types.PgStatRecoveryPrefetchArray"]: Typecast
-[12246]: Typecast;
-["PgCatalog.Types.PgStatSubscription"]: Typecast
-[12245]: Typecast;
-["PgCatalog.Types.PgStatSubscriptionArray"]: Typecast
-[12251]: Typecast;
-["PgCatalog.Types.PgStatSsl"]: Typecast
-[12250]: Typecast;
-["PgCatalog.Types.PgStatSslArray"]: Typecast
-[12255]: Typecast;
-["PgCatalog.Types.PgStatGssapi"]: Typecast
-[12254]: Typecast;
-["PgCatalog.Types.PgStatGssapiArray"]: Typecast
-[12259]: Typecast;
-["PgCatalog.Types.PgReplicationSlots"]: Typecast
-[12258]: Typecast;
-["PgCatalog.Types.PgReplicationSlotsArray"]: Typecast
-[12264]: Typecast;
-["PgCatalog.Types.PgStatReplicationSlots"]: Typecast
-[12263]: Typecast;
-["PgCatalog.Types.PgStatReplicationSlotsArray"]: Typecast
-[12268]: Typecast;
-["PgCatalog.Types.PgStatDatabase"]: Typecast
-[12267]: Typecast;
-["PgCatalog.Types.PgStatDatabaseArray"]: Typecast
-[12273]: Typecast;
-["PgCatalog.Types.PgStatDatabaseConflicts"]: Typecast
-[12272]: Typecast;
-["PgCatalog.Types.PgStatDatabaseConflictsArray"]: Typecast
-[12277]: Typecast;
-["PgCatalog.Types.PgStatUserFunctions"]: Typecast
-[12276]: Typecast;
-["PgCatalog.Types.PgStatUserFunctionsArray"]: Typecast
-[12282]: Typecast;
-["PgCatalog.Types.PgStatXactUserFunctions"]: Typecast
-[12281]: Typecast;
-["PgCatalog.Types.PgStatXactUserFunctionsArray"]: Typecast
-[12287]: Typecast;
-["PgCatalog.Types.PgStatArchiver"]: Typecast
-[12286]: Typecast;
-["PgCatalog.Types.PgStatArchiverArray"]: Typecast
-[12291]: Typecast;
-["PgCatalog.Types.PgStatBgwriter"]: Typecast
-[12290]: Typecast;
-["PgCatalog.Types.PgStatBgwriterArray"]: Typecast
-[12295]: Typecast;
-["PgCatalog.Types.PgStatIo"]: Typecast
-[12294]: Typecast;
-["PgCatalog.Types.PgStatIoArray"]: Typecast
-[12299]: Typecast;
-["PgCatalog.Types.PgStatWal"]: Typecast
-[12298]: Typecast;
-["PgCatalog.Types.PgStatWalArray"]: Typecast
-[12303]: Typecast;
-["PgCatalog.Types.PgStatProgressAnalyze"]: Typecast
-[12302]: Typecast;
-["PgCatalog.Types.PgStatProgressAnalyzeArray"]: Typecast
-[12308]: Typecast;
-["PgCatalog.Types.PgStatProgressVacuum"]: Typecast
-[12307]: Typecast;
-["PgCatalog.Types.PgStatProgressVacuumArray"]: Typecast
-[12313]: Typecast;
-["PgCatalog.Types.PgStatProgressCluster"]: Typecast
-[12312]: Typecast;
-["PgCatalog.Types.PgStatProgressClusterArray"]: Typecast
-[12318]: Typecast;
-["PgCatalog.Types.PgStatProgressCreateIndex"]: Typecast
-[12317]: Typecast;
-["PgCatalog.Types.PgStatProgressCreateIndexArray"]: Typecast
-[12323]: Typecast;
-["PgCatalog.Types.PgStatProgressBasebackup"]: Typecast
-[12322]: Typecast;
-["PgCatalog.Types.PgStatProgressBasebackupArray"]: Typecast
-[12328]: Typecast;
-["PgCatalog.Types.PgStatProgressCopy"]: Typecast
-[12327]: Typecast;
-["PgCatalog.Types.PgStatProgressCopyArray"]: Typecast
-[12333]: Typecast;
-["PgCatalog.Types.PgUserMappings"]: Typecast
-[12332]: Typecast;
-["PgCatalog.Types.PgUserMappingsArray"]: Typecast
-[12338]: Typecast;
-["PgCatalog.Types.PgReplicationOriginStatus"]: Typecast
-[12337]: Typecast;
-["PgCatalog.Types.PgReplicationOriginStatusArray"]: Typecast
-[12342]: Typecast;
-["PgCatalog.Types.PgStatSubscriptionStats"]: Typecast
-[12341]: Typecast;
-["PgCatalog.Types.PgStatSubscriptionStatsArray"]: Typecast
-[2690]: Typecast;
-["PgCatalog.Types.PgProcOidIndex"]: Typecast
-[2691]: Typecast;
-["PgCatalog.Types.PgProcPronameArgsNspIndex"]: Typecast
-[2703]: Typecast;
-["PgCatalog.Types.PgTypeOidIndex"]: Typecast
-[2704]: Typecast;
-["PgCatalog.Types.PgTypeTypnameNspIndex"]: Typecast
-[2658]: Typecast;
-["PgCatalog.Types.PgAttributeRelidAttnamIndex"]: Typecast
-[2659]: Typecast;
-["PgCatalog.Types.PgAttributeRelidAttnumIndex"]: Typecast
-[2662]: Typecast;
-["PgCatalog.Types.PgClassOidIndex"]: Typecast
-[2663]: Typecast;
-["PgCatalog.Types.PgClassRelnameNspIndex"]: Typecast
-[3455]: Typecast;
-["PgCatalog.Types.PgClassTblspcRelfilenodeIndex"]: Typecast
-[2656]: Typecast;
-["PgCatalog.Types.PgAttrdefAdrelidAdnumIndex"]: Typecast
-[2657]: Typecast;
-["PgCatalog.Types.PgAttrdefOidIndex"]: Typecast
-[2664]: Typecast;
-["PgCatalog.Types.PgConstraintConnameNspIndex"]: Typecast
-[2665]: Typecast;
-["PgCatalog.Types.PgConstraintConrelidContypidConnameIndex"]: Typecast
-[2666]: Typecast;
-["PgCatalog.Types.PgConstraintContypidIndex"]: Typecast
-[2667]: Typecast;
-["PgCatalog.Types.PgConstraintOidIndex"]: Typecast
-[2579]: Typecast;
-["PgCatalog.Types.PgConstraintConparentidIndex"]: Typecast
-[2680]: Typecast;
-["PgCatalog.Types.PgInheritsRelidSeqnoIndex"]: Typecast
-[2187]: Typecast;
-["PgCatalog.Types.PgInheritsParentIndex"]: Typecast
-[2678]: Typecast;
-["PgCatalog.Types.PgIndexIndrelidIndex"]: Typecast
-[2679]: Typecast;
-["PgCatalog.Types.PgIndexIndexrelidIndex"]: Typecast
-[2688]: Typecast;
-["PgCatalog.Types.PgOperatorOidIndex"]: Typecast
-[2689]: Typecast;
-["PgCatalog.Types.PgOperatorOprnameLRNIndex"]: Typecast
-[2754]: Typecast;
-["PgCatalog.Types.PgOpfamilyAmNameNspIndex"]: Typecast
-[2755]: Typecast;
-["PgCatalog.Types.PgOpfamilyOidIndex"]: Typecast
-[2686]: Typecast;
-["PgCatalog.Types.PgOpclassAmNameNspIndex"]: Typecast
-[2687]: Typecast;
-["PgCatalog.Types.PgOpclassOidIndex"]: Typecast
-[2651]: Typecast;
-["PgCatalog.Types.PgAmNameIndex"]: Typecast
-[2652]: Typecast;
-["PgCatalog.Types.PgAmOidIndex"]: Typecast
-[2653]: Typecast;
-["PgCatalog.Types.PgAmopFamStratIndex"]: Typecast
-[2654]: Typecast;
-["PgCatalog.Types.PgAmopOprFamIndex"]: Typecast
-[2756]: Typecast;
-["PgCatalog.Types.PgAmopOidIndex"]: Typecast
-[2655]: Typecast;
-["PgCatalog.Types.PgAmprocFamProcIndex"]: Typecast
-[2757]: Typecast;
-["PgCatalog.Types.PgAmprocOidIndex"]: Typecast
-[2681]: Typecast;
-["PgCatalog.Types.PgLanguageNameIndex"]: Typecast
-[2682]: Typecast;
-["PgCatalog.Types.PgLanguageOidIndex"]: Typecast
-[2996]: Typecast;
-["PgCatalog.Types.PgLargeobjectMetadataOidIndex"]: Typecast
-[2683]: Typecast;
-["PgCatalog.Types.PgLargeobjectLoidPnIndex"]: Typecast
-[2650]: Typecast;
-["PgCatalog.Types.PgAggregateFnoidIndex"]: Typecast
-[2696]: Typecast;
-["PgCatalog.Types.PgStatisticRelidAttInhIndex"]: Typecast
-[3380]: Typecast;
-["PgCatalog.Types.PgStatisticExtOidIndex"]: Typecast
-[3997]: Typecast;
-["PgCatalog.Types.PgStatisticExtNameIndex"]: Typecast
-[3379]: Typecast;
-["PgCatalog.Types.PgStatisticExtRelidIndex"]: Typecast
-[3433]: Typecast;
-["PgCatalog.Types.PgStatisticExtDataStxoidInhIndex"]: Typecast
-[2692]: Typecast;
-["PgCatalog.Types.PgRewriteOidIndex"]: Typecast
-[2693]: Typecast;
-["PgCatalog.Types.PgRewriteRelRulenameIndex"]: Typecast
-[2699]: Typecast;
-["PgCatalog.Types.PgTriggerTgconstraintIndex"]: Typecast
-[2701]: Typecast;
-["PgCatalog.Types.PgTriggerTgrelidTgnameIndex"]: Typecast
-[2702]: Typecast;
-["PgCatalog.Types.PgTriggerOidIndex"]: Typecast
-[3467]: Typecast;
-["PgCatalog.Types.PgEventTriggerEvtnameIndex"]: Typecast
-[3468]: Typecast;
-["PgCatalog.Types.PgEventTriggerOidIndex"]: Typecast
-[2675]: Typecast;
-["PgCatalog.Types.PgDescriptionOCOIndex"]: Typecast
-[2660]: Typecast;
-["PgCatalog.Types.PgCastOidIndex"]: Typecast
-[2661]: Typecast;
-["PgCatalog.Types.PgCastSourceTargetIndex"]: Typecast
-[3502]: Typecast;
-["PgCatalog.Types.PgEnumOidIndex"]: Typecast
-[3503]: Typecast;
-["PgCatalog.Types.PgEnumTypidLabelIndex"]: Typecast
-[3534]: Typecast;
-["PgCatalog.Types.PgEnumTypidSortorderIndex"]: Typecast
-[2684]: Typecast;
-["PgCatalog.Types.PgNamespaceNspnameIndex"]: Typecast
-[2685]: Typecast;
-["PgCatalog.Types.PgNamespaceOidIndex"]: Typecast
-[2668]: Typecast;
-["PgCatalog.Types.PgConversionDefaultIndex"]: Typecast
-[2669]: Typecast;
-["PgCatalog.Types.PgConversionNameNspIndex"]: Typecast
-[2670]: Typecast;
-["PgCatalog.Types.PgConversionOidIndex"]: Typecast
-[2673]: Typecast;
-["PgCatalog.Types.PgDependDependerIndex"]: Typecast
-[2674]: Typecast;
-["PgCatalog.Types.PgDependReferenceIndex"]: Typecast
-[2671]: Typecast;
-["PgCatalog.Types.PgDatabaseDatnameIndex"]: Typecast
-[2672]: Typecast;
-["PgCatalog.Types.PgDatabaseOidIndex"]: Typecast
-[2965]: Typecast;
-["PgCatalog.Types.PgDbRoleSettingDatabaseidRolIndex"]: Typecast
-[2697]: Typecast;
-["PgCatalog.Types.PgTablespaceOidIndex"]: Typecast
-[2698]: Typecast;
-["PgCatalog.Types.PgTablespaceSpcnameIndex"]: Typecast
-[2676]: Typecast;
-["PgCatalog.Types.PgAuthidRolnameIndex"]: Typecast
-[2677]: Typecast;
-["PgCatalog.Types.PgAuthidOidIndex"]: Typecast
-[6303]: Typecast;
-["PgCatalog.Types.PgAuthMembersOidIndex"]: Typecast
-[2694]: Typecast;
-["PgCatalog.Types.PgAuthMembersRoleMemberIndex"]: Typecast
-[2695]: Typecast;
-["PgCatalog.Types.PgAuthMembersMemberRoleIndex"]: Typecast
-[6302]: Typecast;
-["PgCatalog.Types.PgAuthMembersGrantorIndex"]: Typecast
-[1232]: Typecast;
-["PgCatalog.Types.PgShdependDependerIndex"]: Typecast
-[1233]: Typecast;
-["PgCatalog.Types.PgShdependReferenceIndex"]: Typecast
-[2397]: Typecast;
-["PgCatalog.Types.PgShdescriptionOCIndex"]: Typecast
-[3608]: Typecast;
-["PgCatalog.Types.PgTsConfigCfgnameIndex"]: Typecast
-[3712]: Typecast;
-["PgCatalog.Types.PgTsConfigOidIndex"]: Typecast
-[3609]: Typecast;
-["PgCatalog.Types.PgTsConfigMapIndex"]: Typecast
-[3604]: Typecast;
-["PgCatalog.Types.PgTsDictDictnameIndex"]: Typecast
-[3605]: Typecast;
-["PgCatalog.Types.PgTsDictOidIndex"]: Typecast
-[3606]: Typecast;
-["PgCatalog.Types.PgTsParserPrsnameIndex"]: Typecast
-[3607]: Typecast;
-["PgCatalog.Types.PgTsParserOidIndex"]: Typecast
-[3766]: Typecast;
-["PgCatalog.Types.PgTsTemplateTmplnameIndex"]: Typecast
-[3767]: Typecast;
-["PgCatalog.Types.PgTsTemplateOidIndex"]: Typecast
-[3080]: Typecast;
-["PgCatalog.Types.PgExtensionOidIndex"]: Typecast
-[3081]: Typecast;
-["PgCatalog.Types.PgExtensionNameIndex"]: Typecast
-[112]: Typecast;
-["PgCatalog.Types.PgForeignDataWrapperOidIndex"]: Typecast
-[548]: Typecast;
-["PgCatalog.Types.PgForeignDataWrapperNameIndex"]: Typecast
-[113]: Typecast;
-["PgCatalog.Types.PgForeignServerOidIndex"]: Typecast
-[549]: Typecast;
-["PgCatalog.Types.PgForeignServerNameIndex"]: Typecast
-[174]: Typecast;
-["PgCatalog.Types.PgUserMappingOidIndex"]: Typecast
-[175]: Typecast;
-["PgCatalog.Types.PgUserMappingUserServerIndex"]: Typecast
-[3119]: Typecast;
-["PgCatalog.Types.PgForeignTableRelidIndex"]: Typecast
-[3257]: Typecast;
-["PgCatalog.Types.PgPolicyOidIndex"]: Typecast
-[3258]: Typecast;
-["PgCatalog.Types.PgPolicyPolrelidPolnameIndex"]: Typecast
-[6001]: Typecast;
-["PgCatalog.Types.PgReplicationOriginRoiidentIndex"]: Typecast
-[6002]: Typecast;
-["PgCatalog.Types.PgReplicationOriginRonameIndex"]: Typecast
-[827]: Typecast;
-["PgCatalog.Types.PgDefaultAclRoleNspObjIndex"]: Typecast
-[828]: Typecast;
-["PgCatalog.Types.PgDefaultAclOidIndex"]: Typecast
-[3395]: Typecast;
-["PgCatalog.Types.PgInitPrivsOCOIndex"]: Typecast
-[3597]: Typecast;
-["PgCatalog.Types.PgSeclabelObjectIndex"]: Typecast
-[3593]: Typecast;
-["PgCatalog.Types.PgShseclabelObjectIndex"]: Typecast
-[3164]: Typecast;
-["PgCatalog.Types.PgCollationNameEncNspIndex"]: Typecast
-[3085]: Typecast;
-["PgCatalog.Types.PgCollationOidIndex"]: Typecast
-[6246]: Typecast;
-["PgCatalog.Types.PgParameterAclParnameIndex"]: Typecast
-[6247]: Typecast;
-["PgCatalog.Types.PgParameterAclOidIndex"]: Typecast
-[3351]: Typecast;
-["PgCatalog.Types.PgPartitionedTablePartrelidIndex"]: Typecast
-[3542]: Typecast;
-["PgCatalog.Types.PgRangeRngtypidIndex"]: Typecast
-[2228]: Typecast;
-["PgCatalog.Types.PgRangeRngmultitypidIndex"]: Typecast
-[3574]: Typecast;
-["PgCatalog.Types.PgTransformOidIndex"]: Typecast
-[3575]: Typecast;
-["PgCatalog.Types.PgTransformTypeLangIndex"]: Typecast
-[5002]: Typecast;
-["PgCatalog.Types.PgSequenceSeqrelidIndex"]: Typecast
-[6110]: Typecast;
-["PgCatalog.Types.PgPublicationOidIndex"]: Typecast
-[6111]: Typecast;
-["PgCatalog.Types.PgPublicationPubnameIndex"]: Typecast
-[6238]: Typecast;
-["PgCatalog.Types.PgPublicationNamespaceOidIndex"]: Typecast
-[6239]: Typecast;
-["PgCatalog.Types.PgPublicationNamespacePnnspidPnpubidIndex"]: Typecast
-[6112]: Typecast;
-["PgCatalog.Types.PgPublicationRelOidIndex"]: Typecast
-[6113]: Typecast;
-["PgCatalog.Types.PgPublicationRelPrrelidPrpubidIndex"]: Typecast
-[6116]: Typecast;
-["PgCatalog.Types.PgPublicationRelPrpubidIndex"]: Typecast
-[6114]: Typecast;
-["PgCatalog.Types.PgSubscriptionOidIndex"]: Typecast
-[6115]: Typecast;
-["PgCatalog.Types.PgSubscriptionSubnameIndex"]: Typecast
-[6117]: Typecast;
-["PgCatalog.Types.PgSubscriptionRelSrrelidSrsubidIndex"]: Typecast
-[13488]: Typecast;
-["InformationSchema.Types.CardinalNumber"]: Typecast
-[13487]: Typecast;
-["InformationSchema.Types.CardinalNumberArray"]: Typecast
-[13491]: Typecast;
-["InformationSchema.Types.CharacterData"]: Typecast
-[13490]: Typecast;
-["InformationSchema.Types.CharacterDataArray"]: Typecast
-[13493]: Typecast;
-["InformationSchema.Types.SqlIdentifier"]: Typecast
-[13492]: Typecast;
-["InformationSchema.Types.SqlIdentifierArray"]: Typecast
-[13496]: Typecast;
-["InformationSchema.Types.InformationSchemaCatalogName"]: Typecast
-[13495]: Typecast;
-["InformationSchema.Types.InformationSchemaCatalogNameArray"]: Typecast
-[13499]: Typecast;
-["InformationSchema.Types.TimeStamp"]: Typecast
-[13498]: Typecast;
-["InformationSchema.Types.TimeStampArray"]: Typecast
-[13501]: Typecast;
-["InformationSchema.Types.YesOrNo"]: Typecast
-[13500]: Typecast;
-["InformationSchema.Types.YesOrNoArray"]: Typecast
-[13505]: Typecast;
-["InformationSchema.Types.ApplicableRoles"]: Typecast
-[13504]: Typecast;
-["InformationSchema.Types.ApplicableRolesArray"]: Typecast
-[13510]: Typecast;
-["InformationSchema.Types.AdministrableRoleAuthorizations"]: Typecast
-[13509]: Typecast;
-["InformationSchema.Types.AdministrableRoleAuthorizationsArray"]: Typecast
-[13514]: Typecast;
-["InformationSchema.Types.Attributes"]: Typecast
-[13513]: Typecast;
-["InformationSchema.Types.AttributesArray"]: Typecast
-[13519]: Typecast;
-["InformationSchema.Types.CharacterSets"]: Typecast
-[13518]: Typecast;
-["InformationSchema.Types.CharacterSetsArray"]: Typecast
-[13524]: Typecast;
-["InformationSchema.Types.CheckConstraintRoutineUsage"]: Typecast
-[13523]: Typecast;
-["InformationSchema.Types.CheckConstraintRoutineUsageArray"]: Typecast
-[13529]: Typecast;
-["InformationSchema.Types.CheckConstraints"]: Typecast
-[13528]: Typecast;
-["InformationSchema.Types.CheckConstraintsArray"]: Typecast
-[13534]: Typecast;
-["InformationSchema.Types.Collations"]: Typecast
-[13533]: Typecast;
-["InformationSchema.Types.CollationsArray"]: Typecast
-[13539]: Typecast;
-["InformationSchema.Types.CollationCharacterSetApplicability"]: Typecast
-[13538]: Typecast;
-["InformationSchema.Types.CollationCharacterSetApplicabilityArray"]: Typecast
-[13544]: Typecast;
-["InformationSchema.Types.ColumnColumnUsage"]: Typecast
-[13543]: Typecast;
-["InformationSchema.Types.ColumnColumnUsageArray"]: Typecast
-[13549]: Typecast;
-["InformationSchema.Types.ColumnDomainUsage"]: Typecast
-[13548]: Typecast;
-["InformationSchema.Types.ColumnDomainUsageArray"]: Typecast
-[13554]: Typecast;
-["InformationSchema.Types.ColumnPrivileges"]: Typecast
-[13553]: Typecast;
-["InformationSchema.Types.ColumnPrivilegesArray"]: Typecast
-[13559]: Typecast;
-["InformationSchema.Types.ColumnUdtUsage"]: Typecast
-[13558]: Typecast;
-["InformationSchema.Types.ColumnUdtUsageArray"]: Typecast
-[13564]: Typecast;
-["InformationSchema.Types.Columns"]: Typecast
-[13563]: Typecast;
-["InformationSchema.Types.ColumnsArray"]: Typecast
-[13569]: Typecast;
-["InformationSchema.Types.ConstraintColumnUsage"]: Typecast
-[13568]: Typecast;
-["InformationSchema.Types.ConstraintColumnUsageArray"]: Typecast
-[13574]: Typecast;
-["InformationSchema.Types.ConstraintTableUsage"]: Typecast
-[13573]: Typecast;
-["InformationSchema.Types.ConstraintTableUsageArray"]: Typecast
-[13579]: Typecast;
-["InformationSchema.Types.DomainConstraints"]: Typecast
-[13578]: Typecast;
-["InformationSchema.Types.DomainConstraintsArray"]: Typecast
-[13584]: Typecast;
-["InformationSchema.Types.DomainUdtUsage"]: Typecast
-[13583]: Typecast;
-["InformationSchema.Types.DomainUdtUsageArray"]: Typecast
-[13589]: Typecast;
-["InformationSchema.Types.Domains"]: Typecast
-[13588]: Typecast;
-["InformationSchema.Types.DomainsArray"]: Typecast
-[13594]: Typecast;
-["InformationSchema.Types.EnabledRoles"]: Typecast
-[13593]: Typecast;
-["InformationSchema.Types.EnabledRolesArray"]: Typecast
-[13598]: Typecast;
-["InformationSchema.Types.KeyColumnUsage"]: Typecast
-[13597]: Typecast;
-["InformationSchema.Types.KeyColumnUsageArray"]: Typecast
-[13603]: Typecast;
-["InformationSchema.Types.Parameters"]: Typecast
-[13602]: Typecast;
-["InformationSchema.Types.ParametersArray"]: Typecast
-[13608]: Typecast;
-["InformationSchema.Types.ReferentialConstraints"]: Typecast
-[13607]: Typecast;
-["InformationSchema.Types.ReferentialConstraintsArray"]: Typecast
-[13613]: Typecast;
-["InformationSchema.Types.RoleColumnGrants"]: Typecast
-[13612]: Typecast;
-["InformationSchema.Types.RoleColumnGrantsArray"]: Typecast
-[13617]: Typecast;
-["InformationSchema.Types.RoutineColumnUsage"]: Typecast
-[13616]: Typecast;
-["InformationSchema.Types.RoutineColumnUsageArray"]: Typecast
-[13622]: Typecast;
-["InformationSchema.Types.RoutinePrivileges"]: Typecast
-[13621]: Typecast;
-["InformationSchema.Types.RoutinePrivilegesArray"]: Typecast
-[13627]: Typecast;
-["InformationSchema.Types.RoleRoutineGrants"]: Typecast
-[13626]: Typecast;
-["InformationSchema.Types.RoleRoutineGrantsArray"]: Typecast
-[13631]: Typecast;
-["InformationSchema.Types.RoutineRoutineUsage"]: Typecast
-[13630]: Typecast;
-["InformationSchema.Types.RoutineRoutineUsageArray"]: Typecast
-[13636]: Typecast;
-["InformationSchema.Types.RoutineSequenceUsage"]: Typecast
-[13635]: Typecast;
-["InformationSchema.Types.RoutineSequenceUsageArray"]: Typecast
-[13641]: Typecast;
-["InformationSchema.Types.RoutineTableUsage"]: Typecast
-[13640]: Typecast;
-["InformationSchema.Types.RoutineTableUsageArray"]: Typecast
-[13646]: Typecast;
-["InformationSchema.Types.Routines"]: Typecast
-[13645]: Typecast;
-["InformationSchema.Types.RoutinesArray"]: Typecast
-[13651]: Typecast;
-["InformationSchema.Types.Schemata"]: Typecast
-[13650]: Typecast;
-["InformationSchema.Types.SchemataArray"]: Typecast
-[13655]: Typecast;
-["InformationSchema.Types.Sequences"]: Typecast
-[13654]: Typecast;
-["InformationSchema.Types.SequencesArray"]: Typecast
-[13660]: Typecast;
-["InformationSchema.Types.SqlFeatures"]: Typecast
-[13659]: Typecast;
-["InformationSchema.Types.SqlFeaturesArray"]: Typecast
-[13665]: Typecast;
-["InformationSchema.Types.SqlImplementationInfo"]: Typecast
-[13664]: Typecast;
-["InformationSchema.Types.SqlImplementationInfoArray"]: Typecast
-[13670]: Typecast;
-["InformationSchema.Types.SqlParts"]: Typecast
-[13669]: Typecast;
-["InformationSchema.Types.SqlPartsArray"]: Typecast
-[13675]: Typecast;
-["InformationSchema.Types.SqlSizing"]: Typecast
-[13674]: Typecast;
-["InformationSchema.Types.SqlSizingArray"]: Typecast
-[13680]: Typecast;
-["InformationSchema.Types.TableConstraints"]: Typecast
-[13679]: Typecast;
-["InformationSchema.Types.TableConstraintsArray"]: Typecast
-[13685]: Typecast;
-["InformationSchema.Types.TablePrivileges"]: Typecast
-[13684]: Typecast;
-["InformationSchema.Types.TablePrivilegesArray"]: Typecast
-[13690]: Typecast;
-["InformationSchema.Types.RoleTableGrants"]: Typecast
-[13689]: Typecast;
-["InformationSchema.Types.RoleTableGrantsArray"]: Typecast
-[13694]: Typecast;
-["InformationSchema.Types.Tables"]: Typecast
-[13693]: Typecast;
-["InformationSchema.Types.TablesArray"]: Typecast
-[13699]: Typecast;
-["InformationSchema.Types.Transforms"]: Typecast
-[13698]: Typecast;
-["InformationSchema.Types.TransformsArray"]: Typecast
-[13704]: Typecast;
-["InformationSchema.Types.TriggeredUpdateColumns"]: Typecast
-[13703]: Typecast;
-["InformationSchema.Types.TriggeredUpdateColumnsArray"]: Typecast
-[13709]: Typecast;
-["InformationSchema.Types.Triggers"]: Typecast
-[13708]: Typecast;
-["InformationSchema.Types.TriggersArray"]: Typecast
-[13714]: Typecast;
-["InformationSchema.Types.UdtPrivileges"]: Typecast
-[13713]: Typecast;
-["InformationSchema.Types.UdtPrivilegesArray"]: Typecast
-[13719]: Typecast;
-["InformationSchema.Types.RoleUdtGrants"]: Typecast
-[13718]: Typecast;
-["InformationSchema.Types.RoleUdtGrantsArray"]: Typecast
-[13723]: Typecast;
-["InformationSchema.Types.UsagePrivileges"]: Typecast
-[13722]: Typecast;
-["InformationSchema.Types.UsagePrivilegesArray"]: Typecast
-[13728]: Typecast;
-["InformationSchema.Types.RoleUsageGrants"]: Typecast
-[13727]: Typecast;
-["InformationSchema.Types.RoleUsageGrantsArray"]: Typecast
-[13732]: Typecast;
-["InformationSchema.Types.UserDefinedTypes"]: Typecast
-[13731]: Typecast;
-["InformationSchema.Types.UserDefinedTypesArray"]: Typecast
-[13737]: Typecast;
-["InformationSchema.Types.ViewColumnUsage"]: Typecast
-[13736]: Typecast;
-["InformationSchema.Types.ViewColumnUsageArray"]: Typecast
-[13742]: Typecast;
-["InformationSchema.Types.ViewRoutineUsage"]: Typecast
-[13741]: Typecast;
-["InformationSchema.Types.ViewRoutineUsageArray"]: Typecast
-[13747]: Typecast;
-["InformationSchema.Types.ViewTableUsage"]: Typecast
-[13746]: Typecast;
-["InformationSchema.Types.ViewTableUsageArray"]: Typecast
-[13752]: Typecast;
-["InformationSchema.Types.Views"]: Typecast
-[13751]: Typecast;
-["InformationSchema.Types.ViewsArray"]: Typecast
-[13757]: Typecast;
-["InformationSchema.Types.DataTypePrivileges"]: Typecast
-[13756]: Typecast;
-["InformationSchema.Types.DataTypePrivilegesArray"]: Typecast
-[13762]: Typecast;
-["InformationSchema.Types.ElementTypes"]: Typecast
-[13761]: Typecast;
-["InformationSchema.Types.ElementTypesArray"]: Typecast
-[13767]: Typecast;
-["InformationSchema.Types.PgForeignTableColumns"]: Typecast
-[13772]: Typecast;
-["InformationSchema.Types.ColumnOptions"]: Typecast
-[13771]: Typecast;
-["InformationSchema.Types.ColumnOptionsArray"]: Typecast
-[13776]: Typecast;
-["InformationSchema.Types.PgForeignDataWrappers"]: Typecast
-[13780]: Typecast;
-["InformationSchema.Types.ForeignDataWrapperOptions"]: Typecast
-[13779]: Typecast;
-["InformationSchema.Types.ForeignDataWrapperOptionsArray"]: Typecast
-[13784]: Typecast;
-["InformationSchema.Types.ForeignDataWrappers"]: Typecast
-[13783]: Typecast;
-["InformationSchema.Types.ForeignDataWrappersArray"]: Typecast
-[13788]: Typecast;
-["InformationSchema.Types.PgForeignServers"]: Typecast
-[13793]: Typecast;
-["InformationSchema.Types.ForeignServerOptions"]: Typecast
-[13792]: Typecast;
-["InformationSchema.Types.ForeignServerOptionsArray"]: Typecast
-[13797]: Typecast;
-["InformationSchema.Types.ForeignServers"]: Typecast
-[13796]: Typecast;
-["InformationSchema.Types.ForeignServersArray"]: Typecast
-[13801]: Typecast;
-["InformationSchema.Types.PgForeignTables"]: Typecast
-[13806]: Typecast;
-["InformationSchema.Types.ForeignTableOptions"]: Typecast
-[13805]: Typecast;
-["InformationSchema.Types.ForeignTableOptionsArray"]: Typecast
-[13810]: Typecast;
-["InformationSchema.Types.ForeignTables"]: Typecast
-[13809]: Typecast;
-["InformationSchema.Types.ForeignTablesArray"]: Typecast
-[13814]: Typecast;
-["InformationSchema.Types.PgUserMappings"]: Typecast
-[13819]: Typecast;
-["InformationSchema.Types.UserMappingOptions"]: Typecast
-[13818]: Typecast;
-["InformationSchema.Types.UserMappingOptionsArray"]: Typecast
-[13824]: Typecast;
-["InformationSchema.Types.UserMappings"]: Typecast
-[13823]: Typecast;
-["InformationSchema.Types.UserMappingsArray"]: Typecast
-[30678]: Typecast;
-["Public.Types.DataSrc"]: Typecast
-[30677]: Typecast;
-["Public.Types.DataSrcArray"]: Typecast
-[30684]: Typecast;
-["Public.Types.Datsrcln"]: Typecast
-[30683]: Typecast;
-["Public.Types.DatsrclnArray"]: Typecast
-[30687]: Typecast;
-["Public.Types.DerivCd"]: Typecast
-[30686]: Typecast;
-["Public.Types.DerivCdArray"]: Typecast
-[30692]: Typecast;
-["Public.Types.FdGroup"]: Typecast
-[30691]: Typecast;
-["Public.Types.FdGroupArray"]: Typecast
-[30697]: Typecast;
-["Public.Types.FoodDes"]: Typecast
-[30696]: Typecast;
-["Public.Types.FoodDesArray"]: Typecast
-[30702]: Typecast;
-["Public.Types.Footnote"]: Typecast
-[30701]: Typecast;
-["Public.Types.FootnoteArray"]: Typecast
-[30707]: Typecast;
-["Public.Types.NutData"]: Typecast
-[30706]: Typecast;
-["Public.Types.NutDataArray"]: Typecast
-[30712]: Typecast;
-["Public.Types.NutrDef"]: Typecast
-[30711]: Typecast;
-["Public.Types.NutrDefArray"]: Typecast
-[30717]: Typecast;
-["Public.Types.SrcCd"]: Typecast
-[30716]: Typecast;
-["Public.Types.SrcCdArray"]: Typecast
-[30722]: Typecast;
-["Public.Types.Weight"]: Typecast
-[30721]: Typecast;
-["Public.Types.WeightArray"]: Typecast
-[30681]: Typecast;
-["Public.Types.DataSrcTitleFulltext"]: Typecast
-[30725]: Typecast;
-["Public.Types.DataSrcPkey"]: Typecast
-[30727]: Typecast;
-["Public.Types.DatsrclnPkey"]: Typecast
-[30729]: Typecast;
-["Public.Types.DerivCdPkey"]: Typecast
-[30731]: Typecast;
-["Public.Types.FdGroupPkey"]: Typecast
-[30733]: Typecast;
-["Public.Types.FoodDesPkey"]: Typecast
-[30735]: Typecast;
-["Public.Types.NutDataPkey"]: Typecast
-[30737]: Typecast;
-["Public.Types.NutrDefPkey"]: Typecast
-[30739]: Typecast;
-["Public.Types.SrcCdPkey"]: Typecast
-[30741]: Typecast;
-["Public.Types.WeightPkey"]: Typecast
-[30743]: Typecast;
-["Public.Types.DatsrclnDatasrcIdIdx"]: Typecast
-[30744]: Typecast;
-["Public.Types.FoodDesFdgrpCdIdx"]: Typecast
-[30745]: Typecast;
-["Public.Types.FootnoteNdbNoIdx"]: Typecast
-[30746]: Typecast;
-["Public.Types.NutDataDerivCdIdx"]: Typecast
-[30747]: Typecast;
-["Public.Types.NutDataNutrNoIdx"]: Typecast
-[30748]: Typecast;
-["Public.Types.NutDataSrcCdIdx"]: Typecast
-[30680]: Typecast;
-["PgToast.Types.PgToast_30676Index"]: Typecast
-[30689]: Typecast;
-["PgToast.Types.PgToast_30685Index"]: Typecast
-[30694]: Typecast;
-["PgToast.Types.PgToast_30690Index"]: Typecast
-[30699]: Typecast;
-["PgToast.Types.PgToast_30695Index"]: Typecast
-[30704]: Typecast;
-["PgToast.Types.PgToast_30700Index"]: Typecast
-[30709]: Typecast;
-["PgToast.Types.PgToast_30705Index"]: Typecast
-[30714]: Typecast;
-["PgToast.Types.PgToast_30710Index"]: Typecast
-[30719]: Typecast;
-["PgToast.Types.PgToast_30715Index"]: Typecast
-[30724]: Typecast;
-["PgToast.Types.PgToast_30720Index"]: Typecast
-[2837]: Typecast;
-["PgToast.Types.PgToast_1255Index"]: Typecast
-[4172]: Typecast;
-["PgToast.Types.PgToast_1247Index"]: Typecast
-[2831]: Typecast;
-["PgToast.Types.PgToast_2604Index"]: Typecast
-[2833]: Typecast;
-["PgToast.Types.PgToast_2606Index"]: Typecast
-[4158]: Typecast;
-["PgToast.Types.PgToast_2612Index"]: Typecast
-[4160]: Typecast;
-["PgToast.Types.PgToast_2600Index"]: Typecast
-[2841]: Typecast;
-["PgToast.Types.PgToast_2619Index"]: Typecast
-[3440]: Typecast;
-["PgToast.Types.PgToast_3381Index"]: Typecast
-[3431]: Typecast;
-["PgToast.Types.PgToast_3429Index"]: Typecast
-[2839]: Typecast;
-["PgToast.Types.PgToast_2618Index"]: Typecast
-[2337]: Typecast;
-["PgToast.Types.PgToast_2620Index"]: Typecast
-[4146]: Typecast;
-["PgToast.Types.PgToast_3466Index"]: Typecast
-[2835]: Typecast;
-["PgToast.Types.PgToast_2609Index"]: Typecast
-[4164]: Typecast;
-["PgToast.Types.PgToast_2615Index"]: Typecast
-[4178]: Typecast;
-["PgToast.Types.PgToast_1262Index"]: Typecast
-[2967]: Typecast;
-["PgToast.Types.PgToast_2964Index"]: Typecast
-[4186]: Typecast;
-["PgToast.Types.PgToast_1213Index"]: Typecast
-[4176]: Typecast;
-["PgToast.Types.PgToast_1260Index"]: Typecast
-[2847]: Typecast;
-["PgToast.Types.PgToast_2396Index"]: Typecast
-[4170]: Typecast;
-["PgToast.Types.PgToast_3600Index"]: Typecast
-[4148]: Typecast;
-["PgToast.Types.PgToast_3079Index"]: Typecast
-[4150]: Typecast;
-["PgToast.Types.PgToast_2328Index"]: Typecast
-[4152]: Typecast;
-["PgToast.Types.PgToast_1417Index"]: Typecast
-[4174]: Typecast;
-["PgToast.Types.PgToast_1418Index"]: Typecast
-[4154]: Typecast;
-["PgToast.Types.PgToast_3118Index"]: Typecast
-[4168]: Typecast;
-["PgToast.Types.PgToast_3256Index"]: Typecast
-[4182]: Typecast;
-["PgToast.Types.PgToast_6000Index"]: Typecast
-[4144]: Typecast;
-["PgToast.Types.PgToast_826Index"]: Typecast
-[4156]: Typecast;
-["PgToast.Types.PgToast_3394Index"]: Typecast
-[3599]: Typecast;
-["PgToast.Types.PgToast_3596Index"]: Typecast
-[4061]: Typecast;
-["PgToast.Types.PgToast_3592Index"]: Typecast
-[6176]: Typecast;
-["PgToast.Types.PgToast_3456Index"]: Typecast
-[6245]: Typecast;
-["PgToast.Types.PgToast_6243Index"]: Typecast
-[4166]: Typecast;
-["PgToast.Types.PgToast_3350Index"]: Typecast
-[6229]: Typecast;
-["PgToast.Types.PgToast_6106Index"]: Typecast
-[4184]: Typecast;
-["PgToast.Types.PgToast_6100Index"]: Typecast
-[13662]: Typecast;
-["PgToast.Types.PgToast_13658Index"]: Typecast
-[13667]: Typecast;
-["PgToast.Types.PgToast_13663Index"]: Typecast
-[13672]: Typecast;
-["PgToast.Types.PgToast_13668Index"]: Typecast
-[13677]: Typecast;
-["PgToast.Types.PgToast_13673Index"]: Typecast
-}
-
-            interface HasDatabase {
-              database: Database;
-            }
-          
-export class Database extends PostgresDatabase implements HasDatabase { 
-get database() { return this };
-get settings() { return this.context.settings as Settings };
-
-          /**
-           * Connect to your database server via URL, and return 
-           * a fully typed database you can use to access it.
-           */
-          static async connect(postgresUrl: string, props?: postgres.Options<never>) {
-              return new Database(await initializeContext(postgresUrl, props));
-          }
-        
-        
-
-          public Public = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-          public Procedures = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-}(this)
-
-          public Tables = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-          public NutData = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-async create(values: Partial<Public.Types.NutData>, options?: Public.Tables.NutData.Options): Promise<Public.Types.NutData>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    INSERT INTO
-      public.nut_data (ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc)
-    VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.nutrNo === undefined ? sql`DEFAULT` : typed[1042](values.nutrNo) },${ values.nutrVal === undefined ? sql`DEFAULT` : typed[701](values.nutrVal) },${ values.numDataPts === undefined ? sql`DEFAULT` : typed[701](values.numDataPts) },${ values.stdError === undefined ? sql`DEFAULT` : typed[701](values.stdError) },${ values.srcCd === undefined ? sql`DEFAULT` : typed[23](values.srcCd) },${ values.derivCd === undefined ? sql`DEFAULT` : typed[25](values.derivCd) },${ values.refNdbNo === undefined ? sql`DEFAULT` : typed[1042](values.refNdbNo) },${ values.addNutrMark === undefined ? sql`DEFAULT` : typed[1042](values.addNutrMark) },${ values.numStudies === undefined ? sql`DEFAULT` : typed[23](values.numStudies) },${ values.min === undefined ? sql`DEFAULT` : typed[701](values.min) },${ values.max === undefined ? sql`DEFAULT` : typed[701](values.max) },${ values.df === undefined ? sql`DEFAULT` : typed[23](values.df) },${ values.lowEb === undefined ? sql`DEFAULT` : typed[701](values.lowEb) },${ values.upEb === undefined ? sql`DEFAULT` : typed[701](values.upEb) },${ values.statCmt === undefined ? sql`DEFAULT` : typed[25](values.statCmt) },${ values.cc === undefined ? sql`DEFAULT` : typed[1042](values.cc) })
-    ON CONFLICT (ndb_no,nutr_no) DO UPDATE
-    SET
-      nutr_val = EXCLUDED.nutr_val,num_data_pts = EXCLUDED.num_data_pts,std_error = EXCLUDED.std_error,src_cd = EXCLUDED.src_cd,deriv_cd = EXCLUDED.deriv_cd,ref_ndb_no = EXCLUDED.ref_ndb_no,add_nutr_mark = EXCLUDED.add_nutr_mark,num_studies = EXCLUDED.num_studies,min = EXCLUDED.min,max = EXCLUDED.max,df = EXCLUDED.df,low_eb = EXCLUDED.low_eb,up_eb = EXCLUDED.up_eb,stat_cmt = EXCLUDED.stat_cmt,cc = EXCLUDED.cc
-    RETURNING
-      ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc
-    `
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))[0]
-}
-async all(options?: Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    SELECT 
-      ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc 
-    FROM
-      public.nut_data 
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
-}
-
-          public NutDataPkey = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Public.Types.NutDataPkey, options?: Public.Types.NutDataPkey.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc 
-    FROM
-      public.nut_data 
-    WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))[0]
-}
-
-async update(parameters: Public.Types.NutDataPkey, values: Partial<Public.Tables.NutData.Values>, options?: Public.Types.NutDataPkey.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      public.nut_data 
-    SET
-      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , nutr_val = ${ values.nutrVal === undefined ? sql`nutr_val` : typed[701](values.nutrVal) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[701](values.numDataPts) } , std_error = ${ values.stdError === undefined ? sql`std_error` : typed[701](values.stdError) } , src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , ref_ndb_no = ${ values.refNdbNo === undefined ? sql`ref_ndb_no` : typed[1042](values.refNdbNo) } , add_nutr_mark = ${ values.addNutrMark === undefined ? sql`add_nutr_mark` : typed[1042](values.addNutrMark) } , num_studies = ${ values.numStudies === undefined ? sql`num_studies` : typed[23](values.numStudies) } , min = ${ values.min === undefined ? sql`min` : typed[701](values.min) } , max = ${ values.max === undefined ? sql`max` : typed[701](values.max) } , df = ${ values.df === undefined ? sql`df` : typed[23](values.df) } , low_eb = ${ values.lowEb === undefined ? sql`low_eb` : typed[701](values.lowEb) } , up_eb = ${ values.upEb === undefined ? sql`up_eb` : typed[701](values.upEb) } , stat_cmt = ${ values.statCmt === undefined ? sql`stat_cmt` : typed[25](values.statCmt) } , cc = ${ values.cc === undefined ? sql`cc` : typed[1042](values.cc) } 
-    WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))[0]
-}
-async delete(parameters: Public.Types.NutDataPkey, options?: Public.Types.NutDataPkey.Options & Public.Tables.NutData.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      public.nut_data 
-    WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
- return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))[0]
-}
-}(this)
-public get ByPrimaryKey(){ return this.NutDataPkey };
-
-          public NutDataDerivCdIdx = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Public.Types.NutDataDerivCdIdx, options?: Public.Types.NutDataDerivCdIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc 
-    FROM
-      public.nut_data 
-    WHERE
-      deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
-}
-
-async update(parameters: Public.Types.NutDataDerivCdIdx, values: Partial<Public.Tables.NutData.Values>, options?: Public.Types.NutDataDerivCdIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      public.nut_data 
-    SET
-      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , nutr_val = ${ values.nutrVal === undefined ? sql`nutr_val` : typed[701](values.nutrVal) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[701](values.numDataPts) } , std_error = ${ values.stdError === undefined ? sql`std_error` : typed[701](values.stdError) } , src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , ref_ndb_no = ${ values.refNdbNo === undefined ? sql`ref_ndb_no` : typed[1042](values.refNdbNo) } , add_nutr_mark = ${ values.addNutrMark === undefined ? sql`add_nutr_mark` : typed[1042](values.addNutrMark) } , num_studies = ${ values.numStudies === undefined ? sql`num_studies` : typed[23](values.numStudies) } , min = ${ values.min === undefined ? sql`min` : typed[701](values.min) } , max = ${ values.max === undefined ? sql`max` : typed[701](values.max) } , df = ${ values.df === undefined ? sql`df` : typed[23](values.df) } , low_eb = ${ values.lowEb === undefined ? sql`low_eb` : typed[701](values.lowEb) } , up_eb = ${ values.upEb === undefined ? sql`up_eb` : typed[701](values.upEb) } , stat_cmt = ${ values.statCmt === undefined ? sql`stat_cmt` : typed[25](values.statCmt) } , cc = ${ values.cc === undefined ? sql`cc` : typed[1042](values.cc) } 
-    WHERE
-      deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
-}
-async delete(parameters: Public.Types.NutDataDerivCdIdx, options?: Public.Types.NutDataDerivCdIdx.Options & Public.Tables.NutData.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      public.nut_data 
-    WHERE
-      deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
- return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
-}
-}(this)
-
-
-          public NutDataNutrNoIdx = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Public.Types.NutDataNutrNoIdx, options?: Public.Types.NutDataNutrNoIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc 
-    FROM
-      public.nut_data 
-    WHERE
-      nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
-}
-
-async update(parameters: Public.Types.NutDataNutrNoIdx, values: Partial<Public.Tables.NutData.Values>, options?: Public.Types.NutDataNutrNoIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      public.nut_data 
-    SET
-      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , nutr_val = ${ values.nutrVal === undefined ? sql`nutr_val` : typed[701](values.nutrVal) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[701](values.numDataPts) } , std_error = ${ values.stdError === undefined ? sql`std_error` : typed[701](values.stdError) } , src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , ref_ndb_no = ${ values.refNdbNo === undefined ? sql`ref_ndb_no` : typed[1042](values.refNdbNo) } , add_nutr_mark = ${ values.addNutrMark === undefined ? sql`add_nutr_mark` : typed[1042](values.addNutrMark) } , num_studies = ${ values.numStudies === undefined ? sql`num_studies` : typed[23](values.numStudies) } , min = ${ values.min === undefined ? sql`min` : typed[701](values.min) } , max = ${ values.max === undefined ? sql`max` : typed[701](values.max) } , df = ${ values.df === undefined ? sql`df` : typed[23](values.df) } , low_eb = ${ values.lowEb === undefined ? sql`low_eb` : typed[701](values.lowEb) } , up_eb = ${ values.upEb === undefined ? sql`up_eb` : typed[701](values.upEb) } , stat_cmt = ${ values.statCmt === undefined ? sql`stat_cmt` : typed[25](values.statCmt) } , cc = ${ values.cc === undefined ? sql`cc` : typed[1042](values.cc) } 
-    WHERE
-      nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
-}
-async delete(parameters: Public.Types.NutDataNutrNoIdx, options?: Public.Types.NutDataNutrNoIdx.Options & Public.Tables.NutData.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      public.nut_data 
-    WHERE
-      nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
- return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
-}
-}(this)
-
-
-          public NutDataSrcCdIdx = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Public.Types.NutDataSrcCdIdx, options?: Public.Types.NutDataSrcCdIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc 
-    FROM
-      public.nut_data 
-    WHERE
-      src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
-}
-
-async update(parameters: Public.Types.NutDataSrcCdIdx, values: Partial<Public.Tables.NutData.Values>, options?: Public.Types.NutDataSrcCdIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      public.nut_data 
-    SET
-      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , nutr_val = ${ values.nutrVal === undefined ? sql`nutr_val` : typed[701](values.nutrVal) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[701](values.numDataPts) } , std_error = ${ values.stdError === undefined ? sql`std_error` : typed[701](values.stdError) } , src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , ref_ndb_no = ${ values.refNdbNo === undefined ? sql`ref_ndb_no` : typed[1042](values.refNdbNo) } , add_nutr_mark = ${ values.addNutrMark === undefined ? sql`add_nutr_mark` : typed[1042](values.addNutrMark) } , num_studies = ${ values.numStudies === undefined ? sql`num_studies` : typed[23](values.numStudies) } , min = ${ values.min === undefined ? sql`min` : typed[701](values.min) } , max = ${ values.max === undefined ? sql`max` : typed[701](values.max) } , df = ${ values.df === undefined ? sql`df` : typed[23](values.df) } , low_eb = ${ values.lowEb === undefined ? sql`low_eb` : typed[701](values.lowEb) } , up_eb = ${ values.upEb === undefined ? sql`up_eb` : typed[701](values.upEb) } , stat_cmt = ${ values.statCmt === undefined ? sql`stat_cmt` : typed[25](values.statCmt) } , cc = ${ values.cc === undefined ? sql`cc` : typed[1042](values.cc) } 
-    WHERE
-      src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
-}
-async delete(parameters: Public.Types.NutDataSrcCdIdx, options?: Public.Types.NutDataSrcCdIdx.Options & Public.Tables.NutData.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      public.nut_data 
-    WHERE
-      src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
- return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
-}
-}(this)
-
-}(this)
-
-          public SrcCd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-async create(values: Partial<Public.Types.SrcCd>, options?: Public.Tables.SrcCd.Options): Promise<Public.Types.SrcCd>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    INSERT INTO
-      public.src_cd (src_cd,srccd_desc)
-    VALUES (${ values.srcCd === undefined ? sql`DEFAULT` : typed[23](values.srcCd) },${ values.srccdDesc === undefined ? sql`DEFAULT` : typed[25](values.srccdDesc) })
-    ON CONFLICT (src_cd) DO UPDATE
-    SET
-      srccd_desc = EXCLUDED.srccd_desc
-    RETURNING
-      src_cd,srccd_desc
-    `
-return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))[0]
-}
-async all(options?: Public.Tables.SrcCd.Options) : Promise<Public.Types.SrcCd[]>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    SELECT 
-      src_cd,srccd_desc 
-    FROM
-      public.src_cd 
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))
-}
-
-          public SrcCdPkey = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Public.Types.SrcCdPkey, options?: Public.Types.SrcCdPkey.Options & Public.Tables.SrcCd.Options) : Promise<Public.Types.SrcCd>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      src_cd,srccd_desc 
-    FROM
-      public.src_cd 
-    WHERE
-      src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))[0]
-}
-
-async update(parameters: Public.Types.SrcCdPkey, values: Partial<Public.Tables.SrcCd.Values>, options?: Public.Types.SrcCdPkey.Options & Public.Tables.SrcCd.Options) : Promise<Public.Types.SrcCd>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      public.src_cd 
-    SET
-      src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , srccd_desc = ${ values.srccdDesc === undefined ? sql`srccd_desc` : typed[25](values.srccdDesc) } 
-    WHERE
-      src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
-    RETURNING src_cd,srccd_desc`
-return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))[0]
-}
-async delete(parameters: Public.Types.SrcCdPkey, options?: Public.Types.SrcCdPkey.Options & Public.Tables.SrcCd.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      public.src_cd 
-    WHERE
-      src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
-    RETURNING src_cd,srccd_desc`
- return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))[0]
-}
-}(this)
-public get ByPrimaryKey(){ return this.SrcCdPkey };
-}(this)
-
-          public Footnote = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-async create(values: Partial<Public.Types.Footnote>, options?: Public.Tables.Footnote.Options): Promise<Public.Types.Footnote>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    INSERT INTO
-      public.footnote (ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt)
-    VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.footntNo === undefined ? sql`DEFAULT` : typed[1042](values.footntNo) },${ values.footntTyp === undefined ? sql`DEFAULT` : typed[1042](values.footntTyp) },${ values.nutrNo === undefined ? sql`DEFAULT` : typed[1042](values.nutrNo) },${ values.footntTxt === undefined ? sql`DEFAULT` : typed[25](values.footntTxt) })
-    ON CONFLICT () DO UPDATE
-    SET
-      ndb_no = EXCLUDED.ndb_no,footnt_no = EXCLUDED.footnt_no,footnt_typ = EXCLUDED.footnt_typ,nutr_no = EXCLUDED.nutr_no,footnt_txt = EXCLUDED.footnt_txt
-    RETURNING
-      ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt
-    `
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))[0]
-}
-async all(options?: Public.Tables.Footnote.Options) : Promise<Public.Types.Footnote[]>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    SELECT 
-      ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt 
-    FROM
-      public.footnote 
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))
-}
-
-          public FootnoteNdbNoIdx = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Public.Types.FootnoteNdbNoIdx, options?: Public.Types.FootnoteNdbNoIdx.Options & Public.Tables.Footnote.Options) : Promise<Public.Types.Footnote[]>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt 
-    FROM
-      public.footnote 
-    WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))
-}
-
-async update(parameters: Public.Types.FootnoteNdbNoIdx, values: Partial<Public.Tables.Footnote.Values>, options?: Public.Types.FootnoteNdbNoIdx.Options & Public.Tables.Footnote.Options) : Promise<Public.Types.Footnote[]>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      public.footnote 
-    SET
-      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , footnt_no = ${ values.footntNo === undefined ? sql`footnt_no` : typed[1042](values.footntNo) } , footnt_typ = ${ values.footntTyp === undefined ? sql`footnt_typ` : typed[1042](values.footntTyp) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , footnt_txt = ${ values.footntTxt === undefined ? sql`footnt_txt` : typed[25](values.footntTxt) } 
-    WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt`
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))
-}
-async delete(parameters: Public.Types.FootnoteNdbNoIdx, options?: Public.Types.FootnoteNdbNoIdx.Options & Public.Tables.Footnote.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      public.footnote 
-    WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt`
- return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))
-}
-}(this)
-
-}(this)
-
-          public NutrDef = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-async create(values: Partial<Public.Types.NutrDef>, options?: Public.Tables.NutrDef.Options): Promise<Public.Types.NutrDef>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    INSERT INTO
-      public.nutr_def (nutr_no,units,tagname,nutrdesc,num_dec,sr_order)
-    VALUES (${ values.nutrNo === undefined ? sql`DEFAULT` : typed[1042](values.nutrNo) },${ values.units === undefined ? sql`DEFAULT` : typed[25](values.units) },${ values.tagname === undefined ? sql`DEFAULT` : typed[25](values.tagname) },${ values.nutrdesc === undefined ? sql`DEFAULT` : typed[25](values.nutrdesc) },${ values.numDec === undefined ? sql`DEFAULT` : typed[21](values.numDec) },${ values.srOrder === undefined ? sql`DEFAULT` : typed[23](values.srOrder) })
-    ON CONFLICT (nutr_no) DO UPDATE
-    SET
-      units = EXCLUDED.units,tagname = EXCLUDED.tagname,nutrdesc = EXCLUDED.nutrdesc,num_dec = EXCLUDED.num_dec,sr_order = EXCLUDED.sr_order
-    RETURNING
-      nutr_no,units,tagname,nutrdesc,num_dec,sr_order
-    `
-return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))[0]
-}
-async all(options?: Public.Tables.NutrDef.Options) : Promise<Public.Types.NutrDef[]>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    SELECT 
-      nutr_no,units,tagname,nutrdesc,num_dec,sr_order 
-    FROM
-      public.nutr_def 
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))
-}
-
-          public NutrDefPkey = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Public.Types.NutrDefPkey, options?: Public.Types.NutrDefPkey.Options & Public.Tables.NutrDef.Options) : Promise<Public.Types.NutrDef>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      nutr_no,units,tagname,nutrdesc,num_dec,sr_order 
-    FROM
-      public.nutr_def 
-    WHERE
-      nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))[0]
-}
-
-async update(parameters: Public.Types.NutrDefPkey, values: Partial<Public.Tables.NutrDef.Values>, options?: Public.Types.NutrDefPkey.Options & Public.Tables.NutrDef.Options) : Promise<Public.Types.NutrDef>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      public.nutr_def 
-    SET
-      nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , units = ${ values.units === undefined ? sql`units` : typed[25](values.units) } , tagname = ${ values.tagname === undefined ? sql`tagname` : typed[25](values.tagname) } , nutrdesc = ${ values.nutrdesc === undefined ? sql`nutrdesc` : typed[25](values.nutrdesc) } , num_dec = ${ values.numDec === undefined ? sql`num_dec` : typed[21](values.numDec) } , sr_order = ${ values.srOrder === undefined ? sql`sr_order` : typed[23](values.srOrder) } 
-    WHERE
-      nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING nutr_no,units,tagname,nutrdesc,num_dec,sr_order`
-return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))[0]
-}
-async delete(parameters: Public.Types.NutrDefPkey, options?: Public.Types.NutrDefPkey.Options & Public.Tables.NutrDef.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      public.nutr_def 
-    WHERE
-      nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING nutr_no,units,tagname,nutrdesc,num_dec,sr_order`
- return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))[0]
-}
-}(this)
-public get ByPrimaryKey(){ return this.NutrDefPkey };
-}(this)
-
-          public DerivCd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-async create(values: Partial<Public.Types.DerivCd>, options?: Public.Tables.DerivCd.Options): Promise<Public.Types.DerivCd>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    INSERT INTO
-      public.deriv_cd (deriv_cd,derivcd_desc)
-    VALUES (${ values.derivCd === undefined ? sql`DEFAULT` : typed[25](values.derivCd) },${ values.derivcdDesc === undefined ? sql`DEFAULT` : typed[25](values.derivcdDesc) })
-    ON CONFLICT (deriv_cd) DO UPDATE
-    SET
-      derivcd_desc = EXCLUDED.derivcd_desc
-    RETURNING
-      deriv_cd,derivcd_desc
-    `
-return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))[0]
-}
-async all(options?: Public.Tables.DerivCd.Options) : Promise<Public.Types.DerivCd[]>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    SELECT 
-      deriv_cd,derivcd_desc 
-    FROM
-      public.deriv_cd 
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))
-}
-
-          public DerivCdPkey = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Public.Types.DerivCdPkey, options?: Public.Types.DerivCdPkey.Options & Public.Tables.DerivCd.Options) : Promise<Public.Types.DerivCd>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      deriv_cd,derivcd_desc 
-    FROM
-      public.deriv_cd 
-    WHERE
-      deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))[0]
-}
-
-async update(parameters: Public.Types.DerivCdPkey, values: Partial<Public.Tables.DerivCd.Values>, options?: Public.Types.DerivCdPkey.Options & Public.Tables.DerivCd.Options) : Promise<Public.Types.DerivCd>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      public.deriv_cd 
-    SET
-      deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , derivcd_desc = ${ values.derivcdDesc === undefined ? sql`derivcd_desc` : typed[25](values.derivcdDesc) } 
-    WHERE
-      deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
-    RETURNING deriv_cd,derivcd_desc`
-return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))[0]
-}
-async delete(parameters: Public.Types.DerivCdPkey, options?: Public.Types.DerivCdPkey.Options & Public.Tables.DerivCd.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      public.deriv_cd 
-    WHERE
-      deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
-    RETURNING deriv_cd,derivcd_desc`
- return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))[0]
-}
-}(this)
-public get ByPrimaryKey(){ return this.DerivCdPkey };
-}(this)
-
-          public FdGroup = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-async create(values: Partial<Public.Types.FdGroup>, options?: Public.Tables.FdGroup.Options): Promise<Public.Types.FdGroup>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    INSERT INTO
-      public.fd_group (fdgrp_cd,fddrp_desc)
-    VALUES (${ values.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](values.fdgrpCd) },${ values.fddrpDesc === undefined ? sql`DEFAULT` : typed[25](values.fddrpDesc) })
-    ON CONFLICT (fdgrp_cd) DO UPDATE
-    SET
-      fddrp_desc = EXCLUDED.fddrp_desc
-    RETURNING
-      fdgrp_cd,fddrp_desc
-    `
-return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))[0]
-}
-async all(options?: Public.Tables.FdGroup.Options) : Promise<Public.Types.FdGroup[]>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    SELECT 
-      fdgrp_cd,fddrp_desc 
-    FROM
-      public.fd_group 
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))
-}
-
-          public FdGroupPkey = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Public.Types.FdGroupPkey, options?: Public.Types.FdGroupPkey.Options & Public.Tables.FdGroup.Options) : Promise<Public.Types.FdGroup>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      fdgrp_cd,fddrp_desc 
-    FROM
-      public.fd_group 
-    WHERE
-      fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))[0]
-}
-
-async update(parameters: Public.Types.FdGroupPkey, values: Partial<Public.Tables.FdGroup.Values>, options?: Public.Types.FdGroupPkey.Options & Public.Tables.FdGroup.Options) : Promise<Public.Types.FdGroup>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      public.fd_group 
-    SET
-      fdgrp_cd = ${ values.fdgrpCd === undefined ? sql`fdgrp_cd` : typed[1042](values.fdgrpCd) } , fddrp_desc = ${ values.fddrpDesc === undefined ? sql`fddrp_desc` : typed[25](values.fddrpDesc) } 
-    WHERE
-      fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
-    RETURNING fdgrp_cd,fddrp_desc`
-return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))[0]
-}
-async delete(parameters: Public.Types.FdGroupPkey, options?: Public.Types.FdGroupPkey.Options & Public.Tables.FdGroup.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      public.fd_group 
-    WHERE
-      fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
-    RETURNING fdgrp_cd,fddrp_desc`
- return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))[0]
-}
-}(this)
-public get ByPrimaryKey(){ return this.FdGroupPkey };
-}(this)
-
-          public Weight = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-async create(values: Partial<Public.Types.Weight>, options?: Public.Tables.Weight.Options): Promise<Public.Types.Weight>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    INSERT INTO
-      public.weight (ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev)
-    VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.seq === undefined ? sql`DEFAULT` : typed[1042](values.seq) },${ values.amount === undefined ? sql`DEFAULT` : typed[701](values.amount) },${ values.msreDesc === undefined ? sql`DEFAULT` : typed[25](values.msreDesc) },${ values.gmWgt === undefined ? sql`DEFAULT` : typed[701](values.gmWgt) },${ values.numDataPts === undefined ? sql`DEFAULT` : typed[23](values.numDataPts) },${ values.stdDev === undefined ? sql`DEFAULT` : typed[701](values.stdDev) })
-    ON CONFLICT (ndb_no,seq) DO UPDATE
-    SET
-      amount = EXCLUDED.amount,msre_desc = EXCLUDED.msre_desc,gm_wgt = EXCLUDED.gm_wgt,num_data_pts = EXCLUDED.num_data_pts,std_dev = EXCLUDED.std_dev
-    RETURNING
-      ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev
-    `
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))[0]
-}
-async all(options?: Public.Tables.Weight.Options) : Promise<Public.Types.Weight[]>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    SELECT 
-      ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev 
-    FROM
-      public.weight 
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))
-}
-
-          public WeightPkey = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Public.Types.WeightPkey, options?: Public.Types.WeightPkey.Options & Public.Tables.Weight.Options) : Promise<Public.Types.Weight>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev 
-    FROM
-      public.weight 
-    WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND seq = ${ parameters.seq === undefined ? sql`DEFAULT` : typed[1042](parameters.seq) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))[0]
-}
-
-async update(parameters: Public.Types.WeightPkey, values: Partial<Public.Tables.Weight.Values>, options?: Public.Types.WeightPkey.Options & Public.Tables.Weight.Options) : Promise<Public.Types.Weight>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      public.weight 
-    SET
-      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , seq = ${ values.seq === undefined ? sql`seq` : typed[1042](values.seq) } , amount = ${ values.amount === undefined ? sql`amount` : typed[701](values.amount) } , msre_desc = ${ values.msreDesc === undefined ? sql`msre_desc` : typed[25](values.msreDesc) } , gm_wgt = ${ values.gmWgt === undefined ? sql`gm_wgt` : typed[701](values.gmWgt) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[23](values.numDataPts) } , std_dev = ${ values.stdDev === undefined ? sql`std_dev` : typed[701](values.stdDev) } 
-    WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND seq = ${ parameters.seq === undefined ? sql`DEFAULT` : typed[1042](parameters.seq) }
-    RETURNING ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev`
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))[0]
-}
-async delete(parameters: Public.Types.WeightPkey, options?: Public.Types.WeightPkey.Options & Public.Tables.Weight.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      public.weight 
-    WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND seq = ${ parameters.seq === undefined ? sql`DEFAULT` : typed[1042](parameters.seq) }
-    RETURNING ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev`
- return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))[0]
-}
-}(this)
-public get ByPrimaryKey(){ return this.WeightPkey };
-}(this)
-
-          public FoodDes = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-async create(values: Partial<Public.Types.FoodDes>, options?: Public.Tables.FoodDes.Options): Promise<Public.Types.FoodDes>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    INSERT INTO
-      public.food_des (ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor)
-    VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](values.fdgrpCd) },${ values.longDesc === undefined ? sql`DEFAULT` : typed[25](values.longDesc) },${ values.shrtDesc === undefined ? sql`DEFAULT` : typed[25](values.shrtDesc) },${ values.comname === undefined ? sql`DEFAULT` : typed[25](values.comname) },${ values.manufacname === undefined ? sql`DEFAULT` : typed[25](values.manufacname) },${ values.survey === undefined ? sql`DEFAULT` : typed[1042](values.survey) },${ values.refDesc === undefined ? sql`DEFAULT` : typed[25](values.refDesc) },${ values.refuse === undefined ? sql`DEFAULT` : typed[23](values.refuse) },${ values.sciname === undefined ? sql`DEFAULT` : typed[25](values.sciname) },${ values.nFactor === undefined ? sql`DEFAULT` : typed[701](values.nFactor) },${ values.proFactor === undefined ? sql`DEFAULT` : typed[701](values.proFactor) },${ values.fatFactor === undefined ? sql`DEFAULT` : typed[701](values.fatFactor) },${ values.choFactor === undefined ? sql`DEFAULT` : typed[701](values.choFactor) })
-    ON CONFLICT (ndb_no) DO UPDATE
-    SET
-      fdgrp_cd = EXCLUDED.fdgrp_cd,long_desc = EXCLUDED.long_desc,shrt_desc = EXCLUDED.shrt_desc,comname = EXCLUDED.comname,manufacname = EXCLUDED.manufacname,survey = EXCLUDED.survey,ref_desc = EXCLUDED.ref_desc,refuse = EXCLUDED.refuse,sciname = EXCLUDED.sciname,n_factor = EXCLUDED.n_factor,pro_factor = EXCLUDED.pro_factor,fat_factor = EXCLUDED.fat_factor,cho_factor = EXCLUDED.cho_factor
-    RETURNING
-      ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor
-    `
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))[0]
-}
-async all(options?: Public.Tables.FoodDes.Options) : Promise<Public.Types.FoodDes[]>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    SELECT 
-      ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor 
-    FROM
-      public.food_des 
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))
-}
-
-          public FoodDesPkey = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Public.Types.FoodDesPkey, options?: Public.Types.FoodDesPkey.Options & Public.Tables.FoodDes.Options) : Promise<Public.Types.FoodDes>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor 
-    FROM
-      public.food_des 
-    WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))[0]
-}
-
-async update(parameters: Public.Types.FoodDesPkey, values: Partial<Public.Tables.FoodDes.Values>, options?: Public.Types.FoodDesPkey.Options & Public.Tables.FoodDes.Options) : Promise<Public.Types.FoodDes>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      public.food_des 
-    SET
-      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , fdgrp_cd = ${ values.fdgrpCd === undefined ? sql`fdgrp_cd` : typed[1042](values.fdgrpCd) } , long_desc = ${ values.longDesc === undefined ? sql`long_desc` : typed[25](values.longDesc) } , shrt_desc = ${ values.shrtDesc === undefined ? sql`shrt_desc` : typed[25](values.shrtDesc) } , comname = ${ values.comname === undefined ? sql`comname` : typed[25](values.comname) } , manufacname = ${ values.manufacname === undefined ? sql`manufacname` : typed[25](values.manufacname) } , survey = ${ values.survey === undefined ? sql`survey` : typed[1042](values.survey) } , ref_desc = ${ values.refDesc === undefined ? sql`ref_desc` : typed[25](values.refDesc) } , refuse = ${ values.refuse === undefined ? sql`refuse` : typed[23](values.refuse) } , sciname = ${ values.sciname === undefined ? sql`sciname` : typed[25](values.sciname) } , n_factor = ${ values.nFactor === undefined ? sql`n_factor` : typed[701](values.nFactor) } , pro_factor = ${ values.proFactor === undefined ? sql`pro_factor` : typed[701](values.proFactor) } , fat_factor = ${ values.fatFactor === undefined ? sql`fat_factor` : typed[701](values.fatFactor) } , cho_factor = ${ values.choFactor === undefined ? sql`cho_factor` : typed[701](values.choFactor) } 
-    WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) }
-    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))[0]
-}
-async delete(parameters: Public.Types.FoodDesPkey, options?: Public.Types.FoodDesPkey.Options & Public.Tables.FoodDes.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      public.food_des 
-    WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) }
-    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`
- return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))[0]
-}
-}(this)
-public get ByPrimaryKey(){ return this.FoodDesPkey };
-
-          public FoodDesFdgrpCdIdx = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Public.Types.FoodDesFdgrpCdIdx, options?: Public.Types.FoodDesFdgrpCdIdx.Options & Public.Tables.FoodDes.Options) : Promise<Public.Types.FoodDes[]>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor 
-    FROM
-      public.food_des 
-    WHERE
-      fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))
-}
-
-async update(parameters: Public.Types.FoodDesFdgrpCdIdx, values: Partial<Public.Tables.FoodDes.Values>, options?: Public.Types.FoodDesFdgrpCdIdx.Options & Public.Tables.FoodDes.Options) : Promise<Public.Types.FoodDes[]>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      public.food_des 
-    SET
-      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , fdgrp_cd = ${ values.fdgrpCd === undefined ? sql`fdgrp_cd` : typed[1042](values.fdgrpCd) } , long_desc = ${ values.longDesc === undefined ? sql`long_desc` : typed[25](values.longDesc) } , shrt_desc = ${ values.shrtDesc === undefined ? sql`shrt_desc` : typed[25](values.shrtDesc) } , comname = ${ values.comname === undefined ? sql`comname` : typed[25](values.comname) } , manufacname = ${ values.manufacname === undefined ? sql`manufacname` : typed[25](values.manufacname) } , survey = ${ values.survey === undefined ? sql`survey` : typed[1042](values.survey) } , ref_desc = ${ values.refDesc === undefined ? sql`ref_desc` : typed[25](values.refDesc) } , refuse = ${ values.refuse === undefined ? sql`refuse` : typed[23](values.refuse) } , sciname = ${ values.sciname === undefined ? sql`sciname` : typed[25](values.sciname) } , n_factor = ${ values.nFactor === undefined ? sql`n_factor` : typed[701](values.nFactor) } , pro_factor = ${ values.proFactor === undefined ? sql`pro_factor` : typed[701](values.proFactor) } , fat_factor = ${ values.fatFactor === undefined ? sql`fat_factor` : typed[701](values.fatFactor) } , cho_factor = ${ values.choFactor === undefined ? sql`cho_factor` : typed[701](values.choFactor) } 
-    WHERE
-      fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
-    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))
-}
-async delete(parameters: Public.Types.FoodDesFdgrpCdIdx, options?: Public.Types.FoodDesFdgrpCdIdx.Options & Public.Tables.FoodDes.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      public.food_des 
-    WHERE
-      fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
-    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`
- return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))
-}
-}(this)
-
-}(this)
-
-          public DataSrc = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-async create(values: Partial<Public.Types.DataSrc>, options?: Public.Tables.DataSrc.Options): Promise<Public.Types.DataSrc>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    INSERT INTO
-      public.data_src (datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page)
-    VALUES (${ values.datasrcId === undefined ? sql`DEFAULT` : typed[1042](values.datasrcId) },${ values.authors === undefined ? sql`DEFAULT` : typed[25](values.authors) },${ values.title === undefined ? sql`DEFAULT` : typed[25](values.title) },${ values.year === undefined ? sql`DEFAULT` : typed[23](values.year) },${ values.journal === undefined ? sql`DEFAULT` : typed[25](values.journal) },${ values.volCity === undefined ? sql`DEFAULT` : typed[25](values.volCity) },${ values.issueState === undefined ? sql`DEFAULT` : typed[25](values.issueState) },${ values.startPage === undefined ? sql`DEFAULT` : typed[25](values.startPage) },${ values.endPage === undefined ? sql`DEFAULT` : typed[25](values.endPage) })
-    ON CONFLICT (datasrc_id) DO UPDATE
-    SET
-      authors = EXCLUDED.authors,title = EXCLUDED.title,year = EXCLUDED.year,journal = EXCLUDED.journal,vol_city = EXCLUDED.vol_city,issue_state = EXCLUDED.issue_state,start_page = EXCLUDED.start_page,end_page = EXCLUDED.end_page
-    RETURNING
-      datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page
-    `
-return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))[0]
-}
-async all(options?: Public.Tables.DataSrc.Options) : Promise<Public.Types.DataSrc[]>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    SELECT 
-      datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page 
-    FROM
-      public.data_src 
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
-}
-
-          public DataSrcTitleFulltext = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Public.Types.DataSrcTitleFulltext, options?: Public.Types.DataSrcTitleFulltext.Options & Public.Tables.DataSrc.Options) : Promise<Public.Types.DataSrc[]>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page 
-    FROM
-      public.data_src 
-    WHERE
-      title @@ ${sql.unsafe(`${options?.title?.queryParser ?? "to_tsquery"}`)}(${options?.title?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.title === undefined ? sql`DEFAULT` : typed[3614](parameters.title) })
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
-}
-
-async update(parameters: Public.Types.DataSrcTitleFulltext, values: Partial<Public.Tables.DataSrc.Values>, options?: Public.Types.DataSrcTitleFulltext.Options & Public.Tables.DataSrc.Options) : Promise<Public.Types.DataSrc[]>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      public.data_src 
-    SET
-      datasrc_id = ${ values.datasrcId === undefined ? sql`datasrc_id` : typed[1042](values.datasrcId) } , authors = ${ values.authors === undefined ? sql`authors` : typed[25](values.authors) } , title = ${ values.title === undefined ? sql`title` : typed[25](values.title) } , year = ${ values.year === undefined ? sql`year` : typed[23](values.year) } , journal = ${ values.journal === undefined ? sql`journal` : typed[25](values.journal) } , vol_city = ${ values.volCity === undefined ? sql`vol_city` : typed[25](values.volCity) } , issue_state = ${ values.issueState === undefined ? sql`issue_state` : typed[25](values.issueState) } , start_page = ${ values.startPage === undefined ? sql`start_page` : typed[25](values.startPage) } , end_page = ${ values.endPage === undefined ? sql`end_page` : typed[25](values.endPage) } 
-    WHERE
-      title @@ ${sql.unsafe(`${options?.title?.queryParser ?? "to_tsquery"}`)}(${options?.title?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.title === undefined ? sql`DEFAULT` : typed[3614](parameters.title) })
-    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`
-return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
-}
-async delete(parameters: Public.Types.DataSrcTitleFulltext, options?: Public.Types.DataSrcTitleFulltext.Options & Public.Tables.DataSrc.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      public.data_src 
-    WHERE
-      title @@ ${sql.unsafe(`${options?.title?.queryParser ?? "to_tsquery"}`)}(${options?.title?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.title === undefined ? sql`DEFAULT` : typed[3614](parameters.title) })
-    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`
- return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
-}
-}(this)
-
-
-          public DataSrcPkey = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Public.Types.DataSrcPkey, options?: Public.Types.DataSrcPkey.Options & Public.Tables.DataSrc.Options) : Promise<Public.Types.DataSrc>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page 
-    FROM
-      public.data_src 
-    WHERE
-      datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))[0]
-}
-
-async update(parameters: Public.Types.DataSrcPkey, values: Partial<Public.Tables.DataSrc.Values>, options?: Public.Types.DataSrcPkey.Options & Public.Tables.DataSrc.Options) : Promise<Public.Types.DataSrc>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      public.data_src 
-    SET
-      datasrc_id = ${ values.datasrcId === undefined ? sql`datasrc_id` : typed[1042](values.datasrcId) } , authors = ${ values.authors === undefined ? sql`authors` : typed[25](values.authors) } , title = ${ values.title === undefined ? sql`title` : typed[25](values.title) } , year = ${ values.year === undefined ? sql`year` : typed[23](values.year) } , journal = ${ values.journal === undefined ? sql`journal` : typed[25](values.journal) } , vol_city = ${ values.volCity === undefined ? sql`vol_city` : typed[25](values.volCity) } , issue_state = ${ values.issueState === undefined ? sql`issue_state` : typed[25](values.issueState) } , start_page = ${ values.startPage === undefined ? sql`start_page` : typed[25](values.startPage) } , end_page = ${ values.endPage === undefined ? sql`end_page` : typed[25](values.endPage) } 
-    WHERE
-      datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
-    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`
-return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))[0]
-}
-async delete(parameters: Public.Types.DataSrcPkey, options?: Public.Types.DataSrcPkey.Options & Public.Tables.DataSrc.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      public.data_src 
-    WHERE
-      datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
-    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`
- return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))[0]
-}
-}(this)
-public get ByPrimaryKey(){ return this.DataSrcPkey };
-}(this)
-
-          public Datsrcln = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-async create(values: Partial<Public.Types.Datsrcln>, options?: Public.Tables.Datsrcln.Options): Promise<Public.Types.Datsrcln>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    INSERT INTO
-      public.datsrcln (ndb_no,nutr_no,datasrc_id)
-    VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.nutrNo === undefined ? sql`DEFAULT` : typed[1042](values.nutrNo) },${ values.datasrcId === undefined ? sql`DEFAULT` : typed[1042](values.datasrcId) })
-    ON CONFLICT (ndb_no,nutr_no,datasrc_id) DO UPDATE
-    SET
-      
-    RETURNING
-      ndb_no,nutr_no,datasrc_id
-    `
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))[0]
-}
-async all(options?: Public.Tables.Datsrcln.Options) : Promise<Public.Types.Datsrcln[]>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    SELECT 
-      ndb_no,nutr_no,datasrc_id 
-    FROM
-      public.datsrcln 
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))
-}
-
-          public DatsrclnPkey = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Public.Types.DatsrclnPkey, options?: Public.Types.DatsrclnPkey.Options & Public.Tables.Datsrcln.Options) : Promise<Public.Types.Datsrcln>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      ndb_no,nutr_no,datasrc_id 
-    FROM
-      public.datsrcln 
-    WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) } AND datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))[0]
-}
-
-async update(parameters: Public.Types.DatsrclnPkey, values: Partial<Public.Tables.Datsrcln.Values>, options?: Public.Types.DatsrclnPkey.Options & Public.Tables.Datsrcln.Options) : Promise<Public.Types.Datsrcln>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      public.datsrcln 
-    SET
-      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , datasrc_id = ${ values.datasrcId === undefined ? sql`datasrc_id` : typed[1042](values.datasrcId) } 
-    WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) } AND datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
-    RETURNING ndb_no,nutr_no,datasrc_id`
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))[0]
-}
-async delete(parameters: Public.Types.DatsrclnPkey, options?: Public.Types.DatsrclnPkey.Options & Public.Tables.Datsrcln.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      public.datsrcln 
-    WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) } AND datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
-    RETURNING ndb_no,nutr_no,datasrc_id`
- return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))[0]
-}
-}(this)
-public get ByPrimaryKey(){ return this.DatsrclnPkey };
-
-          public DatsrclnDatasrcIdIdx = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Public.Types.DatsrclnDatasrcIdIdx, options?: Public.Types.DatsrclnDatasrcIdIdx.Options & Public.Tables.Datsrcln.Options) : Promise<Public.Types.Datsrcln[]>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      ndb_no,nutr_no,datasrc_id 
-    FROM
-      public.datsrcln 
-    WHERE
-      datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))
-}
-
-async update(parameters: Public.Types.DatsrclnDatasrcIdIdx, values: Partial<Public.Tables.Datsrcln.Values>, options?: Public.Types.DatsrclnDatasrcIdIdx.Options & Public.Tables.Datsrcln.Options) : Promise<Public.Types.Datsrcln[]>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      public.datsrcln 
-    SET
-      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , datasrc_id = ${ values.datasrcId === undefined ? sql`datasrc_id` : typed[1042](values.datasrcId) } 
-    WHERE
-      datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
-    RETURNING ndb_no,nutr_no,datasrc_id`
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))
-}
-async delete(parameters: Public.Types.DatsrclnDatasrcIdIdx, options?: Public.Types.DatsrclnDatasrcIdIdx.Options & Public.Tables.Datsrcln.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      public.datsrcln 
-    WHERE
-      datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
-    RETURNING ndb_no,nutr_no,datasrc_id`
- return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))
-}
-}(this)
-
-}(this)
-}(this)
-}(this)
-
-          public PgToast = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-          public Procedures = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-}(this)
-
-          public Tables = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-}(this)
-}(this)
-}
-
-          // begin - operation dispatch map
-          import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
-          export class OperationDispatcher {
-            private dispatchMap: Record<string, OperationDispatchMethod>;
-            constructor(private database: Database){
-              this.dispatchMap = {
-
-          
-"Public.Tables.NutData.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.create(request.values as Public.Tables.NutData.Values),
-
-             "Public.Tables.NutData.all": async (request: EmbraceSQLRequest<object, object, object>) =>
-              database.Public.Tables.NutData.all(request.options as Public.Tables.NutData.Options),
-            
-"Public.Tables.NutData.NutDataPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataPkey.read(request.parameters as Public.Types.NutDataPkey,request.options as Public.Tables.NutData.Options),
-"Public.Tables.NutData.NutDataPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataPkey.update(request.parameters as Public.Types.NutDataPkey,request.values as Partial<Public.Tables.NutData.Values>),
-"Public.Tables.NutData.NutDataPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataPkey.delete(request.parameters as Public.Types.NutDataPkey),
-"Public.Tables.NutData.NutDataDerivCdIdx.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataDerivCdIdx.read(request.parameters as Public.Types.NutDataDerivCdIdx,request.options as Public.Tables.NutData.Options),
-"Public.Tables.NutData.NutDataDerivCdIdx.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataDerivCdIdx.update(request.parameters as Public.Types.NutDataDerivCdIdx,request.values as Partial<Public.Tables.NutData.Values>),
-"Public.Tables.NutData.NutDataDerivCdIdx.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataDerivCdIdx.delete(request.parameters as Public.Types.NutDataDerivCdIdx),
-"Public.Tables.NutData.NutDataNutrNoIdx.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataNutrNoIdx.read(request.parameters as Public.Types.NutDataNutrNoIdx,request.options as Public.Tables.NutData.Options),
-"Public.Tables.NutData.NutDataNutrNoIdx.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataNutrNoIdx.update(request.parameters as Public.Types.NutDataNutrNoIdx,request.values as Partial<Public.Tables.NutData.Values>),
-"Public.Tables.NutData.NutDataNutrNoIdx.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataNutrNoIdx.delete(request.parameters as Public.Types.NutDataNutrNoIdx),
-"Public.Tables.NutData.NutDataSrcCdIdx.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataSrcCdIdx.read(request.parameters as Public.Types.NutDataSrcCdIdx,request.options as Public.Tables.NutData.Options),
-"Public.Tables.NutData.NutDataSrcCdIdx.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataSrcCdIdx.update(request.parameters as Public.Types.NutDataSrcCdIdx,request.values as Partial<Public.Tables.NutData.Values>),
-"Public.Tables.NutData.NutDataSrcCdIdx.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataSrcCdIdx.delete(request.parameters as Public.Types.NutDataSrcCdIdx),
-"Public.Tables.SrcCd.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.SrcCd.create(request.values as Public.Tables.SrcCd.Values),
-
-             "Public.Tables.SrcCd.all": async (request: EmbraceSQLRequest<object, object, object>) =>
-              database.Public.Tables.SrcCd.all(request.options as Public.Tables.SrcCd.Options),
-            
-"Public.Tables.SrcCd.SrcCdPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.SrcCd.SrcCdPkey.read(request.parameters as Public.Types.SrcCdPkey,request.options as Public.Tables.SrcCd.Options),
-"Public.Tables.SrcCd.SrcCdPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.SrcCd.SrcCdPkey.update(request.parameters as Public.Types.SrcCdPkey,request.values as Partial<Public.Tables.SrcCd.Values>),
-"Public.Tables.SrcCd.SrcCdPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.SrcCd.SrcCdPkey.delete(request.parameters as Public.Types.SrcCdPkey),
-"Public.Tables.Footnote.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Footnote.create(request.values as Public.Tables.Footnote.Values),
-
-             "Public.Tables.Footnote.all": async (request: EmbraceSQLRequest<object, object, object>) =>
-              database.Public.Tables.Footnote.all(request.options as Public.Tables.Footnote.Options),
-            
-"Public.Tables.Footnote.FootnoteNdbNoIdx.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Footnote.FootnoteNdbNoIdx.read(request.parameters as Public.Types.FootnoteNdbNoIdx,request.options as Public.Tables.Footnote.Options),
-"Public.Tables.Footnote.FootnoteNdbNoIdx.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Footnote.FootnoteNdbNoIdx.update(request.parameters as Public.Types.FootnoteNdbNoIdx,request.values as Partial<Public.Tables.Footnote.Values>),
-"Public.Tables.Footnote.FootnoteNdbNoIdx.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Footnote.FootnoteNdbNoIdx.delete(request.parameters as Public.Types.FootnoteNdbNoIdx),
-"Public.Tables.NutrDef.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutrDef.create(request.values as Public.Tables.NutrDef.Values),
-
-             "Public.Tables.NutrDef.all": async (request: EmbraceSQLRequest<object, object, object>) =>
-              database.Public.Tables.NutrDef.all(request.options as Public.Tables.NutrDef.Options),
-            
-"Public.Tables.NutrDef.NutrDefPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutrDef.NutrDefPkey.read(request.parameters as Public.Types.NutrDefPkey,request.options as Public.Tables.NutrDef.Options),
-"Public.Tables.NutrDef.NutrDefPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutrDef.NutrDefPkey.update(request.parameters as Public.Types.NutrDefPkey,request.values as Partial<Public.Tables.NutrDef.Values>),
-"Public.Tables.NutrDef.NutrDefPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutrDef.NutrDefPkey.delete(request.parameters as Public.Types.NutrDefPkey),
-"Public.Tables.DerivCd.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DerivCd.create(request.values as Public.Tables.DerivCd.Values),
-
-             "Public.Tables.DerivCd.all": async (request: EmbraceSQLRequest<object, object, object>) =>
-              database.Public.Tables.DerivCd.all(request.options as Public.Tables.DerivCd.Options),
-            
-"Public.Tables.DerivCd.DerivCdPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DerivCd.DerivCdPkey.read(request.parameters as Public.Types.DerivCdPkey,request.options as Public.Tables.DerivCd.Options),
-"Public.Tables.DerivCd.DerivCdPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DerivCd.DerivCdPkey.update(request.parameters as Public.Types.DerivCdPkey,request.values as Partial<Public.Tables.DerivCd.Values>),
-"Public.Tables.DerivCd.DerivCdPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DerivCd.DerivCdPkey.delete(request.parameters as Public.Types.DerivCdPkey),
-"Public.Tables.FdGroup.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FdGroup.create(request.values as Public.Tables.FdGroup.Values),
-
-             "Public.Tables.FdGroup.all": async (request: EmbraceSQLRequest<object, object, object>) =>
-              database.Public.Tables.FdGroup.all(request.options as Public.Tables.FdGroup.Options),
-            
-"Public.Tables.FdGroup.FdGroupPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FdGroup.FdGroupPkey.read(request.parameters as Public.Types.FdGroupPkey,request.options as Public.Tables.FdGroup.Options),
-"Public.Tables.FdGroup.FdGroupPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FdGroup.FdGroupPkey.update(request.parameters as Public.Types.FdGroupPkey,request.values as Partial<Public.Tables.FdGroup.Values>),
-"Public.Tables.FdGroup.FdGroupPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FdGroup.FdGroupPkey.delete(request.parameters as Public.Types.FdGroupPkey),
-"Public.Tables.Weight.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Weight.create(request.values as Public.Tables.Weight.Values),
-
-             "Public.Tables.Weight.all": async (request: EmbraceSQLRequest<object, object, object>) =>
-              database.Public.Tables.Weight.all(request.options as Public.Tables.Weight.Options),
-            
-"Public.Tables.Weight.WeightPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Weight.WeightPkey.read(request.parameters as Public.Types.WeightPkey,request.options as Public.Tables.Weight.Options),
-"Public.Tables.Weight.WeightPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Weight.WeightPkey.update(request.parameters as Public.Types.WeightPkey,request.values as Partial<Public.Tables.Weight.Values>),
-"Public.Tables.Weight.WeightPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Weight.WeightPkey.delete(request.parameters as Public.Types.WeightPkey),
-"Public.Tables.FoodDes.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FoodDes.create(request.values as Public.Tables.FoodDes.Values),
-
-             "Public.Tables.FoodDes.all": async (request: EmbraceSQLRequest<object, object, object>) =>
-              database.Public.Tables.FoodDes.all(request.options as Public.Tables.FoodDes.Options),
-            
-"Public.Tables.FoodDes.FoodDesPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FoodDes.FoodDesPkey.read(request.parameters as Public.Types.FoodDesPkey,request.options as Public.Tables.FoodDes.Options),
-"Public.Tables.FoodDes.FoodDesPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FoodDes.FoodDesPkey.update(request.parameters as Public.Types.FoodDesPkey,request.values as Partial<Public.Tables.FoodDes.Values>),
-"Public.Tables.FoodDes.FoodDesPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FoodDes.FoodDesPkey.delete(request.parameters as Public.Types.FoodDesPkey),
-"Public.Tables.FoodDes.FoodDesFdgrpCdIdx.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FoodDes.FoodDesFdgrpCdIdx.read(request.parameters as Public.Types.FoodDesFdgrpCdIdx,request.options as Public.Tables.FoodDes.Options),
-"Public.Tables.FoodDes.FoodDesFdgrpCdIdx.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FoodDes.FoodDesFdgrpCdIdx.update(request.parameters as Public.Types.FoodDesFdgrpCdIdx,request.values as Partial<Public.Tables.FoodDes.Values>),
-"Public.Tables.FoodDes.FoodDesFdgrpCdIdx.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FoodDes.FoodDesFdgrpCdIdx.delete(request.parameters as Public.Types.FoodDesFdgrpCdIdx),
-"Public.Tables.DataSrc.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DataSrc.create(request.values as Public.Tables.DataSrc.Values),
-
-             "Public.Tables.DataSrc.all": async (request: EmbraceSQLRequest<object, object, object>) =>
-              database.Public.Tables.DataSrc.all(request.options as Public.Tables.DataSrc.Options),
-            
-"Public.Tables.DataSrc.DataSrcTitleFulltext.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DataSrc.DataSrcTitleFulltext.read(request.parameters as Public.Types.DataSrcTitleFulltext,request.options as Public.Tables.DataSrc.Options),
-"Public.Tables.DataSrc.DataSrcTitleFulltext.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DataSrc.DataSrcTitleFulltext.update(request.parameters as Public.Types.DataSrcTitleFulltext,request.values as Partial<Public.Tables.DataSrc.Values>),
-"Public.Tables.DataSrc.DataSrcTitleFulltext.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DataSrc.DataSrcTitleFulltext.delete(request.parameters as Public.Types.DataSrcTitleFulltext),
-"Public.Tables.DataSrc.DataSrcPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DataSrc.DataSrcPkey.read(request.parameters as Public.Types.DataSrcPkey,request.options as Public.Tables.DataSrc.Options),
-"Public.Tables.DataSrc.DataSrcPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DataSrc.DataSrcPkey.update(request.parameters as Public.Types.DataSrcPkey,request.values as Partial<Public.Tables.DataSrc.Values>),
-"Public.Tables.DataSrc.DataSrcPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DataSrc.DataSrcPkey.delete(request.parameters as Public.Types.DataSrcPkey),
-"Public.Tables.Datsrcln.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Datsrcln.create(request.values as Public.Tables.Datsrcln.Values),
-
-             "Public.Tables.Datsrcln.all": async (request: EmbraceSQLRequest<object, object, object>) =>
-              database.Public.Tables.Datsrcln.all(request.options as Public.Tables.Datsrcln.Options),
-            
-"Public.Tables.Datsrcln.DatsrclnPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Datsrcln.DatsrclnPkey.read(request.parameters as Public.Types.DatsrclnPkey,request.options as Public.Tables.Datsrcln.Options),
-"Public.Tables.Datsrcln.DatsrclnPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Datsrcln.DatsrclnPkey.update(request.parameters as Public.Types.DatsrclnPkey,request.values as Partial<Public.Tables.Datsrcln.Values>),
-"Public.Tables.Datsrcln.DatsrclnPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Datsrcln.DatsrclnPkey.delete(request.parameters as Public.Types.DatsrclnPkey),
-"Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.read(request.parameters as Public.Types.DatsrclnDatasrcIdIdx,request.options as Public.Tables.Datsrcln.Options),
-"Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.update(request.parameters as Public.Types.DatsrclnDatasrcIdIdx,request.values as Partial<Public.Tables.Datsrcln.Values>),
-"Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.delete(request.parameters as Public.Types.DatsrclnDatasrcIdIdx),
-}
-}
-
-            async dispatch(request: EmbraceSQLRequest<object, object, object>) {
-              if (!this.dispatchMap[request.operation]) {
-                throw new Error(`${request.operation} not available`);
-              }
-              return this.dispatchMap[request.operation](request);
-            }
-            
 }

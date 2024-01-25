@@ -1,4 +1,5888 @@
 
+            import { Tables, Table, Column, Index } from "@embracesql/shared";
+            import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
+            import postgres from "postgres";
+          
+
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        type ArgumentToPostgres = any;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        type ArgumentFromPostgres = any;
+        type Typecast = (x: ArgumentToPostgres) => ArgumentFromPostgres;
+        export interface PostgresTypecasts { 
+      
+[16]: Typecast;
+["PgCatalog.Types.Bool"]: Typecast
+[17]: Typecast;
+["PgCatalog.Types.Bytea"]: Typecast
+[18]: Typecast;
+["PgCatalog.Types.Char"]: Typecast
+[19]: Typecast;
+["PgCatalog.Types.Name"]: Typecast
+[20]: Typecast;
+["PgCatalog.Types.Int8"]: Typecast
+[21]: Typecast;
+["PgCatalog.Types.Int2"]: Typecast
+[22]: Typecast;
+["PgCatalog.Types.Int2vector"]: Typecast
+[23]: Typecast;
+["PgCatalog.Types.Int4"]: Typecast
+[24]: Typecast;
+["PgCatalog.Types.Regproc"]: Typecast
+[25]: Typecast;
+["PgCatalog.Types.Text"]: Typecast
+[26]: Typecast;
+["PgCatalog.Types.Oid"]: Typecast
+[27]: Typecast;
+["PgCatalog.Types.Tid"]: Typecast
+[28]: Typecast;
+["PgCatalog.Types.Xid"]: Typecast
+[29]: Typecast;
+["PgCatalog.Types.Cid"]: Typecast
+[30]: Typecast;
+["PgCatalog.Types.Oidvector"]: Typecast
+[71]: Typecast;
+["PgCatalog.Types.PgType"]: Typecast
+[75]: Typecast;
+["PgCatalog.Types.PgAttribute"]: Typecast
+[81]: Typecast;
+["PgCatalog.Types.PgProc"]: Typecast
+[83]: Typecast;
+["PgCatalog.Types.PgClass"]: Typecast
+[114]: Typecast;
+["PgCatalog.Types.Json"]: Typecast
+[142]: Typecast;
+["PgCatalog.Types.Xml"]: Typecast
+[194]: Typecast;
+["PgCatalog.Types.PgNodeTree"]: Typecast
+[3361]: Typecast;
+["PgCatalog.Types.PgNdistinct"]: Typecast
+[3402]: Typecast;
+["PgCatalog.Types.PgDependencies"]: Typecast
+[5017]: Typecast;
+["PgCatalog.Types.PgMcvList"]: Typecast
+[32]: Typecast;
+["PgCatalog.Types.PgDdlCommand"]: Typecast
+[5069]: Typecast;
+["PgCatalog.Types.Xid8"]: Typecast
+[600]: Typecast;
+["PgCatalog.Types.Point"]: Typecast
+[601]: Typecast;
+["PgCatalog.Types.Lseg"]: Typecast
+[602]: Typecast;
+["PgCatalog.Types.Path"]: Typecast
+[603]: Typecast;
+["PgCatalog.Types.Box"]: Typecast
+[604]: Typecast;
+["PgCatalog.Types.Polygon"]: Typecast
+[628]: Typecast;
+["PgCatalog.Types.Line"]: Typecast
+[700]: Typecast;
+["PgCatalog.Types.Float4"]: Typecast
+[701]: Typecast;
+["PgCatalog.Types.Float8"]: Typecast
+[705]: Typecast;
+["PgCatalog.Types.Unknown"]: Typecast
+[718]: Typecast;
+["PgCatalog.Types.Circle"]: Typecast
+[790]: Typecast;
+["PgCatalog.Types.Money"]: Typecast
+[829]: Typecast;
+["PgCatalog.Types.Macaddr"]: Typecast
+[869]: Typecast;
+["PgCatalog.Types.Inet"]: Typecast
+[650]: Typecast;
+["PgCatalog.Types.Cidr"]: Typecast
+[774]: Typecast;
+["PgCatalog.Types.Macaddr8"]: Typecast
+[1033]: Typecast;
+["PgCatalog.Types.Aclitem"]: Typecast
+[1042]: Typecast;
+["PgCatalog.Types.Bpchar"]: Typecast
+[1043]: Typecast;
+["PgCatalog.Types.Varchar"]: Typecast
+[1082]: Typecast;
+["PgCatalog.Types.Date"]: Typecast
+[1083]: Typecast;
+["PgCatalog.Types.Time"]: Typecast
+[1114]: Typecast;
+["PgCatalog.Types.Timestamp"]: Typecast
+[1184]: Typecast;
+["PgCatalog.Types.Timestamptz"]: Typecast
+[1186]: Typecast;
+["PgCatalog.Types.Interval"]: Typecast
+[1266]: Typecast;
+["PgCatalog.Types.Timetz"]: Typecast
+[1560]: Typecast;
+["PgCatalog.Types.Bit"]: Typecast
+[1562]: Typecast;
+["PgCatalog.Types.Varbit"]: Typecast
+[1700]: Typecast;
+["PgCatalog.Types.Numeric"]: Typecast
+[1790]: Typecast;
+["PgCatalog.Types.Refcursor"]: Typecast
+[2202]: Typecast;
+["PgCatalog.Types.Regprocedure"]: Typecast
+[2203]: Typecast;
+["PgCatalog.Types.Regoper"]: Typecast
+[2204]: Typecast;
+["PgCatalog.Types.Regoperator"]: Typecast
+[2205]: Typecast;
+["PgCatalog.Types.Regclass"]: Typecast
+[4191]: Typecast;
+["PgCatalog.Types.Regcollation"]: Typecast
+[2206]: Typecast;
+["PgCatalog.Types.Regtype"]: Typecast
+[4096]: Typecast;
+["PgCatalog.Types.Regrole"]: Typecast
+[4089]: Typecast;
+["PgCatalog.Types.Regnamespace"]: Typecast
+[2950]: Typecast;
+["PgCatalog.Types.Uuid"]: Typecast
+[3220]: Typecast;
+["PgCatalog.Types.PgLsn"]: Typecast
+[3614]: Typecast;
+["PgCatalog.Types.Tsvector"]: Typecast
+[3642]: Typecast;
+["PgCatalog.Types.Gtsvector"]: Typecast
+[3615]: Typecast;
+["PgCatalog.Types.Tsquery"]: Typecast
+[3734]: Typecast;
+["PgCatalog.Types.Regconfig"]: Typecast
+[3769]: Typecast;
+["PgCatalog.Types.Regdictionary"]: Typecast
+[3802]: Typecast;
+["PgCatalog.Types.Jsonb"]: Typecast
+[4072]: Typecast;
+["PgCatalog.Types.Jsonpath"]: Typecast
+[2970]: Typecast;
+["PgCatalog.Types.TxidSnapshot"]: Typecast
+[5038]: Typecast;
+["PgCatalog.Types.PgSnapshot"]: Typecast
+[3904]: Typecast;
+["PgCatalog.Types.Int4range"]: Typecast
+[3906]: Typecast;
+["PgCatalog.Types.Numrange"]: Typecast
+[3908]: Typecast;
+["PgCatalog.Types.Tsrange"]: Typecast
+[3910]: Typecast;
+["PgCatalog.Types.Tstzrange"]: Typecast
+[3912]: Typecast;
+["PgCatalog.Types.Daterange"]: Typecast
+[3926]: Typecast;
+["PgCatalog.Types.Int8range"]: Typecast
+[4451]: Typecast;
+["PgCatalog.Types.Int4multirange"]: Typecast
+[4532]: Typecast;
+["PgCatalog.Types.Nummultirange"]: Typecast
+[4533]: Typecast;
+["PgCatalog.Types.Tsmultirange"]: Typecast
+[4534]: Typecast;
+["PgCatalog.Types.Tstzmultirange"]: Typecast
+[4535]: Typecast;
+["PgCatalog.Types.Datemultirange"]: Typecast
+[4536]: Typecast;
+["PgCatalog.Types.Int8multirange"]: Typecast
+[2249]: Typecast;
+["PgCatalog.Types.Record"]: Typecast
+[2287]: Typecast;
+["PgCatalog.Types.RecordArray"]: Typecast
+[2275]: Typecast;
+["PgCatalog.Types.Cstring"]: Typecast
+[2276]: Typecast;
+["PgCatalog.Types.Any"]: Typecast
+[2277]: Typecast;
+["PgCatalog.Types.Anyarray"]: Typecast
+[2278]: Typecast;
+["PgCatalog.Types.Void"]: Typecast
+[2279]: Typecast;
+["PgCatalog.Types.Trigger"]: Typecast
+[3838]: Typecast;
+["PgCatalog.Types.EventTrigger"]: Typecast
+[2280]: Typecast;
+["PgCatalog.Types.LanguageHandler"]: Typecast
+[2281]: Typecast;
+["PgCatalog.Types.Internal"]: Typecast
+[2283]: Typecast;
+["PgCatalog.Types.Anyelement"]: Typecast
+[2776]: Typecast;
+["PgCatalog.Types.Anynonarray"]: Typecast
+[3500]: Typecast;
+["PgCatalog.Types.Anyenum"]: Typecast
+[3115]: Typecast;
+["PgCatalog.Types.FdwHandler"]: Typecast
+[325]: Typecast;
+["PgCatalog.Types.IndexAmHandler"]: Typecast
+[3310]: Typecast;
+["PgCatalog.Types.TsmHandler"]: Typecast
+[269]: Typecast;
+["PgCatalog.Types.TableAmHandler"]: Typecast
+[3831]: Typecast;
+["PgCatalog.Types.Anyrange"]: Typecast
+[5077]: Typecast;
+["PgCatalog.Types.Anycompatible"]: Typecast
+[5078]: Typecast;
+["PgCatalog.Types.Anycompatiblearray"]: Typecast
+[5079]: Typecast;
+["PgCatalog.Types.Anycompatiblenonarray"]: Typecast
+[5080]: Typecast;
+["PgCatalog.Types.Anycompatiblerange"]: Typecast
+[4537]: Typecast;
+["PgCatalog.Types.Anymultirange"]: Typecast
+[4538]: Typecast;
+["PgCatalog.Types.Anycompatiblemultirange"]: Typecast
+[4600]: Typecast;
+["PgCatalog.Types.PgBrinBloomSummary"]: Typecast
+[4601]: Typecast;
+["PgCatalog.Types.PgBrinMinmaxMultiSummary"]: Typecast
+[1000]: Typecast;
+["PgCatalog.Types.BoolArray"]: Typecast
+[1001]: Typecast;
+["PgCatalog.Types.ByteaArray"]: Typecast
+[1002]: Typecast;
+["PgCatalog.Types.CharArray"]: Typecast
+[1003]: Typecast;
+["PgCatalog.Types.NameArray"]: Typecast
+[1016]: Typecast;
+["PgCatalog.Types.Int8Array"]: Typecast
+[1005]: Typecast;
+["PgCatalog.Types.Int2Array"]: Typecast
+[1006]: Typecast;
+["PgCatalog.Types.Int2vectorArray"]: Typecast
+[1007]: Typecast;
+["PgCatalog.Types.Int4Array"]: Typecast
+[1008]: Typecast;
+["PgCatalog.Types.RegprocArray"]: Typecast
+[1009]: Typecast;
+["PgCatalog.Types.TextArray"]: Typecast
+[1028]: Typecast;
+["PgCatalog.Types.OidArray"]: Typecast
+[1010]: Typecast;
+["PgCatalog.Types.TidArray"]: Typecast
+[1011]: Typecast;
+["PgCatalog.Types.XidArray"]: Typecast
+[1012]: Typecast;
+["PgCatalog.Types.CidArray"]: Typecast
+[1013]: Typecast;
+["PgCatalog.Types.OidvectorArray"]: Typecast
+[210]: Typecast;
+["PgCatalog.Types.PgTypeArray"]: Typecast
+[270]: Typecast;
+["PgCatalog.Types.PgAttributeArray"]: Typecast
+[272]: Typecast;
+["PgCatalog.Types.PgProcArray"]: Typecast
+[273]: Typecast;
+["PgCatalog.Types.PgClassArray"]: Typecast
+[199]: Typecast;
+["PgCatalog.Types.JsonArray"]: Typecast
+[143]: Typecast;
+["PgCatalog.Types.XmlArray"]: Typecast
+[271]: Typecast;
+["PgCatalog.Types.Xid8Array"]: Typecast
+[1017]: Typecast;
+["PgCatalog.Types.PointArray"]: Typecast
+[1018]: Typecast;
+["PgCatalog.Types.LsegArray"]: Typecast
+[1019]: Typecast;
+["PgCatalog.Types.PathArray"]: Typecast
+[1020]: Typecast;
+["PgCatalog.Types.BoxArray"]: Typecast
+[1027]: Typecast;
+["PgCatalog.Types.PolygonArray"]: Typecast
+[629]: Typecast;
+["PgCatalog.Types.LineArray"]: Typecast
+[1021]: Typecast;
+["PgCatalog.Types.Float4Array"]: Typecast
+[1022]: Typecast;
+["PgCatalog.Types.Float8Array"]: Typecast
+[719]: Typecast;
+["PgCatalog.Types.CircleArray"]: Typecast
+[791]: Typecast;
+["PgCatalog.Types.MoneyArray"]: Typecast
+[1040]: Typecast;
+["PgCatalog.Types.MacaddrArray"]: Typecast
+[1041]: Typecast;
+["PgCatalog.Types.InetArray"]: Typecast
+[651]: Typecast;
+["PgCatalog.Types.CidrArray"]: Typecast
+[775]: Typecast;
+["PgCatalog.Types.Macaddr8Array"]: Typecast
+[1034]: Typecast;
+["PgCatalog.Types.AclitemArray"]: Typecast
+[1014]: Typecast;
+["PgCatalog.Types.BpcharArray"]: Typecast
+[1015]: Typecast;
+["PgCatalog.Types.VarcharArray"]: Typecast
+[1182]: Typecast;
+["PgCatalog.Types.DateArray"]: Typecast
+[1183]: Typecast;
+["PgCatalog.Types.TimeArray"]: Typecast
+[1115]: Typecast;
+["PgCatalog.Types.TimestampArray"]: Typecast
+[1185]: Typecast;
+["PgCatalog.Types.TimestamptzArray"]: Typecast
+[1187]: Typecast;
+["PgCatalog.Types.IntervalArray"]: Typecast
+[1270]: Typecast;
+["PgCatalog.Types.TimetzArray"]: Typecast
+[1561]: Typecast;
+["PgCatalog.Types.BitArray"]: Typecast
+[1563]: Typecast;
+["PgCatalog.Types.VarbitArray"]: Typecast
+[1231]: Typecast;
+["PgCatalog.Types.NumericArray"]: Typecast
+[2201]: Typecast;
+["PgCatalog.Types.RefcursorArray"]: Typecast
+[2207]: Typecast;
+["PgCatalog.Types.RegprocedureArray"]: Typecast
+[2208]: Typecast;
+["PgCatalog.Types.RegoperArray"]: Typecast
+[2209]: Typecast;
+["PgCatalog.Types.RegoperatorArray"]: Typecast
+[2210]: Typecast;
+["PgCatalog.Types.RegclassArray"]: Typecast
+[4192]: Typecast;
+["PgCatalog.Types.RegcollationArray"]: Typecast
+[2211]: Typecast;
+["PgCatalog.Types.RegtypeArray"]: Typecast
+[4097]: Typecast;
+["PgCatalog.Types.RegroleArray"]: Typecast
+[4090]: Typecast;
+["PgCatalog.Types.RegnamespaceArray"]: Typecast
+[2951]: Typecast;
+["PgCatalog.Types.UuidArray"]: Typecast
+[3221]: Typecast;
+["PgCatalog.Types.PgLsnArray"]: Typecast
+[3643]: Typecast;
+["PgCatalog.Types.TsvectorArray"]: Typecast
+[3644]: Typecast;
+["PgCatalog.Types.GtsvectorArray"]: Typecast
+[3645]: Typecast;
+["PgCatalog.Types.TsqueryArray"]: Typecast
+[3735]: Typecast;
+["PgCatalog.Types.RegconfigArray"]: Typecast
+[3770]: Typecast;
+["PgCatalog.Types.RegdictionaryArray"]: Typecast
+[3807]: Typecast;
+["PgCatalog.Types.JsonbArray"]: Typecast
+[4073]: Typecast;
+["PgCatalog.Types.JsonpathArray"]: Typecast
+[2949]: Typecast;
+["PgCatalog.Types.TxidSnapshotArray"]: Typecast
+[5039]: Typecast;
+["PgCatalog.Types.PgSnapshotArray"]: Typecast
+[3905]: Typecast;
+["PgCatalog.Types.Int4rangeArray"]: Typecast
+[3907]: Typecast;
+["PgCatalog.Types.NumrangeArray"]: Typecast
+[3909]: Typecast;
+["PgCatalog.Types.TsrangeArray"]: Typecast
+[3911]: Typecast;
+["PgCatalog.Types.TstzrangeArray"]: Typecast
+[3913]: Typecast;
+["PgCatalog.Types.DaterangeArray"]: Typecast
+[3927]: Typecast;
+["PgCatalog.Types.Int8rangeArray"]: Typecast
+[6150]: Typecast;
+["PgCatalog.Types.Int4multirangeArray"]: Typecast
+[6151]: Typecast;
+["PgCatalog.Types.NummultirangeArray"]: Typecast
+[6152]: Typecast;
+["PgCatalog.Types.TsmultirangeArray"]: Typecast
+[6153]: Typecast;
+["PgCatalog.Types.TstzmultirangeArray"]: Typecast
+[6155]: Typecast;
+["PgCatalog.Types.DatemultirangeArray"]: Typecast
+[6157]: Typecast;
+["PgCatalog.Types.Int8multirangeArray"]: Typecast
+[1263]: Typecast;
+["PgCatalog.Types.CstringArray"]: Typecast
+[10001]: Typecast;
+["PgCatalog.Types.PgAttrdef"]: Typecast
+[10000]: Typecast;
+["PgCatalog.Types.PgAttrdefArray"]: Typecast
+[10003]: Typecast;
+["PgCatalog.Types.PgConstraint"]: Typecast
+[10002]: Typecast;
+["PgCatalog.Types.PgConstraintArray"]: Typecast
+[10005]: Typecast;
+["PgCatalog.Types.PgInherits"]: Typecast
+[10004]: Typecast;
+["PgCatalog.Types.PgInheritsArray"]: Typecast
+[10007]: Typecast;
+["PgCatalog.Types.PgIndex"]: Typecast
+[10006]: Typecast;
+["PgCatalog.Types.PgIndexArray"]: Typecast
+[10009]: Typecast;
+["PgCatalog.Types.PgOperator"]: Typecast
+[10008]: Typecast;
+["PgCatalog.Types.PgOperatorArray"]: Typecast
+[10011]: Typecast;
+["PgCatalog.Types.PgOpfamily"]: Typecast
+[10010]: Typecast;
+["PgCatalog.Types.PgOpfamilyArray"]: Typecast
+[10013]: Typecast;
+["PgCatalog.Types.PgOpclass"]: Typecast
+[10012]: Typecast;
+["PgCatalog.Types.PgOpclassArray"]: Typecast
+[10015]: Typecast;
+["PgCatalog.Types.PgAm"]: Typecast
+[10014]: Typecast;
+["PgCatalog.Types.PgAmArray"]: Typecast
+[10017]: Typecast;
+["PgCatalog.Types.PgAmop"]: Typecast
+[10016]: Typecast;
+["PgCatalog.Types.PgAmopArray"]: Typecast
+[10019]: Typecast;
+["PgCatalog.Types.PgAmproc"]: Typecast
+[10018]: Typecast;
+["PgCatalog.Types.PgAmprocArray"]: Typecast
+[10021]: Typecast;
+["PgCatalog.Types.PgLanguage"]: Typecast
+[10020]: Typecast;
+["PgCatalog.Types.PgLanguageArray"]: Typecast
+[10023]: Typecast;
+["PgCatalog.Types.PgLargeobjectMetadata"]: Typecast
+[10022]: Typecast;
+["PgCatalog.Types.PgLargeobjectMetadataArray"]: Typecast
+[10025]: Typecast;
+["PgCatalog.Types.PgLargeobject"]: Typecast
+[10024]: Typecast;
+["PgCatalog.Types.PgLargeobjectArray"]: Typecast
+[10027]: Typecast;
+["PgCatalog.Types.PgAggregate"]: Typecast
+[10026]: Typecast;
+["PgCatalog.Types.PgAggregateArray"]: Typecast
+[10029]: Typecast;
+["PgCatalog.Types.PgStatistic"]: Typecast
+[10028]: Typecast;
+["PgCatalog.Types.PgStatisticArray"]: Typecast
+[10031]: Typecast;
+["PgCatalog.Types.PgStatisticExt"]: Typecast
+[10030]: Typecast;
+["PgCatalog.Types.PgStatisticExtArray"]: Typecast
+[10033]: Typecast;
+["PgCatalog.Types.PgStatisticExtData"]: Typecast
+[10032]: Typecast;
+["PgCatalog.Types.PgStatisticExtDataArray"]: Typecast
+[10035]: Typecast;
+["PgCatalog.Types.PgRewrite"]: Typecast
+[10034]: Typecast;
+["PgCatalog.Types.PgRewriteArray"]: Typecast
+[10037]: Typecast;
+["PgCatalog.Types.PgTrigger"]: Typecast
+[10036]: Typecast;
+["PgCatalog.Types.PgTriggerArray"]: Typecast
+[10039]: Typecast;
+["PgCatalog.Types.PgEventTrigger"]: Typecast
+[10038]: Typecast;
+["PgCatalog.Types.PgEventTriggerArray"]: Typecast
+[10041]: Typecast;
+["PgCatalog.Types.PgDescription"]: Typecast
+[10040]: Typecast;
+["PgCatalog.Types.PgDescriptionArray"]: Typecast
+[10043]: Typecast;
+["PgCatalog.Types.PgCast"]: Typecast
+[10042]: Typecast;
+["PgCatalog.Types.PgCastArray"]: Typecast
+[10045]: Typecast;
+["PgCatalog.Types.PgEnum"]: Typecast
+[10044]: Typecast;
+["PgCatalog.Types.PgEnumArray"]: Typecast
+[10047]: Typecast;
+["PgCatalog.Types.PgNamespace"]: Typecast
+[10046]: Typecast;
+["PgCatalog.Types.PgNamespaceArray"]: Typecast
+[10049]: Typecast;
+["PgCatalog.Types.PgConversion"]: Typecast
+[10048]: Typecast;
+["PgCatalog.Types.PgConversionArray"]: Typecast
+[10051]: Typecast;
+["PgCatalog.Types.PgDepend"]: Typecast
+[10050]: Typecast;
+["PgCatalog.Types.PgDependArray"]: Typecast
+[1248]: Typecast;
+["PgCatalog.Types.PgDatabase"]: Typecast
+[10052]: Typecast;
+["PgCatalog.Types.PgDatabaseArray"]: Typecast
+[10054]: Typecast;
+["PgCatalog.Types.PgDbRoleSetting"]: Typecast
+[10053]: Typecast;
+["PgCatalog.Types.PgDbRoleSettingArray"]: Typecast
+[10056]: Typecast;
+["PgCatalog.Types.PgTablespace"]: Typecast
+[10055]: Typecast;
+["PgCatalog.Types.PgTablespaceArray"]: Typecast
+[2842]: Typecast;
+["PgCatalog.Types.PgAuthid"]: Typecast
+[10057]: Typecast;
+["PgCatalog.Types.PgAuthidArray"]: Typecast
+[2843]: Typecast;
+["PgCatalog.Types.PgAuthMembers"]: Typecast
+[10058]: Typecast;
+["PgCatalog.Types.PgAuthMembersArray"]: Typecast
+[10060]: Typecast;
+["PgCatalog.Types.PgShdepend"]: Typecast
+[10059]: Typecast;
+["PgCatalog.Types.PgShdependArray"]: Typecast
+[10062]: Typecast;
+["PgCatalog.Types.PgShdescription"]: Typecast
+[10061]: Typecast;
+["PgCatalog.Types.PgShdescriptionArray"]: Typecast
+[10064]: Typecast;
+["PgCatalog.Types.PgTsConfig"]: Typecast
+[10063]: Typecast;
+["PgCatalog.Types.PgTsConfigArray"]: Typecast
+[10066]: Typecast;
+["PgCatalog.Types.PgTsConfigMap"]: Typecast
+[10065]: Typecast;
+["PgCatalog.Types.PgTsConfigMapArray"]: Typecast
+[10068]: Typecast;
+["PgCatalog.Types.PgTsDict"]: Typecast
+[10067]: Typecast;
+["PgCatalog.Types.PgTsDictArray"]: Typecast
+[10070]: Typecast;
+["PgCatalog.Types.PgTsParser"]: Typecast
+[10069]: Typecast;
+["PgCatalog.Types.PgTsParserArray"]: Typecast
+[10072]: Typecast;
+["PgCatalog.Types.PgTsTemplate"]: Typecast
+[10071]: Typecast;
+["PgCatalog.Types.PgTsTemplateArray"]: Typecast
+[10074]: Typecast;
+["PgCatalog.Types.PgExtension"]: Typecast
+[10073]: Typecast;
+["PgCatalog.Types.PgExtensionArray"]: Typecast
+[10076]: Typecast;
+["PgCatalog.Types.PgForeignDataWrapper"]: Typecast
+[10075]: Typecast;
+["PgCatalog.Types.PgForeignDataWrapperArray"]: Typecast
+[10078]: Typecast;
+["PgCatalog.Types.PgForeignServer"]: Typecast
+[10077]: Typecast;
+["PgCatalog.Types.PgForeignServerArray"]: Typecast
+[10080]: Typecast;
+["PgCatalog.Types.PgUserMapping"]: Typecast
+[10079]: Typecast;
+["PgCatalog.Types.PgUserMappingArray"]: Typecast
+[10082]: Typecast;
+["PgCatalog.Types.PgForeignTable"]: Typecast
+[10081]: Typecast;
+["PgCatalog.Types.PgForeignTableArray"]: Typecast
+[10084]: Typecast;
+["PgCatalog.Types.PgPolicy"]: Typecast
+[10083]: Typecast;
+["PgCatalog.Types.PgPolicyArray"]: Typecast
+[10086]: Typecast;
+["PgCatalog.Types.PgReplicationOrigin"]: Typecast
+[10085]: Typecast;
+["PgCatalog.Types.PgReplicationOriginArray"]: Typecast
+[10088]: Typecast;
+["PgCatalog.Types.PgDefaultAcl"]: Typecast
+[10087]: Typecast;
+["PgCatalog.Types.PgDefaultAclArray"]: Typecast
+[10090]: Typecast;
+["PgCatalog.Types.PgInitPrivs"]: Typecast
+[10089]: Typecast;
+["PgCatalog.Types.PgInitPrivsArray"]: Typecast
+[10092]: Typecast;
+["PgCatalog.Types.PgSeclabel"]: Typecast
+[10091]: Typecast;
+["PgCatalog.Types.PgSeclabelArray"]: Typecast
+[4066]: Typecast;
+["PgCatalog.Types.PgShseclabel"]: Typecast
+[10093]: Typecast;
+["PgCatalog.Types.PgShseclabelArray"]: Typecast
+[10095]: Typecast;
+["PgCatalog.Types.PgCollation"]: Typecast
+[10094]: Typecast;
+["PgCatalog.Types.PgCollationArray"]: Typecast
+[10097]: Typecast;
+["PgCatalog.Types.PgParameterAcl"]: Typecast
+[10096]: Typecast;
+["PgCatalog.Types.PgParameterAclArray"]: Typecast
+[10099]: Typecast;
+["PgCatalog.Types.PgPartitionedTable"]: Typecast
+[10098]: Typecast;
+["PgCatalog.Types.PgPartitionedTableArray"]: Typecast
+[10101]: Typecast;
+["PgCatalog.Types.PgRange"]: Typecast
+[10100]: Typecast;
+["PgCatalog.Types.PgRangeArray"]: Typecast
+[10103]: Typecast;
+["PgCatalog.Types.PgTransform"]: Typecast
+[10102]: Typecast;
+["PgCatalog.Types.PgTransformArray"]: Typecast
+[10105]: Typecast;
+["PgCatalog.Types.PgSequence"]: Typecast
+[10104]: Typecast;
+["PgCatalog.Types.PgSequenceArray"]: Typecast
+[10107]: Typecast;
+["PgCatalog.Types.PgPublication"]: Typecast
+[10106]: Typecast;
+["PgCatalog.Types.PgPublicationArray"]: Typecast
+[10109]: Typecast;
+["PgCatalog.Types.PgPublicationNamespace"]: Typecast
+[10108]: Typecast;
+["PgCatalog.Types.PgPublicationNamespaceArray"]: Typecast
+[10111]: Typecast;
+["PgCatalog.Types.PgPublicationRel"]: Typecast
+[10110]: Typecast;
+["PgCatalog.Types.PgPublicationRelArray"]: Typecast
+[6101]: Typecast;
+["PgCatalog.Types.PgSubscription"]: Typecast
+[10112]: Typecast;
+["PgCatalog.Types.PgSubscriptionArray"]: Typecast
+[10114]: Typecast;
+["PgCatalog.Types.PgSubscriptionRel"]: Typecast
+[10113]: Typecast;
+["PgCatalog.Types.PgSubscriptionRelArray"]: Typecast
+[12002]: Typecast;
+["PgCatalog.Types.PgRoles"]: Typecast
+[12001]: Typecast;
+["PgCatalog.Types.PgRolesArray"]: Typecast
+[12007]: Typecast;
+["PgCatalog.Types.PgShadow"]: Typecast
+[12006]: Typecast;
+["PgCatalog.Types.PgShadowArray"]: Typecast
+[12012]: Typecast;
+["PgCatalog.Types.PgGroup"]: Typecast
+[12011]: Typecast;
+["PgCatalog.Types.PgGroupArray"]: Typecast
+[12016]: Typecast;
+["PgCatalog.Types.PgUser"]: Typecast
+[12015]: Typecast;
+["PgCatalog.Types.PgUserArray"]: Typecast
+[12020]: Typecast;
+["PgCatalog.Types.PgPolicies"]: Typecast
+[12019]: Typecast;
+["PgCatalog.Types.PgPoliciesArray"]: Typecast
+[12025]: Typecast;
+["PgCatalog.Types.PgRules"]: Typecast
+[12024]: Typecast;
+["PgCatalog.Types.PgRulesArray"]: Typecast
+[12030]: Typecast;
+["PgCatalog.Types.PgViews"]: Typecast
+[12029]: Typecast;
+["PgCatalog.Types.PgViewsArray"]: Typecast
+[12035]: Typecast;
+["PgCatalog.Types.PgTables"]: Typecast
+[12034]: Typecast;
+["PgCatalog.Types.PgTablesArray"]: Typecast
+[12040]: Typecast;
+["PgCatalog.Types.PgMatviews"]: Typecast
+[12039]: Typecast;
+["PgCatalog.Types.PgMatviewsArray"]: Typecast
+[12045]: Typecast;
+["PgCatalog.Types.PgIndexes"]: Typecast
+[12044]: Typecast;
+["PgCatalog.Types.PgIndexesArray"]: Typecast
+[12050]: Typecast;
+["PgCatalog.Types.PgSequences"]: Typecast
+[12049]: Typecast;
+["PgCatalog.Types.PgSequencesArray"]: Typecast
+[12055]: Typecast;
+["PgCatalog.Types.PgStats"]: Typecast
+[12054]: Typecast;
+["PgCatalog.Types.PgStatsArray"]: Typecast
+[12060]: Typecast;
+["PgCatalog.Types.PgStatsExt"]: Typecast
+[12059]: Typecast;
+["PgCatalog.Types.PgStatsExtArray"]: Typecast
+[12065]: Typecast;
+["PgCatalog.Types.PgStatsExtExprs"]: Typecast
+[12064]: Typecast;
+["PgCatalog.Types.PgStatsExtExprsArray"]: Typecast
+[12070]: Typecast;
+["PgCatalog.Types.PgPublicationTables"]: Typecast
+[12069]: Typecast;
+["PgCatalog.Types.PgPublicationTablesArray"]: Typecast
+[12075]: Typecast;
+["PgCatalog.Types.PgLocks"]: Typecast
+[12074]: Typecast;
+["PgCatalog.Types.PgLocksArray"]: Typecast
+[12079]: Typecast;
+["PgCatalog.Types.PgCursors"]: Typecast
+[12078]: Typecast;
+["PgCatalog.Types.PgCursorsArray"]: Typecast
+[12083]: Typecast;
+["PgCatalog.Types.PgAvailableExtensions"]: Typecast
+[12082]: Typecast;
+["PgCatalog.Types.PgAvailableExtensionsArray"]: Typecast
+[12087]: Typecast;
+["PgCatalog.Types.PgAvailableExtensionVersions"]: Typecast
+[12086]: Typecast;
+["PgCatalog.Types.PgAvailableExtensionVersionsArray"]: Typecast
+[12092]: Typecast;
+["PgCatalog.Types.PgPreparedXacts"]: Typecast
+[12091]: Typecast;
+["PgCatalog.Types.PgPreparedXactsArray"]: Typecast
+[12097]: Typecast;
+["PgCatalog.Types.PgPreparedStatements"]: Typecast
+[12096]: Typecast;
+["PgCatalog.Types.PgPreparedStatementsArray"]: Typecast
+[12101]: Typecast;
+["PgCatalog.Types.PgSeclabels"]: Typecast
+[12100]: Typecast;
+["PgCatalog.Types.PgSeclabelsArray"]: Typecast
+[12106]: Typecast;
+["PgCatalog.Types.PgSettings"]: Typecast
+[12105]: Typecast;
+["PgCatalog.Types.PgSettingsArray"]: Typecast
+[12112]: Typecast;
+["PgCatalog.Types.PgFileSettings"]: Typecast
+[12111]: Typecast;
+["PgCatalog.Types.PgFileSettingsArray"]: Typecast
+[12116]: Typecast;
+["PgCatalog.Types.PgHbaFileRules"]: Typecast
+[12115]: Typecast;
+["PgCatalog.Types.PgHbaFileRulesArray"]: Typecast
+[12120]: Typecast;
+["PgCatalog.Types.PgIdentFileMappings"]: Typecast
+[12119]: Typecast;
+["PgCatalog.Types.PgIdentFileMappingsArray"]: Typecast
+[12124]: Typecast;
+["PgCatalog.Types.PgTimezoneAbbrevs"]: Typecast
+[12123]: Typecast;
+["PgCatalog.Types.PgTimezoneAbbrevsArray"]: Typecast
+[12128]: Typecast;
+["PgCatalog.Types.PgTimezoneNames"]: Typecast
+[12127]: Typecast;
+["PgCatalog.Types.PgTimezoneNamesArray"]: Typecast
+[12132]: Typecast;
+["PgCatalog.Types.PgConfig"]: Typecast
+[12131]: Typecast;
+["PgCatalog.Types.PgConfigArray"]: Typecast
+[12136]: Typecast;
+["PgCatalog.Types.PgShmemAllocations"]: Typecast
+[12135]: Typecast;
+["PgCatalog.Types.PgShmemAllocationsArray"]: Typecast
+[12140]: Typecast;
+["PgCatalog.Types.PgBackendMemoryContexts"]: Typecast
+[12139]: Typecast;
+["PgCatalog.Types.PgBackendMemoryContextsArray"]: Typecast
+[12144]: Typecast;
+["PgCatalog.Types.PgStatAllTables"]: Typecast
+[12143]: Typecast;
+["PgCatalog.Types.PgStatAllTablesArray"]: Typecast
+[12149]: Typecast;
+["PgCatalog.Types.PgStatXactAllTables"]: Typecast
+[12148]: Typecast;
+["PgCatalog.Types.PgStatXactAllTablesArray"]: Typecast
+[12154]: Typecast;
+["PgCatalog.Types.PgStatSysTables"]: Typecast
+[12153]: Typecast;
+["PgCatalog.Types.PgStatSysTablesArray"]: Typecast
+[12159]: Typecast;
+["PgCatalog.Types.PgStatXactSysTables"]: Typecast
+[12158]: Typecast;
+["PgCatalog.Types.PgStatXactSysTablesArray"]: Typecast
+[12163]: Typecast;
+["PgCatalog.Types.PgStatUserTables"]: Typecast
+[12162]: Typecast;
+["PgCatalog.Types.PgStatUserTablesArray"]: Typecast
+[12168]: Typecast;
+["PgCatalog.Types.PgStatXactUserTables"]: Typecast
+[12167]: Typecast;
+["PgCatalog.Types.PgStatXactUserTablesArray"]: Typecast
+[12172]: Typecast;
+["PgCatalog.Types.PgStatioAllTables"]: Typecast
+[12171]: Typecast;
+["PgCatalog.Types.PgStatioAllTablesArray"]: Typecast
+[12177]: Typecast;
+["PgCatalog.Types.PgStatioSysTables"]: Typecast
+[12176]: Typecast;
+["PgCatalog.Types.PgStatioSysTablesArray"]: Typecast
+[12181]: Typecast;
+["PgCatalog.Types.PgStatioUserTables"]: Typecast
+[12180]: Typecast;
+["PgCatalog.Types.PgStatioUserTablesArray"]: Typecast
+[12185]: Typecast;
+["PgCatalog.Types.PgStatAllIndexes"]: Typecast
+[12184]: Typecast;
+["PgCatalog.Types.PgStatAllIndexesArray"]: Typecast
+[12190]: Typecast;
+["PgCatalog.Types.PgStatSysIndexes"]: Typecast
+[12189]: Typecast;
+["PgCatalog.Types.PgStatSysIndexesArray"]: Typecast
+[12194]: Typecast;
+["PgCatalog.Types.PgStatUserIndexes"]: Typecast
+[12193]: Typecast;
+["PgCatalog.Types.PgStatUserIndexesArray"]: Typecast
+[12198]: Typecast;
+["PgCatalog.Types.PgStatioAllIndexes"]: Typecast
+[12197]: Typecast;
+["PgCatalog.Types.PgStatioAllIndexesArray"]: Typecast
+[12203]: Typecast;
+["PgCatalog.Types.PgStatioSysIndexes"]: Typecast
+[12202]: Typecast;
+["PgCatalog.Types.PgStatioSysIndexesArray"]: Typecast
+[12207]: Typecast;
+["PgCatalog.Types.PgStatioUserIndexes"]: Typecast
+[12206]: Typecast;
+["PgCatalog.Types.PgStatioUserIndexesArray"]: Typecast
+[12211]: Typecast;
+["PgCatalog.Types.PgStatioAllSequences"]: Typecast
+[12210]: Typecast;
+["PgCatalog.Types.PgStatioAllSequencesArray"]: Typecast
+[12216]: Typecast;
+["PgCatalog.Types.PgStatioSysSequences"]: Typecast
+[12215]: Typecast;
+["PgCatalog.Types.PgStatioSysSequencesArray"]: Typecast
+[12220]: Typecast;
+["PgCatalog.Types.PgStatioUserSequences"]: Typecast
+[12219]: Typecast;
+["PgCatalog.Types.PgStatioUserSequencesArray"]: Typecast
+[12224]: Typecast;
+["PgCatalog.Types.PgStatActivity"]: Typecast
+[12223]: Typecast;
+["PgCatalog.Types.PgStatActivityArray"]: Typecast
+[12229]: Typecast;
+["PgCatalog.Types.PgStatReplication"]: Typecast
+[12228]: Typecast;
+["PgCatalog.Types.PgStatReplicationArray"]: Typecast
+[12234]: Typecast;
+["PgCatalog.Types.PgStatSlru"]: Typecast
+[12233]: Typecast;
+["PgCatalog.Types.PgStatSlruArray"]: Typecast
+[12238]: Typecast;
+["PgCatalog.Types.PgStatWalReceiver"]: Typecast
+[12237]: Typecast;
+["PgCatalog.Types.PgStatWalReceiverArray"]: Typecast
+[12242]: Typecast;
+["PgCatalog.Types.PgStatRecoveryPrefetch"]: Typecast
+[12241]: Typecast;
+["PgCatalog.Types.PgStatRecoveryPrefetchArray"]: Typecast
+[12246]: Typecast;
+["PgCatalog.Types.PgStatSubscription"]: Typecast
+[12245]: Typecast;
+["PgCatalog.Types.PgStatSubscriptionArray"]: Typecast
+[12251]: Typecast;
+["PgCatalog.Types.PgStatSsl"]: Typecast
+[12250]: Typecast;
+["PgCatalog.Types.PgStatSslArray"]: Typecast
+[12255]: Typecast;
+["PgCatalog.Types.PgStatGssapi"]: Typecast
+[12254]: Typecast;
+["PgCatalog.Types.PgStatGssapiArray"]: Typecast
+[12259]: Typecast;
+["PgCatalog.Types.PgReplicationSlots"]: Typecast
+[12258]: Typecast;
+["PgCatalog.Types.PgReplicationSlotsArray"]: Typecast
+[12264]: Typecast;
+["PgCatalog.Types.PgStatReplicationSlots"]: Typecast
+[12263]: Typecast;
+["PgCatalog.Types.PgStatReplicationSlotsArray"]: Typecast
+[12268]: Typecast;
+["PgCatalog.Types.PgStatDatabase"]: Typecast
+[12267]: Typecast;
+["PgCatalog.Types.PgStatDatabaseArray"]: Typecast
+[12273]: Typecast;
+["PgCatalog.Types.PgStatDatabaseConflicts"]: Typecast
+[12272]: Typecast;
+["PgCatalog.Types.PgStatDatabaseConflictsArray"]: Typecast
+[12277]: Typecast;
+["PgCatalog.Types.PgStatUserFunctions"]: Typecast
+[12276]: Typecast;
+["PgCatalog.Types.PgStatUserFunctionsArray"]: Typecast
+[12282]: Typecast;
+["PgCatalog.Types.PgStatXactUserFunctions"]: Typecast
+[12281]: Typecast;
+["PgCatalog.Types.PgStatXactUserFunctionsArray"]: Typecast
+[12287]: Typecast;
+["PgCatalog.Types.PgStatArchiver"]: Typecast
+[12286]: Typecast;
+["PgCatalog.Types.PgStatArchiverArray"]: Typecast
+[12291]: Typecast;
+["PgCatalog.Types.PgStatBgwriter"]: Typecast
+[12290]: Typecast;
+["PgCatalog.Types.PgStatBgwriterArray"]: Typecast
+[12295]: Typecast;
+["PgCatalog.Types.PgStatIo"]: Typecast
+[12294]: Typecast;
+["PgCatalog.Types.PgStatIoArray"]: Typecast
+[12299]: Typecast;
+["PgCatalog.Types.PgStatWal"]: Typecast
+[12298]: Typecast;
+["PgCatalog.Types.PgStatWalArray"]: Typecast
+[12303]: Typecast;
+["PgCatalog.Types.PgStatProgressAnalyze"]: Typecast
+[12302]: Typecast;
+["PgCatalog.Types.PgStatProgressAnalyzeArray"]: Typecast
+[12308]: Typecast;
+["PgCatalog.Types.PgStatProgressVacuum"]: Typecast
+[12307]: Typecast;
+["PgCatalog.Types.PgStatProgressVacuumArray"]: Typecast
+[12313]: Typecast;
+["PgCatalog.Types.PgStatProgressCluster"]: Typecast
+[12312]: Typecast;
+["PgCatalog.Types.PgStatProgressClusterArray"]: Typecast
+[12318]: Typecast;
+["PgCatalog.Types.PgStatProgressCreateIndex"]: Typecast
+[12317]: Typecast;
+["PgCatalog.Types.PgStatProgressCreateIndexArray"]: Typecast
+[12323]: Typecast;
+["PgCatalog.Types.PgStatProgressBasebackup"]: Typecast
+[12322]: Typecast;
+["PgCatalog.Types.PgStatProgressBasebackupArray"]: Typecast
+[12328]: Typecast;
+["PgCatalog.Types.PgStatProgressCopy"]: Typecast
+[12327]: Typecast;
+["PgCatalog.Types.PgStatProgressCopyArray"]: Typecast
+[12333]: Typecast;
+["PgCatalog.Types.PgUserMappings"]: Typecast
+[12332]: Typecast;
+["PgCatalog.Types.PgUserMappingsArray"]: Typecast
+[12338]: Typecast;
+["PgCatalog.Types.PgReplicationOriginStatus"]: Typecast
+[12337]: Typecast;
+["PgCatalog.Types.PgReplicationOriginStatusArray"]: Typecast
+[12342]: Typecast;
+["PgCatalog.Types.PgStatSubscriptionStats"]: Typecast
+[12341]: Typecast;
+["PgCatalog.Types.PgStatSubscriptionStatsArray"]: Typecast
+[2690]: Typecast;
+["PgCatalog.Types.PgProcOidIndex"]: Typecast
+[2691]: Typecast;
+["PgCatalog.Types.PgProcPronameArgsNspIndex"]: Typecast
+[2703]: Typecast;
+["PgCatalog.Types.PgTypeOidIndex"]: Typecast
+[2704]: Typecast;
+["PgCatalog.Types.PgTypeTypnameNspIndex"]: Typecast
+[2658]: Typecast;
+["PgCatalog.Types.PgAttributeRelidAttnamIndex"]: Typecast
+[2659]: Typecast;
+["PgCatalog.Types.PgAttributeRelidAttnumIndex"]: Typecast
+[2662]: Typecast;
+["PgCatalog.Types.PgClassOidIndex"]: Typecast
+[2663]: Typecast;
+["PgCatalog.Types.PgClassRelnameNspIndex"]: Typecast
+[3455]: Typecast;
+["PgCatalog.Types.PgClassTblspcRelfilenodeIndex"]: Typecast
+[2656]: Typecast;
+["PgCatalog.Types.PgAttrdefAdrelidAdnumIndex"]: Typecast
+[2657]: Typecast;
+["PgCatalog.Types.PgAttrdefOidIndex"]: Typecast
+[2664]: Typecast;
+["PgCatalog.Types.PgConstraintConnameNspIndex"]: Typecast
+[2665]: Typecast;
+["PgCatalog.Types.PgConstraintConrelidContypidConnameIndex"]: Typecast
+[2666]: Typecast;
+["PgCatalog.Types.PgConstraintContypidIndex"]: Typecast
+[2667]: Typecast;
+["PgCatalog.Types.PgConstraintOidIndex"]: Typecast
+[2579]: Typecast;
+["PgCatalog.Types.PgConstraintConparentidIndex"]: Typecast
+[2680]: Typecast;
+["PgCatalog.Types.PgInheritsRelidSeqnoIndex"]: Typecast
+[2187]: Typecast;
+["PgCatalog.Types.PgInheritsParentIndex"]: Typecast
+[2678]: Typecast;
+["PgCatalog.Types.PgIndexIndrelidIndex"]: Typecast
+[2679]: Typecast;
+["PgCatalog.Types.PgIndexIndexrelidIndex"]: Typecast
+[2688]: Typecast;
+["PgCatalog.Types.PgOperatorOidIndex"]: Typecast
+[2689]: Typecast;
+["PgCatalog.Types.PgOperatorOprnameLRNIndex"]: Typecast
+[2754]: Typecast;
+["PgCatalog.Types.PgOpfamilyAmNameNspIndex"]: Typecast
+[2755]: Typecast;
+["PgCatalog.Types.PgOpfamilyOidIndex"]: Typecast
+[2686]: Typecast;
+["PgCatalog.Types.PgOpclassAmNameNspIndex"]: Typecast
+[2687]: Typecast;
+["PgCatalog.Types.PgOpclassOidIndex"]: Typecast
+[2651]: Typecast;
+["PgCatalog.Types.PgAmNameIndex"]: Typecast
+[2652]: Typecast;
+["PgCatalog.Types.PgAmOidIndex"]: Typecast
+[2653]: Typecast;
+["PgCatalog.Types.PgAmopFamStratIndex"]: Typecast
+[2654]: Typecast;
+["PgCatalog.Types.PgAmopOprFamIndex"]: Typecast
+[2756]: Typecast;
+["PgCatalog.Types.PgAmopOidIndex"]: Typecast
+[2655]: Typecast;
+["PgCatalog.Types.PgAmprocFamProcIndex"]: Typecast
+[2757]: Typecast;
+["PgCatalog.Types.PgAmprocOidIndex"]: Typecast
+[2681]: Typecast;
+["PgCatalog.Types.PgLanguageNameIndex"]: Typecast
+[2682]: Typecast;
+["PgCatalog.Types.PgLanguageOidIndex"]: Typecast
+[2996]: Typecast;
+["PgCatalog.Types.PgLargeobjectMetadataOidIndex"]: Typecast
+[2683]: Typecast;
+["PgCatalog.Types.PgLargeobjectLoidPnIndex"]: Typecast
+[2650]: Typecast;
+["PgCatalog.Types.PgAggregateFnoidIndex"]: Typecast
+[2696]: Typecast;
+["PgCatalog.Types.PgStatisticRelidAttInhIndex"]: Typecast
+[3380]: Typecast;
+["PgCatalog.Types.PgStatisticExtOidIndex"]: Typecast
+[3997]: Typecast;
+["PgCatalog.Types.PgStatisticExtNameIndex"]: Typecast
+[3379]: Typecast;
+["PgCatalog.Types.PgStatisticExtRelidIndex"]: Typecast
+[3433]: Typecast;
+["PgCatalog.Types.PgStatisticExtDataStxoidInhIndex"]: Typecast
+[2692]: Typecast;
+["PgCatalog.Types.PgRewriteOidIndex"]: Typecast
+[2693]: Typecast;
+["PgCatalog.Types.PgRewriteRelRulenameIndex"]: Typecast
+[2699]: Typecast;
+["PgCatalog.Types.PgTriggerTgconstraintIndex"]: Typecast
+[2701]: Typecast;
+["PgCatalog.Types.PgTriggerTgrelidTgnameIndex"]: Typecast
+[2702]: Typecast;
+["PgCatalog.Types.PgTriggerOidIndex"]: Typecast
+[3467]: Typecast;
+["PgCatalog.Types.PgEventTriggerEvtnameIndex"]: Typecast
+[3468]: Typecast;
+["PgCatalog.Types.PgEventTriggerOidIndex"]: Typecast
+[2675]: Typecast;
+["PgCatalog.Types.PgDescriptionOCOIndex"]: Typecast
+[2660]: Typecast;
+["PgCatalog.Types.PgCastOidIndex"]: Typecast
+[2661]: Typecast;
+["PgCatalog.Types.PgCastSourceTargetIndex"]: Typecast
+[3502]: Typecast;
+["PgCatalog.Types.PgEnumOidIndex"]: Typecast
+[3503]: Typecast;
+["PgCatalog.Types.PgEnumTypidLabelIndex"]: Typecast
+[3534]: Typecast;
+["PgCatalog.Types.PgEnumTypidSortorderIndex"]: Typecast
+[2684]: Typecast;
+["PgCatalog.Types.PgNamespaceNspnameIndex"]: Typecast
+[2685]: Typecast;
+["PgCatalog.Types.PgNamespaceOidIndex"]: Typecast
+[2668]: Typecast;
+["PgCatalog.Types.PgConversionDefaultIndex"]: Typecast
+[2669]: Typecast;
+["PgCatalog.Types.PgConversionNameNspIndex"]: Typecast
+[2670]: Typecast;
+["PgCatalog.Types.PgConversionOidIndex"]: Typecast
+[2673]: Typecast;
+["PgCatalog.Types.PgDependDependerIndex"]: Typecast
+[2674]: Typecast;
+["PgCatalog.Types.PgDependReferenceIndex"]: Typecast
+[2671]: Typecast;
+["PgCatalog.Types.PgDatabaseDatnameIndex"]: Typecast
+[2672]: Typecast;
+["PgCatalog.Types.PgDatabaseOidIndex"]: Typecast
+[2965]: Typecast;
+["PgCatalog.Types.PgDbRoleSettingDatabaseidRolIndex"]: Typecast
+[2697]: Typecast;
+["PgCatalog.Types.PgTablespaceOidIndex"]: Typecast
+[2698]: Typecast;
+["PgCatalog.Types.PgTablespaceSpcnameIndex"]: Typecast
+[2676]: Typecast;
+["PgCatalog.Types.PgAuthidRolnameIndex"]: Typecast
+[2677]: Typecast;
+["PgCatalog.Types.PgAuthidOidIndex"]: Typecast
+[6303]: Typecast;
+["PgCatalog.Types.PgAuthMembersOidIndex"]: Typecast
+[2694]: Typecast;
+["PgCatalog.Types.PgAuthMembersRoleMemberIndex"]: Typecast
+[2695]: Typecast;
+["PgCatalog.Types.PgAuthMembersMemberRoleIndex"]: Typecast
+[6302]: Typecast;
+["PgCatalog.Types.PgAuthMembersGrantorIndex"]: Typecast
+[1232]: Typecast;
+["PgCatalog.Types.PgShdependDependerIndex"]: Typecast
+[1233]: Typecast;
+["PgCatalog.Types.PgShdependReferenceIndex"]: Typecast
+[2397]: Typecast;
+["PgCatalog.Types.PgShdescriptionOCIndex"]: Typecast
+[3608]: Typecast;
+["PgCatalog.Types.PgTsConfigCfgnameIndex"]: Typecast
+[3712]: Typecast;
+["PgCatalog.Types.PgTsConfigOidIndex"]: Typecast
+[3609]: Typecast;
+["PgCatalog.Types.PgTsConfigMapIndex"]: Typecast
+[3604]: Typecast;
+["PgCatalog.Types.PgTsDictDictnameIndex"]: Typecast
+[3605]: Typecast;
+["PgCatalog.Types.PgTsDictOidIndex"]: Typecast
+[3606]: Typecast;
+["PgCatalog.Types.PgTsParserPrsnameIndex"]: Typecast
+[3607]: Typecast;
+["PgCatalog.Types.PgTsParserOidIndex"]: Typecast
+[3766]: Typecast;
+["PgCatalog.Types.PgTsTemplateTmplnameIndex"]: Typecast
+[3767]: Typecast;
+["PgCatalog.Types.PgTsTemplateOidIndex"]: Typecast
+[3080]: Typecast;
+["PgCatalog.Types.PgExtensionOidIndex"]: Typecast
+[3081]: Typecast;
+["PgCatalog.Types.PgExtensionNameIndex"]: Typecast
+[112]: Typecast;
+["PgCatalog.Types.PgForeignDataWrapperOidIndex"]: Typecast
+[548]: Typecast;
+["PgCatalog.Types.PgForeignDataWrapperNameIndex"]: Typecast
+[113]: Typecast;
+["PgCatalog.Types.PgForeignServerOidIndex"]: Typecast
+[549]: Typecast;
+["PgCatalog.Types.PgForeignServerNameIndex"]: Typecast
+[174]: Typecast;
+["PgCatalog.Types.PgUserMappingOidIndex"]: Typecast
+[175]: Typecast;
+["PgCatalog.Types.PgUserMappingUserServerIndex"]: Typecast
+[3119]: Typecast;
+["PgCatalog.Types.PgForeignTableRelidIndex"]: Typecast
+[3257]: Typecast;
+["PgCatalog.Types.PgPolicyOidIndex"]: Typecast
+[3258]: Typecast;
+["PgCatalog.Types.PgPolicyPolrelidPolnameIndex"]: Typecast
+[6001]: Typecast;
+["PgCatalog.Types.PgReplicationOriginRoiidentIndex"]: Typecast
+[6002]: Typecast;
+["PgCatalog.Types.PgReplicationOriginRonameIndex"]: Typecast
+[827]: Typecast;
+["PgCatalog.Types.PgDefaultAclRoleNspObjIndex"]: Typecast
+[828]: Typecast;
+["PgCatalog.Types.PgDefaultAclOidIndex"]: Typecast
+[3395]: Typecast;
+["PgCatalog.Types.PgInitPrivsOCOIndex"]: Typecast
+[3597]: Typecast;
+["PgCatalog.Types.PgSeclabelObjectIndex"]: Typecast
+[3593]: Typecast;
+["PgCatalog.Types.PgShseclabelObjectIndex"]: Typecast
+[3164]: Typecast;
+["PgCatalog.Types.PgCollationNameEncNspIndex"]: Typecast
+[3085]: Typecast;
+["PgCatalog.Types.PgCollationOidIndex"]: Typecast
+[6246]: Typecast;
+["PgCatalog.Types.PgParameterAclParnameIndex"]: Typecast
+[6247]: Typecast;
+["PgCatalog.Types.PgParameterAclOidIndex"]: Typecast
+[3351]: Typecast;
+["PgCatalog.Types.PgPartitionedTablePartrelidIndex"]: Typecast
+[3542]: Typecast;
+["PgCatalog.Types.PgRangeRngtypidIndex"]: Typecast
+[2228]: Typecast;
+["PgCatalog.Types.PgRangeRngmultitypidIndex"]: Typecast
+[3574]: Typecast;
+["PgCatalog.Types.PgTransformOidIndex"]: Typecast
+[3575]: Typecast;
+["PgCatalog.Types.PgTransformTypeLangIndex"]: Typecast
+[5002]: Typecast;
+["PgCatalog.Types.PgSequenceSeqrelidIndex"]: Typecast
+[6110]: Typecast;
+["PgCatalog.Types.PgPublicationOidIndex"]: Typecast
+[6111]: Typecast;
+["PgCatalog.Types.PgPublicationPubnameIndex"]: Typecast
+[6238]: Typecast;
+["PgCatalog.Types.PgPublicationNamespaceOidIndex"]: Typecast
+[6239]: Typecast;
+["PgCatalog.Types.PgPublicationNamespacePnnspidPnpubidIndex"]: Typecast
+[6112]: Typecast;
+["PgCatalog.Types.PgPublicationRelOidIndex"]: Typecast
+[6113]: Typecast;
+["PgCatalog.Types.PgPublicationRelPrrelidPrpubidIndex"]: Typecast
+[6116]: Typecast;
+["PgCatalog.Types.PgPublicationRelPrpubidIndex"]: Typecast
+[6114]: Typecast;
+["PgCatalog.Types.PgSubscriptionOidIndex"]: Typecast
+[6115]: Typecast;
+["PgCatalog.Types.PgSubscriptionSubnameIndex"]: Typecast
+[6117]: Typecast;
+["PgCatalog.Types.PgSubscriptionRelSrrelidSrsubidIndex"]: Typecast
+[13488]: Typecast;
+["InformationSchema.Types.CardinalNumber"]: Typecast
+[13487]: Typecast;
+["InformationSchema.Types.CardinalNumberArray"]: Typecast
+[13491]: Typecast;
+["InformationSchema.Types.CharacterData"]: Typecast
+[13490]: Typecast;
+["InformationSchema.Types.CharacterDataArray"]: Typecast
+[13493]: Typecast;
+["InformationSchema.Types.SqlIdentifier"]: Typecast
+[13492]: Typecast;
+["InformationSchema.Types.SqlIdentifierArray"]: Typecast
+[13496]: Typecast;
+["InformationSchema.Types.InformationSchemaCatalogName"]: Typecast
+[13495]: Typecast;
+["InformationSchema.Types.InformationSchemaCatalogNameArray"]: Typecast
+[13499]: Typecast;
+["InformationSchema.Types.TimeStamp"]: Typecast
+[13498]: Typecast;
+["InformationSchema.Types.TimeStampArray"]: Typecast
+[13501]: Typecast;
+["InformationSchema.Types.YesOrNo"]: Typecast
+[13500]: Typecast;
+["InformationSchema.Types.YesOrNoArray"]: Typecast
+[13505]: Typecast;
+["InformationSchema.Types.ApplicableRoles"]: Typecast
+[13504]: Typecast;
+["InformationSchema.Types.ApplicableRolesArray"]: Typecast
+[13510]: Typecast;
+["InformationSchema.Types.AdministrableRoleAuthorizations"]: Typecast
+[13509]: Typecast;
+["InformationSchema.Types.AdministrableRoleAuthorizationsArray"]: Typecast
+[13514]: Typecast;
+["InformationSchema.Types.Attributes"]: Typecast
+[13513]: Typecast;
+["InformationSchema.Types.AttributesArray"]: Typecast
+[13519]: Typecast;
+["InformationSchema.Types.CharacterSets"]: Typecast
+[13518]: Typecast;
+["InformationSchema.Types.CharacterSetsArray"]: Typecast
+[13524]: Typecast;
+["InformationSchema.Types.CheckConstraintRoutineUsage"]: Typecast
+[13523]: Typecast;
+["InformationSchema.Types.CheckConstraintRoutineUsageArray"]: Typecast
+[13529]: Typecast;
+["InformationSchema.Types.CheckConstraints"]: Typecast
+[13528]: Typecast;
+["InformationSchema.Types.CheckConstraintsArray"]: Typecast
+[13534]: Typecast;
+["InformationSchema.Types.Collations"]: Typecast
+[13533]: Typecast;
+["InformationSchema.Types.CollationsArray"]: Typecast
+[13539]: Typecast;
+["InformationSchema.Types.CollationCharacterSetApplicability"]: Typecast
+[13538]: Typecast;
+["InformationSchema.Types.CollationCharacterSetApplicabilityArray"]: Typecast
+[13544]: Typecast;
+["InformationSchema.Types.ColumnColumnUsage"]: Typecast
+[13543]: Typecast;
+["InformationSchema.Types.ColumnColumnUsageArray"]: Typecast
+[13549]: Typecast;
+["InformationSchema.Types.ColumnDomainUsage"]: Typecast
+[13548]: Typecast;
+["InformationSchema.Types.ColumnDomainUsageArray"]: Typecast
+[13554]: Typecast;
+["InformationSchema.Types.ColumnPrivileges"]: Typecast
+[13553]: Typecast;
+["InformationSchema.Types.ColumnPrivilegesArray"]: Typecast
+[13559]: Typecast;
+["InformationSchema.Types.ColumnUdtUsage"]: Typecast
+[13558]: Typecast;
+["InformationSchema.Types.ColumnUdtUsageArray"]: Typecast
+[13564]: Typecast;
+["InformationSchema.Types.Columns"]: Typecast
+[13563]: Typecast;
+["InformationSchema.Types.ColumnsArray"]: Typecast
+[13569]: Typecast;
+["InformationSchema.Types.ConstraintColumnUsage"]: Typecast
+[13568]: Typecast;
+["InformationSchema.Types.ConstraintColumnUsageArray"]: Typecast
+[13574]: Typecast;
+["InformationSchema.Types.ConstraintTableUsage"]: Typecast
+[13573]: Typecast;
+["InformationSchema.Types.ConstraintTableUsageArray"]: Typecast
+[13579]: Typecast;
+["InformationSchema.Types.DomainConstraints"]: Typecast
+[13578]: Typecast;
+["InformationSchema.Types.DomainConstraintsArray"]: Typecast
+[13584]: Typecast;
+["InformationSchema.Types.DomainUdtUsage"]: Typecast
+[13583]: Typecast;
+["InformationSchema.Types.DomainUdtUsageArray"]: Typecast
+[13589]: Typecast;
+["InformationSchema.Types.Domains"]: Typecast
+[13588]: Typecast;
+["InformationSchema.Types.DomainsArray"]: Typecast
+[13594]: Typecast;
+["InformationSchema.Types.EnabledRoles"]: Typecast
+[13593]: Typecast;
+["InformationSchema.Types.EnabledRolesArray"]: Typecast
+[13598]: Typecast;
+["InformationSchema.Types.KeyColumnUsage"]: Typecast
+[13597]: Typecast;
+["InformationSchema.Types.KeyColumnUsageArray"]: Typecast
+[13603]: Typecast;
+["InformationSchema.Types.Parameters"]: Typecast
+[13602]: Typecast;
+["InformationSchema.Types.ParametersArray"]: Typecast
+[13608]: Typecast;
+["InformationSchema.Types.ReferentialConstraints"]: Typecast
+[13607]: Typecast;
+["InformationSchema.Types.ReferentialConstraintsArray"]: Typecast
+[13613]: Typecast;
+["InformationSchema.Types.RoleColumnGrants"]: Typecast
+[13612]: Typecast;
+["InformationSchema.Types.RoleColumnGrantsArray"]: Typecast
+[13617]: Typecast;
+["InformationSchema.Types.RoutineColumnUsage"]: Typecast
+[13616]: Typecast;
+["InformationSchema.Types.RoutineColumnUsageArray"]: Typecast
+[13622]: Typecast;
+["InformationSchema.Types.RoutinePrivileges"]: Typecast
+[13621]: Typecast;
+["InformationSchema.Types.RoutinePrivilegesArray"]: Typecast
+[13627]: Typecast;
+["InformationSchema.Types.RoleRoutineGrants"]: Typecast
+[13626]: Typecast;
+["InformationSchema.Types.RoleRoutineGrantsArray"]: Typecast
+[13631]: Typecast;
+["InformationSchema.Types.RoutineRoutineUsage"]: Typecast
+[13630]: Typecast;
+["InformationSchema.Types.RoutineRoutineUsageArray"]: Typecast
+[13636]: Typecast;
+["InformationSchema.Types.RoutineSequenceUsage"]: Typecast
+[13635]: Typecast;
+["InformationSchema.Types.RoutineSequenceUsageArray"]: Typecast
+[13641]: Typecast;
+["InformationSchema.Types.RoutineTableUsage"]: Typecast
+[13640]: Typecast;
+["InformationSchema.Types.RoutineTableUsageArray"]: Typecast
+[13646]: Typecast;
+["InformationSchema.Types.Routines"]: Typecast
+[13645]: Typecast;
+["InformationSchema.Types.RoutinesArray"]: Typecast
+[13651]: Typecast;
+["InformationSchema.Types.Schemata"]: Typecast
+[13650]: Typecast;
+["InformationSchema.Types.SchemataArray"]: Typecast
+[13655]: Typecast;
+["InformationSchema.Types.Sequences"]: Typecast
+[13654]: Typecast;
+["InformationSchema.Types.SequencesArray"]: Typecast
+[13660]: Typecast;
+["InformationSchema.Types.SqlFeatures"]: Typecast
+[13659]: Typecast;
+["InformationSchema.Types.SqlFeaturesArray"]: Typecast
+[13665]: Typecast;
+["InformationSchema.Types.SqlImplementationInfo"]: Typecast
+[13664]: Typecast;
+["InformationSchema.Types.SqlImplementationInfoArray"]: Typecast
+[13670]: Typecast;
+["InformationSchema.Types.SqlParts"]: Typecast
+[13669]: Typecast;
+["InformationSchema.Types.SqlPartsArray"]: Typecast
+[13675]: Typecast;
+["InformationSchema.Types.SqlSizing"]: Typecast
+[13674]: Typecast;
+["InformationSchema.Types.SqlSizingArray"]: Typecast
+[13680]: Typecast;
+["InformationSchema.Types.TableConstraints"]: Typecast
+[13679]: Typecast;
+["InformationSchema.Types.TableConstraintsArray"]: Typecast
+[13685]: Typecast;
+["InformationSchema.Types.TablePrivileges"]: Typecast
+[13684]: Typecast;
+["InformationSchema.Types.TablePrivilegesArray"]: Typecast
+[13690]: Typecast;
+["InformationSchema.Types.RoleTableGrants"]: Typecast
+[13689]: Typecast;
+["InformationSchema.Types.RoleTableGrantsArray"]: Typecast
+[13694]: Typecast;
+["InformationSchema.Types.Tables"]: Typecast
+[13693]: Typecast;
+["InformationSchema.Types.TablesArray"]: Typecast
+[13699]: Typecast;
+["InformationSchema.Types.Transforms"]: Typecast
+[13698]: Typecast;
+["InformationSchema.Types.TransformsArray"]: Typecast
+[13704]: Typecast;
+["InformationSchema.Types.TriggeredUpdateColumns"]: Typecast
+[13703]: Typecast;
+["InformationSchema.Types.TriggeredUpdateColumnsArray"]: Typecast
+[13709]: Typecast;
+["InformationSchema.Types.Triggers"]: Typecast
+[13708]: Typecast;
+["InformationSchema.Types.TriggersArray"]: Typecast
+[13714]: Typecast;
+["InformationSchema.Types.UdtPrivileges"]: Typecast
+[13713]: Typecast;
+["InformationSchema.Types.UdtPrivilegesArray"]: Typecast
+[13719]: Typecast;
+["InformationSchema.Types.RoleUdtGrants"]: Typecast
+[13718]: Typecast;
+["InformationSchema.Types.RoleUdtGrantsArray"]: Typecast
+[13723]: Typecast;
+["InformationSchema.Types.UsagePrivileges"]: Typecast
+[13722]: Typecast;
+["InformationSchema.Types.UsagePrivilegesArray"]: Typecast
+[13728]: Typecast;
+["InformationSchema.Types.RoleUsageGrants"]: Typecast
+[13727]: Typecast;
+["InformationSchema.Types.RoleUsageGrantsArray"]: Typecast
+[13732]: Typecast;
+["InformationSchema.Types.UserDefinedTypes"]: Typecast
+[13731]: Typecast;
+["InformationSchema.Types.UserDefinedTypesArray"]: Typecast
+[13737]: Typecast;
+["InformationSchema.Types.ViewColumnUsage"]: Typecast
+[13736]: Typecast;
+["InformationSchema.Types.ViewColumnUsageArray"]: Typecast
+[13742]: Typecast;
+["InformationSchema.Types.ViewRoutineUsage"]: Typecast
+[13741]: Typecast;
+["InformationSchema.Types.ViewRoutineUsageArray"]: Typecast
+[13747]: Typecast;
+["InformationSchema.Types.ViewTableUsage"]: Typecast
+[13746]: Typecast;
+["InformationSchema.Types.ViewTableUsageArray"]: Typecast
+[13752]: Typecast;
+["InformationSchema.Types.Views"]: Typecast
+[13751]: Typecast;
+["InformationSchema.Types.ViewsArray"]: Typecast
+[13757]: Typecast;
+["InformationSchema.Types.DataTypePrivileges"]: Typecast
+[13756]: Typecast;
+["InformationSchema.Types.DataTypePrivilegesArray"]: Typecast
+[13762]: Typecast;
+["InformationSchema.Types.ElementTypes"]: Typecast
+[13761]: Typecast;
+["InformationSchema.Types.ElementTypesArray"]: Typecast
+[13767]: Typecast;
+["InformationSchema.Types.PgForeignTableColumns"]: Typecast
+[13772]: Typecast;
+["InformationSchema.Types.ColumnOptions"]: Typecast
+[13771]: Typecast;
+["InformationSchema.Types.ColumnOptionsArray"]: Typecast
+[13776]: Typecast;
+["InformationSchema.Types.PgForeignDataWrappers"]: Typecast
+[13780]: Typecast;
+["InformationSchema.Types.ForeignDataWrapperOptions"]: Typecast
+[13779]: Typecast;
+["InformationSchema.Types.ForeignDataWrapperOptionsArray"]: Typecast
+[13784]: Typecast;
+["InformationSchema.Types.ForeignDataWrappers"]: Typecast
+[13783]: Typecast;
+["InformationSchema.Types.ForeignDataWrappersArray"]: Typecast
+[13788]: Typecast;
+["InformationSchema.Types.PgForeignServers"]: Typecast
+[13793]: Typecast;
+["InformationSchema.Types.ForeignServerOptions"]: Typecast
+[13792]: Typecast;
+["InformationSchema.Types.ForeignServerOptionsArray"]: Typecast
+[13797]: Typecast;
+["InformationSchema.Types.ForeignServers"]: Typecast
+[13796]: Typecast;
+["InformationSchema.Types.ForeignServersArray"]: Typecast
+[13801]: Typecast;
+["InformationSchema.Types.PgForeignTables"]: Typecast
+[13806]: Typecast;
+["InformationSchema.Types.ForeignTableOptions"]: Typecast
+[13805]: Typecast;
+["InformationSchema.Types.ForeignTableOptionsArray"]: Typecast
+[13810]: Typecast;
+["InformationSchema.Types.ForeignTables"]: Typecast
+[13809]: Typecast;
+["InformationSchema.Types.ForeignTablesArray"]: Typecast
+[13814]: Typecast;
+["InformationSchema.Types.PgUserMappings"]: Typecast
+[13819]: Typecast;
+["InformationSchema.Types.UserMappingOptions"]: Typecast
+[13818]: Typecast;
+["InformationSchema.Types.UserMappingOptionsArray"]: Typecast
+[13824]: Typecast;
+["InformationSchema.Types.UserMappings"]: Typecast
+[13823]: Typecast;
+["InformationSchema.Types.UserMappingsArray"]: Typecast
+[29222]: Typecast;
+["Public.Types.CubeArray"]: Typecast
+[29217]: Typecast;
+["Public.Types.Cube"]: Typecast
+[29323]: Typecast;
+["Public.Types.Gtrgm"]: Typecast
+[29326]: Typecast;
+["Public.Types.GtrgmArray"]: Typecast
+[29389]: Typecast;
+["Public.Types.Slug"]: Typecast
+[29388]: Typecast;
+["Public.Types.SlugArray"]: Typecast
+[29391]: Typecast;
+["Public.Types.SlugPkey"]: Typecast
+
+["Public.Procedures.CubeIn.Parameters"]: Typecast
+
+["Public.Procedures.Cube_9c45.Parameters"]: Typecast
+
+["Public.Procedures.Cube_2e6d.Parameters"]: Typecast
+
+["Public.Procedures.CubeOut.Parameters"]: Typecast
+
+["Public.Procedures.CubeEq.Parameters"]: Typecast
+
+["Public.Procedures.CubeNe.Parameters"]: Typecast
+
+["Public.Procedures.CubeLt.Parameters"]: Typecast
+
+["Public.Procedures.CubeGt.Parameters"]: Typecast
+
+["Public.Procedures.CubeLe.Parameters"]: Typecast
+
+["Public.Procedures.CubeGe.Parameters"]: Typecast
+
+["Public.Procedures.CubeCmp.Parameters"]: Typecast
+
+["Public.Procedures.CubeContains.Parameters"]: Typecast
+
+["Public.Procedures.CubeContained.Parameters"]: Typecast
+
+["Public.Procedures.CubeOverlap.Parameters"]: Typecast
+
+["Public.Procedures.CubeUnion.Parameters"]: Typecast
+
+["Public.Procedures.CubeInter.Parameters"]: Typecast
+
+["Public.Procedures.CubeSize.Parameters"]: Typecast
+
+["Public.Procedures.CubeSubset.Parameters"]: Typecast
+
+["Public.Procedures.CubeDistance.Parameters"]: Typecast
+
+["Public.Procedures.DistanceChebyshev.Parameters"]: Typecast
+
+["Public.Procedures.DistanceTaxicab.Parameters"]: Typecast
+
+["Public.Procedures.CubeDim.Parameters"]: Typecast
+
+["Public.Procedures.CubeLlCoord.Parameters"]: Typecast
+
+["Public.Procedures.CubeUrCoord.Parameters"]: Typecast
+
+["Public.Procedures.CubeCoord.Parameters"]: Typecast
+
+["Public.Procedures.CubeCoordLlur.Parameters"]: Typecast
+
+["Public.Procedures.CubeA5b3.Parameters"]: Typecast
+
+["Public.Procedures.Cube_0aec.Parameters"]: Typecast
+
+["Public.Procedures.Cube_5ffb.Parameters"]: Typecast
+
+["Public.Procedures.Cube_9e1c.Parameters"]: Typecast
+
+["Public.Procedures.CubeIsPoint.Parameters"]: Typecast
+
+["Public.Procedures.CubeEnlarge.Parameters"]: Typecast
+
+["Public.Procedures.GCubeConsistent.Parameters"]: Typecast
+
+["Public.Procedures.GCubePenalty.Parameters"]: Typecast
+
+["Public.Procedures.GCubePicksplit.Parameters"]: Typecast
+
+["Public.Procedures.GCubeUnion.Parameters"]: Typecast
+
+["Public.Procedures.GCubeSame.Parameters"]: Typecast
+
+["Public.Procedures.GCubeDistance.Parameters"]: Typecast
+
+["Public.Procedures.CubeRecv.Parameters"]: Typecast
+
+["Public.Procedures.CubeSend.Parameters"]: Typecast
+
+["Public.Procedures.SetLimit.Parameters"]: Typecast
+
+["Public.Procedures.ShowTrgm.Parameters"]: Typecast
+
+["Public.Procedures.Similarity.Parameters"]: Typecast
+
+["Public.Procedures.SimilarityOp.Parameters"]: Typecast
+
+["Public.Procedures.WordSimilarity.Parameters"]: Typecast
+
+["Public.Procedures.WordSimilarityOp.Parameters"]: Typecast
+
+["Public.Procedures.WordSimilarityCommutatorOp.Parameters"]: Typecast
+
+["Public.Procedures.SimilarityDist.Parameters"]: Typecast
+
+["Public.Procedures.WordSimilarityDistOp.Parameters"]: Typecast
+
+["Public.Procedures.WordSimilarityDistCommutatorOp.Parameters"]: Typecast
+
+["Public.Procedures.GtrgmIn.Parameters"]: Typecast
+
+["Public.Procedures.GtrgmOut.Parameters"]: Typecast
+
+["Public.Procedures.GtrgmConsistent.Parameters"]: Typecast
+
+["Public.Procedures.GtrgmDistance.Parameters"]: Typecast
+
+["Public.Procedures.GtrgmCompress.Parameters"]: Typecast
+
+["Public.Procedures.GtrgmDecompress.Parameters"]: Typecast
+
+["Public.Procedures.GtrgmPenalty.Parameters"]: Typecast
+
+["Public.Procedures.GtrgmPicksplit.Parameters"]: Typecast
+
+["Public.Procedures.GtrgmUnion.Parameters"]: Typecast
+
+["Public.Procedures.GtrgmSame.Parameters"]: Typecast
+
+["Public.Procedures.GinExtractValueTrgm.Parameters"]: Typecast
+
+["Public.Procedures.GinExtractQueryTrgm.Parameters"]: Typecast
+
+["Public.Procedures.GinTrgmConsistent.Parameters"]: Typecast
+
+["Public.Procedures.GinTrgmTriconsistent.Parameters"]: Typecast
+
+["Public.Procedures.StrictWordSimilarity.Parameters"]: Typecast
+
+["Public.Procedures.StrictWordSimilarityOp.Parameters"]: Typecast
+
+["Public.Procedures.StrictWordSimilarityCommutatorOp.Parameters"]: Typecast
+
+["Public.Procedures.StrictWordSimilarityDistOp.Parameters"]: Typecast
+
+["Public.Procedures.StrictWordSimilarityDistCommutatorOp.Parameters"]: Typecast
+
+["Public.Procedures.GtrgmOptions.Parameters"]: Typecast
+[29399]: Typecast;
+["Api.Types.EchoType"]: Typecast
+[29398]: Typecast;
+["Api.Types.EchoTypeArray"]: Typecast
+[29402]: Typecast;
+["Api.Types.EchoTypeNested"]: Typecast
+[29401]: Typecast;
+["Api.Types.EchoTypeNestedArray"]: Typecast
+[29408]: Typecast;
+["Api.Types.Answer"]: Typecast
+[29407]: Typecast;
+["Api.Types.AnswerArray"]: Typecast
+[29418]: Typecast;
+["Api.Types.QAndA"]: Typecast
+[29417]: Typecast;
+["Api.Types.QAndAArray"]: Typecast
+[29424]: Typecast;
+["Api.Types.Timezones"]: Typecast
+[29423]: Typecast;
+["Api.Types.TimezonesArray"]: Typecast
+[29431]: Typecast;
+["Api.Types.Points"]: Typecast
+[29430]: Typecast;
+["Api.Types.PointsArray"]: Typecast
+[29437]: Typecast;
+["Api.Types.Lines"]: Typecast
+[29436]: Typecast;
+["Api.Types.LinesArray"]: Typecast
+[29443]: Typecast;
+["Api.Types.LineSegments"]: Typecast
+[29442]: Typecast;
+["Api.Types.LineSegmentsArray"]: Typecast
+[29449]: Typecast;
+["Api.Types.Boxes"]: Typecast
+[29448]: Typecast;
+["Api.Types.BoxesArray"]: Typecast
+[29455]: Typecast;
+["Api.Types.Paths"]: Typecast
+[29454]: Typecast;
+["Api.Types.PathsArray"]: Typecast
+[29463]: Typecast;
+["Api.Types.Polygons"]: Typecast
+[29462]: Typecast;
+["Api.Types.PolygonsArray"]: Typecast
+[29471]: Typecast;
+["Api.Types.Circles"]: Typecast
+[29470]: Typecast;
+["Api.Types.CirclesArray"]: Typecast
+[29421]: Typecast;
+["Api.Types.QAndAAnswer"]: Typecast
+[29427]: Typecast;
+["Api.Types.TrgmIdxGist"]: Typecast
+[29428]: Typecast;
+["Api.Types.TrgmIdxGin"]: Typecast
+[29433]: Typecast;
+["Api.Types.PointsPkey"]: Typecast
+[29439]: Typecast;
+["Api.Types.LinesPkey"]: Typecast
+[29445]: Typecast;
+["Api.Types.LineSegmentsPkey"]: Typecast
+[29451]: Typecast;
+["Api.Types.BoxesPkey"]: Typecast
+[29459]: Typecast;
+["Api.Types.PathsPkey"]: Typecast
+[29467]: Typecast;
+["Api.Types.PolygonsPkey"]: Typecast
+[29473]: Typecast;
+["Api.Types.CirclesPkey"]: Typecast
+[29396]: Typecast;
+["Api.Types.EchoTable"]: Typecast
+
+["Api.Procedures.Echo.Parameters"]: Typecast
+
+["Api.Procedures.EchoSet.Parameters"]: Typecast
+
+["Api.Procedures.EchoTable.Parameters"]: Typecast
+
+["Api.Procedures.EchoType.Parameters"]: Typecast
+
+["Api.Procedures.EchoTypeArray.Parameters"]: Typecast
+
+["Api.Procedures.EchoTypeNested.Parameters"]: Typecast
+
+["Api.Procedures.EchoTypeSet.Parameters"]: Typecast
+
+["Api.Procedures.EchoAnswer.Parameters"]: Typecast
+[29420]: Typecast;
+["PgToast.Types.PgToast_29416Index"]: Typecast
+[29426]: Typecast;
+["PgToast.Types.PgToast_29422Index"]: Typecast
+[29458]: Typecast;
+["PgToast.Types.PgToast_29453Index"]: Typecast
+[29466]: Typecast;
+["PgToast.Types.PgToast_29461Index"]: Typecast
+[2837]: Typecast;
+["PgToast.Types.PgToast_1255Index"]: Typecast
+[4172]: Typecast;
+["PgToast.Types.PgToast_1247Index"]: Typecast
+[2831]: Typecast;
+["PgToast.Types.PgToast_2604Index"]: Typecast
+[2833]: Typecast;
+["PgToast.Types.PgToast_2606Index"]: Typecast
+[4158]: Typecast;
+["PgToast.Types.PgToast_2612Index"]: Typecast
+[4160]: Typecast;
+["PgToast.Types.PgToast_2600Index"]: Typecast
+[2841]: Typecast;
+["PgToast.Types.PgToast_2619Index"]: Typecast
+[3440]: Typecast;
+["PgToast.Types.PgToast_3381Index"]: Typecast
+[3431]: Typecast;
+["PgToast.Types.PgToast_3429Index"]: Typecast
+[2839]: Typecast;
+["PgToast.Types.PgToast_2618Index"]: Typecast
+[2337]: Typecast;
+["PgToast.Types.PgToast_2620Index"]: Typecast
+[4146]: Typecast;
+["PgToast.Types.PgToast_3466Index"]: Typecast
+[2835]: Typecast;
+["PgToast.Types.PgToast_2609Index"]: Typecast
+[4164]: Typecast;
+["PgToast.Types.PgToast_2615Index"]: Typecast
+[4178]: Typecast;
+["PgToast.Types.PgToast_1262Index"]: Typecast
+[2967]: Typecast;
+["PgToast.Types.PgToast_2964Index"]: Typecast
+[4186]: Typecast;
+["PgToast.Types.PgToast_1213Index"]: Typecast
+[4176]: Typecast;
+["PgToast.Types.PgToast_1260Index"]: Typecast
+[2847]: Typecast;
+["PgToast.Types.PgToast_2396Index"]: Typecast
+[4170]: Typecast;
+["PgToast.Types.PgToast_3600Index"]: Typecast
+[4148]: Typecast;
+["PgToast.Types.PgToast_3079Index"]: Typecast
+[4150]: Typecast;
+["PgToast.Types.PgToast_2328Index"]: Typecast
+[4152]: Typecast;
+["PgToast.Types.PgToast_1417Index"]: Typecast
+[4174]: Typecast;
+["PgToast.Types.PgToast_1418Index"]: Typecast
+[4154]: Typecast;
+["PgToast.Types.PgToast_3118Index"]: Typecast
+[4168]: Typecast;
+["PgToast.Types.PgToast_3256Index"]: Typecast
+[4182]: Typecast;
+["PgToast.Types.PgToast_6000Index"]: Typecast
+[4144]: Typecast;
+["PgToast.Types.PgToast_826Index"]: Typecast
+[4156]: Typecast;
+["PgToast.Types.PgToast_3394Index"]: Typecast
+[3599]: Typecast;
+["PgToast.Types.PgToast_3596Index"]: Typecast
+[4061]: Typecast;
+["PgToast.Types.PgToast_3592Index"]: Typecast
+[6176]: Typecast;
+["PgToast.Types.PgToast_3456Index"]: Typecast
+[6245]: Typecast;
+["PgToast.Types.PgToast_6243Index"]: Typecast
+[4166]: Typecast;
+["PgToast.Types.PgToast_3350Index"]: Typecast
+[6229]: Typecast;
+["PgToast.Types.PgToast_6106Index"]: Typecast
+[4184]: Typecast;
+["PgToast.Types.PgToast_6100Index"]: Typecast
+[13662]: Typecast;
+["PgToast.Types.PgToast_13658Index"]: Typecast
+[13667]: Typecast;
+["PgToast.Types.PgToast_13663Index"]: Typecast
+[13672]: Typecast;
+["PgToast.Types.PgToast_13668Index"]: Typecast
+[13677]: Typecast;
+["PgToast.Types.PgToast_13673Index"]: Typecast
+}
+
+            interface HasDatabase {
+              database: Database;
+            }
+          
+export class Database extends PostgresDatabase implements HasDatabase { 
+get database() { return this };
+get settings() { return this.context.settings as Settings };
+
+          /**
+           * Connect to your database server via URL, and return 
+           * a fully typed database you can use to access it.
+           */
+          static async connect(postgresUrl: string, props?: postgres.Options<never>) {
+              return new Database(await initializeContext(postgresUrl, props));
+          }
+        
+        
+
+          public Public = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+
+          public Procedures = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+
+          public CubeIn = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeIn.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return Public.Types.Cube.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`
+  const results = response;
+
+              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_in) );
+              return responseBody;
+           
+}
+}(this)
+
+          public Cube_9c45 = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.Cube_9c45.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return Public.Types.Cube.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube( ${ typed[1022](undefinedIsNull(parameters.argument_0)) }, ${ typed[1022](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
+              return responseBody;
+           
+}
+}(this)
+
+          public Cube_2e6d = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.Cube_2e6d.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return Public.Types.Cube.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube( ${ typed[1022](undefinedIsNull(parameters.argument_0)) })`
+  const results = response;
+
+              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeOut = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeOut.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Cstring.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_out( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].cube_out) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeEq = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeEq.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Bool.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_eq( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_eq) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeNe = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeNe.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Bool.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_ne( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_ne) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeLt = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeLt.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Bool.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_lt( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_lt) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeGt = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeGt.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Bool.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_gt( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_gt) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeLe = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeLe.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Bool.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_le( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_le) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeGe = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeGe.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Bool.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_ge( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_ge) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeCmp = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeCmp.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Int4.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_cmp( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].cube_cmp) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeContains = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeContains.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Bool.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_contains( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_contains) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeContained = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeContained.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Bool.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_contained( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_contained) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeOverlap = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeOverlap.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Bool.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_overlap( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_overlap) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeUnion = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeUnion.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return Public.Types.Cube.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_union( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_union) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeInter = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeInter.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return Public.Types.Cube.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_inter( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_inter) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeSize = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeSize.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Float8.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_size( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_size) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeSubset = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeSubset.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return Public.Types.Cube.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_subset( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[1007](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_subset) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeDistance = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeDistance.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Float8.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_distance( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_distance) );
+              return responseBody;
+           
+}
+}(this)
+
+          public DistanceChebyshev = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.DistanceChebyshev.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Float8.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.distance_chebyshev( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].distance_chebyshev) );
+              return responseBody;
+           
+}
+}(this)
+
+          public DistanceTaxicab = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.DistanceTaxicab.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Float8.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.distance_taxicab( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].distance_taxicab) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeDim = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeDim.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Int4.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_dim( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].cube_dim) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeLlCoord = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeLlCoord.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Float8.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_ll_coord( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_ll_coord) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeUrCoord = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeUrCoord.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Float8.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_ur_coord( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_ur_coord) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeCoord = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeCoord.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Float8.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_coord( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_coord) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeCoordLlur = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeCoordLlur.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Float8.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_coord_llur( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_coord_llur) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeA5b3 = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeA5b3.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return Public.Types.Cube.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube( ${ typed[701](undefinedIsNull(parameters.argument_0)) })`
+  const results = response;
+
+              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
+              return responseBody;
+           
+}
+}(this)
+
+          public Cube_0aec = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.Cube_0aec.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return Public.Types.Cube.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
+              return responseBody;
+           
+}
+}(this)
+
+          public Cube_5ffb = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.Cube_5ffb.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return Public.Types.Cube.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
+              return responseBody;
+           
+}
+}(this)
+
+          public Cube_9e1c = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.Cube_9e1c.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return Public.Types.Cube.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const results = response;
+
+              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeIsPoint = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeIsPoint.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Bool.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_is_point( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_is_point) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeEnlarge = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeEnlarge.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return Public.Types.Cube.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_enlarge( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const results = response;
+
+              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_enlarge) );
+              return responseBody;
+           
+}
+}(this)
+
+          public GCubeConsistent = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.GCubeConsistent.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Bool.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.g_cube_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].g_cube_consistent) );
+              return responseBody;
+           
+}
+}(this)
+
+          public GCubePenalty = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.GCubePenalty.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Internal.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.g_cube_penalty( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].g_cube_penalty) );
+              return responseBody;
+           
+}
+}(this)
+
+          public GCubePicksplit = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.GCubePicksplit.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Internal.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.g_cube_picksplit( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].g_cube_picksplit) );
+              return responseBody;
+           
+}
+}(this)
+
+          public GCubeUnion = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.GCubeUnion.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return Public.Types.Cube.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.g_cube_union( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( Public.Types.Cube.parse(results?.[0].g_cube_union) );
+              return responseBody;
+           
+}
+}(this)
+
+          public GCubeSame = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.GCubeSame.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Internal.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.g_cube_same( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].g_cube_same) );
+              return responseBody;
+           
+}
+}(this)
+
+          public GCubeDistance = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.GCubeDistance.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Float8.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.g_cube_distance( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].g_cube_distance) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeRecv = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeRecv.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return Public.Types.Cube.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_recv( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const results = response;
+
+              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_recv) );
+              return responseBody;
+           
+}
+}(this)
+
+          public CubeSend = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.CubeSend.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Bytea.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.cube_send( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].cube_send) );
+              return responseBody;
+           
+}
+}(this)
+
+          public SetLimit = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.SetLimit.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Float4.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.set_limit( ${ typed[700](undefinedIsNull(parameters.argument_0)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].set_limit) );
+              return responseBody;
+           
+}
+}(this)
+
+          public ShowLimit = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call() {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Float4.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.show_limit()`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].show_limit) );
+              return responseBody;
+           
+}
+}(this)
+
+          public ShowTrgm = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.ShowTrgm.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.TextArray.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.show_trgm( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.TextArray.parse(results?.[0].show_trgm) );
+              return responseBody;
+           
+}
+}(this)
+
+          public Similarity = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.Similarity.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Float4.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.similarity( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].similarity) );
+              return responseBody;
+           
+}
+}(this)
+
+          public SimilarityOp = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.SimilarityOp.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Bool.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.similarity_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].similarity_op) );
+              return responseBody;
+           
+}
+}(this)
+
+          public WordSimilarity = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.WordSimilarity.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Float4.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.word_similarity( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].word_similarity) );
+              return responseBody;
+           
+}
+}(this)
+
+          public WordSimilarityOp = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.WordSimilarityOp.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Bool.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.word_similarity_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].word_similarity_op) );
+              return responseBody;
+           
+}
+}(this)
+
+          public WordSimilarityCommutatorOp = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.WordSimilarityCommutatorOp.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Bool.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.word_similarity_commutator_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].word_similarity_commutator_op) );
+              return responseBody;
+           
+}
+}(this)
+
+          public SimilarityDist = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.SimilarityDist.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Float4.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.similarity_dist( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].similarity_dist) );
+              return responseBody;
+           
+}
+}(this)
+
+          public WordSimilarityDistOp = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.WordSimilarityDistOp.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Float4.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.word_similarity_dist_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].word_similarity_dist_op) );
+              return responseBody;
+           
+}
+}(this)
+
+          public WordSimilarityDistCommutatorOp = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.WordSimilarityDistCommutatorOp.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Float4.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.word_similarity_dist_commutator_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].word_similarity_dist_commutator_op) );
+              return responseBody;
+           
+}
+}(this)
+
+          public GtrgmIn = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.GtrgmIn.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return Public.Types.Gtrgm.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.gtrgm_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`
+  const results = response;
+
+              const responseBody = ( Public.Types.Gtrgm.parse(results?.[0].gtrgm_in) );
+              return responseBody;
+           
+}
+}(this)
+
+          public GtrgmOut = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.GtrgmOut.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Cstring.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.gtrgm_out( ${ typed[29323](undefinedIsNull(parameters.argument_0)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].gtrgm_out) );
+              return responseBody;
+           
+}
+}(this)
+
+          public GtrgmConsistent = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.GtrgmConsistent.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Bool.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.gtrgm_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].gtrgm_consistent) );
+              return responseBody;
+           
+}
+}(this)
+
+          public GtrgmDistance = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.GtrgmDistance.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Float8.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.gtrgm_distance( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].gtrgm_distance) );
+              return responseBody;
+           
+}
+}(this)
+
+          public GtrgmCompress = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.GtrgmCompress.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Internal.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.gtrgm_compress( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gtrgm_compress) );
+              return responseBody;
+           
+}
+}(this)
+
+          public GtrgmDecompress = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.GtrgmDecompress.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Internal.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.gtrgm_decompress( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gtrgm_decompress) );
+              return responseBody;
+           
+}
+}(this)
+
+          public GtrgmPenalty = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.GtrgmPenalty.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Internal.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.gtrgm_penalty( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gtrgm_penalty) );
+              return responseBody;
+           
+}
+}(this)
+
+          public GtrgmPicksplit = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.GtrgmPicksplit.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Internal.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.gtrgm_picksplit( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gtrgm_picksplit) );
+              return responseBody;
+           
+}
+}(this)
+
+          public GtrgmUnion = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.GtrgmUnion.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return Public.Types.Gtrgm.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.gtrgm_union( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( Public.Types.Gtrgm.parse(results?.[0].gtrgm_union) );
+              return responseBody;
+           
+}
+}(this)
+
+          public GtrgmSame = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.GtrgmSame.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Internal.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.gtrgm_same( ${ typed[29323](undefinedIsNull(parameters.argument_0)) }, ${ typed[29323](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gtrgm_same) );
+              return responseBody;
+           
+}
+}(this)
+
+          public GinExtractValueTrgm = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.GinExtractValueTrgm.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Internal.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.gin_extract_value_trgm( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gin_extract_value_trgm) );
+              return responseBody;
+           
+}
+}(this)
+
+          public GinExtractQueryTrgm = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.GinExtractQueryTrgm.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Internal.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.gin_extract_query_trgm( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[2281](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) }, ${ typed[2281](undefinedIsNull(parameters.argument_5)) }, ${ typed[2281](undefinedIsNull(parameters.argument_6)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gin_extract_query_trgm) );
+              return responseBody;
+           
+}
+}(this)
+
+          public GinTrgmConsistent = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.GinTrgmConsistent.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Bool.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.gin_trgm_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[21](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) }, ${ typed[2281](undefinedIsNull(parameters.argument_5)) }, ${ typed[2281](undefinedIsNull(parameters.argument_6)) }, ${ typed[2281](undefinedIsNull(parameters.argument_7)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].gin_trgm_consistent) );
+              return responseBody;
+           
+}
+}(this)
+
+          public GinTrgmTriconsistent = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.GinTrgmTriconsistent.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Char.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.gin_trgm_triconsistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[21](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) }, ${ typed[2281](undefinedIsNull(parameters.argument_5)) }, ${ typed[2281](undefinedIsNull(parameters.argument_6)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Char.parse(results?.[0].gin_trgm_triconsistent) );
+              return responseBody;
+           
+}
+}(this)
+
+          public StrictWordSimilarity = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.StrictWordSimilarity.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Float4.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.strict_word_similarity( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].strict_word_similarity) );
+              return responseBody;
+           
+}
+}(this)
+
+          public StrictWordSimilarityOp = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.StrictWordSimilarityOp.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Bool.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.strict_word_similarity_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].strict_word_similarity_op) );
+              return responseBody;
+           
+}
+}(this)
+
+          public StrictWordSimilarityCommutatorOp = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.StrictWordSimilarityCommutatorOp.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Bool.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.strict_word_similarity_commutator_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].strict_word_similarity_commutator_op) );
+              return responseBody;
+           
+}
+}(this)
+
+          public StrictWordSimilarityDistOp = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.StrictWordSimilarityDistOp.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Float4.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.strict_word_similarity_dist_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].strict_word_similarity_dist_op) );
+              return responseBody;
+           
+}
+}(this)
+
+          public StrictWordSimilarityDistCommutatorOp = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.StrictWordSimilarityDistCommutatorOp.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Float4.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.strict_word_similarity_dist_commutator_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].strict_word_similarity_dist_commutator_op) );
+              return responseBody;
+           
+}
+}(this)
+
+          public GtrgmOptions = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Public.Procedures.GtrgmOptions.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Void.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.gtrgm_options( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].gtrgm_options) );
+              return responseBody;
+           
+}
+}(this)
+}(this)
+get Tables () { return new Public.Tables(this)} 
+}(this)
+
+          public Api = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+
+          public Procedures = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+
+          public Echo = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Api.Procedures.Echo.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Text.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT api.echo(message => ${ typed[25](undefinedIsNull(parameters.message)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].echo) );
+              return responseBody;
+           
+}
+}(this)
+
+          public EchoSet = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Api.Procedures.EchoSet.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Text.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT api.echo_set(message => ${ typed[25](undefinedIsNull(parameters.message)) })`
+  const results = response;
+
+              const responseBody = ( results.map(x => parseResult(this.database.context, x.echo_set)).filter<PgCatalog.Types.Text>((r):r is PgCatalog.Types.Text => r !== null) );
+              return responseBody;
+           
+}
+}(this)
+
+          public EchoTable = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Api.Procedures.EchoTable.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              return context.procTypes[29396].parseFromPostgresIfPseudoType(context, result) as unknown as Api.Types.EchoTable;
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT api.echo_table(message => ${ typed[25](undefinedIsNull(parameters.message)) })`
+  const results = response;
+
+              const responseBody = ( results.map(x => parseResult(this.database.context, x.echo_table)).filter<Api.Types.EchoTable>((r):r is Api.Types.EchoTable => r !== null) );
+              return responseBody;
+           
+}
+}(this)
+
+          public EchoType = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Api.Procedures.EchoType.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return Api.Types.EchoType.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT api.echo_type(message => ${ typed[25](undefinedIsNull(parameters.message)) })`
+  const results = response;
+
+              const responseBody = ( Api.Types.EchoType.parse(results?.[0].echo_type) );
+              return responseBody;
+           
+}
+}(this)
+
+          public EchoTypeArray = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Api.Procedures.EchoTypeArray.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return Api.Types.EchoTypeArray.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT api.echo_type_array(message => ${ typed[25](undefinedIsNull(parameters.message)) })`
+  const results = response;
+
+              const responseBody = ( Api.Types.EchoTypeArray.parse(results?.[0].echo_type_array) );
+              return responseBody;
+           
+}
+}(this)
+
+          public EchoTypeNested = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Api.Procedures.EchoTypeNested.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return Api.Types.EchoTypeNested.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT api.echo_type_nested(message => ${ typed[25](undefinedIsNull(parameters.message)) })`
+  const results = response;
+
+              const responseBody = ( Api.Types.EchoTypeNested.parse(results?.[0].echo_type_nested) );
+              return responseBody;
+           
+}
+}(this)
+
+          public EchoTypeSet = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Api.Procedures.EchoTypeSet.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return Api.Types.EchoType.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT api.echo_type_set(message => ${ typed[25](undefinedIsNull(parameters.message)) })`
+  const results = response;
+
+              const responseBody = ( results.map(x => parseResult(this.database.context, x.echo_type_set)).filter<Api.Types.EchoType>((r):r is Api.Types.EchoType => r !== null) );
+              return responseBody;
+           
+}
+}(this)
+
+          public EchoAnswer = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+async call(parameters : Api.Procedures.EchoAnswer.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return Api.Types.Answer.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT api.echo_answer(message => ${ typed[29408](undefinedIsNull(parameters.message)) })`
+  const results = response;
+
+              const responseBody = ( Api.Types.Answer.parse(results?.[0].echo_answer) );
+              return responseBody;
+           
+}
+}(this)
+}(this)
+get Tables () { return new Api.Tables(this)} 
+}(this)
+
+          public PgToast = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+
+          public Procedures = new class implements HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+        
+}(this)
+get Tables () { return new PgToast.Tables(this)} 
+}(this)
+}
+export namespace Public {
+
+          export class Tables implements Tables, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "Tables";
+            }
+
+            /**
+             * Every table in this schema.
+             */
+            get tables() {
+              return [
+                new Public.Tables.Slug(this)
+              ];
+            }
+        
+get Slug () { return new Public.Tables.Slug(this)} 
+}
+}
+export namespace Api {
+
+          export class Tables implements Tables, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "Tables";
+            }
+
+            /**
+             * Every table in this schema.
+             */
+            get tables() {
+              return [
+                new Api.Tables.QAndA(this),new Api.Tables.Timezones(this),new Api.Tables.Points(this),new Api.Tables.Lines(this),new Api.Tables.LineSegments(this),new Api.Tables.Boxes(this),new Api.Tables.Paths(this),new Api.Tables.Polygons(this),new Api.Tables.Circles(this)
+              ];
+            }
+        
+get QAndA () { return new Api.Tables.QAndA(this)} 
+get Timezones () { return new Api.Tables.Timezones(this)} 
+get Points () { return new Api.Tables.Points(this)} 
+get Lines () { return new Api.Tables.Lines(this)} 
+get LineSegments () { return new Api.Tables.LineSegments(this)} 
+get Boxes () { return new Api.Tables.Boxes(this)} 
+get Paths () { return new Api.Tables.Paths(this)} 
+get Polygons () { return new Api.Tables.Polygons(this)} 
+get Circles () { return new Api.Tables.Circles(this)} 
+}
+}
+export namespace PgToast {
+
+          export class Tables implements Tables, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "Tables";
+            }
+
+            /**
+             * Every table in this schema.
+             */
+            get tables() {
+              return [
+                
+              ];
+            }
+        
+}
+}
+export namespace Public {
+export namespace Tables {
+
+          export class Slug implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "slug";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                {name: "slug_id", type: "pg_catalog.int4"}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                new Public.Tables.Slug.SlugPkey(this)
+              ];
+            }
+        
+
+async create(values: Partial<Public.Types.Slug>, options?: Public.Tables.Slug.Options): Promise<Public.Types.Slug>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+
+      if (!Public.Tables.Slug.includesPrimaryKey(values)) {
+      
+const response = await sql`
+      --
+      INSERT INTO
+        public.slug ()
+      VALUES ()
+      RETURNING
+        slug_id
+    `
+return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))[0]
+}
+const response = await sql`
+    INSERT INTO
+      public.slug (slug_id)
+    VALUES (${ values.slugId === undefined ? sql`DEFAULT` : typed[23](values.slugId) })
+    ON CONFLICT (slug_id) DO UPDATE
+    SET
+      
+    RETURNING
+      slug_id
+    `
+return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))[0]
+}
+async all(options?: Public.Tables.Slug.Options) : Promise<Public.Types.Slug[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      slug_id 
+    FROM
+      public.slug 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))
+}
+public get ByPrimaryKey () { return new Public.Tables.Slug.SlugPkey(this)}
+get SlugPkey () { return new Public.Tables.Slug.SlugPkey(this)} 
+}
+}
+}
+export namespace Api {
+export namespace Tables {
+
+          export class QAndA implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "q_and_a";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                {name: "question", type: "pg_catalog.text"},{name: "answer", type: "api.answer"}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                new Api.Tables.QAndA.QAndAAnswer(this)
+              ];
+            }
+        
+
+async create(values: Partial<Api.Types.QAndA>, options?: Api.Tables.QAndA.Options): Promise<Api.Types.QAndA>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    INSERT INTO
+      api.q_and_a (question,answer)
+    VALUES (${ values.question === undefined ? sql`DEFAULT` : typed[25](values.question) },${ values.answer === undefined ? sql`DEFAULT` : typed[29408](values.answer) })
+    ON CONFLICT () DO UPDATE
+    SET
+      question = EXCLUDED.question,answer = EXCLUDED.answer
+    RETURNING
+      question,answer
+    `
+return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))[0]
+}
+async all(options?: Api.Tables.QAndA.Options) : Promise<Api.Types.QAndA[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      question,answer 
+    FROM
+      api.q_and_a 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
+}
+
+get QAndAAnswer () { return new Api.Tables.QAndA.QAndAAnswer(this)} 
+}
+
+          export class Timezones implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "timezones";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                {name: "country_code", type: "pg_catalog.text"},{name: "time_zone", type: "pg_catalog.text"},{name: "gmt_offset", type: "pg_catalog.float4"},{name: "dst_offset", type: "pg_catalog.float4"},{name: "raw_offset", type: "pg_catalog.float4"}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                new Api.Tables.Timezones.TrgmIdxGist(this),new Api.Tables.Timezones.TrgmIdxGin(this)
+              ];
+            }
+        
+
+async create(values: Partial<Api.Types.Timezones>, options?: Api.Tables.Timezones.Options): Promise<Api.Types.Timezones>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    INSERT INTO
+      api.timezones (country_code,time_zone,gmt_offset,dst_offset,raw_offset)
+    VALUES (${ values.countryCode === undefined ? sql`DEFAULT` : typed[25](values.countryCode) },${ values.timeZone === undefined ? sql`DEFAULT` : typed[25](values.timeZone) },${ values.gmtOffset === undefined ? sql`DEFAULT` : typed[700](values.gmtOffset) },${ values.dstOffset === undefined ? sql`DEFAULT` : typed[700](values.dstOffset) },${ values.rawOffset === undefined ? sql`DEFAULT` : typed[700](values.rawOffset) })
+    ON CONFLICT () DO UPDATE
+    SET
+      country_code = EXCLUDED.country_code,time_zone = EXCLUDED.time_zone,gmt_offset = EXCLUDED.gmt_offset,dst_offset = EXCLUDED.dst_offset,raw_offset = EXCLUDED.raw_offset
+    RETURNING
+      country_code,time_zone,gmt_offset,dst_offset,raw_offset
+    `
+return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))[0]
+}
+async all(options?: Api.Tables.Timezones.Options) : Promise<Api.Types.Timezones[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      country_code,time_zone,gmt_offset,dst_offset,raw_offset 
+    FROM
+      api.timezones 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
+}
+
+get TrgmIdxGist () { return new Api.Tables.Timezones.TrgmIdxGist(this)} 
+
+get TrgmIdxGin () { return new Api.Tables.Timezones.TrgmIdxGin(this)} 
+}
+
+          export class Points implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "points";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                {name: "id", type: "pg_catalog.uuid"},{name: "point", type: "pg_catalog.point"}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                new Api.Tables.Points.PointsPkey(this)
+              ];
+            }
+        
+
+async create(values: Partial<Api.Types.Points>, options?: Api.Tables.Points.Options): Promise<Api.Types.Points>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+
+      if (!Api.Tables.Points.includesPrimaryKey(values)) {
+      
+const response = await sql`
+      --
+      INSERT INTO
+        api.points (point)
+      VALUES (${ values.point === undefined ? sql`DEFAULT` : typed[600](values.point) })
+      RETURNING
+        id,point
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
+}
+const response = await sql`
+    INSERT INTO
+      api.points (id,point)
+    VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.point === undefined ? sql`DEFAULT` : typed[600](values.point) })
+    ON CONFLICT (id) DO UPDATE
+    SET
+      point = EXCLUDED.point
+    RETURNING
+      id,point
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
+}
+async all(options?: Api.Tables.Points.Options) : Promise<Api.Types.Points[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      id,point 
+    FROM
+      api.points 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))
+}
+public get ByPrimaryKey () { return new Api.Tables.Points.PointsPkey(this)}
+get PointsPkey () { return new Api.Tables.Points.PointsPkey(this)} 
+}
+
+          export class Lines implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "lines";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                {name: "id", type: "pg_catalog.uuid"},{name: "line", type: "pg_catalog.line"}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                new Api.Tables.Lines.LinesPkey(this)
+              ];
+            }
+        
+
+async create(values: Partial<Api.Types.Lines>, options?: Api.Tables.Lines.Options): Promise<Api.Types.Lines>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+
+      if (!Api.Tables.Lines.includesPrimaryKey(values)) {
+      
+const response = await sql`
+      --
+      INSERT INTO
+        api.lines (line)
+      VALUES (${ values.line === undefined ? sql`DEFAULT` : typed[628](values.line) })
+      RETURNING
+        id,line
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))[0]
+}
+const response = await sql`
+    INSERT INTO
+      api.lines (id,line)
+    VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.line === undefined ? sql`DEFAULT` : typed[628](values.line) })
+    ON CONFLICT (id) DO UPDATE
+    SET
+      line = EXCLUDED.line
+    RETURNING
+      id,line
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))[0]
+}
+async all(options?: Api.Tables.Lines.Options) : Promise<Api.Types.Lines[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      id,line 
+    FROM
+      api.lines 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))
+}
+public get ByPrimaryKey () { return new Api.Tables.Lines.LinesPkey(this)}
+get LinesPkey () { return new Api.Tables.Lines.LinesPkey(this)} 
+}
+
+          export class LineSegments implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "line_segments";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                {name: "id", type: "pg_catalog.uuid"},{name: "line_segment", type: "pg_catalog.lseg"}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                new Api.Tables.LineSegments.LineSegmentsPkey(this)
+              ];
+            }
+        
+
+async create(values: Partial<Api.Types.LineSegments>, options?: Api.Tables.LineSegments.Options): Promise<Api.Types.LineSegments>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+
+      if (!Api.Tables.LineSegments.includesPrimaryKey(values)) {
+      
+const response = await sql`
+      --
+      INSERT INTO
+        api.line_segments (line_segment)
+      VALUES (${ values.lineSegment === undefined ? sql`DEFAULT` : typed[601](values.lineSegment) })
+      RETURNING
+        id,line_segment
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))[0]
+}
+const response = await sql`
+    INSERT INTO
+      api.line_segments (id,line_segment)
+    VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.lineSegment === undefined ? sql`DEFAULT` : typed[601](values.lineSegment) })
+    ON CONFLICT (id) DO UPDATE
+    SET
+      line_segment = EXCLUDED.line_segment
+    RETURNING
+      id,line_segment
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))[0]
+}
+async all(options?: Api.Tables.LineSegments.Options) : Promise<Api.Types.LineSegments[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      id,line_segment 
+    FROM
+      api.line_segments 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))
+}
+public get ByPrimaryKey () { return new Api.Tables.LineSegments.LineSegmentsPkey(this)}
+get LineSegmentsPkey () { return new Api.Tables.LineSegments.LineSegmentsPkey(this)} 
+}
+
+          export class Boxes implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "boxes";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                {name: "id", type: "pg_catalog.uuid"},{name: "box", type: "pg_catalog.box"}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                new Api.Tables.Boxes.BoxesPkey(this)
+              ];
+            }
+        
+
+async create(values: Partial<Api.Types.Boxes>, options?: Api.Tables.Boxes.Options): Promise<Api.Types.Boxes>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+
+      if (!Api.Tables.Boxes.includesPrimaryKey(values)) {
+      
+const response = await sql`
+      --
+      INSERT INTO
+        api.boxes (box)
+      VALUES (${ values.box === undefined ? sql`DEFAULT` : typed[603](values.box) })
+      RETURNING
+        id,box
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))[0]
+}
+const response = await sql`
+    INSERT INTO
+      api.boxes (id,box)
+    VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.box === undefined ? sql`DEFAULT` : typed[603](values.box) })
+    ON CONFLICT (id) DO UPDATE
+    SET
+      box = EXCLUDED.box
+    RETURNING
+      id,box
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))[0]
+}
+async all(options?: Api.Tables.Boxes.Options) : Promise<Api.Types.Boxes[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      id,box 
+    FROM
+      api.boxes 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))
+}
+public get ByPrimaryKey () { return new Api.Tables.Boxes.BoxesPkey(this)}
+get BoxesPkey () { return new Api.Tables.Boxes.BoxesPkey(this)} 
+}
+
+          export class Paths implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "paths";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                {name: "id", type: "pg_catalog.uuid"},{name: "path", type: "pg_catalog.path"}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                new Api.Tables.Paths.PathsPkey(this)
+              ];
+            }
+        
+
+async create(values: Partial<Api.Types.Paths>, options?: Api.Tables.Paths.Options): Promise<Api.Types.Paths>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+
+      if (!Api.Tables.Paths.includesPrimaryKey(values)) {
+      
+const response = await sql`
+      --
+      INSERT INTO
+        api.paths (path)
+      VALUES (${ values.path === undefined ? sql`DEFAULT` : typed[602](values.path) })
+      RETURNING
+        id,path
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))[0]
+}
+const response = await sql`
+    INSERT INTO
+      api.paths (id,path)
+    VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.path === undefined ? sql`DEFAULT` : typed[602](values.path) })
+    ON CONFLICT (id) DO UPDATE
+    SET
+      path = EXCLUDED.path
+    RETURNING
+      id,path
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))[0]
+}
+async all(options?: Api.Tables.Paths.Options) : Promise<Api.Types.Paths[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      id,path 
+    FROM
+      api.paths 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))
+}
+public get ByPrimaryKey () { return new Api.Tables.Paths.PathsPkey(this)}
+get PathsPkey () { return new Api.Tables.Paths.PathsPkey(this)} 
+}
+
+          export class Polygons implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "polygons";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                {name: "id", type: "pg_catalog.uuid"},{name: "polygon", type: "pg_catalog.polygon"}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                new Api.Tables.Polygons.PolygonsPkey(this)
+              ];
+            }
+        
+
+async create(values: Partial<Api.Types.Polygons>, options?: Api.Tables.Polygons.Options): Promise<Api.Types.Polygons>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+
+      if (!Api.Tables.Polygons.includesPrimaryKey(values)) {
+      
+const response = await sql`
+      --
+      INSERT INTO
+        api.polygons (polygon)
+      VALUES (${ values.polygon === undefined ? sql`DEFAULT` : typed[604](values.polygon) })
+      RETURNING
+        id,polygon
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))[0]
+}
+const response = await sql`
+    INSERT INTO
+      api.polygons (id,polygon)
+    VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.polygon === undefined ? sql`DEFAULT` : typed[604](values.polygon) })
+    ON CONFLICT (id) DO UPDATE
+    SET
+      polygon = EXCLUDED.polygon
+    RETURNING
+      id,polygon
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))[0]
+}
+async all(options?: Api.Tables.Polygons.Options) : Promise<Api.Types.Polygons[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      id,polygon 
+    FROM
+      api.polygons 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))
+}
+public get ByPrimaryKey () { return new Api.Tables.Polygons.PolygonsPkey(this)}
+get PolygonsPkey () { return new Api.Tables.Polygons.PolygonsPkey(this)} 
+}
+
+          export class Circles implements Table, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "circles";
+            }
+
+            /**
+             * Every column in the table.
+             */
+            get columns() {
+              return [
+                {name: "id", type: "pg_catalog.uuid"},{name: "circle", type: "pg_catalog.circle"}
+              ];
+            }
+            
+            /**
+             * Every index on the table.
+             */
+            get indexes() {
+              return [
+                new Api.Tables.Circles.CirclesPkey(this)
+              ];
+            }
+        
+
+async create(values: Partial<Api.Types.Circles>, options?: Api.Tables.Circles.Options): Promise<Api.Types.Circles>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+
+      if (!Api.Tables.Circles.includesPrimaryKey(values)) {
+      
+const response = await sql`
+      --
+      INSERT INTO
+        api.circles (circle)
+      VALUES (${ values.circle === undefined ? sql`DEFAULT` : typed[718](values.circle) })
+      RETURNING
+        id,circle
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))[0]
+}
+const response = await sql`
+    INSERT INTO
+      api.circles (id,circle)
+    VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.circle === undefined ? sql`DEFAULT` : typed[718](values.circle) })
+    ON CONFLICT (id) DO UPDATE
+    SET
+      circle = EXCLUDED.circle
+    RETURNING
+      id,circle
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))[0]
+}
+async all(options?: Api.Tables.Circles.Options) : Promise<Api.Types.Circles[]>{
+
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    SELECT 
+      id,circle 
+    FROM
+      api.circles 
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))
+}
+public get ByPrimaryKey () { return new Api.Tables.Circles.CirclesPkey(this)}
+get CirclesPkey () { return new Api.Tables.Circles.CirclesPkey(this)} 
+}
+}
+}
+export namespace PgToast {
+export namespace Tables {
+}
+}
+export namespace Public {
+export namespace Tables {
+export namespace Slug {
+
+          export class SlugPkey implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "slug_pkey";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "slug_id", type: "pg_catalog.int4"}
+              ];
+            }
+        
+async read(parameters: Public.Types.SlugPkey, options?: Public.Types.SlugPkey.Options & Public.Tables.Slug.Options) : Promise<Public.Types.Slug>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      slug_id 
+    FROM
+      public.slug 
+    WHERE
+      slug_id = ${ parameters.slugId === undefined ? sql`DEFAULT` : typed[23](parameters.slugId) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))[0]
+}
+
+async update(parameters: Public.Types.SlugPkey, values: Partial<Public.Tables.Slug.Values>, options?: Public.Types.SlugPkey.Options & Public.Tables.Slug.Options) : Promise<Public.Types.Slug>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      public.slug 
+    SET
+      slug_id = ${ values.slugId === undefined ? sql`slug_id` : typed[23](values.slugId) } 
+    WHERE
+      slug_id = ${ parameters.slugId === undefined ? sql`DEFAULT` : typed[23](parameters.slugId) }
+    RETURNING slug_id`
+return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))[0]
+}
+async delete(parameters: Public.Types.SlugPkey, options?: Public.Types.SlugPkey.Options & Public.Tables.Slug.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      public.slug 
+    WHERE
+      slug_id = ${ parameters.slugId === undefined ? sql`DEFAULT` : typed[23](parameters.slugId) }
+    RETURNING slug_id`
+ return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))[0]
+}
+}
+}
+}
+}
+export namespace Api {
+export namespace Tables {
+export namespace QAndA {
+
+          export class QAndAAnswer implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "q_and_a_answer";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "answer", type: "api.answer"}
+              ];
+            }
+        
+async read(parameters: Api.Types.QAndAAnswer, options?: Api.Types.QAndAAnswer.Options & Api.Tables.QAndA.Options) : Promise<Api.Types.QAndA[]>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      question,answer 
+    FROM
+      api.q_and_a 
+    WHERE
+      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[29408](parameters.answer) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
+}
+
+async update(parameters: Api.Types.QAndAAnswer, values: Partial<Api.Tables.QAndA.Values>, options?: Api.Types.QAndAAnswer.Options & Api.Tables.QAndA.Options) : Promise<Api.Types.QAndA[]>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      api.q_and_a 
+    SET
+      question = ${ values.question === undefined ? sql`question` : typed[25](values.question) } , answer = ${ values.answer === undefined ? sql`answer` : typed[29408](values.answer) } 
+    WHERE
+      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[29408](parameters.answer) }
+    RETURNING question,answer`
+return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
+}
+async delete(parameters: Api.Types.QAndAAnswer, options?: Api.Types.QAndAAnswer.Options & Api.Tables.QAndA.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      api.q_and_a 
+    WHERE
+      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[29408](parameters.answer) }
+    RETURNING question,answer`
+ return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
+}
+}
+}
+export namespace Timezones {
+
+          export class TrgmIdxGist implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "trgm_idx_gist";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "time_zone", type: "pg_catalog.text"}
+              ];
+            }
+        
+async read(parameters: Api.Types.TrgmIdxGist, options?: Api.Types.TrgmIdxGist.Options & Api.Tables.Timezones.Options) : Promise<Api.Types.Timezones[]>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      country_code,time_zone,gmt_offset,dst_offset,raw_offset 
+    FROM
+      api.timezones 
+    WHERE
+      time_zone % ${ parameters.timeZone === undefined ? sql`DEFAULT` : typed[25](parameters.timeZone) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
+}
+
+async update(parameters: Api.Types.TrgmIdxGist, values: Partial<Api.Tables.Timezones.Values>, options?: Api.Types.TrgmIdxGist.Options & Api.Tables.Timezones.Options) : Promise<Api.Types.Timezones[]>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      api.timezones 
+    SET
+      country_code = ${ values.countryCode === undefined ? sql`country_code` : typed[25](values.countryCode) } , time_zone = ${ values.timeZone === undefined ? sql`time_zone` : typed[25](values.timeZone) } , gmt_offset = ${ values.gmtOffset === undefined ? sql`gmt_offset` : typed[700](values.gmtOffset) } , dst_offset = ${ values.dstOffset === undefined ? sql`dst_offset` : typed[700](values.dstOffset) } , raw_offset = ${ values.rawOffset === undefined ? sql`raw_offset` : typed[700](values.rawOffset) } 
+    WHERE
+      time_zone % ${ parameters.timeZone === undefined ? sql`DEFAULT` : typed[25](parameters.timeZone) }
+    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`
+return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
+}
+async delete(parameters: Api.Types.TrgmIdxGist, options?: Api.Types.TrgmIdxGist.Options & Api.Tables.Timezones.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      api.timezones 
+    WHERE
+      time_zone % ${ parameters.timeZone === undefined ? sql`DEFAULT` : typed[25](parameters.timeZone) }
+    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`
+ return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
+}
+}
+
+          export class TrgmIdxGin implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "trgm_idx_gin";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "time_zone", type: "pg_catalog.text"}
+              ];
+            }
+        
+async read(parameters: Api.Types.TrgmIdxGin, options?: Api.Types.TrgmIdxGin.Options & Api.Tables.Timezones.Options) : Promise<Api.Types.Timezones[]>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      country_code,time_zone,gmt_offset,dst_offset,raw_offset 
+    FROM
+      api.timezones 
+    WHERE
+      time_zone % ${ parameters.timeZone === undefined ? sql`DEFAULT` : typed[25](parameters.timeZone) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
+}
+
+async update(parameters: Api.Types.TrgmIdxGin, values: Partial<Api.Tables.Timezones.Values>, options?: Api.Types.TrgmIdxGin.Options & Api.Tables.Timezones.Options) : Promise<Api.Types.Timezones[]>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      api.timezones 
+    SET
+      country_code = ${ values.countryCode === undefined ? sql`country_code` : typed[25](values.countryCode) } , time_zone = ${ values.timeZone === undefined ? sql`time_zone` : typed[25](values.timeZone) } , gmt_offset = ${ values.gmtOffset === undefined ? sql`gmt_offset` : typed[700](values.gmtOffset) } , dst_offset = ${ values.dstOffset === undefined ? sql`dst_offset` : typed[700](values.dstOffset) } , raw_offset = ${ values.rawOffset === undefined ? sql`raw_offset` : typed[700](values.rawOffset) } 
+    WHERE
+      time_zone % ${ parameters.timeZone === undefined ? sql`DEFAULT` : typed[25](parameters.timeZone) }
+    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`
+return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
+}
+async delete(parameters: Api.Types.TrgmIdxGin, options?: Api.Types.TrgmIdxGin.Options & Api.Tables.Timezones.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      api.timezones 
+    WHERE
+      time_zone % ${ parameters.timeZone === undefined ? sql`DEFAULT` : typed[25](parameters.timeZone) }
+    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`
+ return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
+}
+}
+}
+export namespace Points {
+
+          export class PointsPkey implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "points_pkey";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "id", type: "pg_catalog.uuid"}
+              ];
+            }
+        
+async read(parameters: Api.Types.PointsPkey, options?: Api.Types.PointsPkey.Options & Api.Tables.Points.Options) : Promise<Api.Types.Points>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      id,point 
+    FROM
+      api.points 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
+}
+
+async update(parameters: Api.Types.PointsPkey, values: Partial<Api.Tables.Points.Values>, options?: Api.Types.PointsPkey.Options & Api.Tables.Points.Options) : Promise<Api.Types.Points>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      api.points 
+    SET
+      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , point = ${ values.point === undefined ? sql`point` : typed[600](values.point) } 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    RETURNING id,point`
+return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
+}
+async delete(parameters: Api.Types.PointsPkey, options?: Api.Types.PointsPkey.Options & Api.Tables.Points.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      api.points 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    RETURNING id,point`
+ return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
+}
+}
+}
+export namespace Lines {
+
+          export class LinesPkey implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "lines_pkey";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "id", type: "pg_catalog.uuid"}
+              ];
+            }
+        
+async read(parameters: Api.Types.LinesPkey, options?: Api.Types.LinesPkey.Options & Api.Tables.Lines.Options) : Promise<Api.Types.Lines>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      id,line 
+    FROM
+      api.lines 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))[0]
+}
+
+async update(parameters: Api.Types.LinesPkey, values: Partial<Api.Tables.Lines.Values>, options?: Api.Types.LinesPkey.Options & Api.Tables.Lines.Options) : Promise<Api.Types.Lines>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      api.lines 
+    SET
+      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , line = ${ values.line === undefined ? sql`line` : typed[628](values.line) } 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    RETURNING id,line`
+return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))[0]
+}
+async delete(parameters: Api.Types.LinesPkey, options?: Api.Types.LinesPkey.Options & Api.Tables.Lines.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      api.lines 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    RETURNING id,line`
+ return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))[0]
+}
+}
+}
+export namespace LineSegments {
+
+          export class LineSegmentsPkey implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "line_segments_pkey";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "id", type: "pg_catalog.uuid"}
+              ];
+            }
+        
+async read(parameters: Api.Types.LineSegmentsPkey, options?: Api.Types.LineSegmentsPkey.Options & Api.Tables.LineSegments.Options) : Promise<Api.Types.LineSegments>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      id,line_segment 
+    FROM
+      api.line_segments 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))[0]
+}
+
+async update(parameters: Api.Types.LineSegmentsPkey, values: Partial<Api.Tables.LineSegments.Values>, options?: Api.Types.LineSegmentsPkey.Options & Api.Tables.LineSegments.Options) : Promise<Api.Types.LineSegments>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      api.line_segments 
+    SET
+      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , line_segment = ${ values.lineSegment === undefined ? sql`line_segment` : typed[601](values.lineSegment) } 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    RETURNING id,line_segment`
+return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))[0]
+}
+async delete(parameters: Api.Types.LineSegmentsPkey, options?: Api.Types.LineSegmentsPkey.Options & Api.Tables.LineSegments.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      api.line_segments 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    RETURNING id,line_segment`
+ return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))[0]
+}
+}
+}
+export namespace Boxes {
+
+          export class BoxesPkey implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "boxes_pkey";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "id", type: "pg_catalog.uuid"}
+              ];
+            }
+        
+async read(parameters: Api.Types.BoxesPkey, options?: Api.Types.BoxesPkey.Options & Api.Tables.Boxes.Options) : Promise<Api.Types.Boxes>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      id,box 
+    FROM
+      api.boxes 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))[0]
+}
+
+async update(parameters: Api.Types.BoxesPkey, values: Partial<Api.Tables.Boxes.Values>, options?: Api.Types.BoxesPkey.Options & Api.Tables.Boxes.Options) : Promise<Api.Types.Boxes>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      api.boxes 
+    SET
+      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , box = ${ values.box === undefined ? sql`box` : typed[603](values.box) } 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    RETURNING id,box`
+return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))[0]
+}
+async delete(parameters: Api.Types.BoxesPkey, options?: Api.Types.BoxesPkey.Options & Api.Tables.Boxes.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      api.boxes 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    RETURNING id,box`
+ return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))[0]
+}
+}
+}
+export namespace Paths {
+
+          export class PathsPkey implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "paths_pkey";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "id", type: "pg_catalog.uuid"}
+              ];
+            }
+        
+async read(parameters: Api.Types.PathsPkey, options?: Api.Types.PathsPkey.Options & Api.Tables.Paths.Options) : Promise<Api.Types.Paths>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      id,path 
+    FROM
+      api.paths 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))[0]
+}
+
+async update(parameters: Api.Types.PathsPkey, values: Partial<Api.Tables.Paths.Values>, options?: Api.Types.PathsPkey.Options & Api.Tables.Paths.Options) : Promise<Api.Types.Paths>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      api.paths 
+    SET
+      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , path = ${ values.path === undefined ? sql`path` : typed[602](values.path) } 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    RETURNING id,path`
+return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))[0]
+}
+async delete(parameters: Api.Types.PathsPkey, options?: Api.Types.PathsPkey.Options & Api.Tables.Paths.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      api.paths 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    RETURNING id,path`
+ return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))[0]
+}
+}
+}
+export namespace Polygons {
+
+          export class PolygonsPkey implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "polygons_pkey";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "id", type: "pg_catalog.uuid"}
+              ];
+            }
+        
+async read(parameters: Api.Types.PolygonsPkey, options?: Api.Types.PolygonsPkey.Options & Api.Tables.Polygons.Options) : Promise<Api.Types.Polygons>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      id,polygon 
+    FROM
+      api.polygons 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))[0]
+}
+
+async update(parameters: Api.Types.PolygonsPkey, values: Partial<Api.Tables.Polygons.Values>, options?: Api.Types.PolygonsPkey.Options & Api.Tables.Polygons.Options) : Promise<Api.Types.Polygons>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      api.polygons 
+    SET
+      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , polygon = ${ values.polygon === undefined ? sql`polygon` : typed[604](values.polygon) } 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    RETURNING id,polygon`
+return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))[0]
+}
+async delete(parameters: Api.Types.PolygonsPkey, options?: Api.Types.PolygonsPkey.Options & Api.Tables.Polygons.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      api.polygons 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    RETURNING id,polygon`
+ return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))[0]
+}
+}
+}
+export namespace Circles {
+
+          export class CirclesPkey implements Index, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "circles_pkey";
+            }
+
+            /**
+             * Every column in the index.
+             */
+            get columns() {
+              return [
+                {name: "id", type: "pg_catalog.uuid"}
+              ];
+            }
+        
+async read(parameters: Api.Types.CirclesPkey, options?: Api.Types.CirclesPkey.Options & Api.Tables.Circles.Options) : Promise<Api.Types.Circles>{
+
+      console.assert(parameters);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
+      
+const response = await sql`
+    -- 
+    SELECT 
+      id,circle 
+    FROM
+      api.circles 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    ${sql.unsafe(`${orderBy}`)}
+    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
+    OFFSET ${options?.offsetNumberOfRows ?? 0} 
+    `
+return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))[0]
+}
+
+async update(parameters: Api.Types.CirclesPkey, values: Partial<Api.Tables.Circles.Values>, options?: Api.Types.CirclesPkey.Options & Api.Tables.Circles.Options) : Promise<Api.Types.Circles>{
+
+      console.assert(parameters);
+      console.assert(values);
+      const sql = this.database.context.sql;
+      const typed = sql.typed as unknown as PostgresTypecasts;
+      
+const response = await sql`
+    --
+    UPDATE 
+      api.circles 
+    SET
+      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , circle = ${ values.circle === undefined ? sql`circle` : typed[718](values.circle) } 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    RETURNING id,circle`
+return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))[0]
+}
+async delete(parameters: Api.Types.CirclesPkey, options?: Api.Types.CirclesPkey.Options & Api.Tables.Circles.Options) {
+ console.assert(parameters);
+ const sql = this.database.context.sql;
+ const typed = sql.typed as unknown as PostgresTypecasts;
+ const response = await sql`
+    --
+    DELETE FROM 
+      api.circles 
+    WHERE
+      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+    RETURNING id,circle`
+ return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))[0]
+}
+}
+}
+}
+}
+export namespace PgToast {
+export namespace Tables {
+}
+}
+
+          // begin - operation dispatch map
+          import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
+          export class OperationDispatcher {
+            private dispatchMap: Record<string, OperationDispatchMethod>;
+            constructor(private database: Database){
+              this.dispatchMap = {
+
+          
+"Public.Procedures.CubeIn.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeIn.call(request.parameters as Public.Procedures.CubeIn.Parameters),
+"Public.Procedures.Cube_9c45.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Cube_9c45.call(request.parameters as Public.Procedures.Cube_9c45.Parameters),
+"Public.Procedures.Cube_2e6d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Cube_2e6d.call(request.parameters as Public.Procedures.Cube_2e6d.Parameters),
+"Public.Procedures.CubeOut.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeOut.call(request.parameters as Public.Procedures.CubeOut.Parameters),
+"Public.Procedures.CubeEq.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeEq.call(request.parameters as Public.Procedures.CubeEq.Parameters),
+"Public.Procedures.CubeNe.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeNe.call(request.parameters as Public.Procedures.CubeNe.Parameters),
+"Public.Procedures.CubeLt.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeLt.call(request.parameters as Public.Procedures.CubeLt.Parameters),
+"Public.Procedures.CubeGt.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeGt.call(request.parameters as Public.Procedures.CubeGt.Parameters),
+"Public.Procedures.CubeLe.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeLe.call(request.parameters as Public.Procedures.CubeLe.Parameters),
+"Public.Procedures.CubeGe.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeGe.call(request.parameters as Public.Procedures.CubeGe.Parameters),
+"Public.Procedures.CubeCmp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeCmp.call(request.parameters as Public.Procedures.CubeCmp.Parameters),
+"Public.Procedures.CubeContains.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeContains.call(request.parameters as Public.Procedures.CubeContains.Parameters),
+"Public.Procedures.CubeContained.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeContained.call(request.parameters as Public.Procedures.CubeContained.Parameters),
+"Public.Procedures.CubeOverlap.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeOverlap.call(request.parameters as Public.Procedures.CubeOverlap.Parameters),
+"Public.Procedures.CubeUnion.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeUnion.call(request.parameters as Public.Procedures.CubeUnion.Parameters),
+"Public.Procedures.CubeInter.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeInter.call(request.parameters as Public.Procedures.CubeInter.Parameters),
+"Public.Procedures.CubeSize.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeSize.call(request.parameters as Public.Procedures.CubeSize.Parameters),
+"Public.Procedures.CubeSubset.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeSubset.call(request.parameters as Public.Procedures.CubeSubset.Parameters),
+"Public.Procedures.CubeDistance.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeDistance.call(request.parameters as Public.Procedures.CubeDistance.Parameters),
+"Public.Procedures.DistanceChebyshev.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.DistanceChebyshev.call(request.parameters as Public.Procedures.DistanceChebyshev.Parameters),
+"Public.Procedures.DistanceTaxicab.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.DistanceTaxicab.call(request.parameters as Public.Procedures.DistanceTaxicab.Parameters),
+"Public.Procedures.CubeDim.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeDim.call(request.parameters as Public.Procedures.CubeDim.Parameters),
+"Public.Procedures.CubeLlCoord.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeLlCoord.call(request.parameters as Public.Procedures.CubeLlCoord.Parameters),
+"Public.Procedures.CubeUrCoord.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeUrCoord.call(request.parameters as Public.Procedures.CubeUrCoord.Parameters),
+"Public.Procedures.CubeCoord.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeCoord.call(request.parameters as Public.Procedures.CubeCoord.Parameters),
+"Public.Procedures.CubeCoordLlur.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeCoordLlur.call(request.parameters as Public.Procedures.CubeCoordLlur.Parameters),
+"Public.Procedures.CubeA5b3.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeA5b3.call(request.parameters as Public.Procedures.CubeA5b3.Parameters),
+"Public.Procedures.Cube_0aec.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Cube_0aec.call(request.parameters as Public.Procedures.Cube_0aec.Parameters),
+"Public.Procedures.Cube_5ffb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Cube_5ffb.call(request.parameters as Public.Procedures.Cube_5ffb.Parameters),
+"Public.Procedures.Cube_9e1c.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Cube_9e1c.call(request.parameters as Public.Procedures.Cube_9e1c.Parameters),
+"Public.Procedures.CubeIsPoint.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeIsPoint.call(request.parameters as Public.Procedures.CubeIsPoint.Parameters),
+"Public.Procedures.CubeEnlarge.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeEnlarge.call(request.parameters as Public.Procedures.CubeEnlarge.Parameters),
+"Public.Procedures.GCubeConsistent.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GCubeConsistent.call(request.parameters as Public.Procedures.GCubeConsistent.Parameters),
+"Public.Procedures.GCubePenalty.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GCubePenalty.call(request.parameters as Public.Procedures.GCubePenalty.Parameters),
+"Public.Procedures.GCubePicksplit.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GCubePicksplit.call(request.parameters as Public.Procedures.GCubePicksplit.Parameters),
+"Public.Procedures.GCubeUnion.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GCubeUnion.call(request.parameters as Public.Procedures.GCubeUnion.Parameters),
+"Public.Procedures.GCubeSame.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GCubeSame.call(request.parameters as Public.Procedures.GCubeSame.Parameters),
+"Public.Procedures.GCubeDistance.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GCubeDistance.call(request.parameters as Public.Procedures.GCubeDistance.Parameters),
+"Public.Procedures.CubeRecv.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeRecv.call(request.parameters as Public.Procedures.CubeRecv.Parameters),
+"Public.Procedures.CubeSend.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeSend.call(request.parameters as Public.Procedures.CubeSend.Parameters),
+"Public.Procedures.SetLimit.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.SetLimit.call(request.parameters as Public.Procedures.SetLimit.Parameters),
+"Public.Procedures.ShowLimit.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.ShowLimit.call(),
+"Public.Procedures.ShowTrgm.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.ShowTrgm.call(request.parameters as Public.Procedures.ShowTrgm.Parameters),
+"Public.Procedures.Similarity.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Similarity.call(request.parameters as Public.Procedures.Similarity.Parameters),
+"Public.Procedures.SimilarityOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.SimilarityOp.call(request.parameters as Public.Procedures.SimilarityOp.Parameters),
+"Public.Procedures.WordSimilarity.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.WordSimilarity.call(request.parameters as Public.Procedures.WordSimilarity.Parameters),
+"Public.Procedures.WordSimilarityOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.WordSimilarityOp.call(request.parameters as Public.Procedures.WordSimilarityOp.Parameters),
+"Public.Procedures.WordSimilarityCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.WordSimilarityCommutatorOp.call(request.parameters as Public.Procedures.WordSimilarityCommutatorOp.Parameters),
+"Public.Procedures.SimilarityDist.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.SimilarityDist.call(request.parameters as Public.Procedures.SimilarityDist.Parameters),
+"Public.Procedures.WordSimilarityDistOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.WordSimilarityDistOp.call(request.parameters as Public.Procedures.WordSimilarityDistOp.Parameters),
+"Public.Procedures.WordSimilarityDistCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.WordSimilarityDistCommutatorOp.call(request.parameters as Public.Procedures.WordSimilarityDistCommutatorOp.Parameters),
+"Public.Procedures.GtrgmIn.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmIn.call(request.parameters as Public.Procedures.GtrgmIn.Parameters),
+"Public.Procedures.GtrgmOut.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmOut.call(request.parameters as Public.Procedures.GtrgmOut.Parameters),
+"Public.Procedures.GtrgmConsistent.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmConsistent.call(request.parameters as Public.Procedures.GtrgmConsistent.Parameters),
+"Public.Procedures.GtrgmDistance.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmDistance.call(request.parameters as Public.Procedures.GtrgmDistance.Parameters),
+"Public.Procedures.GtrgmCompress.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmCompress.call(request.parameters as Public.Procedures.GtrgmCompress.Parameters),
+"Public.Procedures.GtrgmDecompress.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmDecompress.call(request.parameters as Public.Procedures.GtrgmDecompress.Parameters),
+"Public.Procedures.GtrgmPenalty.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmPenalty.call(request.parameters as Public.Procedures.GtrgmPenalty.Parameters),
+"Public.Procedures.GtrgmPicksplit.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmPicksplit.call(request.parameters as Public.Procedures.GtrgmPicksplit.Parameters),
+"Public.Procedures.GtrgmUnion.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmUnion.call(request.parameters as Public.Procedures.GtrgmUnion.Parameters),
+"Public.Procedures.GtrgmSame.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmSame.call(request.parameters as Public.Procedures.GtrgmSame.Parameters),
+"Public.Procedures.GinExtractValueTrgm.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GinExtractValueTrgm.call(request.parameters as Public.Procedures.GinExtractValueTrgm.Parameters),
+"Public.Procedures.GinExtractQueryTrgm.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GinExtractQueryTrgm.call(request.parameters as Public.Procedures.GinExtractQueryTrgm.Parameters),
+"Public.Procedures.GinTrgmConsistent.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GinTrgmConsistent.call(request.parameters as Public.Procedures.GinTrgmConsistent.Parameters),
+"Public.Procedures.GinTrgmTriconsistent.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GinTrgmTriconsistent.call(request.parameters as Public.Procedures.GinTrgmTriconsistent.Parameters),
+"Public.Procedures.StrictWordSimilarity.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StrictWordSimilarity.call(request.parameters as Public.Procedures.StrictWordSimilarity.Parameters),
+"Public.Procedures.StrictWordSimilarityOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StrictWordSimilarityOp.call(request.parameters as Public.Procedures.StrictWordSimilarityOp.Parameters),
+"Public.Procedures.StrictWordSimilarityCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StrictWordSimilarityCommutatorOp.call(request.parameters as Public.Procedures.StrictWordSimilarityCommutatorOp.Parameters),
+"Public.Procedures.StrictWordSimilarityDistOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StrictWordSimilarityDistOp.call(request.parameters as Public.Procedures.StrictWordSimilarityDistOp.Parameters),
+"Public.Procedures.StrictWordSimilarityDistCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StrictWordSimilarityDistCommutatorOp.call(request.parameters as Public.Procedures.StrictWordSimilarityDistCommutatorOp.Parameters),
+"Public.Procedures.GtrgmOptions.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmOptions.call(request.parameters as Public.Procedures.GtrgmOptions.Parameters),
+"Public.Tables.Slug.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Slug.create(request.values as Public.Tables.Slug.Values),
+
+             "Public.Tables.Slug.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Public.Tables.Slug.all(request.options as Public.Tables.Slug.Options),
+            
+"Public.Tables.Slug.SlugPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Slug.SlugPkey.read(request.parameters as Public.Types.SlugPkey,request.options as Public.Tables.Slug.Options),
+"Public.Tables.Slug.SlugPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Slug.SlugPkey.update(request.parameters as Public.Types.SlugPkey,request.values as Partial<Public.Tables.Slug.Values>),
+"Public.Tables.Slug.SlugPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Slug.SlugPkey.delete(request.parameters as Public.Types.SlugPkey),
+"Api.Procedures.Echo.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.Echo.call(request.parameters as Api.Procedures.Echo.Parameters),
+"Api.Procedures.EchoSet.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.EchoSet.call(request.parameters as Api.Procedures.EchoSet.Parameters),
+"Api.Procedures.EchoTable.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.EchoTable.call(request.parameters as Api.Procedures.EchoTable.Parameters),
+"Api.Procedures.EchoType.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.EchoType.call(request.parameters as Api.Procedures.EchoType.Parameters),
+"Api.Procedures.EchoTypeArray.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.EchoTypeArray.call(request.parameters as Api.Procedures.EchoTypeArray.Parameters),
+"Api.Procedures.EchoTypeNested.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.EchoTypeNested.call(request.parameters as Api.Procedures.EchoTypeNested.Parameters),
+"Api.Procedures.EchoTypeSet.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.EchoTypeSet.call(request.parameters as Api.Procedures.EchoTypeSet.Parameters),
+"Api.Procedures.EchoAnswer.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.EchoAnswer.call(request.parameters as Api.Procedures.EchoAnswer.Parameters),
+"Api.Tables.QAndA.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.QAndA.create(request.values as Api.Tables.QAndA.Values),
+
+             "Api.Tables.QAndA.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Api.Tables.QAndA.all(request.options as Api.Tables.QAndA.Options),
+            
+"Api.Tables.QAndA.QAndAAnswer.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.QAndA.QAndAAnswer.read(request.parameters as Api.Types.QAndAAnswer,request.options as Api.Tables.QAndA.Options),
+"Api.Tables.QAndA.QAndAAnswer.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.QAndA.QAndAAnswer.update(request.parameters as Api.Types.QAndAAnswer,request.values as Partial<Api.Tables.QAndA.Values>),
+"Api.Tables.QAndA.QAndAAnswer.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.QAndA.QAndAAnswer.delete(request.parameters as Api.Types.QAndAAnswer),
+"Api.Tables.Timezones.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.create(request.values as Api.Tables.Timezones.Values),
+
+             "Api.Tables.Timezones.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Api.Tables.Timezones.all(request.options as Api.Tables.Timezones.Options),
+            
+"Api.Tables.Timezones.TrgmIdxGist.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGist.read(request.parameters as Api.Types.TrgmIdxGist,request.options as Api.Tables.Timezones.Options),
+"Api.Tables.Timezones.TrgmIdxGist.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGist.update(request.parameters as Api.Types.TrgmIdxGist,request.values as Partial<Api.Tables.Timezones.Values>),
+"Api.Tables.Timezones.TrgmIdxGist.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGist.delete(request.parameters as Api.Types.TrgmIdxGist),
+"Api.Tables.Timezones.TrgmIdxGin.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGin.read(request.parameters as Api.Types.TrgmIdxGin,request.options as Api.Tables.Timezones.Options),
+"Api.Tables.Timezones.TrgmIdxGin.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGin.update(request.parameters as Api.Types.TrgmIdxGin,request.values as Partial<Api.Tables.Timezones.Values>),
+"Api.Tables.Timezones.TrgmIdxGin.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGin.delete(request.parameters as Api.Types.TrgmIdxGin),
+"Api.Tables.Points.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Points.create(request.values as Api.Tables.Points.Values),
+
+             "Api.Tables.Points.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Api.Tables.Points.all(request.options as Api.Tables.Points.Options),
+            
+"Api.Tables.Points.PointsPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Points.PointsPkey.read(request.parameters as Api.Types.PointsPkey,request.options as Api.Tables.Points.Options),
+"Api.Tables.Points.PointsPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Points.PointsPkey.update(request.parameters as Api.Types.PointsPkey,request.values as Partial<Api.Tables.Points.Values>),
+"Api.Tables.Points.PointsPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Points.PointsPkey.delete(request.parameters as Api.Types.PointsPkey),
+"Api.Tables.Lines.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Lines.create(request.values as Api.Tables.Lines.Values),
+
+             "Api.Tables.Lines.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Api.Tables.Lines.all(request.options as Api.Tables.Lines.Options),
+            
+"Api.Tables.Lines.LinesPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Lines.LinesPkey.read(request.parameters as Api.Types.LinesPkey,request.options as Api.Tables.Lines.Options),
+"Api.Tables.Lines.LinesPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Lines.LinesPkey.update(request.parameters as Api.Types.LinesPkey,request.values as Partial<Api.Tables.Lines.Values>),
+"Api.Tables.Lines.LinesPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Lines.LinesPkey.delete(request.parameters as Api.Types.LinesPkey),
+"Api.Tables.LineSegments.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.LineSegments.create(request.values as Api.Tables.LineSegments.Values),
+
+             "Api.Tables.LineSegments.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Api.Tables.LineSegments.all(request.options as Api.Tables.LineSegments.Options),
+            
+"Api.Tables.LineSegments.LineSegmentsPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.LineSegments.LineSegmentsPkey.read(request.parameters as Api.Types.LineSegmentsPkey,request.options as Api.Tables.LineSegments.Options),
+"Api.Tables.LineSegments.LineSegmentsPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.LineSegments.LineSegmentsPkey.update(request.parameters as Api.Types.LineSegmentsPkey,request.values as Partial<Api.Tables.LineSegments.Values>),
+"Api.Tables.LineSegments.LineSegmentsPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.LineSegments.LineSegmentsPkey.delete(request.parameters as Api.Types.LineSegmentsPkey),
+"Api.Tables.Boxes.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Boxes.create(request.values as Api.Tables.Boxes.Values),
+
+             "Api.Tables.Boxes.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Api.Tables.Boxes.all(request.options as Api.Tables.Boxes.Options),
+            
+"Api.Tables.Boxes.BoxesPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Boxes.BoxesPkey.read(request.parameters as Api.Types.BoxesPkey,request.options as Api.Tables.Boxes.Options),
+"Api.Tables.Boxes.BoxesPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Boxes.BoxesPkey.update(request.parameters as Api.Types.BoxesPkey,request.values as Partial<Api.Tables.Boxes.Values>),
+"Api.Tables.Boxes.BoxesPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Boxes.BoxesPkey.delete(request.parameters as Api.Types.BoxesPkey),
+"Api.Tables.Paths.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Paths.create(request.values as Api.Tables.Paths.Values),
+
+             "Api.Tables.Paths.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Api.Tables.Paths.all(request.options as Api.Tables.Paths.Options),
+            
+"Api.Tables.Paths.PathsPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Paths.PathsPkey.read(request.parameters as Api.Types.PathsPkey,request.options as Api.Tables.Paths.Options),
+"Api.Tables.Paths.PathsPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Paths.PathsPkey.update(request.parameters as Api.Types.PathsPkey,request.values as Partial<Api.Tables.Paths.Values>),
+"Api.Tables.Paths.PathsPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Paths.PathsPkey.delete(request.parameters as Api.Types.PathsPkey),
+"Api.Tables.Polygons.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Polygons.create(request.values as Api.Tables.Polygons.Values),
+
+             "Api.Tables.Polygons.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Api.Tables.Polygons.all(request.options as Api.Tables.Polygons.Options),
+            
+"Api.Tables.Polygons.PolygonsPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Polygons.PolygonsPkey.read(request.parameters as Api.Types.PolygonsPkey,request.options as Api.Tables.Polygons.Options),
+"Api.Tables.Polygons.PolygonsPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Polygons.PolygonsPkey.update(request.parameters as Api.Types.PolygonsPkey,request.values as Partial<Api.Tables.Polygons.Values>),
+"Api.Tables.Polygons.PolygonsPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Polygons.PolygonsPkey.delete(request.parameters as Api.Types.PolygonsPkey),
+"Api.Tables.Circles.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Circles.create(request.values as Api.Tables.Circles.Values),
+
+             "Api.Tables.Circles.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+              database.Api.Tables.Circles.all(request.options as Api.Tables.Circles.Options),
+            
+"Api.Tables.Circles.CirclesPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Circles.CirclesPkey.read(request.parameters as Api.Types.CirclesPkey,request.options as Api.Tables.Circles.Options),
+"Api.Tables.Circles.CirclesPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Circles.CirclesPkey.update(request.parameters as Api.Types.CirclesPkey,request.values as Partial<Api.Tables.Circles.Values>),
+"Api.Tables.Circles.CirclesPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Circles.CirclesPkey.delete(request.parameters as Api.Types.CirclesPkey),
+}
+}
+
+            async dispatch(request: EmbraceSQLRequest<object, object, object>) {
+              if (!this.dispatchMap[request.operation]) {
+                throw new Error(`${request.operation} not available`);
+              }
+              return this.dispatchMap[request.operation](request);
+            }
+            
+}
+
         // ⚠️ generated - do not modify ⚠️
 
         /**
@@ -56358,5411 +62242,4 @@ workMem: string;
 xmlbinary: string;
 xmloption: string;
 zeroDamagedPages: string;
-}
-
-            import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
-            import postgres from "postgres";
-          
-
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        type ArgumentToPostgres = any;
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        type ArgumentFromPostgres = any;
-        type Typecast = (x: ArgumentToPostgres) => ArgumentFromPostgres;
-        export interface PostgresTypecasts { 
-      
-[16]: Typecast;
-["PgCatalog.Types.Bool"]: Typecast
-[17]: Typecast;
-["PgCatalog.Types.Bytea"]: Typecast
-[18]: Typecast;
-["PgCatalog.Types.Char"]: Typecast
-[19]: Typecast;
-["PgCatalog.Types.Name"]: Typecast
-[20]: Typecast;
-["PgCatalog.Types.Int8"]: Typecast
-[21]: Typecast;
-["PgCatalog.Types.Int2"]: Typecast
-[22]: Typecast;
-["PgCatalog.Types.Int2vector"]: Typecast
-[23]: Typecast;
-["PgCatalog.Types.Int4"]: Typecast
-[24]: Typecast;
-["PgCatalog.Types.Regproc"]: Typecast
-[25]: Typecast;
-["PgCatalog.Types.Text"]: Typecast
-[26]: Typecast;
-["PgCatalog.Types.Oid"]: Typecast
-[27]: Typecast;
-["PgCatalog.Types.Tid"]: Typecast
-[28]: Typecast;
-["PgCatalog.Types.Xid"]: Typecast
-[29]: Typecast;
-["PgCatalog.Types.Cid"]: Typecast
-[30]: Typecast;
-["PgCatalog.Types.Oidvector"]: Typecast
-[71]: Typecast;
-["PgCatalog.Types.PgType"]: Typecast
-[75]: Typecast;
-["PgCatalog.Types.PgAttribute"]: Typecast
-[81]: Typecast;
-["PgCatalog.Types.PgProc"]: Typecast
-[83]: Typecast;
-["PgCatalog.Types.PgClass"]: Typecast
-[114]: Typecast;
-["PgCatalog.Types.Json"]: Typecast
-[142]: Typecast;
-["PgCatalog.Types.Xml"]: Typecast
-[194]: Typecast;
-["PgCatalog.Types.PgNodeTree"]: Typecast
-[3361]: Typecast;
-["PgCatalog.Types.PgNdistinct"]: Typecast
-[3402]: Typecast;
-["PgCatalog.Types.PgDependencies"]: Typecast
-[5017]: Typecast;
-["PgCatalog.Types.PgMcvList"]: Typecast
-[32]: Typecast;
-["PgCatalog.Types.PgDdlCommand"]: Typecast
-[5069]: Typecast;
-["PgCatalog.Types.Xid8"]: Typecast
-[600]: Typecast;
-["PgCatalog.Types.Point"]: Typecast
-[601]: Typecast;
-["PgCatalog.Types.Lseg"]: Typecast
-[602]: Typecast;
-["PgCatalog.Types.Path"]: Typecast
-[603]: Typecast;
-["PgCatalog.Types.Box"]: Typecast
-[604]: Typecast;
-["PgCatalog.Types.Polygon"]: Typecast
-[628]: Typecast;
-["PgCatalog.Types.Line"]: Typecast
-[700]: Typecast;
-["PgCatalog.Types.Float4"]: Typecast
-[701]: Typecast;
-["PgCatalog.Types.Float8"]: Typecast
-[705]: Typecast;
-["PgCatalog.Types.Unknown"]: Typecast
-[718]: Typecast;
-["PgCatalog.Types.Circle"]: Typecast
-[790]: Typecast;
-["PgCatalog.Types.Money"]: Typecast
-[829]: Typecast;
-["PgCatalog.Types.Macaddr"]: Typecast
-[869]: Typecast;
-["PgCatalog.Types.Inet"]: Typecast
-[650]: Typecast;
-["PgCatalog.Types.Cidr"]: Typecast
-[774]: Typecast;
-["PgCatalog.Types.Macaddr8"]: Typecast
-[1033]: Typecast;
-["PgCatalog.Types.Aclitem"]: Typecast
-[1042]: Typecast;
-["PgCatalog.Types.Bpchar"]: Typecast
-[1043]: Typecast;
-["PgCatalog.Types.Varchar"]: Typecast
-[1082]: Typecast;
-["PgCatalog.Types.Date"]: Typecast
-[1083]: Typecast;
-["PgCatalog.Types.Time"]: Typecast
-[1114]: Typecast;
-["PgCatalog.Types.Timestamp"]: Typecast
-[1184]: Typecast;
-["PgCatalog.Types.Timestamptz"]: Typecast
-[1186]: Typecast;
-["PgCatalog.Types.Interval"]: Typecast
-[1266]: Typecast;
-["PgCatalog.Types.Timetz"]: Typecast
-[1560]: Typecast;
-["PgCatalog.Types.Bit"]: Typecast
-[1562]: Typecast;
-["PgCatalog.Types.Varbit"]: Typecast
-[1700]: Typecast;
-["PgCatalog.Types.Numeric"]: Typecast
-[1790]: Typecast;
-["PgCatalog.Types.Refcursor"]: Typecast
-[2202]: Typecast;
-["PgCatalog.Types.Regprocedure"]: Typecast
-[2203]: Typecast;
-["PgCatalog.Types.Regoper"]: Typecast
-[2204]: Typecast;
-["PgCatalog.Types.Regoperator"]: Typecast
-[2205]: Typecast;
-["PgCatalog.Types.Regclass"]: Typecast
-[4191]: Typecast;
-["PgCatalog.Types.Regcollation"]: Typecast
-[2206]: Typecast;
-["PgCatalog.Types.Regtype"]: Typecast
-[4096]: Typecast;
-["PgCatalog.Types.Regrole"]: Typecast
-[4089]: Typecast;
-["PgCatalog.Types.Regnamespace"]: Typecast
-[2950]: Typecast;
-["PgCatalog.Types.Uuid"]: Typecast
-[3220]: Typecast;
-["PgCatalog.Types.PgLsn"]: Typecast
-[3614]: Typecast;
-["PgCatalog.Types.Tsvector"]: Typecast
-[3642]: Typecast;
-["PgCatalog.Types.Gtsvector"]: Typecast
-[3615]: Typecast;
-["PgCatalog.Types.Tsquery"]: Typecast
-[3734]: Typecast;
-["PgCatalog.Types.Regconfig"]: Typecast
-[3769]: Typecast;
-["PgCatalog.Types.Regdictionary"]: Typecast
-[3802]: Typecast;
-["PgCatalog.Types.Jsonb"]: Typecast
-[4072]: Typecast;
-["PgCatalog.Types.Jsonpath"]: Typecast
-[2970]: Typecast;
-["PgCatalog.Types.TxidSnapshot"]: Typecast
-[5038]: Typecast;
-["PgCatalog.Types.PgSnapshot"]: Typecast
-[3904]: Typecast;
-["PgCatalog.Types.Int4range"]: Typecast
-[3906]: Typecast;
-["PgCatalog.Types.Numrange"]: Typecast
-[3908]: Typecast;
-["PgCatalog.Types.Tsrange"]: Typecast
-[3910]: Typecast;
-["PgCatalog.Types.Tstzrange"]: Typecast
-[3912]: Typecast;
-["PgCatalog.Types.Daterange"]: Typecast
-[3926]: Typecast;
-["PgCatalog.Types.Int8range"]: Typecast
-[4451]: Typecast;
-["PgCatalog.Types.Int4multirange"]: Typecast
-[4532]: Typecast;
-["PgCatalog.Types.Nummultirange"]: Typecast
-[4533]: Typecast;
-["PgCatalog.Types.Tsmultirange"]: Typecast
-[4534]: Typecast;
-["PgCatalog.Types.Tstzmultirange"]: Typecast
-[4535]: Typecast;
-["PgCatalog.Types.Datemultirange"]: Typecast
-[4536]: Typecast;
-["PgCatalog.Types.Int8multirange"]: Typecast
-[2249]: Typecast;
-["PgCatalog.Types.Record"]: Typecast
-[2287]: Typecast;
-["PgCatalog.Types.RecordArray"]: Typecast
-[2275]: Typecast;
-["PgCatalog.Types.Cstring"]: Typecast
-[2276]: Typecast;
-["PgCatalog.Types.Any"]: Typecast
-[2277]: Typecast;
-["PgCatalog.Types.Anyarray"]: Typecast
-[2278]: Typecast;
-["PgCatalog.Types.Void"]: Typecast
-[2279]: Typecast;
-["PgCatalog.Types.Trigger"]: Typecast
-[3838]: Typecast;
-["PgCatalog.Types.EventTrigger"]: Typecast
-[2280]: Typecast;
-["PgCatalog.Types.LanguageHandler"]: Typecast
-[2281]: Typecast;
-["PgCatalog.Types.Internal"]: Typecast
-[2283]: Typecast;
-["PgCatalog.Types.Anyelement"]: Typecast
-[2776]: Typecast;
-["PgCatalog.Types.Anynonarray"]: Typecast
-[3500]: Typecast;
-["PgCatalog.Types.Anyenum"]: Typecast
-[3115]: Typecast;
-["PgCatalog.Types.FdwHandler"]: Typecast
-[325]: Typecast;
-["PgCatalog.Types.IndexAmHandler"]: Typecast
-[3310]: Typecast;
-["PgCatalog.Types.TsmHandler"]: Typecast
-[269]: Typecast;
-["PgCatalog.Types.TableAmHandler"]: Typecast
-[3831]: Typecast;
-["PgCatalog.Types.Anyrange"]: Typecast
-[5077]: Typecast;
-["PgCatalog.Types.Anycompatible"]: Typecast
-[5078]: Typecast;
-["PgCatalog.Types.Anycompatiblearray"]: Typecast
-[5079]: Typecast;
-["PgCatalog.Types.Anycompatiblenonarray"]: Typecast
-[5080]: Typecast;
-["PgCatalog.Types.Anycompatiblerange"]: Typecast
-[4537]: Typecast;
-["PgCatalog.Types.Anymultirange"]: Typecast
-[4538]: Typecast;
-["PgCatalog.Types.Anycompatiblemultirange"]: Typecast
-[4600]: Typecast;
-["PgCatalog.Types.PgBrinBloomSummary"]: Typecast
-[4601]: Typecast;
-["PgCatalog.Types.PgBrinMinmaxMultiSummary"]: Typecast
-[1000]: Typecast;
-["PgCatalog.Types.BoolArray"]: Typecast
-[1001]: Typecast;
-["PgCatalog.Types.ByteaArray"]: Typecast
-[1002]: Typecast;
-["PgCatalog.Types.CharArray"]: Typecast
-[1003]: Typecast;
-["PgCatalog.Types.NameArray"]: Typecast
-[1016]: Typecast;
-["PgCatalog.Types.Int8Array"]: Typecast
-[1005]: Typecast;
-["PgCatalog.Types.Int2Array"]: Typecast
-[1006]: Typecast;
-["PgCatalog.Types.Int2vectorArray"]: Typecast
-[1007]: Typecast;
-["PgCatalog.Types.Int4Array"]: Typecast
-[1008]: Typecast;
-["PgCatalog.Types.RegprocArray"]: Typecast
-[1009]: Typecast;
-["PgCatalog.Types.TextArray"]: Typecast
-[1028]: Typecast;
-["PgCatalog.Types.OidArray"]: Typecast
-[1010]: Typecast;
-["PgCatalog.Types.TidArray"]: Typecast
-[1011]: Typecast;
-["PgCatalog.Types.XidArray"]: Typecast
-[1012]: Typecast;
-["PgCatalog.Types.CidArray"]: Typecast
-[1013]: Typecast;
-["PgCatalog.Types.OidvectorArray"]: Typecast
-[210]: Typecast;
-["PgCatalog.Types.PgTypeArray"]: Typecast
-[270]: Typecast;
-["PgCatalog.Types.PgAttributeArray"]: Typecast
-[272]: Typecast;
-["PgCatalog.Types.PgProcArray"]: Typecast
-[273]: Typecast;
-["PgCatalog.Types.PgClassArray"]: Typecast
-[199]: Typecast;
-["PgCatalog.Types.JsonArray"]: Typecast
-[143]: Typecast;
-["PgCatalog.Types.XmlArray"]: Typecast
-[271]: Typecast;
-["PgCatalog.Types.Xid8Array"]: Typecast
-[1017]: Typecast;
-["PgCatalog.Types.PointArray"]: Typecast
-[1018]: Typecast;
-["PgCatalog.Types.LsegArray"]: Typecast
-[1019]: Typecast;
-["PgCatalog.Types.PathArray"]: Typecast
-[1020]: Typecast;
-["PgCatalog.Types.BoxArray"]: Typecast
-[1027]: Typecast;
-["PgCatalog.Types.PolygonArray"]: Typecast
-[629]: Typecast;
-["PgCatalog.Types.LineArray"]: Typecast
-[1021]: Typecast;
-["PgCatalog.Types.Float4Array"]: Typecast
-[1022]: Typecast;
-["PgCatalog.Types.Float8Array"]: Typecast
-[719]: Typecast;
-["PgCatalog.Types.CircleArray"]: Typecast
-[791]: Typecast;
-["PgCatalog.Types.MoneyArray"]: Typecast
-[1040]: Typecast;
-["PgCatalog.Types.MacaddrArray"]: Typecast
-[1041]: Typecast;
-["PgCatalog.Types.InetArray"]: Typecast
-[651]: Typecast;
-["PgCatalog.Types.CidrArray"]: Typecast
-[775]: Typecast;
-["PgCatalog.Types.Macaddr8Array"]: Typecast
-[1034]: Typecast;
-["PgCatalog.Types.AclitemArray"]: Typecast
-[1014]: Typecast;
-["PgCatalog.Types.BpcharArray"]: Typecast
-[1015]: Typecast;
-["PgCatalog.Types.VarcharArray"]: Typecast
-[1182]: Typecast;
-["PgCatalog.Types.DateArray"]: Typecast
-[1183]: Typecast;
-["PgCatalog.Types.TimeArray"]: Typecast
-[1115]: Typecast;
-["PgCatalog.Types.TimestampArray"]: Typecast
-[1185]: Typecast;
-["PgCatalog.Types.TimestamptzArray"]: Typecast
-[1187]: Typecast;
-["PgCatalog.Types.IntervalArray"]: Typecast
-[1270]: Typecast;
-["PgCatalog.Types.TimetzArray"]: Typecast
-[1561]: Typecast;
-["PgCatalog.Types.BitArray"]: Typecast
-[1563]: Typecast;
-["PgCatalog.Types.VarbitArray"]: Typecast
-[1231]: Typecast;
-["PgCatalog.Types.NumericArray"]: Typecast
-[2201]: Typecast;
-["PgCatalog.Types.RefcursorArray"]: Typecast
-[2207]: Typecast;
-["PgCatalog.Types.RegprocedureArray"]: Typecast
-[2208]: Typecast;
-["PgCatalog.Types.RegoperArray"]: Typecast
-[2209]: Typecast;
-["PgCatalog.Types.RegoperatorArray"]: Typecast
-[2210]: Typecast;
-["PgCatalog.Types.RegclassArray"]: Typecast
-[4192]: Typecast;
-["PgCatalog.Types.RegcollationArray"]: Typecast
-[2211]: Typecast;
-["PgCatalog.Types.RegtypeArray"]: Typecast
-[4097]: Typecast;
-["PgCatalog.Types.RegroleArray"]: Typecast
-[4090]: Typecast;
-["PgCatalog.Types.RegnamespaceArray"]: Typecast
-[2951]: Typecast;
-["PgCatalog.Types.UuidArray"]: Typecast
-[3221]: Typecast;
-["PgCatalog.Types.PgLsnArray"]: Typecast
-[3643]: Typecast;
-["PgCatalog.Types.TsvectorArray"]: Typecast
-[3644]: Typecast;
-["PgCatalog.Types.GtsvectorArray"]: Typecast
-[3645]: Typecast;
-["PgCatalog.Types.TsqueryArray"]: Typecast
-[3735]: Typecast;
-["PgCatalog.Types.RegconfigArray"]: Typecast
-[3770]: Typecast;
-["PgCatalog.Types.RegdictionaryArray"]: Typecast
-[3807]: Typecast;
-["PgCatalog.Types.JsonbArray"]: Typecast
-[4073]: Typecast;
-["PgCatalog.Types.JsonpathArray"]: Typecast
-[2949]: Typecast;
-["PgCatalog.Types.TxidSnapshotArray"]: Typecast
-[5039]: Typecast;
-["PgCatalog.Types.PgSnapshotArray"]: Typecast
-[3905]: Typecast;
-["PgCatalog.Types.Int4rangeArray"]: Typecast
-[3907]: Typecast;
-["PgCatalog.Types.NumrangeArray"]: Typecast
-[3909]: Typecast;
-["PgCatalog.Types.TsrangeArray"]: Typecast
-[3911]: Typecast;
-["PgCatalog.Types.TstzrangeArray"]: Typecast
-[3913]: Typecast;
-["PgCatalog.Types.DaterangeArray"]: Typecast
-[3927]: Typecast;
-["PgCatalog.Types.Int8rangeArray"]: Typecast
-[6150]: Typecast;
-["PgCatalog.Types.Int4multirangeArray"]: Typecast
-[6151]: Typecast;
-["PgCatalog.Types.NummultirangeArray"]: Typecast
-[6152]: Typecast;
-["PgCatalog.Types.TsmultirangeArray"]: Typecast
-[6153]: Typecast;
-["PgCatalog.Types.TstzmultirangeArray"]: Typecast
-[6155]: Typecast;
-["PgCatalog.Types.DatemultirangeArray"]: Typecast
-[6157]: Typecast;
-["PgCatalog.Types.Int8multirangeArray"]: Typecast
-[1263]: Typecast;
-["PgCatalog.Types.CstringArray"]: Typecast
-[10001]: Typecast;
-["PgCatalog.Types.PgAttrdef"]: Typecast
-[10000]: Typecast;
-["PgCatalog.Types.PgAttrdefArray"]: Typecast
-[10003]: Typecast;
-["PgCatalog.Types.PgConstraint"]: Typecast
-[10002]: Typecast;
-["PgCatalog.Types.PgConstraintArray"]: Typecast
-[10005]: Typecast;
-["PgCatalog.Types.PgInherits"]: Typecast
-[10004]: Typecast;
-["PgCatalog.Types.PgInheritsArray"]: Typecast
-[10007]: Typecast;
-["PgCatalog.Types.PgIndex"]: Typecast
-[10006]: Typecast;
-["PgCatalog.Types.PgIndexArray"]: Typecast
-[10009]: Typecast;
-["PgCatalog.Types.PgOperator"]: Typecast
-[10008]: Typecast;
-["PgCatalog.Types.PgOperatorArray"]: Typecast
-[10011]: Typecast;
-["PgCatalog.Types.PgOpfamily"]: Typecast
-[10010]: Typecast;
-["PgCatalog.Types.PgOpfamilyArray"]: Typecast
-[10013]: Typecast;
-["PgCatalog.Types.PgOpclass"]: Typecast
-[10012]: Typecast;
-["PgCatalog.Types.PgOpclassArray"]: Typecast
-[10015]: Typecast;
-["PgCatalog.Types.PgAm"]: Typecast
-[10014]: Typecast;
-["PgCatalog.Types.PgAmArray"]: Typecast
-[10017]: Typecast;
-["PgCatalog.Types.PgAmop"]: Typecast
-[10016]: Typecast;
-["PgCatalog.Types.PgAmopArray"]: Typecast
-[10019]: Typecast;
-["PgCatalog.Types.PgAmproc"]: Typecast
-[10018]: Typecast;
-["PgCatalog.Types.PgAmprocArray"]: Typecast
-[10021]: Typecast;
-["PgCatalog.Types.PgLanguage"]: Typecast
-[10020]: Typecast;
-["PgCatalog.Types.PgLanguageArray"]: Typecast
-[10023]: Typecast;
-["PgCatalog.Types.PgLargeobjectMetadata"]: Typecast
-[10022]: Typecast;
-["PgCatalog.Types.PgLargeobjectMetadataArray"]: Typecast
-[10025]: Typecast;
-["PgCatalog.Types.PgLargeobject"]: Typecast
-[10024]: Typecast;
-["PgCatalog.Types.PgLargeobjectArray"]: Typecast
-[10027]: Typecast;
-["PgCatalog.Types.PgAggregate"]: Typecast
-[10026]: Typecast;
-["PgCatalog.Types.PgAggregateArray"]: Typecast
-[10029]: Typecast;
-["PgCatalog.Types.PgStatistic"]: Typecast
-[10028]: Typecast;
-["PgCatalog.Types.PgStatisticArray"]: Typecast
-[10031]: Typecast;
-["PgCatalog.Types.PgStatisticExt"]: Typecast
-[10030]: Typecast;
-["PgCatalog.Types.PgStatisticExtArray"]: Typecast
-[10033]: Typecast;
-["PgCatalog.Types.PgStatisticExtData"]: Typecast
-[10032]: Typecast;
-["PgCatalog.Types.PgStatisticExtDataArray"]: Typecast
-[10035]: Typecast;
-["PgCatalog.Types.PgRewrite"]: Typecast
-[10034]: Typecast;
-["PgCatalog.Types.PgRewriteArray"]: Typecast
-[10037]: Typecast;
-["PgCatalog.Types.PgTrigger"]: Typecast
-[10036]: Typecast;
-["PgCatalog.Types.PgTriggerArray"]: Typecast
-[10039]: Typecast;
-["PgCatalog.Types.PgEventTrigger"]: Typecast
-[10038]: Typecast;
-["PgCatalog.Types.PgEventTriggerArray"]: Typecast
-[10041]: Typecast;
-["PgCatalog.Types.PgDescription"]: Typecast
-[10040]: Typecast;
-["PgCatalog.Types.PgDescriptionArray"]: Typecast
-[10043]: Typecast;
-["PgCatalog.Types.PgCast"]: Typecast
-[10042]: Typecast;
-["PgCatalog.Types.PgCastArray"]: Typecast
-[10045]: Typecast;
-["PgCatalog.Types.PgEnum"]: Typecast
-[10044]: Typecast;
-["PgCatalog.Types.PgEnumArray"]: Typecast
-[10047]: Typecast;
-["PgCatalog.Types.PgNamespace"]: Typecast
-[10046]: Typecast;
-["PgCatalog.Types.PgNamespaceArray"]: Typecast
-[10049]: Typecast;
-["PgCatalog.Types.PgConversion"]: Typecast
-[10048]: Typecast;
-["PgCatalog.Types.PgConversionArray"]: Typecast
-[10051]: Typecast;
-["PgCatalog.Types.PgDepend"]: Typecast
-[10050]: Typecast;
-["PgCatalog.Types.PgDependArray"]: Typecast
-[1248]: Typecast;
-["PgCatalog.Types.PgDatabase"]: Typecast
-[10052]: Typecast;
-["PgCatalog.Types.PgDatabaseArray"]: Typecast
-[10054]: Typecast;
-["PgCatalog.Types.PgDbRoleSetting"]: Typecast
-[10053]: Typecast;
-["PgCatalog.Types.PgDbRoleSettingArray"]: Typecast
-[10056]: Typecast;
-["PgCatalog.Types.PgTablespace"]: Typecast
-[10055]: Typecast;
-["PgCatalog.Types.PgTablespaceArray"]: Typecast
-[2842]: Typecast;
-["PgCatalog.Types.PgAuthid"]: Typecast
-[10057]: Typecast;
-["PgCatalog.Types.PgAuthidArray"]: Typecast
-[2843]: Typecast;
-["PgCatalog.Types.PgAuthMembers"]: Typecast
-[10058]: Typecast;
-["PgCatalog.Types.PgAuthMembersArray"]: Typecast
-[10060]: Typecast;
-["PgCatalog.Types.PgShdepend"]: Typecast
-[10059]: Typecast;
-["PgCatalog.Types.PgShdependArray"]: Typecast
-[10062]: Typecast;
-["PgCatalog.Types.PgShdescription"]: Typecast
-[10061]: Typecast;
-["PgCatalog.Types.PgShdescriptionArray"]: Typecast
-[10064]: Typecast;
-["PgCatalog.Types.PgTsConfig"]: Typecast
-[10063]: Typecast;
-["PgCatalog.Types.PgTsConfigArray"]: Typecast
-[10066]: Typecast;
-["PgCatalog.Types.PgTsConfigMap"]: Typecast
-[10065]: Typecast;
-["PgCatalog.Types.PgTsConfigMapArray"]: Typecast
-[10068]: Typecast;
-["PgCatalog.Types.PgTsDict"]: Typecast
-[10067]: Typecast;
-["PgCatalog.Types.PgTsDictArray"]: Typecast
-[10070]: Typecast;
-["PgCatalog.Types.PgTsParser"]: Typecast
-[10069]: Typecast;
-["PgCatalog.Types.PgTsParserArray"]: Typecast
-[10072]: Typecast;
-["PgCatalog.Types.PgTsTemplate"]: Typecast
-[10071]: Typecast;
-["PgCatalog.Types.PgTsTemplateArray"]: Typecast
-[10074]: Typecast;
-["PgCatalog.Types.PgExtension"]: Typecast
-[10073]: Typecast;
-["PgCatalog.Types.PgExtensionArray"]: Typecast
-[10076]: Typecast;
-["PgCatalog.Types.PgForeignDataWrapper"]: Typecast
-[10075]: Typecast;
-["PgCatalog.Types.PgForeignDataWrapperArray"]: Typecast
-[10078]: Typecast;
-["PgCatalog.Types.PgForeignServer"]: Typecast
-[10077]: Typecast;
-["PgCatalog.Types.PgForeignServerArray"]: Typecast
-[10080]: Typecast;
-["PgCatalog.Types.PgUserMapping"]: Typecast
-[10079]: Typecast;
-["PgCatalog.Types.PgUserMappingArray"]: Typecast
-[10082]: Typecast;
-["PgCatalog.Types.PgForeignTable"]: Typecast
-[10081]: Typecast;
-["PgCatalog.Types.PgForeignTableArray"]: Typecast
-[10084]: Typecast;
-["PgCatalog.Types.PgPolicy"]: Typecast
-[10083]: Typecast;
-["PgCatalog.Types.PgPolicyArray"]: Typecast
-[10086]: Typecast;
-["PgCatalog.Types.PgReplicationOrigin"]: Typecast
-[10085]: Typecast;
-["PgCatalog.Types.PgReplicationOriginArray"]: Typecast
-[10088]: Typecast;
-["PgCatalog.Types.PgDefaultAcl"]: Typecast
-[10087]: Typecast;
-["PgCatalog.Types.PgDefaultAclArray"]: Typecast
-[10090]: Typecast;
-["PgCatalog.Types.PgInitPrivs"]: Typecast
-[10089]: Typecast;
-["PgCatalog.Types.PgInitPrivsArray"]: Typecast
-[10092]: Typecast;
-["PgCatalog.Types.PgSeclabel"]: Typecast
-[10091]: Typecast;
-["PgCatalog.Types.PgSeclabelArray"]: Typecast
-[4066]: Typecast;
-["PgCatalog.Types.PgShseclabel"]: Typecast
-[10093]: Typecast;
-["PgCatalog.Types.PgShseclabelArray"]: Typecast
-[10095]: Typecast;
-["PgCatalog.Types.PgCollation"]: Typecast
-[10094]: Typecast;
-["PgCatalog.Types.PgCollationArray"]: Typecast
-[10097]: Typecast;
-["PgCatalog.Types.PgParameterAcl"]: Typecast
-[10096]: Typecast;
-["PgCatalog.Types.PgParameterAclArray"]: Typecast
-[10099]: Typecast;
-["PgCatalog.Types.PgPartitionedTable"]: Typecast
-[10098]: Typecast;
-["PgCatalog.Types.PgPartitionedTableArray"]: Typecast
-[10101]: Typecast;
-["PgCatalog.Types.PgRange"]: Typecast
-[10100]: Typecast;
-["PgCatalog.Types.PgRangeArray"]: Typecast
-[10103]: Typecast;
-["PgCatalog.Types.PgTransform"]: Typecast
-[10102]: Typecast;
-["PgCatalog.Types.PgTransformArray"]: Typecast
-[10105]: Typecast;
-["PgCatalog.Types.PgSequence"]: Typecast
-[10104]: Typecast;
-["PgCatalog.Types.PgSequenceArray"]: Typecast
-[10107]: Typecast;
-["PgCatalog.Types.PgPublication"]: Typecast
-[10106]: Typecast;
-["PgCatalog.Types.PgPublicationArray"]: Typecast
-[10109]: Typecast;
-["PgCatalog.Types.PgPublicationNamespace"]: Typecast
-[10108]: Typecast;
-["PgCatalog.Types.PgPublicationNamespaceArray"]: Typecast
-[10111]: Typecast;
-["PgCatalog.Types.PgPublicationRel"]: Typecast
-[10110]: Typecast;
-["PgCatalog.Types.PgPublicationRelArray"]: Typecast
-[6101]: Typecast;
-["PgCatalog.Types.PgSubscription"]: Typecast
-[10112]: Typecast;
-["PgCatalog.Types.PgSubscriptionArray"]: Typecast
-[10114]: Typecast;
-["PgCatalog.Types.PgSubscriptionRel"]: Typecast
-[10113]: Typecast;
-["PgCatalog.Types.PgSubscriptionRelArray"]: Typecast
-[12002]: Typecast;
-["PgCatalog.Types.PgRoles"]: Typecast
-[12001]: Typecast;
-["PgCatalog.Types.PgRolesArray"]: Typecast
-[12007]: Typecast;
-["PgCatalog.Types.PgShadow"]: Typecast
-[12006]: Typecast;
-["PgCatalog.Types.PgShadowArray"]: Typecast
-[12012]: Typecast;
-["PgCatalog.Types.PgGroup"]: Typecast
-[12011]: Typecast;
-["PgCatalog.Types.PgGroupArray"]: Typecast
-[12016]: Typecast;
-["PgCatalog.Types.PgUser"]: Typecast
-[12015]: Typecast;
-["PgCatalog.Types.PgUserArray"]: Typecast
-[12020]: Typecast;
-["PgCatalog.Types.PgPolicies"]: Typecast
-[12019]: Typecast;
-["PgCatalog.Types.PgPoliciesArray"]: Typecast
-[12025]: Typecast;
-["PgCatalog.Types.PgRules"]: Typecast
-[12024]: Typecast;
-["PgCatalog.Types.PgRulesArray"]: Typecast
-[12030]: Typecast;
-["PgCatalog.Types.PgViews"]: Typecast
-[12029]: Typecast;
-["PgCatalog.Types.PgViewsArray"]: Typecast
-[12035]: Typecast;
-["PgCatalog.Types.PgTables"]: Typecast
-[12034]: Typecast;
-["PgCatalog.Types.PgTablesArray"]: Typecast
-[12040]: Typecast;
-["PgCatalog.Types.PgMatviews"]: Typecast
-[12039]: Typecast;
-["PgCatalog.Types.PgMatviewsArray"]: Typecast
-[12045]: Typecast;
-["PgCatalog.Types.PgIndexes"]: Typecast
-[12044]: Typecast;
-["PgCatalog.Types.PgIndexesArray"]: Typecast
-[12050]: Typecast;
-["PgCatalog.Types.PgSequences"]: Typecast
-[12049]: Typecast;
-["PgCatalog.Types.PgSequencesArray"]: Typecast
-[12055]: Typecast;
-["PgCatalog.Types.PgStats"]: Typecast
-[12054]: Typecast;
-["PgCatalog.Types.PgStatsArray"]: Typecast
-[12060]: Typecast;
-["PgCatalog.Types.PgStatsExt"]: Typecast
-[12059]: Typecast;
-["PgCatalog.Types.PgStatsExtArray"]: Typecast
-[12065]: Typecast;
-["PgCatalog.Types.PgStatsExtExprs"]: Typecast
-[12064]: Typecast;
-["PgCatalog.Types.PgStatsExtExprsArray"]: Typecast
-[12070]: Typecast;
-["PgCatalog.Types.PgPublicationTables"]: Typecast
-[12069]: Typecast;
-["PgCatalog.Types.PgPublicationTablesArray"]: Typecast
-[12075]: Typecast;
-["PgCatalog.Types.PgLocks"]: Typecast
-[12074]: Typecast;
-["PgCatalog.Types.PgLocksArray"]: Typecast
-[12079]: Typecast;
-["PgCatalog.Types.PgCursors"]: Typecast
-[12078]: Typecast;
-["PgCatalog.Types.PgCursorsArray"]: Typecast
-[12083]: Typecast;
-["PgCatalog.Types.PgAvailableExtensions"]: Typecast
-[12082]: Typecast;
-["PgCatalog.Types.PgAvailableExtensionsArray"]: Typecast
-[12087]: Typecast;
-["PgCatalog.Types.PgAvailableExtensionVersions"]: Typecast
-[12086]: Typecast;
-["PgCatalog.Types.PgAvailableExtensionVersionsArray"]: Typecast
-[12092]: Typecast;
-["PgCatalog.Types.PgPreparedXacts"]: Typecast
-[12091]: Typecast;
-["PgCatalog.Types.PgPreparedXactsArray"]: Typecast
-[12097]: Typecast;
-["PgCatalog.Types.PgPreparedStatements"]: Typecast
-[12096]: Typecast;
-["PgCatalog.Types.PgPreparedStatementsArray"]: Typecast
-[12101]: Typecast;
-["PgCatalog.Types.PgSeclabels"]: Typecast
-[12100]: Typecast;
-["PgCatalog.Types.PgSeclabelsArray"]: Typecast
-[12106]: Typecast;
-["PgCatalog.Types.PgSettings"]: Typecast
-[12105]: Typecast;
-["PgCatalog.Types.PgSettingsArray"]: Typecast
-[12112]: Typecast;
-["PgCatalog.Types.PgFileSettings"]: Typecast
-[12111]: Typecast;
-["PgCatalog.Types.PgFileSettingsArray"]: Typecast
-[12116]: Typecast;
-["PgCatalog.Types.PgHbaFileRules"]: Typecast
-[12115]: Typecast;
-["PgCatalog.Types.PgHbaFileRulesArray"]: Typecast
-[12120]: Typecast;
-["PgCatalog.Types.PgIdentFileMappings"]: Typecast
-[12119]: Typecast;
-["PgCatalog.Types.PgIdentFileMappingsArray"]: Typecast
-[12124]: Typecast;
-["PgCatalog.Types.PgTimezoneAbbrevs"]: Typecast
-[12123]: Typecast;
-["PgCatalog.Types.PgTimezoneAbbrevsArray"]: Typecast
-[12128]: Typecast;
-["PgCatalog.Types.PgTimezoneNames"]: Typecast
-[12127]: Typecast;
-["PgCatalog.Types.PgTimezoneNamesArray"]: Typecast
-[12132]: Typecast;
-["PgCatalog.Types.PgConfig"]: Typecast
-[12131]: Typecast;
-["PgCatalog.Types.PgConfigArray"]: Typecast
-[12136]: Typecast;
-["PgCatalog.Types.PgShmemAllocations"]: Typecast
-[12135]: Typecast;
-["PgCatalog.Types.PgShmemAllocationsArray"]: Typecast
-[12140]: Typecast;
-["PgCatalog.Types.PgBackendMemoryContexts"]: Typecast
-[12139]: Typecast;
-["PgCatalog.Types.PgBackendMemoryContextsArray"]: Typecast
-[12144]: Typecast;
-["PgCatalog.Types.PgStatAllTables"]: Typecast
-[12143]: Typecast;
-["PgCatalog.Types.PgStatAllTablesArray"]: Typecast
-[12149]: Typecast;
-["PgCatalog.Types.PgStatXactAllTables"]: Typecast
-[12148]: Typecast;
-["PgCatalog.Types.PgStatXactAllTablesArray"]: Typecast
-[12154]: Typecast;
-["PgCatalog.Types.PgStatSysTables"]: Typecast
-[12153]: Typecast;
-["PgCatalog.Types.PgStatSysTablesArray"]: Typecast
-[12159]: Typecast;
-["PgCatalog.Types.PgStatXactSysTables"]: Typecast
-[12158]: Typecast;
-["PgCatalog.Types.PgStatXactSysTablesArray"]: Typecast
-[12163]: Typecast;
-["PgCatalog.Types.PgStatUserTables"]: Typecast
-[12162]: Typecast;
-["PgCatalog.Types.PgStatUserTablesArray"]: Typecast
-[12168]: Typecast;
-["PgCatalog.Types.PgStatXactUserTables"]: Typecast
-[12167]: Typecast;
-["PgCatalog.Types.PgStatXactUserTablesArray"]: Typecast
-[12172]: Typecast;
-["PgCatalog.Types.PgStatioAllTables"]: Typecast
-[12171]: Typecast;
-["PgCatalog.Types.PgStatioAllTablesArray"]: Typecast
-[12177]: Typecast;
-["PgCatalog.Types.PgStatioSysTables"]: Typecast
-[12176]: Typecast;
-["PgCatalog.Types.PgStatioSysTablesArray"]: Typecast
-[12181]: Typecast;
-["PgCatalog.Types.PgStatioUserTables"]: Typecast
-[12180]: Typecast;
-["PgCatalog.Types.PgStatioUserTablesArray"]: Typecast
-[12185]: Typecast;
-["PgCatalog.Types.PgStatAllIndexes"]: Typecast
-[12184]: Typecast;
-["PgCatalog.Types.PgStatAllIndexesArray"]: Typecast
-[12190]: Typecast;
-["PgCatalog.Types.PgStatSysIndexes"]: Typecast
-[12189]: Typecast;
-["PgCatalog.Types.PgStatSysIndexesArray"]: Typecast
-[12194]: Typecast;
-["PgCatalog.Types.PgStatUserIndexes"]: Typecast
-[12193]: Typecast;
-["PgCatalog.Types.PgStatUserIndexesArray"]: Typecast
-[12198]: Typecast;
-["PgCatalog.Types.PgStatioAllIndexes"]: Typecast
-[12197]: Typecast;
-["PgCatalog.Types.PgStatioAllIndexesArray"]: Typecast
-[12203]: Typecast;
-["PgCatalog.Types.PgStatioSysIndexes"]: Typecast
-[12202]: Typecast;
-["PgCatalog.Types.PgStatioSysIndexesArray"]: Typecast
-[12207]: Typecast;
-["PgCatalog.Types.PgStatioUserIndexes"]: Typecast
-[12206]: Typecast;
-["PgCatalog.Types.PgStatioUserIndexesArray"]: Typecast
-[12211]: Typecast;
-["PgCatalog.Types.PgStatioAllSequences"]: Typecast
-[12210]: Typecast;
-["PgCatalog.Types.PgStatioAllSequencesArray"]: Typecast
-[12216]: Typecast;
-["PgCatalog.Types.PgStatioSysSequences"]: Typecast
-[12215]: Typecast;
-["PgCatalog.Types.PgStatioSysSequencesArray"]: Typecast
-[12220]: Typecast;
-["PgCatalog.Types.PgStatioUserSequences"]: Typecast
-[12219]: Typecast;
-["PgCatalog.Types.PgStatioUserSequencesArray"]: Typecast
-[12224]: Typecast;
-["PgCatalog.Types.PgStatActivity"]: Typecast
-[12223]: Typecast;
-["PgCatalog.Types.PgStatActivityArray"]: Typecast
-[12229]: Typecast;
-["PgCatalog.Types.PgStatReplication"]: Typecast
-[12228]: Typecast;
-["PgCatalog.Types.PgStatReplicationArray"]: Typecast
-[12234]: Typecast;
-["PgCatalog.Types.PgStatSlru"]: Typecast
-[12233]: Typecast;
-["PgCatalog.Types.PgStatSlruArray"]: Typecast
-[12238]: Typecast;
-["PgCatalog.Types.PgStatWalReceiver"]: Typecast
-[12237]: Typecast;
-["PgCatalog.Types.PgStatWalReceiverArray"]: Typecast
-[12242]: Typecast;
-["PgCatalog.Types.PgStatRecoveryPrefetch"]: Typecast
-[12241]: Typecast;
-["PgCatalog.Types.PgStatRecoveryPrefetchArray"]: Typecast
-[12246]: Typecast;
-["PgCatalog.Types.PgStatSubscription"]: Typecast
-[12245]: Typecast;
-["PgCatalog.Types.PgStatSubscriptionArray"]: Typecast
-[12251]: Typecast;
-["PgCatalog.Types.PgStatSsl"]: Typecast
-[12250]: Typecast;
-["PgCatalog.Types.PgStatSslArray"]: Typecast
-[12255]: Typecast;
-["PgCatalog.Types.PgStatGssapi"]: Typecast
-[12254]: Typecast;
-["PgCatalog.Types.PgStatGssapiArray"]: Typecast
-[12259]: Typecast;
-["PgCatalog.Types.PgReplicationSlots"]: Typecast
-[12258]: Typecast;
-["PgCatalog.Types.PgReplicationSlotsArray"]: Typecast
-[12264]: Typecast;
-["PgCatalog.Types.PgStatReplicationSlots"]: Typecast
-[12263]: Typecast;
-["PgCatalog.Types.PgStatReplicationSlotsArray"]: Typecast
-[12268]: Typecast;
-["PgCatalog.Types.PgStatDatabase"]: Typecast
-[12267]: Typecast;
-["PgCatalog.Types.PgStatDatabaseArray"]: Typecast
-[12273]: Typecast;
-["PgCatalog.Types.PgStatDatabaseConflicts"]: Typecast
-[12272]: Typecast;
-["PgCatalog.Types.PgStatDatabaseConflictsArray"]: Typecast
-[12277]: Typecast;
-["PgCatalog.Types.PgStatUserFunctions"]: Typecast
-[12276]: Typecast;
-["PgCatalog.Types.PgStatUserFunctionsArray"]: Typecast
-[12282]: Typecast;
-["PgCatalog.Types.PgStatXactUserFunctions"]: Typecast
-[12281]: Typecast;
-["PgCatalog.Types.PgStatXactUserFunctionsArray"]: Typecast
-[12287]: Typecast;
-["PgCatalog.Types.PgStatArchiver"]: Typecast
-[12286]: Typecast;
-["PgCatalog.Types.PgStatArchiverArray"]: Typecast
-[12291]: Typecast;
-["PgCatalog.Types.PgStatBgwriter"]: Typecast
-[12290]: Typecast;
-["PgCatalog.Types.PgStatBgwriterArray"]: Typecast
-[12295]: Typecast;
-["PgCatalog.Types.PgStatIo"]: Typecast
-[12294]: Typecast;
-["PgCatalog.Types.PgStatIoArray"]: Typecast
-[12299]: Typecast;
-["PgCatalog.Types.PgStatWal"]: Typecast
-[12298]: Typecast;
-["PgCatalog.Types.PgStatWalArray"]: Typecast
-[12303]: Typecast;
-["PgCatalog.Types.PgStatProgressAnalyze"]: Typecast
-[12302]: Typecast;
-["PgCatalog.Types.PgStatProgressAnalyzeArray"]: Typecast
-[12308]: Typecast;
-["PgCatalog.Types.PgStatProgressVacuum"]: Typecast
-[12307]: Typecast;
-["PgCatalog.Types.PgStatProgressVacuumArray"]: Typecast
-[12313]: Typecast;
-["PgCatalog.Types.PgStatProgressCluster"]: Typecast
-[12312]: Typecast;
-["PgCatalog.Types.PgStatProgressClusterArray"]: Typecast
-[12318]: Typecast;
-["PgCatalog.Types.PgStatProgressCreateIndex"]: Typecast
-[12317]: Typecast;
-["PgCatalog.Types.PgStatProgressCreateIndexArray"]: Typecast
-[12323]: Typecast;
-["PgCatalog.Types.PgStatProgressBasebackup"]: Typecast
-[12322]: Typecast;
-["PgCatalog.Types.PgStatProgressBasebackupArray"]: Typecast
-[12328]: Typecast;
-["PgCatalog.Types.PgStatProgressCopy"]: Typecast
-[12327]: Typecast;
-["PgCatalog.Types.PgStatProgressCopyArray"]: Typecast
-[12333]: Typecast;
-["PgCatalog.Types.PgUserMappings"]: Typecast
-[12332]: Typecast;
-["PgCatalog.Types.PgUserMappingsArray"]: Typecast
-[12338]: Typecast;
-["PgCatalog.Types.PgReplicationOriginStatus"]: Typecast
-[12337]: Typecast;
-["PgCatalog.Types.PgReplicationOriginStatusArray"]: Typecast
-[12342]: Typecast;
-["PgCatalog.Types.PgStatSubscriptionStats"]: Typecast
-[12341]: Typecast;
-["PgCatalog.Types.PgStatSubscriptionStatsArray"]: Typecast
-[2690]: Typecast;
-["PgCatalog.Types.PgProcOidIndex"]: Typecast
-[2691]: Typecast;
-["PgCatalog.Types.PgProcPronameArgsNspIndex"]: Typecast
-[2703]: Typecast;
-["PgCatalog.Types.PgTypeOidIndex"]: Typecast
-[2704]: Typecast;
-["PgCatalog.Types.PgTypeTypnameNspIndex"]: Typecast
-[2658]: Typecast;
-["PgCatalog.Types.PgAttributeRelidAttnamIndex"]: Typecast
-[2659]: Typecast;
-["PgCatalog.Types.PgAttributeRelidAttnumIndex"]: Typecast
-[2662]: Typecast;
-["PgCatalog.Types.PgClassOidIndex"]: Typecast
-[2663]: Typecast;
-["PgCatalog.Types.PgClassRelnameNspIndex"]: Typecast
-[3455]: Typecast;
-["PgCatalog.Types.PgClassTblspcRelfilenodeIndex"]: Typecast
-[2656]: Typecast;
-["PgCatalog.Types.PgAttrdefAdrelidAdnumIndex"]: Typecast
-[2657]: Typecast;
-["PgCatalog.Types.PgAttrdefOidIndex"]: Typecast
-[2664]: Typecast;
-["PgCatalog.Types.PgConstraintConnameNspIndex"]: Typecast
-[2665]: Typecast;
-["PgCatalog.Types.PgConstraintConrelidContypidConnameIndex"]: Typecast
-[2666]: Typecast;
-["PgCatalog.Types.PgConstraintContypidIndex"]: Typecast
-[2667]: Typecast;
-["PgCatalog.Types.PgConstraintOidIndex"]: Typecast
-[2579]: Typecast;
-["PgCatalog.Types.PgConstraintConparentidIndex"]: Typecast
-[2680]: Typecast;
-["PgCatalog.Types.PgInheritsRelidSeqnoIndex"]: Typecast
-[2187]: Typecast;
-["PgCatalog.Types.PgInheritsParentIndex"]: Typecast
-[2678]: Typecast;
-["PgCatalog.Types.PgIndexIndrelidIndex"]: Typecast
-[2679]: Typecast;
-["PgCatalog.Types.PgIndexIndexrelidIndex"]: Typecast
-[2688]: Typecast;
-["PgCatalog.Types.PgOperatorOidIndex"]: Typecast
-[2689]: Typecast;
-["PgCatalog.Types.PgOperatorOprnameLRNIndex"]: Typecast
-[2754]: Typecast;
-["PgCatalog.Types.PgOpfamilyAmNameNspIndex"]: Typecast
-[2755]: Typecast;
-["PgCatalog.Types.PgOpfamilyOidIndex"]: Typecast
-[2686]: Typecast;
-["PgCatalog.Types.PgOpclassAmNameNspIndex"]: Typecast
-[2687]: Typecast;
-["PgCatalog.Types.PgOpclassOidIndex"]: Typecast
-[2651]: Typecast;
-["PgCatalog.Types.PgAmNameIndex"]: Typecast
-[2652]: Typecast;
-["PgCatalog.Types.PgAmOidIndex"]: Typecast
-[2653]: Typecast;
-["PgCatalog.Types.PgAmopFamStratIndex"]: Typecast
-[2654]: Typecast;
-["PgCatalog.Types.PgAmopOprFamIndex"]: Typecast
-[2756]: Typecast;
-["PgCatalog.Types.PgAmopOidIndex"]: Typecast
-[2655]: Typecast;
-["PgCatalog.Types.PgAmprocFamProcIndex"]: Typecast
-[2757]: Typecast;
-["PgCatalog.Types.PgAmprocOidIndex"]: Typecast
-[2681]: Typecast;
-["PgCatalog.Types.PgLanguageNameIndex"]: Typecast
-[2682]: Typecast;
-["PgCatalog.Types.PgLanguageOidIndex"]: Typecast
-[2996]: Typecast;
-["PgCatalog.Types.PgLargeobjectMetadataOidIndex"]: Typecast
-[2683]: Typecast;
-["PgCatalog.Types.PgLargeobjectLoidPnIndex"]: Typecast
-[2650]: Typecast;
-["PgCatalog.Types.PgAggregateFnoidIndex"]: Typecast
-[2696]: Typecast;
-["PgCatalog.Types.PgStatisticRelidAttInhIndex"]: Typecast
-[3380]: Typecast;
-["PgCatalog.Types.PgStatisticExtOidIndex"]: Typecast
-[3997]: Typecast;
-["PgCatalog.Types.PgStatisticExtNameIndex"]: Typecast
-[3379]: Typecast;
-["PgCatalog.Types.PgStatisticExtRelidIndex"]: Typecast
-[3433]: Typecast;
-["PgCatalog.Types.PgStatisticExtDataStxoidInhIndex"]: Typecast
-[2692]: Typecast;
-["PgCatalog.Types.PgRewriteOidIndex"]: Typecast
-[2693]: Typecast;
-["PgCatalog.Types.PgRewriteRelRulenameIndex"]: Typecast
-[2699]: Typecast;
-["PgCatalog.Types.PgTriggerTgconstraintIndex"]: Typecast
-[2701]: Typecast;
-["PgCatalog.Types.PgTriggerTgrelidTgnameIndex"]: Typecast
-[2702]: Typecast;
-["PgCatalog.Types.PgTriggerOidIndex"]: Typecast
-[3467]: Typecast;
-["PgCatalog.Types.PgEventTriggerEvtnameIndex"]: Typecast
-[3468]: Typecast;
-["PgCatalog.Types.PgEventTriggerOidIndex"]: Typecast
-[2675]: Typecast;
-["PgCatalog.Types.PgDescriptionOCOIndex"]: Typecast
-[2660]: Typecast;
-["PgCatalog.Types.PgCastOidIndex"]: Typecast
-[2661]: Typecast;
-["PgCatalog.Types.PgCastSourceTargetIndex"]: Typecast
-[3502]: Typecast;
-["PgCatalog.Types.PgEnumOidIndex"]: Typecast
-[3503]: Typecast;
-["PgCatalog.Types.PgEnumTypidLabelIndex"]: Typecast
-[3534]: Typecast;
-["PgCatalog.Types.PgEnumTypidSortorderIndex"]: Typecast
-[2684]: Typecast;
-["PgCatalog.Types.PgNamespaceNspnameIndex"]: Typecast
-[2685]: Typecast;
-["PgCatalog.Types.PgNamespaceOidIndex"]: Typecast
-[2668]: Typecast;
-["PgCatalog.Types.PgConversionDefaultIndex"]: Typecast
-[2669]: Typecast;
-["PgCatalog.Types.PgConversionNameNspIndex"]: Typecast
-[2670]: Typecast;
-["PgCatalog.Types.PgConversionOidIndex"]: Typecast
-[2673]: Typecast;
-["PgCatalog.Types.PgDependDependerIndex"]: Typecast
-[2674]: Typecast;
-["PgCatalog.Types.PgDependReferenceIndex"]: Typecast
-[2671]: Typecast;
-["PgCatalog.Types.PgDatabaseDatnameIndex"]: Typecast
-[2672]: Typecast;
-["PgCatalog.Types.PgDatabaseOidIndex"]: Typecast
-[2965]: Typecast;
-["PgCatalog.Types.PgDbRoleSettingDatabaseidRolIndex"]: Typecast
-[2697]: Typecast;
-["PgCatalog.Types.PgTablespaceOidIndex"]: Typecast
-[2698]: Typecast;
-["PgCatalog.Types.PgTablespaceSpcnameIndex"]: Typecast
-[2676]: Typecast;
-["PgCatalog.Types.PgAuthidRolnameIndex"]: Typecast
-[2677]: Typecast;
-["PgCatalog.Types.PgAuthidOidIndex"]: Typecast
-[6303]: Typecast;
-["PgCatalog.Types.PgAuthMembersOidIndex"]: Typecast
-[2694]: Typecast;
-["PgCatalog.Types.PgAuthMembersRoleMemberIndex"]: Typecast
-[2695]: Typecast;
-["PgCatalog.Types.PgAuthMembersMemberRoleIndex"]: Typecast
-[6302]: Typecast;
-["PgCatalog.Types.PgAuthMembersGrantorIndex"]: Typecast
-[1232]: Typecast;
-["PgCatalog.Types.PgShdependDependerIndex"]: Typecast
-[1233]: Typecast;
-["PgCatalog.Types.PgShdependReferenceIndex"]: Typecast
-[2397]: Typecast;
-["PgCatalog.Types.PgShdescriptionOCIndex"]: Typecast
-[3608]: Typecast;
-["PgCatalog.Types.PgTsConfigCfgnameIndex"]: Typecast
-[3712]: Typecast;
-["PgCatalog.Types.PgTsConfigOidIndex"]: Typecast
-[3609]: Typecast;
-["PgCatalog.Types.PgTsConfigMapIndex"]: Typecast
-[3604]: Typecast;
-["PgCatalog.Types.PgTsDictDictnameIndex"]: Typecast
-[3605]: Typecast;
-["PgCatalog.Types.PgTsDictOidIndex"]: Typecast
-[3606]: Typecast;
-["PgCatalog.Types.PgTsParserPrsnameIndex"]: Typecast
-[3607]: Typecast;
-["PgCatalog.Types.PgTsParserOidIndex"]: Typecast
-[3766]: Typecast;
-["PgCatalog.Types.PgTsTemplateTmplnameIndex"]: Typecast
-[3767]: Typecast;
-["PgCatalog.Types.PgTsTemplateOidIndex"]: Typecast
-[3080]: Typecast;
-["PgCatalog.Types.PgExtensionOidIndex"]: Typecast
-[3081]: Typecast;
-["PgCatalog.Types.PgExtensionNameIndex"]: Typecast
-[112]: Typecast;
-["PgCatalog.Types.PgForeignDataWrapperOidIndex"]: Typecast
-[548]: Typecast;
-["PgCatalog.Types.PgForeignDataWrapperNameIndex"]: Typecast
-[113]: Typecast;
-["PgCatalog.Types.PgForeignServerOidIndex"]: Typecast
-[549]: Typecast;
-["PgCatalog.Types.PgForeignServerNameIndex"]: Typecast
-[174]: Typecast;
-["PgCatalog.Types.PgUserMappingOidIndex"]: Typecast
-[175]: Typecast;
-["PgCatalog.Types.PgUserMappingUserServerIndex"]: Typecast
-[3119]: Typecast;
-["PgCatalog.Types.PgForeignTableRelidIndex"]: Typecast
-[3257]: Typecast;
-["PgCatalog.Types.PgPolicyOidIndex"]: Typecast
-[3258]: Typecast;
-["PgCatalog.Types.PgPolicyPolrelidPolnameIndex"]: Typecast
-[6001]: Typecast;
-["PgCatalog.Types.PgReplicationOriginRoiidentIndex"]: Typecast
-[6002]: Typecast;
-["PgCatalog.Types.PgReplicationOriginRonameIndex"]: Typecast
-[827]: Typecast;
-["PgCatalog.Types.PgDefaultAclRoleNspObjIndex"]: Typecast
-[828]: Typecast;
-["PgCatalog.Types.PgDefaultAclOidIndex"]: Typecast
-[3395]: Typecast;
-["PgCatalog.Types.PgInitPrivsOCOIndex"]: Typecast
-[3597]: Typecast;
-["PgCatalog.Types.PgSeclabelObjectIndex"]: Typecast
-[3593]: Typecast;
-["PgCatalog.Types.PgShseclabelObjectIndex"]: Typecast
-[3164]: Typecast;
-["PgCatalog.Types.PgCollationNameEncNspIndex"]: Typecast
-[3085]: Typecast;
-["PgCatalog.Types.PgCollationOidIndex"]: Typecast
-[6246]: Typecast;
-["PgCatalog.Types.PgParameterAclParnameIndex"]: Typecast
-[6247]: Typecast;
-["PgCatalog.Types.PgParameterAclOidIndex"]: Typecast
-[3351]: Typecast;
-["PgCatalog.Types.PgPartitionedTablePartrelidIndex"]: Typecast
-[3542]: Typecast;
-["PgCatalog.Types.PgRangeRngtypidIndex"]: Typecast
-[2228]: Typecast;
-["PgCatalog.Types.PgRangeRngmultitypidIndex"]: Typecast
-[3574]: Typecast;
-["PgCatalog.Types.PgTransformOidIndex"]: Typecast
-[3575]: Typecast;
-["PgCatalog.Types.PgTransformTypeLangIndex"]: Typecast
-[5002]: Typecast;
-["PgCatalog.Types.PgSequenceSeqrelidIndex"]: Typecast
-[6110]: Typecast;
-["PgCatalog.Types.PgPublicationOidIndex"]: Typecast
-[6111]: Typecast;
-["PgCatalog.Types.PgPublicationPubnameIndex"]: Typecast
-[6238]: Typecast;
-["PgCatalog.Types.PgPublicationNamespaceOidIndex"]: Typecast
-[6239]: Typecast;
-["PgCatalog.Types.PgPublicationNamespacePnnspidPnpubidIndex"]: Typecast
-[6112]: Typecast;
-["PgCatalog.Types.PgPublicationRelOidIndex"]: Typecast
-[6113]: Typecast;
-["PgCatalog.Types.PgPublicationRelPrrelidPrpubidIndex"]: Typecast
-[6116]: Typecast;
-["PgCatalog.Types.PgPublicationRelPrpubidIndex"]: Typecast
-[6114]: Typecast;
-["PgCatalog.Types.PgSubscriptionOidIndex"]: Typecast
-[6115]: Typecast;
-["PgCatalog.Types.PgSubscriptionSubnameIndex"]: Typecast
-[6117]: Typecast;
-["PgCatalog.Types.PgSubscriptionRelSrrelidSrsubidIndex"]: Typecast
-[13488]: Typecast;
-["InformationSchema.Types.CardinalNumber"]: Typecast
-[13487]: Typecast;
-["InformationSchema.Types.CardinalNumberArray"]: Typecast
-[13491]: Typecast;
-["InformationSchema.Types.CharacterData"]: Typecast
-[13490]: Typecast;
-["InformationSchema.Types.CharacterDataArray"]: Typecast
-[13493]: Typecast;
-["InformationSchema.Types.SqlIdentifier"]: Typecast
-[13492]: Typecast;
-["InformationSchema.Types.SqlIdentifierArray"]: Typecast
-[13496]: Typecast;
-["InformationSchema.Types.InformationSchemaCatalogName"]: Typecast
-[13495]: Typecast;
-["InformationSchema.Types.InformationSchemaCatalogNameArray"]: Typecast
-[13499]: Typecast;
-["InformationSchema.Types.TimeStamp"]: Typecast
-[13498]: Typecast;
-["InformationSchema.Types.TimeStampArray"]: Typecast
-[13501]: Typecast;
-["InformationSchema.Types.YesOrNo"]: Typecast
-[13500]: Typecast;
-["InformationSchema.Types.YesOrNoArray"]: Typecast
-[13505]: Typecast;
-["InformationSchema.Types.ApplicableRoles"]: Typecast
-[13504]: Typecast;
-["InformationSchema.Types.ApplicableRolesArray"]: Typecast
-[13510]: Typecast;
-["InformationSchema.Types.AdministrableRoleAuthorizations"]: Typecast
-[13509]: Typecast;
-["InformationSchema.Types.AdministrableRoleAuthorizationsArray"]: Typecast
-[13514]: Typecast;
-["InformationSchema.Types.Attributes"]: Typecast
-[13513]: Typecast;
-["InformationSchema.Types.AttributesArray"]: Typecast
-[13519]: Typecast;
-["InformationSchema.Types.CharacterSets"]: Typecast
-[13518]: Typecast;
-["InformationSchema.Types.CharacterSetsArray"]: Typecast
-[13524]: Typecast;
-["InformationSchema.Types.CheckConstraintRoutineUsage"]: Typecast
-[13523]: Typecast;
-["InformationSchema.Types.CheckConstraintRoutineUsageArray"]: Typecast
-[13529]: Typecast;
-["InformationSchema.Types.CheckConstraints"]: Typecast
-[13528]: Typecast;
-["InformationSchema.Types.CheckConstraintsArray"]: Typecast
-[13534]: Typecast;
-["InformationSchema.Types.Collations"]: Typecast
-[13533]: Typecast;
-["InformationSchema.Types.CollationsArray"]: Typecast
-[13539]: Typecast;
-["InformationSchema.Types.CollationCharacterSetApplicability"]: Typecast
-[13538]: Typecast;
-["InformationSchema.Types.CollationCharacterSetApplicabilityArray"]: Typecast
-[13544]: Typecast;
-["InformationSchema.Types.ColumnColumnUsage"]: Typecast
-[13543]: Typecast;
-["InformationSchema.Types.ColumnColumnUsageArray"]: Typecast
-[13549]: Typecast;
-["InformationSchema.Types.ColumnDomainUsage"]: Typecast
-[13548]: Typecast;
-["InformationSchema.Types.ColumnDomainUsageArray"]: Typecast
-[13554]: Typecast;
-["InformationSchema.Types.ColumnPrivileges"]: Typecast
-[13553]: Typecast;
-["InformationSchema.Types.ColumnPrivilegesArray"]: Typecast
-[13559]: Typecast;
-["InformationSchema.Types.ColumnUdtUsage"]: Typecast
-[13558]: Typecast;
-["InformationSchema.Types.ColumnUdtUsageArray"]: Typecast
-[13564]: Typecast;
-["InformationSchema.Types.Columns"]: Typecast
-[13563]: Typecast;
-["InformationSchema.Types.ColumnsArray"]: Typecast
-[13569]: Typecast;
-["InformationSchema.Types.ConstraintColumnUsage"]: Typecast
-[13568]: Typecast;
-["InformationSchema.Types.ConstraintColumnUsageArray"]: Typecast
-[13574]: Typecast;
-["InformationSchema.Types.ConstraintTableUsage"]: Typecast
-[13573]: Typecast;
-["InformationSchema.Types.ConstraintTableUsageArray"]: Typecast
-[13579]: Typecast;
-["InformationSchema.Types.DomainConstraints"]: Typecast
-[13578]: Typecast;
-["InformationSchema.Types.DomainConstraintsArray"]: Typecast
-[13584]: Typecast;
-["InformationSchema.Types.DomainUdtUsage"]: Typecast
-[13583]: Typecast;
-["InformationSchema.Types.DomainUdtUsageArray"]: Typecast
-[13589]: Typecast;
-["InformationSchema.Types.Domains"]: Typecast
-[13588]: Typecast;
-["InformationSchema.Types.DomainsArray"]: Typecast
-[13594]: Typecast;
-["InformationSchema.Types.EnabledRoles"]: Typecast
-[13593]: Typecast;
-["InformationSchema.Types.EnabledRolesArray"]: Typecast
-[13598]: Typecast;
-["InformationSchema.Types.KeyColumnUsage"]: Typecast
-[13597]: Typecast;
-["InformationSchema.Types.KeyColumnUsageArray"]: Typecast
-[13603]: Typecast;
-["InformationSchema.Types.Parameters"]: Typecast
-[13602]: Typecast;
-["InformationSchema.Types.ParametersArray"]: Typecast
-[13608]: Typecast;
-["InformationSchema.Types.ReferentialConstraints"]: Typecast
-[13607]: Typecast;
-["InformationSchema.Types.ReferentialConstraintsArray"]: Typecast
-[13613]: Typecast;
-["InformationSchema.Types.RoleColumnGrants"]: Typecast
-[13612]: Typecast;
-["InformationSchema.Types.RoleColumnGrantsArray"]: Typecast
-[13617]: Typecast;
-["InformationSchema.Types.RoutineColumnUsage"]: Typecast
-[13616]: Typecast;
-["InformationSchema.Types.RoutineColumnUsageArray"]: Typecast
-[13622]: Typecast;
-["InformationSchema.Types.RoutinePrivileges"]: Typecast
-[13621]: Typecast;
-["InformationSchema.Types.RoutinePrivilegesArray"]: Typecast
-[13627]: Typecast;
-["InformationSchema.Types.RoleRoutineGrants"]: Typecast
-[13626]: Typecast;
-["InformationSchema.Types.RoleRoutineGrantsArray"]: Typecast
-[13631]: Typecast;
-["InformationSchema.Types.RoutineRoutineUsage"]: Typecast
-[13630]: Typecast;
-["InformationSchema.Types.RoutineRoutineUsageArray"]: Typecast
-[13636]: Typecast;
-["InformationSchema.Types.RoutineSequenceUsage"]: Typecast
-[13635]: Typecast;
-["InformationSchema.Types.RoutineSequenceUsageArray"]: Typecast
-[13641]: Typecast;
-["InformationSchema.Types.RoutineTableUsage"]: Typecast
-[13640]: Typecast;
-["InformationSchema.Types.RoutineTableUsageArray"]: Typecast
-[13646]: Typecast;
-["InformationSchema.Types.Routines"]: Typecast
-[13645]: Typecast;
-["InformationSchema.Types.RoutinesArray"]: Typecast
-[13651]: Typecast;
-["InformationSchema.Types.Schemata"]: Typecast
-[13650]: Typecast;
-["InformationSchema.Types.SchemataArray"]: Typecast
-[13655]: Typecast;
-["InformationSchema.Types.Sequences"]: Typecast
-[13654]: Typecast;
-["InformationSchema.Types.SequencesArray"]: Typecast
-[13660]: Typecast;
-["InformationSchema.Types.SqlFeatures"]: Typecast
-[13659]: Typecast;
-["InformationSchema.Types.SqlFeaturesArray"]: Typecast
-[13665]: Typecast;
-["InformationSchema.Types.SqlImplementationInfo"]: Typecast
-[13664]: Typecast;
-["InformationSchema.Types.SqlImplementationInfoArray"]: Typecast
-[13670]: Typecast;
-["InformationSchema.Types.SqlParts"]: Typecast
-[13669]: Typecast;
-["InformationSchema.Types.SqlPartsArray"]: Typecast
-[13675]: Typecast;
-["InformationSchema.Types.SqlSizing"]: Typecast
-[13674]: Typecast;
-["InformationSchema.Types.SqlSizingArray"]: Typecast
-[13680]: Typecast;
-["InformationSchema.Types.TableConstraints"]: Typecast
-[13679]: Typecast;
-["InformationSchema.Types.TableConstraintsArray"]: Typecast
-[13685]: Typecast;
-["InformationSchema.Types.TablePrivileges"]: Typecast
-[13684]: Typecast;
-["InformationSchema.Types.TablePrivilegesArray"]: Typecast
-[13690]: Typecast;
-["InformationSchema.Types.RoleTableGrants"]: Typecast
-[13689]: Typecast;
-["InformationSchema.Types.RoleTableGrantsArray"]: Typecast
-[13694]: Typecast;
-["InformationSchema.Types.Tables"]: Typecast
-[13693]: Typecast;
-["InformationSchema.Types.TablesArray"]: Typecast
-[13699]: Typecast;
-["InformationSchema.Types.Transforms"]: Typecast
-[13698]: Typecast;
-["InformationSchema.Types.TransformsArray"]: Typecast
-[13704]: Typecast;
-["InformationSchema.Types.TriggeredUpdateColumns"]: Typecast
-[13703]: Typecast;
-["InformationSchema.Types.TriggeredUpdateColumnsArray"]: Typecast
-[13709]: Typecast;
-["InformationSchema.Types.Triggers"]: Typecast
-[13708]: Typecast;
-["InformationSchema.Types.TriggersArray"]: Typecast
-[13714]: Typecast;
-["InformationSchema.Types.UdtPrivileges"]: Typecast
-[13713]: Typecast;
-["InformationSchema.Types.UdtPrivilegesArray"]: Typecast
-[13719]: Typecast;
-["InformationSchema.Types.RoleUdtGrants"]: Typecast
-[13718]: Typecast;
-["InformationSchema.Types.RoleUdtGrantsArray"]: Typecast
-[13723]: Typecast;
-["InformationSchema.Types.UsagePrivileges"]: Typecast
-[13722]: Typecast;
-["InformationSchema.Types.UsagePrivilegesArray"]: Typecast
-[13728]: Typecast;
-["InformationSchema.Types.RoleUsageGrants"]: Typecast
-[13727]: Typecast;
-["InformationSchema.Types.RoleUsageGrantsArray"]: Typecast
-[13732]: Typecast;
-["InformationSchema.Types.UserDefinedTypes"]: Typecast
-[13731]: Typecast;
-["InformationSchema.Types.UserDefinedTypesArray"]: Typecast
-[13737]: Typecast;
-["InformationSchema.Types.ViewColumnUsage"]: Typecast
-[13736]: Typecast;
-["InformationSchema.Types.ViewColumnUsageArray"]: Typecast
-[13742]: Typecast;
-["InformationSchema.Types.ViewRoutineUsage"]: Typecast
-[13741]: Typecast;
-["InformationSchema.Types.ViewRoutineUsageArray"]: Typecast
-[13747]: Typecast;
-["InformationSchema.Types.ViewTableUsage"]: Typecast
-[13746]: Typecast;
-["InformationSchema.Types.ViewTableUsageArray"]: Typecast
-[13752]: Typecast;
-["InformationSchema.Types.Views"]: Typecast
-[13751]: Typecast;
-["InformationSchema.Types.ViewsArray"]: Typecast
-[13757]: Typecast;
-["InformationSchema.Types.DataTypePrivileges"]: Typecast
-[13756]: Typecast;
-["InformationSchema.Types.DataTypePrivilegesArray"]: Typecast
-[13762]: Typecast;
-["InformationSchema.Types.ElementTypes"]: Typecast
-[13761]: Typecast;
-["InformationSchema.Types.ElementTypesArray"]: Typecast
-[13767]: Typecast;
-["InformationSchema.Types.PgForeignTableColumns"]: Typecast
-[13772]: Typecast;
-["InformationSchema.Types.ColumnOptions"]: Typecast
-[13771]: Typecast;
-["InformationSchema.Types.ColumnOptionsArray"]: Typecast
-[13776]: Typecast;
-["InformationSchema.Types.PgForeignDataWrappers"]: Typecast
-[13780]: Typecast;
-["InformationSchema.Types.ForeignDataWrapperOptions"]: Typecast
-[13779]: Typecast;
-["InformationSchema.Types.ForeignDataWrapperOptionsArray"]: Typecast
-[13784]: Typecast;
-["InformationSchema.Types.ForeignDataWrappers"]: Typecast
-[13783]: Typecast;
-["InformationSchema.Types.ForeignDataWrappersArray"]: Typecast
-[13788]: Typecast;
-["InformationSchema.Types.PgForeignServers"]: Typecast
-[13793]: Typecast;
-["InformationSchema.Types.ForeignServerOptions"]: Typecast
-[13792]: Typecast;
-["InformationSchema.Types.ForeignServerOptionsArray"]: Typecast
-[13797]: Typecast;
-["InformationSchema.Types.ForeignServers"]: Typecast
-[13796]: Typecast;
-["InformationSchema.Types.ForeignServersArray"]: Typecast
-[13801]: Typecast;
-["InformationSchema.Types.PgForeignTables"]: Typecast
-[13806]: Typecast;
-["InformationSchema.Types.ForeignTableOptions"]: Typecast
-[13805]: Typecast;
-["InformationSchema.Types.ForeignTableOptionsArray"]: Typecast
-[13810]: Typecast;
-["InformationSchema.Types.ForeignTables"]: Typecast
-[13809]: Typecast;
-["InformationSchema.Types.ForeignTablesArray"]: Typecast
-[13814]: Typecast;
-["InformationSchema.Types.PgUserMappings"]: Typecast
-[13819]: Typecast;
-["InformationSchema.Types.UserMappingOptions"]: Typecast
-[13818]: Typecast;
-["InformationSchema.Types.UserMappingOptionsArray"]: Typecast
-[13824]: Typecast;
-["InformationSchema.Types.UserMappings"]: Typecast
-[13823]: Typecast;
-["InformationSchema.Types.UserMappingsArray"]: Typecast
-[29222]: Typecast;
-["Public.Types.CubeArray"]: Typecast
-[29217]: Typecast;
-["Public.Types.Cube"]: Typecast
-[29323]: Typecast;
-["Public.Types.Gtrgm"]: Typecast
-[29326]: Typecast;
-["Public.Types.GtrgmArray"]: Typecast
-[29389]: Typecast;
-["Public.Types.Slug"]: Typecast
-[29388]: Typecast;
-["Public.Types.SlugArray"]: Typecast
-[29391]: Typecast;
-["Public.Types.SlugPkey"]: Typecast
-
-["Public.Procedures.CubeIn.Parameters"]: Typecast
-
-["Public.Procedures.Cube_9c45.Parameters"]: Typecast
-
-["Public.Procedures.Cube_2e6d.Parameters"]: Typecast
-
-["Public.Procedures.CubeOut.Parameters"]: Typecast
-
-["Public.Procedures.CubeEq.Parameters"]: Typecast
-
-["Public.Procedures.CubeNe.Parameters"]: Typecast
-
-["Public.Procedures.CubeLt.Parameters"]: Typecast
-
-["Public.Procedures.CubeGt.Parameters"]: Typecast
-
-["Public.Procedures.CubeLe.Parameters"]: Typecast
-
-["Public.Procedures.CubeGe.Parameters"]: Typecast
-
-["Public.Procedures.CubeCmp.Parameters"]: Typecast
-
-["Public.Procedures.CubeContains.Parameters"]: Typecast
-
-["Public.Procedures.CubeContained.Parameters"]: Typecast
-
-["Public.Procedures.CubeOverlap.Parameters"]: Typecast
-
-["Public.Procedures.CubeUnion.Parameters"]: Typecast
-
-["Public.Procedures.CubeInter.Parameters"]: Typecast
-
-["Public.Procedures.CubeSize.Parameters"]: Typecast
-
-["Public.Procedures.CubeSubset.Parameters"]: Typecast
-
-["Public.Procedures.CubeDistance.Parameters"]: Typecast
-
-["Public.Procedures.DistanceChebyshev.Parameters"]: Typecast
-
-["Public.Procedures.DistanceTaxicab.Parameters"]: Typecast
-
-["Public.Procedures.CubeDim.Parameters"]: Typecast
-
-["Public.Procedures.CubeLlCoord.Parameters"]: Typecast
-
-["Public.Procedures.CubeUrCoord.Parameters"]: Typecast
-
-["Public.Procedures.CubeCoord.Parameters"]: Typecast
-
-["Public.Procedures.CubeCoordLlur.Parameters"]: Typecast
-
-["Public.Procedures.CubeA5b3.Parameters"]: Typecast
-
-["Public.Procedures.Cube_0aec.Parameters"]: Typecast
-
-["Public.Procedures.Cube_5ffb.Parameters"]: Typecast
-
-["Public.Procedures.Cube_9e1c.Parameters"]: Typecast
-
-["Public.Procedures.CubeIsPoint.Parameters"]: Typecast
-
-["Public.Procedures.CubeEnlarge.Parameters"]: Typecast
-
-["Public.Procedures.GCubeConsistent.Parameters"]: Typecast
-
-["Public.Procedures.GCubePenalty.Parameters"]: Typecast
-
-["Public.Procedures.GCubePicksplit.Parameters"]: Typecast
-
-["Public.Procedures.GCubeUnion.Parameters"]: Typecast
-
-["Public.Procedures.GCubeSame.Parameters"]: Typecast
-
-["Public.Procedures.GCubeDistance.Parameters"]: Typecast
-
-["Public.Procedures.CubeRecv.Parameters"]: Typecast
-
-["Public.Procedures.CubeSend.Parameters"]: Typecast
-
-["Public.Procedures.SetLimit.Parameters"]: Typecast
-
-["Public.Procedures.ShowTrgm.Parameters"]: Typecast
-
-["Public.Procedures.Similarity.Parameters"]: Typecast
-
-["Public.Procedures.SimilarityOp.Parameters"]: Typecast
-
-["Public.Procedures.WordSimilarity.Parameters"]: Typecast
-
-["Public.Procedures.WordSimilarityOp.Parameters"]: Typecast
-
-["Public.Procedures.WordSimilarityCommutatorOp.Parameters"]: Typecast
-
-["Public.Procedures.SimilarityDist.Parameters"]: Typecast
-
-["Public.Procedures.WordSimilarityDistOp.Parameters"]: Typecast
-
-["Public.Procedures.WordSimilarityDistCommutatorOp.Parameters"]: Typecast
-
-["Public.Procedures.GtrgmIn.Parameters"]: Typecast
-
-["Public.Procedures.GtrgmOut.Parameters"]: Typecast
-
-["Public.Procedures.GtrgmConsistent.Parameters"]: Typecast
-
-["Public.Procedures.GtrgmDistance.Parameters"]: Typecast
-
-["Public.Procedures.GtrgmCompress.Parameters"]: Typecast
-
-["Public.Procedures.GtrgmDecompress.Parameters"]: Typecast
-
-["Public.Procedures.GtrgmPenalty.Parameters"]: Typecast
-
-["Public.Procedures.GtrgmPicksplit.Parameters"]: Typecast
-
-["Public.Procedures.GtrgmUnion.Parameters"]: Typecast
-
-["Public.Procedures.GtrgmSame.Parameters"]: Typecast
-
-["Public.Procedures.GinExtractValueTrgm.Parameters"]: Typecast
-
-["Public.Procedures.GinExtractQueryTrgm.Parameters"]: Typecast
-
-["Public.Procedures.GinTrgmConsistent.Parameters"]: Typecast
-
-["Public.Procedures.GinTrgmTriconsistent.Parameters"]: Typecast
-
-["Public.Procedures.StrictWordSimilarity.Parameters"]: Typecast
-
-["Public.Procedures.StrictWordSimilarityOp.Parameters"]: Typecast
-
-["Public.Procedures.StrictWordSimilarityCommutatorOp.Parameters"]: Typecast
-
-["Public.Procedures.StrictWordSimilarityDistOp.Parameters"]: Typecast
-
-["Public.Procedures.StrictWordSimilarityDistCommutatorOp.Parameters"]: Typecast
-
-["Public.Procedures.GtrgmOptions.Parameters"]: Typecast
-[29399]: Typecast;
-["Api.Types.EchoType"]: Typecast
-[29398]: Typecast;
-["Api.Types.EchoTypeArray"]: Typecast
-[29402]: Typecast;
-["Api.Types.EchoTypeNested"]: Typecast
-[29401]: Typecast;
-["Api.Types.EchoTypeNestedArray"]: Typecast
-[29408]: Typecast;
-["Api.Types.Answer"]: Typecast
-[29407]: Typecast;
-["Api.Types.AnswerArray"]: Typecast
-[29418]: Typecast;
-["Api.Types.QAndA"]: Typecast
-[29417]: Typecast;
-["Api.Types.QAndAArray"]: Typecast
-[29424]: Typecast;
-["Api.Types.Timezones"]: Typecast
-[29423]: Typecast;
-["Api.Types.TimezonesArray"]: Typecast
-[29431]: Typecast;
-["Api.Types.Points"]: Typecast
-[29430]: Typecast;
-["Api.Types.PointsArray"]: Typecast
-[29437]: Typecast;
-["Api.Types.Lines"]: Typecast
-[29436]: Typecast;
-["Api.Types.LinesArray"]: Typecast
-[29443]: Typecast;
-["Api.Types.LineSegments"]: Typecast
-[29442]: Typecast;
-["Api.Types.LineSegmentsArray"]: Typecast
-[29449]: Typecast;
-["Api.Types.Boxes"]: Typecast
-[29448]: Typecast;
-["Api.Types.BoxesArray"]: Typecast
-[29455]: Typecast;
-["Api.Types.Paths"]: Typecast
-[29454]: Typecast;
-["Api.Types.PathsArray"]: Typecast
-[29463]: Typecast;
-["Api.Types.Polygons"]: Typecast
-[29462]: Typecast;
-["Api.Types.PolygonsArray"]: Typecast
-[29471]: Typecast;
-["Api.Types.Circles"]: Typecast
-[29470]: Typecast;
-["Api.Types.CirclesArray"]: Typecast
-[29421]: Typecast;
-["Api.Types.QAndAAnswer"]: Typecast
-[29427]: Typecast;
-["Api.Types.TrgmIdxGist"]: Typecast
-[29428]: Typecast;
-["Api.Types.TrgmIdxGin"]: Typecast
-[29433]: Typecast;
-["Api.Types.PointsPkey"]: Typecast
-[29439]: Typecast;
-["Api.Types.LinesPkey"]: Typecast
-[29445]: Typecast;
-["Api.Types.LineSegmentsPkey"]: Typecast
-[29451]: Typecast;
-["Api.Types.BoxesPkey"]: Typecast
-[29459]: Typecast;
-["Api.Types.PathsPkey"]: Typecast
-[29467]: Typecast;
-["Api.Types.PolygonsPkey"]: Typecast
-[29473]: Typecast;
-["Api.Types.CirclesPkey"]: Typecast
-[29396]: Typecast;
-["Api.Types.EchoTable"]: Typecast
-
-["Api.Procedures.Echo.Parameters"]: Typecast
-
-["Api.Procedures.EchoSet.Parameters"]: Typecast
-
-["Api.Procedures.EchoTable.Parameters"]: Typecast
-
-["Api.Procedures.EchoType.Parameters"]: Typecast
-
-["Api.Procedures.EchoTypeArray.Parameters"]: Typecast
-
-["Api.Procedures.EchoTypeNested.Parameters"]: Typecast
-
-["Api.Procedures.EchoTypeSet.Parameters"]: Typecast
-
-["Api.Procedures.EchoAnswer.Parameters"]: Typecast
-[29420]: Typecast;
-["PgToast.Types.PgToast_29416Index"]: Typecast
-[29426]: Typecast;
-["PgToast.Types.PgToast_29422Index"]: Typecast
-[29458]: Typecast;
-["PgToast.Types.PgToast_29453Index"]: Typecast
-[29466]: Typecast;
-["PgToast.Types.PgToast_29461Index"]: Typecast
-[2837]: Typecast;
-["PgToast.Types.PgToast_1255Index"]: Typecast
-[4172]: Typecast;
-["PgToast.Types.PgToast_1247Index"]: Typecast
-[2831]: Typecast;
-["PgToast.Types.PgToast_2604Index"]: Typecast
-[2833]: Typecast;
-["PgToast.Types.PgToast_2606Index"]: Typecast
-[4158]: Typecast;
-["PgToast.Types.PgToast_2612Index"]: Typecast
-[4160]: Typecast;
-["PgToast.Types.PgToast_2600Index"]: Typecast
-[2841]: Typecast;
-["PgToast.Types.PgToast_2619Index"]: Typecast
-[3440]: Typecast;
-["PgToast.Types.PgToast_3381Index"]: Typecast
-[3431]: Typecast;
-["PgToast.Types.PgToast_3429Index"]: Typecast
-[2839]: Typecast;
-["PgToast.Types.PgToast_2618Index"]: Typecast
-[2337]: Typecast;
-["PgToast.Types.PgToast_2620Index"]: Typecast
-[4146]: Typecast;
-["PgToast.Types.PgToast_3466Index"]: Typecast
-[2835]: Typecast;
-["PgToast.Types.PgToast_2609Index"]: Typecast
-[4164]: Typecast;
-["PgToast.Types.PgToast_2615Index"]: Typecast
-[4178]: Typecast;
-["PgToast.Types.PgToast_1262Index"]: Typecast
-[2967]: Typecast;
-["PgToast.Types.PgToast_2964Index"]: Typecast
-[4186]: Typecast;
-["PgToast.Types.PgToast_1213Index"]: Typecast
-[4176]: Typecast;
-["PgToast.Types.PgToast_1260Index"]: Typecast
-[2847]: Typecast;
-["PgToast.Types.PgToast_2396Index"]: Typecast
-[4170]: Typecast;
-["PgToast.Types.PgToast_3600Index"]: Typecast
-[4148]: Typecast;
-["PgToast.Types.PgToast_3079Index"]: Typecast
-[4150]: Typecast;
-["PgToast.Types.PgToast_2328Index"]: Typecast
-[4152]: Typecast;
-["PgToast.Types.PgToast_1417Index"]: Typecast
-[4174]: Typecast;
-["PgToast.Types.PgToast_1418Index"]: Typecast
-[4154]: Typecast;
-["PgToast.Types.PgToast_3118Index"]: Typecast
-[4168]: Typecast;
-["PgToast.Types.PgToast_3256Index"]: Typecast
-[4182]: Typecast;
-["PgToast.Types.PgToast_6000Index"]: Typecast
-[4144]: Typecast;
-["PgToast.Types.PgToast_826Index"]: Typecast
-[4156]: Typecast;
-["PgToast.Types.PgToast_3394Index"]: Typecast
-[3599]: Typecast;
-["PgToast.Types.PgToast_3596Index"]: Typecast
-[4061]: Typecast;
-["PgToast.Types.PgToast_3592Index"]: Typecast
-[6176]: Typecast;
-["PgToast.Types.PgToast_3456Index"]: Typecast
-[6245]: Typecast;
-["PgToast.Types.PgToast_6243Index"]: Typecast
-[4166]: Typecast;
-["PgToast.Types.PgToast_3350Index"]: Typecast
-[6229]: Typecast;
-["PgToast.Types.PgToast_6106Index"]: Typecast
-[4184]: Typecast;
-["PgToast.Types.PgToast_6100Index"]: Typecast
-[13662]: Typecast;
-["PgToast.Types.PgToast_13658Index"]: Typecast
-[13667]: Typecast;
-["PgToast.Types.PgToast_13663Index"]: Typecast
-[13672]: Typecast;
-["PgToast.Types.PgToast_13668Index"]: Typecast
-[13677]: Typecast;
-["PgToast.Types.PgToast_13673Index"]: Typecast
-}
-
-            interface HasDatabase {
-              database: Database;
-            }
-          
-export class Database extends PostgresDatabase implements HasDatabase { 
-get database() { return this };
-get settings() { return this.context.settings as Settings };
-
-          /**
-           * Connect to your database server via URL, and return 
-           * a fully typed database you can use to access it.
-           */
-          static async connect(postgresUrl: string, props?: postgres.Options<never>) {
-              return new Database(await initializeContext(postgresUrl, props));
-          }
-        
-        
-
-          public Public = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-          public Procedures = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-          public CubeIn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeIn.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return Public.Types.Cube.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`
-  const results = response;
-
-              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_in) );
-              return responseBody;
-           
-}
-}(this)
-
-          public Cube_9c45 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.Cube_9c45.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return Public.Types.Cube.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube( ${ typed[1022](undefinedIsNull(parameters.argument_0)) }, ${ typed[1022](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
-              return responseBody;
-           
-}
-}(this)
-
-          public Cube_2e6d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.Cube_2e6d.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return Public.Types.Cube.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube( ${ typed[1022](undefinedIsNull(parameters.argument_0)) })`
-  const results = response;
-
-              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeOut = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeOut.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Cstring.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_out( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].cube_out) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeEq = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeEq.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Bool.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_eq( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_eq) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeNe = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeNe.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Bool.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_ne( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_ne) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeLt = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeLt.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Bool.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_lt( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_lt) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeGt = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeGt.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Bool.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_gt( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_gt) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeLe = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeLe.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Bool.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_le( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_le) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeGe = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeGe.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Bool.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_ge( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_ge) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeCmp = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeCmp.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Int4.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_cmp( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].cube_cmp) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeContains = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeContains.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Bool.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_contains( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_contains) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeContained = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeContained.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Bool.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_contained( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_contained) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeOverlap = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeOverlap.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Bool.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_overlap( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_overlap) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeUnion = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeUnion.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return Public.Types.Cube.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_union( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_union) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeInter = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeInter.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return Public.Types.Cube.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_inter( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_inter) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeSize = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeSize.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Float8.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_size( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_size) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeSubset = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeSubset.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return Public.Types.Cube.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_subset( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[1007](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_subset) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeDistance = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeDistance.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Float8.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_distance( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_distance) );
-              return responseBody;
-           
-}
-}(this)
-
-          public DistanceChebyshev = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.DistanceChebyshev.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Float8.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.distance_chebyshev( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].distance_chebyshev) );
-              return responseBody;
-           
-}
-}(this)
-
-          public DistanceTaxicab = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.DistanceTaxicab.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Float8.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.distance_taxicab( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].distance_taxicab) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeDim = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeDim.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Int4.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_dim( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].cube_dim) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeLlCoord = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeLlCoord.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Float8.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_ll_coord( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_ll_coord) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeUrCoord = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeUrCoord.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Float8.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_ur_coord( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_ur_coord) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeCoord = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeCoord.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Float8.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_coord( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_coord) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeCoordLlur = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeCoordLlur.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Float8.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_coord_llur( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_coord_llur) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeA5b3 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeA5b3.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return Public.Types.Cube.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube( ${ typed[701](undefinedIsNull(parameters.argument_0)) })`
-  const results = response;
-
-              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
-              return responseBody;
-           
-}
-}(this)
-
-          public Cube_0aec = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.Cube_0aec.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return Public.Types.Cube.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
-              return responseBody;
-           
-}
-}(this)
-
-          public Cube_5ffb = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.Cube_5ffb.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return Public.Types.Cube.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
-              return responseBody;
-           
-}
-}(this)
-
-          public Cube_9e1c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.Cube_9e1c.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return Public.Types.Cube.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
-  const results = response;
-
-              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeIsPoint = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeIsPoint.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Bool.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_is_point( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_is_point) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeEnlarge = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeEnlarge.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return Public.Types.Cube.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_enlarge( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
-  const results = response;
-
-              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_enlarge) );
-              return responseBody;
-           
-}
-}(this)
-
-          public GCubeConsistent = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.GCubeConsistent.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Bool.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.g_cube_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].g_cube_consistent) );
-              return responseBody;
-           
-}
-}(this)
-
-          public GCubePenalty = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.GCubePenalty.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Internal.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.g_cube_penalty( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].g_cube_penalty) );
-              return responseBody;
-           
-}
-}(this)
-
-          public GCubePicksplit = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.GCubePicksplit.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Internal.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.g_cube_picksplit( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].g_cube_picksplit) );
-              return responseBody;
-           
-}
-}(this)
-
-          public GCubeUnion = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.GCubeUnion.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return Public.Types.Cube.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.g_cube_union( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( Public.Types.Cube.parse(results?.[0].g_cube_union) );
-              return responseBody;
-           
-}
-}(this)
-
-          public GCubeSame = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.GCubeSame.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Internal.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.g_cube_same( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].g_cube_same) );
-              return responseBody;
-           
-}
-}(this)
-
-          public GCubeDistance = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.GCubeDistance.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Float8.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.g_cube_distance( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].g_cube_distance) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeRecv = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeRecv.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return Public.Types.Cube.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_recv( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
-  const results = response;
-
-              const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_recv) );
-              return responseBody;
-           
-}
-}(this)
-
-          public CubeSend = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.CubeSend.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Bytea.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_send( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].cube_send) );
-              return responseBody;
-           
-}
-}(this)
-
-          public SetLimit = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.SetLimit.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Float4.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.set_limit( ${ typed[700](undefinedIsNull(parameters.argument_0)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].set_limit) );
-              return responseBody;
-           
-}
-}(this)
-
-          public ShowLimit = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call() {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Float4.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.show_limit()`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].show_limit) );
-              return responseBody;
-           
-}
-}(this)
-
-          public ShowTrgm = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.ShowTrgm.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.TextArray.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.show_trgm( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.TextArray.parse(results?.[0].show_trgm) );
-              return responseBody;
-           
-}
-}(this)
-
-          public Similarity = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.Similarity.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Float4.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.similarity( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].similarity) );
-              return responseBody;
-           
-}
-}(this)
-
-          public SimilarityOp = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.SimilarityOp.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Bool.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.similarity_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].similarity_op) );
-              return responseBody;
-           
-}
-}(this)
-
-          public WordSimilarity = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.WordSimilarity.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Float4.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.word_similarity( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].word_similarity) );
-              return responseBody;
-           
-}
-}(this)
-
-          public WordSimilarityOp = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.WordSimilarityOp.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Bool.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.word_similarity_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].word_similarity_op) );
-              return responseBody;
-           
-}
-}(this)
-
-          public WordSimilarityCommutatorOp = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.WordSimilarityCommutatorOp.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Bool.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.word_similarity_commutator_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].word_similarity_commutator_op) );
-              return responseBody;
-           
-}
-}(this)
-
-          public SimilarityDist = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.SimilarityDist.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Float4.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.similarity_dist( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].similarity_dist) );
-              return responseBody;
-           
-}
-}(this)
-
-          public WordSimilarityDistOp = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.WordSimilarityDistOp.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Float4.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.word_similarity_dist_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].word_similarity_dist_op) );
-              return responseBody;
-           
-}
-}(this)
-
-          public WordSimilarityDistCommutatorOp = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.WordSimilarityDistCommutatorOp.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Float4.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.word_similarity_dist_commutator_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].word_similarity_dist_commutator_op) );
-              return responseBody;
-           
-}
-}(this)
-
-          public GtrgmIn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.GtrgmIn.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return Public.Types.Gtrgm.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gtrgm_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`
-  const results = response;
-
-              const responseBody = ( Public.Types.Gtrgm.parse(results?.[0].gtrgm_in) );
-              return responseBody;
-           
-}
-}(this)
-
-          public GtrgmOut = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.GtrgmOut.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Cstring.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gtrgm_out( ${ typed[29323](undefinedIsNull(parameters.argument_0)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].gtrgm_out) );
-              return responseBody;
-           
-}
-}(this)
-
-          public GtrgmConsistent = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.GtrgmConsistent.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Bool.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gtrgm_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].gtrgm_consistent) );
-              return responseBody;
-           
-}
-}(this)
-
-          public GtrgmDistance = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.GtrgmDistance.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Float8.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gtrgm_distance( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].gtrgm_distance) );
-              return responseBody;
-           
-}
-}(this)
-
-          public GtrgmCompress = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.GtrgmCompress.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Internal.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gtrgm_compress( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gtrgm_compress) );
-              return responseBody;
-           
-}
-}(this)
-
-          public GtrgmDecompress = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.GtrgmDecompress.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Internal.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gtrgm_decompress( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gtrgm_decompress) );
-              return responseBody;
-           
-}
-}(this)
-
-          public GtrgmPenalty = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.GtrgmPenalty.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Internal.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gtrgm_penalty( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gtrgm_penalty) );
-              return responseBody;
-           
-}
-}(this)
-
-          public GtrgmPicksplit = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.GtrgmPicksplit.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Internal.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gtrgm_picksplit( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gtrgm_picksplit) );
-              return responseBody;
-           
-}
-}(this)
-
-          public GtrgmUnion = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.GtrgmUnion.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return Public.Types.Gtrgm.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gtrgm_union( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( Public.Types.Gtrgm.parse(results?.[0].gtrgm_union) );
-              return responseBody;
-           
-}
-}(this)
-
-          public GtrgmSame = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.GtrgmSame.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Internal.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gtrgm_same( ${ typed[29323](undefinedIsNull(parameters.argument_0)) }, ${ typed[29323](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gtrgm_same) );
-              return responseBody;
-           
-}
-}(this)
-
-          public GinExtractValueTrgm = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.GinExtractValueTrgm.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Internal.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gin_extract_value_trgm( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gin_extract_value_trgm) );
-              return responseBody;
-           
-}
-}(this)
-
-          public GinExtractQueryTrgm = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.GinExtractQueryTrgm.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Internal.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gin_extract_query_trgm( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[2281](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) }, ${ typed[2281](undefinedIsNull(parameters.argument_5)) }, ${ typed[2281](undefinedIsNull(parameters.argument_6)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gin_extract_query_trgm) );
-              return responseBody;
-           
-}
-}(this)
-
-          public GinTrgmConsistent = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.GinTrgmConsistent.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Bool.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gin_trgm_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[21](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) }, ${ typed[2281](undefinedIsNull(parameters.argument_5)) }, ${ typed[2281](undefinedIsNull(parameters.argument_6)) }, ${ typed[2281](undefinedIsNull(parameters.argument_7)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].gin_trgm_consistent) );
-              return responseBody;
-           
-}
-}(this)
-
-          public GinTrgmTriconsistent = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.GinTrgmTriconsistent.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Char.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gin_trgm_triconsistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[21](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) }, ${ typed[2281](undefinedIsNull(parameters.argument_5)) }, ${ typed[2281](undefinedIsNull(parameters.argument_6)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Char.parse(results?.[0].gin_trgm_triconsistent) );
-              return responseBody;
-           
-}
-}(this)
-
-          public StrictWordSimilarity = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.StrictWordSimilarity.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Float4.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.strict_word_similarity( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].strict_word_similarity) );
-              return responseBody;
-           
-}
-}(this)
-
-          public StrictWordSimilarityOp = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.StrictWordSimilarityOp.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Bool.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.strict_word_similarity_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].strict_word_similarity_op) );
-              return responseBody;
-           
-}
-}(this)
-
-          public StrictWordSimilarityCommutatorOp = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.StrictWordSimilarityCommutatorOp.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Bool.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.strict_word_similarity_commutator_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].strict_word_similarity_commutator_op) );
-              return responseBody;
-           
-}
-}(this)
-
-          public StrictWordSimilarityDistOp = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.StrictWordSimilarityDistOp.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Float4.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.strict_word_similarity_dist_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].strict_word_similarity_dist_op) );
-              return responseBody;
-           
-}
-}(this)
-
-          public StrictWordSimilarityDistCommutatorOp = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.StrictWordSimilarityDistCommutatorOp.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Float4.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.strict_word_similarity_dist_commutator_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].strict_word_similarity_dist_commutator_op) );
-              return responseBody;
-           
-}
-}(this)
-
-          public GtrgmOptions = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.GtrgmOptions.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Void.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gtrgm_options( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].gtrgm_options) );
-              return responseBody;
-           
-}
-}(this)
-}(this)
-
-          public Tables = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-          public Slug = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-async create(values: Partial<Public.Types.Slug>, options?: Public.Tables.Slug.Options): Promise<Public.Types.Slug>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-
-      if (!Public.Tables.Slug.includesPrimaryKey(values)) {
-      
-const response = await sql`
-      --
-      INSERT INTO
-        public.slug ()
-      VALUES ()
-      RETURNING
-        slug_id
-    `
-return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))[0]
-}
-const response = await sql`
-    INSERT INTO
-      public.slug (slug_id)
-    VALUES (${ values.slugId === undefined ? sql`DEFAULT` : typed[23](values.slugId) })
-    ON CONFLICT (slug_id) DO UPDATE
-    SET
-      
-    RETURNING
-      slug_id
-    `
-return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))[0]
-}
-async all(options?: Public.Tables.Slug.Options) : Promise<Public.Types.Slug[]>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    SELECT 
-      slug_id 
-    FROM
-      public.slug 
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))
-}
-
-          public SlugPkey = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Public.Types.SlugPkey, options?: Public.Types.SlugPkey.Options & Public.Tables.Slug.Options) : Promise<Public.Types.Slug>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      slug_id 
-    FROM
-      public.slug 
-    WHERE
-      slug_id = ${ parameters.slugId === undefined ? sql`DEFAULT` : typed[23](parameters.slugId) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))[0]
-}
-
-async update(parameters: Public.Types.SlugPkey, values: Partial<Public.Tables.Slug.Values>, options?: Public.Types.SlugPkey.Options & Public.Tables.Slug.Options) : Promise<Public.Types.Slug>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      public.slug 
-    SET
-      slug_id = ${ values.slugId === undefined ? sql`slug_id` : typed[23](values.slugId) } 
-    WHERE
-      slug_id = ${ parameters.slugId === undefined ? sql`DEFAULT` : typed[23](parameters.slugId) }
-    RETURNING slug_id`
-return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))[0]
-}
-async delete(parameters: Public.Types.SlugPkey, options?: Public.Types.SlugPkey.Options & Public.Tables.Slug.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      public.slug 
-    WHERE
-      slug_id = ${ parameters.slugId === undefined ? sql`DEFAULT` : typed[23](parameters.slugId) }
-    RETURNING slug_id`
- return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))[0]
-}
-}(this)
-public get ByPrimaryKey(){ return this.SlugPkey };
-}(this)
-}(this)
-}(this)
-
-          public Api = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-          public Procedures = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-          public Echo = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Api.Procedures.Echo.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Text.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT api.echo(message => ${ typed[25](undefinedIsNull(parameters.message)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].echo) );
-              return responseBody;
-           
-}
-}(this)
-
-          public EchoSet = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Api.Procedures.EchoSet.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Text.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT api.echo_set(message => ${ typed[25](undefinedIsNull(parameters.message)) })`
-  const results = response;
-
-              const responseBody = ( results.map(x => parseResult(this.database.context, x.echo_set)).filter<PgCatalog.Types.Text>((r):r is PgCatalog.Types.Text => r !== null) );
-              return responseBody;
-           
-}
-}(this)
-
-          public EchoTable = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Api.Procedures.EchoTable.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[29396].parseFromPostgresIfPseudoType(context, result) as unknown as Api.Types.EchoTable;
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT api.echo_table(message => ${ typed[25](undefinedIsNull(parameters.message)) })`
-  const results = response;
-
-              const responseBody = ( results.map(x => parseResult(this.database.context, x.echo_table)).filter<Api.Types.EchoTable>((r):r is Api.Types.EchoTable => r !== null) );
-              return responseBody;
-           
-}
-}(this)
-
-          public EchoType = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Api.Procedures.EchoType.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return Api.Types.EchoType.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT api.echo_type(message => ${ typed[25](undefinedIsNull(parameters.message)) })`
-  const results = response;
-
-              const responseBody = ( Api.Types.EchoType.parse(results?.[0].echo_type) );
-              return responseBody;
-           
-}
-}(this)
-
-          public EchoTypeArray = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Api.Procedures.EchoTypeArray.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return Api.Types.EchoTypeArray.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT api.echo_type_array(message => ${ typed[25](undefinedIsNull(parameters.message)) })`
-  const results = response;
-
-              const responseBody = ( Api.Types.EchoTypeArray.parse(results?.[0].echo_type_array) );
-              return responseBody;
-           
-}
-}(this)
-
-          public EchoTypeNested = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Api.Procedures.EchoTypeNested.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return Api.Types.EchoTypeNested.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT api.echo_type_nested(message => ${ typed[25](undefinedIsNull(parameters.message)) })`
-  const results = response;
-
-              const responseBody = ( Api.Types.EchoTypeNested.parse(results?.[0].echo_type_nested) );
-              return responseBody;
-           
-}
-}(this)
-
-          public EchoTypeSet = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Api.Procedures.EchoTypeSet.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return Api.Types.EchoType.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT api.echo_type_set(message => ${ typed[25](undefinedIsNull(parameters.message)) })`
-  const results = response;
-
-              const responseBody = ( results.map(x => parseResult(this.database.context, x.echo_type_set)).filter<Api.Types.EchoType>((r):r is Api.Types.EchoType => r !== null) );
-              return responseBody;
-           
-}
-}(this)
-
-          public EchoAnswer = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Api.Procedures.EchoAnswer.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return Api.Types.Answer.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT api.echo_answer(message => ${ typed[29408](undefinedIsNull(parameters.message)) })`
-  const results = response;
-
-              const responseBody = ( Api.Types.Answer.parse(results?.[0].echo_answer) );
-              return responseBody;
-           
-}
-}(this)
-}(this)
-
-          public Tables = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-          public QAndA = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-async create(values: Partial<Api.Types.QAndA>, options?: Api.Tables.QAndA.Options): Promise<Api.Types.QAndA>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    INSERT INTO
-      api.q_and_a (question,answer)
-    VALUES (${ values.question === undefined ? sql`DEFAULT` : typed[25](values.question) },${ values.answer === undefined ? sql`DEFAULT` : typed[29408](values.answer) })
-    ON CONFLICT () DO UPDATE
-    SET
-      question = EXCLUDED.question,answer = EXCLUDED.answer
-    RETURNING
-      question,answer
-    `
-return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))[0]
-}
-async all(options?: Api.Tables.QAndA.Options) : Promise<Api.Types.QAndA[]>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    SELECT 
-      question,answer 
-    FROM
-      api.q_and_a 
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
-}
-
-          public QAndAAnswer = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Api.Types.QAndAAnswer, options?: Api.Types.QAndAAnswer.Options & Api.Tables.QAndA.Options) : Promise<Api.Types.QAndA[]>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      question,answer 
-    FROM
-      api.q_and_a 
-    WHERE
-      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[29408](parameters.answer) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
-}
-
-async update(parameters: Api.Types.QAndAAnswer, values: Partial<Api.Tables.QAndA.Values>, options?: Api.Types.QAndAAnswer.Options & Api.Tables.QAndA.Options) : Promise<Api.Types.QAndA[]>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      api.q_and_a 
-    SET
-      question = ${ values.question === undefined ? sql`question` : typed[25](values.question) } , answer = ${ values.answer === undefined ? sql`answer` : typed[29408](values.answer) } 
-    WHERE
-      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[29408](parameters.answer) }
-    RETURNING question,answer`
-return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
-}
-async delete(parameters: Api.Types.QAndAAnswer, options?: Api.Types.QAndAAnswer.Options & Api.Tables.QAndA.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      api.q_and_a 
-    WHERE
-      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[29408](parameters.answer) }
-    RETURNING question,answer`
- return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
-}
-}(this)
-
-}(this)
-
-          public Timezones = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-async create(values: Partial<Api.Types.Timezones>, options?: Api.Tables.Timezones.Options): Promise<Api.Types.Timezones>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    INSERT INTO
-      api.timezones (country_code,time_zone,gmt_offset,dst_offset,raw_offset)
-    VALUES (${ values.countryCode === undefined ? sql`DEFAULT` : typed[25](values.countryCode) },${ values.timeZone === undefined ? sql`DEFAULT` : typed[25](values.timeZone) },${ values.gmtOffset === undefined ? sql`DEFAULT` : typed[700](values.gmtOffset) },${ values.dstOffset === undefined ? sql`DEFAULT` : typed[700](values.dstOffset) },${ values.rawOffset === undefined ? sql`DEFAULT` : typed[700](values.rawOffset) })
-    ON CONFLICT () DO UPDATE
-    SET
-      country_code = EXCLUDED.country_code,time_zone = EXCLUDED.time_zone,gmt_offset = EXCLUDED.gmt_offset,dst_offset = EXCLUDED.dst_offset,raw_offset = EXCLUDED.raw_offset
-    RETURNING
-      country_code,time_zone,gmt_offset,dst_offset,raw_offset
-    `
-return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))[0]
-}
-async all(options?: Api.Tables.Timezones.Options) : Promise<Api.Types.Timezones[]>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    SELECT 
-      country_code,time_zone,gmt_offset,dst_offset,raw_offset 
-    FROM
-      api.timezones 
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
-}
-
-          public TrgmIdxGist = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Api.Types.TrgmIdxGist, options?: Api.Types.TrgmIdxGist.Options & Api.Tables.Timezones.Options) : Promise<Api.Types.Timezones[]>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      country_code,time_zone,gmt_offset,dst_offset,raw_offset 
-    FROM
-      api.timezones 
-    WHERE
-      time_zone % ${ parameters.timeZone === undefined ? sql`DEFAULT` : typed[25](parameters.timeZone) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
-}
-
-async update(parameters: Api.Types.TrgmIdxGist, values: Partial<Api.Tables.Timezones.Values>, options?: Api.Types.TrgmIdxGist.Options & Api.Tables.Timezones.Options) : Promise<Api.Types.Timezones[]>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      api.timezones 
-    SET
-      country_code = ${ values.countryCode === undefined ? sql`country_code` : typed[25](values.countryCode) } , time_zone = ${ values.timeZone === undefined ? sql`time_zone` : typed[25](values.timeZone) } , gmt_offset = ${ values.gmtOffset === undefined ? sql`gmt_offset` : typed[700](values.gmtOffset) } , dst_offset = ${ values.dstOffset === undefined ? sql`dst_offset` : typed[700](values.dstOffset) } , raw_offset = ${ values.rawOffset === undefined ? sql`raw_offset` : typed[700](values.rawOffset) } 
-    WHERE
-      time_zone % ${ parameters.timeZone === undefined ? sql`DEFAULT` : typed[25](parameters.timeZone) }
-    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`
-return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
-}
-async delete(parameters: Api.Types.TrgmIdxGist, options?: Api.Types.TrgmIdxGist.Options & Api.Tables.Timezones.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      api.timezones 
-    WHERE
-      time_zone % ${ parameters.timeZone === undefined ? sql`DEFAULT` : typed[25](parameters.timeZone) }
-    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`
- return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
-}
-}(this)
-
-
-          public TrgmIdxGin = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Api.Types.TrgmIdxGin, options?: Api.Types.TrgmIdxGin.Options & Api.Tables.Timezones.Options) : Promise<Api.Types.Timezones[]>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      country_code,time_zone,gmt_offset,dst_offset,raw_offset 
-    FROM
-      api.timezones 
-    WHERE
-      time_zone % ${ parameters.timeZone === undefined ? sql`DEFAULT` : typed[25](parameters.timeZone) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
-}
-
-async update(parameters: Api.Types.TrgmIdxGin, values: Partial<Api.Tables.Timezones.Values>, options?: Api.Types.TrgmIdxGin.Options & Api.Tables.Timezones.Options) : Promise<Api.Types.Timezones[]>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      api.timezones 
-    SET
-      country_code = ${ values.countryCode === undefined ? sql`country_code` : typed[25](values.countryCode) } , time_zone = ${ values.timeZone === undefined ? sql`time_zone` : typed[25](values.timeZone) } , gmt_offset = ${ values.gmtOffset === undefined ? sql`gmt_offset` : typed[700](values.gmtOffset) } , dst_offset = ${ values.dstOffset === undefined ? sql`dst_offset` : typed[700](values.dstOffset) } , raw_offset = ${ values.rawOffset === undefined ? sql`raw_offset` : typed[700](values.rawOffset) } 
-    WHERE
-      time_zone % ${ parameters.timeZone === undefined ? sql`DEFAULT` : typed[25](parameters.timeZone) }
-    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`
-return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
-}
-async delete(parameters: Api.Types.TrgmIdxGin, options?: Api.Types.TrgmIdxGin.Options & Api.Tables.Timezones.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      api.timezones 
-    WHERE
-      time_zone % ${ parameters.timeZone === undefined ? sql`DEFAULT` : typed[25](parameters.timeZone) }
-    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`
- return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
-}
-}(this)
-
-}(this)
-
-          public Points = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-async create(values: Partial<Api.Types.Points>, options?: Api.Tables.Points.Options): Promise<Api.Types.Points>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-
-      if (!Api.Tables.Points.includesPrimaryKey(values)) {
-      
-const response = await sql`
-      --
-      INSERT INTO
-        api.points (point)
-      VALUES (${ values.point === undefined ? sql`DEFAULT` : typed[600](values.point) })
-      RETURNING
-        id,point
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
-}
-const response = await sql`
-    INSERT INTO
-      api.points (id,point)
-    VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.point === undefined ? sql`DEFAULT` : typed[600](values.point) })
-    ON CONFLICT (id) DO UPDATE
-    SET
-      point = EXCLUDED.point
-    RETURNING
-      id,point
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
-}
-async all(options?: Api.Tables.Points.Options) : Promise<Api.Types.Points[]>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    SELECT 
-      id,point 
-    FROM
-      api.points 
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))
-}
-
-          public PointsPkey = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Api.Types.PointsPkey, options?: Api.Types.PointsPkey.Options & Api.Tables.Points.Options) : Promise<Api.Types.Points>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      id,point 
-    FROM
-      api.points 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
-}
-
-async update(parameters: Api.Types.PointsPkey, values: Partial<Api.Tables.Points.Values>, options?: Api.Types.PointsPkey.Options & Api.Tables.Points.Options) : Promise<Api.Types.Points>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      api.points 
-    SET
-      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , point = ${ values.point === undefined ? sql`point` : typed[600](values.point) } 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,point`
-return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
-}
-async delete(parameters: Api.Types.PointsPkey, options?: Api.Types.PointsPkey.Options & Api.Tables.Points.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      api.points 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,point`
- return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
-}
-}(this)
-public get ByPrimaryKey(){ return this.PointsPkey };
-}(this)
-
-          public Lines = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-async create(values: Partial<Api.Types.Lines>, options?: Api.Tables.Lines.Options): Promise<Api.Types.Lines>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-
-      if (!Api.Tables.Lines.includesPrimaryKey(values)) {
-      
-const response = await sql`
-      --
-      INSERT INTO
-        api.lines (line)
-      VALUES (${ values.line === undefined ? sql`DEFAULT` : typed[628](values.line) })
-      RETURNING
-        id,line
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))[0]
-}
-const response = await sql`
-    INSERT INTO
-      api.lines (id,line)
-    VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.line === undefined ? sql`DEFAULT` : typed[628](values.line) })
-    ON CONFLICT (id) DO UPDATE
-    SET
-      line = EXCLUDED.line
-    RETURNING
-      id,line
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))[0]
-}
-async all(options?: Api.Tables.Lines.Options) : Promise<Api.Types.Lines[]>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    SELECT 
-      id,line 
-    FROM
-      api.lines 
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))
-}
-
-          public LinesPkey = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Api.Types.LinesPkey, options?: Api.Types.LinesPkey.Options & Api.Tables.Lines.Options) : Promise<Api.Types.Lines>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      id,line 
-    FROM
-      api.lines 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))[0]
-}
-
-async update(parameters: Api.Types.LinesPkey, values: Partial<Api.Tables.Lines.Values>, options?: Api.Types.LinesPkey.Options & Api.Tables.Lines.Options) : Promise<Api.Types.Lines>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      api.lines 
-    SET
-      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , line = ${ values.line === undefined ? sql`line` : typed[628](values.line) } 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,line`
-return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))[0]
-}
-async delete(parameters: Api.Types.LinesPkey, options?: Api.Types.LinesPkey.Options & Api.Tables.Lines.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      api.lines 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,line`
- return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))[0]
-}
-}(this)
-public get ByPrimaryKey(){ return this.LinesPkey };
-}(this)
-
-          public LineSegments = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-async create(values: Partial<Api.Types.LineSegments>, options?: Api.Tables.LineSegments.Options): Promise<Api.Types.LineSegments>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-
-      if (!Api.Tables.LineSegments.includesPrimaryKey(values)) {
-      
-const response = await sql`
-      --
-      INSERT INTO
-        api.line_segments (line_segment)
-      VALUES (${ values.lineSegment === undefined ? sql`DEFAULT` : typed[601](values.lineSegment) })
-      RETURNING
-        id,line_segment
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))[0]
-}
-const response = await sql`
-    INSERT INTO
-      api.line_segments (id,line_segment)
-    VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.lineSegment === undefined ? sql`DEFAULT` : typed[601](values.lineSegment) })
-    ON CONFLICT (id) DO UPDATE
-    SET
-      line_segment = EXCLUDED.line_segment
-    RETURNING
-      id,line_segment
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))[0]
-}
-async all(options?: Api.Tables.LineSegments.Options) : Promise<Api.Types.LineSegments[]>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    SELECT 
-      id,line_segment 
-    FROM
-      api.line_segments 
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))
-}
-
-          public LineSegmentsPkey = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Api.Types.LineSegmentsPkey, options?: Api.Types.LineSegmentsPkey.Options & Api.Tables.LineSegments.Options) : Promise<Api.Types.LineSegments>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      id,line_segment 
-    FROM
-      api.line_segments 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))[0]
-}
-
-async update(parameters: Api.Types.LineSegmentsPkey, values: Partial<Api.Tables.LineSegments.Values>, options?: Api.Types.LineSegmentsPkey.Options & Api.Tables.LineSegments.Options) : Promise<Api.Types.LineSegments>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      api.line_segments 
-    SET
-      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , line_segment = ${ values.lineSegment === undefined ? sql`line_segment` : typed[601](values.lineSegment) } 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,line_segment`
-return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))[0]
-}
-async delete(parameters: Api.Types.LineSegmentsPkey, options?: Api.Types.LineSegmentsPkey.Options & Api.Tables.LineSegments.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      api.line_segments 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,line_segment`
- return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))[0]
-}
-}(this)
-public get ByPrimaryKey(){ return this.LineSegmentsPkey };
-}(this)
-
-          public Boxes = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-async create(values: Partial<Api.Types.Boxes>, options?: Api.Tables.Boxes.Options): Promise<Api.Types.Boxes>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-
-      if (!Api.Tables.Boxes.includesPrimaryKey(values)) {
-      
-const response = await sql`
-      --
-      INSERT INTO
-        api.boxes (box)
-      VALUES (${ values.box === undefined ? sql`DEFAULT` : typed[603](values.box) })
-      RETURNING
-        id,box
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))[0]
-}
-const response = await sql`
-    INSERT INTO
-      api.boxes (id,box)
-    VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.box === undefined ? sql`DEFAULT` : typed[603](values.box) })
-    ON CONFLICT (id) DO UPDATE
-    SET
-      box = EXCLUDED.box
-    RETURNING
-      id,box
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))[0]
-}
-async all(options?: Api.Tables.Boxes.Options) : Promise<Api.Types.Boxes[]>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    SELECT 
-      id,box 
-    FROM
-      api.boxes 
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))
-}
-
-          public BoxesPkey = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Api.Types.BoxesPkey, options?: Api.Types.BoxesPkey.Options & Api.Tables.Boxes.Options) : Promise<Api.Types.Boxes>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      id,box 
-    FROM
-      api.boxes 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))[0]
-}
-
-async update(parameters: Api.Types.BoxesPkey, values: Partial<Api.Tables.Boxes.Values>, options?: Api.Types.BoxesPkey.Options & Api.Tables.Boxes.Options) : Promise<Api.Types.Boxes>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      api.boxes 
-    SET
-      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , box = ${ values.box === undefined ? sql`box` : typed[603](values.box) } 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,box`
-return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))[0]
-}
-async delete(parameters: Api.Types.BoxesPkey, options?: Api.Types.BoxesPkey.Options & Api.Tables.Boxes.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      api.boxes 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,box`
- return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))[0]
-}
-}(this)
-public get ByPrimaryKey(){ return this.BoxesPkey };
-}(this)
-
-          public Paths = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-async create(values: Partial<Api.Types.Paths>, options?: Api.Tables.Paths.Options): Promise<Api.Types.Paths>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-
-      if (!Api.Tables.Paths.includesPrimaryKey(values)) {
-      
-const response = await sql`
-      --
-      INSERT INTO
-        api.paths (path)
-      VALUES (${ values.path === undefined ? sql`DEFAULT` : typed[602](values.path) })
-      RETURNING
-        id,path
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))[0]
-}
-const response = await sql`
-    INSERT INTO
-      api.paths (id,path)
-    VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.path === undefined ? sql`DEFAULT` : typed[602](values.path) })
-    ON CONFLICT (id) DO UPDATE
-    SET
-      path = EXCLUDED.path
-    RETURNING
-      id,path
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))[0]
-}
-async all(options?: Api.Tables.Paths.Options) : Promise<Api.Types.Paths[]>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    SELECT 
-      id,path 
-    FROM
-      api.paths 
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))
-}
-
-          public PathsPkey = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Api.Types.PathsPkey, options?: Api.Types.PathsPkey.Options & Api.Tables.Paths.Options) : Promise<Api.Types.Paths>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      id,path 
-    FROM
-      api.paths 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))[0]
-}
-
-async update(parameters: Api.Types.PathsPkey, values: Partial<Api.Tables.Paths.Values>, options?: Api.Types.PathsPkey.Options & Api.Tables.Paths.Options) : Promise<Api.Types.Paths>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      api.paths 
-    SET
-      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , path = ${ values.path === undefined ? sql`path` : typed[602](values.path) } 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,path`
-return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))[0]
-}
-async delete(parameters: Api.Types.PathsPkey, options?: Api.Types.PathsPkey.Options & Api.Tables.Paths.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      api.paths 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,path`
- return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))[0]
-}
-}(this)
-public get ByPrimaryKey(){ return this.PathsPkey };
-}(this)
-
-          public Polygons = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-async create(values: Partial<Api.Types.Polygons>, options?: Api.Tables.Polygons.Options): Promise<Api.Types.Polygons>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-
-      if (!Api.Tables.Polygons.includesPrimaryKey(values)) {
-      
-const response = await sql`
-      --
-      INSERT INTO
-        api.polygons (polygon)
-      VALUES (${ values.polygon === undefined ? sql`DEFAULT` : typed[604](values.polygon) })
-      RETURNING
-        id,polygon
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))[0]
-}
-const response = await sql`
-    INSERT INTO
-      api.polygons (id,polygon)
-    VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.polygon === undefined ? sql`DEFAULT` : typed[604](values.polygon) })
-    ON CONFLICT (id) DO UPDATE
-    SET
-      polygon = EXCLUDED.polygon
-    RETURNING
-      id,polygon
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))[0]
-}
-async all(options?: Api.Tables.Polygons.Options) : Promise<Api.Types.Polygons[]>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    SELECT 
-      id,polygon 
-    FROM
-      api.polygons 
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))
-}
-
-          public PolygonsPkey = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Api.Types.PolygonsPkey, options?: Api.Types.PolygonsPkey.Options & Api.Tables.Polygons.Options) : Promise<Api.Types.Polygons>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      id,polygon 
-    FROM
-      api.polygons 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))[0]
-}
-
-async update(parameters: Api.Types.PolygonsPkey, values: Partial<Api.Tables.Polygons.Values>, options?: Api.Types.PolygonsPkey.Options & Api.Tables.Polygons.Options) : Promise<Api.Types.Polygons>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      api.polygons 
-    SET
-      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , polygon = ${ values.polygon === undefined ? sql`polygon` : typed[604](values.polygon) } 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,polygon`
-return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))[0]
-}
-async delete(parameters: Api.Types.PolygonsPkey, options?: Api.Types.PolygonsPkey.Options & Api.Tables.Polygons.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      api.polygons 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,polygon`
- return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))[0]
-}
-}(this)
-public get ByPrimaryKey(){ return this.PolygonsPkey };
-}(this)
-
-          public Circles = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-async create(values: Partial<Api.Types.Circles>, options?: Api.Tables.Circles.Options): Promise<Api.Types.Circles>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-
-      if (!Api.Tables.Circles.includesPrimaryKey(values)) {
-      
-const response = await sql`
-      --
-      INSERT INTO
-        api.circles (circle)
-      VALUES (${ values.circle === undefined ? sql`DEFAULT` : typed[718](values.circle) })
-      RETURNING
-        id,circle
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))[0]
-}
-const response = await sql`
-    INSERT INTO
-      api.circles (id,circle)
-    VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.circle === undefined ? sql`DEFAULT` : typed[718](values.circle) })
-    ON CONFLICT (id) DO UPDATE
-    SET
-      circle = EXCLUDED.circle
-    RETURNING
-      id,circle
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))[0]
-}
-async all(options?: Api.Tables.Circles.Options) : Promise<Api.Types.Circles[]>{
-
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    SELECT 
-      id,circle 
-    FROM
-      api.circles 
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))
-}
-
-          public CirclesPkey = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async read(parameters: Api.Types.CirclesPkey, options?: Api.Types.CirclesPkey.Options & Api.Tables.Circles.Options) : Promise<Api.Types.Circles>{
-
-      console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
-      
-const response = await sql`
-    -- 
-    SELECT 
-      id,circle 
-    FROM
-      api.circles 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    ${sql.unsafe(`${orderBy}`)}
-    LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
-    OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
-return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))[0]
-}
-
-async update(parameters: Api.Types.CirclesPkey, values: Partial<Api.Tables.Circles.Values>, options?: Api.Types.CirclesPkey.Options & Api.Tables.Circles.Options) : Promise<Api.Types.Circles>{
-
-      console.assert(parameters);
-      console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
-      
-const response = await sql`
-    --
-    UPDATE 
-      api.circles 
-    SET
-      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , circle = ${ values.circle === undefined ? sql`circle` : typed[718](values.circle) } 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,circle`
-return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))[0]
-}
-async delete(parameters: Api.Types.CirclesPkey, options?: Api.Types.CirclesPkey.Options & Api.Tables.Circles.Options) {
- console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
-    --
-    DELETE FROM 
-      api.circles 
-    WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,circle`
- return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))[0]
-}
-}(this)
-public get ByPrimaryKey(){ return this.CirclesPkey };
-}(this)
-}(this)
-}(this)
-
-          public PgToast = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-          public Procedures = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-}(this)
-
-          public Tables = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-}(this)
-}(this)
-}
-
-          // begin - operation dispatch map
-          import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
-          export class OperationDispatcher {
-            private dispatchMap: Record<string, OperationDispatchMethod>;
-            constructor(private database: Database){
-              this.dispatchMap = {
-
-          
-"Public.Procedures.CubeIn.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeIn.call(request.parameters as Public.Procedures.CubeIn.Parameters),
-"Public.Procedures.Cube_9c45.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Cube_9c45.call(request.parameters as Public.Procedures.Cube_9c45.Parameters),
-"Public.Procedures.Cube_2e6d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Cube_2e6d.call(request.parameters as Public.Procedures.Cube_2e6d.Parameters),
-"Public.Procedures.CubeOut.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeOut.call(request.parameters as Public.Procedures.CubeOut.Parameters),
-"Public.Procedures.CubeEq.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeEq.call(request.parameters as Public.Procedures.CubeEq.Parameters),
-"Public.Procedures.CubeNe.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeNe.call(request.parameters as Public.Procedures.CubeNe.Parameters),
-"Public.Procedures.CubeLt.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeLt.call(request.parameters as Public.Procedures.CubeLt.Parameters),
-"Public.Procedures.CubeGt.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeGt.call(request.parameters as Public.Procedures.CubeGt.Parameters),
-"Public.Procedures.CubeLe.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeLe.call(request.parameters as Public.Procedures.CubeLe.Parameters),
-"Public.Procedures.CubeGe.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeGe.call(request.parameters as Public.Procedures.CubeGe.Parameters),
-"Public.Procedures.CubeCmp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeCmp.call(request.parameters as Public.Procedures.CubeCmp.Parameters),
-"Public.Procedures.CubeContains.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeContains.call(request.parameters as Public.Procedures.CubeContains.Parameters),
-"Public.Procedures.CubeContained.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeContained.call(request.parameters as Public.Procedures.CubeContained.Parameters),
-"Public.Procedures.CubeOverlap.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeOverlap.call(request.parameters as Public.Procedures.CubeOverlap.Parameters),
-"Public.Procedures.CubeUnion.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeUnion.call(request.parameters as Public.Procedures.CubeUnion.Parameters),
-"Public.Procedures.CubeInter.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeInter.call(request.parameters as Public.Procedures.CubeInter.Parameters),
-"Public.Procedures.CubeSize.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeSize.call(request.parameters as Public.Procedures.CubeSize.Parameters),
-"Public.Procedures.CubeSubset.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeSubset.call(request.parameters as Public.Procedures.CubeSubset.Parameters),
-"Public.Procedures.CubeDistance.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeDistance.call(request.parameters as Public.Procedures.CubeDistance.Parameters),
-"Public.Procedures.DistanceChebyshev.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.DistanceChebyshev.call(request.parameters as Public.Procedures.DistanceChebyshev.Parameters),
-"Public.Procedures.DistanceTaxicab.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.DistanceTaxicab.call(request.parameters as Public.Procedures.DistanceTaxicab.Parameters),
-"Public.Procedures.CubeDim.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeDim.call(request.parameters as Public.Procedures.CubeDim.Parameters),
-"Public.Procedures.CubeLlCoord.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeLlCoord.call(request.parameters as Public.Procedures.CubeLlCoord.Parameters),
-"Public.Procedures.CubeUrCoord.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeUrCoord.call(request.parameters as Public.Procedures.CubeUrCoord.Parameters),
-"Public.Procedures.CubeCoord.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeCoord.call(request.parameters as Public.Procedures.CubeCoord.Parameters),
-"Public.Procedures.CubeCoordLlur.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeCoordLlur.call(request.parameters as Public.Procedures.CubeCoordLlur.Parameters),
-"Public.Procedures.CubeA5b3.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeA5b3.call(request.parameters as Public.Procedures.CubeA5b3.Parameters),
-"Public.Procedures.Cube_0aec.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Cube_0aec.call(request.parameters as Public.Procedures.Cube_0aec.Parameters),
-"Public.Procedures.Cube_5ffb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Cube_5ffb.call(request.parameters as Public.Procedures.Cube_5ffb.Parameters),
-"Public.Procedures.Cube_9e1c.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Cube_9e1c.call(request.parameters as Public.Procedures.Cube_9e1c.Parameters),
-"Public.Procedures.CubeIsPoint.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeIsPoint.call(request.parameters as Public.Procedures.CubeIsPoint.Parameters),
-"Public.Procedures.CubeEnlarge.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeEnlarge.call(request.parameters as Public.Procedures.CubeEnlarge.Parameters),
-"Public.Procedures.GCubeConsistent.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GCubeConsistent.call(request.parameters as Public.Procedures.GCubeConsistent.Parameters),
-"Public.Procedures.GCubePenalty.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GCubePenalty.call(request.parameters as Public.Procedures.GCubePenalty.Parameters),
-"Public.Procedures.GCubePicksplit.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GCubePicksplit.call(request.parameters as Public.Procedures.GCubePicksplit.Parameters),
-"Public.Procedures.GCubeUnion.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GCubeUnion.call(request.parameters as Public.Procedures.GCubeUnion.Parameters),
-"Public.Procedures.GCubeSame.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GCubeSame.call(request.parameters as Public.Procedures.GCubeSame.Parameters),
-"Public.Procedures.GCubeDistance.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GCubeDistance.call(request.parameters as Public.Procedures.GCubeDistance.Parameters),
-"Public.Procedures.CubeRecv.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeRecv.call(request.parameters as Public.Procedures.CubeRecv.Parameters),
-"Public.Procedures.CubeSend.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeSend.call(request.parameters as Public.Procedures.CubeSend.Parameters),
-"Public.Procedures.SetLimit.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.SetLimit.call(request.parameters as Public.Procedures.SetLimit.Parameters),
-"Public.Procedures.ShowLimit.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.ShowLimit.call(),
-"Public.Procedures.ShowTrgm.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.ShowTrgm.call(request.parameters as Public.Procedures.ShowTrgm.Parameters),
-"Public.Procedures.Similarity.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Similarity.call(request.parameters as Public.Procedures.Similarity.Parameters),
-"Public.Procedures.SimilarityOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.SimilarityOp.call(request.parameters as Public.Procedures.SimilarityOp.Parameters),
-"Public.Procedures.WordSimilarity.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.WordSimilarity.call(request.parameters as Public.Procedures.WordSimilarity.Parameters),
-"Public.Procedures.WordSimilarityOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.WordSimilarityOp.call(request.parameters as Public.Procedures.WordSimilarityOp.Parameters),
-"Public.Procedures.WordSimilarityCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.WordSimilarityCommutatorOp.call(request.parameters as Public.Procedures.WordSimilarityCommutatorOp.Parameters),
-"Public.Procedures.SimilarityDist.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.SimilarityDist.call(request.parameters as Public.Procedures.SimilarityDist.Parameters),
-"Public.Procedures.WordSimilarityDistOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.WordSimilarityDistOp.call(request.parameters as Public.Procedures.WordSimilarityDistOp.Parameters),
-"Public.Procedures.WordSimilarityDistCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.WordSimilarityDistCommutatorOp.call(request.parameters as Public.Procedures.WordSimilarityDistCommutatorOp.Parameters),
-"Public.Procedures.GtrgmIn.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmIn.call(request.parameters as Public.Procedures.GtrgmIn.Parameters),
-"Public.Procedures.GtrgmOut.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmOut.call(request.parameters as Public.Procedures.GtrgmOut.Parameters),
-"Public.Procedures.GtrgmConsistent.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmConsistent.call(request.parameters as Public.Procedures.GtrgmConsistent.Parameters),
-"Public.Procedures.GtrgmDistance.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmDistance.call(request.parameters as Public.Procedures.GtrgmDistance.Parameters),
-"Public.Procedures.GtrgmCompress.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmCompress.call(request.parameters as Public.Procedures.GtrgmCompress.Parameters),
-"Public.Procedures.GtrgmDecompress.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmDecompress.call(request.parameters as Public.Procedures.GtrgmDecompress.Parameters),
-"Public.Procedures.GtrgmPenalty.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmPenalty.call(request.parameters as Public.Procedures.GtrgmPenalty.Parameters),
-"Public.Procedures.GtrgmPicksplit.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmPicksplit.call(request.parameters as Public.Procedures.GtrgmPicksplit.Parameters),
-"Public.Procedures.GtrgmUnion.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmUnion.call(request.parameters as Public.Procedures.GtrgmUnion.Parameters),
-"Public.Procedures.GtrgmSame.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmSame.call(request.parameters as Public.Procedures.GtrgmSame.Parameters),
-"Public.Procedures.GinExtractValueTrgm.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GinExtractValueTrgm.call(request.parameters as Public.Procedures.GinExtractValueTrgm.Parameters),
-"Public.Procedures.GinExtractQueryTrgm.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GinExtractQueryTrgm.call(request.parameters as Public.Procedures.GinExtractQueryTrgm.Parameters),
-"Public.Procedures.GinTrgmConsistent.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GinTrgmConsistent.call(request.parameters as Public.Procedures.GinTrgmConsistent.Parameters),
-"Public.Procedures.GinTrgmTriconsistent.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GinTrgmTriconsistent.call(request.parameters as Public.Procedures.GinTrgmTriconsistent.Parameters),
-"Public.Procedures.StrictWordSimilarity.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StrictWordSimilarity.call(request.parameters as Public.Procedures.StrictWordSimilarity.Parameters),
-"Public.Procedures.StrictWordSimilarityOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StrictWordSimilarityOp.call(request.parameters as Public.Procedures.StrictWordSimilarityOp.Parameters),
-"Public.Procedures.StrictWordSimilarityCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StrictWordSimilarityCommutatorOp.call(request.parameters as Public.Procedures.StrictWordSimilarityCommutatorOp.Parameters),
-"Public.Procedures.StrictWordSimilarityDistOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StrictWordSimilarityDistOp.call(request.parameters as Public.Procedures.StrictWordSimilarityDistOp.Parameters),
-"Public.Procedures.StrictWordSimilarityDistCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StrictWordSimilarityDistCommutatorOp.call(request.parameters as Public.Procedures.StrictWordSimilarityDistCommutatorOp.Parameters),
-"Public.Procedures.GtrgmOptions.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmOptions.call(request.parameters as Public.Procedures.GtrgmOptions.Parameters),
-"Public.Tables.Slug.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Slug.create(request.values as Public.Tables.Slug.Values),
-
-             "Public.Tables.Slug.all": async (request: EmbraceSQLRequest<object, object, object>) =>
-              database.Public.Tables.Slug.all(request.options as Public.Tables.Slug.Options),
-            
-"Public.Tables.Slug.SlugPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Slug.SlugPkey.read(request.parameters as Public.Types.SlugPkey,request.options as Public.Tables.Slug.Options),
-"Public.Tables.Slug.SlugPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Slug.SlugPkey.update(request.parameters as Public.Types.SlugPkey,request.values as Partial<Public.Tables.Slug.Values>),
-"Public.Tables.Slug.SlugPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Slug.SlugPkey.delete(request.parameters as Public.Types.SlugPkey),
-"Api.Procedures.Echo.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.Echo.call(request.parameters as Api.Procedures.Echo.Parameters),
-"Api.Procedures.EchoSet.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.EchoSet.call(request.parameters as Api.Procedures.EchoSet.Parameters),
-"Api.Procedures.EchoTable.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.EchoTable.call(request.parameters as Api.Procedures.EchoTable.Parameters),
-"Api.Procedures.EchoType.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.EchoType.call(request.parameters as Api.Procedures.EchoType.Parameters),
-"Api.Procedures.EchoTypeArray.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.EchoTypeArray.call(request.parameters as Api.Procedures.EchoTypeArray.Parameters),
-"Api.Procedures.EchoTypeNested.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.EchoTypeNested.call(request.parameters as Api.Procedures.EchoTypeNested.Parameters),
-"Api.Procedures.EchoTypeSet.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.EchoTypeSet.call(request.parameters as Api.Procedures.EchoTypeSet.Parameters),
-"Api.Procedures.EchoAnswer.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.EchoAnswer.call(request.parameters as Api.Procedures.EchoAnswer.Parameters),
-"Api.Tables.QAndA.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.QAndA.create(request.values as Api.Tables.QAndA.Values),
-
-             "Api.Tables.QAndA.all": async (request: EmbraceSQLRequest<object, object, object>) =>
-              database.Api.Tables.QAndA.all(request.options as Api.Tables.QAndA.Options),
-            
-"Api.Tables.QAndA.QAndAAnswer.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.QAndA.QAndAAnswer.read(request.parameters as Api.Types.QAndAAnswer,request.options as Api.Tables.QAndA.Options),
-"Api.Tables.QAndA.QAndAAnswer.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.QAndA.QAndAAnswer.update(request.parameters as Api.Types.QAndAAnswer,request.values as Partial<Api.Tables.QAndA.Values>),
-"Api.Tables.QAndA.QAndAAnswer.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.QAndA.QAndAAnswer.delete(request.parameters as Api.Types.QAndAAnswer),
-"Api.Tables.Timezones.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.create(request.values as Api.Tables.Timezones.Values),
-
-             "Api.Tables.Timezones.all": async (request: EmbraceSQLRequest<object, object, object>) =>
-              database.Api.Tables.Timezones.all(request.options as Api.Tables.Timezones.Options),
-            
-"Api.Tables.Timezones.TrgmIdxGist.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGist.read(request.parameters as Api.Types.TrgmIdxGist,request.options as Api.Tables.Timezones.Options),
-"Api.Tables.Timezones.TrgmIdxGist.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGist.update(request.parameters as Api.Types.TrgmIdxGist,request.values as Partial<Api.Tables.Timezones.Values>),
-"Api.Tables.Timezones.TrgmIdxGist.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGist.delete(request.parameters as Api.Types.TrgmIdxGist),
-"Api.Tables.Timezones.TrgmIdxGin.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGin.read(request.parameters as Api.Types.TrgmIdxGin,request.options as Api.Tables.Timezones.Options),
-"Api.Tables.Timezones.TrgmIdxGin.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGin.update(request.parameters as Api.Types.TrgmIdxGin,request.values as Partial<Api.Tables.Timezones.Values>),
-"Api.Tables.Timezones.TrgmIdxGin.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGin.delete(request.parameters as Api.Types.TrgmIdxGin),
-"Api.Tables.Points.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Points.create(request.values as Api.Tables.Points.Values),
-
-             "Api.Tables.Points.all": async (request: EmbraceSQLRequest<object, object, object>) =>
-              database.Api.Tables.Points.all(request.options as Api.Tables.Points.Options),
-            
-"Api.Tables.Points.PointsPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Points.PointsPkey.read(request.parameters as Api.Types.PointsPkey,request.options as Api.Tables.Points.Options),
-"Api.Tables.Points.PointsPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Points.PointsPkey.update(request.parameters as Api.Types.PointsPkey,request.values as Partial<Api.Tables.Points.Values>),
-"Api.Tables.Points.PointsPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Points.PointsPkey.delete(request.parameters as Api.Types.PointsPkey),
-"Api.Tables.Lines.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Lines.create(request.values as Api.Tables.Lines.Values),
-
-             "Api.Tables.Lines.all": async (request: EmbraceSQLRequest<object, object, object>) =>
-              database.Api.Tables.Lines.all(request.options as Api.Tables.Lines.Options),
-            
-"Api.Tables.Lines.LinesPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Lines.LinesPkey.read(request.parameters as Api.Types.LinesPkey,request.options as Api.Tables.Lines.Options),
-"Api.Tables.Lines.LinesPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Lines.LinesPkey.update(request.parameters as Api.Types.LinesPkey,request.values as Partial<Api.Tables.Lines.Values>),
-"Api.Tables.Lines.LinesPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Lines.LinesPkey.delete(request.parameters as Api.Types.LinesPkey),
-"Api.Tables.LineSegments.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.LineSegments.create(request.values as Api.Tables.LineSegments.Values),
-
-             "Api.Tables.LineSegments.all": async (request: EmbraceSQLRequest<object, object, object>) =>
-              database.Api.Tables.LineSegments.all(request.options as Api.Tables.LineSegments.Options),
-            
-"Api.Tables.LineSegments.LineSegmentsPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.LineSegments.LineSegmentsPkey.read(request.parameters as Api.Types.LineSegmentsPkey,request.options as Api.Tables.LineSegments.Options),
-"Api.Tables.LineSegments.LineSegmentsPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.LineSegments.LineSegmentsPkey.update(request.parameters as Api.Types.LineSegmentsPkey,request.values as Partial<Api.Tables.LineSegments.Values>),
-"Api.Tables.LineSegments.LineSegmentsPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.LineSegments.LineSegmentsPkey.delete(request.parameters as Api.Types.LineSegmentsPkey),
-"Api.Tables.Boxes.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Boxes.create(request.values as Api.Tables.Boxes.Values),
-
-             "Api.Tables.Boxes.all": async (request: EmbraceSQLRequest<object, object, object>) =>
-              database.Api.Tables.Boxes.all(request.options as Api.Tables.Boxes.Options),
-            
-"Api.Tables.Boxes.BoxesPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Boxes.BoxesPkey.read(request.parameters as Api.Types.BoxesPkey,request.options as Api.Tables.Boxes.Options),
-"Api.Tables.Boxes.BoxesPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Boxes.BoxesPkey.update(request.parameters as Api.Types.BoxesPkey,request.values as Partial<Api.Tables.Boxes.Values>),
-"Api.Tables.Boxes.BoxesPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Boxes.BoxesPkey.delete(request.parameters as Api.Types.BoxesPkey),
-"Api.Tables.Paths.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Paths.create(request.values as Api.Tables.Paths.Values),
-
-             "Api.Tables.Paths.all": async (request: EmbraceSQLRequest<object, object, object>) =>
-              database.Api.Tables.Paths.all(request.options as Api.Tables.Paths.Options),
-            
-"Api.Tables.Paths.PathsPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Paths.PathsPkey.read(request.parameters as Api.Types.PathsPkey,request.options as Api.Tables.Paths.Options),
-"Api.Tables.Paths.PathsPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Paths.PathsPkey.update(request.parameters as Api.Types.PathsPkey,request.values as Partial<Api.Tables.Paths.Values>),
-"Api.Tables.Paths.PathsPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Paths.PathsPkey.delete(request.parameters as Api.Types.PathsPkey),
-"Api.Tables.Polygons.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Polygons.create(request.values as Api.Tables.Polygons.Values),
-
-             "Api.Tables.Polygons.all": async (request: EmbraceSQLRequest<object, object, object>) =>
-              database.Api.Tables.Polygons.all(request.options as Api.Tables.Polygons.Options),
-            
-"Api.Tables.Polygons.PolygonsPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Polygons.PolygonsPkey.read(request.parameters as Api.Types.PolygonsPkey,request.options as Api.Tables.Polygons.Options),
-"Api.Tables.Polygons.PolygonsPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Polygons.PolygonsPkey.update(request.parameters as Api.Types.PolygonsPkey,request.values as Partial<Api.Tables.Polygons.Values>),
-"Api.Tables.Polygons.PolygonsPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Polygons.PolygonsPkey.delete(request.parameters as Api.Types.PolygonsPkey),
-"Api.Tables.Circles.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Circles.create(request.values as Api.Tables.Circles.Values),
-
-             "Api.Tables.Circles.all": async (request: EmbraceSQLRequest<object, object, object>) =>
-              database.Api.Tables.Circles.all(request.options as Api.Tables.Circles.Options),
-            
-"Api.Tables.Circles.CirclesPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Circles.CirclesPkey.read(request.parameters as Api.Types.CirclesPkey,request.options as Api.Tables.Circles.Options),
-"Api.Tables.Circles.CirclesPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Circles.CirclesPkey.update(request.parameters as Api.Types.CirclesPkey,request.values as Partial<Api.Tables.Circles.Values>),
-"Api.Tables.Circles.CirclesPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Circles.CirclesPkey.delete(request.parameters as Api.Types.CirclesPkey),
-}
-}
-
-            async dispatch(request: EmbraceSQLRequest<object, object, object>) {
-              if (!this.dispatchMap[request.operation]) {
-                throw new Error(`${request.operation} not available`);
-              }
-              return this.dispatchMap[request.operation](request);
-            }
-            
 }
