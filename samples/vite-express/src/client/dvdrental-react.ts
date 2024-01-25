@@ -15,6 +15,7 @@
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
         import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
         import { Geometry } from "@embracesql/shared";
+        import { DatabaseMetadata, Schema, Table, Column, Index, Procedure } from "@embracesql/shared";
     
 // begin fetch client
 import { EmbraceSQLClient as BaseClient, EmbraceSQLClientProps, HasClient } from "@embracesql/client";
@@ -59487,3 +59488,463 @@ xmlbinary: string;
 xmloption: string;
 zeroDamagedPages: string;
 }
+export const Metadata : DatabaseMetadata = {
+  get Schemas() {
+      return [
+{
+ name: "public",
+get Procedures()   {
+      return [
+{
+ name: "film_in_stock"},
+{
+ name: "film_not_in_stock"},
+{
+ name: "get_customer_balance"},
+{
+ name: "inventory_held_by_customer"},
+{
+ name: "inventory_in_stock"},
+{
+ name: "last_day"},
+{
+ name: "rewards_report"},
+];
+},
+get Tables() {
+      return [
+{
+ name: "film_actor",
+ get Columns() { 
+    return[{name: "actor_id", type: "PgCatalog.Types.Int2"},
+{name: "film_id", type: "PgCatalog.Types.Int2"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "film_actor_pkey",
+ get Columns() { 
+    return[{name: "actor_id", type: "PgCatalog.Types.Int2"},
+{name: "film_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+{
+ name: "idx_fk_film_id",
+ get Columns() { 
+    return[{name: "film_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+];
+ }
+},
+{
+ name: "address",
+ get Columns() { 
+    return[{name: "address_id", type: "PgCatalog.Types.Int4"},
+{name: "address", type: "PgCatalog.Types.Varchar"},
+{name: "address2", type: "PgCatalog.Types.Varchar"},
+{name: "district", type: "PgCatalog.Types.Varchar"},
+{name: "city_id", type: "PgCatalog.Types.Int2"},
+{name: "postal_code", type: "PgCatalog.Types.Varchar"},
+{name: "phone", type: "PgCatalog.Types.Varchar"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "address_pkey",
+ get Columns() { 
+    return[{name: "address_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+{
+ name: "idx_fk_city_id",
+ get Columns() { 
+    return[{name: "city_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+];
+ }
+},
+{
+ name: "city",
+ get Columns() { 
+    return[{name: "city_id", type: "PgCatalog.Types.Int4"},
+{name: "city", type: "PgCatalog.Types.Varchar"},
+{name: "country_id", type: "PgCatalog.Types.Int2"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "city_pkey",
+ get Columns() { 
+    return[{name: "city_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+{
+ name: "idx_fk_country_id",
+ get Columns() { 
+    return[{name: "country_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+];
+ }
+},
+{
+ name: "customer",
+ get Columns() { 
+    return[{name: "customer_id", type: "PgCatalog.Types.Int4"},
+{name: "store_id", type: "PgCatalog.Types.Int2"},
+{name: "first_name", type: "PgCatalog.Types.Varchar"},
+{name: "last_name", type: "PgCatalog.Types.Varchar"},
+{name: "email", type: "PgCatalog.Types.Varchar"},
+{name: "address_id", type: "PgCatalog.Types.Int2"},
+{name: "activebool", type: "PgCatalog.Types.Bool"},
+{name: "create_date", type: "PgCatalog.Types.Date"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},
+{name: "active", type: "PgCatalog.Types.Int4"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "customer_pkey",
+ get Columns() { 
+    return[{name: "customer_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+{
+ name: "idx_fk_address_id",
+ get Columns() { 
+    return[{name: "address_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+{
+ name: "idx_fk_store_id",
+ get Columns() { 
+    return[{name: "store_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+{
+ name: "idx_last_name",
+ get Columns() { 
+    return[{name: "last_name", type: "PgCatalog.Types.Varchar"},];
+ },
+},
+];
+ }
+},
+{
+ name: "actor",
+ get Columns() { 
+    return[{name: "actor_id", type: "PgCatalog.Types.Int4"},
+{name: "first_name", type: "PgCatalog.Types.Varchar"},
+{name: "last_name", type: "PgCatalog.Types.Varchar"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "actor_pkey",
+ get Columns() { 
+    return[{name: "actor_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+{
+ name: "idx_actor_last_name",
+ get Columns() { 
+    return[{name: "last_name", type: "PgCatalog.Types.Varchar"},];
+ },
+},
+];
+ }
+},
+{
+ name: "film_category",
+ get Columns() { 
+    return[{name: "film_id", type: "PgCatalog.Types.Int2"},
+{name: "category_id", type: "PgCatalog.Types.Int2"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "film_category_pkey",
+ get Columns() { 
+    return[{name: "film_id", type: "PgCatalog.Types.Int2"},
+{name: "category_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+];
+ }
+},
+{
+ name: "inventory",
+ get Columns() { 
+    return[{name: "inventory_id", type: "PgCatalog.Types.Int4"},
+{name: "film_id", type: "PgCatalog.Types.Int2"},
+{name: "store_id", type: "PgCatalog.Types.Int2"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "inventory_pkey",
+ get Columns() { 
+    return[{name: "inventory_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+{
+ name: "idx_store_id_film_id",
+ get Columns() { 
+    return[{name: "store_id", type: "PgCatalog.Types.Int2"},
+{name: "film_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+];
+ }
+},
+{
+ name: "category",
+ get Columns() { 
+    return[{name: "category_id", type: "PgCatalog.Types.Int4"},
+{name: "name", type: "PgCatalog.Types.Varchar"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "category_pkey",
+ get Columns() { 
+    return[{name: "category_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+];
+ }
+},
+{
+ name: "country",
+ get Columns() { 
+    return[{name: "country_id", type: "PgCatalog.Types.Int4"},
+{name: "country", type: "PgCatalog.Types.Varchar"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "country_pkey",
+ get Columns() { 
+    return[{name: "country_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+];
+ }
+},
+{
+ name: "language",
+ get Columns() { 
+    return[{name: "language_id", type: "PgCatalog.Types.Int4"},
+{name: "name", type: "PgCatalog.Types.Bpchar"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "language_pkey",
+ get Columns() { 
+    return[{name: "language_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+];
+ }
+},
+{
+ name: "rental",
+ get Columns() { 
+    return[{name: "rental_id", type: "PgCatalog.Types.Int4"},
+{name: "rental_date", type: "PgCatalog.Types.Timestamp"},
+{name: "inventory_id", type: "PgCatalog.Types.Int4"},
+{name: "customer_id", type: "PgCatalog.Types.Int2"},
+{name: "return_date", type: "PgCatalog.Types.Timestamp"},
+{name: "staff_id", type: "PgCatalog.Types.Int2"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "rental_pkey",
+ get Columns() { 
+    return[{name: "rental_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+{
+ name: "idx_fk_inventory_id",
+ get Columns() { 
+    return[{name: "inventory_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+{
+ name: "idx_unq_rental_rental_date_inventory_id_customer_id",
+ get Columns() { 
+    return[{name: "rental_date", type: "PgCatalog.Types.Timestamp"},
+{name: "inventory_id", type: "PgCatalog.Types.Int4"},
+{name: "customer_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+];
+ }
+},
+{
+ name: "staff",
+ get Columns() { 
+    return[{name: "staff_id", type: "PgCatalog.Types.Int4"},
+{name: "first_name", type: "PgCatalog.Types.Varchar"},
+{name: "last_name", type: "PgCatalog.Types.Varchar"},
+{name: "address_id", type: "PgCatalog.Types.Int2"},
+{name: "email", type: "PgCatalog.Types.Varchar"},
+{name: "store_id", type: "PgCatalog.Types.Int2"},
+{name: "active", type: "PgCatalog.Types.Bool"},
+{name: "username", type: "PgCatalog.Types.Varchar"},
+{name: "password", type: "PgCatalog.Types.Varchar"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},
+{name: "picture", type: "PgCatalog.Types.Bytea"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "staff_pkey",
+ get Columns() { 
+    return[{name: "staff_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+];
+ }
+},
+{
+ name: "store",
+ get Columns() { 
+    return[{name: "store_id", type: "PgCatalog.Types.Int4"},
+{name: "manager_staff_id", type: "PgCatalog.Types.Int2"},
+{name: "address_id", type: "PgCatalog.Types.Int2"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "store_pkey",
+ get Columns() { 
+    return[{name: "store_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+{
+ name: "idx_unq_manager_staff_id",
+ get Columns() { 
+    return[{name: "manager_staff_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+];
+ }
+},
+{
+ name: "payment",
+ get Columns() { 
+    return[{name: "payment_id", type: "PgCatalog.Types.Int4"},
+{name: "customer_id", type: "PgCatalog.Types.Int2"},
+{name: "staff_id", type: "PgCatalog.Types.Int2"},
+{name: "rental_id", type: "PgCatalog.Types.Int4"},
+{name: "amount", type: "PgCatalog.Types.Numeric"},
+{name: "payment_date", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "payment_pkey",
+ get Columns() { 
+    return[{name: "payment_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+{
+ name: "idx_fk_customer_id",
+ get Columns() { 
+    return[{name: "customer_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+{
+ name: "idx_fk_rental_id",
+ get Columns() { 
+    return[{name: "rental_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+{
+ name: "idx_fk_staff_id",
+ get Columns() { 
+    return[{name: "staff_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+];
+ }
+},
+{
+ name: "film",
+ get Columns() { 
+    return[{name: "film_id", type: "PgCatalog.Types.Int4"},
+{name: "title", type: "PgCatalog.Types.Varchar"},
+{name: "description", type: "PgCatalog.Types.Text"},
+{name: "release_year", type: "Public.Types.Year"},
+{name: "language_id", type: "PgCatalog.Types.Int2"},
+{name: "rental_duration", type: "PgCatalog.Types.Int2"},
+{name: "rental_rate", type: "PgCatalog.Types.Numeric"},
+{name: "length", type: "PgCatalog.Types.Int2"},
+{name: "replacement_cost", type: "PgCatalog.Types.Numeric"},
+{name: "rating", type: "Public.Types.MpaaRating"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},
+{name: "special_features", type: "PgCatalog.Types.TextArray"},
+{name: "fulltext", type: "PgCatalog.Types.Tsvector"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "film_pkey",
+ get Columns() { 
+    return[{name: "film_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+{
+ name: "film_fulltext_idx",
+ get Columns() { 
+    return[{name: "fulltext", type: "PgCatalog.Types.Tsvector"},];
+ },
+},
+{
+ name: "idx_fk_language_id",
+ get Columns() { 
+    return[{name: "language_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+{
+ name: "idx_title",
+ get Columns() { 
+    return[{name: "title", type: "PgCatalog.Types.Varchar"},];
+ },
+},
+];
+ }
+},
+];
+},
+},
+{
+ name: "pg_toast",
+get Procedures()   {
+      return [
+];
+},
+get Tables() {
+      return [
+];
+},
+},
+]; 
+}
+};

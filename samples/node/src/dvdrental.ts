@@ -15,9 +15,9 @@
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
         import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
         import { Geometry } from "@embracesql/shared";
+        import { DatabaseMetadata, Schema, Table, Column, Index, Procedure } from "@embracesql/shared";
     
 
-            import { Tables, Table, Column, Index, Procedures, Procedure } from "@embracesql/shared";
             import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
             import postgres from "postgres";
           
@@ -1771,33 +1771,41 @@ get settings() { return this.context.settings as Settings };
         
         
 
-          public Public = new class implements HasDatabase {
+            get Public() { return new Public(this); }
+            
+
+            get PgToast() { return new PgToast(this); }
+            
+}
+
+          export class Public implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
             }
+
         
 get Procedures () { return new Public.Procedures(this)} 
 get Tables () { return new Public.Tables(this)} 
-}(this)
+}
 
-          public PgToast = new class implements HasDatabase {
+          export class PgToast implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
             }
+
         
 get Procedures () { return new PgToast.Procedures(this)} 
 get Tables () { return new PgToast.Tables(this)} 
-}(this)
 }
 export namespace Public {
 
-          export class Procedures implements Procedures, HasDatabase {
+          export class Procedures implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -1805,18 +1813,6 @@ export namespace Public {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "Procedures";
-            }
-
-            /**
-             * Every procedure in this schema.
-             */
-            get procedures() {
-              return [
-                new Public.Procedures.FilmInStock(this),new Public.Procedures.FilmNotInStock(this),new Public.Procedures.GetCustomerBalance(this),new Public.Procedures.InventoryHeldByCustomer(this),new Public.Procedures.InventoryInStock(this),new Public.Procedures.LastDay(this),new Public.Procedures.RewardsReport(this)
-              ];
-            }
         
 get FilmInStock () { return new Public.Procedures.FilmInStock(this)} 
 get FilmNotInStock () { return new Public.Procedures.FilmNotInStock(this)} 
@@ -1829,7 +1825,7 @@ get RewardsReport () { return new Public.Procedures.RewardsReport(this)}
 }
 export namespace PgToast {
 
-          export class Procedures implements Procedures, HasDatabase {
+          export class Procedures implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -1837,24 +1833,12 @@ export namespace PgToast {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "Procedures";
-            }
-
-            /**
-             * Every procedure in this schema.
-             */
-            get procedures() {
-              return [
-                
-              ];
-            }
         
 }
 }
 export namespace Public {
 export namespace Procedures {
-export class FilmInStock implements Procedure, HasDatabase {
+export class FilmInStock implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "film_in_stock"; }
@@ -1874,7 +1858,7 @@ async call(parameters : Public.Procedures.FilmInStock.Parameters) {
            
 }
 }
-export class FilmNotInStock implements Procedure, HasDatabase {
+export class FilmNotInStock implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "film_not_in_stock"; }
@@ -1894,7 +1878,7 @@ async call(parameters : Public.Procedures.FilmNotInStock.Parameters) {
            
 }
 }
-export class GetCustomerBalance implements Procedure, HasDatabase {
+export class GetCustomerBalance implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "get_customer_balance"; }
@@ -1915,7 +1899,7 @@ async call(parameters : Public.Procedures.GetCustomerBalance.Parameters) {
            
 }
 }
-export class InventoryHeldByCustomer implements Procedure, HasDatabase {
+export class InventoryHeldByCustomer implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "inventory_held_by_customer"; }
@@ -1936,7 +1920,7 @@ async call(parameters : Public.Procedures.InventoryHeldByCustomer.Parameters) {
            
 }
 }
-export class InventoryInStock implements Procedure, HasDatabase {
+export class InventoryInStock implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "inventory_in_stock"; }
@@ -1957,7 +1941,7 @@ async call(parameters : Public.Procedures.InventoryInStock.Parameters) {
            
 }
 }
-export class LastDay implements Procedure, HasDatabase {
+export class LastDay implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "last_day"; }
@@ -1978,7 +1962,7 @@ async call(parameters : Public.Procedures.LastDay.Parameters) {
            
 }
 }
-export class RewardsReport implements Procedure, HasDatabase {
+export class RewardsReport implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "rewards_report"; }
@@ -2007,25 +1991,12 @@ export namespace Procedures {
 }
 export namespace Public {
 
-          export class Tables implements Tables, HasDatabase {
+          export class Tables implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "Tables";
-            }
-
-            /**
-             * Every table in this schema.
-             */
-            get tables() {
-              return [
-                new Public.Tables.FilmActor(this),new Public.Tables.Address(this),new Public.Tables.City(this),new Public.Tables.Customer(this),new Public.Tables.Actor(this),new Public.Tables.FilmCategory(this),new Public.Tables.Inventory(this),new Public.Tables.Category(this),new Public.Tables.Country(this),new Public.Tables.Language(this),new Public.Tables.Rental(this),new Public.Tables.Staff(this),new Public.Tables.Store(this),new Public.Tables.Payment(this),new Public.Tables.Film(this)
-              ];
             }
         
 get FilmActor () { return new Public.Tables.FilmActor(this)} 
@@ -2047,25 +2018,12 @@ get Film () { return new Public.Tables.Film(this)}
 }
 export namespace PgToast {
 
-          export class Tables implements Tables, HasDatabase {
+          export class Tables implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "Tables";
-            }
-
-            /**
-             * Every table in this schema.
-             */
-            get tables() {
-              return [
-                
-              ];
             }
         
 }
@@ -2073,34 +2031,12 @@ export namespace PgToast {
 export namespace Public {
 export namespace Tables {
 
-          export class FilmActor implements Table, HasDatabase {
+          export class FilmActor implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "film_actor";
-            }
-
-            /**
-             * Every column in the table.
-             */
-            get columns() {
-              return [
-                {name: "actor_id", type: "pg_catalog.int2"},{name: "film_id", type: "pg_catalog.int2"},{name: "last_update", type: "pg_catalog.timestamp"}
-              ];
-            }
-            
-            /**
-             * Every index on the table.
-             */
-            get indexes() {
-              return [
-                new Public.Tables.FilmActor.FilmActorPkey(this),new Public.Tables.FilmActor.IdxFkFilmId(this)
-              ];
             }
         
 
@@ -2144,34 +2080,12 @@ get FilmActorPkey () { return new Public.Tables.FilmActor.FilmActorPkey(this)}
 get IdxFkFilmId () { return new Public.Tables.FilmActor.IdxFkFilmId(this)} 
 }
 
-          export class Address implements Table, HasDatabase {
+          export class Address implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "address";
-            }
-
-            /**
-             * Every column in the table.
-             */
-            get columns() {
-              return [
-                {name: "address_id", type: "pg_catalog.int4"},{name: "address", type: "pg_catalog.varchar"},{name: "address2", type: "pg_catalog.varchar"},{name: "district", type: "pg_catalog.varchar"},{name: "city_id", type: "pg_catalog.int2"},{name: "postal_code", type: "pg_catalog.varchar"},{name: "phone", type: "pg_catalog.varchar"},{name: "last_update", type: "pg_catalog.timestamp"}
-              ];
-            }
-            
-            /**
-             * Every index on the table.
-             */
-            get indexes() {
-              return [
-                new Public.Tables.Address.AddressPkey(this),new Public.Tables.Address.IdxFkCityId(this)
-              ];
             }
         
 
@@ -2228,34 +2142,12 @@ get AddressPkey () { return new Public.Tables.Address.AddressPkey(this)}
 get IdxFkCityId () { return new Public.Tables.Address.IdxFkCityId(this)} 
 }
 
-          export class City implements Table, HasDatabase {
+          export class City implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "city";
-            }
-
-            /**
-             * Every column in the table.
-             */
-            get columns() {
-              return [
-                {name: "city_id", type: "pg_catalog.int4"},{name: "city", type: "pg_catalog.varchar"},{name: "country_id", type: "pg_catalog.int2"},{name: "last_update", type: "pg_catalog.timestamp"}
-              ];
-            }
-            
-            /**
-             * Every index on the table.
-             */
-            get indexes() {
-              return [
-                new Public.Tables.City.CityPkey(this),new Public.Tables.City.IdxFkCountryId(this)
-              ];
             }
         
 
@@ -2312,34 +2204,12 @@ get CityPkey () { return new Public.Tables.City.CityPkey(this)}
 get IdxFkCountryId () { return new Public.Tables.City.IdxFkCountryId(this)} 
 }
 
-          export class Customer implements Table, HasDatabase {
+          export class Customer implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "customer";
-            }
-
-            /**
-             * Every column in the table.
-             */
-            get columns() {
-              return [
-                {name: "customer_id", type: "pg_catalog.int4"},{name: "store_id", type: "pg_catalog.int2"},{name: "first_name", type: "pg_catalog.varchar"},{name: "last_name", type: "pg_catalog.varchar"},{name: "email", type: "pg_catalog.varchar"},{name: "address_id", type: "pg_catalog.int2"},{name: "activebool", type: "pg_catalog.bool"},{name: "create_date", type: "pg_catalog.date"},{name: "last_update", type: "pg_catalog.timestamp"},{name: "active", type: "pg_catalog.int4"}
-              ];
-            }
-            
-            /**
-             * Every index on the table.
-             */
-            get indexes() {
-              return [
-                new Public.Tables.Customer.CustomerPkey(this),new Public.Tables.Customer.IdxFkAddressId(this),new Public.Tables.Customer.IdxFkStoreId(this),new Public.Tables.Customer.IdxLastName(this)
-              ];
             }
         
 
@@ -2400,34 +2270,12 @@ get IdxFkStoreId () { return new Public.Tables.Customer.IdxFkStoreId(this)}
 get IdxLastName () { return new Public.Tables.Customer.IdxLastName(this)} 
 }
 
-          export class Actor implements Table, HasDatabase {
+          export class Actor implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "actor";
-            }
-
-            /**
-             * Every column in the table.
-             */
-            get columns() {
-              return [
-                {name: "actor_id", type: "pg_catalog.int4"},{name: "first_name", type: "pg_catalog.varchar"},{name: "last_name", type: "pg_catalog.varchar"},{name: "last_update", type: "pg_catalog.timestamp"}
-              ];
-            }
-            
-            /**
-             * Every index on the table.
-             */
-            get indexes() {
-              return [
-                new Public.Tables.Actor.ActorPkey(this),new Public.Tables.Actor.IdxActorLastName(this)
-              ];
             }
         
 
@@ -2484,34 +2332,12 @@ get ActorPkey () { return new Public.Tables.Actor.ActorPkey(this)}
 get IdxActorLastName () { return new Public.Tables.Actor.IdxActorLastName(this)} 
 }
 
-          export class FilmCategory implements Table, HasDatabase {
+          export class FilmCategory implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "film_category";
-            }
-
-            /**
-             * Every column in the table.
-             */
-            get columns() {
-              return [
-                {name: "film_id", type: "pg_catalog.int2"},{name: "category_id", type: "pg_catalog.int2"},{name: "last_update", type: "pg_catalog.timestamp"}
-              ];
-            }
-            
-            /**
-             * Every index on the table.
-             */
-            get indexes() {
-              return [
-                new Public.Tables.FilmCategory.FilmCategoryPkey(this)
-              ];
             }
         
 
@@ -2553,34 +2379,12 @@ public get ByPrimaryKey () { return new Public.Tables.FilmCategory.FilmCategoryP
 get FilmCategoryPkey () { return new Public.Tables.FilmCategory.FilmCategoryPkey(this)} 
 }
 
-          export class Inventory implements Table, HasDatabase {
+          export class Inventory implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "inventory";
-            }
-
-            /**
-             * Every column in the table.
-             */
-            get columns() {
-              return [
-                {name: "inventory_id", type: "pg_catalog.int4"},{name: "film_id", type: "pg_catalog.int2"},{name: "store_id", type: "pg_catalog.int2"},{name: "last_update", type: "pg_catalog.timestamp"}
-              ];
-            }
-            
-            /**
-             * Every index on the table.
-             */
-            get indexes() {
-              return [
-                new Public.Tables.Inventory.InventoryPkey(this),new Public.Tables.Inventory.IdxStoreIdFilmId(this)
-              ];
             }
         
 
@@ -2637,34 +2441,12 @@ get InventoryPkey () { return new Public.Tables.Inventory.InventoryPkey(this)}
 get IdxStoreIdFilmId () { return new Public.Tables.Inventory.IdxStoreIdFilmId(this)} 
 }
 
-          export class Category implements Table, HasDatabase {
+          export class Category implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "category";
-            }
-
-            /**
-             * Every column in the table.
-             */
-            get columns() {
-              return [
-                {name: "category_id", type: "pg_catalog.int4"},{name: "name", type: "pg_catalog.varchar"},{name: "last_update", type: "pg_catalog.timestamp"}
-              ];
-            }
-            
-            /**
-             * Every index on the table.
-             */
-            get indexes() {
-              return [
-                new Public.Tables.Category.CategoryPkey(this)
-              ];
             }
         
 
@@ -2719,34 +2501,12 @@ public get ByPrimaryKey () { return new Public.Tables.Category.CategoryPkey(this
 get CategoryPkey () { return new Public.Tables.Category.CategoryPkey(this)} 
 }
 
-          export class Country implements Table, HasDatabase {
+          export class Country implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "country";
-            }
-
-            /**
-             * Every column in the table.
-             */
-            get columns() {
-              return [
-                {name: "country_id", type: "pg_catalog.int4"},{name: "country", type: "pg_catalog.varchar"},{name: "last_update", type: "pg_catalog.timestamp"}
-              ];
-            }
-            
-            /**
-             * Every index on the table.
-             */
-            get indexes() {
-              return [
-                new Public.Tables.Country.CountryPkey(this)
-              ];
             }
         
 
@@ -2801,34 +2561,12 @@ public get ByPrimaryKey () { return new Public.Tables.Country.CountryPkey(this)}
 get CountryPkey () { return new Public.Tables.Country.CountryPkey(this)} 
 }
 
-          export class Language implements Table, HasDatabase {
+          export class Language implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "language";
-            }
-
-            /**
-             * Every column in the table.
-             */
-            get columns() {
-              return [
-                {name: "language_id", type: "pg_catalog.int4"},{name: "name", type: "pg_catalog.bpchar"},{name: "last_update", type: "pg_catalog.timestamp"}
-              ];
-            }
-            
-            /**
-             * Every index on the table.
-             */
-            get indexes() {
-              return [
-                new Public.Tables.Language.LanguagePkey(this)
-              ];
             }
         
 
@@ -2883,34 +2621,12 @@ public get ByPrimaryKey () { return new Public.Tables.Language.LanguagePkey(this
 get LanguagePkey () { return new Public.Tables.Language.LanguagePkey(this)} 
 }
 
-          export class Rental implements Table, HasDatabase {
+          export class Rental implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "rental";
-            }
-
-            /**
-             * Every column in the table.
-             */
-            get columns() {
-              return [
-                {name: "rental_id", type: "pg_catalog.int4"},{name: "rental_date", type: "pg_catalog.timestamp"},{name: "inventory_id", type: "pg_catalog.int4"},{name: "customer_id", type: "pg_catalog.int2"},{name: "return_date", type: "pg_catalog.timestamp"},{name: "staff_id", type: "pg_catalog.int2"},{name: "last_update", type: "pg_catalog.timestamp"}
-              ];
-            }
-            
-            /**
-             * Every index on the table.
-             */
-            get indexes() {
-              return [
-                new Public.Tables.Rental.RentalPkey(this),new Public.Tables.Rental.IdxFkInventoryId(this),new Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId(this)
-              ];
             }
         
 
@@ -2969,34 +2685,12 @@ get IdxFkInventoryId () { return new Public.Tables.Rental.IdxFkInventoryId(this)
 get IdxUnqRentalRentalDateInventoryIdCustomerId () { return new Public.Tables.Rental.IdxUnqRentalRentalDateInventoryIdCustomerId(this)} 
 }
 
-          export class Staff implements Table, HasDatabase {
+          export class Staff implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "staff";
-            }
-
-            /**
-             * Every column in the table.
-             */
-            get columns() {
-              return [
-                {name: "staff_id", type: "pg_catalog.int4"},{name: "first_name", type: "pg_catalog.varchar"},{name: "last_name", type: "pg_catalog.varchar"},{name: "address_id", type: "pg_catalog.int2"},{name: "email", type: "pg_catalog.varchar"},{name: "store_id", type: "pg_catalog.int2"},{name: "active", type: "pg_catalog.bool"},{name: "username", type: "pg_catalog.varchar"},{name: "password", type: "pg_catalog.varchar"},{name: "last_update", type: "pg_catalog.timestamp"},{name: "picture", type: "pg_catalog.bytea"}
-              ];
-            }
-            
-            /**
-             * Every index on the table.
-             */
-            get indexes() {
-              return [
-                new Public.Tables.Staff.StaffPkey(this)
-              ];
             }
         
 
@@ -3051,34 +2745,12 @@ public get ByPrimaryKey () { return new Public.Tables.Staff.StaffPkey(this)}
 get StaffPkey () { return new Public.Tables.Staff.StaffPkey(this)} 
 }
 
-          export class Store implements Table, HasDatabase {
+          export class Store implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "store";
-            }
-
-            /**
-             * Every column in the table.
-             */
-            get columns() {
-              return [
-                {name: "store_id", type: "pg_catalog.int4"},{name: "manager_staff_id", type: "pg_catalog.int2"},{name: "address_id", type: "pg_catalog.int2"},{name: "last_update", type: "pg_catalog.timestamp"}
-              ];
-            }
-            
-            /**
-             * Every index on the table.
-             */
-            get indexes() {
-              return [
-                new Public.Tables.Store.StorePkey(this),new Public.Tables.Store.IdxUnqManagerStaffId(this)
-              ];
             }
         
 
@@ -3135,34 +2807,12 @@ get StorePkey () { return new Public.Tables.Store.StorePkey(this)}
 get IdxUnqManagerStaffId () { return new Public.Tables.Store.IdxUnqManagerStaffId(this)} 
 }
 
-          export class Payment implements Table, HasDatabase {
+          export class Payment implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "payment";
-            }
-
-            /**
-             * Every column in the table.
-             */
-            get columns() {
-              return [
-                {name: "payment_id", type: "pg_catalog.int4"},{name: "customer_id", type: "pg_catalog.int2"},{name: "staff_id", type: "pg_catalog.int2"},{name: "rental_id", type: "pg_catalog.int4"},{name: "amount", type: "pg_catalog.numeric"},{name: "payment_date", type: "pg_catalog.timestamp"}
-              ];
-            }
-            
-            /**
-             * Every index on the table.
-             */
-            get indexes() {
-              return [
-                new Public.Tables.Payment.PaymentPkey(this),new Public.Tables.Payment.IdxFkCustomerId(this),new Public.Tables.Payment.IdxFkRentalId(this),new Public.Tables.Payment.IdxFkStaffId(this)
-              ];
             }
         
 
@@ -3223,34 +2873,12 @@ get IdxFkRentalId () { return new Public.Tables.Payment.IdxFkRentalId(this)}
 get IdxFkStaffId () { return new Public.Tables.Payment.IdxFkStaffId(this)} 
 }
 
-          export class Film implements Table, HasDatabase {
+          export class Film implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "film";
-            }
-
-            /**
-             * Every column in the table.
-             */
-            get columns() {
-              return [
-                {name: "film_id", type: "pg_catalog.int4"},{name: "title", type: "pg_catalog.varchar"},{name: "description", type: "pg_catalog.text"},{name: "release_year", type: "public.year"},{name: "language_id", type: "pg_catalog.int2"},{name: "rental_duration", type: "pg_catalog.int2"},{name: "rental_rate", type: "pg_catalog.numeric"},{name: "length", type: "pg_catalog.int2"},{name: "replacement_cost", type: "pg_catalog.numeric"},{name: "rating", type: "public.mpaa_rating"},{name: "last_update", type: "pg_catalog.timestamp"},{name: "special_features", type: "pg_catalog._text_array"},{name: "fulltext", type: "pg_catalog.tsvector"}
-              ];
-            }
-            
-            /**
-             * Every index on the table.
-             */
-            get indexes() {
-              return [
-                new Public.Tables.Film.FilmPkey(this),new Public.Tables.Film.FilmFulltextIdx(this),new Public.Tables.Film.IdxFkLanguageId(this),new Public.Tables.Film.IdxTitle(this)
-              ];
             }
         
 
@@ -3320,7 +2948,7 @@ export namespace Public {
 export namespace Tables {
 export namespace FilmActor {
 
-          export class FilmActorPkey implements Index, HasDatabase {
+          export class FilmActorPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -3328,18 +2956,6 @@ export namespace FilmActor {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "film_actor_pkey";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "actor_id", type: "pg_catalog.int2"},{name: "film_id", type: "pg_catalog.int2"}
-              ];
-            }
         
 async read(parameters: Public.Types.FilmActorPkey, options?: Public.Types.FilmActorPkey.Options & Public.Tables.FilmActor.Options) : Promise<Public.Types.FilmActor>{
 
@@ -3396,7 +3012,7 @@ async delete(parameters: Public.Types.FilmActorPkey, options?: Public.Types.Film
 }
 }
 
-          export class IdxFkFilmId implements Index, HasDatabase {
+          export class IdxFkFilmId implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -3404,18 +3020,6 @@ async delete(parameters: Public.Types.FilmActorPkey, options?: Public.Types.Film
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "idx_fk_film_id";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "film_id", type: "pg_catalog.int2"}
-              ];
-            }
         
 async read(parameters: Public.Types.IdxFkFilmId, options?: Public.Types.IdxFkFilmId.Options & Public.Tables.FilmActor.Options) : Promise<Public.Types.FilmActor[]>{
 
@@ -3474,7 +3078,7 @@ async delete(parameters: Public.Types.IdxFkFilmId, options?: Public.Types.IdxFkF
 }
 export namespace Address {
 
-          export class AddressPkey implements Index, HasDatabase {
+          export class AddressPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -3482,18 +3086,6 @@ export namespace Address {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "address_pkey";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "address_id", type: "pg_catalog.int4"}
-              ];
-            }
         
 async read(parameters: Public.Types.AddressPkey, options?: Public.Types.AddressPkey.Options & Public.Tables.Address.Options) : Promise<Public.Types.Address>{
 
@@ -3550,7 +3142,7 @@ async delete(parameters: Public.Types.AddressPkey, options?: Public.Types.Addres
 }
 }
 
-          export class IdxFkCityId implements Index, HasDatabase {
+          export class IdxFkCityId implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -3558,18 +3150,6 @@ async delete(parameters: Public.Types.AddressPkey, options?: Public.Types.Addres
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "idx_fk_city_id";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "city_id", type: "pg_catalog.int2"}
-              ];
-            }
         
 async read(parameters: Public.Types.IdxFkCityId, options?: Public.Types.IdxFkCityId.Options & Public.Tables.Address.Options) : Promise<Public.Types.Address[]>{
 
@@ -3628,7 +3208,7 @@ async delete(parameters: Public.Types.IdxFkCityId, options?: Public.Types.IdxFkC
 }
 export namespace City {
 
-          export class CityPkey implements Index, HasDatabase {
+          export class CityPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -3636,18 +3216,6 @@ export namespace City {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "city_pkey";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "city_id", type: "pg_catalog.int4"}
-              ];
-            }
         
 async read(parameters: Public.Types.CityPkey, options?: Public.Types.CityPkey.Options & Public.Tables.City.Options) : Promise<Public.Types.City>{
 
@@ -3704,7 +3272,7 @@ async delete(parameters: Public.Types.CityPkey, options?: Public.Types.CityPkey.
 }
 }
 
-          export class IdxFkCountryId implements Index, HasDatabase {
+          export class IdxFkCountryId implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -3712,18 +3280,6 @@ async delete(parameters: Public.Types.CityPkey, options?: Public.Types.CityPkey.
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "idx_fk_country_id";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "country_id", type: "pg_catalog.int2"}
-              ];
-            }
         
 async read(parameters: Public.Types.IdxFkCountryId, options?: Public.Types.IdxFkCountryId.Options & Public.Tables.City.Options) : Promise<Public.Types.City[]>{
 
@@ -3782,7 +3338,7 @@ async delete(parameters: Public.Types.IdxFkCountryId, options?: Public.Types.Idx
 }
 export namespace Customer {
 
-          export class CustomerPkey implements Index, HasDatabase {
+          export class CustomerPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -3790,18 +3346,6 @@ export namespace Customer {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "customer_pkey";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "customer_id", type: "pg_catalog.int4"}
-              ];
-            }
         
 async read(parameters: Public.Types.CustomerPkey, options?: Public.Types.CustomerPkey.Options & Public.Tables.Customer.Options) : Promise<Public.Types.Customer>{
 
@@ -3858,7 +3402,7 @@ async delete(parameters: Public.Types.CustomerPkey, options?: Public.Types.Custo
 }
 }
 
-          export class IdxFkAddressId implements Index, HasDatabase {
+          export class IdxFkAddressId implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -3866,18 +3410,6 @@ async delete(parameters: Public.Types.CustomerPkey, options?: Public.Types.Custo
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "idx_fk_address_id";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "address_id", type: "pg_catalog.int2"}
-              ];
-            }
         
 async read(parameters: Public.Types.IdxFkAddressId, options?: Public.Types.IdxFkAddressId.Options & Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]>{
 
@@ -3934,7 +3466,7 @@ async delete(parameters: Public.Types.IdxFkAddressId, options?: Public.Types.Idx
 }
 }
 
-          export class IdxFkStoreId implements Index, HasDatabase {
+          export class IdxFkStoreId implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -3942,18 +3474,6 @@ async delete(parameters: Public.Types.IdxFkAddressId, options?: Public.Types.Idx
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "idx_fk_store_id";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "store_id", type: "pg_catalog.int2"}
-              ];
-            }
         
 async read(parameters: Public.Types.IdxFkStoreId, options?: Public.Types.IdxFkStoreId.Options & Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]>{
 
@@ -4010,7 +3530,7 @@ async delete(parameters: Public.Types.IdxFkStoreId, options?: Public.Types.IdxFk
 }
 }
 
-          export class IdxLastName implements Index, HasDatabase {
+          export class IdxLastName implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -4018,18 +3538,6 @@ async delete(parameters: Public.Types.IdxFkStoreId, options?: Public.Types.IdxFk
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "idx_last_name";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "last_name", type: "pg_catalog.varchar"}
-              ];
-            }
         
 async read(parameters: Public.Types.IdxLastName, options?: Public.Types.IdxLastName.Options & Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]>{
 
@@ -4088,7 +3596,7 @@ async delete(parameters: Public.Types.IdxLastName, options?: Public.Types.IdxLas
 }
 export namespace Actor {
 
-          export class ActorPkey implements Index, HasDatabase {
+          export class ActorPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -4096,18 +3604,6 @@ export namespace Actor {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "actor_pkey";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "actor_id", type: "pg_catalog.int4"}
-              ];
-            }
         
 async read(parameters: Public.Types.ActorPkey, options?: Public.Types.ActorPkey.Options & Public.Tables.Actor.Options) : Promise<Public.Types.Actor>{
 
@@ -4164,7 +3660,7 @@ async delete(parameters: Public.Types.ActorPkey, options?: Public.Types.ActorPke
 }
 }
 
-          export class IdxActorLastName implements Index, HasDatabase {
+          export class IdxActorLastName implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -4172,18 +3668,6 @@ async delete(parameters: Public.Types.ActorPkey, options?: Public.Types.ActorPke
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "idx_actor_last_name";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "last_name", type: "pg_catalog.varchar"}
-              ];
-            }
         
 async read(parameters: Public.Types.IdxActorLastName, options?: Public.Types.IdxActorLastName.Options & Public.Tables.Actor.Options) : Promise<Public.Types.Actor[]>{
 
@@ -4242,7 +3726,7 @@ async delete(parameters: Public.Types.IdxActorLastName, options?: Public.Types.I
 }
 export namespace FilmCategory {
 
-          export class FilmCategoryPkey implements Index, HasDatabase {
+          export class FilmCategoryPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -4250,18 +3734,6 @@ export namespace FilmCategory {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "film_category_pkey";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "film_id", type: "pg_catalog.int2"},{name: "category_id", type: "pg_catalog.int2"}
-              ];
-            }
         
 async read(parameters: Public.Types.FilmCategoryPkey, options?: Public.Types.FilmCategoryPkey.Options & Public.Tables.FilmCategory.Options) : Promise<Public.Types.FilmCategory>{
 
@@ -4320,7 +3792,7 @@ async delete(parameters: Public.Types.FilmCategoryPkey, options?: Public.Types.F
 }
 export namespace Inventory {
 
-          export class InventoryPkey implements Index, HasDatabase {
+          export class InventoryPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -4328,18 +3800,6 @@ export namespace Inventory {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "inventory_pkey";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "inventory_id", type: "pg_catalog.int4"}
-              ];
-            }
         
 async read(parameters: Public.Types.InventoryPkey, options?: Public.Types.InventoryPkey.Options & Public.Tables.Inventory.Options) : Promise<Public.Types.Inventory>{
 
@@ -4396,7 +3856,7 @@ async delete(parameters: Public.Types.InventoryPkey, options?: Public.Types.Inve
 }
 }
 
-          export class IdxStoreIdFilmId implements Index, HasDatabase {
+          export class IdxStoreIdFilmId implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -4404,18 +3864,6 @@ async delete(parameters: Public.Types.InventoryPkey, options?: Public.Types.Inve
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "idx_store_id_film_id";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "store_id", type: "pg_catalog.int2"},{name: "film_id", type: "pg_catalog.int2"}
-              ];
-            }
         
 async read(parameters: Public.Types.IdxStoreIdFilmId, options?: Public.Types.IdxStoreIdFilmId.Options & Public.Tables.Inventory.Options) : Promise<Public.Types.Inventory[]>{
 
@@ -4474,7 +3922,7 @@ async delete(parameters: Public.Types.IdxStoreIdFilmId, options?: Public.Types.I
 }
 export namespace Category {
 
-          export class CategoryPkey implements Index, HasDatabase {
+          export class CategoryPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -4482,18 +3930,6 @@ export namespace Category {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "category_pkey";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "category_id", type: "pg_catalog.int4"}
-              ];
-            }
         
 async read(parameters: Public.Types.CategoryPkey, options?: Public.Types.CategoryPkey.Options & Public.Tables.Category.Options) : Promise<Public.Types.Category>{
 
@@ -4552,7 +3988,7 @@ async delete(parameters: Public.Types.CategoryPkey, options?: Public.Types.Categ
 }
 export namespace Country {
 
-          export class CountryPkey implements Index, HasDatabase {
+          export class CountryPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -4560,18 +3996,6 @@ export namespace Country {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "country_pkey";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "country_id", type: "pg_catalog.int4"}
-              ];
-            }
         
 async read(parameters: Public.Types.CountryPkey, options?: Public.Types.CountryPkey.Options & Public.Tables.Country.Options) : Promise<Public.Types.Country>{
 
@@ -4630,7 +4054,7 @@ async delete(parameters: Public.Types.CountryPkey, options?: Public.Types.Countr
 }
 export namespace Language {
 
-          export class LanguagePkey implements Index, HasDatabase {
+          export class LanguagePkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -4638,18 +4062,6 @@ export namespace Language {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "language_pkey";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "language_id", type: "pg_catalog.int4"}
-              ];
-            }
         
 async read(parameters: Public.Types.LanguagePkey, options?: Public.Types.LanguagePkey.Options & Public.Tables.Language.Options) : Promise<Public.Types.Language>{
 
@@ -4708,7 +4120,7 @@ async delete(parameters: Public.Types.LanguagePkey, options?: Public.Types.Langu
 }
 export namespace Rental {
 
-          export class RentalPkey implements Index, HasDatabase {
+          export class RentalPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -4716,18 +4128,6 @@ export namespace Rental {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "rental_pkey";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "rental_id", type: "pg_catalog.int4"}
-              ];
-            }
         
 async read(parameters: Public.Types.RentalPkey, options?: Public.Types.RentalPkey.Options & Public.Tables.Rental.Options) : Promise<Public.Types.Rental>{
 
@@ -4784,7 +4184,7 @@ async delete(parameters: Public.Types.RentalPkey, options?: Public.Types.RentalP
 }
 }
 
-          export class IdxFkInventoryId implements Index, HasDatabase {
+          export class IdxFkInventoryId implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -4792,18 +4192,6 @@ async delete(parameters: Public.Types.RentalPkey, options?: Public.Types.RentalP
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "idx_fk_inventory_id";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "inventory_id", type: "pg_catalog.int4"}
-              ];
-            }
         
 async read(parameters: Public.Types.IdxFkInventoryId, options?: Public.Types.IdxFkInventoryId.Options & Public.Tables.Rental.Options) : Promise<Public.Types.Rental[]>{
 
@@ -4860,7 +4248,7 @@ async delete(parameters: Public.Types.IdxFkInventoryId, options?: Public.Types.I
 }
 }
 
-          export class IdxUnqRentalRentalDateInventoryIdCustomerId implements Index, HasDatabase {
+          export class IdxUnqRentalRentalDateInventoryIdCustomerId implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -4868,18 +4256,6 @@ async delete(parameters: Public.Types.IdxFkInventoryId, options?: Public.Types.I
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "idx_unq_rental_rental_date_inventory_id_customer_id";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "rental_date", type: "pg_catalog.timestamp"},{name: "inventory_id", type: "pg_catalog.int4"},{name: "customer_id", type: "pg_catalog.int2"}
-              ];
-            }
         
 async read(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, options?: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId.Options & Public.Tables.Rental.Options) : Promise<Public.Types.Rental>{
 
@@ -4938,7 +4314,7 @@ async delete(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerI
 }
 export namespace Staff {
 
-          export class StaffPkey implements Index, HasDatabase {
+          export class StaffPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -4946,18 +4322,6 @@ export namespace Staff {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "staff_pkey";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "staff_id", type: "pg_catalog.int4"}
-              ];
-            }
         
 async read(parameters: Public.Types.StaffPkey, options?: Public.Types.StaffPkey.Options & Public.Tables.Staff.Options) : Promise<Public.Types.Staff>{
 
@@ -5016,7 +4380,7 @@ async delete(parameters: Public.Types.StaffPkey, options?: Public.Types.StaffPke
 }
 export namespace Store {
 
-          export class StorePkey implements Index, HasDatabase {
+          export class StorePkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -5024,18 +4388,6 @@ export namespace Store {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "store_pkey";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "store_id", type: "pg_catalog.int4"}
-              ];
-            }
         
 async read(parameters: Public.Types.StorePkey, options?: Public.Types.StorePkey.Options & Public.Tables.Store.Options) : Promise<Public.Types.Store>{
 
@@ -5092,7 +4444,7 @@ async delete(parameters: Public.Types.StorePkey, options?: Public.Types.StorePke
 }
 }
 
-          export class IdxUnqManagerStaffId implements Index, HasDatabase {
+          export class IdxUnqManagerStaffId implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -5100,18 +4452,6 @@ async delete(parameters: Public.Types.StorePkey, options?: Public.Types.StorePke
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "idx_unq_manager_staff_id";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "manager_staff_id", type: "pg_catalog.int2"}
-              ];
-            }
         
 async read(parameters: Public.Types.IdxUnqManagerStaffId, options?: Public.Types.IdxUnqManagerStaffId.Options & Public.Tables.Store.Options) : Promise<Public.Types.Store>{
 
@@ -5170,7 +4510,7 @@ async delete(parameters: Public.Types.IdxUnqManagerStaffId, options?: Public.Typ
 }
 export namespace Payment {
 
-          export class PaymentPkey implements Index, HasDatabase {
+          export class PaymentPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -5178,18 +4518,6 @@ export namespace Payment {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "payment_pkey";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "payment_id", type: "pg_catalog.int4"}
-              ];
-            }
         
 async read(parameters: Public.Types.PaymentPkey, options?: Public.Types.PaymentPkey.Options & Public.Tables.Payment.Options) : Promise<Public.Types.Payment>{
 
@@ -5246,7 +4574,7 @@ async delete(parameters: Public.Types.PaymentPkey, options?: Public.Types.Paymen
 }
 }
 
-          export class IdxFkCustomerId implements Index, HasDatabase {
+          export class IdxFkCustomerId implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -5254,18 +4582,6 @@ async delete(parameters: Public.Types.PaymentPkey, options?: Public.Types.Paymen
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "idx_fk_customer_id";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "customer_id", type: "pg_catalog.int2"}
-              ];
-            }
         
 async read(parameters: Public.Types.IdxFkCustomerId, options?: Public.Types.IdxFkCustomerId.Options & Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]>{
 
@@ -5322,7 +4638,7 @@ async delete(parameters: Public.Types.IdxFkCustomerId, options?: Public.Types.Id
 }
 }
 
-          export class IdxFkRentalId implements Index, HasDatabase {
+          export class IdxFkRentalId implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -5330,18 +4646,6 @@ async delete(parameters: Public.Types.IdxFkCustomerId, options?: Public.Types.Id
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "idx_fk_rental_id";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "rental_id", type: "pg_catalog.int4"}
-              ];
-            }
         
 async read(parameters: Public.Types.IdxFkRentalId, options?: Public.Types.IdxFkRentalId.Options & Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]>{
 
@@ -5398,7 +4702,7 @@ async delete(parameters: Public.Types.IdxFkRentalId, options?: Public.Types.IdxF
 }
 }
 
-          export class IdxFkStaffId implements Index, HasDatabase {
+          export class IdxFkStaffId implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -5406,18 +4710,6 @@ async delete(parameters: Public.Types.IdxFkRentalId, options?: Public.Types.IdxF
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "idx_fk_staff_id";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "staff_id", type: "pg_catalog.int2"}
-              ];
-            }
         
 async read(parameters: Public.Types.IdxFkStaffId, options?: Public.Types.IdxFkStaffId.Options & Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]>{
 
@@ -5476,7 +4768,7 @@ async delete(parameters: Public.Types.IdxFkStaffId, options?: Public.Types.IdxFk
 }
 export namespace Film {
 
-          export class FilmPkey implements Index, HasDatabase {
+          export class FilmPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -5484,18 +4776,6 @@ export namespace Film {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "film_pkey";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "film_id", type: "pg_catalog.int4"}
-              ];
-            }
         
 async read(parameters: Public.Types.FilmPkey, options?: Public.Types.FilmPkey.Options & Public.Tables.Film.Options) : Promise<Public.Types.Film>{
 
@@ -5552,7 +4832,7 @@ async delete(parameters: Public.Types.FilmPkey, options?: Public.Types.FilmPkey.
 }
 }
 
-          export class FilmFulltextIdx implements Index, HasDatabase {
+          export class FilmFulltextIdx implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -5560,18 +4840,6 @@ async delete(parameters: Public.Types.FilmPkey, options?: Public.Types.FilmPkey.
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "film_fulltext_idx";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "fulltext", type: "pg_catalog.tsvector"}
-              ];
-            }
         
 async read(parameters: Public.Types.FilmFulltextIdx, options?: Public.Types.FilmFulltextIdx.Options & Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
 
@@ -5628,7 +4896,7 @@ async delete(parameters: Public.Types.FilmFulltextIdx, options?: Public.Types.Fi
 }
 }
 
-          export class IdxFkLanguageId implements Index, HasDatabase {
+          export class IdxFkLanguageId implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -5636,18 +4904,6 @@ async delete(parameters: Public.Types.FilmFulltextIdx, options?: Public.Types.Fi
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "idx_fk_language_id";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "language_id", type: "pg_catalog.int2"}
-              ];
-            }
         
 async read(parameters: Public.Types.IdxFkLanguageId, options?: Public.Types.IdxFkLanguageId.Options & Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
 
@@ -5704,7 +4960,7 @@ async delete(parameters: Public.Types.IdxFkLanguageId, options?: Public.Types.Id
 }
 }
 
-          export class IdxTitle implements Index, HasDatabase {
+          export class IdxTitle implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -5712,18 +4968,6 @@ async delete(parameters: Public.Types.IdxFkLanguageId, options?: Public.Types.Id
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "idx_title";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "title", type: "pg_catalog.varchar"}
-              ];
-            }
         
 async read(parameters: Public.Types.IdxTitle, options?: Public.Types.IdxTitle.Options & Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
 
@@ -60705,3 +59949,463 @@ xmlbinary: string;
 xmloption: string;
 zeroDamagedPages: string;
 }
+export const Metadata : DatabaseMetadata = {
+  get Schemas() {
+      return [
+{
+ name: "public",
+get Procedures()   {
+      return [
+{
+ name: "film_in_stock"},
+{
+ name: "film_not_in_stock"},
+{
+ name: "get_customer_balance"},
+{
+ name: "inventory_held_by_customer"},
+{
+ name: "inventory_in_stock"},
+{
+ name: "last_day"},
+{
+ name: "rewards_report"},
+];
+},
+get Tables() {
+      return [
+{
+ name: "film_actor",
+ get Columns() { 
+    return[{name: "actor_id", type: "PgCatalog.Types.Int2"},
+{name: "film_id", type: "PgCatalog.Types.Int2"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "film_actor_pkey",
+ get Columns() { 
+    return[{name: "actor_id", type: "PgCatalog.Types.Int2"},
+{name: "film_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+{
+ name: "idx_fk_film_id",
+ get Columns() { 
+    return[{name: "film_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+];
+ }
+},
+{
+ name: "address",
+ get Columns() { 
+    return[{name: "address_id", type: "PgCatalog.Types.Int4"},
+{name: "address", type: "PgCatalog.Types.Varchar"},
+{name: "address2", type: "PgCatalog.Types.Varchar"},
+{name: "district", type: "PgCatalog.Types.Varchar"},
+{name: "city_id", type: "PgCatalog.Types.Int2"},
+{name: "postal_code", type: "PgCatalog.Types.Varchar"},
+{name: "phone", type: "PgCatalog.Types.Varchar"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "address_pkey",
+ get Columns() { 
+    return[{name: "address_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+{
+ name: "idx_fk_city_id",
+ get Columns() { 
+    return[{name: "city_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+];
+ }
+},
+{
+ name: "city",
+ get Columns() { 
+    return[{name: "city_id", type: "PgCatalog.Types.Int4"},
+{name: "city", type: "PgCatalog.Types.Varchar"},
+{name: "country_id", type: "PgCatalog.Types.Int2"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "city_pkey",
+ get Columns() { 
+    return[{name: "city_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+{
+ name: "idx_fk_country_id",
+ get Columns() { 
+    return[{name: "country_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+];
+ }
+},
+{
+ name: "customer",
+ get Columns() { 
+    return[{name: "customer_id", type: "PgCatalog.Types.Int4"},
+{name: "store_id", type: "PgCatalog.Types.Int2"},
+{name: "first_name", type: "PgCatalog.Types.Varchar"},
+{name: "last_name", type: "PgCatalog.Types.Varchar"},
+{name: "email", type: "PgCatalog.Types.Varchar"},
+{name: "address_id", type: "PgCatalog.Types.Int2"},
+{name: "activebool", type: "PgCatalog.Types.Bool"},
+{name: "create_date", type: "PgCatalog.Types.Date"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},
+{name: "active", type: "PgCatalog.Types.Int4"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "customer_pkey",
+ get Columns() { 
+    return[{name: "customer_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+{
+ name: "idx_fk_address_id",
+ get Columns() { 
+    return[{name: "address_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+{
+ name: "idx_fk_store_id",
+ get Columns() { 
+    return[{name: "store_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+{
+ name: "idx_last_name",
+ get Columns() { 
+    return[{name: "last_name", type: "PgCatalog.Types.Varchar"},];
+ },
+},
+];
+ }
+},
+{
+ name: "actor",
+ get Columns() { 
+    return[{name: "actor_id", type: "PgCatalog.Types.Int4"},
+{name: "first_name", type: "PgCatalog.Types.Varchar"},
+{name: "last_name", type: "PgCatalog.Types.Varchar"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "actor_pkey",
+ get Columns() { 
+    return[{name: "actor_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+{
+ name: "idx_actor_last_name",
+ get Columns() { 
+    return[{name: "last_name", type: "PgCatalog.Types.Varchar"},];
+ },
+},
+];
+ }
+},
+{
+ name: "film_category",
+ get Columns() { 
+    return[{name: "film_id", type: "PgCatalog.Types.Int2"},
+{name: "category_id", type: "PgCatalog.Types.Int2"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "film_category_pkey",
+ get Columns() { 
+    return[{name: "film_id", type: "PgCatalog.Types.Int2"},
+{name: "category_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+];
+ }
+},
+{
+ name: "inventory",
+ get Columns() { 
+    return[{name: "inventory_id", type: "PgCatalog.Types.Int4"},
+{name: "film_id", type: "PgCatalog.Types.Int2"},
+{name: "store_id", type: "PgCatalog.Types.Int2"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "inventory_pkey",
+ get Columns() { 
+    return[{name: "inventory_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+{
+ name: "idx_store_id_film_id",
+ get Columns() { 
+    return[{name: "store_id", type: "PgCatalog.Types.Int2"},
+{name: "film_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+];
+ }
+},
+{
+ name: "category",
+ get Columns() { 
+    return[{name: "category_id", type: "PgCatalog.Types.Int4"},
+{name: "name", type: "PgCatalog.Types.Varchar"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "category_pkey",
+ get Columns() { 
+    return[{name: "category_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+];
+ }
+},
+{
+ name: "country",
+ get Columns() { 
+    return[{name: "country_id", type: "PgCatalog.Types.Int4"},
+{name: "country", type: "PgCatalog.Types.Varchar"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "country_pkey",
+ get Columns() { 
+    return[{name: "country_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+];
+ }
+},
+{
+ name: "language",
+ get Columns() { 
+    return[{name: "language_id", type: "PgCatalog.Types.Int4"},
+{name: "name", type: "PgCatalog.Types.Bpchar"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "language_pkey",
+ get Columns() { 
+    return[{name: "language_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+];
+ }
+},
+{
+ name: "rental",
+ get Columns() { 
+    return[{name: "rental_id", type: "PgCatalog.Types.Int4"},
+{name: "rental_date", type: "PgCatalog.Types.Timestamp"},
+{name: "inventory_id", type: "PgCatalog.Types.Int4"},
+{name: "customer_id", type: "PgCatalog.Types.Int2"},
+{name: "return_date", type: "PgCatalog.Types.Timestamp"},
+{name: "staff_id", type: "PgCatalog.Types.Int2"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "rental_pkey",
+ get Columns() { 
+    return[{name: "rental_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+{
+ name: "idx_fk_inventory_id",
+ get Columns() { 
+    return[{name: "inventory_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+{
+ name: "idx_unq_rental_rental_date_inventory_id_customer_id",
+ get Columns() { 
+    return[{name: "rental_date", type: "PgCatalog.Types.Timestamp"},
+{name: "inventory_id", type: "PgCatalog.Types.Int4"},
+{name: "customer_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+];
+ }
+},
+{
+ name: "staff",
+ get Columns() { 
+    return[{name: "staff_id", type: "PgCatalog.Types.Int4"},
+{name: "first_name", type: "PgCatalog.Types.Varchar"},
+{name: "last_name", type: "PgCatalog.Types.Varchar"},
+{name: "address_id", type: "PgCatalog.Types.Int2"},
+{name: "email", type: "PgCatalog.Types.Varchar"},
+{name: "store_id", type: "PgCatalog.Types.Int2"},
+{name: "active", type: "PgCatalog.Types.Bool"},
+{name: "username", type: "PgCatalog.Types.Varchar"},
+{name: "password", type: "PgCatalog.Types.Varchar"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},
+{name: "picture", type: "PgCatalog.Types.Bytea"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "staff_pkey",
+ get Columns() { 
+    return[{name: "staff_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+];
+ }
+},
+{
+ name: "store",
+ get Columns() { 
+    return[{name: "store_id", type: "PgCatalog.Types.Int4"},
+{name: "manager_staff_id", type: "PgCatalog.Types.Int2"},
+{name: "address_id", type: "PgCatalog.Types.Int2"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "store_pkey",
+ get Columns() { 
+    return[{name: "store_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+{
+ name: "idx_unq_manager_staff_id",
+ get Columns() { 
+    return[{name: "manager_staff_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+];
+ }
+},
+{
+ name: "payment",
+ get Columns() { 
+    return[{name: "payment_id", type: "PgCatalog.Types.Int4"},
+{name: "customer_id", type: "PgCatalog.Types.Int2"},
+{name: "staff_id", type: "PgCatalog.Types.Int2"},
+{name: "rental_id", type: "PgCatalog.Types.Int4"},
+{name: "amount", type: "PgCatalog.Types.Numeric"},
+{name: "payment_date", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "payment_pkey",
+ get Columns() { 
+    return[{name: "payment_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+{
+ name: "idx_fk_customer_id",
+ get Columns() { 
+    return[{name: "customer_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+{
+ name: "idx_fk_rental_id",
+ get Columns() { 
+    return[{name: "rental_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+{
+ name: "idx_fk_staff_id",
+ get Columns() { 
+    return[{name: "staff_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+];
+ }
+},
+{
+ name: "film",
+ get Columns() { 
+    return[{name: "film_id", type: "PgCatalog.Types.Int4"},
+{name: "title", type: "PgCatalog.Types.Varchar"},
+{name: "description", type: "PgCatalog.Types.Text"},
+{name: "release_year", type: "Public.Types.Year"},
+{name: "language_id", type: "PgCatalog.Types.Int2"},
+{name: "rental_duration", type: "PgCatalog.Types.Int2"},
+{name: "rental_rate", type: "PgCatalog.Types.Numeric"},
+{name: "length", type: "PgCatalog.Types.Int2"},
+{name: "replacement_cost", type: "PgCatalog.Types.Numeric"},
+{name: "rating", type: "Public.Types.MpaaRating"},
+{name: "last_update", type: "PgCatalog.Types.Timestamp"},
+{name: "special_features", type: "PgCatalog.Types.TextArray"},
+{name: "fulltext", type: "PgCatalog.Types.Tsvector"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "film_pkey",
+ get Columns() { 
+    return[{name: "film_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+{
+ name: "film_fulltext_idx",
+ get Columns() { 
+    return[{name: "fulltext", type: "PgCatalog.Types.Tsvector"},];
+ },
+},
+{
+ name: "idx_fk_language_id",
+ get Columns() { 
+    return[{name: "language_id", type: "PgCatalog.Types.Int2"},];
+ },
+},
+{
+ name: "idx_title",
+ get Columns() { 
+    return[{name: "title", type: "PgCatalog.Types.Varchar"},];
+ },
+},
+];
+ }
+},
+];
+},
+},
+{
+ name: "pg_toast",
+get Procedures()   {
+      return [
+];
+},
+get Tables() {
+      return [
+];
+},
+},
+]; 
+}
+};

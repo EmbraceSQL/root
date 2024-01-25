@@ -15,9 +15,9 @@
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
         import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
         import { Geometry } from "@embracesql/shared";
+        import { DatabaseMetadata, Schema, Table, Column, Index, Procedure } from "@embracesql/shared";
     
 
-            import { Tables, Table, Column, Index, Procedures, Procedure } from "@embracesql/shared";
             import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
             import postgres from "postgres";
           
@@ -1611,33 +1611,41 @@ get settings() { return this.context.settings as Settings };
         
         
 
-          public Public = new class implements HasDatabase {
+            get Public() { return new Public(this); }
+            
+
+            get PgToast() { return new PgToast(this); }
+            
+}
+
+          export class Public implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
             }
+
         
 get Procedures () { return new Public.Procedures(this)} 
 get Tables () { return new Public.Tables(this)} 
-}(this)
+}
 
-          public PgToast = new class implements HasDatabase {
+          export class PgToast implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
             }
+
         
 get Procedures () { return new PgToast.Procedures(this)} 
 get Tables () { return new PgToast.Tables(this)} 
-}(this)
 }
 export namespace Public {
 
-          export class Procedures implements Procedures, HasDatabase {
+          export class Procedures implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -1645,24 +1653,12 @@ export namespace Public {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "Procedures";
-            }
-
-            /**
-             * Every procedure in this schema.
-             */
-            get procedures() {
-              return [
-                
-              ];
-            }
         
 }
 }
 export namespace PgToast {
 
-          export class Procedures implements Procedures, HasDatabase {
+          export class Procedures implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -1670,18 +1666,6 @@ export namespace PgToast {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "Procedures";
-            }
-
-            /**
-             * Every procedure in this schema.
-             */
-            get procedures() {
-              return [
-                
-              ];
-            }
         
 }
 }
@@ -1695,25 +1679,12 @@ export namespace Procedures {
 }
 export namespace Public {
 
-          export class Tables implements Tables, HasDatabase {
+          export class Tables implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "Tables";
-            }
-
-            /**
-             * Every table in this schema.
-             */
-            get tables() {
-              return [
-                new Public.Tables.Checklist(this),new Public.Tables.ChecklistItem(this)
-              ];
             }
         
 get Checklist () { return new Public.Tables.Checklist(this)} 
@@ -1722,25 +1693,12 @@ get ChecklistItem () { return new Public.Tables.ChecklistItem(this)}
 }
 export namespace PgToast {
 
-          export class Tables implements Tables, HasDatabase {
+          export class Tables implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "Tables";
-            }
-
-            /**
-             * Every table in this schema.
-             */
-            get tables() {
-              return [
-                
-              ];
             }
         
 }
@@ -1748,34 +1706,12 @@ export namespace PgToast {
 export namespace Public {
 export namespace Tables {
 
-          export class Checklist implements Table, HasDatabase {
+          export class Checklist implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "checklist";
-            }
-
-            /**
-             * Every column in the table.
-             */
-            get columns() {
-              return [
-                {name: "id", type: "pg_catalog.uuid"},{name: "name", type: "pg_catalog.text"},{name: "created_at", type: "pg_catalog.timestamp"}
-              ];
-            }
-            
-            /**
-             * Every index on the table.
-             */
-            get indexes() {
-              return [
-                new Public.Tables.Checklist.ChecklistPkey(this)
-              ];
             }
         
 
@@ -1830,34 +1766,12 @@ public get ByPrimaryKey () { return new Public.Tables.Checklist.ChecklistPkey(th
 get ChecklistPkey () { return new Public.Tables.Checklist.ChecklistPkey(this)} 
 }
 
-          export class ChecklistItem implements Table, HasDatabase {
+          export class ChecklistItem implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "checklist_item";
-            }
-
-            /**
-             * Every column in the table.
-             */
-            get columns() {
-              return [
-                {name: "id", type: "pg_catalog.uuid"},{name: "checklist_id", type: "pg_catalog.uuid"},{name: "title", type: "pg_catalog.text"},{name: "checked", type: "pg_catalog.bool"},{name: "created_at", type: "pg_catalog.timestamp"}
-              ];
-            }
-            
-            /**
-             * Every index on the table.
-             */
-            get indexes() {
-              return [
-                new Public.Tables.ChecklistItem.ChecklistItemPkey(this),new Public.Tables.ChecklistItem.ChecklistItemParent(this)
-              ];
             }
         
 
@@ -1923,7 +1837,7 @@ export namespace Public {
 export namespace Tables {
 export namespace Checklist {
 
-          export class ChecklistPkey implements Index, HasDatabase {
+          export class ChecklistPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -1931,18 +1845,6 @@ export namespace Checklist {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "checklist_pkey";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "id", type: "pg_catalog.uuid"}
-              ];
-            }
         
 async read(parameters: Public.Types.ChecklistPkey, options?: Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options) : Promise<Public.Types.Checklist>{
 
@@ -2001,7 +1903,7 @@ async delete(parameters: Public.Types.ChecklistPkey, options?: Public.Types.Chec
 }
 export namespace ChecklistItem {
 
-          export class ChecklistItemPkey implements Index, HasDatabase {
+          export class ChecklistItemPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -2009,18 +1911,6 @@ export namespace ChecklistItem {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "checklist_item_pkey";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "id", type: "pg_catalog.uuid"}
-              ];
-            }
         
 async read(parameters: Public.Types.ChecklistItemPkey, options?: Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem>{
 
@@ -2077,7 +1967,7 @@ async delete(parameters: Public.Types.ChecklistItemPkey, options?: Public.Types.
 }
 }
 
-          export class ChecklistItemParent implements Index, HasDatabase {
+          export class ChecklistItemParent implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -2085,18 +1975,6 @@ async delete(parameters: Public.Types.ChecklistItemPkey, options?: Public.Types.
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "checklist_item_parent";
-            }
-
-            /**
-             * Every column in the index.
-             */
-            get columns() {
-              return [
-                {name: "checklist_id", type: "pg_catalog.uuid"}
-              ];
-            }
         
 async read(parameters: Public.Types.ChecklistItemParent, options?: Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem[]>{
 
@@ -51728,3 +51606,75 @@ xmlbinary: string;
 xmloption: string;
 zeroDamagedPages: string;
 }
+export const Metadata : DatabaseMetadata = {
+  get Schemas() {
+      return [
+{
+ name: "public",
+get Procedures()   {
+      return [
+];
+},
+get Tables() {
+      return [
+{
+ name: "checklist",
+ get Columns() { 
+    return[{name: "id", type: "PgCatalog.Types.Uuid"},
+{name: "name", type: "PgCatalog.Types.Text"},
+{name: "created_at", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "checklist_pkey",
+ get Columns() { 
+    return[{name: "id", type: "PgCatalog.Types.Uuid"},];
+ },
+},
+];
+ }
+},
+{
+ name: "checklist_item",
+ get Columns() { 
+    return[{name: "id", type: "PgCatalog.Types.Uuid"},
+{name: "checklist_id", type: "PgCatalog.Types.Uuid"},
+{name: "title", type: "PgCatalog.Types.Text"},
+{name: "checked", type: "PgCatalog.Types.Bool"},
+{name: "created_at", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "checklist_item_pkey",
+ get Columns() { 
+    return[{name: "id", type: "PgCatalog.Types.Uuid"},];
+ },
+},
+{
+ name: "checklist_item_parent",
+ get Columns() { 
+    return[{name: "checklist_id", type: "PgCatalog.Types.Uuid"},];
+ },
+},
+];
+ }
+},
+];
+},
+},
+{
+ name: "pg_toast",
+get Procedures()   {
+      return [
+];
+},
+get Tables() {
+      return [
+];
+},
+},
+]; 
+}
+};

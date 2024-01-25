@@ -1,0 +1,28 @@
+import SQLScript from "!!raw-loader!../../../../var/data/dvdrental/sql/movie_listing.sql";
+import ReactSource from "!!raw-loader!../../../../samples/next/src/app/metadata/page.tsx";
+import CodeBlock from "@theme/CodeBlock";
+import GenerateSource from "!!raw-loader!../../../../samples/next/bin/generate";
+
+# Database Metadata
+
+Say you want to browse the schema, or explore database metadata about
+tables, columns and indexes.
+
+EmbraceSQL generates the metadata for you -- no need to query the system
+catalogs.
+
+
+## Requirements
+
+Make sure you are read as specified in the [Cookbook](./).
+
+## Steps
+
+
+### Code React
+
+The `Metadata` is an exported object as a constant. No need to even hook.
+
+<CodeBlock language="tsx" title="src/app/by_index/page.tsx" >
+  {ReactSource}
+</CodeBlock>

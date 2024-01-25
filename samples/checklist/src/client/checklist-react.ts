@@ -15,6 +15,7 @@
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
         import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
         import { Geometry } from "@embracesql/shared";
+        import { DatabaseMetadata, Schema, Table, Column, Index, Procedure } from "@embracesql/shared";
     
 // begin fetch client
 import { EmbraceSQLClient as BaseClient, EmbraceSQLClientProps, HasClient } from "@embracesql/client";
@@ -50057,3 +50058,75 @@ xmlbinary: string;
 xmloption: string;
 zeroDamagedPages: string;
 }
+export const Metadata : DatabaseMetadata = {
+  get Schemas() {
+      return [
+{
+ name: "public",
+get Procedures()   {
+      return [
+];
+},
+get Tables() {
+      return [
+{
+ name: "checklist",
+ get Columns() { 
+    return[{name: "id", type: "PgCatalog.Types.Uuid"},
+{name: "name", type: "PgCatalog.Types.Text"},
+{name: "created_at", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "checklist_pkey",
+ get Columns() { 
+    return[{name: "id", type: "PgCatalog.Types.Uuid"},];
+ },
+},
+];
+ }
+},
+{
+ name: "checklist_item",
+ get Columns() { 
+    return[{name: "id", type: "PgCatalog.Types.Uuid"},
+{name: "checklist_id", type: "PgCatalog.Types.Uuid"},
+{name: "title", type: "PgCatalog.Types.Text"},
+{name: "checked", type: "PgCatalog.Types.Bool"},
+{name: "created_at", type: "PgCatalog.Types.Timestamp"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "checklist_item_pkey",
+ get Columns() { 
+    return[{name: "id", type: "PgCatalog.Types.Uuid"},];
+ },
+},
+{
+ name: "checklist_item_parent",
+ get Columns() { 
+    return[{name: "checklist_id", type: "PgCatalog.Types.Uuid"},];
+ },
+},
+];
+ }
+},
+];
+},
+},
+{
+ name: "pg_toast",
+get Procedures()   {
+      return [
+];
+},
+get Tables() {
+      return [
+];
+},
+},
+]; 
+}
+};
