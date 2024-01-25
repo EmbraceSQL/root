@@ -15,9 +15,9 @@
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
         import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
         import { Geometry } from "@embracesql/shared";
+        import { DatabaseMetadata, Schema, Table, Column, Index, Procedure } from "@embracesql/shared";
     
 
-            import { Schema, Tables, Table, Column, Index, Procedures, Procedure } from "@embracesql/shared";
             import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
             import postgres from "postgres";
           
@@ -1493,96 +1493,96 @@
 ["InformationSchema.Types.UserMappings"]: Typecast
 [13823]: Typecast;
 ["InformationSchema.Types.UserMappingsArray"]: Typecast
-[81206]: Typecast;
+[30678]: Typecast;
 ["Public.Types.DataSrc"]: Typecast
-[81205]: Typecast;
+[30677]: Typecast;
 ["Public.Types.DataSrcArray"]: Typecast
-[81212]: Typecast;
+[30684]: Typecast;
 ["Public.Types.Datsrcln"]: Typecast
-[81211]: Typecast;
+[30683]: Typecast;
 ["Public.Types.DatsrclnArray"]: Typecast
-[81215]: Typecast;
+[30687]: Typecast;
 ["Public.Types.DerivCd"]: Typecast
-[81214]: Typecast;
+[30686]: Typecast;
 ["Public.Types.DerivCdArray"]: Typecast
-[81220]: Typecast;
+[30692]: Typecast;
 ["Public.Types.FdGroup"]: Typecast
-[81219]: Typecast;
+[30691]: Typecast;
 ["Public.Types.FdGroupArray"]: Typecast
-[81225]: Typecast;
+[30697]: Typecast;
 ["Public.Types.FoodDes"]: Typecast
-[81224]: Typecast;
+[30696]: Typecast;
 ["Public.Types.FoodDesArray"]: Typecast
-[81230]: Typecast;
+[30702]: Typecast;
 ["Public.Types.Footnote"]: Typecast
-[81229]: Typecast;
+[30701]: Typecast;
 ["Public.Types.FootnoteArray"]: Typecast
-[81235]: Typecast;
+[30707]: Typecast;
 ["Public.Types.NutData"]: Typecast
-[81234]: Typecast;
+[30706]: Typecast;
 ["Public.Types.NutDataArray"]: Typecast
-[81240]: Typecast;
+[30712]: Typecast;
 ["Public.Types.NutrDef"]: Typecast
-[81239]: Typecast;
+[30711]: Typecast;
 ["Public.Types.NutrDefArray"]: Typecast
-[81245]: Typecast;
+[30717]: Typecast;
 ["Public.Types.SrcCd"]: Typecast
-[81244]: Typecast;
+[30716]: Typecast;
 ["Public.Types.SrcCdArray"]: Typecast
-[81250]: Typecast;
+[30722]: Typecast;
 ["Public.Types.Weight"]: Typecast
-[81249]: Typecast;
+[30721]: Typecast;
 ["Public.Types.WeightArray"]: Typecast
-[81209]: Typecast;
+[30681]: Typecast;
 ["Public.Types.DataSrcTitleFulltext"]: Typecast
-[81253]: Typecast;
+[30725]: Typecast;
 ["Public.Types.DataSrcPkey"]: Typecast
-[81255]: Typecast;
+[30727]: Typecast;
 ["Public.Types.DatsrclnPkey"]: Typecast
-[81257]: Typecast;
+[30729]: Typecast;
 ["Public.Types.DerivCdPkey"]: Typecast
-[81259]: Typecast;
+[30731]: Typecast;
 ["Public.Types.FdGroupPkey"]: Typecast
-[81261]: Typecast;
+[30733]: Typecast;
 ["Public.Types.FoodDesPkey"]: Typecast
-[81263]: Typecast;
+[30735]: Typecast;
 ["Public.Types.NutDataPkey"]: Typecast
-[81265]: Typecast;
+[30737]: Typecast;
 ["Public.Types.NutrDefPkey"]: Typecast
-[81267]: Typecast;
+[30739]: Typecast;
 ["Public.Types.SrcCdPkey"]: Typecast
-[81269]: Typecast;
+[30741]: Typecast;
 ["Public.Types.WeightPkey"]: Typecast
-[81271]: Typecast;
+[30743]: Typecast;
 ["Public.Types.DatsrclnDatasrcIdIdx"]: Typecast
-[81272]: Typecast;
+[30744]: Typecast;
 ["Public.Types.FoodDesFdgrpCdIdx"]: Typecast
-[81273]: Typecast;
+[30745]: Typecast;
 ["Public.Types.FootnoteNdbNoIdx"]: Typecast
-[81274]: Typecast;
+[30746]: Typecast;
 ["Public.Types.NutDataDerivCdIdx"]: Typecast
-[81275]: Typecast;
+[30747]: Typecast;
 ["Public.Types.NutDataNutrNoIdx"]: Typecast
-[81276]: Typecast;
+[30748]: Typecast;
 ["Public.Types.NutDataSrcCdIdx"]: Typecast
-[81208]: Typecast;
-["PgToast.Types.PgToast_81204Index"]: Typecast
-[81217]: Typecast;
-["PgToast.Types.PgToast_81213Index"]: Typecast
-[81222]: Typecast;
-["PgToast.Types.PgToast_81218Index"]: Typecast
-[81227]: Typecast;
-["PgToast.Types.PgToast_81223Index"]: Typecast
-[81232]: Typecast;
-["PgToast.Types.PgToast_81228Index"]: Typecast
-[81237]: Typecast;
-["PgToast.Types.PgToast_81233Index"]: Typecast
-[81242]: Typecast;
-["PgToast.Types.PgToast_81238Index"]: Typecast
-[81247]: Typecast;
-["PgToast.Types.PgToast_81243Index"]: Typecast
-[81252]: Typecast;
-["PgToast.Types.PgToast_81248Index"]: Typecast
+[30680]: Typecast;
+["PgToast.Types.PgToast_30676Index"]: Typecast
+[30689]: Typecast;
+["PgToast.Types.PgToast_30685Index"]: Typecast
+[30694]: Typecast;
+["PgToast.Types.PgToast_30690Index"]: Typecast
+[30699]: Typecast;
+["PgToast.Types.PgToast_30695Index"]: Typecast
+[30704]: Typecast;
+["PgToast.Types.PgToast_30700Index"]: Typecast
+[30709]: Typecast;
+["PgToast.Types.PgToast_30705Index"]: Typecast
+[30714]: Typecast;
+["PgToast.Types.PgToast_30710Index"]: Typecast
+[30719]: Typecast;
+["PgToast.Types.PgToast_30715Index"]: Typecast
+[30724]: Typecast;
+["PgToast.Types.PgToast_30720Index"]: Typecast
 [2837]: Typecast;
 ["PgToast.Types.PgToast_1255Index"]: Typecast
 [4172]: Typecast;
@@ -1687,7 +1687,7 @@ get settings() { return this.context.settings as Settings };
             
 }
 
-          export class Public implements Schema, HasDatabase {
+          export class Public implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -1695,16 +1695,13 @@ get settings() { return this.context.settings as Settings };
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "public";
-            }
         
 get Procedures () { return new Public.Procedures(this)} 
 get Tables () { return new Public.Tables(this)} 
 }
 export namespace Public {
 
-          export class Procedures implements Procedures, HasDatabase {
+          export class Procedures implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -1712,18 +1709,6 @@ export namespace Public {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "Procedures";
-            }
-
-            *[Symbol.iterator](): IterableIterator<Procedure> {
-                const all : Procedure[] = [
-                  
-                ];
-                for (const procedure of all) {
-                    yield procedure;
-                }
-            }
         
 }
 }
@@ -1733,25 +1718,12 @@ export namespace Procedures {
 }
 export namespace Public {
 
-          export class Tables implements Tables, HasDatabase {
+          export class Tables implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "Tables";
-            }
-
-            *[Symbol.iterator](): IterableIterator<Table> {
-                const all : Table[] = [
-                  new Public.Tables.NutData(this),new Public.Tables.SrcCd(this),new Public.Tables.Footnote(this),new Public.Tables.NutrDef(this),new Public.Tables.DerivCd(this),new Public.Tables.FdGroup(this),new Public.Tables.Weight(this),new Public.Tables.FoodDes(this),new Public.Tables.DataSrc(this),new Public.Tables.Datsrcln(this)
-                ];
-                for (const table of all) {
-                    yield table;
-                }
             }
         
 get NutData () { return new Public.Tables.NutData(this)} 
@@ -1769,28 +1741,12 @@ get Datsrcln () { return new Public.Tables.Datsrcln(this)}
 export namespace Public {
 export namespace Tables {
 
-          export class NutData implements Table, HasDatabase {
+          export class NutData implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "nut_data";
-            }
-
-            get columns() {
-              return [
-                {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "nutr_no", type: "pg_catalog.bpchar"},{name: "nutr_val", type: "pg_catalog.float8"},{name: "num_data_pts", type: "pg_catalog.float8"},{name: "std_error", type: "pg_catalog.float8"},{name: "src_cd", type: "pg_catalog.int4"},{name: "deriv_cd", type: "pg_catalog.text"},{name: "ref_ndb_no", type: "pg_catalog.bpchar"},{name: "add_nutr_mark", type: "pg_catalog.bpchar"},{name: "num_studies", type: "pg_catalog.int4"},{name: "min", type: "pg_catalog.float8"},{name: "max", type: "pg_catalog.float8"},{name: "df", type: "pg_catalog.int4"},{name: "low_eb", type: "pg_catalog.float8"},{name: "up_eb", type: "pg_catalog.float8"},{name: "stat_cmt", type: "pg_catalog.text"},{name: "cc", type: "pg_catalog.bpchar"}
-              ];
-            }
-            
-            get indexes() {
-              return [
-                new Public.Tables.NutData.NutDataPkey(this),new Public.Tables.NutData.NutDataDerivCdIdx(this),new Public.Tables.NutData.NutDataNutrNoIdx(this),new Public.Tables.NutData.NutDataSrcCdIdx(this)
-              ];
             }
         
 
@@ -1838,28 +1794,12 @@ get NutDataNutrNoIdx () { return new Public.Tables.NutData.NutDataNutrNoIdx(this
 get NutDataSrcCdIdx () { return new Public.Tables.NutData.NutDataSrcCdIdx(this)} 
 }
 
-          export class SrcCd implements Table, HasDatabase {
+          export class SrcCd implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "src_cd";
-            }
-
-            get columns() {
-              return [
-                {name: "src_cd", type: "pg_catalog.int4"},{name: "srccd_desc", type: "pg_catalog.text"}
-              ];
-            }
-            
-            get indexes() {
-              return [
-                new Public.Tables.SrcCd.SrcCdPkey(this)
-              ];
             }
         
 
@@ -1901,28 +1841,12 @@ public get ByPrimaryKey () { return new Public.Tables.SrcCd.SrcCdPkey(this)}
 get SrcCdPkey () { return new Public.Tables.SrcCd.SrcCdPkey(this)} 
 }
 
-          export class Footnote implements Table, HasDatabase {
+          export class Footnote implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "footnote";
-            }
-
-            get columns() {
-              return [
-                {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "footnt_no", type: "pg_catalog.bpchar"},{name: "footnt_typ", type: "pg_catalog.bpchar"},{name: "nutr_no", type: "pg_catalog.bpchar"},{name: "footnt_txt", type: "pg_catalog.text"}
-              ];
-            }
-            
-            get indexes() {
-              return [
-                new Public.Tables.Footnote.FootnoteNdbNoIdx(this)
-              ];
             }
         
 
@@ -1964,28 +1888,12 @@ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefined
 get FootnoteNdbNoIdx () { return new Public.Tables.Footnote.FootnoteNdbNoIdx(this)} 
 }
 
-          export class NutrDef implements Table, HasDatabase {
+          export class NutrDef implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "nutr_def";
-            }
-
-            get columns() {
-              return [
-                {name: "nutr_no", type: "pg_catalog.bpchar"},{name: "units", type: "pg_catalog.text"},{name: "tagname", type: "pg_catalog.text"},{name: "nutrdesc", type: "pg_catalog.text"},{name: "num_dec", type: "pg_catalog.int2"},{name: "sr_order", type: "pg_catalog.int4"}
-              ];
-            }
-            
-            get indexes() {
-              return [
-                new Public.Tables.NutrDef.NutrDefPkey(this)
-              ];
             }
         
 
@@ -2027,28 +1935,12 @@ public get ByPrimaryKey () { return new Public.Tables.NutrDef.NutrDefPkey(this)}
 get NutrDefPkey () { return new Public.Tables.NutrDef.NutrDefPkey(this)} 
 }
 
-          export class DerivCd implements Table, HasDatabase {
+          export class DerivCd implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "deriv_cd";
-            }
-
-            get columns() {
-              return [
-                {name: "deriv_cd", type: "pg_catalog.text"},{name: "derivcd_desc", type: "pg_catalog.text"}
-              ];
-            }
-            
-            get indexes() {
-              return [
-                new Public.Tables.DerivCd.DerivCdPkey(this)
-              ];
             }
         
 
@@ -2090,28 +1982,12 @@ public get ByPrimaryKey () { return new Public.Tables.DerivCd.DerivCdPkey(this)}
 get DerivCdPkey () { return new Public.Tables.DerivCd.DerivCdPkey(this)} 
 }
 
-          export class FdGroup implements Table, HasDatabase {
+          export class FdGroup implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "fd_group";
-            }
-
-            get columns() {
-              return [
-                {name: "fdgrp_cd", type: "pg_catalog.bpchar"},{name: "fddrp_desc", type: "pg_catalog.text"}
-              ];
-            }
-            
-            get indexes() {
-              return [
-                new Public.Tables.FdGroup.FdGroupPkey(this)
-              ];
             }
         
 
@@ -2153,28 +2029,12 @@ public get ByPrimaryKey () { return new Public.Tables.FdGroup.FdGroupPkey(this)}
 get FdGroupPkey () { return new Public.Tables.FdGroup.FdGroupPkey(this)} 
 }
 
-          export class Weight implements Table, HasDatabase {
+          export class Weight implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "weight";
-            }
-
-            get columns() {
-              return [
-                {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "seq", type: "pg_catalog.bpchar"},{name: "amount", type: "pg_catalog.float8"},{name: "msre_desc", type: "pg_catalog.text"},{name: "gm_wgt", type: "pg_catalog.float8"},{name: "num_data_pts", type: "pg_catalog.int4"},{name: "std_dev", type: "pg_catalog.float8"}
-              ];
-            }
-            
-            get indexes() {
-              return [
-                new Public.Tables.Weight.WeightPkey(this)
-              ];
             }
         
 
@@ -2216,28 +2076,12 @@ public get ByPrimaryKey () { return new Public.Tables.Weight.WeightPkey(this)}
 get WeightPkey () { return new Public.Tables.Weight.WeightPkey(this)} 
 }
 
-          export class FoodDes implements Table, HasDatabase {
+          export class FoodDes implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "food_des";
-            }
-
-            get columns() {
-              return [
-                {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "fdgrp_cd", type: "pg_catalog.bpchar"},{name: "long_desc", type: "pg_catalog.text"},{name: "shrt_desc", type: "pg_catalog.text"},{name: "comname", type: "pg_catalog.text"},{name: "manufacname", type: "pg_catalog.text"},{name: "survey", type: "pg_catalog.bpchar"},{name: "ref_desc", type: "pg_catalog.text"},{name: "refuse", type: "pg_catalog.int4"},{name: "sciname", type: "pg_catalog.text"},{name: "n_factor", type: "pg_catalog.float8"},{name: "pro_factor", type: "pg_catalog.float8"},{name: "fat_factor", type: "pg_catalog.float8"},{name: "cho_factor", type: "pg_catalog.float8"}
-              ];
-            }
-            
-            get indexes() {
-              return [
-                new Public.Tables.FoodDes.FoodDesPkey(this),new Public.Tables.FoodDes.FoodDesFdgrpCdIdx(this)
-              ];
             }
         
 
@@ -2281,28 +2125,12 @@ get FoodDesPkey () { return new Public.Tables.FoodDes.FoodDesPkey(this)}
 get FoodDesFdgrpCdIdx () { return new Public.Tables.FoodDes.FoodDesFdgrpCdIdx(this)} 
 }
 
-          export class DataSrc implements Table, HasDatabase {
+          export class DataSrc implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "data_src";
-            }
-
-            get columns() {
-              return [
-                {name: "datasrc_id", type: "pg_catalog.bpchar"},{name: "authors", type: "pg_catalog.text"},{name: "title", type: "pg_catalog.text"},{name: "year", type: "pg_catalog.int4"},{name: "journal", type: "pg_catalog.text"},{name: "vol_city", type: "pg_catalog.text"},{name: "issue_state", type: "pg_catalog.text"},{name: "start_page", type: "pg_catalog.text"},{name: "end_page", type: "pg_catalog.text"}
-              ];
-            }
-            
-            get indexes() {
-              return [
-                new Public.Tables.DataSrc.DataSrcTitleFulltext(this),new Public.Tables.DataSrc.DataSrcPkey(this)
-              ];
             }
         
 
@@ -2346,28 +2174,12 @@ public get ByPrimaryKey () { return new Public.Tables.DataSrc.DataSrcPkey(this)}
 get DataSrcPkey () { return new Public.Tables.DataSrc.DataSrcPkey(this)} 
 }
 
-          export class Datsrcln implements Table, HasDatabase {
+          export class Datsrcln implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "datsrcln";
-            }
-
-            get columns() {
-              return [
-                {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "nutr_no", type: "pg_catalog.bpchar"},{name: "datasrc_id", type: "pg_catalog.bpchar"}
-              ];
-            }
-            
-            get indexes() {
-              return [
-                new Public.Tables.Datsrcln.DatsrclnPkey(this),new Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx(this)
-              ];
             }
         
 
@@ -2416,7 +2228,7 @@ export namespace Public {
 export namespace Tables {
 export namespace NutData {
 
-          export class NutDataPkey implements Index, HasDatabase {
+          export class NutDataPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -2424,15 +2236,6 @@ export namespace NutData {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "nut_data_pkey";
-            }
-
-            get columns() {
-              return [
-                {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "nutr_no", type: "pg_catalog.bpchar"}
-              ];
-            }
         
 async read(parameters: Public.Types.NutDataPkey, options?: Public.Types.NutDataPkey.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData>{
 
@@ -2489,7 +2292,7 @@ async delete(parameters: Public.Types.NutDataPkey, options?: Public.Types.NutDat
 }
 }
 
-          export class NutDataDerivCdIdx implements Index, HasDatabase {
+          export class NutDataDerivCdIdx implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -2497,15 +2300,6 @@ async delete(parameters: Public.Types.NutDataPkey, options?: Public.Types.NutDat
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "nut_data_deriv_cd_idx";
-            }
-
-            get columns() {
-              return [
-                {name: "deriv_cd", type: "pg_catalog.text"}
-              ];
-            }
         
 async read(parameters: Public.Types.NutDataDerivCdIdx, options?: Public.Types.NutDataDerivCdIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
 
@@ -2562,7 +2356,7 @@ async delete(parameters: Public.Types.NutDataDerivCdIdx, options?: Public.Types.
 }
 }
 
-          export class NutDataNutrNoIdx implements Index, HasDatabase {
+          export class NutDataNutrNoIdx implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -2570,15 +2364,6 @@ async delete(parameters: Public.Types.NutDataDerivCdIdx, options?: Public.Types.
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "nut_data_nutr_no_idx";
-            }
-
-            get columns() {
-              return [
-                {name: "nutr_no", type: "pg_catalog.bpchar"}
-              ];
-            }
         
 async read(parameters: Public.Types.NutDataNutrNoIdx, options?: Public.Types.NutDataNutrNoIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
 
@@ -2635,7 +2420,7 @@ async delete(parameters: Public.Types.NutDataNutrNoIdx, options?: Public.Types.N
 }
 }
 
-          export class NutDataSrcCdIdx implements Index, HasDatabase {
+          export class NutDataSrcCdIdx implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -2643,15 +2428,6 @@ async delete(parameters: Public.Types.NutDataNutrNoIdx, options?: Public.Types.N
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "nut_data_src_cd_idx";
-            }
-
-            get columns() {
-              return [
-                {name: "src_cd", type: "pg_catalog.int4"}
-              ];
-            }
         
 async read(parameters: Public.Types.NutDataSrcCdIdx, options?: Public.Types.NutDataSrcCdIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
 
@@ -2710,7 +2486,7 @@ async delete(parameters: Public.Types.NutDataSrcCdIdx, options?: Public.Types.Nu
 }
 export namespace SrcCd {
 
-          export class SrcCdPkey implements Index, HasDatabase {
+          export class SrcCdPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -2718,15 +2494,6 @@ export namespace SrcCd {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "src_cd_pkey";
-            }
-
-            get columns() {
-              return [
-                {name: "src_cd", type: "pg_catalog.int4"}
-              ];
-            }
         
 async read(parameters: Public.Types.SrcCdPkey, options?: Public.Types.SrcCdPkey.Options & Public.Tables.SrcCd.Options) : Promise<Public.Types.SrcCd>{
 
@@ -2785,7 +2552,7 @@ async delete(parameters: Public.Types.SrcCdPkey, options?: Public.Types.SrcCdPke
 }
 export namespace Footnote {
 
-          export class FootnoteNdbNoIdx implements Index, HasDatabase {
+          export class FootnoteNdbNoIdx implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -2793,15 +2560,6 @@ export namespace Footnote {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "footnote_ndb_no_idx";
-            }
-
-            get columns() {
-              return [
-                {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "nutr_no", type: "pg_catalog.bpchar"}
-              ];
-            }
         
 async read(parameters: Public.Types.FootnoteNdbNoIdx, options?: Public.Types.FootnoteNdbNoIdx.Options & Public.Tables.Footnote.Options) : Promise<Public.Types.Footnote[]>{
 
@@ -2860,7 +2618,7 @@ async delete(parameters: Public.Types.FootnoteNdbNoIdx, options?: Public.Types.F
 }
 export namespace NutrDef {
 
-          export class NutrDefPkey implements Index, HasDatabase {
+          export class NutrDefPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -2868,15 +2626,6 @@ export namespace NutrDef {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "nutr_def_pkey";
-            }
-
-            get columns() {
-              return [
-                {name: "nutr_no", type: "pg_catalog.bpchar"}
-              ];
-            }
         
 async read(parameters: Public.Types.NutrDefPkey, options?: Public.Types.NutrDefPkey.Options & Public.Tables.NutrDef.Options) : Promise<Public.Types.NutrDef>{
 
@@ -2935,7 +2684,7 @@ async delete(parameters: Public.Types.NutrDefPkey, options?: Public.Types.NutrDe
 }
 export namespace DerivCd {
 
-          export class DerivCdPkey implements Index, HasDatabase {
+          export class DerivCdPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -2943,15 +2692,6 @@ export namespace DerivCd {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "deriv_cd_pkey";
-            }
-
-            get columns() {
-              return [
-                {name: "deriv_cd", type: "pg_catalog.text"}
-              ];
-            }
         
 async read(parameters: Public.Types.DerivCdPkey, options?: Public.Types.DerivCdPkey.Options & Public.Tables.DerivCd.Options) : Promise<Public.Types.DerivCd>{
 
@@ -3010,7 +2750,7 @@ async delete(parameters: Public.Types.DerivCdPkey, options?: Public.Types.DerivC
 }
 export namespace FdGroup {
 
-          export class FdGroupPkey implements Index, HasDatabase {
+          export class FdGroupPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -3018,15 +2758,6 @@ export namespace FdGroup {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "fd_group_pkey";
-            }
-
-            get columns() {
-              return [
-                {name: "fdgrp_cd", type: "pg_catalog.bpchar"}
-              ];
-            }
         
 async read(parameters: Public.Types.FdGroupPkey, options?: Public.Types.FdGroupPkey.Options & Public.Tables.FdGroup.Options) : Promise<Public.Types.FdGroup>{
 
@@ -3085,7 +2816,7 @@ async delete(parameters: Public.Types.FdGroupPkey, options?: Public.Types.FdGrou
 }
 export namespace Weight {
 
-          export class WeightPkey implements Index, HasDatabase {
+          export class WeightPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -3093,15 +2824,6 @@ export namespace Weight {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "weight_pkey";
-            }
-
-            get columns() {
-              return [
-                {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "seq", type: "pg_catalog.bpchar"}
-              ];
-            }
         
 async read(parameters: Public.Types.WeightPkey, options?: Public.Types.WeightPkey.Options & Public.Tables.Weight.Options) : Promise<Public.Types.Weight>{
 
@@ -3160,7 +2882,7 @@ async delete(parameters: Public.Types.WeightPkey, options?: Public.Types.WeightP
 }
 export namespace FoodDes {
 
-          export class FoodDesPkey implements Index, HasDatabase {
+          export class FoodDesPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -3168,15 +2890,6 @@ export namespace FoodDes {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "food_des_pkey";
-            }
-
-            get columns() {
-              return [
-                {name: "ndb_no", type: "pg_catalog.bpchar"}
-              ];
-            }
         
 async read(parameters: Public.Types.FoodDesPkey, options?: Public.Types.FoodDesPkey.Options & Public.Tables.FoodDes.Options) : Promise<Public.Types.FoodDes>{
 
@@ -3233,7 +2946,7 @@ async delete(parameters: Public.Types.FoodDesPkey, options?: Public.Types.FoodDe
 }
 }
 
-          export class FoodDesFdgrpCdIdx implements Index, HasDatabase {
+          export class FoodDesFdgrpCdIdx implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -3241,15 +2954,6 @@ async delete(parameters: Public.Types.FoodDesPkey, options?: Public.Types.FoodDe
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "food_des_fdgrp_cd_idx";
-            }
-
-            get columns() {
-              return [
-                {name: "fdgrp_cd", type: "pg_catalog.bpchar"}
-              ];
-            }
         
 async read(parameters: Public.Types.FoodDesFdgrpCdIdx, options?: Public.Types.FoodDesFdgrpCdIdx.Options & Public.Tables.FoodDes.Options) : Promise<Public.Types.FoodDes[]>{
 
@@ -3308,7 +3012,7 @@ async delete(parameters: Public.Types.FoodDesFdgrpCdIdx, options?: Public.Types.
 }
 export namespace DataSrc {
 
-          export class DataSrcTitleFulltext implements Index, HasDatabase {
+          export class DataSrcTitleFulltext implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -3316,15 +3020,6 @@ export namespace DataSrc {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "data_src_title_fulltext";
-            }
-
-            get columns() {
-              return [
-                {name: "title", type: "pg_catalog.tsvector"}
-              ];
-            }
         
 async read(parameters: Public.Types.DataSrcTitleFulltext, options?: Public.Types.DataSrcTitleFulltext.Options & Public.Tables.DataSrc.Options) : Promise<Public.Types.DataSrc[]>{
 
@@ -3381,7 +3076,7 @@ async delete(parameters: Public.Types.DataSrcTitleFulltext, options?: Public.Typ
 }
 }
 
-          export class DataSrcPkey implements Index, HasDatabase {
+          export class DataSrcPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -3389,15 +3084,6 @@ async delete(parameters: Public.Types.DataSrcTitleFulltext, options?: Public.Typ
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "data_src_pkey";
-            }
-
-            get columns() {
-              return [
-                {name: "datasrc_id", type: "pg_catalog.bpchar"}
-              ];
-            }
         
 async read(parameters: Public.Types.DataSrcPkey, options?: Public.Types.DataSrcPkey.Options & Public.Tables.DataSrc.Options) : Promise<Public.Types.DataSrc>{
 
@@ -3456,7 +3142,7 @@ async delete(parameters: Public.Types.DataSrcPkey, options?: Public.Types.DataSr
 }
 export namespace Datsrcln {
 
-          export class DatsrclnPkey implements Index, HasDatabase {
+          export class DatsrclnPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -3464,15 +3150,6 @@ export namespace Datsrcln {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "datsrcln_pkey";
-            }
-
-            get columns() {
-              return [
-                {name: "ndb_no", type: "pg_catalog.bpchar"},{name: "nutr_no", type: "pg_catalog.bpchar"},{name: "datasrc_id", type: "pg_catalog.bpchar"}
-              ];
-            }
         
 async read(parameters: Public.Types.DatsrclnPkey, options?: Public.Types.DatsrclnPkey.Options & Public.Tables.Datsrcln.Options) : Promise<Public.Types.Datsrcln>{
 
@@ -3529,7 +3206,7 @@ async delete(parameters: Public.Types.DatsrclnPkey, options?: Public.Types.Datsr
 }
 }
 
-          export class DatsrclnDatasrcIdIdx implements Index, HasDatabase {
+          export class DatsrclnDatasrcIdIdx implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -3537,15 +3214,6 @@ async delete(parameters: Public.Types.DatsrclnPkey, options?: Public.Types.Datsr
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "datsrcln_datasrc_id_idx";
-            }
-
-            get columns() {
-              return [
-                {name: "datasrc_id", type: "pg_catalog.bpchar"}
-              ];
-            }
         
 async read(parameters: Public.Types.DatsrclnDatasrcIdIdx, options?: Public.Types.DatsrclnDatasrcIdIdx.Options & Public.Tables.Datsrcln.Options) : Promise<Public.Types.Datsrcln[]>{
 
@@ -14173,47 +13841,47 @@ export type PrimaryKey = Public.Types.DatsrclnPkey;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_81204Index = {
+export type PgToast_30676Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_81213Index = {
+export type PgToast_30685Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_81218Index = {
+export type PgToast_30690Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_81223Index = {
+export type PgToast_30695Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_81228Index = {
+export type PgToast_30700Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_81233Index = {
+export type PgToast_30705Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_81238Index = {
+export type PgToast_30710Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_81243Index = {
+export type PgToast_30715Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_81248Index = {
+export type PgToast_30720Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -26982,11 +26650,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_81204Index {
+export namespace PgToast_30676Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_81204Index.is(from)) {
+if (PgToast.Types.PgToast_30676Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26997,11 +26665,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_81213Index {
+export namespace PgToast_30685Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_81213Index.is(from)) {
+if (PgToast.Types.PgToast_30685Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -27012,11 +26680,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_81218Index {
+export namespace PgToast_30690Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_81218Index.is(from)) {
+if (PgToast.Types.PgToast_30690Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -27027,11 +26695,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_81223Index {
+export namespace PgToast_30695Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_81223Index.is(from)) {
+if (PgToast.Types.PgToast_30695Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -27042,11 +26710,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_81228Index {
+export namespace PgToast_30700Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_81228Index.is(from)) {
+if (PgToast.Types.PgToast_30700Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -27057,11 +26725,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_81233Index {
+export namespace PgToast_30705Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_81233Index.is(from)) {
+if (PgToast.Types.PgToast_30705Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -27072,11 +26740,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_81238Index {
+export namespace PgToast_30710Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_81238Index.is(from)) {
+if (PgToast.Types.PgToast_30710Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -27087,11 +26755,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_81243Index {
+export namespace PgToast_30715Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_81243Index.is(from)) {
+if (PgToast.Types.PgToast_30715Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -27102,11 +26770,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_81248Index {
+export namespace PgToast_30720Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_81248Index.is(from)) {
+if (PgToast.Types.PgToast_30720Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -33129,72 +32797,72 @@ export namespace Datsrcln {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_81204Index {
-export function is(value: any) : value is PgToast.Types.PgToast_81204Index {
+export namespace PgToast_30676Index {
+export function is(value: any) : value is PgToast.Types.PgToast_30676Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_81213Index {
-export function is(value: any) : value is PgToast.Types.PgToast_81213Index {
+export namespace PgToast_30685Index {
+export function is(value: any) : value is PgToast.Types.PgToast_30685Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_81218Index {
-export function is(value: any) : value is PgToast.Types.PgToast_81218Index {
+export namespace PgToast_30690Index {
+export function is(value: any) : value is PgToast.Types.PgToast_30690Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_81223Index {
-export function is(value: any) : value is PgToast.Types.PgToast_81223Index {
+export namespace PgToast_30695Index {
+export function is(value: any) : value is PgToast.Types.PgToast_30695Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_81228Index {
-export function is(value: any) : value is PgToast.Types.PgToast_81228Index {
+export namespace PgToast_30700Index {
+export function is(value: any) : value is PgToast.Types.PgToast_30700Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_81233Index {
-export function is(value: any) : value is PgToast.Types.PgToast_81233Index {
+export namespace PgToast_30705Index {
+export function is(value: any) : value is PgToast.Types.PgToast_30705Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_81238Index {
-export function is(value: any) : value is PgToast.Types.PgToast_81238Index {
+export namespace PgToast_30710Index {
+export function is(value: any) : value is PgToast.Types.PgToast_30710Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_81243Index {
-export function is(value: any) : value is PgToast.Types.PgToast_81243Index {
+export namespace PgToast_30715Index {
+export function is(value: any) : value is PgToast.Types.PgToast_30715Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_81248Index {
-export function is(value: any) : value is PgToast.Types.PgToast_81248Index {
+export namespace PgToast_30720Index {
+export function is(value: any) : value is PgToast.Types.PgToast_30720Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -37549,48 +37217,48 @@ export namespace Datsrcln {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_81204Index {
- export function equals(l: PgToast.Types.PgToast_81204Index|undefined, r: unknown) {
+export namespace PgToast_30676Index {
+ export function equals(l: PgToast.Types.PgToast_30676Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_81213Index {
- export function equals(l: PgToast.Types.PgToast_81213Index|undefined, r: unknown) {
+export namespace PgToast_30685Index {
+ export function equals(l: PgToast.Types.PgToast_30685Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_81218Index {
- export function equals(l: PgToast.Types.PgToast_81218Index|undefined, r: unknown) {
+export namespace PgToast_30690Index {
+ export function equals(l: PgToast.Types.PgToast_30690Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_81223Index {
- export function equals(l: PgToast.Types.PgToast_81223Index|undefined, r: unknown) {
+export namespace PgToast_30695Index {
+ export function equals(l: PgToast.Types.PgToast_30695Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_81228Index {
- export function equals(l: PgToast.Types.PgToast_81228Index|undefined, r: unknown) {
+export namespace PgToast_30700Index {
+ export function equals(l: PgToast.Types.PgToast_30700Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_81233Index {
- export function equals(l: PgToast.Types.PgToast_81233Index|undefined, r: unknown) {
+export namespace PgToast_30705Index {
+ export function equals(l: PgToast.Types.PgToast_30705Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_81238Index {
- export function equals(l: PgToast.Types.PgToast_81238Index|undefined, r: unknown) {
+export namespace PgToast_30710Index {
+ export function equals(l: PgToast.Types.PgToast_30710Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_81243Index {
- export function equals(l: PgToast.Types.PgToast_81243Index|undefined, r: unknown) {
+export namespace PgToast_30715Index {
+ export function equals(l: PgToast.Types.PgToast_30715Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_81248Index {
- export function equals(l: PgToast.Types.PgToast_81248Index|undefined, r: unknown) {
+export namespace PgToast_30720Index {
+ export function equals(l: PgToast.Types.PgToast_30720Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -54837,7 +54505,7 @@ export namespace Datsrcln {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_81204Index {
+export namespace PgToast_30676Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54853,7 +54521,7 @@ export type Options = {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_81213Index {
+export namespace PgToast_30685Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54869,7 +54537,7 @@ export type Options = {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_81218Index {
+export namespace PgToast_30690Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54885,7 +54553,7 @@ export type Options = {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_81223Index {
+export namespace PgToast_30695Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54901,7 +54569,7 @@ export type Options = {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_81228Index {
+export namespace PgToast_30700Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54917,7 +54585,7 @@ export type Options = {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_81233Index {
+export namespace PgToast_30705Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54933,7 +54601,7 @@ export type Options = {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_81238Index {
+export namespace PgToast_30710Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54949,7 +54617,7 @@ export type Options = {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_81243Index {
+export namespace PgToast_30715Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54965,7 +54633,7 @@ export type Options = {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_81248Index {
+export namespace PgToast_30720Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -55989,3 +55657,278 @@ xmlbinary: string;
 xmloption: string;
 zeroDamagedPages: string;
 }
+export const Metadata : DatabaseMetadata = {
+  get Schemas() {
+      return [
+{
+ name: "public",
+get Procedures()   {
+      return [
+];
+},
+get Tables() {
+      return [
+{
+ name: "nut_data",
+ get Columns() { 
+    return[{name: "ndb_no", type: "PgCatalog.Types.Bpchar"},
+{name: "nutr_no", type: "PgCatalog.Types.Bpchar"},
+{name: "nutr_val", type: "PgCatalog.Types.Float8"},
+{name: "num_data_pts", type: "PgCatalog.Types.Float8"},
+{name: "std_error", type: "PgCatalog.Types.Float8"},
+{name: "src_cd", type: "PgCatalog.Types.Int4"},
+{name: "deriv_cd", type: "PgCatalog.Types.Text"},
+{name: "ref_ndb_no", type: "PgCatalog.Types.Bpchar"},
+{name: "add_nutr_mark", type: "PgCatalog.Types.Bpchar"},
+{name: "num_studies", type: "PgCatalog.Types.Int4"},
+{name: "min", type: "PgCatalog.Types.Float8"},
+{name: "max", type: "PgCatalog.Types.Float8"},
+{name: "df", type: "PgCatalog.Types.Int4"},
+{name: "low_eb", type: "PgCatalog.Types.Float8"},
+{name: "up_eb", type: "PgCatalog.Types.Float8"},
+{name: "stat_cmt", type: "PgCatalog.Types.Text"},
+{name: "cc", type: "PgCatalog.Types.Bpchar"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "nut_data_pkey",
+ get Columns() { 
+    return[{name: "ndb_no", type: "PgCatalog.Types.Bpchar"},
+{name: "nutr_no", type: "PgCatalog.Types.Bpchar"},];
+ },
+},
+{
+ name: "nut_data_deriv_cd_idx",
+ get Columns() { 
+    return[{name: "deriv_cd", type: "PgCatalog.Types.Text"},];
+ },
+},
+{
+ name: "nut_data_nutr_no_idx",
+ get Columns() { 
+    return[{name: "nutr_no", type: "PgCatalog.Types.Bpchar"},];
+ },
+},
+{
+ name: "nut_data_src_cd_idx",
+ get Columns() { 
+    return[{name: "src_cd", type: "PgCatalog.Types.Int4"},];
+ },
+},
+];
+ }
+},
+{
+ name: "src_cd",
+ get Columns() { 
+    return[{name: "src_cd", type: "PgCatalog.Types.Int4"},
+{name: "srccd_desc", type: "PgCatalog.Types.Text"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "src_cd_pkey",
+ get Columns() { 
+    return[{name: "src_cd", type: "PgCatalog.Types.Int4"},];
+ },
+},
+];
+ }
+},
+{
+ name: "footnote",
+ get Columns() { 
+    return[{name: "ndb_no", type: "PgCatalog.Types.Bpchar"},
+{name: "footnt_no", type: "PgCatalog.Types.Bpchar"},
+{name: "footnt_typ", type: "PgCatalog.Types.Bpchar"},
+{name: "nutr_no", type: "PgCatalog.Types.Bpchar"},
+{name: "footnt_txt", type: "PgCatalog.Types.Text"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "footnote_ndb_no_idx",
+ get Columns() { 
+    return[{name: "ndb_no", type: "PgCatalog.Types.Bpchar"},
+{name: "nutr_no", type: "PgCatalog.Types.Bpchar"},];
+ },
+},
+];
+ }
+},
+{
+ name: "nutr_def",
+ get Columns() { 
+    return[{name: "nutr_no", type: "PgCatalog.Types.Bpchar"},
+{name: "units", type: "PgCatalog.Types.Text"},
+{name: "tagname", type: "PgCatalog.Types.Text"},
+{name: "nutrdesc", type: "PgCatalog.Types.Text"},
+{name: "num_dec", type: "PgCatalog.Types.Int2"},
+{name: "sr_order", type: "PgCatalog.Types.Int4"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "nutr_def_pkey",
+ get Columns() { 
+    return[{name: "nutr_no", type: "PgCatalog.Types.Bpchar"},];
+ },
+},
+];
+ }
+},
+{
+ name: "deriv_cd",
+ get Columns() { 
+    return[{name: "deriv_cd", type: "PgCatalog.Types.Text"},
+{name: "derivcd_desc", type: "PgCatalog.Types.Text"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "deriv_cd_pkey",
+ get Columns() { 
+    return[{name: "deriv_cd", type: "PgCatalog.Types.Text"},];
+ },
+},
+];
+ }
+},
+{
+ name: "fd_group",
+ get Columns() { 
+    return[{name: "fdgrp_cd", type: "PgCatalog.Types.Bpchar"},
+{name: "fddrp_desc", type: "PgCatalog.Types.Text"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "fd_group_pkey",
+ get Columns() { 
+    return[{name: "fdgrp_cd", type: "PgCatalog.Types.Bpchar"},];
+ },
+},
+];
+ }
+},
+{
+ name: "weight",
+ get Columns() { 
+    return[{name: "ndb_no", type: "PgCatalog.Types.Bpchar"},
+{name: "seq", type: "PgCatalog.Types.Bpchar"},
+{name: "amount", type: "PgCatalog.Types.Float8"},
+{name: "msre_desc", type: "PgCatalog.Types.Text"},
+{name: "gm_wgt", type: "PgCatalog.Types.Float8"},
+{name: "num_data_pts", type: "PgCatalog.Types.Int4"},
+{name: "std_dev", type: "PgCatalog.Types.Float8"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "weight_pkey",
+ get Columns() { 
+    return[{name: "ndb_no", type: "PgCatalog.Types.Bpchar"},
+{name: "seq", type: "PgCatalog.Types.Bpchar"},];
+ },
+},
+];
+ }
+},
+{
+ name: "food_des",
+ get Columns() { 
+    return[{name: "ndb_no", type: "PgCatalog.Types.Bpchar"},
+{name: "fdgrp_cd", type: "PgCatalog.Types.Bpchar"},
+{name: "long_desc", type: "PgCatalog.Types.Text"},
+{name: "shrt_desc", type: "PgCatalog.Types.Text"},
+{name: "comname", type: "PgCatalog.Types.Text"},
+{name: "manufacname", type: "PgCatalog.Types.Text"},
+{name: "survey", type: "PgCatalog.Types.Bpchar"},
+{name: "ref_desc", type: "PgCatalog.Types.Text"},
+{name: "refuse", type: "PgCatalog.Types.Int4"},
+{name: "sciname", type: "PgCatalog.Types.Text"},
+{name: "n_factor", type: "PgCatalog.Types.Float8"},
+{name: "pro_factor", type: "PgCatalog.Types.Float8"},
+{name: "fat_factor", type: "PgCatalog.Types.Float8"},
+{name: "cho_factor", type: "PgCatalog.Types.Float8"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "food_des_pkey",
+ get Columns() { 
+    return[{name: "ndb_no", type: "PgCatalog.Types.Bpchar"},];
+ },
+},
+{
+ name: "food_des_fdgrp_cd_idx",
+ get Columns() { 
+    return[{name: "fdgrp_cd", type: "PgCatalog.Types.Bpchar"},];
+ },
+},
+];
+ }
+},
+{
+ name: "data_src",
+ get Columns() { 
+    return[{name: "datasrc_id", type: "PgCatalog.Types.Bpchar"},
+{name: "authors", type: "PgCatalog.Types.Text"},
+{name: "title", type: "PgCatalog.Types.Text"},
+{name: "year", type: "PgCatalog.Types.Int4"},
+{name: "journal", type: "PgCatalog.Types.Text"},
+{name: "vol_city", type: "PgCatalog.Types.Text"},
+{name: "issue_state", type: "PgCatalog.Types.Text"},
+{name: "start_page", type: "PgCatalog.Types.Text"},
+{name: "end_page", type: "PgCatalog.Types.Text"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "data_src_title_fulltext",
+ get Columns() { 
+    return[{name: "title", type: "PgCatalog.Types.Tsvector"},];
+ },
+},
+{
+ name: "data_src_pkey",
+ get Columns() { 
+    return[{name: "datasrc_id", type: "PgCatalog.Types.Bpchar"},];
+ },
+},
+];
+ }
+},
+{
+ name: "datsrcln",
+ get Columns() { 
+    return[{name: "ndb_no", type: "PgCatalog.Types.Bpchar"},
+{name: "nutr_no", type: "PgCatalog.Types.Bpchar"},
+{name: "datasrc_id", type: "PgCatalog.Types.Bpchar"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "datsrcln_pkey",
+ get Columns() { 
+    return[{name: "ndb_no", type: "PgCatalog.Types.Bpchar"},
+{name: "nutr_no", type: "PgCatalog.Types.Bpchar"},
+{name: "datasrc_id", type: "PgCatalog.Types.Bpchar"},];
+ },
+},
+{
+ name: "datsrcln_datasrc_id_idx",
+ get Columns() { 
+    return[{name: "datasrc_id", type: "PgCatalog.Types.Bpchar"},];
+ },
+},
+];
+ }
+},
+];
+},
+},
+]; 
+}
+};

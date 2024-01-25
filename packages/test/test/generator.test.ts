@@ -4,6 +4,7 @@ import {
   generateOperationDispatcher,
   generateSchemaDefinitions,
 } from "@embracesql/postgres/src/generator";
+import { generateMetadata } from "@embracesql/postgres/src/generator/typescript/generateMetadata";
 import { generateReactComponents } from "@embracesql/react/src/typescript/generateReactComponents";
 import path from "path";
 import ts from "typescript";
@@ -76,6 +77,16 @@ describe("The generator can", () => {
       "postgres://postgres:postgres@localhost/usda",
     );
     const source = await generateDatabaseRoot(context);
+    const compiled = ts.transpileModule(source, {
+      compilerOptions: { module: ts.ModuleKind.CommonJS },
+    });
+    expect(compiled).toBeTruthy();
+  });
+  it("create TypeScript Database metadata for usda sample", async () => {
+    context = await initializeContext(
+      "postgres://postgres:postgres@localhost/usda",
+    );
+    const source = await generateMetadata(context);
     const compiled = ts.transpileModule(source, {
       compilerOptions: { module: ts.ModuleKind.CommonJS },
     });

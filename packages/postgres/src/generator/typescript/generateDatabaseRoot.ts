@@ -55,7 +55,6 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
               // starting off with all the imports, append to this list
               // and it will be the final output
               `
-            import { Schema, Tables, Table, Column, Index, Procedures, Procedure } from "@embracesql/shared";
             import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
             import postgres from "postgres";
           `,
@@ -155,7 +154,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
         [ASTKind.Schema]: {
           before: async (_, node) => {
             return `
-          export class ${node.typescriptName} implements Schema, HasDatabase {
+          export class ${node.typescriptName} implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -163,9 +162,6 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "${node.name}";
-            }
         `;
           },
           after: async () => {
@@ -196,9 +192,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
         [ASTKind.Procedures]: {
           before: async (_, node) => {
             return `
-          export class ${
-            node.typescriptName
-          } implements Procedures, HasDatabase {
+          export class ${node.typescriptName} implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -206,20 +200,6 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "${node.name}";
-            }
-
-            *[Symbol.iterator](): IterableIterator<Procedure> {
-                const all : Procedure[] = [
-                  ${node.procedures
-                    .map((t) => `new ${t.typescriptNamespacedName}(this)`)
-                    .join(",")}
-                ];
-                for (const procedure of all) {
-                    yield procedure;
-                }
-            }
         `;
           },
           after: async () => {
@@ -274,7 +254,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
               ? `parameters : ${node.parametersType?.typescriptNamespacedName}`
               : ``;
             return [
-              `export class ${node.typescriptName} implements Procedure, HasDatabase {`,
+              `export class ${node.typescriptName} implements HasDatabase {`,
               `  constructor(private hasDatabase: HasDatabase) {}`,
               `  get database() { return this.hasDatabase.database; }`,
               `  get name() { return "${node.name}"; }`,
@@ -313,27 +293,12 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
         [ASTKind.Tables]: {
           before: async (_, node) => {
             return `
-          export class ${node.typescriptName} implements Tables, HasDatabase {
+          export class ${node.typescriptName} implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "${node.name}";
-            }
-
-            *[Symbol.iterator](): IterableIterator<Table> {
-                const all : Table[] = [
-                  ${node.tables
-                    .map((t) => `new ${t.typescriptNamespacedName}(this)`)
-                    .join(",")}
-                ];
-                for (const table of all) {
-                    yield table;
-                }
             }
         `;
           },
@@ -360,35 +325,12 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
         [ASTKind.Table]: {
           before: async (_, node) => {
             return `
-          export class ${node.typescriptName} implements Table, HasDatabase {
+          export class ${node.typescriptName} implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "${node.name}";
-            }
-
-            get Columns() {
-              return [
-                ${node.type.attributes
-                  .map(
-                    (a) =>
-                      `{name: "${a.name}", type: "${a.type.databaseName}"}`,
-                  )
-                  .join(",")}
-              ];
-            }
-            
-            get Indexes() {
-              return [
-                ${node.indexes
-                  .map((i) => `new ${i.typescriptNamespacedName}(this)`)
-                  .join(",")}
-              ];
             }
         `;
           },
@@ -422,7 +364,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
         [ASTKind.Index]: {
           before: async (_, node) => {
             return `
-          export class ${node.typescriptName} implements Index, HasDatabase {
+          export class ${node.typescriptName} implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -430,20 +372,6 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "${node.name}";
-            }
-
-            get Columns() {
-              return [
-                ${node.type.attributes
-                  .map(
-                    (a) =>
-                      `{name: "${a.name}", type: "${a.type.databaseName}"}`,
-                  )
-                  .join(",")}
-              ];
-            }
         `;
           },
           after: async () => {

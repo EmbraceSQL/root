@@ -17,7 +17,7 @@
         import { Geometry } from "@embracesql/shared";
     
 
-            import { Tables, Table, Column, Index } from "@embracesql/shared";
+            import { Tables, Table, Column, Index, Procedures, Procedure } from "@embracesql/shared";
             import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
             import postgres from "postgres";
           
@@ -1779,8 +1779,11 @@ get settings() { return this.context.settings as Settings };
               return this.hasDatabase.database;
             }
         
+get Procedures () { return new Public.Procedures(this)} 
+get Tables () { return new Public.Tables(this)} 
+}(this)
 
-          public Procedures = new class implements HasDatabase {
+          public PgToast = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -1788,15 +1791,73 @@ get settings() { return this.context.settings as Settings };
               return this.hasDatabase.database;
             }
         
+get Procedures () { return new PgToast.Procedures(this)} 
+get Tables () { return new PgToast.Tables(this)} 
+}(this)
+}
+export namespace Public {
 
-          public FilmInStock = new class implements HasDatabase {
+          export class Procedures implements Procedures, HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
             }
+
+            get name() {
+              return "Procedures";
+            }
+
+            /**
+             * Every procedure in this schema.
+             */
+            get procedures() {
+              return [
+                new Public.Procedures.FilmInStock(this),new Public.Procedures.FilmNotInStock(this),new Public.Procedures.GetCustomerBalance(this),new Public.Procedures.InventoryHeldByCustomer(this),new Public.Procedures.InventoryInStock(this),new Public.Procedures.LastDay(this),new Public.Procedures.RewardsReport(this)
+              ];
+            }
         
+get FilmInStock () { return new Public.Procedures.FilmInStock(this)} 
+get FilmNotInStock () { return new Public.Procedures.FilmNotInStock(this)} 
+get GetCustomerBalance () { return new Public.Procedures.GetCustomerBalance(this)} 
+get InventoryHeldByCustomer () { return new Public.Procedures.InventoryHeldByCustomer(this)} 
+get InventoryInStock () { return new Public.Procedures.InventoryInStock(this)} 
+get LastDay () { return new Public.Procedures.LastDay(this)} 
+get RewardsReport () { return new Public.Procedures.RewardsReport(this)} 
+}
+}
+export namespace PgToast {
+
+          export class Procedures implements Procedures, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "Procedures";
+            }
+
+            /**
+             * Every procedure in this schema.
+             */
+            get procedures() {
+              return [
+                
+              ];
+            }
+        
+}
+}
+export namespace Public {
+export namespace Procedures {
+export class FilmInStock implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "film_in_stock"; }
 async call(parameters : Public.Procedures.FilmInStock.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -1812,16 +1873,11 @@ async call(parameters : Public.Procedures.FilmInStock.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public FilmNotInStock = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class FilmNotInStock implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "film_not_in_stock"; }
 async call(parameters : Public.Procedures.FilmNotInStock.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -1837,16 +1893,11 @@ async call(parameters : Public.Procedures.FilmNotInStock.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GetCustomerBalance = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GetCustomerBalance implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "get_customer_balance"; }
 async call(parameters : Public.Procedures.GetCustomerBalance.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -1863,16 +1914,11 @@ async call(parameters : Public.Procedures.GetCustomerBalance.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public InventoryHeldByCustomer = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class InventoryHeldByCustomer implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "inventory_held_by_customer"; }
 async call(parameters : Public.Procedures.InventoryHeldByCustomer.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -1889,16 +1935,11 @@ async call(parameters : Public.Procedures.InventoryHeldByCustomer.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public InventoryInStock = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class InventoryInStock implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "inventory_in_stock"; }
 async call(parameters : Public.Procedures.InventoryInStock.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -1915,16 +1956,11 @@ async call(parameters : Public.Procedures.InventoryInStock.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public LastDay = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class LastDay implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "last_day"; }
 async call(parameters : Public.Procedures.LastDay.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -1941,16 +1977,11 @@ async call(parameters : Public.Procedures.LastDay.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public RewardsReport = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class RewardsReport implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "rewards_report"; }
 async call(parameters : Public.Procedures.RewardsReport.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -1967,31 +1998,12 @@ async call(parameters : Public.Procedures.RewardsReport.Parameters) {
               return responseBody;
            
 }
-}(this)
-}(this)
-get Tables () { return new Public.Tables(this)} 
-}(this)
-
-          public PgToast = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-          public Procedures = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-}(this)
-get Tables () { return new PgToast.Tables(this)} 
-}(this)
+}
+}
+}
+export namespace PgToast {
+export namespace Procedures {
+}
 }
 export namespace Public {
 

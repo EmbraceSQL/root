@@ -1,6 +1,7 @@
 import { GenerationContext } from "..";
 import { asDocComment } from "../../util";
 import { emptyTypescriptRow } from "./autocrud/shared";
+import { generateMetadata } from "./generateMetadata";
 import { generatePrimaryKeyPickers } from "./generatePrimaryKeyPickers";
 import { generateSettings } from "./generateSettings";
 import { generateTypeComparison } from "./generateTypeComparison";
@@ -228,6 +229,7 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
   generationBuffer.push(await generateTypeComparison(context));
   generationBuffer.push(await generateTypeOptions(context));
   generationBuffer.push(await generateSettings(context));
+  generationBuffer.push(await generateMetadata(context));
 
   return generationBuffer.join("\n");
 };

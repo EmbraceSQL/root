@@ -193,6 +193,17 @@ export type PossiblyEmpty<T> = {
 };
 
 /**
+ * Database metadata describing the database and contained
+ * objects.
+ */
+export interface DatabaseMetadata {
+  /**
+   * Databases are divided into schemas.
+   */
+  Schemas: Schema[];
+}
+
+/**
  * Database schema containing database objects.
  */
 export interface Schema {
@@ -204,18 +215,13 @@ export interface Schema {
   /**
    * All procedures in this schema.
    */
-  Procedures: Procedures;
+  Procedures: Procedure[];
 
   /**
    * All tables in this schema.
    */
-  Tables: Tables;
+  Tables: Table[];
 }
-
-/**
- * Grouping of procedures.
- */
-export interface Procedures extends Iterable<Procedure> {}
 
 /**
  * Callable procedure or function in the database.
@@ -226,11 +232,6 @@ export interface Procedure {
    */
   name: string;
 }
-
-/**
- * Grouping of tables.
- */
-export interface Tables extends Iterable<Table> {}
 
 /**
  * An individual Table.

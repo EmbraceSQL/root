@@ -17,7 +17,7 @@
         import { Geometry } from "@embracesql/shared";
     
 
-            import { Tables, Table, Column, Index } from "@embracesql/shared";
+            import { Tables, Table, Column, Index, Procedures, Procedure } from "@embracesql/shared";
             import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
             import postgres from "postgres";
           
@@ -1619,16 +1619,7 @@ get settings() { return this.context.settings as Settings };
               return this.hasDatabase.database;
             }
         
-
-          public Procedures = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-}(this)
+get Procedures () { return new Public.Procedures(this)} 
 get Tables () { return new Public.Tables(this)} 
 }(this)
 
@@ -1640,18 +1631,67 @@ get Tables () { return new Public.Tables(this)}
               return this.hasDatabase.database;
             }
         
+get Procedures () { return new PgToast.Procedures(this)} 
+get Tables () { return new PgToast.Tables(this)} 
+}(this)
+}
+export namespace Public {
 
-          public Procedures = new class implements HasDatabase {
+          export class Procedures implements Procedures, HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
             }
+
+            get name() {
+              return "Procedures";
+            }
+
+            /**
+             * Every procedure in this schema.
+             */
+            get procedures() {
+              return [
+                
+              ];
+            }
         
-}(this)
-get Tables () { return new PgToast.Tables(this)} 
-}(this)
+}
+}
+export namespace PgToast {
+
+          export class Procedures implements Procedures, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "Procedures";
+            }
+
+            /**
+             * Every procedure in this schema.
+             */
+            get procedures() {
+              return [
+                
+              ];
+            }
+        
+}
+}
+export namespace Public {
+export namespace Procedures {
+}
+}
+export namespace PgToast {
+export namespace Procedures {
+}
 }
 export namespace Public {
 

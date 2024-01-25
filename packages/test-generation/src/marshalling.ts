@@ -15,9 +15,9 @@
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
         import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
         import { Geometry } from "@embracesql/shared";
+        import { DatabaseMetadata, Schema, Table, Column, Index, Procedure } from "@embracesql/shared";
     
 
-            import { Schema, Tables, Table, Column, Index, Procedures, Procedure } from "@embracesql/shared";
             import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
             import postgres from "postgres";
           
@@ -1493,19 +1493,19 @@
 ["InformationSchema.Types.UserMappings"]: Typecast
 [13823]: Typecast;
 ["InformationSchema.Types.UserMappingsArray"]: Typecast
-[79750]: Typecast;
+[29222]: Typecast;
 ["Public.Types.CubeArray"]: Typecast
-[79745]: Typecast;
+[29217]: Typecast;
 ["Public.Types.Cube"]: Typecast
-[79851]: Typecast;
+[29323]: Typecast;
 ["Public.Types.Gtrgm"]: Typecast
-[79854]: Typecast;
+[29326]: Typecast;
 ["Public.Types.GtrgmArray"]: Typecast
-[79917]: Typecast;
+[29389]: Typecast;
 ["Public.Types.Slug"]: Typecast
-[79916]: Typecast;
+[29388]: Typecast;
 ["Public.Types.SlugArray"]: Typecast
-[79919]: Typecast;
+[29391]: Typecast;
 ["Public.Types.SlugPkey"]: Typecast
 
 ["Public.Procedures.CubeIn.Parameters"]: Typecast
@@ -1564,9 +1564,9 @@
 
 ["Public.Procedures.Cube_0aec.Parameters"]: Typecast
 
-["Public.Procedures.Cube_7bfd.Parameters"]: Typecast
+["Public.Procedures.Cube_5ffb.Parameters"]: Typecast
 
-["Public.Procedures.CubeF584.Parameters"]: Typecast
+["Public.Procedures.Cube_9e1c.Parameters"]: Typecast
 
 ["Public.Procedures.CubeIsPoint.Parameters"]: Typecast
 
@@ -1647,75 +1647,75 @@
 ["Public.Procedures.StrictWordSimilarityDistCommutatorOp.Parameters"]: Typecast
 
 ["Public.Procedures.GtrgmOptions.Parameters"]: Typecast
-[79927]: Typecast;
+[29399]: Typecast;
 ["Api.Types.EchoType"]: Typecast
-[79926]: Typecast;
+[29398]: Typecast;
 ["Api.Types.EchoTypeArray"]: Typecast
-[79930]: Typecast;
+[29402]: Typecast;
 ["Api.Types.EchoTypeNested"]: Typecast
-[79929]: Typecast;
+[29401]: Typecast;
 ["Api.Types.EchoTypeNestedArray"]: Typecast
-[79936]: Typecast;
+[29408]: Typecast;
 ["Api.Types.Answer"]: Typecast
-[79935]: Typecast;
+[29407]: Typecast;
 ["Api.Types.AnswerArray"]: Typecast
-[79946]: Typecast;
+[29418]: Typecast;
 ["Api.Types.QAndA"]: Typecast
-[79945]: Typecast;
+[29417]: Typecast;
 ["Api.Types.QAndAArray"]: Typecast
-[79952]: Typecast;
+[29424]: Typecast;
 ["Api.Types.Timezones"]: Typecast
-[79951]: Typecast;
+[29423]: Typecast;
 ["Api.Types.TimezonesArray"]: Typecast
-[79959]: Typecast;
+[29431]: Typecast;
 ["Api.Types.Points"]: Typecast
-[79958]: Typecast;
+[29430]: Typecast;
 ["Api.Types.PointsArray"]: Typecast
-[79965]: Typecast;
+[29437]: Typecast;
 ["Api.Types.Lines"]: Typecast
-[79964]: Typecast;
+[29436]: Typecast;
 ["Api.Types.LinesArray"]: Typecast
-[79971]: Typecast;
+[29443]: Typecast;
 ["Api.Types.LineSegments"]: Typecast
-[79970]: Typecast;
+[29442]: Typecast;
 ["Api.Types.LineSegmentsArray"]: Typecast
-[79977]: Typecast;
+[29449]: Typecast;
 ["Api.Types.Boxes"]: Typecast
-[79976]: Typecast;
+[29448]: Typecast;
 ["Api.Types.BoxesArray"]: Typecast
-[79983]: Typecast;
+[29455]: Typecast;
 ["Api.Types.Paths"]: Typecast
-[79982]: Typecast;
+[29454]: Typecast;
 ["Api.Types.PathsArray"]: Typecast
-[79991]: Typecast;
+[29463]: Typecast;
 ["Api.Types.Polygons"]: Typecast
-[79990]: Typecast;
+[29462]: Typecast;
 ["Api.Types.PolygonsArray"]: Typecast
-[79999]: Typecast;
+[29471]: Typecast;
 ["Api.Types.Circles"]: Typecast
-[79998]: Typecast;
+[29470]: Typecast;
 ["Api.Types.CirclesArray"]: Typecast
-[79949]: Typecast;
+[29421]: Typecast;
 ["Api.Types.QAndAAnswer"]: Typecast
-[79955]: Typecast;
+[29427]: Typecast;
 ["Api.Types.TrgmIdxGist"]: Typecast
-[79956]: Typecast;
+[29428]: Typecast;
 ["Api.Types.TrgmIdxGin"]: Typecast
-[79961]: Typecast;
+[29433]: Typecast;
 ["Api.Types.PointsPkey"]: Typecast
-[79967]: Typecast;
+[29439]: Typecast;
 ["Api.Types.LinesPkey"]: Typecast
-[79973]: Typecast;
+[29445]: Typecast;
 ["Api.Types.LineSegmentsPkey"]: Typecast
-[79979]: Typecast;
+[29451]: Typecast;
 ["Api.Types.BoxesPkey"]: Typecast
-[79987]: Typecast;
+[29459]: Typecast;
 ["Api.Types.PathsPkey"]: Typecast
-[79995]: Typecast;
+[29467]: Typecast;
 ["Api.Types.PolygonsPkey"]: Typecast
-[80001]: Typecast;
+[29473]: Typecast;
 ["Api.Types.CirclesPkey"]: Typecast
-[79924]: Typecast;
+[29396]: Typecast;
 ["Api.Types.EchoTable"]: Typecast
 
 ["Api.Procedures.Echo.Parameters"]: Typecast
@@ -1733,14 +1733,14 @@
 ["Api.Procedures.EchoTypeSet.Parameters"]: Typecast
 
 ["Api.Procedures.EchoAnswer.Parameters"]: Typecast
-[79948]: Typecast;
-["PgToast.Types.PgToast_79944Index"]: Typecast
-[79954]: Typecast;
-["PgToast.Types.PgToast_79950Index"]: Typecast
-[79986]: Typecast;
-["PgToast.Types.PgToast_79981Index"]: Typecast
-[79994]: Typecast;
-["PgToast.Types.PgToast_79989Index"]: Typecast
+[29420]: Typecast;
+["PgToast.Types.PgToast_29416Index"]: Typecast
+[29426]: Typecast;
+["PgToast.Types.PgToast_29422Index"]: Typecast
+[29458]: Typecast;
+["PgToast.Types.PgToast_29453Index"]: Typecast
+[29466]: Typecast;
+["PgToast.Types.PgToast_29461Index"]: Typecast
 [2837]: Typecast;
 ["PgToast.Types.PgToast_1255Index"]: Typecast
 [4172]: Typecast;
@@ -1851,7 +1851,7 @@ get settings() { return this.context.settings as Settings };
             
 }
 
-          export class Public implements Schema, HasDatabase {
+          export class Public implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -1859,15 +1859,12 @@ get settings() { return this.context.settings as Settings };
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "public";
-            }
         
 get Procedures () { return new Public.Procedures(this)} 
 get Tables () { return new Public.Tables(this)} 
 }
 
-          export class Api implements Schema, HasDatabase {
+          export class Api implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -1875,15 +1872,12 @@ get Tables () { return new Public.Tables(this)}
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "api";
-            }
         
 get Procedures () { return new Api.Procedures(this)} 
 get Tables () { return new Api.Tables(this)} 
 }
 
-          export class PgToast implements Schema, HasDatabase {
+          export class PgToast implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -1891,16 +1885,13 @@ get Tables () { return new Api.Tables(this)}
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "pg_toast";
-            }
         
 get Procedures () { return new PgToast.Procedures(this)} 
 get Tables () { return new PgToast.Tables(this)} 
 }
 export namespace Public {
 
-          export class Procedures implements Procedures, HasDatabase {
+          export class Procedures implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -1908,18 +1899,6 @@ export namespace Public {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "Procedures";
-            }
-
-            *[Symbol.iterator](): IterableIterator<Procedure> {
-                const all : Procedure[] = [
-                  new Public.Procedures.CubeIn(this),new Public.Procedures.Cube_9c45(this),new Public.Procedures.Cube_2e6d(this),new Public.Procedures.CubeOut(this),new Public.Procedures.CubeEq(this),new Public.Procedures.CubeNe(this),new Public.Procedures.CubeLt(this),new Public.Procedures.CubeGt(this),new Public.Procedures.CubeLe(this),new Public.Procedures.CubeGe(this),new Public.Procedures.CubeCmp(this),new Public.Procedures.CubeContains(this),new Public.Procedures.CubeContained(this),new Public.Procedures.CubeOverlap(this),new Public.Procedures.CubeUnion(this),new Public.Procedures.CubeInter(this),new Public.Procedures.CubeSize(this),new Public.Procedures.CubeSubset(this),new Public.Procedures.CubeDistance(this),new Public.Procedures.DistanceChebyshev(this),new Public.Procedures.DistanceTaxicab(this),new Public.Procedures.CubeDim(this),new Public.Procedures.CubeLlCoord(this),new Public.Procedures.CubeUrCoord(this),new Public.Procedures.CubeCoord(this),new Public.Procedures.CubeCoordLlur(this),new Public.Procedures.CubeA5b3(this),new Public.Procedures.Cube_0aec(this),new Public.Procedures.Cube_7bfd(this),new Public.Procedures.CubeF584(this),new Public.Procedures.CubeIsPoint(this),new Public.Procedures.CubeEnlarge(this),new Public.Procedures.GCubeConsistent(this),new Public.Procedures.GCubePenalty(this),new Public.Procedures.GCubePicksplit(this),new Public.Procedures.GCubeUnion(this),new Public.Procedures.GCubeSame(this),new Public.Procedures.GCubeDistance(this),new Public.Procedures.CubeRecv(this),new Public.Procedures.CubeSend(this),new Public.Procedures.SetLimit(this),new Public.Procedures.ShowLimit(this),new Public.Procedures.ShowTrgm(this),new Public.Procedures.Similarity(this),new Public.Procedures.SimilarityOp(this),new Public.Procedures.WordSimilarity(this),new Public.Procedures.WordSimilarityOp(this),new Public.Procedures.WordSimilarityCommutatorOp(this),new Public.Procedures.SimilarityDist(this),new Public.Procedures.WordSimilarityDistOp(this),new Public.Procedures.WordSimilarityDistCommutatorOp(this),new Public.Procedures.GtrgmIn(this),new Public.Procedures.GtrgmOut(this),new Public.Procedures.GtrgmConsistent(this),new Public.Procedures.GtrgmDistance(this),new Public.Procedures.GtrgmCompress(this),new Public.Procedures.GtrgmDecompress(this),new Public.Procedures.GtrgmPenalty(this),new Public.Procedures.GtrgmPicksplit(this),new Public.Procedures.GtrgmUnion(this),new Public.Procedures.GtrgmSame(this),new Public.Procedures.GinExtractValueTrgm(this),new Public.Procedures.GinExtractQueryTrgm(this),new Public.Procedures.GinTrgmConsistent(this),new Public.Procedures.GinTrgmTriconsistent(this),new Public.Procedures.StrictWordSimilarity(this),new Public.Procedures.StrictWordSimilarityOp(this),new Public.Procedures.StrictWordSimilarityCommutatorOp(this),new Public.Procedures.StrictWordSimilarityDistOp(this),new Public.Procedures.StrictWordSimilarityDistCommutatorOp(this),new Public.Procedures.GtrgmOptions(this)
-                ];
-                for (const procedure of all) {
-                    yield procedure;
-                }
-            }
         
 get CubeIn () { return new Public.Procedures.CubeIn(this)} 
 get Cube_9c45 () { return new Public.Procedures.Cube_9c45(this)} 
@@ -1949,8 +1928,8 @@ get CubeCoord () { return new Public.Procedures.CubeCoord(this)}
 get CubeCoordLlur () { return new Public.Procedures.CubeCoordLlur(this)} 
 get CubeA5b3 () { return new Public.Procedures.CubeA5b3(this)} 
 get Cube_0aec () { return new Public.Procedures.Cube_0aec(this)} 
-get Cube_7bfd () { return new Public.Procedures.Cube_7bfd(this)} 
-get CubeF584 () { return new Public.Procedures.CubeF584(this)} 
+get Cube_5ffb () { return new Public.Procedures.Cube_5ffb(this)} 
+get Cube_9e1c () { return new Public.Procedures.Cube_9e1c(this)} 
 get CubeIsPoint () { return new Public.Procedures.CubeIsPoint(this)} 
 get CubeEnlarge () { return new Public.Procedures.CubeEnlarge(this)} 
 get GCubeConsistent () { return new Public.Procedures.GCubeConsistent(this)} 
@@ -1996,7 +1975,7 @@ get GtrgmOptions () { return new Public.Procedures.GtrgmOptions(this)}
 }
 export namespace Api {
 
-          export class Procedures implements Procedures, HasDatabase {
+          export class Procedures implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -2004,18 +1983,6 @@ export namespace Api {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "Procedures";
-            }
-
-            *[Symbol.iterator](): IterableIterator<Procedure> {
-                const all : Procedure[] = [
-                  new Api.Procedures.Echo(this),new Api.Procedures.EchoSet(this),new Api.Procedures.EchoTable(this),new Api.Procedures.EchoType(this),new Api.Procedures.EchoTypeArray(this),new Api.Procedures.EchoTypeNested(this),new Api.Procedures.EchoTypeSet(this),new Api.Procedures.EchoAnswer(this)
-                ];
-                for (const procedure of all) {
-                    yield procedure;
-                }
-            }
         
 get Echo () { return new Api.Procedures.Echo(this)} 
 get EchoSet () { return new Api.Procedures.EchoSet(this)} 
@@ -2029,7 +1996,7 @@ get EchoAnswer () { return new Api.Procedures.EchoAnswer(this)}
 }
 export namespace PgToast {
 
-          export class Procedures implements Procedures, HasDatabase {
+          export class Procedures implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -2037,24 +2004,12 @@ export namespace PgToast {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "Procedures";
-            }
-
-            *[Symbol.iterator](): IterableIterator<Procedure> {
-                const all : Procedure[] = [
-                  
-                ];
-                for (const procedure of all) {
-                    yield procedure;
-                }
-            }
         
 }
 }
 export namespace Public {
 export namespace Procedures {
-export class CubeIn implements Procedure, HasDatabase {
+export class CubeIn implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_in"; }
@@ -2075,7 +2030,7 @@ async call(parameters : Public.Procedures.CubeIn.Parameters) {
            
 }
 }
-export class Cube_9c45 implements Procedure, HasDatabase {
+export class Cube_9c45 implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_9c45"; }
@@ -2096,7 +2051,7 @@ async call(parameters : Public.Procedures.Cube_9c45.Parameters) {
            
 }
 }
-export class Cube_2e6d implements Procedure, HasDatabase {
+export class Cube_2e6d implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_2e6d"; }
@@ -2117,7 +2072,7 @@ async call(parameters : Public.Procedures.Cube_2e6d.Parameters) {
            
 }
 }
-export class CubeOut implements Procedure, HasDatabase {
+export class CubeOut implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_out"; }
@@ -2130,7 +2085,7 @@ async call(parameters : Public.Procedures.CubeOut.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_out( ${ typed[79745](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.cube_out( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].cube_out) );
@@ -2138,7 +2093,7 @@ async call(parameters : Public.Procedures.CubeOut.Parameters) {
            
 }
 }
-export class CubeEq implements Procedure, HasDatabase {
+export class CubeEq implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_eq"; }
@@ -2151,7 +2106,7 @@ async call(parameters : Public.Procedures.CubeEq.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_eq( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[79745](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_eq( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_eq) );
@@ -2159,7 +2114,7 @@ async call(parameters : Public.Procedures.CubeEq.Parameters) {
            
 }
 }
-export class CubeNe implements Procedure, HasDatabase {
+export class CubeNe implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_ne"; }
@@ -2172,7 +2127,7 @@ async call(parameters : Public.Procedures.CubeNe.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_ne( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[79745](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_ne( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_ne) );
@@ -2180,7 +2135,7 @@ async call(parameters : Public.Procedures.CubeNe.Parameters) {
            
 }
 }
-export class CubeLt implements Procedure, HasDatabase {
+export class CubeLt implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_lt"; }
@@ -2193,7 +2148,7 @@ async call(parameters : Public.Procedures.CubeLt.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_lt( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[79745](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_lt( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_lt) );
@@ -2201,7 +2156,7 @@ async call(parameters : Public.Procedures.CubeLt.Parameters) {
            
 }
 }
-export class CubeGt implements Procedure, HasDatabase {
+export class CubeGt implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_gt"; }
@@ -2214,7 +2169,7 @@ async call(parameters : Public.Procedures.CubeGt.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_gt( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[79745](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_gt( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_gt) );
@@ -2222,7 +2177,7 @@ async call(parameters : Public.Procedures.CubeGt.Parameters) {
            
 }
 }
-export class CubeLe implements Procedure, HasDatabase {
+export class CubeLe implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_le"; }
@@ -2235,7 +2190,7 @@ async call(parameters : Public.Procedures.CubeLe.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_le( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[79745](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_le( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_le) );
@@ -2243,7 +2198,7 @@ async call(parameters : Public.Procedures.CubeLe.Parameters) {
            
 }
 }
-export class CubeGe implements Procedure, HasDatabase {
+export class CubeGe implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_ge"; }
@@ -2256,7 +2211,7 @@ async call(parameters : Public.Procedures.CubeGe.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_ge( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[79745](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_ge( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_ge) );
@@ -2264,7 +2219,7 @@ async call(parameters : Public.Procedures.CubeGe.Parameters) {
            
 }
 }
-export class CubeCmp implements Procedure, HasDatabase {
+export class CubeCmp implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_cmp"; }
@@ -2277,7 +2232,7 @@ async call(parameters : Public.Procedures.CubeCmp.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_cmp( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[79745](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_cmp( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].cube_cmp) );
@@ -2285,7 +2240,7 @@ async call(parameters : Public.Procedures.CubeCmp.Parameters) {
            
 }
 }
-export class CubeContains implements Procedure, HasDatabase {
+export class CubeContains implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_contains"; }
@@ -2298,7 +2253,7 @@ async call(parameters : Public.Procedures.CubeContains.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_contains( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[79745](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_contains( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_contains) );
@@ -2306,7 +2261,7 @@ async call(parameters : Public.Procedures.CubeContains.Parameters) {
            
 }
 }
-export class CubeContained implements Procedure, HasDatabase {
+export class CubeContained implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_contained"; }
@@ -2319,7 +2274,7 @@ async call(parameters : Public.Procedures.CubeContained.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_contained( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[79745](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_contained( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_contained) );
@@ -2327,7 +2282,7 @@ async call(parameters : Public.Procedures.CubeContained.Parameters) {
            
 }
 }
-export class CubeOverlap implements Procedure, HasDatabase {
+export class CubeOverlap implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_overlap"; }
@@ -2340,7 +2295,7 @@ async call(parameters : Public.Procedures.CubeOverlap.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_overlap( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[79745](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_overlap( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_overlap) );
@@ -2348,7 +2303,7 @@ async call(parameters : Public.Procedures.CubeOverlap.Parameters) {
            
 }
 }
-export class CubeUnion implements Procedure, HasDatabase {
+export class CubeUnion implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_union"; }
@@ -2361,7 +2316,7 @@ async call(parameters : Public.Procedures.CubeUnion.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_union( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[79745](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_union( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_union) );
@@ -2369,7 +2324,7 @@ async call(parameters : Public.Procedures.CubeUnion.Parameters) {
            
 }
 }
-export class CubeInter implements Procedure, HasDatabase {
+export class CubeInter implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_inter"; }
@@ -2382,7 +2337,7 @@ async call(parameters : Public.Procedures.CubeInter.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_inter( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[79745](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_inter( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_inter) );
@@ -2390,7 +2345,7 @@ async call(parameters : Public.Procedures.CubeInter.Parameters) {
            
 }
 }
-export class CubeSize implements Procedure, HasDatabase {
+export class CubeSize implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_size"; }
@@ -2403,7 +2358,7 @@ async call(parameters : Public.Procedures.CubeSize.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_size( ${ typed[79745](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.cube_size( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_size) );
@@ -2411,7 +2366,7 @@ async call(parameters : Public.Procedures.CubeSize.Parameters) {
            
 }
 }
-export class CubeSubset implements Procedure, HasDatabase {
+export class CubeSubset implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_subset"; }
@@ -2424,7 +2379,7 @@ async call(parameters : Public.Procedures.CubeSubset.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_subset( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[1007](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_subset( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[1007](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_subset) );
@@ -2432,7 +2387,7 @@ async call(parameters : Public.Procedures.CubeSubset.Parameters) {
            
 }
 }
-export class CubeDistance implements Procedure, HasDatabase {
+export class CubeDistance implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_distance"; }
@@ -2445,7 +2400,7 @@ async call(parameters : Public.Procedures.CubeDistance.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_distance( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[79745](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_distance( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_distance) );
@@ -2453,7 +2408,7 @@ async call(parameters : Public.Procedures.CubeDistance.Parameters) {
            
 }
 }
-export class DistanceChebyshev implements Procedure, HasDatabase {
+export class DistanceChebyshev implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "distance_chebyshev"; }
@@ -2466,7 +2421,7 @@ async call(parameters : Public.Procedures.DistanceChebyshev.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.distance_chebyshev( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[79745](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.distance_chebyshev( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].distance_chebyshev) );
@@ -2474,7 +2429,7 @@ async call(parameters : Public.Procedures.DistanceChebyshev.Parameters) {
            
 }
 }
-export class DistanceTaxicab implements Procedure, HasDatabase {
+export class DistanceTaxicab implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "distance_taxicab"; }
@@ -2487,7 +2442,7 @@ async call(parameters : Public.Procedures.DistanceTaxicab.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.distance_taxicab( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[79745](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.distance_taxicab( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].distance_taxicab) );
@@ -2495,7 +2450,7 @@ async call(parameters : Public.Procedures.DistanceTaxicab.Parameters) {
            
 }
 }
-export class CubeDim implements Procedure, HasDatabase {
+export class CubeDim implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_dim"; }
@@ -2508,7 +2463,7 @@ async call(parameters : Public.Procedures.CubeDim.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_dim( ${ typed[79745](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.cube_dim( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].cube_dim) );
@@ -2516,7 +2471,7 @@ async call(parameters : Public.Procedures.CubeDim.Parameters) {
            
 }
 }
-export class CubeLlCoord implements Procedure, HasDatabase {
+export class CubeLlCoord implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_ll_coord"; }
@@ -2529,7 +2484,7 @@ async call(parameters : Public.Procedures.CubeLlCoord.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_ll_coord( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_ll_coord( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_ll_coord) );
@@ -2537,7 +2492,7 @@ async call(parameters : Public.Procedures.CubeLlCoord.Parameters) {
            
 }
 }
-export class CubeUrCoord implements Procedure, HasDatabase {
+export class CubeUrCoord implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_ur_coord"; }
@@ -2550,7 +2505,7 @@ async call(parameters : Public.Procedures.CubeUrCoord.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_ur_coord( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_ur_coord( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_ur_coord) );
@@ -2558,7 +2513,7 @@ async call(parameters : Public.Procedures.CubeUrCoord.Parameters) {
            
 }
 }
-export class CubeCoord implements Procedure, HasDatabase {
+export class CubeCoord implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_coord"; }
@@ -2571,7 +2526,7 @@ async call(parameters : Public.Procedures.CubeCoord.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_coord( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_coord( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_coord) );
@@ -2579,7 +2534,7 @@ async call(parameters : Public.Procedures.CubeCoord.Parameters) {
            
 }
 }
-export class CubeCoordLlur implements Procedure, HasDatabase {
+export class CubeCoordLlur implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_coord_llur"; }
@@ -2592,7 +2547,7 @@ async call(parameters : Public.Procedures.CubeCoordLlur.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_coord_llur( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube_coord_llur( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_coord_llur) );
@@ -2600,7 +2555,7 @@ async call(parameters : Public.Procedures.CubeCoordLlur.Parameters) {
            
 }
 }
-export class CubeA5b3 implements Procedure, HasDatabase {
+export class CubeA5b3 implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_a5b3"; }
@@ -2621,7 +2576,7 @@ async call(parameters : Public.Procedures.CubeA5b3.Parameters) {
            
 }
 }
-export class Cube_0aec implements Procedure, HasDatabase {
+export class Cube_0aec implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_0aec"; }
@@ -2642,11 +2597,11 @@ async call(parameters : Public.Procedures.Cube_0aec.Parameters) {
            
 }
 }
-export class Cube_7bfd implements Procedure, HasDatabase {
+export class Cube_5ffb implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
-  get name() { return "cube_7bfd"; }
-async call(parameters : Public.Procedures.Cube_7bfd.Parameters) {
+  get name() { return "cube_5ffb"; }
+async call(parameters : Public.Procedures.Cube_5ffb.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2655,7 +2610,7 @@ async call(parameters : Public.Procedures.Cube_7bfd.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const response = await sql`SELECT public.cube( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
@@ -2663,11 +2618,11 @@ async call(parameters : Public.Procedures.Cube_7bfd.Parameters) {
            
 }
 }
-export class CubeF584 implements Procedure, HasDatabase {
+export class Cube_9e1c implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
-  get name() { return "cube_f584"; }
-async call(parameters : Public.Procedures.CubeF584.Parameters) {
+  get name() { return "cube_9e1c"; }
+async call(parameters : Public.Procedures.Cube_9e1c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2676,7 +2631,7 @@ async call(parameters : Public.Procedures.CubeF584.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.cube( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
@@ -2684,7 +2639,7 @@ async call(parameters : Public.Procedures.CubeF584.Parameters) {
            
 }
 }
-export class CubeIsPoint implements Procedure, HasDatabase {
+export class CubeIsPoint implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_is_point"; }
@@ -2697,7 +2652,7 @@ async call(parameters : Public.Procedures.CubeIsPoint.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_is_point( ${ typed[79745](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.cube_is_point( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_is_point) );
@@ -2705,7 +2660,7 @@ async call(parameters : Public.Procedures.CubeIsPoint.Parameters) {
            
 }
 }
-export class CubeEnlarge implements Procedure, HasDatabase {
+export class CubeEnlarge implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_enlarge"; }
@@ -2718,7 +2673,7 @@ async call(parameters : Public.Procedures.CubeEnlarge.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_enlarge( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.cube_enlarge( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_enlarge) );
@@ -2726,7 +2681,7 @@ async call(parameters : Public.Procedures.CubeEnlarge.Parameters) {
            
 }
 }
-export class GCubeConsistent implements Procedure, HasDatabase {
+export class GCubeConsistent implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "g_cube_consistent"; }
@@ -2739,7 +2694,7 @@ async call(parameters : Public.Procedures.GCubeConsistent.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.g_cube_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[79745](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`
+  const response = await sql`SELECT public.g_cube_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].g_cube_consistent) );
@@ -2747,7 +2702,7 @@ async call(parameters : Public.Procedures.GCubeConsistent.Parameters) {
            
 }
 }
-export class GCubePenalty implements Procedure, HasDatabase {
+export class GCubePenalty implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "g_cube_penalty"; }
@@ -2768,7 +2723,7 @@ async call(parameters : Public.Procedures.GCubePenalty.Parameters) {
            
 }
 }
-export class GCubePicksplit implements Procedure, HasDatabase {
+export class GCubePicksplit implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "g_cube_picksplit"; }
@@ -2789,7 +2744,7 @@ async call(parameters : Public.Procedures.GCubePicksplit.Parameters) {
            
 }
 }
-export class GCubeUnion implements Procedure, HasDatabase {
+export class GCubeUnion implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "g_cube_union"; }
@@ -2810,7 +2765,7 @@ async call(parameters : Public.Procedures.GCubeUnion.Parameters) {
            
 }
 }
-export class GCubeSame implements Procedure, HasDatabase {
+export class GCubeSame implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "g_cube_same"; }
@@ -2823,7 +2778,7 @@ async call(parameters : Public.Procedures.GCubeSame.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.g_cube_same( ${ typed[79745](undefinedIsNull(parameters.argument_0)) }, ${ typed[79745](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.g_cube_same( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].g_cube_same) );
@@ -2831,7 +2786,7 @@ async call(parameters : Public.Procedures.GCubeSame.Parameters) {
            
 }
 }
-export class GCubeDistance implements Procedure, HasDatabase {
+export class GCubeDistance implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "g_cube_distance"; }
@@ -2844,7 +2799,7 @@ async call(parameters : Public.Procedures.GCubeDistance.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.g_cube_distance( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[79745](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`
+  const response = await sql`SELECT public.g_cube_distance( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].g_cube_distance) );
@@ -2852,7 +2807,7 @@ async call(parameters : Public.Procedures.GCubeDistance.Parameters) {
            
 }
 }
-export class CubeRecv implements Procedure, HasDatabase {
+export class CubeRecv implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_recv"; }
@@ -2873,7 +2828,7 @@ async call(parameters : Public.Procedures.CubeRecv.Parameters) {
            
 }
 }
-export class CubeSend implements Procedure, HasDatabase {
+export class CubeSend implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_send"; }
@@ -2886,7 +2841,7 @@ async call(parameters : Public.Procedures.CubeSend.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.cube_send( ${ typed[79745](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.cube_send( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].cube_send) );
@@ -2894,7 +2849,7 @@ async call(parameters : Public.Procedures.CubeSend.Parameters) {
            
 }
 }
-export class SetLimit implements Procedure, HasDatabase {
+export class SetLimit implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "set_limit"; }
@@ -2915,7 +2870,7 @@ async call(parameters : Public.Procedures.SetLimit.Parameters) {
            
 }
 }
-export class ShowLimit implements Procedure, HasDatabase {
+export class ShowLimit implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "show_limit"; }
@@ -2936,7 +2891,7 @@ async call() {
            
 }
 }
-export class ShowTrgm implements Procedure, HasDatabase {
+export class ShowTrgm implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "show_trgm"; }
@@ -2957,7 +2912,7 @@ async call(parameters : Public.Procedures.ShowTrgm.Parameters) {
            
 }
 }
-export class Similarity implements Procedure, HasDatabase {
+export class Similarity implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "similarity"; }
@@ -2978,7 +2933,7 @@ async call(parameters : Public.Procedures.Similarity.Parameters) {
            
 }
 }
-export class SimilarityOp implements Procedure, HasDatabase {
+export class SimilarityOp implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "similarity_op"; }
@@ -2999,7 +2954,7 @@ async call(parameters : Public.Procedures.SimilarityOp.Parameters) {
            
 }
 }
-export class WordSimilarity implements Procedure, HasDatabase {
+export class WordSimilarity implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "word_similarity"; }
@@ -3020,7 +2975,7 @@ async call(parameters : Public.Procedures.WordSimilarity.Parameters) {
            
 }
 }
-export class WordSimilarityOp implements Procedure, HasDatabase {
+export class WordSimilarityOp implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "word_similarity_op"; }
@@ -3041,7 +2996,7 @@ async call(parameters : Public.Procedures.WordSimilarityOp.Parameters) {
            
 }
 }
-export class WordSimilarityCommutatorOp implements Procedure, HasDatabase {
+export class WordSimilarityCommutatorOp implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "word_similarity_commutator_op"; }
@@ -3062,7 +3017,7 @@ async call(parameters : Public.Procedures.WordSimilarityCommutatorOp.Parameters)
            
 }
 }
-export class SimilarityDist implements Procedure, HasDatabase {
+export class SimilarityDist implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "similarity_dist"; }
@@ -3083,7 +3038,7 @@ async call(parameters : Public.Procedures.SimilarityDist.Parameters) {
            
 }
 }
-export class WordSimilarityDistOp implements Procedure, HasDatabase {
+export class WordSimilarityDistOp implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "word_similarity_dist_op"; }
@@ -3104,7 +3059,7 @@ async call(parameters : Public.Procedures.WordSimilarityDistOp.Parameters) {
            
 }
 }
-export class WordSimilarityDistCommutatorOp implements Procedure, HasDatabase {
+export class WordSimilarityDistCommutatorOp implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "word_similarity_dist_commutator_op"; }
@@ -3125,7 +3080,7 @@ async call(parameters : Public.Procedures.WordSimilarityDistCommutatorOp.Paramet
            
 }
 }
-export class GtrgmIn implements Procedure, HasDatabase {
+export class GtrgmIn implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gtrgm_in"; }
@@ -3146,7 +3101,7 @@ async call(parameters : Public.Procedures.GtrgmIn.Parameters) {
            
 }
 }
-export class GtrgmOut implements Procedure, HasDatabase {
+export class GtrgmOut implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gtrgm_out"; }
@@ -3159,7 +3114,7 @@ async call(parameters : Public.Procedures.GtrgmOut.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gtrgm_out( ${ typed[79851](undefinedIsNull(parameters.argument_0)) })`
+  const response = await sql`SELECT public.gtrgm_out( ${ typed[29323](undefinedIsNull(parameters.argument_0)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].gtrgm_out) );
@@ -3167,7 +3122,7 @@ async call(parameters : Public.Procedures.GtrgmOut.Parameters) {
            
 }
 }
-export class GtrgmConsistent implements Procedure, HasDatabase {
+export class GtrgmConsistent implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gtrgm_consistent"; }
@@ -3188,7 +3143,7 @@ async call(parameters : Public.Procedures.GtrgmConsistent.Parameters) {
            
 }
 }
-export class GtrgmDistance implements Procedure, HasDatabase {
+export class GtrgmDistance implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gtrgm_distance"; }
@@ -3209,7 +3164,7 @@ async call(parameters : Public.Procedures.GtrgmDistance.Parameters) {
            
 }
 }
-export class GtrgmCompress implements Procedure, HasDatabase {
+export class GtrgmCompress implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gtrgm_compress"; }
@@ -3230,7 +3185,7 @@ async call(parameters : Public.Procedures.GtrgmCompress.Parameters) {
            
 }
 }
-export class GtrgmDecompress implements Procedure, HasDatabase {
+export class GtrgmDecompress implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gtrgm_decompress"; }
@@ -3251,7 +3206,7 @@ async call(parameters : Public.Procedures.GtrgmDecompress.Parameters) {
            
 }
 }
-export class GtrgmPenalty implements Procedure, HasDatabase {
+export class GtrgmPenalty implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gtrgm_penalty"; }
@@ -3272,7 +3227,7 @@ async call(parameters : Public.Procedures.GtrgmPenalty.Parameters) {
            
 }
 }
-export class GtrgmPicksplit implements Procedure, HasDatabase {
+export class GtrgmPicksplit implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gtrgm_picksplit"; }
@@ -3293,7 +3248,7 @@ async call(parameters : Public.Procedures.GtrgmPicksplit.Parameters) {
            
 }
 }
-export class GtrgmUnion implements Procedure, HasDatabase {
+export class GtrgmUnion implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gtrgm_union"; }
@@ -3314,7 +3269,7 @@ async call(parameters : Public.Procedures.GtrgmUnion.Parameters) {
            
 }
 }
-export class GtrgmSame implements Procedure, HasDatabase {
+export class GtrgmSame implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gtrgm_same"; }
@@ -3327,7 +3282,7 @@ async call(parameters : Public.Procedures.GtrgmSame.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gtrgm_same( ${ typed[79851](undefinedIsNull(parameters.argument_0)) }, ${ typed[79851](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
+  const response = await sql`SELECT public.gtrgm_same( ${ typed[29323](undefinedIsNull(parameters.argument_0)) }, ${ typed[29323](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gtrgm_same) );
@@ -3335,7 +3290,7 @@ async call(parameters : Public.Procedures.GtrgmSame.Parameters) {
            
 }
 }
-export class GinExtractValueTrgm implements Procedure, HasDatabase {
+export class GinExtractValueTrgm implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gin_extract_value_trgm"; }
@@ -3356,7 +3311,7 @@ async call(parameters : Public.Procedures.GinExtractValueTrgm.Parameters) {
            
 }
 }
-export class GinExtractQueryTrgm implements Procedure, HasDatabase {
+export class GinExtractQueryTrgm implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gin_extract_query_trgm"; }
@@ -3377,7 +3332,7 @@ async call(parameters : Public.Procedures.GinExtractQueryTrgm.Parameters) {
            
 }
 }
-export class GinTrgmConsistent implements Procedure, HasDatabase {
+export class GinTrgmConsistent implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gin_trgm_consistent"; }
@@ -3398,7 +3353,7 @@ async call(parameters : Public.Procedures.GinTrgmConsistent.Parameters) {
            
 }
 }
-export class GinTrgmTriconsistent implements Procedure, HasDatabase {
+export class GinTrgmTriconsistent implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gin_trgm_triconsistent"; }
@@ -3419,7 +3374,7 @@ async call(parameters : Public.Procedures.GinTrgmTriconsistent.Parameters) {
            
 }
 }
-export class StrictWordSimilarity implements Procedure, HasDatabase {
+export class StrictWordSimilarity implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "strict_word_similarity"; }
@@ -3440,7 +3395,7 @@ async call(parameters : Public.Procedures.StrictWordSimilarity.Parameters) {
            
 }
 }
-export class StrictWordSimilarityOp implements Procedure, HasDatabase {
+export class StrictWordSimilarityOp implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "strict_word_similarity_op"; }
@@ -3461,7 +3416,7 @@ async call(parameters : Public.Procedures.StrictWordSimilarityOp.Parameters) {
            
 }
 }
-export class StrictWordSimilarityCommutatorOp implements Procedure, HasDatabase {
+export class StrictWordSimilarityCommutatorOp implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "strict_word_similarity_commutator_op"; }
@@ -3482,7 +3437,7 @@ async call(parameters : Public.Procedures.StrictWordSimilarityCommutatorOp.Param
            
 }
 }
-export class StrictWordSimilarityDistOp implements Procedure, HasDatabase {
+export class StrictWordSimilarityDistOp implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "strict_word_similarity_dist_op"; }
@@ -3503,7 +3458,7 @@ async call(parameters : Public.Procedures.StrictWordSimilarityDistOp.Parameters)
            
 }
 }
-export class StrictWordSimilarityDistCommutatorOp implements Procedure, HasDatabase {
+export class StrictWordSimilarityDistCommutatorOp implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "strict_word_similarity_dist_commutator_op"; }
@@ -3524,7 +3479,7 @@ async call(parameters : Public.Procedures.StrictWordSimilarityDistCommutatorOp.P
            
 }
 }
-export class GtrgmOptions implements Procedure, HasDatabase {
+export class GtrgmOptions implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gtrgm_options"; }
@@ -3549,7 +3504,7 @@ async call(parameters : Public.Procedures.GtrgmOptions.Parameters) {
 }
 export namespace Api {
 export namespace Procedures {
-export class Echo implements Procedure, HasDatabase {
+export class Echo implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "echo"; }
@@ -3570,7 +3525,7 @@ async call(parameters : Api.Procedures.Echo.Parameters) {
            
 }
 }
-export class EchoSet implements Procedure, HasDatabase {
+export class EchoSet implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "echo_set"; }
@@ -3591,14 +3546,14 @@ async call(parameters : Api.Procedures.EchoSet.Parameters) {
            
 }
 }
-export class EchoTable implements Procedure, HasDatabase {
+export class EchoTable implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "echo_table"; }
 async call(parameters : Api.Procedures.EchoTable.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[79924].parseFromPostgresIfPseudoType(context, result) as unknown as Api.Types.EchoTable;
+              return context.procTypes[29396].parseFromPostgresIfPseudoType(context, result) as unknown as Api.Types.EchoTable;
             };
           
   const sql = this.database.context.sql;
@@ -3611,7 +3566,7 @@ async call(parameters : Api.Procedures.EchoTable.Parameters) {
            
 }
 }
-export class EchoType implements Procedure, HasDatabase {
+export class EchoType implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "echo_type"; }
@@ -3632,7 +3587,7 @@ async call(parameters : Api.Procedures.EchoType.Parameters) {
            
 }
 }
-export class EchoTypeArray implements Procedure, HasDatabase {
+export class EchoTypeArray implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "echo_type_array"; }
@@ -3653,7 +3608,7 @@ async call(parameters : Api.Procedures.EchoTypeArray.Parameters) {
            
 }
 }
-export class EchoTypeNested implements Procedure, HasDatabase {
+export class EchoTypeNested implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "echo_type_nested"; }
@@ -3674,7 +3629,7 @@ async call(parameters : Api.Procedures.EchoTypeNested.Parameters) {
            
 }
 }
-export class EchoTypeSet implements Procedure, HasDatabase {
+export class EchoTypeSet implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "echo_type_set"; }
@@ -3695,7 +3650,7 @@ async call(parameters : Api.Procedures.EchoTypeSet.Parameters) {
            
 }
 }
-export class EchoAnswer implements Procedure, HasDatabase {
+export class EchoAnswer implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "echo_answer"; }
@@ -3708,7 +3663,7 @@ async call(parameters : Api.Procedures.EchoAnswer.Parameters) {
           
   const sql = this.database.context.sql;
   const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT api.echo_answer(message => ${ typed[79936](undefinedIsNull(parameters.message)) })`
+  const response = await sql`SELECT api.echo_answer(message => ${ typed[29408](undefinedIsNull(parameters.message)) })`
   const results = response;
 
               const responseBody = ( Api.Types.Answer.parse(results?.[0].echo_answer) );
@@ -3724,25 +3679,12 @@ export namespace Procedures {
 }
 export namespace Public {
 
-          export class Tables implements Tables, HasDatabase {
+          export class Tables implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "Tables";
-            }
-
-            *[Symbol.iterator](): IterableIterator<Table> {
-                const all : Table[] = [
-                  new Public.Tables.Slug(this)
-                ];
-                for (const table of all) {
-                    yield table;
-                }
             }
         
 get Slug () { return new Public.Tables.Slug(this)} 
@@ -3750,25 +3692,12 @@ get Slug () { return new Public.Tables.Slug(this)}
 }
 export namespace Api {
 
-          export class Tables implements Tables, HasDatabase {
+          export class Tables implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "Tables";
-            }
-
-            *[Symbol.iterator](): IterableIterator<Table> {
-                const all : Table[] = [
-                  new Api.Tables.QAndA(this),new Api.Tables.Timezones(this),new Api.Tables.Points(this),new Api.Tables.Lines(this),new Api.Tables.LineSegments(this),new Api.Tables.Boxes(this),new Api.Tables.Paths(this),new Api.Tables.Polygons(this),new Api.Tables.Circles(this)
-                ];
-                for (const table of all) {
-                    yield table;
-                }
             }
         
 get QAndA () { return new Api.Tables.QAndA(this)} 
@@ -3784,25 +3713,12 @@ get Circles () { return new Api.Tables.Circles(this)}
 }
 export namespace PgToast {
 
-          export class Tables implements Tables, HasDatabase {
+          export class Tables implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "Tables";
-            }
-
-            *[Symbol.iterator](): IterableIterator<Table> {
-                const all : Table[] = [
-                  
-                ];
-                for (const table of all) {
-                    yield table;
-                }
             }
         
 }
@@ -3810,28 +3726,12 @@ export namespace PgToast {
 export namespace Public {
 export namespace Tables {
 
-          export class Slug implements Table, HasDatabase {
+          export class Slug implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "slug";
-            }
-
-            get columns() {
-              return [
-                {name: "slug_id", type: "pg_catalog.int4"}
-              ];
-            }
-            
-            get indexes() {
-              return [
-                new Public.Tables.Slug.SlugPkey(this)
-              ];
             }
         
 
@@ -3890,28 +3790,12 @@ get SlugPkey () { return new Public.Tables.Slug.SlugPkey(this)}
 export namespace Api {
 export namespace Tables {
 
-          export class QAndA implements Table, HasDatabase {
+          export class QAndA implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "q_and_a";
-            }
-
-            get columns() {
-              return [
-                {name: "question", type: "pg_catalog.text"},{name: "answer", type: "api.answer"}
-              ];
-            }
-            
-            get indexes() {
-              return [
-                new Api.Tables.QAndA.QAndAAnswer(this)
-              ];
             }
         
 
@@ -3923,7 +3807,7 @@ async create(values: Partial<Api.Types.QAndA>, options?: Api.Tables.QAndA.Option
 const response = await sql`
     INSERT INTO
       api.q_and_a (question,answer)
-    VALUES (${ values.question === undefined ? sql`DEFAULT` : typed[25](values.question) },${ values.answer === undefined ? sql`DEFAULT` : typed[79936](values.answer) })
+    VALUES (${ values.question === undefined ? sql`DEFAULT` : typed[25](values.question) },${ values.answer === undefined ? sql`DEFAULT` : typed[29408](values.answer) })
     ON CONFLICT () DO UPDATE
     SET
       question = EXCLUDED.question,answer = EXCLUDED.answer
@@ -3953,28 +3837,12 @@ return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefi
 get QAndAAnswer () { return new Api.Tables.QAndA.QAndAAnswer(this)} 
 }
 
-          export class Timezones implements Table, HasDatabase {
+          export class Timezones implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "timezones";
-            }
-
-            get columns() {
-              return [
-                {name: "country_code", type: "pg_catalog.text"},{name: "time_zone", type: "pg_catalog.text"},{name: "gmt_offset", type: "pg_catalog.float4"},{name: "dst_offset", type: "pg_catalog.float4"},{name: "raw_offset", type: "pg_catalog.float4"}
-              ];
-            }
-            
-            get indexes() {
-              return [
-                new Api.Tables.Timezones.TrgmIdxGist(this),new Api.Tables.Timezones.TrgmIdxGin(this)
-              ];
             }
         
 
@@ -4018,28 +3886,12 @@ get TrgmIdxGist () { return new Api.Tables.Timezones.TrgmIdxGist(this)}
 get TrgmIdxGin () { return new Api.Tables.Timezones.TrgmIdxGin(this)} 
 }
 
-          export class Points implements Table, HasDatabase {
+          export class Points implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "points";
-            }
-
-            get columns() {
-              return [
-                {name: "id", type: "pg_catalog.uuid"},{name: "point", type: "pg_catalog.point"}
-              ];
-            }
-            
-            get indexes() {
-              return [
-                new Api.Tables.Points.PointsPkey(this)
-              ];
             }
         
 
@@ -4094,28 +3946,12 @@ public get ByPrimaryKey () { return new Api.Tables.Points.PointsPkey(this)}
 get PointsPkey () { return new Api.Tables.Points.PointsPkey(this)} 
 }
 
-          export class Lines implements Table, HasDatabase {
+          export class Lines implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "lines";
-            }
-
-            get columns() {
-              return [
-                {name: "id", type: "pg_catalog.uuid"},{name: "line", type: "pg_catalog.line"}
-              ];
-            }
-            
-            get indexes() {
-              return [
-                new Api.Tables.Lines.LinesPkey(this)
-              ];
             }
         
 
@@ -4170,28 +4006,12 @@ public get ByPrimaryKey () { return new Api.Tables.Lines.LinesPkey(this)}
 get LinesPkey () { return new Api.Tables.Lines.LinesPkey(this)} 
 }
 
-          export class LineSegments implements Table, HasDatabase {
+          export class LineSegments implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "line_segments";
-            }
-
-            get columns() {
-              return [
-                {name: "id", type: "pg_catalog.uuid"},{name: "line_segment", type: "pg_catalog.lseg"}
-              ];
-            }
-            
-            get indexes() {
-              return [
-                new Api.Tables.LineSegments.LineSegmentsPkey(this)
-              ];
             }
         
 
@@ -4246,28 +4066,12 @@ public get ByPrimaryKey () { return new Api.Tables.LineSegments.LineSegmentsPkey
 get LineSegmentsPkey () { return new Api.Tables.LineSegments.LineSegmentsPkey(this)} 
 }
 
-          export class Boxes implements Table, HasDatabase {
+          export class Boxes implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "boxes";
-            }
-
-            get columns() {
-              return [
-                {name: "id", type: "pg_catalog.uuid"},{name: "box", type: "pg_catalog.box"}
-              ];
-            }
-            
-            get indexes() {
-              return [
-                new Api.Tables.Boxes.BoxesPkey(this)
-              ];
             }
         
 
@@ -4322,28 +4126,12 @@ public get ByPrimaryKey () { return new Api.Tables.Boxes.BoxesPkey(this)}
 get BoxesPkey () { return new Api.Tables.Boxes.BoxesPkey(this)} 
 }
 
-          export class Paths implements Table, HasDatabase {
+          export class Paths implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "paths";
-            }
-
-            get columns() {
-              return [
-                {name: "id", type: "pg_catalog.uuid"},{name: "path", type: "pg_catalog.path"}
-              ];
-            }
-            
-            get indexes() {
-              return [
-                new Api.Tables.Paths.PathsPkey(this)
-              ];
             }
         
 
@@ -4398,28 +4186,12 @@ public get ByPrimaryKey () { return new Api.Tables.Paths.PathsPkey(this)}
 get PathsPkey () { return new Api.Tables.Paths.PathsPkey(this)} 
 }
 
-          export class Polygons implements Table, HasDatabase {
+          export class Polygons implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "polygons";
-            }
-
-            get columns() {
-              return [
-                {name: "id", type: "pg_catalog.uuid"},{name: "polygon", type: "pg_catalog.polygon"}
-              ];
-            }
-            
-            get indexes() {
-              return [
-                new Api.Tables.Polygons.PolygonsPkey(this)
-              ];
             }
         
 
@@ -4474,28 +4246,12 @@ public get ByPrimaryKey () { return new Api.Tables.Polygons.PolygonsPkey(this)}
 get PolygonsPkey () { return new Api.Tables.Polygons.PolygonsPkey(this)} 
 }
 
-          export class Circles implements Table, HasDatabase {
+          export class Circles implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
-            }
-
-            get name() {
-              return "circles";
-            }
-
-            get columns() {
-              return [
-                {name: "id", type: "pg_catalog.uuid"},{name: "circle", type: "pg_catalog.circle"}
-              ];
-            }
-            
-            get indexes() {
-              return [
-                new Api.Tables.Circles.CirclesPkey(this)
-              ];
             }
         
 
@@ -4559,7 +4315,7 @@ export namespace Public {
 export namespace Tables {
 export namespace Slug {
 
-          export class SlugPkey implements Index, HasDatabase {
+          export class SlugPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -4567,15 +4323,6 @@ export namespace Slug {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "slug_pkey";
-            }
-
-            get columns() {
-              return [
-                {name: "slug_id", type: "pg_catalog.int4"}
-              ];
-            }
         
 async read(parameters: Public.Types.SlugPkey, options?: Public.Types.SlugPkey.Options & Public.Tables.Slug.Options) : Promise<Public.Types.Slug>{
 
@@ -4638,7 +4385,7 @@ export namespace Api {
 export namespace Tables {
 export namespace QAndA {
 
-          export class QAndAAnswer implements Index, HasDatabase {
+          export class QAndAAnswer implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -4646,15 +4393,6 @@ export namespace QAndA {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "q_and_a_answer";
-            }
-
-            get columns() {
-              return [
-                {name: "answer", type: "api.answer"}
-              ];
-            }
         
 async read(parameters: Api.Types.QAndAAnswer, options?: Api.Types.QAndAAnswer.Options & Api.Tables.QAndA.Options) : Promise<Api.Types.QAndA[]>{
 
@@ -4670,7 +4408,7 @@ const response = await sql`
     FROM
       api.q_and_a 
     WHERE
-      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[79936](parameters.answer) }
+      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[29408](parameters.answer) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
@@ -4690,9 +4428,9 @@ const response = await sql`
     UPDATE 
       api.q_and_a 
     SET
-      question = ${ values.question === undefined ? sql`question` : typed[25](values.question) } , answer = ${ values.answer === undefined ? sql`answer` : typed[79936](values.answer) } 
+      question = ${ values.question === undefined ? sql`question` : typed[25](values.question) } , answer = ${ values.answer === undefined ? sql`answer` : typed[29408](values.answer) } 
     WHERE
-      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[79936](parameters.answer) }
+      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[29408](parameters.answer) }
     RETURNING question,answer`
 return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
 }
@@ -4705,7 +4443,7 @@ async delete(parameters: Api.Types.QAndAAnswer, options?: Api.Types.QAndAAnswer.
     DELETE FROM 
       api.q_and_a 
     WHERE
-      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[79936](parameters.answer) }
+      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[29408](parameters.answer) }
     RETURNING question,answer`
  return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
 }
@@ -4713,7 +4451,7 @@ async delete(parameters: Api.Types.QAndAAnswer, options?: Api.Types.QAndAAnswer.
 }
 export namespace Timezones {
 
-          export class TrgmIdxGist implements Index, HasDatabase {
+          export class TrgmIdxGist implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -4721,15 +4459,6 @@ export namespace Timezones {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "trgm_idx_gist";
-            }
-
-            get columns() {
-              return [
-                {name: "time_zone", type: "pg_catalog.text"}
-              ];
-            }
         
 async read(parameters: Api.Types.TrgmIdxGist, options?: Api.Types.TrgmIdxGist.Options & Api.Tables.Timezones.Options) : Promise<Api.Types.Timezones[]>{
 
@@ -4786,7 +4515,7 @@ async delete(parameters: Api.Types.TrgmIdxGist, options?: Api.Types.TrgmIdxGist.
 }
 }
 
-          export class TrgmIdxGin implements Index, HasDatabase {
+          export class TrgmIdxGin implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -4794,15 +4523,6 @@ async delete(parameters: Api.Types.TrgmIdxGist, options?: Api.Types.TrgmIdxGist.
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "trgm_idx_gin";
-            }
-
-            get columns() {
-              return [
-                {name: "time_zone", type: "pg_catalog.text"}
-              ];
-            }
         
 async read(parameters: Api.Types.TrgmIdxGin, options?: Api.Types.TrgmIdxGin.Options & Api.Tables.Timezones.Options) : Promise<Api.Types.Timezones[]>{
 
@@ -4861,7 +4581,7 @@ async delete(parameters: Api.Types.TrgmIdxGin, options?: Api.Types.TrgmIdxGin.Op
 }
 export namespace Points {
 
-          export class PointsPkey implements Index, HasDatabase {
+          export class PointsPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -4869,15 +4589,6 @@ export namespace Points {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "points_pkey";
-            }
-
-            get columns() {
-              return [
-                {name: "id", type: "pg_catalog.uuid"}
-              ];
-            }
         
 async read(parameters: Api.Types.PointsPkey, options?: Api.Types.PointsPkey.Options & Api.Tables.Points.Options) : Promise<Api.Types.Points>{
 
@@ -4936,7 +4647,7 @@ async delete(parameters: Api.Types.PointsPkey, options?: Api.Types.PointsPkey.Op
 }
 export namespace Lines {
 
-          export class LinesPkey implements Index, HasDatabase {
+          export class LinesPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -4944,15 +4655,6 @@ export namespace Lines {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "lines_pkey";
-            }
-
-            get columns() {
-              return [
-                {name: "id", type: "pg_catalog.uuid"}
-              ];
-            }
         
 async read(parameters: Api.Types.LinesPkey, options?: Api.Types.LinesPkey.Options & Api.Tables.Lines.Options) : Promise<Api.Types.Lines>{
 
@@ -5011,7 +4713,7 @@ async delete(parameters: Api.Types.LinesPkey, options?: Api.Types.LinesPkey.Opti
 }
 export namespace LineSegments {
 
-          export class LineSegmentsPkey implements Index, HasDatabase {
+          export class LineSegmentsPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -5019,15 +4721,6 @@ export namespace LineSegments {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "line_segments_pkey";
-            }
-
-            get columns() {
-              return [
-                {name: "id", type: "pg_catalog.uuid"}
-              ];
-            }
         
 async read(parameters: Api.Types.LineSegmentsPkey, options?: Api.Types.LineSegmentsPkey.Options & Api.Tables.LineSegments.Options) : Promise<Api.Types.LineSegments>{
 
@@ -5086,7 +4779,7 @@ async delete(parameters: Api.Types.LineSegmentsPkey, options?: Api.Types.LineSeg
 }
 export namespace Boxes {
 
-          export class BoxesPkey implements Index, HasDatabase {
+          export class BoxesPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -5094,15 +4787,6 @@ export namespace Boxes {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "boxes_pkey";
-            }
-
-            get columns() {
-              return [
-                {name: "id", type: "pg_catalog.uuid"}
-              ];
-            }
         
 async read(parameters: Api.Types.BoxesPkey, options?: Api.Types.BoxesPkey.Options & Api.Tables.Boxes.Options) : Promise<Api.Types.Boxes>{
 
@@ -5161,7 +4845,7 @@ async delete(parameters: Api.Types.BoxesPkey, options?: Api.Types.BoxesPkey.Opti
 }
 export namespace Paths {
 
-          export class PathsPkey implements Index, HasDatabase {
+          export class PathsPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -5169,15 +4853,6 @@ export namespace Paths {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "paths_pkey";
-            }
-
-            get columns() {
-              return [
-                {name: "id", type: "pg_catalog.uuid"}
-              ];
-            }
         
 async read(parameters: Api.Types.PathsPkey, options?: Api.Types.PathsPkey.Options & Api.Tables.Paths.Options) : Promise<Api.Types.Paths>{
 
@@ -5236,7 +4911,7 @@ async delete(parameters: Api.Types.PathsPkey, options?: Api.Types.PathsPkey.Opti
 }
 export namespace Polygons {
 
-          export class PolygonsPkey implements Index, HasDatabase {
+          export class PolygonsPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -5244,15 +4919,6 @@ export namespace Polygons {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "polygons_pkey";
-            }
-
-            get columns() {
-              return [
-                {name: "id", type: "pg_catalog.uuid"}
-              ];
-            }
         
 async read(parameters: Api.Types.PolygonsPkey, options?: Api.Types.PolygonsPkey.Options & Api.Tables.Polygons.Options) : Promise<Api.Types.Polygons>{
 
@@ -5311,7 +4977,7 @@ async delete(parameters: Api.Types.PolygonsPkey, options?: Api.Types.PolygonsPke
 }
 export namespace Circles {
 
-          export class CirclesPkey implements Index, HasDatabase {
+          export class CirclesPkey implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -5319,15 +4985,6 @@ export namespace Circles {
               return this.hasDatabase.database;
             }
 
-            get name() {
-              return "circles_pkey";
-            }
-
-            get columns() {
-              return [
-                {name: "id", type: "pg_catalog.uuid"}
-              ];
-            }
         
 async read(parameters: Api.Types.CirclesPkey, options?: Api.Types.CirclesPkey.Options & Api.Tables.Circles.Options) : Promise<Api.Types.Circles>{
 
@@ -5427,8 +5084,8 @@ export namespace Tables {
 "Public.Procedures.CubeCoordLlur.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeCoordLlur.call(request.parameters as Public.Procedures.CubeCoordLlur.Parameters),
 "Public.Procedures.CubeA5b3.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeA5b3.call(request.parameters as Public.Procedures.CubeA5b3.Parameters),
 "Public.Procedures.Cube_0aec.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Cube_0aec.call(request.parameters as Public.Procedures.Cube_0aec.Parameters),
-"Public.Procedures.Cube_7bfd.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Cube_7bfd.call(request.parameters as Public.Procedures.Cube_7bfd.Parameters),
-"Public.Procedures.CubeF584.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeF584.call(request.parameters as Public.Procedures.CubeF584.Parameters),
+"Public.Procedures.Cube_5ffb.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Cube_5ffb.call(request.parameters as Public.Procedures.Cube_5ffb.Parameters),
+"Public.Procedures.Cube_9e1c.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Cube_9e1c.call(request.parameters as Public.Procedures.Cube_9e1c.Parameters),
 "Public.Procedures.CubeIsPoint.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeIsPoint.call(request.parameters as Public.Procedures.CubeIsPoint.Parameters),
 "Public.Procedures.CubeEnlarge.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeEnlarge.call(request.parameters as Public.Procedures.CubeEnlarge.Parameters),
 "Public.Procedures.GCubeConsistent.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GCubeConsistent.call(request.parameters as Public.Procedures.GCubeConsistent.Parameters),
@@ -15461,7 +15118,7 @@ argument_0: Nullable<PgCatalog.Types.Float8>;
 argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace Cube_7bfd {
+export namespace Cube_5ffb {
 
 
 export type Parameters = {
@@ -15469,7 +15126,7 @@ argument_0: Nullable<Public.Types.Cube>;
 argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace CubeF584 {
+export namespace Cube_9e1c {
 
 
 export type Parameters = {
@@ -16414,22 +16071,22 @@ export type PrimaryKey = Api.Types.CirclesPkey;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_79944Index = {
+export type PgToast_29416Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_79950Index = {
+export type PgToast_29422Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_79981Index = {
+export type PgToast_29453Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_79989Index = {
+export type PgToast_29461Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -29207,14 +28864,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace Cube_7bfd {
+export namespace Cube_5ffb {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.Cube_7bfd.Parameters.is(from)) {
+if (Public.Procedures.Cube_5ffb.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Cube.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -29226,14 +28883,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace CubeF584 {
+export namespace Cube_9e1c {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.CubeF584.Parameters.is(from)) {
+if (Public.Procedures.Cube_9e1c.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Cube.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -30730,11 +30387,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_79944Index {
+export namespace PgToast_29416Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_79944Index.is(from)) {
+if (PgToast.Types.PgToast_29416Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -30745,11 +30402,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_79950Index {
+export namespace PgToast_29422Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_79950Index.is(from)) {
+if (PgToast.Types.PgToast_29422Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -30760,11 +30417,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_79981Index {
+export namespace PgToast_29453Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_79981Index.is(from)) {
+if (PgToast.Types.PgToast_29453Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -30775,11 +30432,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_79989Index {
+export namespace PgToast_29461Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_79989Index.is(from)) {
+if (PgToast.Types.PgToast_29461Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -36733,9 +36390,9 @@ return false;
 }
 }
 }
-export namespace Cube_7bfd {
+export namespace Cube_5ffb {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.Cube_7bfd.Parameters {
+export function is(value: any) : value is Public.Procedures.Cube_5ffb.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -36743,9 +36400,9 @@ return false;
 }
 }
 }
-export namespace CubeF584 {
+export namespace Cube_9e1c {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.CubeF584.Parameters {
+export function is(value: any) : value is Public.Procedures.Cube_9e1c.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -37445,32 +37102,32 @@ export namespace Circles {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_79944Index {
-export function is(value: any) : value is PgToast.Types.PgToast_79944Index {
+export namespace PgToast_29416Index {
+export function is(value: any) : value is PgToast.Types.PgToast_29416Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_79950Index {
-export function is(value: any) : value is PgToast.Types.PgToast_79950Index {
+export namespace PgToast_29422Index {
+export function is(value: any) : value is PgToast.Types.PgToast_29422Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_79981Index {
-export function is(value: any) : value is PgToast.Types.PgToast_79981Index {
+export namespace PgToast_29453Index {
+export function is(value: any) : value is PgToast.Types.PgToast_29453Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_79989Index {
-export function is(value: any) : value is PgToast.Types.PgToast_79989Index {
+export namespace PgToast_29461Index {
+export function is(value: any) : value is PgToast.Types.PgToast_29461Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -41850,16 +41507,16 @@ export namespace Parameters {
  }
 }
 }
-export namespace Cube_7bfd {
+export namespace Cube_5ffb {
 export namespace Parameters {
- export function equals(l: Public.Procedures.Cube_7bfd.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.Cube_5ffb.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace CubeF584 {
+export namespace Cube_9e1c {
 export namespace Parameters {
- export function equals(l: Public.Procedures.CubeF584.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.Cube_9e1c.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -42411,23 +42068,23 @@ export namespace Circles {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_79944Index {
- export function equals(l: PgToast.Types.PgToast_79944Index|undefined, r: unknown) {
+export namespace PgToast_29416Index {
+ export function equals(l: PgToast.Types.PgToast_29416Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_79950Index {
- export function equals(l: PgToast.Types.PgToast_79950Index|undefined, r: unknown) {
+export namespace PgToast_29422Index {
+ export function equals(l: PgToast.Types.PgToast_29422Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_79981Index {
- export function equals(l: PgToast.Types.PgToast_79981Index|undefined, r: unknown) {
+export namespace PgToast_29453Index {
+ export function equals(l: PgToast.Types.PgToast_29453Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_79989Index {
- export function equals(l: PgToast.Types.PgToast_79989Index|undefined, r: unknown) {
+export namespace PgToast_29461Index {
+ export function equals(l: PgToast.Types.PgToast_29461Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -59468,7 +59125,7 @@ argument_1?: PgCatalog.Types.Float8.Options
 }
 }
 }
-export namespace Cube_7bfd {
+export namespace Cube_5ffb {
 export namespace Parameters {
 export namespace Argument_0 {
 
@@ -59486,7 +59143,7 @@ argument_1?: PgCatalog.Types.Float8.Options
 }
 }
 }
-export namespace CubeF584 {
+export namespace Cube_9e1c {
 export namespace Parameters {
 export namespace Argument_0 {
 
@@ -60843,7 +60500,7 @@ export namespace Circles {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_79944Index {
+export namespace PgToast_29416Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -60859,7 +60516,7 @@ export type Options = {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_79950Index {
+export namespace PgToast_29422Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -60875,7 +60532,7 @@ export type Options = {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_79981Index {
+export namespace PgToast_29453Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -60891,7 +60548,7 @@ export type Options = {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_79989Index {
+export namespace PgToast_29461Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -61915,3 +61572,378 @@ xmlbinary: string;
 xmloption: string;
 zeroDamagedPages: string;
 }
+export const Metadata : DatabaseMetadata = {
+  get Schemas() {
+      return [
+{
+ name: "public",
+get Procedures()   {
+      return [
+{
+ name: "cube_in"},
+{
+ name: "cube_9c45"},
+{
+ name: "cube_2e6d"},
+{
+ name: "cube_out"},
+{
+ name: "cube_eq"},
+{
+ name: "cube_ne"},
+{
+ name: "cube_lt"},
+{
+ name: "cube_gt"},
+{
+ name: "cube_le"},
+{
+ name: "cube_ge"},
+{
+ name: "cube_cmp"},
+{
+ name: "cube_contains"},
+{
+ name: "cube_contained"},
+{
+ name: "cube_overlap"},
+{
+ name: "cube_union"},
+{
+ name: "cube_inter"},
+{
+ name: "cube_size"},
+{
+ name: "cube_subset"},
+{
+ name: "cube_distance"},
+{
+ name: "distance_chebyshev"},
+{
+ name: "distance_taxicab"},
+{
+ name: "cube_dim"},
+{
+ name: "cube_ll_coord"},
+{
+ name: "cube_ur_coord"},
+{
+ name: "cube_coord"},
+{
+ name: "cube_coord_llur"},
+{
+ name: "cube_a5b3"},
+{
+ name: "cube_0aec"},
+{
+ name: "cube_5ffb"},
+{
+ name: "cube_9e1c"},
+{
+ name: "cube_is_point"},
+{
+ name: "cube_enlarge"},
+{
+ name: "g_cube_consistent"},
+{
+ name: "g_cube_penalty"},
+{
+ name: "g_cube_picksplit"},
+{
+ name: "g_cube_union"},
+{
+ name: "g_cube_same"},
+{
+ name: "g_cube_distance"},
+{
+ name: "cube_recv"},
+{
+ name: "cube_send"},
+{
+ name: "set_limit"},
+{
+ name: "show_limit"},
+{
+ name: "show_trgm"},
+{
+ name: "similarity"},
+{
+ name: "similarity_op"},
+{
+ name: "word_similarity"},
+{
+ name: "word_similarity_op"},
+{
+ name: "word_similarity_commutator_op"},
+{
+ name: "similarity_dist"},
+{
+ name: "word_similarity_dist_op"},
+{
+ name: "word_similarity_dist_commutator_op"},
+{
+ name: "gtrgm_in"},
+{
+ name: "gtrgm_out"},
+{
+ name: "gtrgm_consistent"},
+{
+ name: "gtrgm_distance"},
+{
+ name: "gtrgm_compress"},
+{
+ name: "gtrgm_decompress"},
+{
+ name: "gtrgm_penalty"},
+{
+ name: "gtrgm_picksplit"},
+{
+ name: "gtrgm_union"},
+{
+ name: "gtrgm_same"},
+{
+ name: "gin_extract_value_trgm"},
+{
+ name: "gin_extract_query_trgm"},
+{
+ name: "gin_trgm_consistent"},
+{
+ name: "gin_trgm_triconsistent"},
+{
+ name: "strict_word_similarity"},
+{
+ name: "strict_word_similarity_op"},
+{
+ name: "strict_word_similarity_commutator_op"},
+{
+ name: "strict_word_similarity_dist_op"},
+{
+ name: "strict_word_similarity_dist_commutator_op"},
+{
+ name: "gtrgm_options"},
+];
+},
+get Tables() {
+      return [
+{
+ name: "slug",
+ get Columns() { 
+    return[{name: "slug_id", type: "PgCatalog.Types.Int4"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "slug_pkey",
+ get Columns() { 
+    return[{name: "slug_id", type: "PgCatalog.Types.Int4"},];
+ },
+},
+];
+ }
+},
+];
+},
+},
+{
+ name: "api",
+get Procedures()   {
+      return [
+{
+ name: "echo"},
+{
+ name: "echo_set"},
+{
+ name: "echo_table"},
+{
+ name: "echo_type"},
+{
+ name: "echo_type_array"},
+{
+ name: "echo_type_nested"},
+{
+ name: "echo_type_set"},
+{
+ name: "echo_answer"},
+];
+},
+get Tables() {
+      return [
+{
+ name: "q_and_a",
+ get Columns() { 
+    return[{name: "question", type: "PgCatalog.Types.Text"},
+{name: "answer", type: "Api.Types.Answer"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "q_and_a_answer",
+ get Columns() { 
+    return[{name: "answer", type: "Api.Types.Answer"},];
+ },
+},
+];
+ }
+},
+{
+ name: "timezones",
+ get Columns() { 
+    return[{name: "country_code", type: "PgCatalog.Types.Text"},
+{name: "time_zone", type: "PgCatalog.Types.Text"},
+{name: "gmt_offset", type: "PgCatalog.Types.Float4"},
+{name: "dst_offset", type: "PgCatalog.Types.Float4"},
+{name: "raw_offset", type: "PgCatalog.Types.Float4"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "trgm_idx_gist",
+ get Columns() { 
+    return[{name: "time_zone", type: "PgCatalog.Types.Text"},];
+ },
+},
+{
+ name: "trgm_idx_gin",
+ get Columns() { 
+    return[{name: "time_zone", type: "PgCatalog.Types.Text"},];
+ },
+},
+];
+ }
+},
+{
+ name: "points",
+ get Columns() { 
+    return[{name: "id", type: "PgCatalog.Types.Uuid"},
+{name: "point", type: "PgCatalog.Types.Point"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "points_pkey",
+ get Columns() { 
+    return[{name: "id", type: "PgCatalog.Types.Uuid"},];
+ },
+},
+];
+ }
+},
+{
+ name: "lines",
+ get Columns() { 
+    return[{name: "id", type: "PgCatalog.Types.Uuid"},
+{name: "line", type: "PgCatalog.Types.Line"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "lines_pkey",
+ get Columns() { 
+    return[{name: "id", type: "PgCatalog.Types.Uuid"},];
+ },
+},
+];
+ }
+},
+{
+ name: "line_segments",
+ get Columns() { 
+    return[{name: "id", type: "PgCatalog.Types.Uuid"},
+{name: "line_segment", type: "PgCatalog.Types.Lseg"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "line_segments_pkey",
+ get Columns() { 
+    return[{name: "id", type: "PgCatalog.Types.Uuid"},];
+ },
+},
+];
+ }
+},
+{
+ name: "boxes",
+ get Columns() { 
+    return[{name: "id", type: "PgCatalog.Types.Uuid"},
+{name: "box", type: "PgCatalog.Types.Box"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "boxes_pkey",
+ get Columns() { 
+    return[{name: "id", type: "PgCatalog.Types.Uuid"},];
+ },
+},
+];
+ }
+},
+{
+ name: "paths",
+ get Columns() { 
+    return[{name: "id", type: "PgCatalog.Types.Uuid"},
+{name: "path", type: "PgCatalog.Types.Path"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "paths_pkey",
+ get Columns() { 
+    return[{name: "id", type: "PgCatalog.Types.Uuid"},];
+ },
+},
+];
+ }
+},
+{
+ name: "polygons",
+ get Columns() { 
+    return[{name: "id", type: "PgCatalog.Types.Uuid"},
+{name: "polygon", type: "PgCatalog.Types.Polygon"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "polygons_pkey",
+ get Columns() { 
+    return[{name: "id", type: "PgCatalog.Types.Uuid"},];
+ },
+},
+];
+ }
+},
+{
+ name: "circles",
+ get Columns() { 
+    return[{name: "id", type: "PgCatalog.Types.Uuid"},
+{name: "circle", type: "PgCatalog.Types.Circle"},];
+ },
+ get Indexes() { 
+    return[
+{
+ name: "circles_pkey",
+ get Columns() { 
+    return[{name: "id", type: "PgCatalog.Types.Uuid"},];
+ },
+},
+];
+ }
+},
+];
+},
+},
+{
+ name: "pg_toast",
+get Procedures()   {
+      return [
+];
+},
+get Tables() {
+      return [
+];
+},
+},
+]; 
+}
+};
