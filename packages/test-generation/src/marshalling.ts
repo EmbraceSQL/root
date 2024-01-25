@@ -1,5 +1,23 @@
 
-            import { Tables, Table, Column, Index } from "@embracesql/shared";
+        // ⚠️ generated - do not modify ⚠️
+
+        /**
+         * These types are node/browser isomorphic and are used by all other
+         * EmbraceSQL generated code.
+         */
+        /* eslint-disable @typescript-eslint/no-explicit-any */
+        /* eslint-disable @typescript-eslint/no-empty-interface */
+        /* eslint-disable @typescript-eslint/no-namespace */
+        /* eslint-disable @typescript-eslint/no-unused-vars */
+        /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
+        /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
+        /* @typescript-eslint/no-redundant-type-constituents */
+        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
+        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
+        import { Geometry } from "@embracesql/shared";
+    
+
+            import { Tables, Table, Column, Index, Procedures, Procedure } from "@embracesql/shared";
             import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
             import postgres from "postgres";
           
@@ -1831,8 +1849,11 @@ get settings() { return this.context.settings as Settings };
               return this.hasDatabase.database;
             }
         
+get Procedures () { return new Public.Procedures(this)} 
+get Tables () { return new Public.Tables(this)} 
+}(this)
 
-          public Procedures = new class implements HasDatabase {
+          public Api = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -1840,8 +1861,11 @@ get settings() { return this.context.settings as Settings };
               return this.hasDatabase.database;
             }
         
+get Procedures () { return new Api.Procedures(this)} 
+get Tables () { return new Api.Tables(this)} 
+}(this)
 
-          public CubeIn = new class implements HasDatabase {
+          public PgToast = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -1849,6 +1873,170 @@ get settings() { return this.context.settings as Settings };
               return this.hasDatabase.database;
             }
         
+get Procedures () { return new PgToast.Procedures(this)} 
+get Tables () { return new PgToast.Tables(this)} 
+}(this)
+}
+export namespace Public {
+
+          export class Procedures implements Procedures, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "Procedures";
+            }
+
+            /**
+             * Every procedure in this schema.
+             */
+            get procedures() {
+              return [
+                new Public.Procedures.CubeIn(this),new Public.Procedures.Cube_9c45(this),new Public.Procedures.Cube_2e6d(this),new Public.Procedures.CubeOut(this),new Public.Procedures.CubeEq(this),new Public.Procedures.CubeNe(this),new Public.Procedures.CubeLt(this),new Public.Procedures.CubeGt(this),new Public.Procedures.CubeLe(this),new Public.Procedures.CubeGe(this),new Public.Procedures.CubeCmp(this),new Public.Procedures.CubeContains(this),new Public.Procedures.CubeContained(this),new Public.Procedures.CubeOverlap(this),new Public.Procedures.CubeUnion(this),new Public.Procedures.CubeInter(this),new Public.Procedures.CubeSize(this),new Public.Procedures.CubeSubset(this),new Public.Procedures.CubeDistance(this),new Public.Procedures.DistanceChebyshev(this),new Public.Procedures.DistanceTaxicab(this),new Public.Procedures.CubeDim(this),new Public.Procedures.CubeLlCoord(this),new Public.Procedures.CubeUrCoord(this),new Public.Procedures.CubeCoord(this),new Public.Procedures.CubeCoordLlur(this),new Public.Procedures.CubeA5b3(this),new Public.Procedures.Cube_0aec(this),new Public.Procedures.Cube_5ffb(this),new Public.Procedures.Cube_9e1c(this),new Public.Procedures.CubeIsPoint(this),new Public.Procedures.CubeEnlarge(this),new Public.Procedures.GCubeConsistent(this),new Public.Procedures.GCubePenalty(this),new Public.Procedures.GCubePicksplit(this),new Public.Procedures.GCubeUnion(this),new Public.Procedures.GCubeSame(this),new Public.Procedures.GCubeDistance(this),new Public.Procedures.CubeRecv(this),new Public.Procedures.CubeSend(this),new Public.Procedures.SetLimit(this),new Public.Procedures.ShowLimit(this),new Public.Procedures.ShowTrgm(this),new Public.Procedures.Similarity(this),new Public.Procedures.SimilarityOp(this),new Public.Procedures.WordSimilarity(this),new Public.Procedures.WordSimilarityOp(this),new Public.Procedures.WordSimilarityCommutatorOp(this),new Public.Procedures.SimilarityDist(this),new Public.Procedures.WordSimilarityDistOp(this),new Public.Procedures.WordSimilarityDistCommutatorOp(this),new Public.Procedures.GtrgmIn(this),new Public.Procedures.GtrgmOut(this),new Public.Procedures.GtrgmConsistent(this),new Public.Procedures.GtrgmDistance(this),new Public.Procedures.GtrgmCompress(this),new Public.Procedures.GtrgmDecompress(this),new Public.Procedures.GtrgmPenalty(this),new Public.Procedures.GtrgmPicksplit(this),new Public.Procedures.GtrgmUnion(this),new Public.Procedures.GtrgmSame(this),new Public.Procedures.GinExtractValueTrgm(this),new Public.Procedures.GinExtractQueryTrgm(this),new Public.Procedures.GinTrgmConsistent(this),new Public.Procedures.GinTrgmTriconsistent(this),new Public.Procedures.StrictWordSimilarity(this),new Public.Procedures.StrictWordSimilarityOp(this),new Public.Procedures.StrictWordSimilarityCommutatorOp(this),new Public.Procedures.StrictWordSimilarityDistOp(this),new Public.Procedures.StrictWordSimilarityDistCommutatorOp(this),new Public.Procedures.GtrgmOptions(this)
+              ];
+            }
+        
+get CubeIn () { return new Public.Procedures.CubeIn(this)} 
+get Cube_9c45 () { return new Public.Procedures.Cube_9c45(this)} 
+get Cube_2e6d () { return new Public.Procedures.Cube_2e6d(this)} 
+get CubeOut () { return new Public.Procedures.CubeOut(this)} 
+get CubeEq () { return new Public.Procedures.CubeEq(this)} 
+get CubeNe () { return new Public.Procedures.CubeNe(this)} 
+get CubeLt () { return new Public.Procedures.CubeLt(this)} 
+get CubeGt () { return new Public.Procedures.CubeGt(this)} 
+get CubeLe () { return new Public.Procedures.CubeLe(this)} 
+get CubeGe () { return new Public.Procedures.CubeGe(this)} 
+get CubeCmp () { return new Public.Procedures.CubeCmp(this)} 
+get CubeContains () { return new Public.Procedures.CubeContains(this)} 
+get CubeContained () { return new Public.Procedures.CubeContained(this)} 
+get CubeOverlap () { return new Public.Procedures.CubeOverlap(this)} 
+get CubeUnion () { return new Public.Procedures.CubeUnion(this)} 
+get CubeInter () { return new Public.Procedures.CubeInter(this)} 
+get CubeSize () { return new Public.Procedures.CubeSize(this)} 
+get CubeSubset () { return new Public.Procedures.CubeSubset(this)} 
+get CubeDistance () { return new Public.Procedures.CubeDistance(this)} 
+get DistanceChebyshev () { return new Public.Procedures.DistanceChebyshev(this)} 
+get DistanceTaxicab () { return new Public.Procedures.DistanceTaxicab(this)} 
+get CubeDim () { return new Public.Procedures.CubeDim(this)} 
+get CubeLlCoord () { return new Public.Procedures.CubeLlCoord(this)} 
+get CubeUrCoord () { return new Public.Procedures.CubeUrCoord(this)} 
+get CubeCoord () { return new Public.Procedures.CubeCoord(this)} 
+get CubeCoordLlur () { return new Public.Procedures.CubeCoordLlur(this)} 
+get CubeA5b3 () { return new Public.Procedures.CubeA5b3(this)} 
+get Cube_0aec () { return new Public.Procedures.Cube_0aec(this)} 
+get Cube_5ffb () { return new Public.Procedures.Cube_5ffb(this)} 
+get Cube_9e1c () { return new Public.Procedures.Cube_9e1c(this)} 
+get CubeIsPoint () { return new Public.Procedures.CubeIsPoint(this)} 
+get CubeEnlarge () { return new Public.Procedures.CubeEnlarge(this)} 
+get GCubeConsistent () { return new Public.Procedures.GCubeConsistent(this)} 
+get GCubePenalty () { return new Public.Procedures.GCubePenalty(this)} 
+get GCubePicksplit () { return new Public.Procedures.GCubePicksplit(this)} 
+get GCubeUnion () { return new Public.Procedures.GCubeUnion(this)} 
+get GCubeSame () { return new Public.Procedures.GCubeSame(this)} 
+get GCubeDistance () { return new Public.Procedures.GCubeDistance(this)} 
+get CubeRecv () { return new Public.Procedures.CubeRecv(this)} 
+get CubeSend () { return new Public.Procedures.CubeSend(this)} 
+get SetLimit () { return new Public.Procedures.SetLimit(this)} 
+get ShowLimit () { return new Public.Procedures.ShowLimit(this)} 
+get ShowTrgm () { return new Public.Procedures.ShowTrgm(this)} 
+get Similarity () { return new Public.Procedures.Similarity(this)} 
+get SimilarityOp () { return new Public.Procedures.SimilarityOp(this)} 
+get WordSimilarity () { return new Public.Procedures.WordSimilarity(this)} 
+get WordSimilarityOp () { return new Public.Procedures.WordSimilarityOp(this)} 
+get WordSimilarityCommutatorOp () { return new Public.Procedures.WordSimilarityCommutatorOp(this)} 
+get SimilarityDist () { return new Public.Procedures.SimilarityDist(this)} 
+get WordSimilarityDistOp () { return new Public.Procedures.WordSimilarityDistOp(this)} 
+get WordSimilarityDistCommutatorOp () { return new Public.Procedures.WordSimilarityDistCommutatorOp(this)} 
+get GtrgmIn () { return new Public.Procedures.GtrgmIn(this)} 
+get GtrgmOut () { return new Public.Procedures.GtrgmOut(this)} 
+get GtrgmConsistent () { return new Public.Procedures.GtrgmConsistent(this)} 
+get GtrgmDistance () { return new Public.Procedures.GtrgmDistance(this)} 
+get GtrgmCompress () { return new Public.Procedures.GtrgmCompress(this)} 
+get GtrgmDecompress () { return new Public.Procedures.GtrgmDecompress(this)} 
+get GtrgmPenalty () { return new Public.Procedures.GtrgmPenalty(this)} 
+get GtrgmPicksplit () { return new Public.Procedures.GtrgmPicksplit(this)} 
+get GtrgmUnion () { return new Public.Procedures.GtrgmUnion(this)} 
+get GtrgmSame () { return new Public.Procedures.GtrgmSame(this)} 
+get GinExtractValueTrgm () { return new Public.Procedures.GinExtractValueTrgm(this)} 
+get GinExtractQueryTrgm () { return new Public.Procedures.GinExtractQueryTrgm(this)} 
+get GinTrgmConsistent () { return new Public.Procedures.GinTrgmConsistent(this)} 
+get GinTrgmTriconsistent () { return new Public.Procedures.GinTrgmTriconsistent(this)} 
+get StrictWordSimilarity () { return new Public.Procedures.StrictWordSimilarity(this)} 
+get StrictWordSimilarityOp () { return new Public.Procedures.StrictWordSimilarityOp(this)} 
+get StrictWordSimilarityCommutatorOp () { return new Public.Procedures.StrictWordSimilarityCommutatorOp(this)} 
+get StrictWordSimilarityDistOp () { return new Public.Procedures.StrictWordSimilarityDistOp(this)} 
+get StrictWordSimilarityDistCommutatorOp () { return new Public.Procedures.StrictWordSimilarityDistCommutatorOp(this)} 
+get GtrgmOptions () { return new Public.Procedures.GtrgmOptions(this)} 
+}
+}
+export namespace Api {
+
+          export class Procedures implements Procedures, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "Procedures";
+            }
+
+            /**
+             * Every procedure in this schema.
+             */
+            get procedures() {
+              return [
+                new Api.Procedures.Echo(this),new Api.Procedures.EchoSet(this),new Api.Procedures.EchoTable(this),new Api.Procedures.EchoType(this),new Api.Procedures.EchoTypeArray(this),new Api.Procedures.EchoTypeNested(this),new Api.Procedures.EchoTypeSet(this),new Api.Procedures.EchoAnswer(this)
+              ];
+            }
+        
+get Echo () { return new Api.Procedures.Echo(this)} 
+get EchoSet () { return new Api.Procedures.EchoSet(this)} 
+get EchoTable () { return new Api.Procedures.EchoTable(this)} 
+get EchoType () { return new Api.Procedures.EchoType(this)} 
+get EchoTypeArray () { return new Api.Procedures.EchoTypeArray(this)} 
+get EchoTypeNested () { return new Api.Procedures.EchoTypeNested(this)} 
+get EchoTypeSet () { return new Api.Procedures.EchoTypeSet(this)} 
+get EchoAnswer () { return new Api.Procedures.EchoAnswer(this)} 
+}
+}
+export namespace PgToast {
+
+          export class Procedures implements Procedures, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "Procedures";
+            }
+
+            /**
+             * Every procedure in this schema.
+             */
+            get procedures() {
+              return [
+                
+              ];
+            }
+        
+}
+}
+export namespace Public {
+export namespace Procedures {
+export class CubeIn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_in"; }
 async call(parameters : Public.Procedures.CubeIn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -1865,16 +2053,11 @@ async call(parameters : Public.Procedures.CubeIn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Cube_9c45 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Cube_9c45 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_9c45"; }
 async call(parameters : Public.Procedures.Cube_9c45.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -1891,16 +2074,11 @@ async call(parameters : Public.Procedures.Cube_9c45.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Cube_2e6d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Cube_2e6d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_2e6d"; }
 async call(parameters : Public.Procedures.Cube_2e6d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -1917,16 +2095,11 @@ async call(parameters : Public.Procedures.Cube_2e6d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeOut = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeOut implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_out"; }
 async call(parameters : Public.Procedures.CubeOut.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -1943,16 +2116,11 @@ async call(parameters : Public.Procedures.CubeOut.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeEq = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeEq implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_eq"; }
 async call(parameters : Public.Procedures.CubeEq.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -1969,16 +2137,11 @@ async call(parameters : Public.Procedures.CubeEq.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeNe = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeNe implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_ne"; }
 async call(parameters : Public.Procedures.CubeNe.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -1995,16 +2158,11 @@ async call(parameters : Public.Procedures.CubeNe.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeLt = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeLt implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_lt"; }
 async call(parameters : Public.Procedures.CubeLt.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2021,16 +2179,11 @@ async call(parameters : Public.Procedures.CubeLt.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeGt = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeGt implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_gt"; }
 async call(parameters : Public.Procedures.CubeGt.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2047,16 +2200,11 @@ async call(parameters : Public.Procedures.CubeGt.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeLe = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeLe implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_le"; }
 async call(parameters : Public.Procedures.CubeLe.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2073,16 +2221,11 @@ async call(parameters : Public.Procedures.CubeLe.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeGe = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeGe implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_ge"; }
 async call(parameters : Public.Procedures.CubeGe.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2099,16 +2242,11 @@ async call(parameters : Public.Procedures.CubeGe.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeCmp = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeCmp implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_cmp"; }
 async call(parameters : Public.Procedures.CubeCmp.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2125,16 +2263,11 @@ async call(parameters : Public.Procedures.CubeCmp.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeContains = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeContains implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_contains"; }
 async call(parameters : Public.Procedures.CubeContains.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2151,16 +2284,11 @@ async call(parameters : Public.Procedures.CubeContains.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeContained = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeContained implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_contained"; }
 async call(parameters : Public.Procedures.CubeContained.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2177,16 +2305,11 @@ async call(parameters : Public.Procedures.CubeContained.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeOverlap = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeOverlap implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_overlap"; }
 async call(parameters : Public.Procedures.CubeOverlap.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2203,16 +2326,11 @@ async call(parameters : Public.Procedures.CubeOverlap.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeUnion = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeUnion implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_union"; }
 async call(parameters : Public.Procedures.CubeUnion.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2229,16 +2347,11 @@ async call(parameters : Public.Procedures.CubeUnion.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeInter = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeInter implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_inter"; }
 async call(parameters : Public.Procedures.CubeInter.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2255,16 +2368,11 @@ async call(parameters : Public.Procedures.CubeInter.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeSize = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeSize implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_size"; }
 async call(parameters : Public.Procedures.CubeSize.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2281,16 +2389,11 @@ async call(parameters : Public.Procedures.CubeSize.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeSubset = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeSubset implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_subset"; }
 async call(parameters : Public.Procedures.CubeSubset.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2307,16 +2410,11 @@ async call(parameters : Public.Procedures.CubeSubset.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeDistance = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeDistance implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_distance"; }
 async call(parameters : Public.Procedures.CubeDistance.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2333,16 +2431,11 @@ async call(parameters : Public.Procedures.CubeDistance.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public DistanceChebyshev = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class DistanceChebyshev implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "distance_chebyshev"; }
 async call(parameters : Public.Procedures.DistanceChebyshev.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2359,16 +2452,11 @@ async call(parameters : Public.Procedures.DistanceChebyshev.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public DistanceTaxicab = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class DistanceTaxicab implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "distance_taxicab"; }
 async call(parameters : Public.Procedures.DistanceTaxicab.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2385,16 +2473,11 @@ async call(parameters : Public.Procedures.DistanceTaxicab.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeDim = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeDim implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_dim"; }
 async call(parameters : Public.Procedures.CubeDim.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2411,16 +2494,11 @@ async call(parameters : Public.Procedures.CubeDim.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeLlCoord = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeLlCoord implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_ll_coord"; }
 async call(parameters : Public.Procedures.CubeLlCoord.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2437,16 +2515,11 @@ async call(parameters : Public.Procedures.CubeLlCoord.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeUrCoord = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeUrCoord implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_ur_coord"; }
 async call(parameters : Public.Procedures.CubeUrCoord.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2463,16 +2536,11 @@ async call(parameters : Public.Procedures.CubeUrCoord.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeCoord = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeCoord implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_coord"; }
 async call(parameters : Public.Procedures.CubeCoord.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2489,16 +2557,11 @@ async call(parameters : Public.Procedures.CubeCoord.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeCoordLlur = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeCoordLlur implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_coord_llur"; }
 async call(parameters : Public.Procedures.CubeCoordLlur.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2515,16 +2578,11 @@ async call(parameters : Public.Procedures.CubeCoordLlur.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeA5b3 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeA5b3 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_a5b3"; }
 async call(parameters : Public.Procedures.CubeA5b3.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2541,16 +2599,11 @@ async call(parameters : Public.Procedures.CubeA5b3.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Cube_0aec = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Cube_0aec implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_0aec"; }
 async call(parameters : Public.Procedures.Cube_0aec.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2567,16 +2620,11 @@ async call(parameters : Public.Procedures.Cube_0aec.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Cube_5ffb = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Cube_5ffb implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_5ffb"; }
 async call(parameters : Public.Procedures.Cube_5ffb.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2593,16 +2641,11 @@ async call(parameters : Public.Procedures.Cube_5ffb.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Cube_9e1c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Cube_9e1c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_9e1c"; }
 async call(parameters : Public.Procedures.Cube_9e1c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2619,16 +2662,11 @@ async call(parameters : Public.Procedures.Cube_9e1c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeIsPoint = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeIsPoint implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_is_point"; }
 async call(parameters : Public.Procedures.CubeIsPoint.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2645,16 +2683,11 @@ async call(parameters : Public.Procedures.CubeIsPoint.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeEnlarge = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeEnlarge implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_enlarge"; }
 async call(parameters : Public.Procedures.CubeEnlarge.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2671,16 +2704,11 @@ async call(parameters : Public.Procedures.CubeEnlarge.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GCubeConsistent = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GCubeConsistent implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "g_cube_consistent"; }
 async call(parameters : Public.Procedures.GCubeConsistent.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2697,16 +2725,11 @@ async call(parameters : Public.Procedures.GCubeConsistent.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GCubePenalty = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GCubePenalty implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "g_cube_penalty"; }
 async call(parameters : Public.Procedures.GCubePenalty.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2723,16 +2746,11 @@ async call(parameters : Public.Procedures.GCubePenalty.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GCubePicksplit = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GCubePicksplit implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "g_cube_picksplit"; }
 async call(parameters : Public.Procedures.GCubePicksplit.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2749,16 +2767,11 @@ async call(parameters : Public.Procedures.GCubePicksplit.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GCubeUnion = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GCubeUnion implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "g_cube_union"; }
 async call(parameters : Public.Procedures.GCubeUnion.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2775,16 +2788,11 @@ async call(parameters : Public.Procedures.GCubeUnion.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GCubeSame = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GCubeSame implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "g_cube_same"; }
 async call(parameters : Public.Procedures.GCubeSame.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2801,16 +2809,11 @@ async call(parameters : Public.Procedures.GCubeSame.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GCubeDistance = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GCubeDistance implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "g_cube_distance"; }
 async call(parameters : Public.Procedures.GCubeDistance.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2827,16 +2830,11 @@ async call(parameters : Public.Procedures.GCubeDistance.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeRecv = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeRecv implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_recv"; }
 async call(parameters : Public.Procedures.CubeRecv.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2853,16 +2851,11 @@ async call(parameters : Public.Procedures.CubeRecv.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public CubeSend = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class CubeSend implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "cube_send"; }
 async call(parameters : Public.Procedures.CubeSend.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2879,16 +2872,11 @@ async call(parameters : Public.Procedures.CubeSend.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public SetLimit = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class SetLimit implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "set_limit"; }
 async call(parameters : Public.Procedures.SetLimit.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2905,16 +2893,11 @@ async call(parameters : Public.Procedures.SetLimit.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public ShowLimit = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class ShowLimit implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "show_limit"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2931,16 +2914,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public ShowTrgm = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class ShowTrgm implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "show_trgm"; }
 async call(parameters : Public.Procedures.ShowTrgm.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2957,16 +2935,11 @@ async call(parameters : Public.Procedures.ShowTrgm.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Similarity = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Similarity implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "similarity"; }
 async call(parameters : Public.Procedures.Similarity.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -2983,16 +2956,11 @@ async call(parameters : Public.Procedures.Similarity.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public SimilarityOp = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class SimilarityOp implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "similarity_op"; }
 async call(parameters : Public.Procedures.SimilarityOp.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3009,16 +2977,11 @@ async call(parameters : Public.Procedures.SimilarityOp.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public WordSimilarity = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class WordSimilarity implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "word_similarity"; }
 async call(parameters : Public.Procedures.WordSimilarity.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3035,16 +2998,11 @@ async call(parameters : Public.Procedures.WordSimilarity.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public WordSimilarityOp = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class WordSimilarityOp implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "word_similarity_op"; }
 async call(parameters : Public.Procedures.WordSimilarityOp.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3061,16 +3019,11 @@ async call(parameters : Public.Procedures.WordSimilarityOp.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public WordSimilarityCommutatorOp = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class WordSimilarityCommutatorOp implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "word_similarity_commutator_op"; }
 async call(parameters : Public.Procedures.WordSimilarityCommutatorOp.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3087,16 +3040,11 @@ async call(parameters : Public.Procedures.WordSimilarityCommutatorOp.Parameters)
               return responseBody;
            
 }
-}(this)
-
-          public SimilarityDist = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class SimilarityDist implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "similarity_dist"; }
 async call(parameters : Public.Procedures.SimilarityDist.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3113,16 +3061,11 @@ async call(parameters : Public.Procedures.SimilarityDist.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public WordSimilarityDistOp = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class WordSimilarityDistOp implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "word_similarity_dist_op"; }
 async call(parameters : Public.Procedures.WordSimilarityDistOp.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3139,16 +3082,11 @@ async call(parameters : Public.Procedures.WordSimilarityDistOp.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public WordSimilarityDistCommutatorOp = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class WordSimilarityDistCommutatorOp implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "word_similarity_dist_commutator_op"; }
 async call(parameters : Public.Procedures.WordSimilarityDistCommutatorOp.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3165,16 +3103,11 @@ async call(parameters : Public.Procedures.WordSimilarityDistCommutatorOp.Paramet
               return responseBody;
            
 }
-}(this)
-
-          public GtrgmIn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GtrgmIn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "gtrgm_in"; }
 async call(parameters : Public.Procedures.GtrgmIn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3191,16 +3124,11 @@ async call(parameters : Public.Procedures.GtrgmIn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GtrgmOut = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GtrgmOut implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "gtrgm_out"; }
 async call(parameters : Public.Procedures.GtrgmOut.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3217,16 +3145,11 @@ async call(parameters : Public.Procedures.GtrgmOut.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GtrgmConsistent = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GtrgmConsistent implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "gtrgm_consistent"; }
 async call(parameters : Public.Procedures.GtrgmConsistent.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3243,16 +3166,11 @@ async call(parameters : Public.Procedures.GtrgmConsistent.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GtrgmDistance = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GtrgmDistance implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "gtrgm_distance"; }
 async call(parameters : Public.Procedures.GtrgmDistance.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3269,16 +3187,11 @@ async call(parameters : Public.Procedures.GtrgmDistance.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GtrgmCompress = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GtrgmCompress implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "gtrgm_compress"; }
 async call(parameters : Public.Procedures.GtrgmCompress.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3295,16 +3208,11 @@ async call(parameters : Public.Procedures.GtrgmCompress.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GtrgmDecompress = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GtrgmDecompress implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "gtrgm_decompress"; }
 async call(parameters : Public.Procedures.GtrgmDecompress.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3321,16 +3229,11 @@ async call(parameters : Public.Procedures.GtrgmDecompress.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GtrgmPenalty = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GtrgmPenalty implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "gtrgm_penalty"; }
 async call(parameters : Public.Procedures.GtrgmPenalty.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3347,16 +3250,11 @@ async call(parameters : Public.Procedures.GtrgmPenalty.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GtrgmPicksplit = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GtrgmPicksplit implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "gtrgm_picksplit"; }
 async call(parameters : Public.Procedures.GtrgmPicksplit.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3373,16 +3271,11 @@ async call(parameters : Public.Procedures.GtrgmPicksplit.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GtrgmUnion = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GtrgmUnion implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "gtrgm_union"; }
 async call(parameters : Public.Procedures.GtrgmUnion.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3399,16 +3292,11 @@ async call(parameters : Public.Procedures.GtrgmUnion.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GtrgmSame = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GtrgmSame implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "gtrgm_same"; }
 async call(parameters : Public.Procedures.GtrgmSame.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3425,16 +3313,11 @@ async call(parameters : Public.Procedures.GtrgmSame.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GinExtractValueTrgm = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GinExtractValueTrgm implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "gin_extract_value_trgm"; }
 async call(parameters : Public.Procedures.GinExtractValueTrgm.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3451,16 +3334,11 @@ async call(parameters : Public.Procedures.GinExtractValueTrgm.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GinExtractQueryTrgm = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GinExtractQueryTrgm implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "gin_extract_query_trgm"; }
 async call(parameters : Public.Procedures.GinExtractQueryTrgm.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3477,16 +3355,11 @@ async call(parameters : Public.Procedures.GinExtractQueryTrgm.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GinTrgmConsistent = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GinTrgmConsistent implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "gin_trgm_consistent"; }
 async call(parameters : Public.Procedures.GinTrgmConsistent.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3503,16 +3376,11 @@ async call(parameters : Public.Procedures.GinTrgmConsistent.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GinTrgmTriconsistent = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GinTrgmTriconsistent implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "gin_trgm_triconsistent"; }
 async call(parameters : Public.Procedures.GinTrgmTriconsistent.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3529,16 +3397,11 @@ async call(parameters : Public.Procedures.GinTrgmTriconsistent.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StrictWordSimilarity = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StrictWordSimilarity implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "strict_word_similarity"; }
 async call(parameters : Public.Procedures.StrictWordSimilarity.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3555,16 +3418,11 @@ async call(parameters : Public.Procedures.StrictWordSimilarity.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StrictWordSimilarityOp = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StrictWordSimilarityOp implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "strict_word_similarity_op"; }
 async call(parameters : Public.Procedures.StrictWordSimilarityOp.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3581,16 +3439,11 @@ async call(parameters : Public.Procedures.StrictWordSimilarityOp.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StrictWordSimilarityCommutatorOp = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StrictWordSimilarityCommutatorOp implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "strict_word_similarity_commutator_op"; }
 async call(parameters : Public.Procedures.StrictWordSimilarityCommutatorOp.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3607,16 +3460,11 @@ async call(parameters : Public.Procedures.StrictWordSimilarityCommutatorOp.Param
               return responseBody;
            
 }
-}(this)
-
-          public StrictWordSimilarityDistOp = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StrictWordSimilarityDistOp implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "strict_word_similarity_dist_op"; }
 async call(parameters : Public.Procedures.StrictWordSimilarityDistOp.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3633,16 +3481,11 @@ async call(parameters : Public.Procedures.StrictWordSimilarityDistOp.Parameters)
               return responseBody;
            
 }
-}(this)
-
-          public StrictWordSimilarityDistCommutatorOp = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StrictWordSimilarityDistCommutatorOp implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "strict_word_similarity_dist_commutator_op"; }
 async call(parameters : Public.Procedures.StrictWordSimilarityDistCommutatorOp.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3659,16 +3502,11 @@ async call(parameters : Public.Procedures.StrictWordSimilarityDistCommutatorOp.P
               return responseBody;
            
 }
-}(this)
-
-          public GtrgmOptions = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GtrgmOptions implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "gtrgm_options"; }
 async call(parameters : Public.Procedures.GtrgmOptions.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3685,37 +3523,15 @@ async call(parameters : Public.Procedures.GtrgmOptions.Parameters) {
               return responseBody;
            
 }
-}(this)
-}(this)
-get Tables () { return new Public.Tables(this)} 
-}(this)
-
-          public Api = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-          public Procedures = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-          public Echo = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+}
+}
+export namespace Api {
+export namespace Procedures {
+export class Echo implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "echo"; }
 async call(parameters : Api.Procedures.Echo.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3732,16 +3548,11 @@ async call(parameters : Api.Procedures.Echo.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public EchoSet = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class EchoSet implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "echo_set"; }
 async call(parameters : Api.Procedures.EchoSet.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3758,16 +3569,11 @@ async call(parameters : Api.Procedures.EchoSet.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public EchoTable = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class EchoTable implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "echo_table"; }
 async call(parameters : Api.Procedures.EchoTable.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3783,16 +3589,11 @@ async call(parameters : Api.Procedures.EchoTable.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public EchoType = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class EchoType implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "echo_type"; }
 async call(parameters : Api.Procedures.EchoType.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3809,16 +3610,11 @@ async call(parameters : Api.Procedures.EchoType.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public EchoTypeArray = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class EchoTypeArray implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "echo_type_array"; }
 async call(parameters : Api.Procedures.EchoTypeArray.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3835,16 +3631,11 @@ async call(parameters : Api.Procedures.EchoTypeArray.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public EchoTypeNested = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class EchoTypeNested implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "echo_type_nested"; }
 async call(parameters : Api.Procedures.EchoTypeNested.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3861,16 +3652,11 @@ async call(parameters : Api.Procedures.EchoTypeNested.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public EchoTypeSet = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class EchoTypeSet implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "echo_type_set"; }
 async call(parameters : Api.Procedures.EchoTypeSet.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3887,16 +3673,11 @@ async call(parameters : Api.Procedures.EchoTypeSet.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public EchoAnswer = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class EchoAnswer implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "echo_answer"; }
 async call(parameters : Api.Procedures.EchoAnswer.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3913,31 +3694,12 @@ async call(parameters : Api.Procedures.EchoAnswer.Parameters) {
               return responseBody;
            
 }
-}(this)
-}(this)
-get Tables () { return new Api.Tables(this)} 
-}(this)
-
-          public PgToast = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-          public Procedures = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-}(this)
-get Tables () { return new PgToast.Tables(this)} 
-}(this)
+}
+}
+}
+export namespace PgToast {
+export namespace Procedures {
+}
 }
 export namespace Public {
 
@@ -5883,24 +5645,6 @@ export namespace Tables {
             
 }
 
-        // ⚠️ generated - do not modify ⚠️
-
-        /**
-         * These types are node/browser isomorphic and are used by all other
-         * EmbraceSQL generated code.
-         */
-        /* eslint-disable @typescript-eslint/no-explicit-any */
-        /* eslint-disable @typescript-eslint/no-empty-interface */
-        /* eslint-disable @typescript-eslint/no-namespace */
-        /* eslint-disable @typescript-eslint/no-unused-vars */
-        /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
-        /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
-        /* @typescript-eslint/no-redundant-type-constituents */
-        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
-        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
-        import { Geometry } from "@embracesql/shared";
-
-    
 export namespace PgCatalog {
 export namespace Types {
 

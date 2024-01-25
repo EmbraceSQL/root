@@ -1,5 +1,23 @@
 
-            import { Tables, Table, Column, Index } from "@embracesql/shared";
+        // ⚠️ generated - do not modify ⚠️
+
+        /**
+         * These types are node/browser isomorphic and are used by all other
+         * EmbraceSQL generated code.
+         */
+        /* eslint-disable @typescript-eslint/no-explicit-any */
+        /* eslint-disable @typescript-eslint/no-empty-interface */
+        /* eslint-disable @typescript-eslint/no-namespace */
+        /* eslint-disable @typescript-eslint/no-unused-vars */
+        /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
+        /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
+        /* @typescript-eslint/no-redundant-type-constituents */
+        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
+        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
+        import { Geometry } from "@embracesql/shared";
+    
+
+            import { Tables, Table, Column, Index, Procedures, Procedure } from "@embracesql/shared";
             import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
             import postgres from "postgres";
           
@@ -1775,196 +1793,7 @@ get settings() { return this.context.settings as Settings };
               return this.hasDatabase.database;
             }
         
-
-          public Procedures = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-          public FilmInStock = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.FilmInStock.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[28923].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.film_in_stock(p_film_id => ${ typed[23](undefinedIsNull(parameters.pFilmId)) },p_store_id => ${ typed[23](undefinedIsNull(parameters.pStoreId)) })`
-  const results = response;
-
-              const responseBody = ( results.map(x => parseResult(this.database.context, x.film_in_stock)).filter<PgCatalog.Types.Int4>((r):r is PgCatalog.Types.Int4 => r !== null) );
-              return responseBody;
-           
-}
-}(this)
-
-          public FilmNotInStock = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.FilmNotInStock.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[28924].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.film_not_in_stock(p_film_id => ${ typed[23](undefinedIsNull(parameters.pFilmId)) },p_store_id => ${ typed[23](undefinedIsNull(parameters.pStoreId)) })`
-  const results = response;
-
-              const responseBody = ( results.map(x => parseResult(this.database.context, x.film_not_in_stock)).filter<PgCatalog.Types.Int4>((r):r is PgCatalog.Types.Int4 => r !== null) );
-              return responseBody;
-           
-}
-}(this)
-
-          public GetCustomerBalance = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.GetCustomerBalance.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Numeric.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.get_customer_balance(p_customer_id => ${ typed[23](undefinedIsNull(parameters.pCustomerId)) },p_effective_date => ${ typed[1114](undefinedIsNull(parameters.pEffectiveDate)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Numeric.parse(results?.[0].get_customer_balance) );
-              return responseBody;
-           
-}
-}(this)
-
-          public InventoryHeldByCustomer = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.InventoryHeldByCustomer.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Int4.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.inventory_held_by_customer(p_inventory_id => ${ typed[23](undefinedIsNull(parameters.pInventoryId)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].inventory_held_by_customer) );
-              return responseBody;
-           
-}
-}(this)
-
-          public InventoryInStock = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.InventoryInStock.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Bool.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.inventory_in_stock(p_inventory_id => ${ typed[23](undefinedIsNull(parameters.pInventoryId)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].inventory_in_stock) );
-              return responseBody;
-           
-}
-}(this)
-
-          public LastDay = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.LastDay.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return PgCatalog.Types.Date.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.last_day( ${ typed[1114](undefinedIsNull(parameters.argument_0)) })`
-  const results = response;
-
-              const responseBody = ( PgCatalog.Types.Date.parse(results?.[0].last_day) );
-              return responseBody;
-           
-}
-}(this)
-
-          public RewardsReport = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-async call(parameters : Public.Procedures.RewardsReport.Parameters) {
-  
-            const parseResult = (context: Context, result: unknown) => {
-              console.assert(context);
-              return Public.Types.Customer.parse(result);
-            };
-          
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.rewards_report(min_monthly_purchases => ${ typed[23](undefinedIsNull(parameters.minMonthlyPurchases)) },min_dollar_amount_purchased => ${ typed[1700](undefinedIsNull(parameters.minDollarAmountPurchased)) })`
-  const results = response;
-
-              const responseBody = ( results.map(x => parseResult(this.database.context, x.rewards_report)).filter<Public.Types.Customer>((r):r is Public.Types.Customer => r !== null) );
-              return responseBody;
-           
-}
-}(this)
-}(this)
+get Procedures () { return new Public.Procedures(this)} 
 get Tables () { return new Public.Tables(this)} 
 }(this)
 
@@ -1976,16 +1805,7 @@ get Tables () { return new Public.Tables(this)}
               return this.hasDatabase.database;
             }
         
-
-          public Procedures = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-}(this)
+get Procedures () { return new PgToast.Procedures(this)} 
 get Tables () { return new PgToast.Tables(this)} 
 }(this)
 
@@ -2155,6 +1975,216 @@ FROM
         
 }(this)
 }(this)
+}
+export namespace Public {
+
+          export class Procedures implements Procedures, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "Procedures";
+            }
+
+            /**
+             * Every procedure in this schema.
+             */
+            get procedures() {
+              return [
+                new Public.Procedures.FilmInStock(this),new Public.Procedures.FilmNotInStock(this),new Public.Procedures.GetCustomerBalance(this),new Public.Procedures.InventoryHeldByCustomer(this),new Public.Procedures.InventoryInStock(this),new Public.Procedures.LastDay(this),new Public.Procedures.RewardsReport(this)
+              ];
+            }
+        
+get FilmInStock () { return new Public.Procedures.FilmInStock(this)} 
+get FilmNotInStock () { return new Public.Procedures.FilmNotInStock(this)} 
+get GetCustomerBalance () { return new Public.Procedures.GetCustomerBalance(this)} 
+get InventoryHeldByCustomer () { return new Public.Procedures.InventoryHeldByCustomer(this)} 
+get InventoryInStock () { return new Public.Procedures.InventoryInStock(this)} 
+get LastDay () { return new Public.Procedures.LastDay(this)} 
+get RewardsReport () { return new Public.Procedures.RewardsReport(this)} 
+}
+}
+export namespace PgToast {
+
+          export class Procedures implements Procedures, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "Procedures";
+            }
+
+            /**
+             * Every procedure in this schema.
+             */
+            get procedures() {
+              return [
+                
+              ];
+            }
+        
+}
+}
+export namespace Public {
+export namespace Procedures {
+export class FilmInStock implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "film_in_stock"; }
+async call(parameters : Public.Procedures.FilmInStock.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              return context.procTypes[28923].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.film_in_stock(p_film_id => ${ typed[23](undefinedIsNull(parameters.pFilmId)) },p_store_id => ${ typed[23](undefinedIsNull(parameters.pStoreId)) })`
+  const results = response;
+
+              const responseBody = ( results.map(x => parseResult(this.database.context, x.film_in_stock)).filter<PgCatalog.Types.Int4>((r):r is PgCatalog.Types.Int4 => r !== null) );
+              return responseBody;
+           
+}
+}
+export class FilmNotInStock implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "film_not_in_stock"; }
+async call(parameters : Public.Procedures.FilmNotInStock.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              return context.procTypes[28924].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.film_not_in_stock(p_film_id => ${ typed[23](undefinedIsNull(parameters.pFilmId)) },p_store_id => ${ typed[23](undefinedIsNull(parameters.pStoreId)) })`
+  const results = response;
+
+              const responseBody = ( results.map(x => parseResult(this.database.context, x.film_not_in_stock)).filter<PgCatalog.Types.Int4>((r):r is PgCatalog.Types.Int4 => r !== null) );
+              return responseBody;
+           
+}
+}
+export class GetCustomerBalance implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "get_customer_balance"; }
+async call(parameters : Public.Procedures.GetCustomerBalance.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Numeric.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.get_customer_balance(p_customer_id => ${ typed[23](undefinedIsNull(parameters.pCustomerId)) },p_effective_date => ${ typed[1114](undefinedIsNull(parameters.pEffectiveDate)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Numeric.parse(results?.[0].get_customer_balance) );
+              return responseBody;
+           
+}
+}
+export class InventoryHeldByCustomer implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "inventory_held_by_customer"; }
+async call(parameters : Public.Procedures.InventoryHeldByCustomer.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Int4.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.inventory_held_by_customer(p_inventory_id => ${ typed[23](undefinedIsNull(parameters.pInventoryId)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].inventory_held_by_customer) );
+              return responseBody;
+           
+}
+}
+export class InventoryInStock implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "inventory_in_stock"; }
+async call(parameters : Public.Procedures.InventoryInStock.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Bool.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.inventory_in_stock(p_inventory_id => ${ typed[23](undefinedIsNull(parameters.pInventoryId)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].inventory_in_stock) );
+              return responseBody;
+           
+}
+}
+export class LastDay implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "last_day"; }
+async call(parameters : Public.Procedures.LastDay.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return PgCatalog.Types.Date.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.last_day( ${ typed[1114](undefinedIsNull(parameters.argument_0)) })`
+  const results = response;
+
+              const responseBody = ( PgCatalog.Types.Date.parse(results?.[0].last_day) );
+              return responseBody;
+           
+}
+}
+export class RewardsReport implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "rewards_report"; }
+async call(parameters : Public.Procedures.RewardsReport.Parameters) {
+  
+            const parseResult = (context: Context, result: unknown) => {
+              console.assert(context);
+              return Public.Types.Customer.parse(result);
+            };
+          
+  const sql = this.database.context.sql;
+  const typed = sql.typed as unknown as PostgresTypecasts;
+  const response = await sql`SELECT public.rewards_report(min_monthly_purchases => ${ typed[23](undefinedIsNull(parameters.minMonthlyPurchases)) },min_dollar_amount_purchased => ${ typed[1700](undefinedIsNull(parameters.minDollarAmountPurchased)) })`
+  const results = response;
+
+              const responseBody = ( results.map(x => parseResult(this.database.context, x.rewards_report)).filter<Public.Types.Customer>((r):r is Public.Types.Customer => r !== null) );
+              return responseBody;
+           
+}
+}
+}
+}
+export namespace PgToast {
+export namespace Procedures {
+}
 }
 export namespace Public {
 
@@ -6151,24 +6181,6 @@ import {EmbraceSQLExpress} from "@embracesql/express"
   
 // End Express generated section
 
-        // ⚠️ generated - do not modify ⚠️
-
-        /**
-         * These types are node/browser isomorphic and are used by all other
-         * EmbraceSQL generated code.
-         */
-        /* eslint-disable @typescript-eslint/no-explicit-any */
-        /* eslint-disable @typescript-eslint/no-empty-interface */
-        /* eslint-disable @typescript-eslint/no-namespace */
-        /* eslint-disable @typescript-eslint/no-unused-vars */
-        /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
-        /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
-        /* @typescript-eslint/no-redundant-type-constituents */
-        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
-        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
-        import { Geometry } from "@embracesql/shared";
-
-    
 export namespace PgCatalog {
 export namespace Types {
 

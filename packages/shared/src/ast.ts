@@ -806,6 +806,11 @@ export class ProceduresNode extends ContainerNode {
   constructor(public schema: SchemaNode) {
     super("Procedures", ASTKind.Procedures, schema);
   }
+  get procedures() {
+    return this.children.filter<ProcedureNode>((n): n is ProcedureNode =>
+      isNodeType(n, ASTKind.Procedure),
+    );
+  }
 }
 
 /**

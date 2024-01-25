@@ -1,4 +1,22 @@
 
+        // ⚠️ generated - do not modify ⚠️
+
+        /**
+         * These types are node/browser isomorphic and are used by all other
+         * EmbraceSQL generated code.
+         */
+        /* eslint-disable @typescript-eslint/no-explicit-any */
+        /* eslint-disable @typescript-eslint/no-empty-interface */
+        /* eslint-disable @typescript-eslint/no-namespace */
+        /* eslint-disable @typescript-eslint/no-unused-vars */
+        /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
+        /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
+        /* @typescript-eslint/no-redundant-type-constituents */
+        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
+        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
+        import { Geometry } from "@embracesql/shared";
+    
+
             import { Tables, Table, Column, Index } from "@embracesql/shared";
             import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
             import postgres from "postgres";
@@ -5965,24 +5983,6 @@ import {EmbraceSQLExpress} from "@embracesql/express"
   
 // End Express generated section
 
-        // ⚠️ generated - do not modify ⚠️
-
-        /**
-         * These types are node/browser isomorphic and are used by all other
-         * EmbraceSQL generated code.
-         */
-        /* eslint-disable @typescript-eslint/no-explicit-any */
-        /* eslint-disable @typescript-eslint/no-empty-interface */
-        /* eslint-disable @typescript-eslint/no-namespace */
-        /* eslint-disable @typescript-eslint/no-unused-vars */
-        /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
-        /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
-        /* @typescript-eslint/no-redundant-type-constituents */
-        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
-        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
-        import { Geometry } from "@embracesql/shared";
-
-    
 export namespace PgCatalog {
 export namespace Types {
 

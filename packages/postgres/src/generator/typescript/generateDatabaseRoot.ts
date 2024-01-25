@@ -55,7 +55,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
               // starting off with all the imports, append to this list
               // and it will be the final output
               `
-            import { Tables, Table, Column, Index } from "@embracesql/shared";
+            import { Tables, Table, Column, Index, Procedures, Procedure } from "@embracesql/shared";
             import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
             import postgres from "postgres";
           `,
@@ -140,7 +140,76 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
           },
           after: NestedNamedClassVisitor.after,
         },
-        [ASTKind.Procedures]: NestedNamedClassVisitor,
+        [ASTKind.Procedures]: {
+          before: async (_, node) => {
+            return [
+              `get ${node.typescriptName} () { return new ${node.typescriptNamespacedName}(this)} `,
+            ].join("\n");
+          },
+        },
+        [ASTKind.Tables]: {
+          before: async (_, node) => {
+            return [
+              `get ${node.typescriptName} () { return new ${node.typescriptNamespacedName}(this)} `,
+            ].join("\n");
+          },
+        },
+      },
+    }),
+    // procedures collection holder
+    await context.database.visit({
+      ...context,
+      handlers: {
+        [ASTKind.Schema]: NamespaceVisitor,
+        [ASTKind.Procedures]: {
+          before: async (_, node) => {
+            return `
+          export class ${
+            node.typescriptName
+          } implements Procedures, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "${node.name}";
+            }
+
+            /**
+             * Every procedure in this schema.
+             */
+            get procedures() {
+              return [
+                ${node.procedures
+                  .map((t) => `new ${t.typescriptNamespacedName}(this)`)
+                  .join(",")}
+              ];
+            }
+        `;
+          },
+          after: async () => {
+            return `}`;
+          },
+        },
+        [ASTKind.Procedure]: {
+          before: async (_, node) => {
+            return [
+              `get ${node.typescriptName} () { return new ${node.typescriptNamespacedName}(this)} `,
+            ].join("\n");
+          },
+        },
+      },
+    }),
+    // stored callable procedure
+    await context.database.visit({
+      ...context,
+      handlers: {
+        [ASTKind.Schema]: NamespaceVisitor,
+        [ASTKind.Procedures]: NamespaceVisitor,
+
         [ASTKind.Procedure]: {
           before: async (_, node) => {
             // turn parameters into the postgres driver escape sequence
@@ -173,7 +242,11 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
               ? `parameters : ${node.parametersType?.typescriptNamespacedName}`
               : ``;
             return [
-              await NestedNamedClassVisitor.before(context, node),
+              `export class ${node.typescriptName} implements Procedure, HasDatabase {`,
+              `  constructor(private hasDatabase: HasDatabase) {}`,
+              `  get database() { return this.hasDatabase.database; }`,
+              `  get name() { return "${node.name}"; }`,
+
               `async call(${parameters}) {`,
               `  ${parseResult}`,
               `  const sql = this.database.context.sql;`,
@@ -194,13 +267,8 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
               `}`,
             ].join("\n");
           },
-          after: NestedNamedClassVisitor.after,
-        },
-        [ASTKind.Tables]: {
-          before: async (_, node) => {
-            return [
-              `get ${node.typescriptName} () { return new ${node.typescriptNamespacedName}(this)} `,
-            ].join("\n");
+          after: async () => {
+            return `}`;
           },
         },
       },
@@ -213,7 +281,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
         [ASTKind.Tables]: {
           before: async (_, node) => {
             return `
-          export class Tables implements Tables, HasDatabase {
+          export class ${node.typescriptName} implements Tables, HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 

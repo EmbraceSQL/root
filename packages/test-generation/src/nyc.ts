@@ -1,5 +1,23 @@
 
-            import { Tables, Table, Column, Index } from "@embracesql/shared";
+        // ⚠️ generated - do not modify ⚠️
+
+        /**
+         * These types are node/browser isomorphic and are used by all other
+         * EmbraceSQL generated code.
+         */
+        /* eslint-disable @typescript-eslint/no-explicit-any */
+        /* eslint-disable @typescript-eslint/no-empty-interface */
+        /* eslint-disable @typescript-eslint/no-namespace */
+        /* eslint-disable @typescript-eslint/no-unused-vars */
+        /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
+        /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
+        /* @typescript-eslint/no-redundant-type-constituents */
+        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
+        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
+        import { Geometry } from "@embracesql/shared";
+    
+
+            import { Tables, Table, Column, Index, Procedures, Procedure } from "@embracesql/shared";
             import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
             import postgres from "postgres";
           
@@ -3059,8 +3077,11 @@ get settings() { return this.context.settings as Settings };
               return this.hasDatabase.database;
             }
         
+get Procedures () { return new Public.Procedures(this)} 
+get Tables () { return new Public.Tables(this)} 
+}(this)
 
-          public Procedures = new class implements HasDatabase {
+          public PgToast = new class implements HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
@@ -3068,15 +3089,769 @@ get settings() { return this.context.settings as Settings };
               return this.hasDatabase.database;
             }
         
+get Procedures () { return new PgToast.Procedures(this)} 
+get Tables () { return new PgToast.Tables(this)} 
+}(this)
+}
+export namespace Public {
 
-          public StForcepolygoncw = new class implements HasDatabase {
+          export class Procedures implements Procedures, HasDatabase {
        		  constructor(private hasDatabase: HasDatabase) {
             }
 
             get database() {
               return this.hasDatabase.database;
             }
+
+            get name() {
+              return "Procedures";
+            }
+
+            /**
+             * Every procedure in this schema.
+             */
+            get procedures() {
+              return [
+                new Public.Procedures.StForcepolygoncw(this),new Public.Procedures.SpheroidIn(this),new Public.Procedures.SpheroidOut(this),new Public.Procedures.GeometryIn(this),new Public.Procedures.GeometryOut(this),new Public.Procedures.GeometryTypmodIn(this),new Public.Procedures.GeometryTypmodOut(this),new Public.Procedures.GeometryAnalyze(this),new Public.Procedures.GeometryRecv(this),new Public.Procedures.GeometrySend(this),new Public.Procedures.Geometry_02f3(this),new Public.Procedures.Geometry_8997(this),new Public.Procedures.Point(this),new Public.Procedures.GeometryB0d8(this),new Public.Procedures.Path(this),new Public.Procedures.GeometryF1be(this),new Public.Procedures.Polygon(this),new Public.Procedures.StX(this),new Public.Procedures.StY(this),new Public.Procedures.StZ(this),new Public.Procedures.StM(this),new Public.Procedures.Box3dIn(this),new Public.Procedures.Box3dOut(this),new Public.Procedures.Box2dIn(this),new Public.Procedures.Box2dOut(this),new Public.Procedures.Box2dfIn(this),new Public.Procedures.Box2dfOut(this),new Public.Procedures.GidxIn(this),new Public.Procedures.GidxOut(this),new Public.Procedures.GeometryLt(this),new Public.Procedures.GeometryLe(this),new Public.Procedures.GeometryGt(this),new Public.Procedures.GeometryGe(this),new Public.Procedures.GeometryEq(this),new Public.Procedures.GeometryCmp(this),new Public.Procedures.GeometrySortsupport(this),new Public.Procedures.GeometryHash(this),new Public.Procedures.GeometryGistDistance_2d(this),new Public.Procedures.GeometryGistConsistent_2d(this),new Public.Procedures.GeometryGistCompress_2d(this),new Public.Procedures.GeometryGistPenalty_2d(this),new Public.Procedures.GeometryGistPicksplit_2d(this),new Public.Procedures.GeometryGistUnion_2d(this),new Public.Procedures.GeometryGistSame_2d(this),new Public.Procedures.GeometryGistDecompress_2d(this),new Public.Procedures.GeometryGistSortsupport_2d(this),new Public.Procedures.StForcerhr(this),new Public.Procedures.PostgisNoop(this),new Public.Procedures.StForcepolygonccw(this),new Public.Procedures.GserializedGistSel_2d(this),new Public.Procedures.GserializedGistSelNd(this),new Public.Procedures.GserializedGistJoinsel_2d(this),new Public.Procedures.GserializedGistJoinselNd(this),new Public.Procedures.GeometryOverlaps(this),new Public.Procedures.GeometrySame(this),new Public.Procedures.GeometryDistanceCentroid(this),new Public.Procedures.GeometryDistanceBox(this),new Public.Procedures.GeometryContains(this),new Public.Procedures.GeometryWithin(this),new Public.Procedures.GeometryLeft(this),new Public.Procedures.GeometryOverleft(this),new Public.Procedures.GeometryBelow(this),new Public.Procedures.GeometryOverbelow(this),new Public.Procedures.GeometryOverright(this),new Public.Procedures.GeometryRight(this),new Public.Procedures.GeometryOverabove(this),new Public.Procedures.GeometryAbove(this),new Public.Procedures.GeometryGistConsistentNd(this),new Public.Procedures.GeometryGistCompressNd(this),new Public.Procedures.GeometryGistPenaltyNd(this),new Public.Procedures.GeometryGistPicksplitNd(this),new Public.Procedures.GeometryGistUnionNd(this),new Public.Procedures.GeometryGistSameNd(this),new Public.Procedures.GeometryGistDecompressNd(this),new Public.Procedures.GeometryOverlapsNd(this),new Public.Procedures.GeometryContainsNd(this),new Public.Procedures.GeometryWithinNd(this),new Public.Procedures.GeometrySameNd(this),new Public.Procedures.GeometryDistanceCentroidNd(this),new Public.Procedures.GeometryDistanceCpa(this),new Public.Procedures.GeometryGistDistanceNd(this),new Public.Procedures.StShiftlongitude(this),new Public.Procedures.StWrapx(this),new Public.Procedures.StXmin(this),new Public.Procedures.StYmin(this),new Public.Procedures.StZmin(this),new Public.Procedures.StXmax(this),new Public.Procedures.StYmax(this),new Public.Procedures.StZmax(this),new Public.Procedures.StExpand_84f4(this),new Public.Procedures.StExpand_42b4(this),new Public.Procedures.PostgisGetbbox(this),new Public.Procedures.StMakebox2d(this),new Public.Procedures.StEstimatedextentD2f5(this),new Public.Procedures.StEstimatedextent_27e1(this),new Public.Procedures.StEstimatedextent_2ec2(this),new Public.Procedures.StFindextent_27e1(this),new Public.Procedures.StFindextent_2ec2(this),new Public.Procedures.PostgisAddbbox(this),new Public.Procedures.PostgisDropbbox(this),new Public.Procedures.PostgisHasbbox(this),new Public.Procedures.StQuantizecoordinates(this),new Public.Procedures.StMemsize(this),new Public.Procedures.StSummary_7e9c(this),new Public.Procedures.StNpoints(this),new Public.Procedures.StNrings(this),new Public.Procedures.St_3dlength(this),new Public.Procedures.StLength2d(this),new Public.Procedures.StLength_7e9c(this),new Public.Procedures.StLengthspheroid(this),new Public.Procedures.StLength2dspheroid(this),new Public.Procedures.St_3dperimeter(this),new Public.Procedures.StPerimeter2d(this),new Public.Procedures.StPerimeter_7e9c(this),new Public.Procedures.StArea2d(this),new Public.Procedures.StArea_7e9c(this),new Public.Procedures.StIspolygoncw(this),new Public.Procedures.StIspolygonccw(this),new Public.Procedures.StDistancespheroidF223(this),new Public.Procedures.StDistancespheroid_14de(this),new Public.Procedures.StDistance_14de(this),new Public.Procedures.StPointinsidecircle(this),new Public.Procedures.StAzimuth_14de(this),new Public.Procedures.StProject_335d(this),new Public.Procedures.StProjectCf0b(this),new Public.Procedures.StAngle_1afa(this),new Public.Procedures.StLineextend(this),new Public.Procedures.StForce2d(this),new Public.Procedures.StForce3dz(this),new Public.Procedures.StForce3d(this),new Public.Procedures.StForce3dm(this),new Public.Procedures.StForce4d(this),new Public.Procedures.StForcecollection(this),new Public.Procedures.StCollectionextractFa24(this),new Public.Procedures.StCollectionextract_7e9c(this),new Public.Procedures.StCollectionhomogenize(this),new Public.Procedures.StMulti(this),new Public.Procedures.StForcecurve(this),new Public.Procedures.StForcesfs_7e9c(this),new Public.Procedures.StForcesfs_2ca2(this),new Public.Procedures.StExpand_9609(this),new Public.Procedures.StExpand_7003(this),new Public.Procedures.StExpand_2b18(this),new Public.Procedures.StExpand_6be8(this),new Public.Procedures.StEnvelope(this),new Public.Procedures.StBoundingdiagonal(this),new Public.Procedures.StReverse(this),new Public.Procedures.StScroll(this),new Public.Procedures.PostgisGeosNoop(this),new Public.Procedures.StNormalize(this),new Public.Procedures.StZmflag(this),new Public.Procedures.StNdims(this),new Public.Procedures.StAsewkt_7e9c(this),new Public.Procedures.StAsewktFa24(this),new Public.Procedures.StAstwkb_055b(this),new Public.Procedures.StAstwkb_3d8c(this),new Public.Procedures.StAsewkb_7e9c(this),new Public.Procedures.StAshexewkb_7e9c(this),new Public.Procedures.StAshexewkb_2ca2(this),new Public.Procedures.StAsewkb_2ca2(this),new Public.Procedures.StAslatlontext(this),new Public.Procedures.Geomfromewkb(this),new Public.Procedures.StGeomfromewkb(this),new Public.Procedures.StGeomfromtwkb(this),new Public.Procedures.Geomfromewkt(this),new Public.Procedures.StGeomfromewkt(this),new Public.Procedures.PostgisCacheBbox(this),new Public.Procedures.StMakepoint_0aec(this),new Public.Procedures.StMakepoint_81ec(this),new Public.Procedures.StMakepoint_570b(this),new Public.Procedures.StMakepointm(this),new Public.Procedures.St_3dmakebox(this),new Public.Procedures.StMakeline_4a4c(this),new Public.Procedures.StLinefrommultipoint(this),new Public.Procedures.StMakeline_14de(this),new Public.Procedures.StAddpoint_14de(this),new Public.Procedures.StScale_335d(this),new Public.Procedures.StAddpointF3bd(this),new Public.Procedures.StRemovepoint(this),new Public.Procedures.StSetpoint(this),new Public.Procedures.StMakeenvelope(this),new Public.Procedures.StTileenvelope(this),new Public.Procedures.StMakepolygonCd76(this),new Public.Procedures.StMakepolygon_7e9c(this),new Public.Procedures.StBuildarea(this),new Public.Procedures.StPolygonize_4a4c(this),new Public.Procedures.StClusterintersecting_4a4c(this),new Public.Procedures.StClusterwithin_756d(this),new Public.Procedures.StLinemerge_7e9c(this),new Public.Procedures.StLinemergeF473(this),new Public.Procedures.StAffine_5d4d(this),new Public.Procedures.StAffineAe1f(this),new Public.Procedures.StRotate_2b18(this),new Public.Procedures.StRotate_4294(this),new Public.Procedures.StRotateAb9e(this),new Public.Procedures.StRotatez(this),new Public.Procedures.StRotatex(this),new Public.Procedures.StRotatey(this),new Public.Procedures.StTranslate_4294(this),new Public.Procedures.StTranslate_335d(this),new Public.Procedures.StScale_14de(this),new Public.Procedures.StScale_09cb(this),new Public.Procedures.StScale_4294(this),new Public.Procedures.StTransscale(this),new Public.Procedures.StDump(this),new Public.Procedures.StDumprings(this),new Public.Procedures.StDumppoints(this),new Public.Procedures.StDumpsegments(this),new Public.Procedures.PopulateGeometryColumns_23fc(this),new Public.Procedures.PopulateGeometryColumns_4174(this),new Public.Procedures.Addgeometrycolumn_8fbb(this),new Public.Procedures.Addgeometrycolumn_4617(this),new Public.Procedures.Addgeometrycolumn_093c(this),new Public.Procedures.Dropgeometrycolumn_0412(this),new Public.Procedures.Dropgeometrycolumn_2253(this),new Public.Procedures.DropgeometrycolumnF11a(this),new Public.Procedures.Dropgeometrytable_2253(this),new Public.Procedures.StSegmentize_2b18(this),new Public.Procedures.DropgeometrytableF11a(this),new Public.Procedures.DropgeometrytableBfde(this),new Public.Procedures.UpdategeometrysridB2ee(this),new Public.Procedures.Updategeometrysrid_7b58(this),new Public.Procedures.Updategeometrysrid_11c8(this),new Public.Procedures.FindSrid(this),new Public.Procedures.GetProj4FromSrid(this),new Public.Procedures.StSetsridFa24(this),new Public.Procedures.StSrid_7e9c(this),new Public.Procedures.PostgisTransformGeometry(this),new Public.Procedures.PostgisSrsCodes(this),new Public.Procedures.PostgisSrs(this),new Public.Procedures.PostgisSrsAll(this),new Public.Procedures.PostgisSrsSearch(this),new Public.Procedures.StTransformFa24(this),new Public.Procedures.StTransform_2ca2(this),new Public.Procedures.StTransform_4b67(this),new Public.Procedures.StTransform_1623(this),new Public.Procedures.PostgisTransformPipelineGeometry(this),new Public.Procedures.StTransformpipeline(this),new Public.Procedures.StInversetransformpipeline(this),new Public.Procedures.PostgisVersion(this),new Public.Procedures.PostgisLiblwgeomVersion(this),new Public.Procedures.PostgisProjVersion(this),new Public.Procedures.PostgisWagyuVersion(this),new Public.Procedures.PostgisScriptsInstalled(this),new Public.Procedures.PostgisLibVersion(this),new Public.Procedures.PostgisScriptsReleased(this),new Public.Procedures.PostgisGeosVersion(this),new Public.Procedures.PostgisGeosCompiledVersion(this),new Public.Procedures.PostgisLibRevision(this),new Public.Procedures.PostgisSvnVersion(this),new Public.Procedures.PostgisLibxmlVersion(this),new Public.Procedures.PostgisScriptsBuildDate(this),new Public.Procedures.PostgisLibBuildDate(this),new Public.Procedures.PostgisExtensionsUpgrade(this),new Public.Procedures.StLineinterpolatepoint_2b18(this),new Public.Procedures.StLineinterpolatepoints_89cf(this),new Public.Procedures.StLinesubstring_335d(this),new Public.Procedures.StLinelocatepoint_14de(this),new Public.Procedures.StAddmeasure(this),new Public.Procedures.StClosestpointofapproach(this),new Public.Procedures.PostgisFullVersion(this),new Public.Procedures.Box2d_7e9c(this),new Public.Procedures.Box3d_7e9c(this),new Public.Procedures.Box_7e9c(this),new Public.Procedures.Box2dD3c1(this),new Public.Procedures.Box3dAc3a(this),new Public.Procedures.BoxD3c1(this),new Public.Procedures.Text(this),new Public.Procedures.Box3dtobox(this),new Public.Procedures.GeometryAc3a(this),new Public.Procedures.GeometryD3c1(this),new Public.Procedures.GeometryE728(this),new Public.Procedures.Geometry_2d19(this),new Public.Procedures.Bytea_7e9c(this),new Public.Procedures.StSimplify_2b18(this),new Public.Procedures.StSimplify_89cf(this),new Public.Procedures.StSimplifyvw(this),new Public.Procedures.StSeteffectivearea(this),new Public.Procedures.StFilterbym(this),new Public.Procedures.StChaikinsmoothing(this),new Public.Procedures.StSnaptogrid_6be8(this),new Public.Procedures.StSnaptogrid_335d(this),new Public.Procedures.StSnaptogrid_2b18(this),new Public.Procedures.StSnaptogrid_4ae3(this),new Public.Procedures.StDistancecpa(this),new Public.Procedures.StCpawithin(this),new Public.Procedures.StIsvalidtrajectory(this),new Public.Procedures.StIntersectionCf0b(this),new Public.Procedures.StBufferB011(this),new Public.Procedures.StBuffer_8d37(this),new Public.Procedures.StMinimumboundingradius(this),new Public.Procedures.StMinimumboundingcircle(this),new Public.Procedures.StOrientedenvelope(this),new Public.Procedures.StOffsetcurve(this),new Public.Procedures.StGeneratepointsFa24(this),new Public.Procedures.StGeneratepoints_5ca3(this),new Public.Procedures.StConvexhull(this),new Public.Procedures.StSimplifypreservetopology(this),new Public.Procedures.StIsvalidreason_7e9c(this),new Public.Procedures.StIsvaliddetail(this),new Public.Procedures.StIsvalidreasonFa24(this),new Public.Procedures.StIsvalidFa24(this),new Public.Procedures.StHausdorffdistance_14de(this),new Public.Procedures.StHausdorffdistanceCf0b(this),new Public.Procedures.StFrechetdistance(this),new Public.Procedures.StMaximuminscribedcircle(this),new Public.Procedures.StLargestemptycircle(this),new Public.Procedures.StDifference(this),new Public.Procedures.StBoundary(this),new Public.Procedures.StPoints(this),new Public.Procedures.StSymdifference(this),new Public.Procedures.StSymmetricdifference(this),new Public.Procedures.StUnion_14de(this),new Public.Procedures.StUnionCf0b(this),new Public.Procedures.StUnaryunion(this),new Public.Procedures.StRemoverepeatedpoints(this),new Public.Procedures.StClipbybox2d(this),new Public.Procedures.StSubdivide(this),new Public.Procedures.StReduceprecision(this),new Public.Procedures.StMakevalid_7e9c(this),new Public.Procedures.StMakevalid_2ca2(this),new Public.Procedures.StCleangeometry(this),new Public.Procedures.StSplit(this),new Public.Procedures.StSharedpaths(this),new Public.Procedures.StSnap(this),new Public.Procedures.StRelatematch(this),new Public.Procedures.StNode(this),new Public.Procedures.StDelaunaytriangles(this),new Public.Procedures.StTriangulatepolygon(this),new Public.Procedures.StVoronoipolygons(this),new Public.Procedures.StVoronoilines(this),new Public.Procedures.StCombinebbox_26c1(this),new Public.Procedures.StCombinebboxF3db(this),new Public.Procedures.StCombinebboxCe9a(this),new Public.Procedures.StCollect_14de(this),new Public.Procedures.StCollect_4a4c(this),new Public.Procedures.PgisGeometryAccumTransfn_2b9b(this),new Public.Procedures.PgisGeometryAccumTransfn_623d(this),new Public.Procedures.PgisGeometryAccumTransfn_3d24(this),new Public.Procedures.PgisGeometryCollectFinalfn(this),new Public.Procedures.PgisGeometryPolygonizeFinalfn(this),new Public.Procedures.PgisGeometryClusterintersectingFinalfn(this),new Public.Procedures.PgisGeometryClusterwithinFinalfn(this),new Public.Procedures.PgisGeometryMakelineFinalfn(this),new Public.Procedures.PgisGeometryCoverageunionFinalfn(this),new Public.Procedures.PgisGeometryUnionParallelTransfn_2b9b(this),new Public.Procedures.PgisGeometryUnionParallelTransfn_623d(this),new Public.Procedures.PgisGeometryUnionParallelCombinefn(this),new Public.Procedures.PgisGeometryUnionParallelSerialfn(this),new Public.Procedures.PgisGeometryUnionParallelDeserialfn(this),new Public.Procedures.PgisGeometryUnionParallelFinalfn(this),new Public.Procedures.StUnion_4a4c(this),new Public.Procedures.StCoverageunion_4a4c(this),new Public.Procedures.StRelate_14de(this),new Public.Procedures.StRelateF3bd(this),new Public.Procedures.StRelateC160(this),new Public.Procedures.StDisjoint(this),new Public.Procedures.PostgisIndexSupportfn(this),new Public.Procedures.StLinecrossingdirection(this),new Public.Procedures.StDwithinCf0b(this),new Public.Procedures.StTouches(this),new Public.Procedures.StIntersects_14de(this),new Public.Procedures.StCrosses(this),new Public.Procedures.StContains(this),new Public.Procedures.StContainsproperly(this),new Public.Procedures.StWithin(this),new Public.Procedures.StCovers_14de(this),new Public.Procedures.StCoveredby_14de(this),new Public.Procedures.StOverlaps(this),new Public.Procedures.StDfullywithin(this),new Public.Procedures.St_3ddwithin(this),new Public.Procedures.St_3ddfullywithin(this),new Public.Procedures.St_3dintersects(this),new Public.Procedures.StOrderingequals(this),new Public.Procedures.StEquals(this),new Public.Procedures.StIsvalid_7e9c(this),new Public.Procedures.StMinimumclearance(this),new Public.Procedures.StMinimumclearanceline(this),new Public.Procedures.StCentroid_7e9c(this),new Public.Procedures.StGeometricmedian(this),new Public.Procedures.StIsring(this),new Public.Procedures.StPointonsurface(this),new Public.Procedures.StIssimple(this),new Public.Procedures.StIscollection(this),new Public.Procedures.Equals(this),new Public.Procedures.StGeomfromgml_27e2(this),new Public.Procedures.StGeomfromgmlE728(this),new Public.Procedures.StGmltosqlE728(this),new Public.Procedures.StGmltosql_27e2(this),new Public.Procedures.StGeomfromkml(this),new Public.Procedures.StGeomfrommarc21(this),new Public.Procedures.StAsmarc21(this),new Public.Procedures.StGeomfromgeojsonE728(this),new Public.Procedures.StGeomfromgeojson_608f(this),new Public.Procedures.StGeomfromgeojson_3c9d(this),new Public.Procedures.PostgisLibjsonVersion(this),new Public.Procedures.StLinefromencodedpolyline(this),new Public.Procedures.StAsencodedpolyline(this),new Public.Procedures.StAssvg_5ca3(this),new Public.Procedures.StAsgml_5ca3(this),new Public.Procedures.StAsgmlE482(this),new Public.Procedures.StAskmlC46e(this),new Public.Procedures.StAsgeojson_5ca3(this),new Public.Procedures.StAsgeojsonF2c6(this),new Public.Procedures.Json(this),new Public.Procedures.Jsonb(this),new Public.Procedures.PgisAsmvtTransfn_647f(this),new Public.Procedures.PgisAsmvtTransfn_27f4(this),new Public.Procedures.PgisAsmvtTransfnF57f(this),new Public.Procedures.PgisAsmvtTransfn_92c1(this),new Public.Procedures.PgisAsmvtTransfnF5be(this),new Public.Procedures.PgisAsmvtFinalfn(this),new Public.Procedures.PgisAsmvtCombinefn(this),new Public.Procedures.PgisAsmvtSerialfn(this),new Public.Procedures.PgisAsmvtDeserialfn(this),new Public.Procedures.StAsmvtgeom(this),new Public.Procedures.PostgisLibprotobufVersion(this),new Public.Procedures.PgisAsgeobufTransfn_647f(this),new Public.Procedures.PgisAsgeobufTransfn_27f4(this),new Public.Procedures.PgisAsgeobufFinalfn(this),new Public.Procedures.PgisAsflatgeobufTransfn_647f(this),new Public.Procedures.PgisAsflatgeobufTransfn_9633(this),new Public.Procedures.PgisAsflatgeobufTransfn_521f(this),new Public.Procedures.PgisAsflatgeobufFinalfn(this),new Public.Procedures.StFromflatgeobuftotable(this),new Public.Procedures.StFromflatgeobuf(this),new Public.Procedures.StGeohashFa24(this),new Public.Procedures.StBox2dfromgeohash(this),new Public.Procedures.StPointfromgeohash(this),new Public.Procedures.StGeomfromgeohash(this),new Public.Procedures.StNumpoints(this),new Public.Procedures.StNumgeometries(this),new Public.Procedures.StGeometryn(this),new Public.Procedures.StDimension(this),new Public.Procedures.StExteriorring(this),new Public.Procedures.StNuminteriorrings(this),new Public.Procedures.StNuminteriorring(this),new Public.Procedures.StInteriorringn(this),new Public.Procedures.Geometrytype_7e9c(this),new Public.Procedures.StGeometrytype(this),new Public.Procedures.StPointn(this),new Public.Procedures.StNumpatches(this),new Public.Procedures.StPatchn(this),new Public.Procedures.StStartpoint(this),new Public.Procedures.StEndpoint(this),new Public.Procedures.StIsclosed(this),new Public.Procedures.StIsempty(this),new Public.Procedures.StAsbinary_2ca2(this),new Public.Procedures.StAsbinary_7e9c(this),new Public.Procedures.StAstext_7e9c(this),new Public.Procedures.StAstextFa24(this),new Public.Procedures.StGeometryfromtextE728(this),new Public.Procedures.StGeometryfromtext_27e2(this),new Public.Procedures.StGeomfromtextE728(this),new Public.Procedures.StGeomfromtext_27e2(this),new Public.Procedures.StWkttosql(this),new Public.Procedures.StPointfromtextE728(this),new Public.Procedures.StPointfromtext_27e2(this),new Public.Procedures.StLinefromtextE728(this),new Public.Procedures.StLinefromtext_27e2(this),new Public.Procedures.StPolyfromtextE728(this),new Public.Procedures.StPolyfromtext_27e2(this),new Public.Procedures.StPolygonfromtext_27e2(this),new Public.Procedures.StPolygonfromtextE728(this),new Public.Procedures.StMlinefromtext_27e2(this),new Public.Procedures.StMlinefromtextE728(this),new Public.Procedures.StMultilinestringfromtextE728(this),new Public.Procedures.StMultilinestringfromtext_27e2(this),new Public.Procedures.StMpointfromtext_27e2(this),new Public.Procedures.StMpointfromtextE728(this),new Public.Procedures.StMultipointfromtext(this),new Public.Procedures.StMpolyfromtext_27e2(this),new Public.Procedures.StMpolyfromtextE728(this),new Public.Procedures.StMultipolygonfromtext_27e2(this),new Public.Procedures.StMultipolygonfromtextE728(this),new Public.Procedures.StGeomcollfromtext_27e2(this),new Public.Procedures.StGeomcollfromtextE728(this),new Public.Procedures.StGeomfromwkb_2d19(this),new Public.Procedures.StGeomfromwkbD8af(this),new Public.Procedures.StPointfromwkbD8af(this),new Public.Procedures.StPointfromwkb_2d19(this),new Public.Procedures.StLinefromwkbD8af(this),new Public.Procedures.StLinefromwkb_2d19(this),new Public.Procedures.StLinestringfromwkbD8af(this),new Public.Procedures.StLinestringfromwkb_2d19(this),new Public.Procedures.StPolyfromwkbD8af(this),new Public.Procedures.StPolyfromwkb_2d19(this),new Public.Procedures.StPolygonfromwkbD8af(this),new Public.Procedures.StPolygonfromwkb_2d19(this),new Public.Procedures.StMpointfromwkbD8af(this),new Public.Procedures.StMpointfromwkb_2d19(this),new Public.Procedures.StMultipointfromwkbD8af(this),new Public.Procedures.GeographyAnalyze(this),new Public.Procedures.StMultipointfromwkb_2d19(this),new Public.Procedures.StMultilinefromwkb(this),new Public.Procedures.StMlinefromwkbD8af(this),new Public.Procedures.StMlinefromwkb_2d19(this),new Public.Procedures.StMpolyfromwkbD8af(this),new Public.Procedures.StMpolyfromwkb_2d19(this),new Public.Procedures.StMultipolyfromwkbD8af(this),new Public.Procedures.StMultipolyfromwkb_2d19(this),new Public.Procedures.StGeomcollfromwkbD8af(this),new Public.Procedures.StGeomcollfromwkb_2d19(this),new Public.Procedures.StMaxdistance(this),new Public.Procedures.StClosestpoint_14de(this),new Public.Procedures.StShortestline_14de(this),new Public.Procedures.StLongestline(this),new Public.Procedures.StSwapordinates(this),new Public.Procedures.StFlipcoordinates(this),new Public.Procedures.StBdpolyfromtext(this),new Public.Procedures.StBdmpolyfromtext(this),new Public.Procedures.Unlockrows(this),new Public.Procedures.Geography_5f53(this),new Public.Procedures.Geography_2d19(this),new Public.Procedures.Bytea_1126(this),new Public.Procedures.StAstext_1126(this),new Public.Procedures.StAstext_44eb(this),new Public.Procedures.LockrowE9aa(this),new Public.Procedures.Lockrow_02b4(this),new Public.Procedures.Lockrow_27e1(this),new Public.Procedures.Lockrow_9a8a(this),new Public.Procedures.Addauth(this),new Public.Procedures.Checkauth_27e1(this),new Public.Procedures.Checkauth_2ec2(this),new Public.Procedures.Checkauthtrigger(this),new Public.Procedures.Gettransactionid(this),new Public.Procedures.Enablelongtransactions(this),new Public.Procedures.Longtransactionsenabled(this),new Public.Procedures.Disablelongtransactions(this),new Public.Procedures.GeographyTypmodIn(this),new Public.Procedures.GeographyTypmodOut(this),new Public.Procedures.GeographyIn(this),new Public.Procedures.GeographyOut(this),new Public.Procedures.GeographyRecv(this),new Public.Procedures.GeographySend(this),new Public.Procedures.StAstextE728(this),new Public.Procedures.StGeographyfromtext(this),new Public.Procedures.StGeogfromtext(this),new Public.Procedures.StGeogfromwkb(this),new Public.Procedures.PostgisTypmodDims(this),new Public.Procedures.PostgisTypmodSrid(this),new Public.Procedures.PostgisTypmodType(this),new Public.Procedures.Geography_7e9c(this),new Public.Procedures.Geometry_1126(this),new Public.Procedures.GeographyGistConsistent(this),new Public.Procedures.GeographyGistCompress(this),new Public.Procedures.GeographyGistPenalty(this),new Public.Procedures.GeographyGistPicksplit(this),new Public.Procedures.GeographyGistUnion(this),new Public.Procedures.GeographyGistSame(this),new Public.Procedures.GeographyGistDecompress(this),new Public.Procedures.GeographyOverlaps(this),new Public.Procedures.GeographyDistanceKnn(this),new Public.Procedures.GeographyGistDistance(this),new Public.Procedures.OverlapsGeog_1632(this),new Public.Procedures.OverlapsGeogD1f5(this),new Public.Procedures.OverlapsGeogB3cf(this),new Public.Procedures.GeogBrinInclusionAddValue(this),new Public.Procedures.GeographyLt(this),new Public.Procedures.GeographyLe(this),new Public.Procedures.GeographyGt(this),new Public.Procedures.GeographyGe(this),new Public.Procedures.GeographyEq(this),new Public.Procedures.GeographyCmp(this),new Public.Procedures.StAssvgD22b(this),new Public.Procedures.StAssvgE728(this),new Public.Procedures.StProjectF245(this),new Public.Procedures.StAzimuthAeb8(this),new Public.Procedures.StBuffer_49f7(this),new Public.Procedures.StAsgml_9c73(this),new Public.Procedures.StAsgmlE8a8(this),new Public.Procedures.StAsgmlE728(this),new Public.Procedures.StAskmlAb1b(this),new Public.Procedures.StAskmlE728(this),new Public.Procedures.StAsgeojsonD22b(this),new Public.Procedures.StAsgeojsonE728(this),new Public.Procedures.StDistanceE193(this),new Public.Procedures.StDistance_2ec2(this),new Public.Procedures.StArea_5696(this),new Public.Procedures.StAreaE728(this),new Public.Procedures.StLength_5696(this),new Public.Procedures.StLengthE728(this),new Public.Procedures.StProject_44fa(this),new Public.Procedures.StPerimeter_5696(this),new Public.Procedures.StSegmentize_8ba5(this),new Public.Procedures.StAsbinary_1126(this),new Public.Procedures.StAsbinary_1951(this),new Public.Procedures.StAsewkt_1126(this),new Public.Procedures.StAsewkt_44eb(this),new Public.Procedures.StAsewktE728(this),new Public.Procedures.Geometrytype_1126(this),new Public.Procedures.StSummary_1126(this),new Public.Procedures.StGeohash_44eb(this),new Public.Procedures.StSrid_1126(this),new Public.Procedures.StSetsrid_44eb(this),new Public.Procedures.StCentroid_5696(this),new Public.Procedures.StCentroidE728(this),new Public.Procedures.StCoversAeb8(this),new Public.Procedures.StDwithinBfd6(this),new Public.Procedures.StCoveredbyAeb8(this),new Public.Procedures.StIntersectsAeb8(this),new Public.Procedures.StBuffer_8ba5(this),new Public.Procedures.StBufferBe24(this),new Public.Procedures.StBuffer_82e5(this),new Public.Procedures.StBufferC349(this),new Public.Procedures.StBufferF7c6(this),new Public.Procedures.StIntersectionAeb8(this),new Public.Procedures.StIntersection_2ec2(this),new Public.Procedures.StCovers_2ec2(this),new Public.Procedures.StCoveredby_2ec2(this),new Public.Procedures.StDwithinEfc0(this),new Public.Procedures.StIntersects_2ec2(this),new Public.Procedures.StClosestpointE193(this),new Public.Procedures.StClosestpoint_2ec2(this),new Public.Procedures.StShortestlineE193(this),new Public.Procedures.StShortestline_2ec2(this),new Public.Procedures.StLinesubstring_44fa(this),new Public.Procedures.StLinesubstringE586(this),new Public.Procedures.StLinelocatepointE193(this),new Public.Procedures.StLinelocatepoint_2ec2(this),new Public.Procedures.StLineinterpolatepoints_8013(this),new Public.Procedures.StLineinterpolatepointsC349(this),new Public.Procedures.StLineinterpolatepoint_6847(this),new Public.Procedures.StLineinterpolatepointC349(this),new Public.Procedures.StDistancesphere_14de(this),new Public.Procedures.StDistancesphereCf0b(this),new Public.Procedures.PostgisTypeName(this),new Public.Procedures.PostgisConstraintSrid(this),new Public.Procedures.PostgisConstraintDims(this),new Public.Procedures.PostgisConstraintType(this),new Public.Procedures.St_3ddistance(this),new Public.Procedures.St_3dmaxdistance(this),new Public.Procedures.St_3dclosestpoint(this),new Public.Procedures.St_3dshortestline(this),new Public.Procedures.St_3dlongestline(this),new Public.Procedures.StCoorddim(this),new Public.Procedures.StCurvetoline(this),new Public.Procedures.StHasarc(this),new Public.Procedures.StLinetocurve(this),new Public.Procedures.StPoint_0aec(this),new Public.Procedures.StPoint_0b7f(this),new Public.Procedures.StPointz(this),new Public.Procedures.StPointm(this),new Public.Procedures.StPointzm(this),new Public.Procedures.StPolygon(this),new Public.Procedures.StWkbtosql(this),new Public.Procedures.StLocatebetween(this),new Public.Procedures.StLocatealong(this),new Public.Procedures.StLocatebetweenelevations(this),new Public.Procedures.StInterpolatepoint(this),new Public.Procedures.StHexagon(this),new Public.Procedures.StSquare(this),new Public.Procedures.StHexagongrid(this),new Public.Procedures.StSquaregrid(this),new Public.Procedures.Contains_2dFd11(this),new Public.Procedures.IsContained_2dFd11(this),new Public.Procedures.Overlaps_2dFd11(this),new Public.Procedures.Overlaps_2dC063(this),new Public.Procedures.Contains_2dC063(this),new Public.Procedures.IsContained_2dC063(this),new Public.Procedures.Contains_2dE856(this),new Public.Procedures.IsContained_2dE856(this),new Public.Procedures.Overlaps_2dE856(this),new Public.Procedures.OverlapsNd_545f(this),new Public.Procedures.OverlapsNdD1f5(this),new Public.Procedures.OverlapsNd_87b1(this),new Public.Procedures.Geom2dBrinInclusionAddValue(this),new Public.Procedures.Geom3dBrinInclusionAddValue(this),new Public.Procedures.Geom4dBrinInclusionAddValue(this),new Public.Procedures.StSimplifypolygonhull(this),new Public.Procedures.StConcavehull(this),new Public.Procedures.StAsx3d(this),new Public.Procedures.StAngle_14de(this),new Public.Procedures.St_3dlineinterpolatepoint(this),new Public.Procedures.GeometrySpgistConfig_2d(this),new Public.Procedures.GeometrySpgistChoose_2d(this),new Public.Procedures.GeometrySpgistPicksplit_2d(this),new Public.Procedures.GeometrySpgistInnerConsistent_2d(this),new Public.Procedures.GeometrySpgistLeafConsistent_2d(this),new Public.Procedures.GeometrySpgistCompress_2d(this),new Public.Procedures.GeometryOverlaps_3d(this),new Public.Procedures.GeometryContains_3d(this),new Public.Procedures.GeometryContained_3d(this),new Public.Procedures.GeometrySame_3d(this),new Public.Procedures.GeometrySpgistConfig_3d(this),new Public.Procedures.GeometrySpgistChoose_3d(this),new Public.Procedures.GeometrySpgistPicksplit_3d(this),new Public.Procedures.GeometrySpgistInnerConsistent_3d(this),new Public.Procedures.GeometrySpgistLeafConsistent_3d(this),new Public.Procedures.GeometrySpgistCompress_3d(this),new Public.Procedures.GeometrySpgistConfigNd(this),new Public.Procedures.GeometrySpgistChooseNd(this),new Public.Procedures.GeometrySpgistPicksplitNd(this),new Public.Procedures.GeometrySpgistInnerConsistentNd(this),new Public.Procedures.GeometrySpgistLeafConsistentNd(this),new Public.Procedures.GeometrySpgistCompressNd(this),new Public.Procedures.GeographySpgistConfigNd(this),new Public.Procedures.GeographySpgistChooseNd(this),new Public.Procedures.GeographySpgistPicksplitNd(this),new Public.Procedures.GeographySpgistInnerConsistentNd(this),new Public.Procedures.GeographySpgistLeafConsistentNd(this),new Public.Procedures.GeographySpgistCompressNd(this),new Public.Procedures.StLetters(this)
+              ];
+            }
         
+get StForcepolygoncw () { return new Public.Procedures.StForcepolygoncw(this)} 
+get SpheroidIn () { return new Public.Procedures.SpheroidIn(this)} 
+get SpheroidOut () { return new Public.Procedures.SpheroidOut(this)} 
+get GeometryIn () { return new Public.Procedures.GeometryIn(this)} 
+get GeometryOut () { return new Public.Procedures.GeometryOut(this)} 
+get GeometryTypmodIn () { return new Public.Procedures.GeometryTypmodIn(this)} 
+get GeometryTypmodOut () { return new Public.Procedures.GeometryTypmodOut(this)} 
+get GeometryAnalyze () { return new Public.Procedures.GeometryAnalyze(this)} 
+get GeometryRecv () { return new Public.Procedures.GeometryRecv(this)} 
+get GeometrySend () { return new Public.Procedures.GeometrySend(this)} 
+get Geometry_02f3 () { return new Public.Procedures.Geometry_02f3(this)} 
+get Geometry_8997 () { return new Public.Procedures.Geometry_8997(this)} 
+get Point () { return new Public.Procedures.Point(this)} 
+get GeometryB0d8 () { return new Public.Procedures.GeometryB0d8(this)} 
+get Path () { return new Public.Procedures.Path(this)} 
+get GeometryF1be () { return new Public.Procedures.GeometryF1be(this)} 
+get Polygon () { return new Public.Procedures.Polygon(this)} 
+get StX () { return new Public.Procedures.StX(this)} 
+get StY () { return new Public.Procedures.StY(this)} 
+get StZ () { return new Public.Procedures.StZ(this)} 
+get StM () { return new Public.Procedures.StM(this)} 
+get Box3dIn () { return new Public.Procedures.Box3dIn(this)} 
+get Box3dOut () { return new Public.Procedures.Box3dOut(this)} 
+get Box2dIn () { return new Public.Procedures.Box2dIn(this)} 
+get Box2dOut () { return new Public.Procedures.Box2dOut(this)} 
+get Box2dfIn () { return new Public.Procedures.Box2dfIn(this)} 
+get Box2dfOut () { return new Public.Procedures.Box2dfOut(this)} 
+get GidxIn () { return new Public.Procedures.GidxIn(this)} 
+get GidxOut () { return new Public.Procedures.GidxOut(this)} 
+get GeometryLt () { return new Public.Procedures.GeometryLt(this)} 
+get GeometryLe () { return new Public.Procedures.GeometryLe(this)} 
+get GeometryGt () { return new Public.Procedures.GeometryGt(this)} 
+get GeometryGe () { return new Public.Procedures.GeometryGe(this)} 
+get GeometryEq () { return new Public.Procedures.GeometryEq(this)} 
+get GeometryCmp () { return new Public.Procedures.GeometryCmp(this)} 
+get GeometrySortsupport () { return new Public.Procedures.GeometrySortsupport(this)} 
+get GeometryHash () { return new Public.Procedures.GeometryHash(this)} 
+get GeometryGistDistance_2d () { return new Public.Procedures.GeometryGistDistance_2d(this)} 
+get GeometryGistConsistent_2d () { return new Public.Procedures.GeometryGistConsistent_2d(this)} 
+get GeometryGistCompress_2d () { return new Public.Procedures.GeometryGistCompress_2d(this)} 
+get GeometryGistPenalty_2d () { return new Public.Procedures.GeometryGistPenalty_2d(this)} 
+get GeometryGistPicksplit_2d () { return new Public.Procedures.GeometryGistPicksplit_2d(this)} 
+get GeometryGistUnion_2d () { return new Public.Procedures.GeometryGistUnion_2d(this)} 
+get GeometryGistSame_2d () { return new Public.Procedures.GeometryGistSame_2d(this)} 
+get GeometryGistDecompress_2d () { return new Public.Procedures.GeometryGistDecompress_2d(this)} 
+get GeometryGistSortsupport_2d () { return new Public.Procedures.GeometryGistSortsupport_2d(this)} 
+get StForcerhr () { return new Public.Procedures.StForcerhr(this)} 
+get PostgisNoop () { return new Public.Procedures.PostgisNoop(this)} 
+get StForcepolygonccw () { return new Public.Procedures.StForcepolygonccw(this)} 
+get GserializedGistSel_2d () { return new Public.Procedures.GserializedGistSel_2d(this)} 
+get GserializedGistSelNd () { return new Public.Procedures.GserializedGistSelNd(this)} 
+get GserializedGistJoinsel_2d () { return new Public.Procedures.GserializedGistJoinsel_2d(this)} 
+get GserializedGistJoinselNd () { return new Public.Procedures.GserializedGistJoinselNd(this)} 
+get GeometryOverlaps () { return new Public.Procedures.GeometryOverlaps(this)} 
+get GeometrySame () { return new Public.Procedures.GeometrySame(this)} 
+get GeometryDistanceCentroid () { return new Public.Procedures.GeometryDistanceCentroid(this)} 
+get GeometryDistanceBox () { return new Public.Procedures.GeometryDistanceBox(this)} 
+get GeometryContains () { return new Public.Procedures.GeometryContains(this)} 
+get GeometryWithin () { return new Public.Procedures.GeometryWithin(this)} 
+get GeometryLeft () { return new Public.Procedures.GeometryLeft(this)} 
+get GeometryOverleft () { return new Public.Procedures.GeometryOverleft(this)} 
+get GeometryBelow () { return new Public.Procedures.GeometryBelow(this)} 
+get GeometryOverbelow () { return new Public.Procedures.GeometryOverbelow(this)} 
+get GeometryOverright () { return new Public.Procedures.GeometryOverright(this)} 
+get GeometryRight () { return new Public.Procedures.GeometryRight(this)} 
+get GeometryOverabove () { return new Public.Procedures.GeometryOverabove(this)} 
+get GeometryAbove () { return new Public.Procedures.GeometryAbove(this)} 
+get GeometryGistConsistentNd () { return new Public.Procedures.GeometryGistConsistentNd(this)} 
+get GeometryGistCompressNd () { return new Public.Procedures.GeometryGistCompressNd(this)} 
+get GeometryGistPenaltyNd () { return new Public.Procedures.GeometryGistPenaltyNd(this)} 
+get GeometryGistPicksplitNd () { return new Public.Procedures.GeometryGistPicksplitNd(this)} 
+get GeometryGistUnionNd () { return new Public.Procedures.GeometryGistUnionNd(this)} 
+get GeometryGistSameNd () { return new Public.Procedures.GeometryGistSameNd(this)} 
+get GeometryGistDecompressNd () { return new Public.Procedures.GeometryGistDecompressNd(this)} 
+get GeometryOverlapsNd () { return new Public.Procedures.GeometryOverlapsNd(this)} 
+get GeometryContainsNd () { return new Public.Procedures.GeometryContainsNd(this)} 
+get GeometryWithinNd () { return new Public.Procedures.GeometryWithinNd(this)} 
+get GeometrySameNd () { return new Public.Procedures.GeometrySameNd(this)} 
+get GeometryDistanceCentroidNd () { return new Public.Procedures.GeometryDistanceCentroidNd(this)} 
+get GeometryDistanceCpa () { return new Public.Procedures.GeometryDistanceCpa(this)} 
+get GeometryGistDistanceNd () { return new Public.Procedures.GeometryGistDistanceNd(this)} 
+get StShiftlongitude () { return new Public.Procedures.StShiftlongitude(this)} 
+get StWrapx () { return new Public.Procedures.StWrapx(this)} 
+get StXmin () { return new Public.Procedures.StXmin(this)} 
+get StYmin () { return new Public.Procedures.StYmin(this)} 
+get StZmin () { return new Public.Procedures.StZmin(this)} 
+get StXmax () { return new Public.Procedures.StXmax(this)} 
+get StYmax () { return new Public.Procedures.StYmax(this)} 
+get StZmax () { return new Public.Procedures.StZmax(this)} 
+get StExpand_84f4 () { return new Public.Procedures.StExpand_84f4(this)} 
+get StExpand_42b4 () { return new Public.Procedures.StExpand_42b4(this)} 
+get PostgisGetbbox () { return new Public.Procedures.PostgisGetbbox(this)} 
+get StMakebox2d () { return new Public.Procedures.StMakebox2d(this)} 
+get StEstimatedextentD2f5 () { return new Public.Procedures.StEstimatedextentD2f5(this)} 
+get StEstimatedextent_27e1 () { return new Public.Procedures.StEstimatedextent_27e1(this)} 
+get StEstimatedextent_2ec2 () { return new Public.Procedures.StEstimatedextent_2ec2(this)} 
+get StFindextent_27e1 () { return new Public.Procedures.StFindextent_27e1(this)} 
+get StFindextent_2ec2 () { return new Public.Procedures.StFindextent_2ec2(this)} 
+get PostgisAddbbox () { return new Public.Procedures.PostgisAddbbox(this)} 
+get PostgisDropbbox () { return new Public.Procedures.PostgisDropbbox(this)} 
+get PostgisHasbbox () { return new Public.Procedures.PostgisHasbbox(this)} 
+get StQuantizecoordinates () { return new Public.Procedures.StQuantizecoordinates(this)} 
+get StMemsize () { return new Public.Procedures.StMemsize(this)} 
+get StSummary_7e9c () { return new Public.Procedures.StSummary_7e9c(this)} 
+get StNpoints () { return new Public.Procedures.StNpoints(this)} 
+get StNrings () { return new Public.Procedures.StNrings(this)} 
+get St_3dlength () { return new Public.Procedures.St_3dlength(this)} 
+get StLength2d () { return new Public.Procedures.StLength2d(this)} 
+get StLength_7e9c () { return new Public.Procedures.StLength_7e9c(this)} 
+get StLengthspheroid () { return new Public.Procedures.StLengthspheroid(this)} 
+get StLength2dspheroid () { return new Public.Procedures.StLength2dspheroid(this)} 
+get St_3dperimeter () { return new Public.Procedures.St_3dperimeter(this)} 
+get StPerimeter2d () { return new Public.Procedures.StPerimeter2d(this)} 
+get StPerimeter_7e9c () { return new Public.Procedures.StPerimeter_7e9c(this)} 
+get StArea2d () { return new Public.Procedures.StArea2d(this)} 
+get StArea_7e9c () { return new Public.Procedures.StArea_7e9c(this)} 
+get StIspolygoncw () { return new Public.Procedures.StIspolygoncw(this)} 
+get StIspolygonccw () { return new Public.Procedures.StIspolygonccw(this)} 
+get StDistancespheroidF223 () { return new Public.Procedures.StDistancespheroidF223(this)} 
+get StDistancespheroid_14de () { return new Public.Procedures.StDistancespheroid_14de(this)} 
+get StDistance_14de () { return new Public.Procedures.StDistance_14de(this)} 
+get StPointinsidecircle () { return new Public.Procedures.StPointinsidecircle(this)} 
+get StAzimuth_14de () { return new Public.Procedures.StAzimuth_14de(this)} 
+get StProject_335d () { return new Public.Procedures.StProject_335d(this)} 
+get StProjectCf0b () { return new Public.Procedures.StProjectCf0b(this)} 
+get StAngle_1afa () { return new Public.Procedures.StAngle_1afa(this)} 
+get StLineextend () { return new Public.Procedures.StLineextend(this)} 
+get StForce2d () { return new Public.Procedures.StForce2d(this)} 
+get StForce3dz () { return new Public.Procedures.StForce3dz(this)} 
+get StForce3d () { return new Public.Procedures.StForce3d(this)} 
+get StForce3dm () { return new Public.Procedures.StForce3dm(this)} 
+get StForce4d () { return new Public.Procedures.StForce4d(this)} 
+get StForcecollection () { return new Public.Procedures.StForcecollection(this)} 
+get StCollectionextractFa24 () { return new Public.Procedures.StCollectionextractFa24(this)} 
+get StCollectionextract_7e9c () { return new Public.Procedures.StCollectionextract_7e9c(this)} 
+get StCollectionhomogenize () { return new Public.Procedures.StCollectionhomogenize(this)} 
+get StMulti () { return new Public.Procedures.StMulti(this)} 
+get StForcecurve () { return new Public.Procedures.StForcecurve(this)} 
+get StForcesfs_7e9c () { return new Public.Procedures.StForcesfs_7e9c(this)} 
+get StForcesfs_2ca2 () { return new Public.Procedures.StForcesfs_2ca2(this)} 
+get StExpand_9609 () { return new Public.Procedures.StExpand_9609(this)} 
+get StExpand_7003 () { return new Public.Procedures.StExpand_7003(this)} 
+get StExpand_2b18 () { return new Public.Procedures.StExpand_2b18(this)} 
+get StExpand_6be8 () { return new Public.Procedures.StExpand_6be8(this)} 
+get StEnvelope () { return new Public.Procedures.StEnvelope(this)} 
+get StBoundingdiagonal () { return new Public.Procedures.StBoundingdiagonal(this)} 
+get StReverse () { return new Public.Procedures.StReverse(this)} 
+get StScroll () { return new Public.Procedures.StScroll(this)} 
+get PostgisGeosNoop () { return new Public.Procedures.PostgisGeosNoop(this)} 
+get StNormalize () { return new Public.Procedures.StNormalize(this)} 
+get StZmflag () { return new Public.Procedures.StZmflag(this)} 
+get StNdims () { return new Public.Procedures.StNdims(this)} 
+get StAsewkt_7e9c () { return new Public.Procedures.StAsewkt_7e9c(this)} 
+get StAsewktFa24 () { return new Public.Procedures.StAsewktFa24(this)} 
+get StAstwkb_055b () { return new Public.Procedures.StAstwkb_055b(this)} 
+get StAstwkb_3d8c () { return new Public.Procedures.StAstwkb_3d8c(this)} 
+get StAsewkb_7e9c () { return new Public.Procedures.StAsewkb_7e9c(this)} 
+get StAshexewkb_7e9c () { return new Public.Procedures.StAshexewkb_7e9c(this)} 
+get StAshexewkb_2ca2 () { return new Public.Procedures.StAshexewkb_2ca2(this)} 
+get StAsewkb_2ca2 () { return new Public.Procedures.StAsewkb_2ca2(this)} 
+get StAslatlontext () { return new Public.Procedures.StAslatlontext(this)} 
+get Geomfromewkb () { return new Public.Procedures.Geomfromewkb(this)} 
+get StGeomfromewkb () { return new Public.Procedures.StGeomfromewkb(this)} 
+get StGeomfromtwkb () { return new Public.Procedures.StGeomfromtwkb(this)} 
+get Geomfromewkt () { return new Public.Procedures.Geomfromewkt(this)} 
+get StGeomfromewkt () { return new Public.Procedures.StGeomfromewkt(this)} 
+get PostgisCacheBbox () { return new Public.Procedures.PostgisCacheBbox(this)} 
+get StMakepoint_0aec () { return new Public.Procedures.StMakepoint_0aec(this)} 
+get StMakepoint_81ec () { return new Public.Procedures.StMakepoint_81ec(this)} 
+get StMakepoint_570b () { return new Public.Procedures.StMakepoint_570b(this)} 
+get StMakepointm () { return new Public.Procedures.StMakepointm(this)} 
+get St_3dmakebox () { return new Public.Procedures.St_3dmakebox(this)} 
+get StMakeline_4a4c () { return new Public.Procedures.StMakeline_4a4c(this)} 
+get StLinefrommultipoint () { return new Public.Procedures.StLinefrommultipoint(this)} 
+get StMakeline_14de () { return new Public.Procedures.StMakeline_14de(this)} 
+get StAddpoint_14de () { return new Public.Procedures.StAddpoint_14de(this)} 
+get StScale_335d () { return new Public.Procedures.StScale_335d(this)} 
+get StAddpointF3bd () { return new Public.Procedures.StAddpointF3bd(this)} 
+get StRemovepoint () { return new Public.Procedures.StRemovepoint(this)} 
+get StSetpoint () { return new Public.Procedures.StSetpoint(this)} 
+get StMakeenvelope () { return new Public.Procedures.StMakeenvelope(this)} 
+get StTileenvelope () { return new Public.Procedures.StTileenvelope(this)} 
+get StMakepolygonCd76 () { return new Public.Procedures.StMakepolygonCd76(this)} 
+get StMakepolygon_7e9c () { return new Public.Procedures.StMakepolygon_7e9c(this)} 
+get StBuildarea () { return new Public.Procedures.StBuildarea(this)} 
+get StPolygonize_4a4c () { return new Public.Procedures.StPolygonize_4a4c(this)} 
+get StClusterintersecting_4a4c () { return new Public.Procedures.StClusterintersecting_4a4c(this)} 
+get StClusterwithin_756d () { return new Public.Procedures.StClusterwithin_756d(this)} 
+get StLinemerge_7e9c () { return new Public.Procedures.StLinemerge_7e9c(this)} 
+get StLinemergeF473 () { return new Public.Procedures.StLinemergeF473(this)} 
+get StAffine_5d4d () { return new Public.Procedures.StAffine_5d4d(this)} 
+get StAffineAe1f () { return new Public.Procedures.StAffineAe1f(this)} 
+get StRotate_2b18 () { return new Public.Procedures.StRotate_2b18(this)} 
+get StRotate_4294 () { return new Public.Procedures.StRotate_4294(this)} 
+get StRotateAb9e () { return new Public.Procedures.StRotateAb9e(this)} 
+get StRotatez () { return new Public.Procedures.StRotatez(this)} 
+get StRotatex () { return new Public.Procedures.StRotatex(this)} 
+get StRotatey () { return new Public.Procedures.StRotatey(this)} 
+get StTranslate_4294 () { return new Public.Procedures.StTranslate_4294(this)} 
+get StTranslate_335d () { return new Public.Procedures.StTranslate_335d(this)} 
+get StScale_14de () { return new Public.Procedures.StScale_14de(this)} 
+get StScale_09cb () { return new Public.Procedures.StScale_09cb(this)} 
+get StScale_4294 () { return new Public.Procedures.StScale_4294(this)} 
+get StTransscale () { return new Public.Procedures.StTransscale(this)} 
+get StDump () { return new Public.Procedures.StDump(this)} 
+get StDumprings () { return new Public.Procedures.StDumprings(this)} 
+get StDumppoints () { return new Public.Procedures.StDumppoints(this)} 
+get StDumpsegments () { return new Public.Procedures.StDumpsegments(this)} 
+get PopulateGeometryColumns_23fc () { return new Public.Procedures.PopulateGeometryColumns_23fc(this)} 
+get PopulateGeometryColumns_4174 () { return new Public.Procedures.PopulateGeometryColumns_4174(this)} 
+get Addgeometrycolumn_8fbb () { return new Public.Procedures.Addgeometrycolumn_8fbb(this)} 
+get Addgeometrycolumn_4617 () { return new Public.Procedures.Addgeometrycolumn_4617(this)} 
+get Addgeometrycolumn_093c () { return new Public.Procedures.Addgeometrycolumn_093c(this)} 
+get Dropgeometrycolumn_0412 () { return new Public.Procedures.Dropgeometrycolumn_0412(this)} 
+get Dropgeometrycolumn_2253 () { return new Public.Procedures.Dropgeometrycolumn_2253(this)} 
+get DropgeometrycolumnF11a () { return new Public.Procedures.DropgeometrycolumnF11a(this)} 
+get Dropgeometrytable_2253 () { return new Public.Procedures.Dropgeometrytable_2253(this)} 
+get StSegmentize_2b18 () { return new Public.Procedures.StSegmentize_2b18(this)} 
+get DropgeometrytableF11a () { return new Public.Procedures.DropgeometrytableF11a(this)} 
+get DropgeometrytableBfde () { return new Public.Procedures.DropgeometrytableBfde(this)} 
+get UpdategeometrysridB2ee () { return new Public.Procedures.UpdategeometrysridB2ee(this)} 
+get Updategeometrysrid_7b58 () { return new Public.Procedures.Updategeometrysrid_7b58(this)} 
+get Updategeometrysrid_11c8 () { return new Public.Procedures.Updategeometrysrid_11c8(this)} 
+get FindSrid () { return new Public.Procedures.FindSrid(this)} 
+get GetProj4FromSrid () { return new Public.Procedures.GetProj4FromSrid(this)} 
+get StSetsridFa24 () { return new Public.Procedures.StSetsridFa24(this)} 
+get StSrid_7e9c () { return new Public.Procedures.StSrid_7e9c(this)} 
+get PostgisTransformGeometry () { return new Public.Procedures.PostgisTransformGeometry(this)} 
+get PostgisSrsCodes () { return new Public.Procedures.PostgisSrsCodes(this)} 
+get PostgisSrs () { return new Public.Procedures.PostgisSrs(this)} 
+get PostgisSrsAll () { return new Public.Procedures.PostgisSrsAll(this)} 
+get PostgisSrsSearch () { return new Public.Procedures.PostgisSrsSearch(this)} 
+get StTransformFa24 () { return new Public.Procedures.StTransformFa24(this)} 
+get StTransform_2ca2 () { return new Public.Procedures.StTransform_2ca2(this)} 
+get StTransform_4b67 () { return new Public.Procedures.StTransform_4b67(this)} 
+get StTransform_1623 () { return new Public.Procedures.StTransform_1623(this)} 
+get PostgisTransformPipelineGeometry () { return new Public.Procedures.PostgisTransformPipelineGeometry(this)} 
+get StTransformpipeline () { return new Public.Procedures.StTransformpipeline(this)} 
+get StInversetransformpipeline () { return new Public.Procedures.StInversetransformpipeline(this)} 
+get PostgisVersion () { return new Public.Procedures.PostgisVersion(this)} 
+get PostgisLiblwgeomVersion () { return new Public.Procedures.PostgisLiblwgeomVersion(this)} 
+get PostgisProjVersion () { return new Public.Procedures.PostgisProjVersion(this)} 
+get PostgisWagyuVersion () { return new Public.Procedures.PostgisWagyuVersion(this)} 
+get PostgisScriptsInstalled () { return new Public.Procedures.PostgisScriptsInstalled(this)} 
+get PostgisLibVersion () { return new Public.Procedures.PostgisLibVersion(this)} 
+get PostgisScriptsReleased () { return new Public.Procedures.PostgisScriptsReleased(this)} 
+get PostgisGeosVersion () { return new Public.Procedures.PostgisGeosVersion(this)} 
+get PostgisGeosCompiledVersion () { return new Public.Procedures.PostgisGeosCompiledVersion(this)} 
+get PostgisLibRevision () { return new Public.Procedures.PostgisLibRevision(this)} 
+get PostgisSvnVersion () { return new Public.Procedures.PostgisSvnVersion(this)} 
+get PostgisLibxmlVersion () { return new Public.Procedures.PostgisLibxmlVersion(this)} 
+get PostgisScriptsBuildDate () { return new Public.Procedures.PostgisScriptsBuildDate(this)} 
+get PostgisLibBuildDate () { return new Public.Procedures.PostgisLibBuildDate(this)} 
+get PostgisExtensionsUpgrade () { return new Public.Procedures.PostgisExtensionsUpgrade(this)} 
+get StLineinterpolatepoint_2b18 () { return new Public.Procedures.StLineinterpolatepoint_2b18(this)} 
+get StLineinterpolatepoints_89cf () { return new Public.Procedures.StLineinterpolatepoints_89cf(this)} 
+get StLinesubstring_335d () { return new Public.Procedures.StLinesubstring_335d(this)} 
+get StLinelocatepoint_14de () { return new Public.Procedures.StLinelocatepoint_14de(this)} 
+get StAddmeasure () { return new Public.Procedures.StAddmeasure(this)} 
+get StClosestpointofapproach () { return new Public.Procedures.StClosestpointofapproach(this)} 
+get PostgisFullVersion () { return new Public.Procedures.PostgisFullVersion(this)} 
+get Box2d_7e9c () { return new Public.Procedures.Box2d_7e9c(this)} 
+get Box3d_7e9c () { return new Public.Procedures.Box3d_7e9c(this)} 
+get Box_7e9c () { return new Public.Procedures.Box_7e9c(this)} 
+get Box2dD3c1 () { return new Public.Procedures.Box2dD3c1(this)} 
+get Box3dAc3a () { return new Public.Procedures.Box3dAc3a(this)} 
+get BoxD3c1 () { return new Public.Procedures.BoxD3c1(this)} 
+get Text () { return new Public.Procedures.Text(this)} 
+get Box3dtobox () { return new Public.Procedures.Box3dtobox(this)} 
+get GeometryAc3a () { return new Public.Procedures.GeometryAc3a(this)} 
+get GeometryD3c1 () { return new Public.Procedures.GeometryD3c1(this)} 
+get GeometryE728 () { return new Public.Procedures.GeometryE728(this)} 
+get Geometry_2d19 () { return new Public.Procedures.Geometry_2d19(this)} 
+get Bytea_7e9c () { return new Public.Procedures.Bytea_7e9c(this)} 
+get StSimplify_2b18 () { return new Public.Procedures.StSimplify_2b18(this)} 
+get StSimplify_89cf () { return new Public.Procedures.StSimplify_89cf(this)} 
+get StSimplifyvw () { return new Public.Procedures.StSimplifyvw(this)} 
+get StSeteffectivearea () { return new Public.Procedures.StSeteffectivearea(this)} 
+get StFilterbym () { return new Public.Procedures.StFilterbym(this)} 
+get StChaikinsmoothing () { return new Public.Procedures.StChaikinsmoothing(this)} 
+get StSnaptogrid_6be8 () { return new Public.Procedures.StSnaptogrid_6be8(this)} 
+get StSnaptogrid_335d () { return new Public.Procedures.StSnaptogrid_335d(this)} 
+get StSnaptogrid_2b18 () { return new Public.Procedures.StSnaptogrid_2b18(this)} 
+get StSnaptogrid_4ae3 () { return new Public.Procedures.StSnaptogrid_4ae3(this)} 
+get StDistancecpa () { return new Public.Procedures.StDistancecpa(this)} 
+get StCpawithin () { return new Public.Procedures.StCpawithin(this)} 
+get StIsvalidtrajectory () { return new Public.Procedures.StIsvalidtrajectory(this)} 
+get StIntersectionCf0b () { return new Public.Procedures.StIntersectionCf0b(this)} 
+get StBufferB011 () { return new Public.Procedures.StBufferB011(this)} 
+get StBuffer_8d37 () { return new Public.Procedures.StBuffer_8d37(this)} 
+get StMinimumboundingradius () { return new Public.Procedures.StMinimumboundingradius(this)} 
+get StMinimumboundingcircle () { return new Public.Procedures.StMinimumboundingcircle(this)} 
+get StOrientedenvelope () { return new Public.Procedures.StOrientedenvelope(this)} 
+get StOffsetcurve () { return new Public.Procedures.StOffsetcurve(this)} 
+get StGeneratepointsFa24 () { return new Public.Procedures.StGeneratepointsFa24(this)} 
+get StGeneratepoints_5ca3 () { return new Public.Procedures.StGeneratepoints_5ca3(this)} 
+get StConvexhull () { return new Public.Procedures.StConvexhull(this)} 
+get StSimplifypreservetopology () { return new Public.Procedures.StSimplifypreservetopology(this)} 
+get StIsvalidreason_7e9c () { return new Public.Procedures.StIsvalidreason_7e9c(this)} 
+get StIsvaliddetail () { return new Public.Procedures.StIsvaliddetail(this)} 
+get StIsvalidreasonFa24 () { return new Public.Procedures.StIsvalidreasonFa24(this)} 
+get StIsvalidFa24 () { return new Public.Procedures.StIsvalidFa24(this)} 
+get StHausdorffdistance_14de () { return new Public.Procedures.StHausdorffdistance_14de(this)} 
+get StHausdorffdistanceCf0b () { return new Public.Procedures.StHausdorffdistanceCf0b(this)} 
+get StFrechetdistance () { return new Public.Procedures.StFrechetdistance(this)} 
+get StMaximuminscribedcircle () { return new Public.Procedures.StMaximuminscribedcircle(this)} 
+get StLargestemptycircle () { return new Public.Procedures.StLargestemptycircle(this)} 
+get StDifference () { return new Public.Procedures.StDifference(this)} 
+get StBoundary () { return new Public.Procedures.StBoundary(this)} 
+get StPoints () { return new Public.Procedures.StPoints(this)} 
+get StSymdifference () { return new Public.Procedures.StSymdifference(this)} 
+get StSymmetricdifference () { return new Public.Procedures.StSymmetricdifference(this)} 
+get StUnion_14de () { return new Public.Procedures.StUnion_14de(this)} 
+get StUnionCf0b () { return new Public.Procedures.StUnionCf0b(this)} 
+get StUnaryunion () { return new Public.Procedures.StUnaryunion(this)} 
+get StRemoverepeatedpoints () { return new Public.Procedures.StRemoverepeatedpoints(this)} 
+get StClipbybox2d () { return new Public.Procedures.StClipbybox2d(this)} 
+get StSubdivide () { return new Public.Procedures.StSubdivide(this)} 
+get StReduceprecision () { return new Public.Procedures.StReduceprecision(this)} 
+get StMakevalid_7e9c () { return new Public.Procedures.StMakevalid_7e9c(this)} 
+get StMakevalid_2ca2 () { return new Public.Procedures.StMakevalid_2ca2(this)} 
+get StCleangeometry () { return new Public.Procedures.StCleangeometry(this)} 
+get StSplit () { return new Public.Procedures.StSplit(this)} 
+get StSharedpaths () { return new Public.Procedures.StSharedpaths(this)} 
+get StSnap () { return new Public.Procedures.StSnap(this)} 
+get StRelatematch () { return new Public.Procedures.StRelatematch(this)} 
+get StNode () { return new Public.Procedures.StNode(this)} 
+get StDelaunaytriangles () { return new Public.Procedures.StDelaunaytriangles(this)} 
+get StTriangulatepolygon () { return new Public.Procedures.StTriangulatepolygon(this)} 
+get StVoronoipolygons () { return new Public.Procedures.StVoronoipolygons(this)} 
+get StVoronoilines () { return new Public.Procedures.StVoronoilines(this)} 
+get StCombinebbox_26c1 () { return new Public.Procedures.StCombinebbox_26c1(this)} 
+get StCombinebboxF3db () { return new Public.Procedures.StCombinebboxF3db(this)} 
+get StCombinebboxCe9a () { return new Public.Procedures.StCombinebboxCe9a(this)} 
+get StCollect_14de () { return new Public.Procedures.StCollect_14de(this)} 
+get StCollect_4a4c () { return new Public.Procedures.StCollect_4a4c(this)} 
+get PgisGeometryAccumTransfn_2b9b () { return new Public.Procedures.PgisGeometryAccumTransfn_2b9b(this)} 
+get PgisGeometryAccumTransfn_623d () { return new Public.Procedures.PgisGeometryAccumTransfn_623d(this)} 
+get PgisGeometryAccumTransfn_3d24 () { return new Public.Procedures.PgisGeometryAccumTransfn_3d24(this)} 
+get PgisGeometryCollectFinalfn () { return new Public.Procedures.PgisGeometryCollectFinalfn(this)} 
+get PgisGeometryPolygonizeFinalfn () { return new Public.Procedures.PgisGeometryPolygonizeFinalfn(this)} 
+get PgisGeometryClusterintersectingFinalfn () { return new Public.Procedures.PgisGeometryClusterintersectingFinalfn(this)} 
+get PgisGeometryClusterwithinFinalfn () { return new Public.Procedures.PgisGeometryClusterwithinFinalfn(this)} 
+get PgisGeometryMakelineFinalfn () { return new Public.Procedures.PgisGeometryMakelineFinalfn(this)} 
+get PgisGeometryCoverageunionFinalfn () { return new Public.Procedures.PgisGeometryCoverageunionFinalfn(this)} 
+get PgisGeometryUnionParallelTransfn_2b9b () { return new Public.Procedures.PgisGeometryUnionParallelTransfn_2b9b(this)} 
+get PgisGeometryUnionParallelTransfn_623d () { return new Public.Procedures.PgisGeometryUnionParallelTransfn_623d(this)} 
+get PgisGeometryUnionParallelCombinefn () { return new Public.Procedures.PgisGeometryUnionParallelCombinefn(this)} 
+get PgisGeometryUnionParallelSerialfn () { return new Public.Procedures.PgisGeometryUnionParallelSerialfn(this)} 
+get PgisGeometryUnionParallelDeserialfn () { return new Public.Procedures.PgisGeometryUnionParallelDeserialfn(this)} 
+get PgisGeometryUnionParallelFinalfn () { return new Public.Procedures.PgisGeometryUnionParallelFinalfn(this)} 
+get StUnion_4a4c () { return new Public.Procedures.StUnion_4a4c(this)} 
+get StCoverageunion_4a4c () { return new Public.Procedures.StCoverageunion_4a4c(this)} 
+get StRelate_14de () { return new Public.Procedures.StRelate_14de(this)} 
+get StRelateF3bd () { return new Public.Procedures.StRelateF3bd(this)} 
+get StRelateC160 () { return new Public.Procedures.StRelateC160(this)} 
+get StDisjoint () { return new Public.Procedures.StDisjoint(this)} 
+get PostgisIndexSupportfn () { return new Public.Procedures.PostgisIndexSupportfn(this)} 
+get StLinecrossingdirection () { return new Public.Procedures.StLinecrossingdirection(this)} 
+get StDwithinCf0b () { return new Public.Procedures.StDwithinCf0b(this)} 
+get StTouches () { return new Public.Procedures.StTouches(this)} 
+get StIntersects_14de () { return new Public.Procedures.StIntersects_14de(this)} 
+get StCrosses () { return new Public.Procedures.StCrosses(this)} 
+get StContains () { return new Public.Procedures.StContains(this)} 
+get StContainsproperly () { return new Public.Procedures.StContainsproperly(this)} 
+get StWithin () { return new Public.Procedures.StWithin(this)} 
+get StCovers_14de () { return new Public.Procedures.StCovers_14de(this)} 
+get StCoveredby_14de () { return new Public.Procedures.StCoveredby_14de(this)} 
+get StOverlaps () { return new Public.Procedures.StOverlaps(this)} 
+get StDfullywithin () { return new Public.Procedures.StDfullywithin(this)} 
+get St_3ddwithin () { return new Public.Procedures.St_3ddwithin(this)} 
+get St_3ddfullywithin () { return new Public.Procedures.St_3ddfullywithin(this)} 
+get St_3dintersects () { return new Public.Procedures.St_3dintersects(this)} 
+get StOrderingequals () { return new Public.Procedures.StOrderingequals(this)} 
+get StEquals () { return new Public.Procedures.StEquals(this)} 
+get StIsvalid_7e9c () { return new Public.Procedures.StIsvalid_7e9c(this)} 
+get StMinimumclearance () { return new Public.Procedures.StMinimumclearance(this)} 
+get StMinimumclearanceline () { return new Public.Procedures.StMinimumclearanceline(this)} 
+get StCentroid_7e9c () { return new Public.Procedures.StCentroid_7e9c(this)} 
+get StGeometricmedian () { return new Public.Procedures.StGeometricmedian(this)} 
+get StIsring () { return new Public.Procedures.StIsring(this)} 
+get StPointonsurface () { return new Public.Procedures.StPointonsurface(this)} 
+get StIssimple () { return new Public.Procedures.StIssimple(this)} 
+get StIscollection () { return new Public.Procedures.StIscollection(this)} 
+get Equals () { return new Public.Procedures.Equals(this)} 
+get StGeomfromgml_27e2 () { return new Public.Procedures.StGeomfromgml_27e2(this)} 
+get StGeomfromgmlE728 () { return new Public.Procedures.StGeomfromgmlE728(this)} 
+get StGmltosqlE728 () { return new Public.Procedures.StGmltosqlE728(this)} 
+get StGmltosql_27e2 () { return new Public.Procedures.StGmltosql_27e2(this)} 
+get StGeomfromkml () { return new Public.Procedures.StGeomfromkml(this)} 
+get StGeomfrommarc21 () { return new Public.Procedures.StGeomfrommarc21(this)} 
+get StAsmarc21 () { return new Public.Procedures.StAsmarc21(this)} 
+get StGeomfromgeojsonE728 () { return new Public.Procedures.StGeomfromgeojsonE728(this)} 
+get StGeomfromgeojson_608f () { return new Public.Procedures.StGeomfromgeojson_608f(this)} 
+get StGeomfromgeojson_3c9d () { return new Public.Procedures.StGeomfromgeojson_3c9d(this)} 
+get PostgisLibjsonVersion () { return new Public.Procedures.PostgisLibjsonVersion(this)} 
+get StLinefromencodedpolyline () { return new Public.Procedures.StLinefromencodedpolyline(this)} 
+get StAsencodedpolyline () { return new Public.Procedures.StAsencodedpolyline(this)} 
+get StAssvg_5ca3 () { return new Public.Procedures.StAssvg_5ca3(this)} 
+get StAsgml_5ca3 () { return new Public.Procedures.StAsgml_5ca3(this)} 
+get StAsgmlE482 () { return new Public.Procedures.StAsgmlE482(this)} 
+get StAskmlC46e () { return new Public.Procedures.StAskmlC46e(this)} 
+get StAsgeojson_5ca3 () { return new Public.Procedures.StAsgeojson_5ca3(this)} 
+get StAsgeojsonF2c6 () { return new Public.Procedures.StAsgeojsonF2c6(this)} 
+get Json () { return new Public.Procedures.Json(this)} 
+get Jsonb () { return new Public.Procedures.Jsonb(this)} 
+get PgisAsmvtTransfn_647f () { return new Public.Procedures.PgisAsmvtTransfn_647f(this)} 
+get PgisAsmvtTransfn_27f4 () { return new Public.Procedures.PgisAsmvtTransfn_27f4(this)} 
+get PgisAsmvtTransfnF57f () { return new Public.Procedures.PgisAsmvtTransfnF57f(this)} 
+get PgisAsmvtTransfn_92c1 () { return new Public.Procedures.PgisAsmvtTransfn_92c1(this)} 
+get PgisAsmvtTransfnF5be () { return new Public.Procedures.PgisAsmvtTransfnF5be(this)} 
+get PgisAsmvtFinalfn () { return new Public.Procedures.PgisAsmvtFinalfn(this)} 
+get PgisAsmvtCombinefn () { return new Public.Procedures.PgisAsmvtCombinefn(this)} 
+get PgisAsmvtSerialfn () { return new Public.Procedures.PgisAsmvtSerialfn(this)} 
+get PgisAsmvtDeserialfn () { return new Public.Procedures.PgisAsmvtDeserialfn(this)} 
+get StAsmvtgeom () { return new Public.Procedures.StAsmvtgeom(this)} 
+get PostgisLibprotobufVersion () { return new Public.Procedures.PostgisLibprotobufVersion(this)} 
+get PgisAsgeobufTransfn_647f () { return new Public.Procedures.PgisAsgeobufTransfn_647f(this)} 
+get PgisAsgeobufTransfn_27f4 () { return new Public.Procedures.PgisAsgeobufTransfn_27f4(this)} 
+get PgisAsgeobufFinalfn () { return new Public.Procedures.PgisAsgeobufFinalfn(this)} 
+get PgisAsflatgeobufTransfn_647f () { return new Public.Procedures.PgisAsflatgeobufTransfn_647f(this)} 
+get PgisAsflatgeobufTransfn_9633 () { return new Public.Procedures.PgisAsflatgeobufTransfn_9633(this)} 
+get PgisAsflatgeobufTransfn_521f () { return new Public.Procedures.PgisAsflatgeobufTransfn_521f(this)} 
+get PgisAsflatgeobufFinalfn () { return new Public.Procedures.PgisAsflatgeobufFinalfn(this)} 
+get StFromflatgeobuftotable () { return new Public.Procedures.StFromflatgeobuftotable(this)} 
+get StFromflatgeobuf () { return new Public.Procedures.StFromflatgeobuf(this)} 
+get StGeohashFa24 () { return new Public.Procedures.StGeohashFa24(this)} 
+get StBox2dfromgeohash () { return new Public.Procedures.StBox2dfromgeohash(this)} 
+get StPointfromgeohash () { return new Public.Procedures.StPointfromgeohash(this)} 
+get StGeomfromgeohash () { return new Public.Procedures.StGeomfromgeohash(this)} 
+get StNumpoints () { return new Public.Procedures.StNumpoints(this)} 
+get StNumgeometries () { return new Public.Procedures.StNumgeometries(this)} 
+get StGeometryn () { return new Public.Procedures.StGeometryn(this)} 
+get StDimension () { return new Public.Procedures.StDimension(this)} 
+get StExteriorring () { return new Public.Procedures.StExteriorring(this)} 
+get StNuminteriorrings () { return new Public.Procedures.StNuminteriorrings(this)} 
+get StNuminteriorring () { return new Public.Procedures.StNuminteriorring(this)} 
+get StInteriorringn () { return new Public.Procedures.StInteriorringn(this)} 
+get Geometrytype_7e9c () { return new Public.Procedures.Geometrytype_7e9c(this)} 
+get StGeometrytype () { return new Public.Procedures.StGeometrytype(this)} 
+get StPointn () { return new Public.Procedures.StPointn(this)} 
+get StNumpatches () { return new Public.Procedures.StNumpatches(this)} 
+get StPatchn () { return new Public.Procedures.StPatchn(this)} 
+get StStartpoint () { return new Public.Procedures.StStartpoint(this)} 
+get StEndpoint () { return new Public.Procedures.StEndpoint(this)} 
+get StIsclosed () { return new Public.Procedures.StIsclosed(this)} 
+get StIsempty () { return new Public.Procedures.StIsempty(this)} 
+get StAsbinary_2ca2 () { return new Public.Procedures.StAsbinary_2ca2(this)} 
+get StAsbinary_7e9c () { return new Public.Procedures.StAsbinary_7e9c(this)} 
+get StAstext_7e9c () { return new Public.Procedures.StAstext_7e9c(this)} 
+get StAstextFa24 () { return new Public.Procedures.StAstextFa24(this)} 
+get StGeometryfromtextE728 () { return new Public.Procedures.StGeometryfromtextE728(this)} 
+get StGeometryfromtext_27e2 () { return new Public.Procedures.StGeometryfromtext_27e2(this)} 
+get StGeomfromtextE728 () { return new Public.Procedures.StGeomfromtextE728(this)} 
+get StGeomfromtext_27e2 () { return new Public.Procedures.StGeomfromtext_27e2(this)} 
+get StWkttosql () { return new Public.Procedures.StWkttosql(this)} 
+get StPointfromtextE728 () { return new Public.Procedures.StPointfromtextE728(this)} 
+get StPointfromtext_27e2 () { return new Public.Procedures.StPointfromtext_27e2(this)} 
+get StLinefromtextE728 () { return new Public.Procedures.StLinefromtextE728(this)} 
+get StLinefromtext_27e2 () { return new Public.Procedures.StLinefromtext_27e2(this)} 
+get StPolyfromtextE728 () { return new Public.Procedures.StPolyfromtextE728(this)} 
+get StPolyfromtext_27e2 () { return new Public.Procedures.StPolyfromtext_27e2(this)} 
+get StPolygonfromtext_27e2 () { return new Public.Procedures.StPolygonfromtext_27e2(this)} 
+get StPolygonfromtextE728 () { return new Public.Procedures.StPolygonfromtextE728(this)} 
+get StMlinefromtext_27e2 () { return new Public.Procedures.StMlinefromtext_27e2(this)} 
+get StMlinefromtextE728 () { return new Public.Procedures.StMlinefromtextE728(this)} 
+get StMultilinestringfromtextE728 () { return new Public.Procedures.StMultilinestringfromtextE728(this)} 
+get StMultilinestringfromtext_27e2 () { return new Public.Procedures.StMultilinestringfromtext_27e2(this)} 
+get StMpointfromtext_27e2 () { return new Public.Procedures.StMpointfromtext_27e2(this)} 
+get StMpointfromtextE728 () { return new Public.Procedures.StMpointfromtextE728(this)} 
+get StMultipointfromtext () { return new Public.Procedures.StMultipointfromtext(this)} 
+get StMpolyfromtext_27e2 () { return new Public.Procedures.StMpolyfromtext_27e2(this)} 
+get StMpolyfromtextE728 () { return new Public.Procedures.StMpolyfromtextE728(this)} 
+get StMultipolygonfromtext_27e2 () { return new Public.Procedures.StMultipolygonfromtext_27e2(this)} 
+get StMultipolygonfromtextE728 () { return new Public.Procedures.StMultipolygonfromtextE728(this)} 
+get StGeomcollfromtext_27e2 () { return new Public.Procedures.StGeomcollfromtext_27e2(this)} 
+get StGeomcollfromtextE728 () { return new Public.Procedures.StGeomcollfromtextE728(this)} 
+get StGeomfromwkb_2d19 () { return new Public.Procedures.StGeomfromwkb_2d19(this)} 
+get StGeomfromwkbD8af () { return new Public.Procedures.StGeomfromwkbD8af(this)} 
+get StPointfromwkbD8af () { return new Public.Procedures.StPointfromwkbD8af(this)} 
+get StPointfromwkb_2d19 () { return new Public.Procedures.StPointfromwkb_2d19(this)} 
+get StLinefromwkbD8af () { return new Public.Procedures.StLinefromwkbD8af(this)} 
+get StLinefromwkb_2d19 () { return new Public.Procedures.StLinefromwkb_2d19(this)} 
+get StLinestringfromwkbD8af () { return new Public.Procedures.StLinestringfromwkbD8af(this)} 
+get StLinestringfromwkb_2d19 () { return new Public.Procedures.StLinestringfromwkb_2d19(this)} 
+get StPolyfromwkbD8af () { return new Public.Procedures.StPolyfromwkbD8af(this)} 
+get StPolyfromwkb_2d19 () { return new Public.Procedures.StPolyfromwkb_2d19(this)} 
+get StPolygonfromwkbD8af () { return new Public.Procedures.StPolygonfromwkbD8af(this)} 
+get StPolygonfromwkb_2d19 () { return new Public.Procedures.StPolygonfromwkb_2d19(this)} 
+get StMpointfromwkbD8af () { return new Public.Procedures.StMpointfromwkbD8af(this)} 
+get StMpointfromwkb_2d19 () { return new Public.Procedures.StMpointfromwkb_2d19(this)} 
+get StMultipointfromwkbD8af () { return new Public.Procedures.StMultipointfromwkbD8af(this)} 
+get GeographyAnalyze () { return new Public.Procedures.GeographyAnalyze(this)} 
+get StMultipointfromwkb_2d19 () { return new Public.Procedures.StMultipointfromwkb_2d19(this)} 
+get StMultilinefromwkb () { return new Public.Procedures.StMultilinefromwkb(this)} 
+get StMlinefromwkbD8af () { return new Public.Procedures.StMlinefromwkbD8af(this)} 
+get StMlinefromwkb_2d19 () { return new Public.Procedures.StMlinefromwkb_2d19(this)} 
+get StMpolyfromwkbD8af () { return new Public.Procedures.StMpolyfromwkbD8af(this)} 
+get StMpolyfromwkb_2d19 () { return new Public.Procedures.StMpolyfromwkb_2d19(this)} 
+get StMultipolyfromwkbD8af () { return new Public.Procedures.StMultipolyfromwkbD8af(this)} 
+get StMultipolyfromwkb_2d19 () { return new Public.Procedures.StMultipolyfromwkb_2d19(this)} 
+get StGeomcollfromwkbD8af () { return new Public.Procedures.StGeomcollfromwkbD8af(this)} 
+get StGeomcollfromwkb_2d19 () { return new Public.Procedures.StGeomcollfromwkb_2d19(this)} 
+get StMaxdistance () { return new Public.Procedures.StMaxdistance(this)} 
+get StClosestpoint_14de () { return new Public.Procedures.StClosestpoint_14de(this)} 
+get StShortestline_14de () { return new Public.Procedures.StShortestline_14de(this)} 
+get StLongestline () { return new Public.Procedures.StLongestline(this)} 
+get StSwapordinates () { return new Public.Procedures.StSwapordinates(this)} 
+get StFlipcoordinates () { return new Public.Procedures.StFlipcoordinates(this)} 
+get StBdpolyfromtext () { return new Public.Procedures.StBdpolyfromtext(this)} 
+get StBdmpolyfromtext () { return new Public.Procedures.StBdmpolyfromtext(this)} 
+get Unlockrows () { return new Public.Procedures.Unlockrows(this)} 
+get Geography_5f53 () { return new Public.Procedures.Geography_5f53(this)} 
+get Geography_2d19 () { return new Public.Procedures.Geography_2d19(this)} 
+get Bytea_1126 () { return new Public.Procedures.Bytea_1126(this)} 
+get StAstext_1126 () { return new Public.Procedures.StAstext_1126(this)} 
+get StAstext_44eb () { return new Public.Procedures.StAstext_44eb(this)} 
+get LockrowE9aa () { return new Public.Procedures.LockrowE9aa(this)} 
+get Lockrow_02b4 () { return new Public.Procedures.Lockrow_02b4(this)} 
+get Lockrow_27e1 () { return new Public.Procedures.Lockrow_27e1(this)} 
+get Lockrow_9a8a () { return new Public.Procedures.Lockrow_9a8a(this)} 
+get Addauth () { return new Public.Procedures.Addauth(this)} 
+get Checkauth_27e1 () { return new Public.Procedures.Checkauth_27e1(this)} 
+get Checkauth_2ec2 () { return new Public.Procedures.Checkauth_2ec2(this)} 
+get Checkauthtrigger () { return new Public.Procedures.Checkauthtrigger(this)} 
+get Gettransactionid () { return new Public.Procedures.Gettransactionid(this)} 
+get Enablelongtransactions () { return new Public.Procedures.Enablelongtransactions(this)} 
+get Longtransactionsenabled () { return new Public.Procedures.Longtransactionsenabled(this)} 
+get Disablelongtransactions () { return new Public.Procedures.Disablelongtransactions(this)} 
+get GeographyTypmodIn () { return new Public.Procedures.GeographyTypmodIn(this)} 
+get GeographyTypmodOut () { return new Public.Procedures.GeographyTypmodOut(this)} 
+get GeographyIn () { return new Public.Procedures.GeographyIn(this)} 
+get GeographyOut () { return new Public.Procedures.GeographyOut(this)} 
+get GeographyRecv () { return new Public.Procedures.GeographyRecv(this)} 
+get GeographySend () { return new Public.Procedures.GeographySend(this)} 
+get StAstextE728 () { return new Public.Procedures.StAstextE728(this)} 
+get StGeographyfromtext () { return new Public.Procedures.StGeographyfromtext(this)} 
+get StGeogfromtext () { return new Public.Procedures.StGeogfromtext(this)} 
+get StGeogfromwkb () { return new Public.Procedures.StGeogfromwkb(this)} 
+get PostgisTypmodDims () { return new Public.Procedures.PostgisTypmodDims(this)} 
+get PostgisTypmodSrid () { return new Public.Procedures.PostgisTypmodSrid(this)} 
+get PostgisTypmodType () { return new Public.Procedures.PostgisTypmodType(this)} 
+get Geography_7e9c () { return new Public.Procedures.Geography_7e9c(this)} 
+get Geometry_1126 () { return new Public.Procedures.Geometry_1126(this)} 
+get GeographyGistConsistent () { return new Public.Procedures.GeographyGistConsistent(this)} 
+get GeographyGistCompress () { return new Public.Procedures.GeographyGistCompress(this)} 
+get GeographyGistPenalty () { return new Public.Procedures.GeographyGistPenalty(this)} 
+get GeographyGistPicksplit () { return new Public.Procedures.GeographyGistPicksplit(this)} 
+get GeographyGistUnion () { return new Public.Procedures.GeographyGistUnion(this)} 
+get GeographyGistSame () { return new Public.Procedures.GeographyGistSame(this)} 
+get GeographyGistDecompress () { return new Public.Procedures.GeographyGistDecompress(this)} 
+get GeographyOverlaps () { return new Public.Procedures.GeographyOverlaps(this)} 
+get GeographyDistanceKnn () { return new Public.Procedures.GeographyDistanceKnn(this)} 
+get GeographyGistDistance () { return new Public.Procedures.GeographyGistDistance(this)} 
+get OverlapsGeog_1632 () { return new Public.Procedures.OverlapsGeog_1632(this)} 
+get OverlapsGeogD1f5 () { return new Public.Procedures.OverlapsGeogD1f5(this)} 
+get OverlapsGeogB3cf () { return new Public.Procedures.OverlapsGeogB3cf(this)} 
+get GeogBrinInclusionAddValue () { return new Public.Procedures.GeogBrinInclusionAddValue(this)} 
+get GeographyLt () { return new Public.Procedures.GeographyLt(this)} 
+get GeographyLe () { return new Public.Procedures.GeographyLe(this)} 
+get GeographyGt () { return new Public.Procedures.GeographyGt(this)} 
+get GeographyGe () { return new Public.Procedures.GeographyGe(this)} 
+get GeographyEq () { return new Public.Procedures.GeographyEq(this)} 
+get GeographyCmp () { return new Public.Procedures.GeographyCmp(this)} 
+get StAssvgD22b () { return new Public.Procedures.StAssvgD22b(this)} 
+get StAssvgE728 () { return new Public.Procedures.StAssvgE728(this)} 
+get StProjectF245 () { return new Public.Procedures.StProjectF245(this)} 
+get StAzimuthAeb8 () { return new Public.Procedures.StAzimuthAeb8(this)} 
+get StBuffer_49f7 () { return new Public.Procedures.StBuffer_49f7(this)} 
+get StAsgml_9c73 () { return new Public.Procedures.StAsgml_9c73(this)} 
+get StAsgmlE8a8 () { return new Public.Procedures.StAsgmlE8a8(this)} 
+get StAsgmlE728 () { return new Public.Procedures.StAsgmlE728(this)} 
+get StAskmlAb1b () { return new Public.Procedures.StAskmlAb1b(this)} 
+get StAskmlE728 () { return new Public.Procedures.StAskmlE728(this)} 
+get StAsgeojsonD22b () { return new Public.Procedures.StAsgeojsonD22b(this)} 
+get StAsgeojsonE728 () { return new Public.Procedures.StAsgeojsonE728(this)} 
+get StDistanceE193 () { return new Public.Procedures.StDistanceE193(this)} 
+get StDistance_2ec2 () { return new Public.Procedures.StDistance_2ec2(this)} 
+get StArea_5696 () { return new Public.Procedures.StArea_5696(this)} 
+get StAreaE728 () { return new Public.Procedures.StAreaE728(this)} 
+get StLength_5696 () { return new Public.Procedures.StLength_5696(this)} 
+get StLengthE728 () { return new Public.Procedures.StLengthE728(this)} 
+get StProject_44fa () { return new Public.Procedures.StProject_44fa(this)} 
+get StPerimeter_5696 () { return new Public.Procedures.StPerimeter_5696(this)} 
+get StSegmentize_8ba5 () { return new Public.Procedures.StSegmentize_8ba5(this)} 
+get StAsbinary_1126 () { return new Public.Procedures.StAsbinary_1126(this)} 
+get StAsbinary_1951 () { return new Public.Procedures.StAsbinary_1951(this)} 
+get StAsewkt_1126 () { return new Public.Procedures.StAsewkt_1126(this)} 
+get StAsewkt_44eb () { return new Public.Procedures.StAsewkt_44eb(this)} 
+get StAsewktE728 () { return new Public.Procedures.StAsewktE728(this)} 
+get Geometrytype_1126 () { return new Public.Procedures.Geometrytype_1126(this)} 
+get StSummary_1126 () { return new Public.Procedures.StSummary_1126(this)} 
+get StGeohash_44eb () { return new Public.Procedures.StGeohash_44eb(this)} 
+get StSrid_1126 () { return new Public.Procedures.StSrid_1126(this)} 
+get StSetsrid_44eb () { return new Public.Procedures.StSetsrid_44eb(this)} 
+get StCentroid_5696 () { return new Public.Procedures.StCentroid_5696(this)} 
+get StCentroidE728 () { return new Public.Procedures.StCentroidE728(this)} 
+get StCoversAeb8 () { return new Public.Procedures.StCoversAeb8(this)} 
+get StDwithinBfd6 () { return new Public.Procedures.StDwithinBfd6(this)} 
+get StCoveredbyAeb8 () { return new Public.Procedures.StCoveredbyAeb8(this)} 
+get StIntersectsAeb8 () { return new Public.Procedures.StIntersectsAeb8(this)} 
+get StBuffer_8ba5 () { return new Public.Procedures.StBuffer_8ba5(this)} 
+get StBufferBe24 () { return new Public.Procedures.StBufferBe24(this)} 
+get StBuffer_82e5 () { return new Public.Procedures.StBuffer_82e5(this)} 
+get StBufferC349 () { return new Public.Procedures.StBufferC349(this)} 
+get StBufferF7c6 () { return new Public.Procedures.StBufferF7c6(this)} 
+get StIntersectionAeb8 () { return new Public.Procedures.StIntersectionAeb8(this)} 
+get StIntersection_2ec2 () { return new Public.Procedures.StIntersection_2ec2(this)} 
+get StCovers_2ec2 () { return new Public.Procedures.StCovers_2ec2(this)} 
+get StCoveredby_2ec2 () { return new Public.Procedures.StCoveredby_2ec2(this)} 
+get StDwithinEfc0 () { return new Public.Procedures.StDwithinEfc0(this)} 
+get StIntersects_2ec2 () { return new Public.Procedures.StIntersects_2ec2(this)} 
+get StClosestpointE193 () { return new Public.Procedures.StClosestpointE193(this)} 
+get StClosestpoint_2ec2 () { return new Public.Procedures.StClosestpoint_2ec2(this)} 
+get StShortestlineE193 () { return new Public.Procedures.StShortestlineE193(this)} 
+get StShortestline_2ec2 () { return new Public.Procedures.StShortestline_2ec2(this)} 
+get StLinesubstring_44fa () { return new Public.Procedures.StLinesubstring_44fa(this)} 
+get StLinesubstringE586 () { return new Public.Procedures.StLinesubstringE586(this)} 
+get StLinelocatepointE193 () { return new Public.Procedures.StLinelocatepointE193(this)} 
+get StLinelocatepoint_2ec2 () { return new Public.Procedures.StLinelocatepoint_2ec2(this)} 
+get StLineinterpolatepoints_8013 () { return new Public.Procedures.StLineinterpolatepoints_8013(this)} 
+get StLineinterpolatepointsC349 () { return new Public.Procedures.StLineinterpolatepointsC349(this)} 
+get StLineinterpolatepoint_6847 () { return new Public.Procedures.StLineinterpolatepoint_6847(this)} 
+get StLineinterpolatepointC349 () { return new Public.Procedures.StLineinterpolatepointC349(this)} 
+get StDistancesphere_14de () { return new Public.Procedures.StDistancesphere_14de(this)} 
+get StDistancesphereCf0b () { return new Public.Procedures.StDistancesphereCf0b(this)} 
+get PostgisTypeName () { return new Public.Procedures.PostgisTypeName(this)} 
+get PostgisConstraintSrid () { return new Public.Procedures.PostgisConstraintSrid(this)} 
+get PostgisConstraintDims () { return new Public.Procedures.PostgisConstraintDims(this)} 
+get PostgisConstraintType () { return new Public.Procedures.PostgisConstraintType(this)} 
+get St_3ddistance () { return new Public.Procedures.St_3ddistance(this)} 
+get St_3dmaxdistance () { return new Public.Procedures.St_3dmaxdistance(this)} 
+get St_3dclosestpoint () { return new Public.Procedures.St_3dclosestpoint(this)} 
+get St_3dshortestline () { return new Public.Procedures.St_3dshortestline(this)} 
+get St_3dlongestline () { return new Public.Procedures.St_3dlongestline(this)} 
+get StCoorddim () { return new Public.Procedures.StCoorddim(this)} 
+get StCurvetoline () { return new Public.Procedures.StCurvetoline(this)} 
+get StHasarc () { return new Public.Procedures.StHasarc(this)} 
+get StLinetocurve () { return new Public.Procedures.StLinetocurve(this)} 
+get StPoint_0aec () { return new Public.Procedures.StPoint_0aec(this)} 
+get StPoint_0b7f () { return new Public.Procedures.StPoint_0b7f(this)} 
+get StPointz () { return new Public.Procedures.StPointz(this)} 
+get StPointm () { return new Public.Procedures.StPointm(this)} 
+get StPointzm () { return new Public.Procedures.StPointzm(this)} 
+get StPolygon () { return new Public.Procedures.StPolygon(this)} 
+get StWkbtosql () { return new Public.Procedures.StWkbtosql(this)} 
+get StLocatebetween () { return new Public.Procedures.StLocatebetween(this)} 
+get StLocatealong () { return new Public.Procedures.StLocatealong(this)} 
+get StLocatebetweenelevations () { return new Public.Procedures.StLocatebetweenelevations(this)} 
+get StInterpolatepoint () { return new Public.Procedures.StInterpolatepoint(this)} 
+get StHexagon () { return new Public.Procedures.StHexagon(this)} 
+get StSquare () { return new Public.Procedures.StSquare(this)} 
+get StHexagongrid () { return new Public.Procedures.StHexagongrid(this)} 
+get StSquaregrid () { return new Public.Procedures.StSquaregrid(this)} 
+get Contains_2dFd11 () { return new Public.Procedures.Contains_2dFd11(this)} 
+get IsContained_2dFd11 () { return new Public.Procedures.IsContained_2dFd11(this)} 
+get Overlaps_2dFd11 () { return new Public.Procedures.Overlaps_2dFd11(this)} 
+get Overlaps_2dC063 () { return new Public.Procedures.Overlaps_2dC063(this)} 
+get Contains_2dC063 () { return new Public.Procedures.Contains_2dC063(this)} 
+get IsContained_2dC063 () { return new Public.Procedures.IsContained_2dC063(this)} 
+get Contains_2dE856 () { return new Public.Procedures.Contains_2dE856(this)} 
+get IsContained_2dE856 () { return new Public.Procedures.IsContained_2dE856(this)} 
+get Overlaps_2dE856 () { return new Public.Procedures.Overlaps_2dE856(this)} 
+get OverlapsNd_545f () { return new Public.Procedures.OverlapsNd_545f(this)} 
+get OverlapsNdD1f5 () { return new Public.Procedures.OverlapsNdD1f5(this)} 
+get OverlapsNd_87b1 () { return new Public.Procedures.OverlapsNd_87b1(this)} 
+get Geom2dBrinInclusionAddValue () { return new Public.Procedures.Geom2dBrinInclusionAddValue(this)} 
+get Geom3dBrinInclusionAddValue () { return new Public.Procedures.Geom3dBrinInclusionAddValue(this)} 
+get Geom4dBrinInclusionAddValue () { return new Public.Procedures.Geom4dBrinInclusionAddValue(this)} 
+get StSimplifypolygonhull () { return new Public.Procedures.StSimplifypolygonhull(this)} 
+get StConcavehull () { return new Public.Procedures.StConcavehull(this)} 
+get StAsx3d () { return new Public.Procedures.StAsx3d(this)} 
+get StAngle_14de () { return new Public.Procedures.StAngle_14de(this)} 
+get St_3dlineinterpolatepoint () { return new Public.Procedures.St_3dlineinterpolatepoint(this)} 
+get GeometrySpgistConfig_2d () { return new Public.Procedures.GeometrySpgistConfig_2d(this)} 
+get GeometrySpgistChoose_2d () { return new Public.Procedures.GeometrySpgistChoose_2d(this)} 
+get GeometrySpgistPicksplit_2d () { return new Public.Procedures.GeometrySpgistPicksplit_2d(this)} 
+get GeometrySpgistInnerConsistent_2d () { return new Public.Procedures.GeometrySpgistInnerConsistent_2d(this)} 
+get GeometrySpgistLeafConsistent_2d () { return new Public.Procedures.GeometrySpgistLeafConsistent_2d(this)} 
+get GeometrySpgistCompress_2d () { return new Public.Procedures.GeometrySpgistCompress_2d(this)} 
+get GeometryOverlaps_3d () { return new Public.Procedures.GeometryOverlaps_3d(this)} 
+get GeometryContains_3d () { return new Public.Procedures.GeometryContains_3d(this)} 
+get GeometryContained_3d () { return new Public.Procedures.GeometryContained_3d(this)} 
+get GeometrySame_3d () { return new Public.Procedures.GeometrySame_3d(this)} 
+get GeometrySpgistConfig_3d () { return new Public.Procedures.GeometrySpgistConfig_3d(this)} 
+get GeometrySpgistChoose_3d () { return new Public.Procedures.GeometrySpgistChoose_3d(this)} 
+get GeometrySpgistPicksplit_3d () { return new Public.Procedures.GeometrySpgistPicksplit_3d(this)} 
+get GeometrySpgistInnerConsistent_3d () { return new Public.Procedures.GeometrySpgistInnerConsistent_3d(this)} 
+get GeometrySpgistLeafConsistent_3d () { return new Public.Procedures.GeometrySpgistLeafConsistent_3d(this)} 
+get GeometrySpgistCompress_3d () { return new Public.Procedures.GeometrySpgistCompress_3d(this)} 
+get GeometrySpgistConfigNd () { return new Public.Procedures.GeometrySpgistConfigNd(this)} 
+get GeometrySpgistChooseNd () { return new Public.Procedures.GeometrySpgistChooseNd(this)} 
+get GeometrySpgistPicksplitNd () { return new Public.Procedures.GeometrySpgistPicksplitNd(this)} 
+get GeometrySpgistInnerConsistentNd () { return new Public.Procedures.GeometrySpgistInnerConsistentNd(this)} 
+get GeometrySpgistLeafConsistentNd () { return new Public.Procedures.GeometrySpgistLeafConsistentNd(this)} 
+get GeometrySpgistCompressNd () { return new Public.Procedures.GeometrySpgistCompressNd(this)} 
+get GeographySpgistConfigNd () { return new Public.Procedures.GeographySpgistConfigNd(this)} 
+get GeographySpgistChooseNd () { return new Public.Procedures.GeographySpgistChooseNd(this)} 
+get GeographySpgistPicksplitNd () { return new Public.Procedures.GeographySpgistPicksplitNd(this)} 
+get GeographySpgistInnerConsistentNd () { return new Public.Procedures.GeographySpgistInnerConsistentNd(this)} 
+get GeographySpgistLeafConsistentNd () { return new Public.Procedures.GeographySpgistLeafConsistentNd(this)} 
+get GeographySpgistCompressNd () { return new Public.Procedures.GeographySpgistCompressNd(this)} 
+get StLetters () { return new Public.Procedures.StLetters(this)} 
+}
+}
+export namespace PgToast {
+
+          export class Procedures implements Procedures, HasDatabase {
+       		  constructor(private hasDatabase: HasDatabase) {
+            }
+
+            get database() {
+              return this.hasDatabase.database;
+            }
+
+            get name() {
+              return "Procedures";
+            }
+
+            /**
+             * Every procedure in this schema.
+             */
+            get procedures() {
+              return [
+                
+              ];
+            }
+        
+}
+}
+export namespace Public {
+export namespace Procedures {
+export class StForcepolygoncw implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_forcepolygoncw"; }
 async call(parameters : Public.Procedures.StForcepolygoncw.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3093,16 +3868,11 @@ async call(parameters : Public.Procedures.StForcepolygoncw.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public SpheroidIn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class SpheroidIn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "spheroid_in"; }
 async call(parameters : Public.Procedures.SpheroidIn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3119,16 +3889,11 @@ async call(parameters : Public.Procedures.SpheroidIn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public SpheroidOut = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class SpheroidOut implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "spheroid_out"; }
 async call(parameters : Public.Procedures.SpheroidOut.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3145,16 +3910,11 @@ async call(parameters : Public.Procedures.SpheroidOut.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryIn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryIn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_in"; }
 async call(parameters : Public.Procedures.GeometryIn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3171,16 +3931,11 @@ async call(parameters : Public.Procedures.GeometryIn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryOut = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryOut implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_out"; }
 async call(parameters : Public.Procedures.GeometryOut.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3197,16 +3952,11 @@ async call(parameters : Public.Procedures.GeometryOut.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryTypmodIn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryTypmodIn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_typmod_in"; }
 async call(parameters : Public.Procedures.GeometryTypmodIn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3223,16 +3973,11 @@ async call(parameters : Public.Procedures.GeometryTypmodIn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryTypmodOut = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryTypmodOut implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_typmod_out"; }
 async call(parameters : Public.Procedures.GeometryTypmodOut.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3249,16 +3994,11 @@ async call(parameters : Public.Procedures.GeometryTypmodOut.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryAnalyze = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryAnalyze implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_analyze"; }
 async call(parameters : Public.Procedures.GeometryAnalyze.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3275,16 +4015,11 @@ async call(parameters : Public.Procedures.GeometryAnalyze.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryRecv = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryRecv implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_recv"; }
 async call(parameters : Public.Procedures.GeometryRecv.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3301,16 +4036,11 @@ async call(parameters : Public.Procedures.GeometryRecv.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySend = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySend implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_send"; }
 async call(parameters : Public.Procedures.GeometrySend.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3327,16 +4057,11 @@ async call(parameters : Public.Procedures.GeometrySend.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Geometry_02f3 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Geometry_02f3 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_02f3"; }
 async call(parameters : Public.Procedures.Geometry_02f3.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3353,16 +4078,11 @@ async call(parameters : Public.Procedures.Geometry_02f3.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Geometry_8997 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Geometry_8997 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_8997"; }
 async call(parameters : Public.Procedures.Geometry_8997.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3379,16 +4099,11 @@ async call(parameters : Public.Procedures.Geometry_8997.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Point = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Point implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "point"; }
 async call(parameters : Public.Procedures.Point.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3405,16 +4120,11 @@ async call(parameters : Public.Procedures.Point.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryB0d8 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryB0d8 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_b0d8"; }
 async call(parameters : Public.Procedures.GeometryB0d8.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3431,16 +4141,11 @@ async call(parameters : Public.Procedures.GeometryB0d8.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Path = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Path implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "path"; }
 async call(parameters : Public.Procedures.Path.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3457,16 +4162,11 @@ async call(parameters : Public.Procedures.Path.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryF1be = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryF1be implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_f1be"; }
 async call(parameters : Public.Procedures.GeometryF1be.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3483,16 +4183,11 @@ async call(parameters : Public.Procedures.GeometryF1be.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Polygon = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Polygon implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "polygon"; }
 async call(parameters : Public.Procedures.Polygon.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3509,16 +4204,11 @@ async call(parameters : Public.Procedures.Polygon.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StX = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StX implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_x"; }
 async call(parameters : Public.Procedures.StX.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3535,16 +4225,11 @@ async call(parameters : Public.Procedures.StX.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StY = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StY implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_y"; }
 async call(parameters : Public.Procedures.StY.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3561,16 +4246,11 @@ async call(parameters : Public.Procedures.StY.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StZ = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StZ implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_z"; }
 async call(parameters : Public.Procedures.StZ.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3587,16 +4267,11 @@ async call(parameters : Public.Procedures.StZ.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StM = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StM implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_m"; }
 async call(parameters : Public.Procedures.StM.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3613,16 +4288,11 @@ async call(parameters : Public.Procedures.StM.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Box3dIn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Box3dIn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "box3d_in"; }
 async call(parameters : Public.Procedures.Box3dIn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3639,16 +4309,11 @@ async call(parameters : Public.Procedures.Box3dIn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Box3dOut = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Box3dOut implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "box3d_out"; }
 async call(parameters : Public.Procedures.Box3dOut.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3665,16 +4330,11 @@ async call(parameters : Public.Procedures.Box3dOut.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Box2dIn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Box2dIn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "box2d_in"; }
 async call(parameters : Public.Procedures.Box2dIn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3691,16 +4351,11 @@ async call(parameters : Public.Procedures.Box2dIn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Box2dOut = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Box2dOut implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "box2d_out"; }
 async call(parameters : Public.Procedures.Box2dOut.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3717,16 +4372,11 @@ async call(parameters : Public.Procedures.Box2dOut.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Box2dfIn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Box2dfIn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "box2df_in"; }
 async call(parameters : Public.Procedures.Box2dfIn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3743,16 +4393,11 @@ async call(parameters : Public.Procedures.Box2dfIn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Box2dfOut = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Box2dfOut implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "box2df_out"; }
 async call(parameters : Public.Procedures.Box2dfOut.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3769,16 +4414,11 @@ async call(parameters : Public.Procedures.Box2dfOut.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GidxIn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GidxIn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "gidx_in"; }
 async call(parameters : Public.Procedures.GidxIn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3795,16 +4435,11 @@ async call(parameters : Public.Procedures.GidxIn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GidxOut = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GidxOut implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "gidx_out"; }
 async call(parameters : Public.Procedures.GidxOut.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3821,16 +4456,11 @@ async call(parameters : Public.Procedures.GidxOut.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryLt = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryLt implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_lt"; }
 async call(parameters : Public.Procedures.GeometryLt.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3847,16 +4477,11 @@ async call(parameters : Public.Procedures.GeometryLt.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryLe = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryLe implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_le"; }
 async call(parameters : Public.Procedures.GeometryLe.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3873,16 +4498,11 @@ async call(parameters : Public.Procedures.GeometryLe.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryGt = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryGt implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_gt"; }
 async call(parameters : Public.Procedures.GeometryGt.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3899,16 +4519,11 @@ async call(parameters : Public.Procedures.GeometryGt.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryGe = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryGe implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_ge"; }
 async call(parameters : Public.Procedures.GeometryGe.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3925,16 +4540,11 @@ async call(parameters : Public.Procedures.GeometryGe.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryEq = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryEq implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_eq"; }
 async call(parameters : Public.Procedures.GeometryEq.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3951,16 +4561,11 @@ async call(parameters : Public.Procedures.GeometryEq.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryCmp = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryCmp implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_cmp"; }
 async call(parameters : Public.Procedures.GeometryCmp.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -3977,16 +4582,11 @@ async call(parameters : Public.Procedures.GeometryCmp.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySortsupport = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySortsupport implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_sortsupport"; }
 async call(parameters : Public.Procedures.GeometrySortsupport.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4003,16 +4603,11 @@ async call(parameters : Public.Procedures.GeometrySortsupport.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryHash = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryHash implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_hash"; }
 async call(parameters : Public.Procedures.GeometryHash.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4029,16 +4624,11 @@ async call(parameters : Public.Procedures.GeometryHash.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryGistDistance_2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryGistDistance_2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_gist_distance_2d"; }
 async call(parameters : Public.Procedures.GeometryGistDistance_2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4055,16 +4645,11 @@ async call(parameters : Public.Procedures.GeometryGistDistance_2d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryGistConsistent_2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryGistConsistent_2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_gist_consistent_2d"; }
 async call(parameters : Public.Procedures.GeometryGistConsistent_2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4081,16 +4666,11 @@ async call(parameters : Public.Procedures.GeometryGistConsistent_2d.Parameters) 
               return responseBody;
            
 }
-}(this)
-
-          public GeometryGistCompress_2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryGistCompress_2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_gist_compress_2d"; }
 async call(parameters : Public.Procedures.GeometryGistCompress_2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4107,16 +4687,11 @@ async call(parameters : Public.Procedures.GeometryGistCompress_2d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryGistPenalty_2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryGistPenalty_2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_gist_penalty_2d"; }
 async call(parameters : Public.Procedures.GeometryGistPenalty_2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4133,16 +4708,11 @@ async call(parameters : Public.Procedures.GeometryGistPenalty_2d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryGistPicksplit_2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryGistPicksplit_2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_gist_picksplit_2d"; }
 async call(parameters : Public.Procedures.GeometryGistPicksplit_2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4159,16 +4729,11 @@ async call(parameters : Public.Procedures.GeometryGistPicksplit_2d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryGistUnion_2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryGistUnion_2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_gist_union_2d"; }
 async call(parameters : Public.Procedures.GeometryGistUnion_2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4185,16 +4750,11 @@ async call(parameters : Public.Procedures.GeometryGistUnion_2d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryGistSame_2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryGistSame_2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_gist_same_2d"; }
 async call(parameters : Public.Procedures.GeometryGistSame_2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4211,16 +4771,11 @@ async call(parameters : Public.Procedures.GeometryGistSame_2d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryGistDecompress_2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryGistDecompress_2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_gist_decompress_2d"; }
 async call(parameters : Public.Procedures.GeometryGistDecompress_2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4237,16 +4792,11 @@ async call(parameters : Public.Procedures.GeometryGistDecompress_2d.Parameters) 
               return responseBody;
            
 }
-}(this)
-
-          public GeometryGistSortsupport_2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryGistSortsupport_2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_gist_sortsupport_2d"; }
 async call(parameters : Public.Procedures.GeometryGistSortsupport_2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4263,16 +4813,11 @@ async call(parameters : Public.Procedures.GeometryGistSortsupport_2d.Parameters)
               return responseBody;
            
 }
-}(this)
-
-          public StForcerhr = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StForcerhr implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_forcerhr"; }
 async call(parameters : Public.Procedures.StForcerhr.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4289,16 +4834,11 @@ async call(parameters : Public.Procedures.StForcerhr.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisNoop = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisNoop implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_noop"; }
 async call(parameters : Public.Procedures.PostgisNoop.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4315,16 +4855,11 @@ async call(parameters : Public.Procedures.PostgisNoop.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StForcepolygonccw = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StForcepolygonccw implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_forcepolygonccw"; }
 async call(parameters : Public.Procedures.StForcepolygonccw.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4341,16 +4876,11 @@ async call(parameters : Public.Procedures.StForcepolygonccw.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GserializedGistSel_2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GserializedGistSel_2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "gserialized_gist_sel_2d"; }
 async call(parameters : Public.Procedures.GserializedGistSel_2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4367,16 +4897,11 @@ async call(parameters : Public.Procedures.GserializedGistSel_2d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GserializedGistSelNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GserializedGistSelNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "gserialized_gist_sel_nd"; }
 async call(parameters : Public.Procedures.GserializedGistSelNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4393,16 +4918,11 @@ async call(parameters : Public.Procedures.GserializedGistSelNd.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GserializedGistJoinsel_2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GserializedGistJoinsel_2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "gserialized_gist_joinsel_2d"; }
 async call(parameters : Public.Procedures.GserializedGistJoinsel_2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4419,16 +4939,11 @@ async call(parameters : Public.Procedures.GserializedGistJoinsel_2d.Parameters) 
               return responseBody;
            
 }
-}(this)
-
-          public GserializedGistJoinselNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GserializedGistJoinselNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "gserialized_gist_joinsel_nd"; }
 async call(parameters : Public.Procedures.GserializedGistJoinselNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4445,16 +4960,11 @@ async call(parameters : Public.Procedures.GserializedGistJoinselNd.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryOverlaps = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryOverlaps implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_overlaps"; }
 async call(parameters : Public.Procedures.GeometryOverlaps.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4471,16 +4981,11 @@ async call(parameters : Public.Procedures.GeometryOverlaps.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySame = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySame implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_same"; }
 async call(parameters : Public.Procedures.GeometrySame.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4497,16 +5002,11 @@ async call(parameters : Public.Procedures.GeometrySame.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryDistanceCentroid = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryDistanceCentroid implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_distance_centroid"; }
 async call(parameters : Public.Procedures.GeometryDistanceCentroid.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4523,16 +5023,11 @@ async call(parameters : Public.Procedures.GeometryDistanceCentroid.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryDistanceBox = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryDistanceBox implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_distance_box"; }
 async call(parameters : Public.Procedures.GeometryDistanceBox.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4549,16 +5044,11 @@ async call(parameters : Public.Procedures.GeometryDistanceBox.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryContains = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryContains implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_contains"; }
 async call(parameters : Public.Procedures.GeometryContains.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4575,16 +5065,11 @@ async call(parameters : Public.Procedures.GeometryContains.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryWithin = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryWithin implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_within"; }
 async call(parameters : Public.Procedures.GeometryWithin.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4601,16 +5086,11 @@ async call(parameters : Public.Procedures.GeometryWithin.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryLeft = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryLeft implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_left"; }
 async call(parameters : Public.Procedures.GeometryLeft.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4627,16 +5107,11 @@ async call(parameters : Public.Procedures.GeometryLeft.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryOverleft = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryOverleft implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_overleft"; }
 async call(parameters : Public.Procedures.GeometryOverleft.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4653,16 +5128,11 @@ async call(parameters : Public.Procedures.GeometryOverleft.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryBelow = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryBelow implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_below"; }
 async call(parameters : Public.Procedures.GeometryBelow.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4679,16 +5149,11 @@ async call(parameters : Public.Procedures.GeometryBelow.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryOverbelow = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryOverbelow implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_overbelow"; }
 async call(parameters : Public.Procedures.GeometryOverbelow.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4705,16 +5170,11 @@ async call(parameters : Public.Procedures.GeometryOverbelow.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryOverright = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryOverright implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_overright"; }
 async call(parameters : Public.Procedures.GeometryOverright.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4731,16 +5191,11 @@ async call(parameters : Public.Procedures.GeometryOverright.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryRight = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryRight implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_right"; }
 async call(parameters : Public.Procedures.GeometryRight.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4757,16 +5212,11 @@ async call(parameters : Public.Procedures.GeometryRight.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryOverabove = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryOverabove implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_overabove"; }
 async call(parameters : Public.Procedures.GeometryOverabove.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4783,16 +5233,11 @@ async call(parameters : Public.Procedures.GeometryOverabove.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryAbove = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryAbove implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_above"; }
 async call(parameters : Public.Procedures.GeometryAbove.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4809,16 +5254,11 @@ async call(parameters : Public.Procedures.GeometryAbove.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryGistConsistentNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryGistConsistentNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_gist_consistent_nd"; }
 async call(parameters : Public.Procedures.GeometryGistConsistentNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4835,16 +5275,11 @@ async call(parameters : Public.Procedures.GeometryGistConsistentNd.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryGistCompressNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryGistCompressNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_gist_compress_nd"; }
 async call(parameters : Public.Procedures.GeometryGistCompressNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4861,16 +5296,11 @@ async call(parameters : Public.Procedures.GeometryGistCompressNd.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryGistPenaltyNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryGistPenaltyNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_gist_penalty_nd"; }
 async call(parameters : Public.Procedures.GeometryGistPenaltyNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4887,16 +5317,11 @@ async call(parameters : Public.Procedures.GeometryGistPenaltyNd.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryGistPicksplitNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryGistPicksplitNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_gist_picksplit_nd"; }
 async call(parameters : Public.Procedures.GeometryGistPicksplitNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4913,16 +5338,11 @@ async call(parameters : Public.Procedures.GeometryGistPicksplitNd.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryGistUnionNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryGistUnionNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_gist_union_nd"; }
 async call(parameters : Public.Procedures.GeometryGistUnionNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4939,16 +5359,11 @@ async call(parameters : Public.Procedures.GeometryGistUnionNd.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryGistSameNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryGistSameNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_gist_same_nd"; }
 async call(parameters : Public.Procedures.GeometryGistSameNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4965,16 +5380,11 @@ async call(parameters : Public.Procedures.GeometryGistSameNd.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryGistDecompressNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryGistDecompressNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_gist_decompress_nd"; }
 async call(parameters : Public.Procedures.GeometryGistDecompressNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -4991,16 +5401,11 @@ async call(parameters : Public.Procedures.GeometryGistDecompressNd.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryOverlapsNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryOverlapsNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_overlaps_nd"; }
 async call(parameters : Public.Procedures.GeometryOverlapsNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5017,16 +5422,11 @@ async call(parameters : Public.Procedures.GeometryOverlapsNd.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryContainsNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryContainsNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_contains_nd"; }
 async call(parameters : Public.Procedures.GeometryContainsNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5043,16 +5443,11 @@ async call(parameters : Public.Procedures.GeometryContainsNd.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryWithinNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryWithinNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_within_nd"; }
 async call(parameters : Public.Procedures.GeometryWithinNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5069,16 +5464,11 @@ async call(parameters : Public.Procedures.GeometryWithinNd.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySameNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySameNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_same_nd"; }
 async call(parameters : Public.Procedures.GeometrySameNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5095,16 +5485,11 @@ async call(parameters : Public.Procedures.GeometrySameNd.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryDistanceCentroidNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryDistanceCentroidNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_distance_centroid_nd"; }
 async call(parameters : Public.Procedures.GeometryDistanceCentroidNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5121,16 +5506,11 @@ async call(parameters : Public.Procedures.GeometryDistanceCentroidNd.Parameters)
               return responseBody;
            
 }
-}(this)
-
-          public GeometryDistanceCpa = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryDistanceCpa implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_distance_cpa"; }
 async call(parameters : Public.Procedures.GeometryDistanceCpa.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5147,16 +5527,11 @@ async call(parameters : Public.Procedures.GeometryDistanceCpa.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryGistDistanceNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryGistDistanceNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_gist_distance_nd"; }
 async call(parameters : Public.Procedures.GeometryGistDistanceNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5173,16 +5548,11 @@ async call(parameters : Public.Procedures.GeometryGistDistanceNd.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StShiftlongitude = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StShiftlongitude implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_shiftlongitude"; }
 async call(parameters : Public.Procedures.StShiftlongitude.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5199,16 +5569,11 @@ async call(parameters : Public.Procedures.StShiftlongitude.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StWrapx = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StWrapx implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_wrapx"; }
 async call(parameters : Public.Procedures.StWrapx.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5225,16 +5590,11 @@ async call(parameters : Public.Procedures.StWrapx.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StXmin = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StXmin implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_xmin"; }
 async call(parameters : Public.Procedures.StXmin.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5251,16 +5611,11 @@ async call(parameters : Public.Procedures.StXmin.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StYmin = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StYmin implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_ymin"; }
 async call(parameters : Public.Procedures.StYmin.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5277,16 +5632,11 @@ async call(parameters : Public.Procedures.StYmin.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StZmin = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StZmin implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_zmin"; }
 async call(parameters : Public.Procedures.StZmin.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5303,16 +5653,11 @@ async call(parameters : Public.Procedures.StZmin.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StXmax = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StXmax implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_xmax"; }
 async call(parameters : Public.Procedures.StXmax.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5329,16 +5674,11 @@ async call(parameters : Public.Procedures.StXmax.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StYmax = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StYmax implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_ymax"; }
 async call(parameters : Public.Procedures.StYmax.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5355,16 +5695,11 @@ async call(parameters : Public.Procedures.StYmax.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StZmax = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StZmax implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_zmax"; }
 async call(parameters : Public.Procedures.StZmax.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5381,16 +5716,11 @@ async call(parameters : Public.Procedures.StZmax.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StExpand_84f4 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StExpand_84f4 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_expand_84f4"; }
 async call(parameters : Public.Procedures.StExpand_84f4.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5407,16 +5737,11 @@ async call(parameters : Public.Procedures.StExpand_84f4.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StExpand_42b4 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StExpand_42b4 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_expand_42b4"; }
 async call(parameters : Public.Procedures.StExpand_42b4.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5433,16 +5758,11 @@ async call(parameters : Public.Procedures.StExpand_42b4.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisGetbbox = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisGetbbox implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_getbbox"; }
 async call(parameters : Public.Procedures.PostgisGetbbox.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5459,16 +5779,11 @@ async call(parameters : Public.Procedures.PostgisGetbbox.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMakebox2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMakebox2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_makebox2d"; }
 async call(parameters : Public.Procedures.StMakebox2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5485,16 +5800,11 @@ async call(parameters : Public.Procedures.StMakebox2d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StEstimatedextentD2f5 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StEstimatedextentD2f5 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_estimatedextent_d2f5"; }
 async call(parameters : Public.Procedures.StEstimatedextentD2f5.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5511,16 +5821,11 @@ async call(parameters : Public.Procedures.StEstimatedextentD2f5.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StEstimatedextent_27e1 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StEstimatedextent_27e1 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_estimatedextent_27e1"; }
 async call(parameters : Public.Procedures.StEstimatedextent_27e1.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5537,16 +5842,11 @@ async call(parameters : Public.Procedures.StEstimatedextent_27e1.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StEstimatedextent_2ec2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StEstimatedextent_2ec2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_estimatedextent_2ec2"; }
 async call(parameters : Public.Procedures.StEstimatedextent_2ec2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5563,16 +5863,11 @@ async call(parameters : Public.Procedures.StEstimatedextent_2ec2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StFindextent_27e1 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StFindextent_27e1 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_findextent_27e1"; }
 async call(parameters : Public.Procedures.StFindextent_27e1.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5589,16 +5884,11 @@ async call(parameters : Public.Procedures.StFindextent_27e1.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StFindextent_2ec2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StFindextent_2ec2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_findextent_2ec2"; }
 async call(parameters : Public.Procedures.StFindextent_2ec2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5615,16 +5905,11 @@ async call(parameters : Public.Procedures.StFindextent_2ec2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisAddbbox = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisAddbbox implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_addbbox"; }
 async call(parameters : Public.Procedures.PostgisAddbbox.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5641,16 +5926,11 @@ async call(parameters : Public.Procedures.PostgisAddbbox.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisDropbbox = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisDropbbox implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_dropbbox"; }
 async call(parameters : Public.Procedures.PostgisDropbbox.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5667,16 +5947,11 @@ async call(parameters : Public.Procedures.PostgisDropbbox.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisHasbbox = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisHasbbox implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_hasbbox"; }
 async call(parameters : Public.Procedures.PostgisHasbbox.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5693,16 +5968,11 @@ async call(parameters : Public.Procedures.PostgisHasbbox.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StQuantizecoordinates = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StQuantizecoordinates implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_quantizecoordinates"; }
 async call(parameters : Public.Procedures.StQuantizecoordinates.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5719,16 +5989,11 @@ async call(parameters : Public.Procedures.StQuantizecoordinates.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMemsize = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMemsize implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_memsize"; }
 async call(parameters : Public.Procedures.StMemsize.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5745,16 +6010,11 @@ async call(parameters : Public.Procedures.StMemsize.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSummary_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSummary_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_summary_7e9c"; }
 async call(parameters : Public.Procedures.StSummary_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5771,16 +6031,11 @@ async call(parameters : Public.Procedures.StSummary_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StNpoints = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StNpoints implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_npoints"; }
 async call(parameters : Public.Procedures.StNpoints.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5797,16 +6052,11 @@ async call(parameters : Public.Procedures.StNpoints.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StNrings = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StNrings implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_nrings"; }
 async call(parameters : Public.Procedures.StNrings.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5823,16 +6073,11 @@ async call(parameters : Public.Procedures.StNrings.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public St_3dlength = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class St_3dlength implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_3dlength"; }
 async call(parameters : Public.Procedures.St_3dlength.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5849,16 +6094,11 @@ async call(parameters : Public.Procedures.St_3dlength.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLength2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLength2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_length2d"; }
 async call(parameters : Public.Procedures.StLength2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5875,16 +6115,11 @@ async call(parameters : Public.Procedures.StLength2d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLength_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLength_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_length_7e9c"; }
 async call(parameters : Public.Procedures.StLength_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5901,16 +6136,11 @@ async call(parameters : Public.Procedures.StLength_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLengthspheroid = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLengthspheroid implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_lengthspheroid"; }
 async call(parameters : Public.Procedures.StLengthspheroid.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5927,16 +6157,11 @@ async call(parameters : Public.Procedures.StLengthspheroid.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLength2dspheroid = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLength2dspheroid implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_length2dspheroid"; }
 async call(parameters : Public.Procedures.StLength2dspheroid.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5953,16 +6178,11 @@ async call(parameters : Public.Procedures.StLength2dspheroid.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public St_3dperimeter = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class St_3dperimeter implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_3dperimeter"; }
 async call(parameters : Public.Procedures.St_3dperimeter.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -5979,16 +6199,11 @@ async call(parameters : Public.Procedures.St_3dperimeter.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPerimeter2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPerimeter2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_perimeter2d"; }
 async call(parameters : Public.Procedures.StPerimeter2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6005,16 +6220,11 @@ async call(parameters : Public.Procedures.StPerimeter2d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPerimeter_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPerimeter_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_perimeter_7e9c"; }
 async call(parameters : Public.Procedures.StPerimeter_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6031,16 +6241,11 @@ async call(parameters : Public.Procedures.StPerimeter_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StArea2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StArea2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_area2d"; }
 async call(parameters : Public.Procedures.StArea2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6057,16 +6262,11 @@ async call(parameters : Public.Procedures.StArea2d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StArea_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StArea_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_area_7e9c"; }
 async call(parameters : Public.Procedures.StArea_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6083,16 +6283,11 @@ async call(parameters : Public.Procedures.StArea_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StIspolygoncw = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StIspolygoncw implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_ispolygoncw"; }
 async call(parameters : Public.Procedures.StIspolygoncw.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6109,16 +6304,11 @@ async call(parameters : Public.Procedures.StIspolygoncw.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StIspolygonccw = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StIspolygonccw implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_ispolygonccw"; }
 async call(parameters : Public.Procedures.StIspolygonccw.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6135,16 +6325,11 @@ async call(parameters : Public.Procedures.StIspolygonccw.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StDistancespheroidF223 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StDistancespheroidF223 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_distancespheroid_f223"; }
 async call(parameters : Public.Procedures.StDistancespheroidF223.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6161,16 +6346,11 @@ async call(parameters : Public.Procedures.StDistancespheroidF223.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StDistancespheroid_14de = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StDistancespheroid_14de implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_distancespheroid_14de"; }
 async call(parameters : Public.Procedures.StDistancespheroid_14de.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6187,16 +6367,11 @@ async call(parameters : Public.Procedures.StDistancespheroid_14de.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StDistance_14de = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StDistance_14de implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_distance_14de"; }
 async call(parameters : Public.Procedures.StDistance_14de.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6213,16 +6388,11 @@ async call(parameters : Public.Procedures.StDistance_14de.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPointinsidecircle = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPointinsidecircle implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_pointinsidecircle"; }
 async call(parameters : Public.Procedures.StPointinsidecircle.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6239,16 +6409,11 @@ async call(parameters : Public.Procedures.StPointinsidecircle.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAzimuth_14de = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAzimuth_14de implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_azimuth_14de"; }
 async call(parameters : Public.Procedures.StAzimuth_14de.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6265,16 +6430,11 @@ async call(parameters : Public.Procedures.StAzimuth_14de.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StProject_335d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StProject_335d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_project_335d"; }
 async call(parameters : Public.Procedures.StProject_335d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6291,16 +6451,11 @@ async call(parameters : Public.Procedures.StProject_335d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StProjectCf0b = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StProjectCf0b implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_project_cf0b"; }
 async call(parameters : Public.Procedures.StProjectCf0b.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6317,16 +6472,11 @@ async call(parameters : Public.Procedures.StProjectCf0b.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAngle_1afa = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAngle_1afa implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_angle_1afa"; }
 async call(parameters : Public.Procedures.StAngle_1afa.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6343,16 +6493,11 @@ async call(parameters : Public.Procedures.StAngle_1afa.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLineextend = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLineextend implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_lineextend"; }
 async call(parameters : Public.Procedures.StLineextend.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6369,16 +6514,11 @@ async call(parameters : Public.Procedures.StLineextend.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StForce2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StForce2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_force2d"; }
 async call(parameters : Public.Procedures.StForce2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6395,16 +6535,11 @@ async call(parameters : Public.Procedures.StForce2d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StForce3dz = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StForce3dz implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_force3dz"; }
 async call(parameters : Public.Procedures.StForce3dz.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6421,16 +6556,11 @@ async call(parameters : Public.Procedures.StForce3dz.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StForce3d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StForce3d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_force3d"; }
 async call(parameters : Public.Procedures.StForce3d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6447,16 +6577,11 @@ async call(parameters : Public.Procedures.StForce3d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StForce3dm = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StForce3dm implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_force3dm"; }
 async call(parameters : Public.Procedures.StForce3dm.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6473,16 +6598,11 @@ async call(parameters : Public.Procedures.StForce3dm.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StForce4d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StForce4d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_force4d"; }
 async call(parameters : Public.Procedures.StForce4d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6499,16 +6619,11 @@ async call(parameters : Public.Procedures.StForce4d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StForcecollection = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StForcecollection implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_forcecollection"; }
 async call(parameters : Public.Procedures.StForcecollection.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6525,16 +6640,11 @@ async call(parameters : Public.Procedures.StForcecollection.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCollectionextractFa24 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCollectionextractFa24 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_collectionextract_fa24"; }
 async call(parameters : Public.Procedures.StCollectionextractFa24.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6551,16 +6661,11 @@ async call(parameters : Public.Procedures.StCollectionextractFa24.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCollectionextract_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCollectionextract_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_collectionextract_7e9c"; }
 async call(parameters : Public.Procedures.StCollectionextract_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6577,16 +6682,11 @@ async call(parameters : Public.Procedures.StCollectionextract_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCollectionhomogenize = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCollectionhomogenize implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_collectionhomogenize"; }
 async call(parameters : Public.Procedures.StCollectionhomogenize.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6603,16 +6703,11 @@ async call(parameters : Public.Procedures.StCollectionhomogenize.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMulti = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMulti implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_multi"; }
 async call(parameters : Public.Procedures.StMulti.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6629,16 +6724,11 @@ async call(parameters : Public.Procedures.StMulti.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StForcecurve = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StForcecurve implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_forcecurve"; }
 async call(parameters : Public.Procedures.StForcecurve.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6655,16 +6745,11 @@ async call(parameters : Public.Procedures.StForcecurve.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StForcesfs_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StForcesfs_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_forcesfs_7e9c"; }
 async call(parameters : Public.Procedures.StForcesfs_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6681,16 +6766,11 @@ async call(parameters : Public.Procedures.StForcesfs_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StForcesfs_2ca2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StForcesfs_2ca2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_forcesfs_2ca2"; }
 async call(parameters : Public.Procedures.StForcesfs_2ca2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6707,16 +6787,11 @@ async call(parameters : Public.Procedures.StForcesfs_2ca2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StExpand_9609 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StExpand_9609 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_expand_9609"; }
 async call(parameters : Public.Procedures.StExpand_9609.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6733,16 +6808,11 @@ async call(parameters : Public.Procedures.StExpand_9609.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StExpand_7003 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StExpand_7003 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_expand_7003"; }
 async call(parameters : Public.Procedures.StExpand_7003.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6759,16 +6829,11 @@ async call(parameters : Public.Procedures.StExpand_7003.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StExpand_2b18 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StExpand_2b18 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_expand_2b18"; }
 async call(parameters : Public.Procedures.StExpand_2b18.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6785,16 +6850,11 @@ async call(parameters : Public.Procedures.StExpand_2b18.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StExpand_6be8 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StExpand_6be8 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_expand_6be8"; }
 async call(parameters : Public.Procedures.StExpand_6be8.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6811,16 +6871,11 @@ async call(parameters : Public.Procedures.StExpand_6be8.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StEnvelope = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StEnvelope implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_envelope"; }
 async call(parameters : Public.Procedures.StEnvelope.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6837,16 +6892,11 @@ async call(parameters : Public.Procedures.StEnvelope.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StBoundingdiagonal = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StBoundingdiagonal implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_boundingdiagonal"; }
 async call(parameters : Public.Procedures.StBoundingdiagonal.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6863,16 +6913,11 @@ async call(parameters : Public.Procedures.StBoundingdiagonal.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StReverse = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StReverse implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_reverse"; }
 async call(parameters : Public.Procedures.StReverse.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6889,16 +6934,11 @@ async call(parameters : Public.Procedures.StReverse.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StScroll = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StScroll implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_scroll"; }
 async call(parameters : Public.Procedures.StScroll.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6915,16 +6955,11 @@ async call(parameters : Public.Procedures.StScroll.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisGeosNoop = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisGeosNoop implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_geos_noop"; }
 async call(parameters : Public.Procedures.PostgisGeosNoop.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6941,16 +6976,11 @@ async call(parameters : Public.Procedures.PostgisGeosNoop.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StNormalize = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StNormalize implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_normalize"; }
 async call(parameters : Public.Procedures.StNormalize.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6967,16 +6997,11 @@ async call(parameters : Public.Procedures.StNormalize.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StZmflag = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StZmflag implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_zmflag"; }
 async call(parameters : Public.Procedures.StZmflag.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -6993,16 +7018,11 @@ async call(parameters : Public.Procedures.StZmflag.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StNdims = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StNdims implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_ndims"; }
 async call(parameters : Public.Procedures.StNdims.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7019,16 +7039,11 @@ async call(parameters : Public.Procedures.StNdims.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsewkt_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsewkt_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asewkt_7e9c"; }
 async call(parameters : Public.Procedures.StAsewkt_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7045,16 +7060,11 @@ async call(parameters : Public.Procedures.StAsewkt_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsewktFa24 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsewktFa24 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asewkt_fa24"; }
 async call(parameters : Public.Procedures.StAsewktFa24.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7071,16 +7081,11 @@ async call(parameters : Public.Procedures.StAsewktFa24.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAstwkb_055b = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAstwkb_055b implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_astwkb_055b"; }
 async call(parameters : Public.Procedures.StAstwkb_055b.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7097,16 +7102,11 @@ async call(parameters : Public.Procedures.StAstwkb_055b.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAstwkb_3d8c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAstwkb_3d8c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_astwkb_3d8c"; }
 async call(parameters : Public.Procedures.StAstwkb_3d8c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7123,16 +7123,11 @@ async call(parameters : Public.Procedures.StAstwkb_3d8c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsewkb_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsewkb_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asewkb_7e9c"; }
 async call(parameters : Public.Procedures.StAsewkb_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7149,16 +7144,11 @@ async call(parameters : Public.Procedures.StAsewkb_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAshexewkb_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAshexewkb_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_ashexewkb_7e9c"; }
 async call(parameters : Public.Procedures.StAshexewkb_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7175,16 +7165,11 @@ async call(parameters : Public.Procedures.StAshexewkb_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAshexewkb_2ca2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAshexewkb_2ca2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_ashexewkb_2ca2"; }
 async call(parameters : Public.Procedures.StAshexewkb_2ca2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7201,16 +7186,11 @@ async call(parameters : Public.Procedures.StAshexewkb_2ca2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsewkb_2ca2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsewkb_2ca2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asewkb_2ca2"; }
 async call(parameters : Public.Procedures.StAsewkb_2ca2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7227,16 +7207,11 @@ async call(parameters : Public.Procedures.StAsewkb_2ca2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAslatlontext = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAslatlontext implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_aslatlontext"; }
 async call(parameters : Public.Procedures.StAslatlontext.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7253,16 +7228,11 @@ async call(parameters : Public.Procedures.StAslatlontext.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Geomfromewkb = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Geomfromewkb implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geomfromewkb"; }
 async call(parameters : Public.Procedures.Geomfromewkb.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7279,16 +7249,11 @@ async call(parameters : Public.Procedures.Geomfromewkb.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeomfromewkb = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeomfromewkb implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geomfromewkb"; }
 async call(parameters : Public.Procedures.StGeomfromewkb.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7305,16 +7270,11 @@ async call(parameters : Public.Procedures.StGeomfromewkb.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeomfromtwkb = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeomfromtwkb implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geomfromtwkb"; }
 async call(parameters : Public.Procedures.StGeomfromtwkb.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7331,16 +7291,11 @@ async call(parameters : Public.Procedures.StGeomfromtwkb.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Geomfromewkt = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Geomfromewkt implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geomfromewkt"; }
 async call(parameters : Public.Procedures.Geomfromewkt.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7357,16 +7312,11 @@ async call(parameters : Public.Procedures.Geomfromewkt.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeomfromewkt = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeomfromewkt implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geomfromewkt"; }
 async call(parameters : Public.Procedures.StGeomfromewkt.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7383,16 +7333,11 @@ async call(parameters : Public.Procedures.StGeomfromewkt.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisCacheBbox = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisCacheBbox implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_cache_bbox"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7409,16 +7354,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public StMakepoint_0aec = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMakepoint_0aec implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_makepoint_0aec"; }
 async call(parameters : Public.Procedures.StMakepoint_0aec.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7435,16 +7375,11 @@ async call(parameters : Public.Procedures.StMakepoint_0aec.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMakepoint_81ec = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMakepoint_81ec implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_makepoint_81ec"; }
 async call(parameters : Public.Procedures.StMakepoint_81ec.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7461,16 +7396,11 @@ async call(parameters : Public.Procedures.StMakepoint_81ec.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMakepoint_570b = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMakepoint_570b implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_makepoint_570b"; }
 async call(parameters : Public.Procedures.StMakepoint_570b.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7487,16 +7417,11 @@ async call(parameters : Public.Procedures.StMakepoint_570b.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMakepointm = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMakepointm implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_makepointm"; }
 async call(parameters : Public.Procedures.StMakepointm.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7513,16 +7438,11 @@ async call(parameters : Public.Procedures.StMakepointm.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public St_3dmakebox = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class St_3dmakebox implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_3dmakebox"; }
 async call(parameters : Public.Procedures.St_3dmakebox.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7539,16 +7459,11 @@ async call(parameters : Public.Procedures.St_3dmakebox.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMakeline_4a4c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMakeline_4a4c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_makeline_4a4c"; }
 async call(parameters : Public.Procedures.StMakeline_4a4c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7565,16 +7480,11 @@ async call(parameters : Public.Procedures.StMakeline_4a4c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLinefrommultipoint = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLinefrommultipoint implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_linefrommultipoint"; }
 async call(parameters : Public.Procedures.StLinefrommultipoint.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7591,16 +7501,11 @@ async call(parameters : Public.Procedures.StLinefrommultipoint.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMakeline_14de = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMakeline_14de implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_makeline_14de"; }
 async call(parameters : Public.Procedures.StMakeline_14de.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7617,16 +7522,11 @@ async call(parameters : Public.Procedures.StMakeline_14de.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAddpoint_14de = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAddpoint_14de implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_addpoint_14de"; }
 async call(parameters : Public.Procedures.StAddpoint_14de.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7643,16 +7543,11 @@ async call(parameters : Public.Procedures.StAddpoint_14de.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StScale_335d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StScale_335d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_scale_335d"; }
 async call(parameters : Public.Procedures.StScale_335d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7669,16 +7564,11 @@ async call(parameters : Public.Procedures.StScale_335d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAddpointF3bd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAddpointF3bd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_addpoint_f3bd"; }
 async call(parameters : Public.Procedures.StAddpointF3bd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7695,16 +7585,11 @@ async call(parameters : Public.Procedures.StAddpointF3bd.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StRemovepoint = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StRemovepoint implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_removepoint"; }
 async call(parameters : Public.Procedures.StRemovepoint.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7721,16 +7606,11 @@ async call(parameters : Public.Procedures.StRemovepoint.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSetpoint = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSetpoint implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_setpoint"; }
 async call(parameters : Public.Procedures.StSetpoint.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7747,16 +7627,11 @@ async call(parameters : Public.Procedures.StSetpoint.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMakeenvelope = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMakeenvelope implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_makeenvelope"; }
 async call(parameters : Public.Procedures.StMakeenvelope.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7773,16 +7648,11 @@ async call(parameters : Public.Procedures.StMakeenvelope.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StTileenvelope = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StTileenvelope implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_tileenvelope"; }
 async call(parameters : Public.Procedures.StTileenvelope.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7799,16 +7669,11 @@ async call(parameters : Public.Procedures.StTileenvelope.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMakepolygonCd76 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMakepolygonCd76 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_makepolygon_cd76"; }
 async call(parameters : Public.Procedures.StMakepolygonCd76.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7825,16 +7690,11 @@ async call(parameters : Public.Procedures.StMakepolygonCd76.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMakepolygon_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMakepolygon_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_makepolygon_7e9c"; }
 async call(parameters : Public.Procedures.StMakepolygon_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7851,16 +7711,11 @@ async call(parameters : Public.Procedures.StMakepolygon_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StBuildarea = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StBuildarea implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_buildarea"; }
 async call(parameters : Public.Procedures.StBuildarea.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7877,16 +7732,11 @@ async call(parameters : Public.Procedures.StBuildarea.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPolygonize_4a4c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPolygonize_4a4c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_polygonize_4a4c"; }
 async call(parameters : Public.Procedures.StPolygonize_4a4c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7903,16 +7753,11 @@ async call(parameters : Public.Procedures.StPolygonize_4a4c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StClusterintersecting_4a4c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StClusterintersecting_4a4c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_clusterintersecting_4a4c"; }
 async call(parameters : Public.Procedures.StClusterintersecting_4a4c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7929,16 +7774,11 @@ async call(parameters : Public.Procedures.StClusterintersecting_4a4c.Parameters)
               return responseBody;
            
 }
-}(this)
-
-          public StClusterwithin_756d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StClusterwithin_756d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_clusterwithin_756d"; }
 async call(parameters : Public.Procedures.StClusterwithin_756d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7955,16 +7795,11 @@ async call(parameters : Public.Procedures.StClusterwithin_756d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLinemerge_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLinemerge_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_linemerge_7e9c"; }
 async call(parameters : Public.Procedures.StLinemerge_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -7981,16 +7816,11 @@ async call(parameters : Public.Procedures.StLinemerge_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLinemergeF473 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLinemergeF473 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_linemerge_f473"; }
 async call(parameters : Public.Procedures.StLinemergeF473.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8007,16 +7837,11 @@ async call(parameters : Public.Procedures.StLinemergeF473.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAffine_5d4d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAffine_5d4d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_affine_5d4d"; }
 async call(parameters : Public.Procedures.StAffine_5d4d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8033,16 +7858,11 @@ async call(parameters : Public.Procedures.StAffine_5d4d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAffineAe1f = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAffineAe1f implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_affine_ae1f"; }
 async call(parameters : Public.Procedures.StAffineAe1f.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8059,16 +7879,11 @@ async call(parameters : Public.Procedures.StAffineAe1f.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StRotate_2b18 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StRotate_2b18 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_rotate_2b18"; }
 async call(parameters : Public.Procedures.StRotate_2b18.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8085,16 +7900,11 @@ async call(parameters : Public.Procedures.StRotate_2b18.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StRotate_4294 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StRotate_4294 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_rotate_4294"; }
 async call(parameters : Public.Procedures.StRotate_4294.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8111,16 +7921,11 @@ async call(parameters : Public.Procedures.StRotate_4294.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StRotateAb9e = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StRotateAb9e implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_rotate_ab9e"; }
 async call(parameters : Public.Procedures.StRotateAb9e.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8137,16 +7942,11 @@ async call(parameters : Public.Procedures.StRotateAb9e.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StRotatez = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StRotatez implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_rotatez"; }
 async call(parameters : Public.Procedures.StRotatez.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8163,16 +7963,11 @@ async call(parameters : Public.Procedures.StRotatez.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StRotatex = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StRotatex implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_rotatex"; }
 async call(parameters : Public.Procedures.StRotatex.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8189,16 +7984,11 @@ async call(parameters : Public.Procedures.StRotatex.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StRotatey = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StRotatey implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_rotatey"; }
 async call(parameters : Public.Procedures.StRotatey.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8215,16 +8005,11 @@ async call(parameters : Public.Procedures.StRotatey.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StTranslate_4294 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StTranslate_4294 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_translate_4294"; }
 async call(parameters : Public.Procedures.StTranslate_4294.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8241,16 +8026,11 @@ async call(parameters : Public.Procedures.StTranslate_4294.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StTranslate_335d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StTranslate_335d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_translate_335d"; }
 async call(parameters : Public.Procedures.StTranslate_335d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8267,16 +8047,11 @@ async call(parameters : Public.Procedures.StTranslate_335d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StScale_14de = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StScale_14de implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_scale_14de"; }
 async call(parameters : Public.Procedures.StScale_14de.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8293,16 +8068,11 @@ async call(parameters : Public.Procedures.StScale_14de.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StScale_09cb = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StScale_09cb implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_scale_09cb"; }
 async call(parameters : Public.Procedures.StScale_09cb.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8319,16 +8089,11 @@ async call(parameters : Public.Procedures.StScale_09cb.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StScale_4294 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StScale_4294 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_scale_4294"; }
 async call(parameters : Public.Procedures.StScale_4294.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8345,16 +8110,11 @@ async call(parameters : Public.Procedures.StScale_4294.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StTransscale = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StTransscale implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_transscale"; }
 async call(parameters : Public.Procedures.StTransscale.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8371,16 +8131,11 @@ async call(parameters : Public.Procedures.StTransscale.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StDump = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StDump implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_dump"; }
 async call(parameters : Public.Procedures.StDump.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8397,16 +8152,11 @@ async call(parameters : Public.Procedures.StDump.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StDumprings = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StDumprings implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_dumprings"; }
 async call(parameters : Public.Procedures.StDumprings.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8423,16 +8173,11 @@ async call(parameters : Public.Procedures.StDumprings.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StDumppoints = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StDumppoints implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_dumppoints"; }
 async call(parameters : Public.Procedures.StDumppoints.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8449,16 +8194,11 @@ async call(parameters : Public.Procedures.StDumppoints.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StDumpsegments = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StDumpsegments implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_dumpsegments"; }
 async call(parameters : Public.Procedures.StDumpsegments.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8475,16 +8215,11 @@ async call(parameters : Public.Procedures.StDumpsegments.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PopulateGeometryColumns_23fc = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PopulateGeometryColumns_23fc implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "populate_geometry_columns_23fc"; }
 async call(parameters : Public.Procedures.PopulateGeometryColumns_23fc.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8501,16 +8236,11 @@ async call(parameters : Public.Procedures.PopulateGeometryColumns_23fc.Parameter
               return responseBody;
            
 }
-}(this)
-
-          public PopulateGeometryColumns_4174 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PopulateGeometryColumns_4174 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "populate_geometry_columns_4174"; }
 async call(parameters : Public.Procedures.PopulateGeometryColumns_4174.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8527,16 +8257,11 @@ async call(parameters : Public.Procedures.PopulateGeometryColumns_4174.Parameter
               return responseBody;
            
 }
-}(this)
-
-          public Addgeometrycolumn_8fbb = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Addgeometrycolumn_8fbb implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "addgeometrycolumn_8fbb"; }
 async call(parameters : Public.Procedures.Addgeometrycolumn_8fbb.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8553,16 +8278,11 @@ async call(parameters : Public.Procedures.Addgeometrycolumn_8fbb.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Addgeometrycolumn_4617 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Addgeometrycolumn_4617 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "addgeometrycolumn_4617"; }
 async call(parameters : Public.Procedures.Addgeometrycolumn_4617.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8579,16 +8299,11 @@ async call(parameters : Public.Procedures.Addgeometrycolumn_4617.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Addgeometrycolumn_093c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Addgeometrycolumn_093c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "addgeometrycolumn_093c"; }
 async call(parameters : Public.Procedures.Addgeometrycolumn_093c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8605,16 +8320,11 @@ async call(parameters : Public.Procedures.Addgeometrycolumn_093c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Dropgeometrycolumn_0412 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Dropgeometrycolumn_0412 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "dropgeometrycolumn_0412"; }
 async call(parameters : Public.Procedures.Dropgeometrycolumn_0412.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8631,16 +8341,11 @@ async call(parameters : Public.Procedures.Dropgeometrycolumn_0412.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Dropgeometrycolumn_2253 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Dropgeometrycolumn_2253 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "dropgeometrycolumn_2253"; }
 async call(parameters : Public.Procedures.Dropgeometrycolumn_2253.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8657,16 +8362,11 @@ async call(parameters : Public.Procedures.Dropgeometrycolumn_2253.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public DropgeometrycolumnF11a = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class DropgeometrycolumnF11a implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "dropgeometrycolumn_f11a"; }
 async call(parameters : Public.Procedures.DropgeometrycolumnF11a.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8683,16 +8383,11 @@ async call(parameters : Public.Procedures.DropgeometrycolumnF11a.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Dropgeometrytable_2253 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Dropgeometrytable_2253 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "dropgeometrytable_2253"; }
 async call(parameters : Public.Procedures.Dropgeometrytable_2253.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8709,16 +8404,11 @@ async call(parameters : Public.Procedures.Dropgeometrytable_2253.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSegmentize_2b18 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSegmentize_2b18 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_segmentize_2b18"; }
 async call(parameters : Public.Procedures.StSegmentize_2b18.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8735,16 +8425,11 @@ async call(parameters : Public.Procedures.StSegmentize_2b18.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public DropgeometrytableF11a = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class DropgeometrytableF11a implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "dropgeometrytable_f11a"; }
 async call(parameters : Public.Procedures.DropgeometrytableF11a.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8761,16 +8446,11 @@ async call(parameters : Public.Procedures.DropgeometrytableF11a.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public DropgeometrytableBfde = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class DropgeometrytableBfde implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "dropgeometrytable_bfde"; }
 async call(parameters : Public.Procedures.DropgeometrytableBfde.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8787,16 +8467,11 @@ async call(parameters : Public.Procedures.DropgeometrytableBfde.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public UpdategeometrysridB2ee = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class UpdategeometrysridB2ee implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "updategeometrysrid_b2ee"; }
 async call(parameters : Public.Procedures.UpdategeometrysridB2ee.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8813,16 +8488,11 @@ async call(parameters : Public.Procedures.UpdategeometrysridB2ee.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Updategeometrysrid_7b58 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Updategeometrysrid_7b58 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "updategeometrysrid_7b58"; }
 async call(parameters : Public.Procedures.Updategeometrysrid_7b58.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8839,16 +8509,11 @@ async call(parameters : Public.Procedures.Updategeometrysrid_7b58.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Updategeometrysrid_11c8 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Updategeometrysrid_11c8 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "updategeometrysrid_11c8"; }
 async call(parameters : Public.Procedures.Updategeometrysrid_11c8.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8865,16 +8530,11 @@ async call(parameters : Public.Procedures.Updategeometrysrid_11c8.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public FindSrid = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class FindSrid implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "find_srid"; }
 async call(parameters : Public.Procedures.FindSrid.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8891,16 +8551,11 @@ async call(parameters : Public.Procedures.FindSrid.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GetProj4FromSrid = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GetProj4FromSrid implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "get_proj4_from_srid"; }
 async call(parameters : Public.Procedures.GetProj4FromSrid.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8917,16 +8572,11 @@ async call(parameters : Public.Procedures.GetProj4FromSrid.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSetsridFa24 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSetsridFa24 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_setsrid_fa24"; }
 async call(parameters : Public.Procedures.StSetsridFa24.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8943,16 +8593,11 @@ async call(parameters : Public.Procedures.StSetsridFa24.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSrid_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSrid_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_srid_7e9c"; }
 async call(parameters : Public.Procedures.StSrid_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8969,16 +8614,11 @@ async call(parameters : Public.Procedures.StSrid_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisTransformGeometry = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisTransformGeometry implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_transform_geometry"; }
 async call(parameters : Public.Procedures.PostgisTransformGeometry.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -8995,16 +8635,11 @@ async call(parameters : Public.Procedures.PostgisTransformGeometry.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisSrsCodes = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisSrsCodes implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_srs_codes"; }
 async call(parameters : Public.Procedures.PostgisSrsCodes.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9021,16 +8656,11 @@ async call(parameters : Public.Procedures.PostgisSrsCodes.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisSrs = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisSrs implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_srs"; }
 async call(parameters : Public.Procedures.PostgisSrs.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9046,16 +8676,11 @@ async call(parameters : Public.Procedures.PostgisSrs.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisSrsAll = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisSrsAll implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_srs_all"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9071,16 +8696,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisSrsSearch = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisSrsSearch implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_srs_search"; }
 async call(parameters : Public.Procedures.PostgisSrsSearch.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9096,16 +8716,11 @@ async call(parameters : Public.Procedures.PostgisSrsSearch.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StTransformFa24 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StTransformFa24 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_transform_fa24"; }
 async call(parameters : Public.Procedures.StTransformFa24.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9122,16 +8737,11 @@ async call(parameters : Public.Procedures.StTransformFa24.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StTransform_2ca2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StTransform_2ca2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_transform_2ca2"; }
 async call(parameters : Public.Procedures.StTransform_2ca2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9148,16 +8758,11 @@ async call(parameters : Public.Procedures.StTransform_2ca2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StTransform_4b67 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StTransform_4b67 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_transform_4b67"; }
 async call(parameters : Public.Procedures.StTransform_4b67.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9174,16 +8779,11 @@ async call(parameters : Public.Procedures.StTransform_4b67.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StTransform_1623 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StTransform_1623 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_transform_1623"; }
 async call(parameters : Public.Procedures.StTransform_1623.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9200,16 +8800,11 @@ async call(parameters : Public.Procedures.StTransform_1623.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisTransformPipelineGeometry = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisTransformPipelineGeometry implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_transform_pipeline_geometry"; }
 async call(parameters : Public.Procedures.PostgisTransformPipelineGeometry.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9226,16 +8821,11 @@ async call(parameters : Public.Procedures.PostgisTransformPipelineGeometry.Param
               return responseBody;
            
 }
-}(this)
-
-          public StTransformpipeline = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StTransformpipeline implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_transformpipeline"; }
 async call(parameters : Public.Procedures.StTransformpipeline.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9252,16 +8842,11 @@ async call(parameters : Public.Procedures.StTransformpipeline.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StInversetransformpipeline = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StInversetransformpipeline implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_inversetransformpipeline"; }
 async call(parameters : Public.Procedures.StInversetransformpipeline.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9278,16 +8863,11 @@ async call(parameters : Public.Procedures.StInversetransformpipeline.Parameters)
               return responseBody;
            
 }
-}(this)
-
-          public PostgisVersion = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisVersion implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_version"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9304,16 +8884,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisLiblwgeomVersion = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisLiblwgeomVersion implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_liblwgeom_version"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9330,16 +8905,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisProjVersion = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisProjVersion implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_proj_version"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9356,16 +8926,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisWagyuVersion = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisWagyuVersion implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_wagyu_version"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9382,16 +8947,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisScriptsInstalled = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisScriptsInstalled implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_scripts_installed"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9408,16 +8968,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisLibVersion = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisLibVersion implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_lib_version"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9434,16 +8989,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisScriptsReleased = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisScriptsReleased implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_scripts_released"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9460,16 +9010,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisGeosVersion = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisGeosVersion implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_geos_version"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9486,16 +9031,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisGeosCompiledVersion = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisGeosCompiledVersion implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_geos_compiled_version"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9512,16 +9052,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisLibRevision = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisLibRevision implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_lib_revision"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9538,16 +9073,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisSvnVersion = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisSvnVersion implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_svn_version"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9564,16 +9094,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisLibxmlVersion = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisLibxmlVersion implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_libxml_version"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9590,16 +9115,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisScriptsBuildDate = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisScriptsBuildDate implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_scripts_build_date"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9616,16 +9136,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisLibBuildDate = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisLibBuildDate implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_lib_build_date"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9642,16 +9157,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisExtensionsUpgrade = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisExtensionsUpgrade implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_extensions_upgrade"; }
 async call(parameters : Public.Procedures.PostgisExtensionsUpgrade.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9668,16 +9178,11 @@ async call(parameters : Public.Procedures.PostgisExtensionsUpgrade.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLineinterpolatepoint_2b18 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLineinterpolatepoint_2b18 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_lineinterpolatepoint_2b18"; }
 async call(parameters : Public.Procedures.StLineinterpolatepoint_2b18.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9694,16 +9199,11 @@ async call(parameters : Public.Procedures.StLineinterpolatepoint_2b18.Parameters
               return responseBody;
            
 }
-}(this)
-
-          public StLineinterpolatepoints_89cf = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLineinterpolatepoints_89cf implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_lineinterpolatepoints_89cf"; }
 async call(parameters : Public.Procedures.StLineinterpolatepoints_89cf.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9720,16 +9220,11 @@ async call(parameters : Public.Procedures.StLineinterpolatepoints_89cf.Parameter
               return responseBody;
            
 }
-}(this)
-
-          public StLinesubstring_335d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLinesubstring_335d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_linesubstring_335d"; }
 async call(parameters : Public.Procedures.StLinesubstring_335d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9746,16 +9241,11 @@ async call(parameters : Public.Procedures.StLinesubstring_335d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLinelocatepoint_14de = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLinelocatepoint_14de implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_linelocatepoint_14de"; }
 async call(parameters : Public.Procedures.StLinelocatepoint_14de.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9772,16 +9262,11 @@ async call(parameters : Public.Procedures.StLinelocatepoint_14de.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAddmeasure = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAddmeasure implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_addmeasure"; }
 async call(parameters : Public.Procedures.StAddmeasure.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9798,16 +9283,11 @@ async call(parameters : Public.Procedures.StAddmeasure.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StClosestpointofapproach = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StClosestpointofapproach implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_closestpointofapproach"; }
 async call(parameters : Public.Procedures.StClosestpointofapproach.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9824,16 +9304,11 @@ async call(parameters : Public.Procedures.StClosestpointofapproach.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisFullVersion = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisFullVersion implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_full_version"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9850,16 +9325,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public Box2d_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Box2d_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "box2d_7e9c"; }
 async call(parameters : Public.Procedures.Box2d_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9876,16 +9346,11 @@ async call(parameters : Public.Procedures.Box2d_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Box3d_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Box3d_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "box3d_7e9c"; }
 async call(parameters : Public.Procedures.Box3d_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9902,16 +9367,11 @@ async call(parameters : Public.Procedures.Box3d_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Box_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Box_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "box_7e9c"; }
 async call(parameters : Public.Procedures.Box_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9928,16 +9388,11 @@ async call(parameters : Public.Procedures.Box_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Box2dD3c1 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Box2dD3c1 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "box2d_d3c1"; }
 async call(parameters : Public.Procedures.Box2dD3c1.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9954,16 +9409,11 @@ async call(parameters : Public.Procedures.Box2dD3c1.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Box3dAc3a = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Box3dAc3a implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "box3d_ac3a"; }
 async call(parameters : Public.Procedures.Box3dAc3a.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -9980,16 +9430,11 @@ async call(parameters : Public.Procedures.Box3dAc3a.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public BoxD3c1 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class BoxD3c1 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "box_d3c1"; }
 async call(parameters : Public.Procedures.BoxD3c1.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10006,16 +9451,11 @@ async call(parameters : Public.Procedures.BoxD3c1.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Text = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Text implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "text"; }
 async call(parameters : Public.Procedures.Text.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10032,16 +9472,11 @@ async call(parameters : Public.Procedures.Text.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Box3dtobox = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Box3dtobox implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "box3dtobox"; }
 async call(parameters : Public.Procedures.Box3dtobox.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10058,16 +9493,11 @@ async call(parameters : Public.Procedures.Box3dtobox.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryAc3a = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryAc3a implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_ac3a"; }
 async call(parameters : Public.Procedures.GeometryAc3a.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10084,16 +9514,11 @@ async call(parameters : Public.Procedures.GeometryAc3a.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryD3c1 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryD3c1 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_d3c1"; }
 async call(parameters : Public.Procedures.GeometryD3c1.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10110,16 +9535,11 @@ async call(parameters : Public.Procedures.GeometryD3c1.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_e728"; }
 async call(parameters : Public.Procedures.GeometryE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10136,16 +9556,11 @@ async call(parameters : Public.Procedures.GeometryE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Geometry_2d19 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Geometry_2d19 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_2d19"; }
 async call(parameters : Public.Procedures.Geometry_2d19.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10162,16 +9577,11 @@ async call(parameters : Public.Procedures.Geometry_2d19.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Bytea_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Bytea_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "bytea_7e9c"; }
 async call(parameters : Public.Procedures.Bytea_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10188,16 +9598,11 @@ async call(parameters : Public.Procedures.Bytea_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSimplify_2b18 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSimplify_2b18 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_simplify_2b18"; }
 async call(parameters : Public.Procedures.StSimplify_2b18.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10214,16 +9619,11 @@ async call(parameters : Public.Procedures.StSimplify_2b18.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSimplify_89cf = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSimplify_89cf implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_simplify_89cf"; }
 async call(parameters : Public.Procedures.StSimplify_89cf.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10240,16 +9640,11 @@ async call(parameters : Public.Procedures.StSimplify_89cf.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSimplifyvw = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSimplifyvw implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_simplifyvw"; }
 async call(parameters : Public.Procedures.StSimplifyvw.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10266,16 +9661,11 @@ async call(parameters : Public.Procedures.StSimplifyvw.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSeteffectivearea = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSeteffectivearea implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_seteffectivearea"; }
 async call(parameters : Public.Procedures.StSeteffectivearea.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10292,16 +9682,11 @@ async call(parameters : Public.Procedures.StSeteffectivearea.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StFilterbym = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StFilterbym implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_filterbym"; }
 async call(parameters : Public.Procedures.StFilterbym.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10318,16 +9703,11 @@ async call(parameters : Public.Procedures.StFilterbym.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StChaikinsmoothing = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StChaikinsmoothing implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_chaikinsmoothing"; }
 async call(parameters : Public.Procedures.StChaikinsmoothing.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10344,16 +9724,11 @@ async call(parameters : Public.Procedures.StChaikinsmoothing.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSnaptogrid_6be8 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSnaptogrid_6be8 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_snaptogrid_6be8"; }
 async call(parameters : Public.Procedures.StSnaptogrid_6be8.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10370,16 +9745,11 @@ async call(parameters : Public.Procedures.StSnaptogrid_6be8.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSnaptogrid_335d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSnaptogrid_335d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_snaptogrid_335d"; }
 async call(parameters : Public.Procedures.StSnaptogrid_335d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10396,16 +9766,11 @@ async call(parameters : Public.Procedures.StSnaptogrid_335d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSnaptogrid_2b18 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSnaptogrid_2b18 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_snaptogrid_2b18"; }
 async call(parameters : Public.Procedures.StSnaptogrid_2b18.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10422,16 +9787,11 @@ async call(parameters : Public.Procedures.StSnaptogrid_2b18.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSnaptogrid_4ae3 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSnaptogrid_4ae3 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_snaptogrid_4ae3"; }
 async call(parameters : Public.Procedures.StSnaptogrid_4ae3.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10448,16 +9808,11 @@ async call(parameters : Public.Procedures.StSnaptogrid_4ae3.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StDistancecpa = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StDistancecpa implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_distancecpa"; }
 async call(parameters : Public.Procedures.StDistancecpa.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10474,16 +9829,11 @@ async call(parameters : Public.Procedures.StDistancecpa.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCpawithin = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCpawithin implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_cpawithin"; }
 async call(parameters : Public.Procedures.StCpawithin.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10500,16 +9850,11 @@ async call(parameters : Public.Procedures.StCpawithin.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StIsvalidtrajectory = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StIsvalidtrajectory implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_isvalidtrajectory"; }
 async call(parameters : Public.Procedures.StIsvalidtrajectory.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10526,16 +9871,11 @@ async call(parameters : Public.Procedures.StIsvalidtrajectory.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StIntersectionCf0b = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StIntersectionCf0b implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_intersection_cf0b"; }
 async call(parameters : Public.Procedures.StIntersectionCf0b.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10552,16 +9892,11 @@ async call(parameters : Public.Procedures.StIntersectionCf0b.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StBufferB011 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StBufferB011 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_buffer_b011"; }
 async call(parameters : Public.Procedures.StBufferB011.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10578,16 +9913,11 @@ async call(parameters : Public.Procedures.StBufferB011.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StBuffer_8d37 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StBuffer_8d37 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_buffer_8d37"; }
 async call(parameters : Public.Procedures.StBuffer_8d37.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10604,16 +9934,11 @@ async call(parameters : Public.Procedures.StBuffer_8d37.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMinimumboundingradius = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMinimumboundingradius implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_minimumboundingradius"; }
 async call(parameters : Public.Procedures.StMinimumboundingradius.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10629,16 +9954,11 @@ async call(parameters : Public.Procedures.StMinimumboundingradius.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMinimumboundingcircle = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMinimumboundingcircle implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_minimumboundingcircle"; }
 async call(parameters : Public.Procedures.StMinimumboundingcircle.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10655,16 +9975,11 @@ async call(parameters : Public.Procedures.StMinimumboundingcircle.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StOrientedenvelope = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StOrientedenvelope implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_orientedenvelope"; }
 async call(parameters : Public.Procedures.StOrientedenvelope.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10681,16 +9996,11 @@ async call(parameters : Public.Procedures.StOrientedenvelope.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StOffsetcurve = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StOffsetcurve implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_offsetcurve"; }
 async call(parameters : Public.Procedures.StOffsetcurve.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10707,16 +10017,11 @@ async call(parameters : Public.Procedures.StOffsetcurve.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeneratepointsFa24 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeneratepointsFa24 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_generatepoints_fa24"; }
 async call(parameters : Public.Procedures.StGeneratepointsFa24.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10733,16 +10038,11 @@ async call(parameters : Public.Procedures.StGeneratepointsFa24.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeneratepoints_5ca3 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeneratepoints_5ca3 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_generatepoints_5ca3"; }
 async call(parameters : Public.Procedures.StGeneratepoints_5ca3.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10759,16 +10059,11 @@ async call(parameters : Public.Procedures.StGeneratepoints_5ca3.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StConvexhull = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StConvexhull implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_convexhull"; }
 async call(parameters : Public.Procedures.StConvexhull.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10785,16 +10080,11 @@ async call(parameters : Public.Procedures.StConvexhull.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSimplifypreservetopology = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSimplifypreservetopology implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_simplifypreservetopology"; }
 async call(parameters : Public.Procedures.StSimplifypreservetopology.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10811,16 +10101,11 @@ async call(parameters : Public.Procedures.StSimplifypreservetopology.Parameters)
               return responseBody;
            
 }
-}(this)
-
-          public StIsvalidreason_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StIsvalidreason_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_isvalidreason_7e9c"; }
 async call(parameters : Public.Procedures.StIsvalidreason_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10837,16 +10122,11 @@ async call(parameters : Public.Procedures.StIsvalidreason_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StIsvaliddetail = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StIsvaliddetail implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_isvaliddetail"; }
 async call(parameters : Public.Procedures.StIsvaliddetail.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10863,16 +10143,11 @@ async call(parameters : Public.Procedures.StIsvaliddetail.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StIsvalidreasonFa24 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StIsvalidreasonFa24 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_isvalidreason_fa24"; }
 async call(parameters : Public.Procedures.StIsvalidreasonFa24.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10889,16 +10164,11 @@ async call(parameters : Public.Procedures.StIsvalidreasonFa24.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StIsvalidFa24 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StIsvalidFa24 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_isvalid_fa24"; }
 async call(parameters : Public.Procedures.StIsvalidFa24.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10915,16 +10185,11 @@ async call(parameters : Public.Procedures.StIsvalidFa24.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StHausdorffdistance_14de = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StHausdorffdistance_14de implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_hausdorffdistance_14de"; }
 async call(parameters : Public.Procedures.StHausdorffdistance_14de.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10941,16 +10206,11 @@ async call(parameters : Public.Procedures.StHausdorffdistance_14de.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StHausdorffdistanceCf0b = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StHausdorffdistanceCf0b implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_hausdorffdistance_cf0b"; }
 async call(parameters : Public.Procedures.StHausdorffdistanceCf0b.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10967,16 +10227,11 @@ async call(parameters : Public.Procedures.StHausdorffdistanceCf0b.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StFrechetdistance = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StFrechetdistance implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_frechetdistance"; }
 async call(parameters : Public.Procedures.StFrechetdistance.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -10993,16 +10248,11 @@ async call(parameters : Public.Procedures.StFrechetdistance.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMaximuminscribedcircle = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMaximuminscribedcircle implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_maximuminscribedcircle"; }
 async call(parameters : Public.Procedures.StMaximuminscribedcircle.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11018,16 +10268,11 @@ async call(parameters : Public.Procedures.StMaximuminscribedcircle.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLargestemptycircle = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLargestemptycircle implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_largestemptycircle"; }
 async call(parameters : Public.Procedures.StLargestemptycircle.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11043,16 +10288,11 @@ async call(parameters : Public.Procedures.StLargestemptycircle.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StDifference = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StDifference implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_difference"; }
 async call(parameters : Public.Procedures.StDifference.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11069,16 +10309,11 @@ async call(parameters : Public.Procedures.StDifference.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StBoundary = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StBoundary implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_boundary"; }
 async call(parameters : Public.Procedures.StBoundary.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11095,16 +10330,11 @@ async call(parameters : Public.Procedures.StBoundary.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPoints = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPoints implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_points"; }
 async call(parameters : Public.Procedures.StPoints.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11121,16 +10351,11 @@ async call(parameters : Public.Procedures.StPoints.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSymdifference = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSymdifference implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_symdifference"; }
 async call(parameters : Public.Procedures.StSymdifference.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11147,16 +10372,11 @@ async call(parameters : Public.Procedures.StSymdifference.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSymmetricdifference = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSymmetricdifference implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_symmetricdifference"; }
 async call(parameters : Public.Procedures.StSymmetricdifference.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11173,16 +10393,11 @@ async call(parameters : Public.Procedures.StSymmetricdifference.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StUnion_14de = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StUnion_14de implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_union_14de"; }
 async call(parameters : Public.Procedures.StUnion_14de.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11199,16 +10414,11 @@ async call(parameters : Public.Procedures.StUnion_14de.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StUnionCf0b = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StUnionCf0b implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_union_cf0b"; }
 async call(parameters : Public.Procedures.StUnionCf0b.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11225,16 +10435,11 @@ async call(parameters : Public.Procedures.StUnionCf0b.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StUnaryunion = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StUnaryunion implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_unaryunion"; }
 async call(parameters : Public.Procedures.StUnaryunion.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11251,16 +10456,11 @@ async call(parameters : Public.Procedures.StUnaryunion.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StRemoverepeatedpoints = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StRemoverepeatedpoints implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_removerepeatedpoints"; }
 async call(parameters : Public.Procedures.StRemoverepeatedpoints.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11277,16 +10477,11 @@ async call(parameters : Public.Procedures.StRemoverepeatedpoints.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StClipbybox2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StClipbybox2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_clipbybox2d"; }
 async call(parameters : Public.Procedures.StClipbybox2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11303,16 +10498,11 @@ async call(parameters : Public.Procedures.StClipbybox2d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSubdivide = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSubdivide implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_subdivide"; }
 async call(parameters : Public.Procedures.StSubdivide.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11329,16 +10519,11 @@ async call(parameters : Public.Procedures.StSubdivide.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StReduceprecision = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StReduceprecision implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_reduceprecision"; }
 async call(parameters : Public.Procedures.StReduceprecision.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11355,16 +10540,11 @@ async call(parameters : Public.Procedures.StReduceprecision.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMakevalid_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMakevalid_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_makevalid_7e9c"; }
 async call(parameters : Public.Procedures.StMakevalid_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11381,16 +10561,11 @@ async call(parameters : Public.Procedures.StMakevalid_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMakevalid_2ca2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMakevalid_2ca2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_makevalid_2ca2"; }
 async call(parameters : Public.Procedures.StMakevalid_2ca2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11407,16 +10582,11 @@ async call(parameters : Public.Procedures.StMakevalid_2ca2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCleangeometry = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCleangeometry implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_cleangeometry"; }
 async call(parameters : Public.Procedures.StCleangeometry.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11433,16 +10603,11 @@ async call(parameters : Public.Procedures.StCleangeometry.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSplit = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSplit implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_split"; }
 async call(parameters : Public.Procedures.StSplit.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11459,16 +10624,11 @@ async call(parameters : Public.Procedures.StSplit.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSharedpaths = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSharedpaths implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_sharedpaths"; }
 async call(parameters : Public.Procedures.StSharedpaths.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11485,16 +10645,11 @@ async call(parameters : Public.Procedures.StSharedpaths.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSnap = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSnap implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_snap"; }
 async call(parameters : Public.Procedures.StSnap.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11511,16 +10666,11 @@ async call(parameters : Public.Procedures.StSnap.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StRelatematch = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StRelatematch implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_relatematch"; }
 async call(parameters : Public.Procedures.StRelatematch.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11537,16 +10687,11 @@ async call(parameters : Public.Procedures.StRelatematch.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StNode = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StNode implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_node"; }
 async call(parameters : Public.Procedures.StNode.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11563,16 +10708,11 @@ async call(parameters : Public.Procedures.StNode.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StDelaunaytriangles = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StDelaunaytriangles implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_delaunaytriangles"; }
 async call(parameters : Public.Procedures.StDelaunaytriangles.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11589,16 +10729,11 @@ async call(parameters : Public.Procedures.StDelaunaytriangles.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StTriangulatepolygon = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StTriangulatepolygon implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_triangulatepolygon"; }
 async call(parameters : Public.Procedures.StTriangulatepolygon.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11615,16 +10750,11 @@ async call(parameters : Public.Procedures.StTriangulatepolygon.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StVoronoipolygons = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StVoronoipolygons implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_voronoipolygons"; }
 async call(parameters : Public.Procedures.StVoronoipolygons.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11641,16 +10771,11 @@ async call(parameters : Public.Procedures.StVoronoipolygons.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StVoronoilines = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StVoronoilines implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_voronoilines"; }
 async call(parameters : Public.Procedures.StVoronoilines.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11667,16 +10792,11 @@ async call(parameters : Public.Procedures.StVoronoilines.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCombinebbox_26c1 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCombinebbox_26c1 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_combinebbox_26c1"; }
 async call(parameters : Public.Procedures.StCombinebbox_26c1.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11693,16 +10813,11 @@ async call(parameters : Public.Procedures.StCombinebbox_26c1.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCombinebboxF3db = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCombinebboxF3db implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_combinebbox_f3db"; }
 async call(parameters : Public.Procedures.StCombinebboxF3db.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11719,16 +10834,11 @@ async call(parameters : Public.Procedures.StCombinebboxF3db.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCombinebboxCe9a = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCombinebboxCe9a implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_combinebbox_ce9a"; }
 async call(parameters : Public.Procedures.StCombinebboxCe9a.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11745,16 +10855,11 @@ async call(parameters : Public.Procedures.StCombinebboxCe9a.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCollect_14de = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCollect_14de implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_collect_14de"; }
 async call(parameters : Public.Procedures.StCollect_14de.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11771,16 +10876,11 @@ async call(parameters : Public.Procedures.StCollect_14de.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCollect_4a4c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCollect_4a4c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_collect_4a4c"; }
 async call(parameters : Public.Procedures.StCollect_4a4c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11797,16 +10897,11 @@ async call(parameters : Public.Procedures.StCollect_4a4c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PgisGeometryAccumTransfn_2b9b = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisGeometryAccumTransfn_2b9b implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_geometry_accum_transfn_2b9b"; }
 async call(parameters : Public.Procedures.PgisGeometryAccumTransfn_2b9b.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11823,16 +10918,11 @@ async call(parameters : Public.Procedures.PgisGeometryAccumTransfn_2b9b.Paramete
               return responseBody;
            
 }
-}(this)
-
-          public PgisGeometryAccumTransfn_623d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisGeometryAccumTransfn_623d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_geometry_accum_transfn_623d"; }
 async call(parameters : Public.Procedures.PgisGeometryAccumTransfn_623d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11849,16 +10939,11 @@ async call(parameters : Public.Procedures.PgisGeometryAccumTransfn_623d.Paramete
               return responseBody;
            
 }
-}(this)
-
-          public PgisGeometryAccumTransfn_3d24 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisGeometryAccumTransfn_3d24 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_geometry_accum_transfn_3d24"; }
 async call(parameters : Public.Procedures.PgisGeometryAccumTransfn_3d24.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11875,16 +10960,11 @@ async call(parameters : Public.Procedures.PgisGeometryAccumTransfn_3d24.Paramete
               return responseBody;
            
 }
-}(this)
-
-          public PgisGeometryCollectFinalfn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisGeometryCollectFinalfn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_geometry_collect_finalfn"; }
 async call(parameters : Public.Procedures.PgisGeometryCollectFinalfn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11901,16 +10981,11 @@ async call(parameters : Public.Procedures.PgisGeometryCollectFinalfn.Parameters)
               return responseBody;
            
 }
-}(this)
-
-          public PgisGeometryPolygonizeFinalfn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisGeometryPolygonizeFinalfn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_geometry_polygonize_finalfn"; }
 async call(parameters : Public.Procedures.PgisGeometryPolygonizeFinalfn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11927,16 +11002,11 @@ async call(parameters : Public.Procedures.PgisGeometryPolygonizeFinalfn.Paramete
               return responseBody;
            
 }
-}(this)
-
-          public PgisGeometryClusterintersectingFinalfn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisGeometryClusterintersectingFinalfn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_geometry_clusterintersecting_finalfn"; }
 async call(parameters : Public.Procedures.PgisGeometryClusterintersectingFinalfn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11953,16 +11023,11 @@ async call(parameters : Public.Procedures.PgisGeometryClusterintersectingFinalfn
               return responseBody;
            
 }
-}(this)
-
-          public PgisGeometryClusterwithinFinalfn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisGeometryClusterwithinFinalfn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_geometry_clusterwithin_finalfn"; }
 async call(parameters : Public.Procedures.PgisGeometryClusterwithinFinalfn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -11979,16 +11044,11 @@ async call(parameters : Public.Procedures.PgisGeometryClusterwithinFinalfn.Param
               return responseBody;
            
 }
-}(this)
-
-          public PgisGeometryMakelineFinalfn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisGeometryMakelineFinalfn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_geometry_makeline_finalfn"; }
 async call(parameters : Public.Procedures.PgisGeometryMakelineFinalfn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12005,16 +11065,11 @@ async call(parameters : Public.Procedures.PgisGeometryMakelineFinalfn.Parameters
               return responseBody;
            
 }
-}(this)
-
-          public PgisGeometryCoverageunionFinalfn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisGeometryCoverageunionFinalfn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_geometry_coverageunion_finalfn"; }
 async call(parameters : Public.Procedures.PgisGeometryCoverageunionFinalfn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12031,16 +11086,11 @@ async call(parameters : Public.Procedures.PgisGeometryCoverageunionFinalfn.Param
               return responseBody;
            
 }
-}(this)
-
-          public PgisGeometryUnionParallelTransfn_2b9b = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisGeometryUnionParallelTransfn_2b9b implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_geometry_union_parallel_transfn_2b9b"; }
 async call(parameters : Public.Procedures.PgisGeometryUnionParallelTransfn_2b9b.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12057,16 +11107,11 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelTransfn_2b9b.
               return responseBody;
            
 }
-}(this)
-
-          public PgisGeometryUnionParallelTransfn_623d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisGeometryUnionParallelTransfn_623d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_geometry_union_parallel_transfn_623d"; }
 async call(parameters : Public.Procedures.PgisGeometryUnionParallelTransfn_623d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12083,16 +11128,11 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelTransfn_623d.
               return responseBody;
            
 }
-}(this)
-
-          public PgisGeometryUnionParallelCombinefn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisGeometryUnionParallelCombinefn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_geometry_union_parallel_combinefn"; }
 async call(parameters : Public.Procedures.PgisGeometryUnionParallelCombinefn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12109,16 +11149,11 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelCombinefn.Par
               return responseBody;
            
 }
-}(this)
-
-          public PgisGeometryUnionParallelSerialfn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisGeometryUnionParallelSerialfn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_geometry_union_parallel_serialfn"; }
 async call(parameters : Public.Procedures.PgisGeometryUnionParallelSerialfn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12135,16 +11170,11 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelSerialfn.Para
               return responseBody;
            
 }
-}(this)
-
-          public PgisGeometryUnionParallelDeserialfn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisGeometryUnionParallelDeserialfn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_geometry_union_parallel_deserialfn"; }
 async call(parameters : Public.Procedures.PgisGeometryUnionParallelDeserialfn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12161,16 +11191,11 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelDeserialfn.Pa
               return responseBody;
            
 }
-}(this)
-
-          public PgisGeometryUnionParallelFinalfn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisGeometryUnionParallelFinalfn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_geometry_union_parallel_finalfn"; }
 async call(parameters : Public.Procedures.PgisGeometryUnionParallelFinalfn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12187,16 +11212,11 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelFinalfn.Param
               return responseBody;
            
 }
-}(this)
-
-          public StUnion_4a4c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StUnion_4a4c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_union_4a4c"; }
 async call(parameters : Public.Procedures.StUnion_4a4c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12213,16 +11233,11 @@ async call(parameters : Public.Procedures.StUnion_4a4c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCoverageunion_4a4c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCoverageunion_4a4c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_coverageunion_4a4c"; }
 async call(parameters : Public.Procedures.StCoverageunion_4a4c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12239,16 +11254,11 @@ async call(parameters : Public.Procedures.StCoverageunion_4a4c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StRelate_14de = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StRelate_14de implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_relate_14de"; }
 async call(parameters : Public.Procedures.StRelate_14de.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12265,16 +11275,11 @@ async call(parameters : Public.Procedures.StRelate_14de.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StRelateF3bd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StRelateF3bd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_relate_f3bd"; }
 async call(parameters : Public.Procedures.StRelateF3bd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12291,16 +11296,11 @@ async call(parameters : Public.Procedures.StRelateF3bd.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StRelateC160 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StRelateC160 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_relate_c160"; }
 async call(parameters : Public.Procedures.StRelateC160.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12317,16 +11317,11 @@ async call(parameters : Public.Procedures.StRelateC160.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StDisjoint = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StDisjoint implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_disjoint"; }
 async call(parameters : Public.Procedures.StDisjoint.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12343,16 +11338,11 @@ async call(parameters : Public.Procedures.StDisjoint.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisIndexSupportfn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisIndexSupportfn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_index_supportfn"; }
 async call(parameters : Public.Procedures.PostgisIndexSupportfn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12369,16 +11359,11 @@ async call(parameters : Public.Procedures.PostgisIndexSupportfn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLinecrossingdirection = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLinecrossingdirection implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_linecrossingdirection"; }
 async call(parameters : Public.Procedures.StLinecrossingdirection.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12395,16 +11380,11 @@ async call(parameters : Public.Procedures.StLinecrossingdirection.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StDwithinCf0b = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StDwithinCf0b implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_dwithin_cf0b"; }
 async call(parameters : Public.Procedures.StDwithinCf0b.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12421,16 +11401,11 @@ async call(parameters : Public.Procedures.StDwithinCf0b.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StTouches = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StTouches implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_touches"; }
 async call(parameters : Public.Procedures.StTouches.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12447,16 +11422,11 @@ async call(parameters : Public.Procedures.StTouches.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StIntersects_14de = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StIntersects_14de implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_intersects_14de"; }
 async call(parameters : Public.Procedures.StIntersects_14de.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12473,16 +11443,11 @@ async call(parameters : Public.Procedures.StIntersects_14de.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCrosses = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCrosses implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_crosses"; }
 async call(parameters : Public.Procedures.StCrosses.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12499,16 +11464,11 @@ async call(parameters : Public.Procedures.StCrosses.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StContains = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StContains implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_contains"; }
 async call(parameters : Public.Procedures.StContains.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12525,16 +11485,11 @@ async call(parameters : Public.Procedures.StContains.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StContainsproperly = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StContainsproperly implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_containsproperly"; }
 async call(parameters : Public.Procedures.StContainsproperly.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12551,16 +11506,11 @@ async call(parameters : Public.Procedures.StContainsproperly.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StWithin = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StWithin implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_within"; }
 async call(parameters : Public.Procedures.StWithin.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12577,16 +11527,11 @@ async call(parameters : Public.Procedures.StWithin.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCovers_14de = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCovers_14de implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_covers_14de"; }
 async call(parameters : Public.Procedures.StCovers_14de.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12603,16 +11548,11 @@ async call(parameters : Public.Procedures.StCovers_14de.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCoveredby_14de = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCoveredby_14de implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_coveredby_14de"; }
 async call(parameters : Public.Procedures.StCoveredby_14de.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12629,16 +11569,11 @@ async call(parameters : Public.Procedures.StCoveredby_14de.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StOverlaps = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StOverlaps implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_overlaps"; }
 async call(parameters : Public.Procedures.StOverlaps.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12655,16 +11590,11 @@ async call(parameters : Public.Procedures.StOverlaps.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StDfullywithin = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StDfullywithin implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_dfullywithin"; }
 async call(parameters : Public.Procedures.StDfullywithin.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12681,16 +11611,11 @@ async call(parameters : Public.Procedures.StDfullywithin.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public St_3ddwithin = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class St_3ddwithin implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_3ddwithin"; }
 async call(parameters : Public.Procedures.St_3ddwithin.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12707,16 +11632,11 @@ async call(parameters : Public.Procedures.St_3ddwithin.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public St_3ddfullywithin = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class St_3ddfullywithin implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_3ddfullywithin"; }
 async call(parameters : Public.Procedures.St_3ddfullywithin.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12733,16 +11653,11 @@ async call(parameters : Public.Procedures.St_3ddfullywithin.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public St_3dintersects = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class St_3dintersects implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_3dintersects"; }
 async call(parameters : Public.Procedures.St_3dintersects.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12759,16 +11674,11 @@ async call(parameters : Public.Procedures.St_3dintersects.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StOrderingequals = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StOrderingequals implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_orderingequals"; }
 async call(parameters : Public.Procedures.StOrderingequals.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12785,16 +11695,11 @@ async call(parameters : Public.Procedures.StOrderingequals.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StEquals = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StEquals implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_equals"; }
 async call(parameters : Public.Procedures.StEquals.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12811,16 +11716,11 @@ async call(parameters : Public.Procedures.StEquals.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StIsvalid_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StIsvalid_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_isvalid_7e9c"; }
 async call(parameters : Public.Procedures.StIsvalid_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12837,16 +11737,11 @@ async call(parameters : Public.Procedures.StIsvalid_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMinimumclearance = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMinimumclearance implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_minimumclearance"; }
 async call(parameters : Public.Procedures.StMinimumclearance.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12863,16 +11758,11 @@ async call(parameters : Public.Procedures.StMinimumclearance.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMinimumclearanceline = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMinimumclearanceline implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_minimumclearanceline"; }
 async call(parameters : Public.Procedures.StMinimumclearanceline.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12889,16 +11779,11 @@ async call(parameters : Public.Procedures.StMinimumclearanceline.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCentroid_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCentroid_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_centroid_7e9c"; }
 async call(parameters : Public.Procedures.StCentroid_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12915,16 +11800,11 @@ async call(parameters : Public.Procedures.StCentroid_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeometricmedian = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeometricmedian implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geometricmedian"; }
 async call(parameters : Public.Procedures.StGeometricmedian.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12941,16 +11821,11 @@ async call(parameters : Public.Procedures.StGeometricmedian.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StIsring = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StIsring implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_isring"; }
 async call(parameters : Public.Procedures.StIsring.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12967,16 +11842,11 @@ async call(parameters : Public.Procedures.StIsring.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPointonsurface = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPointonsurface implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_pointonsurface"; }
 async call(parameters : Public.Procedures.StPointonsurface.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -12993,16 +11863,11 @@ async call(parameters : Public.Procedures.StPointonsurface.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StIssimple = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StIssimple implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_issimple"; }
 async call(parameters : Public.Procedures.StIssimple.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13019,16 +11884,11 @@ async call(parameters : Public.Procedures.StIssimple.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StIscollection = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StIscollection implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_iscollection"; }
 async call(parameters : Public.Procedures.StIscollection.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13045,16 +11905,11 @@ async call(parameters : Public.Procedures.StIscollection.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Equals = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Equals implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "equals"; }
 async call(parameters : Public.Procedures.Equals.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13071,16 +11926,11 @@ async call(parameters : Public.Procedures.Equals.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeomfromgml_27e2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeomfromgml_27e2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geomfromgml_27e2"; }
 async call(parameters : Public.Procedures.StGeomfromgml_27e2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13097,16 +11947,11 @@ async call(parameters : Public.Procedures.StGeomfromgml_27e2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeomfromgmlE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeomfromgmlE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geomfromgml_e728"; }
 async call(parameters : Public.Procedures.StGeomfromgmlE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13123,16 +11968,11 @@ async call(parameters : Public.Procedures.StGeomfromgmlE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGmltosqlE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGmltosqlE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_gmltosql_e728"; }
 async call(parameters : Public.Procedures.StGmltosqlE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13149,16 +11989,11 @@ async call(parameters : Public.Procedures.StGmltosqlE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGmltosql_27e2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGmltosql_27e2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_gmltosql_27e2"; }
 async call(parameters : Public.Procedures.StGmltosql_27e2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13175,16 +12010,11 @@ async call(parameters : Public.Procedures.StGmltosql_27e2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeomfromkml = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeomfromkml implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geomfromkml"; }
 async call(parameters : Public.Procedures.StGeomfromkml.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13201,16 +12031,11 @@ async call(parameters : Public.Procedures.StGeomfromkml.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeomfrommarc21 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeomfrommarc21 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geomfrommarc21"; }
 async call(parameters : Public.Procedures.StGeomfrommarc21.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13227,16 +12052,11 @@ async call(parameters : Public.Procedures.StGeomfrommarc21.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsmarc21 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsmarc21 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asmarc21"; }
 async call(parameters : Public.Procedures.StAsmarc21.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13253,16 +12073,11 @@ async call(parameters : Public.Procedures.StAsmarc21.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeomfromgeojsonE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeomfromgeojsonE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geomfromgeojson_e728"; }
 async call(parameters : Public.Procedures.StGeomfromgeojsonE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13279,16 +12094,11 @@ async call(parameters : Public.Procedures.StGeomfromgeojsonE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeomfromgeojson_608f = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeomfromgeojson_608f implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geomfromgeojson_608f"; }
 async call(parameters : Public.Procedures.StGeomfromgeojson_608f.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13305,16 +12115,11 @@ async call(parameters : Public.Procedures.StGeomfromgeojson_608f.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeomfromgeojson_3c9d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeomfromgeojson_3c9d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geomfromgeojson_3c9d"; }
 async call(parameters : Public.Procedures.StGeomfromgeojson_3c9d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13331,16 +12136,11 @@ async call(parameters : Public.Procedures.StGeomfromgeojson_3c9d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisLibjsonVersion = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisLibjsonVersion implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_libjson_version"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13357,16 +12157,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public StLinefromencodedpolyline = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLinefromencodedpolyline implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_linefromencodedpolyline"; }
 async call(parameters : Public.Procedures.StLinefromencodedpolyline.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13383,16 +12178,11 @@ async call(parameters : Public.Procedures.StLinefromencodedpolyline.Parameters) 
               return responseBody;
            
 }
-}(this)
-
-          public StAsencodedpolyline = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsencodedpolyline implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asencodedpolyline"; }
 async call(parameters : Public.Procedures.StAsencodedpolyline.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13409,16 +12199,11 @@ async call(parameters : Public.Procedures.StAsencodedpolyline.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAssvg_5ca3 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAssvg_5ca3 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_assvg_5ca3"; }
 async call(parameters : Public.Procedures.StAssvg_5ca3.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13435,16 +12220,11 @@ async call(parameters : Public.Procedures.StAssvg_5ca3.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsgml_5ca3 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsgml_5ca3 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asgml_5ca3"; }
 async call(parameters : Public.Procedures.StAsgml_5ca3.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13461,16 +12241,11 @@ async call(parameters : Public.Procedures.StAsgml_5ca3.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsgmlE482 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsgmlE482 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asgml_e482"; }
 async call(parameters : Public.Procedures.StAsgmlE482.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13487,16 +12262,11 @@ async call(parameters : Public.Procedures.StAsgmlE482.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAskmlC46e = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAskmlC46e implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_askml_c46e"; }
 async call(parameters : Public.Procedures.StAskmlC46e.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13513,16 +12283,11 @@ async call(parameters : Public.Procedures.StAskmlC46e.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsgeojson_5ca3 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsgeojson_5ca3 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asgeojson_5ca3"; }
 async call(parameters : Public.Procedures.StAsgeojson_5ca3.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13539,16 +12304,11 @@ async call(parameters : Public.Procedures.StAsgeojson_5ca3.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsgeojsonF2c6 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsgeojsonF2c6 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asgeojson_f2c6"; }
 async call(parameters : Public.Procedures.StAsgeojsonF2c6.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13565,16 +12325,11 @@ async call(parameters : Public.Procedures.StAsgeojsonF2c6.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Json = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Json implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "json"; }
 async call(parameters : Public.Procedures.Json.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13591,16 +12346,11 @@ async call(parameters : Public.Procedures.Json.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Jsonb = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Jsonb implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "jsonb"; }
 async call(parameters : Public.Procedures.Jsonb.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13617,16 +12367,11 @@ async call(parameters : Public.Procedures.Jsonb.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PgisAsmvtTransfn_647f = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisAsmvtTransfn_647f implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_asmvt_transfn_647f"; }
 async call(parameters : Public.Procedures.PgisAsmvtTransfn_647f.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13643,16 +12388,11 @@ async call(parameters : Public.Procedures.PgisAsmvtTransfn_647f.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PgisAsmvtTransfn_27f4 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisAsmvtTransfn_27f4 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_asmvt_transfn_27f4"; }
 async call(parameters : Public.Procedures.PgisAsmvtTransfn_27f4.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13669,16 +12409,11 @@ async call(parameters : Public.Procedures.PgisAsmvtTransfn_27f4.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PgisAsmvtTransfnF57f = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisAsmvtTransfnF57f implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_asmvt_transfn_f57f"; }
 async call(parameters : Public.Procedures.PgisAsmvtTransfnF57f.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13695,16 +12430,11 @@ async call(parameters : Public.Procedures.PgisAsmvtTransfnF57f.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PgisAsmvtTransfn_92c1 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisAsmvtTransfn_92c1 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_asmvt_transfn_92c1"; }
 async call(parameters : Public.Procedures.PgisAsmvtTransfn_92c1.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13721,16 +12451,11 @@ async call(parameters : Public.Procedures.PgisAsmvtTransfn_92c1.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PgisAsmvtTransfnF5be = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisAsmvtTransfnF5be implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_asmvt_transfn_f5be"; }
 async call(parameters : Public.Procedures.PgisAsmvtTransfnF5be.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13747,16 +12472,11 @@ async call(parameters : Public.Procedures.PgisAsmvtTransfnF5be.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PgisAsmvtFinalfn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisAsmvtFinalfn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_asmvt_finalfn"; }
 async call(parameters : Public.Procedures.PgisAsmvtFinalfn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13773,16 +12493,11 @@ async call(parameters : Public.Procedures.PgisAsmvtFinalfn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PgisAsmvtCombinefn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisAsmvtCombinefn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_asmvt_combinefn"; }
 async call(parameters : Public.Procedures.PgisAsmvtCombinefn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13799,16 +12514,11 @@ async call(parameters : Public.Procedures.PgisAsmvtCombinefn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PgisAsmvtSerialfn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisAsmvtSerialfn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_asmvt_serialfn"; }
 async call(parameters : Public.Procedures.PgisAsmvtSerialfn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13825,16 +12535,11 @@ async call(parameters : Public.Procedures.PgisAsmvtSerialfn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PgisAsmvtDeserialfn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisAsmvtDeserialfn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_asmvt_deserialfn"; }
 async call(parameters : Public.Procedures.PgisAsmvtDeserialfn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13851,16 +12556,11 @@ async call(parameters : Public.Procedures.PgisAsmvtDeserialfn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsmvtgeom = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsmvtgeom implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asmvtgeom"; }
 async call(parameters : Public.Procedures.StAsmvtgeom.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13877,16 +12577,11 @@ async call(parameters : Public.Procedures.StAsmvtgeom.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisLibprotobufVersion = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisLibprotobufVersion implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_libprotobuf_version"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13903,16 +12598,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public PgisAsgeobufTransfn_647f = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisAsgeobufTransfn_647f implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_asgeobuf_transfn_647f"; }
 async call(parameters : Public.Procedures.PgisAsgeobufTransfn_647f.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13929,16 +12619,11 @@ async call(parameters : Public.Procedures.PgisAsgeobufTransfn_647f.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PgisAsgeobufTransfn_27f4 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisAsgeobufTransfn_27f4 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_asgeobuf_transfn_27f4"; }
 async call(parameters : Public.Procedures.PgisAsgeobufTransfn_27f4.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13955,16 +12640,11 @@ async call(parameters : Public.Procedures.PgisAsgeobufTransfn_27f4.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PgisAsgeobufFinalfn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisAsgeobufFinalfn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_asgeobuf_finalfn"; }
 async call(parameters : Public.Procedures.PgisAsgeobufFinalfn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -13981,16 +12661,11 @@ async call(parameters : Public.Procedures.PgisAsgeobufFinalfn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PgisAsflatgeobufTransfn_647f = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisAsflatgeobufTransfn_647f implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_asflatgeobuf_transfn_647f"; }
 async call(parameters : Public.Procedures.PgisAsflatgeobufTransfn_647f.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14007,16 +12682,11 @@ async call(parameters : Public.Procedures.PgisAsflatgeobufTransfn_647f.Parameter
               return responseBody;
            
 }
-}(this)
-
-          public PgisAsflatgeobufTransfn_9633 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisAsflatgeobufTransfn_9633 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_asflatgeobuf_transfn_9633"; }
 async call(parameters : Public.Procedures.PgisAsflatgeobufTransfn_9633.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14033,16 +12703,11 @@ async call(parameters : Public.Procedures.PgisAsflatgeobufTransfn_9633.Parameter
               return responseBody;
            
 }
-}(this)
-
-          public PgisAsflatgeobufTransfn_521f = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisAsflatgeobufTransfn_521f implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_asflatgeobuf_transfn_521f"; }
 async call(parameters : Public.Procedures.PgisAsflatgeobufTransfn_521f.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14059,16 +12724,11 @@ async call(parameters : Public.Procedures.PgisAsflatgeobufTransfn_521f.Parameter
               return responseBody;
            
 }
-}(this)
-
-          public PgisAsflatgeobufFinalfn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PgisAsflatgeobufFinalfn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "pgis_asflatgeobuf_finalfn"; }
 async call(parameters : Public.Procedures.PgisAsflatgeobufFinalfn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14085,16 +12745,11 @@ async call(parameters : Public.Procedures.PgisAsflatgeobufFinalfn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StFromflatgeobuftotable = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StFromflatgeobuftotable implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_fromflatgeobuftotable"; }
 async call(parameters : Public.Procedures.StFromflatgeobuftotable.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14111,16 +12766,11 @@ async call(parameters : Public.Procedures.StFromflatgeobuftotable.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StFromflatgeobuf = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StFromflatgeobuf implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_fromflatgeobuf"; }
 async call(parameters : Public.Procedures.StFromflatgeobuf.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14137,16 +12787,11 @@ async call(parameters : Public.Procedures.StFromflatgeobuf.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeohashFa24 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeohashFa24 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geohash_fa24"; }
 async call(parameters : Public.Procedures.StGeohashFa24.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14163,16 +12808,11 @@ async call(parameters : Public.Procedures.StGeohashFa24.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StBox2dfromgeohash = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StBox2dfromgeohash implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_box2dfromgeohash"; }
 async call(parameters : Public.Procedures.StBox2dfromgeohash.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14189,16 +12829,11 @@ async call(parameters : Public.Procedures.StBox2dfromgeohash.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPointfromgeohash = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPointfromgeohash implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_pointfromgeohash"; }
 async call(parameters : Public.Procedures.StPointfromgeohash.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14215,16 +12850,11 @@ async call(parameters : Public.Procedures.StPointfromgeohash.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeomfromgeohash = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeomfromgeohash implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geomfromgeohash"; }
 async call(parameters : Public.Procedures.StGeomfromgeohash.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14241,16 +12871,11 @@ async call(parameters : Public.Procedures.StGeomfromgeohash.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StNumpoints = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StNumpoints implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_numpoints"; }
 async call(parameters : Public.Procedures.StNumpoints.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14267,16 +12892,11 @@ async call(parameters : Public.Procedures.StNumpoints.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StNumgeometries = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StNumgeometries implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_numgeometries"; }
 async call(parameters : Public.Procedures.StNumgeometries.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14293,16 +12913,11 @@ async call(parameters : Public.Procedures.StNumgeometries.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeometryn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeometryn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geometryn"; }
 async call(parameters : Public.Procedures.StGeometryn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14319,16 +12934,11 @@ async call(parameters : Public.Procedures.StGeometryn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StDimension = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StDimension implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_dimension"; }
 async call(parameters : Public.Procedures.StDimension.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14345,16 +12955,11 @@ async call(parameters : Public.Procedures.StDimension.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StExteriorring = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StExteriorring implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_exteriorring"; }
 async call(parameters : Public.Procedures.StExteriorring.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14371,16 +12976,11 @@ async call(parameters : Public.Procedures.StExteriorring.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StNuminteriorrings = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StNuminteriorrings implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_numinteriorrings"; }
 async call(parameters : Public.Procedures.StNuminteriorrings.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14397,16 +12997,11 @@ async call(parameters : Public.Procedures.StNuminteriorrings.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StNuminteriorring = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StNuminteriorring implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_numinteriorring"; }
 async call(parameters : Public.Procedures.StNuminteriorring.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14423,16 +13018,11 @@ async call(parameters : Public.Procedures.StNuminteriorring.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StInteriorringn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StInteriorringn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_interiorringn"; }
 async call(parameters : Public.Procedures.StInteriorringn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14449,16 +13039,11 @@ async call(parameters : Public.Procedures.StInteriorringn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Geometrytype_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Geometrytype_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometrytype_7e9c"; }
 async call(parameters : Public.Procedures.Geometrytype_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14475,16 +13060,11 @@ async call(parameters : Public.Procedures.Geometrytype_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeometrytype = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeometrytype implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geometrytype"; }
 async call(parameters : Public.Procedures.StGeometrytype.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14501,16 +13081,11 @@ async call(parameters : Public.Procedures.StGeometrytype.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPointn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPointn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_pointn"; }
 async call(parameters : Public.Procedures.StPointn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14527,16 +13102,11 @@ async call(parameters : Public.Procedures.StPointn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StNumpatches = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StNumpatches implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_numpatches"; }
 async call(parameters : Public.Procedures.StNumpatches.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14553,16 +13123,11 @@ async call(parameters : Public.Procedures.StNumpatches.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPatchn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPatchn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_patchn"; }
 async call(parameters : Public.Procedures.StPatchn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14579,16 +13144,11 @@ async call(parameters : Public.Procedures.StPatchn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StStartpoint = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StStartpoint implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_startpoint"; }
 async call(parameters : Public.Procedures.StStartpoint.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14605,16 +13165,11 @@ async call(parameters : Public.Procedures.StStartpoint.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StEndpoint = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StEndpoint implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_endpoint"; }
 async call(parameters : Public.Procedures.StEndpoint.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14631,16 +13186,11 @@ async call(parameters : Public.Procedures.StEndpoint.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StIsclosed = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StIsclosed implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_isclosed"; }
 async call(parameters : Public.Procedures.StIsclosed.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14657,16 +13207,11 @@ async call(parameters : Public.Procedures.StIsclosed.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StIsempty = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StIsempty implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_isempty"; }
 async call(parameters : Public.Procedures.StIsempty.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14683,16 +13228,11 @@ async call(parameters : Public.Procedures.StIsempty.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsbinary_2ca2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsbinary_2ca2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asbinary_2ca2"; }
 async call(parameters : Public.Procedures.StAsbinary_2ca2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14709,16 +13249,11 @@ async call(parameters : Public.Procedures.StAsbinary_2ca2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsbinary_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsbinary_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asbinary_7e9c"; }
 async call(parameters : Public.Procedures.StAsbinary_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14735,16 +13270,11 @@ async call(parameters : Public.Procedures.StAsbinary_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAstext_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAstext_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_astext_7e9c"; }
 async call(parameters : Public.Procedures.StAstext_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14761,16 +13291,11 @@ async call(parameters : Public.Procedures.StAstext_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAstextFa24 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAstextFa24 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_astext_fa24"; }
 async call(parameters : Public.Procedures.StAstextFa24.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14787,16 +13312,11 @@ async call(parameters : Public.Procedures.StAstextFa24.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeometryfromtextE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeometryfromtextE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geometryfromtext_e728"; }
 async call(parameters : Public.Procedures.StGeometryfromtextE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14813,16 +13333,11 @@ async call(parameters : Public.Procedures.StGeometryfromtextE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeometryfromtext_27e2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeometryfromtext_27e2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geometryfromtext_27e2"; }
 async call(parameters : Public.Procedures.StGeometryfromtext_27e2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14839,16 +13354,11 @@ async call(parameters : Public.Procedures.StGeometryfromtext_27e2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeomfromtextE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeomfromtextE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geomfromtext_e728"; }
 async call(parameters : Public.Procedures.StGeomfromtextE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14865,16 +13375,11 @@ async call(parameters : Public.Procedures.StGeomfromtextE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeomfromtext_27e2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeomfromtext_27e2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geomfromtext_27e2"; }
 async call(parameters : Public.Procedures.StGeomfromtext_27e2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14891,16 +13396,11 @@ async call(parameters : Public.Procedures.StGeomfromtext_27e2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StWkttosql = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StWkttosql implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_wkttosql"; }
 async call(parameters : Public.Procedures.StWkttosql.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14917,16 +13417,11 @@ async call(parameters : Public.Procedures.StWkttosql.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPointfromtextE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPointfromtextE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_pointfromtext_e728"; }
 async call(parameters : Public.Procedures.StPointfromtextE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14943,16 +13438,11 @@ async call(parameters : Public.Procedures.StPointfromtextE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPointfromtext_27e2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPointfromtext_27e2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_pointfromtext_27e2"; }
 async call(parameters : Public.Procedures.StPointfromtext_27e2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14969,16 +13459,11 @@ async call(parameters : Public.Procedures.StPointfromtext_27e2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLinefromtextE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLinefromtextE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_linefromtext_e728"; }
 async call(parameters : Public.Procedures.StLinefromtextE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -14995,16 +13480,11 @@ async call(parameters : Public.Procedures.StLinefromtextE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLinefromtext_27e2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLinefromtext_27e2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_linefromtext_27e2"; }
 async call(parameters : Public.Procedures.StLinefromtext_27e2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15021,16 +13501,11 @@ async call(parameters : Public.Procedures.StLinefromtext_27e2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPolyfromtextE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPolyfromtextE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_polyfromtext_e728"; }
 async call(parameters : Public.Procedures.StPolyfromtextE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15047,16 +13522,11 @@ async call(parameters : Public.Procedures.StPolyfromtextE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPolyfromtext_27e2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPolyfromtext_27e2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_polyfromtext_27e2"; }
 async call(parameters : Public.Procedures.StPolyfromtext_27e2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15073,16 +13543,11 @@ async call(parameters : Public.Procedures.StPolyfromtext_27e2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPolygonfromtext_27e2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPolygonfromtext_27e2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_polygonfromtext_27e2"; }
 async call(parameters : Public.Procedures.StPolygonfromtext_27e2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15099,16 +13564,11 @@ async call(parameters : Public.Procedures.StPolygonfromtext_27e2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPolygonfromtextE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPolygonfromtextE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_polygonfromtext_e728"; }
 async call(parameters : Public.Procedures.StPolygonfromtextE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15125,16 +13585,11 @@ async call(parameters : Public.Procedures.StPolygonfromtextE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMlinefromtext_27e2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMlinefromtext_27e2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_mlinefromtext_27e2"; }
 async call(parameters : Public.Procedures.StMlinefromtext_27e2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15151,16 +13606,11 @@ async call(parameters : Public.Procedures.StMlinefromtext_27e2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMlinefromtextE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMlinefromtextE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_mlinefromtext_e728"; }
 async call(parameters : Public.Procedures.StMlinefromtextE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15177,16 +13627,11 @@ async call(parameters : Public.Procedures.StMlinefromtextE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMultilinestringfromtextE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMultilinestringfromtextE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_multilinestringfromtext_e728"; }
 async call(parameters : Public.Procedures.StMultilinestringfromtextE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15203,16 +13648,11 @@ async call(parameters : Public.Procedures.StMultilinestringfromtextE728.Paramete
               return responseBody;
            
 }
-}(this)
-
-          public StMultilinestringfromtext_27e2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMultilinestringfromtext_27e2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_multilinestringfromtext_27e2"; }
 async call(parameters : Public.Procedures.StMultilinestringfromtext_27e2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15229,16 +13669,11 @@ async call(parameters : Public.Procedures.StMultilinestringfromtext_27e2.Paramet
               return responseBody;
            
 }
-}(this)
-
-          public StMpointfromtext_27e2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMpointfromtext_27e2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_mpointfromtext_27e2"; }
 async call(parameters : Public.Procedures.StMpointfromtext_27e2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15255,16 +13690,11 @@ async call(parameters : Public.Procedures.StMpointfromtext_27e2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMpointfromtextE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMpointfromtextE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_mpointfromtext_e728"; }
 async call(parameters : Public.Procedures.StMpointfromtextE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15281,16 +13711,11 @@ async call(parameters : Public.Procedures.StMpointfromtextE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMultipointfromtext = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMultipointfromtext implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_multipointfromtext"; }
 async call(parameters : Public.Procedures.StMultipointfromtext.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15307,16 +13732,11 @@ async call(parameters : Public.Procedures.StMultipointfromtext.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMpolyfromtext_27e2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMpolyfromtext_27e2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_mpolyfromtext_27e2"; }
 async call(parameters : Public.Procedures.StMpolyfromtext_27e2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15333,16 +13753,11 @@ async call(parameters : Public.Procedures.StMpolyfromtext_27e2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMpolyfromtextE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMpolyfromtextE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_mpolyfromtext_e728"; }
 async call(parameters : Public.Procedures.StMpolyfromtextE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15359,16 +13774,11 @@ async call(parameters : Public.Procedures.StMpolyfromtextE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMultipolygonfromtext_27e2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMultipolygonfromtext_27e2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_multipolygonfromtext_27e2"; }
 async call(parameters : Public.Procedures.StMultipolygonfromtext_27e2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15385,16 +13795,11 @@ async call(parameters : Public.Procedures.StMultipolygonfromtext_27e2.Parameters
               return responseBody;
            
 }
-}(this)
-
-          public StMultipolygonfromtextE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMultipolygonfromtextE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_multipolygonfromtext_e728"; }
 async call(parameters : Public.Procedures.StMultipolygonfromtextE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15411,16 +13816,11 @@ async call(parameters : Public.Procedures.StMultipolygonfromtextE728.Parameters)
               return responseBody;
            
 }
-}(this)
-
-          public StGeomcollfromtext_27e2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeomcollfromtext_27e2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geomcollfromtext_27e2"; }
 async call(parameters : Public.Procedures.StGeomcollfromtext_27e2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15437,16 +13837,11 @@ async call(parameters : Public.Procedures.StGeomcollfromtext_27e2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeomcollfromtextE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeomcollfromtextE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geomcollfromtext_e728"; }
 async call(parameters : Public.Procedures.StGeomcollfromtextE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15463,16 +13858,11 @@ async call(parameters : Public.Procedures.StGeomcollfromtextE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeomfromwkb_2d19 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeomfromwkb_2d19 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geomfromwkb_2d19"; }
 async call(parameters : Public.Procedures.StGeomfromwkb_2d19.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15489,16 +13879,11 @@ async call(parameters : Public.Procedures.StGeomfromwkb_2d19.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeomfromwkbD8af = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeomfromwkbD8af implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geomfromwkb_d8af"; }
 async call(parameters : Public.Procedures.StGeomfromwkbD8af.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15515,16 +13900,11 @@ async call(parameters : Public.Procedures.StGeomfromwkbD8af.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPointfromwkbD8af = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPointfromwkbD8af implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_pointfromwkb_d8af"; }
 async call(parameters : Public.Procedures.StPointfromwkbD8af.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15541,16 +13921,11 @@ async call(parameters : Public.Procedures.StPointfromwkbD8af.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPointfromwkb_2d19 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPointfromwkb_2d19 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_pointfromwkb_2d19"; }
 async call(parameters : Public.Procedures.StPointfromwkb_2d19.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15567,16 +13942,11 @@ async call(parameters : Public.Procedures.StPointfromwkb_2d19.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLinefromwkbD8af = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLinefromwkbD8af implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_linefromwkb_d8af"; }
 async call(parameters : Public.Procedures.StLinefromwkbD8af.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15593,16 +13963,11 @@ async call(parameters : Public.Procedures.StLinefromwkbD8af.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLinefromwkb_2d19 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLinefromwkb_2d19 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_linefromwkb_2d19"; }
 async call(parameters : Public.Procedures.StLinefromwkb_2d19.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15619,16 +13984,11 @@ async call(parameters : Public.Procedures.StLinefromwkb_2d19.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLinestringfromwkbD8af = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLinestringfromwkbD8af implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_linestringfromwkb_d8af"; }
 async call(parameters : Public.Procedures.StLinestringfromwkbD8af.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15645,16 +14005,11 @@ async call(parameters : Public.Procedures.StLinestringfromwkbD8af.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLinestringfromwkb_2d19 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLinestringfromwkb_2d19 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_linestringfromwkb_2d19"; }
 async call(parameters : Public.Procedures.StLinestringfromwkb_2d19.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15671,16 +14026,11 @@ async call(parameters : Public.Procedures.StLinestringfromwkb_2d19.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPolyfromwkbD8af = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPolyfromwkbD8af implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_polyfromwkb_d8af"; }
 async call(parameters : Public.Procedures.StPolyfromwkbD8af.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15697,16 +14047,11 @@ async call(parameters : Public.Procedures.StPolyfromwkbD8af.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPolyfromwkb_2d19 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPolyfromwkb_2d19 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_polyfromwkb_2d19"; }
 async call(parameters : Public.Procedures.StPolyfromwkb_2d19.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15723,16 +14068,11 @@ async call(parameters : Public.Procedures.StPolyfromwkb_2d19.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPolygonfromwkbD8af = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPolygonfromwkbD8af implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_polygonfromwkb_d8af"; }
 async call(parameters : Public.Procedures.StPolygonfromwkbD8af.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15749,16 +14089,11 @@ async call(parameters : Public.Procedures.StPolygonfromwkbD8af.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPolygonfromwkb_2d19 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPolygonfromwkb_2d19 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_polygonfromwkb_2d19"; }
 async call(parameters : Public.Procedures.StPolygonfromwkb_2d19.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15775,16 +14110,11 @@ async call(parameters : Public.Procedures.StPolygonfromwkb_2d19.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMpointfromwkbD8af = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMpointfromwkbD8af implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_mpointfromwkb_d8af"; }
 async call(parameters : Public.Procedures.StMpointfromwkbD8af.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15801,16 +14131,11 @@ async call(parameters : Public.Procedures.StMpointfromwkbD8af.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMpointfromwkb_2d19 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMpointfromwkb_2d19 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_mpointfromwkb_2d19"; }
 async call(parameters : Public.Procedures.StMpointfromwkb_2d19.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15827,16 +14152,11 @@ async call(parameters : Public.Procedures.StMpointfromwkb_2d19.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMultipointfromwkbD8af = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMultipointfromwkbD8af implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_multipointfromwkb_d8af"; }
 async call(parameters : Public.Procedures.StMultipointfromwkbD8af.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15853,16 +14173,11 @@ async call(parameters : Public.Procedures.StMultipointfromwkbD8af.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographyAnalyze = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographyAnalyze implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_analyze"; }
 async call(parameters : Public.Procedures.GeographyAnalyze.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15879,16 +14194,11 @@ async call(parameters : Public.Procedures.GeographyAnalyze.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMultipointfromwkb_2d19 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMultipointfromwkb_2d19 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_multipointfromwkb_2d19"; }
 async call(parameters : Public.Procedures.StMultipointfromwkb_2d19.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15905,16 +14215,11 @@ async call(parameters : Public.Procedures.StMultipointfromwkb_2d19.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMultilinefromwkb = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMultilinefromwkb implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_multilinefromwkb"; }
 async call(parameters : Public.Procedures.StMultilinefromwkb.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15931,16 +14236,11 @@ async call(parameters : Public.Procedures.StMultilinefromwkb.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMlinefromwkbD8af = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMlinefromwkbD8af implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_mlinefromwkb_d8af"; }
 async call(parameters : Public.Procedures.StMlinefromwkbD8af.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15957,16 +14257,11 @@ async call(parameters : Public.Procedures.StMlinefromwkbD8af.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMlinefromwkb_2d19 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMlinefromwkb_2d19 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_mlinefromwkb_2d19"; }
 async call(parameters : Public.Procedures.StMlinefromwkb_2d19.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -15983,16 +14278,11 @@ async call(parameters : Public.Procedures.StMlinefromwkb_2d19.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMpolyfromwkbD8af = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMpolyfromwkbD8af implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_mpolyfromwkb_d8af"; }
 async call(parameters : Public.Procedures.StMpolyfromwkbD8af.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16009,16 +14299,11 @@ async call(parameters : Public.Procedures.StMpolyfromwkbD8af.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMpolyfromwkb_2d19 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMpolyfromwkb_2d19 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_mpolyfromwkb_2d19"; }
 async call(parameters : Public.Procedures.StMpolyfromwkb_2d19.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16035,16 +14320,11 @@ async call(parameters : Public.Procedures.StMpolyfromwkb_2d19.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMultipolyfromwkbD8af = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMultipolyfromwkbD8af implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_multipolyfromwkb_d8af"; }
 async call(parameters : Public.Procedures.StMultipolyfromwkbD8af.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16061,16 +14341,11 @@ async call(parameters : Public.Procedures.StMultipolyfromwkbD8af.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMultipolyfromwkb_2d19 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMultipolyfromwkb_2d19 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_multipolyfromwkb_2d19"; }
 async call(parameters : Public.Procedures.StMultipolyfromwkb_2d19.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16087,16 +14362,11 @@ async call(parameters : Public.Procedures.StMultipolyfromwkb_2d19.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeomcollfromwkbD8af = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeomcollfromwkbD8af implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geomcollfromwkb_d8af"; }
 async call(parameters : Public.Procedures.StGeomcollfromwkbD8af.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16113,16 +14383,11 @@ async call(parameters : Public.Procedures.StGeomcollfromwkbD8af.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeomcollfromwkb_2d19 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeomcollfromwkb_2d19 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geomcollfromwkb_2d19"; }
 async call(parameters : Public.Procedures.StGeomcollfromwkb_2d19.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16139,16 +14404,11 @@ async call(parameters : Public.Procedures.StGeomcollfromwkb_2d19.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StMaxdistance = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StMaxdistance implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_maxdistance"; }
 async call(parameters : Public.Procedures.StMaxdistance.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16165,16 +14425,11 @@ async call(parameters : Public.Procedures.StMaxdistance.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StClosestpoint_14de = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StClosestpoint_14de implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_closestpoint_14de"; }
 async call(parameters : Public.Procedures.StClosestpoint_14de.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16191,16 +14446,11 @@ async call(parameters : Public.Procedures.StClosestpoint_14de.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StShortestline_14de = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StShortestline_14de implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_shortestline_14de"; }
 async call(parameters : Public.Procedures.StShortestline_14de.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16217,16 +14467,11 @@ async call(parameters : Public.Procedures.StShortestline_14de.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLongestline = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLongestline implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_longestline"; }
 async call(parameters : Public.Procedures.StLongestline.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16243,16 +14488,11 @@ async call(parameters : Public.Procedures.StLongestline.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSwapordinates = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSwapordinates implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_swapordinates"; }
 async call(parameters : Public.Procedures.StSwapordinates.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16269,16 +14509,11 @@ async call(parameters : Public.Procedures.StSwapordinates.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StFlipcoordinates = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StFlipcoordinates implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_flipcoordinates"; }
 async call(parameters : Public.Procedures.StFlipcoordinates.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16295,16 +14530,11 @@ async call(parameters : Public.Procedures.StFlipcoordinates.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StBdpolyfromtext = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StBdpolyfromtext implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_bdpolyfromtext"; }
 async call(parameters : Public.Procedures.StBdpolyfromtext.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16321,16 +14551,11 @@ async call(parameters : Public.Procedures.StBdpolyfromtext.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StBdmpolyfromtext = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StBdmpolyfromtext implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_bdmpolyfromtext"; }
 async call(parameters : Public.Procedures.StBdmpolyfromtext.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16347,16 +14572,11 @@ async call(parameters : Public.Procedures.StBdmpolyfromtext.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Unlockrows = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Unlockrows implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "unlockrows"; }
 async call(parameters : Public.Procedures.Unlockrows.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16373,16 +14593,11 @@ async call(parameters : Public.Procedures.Unlockrows.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Geography_5f53 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Geography_5f53 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_5f53"; }
 async call(parameters : Public.Procedures.Geography_5f53.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16399,16 +14614,11 @@ async call(parameters : Public.Procedures.Geography_5f53.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Geography_2d19 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Geography_2d19 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_2d19"; }
 async call(parameters : Public.Procedures.Geography_2d19.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16425,16 +14635,11 @@ async call(parameters : Public.Procedures.Geography_2d19.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Bytea_1126 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Bytea_1126 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "bytea_1126"; }
 async call(parameters : Public.Procedures.Bytea_1126.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16451,16 +14656,11 @@ async call(parameters : Public.Procedures.Bytea_1126.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAstext_1126 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAstext_1126 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_astext_1126"; }
 async call(parameters : Public.Procedures.StAstext_1126.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16477,16 +14677,11 @@ async call(parameters : Public.Procedures.StAstext_1126.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAstext_44eb = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAstext_44eb implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_astext_44eb"; }
 async call(parameters : Public.Procedures.StAstext_44eb.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16503,16 +14698,11 @@ async call(parameters : Public.Procedures.StAstext_44eb.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public LockrowE9aa = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class LockrowE9aa implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "lockrow_e9aa"; }
 async call(parameters : Public.Procedures.LockrowE9aa.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16529,16 +14719,11 @@ async call(parameters : Public.Procedures.LockrowE9aa.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Lockrow_02b4 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Lockrow_02b4 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "lockrow_02b4"; }
 async call(parameters : Public.Procedures.Lockrow_02b4.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16555,16 +14740,11 @@ async call(parameters : Public.Procedures.Lockrow_02b4.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Lockrow_27e1 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Lockrow_27e1 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "lockrow_27e1"; }
 async call(parameters : Public.Procedures.Lockrow_27e1.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16581,16 +14761,11 @@ async call(parameters : Public.Procedures.Lockrow_27e1.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Lockrow_9a8a = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Lockrow_9a8a implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "lockrow_9a8a"; }
 async call(parameters : Public.Procedures.Lockrow_9a8a.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16607,16 +14782,11 @@ async call(parameters : Public.Procedures.Lockrow_9a8a.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Addauth = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Addauth implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "addauth"; }
 async call(parameters : Public.Procedures.Addauth.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16633,16 +14803,11 @@ async call(parameters : Public.Procedures.Addauth.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Checkauth_27e1 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Checkauth_27e1 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "checkauth_27e1"; }
 async call(parameters : Public.Procedures.Checkauth_27e1.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16659,16 +14824,11 @@ async call(parameters : Public.Procedures.Checkauth_27e1.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Checkauth_2ec2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Checkauth_2ec2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "checkauth_2ec2"; }
 async call(parameters : Public.Procedures.Checkauth_2ec2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16685,16 +14845,11 @@ async call(parameters : Public.Procedures.Checkauth_2ec2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Checkauthtrigger = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Checkauthtrigger implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "checkauthtrigger"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16711,16 +14866,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public Gettransactionid = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Gettransactionid implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "gettransactionid"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16737,16 +14887,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public Enablelongtransactions = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Enablelongtransactions implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "enablelongtransactions"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16763,16 +14908,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public Longtransactionsenabled = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Longtransactionsenabled implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "longtransactionsenabled"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16789,16 +14929,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public Disablelongtransactions = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Disablelongtransactions implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "disablelongtransactions"; }
 async call() {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16815,16 +14950,11 @@ async call() {
               return responseBody;
            
 }
-}(this)
-
-          public GeographyTypmodIn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographyTypmodIn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_typmod_in"; }
 async call(parameters : Public.Procedures.GeographyTypmodIn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16841,16 +14971,11 @@ async call(parameters : Public.Procedures.GeographyTypmodIn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographyTypmodOut = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographyTypmodOut implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_typmod_out"; }
 async call(parameters : Public.Procedures.GeographyTypmodOut.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16867,16 +14992,11 @@ async call(parameters : Public.Procedures.GeographyTypmodOut.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographyIn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographyIn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_in"; }
 async call(parameters : Public.Procedures.GeographyIn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16893,16 +15013,11 @@ async call(parameters : Public.Procedures.GeographyIn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographyOut = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographyOut implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_out"; }
 async call(parameters : Public.Procedures.GeographyOut.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16919,16 +15034,11 @@ async call(parameters : Public.Procedures.GeographyOut.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographyRecv = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographyRecv implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_recv"; }
 async call(parameters : Public.Procedures.GeographyRecv.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16945,16 +15055,11 @@ async call(parameters : Public.Procedures.GeographyRecv.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographySend = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographySend implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_send"; }
 async call(parameters : Public.Procedures.GeographySend.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16971,16 +15076,11 @@ async call(parameters : Public.Procedures.GeographySend.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAstextE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAstextE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_astext_e728"; }
 async call(parameters : Public.Procedures.StAstextE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -16997,16 +15097,11 @@ async call(parameters : Public.Procedures.StAstextE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeographyfromtext = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeographyfromtext implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geographyfromtext"; }
 async call(parameters : Public.Procedures.StGeographyfromtext.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17023,16 +15118,11 @@ async call(parameters : Public.Procedures.StGeographyfromtext.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeogfromtext = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeogfromtext implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geogfromtext"; }
 async call(parameters : Public.Procedures.StGeogfromtext.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17049,16 +15139,11 @@ async call(parameters : Public.Procedures.StGeogfromtext.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeogfromwkb = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeogfromwkb implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geogfromwkb"; }
 async call(parameters : Public.Procedures.StGeogfromwkb.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17075,16 +15160,11 @@ async call(parameters : Public.Procedures.StGeogfromwkb.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisTypmodDims = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisTypmodDims implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_typmod_dims"; }
 async call(parameters : Public.Procedures.PostgisTypmodDims.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17101,16 +15181,11 @@ async call(parameters : Public.Procedures.PostgisTypmodDims.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisTypmodSrid = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisTypmodSrid implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_typmod_srid"; }
 async call(parameters : Public.Procedures.PostgisTypmodSrid.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17127,16 +15202,11 @@ async call(parameters : Public.Procedures.PostgisTypmodSrid.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisTypmodType = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisTypmodType implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_typmod_type"; }
 async call(parameters : Public.Procedures.PostgisTypmodType.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17153,16 +15223,11 @@ async call(parameters : Public.Procedures.PostgisTypmodType.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Geography_7e9c = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Geography_7e9c implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_7e9c"; }
 async call(parameters : Public.Procedures.Geography_7e9c.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17179,16 +15244,11 @@ async call(parameters : Public.Procedures.Geography_7e9c.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Geometry_1126 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Geometry_1126 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_1126"; }
 async call(parameters : Public.Procedures.Geometry_1126.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17205,16 +15265,11 @@ async call(parameters : Public.Procedures.Geometry_1126.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographyGistConsistent = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographyGistConsistent implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_gist_consistent"; }
 async call(parameters : Public.Procedures.GeographyGistConsistent.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17231,16 +15286,11 @@ async call(parameters : Public.Procedures.GeographyGistConsistent.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographyGistCompress = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographyGistCompress implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_gist_compress"; }
 async call(parameters : Public.Procedures.GeographyGistCompress.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17257,16 +15307,11 @@ async call(parameters : Public.Procedures.GeographyGistCompress.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographyGistPenalty = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographyGistPenalty implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_gist_penalty"; }
 async call(parameters : Public.Procedures.GeographyGistPenalty.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17283,16 +15328,11 @@ async call(parameters : Public.Procedures.GeographyGistPenalty.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographyGistPicksplit = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographyGistPicksplit implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_gist_picksplit"; }
 async call(parameters : Public.Procedures.GeographyGistPicksplit.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17309,16 +15349,11 @@ async call(parameters : Public.Procedures.GeographyGistPicksplit.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographyGistUnion = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographyGistUnion implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_gist_union"; }
 async call(parameters : Public.Procedures.GeographyGistUnion.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17335,16 +15370,11 @@ async call(parameters : Public.Procedures.GeographyGistUnion.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographyGistSame = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographyGistSame implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_gist_same"; }
 async call(parameters : Public.Procedures.GeographyGistSame.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17361,16 +15391,11 @@ async call(parameters : Public.Procedures.GeographyGistSame.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographyGistDecompress = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographyGistDecompress implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_gist_decompress"; }
 async call(parameters : Public.Procedures.GeographyGistDecompress.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17387,16 +15412,11 @@ async call(parameters : Public.Procedures.GeographyGistDecompress.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographyOverlaps = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographyOverlaps implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_overlaps"; }
 async call(parameters : Public.Procedures.GeographyOverlaps.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17413,16 +15433,11 @@ async call(parameters : Public.Procedures.GeographyOverlaps.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographyDistanceKnn = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographyDistanceKnn implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_distance_knn"; }
 async call(parameters : Public.Procedures.GeographyDistanceKnn.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17439,16 +15454,11 @@ async call(parameters : Public.Procedures.GeographyDistanceKnn.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographyGistDistance = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographyGistDistance implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_gist_distance"; }
 async call(parameters : Public.Procedures.GeographyGistDistance.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17465,16 +15475,11 @@ async call(parameters : Public.Procedures.GeographyGistDistance.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public OverlapsGeog_1632 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class OverlapsGeog_1632 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "overlaps_geog_1632"; }
 async call(parameters : Public.Procedures.OverlapsGeog_1632.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17491,16 +15496,11 @@ async call(parameters : Public.Procedures.OverlapsGeog_1632.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public OverlapsGeogD1f5 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class OverlapsGeogD1f5 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "overlaps_geog_d1f5"; }
 async call(parameters : Public.Procedures.OverlapsGeogD1f5.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17517,16 +15517,11 @@ async call(parameters : Public.Procedures.OverlapsGeogD1f5.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public OverlapsGeogB3cf = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class OverlapsGeogB3cf implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "overlaps_geog_b3cf"; }
 async call(parameters : Public.Procedures.OverlapsGeogB3cf.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17543,16 +15538,11 @@ async call(parameters : Public.Procedures.OverlapsGeogB3cf.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeogBrinInclusionAddValue = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeogBrinInclusionAddValue implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geog_brin_inclusion_add_value"; }
 async call(parameters : Public.Procedures.GeogBrinInclusionAddValue.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17569,16 +15559,11 @@ async call(parameters : Public.Procedures.GeogBrinInclusionAddValue.Parameters) 
               return responseBody;
            
 }
-}(this)
-
-          public GeographyLt = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographyLt implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_lt"; }
 async call(parameters : Public.Procedures.GeographyLt.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17595,16 +15580,11 @@ async call(parameters : Public.Procedures.GeographyLt.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographyLe = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographyLe implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_le"; }
 async call(parameters : Public.Procedures.GeographyLe.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17621,16 +15601,11 @@ async call(parameters : Public.Procedures.GeographyLe.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographyGt = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographyGt implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_gt"; }
 async call(parameters : Public.Procedures.GeographyGt.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17647,16 +15622,11 @@ async call(parameters : Public.Procedures.GeographyGt.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographyGe = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographyGe implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_ge"; }
 async call(parameters : Public.Procedures.GeographyGe.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17673,16 +15643,11 @@ async call(parameters : Public.Procedures.GeographyGe.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographyEq = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographyEq implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_eq"; }
 async call(parameters : Public.Procedures.GeographyEq.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17699,16 +15664,11 @@ async call(parameters : Public.Procedures.GeographyEq.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographyCmp = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographyCmp implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_cmp"; }
 async call(parameters : Public.Procedures.GeographyCmp.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17725,16 +15685,11 @@ async call(parameters : Public.Procedures.GeographyCmp.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAssvgD22b = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAssvgD22b implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_assvg_d22b"; }
 async call(parameters : Public.Procedures.StAssvgD22b.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17751,16 +15706,11 @@ async call(parameters : Public.Procedures.StAssvgD22b.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAssvgE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAssvgE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_assvg_e728"; }
 async call(parameters : Public.Procedures.StAssvgE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17777,16 +15727,11 @@ async call(parameters : Public.Procedures.StAssvgE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StProjectF245 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StProjectF245 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_project_f245"; }
 async call(parameters : Public.Procedures.StProjectF245.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17803,16 +15748,11 @@ async call(parameters : Public.Procedures.StProjectF245.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAzimuthAeb8 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAzimuthAeb8 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_azimuth_aeb8"; }
 async call(parameters : Public.Procedures.StAzimuthAeb8.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17829,16 +15769,11 @@ async call(parameters : Public.Procedures.StAzimuthAeb8.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StBuffer_49f7 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StBuffer_49f7 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_buffer_49f7"; }
 async call(parameters : Public.Procedures.StBuffer_49f7.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17855,16 +15790,11 @@ async call(parameters : Public.Procedures.StBuffer_49f7.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsgml_9c73 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsgml_9c73 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asgml_9c73"; }
 async call(parameters : Public.Procedures.StAsgml_9c73.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17881,16 +15811,11 @@ async call(parameters : Public.Procedures.StAsgml_9c73.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsgmlE8a8 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsgmlE8a8 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asgml_e8a8"; }
 async call(parameters : Public.Procedures.StAsgmlE8a8.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17907,16 +15832,11 @@ async call(parameters : Public.Procedures.StAsgmlE8a8.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsgmlE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsgmlE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asgml_e728"; }
 async call(parameters : Public.Procedures.StAsgmlE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17933,16 +15853,11 @@ async call(parameters : Public.Procedures.StAsgmlE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAskmlAb1b = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAskmlAb1b implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_askml_ab1b"; }
 async call(parameters : Public.Procedures.StAskmlAb1b.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17959,16 +15874,11 @@ async call(parameters : Public.Procedures.StAskmlAb1b.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAskmlE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAskmlE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_askml_e728"; }
 async call(parameters : Public.Procedures.StAskmlE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -17985,16 +15895,11 @@ async call(parameters : Public.Procedures.StAskmlE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsgeojsonD22b = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsgeojsonD22b implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asgeojson_d22b"; }
 async call(parameters : Public.Procedures.StAsgeojsonD22b.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18011,16 +15916,11 @@ async call(parameters : Public.Procedures.StAsgeojsonD22b.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsgeojsonE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsgeojsonE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asgeojson_e728"; }
 async call(parameters : Public.Procedures.StAsgeojsonE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18037,16 +15937,11 @@ async call(parameters : Public.Procedures.StAsgeojsonE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StDistanceE193 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StDistanceE193 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_distance_e193"; }
 async call(parameters : Public.Procedures.StDistanceE193.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18063,16 +15958,11 @@ async call(parameters : Public.Procedures.StDistanceE193.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StDistance_2ec2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StDistance_2ec2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_distance_2ec2"; }
 async call(parameters : Public.Procedures.StDistance_2ec2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18089,16 +15979,11 @@ async call(parameters : Public.Procedures.StDistance_2ec2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StArea_5696 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StArea_5696 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_area_5696"; }
 async call(parameters : Public.Procedures.StArea_5696.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18115,16 +16000,11 @@ async call(parameters : Public.Procedures.StArea_5696.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAreaE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAreaE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_area_e728"; }
 async call(parameters : Public.Procedures.StAreaE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18141,16 +16021,11 @@ async call(parameters : Public.Procedures.StAreaE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLength_5696 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLength_5696 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_length_5696"; }
 async call(parameters : Public.Procedures.StLength_5696.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18167,16 +16042,11 @@ async call(parameters : Public.Procedures.StLength_5696.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLengthE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLengthE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_length_e728"; }
 async call(parameters : Public.Procedures.StLengthE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18193,16 +16063,11 @@ async call(parameters : Public.Procedures.StLengthE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StProject_44fa = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StProject_44fa implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_project_44fa"; }
 async call(parameters : Public.Procedures.StProject_44fa.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18219,16 +16084,11 @@ async call(parameters : Public.Procedures.StProject_44fa.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPerimeter_5696 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPerimeter_5696 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_perimeter_5696"; }
 async call(parameters : Public.Procedures.StPerimeter_5696.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18245,16 +16105,11 @@ async call(parameters : Public.Procedures.StPerimeter_5696.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSegmentize_8ba5 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSegmentize_8ba5 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_segmentize_8ba5"; }
 async call(parameters : Public.Procedures.StSegmentize_8ba5.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18271,16 +16126,11 @@ async call(parameters : Public.Procedures.StSegmentize_8ba5.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsbinary_1126 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsbinary_1126 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asbinary_1126"; }
 async call(parameters : Public.Procedures.StAsbinary_1126.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18297,16 +16147,11 @@ async call(parameters : Public.Procedures.StAsbinary_1126.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsbinary_1951 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsbinary_1951 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asbinary_1951"; }
 async call(parameters : Public.Procedures.StAsbinary_1951.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18323,16 +16168,11 @@ async call(parameters : Public.Procedures.StAsbinary_1951.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsewkt_1126 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsewkt_1126 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asewkt_1126"; }
 async call(parameters : Public.Procedures.StAsewkt_1126.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18349,16 +16189,11 @@ async call(parameters : Public.Procedures.StAsewkt_1126.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsewkt_44eb = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsewkt_44eb implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asewkt_44eb"; }
 async call(parameters : Public.Procedures.StAsewkt_44eb.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18375,16 +16210,11 @@ async call(parameters : Public.Procedures.StAsewkt_44eb.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsewktE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsewktE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asewkt_e728"; }
 async call(parameters : Public.Procedures.StAsewktE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18401,16 +16231,11 @@ async call(parameters : Public.Procedures.StAsewktE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Geometrytype_1126 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Geometrytype_1126 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometrytype_1126"; }
 async call(parameters : Public.Procedures.Geometrytype_1126.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18427,16 +16252,11 @@ async call(parameters : Public.Procedures.Geometrytype_1126.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSummary_1126 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSummary_1126 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_summary_1126"; }
 async call(parameters : Public.Procedures.StSummary_1126.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18453,16 +16273,11 @@ async call(parameters : Public.Procedures.StSummary_1126.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StGeohash_44eb = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StGeohash_44eb implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_geohash_44eb"; }
 async call(parameters : Public.Procedures.StGeohash_44eb.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18479,16 +16294,11 @@ async call(parameters : Public.Procedures.StGeohash_44eb.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSrid_1126 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSrid_1126 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_srid_1126"; }
 async call(parameters : Public.Procedures.StSrid_1126.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18505,16 +16315,11 @@ async call(parameters : Public.Procedures.StSrid_1126.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSetsrid_44eb = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSetsrid_44eb implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_setsrid_44eb"; }
 async call(parameters : Public.Procedures.StSetsrid_44eb.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18531,16 +16336,11 @@ async call(parameters : Public.Procedures.StSetsrid_44eb.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCentroid_5696 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCentroid_5696 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_centroid_5696"; }
 async call(parameters : Public.Procedures.StCentroid_5696.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18557,16 +16357,11 @@ async call(parameters : Public.Procedures.StCentroid_5696.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCentroidE728 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCentroidE728 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_centroid_e728"; }
 async call(parameters : Public.Procedures.StCentroidE728.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18583,16 +16378,11 @@ async call(parameters : Public.Procedures.StCentroidE728.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCoversAeb8 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCoversAeb8 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_covers_aeb8"; }
 async call(parameters : Public.Procedures.StCoversAeb8.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18609,16 +16399,11 @@ async call(parameters : Public.Procedures.StCoversAeb8.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StDwithinBfd6 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StDwithinBfd6 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_dwithin_bfd6"; }
 async call(parameters : Public.Procedures.StDwithinBfd6.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18635,16 +16420,11 @@ async call(parameters : Public.Procedures.StDwithinBfd6.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCoveredbyAeb8 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCoveredbyAeb8 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_coveredby_aeb8"; }
 async call(parameters : Public.Procedures.StCoveredbyAeb8.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18661,16 +16441,11 @@ async call(parameters : Public.Procedures.StCoveredbyAeb8.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StIntersectsAeb8 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StIntersectsAeb8 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_intersects_aeb8"; }
 async call(parameters : Public.Procedures.StIntersectsAeb8.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18687,16 +16462,11 @@ async call(parameters : Public.Procedures.StIntersectsAeb8.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StBuffer_8ba5 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StBuffer_8ba5 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_buffer_8ba5"; }
 async call(parameters : Public.Procedures.StBuffer_8ba5.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18713,16 +16483,11 @@ async call(parameters : Public.Procedures.StBuffer_8ba5.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StBufferBe24 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StBufferBe24 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_buffer_be24"; }
 async call(parameters : Public.Procedures.StBufferBe24.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18739,16 +16504,11 @@ async call(parameters : Public.Procedures.StBufferBe24.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StBuffer_82e5 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StBuffer_82e5 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_buffer_82e5"; }
 async call(parameters : Public.Procedures.StBuffer_82e5.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18765,16 +16525,11 @@ async call(parameters : Public.Procedures.StBuffer_82e5.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StBufferC349 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StBufferC349 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_buffer_c349"; }
 async call(parameters : Public.Procedures.StBufferC349.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18791,16 +16546,11 @@ async call(parameters : Public.Procedures.StBufferC349.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StBufferF7c6 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StBufferF7c6 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_buffer_f7c6"; }
 async call(parameters : Public.Procedures.StBufferF7c6.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18817,16 +16567,11 @@ async call(parameters : Public.Procedures.StBufferF7c6.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StIntersectionAeb8 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StIntersectionAeb8 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_intersection_aeb8"; }
 async call(parameters : Public.Procedures.StIntersectionAeb8.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18843,16 +16588,11 @@ async call(parameters : Public.Procedures.StIntersectionAeb8.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StIntersection_2ec2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StIntersection_2ec2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_intersection_2ec2"; }
 async call(parameters : Public.Procedures.StIntersection_2ec2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18869,16 +16609,11 @@ async call(parameters : Public.Procedures.StIntersection_2ec2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCovers_2ec2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCovers_2ec2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_covers_2ec2"; }
 async call(parameters : Public.Procedures.StCovers_2ec2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18895,16 +16630,11 @@ async call(parameters : Public.Procedures.StCovers_2ec2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCoveredby_2ec2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCoveredby_2ec2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_coveredby_2ec2"; }
 async call(parameters : Public.Procedures.StCoveredby_2ec2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18921,16 +16651,11 @@ async call(parameters : Public.Procedures.StCoveredby_2ec2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StDwithinEfc0 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StDwithinEfc0 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_dwithin_efc0"; }
 async call(parameters : Public.Procedures.StDwithinEfc0.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18947,16 +16672,11 @@ async call(parameters : Public.Procedures.StDwithinEfc0.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StIntersects_2ec2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StIntersects_2ec2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_intersects_2ec2"; }
 async call(parameters : Public.Procedures.StIntersects_2ec2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18973,16 +16693,11 @@ async call(parameters : Public.Procedures.StIntersects_2ec2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StClosestpointE193 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StClosestpointE193 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_closestpoint_e193"; }
 async call(parameters : Public.Procedures.StClosestpointE193.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -18999,16 +16714,11 @@ async call(parameters : Public.Procedures.StClosestpointE193.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StClosestpoint_2ec2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StClosestpoint_2ec2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_closestpoint_2ec2"; }
 async call(parameters : Public.Procedures.StClosestpoint_2ec2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19025,16 +16735,11 @@ async call(parameters : Public.Procedures.StClosestpoint_2ec2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StShortestlineE193 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StShortestlineE193 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_shortestline_e193"; }
 async call(parameters : Public.Procedures.StShortestlineE193.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19051,16 +16756,11 @@ async call(parameters : Public.Procedures.StShortestlineE193.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StShortestline_2ec2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StShortestline_2ec2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_shortestline_2ec2"; }
 async call(parameters : Public.Procedures.StShortestline_2ec2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19077,16 +16777,11 @@ async call(parameters : Public.Procedures.StShortestline_2ec2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLinesubstring_44fa = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLinesubstring_44fa implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_linesubstring_44fa"; }
 async call(parameters : Public.Procedures.StLinesubstring_44fa.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19103,16 +16798,11 @@ async call(parameters : Public.Procedures.StLinesubstring_44fa.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLinesubstringE586 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLinesubstringE586 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_linesubstring_e586"; }
 async call(parameters : Public.Procedures.StLinesubstringE586.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19129,16 +16819,11 @@ async call(parameters : Public.Procedures.StLinesubstringE586.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLinelocatepointE193 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLinelocatepointE193 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_linelocatepoint_e193"; }
 async call(parameters : Public.Procedures.StLinelocatepointE193.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19155,16 +16840,11 @@ async call(parameters : Public.Procedures.StLinelocatepointE193.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLinelocatepoint_2ec2 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLinelocatepoint_2ec2 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_linelocatepoint_2ec2"; }
 async call(parameters : Public.Procedures.StLinelocatepoint_2ec2.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19181,16 +16861,11 @@ async call(parameters : Public.Procedures.StLinelocatepoint_2ec2.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLineinterpolatepoints_8013 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLineinterpolatepoints_8013 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_lineinterpolatepoints_8013"; }
 async call(parameters : Public.Procedures.StLineinterpolatepoints_8013.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19207,16 +16882,11 @@ async call(parameters : Public.Procedures.StLineinterpolatepoints_8013.Parameter
               return responseBody;
            
 }
-}(this)
-
-          public StLineinterpolatepointsC349 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLineinterpolatepointsC349 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_lineinterpolatepoints_c349"; }
 async call(parameters : Public.Procedures.StLineinterpolatepointsC349.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19233,16 +16903,11 @@ async call(parameters : Public.Procedures.StLineinterpolatepointsC349.Parameters
               return responseBody;
            
 }
-}(this)
-
-          public StLineinterpolatepoint_6847 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLineinterpolatepoint_6847 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_lineinterpolatepoint_6847"; }
 async call(parameters : Public.Procedures.StLineinterpolatepoint_6847.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19259,16 +16924,11 @@ async call(parameters : Public.Procedures.StLineinterpolatepoint_6847.Parameters
               return responseBody;
            
 }
-}(this)
-
-          public StLineinterpolatepointC349 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLineinterpolatepointC349 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_lineinterpolatepoint_c349"; }
 async call(parameters : Public.Procedures.StLineinterpolatepointC349.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19285,16 +16945,11 @@ async call(parameters : Public.Procedures.StLineinterpolatepointC349.Parameters)
               return responseBody;
            
 }
-}(this)
-
-          public StDistancesphere_14de = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StDistancesphere_14de implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_distancesphere_14de"; }
 async call(parameters : Public.Procedures.StDistancesphere_14de.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19311,16 +16966,11 @@ async call(parameters : Public.Procedures.StDistancesphere_14de.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StDistancesphereCf0b = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StDistancesphereCf0b implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_distancesphere_cf0b"; }
 async call(parameters : Public.Procedures.StDistancesphereCf0b.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19337,16 +16987,11 @@ async call(parameters : Public.Procedures.StDistancesphereCf0b.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisTypeName = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisTypeName implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_type_name"; }
 async call(parameters : Public.Procedures.PostgisTypeName.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19363,16 +17008,11 @@ async call(parameters : Public.Procedures.PostgisTypeName.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisConstraintSrid = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisConstraintSrid implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_constraint_srid"; }
 async call(parameters : Public.Procedures.PostgisConstraintSrid.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19389,16 +17029,11 @@ async call(parameters : Public.Procedures.PostgisConstraintSrid.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisConstraintDims = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisConstraintDims implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_constraint_dims"; }
 async call(parameters : Public.Procedures.PostgisConstraintDims.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19415,16 +17050,11 @@ async call(parameters : Public.Procedures.PostgisConstraintDims.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public PostgisConstraintType = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class PostgisConstraintType implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "postgis_constraint_type"; }
 async call(parameters : Public.Procedures.PostgisConstraintType.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19441,16 +17071,11 @@ async call(parameters : Public.Procedures.PostgisConstraintType.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public St_3ddistance = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class St_3ddistance implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_3ddistance"; }
 async call(parameters : Public.Procedures.St_3ddistance.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19467,16 +17092,11 @@ async call(parameters : Public.Procedures.St_3ddistance.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public St_3dmaxdistance = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class St_3dmaxdistance implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_3dmaxdistance"; }
 async call(parameters : Public.Procedures.St_3dmaxdistance.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19493,16 +17113,11 @@ async call(parameters : Public.Procedures.St_3dmaxdistance.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public St_3dclosestpoint = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class St_3dclosestpoint implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_3dclosestpoint"; }
 async call(parameters : Public.Procedures.St_3dclosestpoint.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19519,16 +17134,11 @@ async call(parameters : Public.Procedures.St_3dclosestpoint.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public St_3dshortestline = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class St_3dshortestline implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_3dshortestline"; }
 async call(parameters : Public.Procedures.St_3dshortestline.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19545,16 +17155,11 @@ async call(parameters : Public.Procedures.St_3dshortestline.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public St_3dlongestline = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class St_3dlongestline implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_3dlongestline"; }
 async call(parameters : Public.Procedures.St_3dlongestline.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19571,16 +17176,11 @@ async call(parameters : Public.Procedures.St_3dlongestline.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCoorddim = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCoorddim implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_coorddim"; }
 async call(parameters : Public.Procedures.StCoorddim.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19597,16 +17197,11 @@ async call(parameters : Public.Procedures.StCoorddim.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StCurvetoline = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StCurvetoline implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_curvetoline"; }
 async call(parameters : Public.Procedures.StCurvetoline.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19623,16 +17218,11 @@ async call(parameters : Public.Procedures.StCurvetoline.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StHasarc = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StHasarc implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_hasarc"; }
 async call(parameters : Public.Procedures.StHasarc.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19649,16 +17239,11 @@ async call(parameters : Public.Procedures.StHasarc.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLinetocurve = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLinetocurve implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_linetocurve"; }
 async call(parameters : Public.Procedures.StLinetocurve.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19675,16 +17260,11 @@ async call(parameters : Public.Procedures.StLinetocurve.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPoint_0aec = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPoint_0aec implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_point_0aec"; }
 async call(parameters : Public.Procedures.StPoint_0aec.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19701,16 +17281,11 @@ async call(parameters : Public.Procedures.StPoint_0aec.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPoint_0b7f = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPoint_0b7f implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_point_0b7f"; }
 async call(parameters : Public.Procedures.StPoint_0b7f.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19727,16 +17302,11 @@ async call(parameters : Public.Procedures.StPoint_0b7f.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPointz = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPointz implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_pointz"; }
 async call(parameters : Public.Procedures.StPointz.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19753,16 +17323,11 @@ async call(parameters : Public.Procedures.StPointz.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPointm = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPointm implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_pointm"; }
 async call(parameters : Public.Procedures.StPointm.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19779,16 +17344,11 @@ async call(parameters : Public.Procedures.StPointm.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPointzm = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPointzm implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_pointzm"; }
 async call(parameters : Public.Procedures.StPointzm.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19805,16 +17365,11 @@ async call(parameters : Public.Procedures.StPointzm.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StPolygon = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StPolygon implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_polygon"; }
 async call(parameters : Public.Procedures.StPolygon.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19831,16 +17386,11 @@ async call(parameters : Public.Procedures.StPolygon.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StWkbtosql = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StWkbtosql implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_wkbtosql"; }
 async call(parameters : Public.Procedures.StWkbtosql.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19857,16 +17407,11 @@ async call(parameters : Public.Procedures.StWkbtosql.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLocatebetween = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLocatebetween implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_locatebetween"; }
 async call(parameters : Public.Procedures.StLocatebetween.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19883,16 +17428,11 @@ async call(parameters : Public.Procedures.StLocatebetween.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLocatealong = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLocatealong implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_locatealong"; }
 async call(parameters : Public.Procedures.StLocatealong.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19909,16 +17449,11 @@ async call(parameters : Public.Procedures.StLocatealong.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StLocatebetweenelevations = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLocatebetweenelevations implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_locatebetweenelevations"; }
 async call(parameters : Public.Procedures.StLocatebetweenelevations.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19935,16 +17470,11 @@ async call(parameters : Public.Procedures.StLocatebetweenelevations.Parameters) 
               return responseBody;
            
 }
-}(this)
-
-          public StInterpolatepoint = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StInterpolatepoint implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_interpolatepoint"; }
 async call(parameters : Public.Procedures.StInterpolatepoint.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19961,16 +17491,11 @@ async call(parameters : Public.Procedures.StInterpolatepoint.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StHexagon = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StHexagon implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_hexagon"; }
 async call(parameters : Public.Procedures.StHexagon.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -19987,16 +17512,11 @@ async call(parameters : Public.Procedures.StHexagon.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSquare = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSquare implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_square"; }
 async call(parameters : Public.Procedures.StSquare.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20013,16 +17533,11 @@ async call(parameters : Public.Procedures.StSquare.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StHexagongrid = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StHexagongrid implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_hexagongrid"; }
 async call(parameters : Public.Procedures.StHexagongrid.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20038,16 +17553,11 @@ async call(parameters : Public.Procedures.StHexagongrid.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StSquaregrid = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSquaregrid implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_squaregrid"; }
 async call(parameters : Public.Procedures.StSquaregrid.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20063,16 +17573,11 @@ async call(parameters : Public.Procedures.StSquaregrid.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Contains_2dFd11 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Contains_2dFd11 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "contains_2d_fd11"; }
 async call(parameters : Public.Procedures.Contains_2dFd11.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20089,16 +17594,11 @@ async call(parameters : Public.Procedures.Contains_2dFd11.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public IsContained_2dFd11 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class IsContained_2dFd11 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "is_contained_2d_fd11"; }
 async call(parameters : Public.Procedures.IsContained_2dFd11.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20115,16 +17615,11 @@ async call(parameters : Public.Procedures.IsContained_2dFd11.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Overlaps_2dFd11 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Overlaps_2dFd11 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "overlaps_2d_fd11"; }
 async call(parameters : Public.Procedures.Overlaps_2dFd11.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20141,16 +17636,11 @@ async call(parameters : Public.Procedures.Overlaps_2dFd11.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Overlaps_2dC063 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Overlaps_2dC063 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "overlaps_2d_c063"; }
 async call(parameters : Public.Procedures.Overlaps_2dC063.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20167,16 +17657,11 @@ async call(parameters : Public.Procedures.Overlaps_2dC063.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Contains_2dC063 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Contains_2dC063 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "contains_2d_c063"; }
 async call(parameters : Public.Procedures.Contains_2dC063.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20193,16 +17678,11 @@ async call(parameters : Public.Procedures.Contains_2dC063.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public IsContained_2dC063 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class IsContained_2dC063 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "is_contained_2d_c063"; }
 async call(parameters : Public.Procedures.IsContained_2dC063.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20219,16 +17699,11 @@ async call(parameters : Public.Procedures.IsContained_2dC063.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Contains_2dE856 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Contains_2dE856 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "contains_2d_e856"; }
 async call(parameters : Public.Procedures.Contains_2dE856.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20245,16 +17720,11 @@ async call(parameters : Public.Procedures.Contains_2dE856.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public IsContained_2dE856 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class IsContained_2dE856 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "is_contained_2d_e856"; }
 async call(parameters : Public.Procedures.IsContained_2dE856.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20271,16 +17741,11 @@ async call(parameters : Public.Procedures.IsContained_2dE856.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Overlaps_2dE856 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Overlaps_2dE856 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "overlaps_2d_e856"; }
 async call(parameters : Public.Procedures.Overlaps_2dE856.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20297,16 +17762,11 @@ async call(parameters : Public.Procedures.Overlaps_2dE856.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public OverlapsNd_545f = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class OverlapsNd_545f implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "overlaps_nd_545f"; }
 async call(parameters : Public.Procedures.OverlapsNd_545f.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20323,16 +17783,11 @@ async call(parameters : Public.Procedures.OverlapsNd_545f.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public OverlapsNdD1f5 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class OverlapsNdD1f5 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "overlaps_nd_d1f5"; }
 async call(parameters : Public.Procedures.OverlapsNdD1f5.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20349,16 +17804,11 @@ async call(parameters : Public.Procedures.OverlapsNdD1f5.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public OverlapsNd_87b1 = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class OverlapsNd_87b1 implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "overlaps_nd_87b1"; }
 async call(parameters : Public.Procedures.OverlapsNd_87b1.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20375,16 +17825,11 @@ async call(parameters : Public.Procedures.OverlapsNd_87b1.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public Geom2dBrinInclusionAddValue = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Geom2dBrinInclusionAddValue implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geom2d_brin_inclusion_add_value"; }
 async call(parameters : Public.Procedures.Geom2dBrinInclusionAddValue.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20401,16 +17846,11 @@ async call(parameters : Public.Procedures.Geom2dBrinInclusionAddValue.Parameters
               return responseBody;
            
 }
-}(this)
-
-          public Geom3dBrinInclusionAddValue = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Geom3dBrinInclusionAddValue implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geom3d_brin_inclusion_add_value"; }
 async call(parameters : Public.Procedures.Geom3dBrinInclusionAddValue.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20427,16 +17867,11 @@ async call(parameters : Public.Procedures.Geom3dBrinInclusionAddValue.Parameters
               return responseBody;
            
 }
-}(this)
-
-          public Geom4dBrinInclusionAddValue = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class Geom4dBrinInclusionAddValue implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geom4d_brin_inclusion_add_value"; }
 async call(parameters : Public.Procedures.Geom4dBrinInclusionAddValue.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20453,16 +17888,11 @@ async call(parameters : Public.Procedures.Geom4dBrinInclusionAddValue.Parameters
               return responseBody;
            
 }
-}(this)
-
-          public StSimplifypolygonhull = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StSimplifypolygonhull implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_simplifypolygonhull"; }
 async call(parameters : Public.Procedures.StSimplifypolygonhull.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20479,16 +17909,11 @@ async call(parameters : Public.Procedures.StSimplifypolygonhull.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StConcavehull = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StConcavehull implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_concavehull"; }
 async call(parameters : Public.Procedures.StConcavehull.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20505,16 +17930,11 @@ async call(parameters : Public.Procedures.StConcavehull.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAsx3d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAsx3d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_asx3d"; }
 async call(parameters : Public.Procedures.StAsx3d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20531,16 +17951,11 @@ async call(parameters : Public.Procedures.StAsx3d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public StAngle_14de = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StAngle_14de implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_angle_14de"; }
 async call(parameters : Public.Procedures.StAngle_14de.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20557,16 +17972,11 @@ async call(parameters : Public.Procedures.StAngle_14de.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public St_3dlineinterpolatepoint = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class St_3dlineinterpolatepoint implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_3dlineinterpolatepoint"; }
 async call(parameters : Public.Procedures.St_3dlineinterpolatepoint.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20583,16 +17993,11 @@ async call(parameters : Public.Procedures.St_3dlineinterpolatepoint.Parameters) 
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySpgistConfig_2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySpgistConfig_2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_spgist_config_2d"; }
 async call(parameters : Public.Procedures.GeometrySpgistConfig_2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20609,16 +18014,11 @@ async call(parameters : Public.Procedures.GeometrySpgistConfig_2d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySpgistChoose_2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySpgistChoose_2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_spgist_choose_2d"; }
 async call(parameters : Public.Procedures.GeometrySpgistChoose_2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20635,16 +18035,11 @@ async call(parameters : Public.Procedures.GeometrySpgistChoose_2d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySpgistPicksplit_2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySpgistPicksplit_2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_spgist_picksplit_2d"; }
 async call(parameters : Public.Procedures.GeometrySpgistPicksplit_2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20661,16 +18056,11 @@ async call(parameters : Public.Procedures.GeometrySpgistPicksplit_2d.Parameters)
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySpgistInnerConsistent_2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySpgistInnerConsistent_2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_spgist_inner_consistent_2d"; }
 async call(parameters : Public.Procedures.GeometrySpgistInnerConsistent_2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20687,16 +18077,11 @@ async call(parameters : Public.Procedures.GeometrySpgistInnerConsistent_2d.Param
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySpgistLeafConsistent_2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySpgistLeafConsistent_2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_spgist_leaf_consistent_2d"; }
 async call(parameters : Public.Procedures.GeometrySpgistLeafConsistent_2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20713,16 +18098,11 @@ async call(parameters : Public.Procedures.GeometrySpgistLeafConsistent_2d.Parame
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySpgistCompress_2d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySpgistCompress_2d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_spgist_compress_2d"; }
 async call(parameters : Public.Procedures.GeometrySpgistCompress_2d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20739,16 +18119,11 @@ async call(parameters : Public.Procedures.GeometrySpgistCompress_2d.Parameters) 
               return responseBody;
            
 }
-}(this)
-
-          public GeometryOverlaps_3d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryOverlaps_3d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_overlaps_3d"; }
 async call(parameters : Public.Procedures.GeometryOverlaps_3d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20765,16 +18140,11 @@ async call(parameters : Public.Procedures.GeometryOverlaps_3d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryContains_3d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryContains_3d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_contains_3d"; }
 async call(parameters : Public.Procedures.GeometryContains_3d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20791,16 +18161,11 @@ async call(parameters : Public.Procedures.GeometryContains_3d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometryContained_3d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometryContained_3d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_contained_3d"; }
 async call(parameters : Public.Procedures.GeometryContained_3d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20817,16 +18182,11 @@ async call(parameters : Public.Procedures.GeometryContained_3d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySame_3d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySame_3d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_same_3d"; }
 async call(parameters : Public.Procedures.GeometrySame_3d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20843,16 +18203,11 @@ async call(parameters : Public.Procedures.GeometrySame_3d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySpgistConfig_3d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySpgistConfig_3d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_spgist_config_3d"; }
 async call(parameters : Public.Procedures.GeometrySpgistConfig_3d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20869,16 +18224,11 @@ async call(parameters : Public.Procedures.GeometrySpgistConfig_3d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySpgistChoose_3d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySpgistChoose_3d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_spgist_choose_3d"; }
 async call(parameters : Public.Procedures.GeometrySpgistChoose_3d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20895,16 +18245,11 @@ async call(parameters : Public.Procedures.GeometrySpgistChoose_3d.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySpgistPicksplit_3d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySpgistPicksplit_3d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_spgist_picksplit_3d"; }
 async call(parameters : Public.Procedures.GeometrySpgistPicksplit_3d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20921,16 +18266,11 @@ async call(parameters : Public.Procedures.GeometrySpgistPicksplit_3d.Parameters)
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySpgistInnerConsistent_3d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySpgistInnerConsistent_3d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_spgist_inner_consistent_3d"; }
 async call(parameters : Public.Procedures.GeometrySpgistInnerConsistent_3d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20947,16 +18287,11 @@ async call(parameters : Public.Procedures.GeometrySpgistInnerConsistent_3d.Param
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySpgistLeafConsistent_3d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySpgistLeafConsistent_3d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_spgist_leaf_consistent_3d"; }
 async call(parameters : Public.Procedures.GeometrySpgistLeafConsistent_3d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20973,16 +18308,11 @@ async call(parameters : Public.Procedures.GeometrySpgistLeafConsistent_3d.Parame
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySpgistCompress_3d = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySpgistCompress_3d implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_spgist_compress_3d"; }
 async call(parameters : Public.Procedures.GeometrySpgistCompress_3d.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -20999,16 +18329,11 @@ async call(parameters : Public.Procedures.GeometrySpgistCompress_3d.Parameters) 
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySpgistConfigNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySpgistConfigNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_spgist_config_nd"; }
 async call(parameters : Public.Procedures.GeometrySpgistConfigNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -21025,16 +18350,11 @@ async call(parameters : Public.Procedures.GeometrySpgistConfigNd.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySpgistChooseNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySpgistChooseNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_spgist_choose_nd"; }
 async call(parameters : Public.Procedures.GeometrySpgistChooseNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -21051,16 +18371,11 @@ async call(parameters : Public.Procedures.GeometrySpgistChooseNd.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySpgistPicksplitNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySpgistPicksplitNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_spgist_picksplit_nd"; }
 async call(parameters : Public.Procedures.GeometrySpgistPicksplitNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -21077,16 +18392,11 @@ async call(parameters : Public.Procedures.GeometrySpgistPicksplitNd.Parameters) 
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySpgistInnerConsistentNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySpgistInnerConsistentNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_spgist_inner_consistent_nd"; }
 async call(parameters : Public.Procedures.GeometrySpgistInnerConsistentNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -21103,16 +18413,11 @@ async call(parameters : Public.Procedures.GeometrySpgistInnerConsistentNd.Parame
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySpgistLeafConsistentNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySpgistLeafConsistentNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_spgist_leaf_consistent_nd"; }
 async call(parameters : Public.Procedures.GeometrySpgistLeafConsistentNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -21129,16 +18434,11 @@ async call(parameters : Public.Procedures.GeometrySpgistLeafConsistentNd.Paramet
               return responseBody;
            
 }
-}(this)
-
-          public GeometrySpgistCompressNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeometrySpgistCompressNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geometry_spgist_compress_nd"; }
 async call(parameters : Public.Procedures.GeometrySpgistCompressNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -21155,16 +18455,11 @@ async call(parameters : Public.Procedures.GeometrySpgistCompressNd.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographySpgistConfigNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographySpgistConfigNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_spgist_config_nd"; }
 async call(parameters : Public.Procedures.GeographySpgistConfigNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -21181,16 +18476,11 @@ async call(parameters : Public.Procedures.GeographySpgistConfigNd.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographySpgistChooseNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographySpgistChooseNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_spgist_choose_nd"; }
 async call(parameters : Public.Procedures.GeographySpgistChooseNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -21207,16 +18497,11 @@ async call(parameters : Public.Procedures.GeographySpgistChooseNd.Parameters) {
               return responseBody;
            
 }
-}(this)
-
-          public GeographySpgistPicksplitNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographySpgistPicksplitNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_spgist_picksplit_nd"; }
 async call(parameters : Public.Procedures.GeographySpgistPicksplitNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -21233,16 +18518,11 @@ async call(parameters : Public.Procedures.GeographySpgistPicksplitNd.Parameters)
               return responseBody;
            
 }
-}(this)
-
-          public GeographySpgistInnerConsistentNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographySpgistInnerConsistentNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_spgist_inner_consistent_nd"; }
 async call(parameters : Public.Procedures.GeographySpgistInnerConsistentNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -21259,16 +18539,11 @@ async call(parameters : Public.Procedures.GeographySpgistInnerConsistentNd.Param
               return responseBody;
            
 }
-}(this)
-
-          public GeographySpgistLeafConsistentNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographySpgistLeafConsistentNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_spgist_leaf_consistent_nd"; }
 async call(parameters : Public.Procedures.GeographySpgistLeafConsistentNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -21285,16 +18560,11 @@ async call(parameters : Public.Procedures.GeographySpgistLeafConsistentNd.Parame
               return responseBody;
            
 }
-}(this)
-
-          public GeographySpgistCompressNd = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class GeographySpgistCompressNd implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "geography_spgist_compress_nd"; }
 async call(parameters : Public.Procedures.GeographySpgistCompressNd.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -21311,16 +18581,11 @@ async call(parameters : Public.Procedures.GeographySpgistCompressNd.Parameters) 
               return responseBody;
            
 }
-}(this)
-
-          public StLetters = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
+}
+export class StLetters implements Procedure, HasDatabase {
+  constructor(private hasDatabase: HasDatabase) {}
+  get database() { return this.hasDatabase.database; }
+  get name() { return "st_letters"; }
 async call(parameters : Public.Procedures.StLetters.Parameters) {
   
             const parseResult = (context: Context, result: unknown) => {
@@ -21337,31 +18602,12 @@ async call(parameters : Public.Procedures.StLetters.Parameters) {
               return responseBody;
            
 }
-}(this)
-}(this)
-get Tables () { return new Public.Tables(this)} 
-}(this)
-
-          public PgToast = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-
-          public Procedures = new class implements HasDatabase {
-       		  constructor(private hasDatabase: HasDatabase) {
-            }
-
-            get database() {
-              return this.hasDatabase.database;
-            }
-        
-}(this)
-get Tables () { return new PgToast.Tables(this)} 
-}(this)
+}
+}
+}
+export namespace PgToast {
+export namespace Procedures {
+}
 }
 export namespace Public {
 
@@ -23559,24 +20805,6 @@ export namespace Tables {
             
 }
 
-        // ⚠️ generated - do not modify ⚠️
-
-        /**
-         * These types are node/browser isomorphic and are used by all other
-         * EmbraceSQL generated code.
-         */
-        /* eslint-disable @typescript-eslint/no-explicit-any */
-        /* eslint-disable @typescript-eslint/no-empty-interface */
-        /* eslint-disable @typescript-eslint/no-namespace */
-        /* eslint-disable @typescript-eslint/no-unused-vars */
-        /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
-        /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
-        /* @typescript-eslint/no-redundant-type-constituents */
-        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
-        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
-        import { Geometry } from "@embracesql/shared";
-
-    
 export namespace PgCatalog {
 export namespace Types {
 
