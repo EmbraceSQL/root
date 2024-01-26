@@ -38,7 +38,7 @@ export const UpdateOperation = {
       `
       console.assert(parameters);
       console.assert(values);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       `,
     );
     // query using postgres driver bindings to the index

@@ -15,7 +15,7 @@ type InvokeQuery<T> = (sql: postgres.Sql) => Promise<T>;
 /**
  * A single postgres database. Inherit from this in generated code.
  */
-export abstract class PostgresDatabase {
+export abstract class PostgresDatabase<TTypecast> {
   constructor(public context: Context) {}
 
   /**
@@ -34,7 +34,9 @@ export abstract class PostgresDatabase {
     return this;
   }
 
-  // TODO: add in a generic get typed()
+  get typed(): TTypecast {
+    return this.context.sql.typed as unknown as TTypecast;
+  }
 
   /**
    * Returns a database scoped to a new transaction.

@@ -15,7 +15,7 @@ export const CreateOperation = {
     );
     generationBuffer.push(
       `
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       `,
     );
     const allSqlColumnNames = node.table.allColumns

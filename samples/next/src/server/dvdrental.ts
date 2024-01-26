@@ -13,12 +13,12 @@
         /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
         /* @typescript-eslint/no-redundant-type-constituents */
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
-        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
+        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort, InvokeQueryOptions } from "@embracesql/shared";
         import { Geometry } from "@embracesql/shared";
         import { DatabaseMetadata, Schema, Table, Column, Index, Procedure } from "@embracesql/shared";
     
 
-            import { Context, initializeContext, PostgresDatabase, InvokeQueryOptions } from "@embracesql/postgres";
+            import { Context, initializeContext, PostgresDatabase } from "@embracesql/postgres";
             import postgres from "postgres";
           
 
@@ -1809,7 +1809,7 @@ get settings() { return this.context.settings as Settings };
             }
         
 
-          async call (, options?: InvokeQueryOptions) {
+          async call (options?: InvokeQueryOptions) {
             const response = await this.database.invoke( (sql) => sql.unsafe(`
                 SELECT
   film_id,
@@ -1887,7 +1887,7 @@ WHERE
             }
         
 
-          async call (, options?: InvokeQueryOptions) {
+          async call (options?: InvokeQueryOptions) {
             const response = await this.database.invoke( (sql) => sql.unsafe(`
                 SELECT
     COUNT(*)
@@ -1934,7 +1934,7 @@ WHERE
             }
         
 
-          async call (, options?: InvokeQueryOptions) {
+          async call (options?: InvokeQueryOptions) {
             const response = await this.database.invoke( (sql) => sql.unsafe(`
                 SELECT
     COUNT(*)

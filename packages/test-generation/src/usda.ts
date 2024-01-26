@@ -1752,7 +1752,7 @@ export namespace Tables {
 
 async create(values: Partial<Public.Types.NutData>, options?: Public.Tables.NutData.Options): Promise<Public.Types.NutData>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
@@ -1768,7 +1768,7 @@ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIs
 }
 async all(options?: Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -1803,7 +1803,7 @@ get NutDataSrcCdIdx () { return new Public.Tables.NutData.NutDataSrcCdIdx(this)}
 
 async create(values: Partial<Public.Types.SrcCd>, options?: Public.Tables.SrcCd.Options): Promise<Public.Types.SrcCd>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
@@ -1819,7 +1819,7 @@ return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefine
 }
 async all(options?: Public.Tables.SrcCd.Options) : Promise<Public.Types.SrcCd[]>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -1848,7 +1848,7 @@ get SrcCdPkey () { return new Public.Tables.SrcCd.SrcCdPkey(this)}
 
 async create(values: Partial<Public.Types.Footnote>, options?: Public.Tables.Footnote.Options): Promise<Public.Types.Footnote>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
@@ -1864,7 +1864,7 @@ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefined
 }
 async all(options?: Public.Tables.Footnote.Options) : Promise<Public.Types.Footnote[]>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -1893,7 +1893,7 @@ get FootnoteNdbNoIdx () { return new Public.Tables.Footnote.FootnoteNdbNoIdx(thi
 
 async create(values: Partial<Public.Types.NutrDef>, options?: Public.Tables.NutrDef.Options): Promise<Public.Types.NutrDef>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
@@ -1909,7 +1909,7 @@ return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedI
 }
 async all(options?: Public.Tables.NutrDef.Options) : Promise<Public.Types.NutrDef[]>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -1938,7 +1938,7 @@ get NutrDefPkey () { return new Public.Tables.NutrDef.NutrDefPkey(this)}
 
 async create(values: Partial<Public.Types.DerivCd>, options?: Public.Tables.DerivCd.Options): Promise<Public.Types.DerivCd>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
@@ -1954,7 +1954,7 @@ return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: un
 }
 async all(options?: Public.Tables.DerivCd.Options) : Promise<Public.Types.DerivCd[]>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -1983,7 +1983,7 @@ get DerivCdPkey () { return new Public.Tables.DerivCd.DerivCdPkey(this)}
 
 async create(values: Partial<Public.Types.FdGroup>, options?: Public.Tables.FdGroup.Options): Promise<Public.Types.FdGroup>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
@@ -1999,7 +1999,7 @@ return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: unde
 }
 async all(options?: Public.Tables.FdGroup.Options) : Promise<Public.Types.FdGroup[]>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -2028,7 +2028,7 @@ get FdGroupPkey () { return new Public.Tables.FdGroup.FdGroupPkey(this)}
 
 async create(values: Partial<Public.Types.Weight>, options?: Public.Tables.Weight.Options): Promise<Public.Types.Weight>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
@@ -2044,7 +2044,7 @@ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNul
 }
 async all(options?: Public.Tables.Weight.Options) : Promise<Public.Types.Weight[]>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -2073,7 +2073,7 @@ get WeightPkey () { return new Public.Tables.Weight.WeightPkey(this)}
 
 async create(values: Partial<Public.Types.FoodDes>, options?: Public.Tables.FoodDes.Options): Promise<Public.Types.FoodDes>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
@@ -2089,7 +2089,7 @@ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedI
 }
 async all(options?: Public.Tables.FoodDes.Options) : Promise<Public.Types.FoodDes[]>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -2120,7 +2120,7 @@ get FoodDesFdgrpCdIdx () { return new Public.Tables.FoodDes.FoodDesFdgrpCdIdx(th
 
 async create(values: Partial<Public.Types.DataSrc>, options?: Public.Tables.DataSrc.Options): Promise<Public.Types.DataSrc>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
@@ -2136,7 +2136,7 @@ return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: un
 }
 async all(options?: Public.Tables.DataSrc.Options) : Promise<Public.Types.DataSrc[]>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -2167,7 +2167,7 @@ get DataSrcPkey () { return new Public.Tables.DataSrc.DataSrcPkey(this)}
 
 async create(values: Partial<Public.Types.Datsrcln>, options?: Public.Tables.Datsrcln.Options): Promise<Public.Types.Datsrcln>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
@@ -2183,7 +2183,7 @@ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIs
 }
 async all(options?: Public.Tables.Datsrcln.Options) : Promise<Public.Types.Datsrcln[]>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -2220,7 +2220,7 @@ export namespace NutData {
 async read(parameters: Public.Types.NutDataPkey, options?: Public.Types.NutDataPkey.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData>{
 
       console.assert(parameters);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -2242,7 +2242,7 @@ async update(parameters: Public.Types.NutDataPkey, values: Partial<Public.Tables
 
       console.assert(parameters);
       console.assert(values);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     --
@@ -2257,7 +2257,7 @@ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIs
 }
 async delete(parameters: Public.Types.NutDataPkey, options?: Public.Types.NutDataPkey.Options & Public.Tables.NutData.Options) {
  console.assert(parameters);
- const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const typed = this.database.typed;
  const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
@@ -2281,7 +2281,7 @@ async delete(parameters: Public.Types.NutDataPkey, options?: Public.Types.NutDat
 async read(parameters: Public.Types.NutDataDerivCdIdx, options?: Public.Types.NutDataDerivCdIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
 
       console.assert(parameters);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -2303,7 +2303,7 @@ async update(parameters: Public.Types.NutDataDerivCdIdx, values: Partial<Public.
 
       console.assert(parameters);
       console.assert(values);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     --
@@ -2318,7 +2318,7 @@ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIs
 }
 async delete(parameters: Public.Types.NutDataDerivCdIdx, options?: Public.Types.NutDataDerivCdIdx.Options & Public.Tables.NutData.Options) {
  console.assert(parameters);
- const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const typed = this.database.typed;
  const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
@@ -2342,7 +2342,7 @@ async delete(parameters: Public.Types.NutDataDerivCdIdx, options?: Public.Types.
 async read(parameters: Public.Types.NutDataNutrNoIdx, options?: Public.Types.NutDataNutrNoIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
 
       console.assert(parameters);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -2364,7 +2364,7 @@ async update(parameters: Public.Types.NutDataNutrNoIdx, values: Partial<Public.T
 
       console.assert(parameters);
       console.assert(values);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     --
@@ -2379,7 +2379,7 @@ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIs
 }
 async delete(parameters: Public.Types.NutDataNutrNoIdx, options?: Public.Types.NutDataNutrNoIdx.Options & Public.Tables.NutData.Options) {
  console.assert(parameters);
- const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const typed = this.database.typed;
  const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
@@ -2403,7 +2403,7 @@ async delete(parameters: Public.Types.NutDataNutrNoIdx, options?: Public.Types.N
 async read(parameters: Public.Types.NutDataSrcCdIdx, options?: Public.Types.NutDataSrcCdIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
 
       console.assert(parameters);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -2425,7 +2425,7 @@ async update(parameters: Public.Types.NutDataSrcCdIdx, values: Partial<Public.Ta
 
       console.assert(parameters);
       console.assert(values);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     --
@@ -2440,7 +2440,7 @@ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIs
 }
 async delete(parameters: Public.Types.NutDataSrcCdIdx, options?: Public.Types.NutDataSrcCdIdx.Options & Public.Tables.NutData.Options) {
  console.assert(parameters);
- const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const typed = this.database.typed;
  const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
@@ -2466,7 +2466,7 @@ export namespace SrcCd {
 async read(parameters: Public.Types.SrcCdPkey, options?: Public.Types.SrcCdPkey.Options & Public.Tables.SrcCd.Options) : Promise<Public.Types.SrcCd>{
 
       console.assert(parameters);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -2488,7 +2488,7 @@ async update(parameters: Public.Types.SrcCdPkey, values: Partial<Public.Tables.S
 
       console.assert(parameters);
       console.assert(values);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     --
@@ -2503,7 +2503,7 @@ return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefine
 }
 async delete(parameters: Public.Types.SrcCdPkey, options?: Public.Types.SrcCdPkey.Options & Public.Tables.SrcCd.Options) {
  console.assert(parameters);
- const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const typed = this.database.typed;
  const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
@@ -2529,7 +2529,7 @@ export namespace Footnote {
 async read(parameters: Public.Types.FootnoteNdbNoIdx, options?: Public.Types.FootnoteNdbNoIdx.Options & Public.Tables.Footnote.Options) : Promise<Public.Types.Footnote[]>{
 
       console.assert(parameters);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -2551,7 +2551,7 @@ async update(parameters: Public.Types.FootnoteNdbNoIdx, values: Partial<Public.T
 
       console.assert(parameters);
       console.assert(values);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     --
@@ -2566,7 +2566,7 @@ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefined
 }
 async delete(parameters: Public.Types.FootnoteNdbNoIdx, options?: Public.Types.FootnoteNdbNoIdx.Options & Public.Tables.Footnote.Options) {
  console.assert(parameters);
- const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const typed = this.database.typed;
  const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
@@ -2592,7 +2592,7 @@ export namespace NutrDef {
 async read(parameters: Public.Types.NutrDefPkey, options?: Public.Types.NutrDefPkey.Options & Public.Tables.NutrDef.Options) : Promise<Public.Types.NutrDef>{
 
       console.assert(parameters);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -2614,7 +2614,7 @@ async update(parameters: Public.Types.NutrDefPkey, values: Partial<Public.Tables
 
       console.assert(parameters);
       console.assert(values);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     --
@@ -2629,7 +2629,7 @@ return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedI
 }
 async delete(parameters: Public.Types.NutrDefPkey, options?: Public.Types.NutrDefPkey.Options & Public.Tables.NutrDef.Options) {
  console.assert(parameters);
- const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const typed = this.database.typed;
  const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
@@ -2655,7 +2655,7 @@ export namespace DerivCd {
 async read(parameters: Public.Types.DerivCdPkey, options?: Public.Types.DerivCdPkey.Options & Public.Tables.DerivCd.Options) : Promise<Public.Types.DerivCd>{
 
       console.assert(parameters);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -2677,7 +2677,7 @@ async update(parameters: Public.Types.DerivCdPkey, values: Partial<Public.Tables
 
       console.assert(parameters);
       console.assert(values);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     --
@@ -2692,7 +2692,7 @@ return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: un
 }
 async delete(parameters: Public.Types.DerivCdPkey, options?: Public.Types.DerivCdPkey.Options & Public.Tables.DerivCd.Options) {
  console.assert(parameters);
- const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const typed = this.database.typed;
  const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
@@ -2718,7 +2718,7 @@ export namespace FdGroup {
 async read(parameters: Public.Types.FdGroupPkey, options?: Public.Types.FdGroupPkey.Options & Public.Tables.FdGroup.Options) : Promise<Public.Types.FdGroup>{
 
       console.assert(parameters);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -2740,7 +2740,7 @@ async update(parameters: Public.Types.FdGroupPkey, values: Partial<Public.Tables
 
       console.assert(parameters);
       console.assert(values);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     --
@@ -2755,7 +2755,7 @@ return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: unde
 }
 async delete(parameters: Public.Types.FdGroupPkey, options?: Public.Types.FdGroupPkey.Options & Public.Tables.FdGroup.Options) {
  console.assert(parameters);
- const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const typed = this.database.typed;
  const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
@@ -2781,7 +2781,7 @@ export namespace Weight {
 async read(parameters: Public.Types.WeightPkey, options?: Public.Types.WeightPkey.Options & Public.Tables.Weight.Options) : Promise<Public.Types.Weight>{
 
       console.assert(parameters);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -2803,7 +2803,7 @@ async update(parameters: Public.Types.WeightPkey, values: Partial<Public.Tables.
 
       console.assert(parameters);
       console.assert(values);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     --
@@ -2818,7 +2818,7 @@ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNul
 }
 async delete(parameters: Public.Types.WeightPkey, options?: Public.Types.WeightPkey.Options & Public.Tables.Weight.Options) {
  console.assert(parameters);
- const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const typed = this.database.typed;
  const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
@@ -2844,7 +2844,7 @@ export namespace FoodDes {
 async read(parameters: Public.Types.FoodDesPkey, options?: Public.Types.FoodDesPkey.Options & Public.Tables.FoodDes.Options) : Promise<Public.Types.FoodDes>{
 
       console.assert(parameters);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -2866,7 +2866,7 @@ async update(parameters: Public.Types.FoodDesPkey, values: Partial<Public.Tables
 
       console.assert(parameters);
       console.assert(values);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     --
@@ -2881,7 +2881,7 @@ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedI
 }
 async delete(parameters: Public.Types.FoodDesPkey, options?: Public.Types.FoodDesPkey.Options & Public.Tables.FoodDes.Options) {
  console.assert(parameters);
- const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const typed = this.database.typed;
  const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
@@ -2905,7 +2905,7 @@ async delete(parameters: Public.Types.FoodDesPkey, options?: Public.Types.FoodDe
 async read(parameters: Public.Types.FoodDesFdgrpCdIdx, options?: Public.Types.FoodDesFdgrpCdIdx.Options & Public.Tables.FoodDes.Options) : Promise<Public.Types.FoodDes[]>{
 
       console.assert(parameters);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -2927,7 +2927,7 @@ async update(parameters: Public.Types.FoodDesFdgrpCdIdx, values: Partial<Public.
 
       console.assert(parameters);
       console.assert(values);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     --
@@ -2942,7 +2942,7 @@ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedI
 }
 async delete(parameters: Public.Types.FoodDesFdgrpCdIdx, options?: Public.Types.FoodDesFdgrpCdIdx.Options & Public.Tables.FoodDes.Options) {
  console.assert(parameters);
- const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const typed = this.database.typed;
  const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
@@ -2968,7 +2968,7 @@ export namespace DataSrc {
 async read(parameters: Public.Types.DataSrcTitleFulltext, options?: Public.Types.DataSrcTitleFulltext.Options & Public.Tables.DataSrc.Options) : Promise<Public.Types.DataSrc[]>{
 
       console.assert(parameters);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -2990,7 +2990,7 @@ async update(parameters: Public.Types.DataSrcTitleFulltext, values: Partial<Publ
 
       console.assert(parameters);
       console.assert(values);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     --
@@ -3005,7 +3005,7 @@ return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: un
 }
 async delete(parameters: Public.Types.DataSrcTitleFulltext, options?: Public.Types.DataSrcTitleFulltext.Options & Public.Tables.DataSrc.Options) {
  console.assert(parameters);
- const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const typed = this.database.typed;
  const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
@@ -3029,7 +3029,7 @@ async delete(parameters: Public.Types.DataSrcTitleFulltext, options?: Public.Typ
 async read(parameters: Public.Types.DataSrcPkey, options?: Public.Types.DataSrcPkey.Options & Public.Tables.DataSrc.Options) : Promise<Public.Types.DataSrc>{
 
       console.assert(parameters);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -3051,7 +3051,7 @@ async update(parameters: Public.Types.DataSrcPkey, values: Partial<Public.Tables
 
       console.assert(parameters);
       console.assert(values);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     --
@@ -3066,7 +3066,7 @@ return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: un
 }
 async delete(parameters: Public.Types.DataSrcPkey, options?: Public.Types.DataSrcPkey.Options & Public.Tables.DataSrc.Options) {
  console.assert(parameters);
- const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const typed = this.database.typed;
  const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
@@ -3092,7 +3092,7 @@ export namespace Datsrcln {
 async read(parameters: Public.Types.DatsrclnPkey, options?: Public.Types.DatsrclnPkey.Options & Public.Tables.Datsrcln.Options) : Promise<Public.Types.Datsrcln>{
 
       console.assert(parameters);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -3114,7 +3114,7 @@ async update(parameters: Public.Types.DatsrclnPkey, values: Partial<Public.Table
 
       console.assert(parameters);
       console.assert(values);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     --
@@ -3129,7 +3129,7 @@ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIs
 }
 async delete(parameters: Public.Types.DatsrclnPkey, options?: Public.Types.DatsrclnPkey.Options & Public.Tables.Datsrcln.Options) {
  console.assert(parameters);
- const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const typed = this.database.typed;
  const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
@@ -3153,7 +3153,7 @@ async delete(parameters: Public.Types.DatsrclnPkey, options?: Public.Types.Datsr
 async read(parameters: Public.Types.DatsrclnDatasrcIdIdx, options?: Public.Types.DatsrclnDatasrcIdIdx.Options & Public.Tables.Datsrcln.Options) : Promise<Public.Types.Datsrcln[]>{
 
       console.assert(parameters);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -3175,7 +3175,7 @@ async update(parameters: Public.Types.DatsrclnDatasrcIdIdx, values: Partial<Publ
 
       console.assert(parameters);
       console.assert(values);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     --
@@ -3190,7 +3190,7 @@ return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIs
 }
 async delete(parameters: Public.Types.DatsrclnDatasrcIdIdx, options?: Public.Types.DatsrclnDatasrcIdIdx.Options & Public.Tables.Datsrcln.Options) {
  console.assert(parameters);
- const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const typed = this.database.typed;
  const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 

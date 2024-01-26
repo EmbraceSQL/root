@@ -23,7 +23,7 @@ export const AllOperation = {
     return [
       `async ${node.typescriptPropertyName}(${parameters}${options}) : ${returns}{`,
       `
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? \`ORDER BY \${options.sort.join(",")}\` : "";
       `,
       `const response = await this.database.invoke( (sql) => sql\`${sql}\`, options);`,

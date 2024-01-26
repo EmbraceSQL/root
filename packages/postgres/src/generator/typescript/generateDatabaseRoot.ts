@@ -69,7 +69,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
               // typecast map for postgres driver codec.
 
               // generated database class starts here
-              `export class Database extends PostgresDatabase implements HasDatabase { `,
+              `export class Database extends PostgresDatabase<PostgresTypecasts> implements HasDatabase { `,
               `get database() { return this };`,
               `get settings() { return this.context.settings as Settings };`,
               `
@@ -266,7 +266,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
 
               `async call(${parameters}${options}) {`,
               `  ${parseResult}`,
-              `  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;`,
+              `  const typed = this.database.typed;`,
               `  const response = await this.database.invoke( (sql) => sql\`SELECT ${node.databaseName}(${parameterExpressions})\`${optionsExpression});`,
               `  const results = response;`,
               `
