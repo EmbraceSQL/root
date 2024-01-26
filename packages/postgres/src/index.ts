@@ -9,6 +9,19 @@ interface ConstructorOf<T> {
   new (context: Context): T;
 }
 
+type InvokeQuery<T> = (sql: postgres.Sql) => Promise<T>;
+
+/**
+ * Additional options to control running a query on the database.
+ */
+export type InvokeQueryOptions = {
+  /**
+   * When greater than 0, retry the query on any error this number
+   * of times.
+   */
+  retries: number;
+};
+
 /**
  * A single postgres database. Inherit from this in generated code.
  */
@@ -30,6 +43,8 @@ export abstract class PostgresDatabase {
   get self(): this {
     return this;
   }
+
+  // TODO: add in a generic get typed()
 
   /**
    * Returns a database scoped to a new transaction.
@@ -80,5 +95,15 @@ export abstract class PostgresDatabase {
           await body(new CurrentSubclass({ ...this.context, sql })),
       );
     }
+  }
+
+  /**
+   * Invoke a query.
+   *
+   * This provides a hook point for middleware before and after
+   * your natural query invocation to interact with the database.
+   */
+  async invoke<T>(queryCallback: InvokeQuery<T>): Promise<T> {
+    return await queryCallback(this.context.sql);
   }
 }

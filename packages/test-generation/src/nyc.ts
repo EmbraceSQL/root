@@ -3814,9 +3814,8 @@ async call(parameters : Public.Procedures.StForcepolygoncw.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_forcepolygoncw( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_forcepolygoncw( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_forcepolygoncw) );
@@ -3835,9 +3834,8 @@ async call(parameters : Public.Procedures.SpheroidIn.Parameters) {
               return Public.Types.Spheroid.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.spheroid_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.spheroid_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Spheroid.parse(results?.[0].spheroid_in) );
@@ -3856,9 +3854,8 @@ async call(parameters : Public.Procedures.SpheroidOut.Parameters) {
               return PgCatalog.Types.Cstring.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.spheroid_out( ${ typed[29504](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.spheroid_out( ${ typed[29504](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].spheroid_out) );
@@ -3877,9 +3874,8 @@ async call(parameters : Public.Procedures.GeometryIn.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry_in) );
@@ -3898,9 +3894,8 @@ async call(parameters : Public.Procedures.GeometryOut.Parameters) {
               return PgCatalog.Types.Cstring.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_out( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_out( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].geometry_out) );
@@ -3919,9 +3914,8 @@ async call(parameters : Public.Procedures.GeometryTypmodIn.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_typmod_in( ${ typed[1263](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_typmod_in( ${ typed[1263](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].geometry_typmod_in) );
@@ -3940,9 +3934,8 @@ async call(parameters : Public.Procedures.GeometryTypmodOut.Parameters) {
               return PgCatalog.Types.Cstring.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_typmod_out( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_typmod_out( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].geometry_typmod_out) );
@@ -3961,9 +3954,8 @@ async call(parameters : Public.Procedures.GeometryAnalyze.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_analyze( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_analyze( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_analyze) );
@@ -3982,9 +3974,8 @@ async call(parameters : Public.Procedures.GeometryRecv.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_recv( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_recv( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry_recv) );
@@ -4003,9 +3994,8 @@ async call(parameters : Public.Procedures.GeometrySend.Parameters) {
               return PgCatalog.Types.Bytea.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_send( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_send( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].geometry_send) );
@@ -4024,9 +4014,8 @@ async call(parameters : Public.Procedures.Geometry_02f3.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry) );
@@ -4045,9 +4034,8 @@ async call(parameters : Public.Procedures.Geometry_8997.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry( ${ typed[600](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[600](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry) );
@@ -4066,9 +4054,8 @@ async call(parameters : Public.Procedures.Point.Parameters) {
               return PgCatalog.Types.Point.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.point( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.point( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Point.parse(results?.[0].point) );
@@ -4087,9 +4074,8 @@ async call(parameters : Public.Procedures.GeometryB0d8.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry( ${ typed[602](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[602](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry) );
@@ -4108,9 +4094,8 @@ async call(parameters : Public.Procedures.Path.Parameters) {
               return PgCatalog.Types.Path.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.path( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.path( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Path.parse(results?.[0].path) );
@@ -4129,9 +4114,8 @@ async call(parameters : Public.Procedures.GeometryF1be.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry( ${ typed[604](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[604](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry) );
@@ -4150,9 +4134,8 @@ async call(parameters : Public.Procedures.Polygon.Parameters) {
               return PgCatalog.Types.Polygon.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.polygon( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.polygon( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Polygon.parse(results?.[0].polygon) );
@@ -4171,9 +4154,8 @@ async call(parameters : Public.Procedures.StX.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_x( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_x( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_x) );
@@ -4192,9 +4174,8 @@ async call(parameters : Public.Procedures.StY.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_y( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_y( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_y) );
@@ -4213,9 +4194,8 @@ async call(parameters : Public.Procedures.StZ.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_z( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_z( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_z) );
@@ -4234,9 +4214,8 @@ async call(parameters : Public.Procedures.StM.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_m( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_m( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_m) );
@@ -4255,9 +4234,8 @@ async call(parameters : Public.Procedures.Box3dIn.Parameters) {
               return Public.Types.Box3d.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box3d_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box3d_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].box3d_in) );
@@ -4276,9 +4254,8 @@ async call(parameters : Public.Procedures.Box3dOut.Parameters) {
               return PgCatalog.Types.Cstring.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box3d_out( ${ typed[29535](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box3d_out( ${ typed[29535](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].box3d_out) );
@@ -4297,9 +4274,8 @@ async call(parameters : Public.Procedures.Box2dIn.Parameters) {
               return Public.Types.Box2d.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box2d_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box2d_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].box2d_in) );
@@ -4318,9 +4294,8 @@ async call(parameters : Public.Procedures.Box2dOut.Parameters) {
               return PgCatalog.Types.Cstring.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box2d_out( ${ typed[29539](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box2d_out( ${ typed[29539](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].box2d_out) );
@@ -4339,9 +4314,8 @@ async call(parameters : Public.Procedures.Box2dfIn.Parameters) {
               return Public.Types.Box2df.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box2df_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box2df_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box2df.parse(results?.[0].box2df_in) );
@@ -4360,9 +4334,8 @@ async call(parameters : Public.Procedures.Box2dfOut.Parameters) {
               return PgCatalog.Types.Cstring.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box2df_out( ${ typed[29543](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box2df_out( ${ typed[29543](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].box2df_out) );
@@ -4381,9 +4354,8 @@ async call(parameters : Public.Procedures.GidxIn.Parameters) {
               return Public.Types.Gidx.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gidx_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gidx_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Gidx.parse(results?.[0].gidx_in) );
@@ -4402,9 +4374,8 @@ async call(parameters : Public.Procedures.GidxOut.Parameters) {
               return PgCatalog.Types.Cstring.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gidx_out( ${ typed[29547](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gidx_out( ${ typed[29547](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].gidx_out) );
@@ -4423,9 +4394,8 @@ async call(parameters : Public.Procedures.GeometryLt.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_lt(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_lt(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_lt) );
@@ -4444,9 +4414,8 @@ async call(parameters : Public.Procedures.GeometryLe.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_le(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_le(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_le) );
@@ -4465,9 +4434,8 @@ async call(parameters : Public.Procedures.GeometryGt.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gt(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gt(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_gt) );
@@ -4486,9 +4454,8 @@ async call(parameters : Public.Procedures.GeometryGe.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_ge(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_ge(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_ge) );
@@ -4507,9 +4474,8 @@ async call(parameters : Public.Procedures.GeometryEq.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_eq(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_eq(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_eq) );
@@ -4528,9 +4494,8 @@ async call(parameters : Public.Procedures.GeometryCmp.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_cmp(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_cmp(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].geometry_cmp) );
@@ -4549,9 +4514,8 @@ async call(parameters : Public.Procedures.GeometrySortsupport.Parameters) {
               return PgCatalog.Types.Void.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_sortsupport( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_sortsupport( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_sortsupport) );
@@ -4570,9 +4534,8 @@ async call(parameters : Public.Procedures.GeometryHash.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_hash( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_hash( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].geometry_hash) );
@@ -4591,9 +4554,8 @@ async call(parameters : Public.Procedures.GeometryGistDistance_2d.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_distance_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_distance_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geometry_gist_distance_2d) );
@@ -4612,9 +4574,8 @@ async call(parameters : Public.Procedures.GeometryGistConsistent_2d.Parameters) 
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_consistent_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_consistent_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_gist_consistent_2d) );
@@ -4633,9 +4594,8 @@ async call(parameters : Public.Procedures.GeometryGistCompress_2d.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_compress_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_compress_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_compress_2d) );
@@ -4654,9 +4614,8 @@ async call(parameters : Public.Procedures.GeometryGistPenalty_2d.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_penalty_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_penalty_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_penalty_2d) );
@@ -4675,9 +4634,8 @@ async call(parameters : Public.Procedures.GeometryGistPicksplit_2d.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_picksplit_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_picksplit_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_picksplit_2d) );
@@ -4696,9 +4654,8 @@ async call(parameters : Public.Procedures.GeometryGistUnion_2d.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_union_2d( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_union_2d( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_union_2d) );
@@ -4717,9 +4674,8 @@ async call(parameters : Public.Procedures.GeometryGistSame_2d.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_same_2d(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_same_2d(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_same_2d) );
@@ -4738,9 +4694,8 @@ async call(parameters : Public.Procedures.GeometryGistDecompress_2d.Parameters) 
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_decompress_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_decompress_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_decompress_2d) );
@@ -4759,9 +4714,8 @@ async call(parameters : Public.Procedures.GeometryGistSortsupport_2d.Parameters)
               return PgCatalog.Types.Void.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_sortsupport_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_sortsupport_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_gist_sortsupport_2d) );
@@ -4780,9 +4734,8 @@ async call(parameters : Public.Procedures.StForcerhr.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_forcerhr( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_forcerhr( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_forcerhr) );
@@ -4801,9 +4754,8 @@ async call(parameters : Public.Procedures.PostgisNoop.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_noop( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_noop( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].postgis_noop) );
@@ -4822,9 +4774,8 @@ async call(parameters : Public.Procedures.StForcepolygonccw.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_forcepolygonccw( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_forcepolygonccw( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_forcepolygonccw) );
@@ -4843,9 +4794,8 @@ async call(parameters : Public.Procedures.GserializedGistSel_2d.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gserialized_gist_sel_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gserialized_gist_sel_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].gserialized_gist_sel_2d) );
@@ -4864,9 +4814,8 @@ async call(parameters : Public.Procedures.GserializedGistSelNd.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gserialized_gist_sel_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gserialized_gist_sel_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].gserialized_gist_sel_nd) );
@@ -4885,9 +4834,8 @@ async call(parameters : Public.Procedures.GserializedGistJoinsel_2d.Parameters) 
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gserialized_gist_joinsel_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[21](undefinedIsNull(parameters.argument_3)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gserialized_gist_joinsel_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[21](undefinedIsNull(parameters.argument_3)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].gserialized_gist_joinsel_2d) );
@@ -4906,9 +4854,8 @@ async call(parameters : Public.Procedures.GserializedGistJoinselNd.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gserialized_gist_joinsel_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[21](undefinedIsNull(parameters.argument_3)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gserialized_gist_joinsel_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[21](undefinedIsNull(parameters.argument_3)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].gserialized_gist_joinsel_nd) );
@@ -4927,9 +4874,8 @@ async call(parameters : Public.Procedures.GeometryOverlaps.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_overlaps(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_overlaps(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_overlaps) );
@@ -4948,9 +4894,8 @@ async call(parameters : Public.Procedures.GeometrySame.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_same(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_same(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_same) );
@@ -4969,9 +4914,8 @@ async call(parameters : Public.Procedures.GeometryDistanceCentroid.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_distance_centroid(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_distance_centroid(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geometry_distance_centroid) );
@@ -4990,9 +4934,8 @@ async call(parameters : Public.Procedures.GeometryDistanceBox.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_distance_box(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_distance_box(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geometry_distance_box) );
@@ -5011,9 +4954,8 @@ async call(parameters : Public.Procedures.GeometryContains.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_contains(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_contains(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_contains) );
@@ -5032,9 +4974,8 @@ async call(parameters : Public.Procedures.GeometryWithin.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_within(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_within(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_within) );
@@ -5053,9 +4994,8 @@ async call(parameters : Public.Procedures.GeometryLeft.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_left(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_left(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_left) );
@@ -5074,9 +5014,8 @@ async call(parameters : Public.Procedures.GeometryOverleft.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_overleft(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_overleft(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_overleft) );
@@ -5095,9 +5034,8 @@ async call(parameters : Public.Procedures.GeometryBelow.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_below(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_below(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_below) );
@@ -5116,9 +5054,8 @@ async call(parameters : Public.Procedures.GeometryOverbelow.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_overbelow(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_overbelow(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_overbelow) );
@@ -5137,9 +5074,8 @@ async call(parameters : Public.Procedures.GeometryOverright.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_overright(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_overright(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_overright) );
@@ -5158,9 +5094,8 @@ async call(parameters : Public.Procedures.GeometryRight.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_right(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_right(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_right) );
@@ -5179,9 +5114,8 @@ async call(parameters : Public.Procedures.GeometryOverabove.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_overabove(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_overabove(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_overabove) );
@@ -5200,9 +5134,8 @@ async call(parameters : Public.Procedures.GeometryAbove.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_above(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_above(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_above) );
@@ -5221,9 +5154,8 @@ async call(parameters : Public.Procedures.GeometryGistConsistentNd.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_consistent_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_consistent_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_gist_consistent_nd) );
@@ -5242,9 +5174,8 @@ async call(parameters : Public.Procedures.GeometryGistCompressNd.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_compress_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_compress_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_compress_nd) );
@@ -5263,9 +5194,8 @@ async call(parameters : Public.Procedures.GeometryGistPenaltyNd.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_penalty_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_penalty_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_penalty_nd) );
@@ -5284,9 +5214,8 @@ async call(parameters : Public.Procedures.GeometryGistPicksplitNd.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_picksplit_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_picksplit_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_picksplit_nd) );
@@ -5305,9 +5234,8 @@ async call(parameters : Public.Procedures.GeometryGistUnionNd.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_union_nd( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_union_nd( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_union_nd) );
@@ -5326,9 +5254,8 @@ async call(parameters : Public.Procedures.GeometryGistSameNd.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_same_nd( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_same_nd( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_same_nd) );
@@ -5347,9 +5274,8 @@ async call(parameters : Public.Procedures.GeometryGistDecompressNd.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_decompress_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_decompress_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_decompress_nd) );
@@ -5368,9 +5294,8 @@ async call(parameters : Public.Procedures.GeometryOverlapsNd.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_overlaps_nd( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_overlaps_nd( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_overlaps_nd) );
@@ -5389,9 +5314,8 @@ async call(parameters : Public.Procedures.GeometryContainsNd.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_contains_nd( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_contains_nd( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_contains_nd) );
@@ -5410,9 +5334,8 @@ async call(parameters : Public.Procedures.GeometryWithinNd.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_within_nd( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_within_nd( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_within_nd) );
@@ -5431,9 +5354,8 @@ async call(parameters : Public.Procedures.GeometrySameNd.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_same_nd( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_same_nd( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_same_nd) );
@@ -5452,9 +5374,8 @@ async call(parameters : Public.Procedures.GeometryDistanceCentroidNd.Parameters)
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_distance_centroid_nd( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_distance_centroid_nd( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geometry_distance_centroid_nd) );
@@ -5473,9 +5394,8 @@ async call(parameters : Public.Procedures.GeometryDistanceCpa.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_distance_cpa( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_distance_cpa( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geometry_distance_cpa) );
@@ -5494,9 +5414,8 @@ async call(parameters : Public.Procedures.GeometryGistDistanceNd.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_gist_distance_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_distance_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geometry_gist_distance_nd) );
@@ -5515,9 +5434,8 @@ async call(parameters : Public.Procedures.StShiftlongitude.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_shiftlongitude( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_shiftlongitude( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_shiftlongitude) );
@@ -5536,9 +5454,8 @@ async call(parameters : Public.Procedures.StWrapx.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_wrapx(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },wrap => ${ typed[701](undefinedIsNull(parameters.wrap)) },move => ${ typed[701](undefinedIsNull(parameters.move)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_wrapx(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },wrap => ${ typed[701](undefinedIsNull(parameters.wrap)) },move => ${ typed[701](undefinedIsNull(parameters.move)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_wrapx) );
@@ -5557,9 +5474,8 @@ async call(parameters : Public.Procedures.StXmin.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_xmin( ${ typed[29535](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_xmin( ${ typed[29535](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_xmin) );
@@ -5578,9 +5494,8 @@ async call(parameters : Public.Procedures.StYmin.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_ymin( ${ typed[29535](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_ymin( ${ typed[29535](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_ymin) );
@@ -5599,9 +5514,8 @@ async call(parameters : Public.Procedures.StZmin.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_zmin( ${ typed[29535](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_zmin( ${ typed[29535](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_zmin) );
@@ -5620,9 +5534,8 @@ async call(parameters : Public.Procedures.StXmax.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_xmax( ${ typed[29535](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_xmax( ${ typed[29535](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_xmax) );
@@ -5641,9 +5554,8 @@ async call(parameters : Public.Procedures.StYmax.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_ymax( ${ typed[29535](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_ymax( ${ typed[29535](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_ymax) );
@@ -5662,9 +5574,8 @@ async call(parameters : Public.Procedures.StZmax.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_zmax( ${ typed[29535](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_zmax( ${ typed[29535](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_zmax) );
@@ -5683,9 +5594,8 @@ async call(parameters : Public.Procedures.StExpand_84f4.Parameters) {
               return Public.Types.Box2d.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_expand( ${ typed[29539](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_expand( ${ typed[29539](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_expand) );
@@ -5704,9 +5614,8 @@ async call(parameters : Public.Procedures.StExpand_42b4.Parameters) {
               return Public.Types.Box2d.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_expand(box => ${ typed[29539](undefinedIsNull(parameters.box)) },dx => ${ typed[701](undefinedIsNull(parameters.dx)) },dy => ${ typed[701](undefinedIsNull(parameters.dy)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_expand(box => ${ typed[29539](undefinedIsNull(parameters.box)) },dx => ${ typed[701](undefinedIsNull(parameters.dx)) },dy => ${ typed[701](undefinedIsNull(parameters.dy)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_expand) );
@@ -5725,9 +5634,8 @@ async call(parameters : Public.Procedures.PostgisGetbbox.Parameters) {
               return Public.Types.Box2d.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_getbbox( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_getbbox( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].postgis_getbbox) );
@@ -5746,9 +5654,8 @@ async call(parameters : Public.Procedures.StMakebox2d.Parameters) {
               return Public.Types.Box2d.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_makebox2d(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makebox2d(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_makebox2d) );
@@ -5767,9 +5674,8 @@ async call(parameters : Public.Procedures.StEstimatedextentD2f5.Parameters) {
               return Public.Types.Box2d.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_estimatedextent( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[16](undefinedIsNull(parameters.argument_3)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_estimatedextent( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[16](undefinedIsNull(parameters.argument_3)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_estimatedextent) );
@@ -5788,9 +5694,8 @@ async call(parameters : Public.Procedures.StEstimatedextent_27e1.Parameters) {
               return Public.Types.Box2d.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_estimatedextent( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_estimatedextent( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_estimatedextent) );
@@ -5809,9 +5714,8 @@ async call(parameters : Public.Procedures.StEstimatedextent_2ec2.Parameters) {
               return Public.Types.Box2d.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_estimatedextent( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_estimatedextent( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_estimatedextent) );
@@ -5830,9 +5734,8 @@ async call(parameters : Public.Procedures.StFindextent_27e1.Parameters) {
               return Public.Types.Box2d.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_findextent( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_findextent( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_findextent) );
@@ -5851,9 +5754,8 @@ async call(parameters : Public.Procedures.StFindextent_2ec2.Parameters) {
               return Public.Types.Box2d.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_findextent( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_findextent( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_findextent) );
@@ -5872,9 +5774,8 @@ async call(parameters : Public.Procedures.PostgisAddbbox.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_addbbox( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_addbbox( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].postgis_addbbox) );
@@ -5893,9 +5794,8 @@ async call(parameters : Public.Procedures.PostgisDropbbox.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_dropbbox( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_dropbbox( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].postgis_dropbbox) );
@@ -5914,9 +5814,8 @@ async call(parameters : Public.Procedures.PostgisHasbbox.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_hasbbox( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_hasbbox( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].postgis_hasbbox) );
@@ -5935,9 +5834,8 @@ async call(parameters : Public.Procedures.StQuantizecoordinates.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_quantizecoordinates(g => ${ typed[29508](undefinedIsNull(parameters.g)) },prec_x => ${ typed[23](undefinedIsNull(parameters.precX)) },prec_y => ${ typed[23](undefinedIsNull(parameters.precY)) },prec_z => ${ typed[23](undefinedIsNull(parameters.precZ)) },prec_m => ${ typed[23](undefinedIsNull(parameters.precM)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_quantizecoordinates(g => ${ typed[29508](undefinedIsNull(parameters.g)) },prec_x => ${ typed[23](undefinedIsNull(parameters.precX)) },prec_y => ${ typed[23](undefinedIsNull(parameters.precY)) },prec_z => ${ typed[23](undefinedIsNull(parameters.precZ)) },prec_m => ${ typed[23](undefinedIsNull(parameters.precM)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_quantizecoordinates) );
@@ -5956,9 +5854,8 @@ async call(parameters : Public.Procedures.StMemsize.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_memsize( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_memsize( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_memsize) );
@@ -5977,9 +5874,8 @@ async call(parameters : Public.Procedures.StSummary_7e9c.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_summary( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_summary( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_summary) );
@@ -5998,9 +5894,8 @@ async call(parameters : Public.Procedures.StNpoints.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_npoints( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_npoints( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_npoints) );
@@ -6019,9 +5914,8 @@ async call(parameters : Public.Procedures.StNrings.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_nrings( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_nrings( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_nrings) );
@@ -6040,9 +5934,8 @@ async call(parameters : Public.Procedures.St_3dlength.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3dlength( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dlength( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_3dlength) );
@@ -6061,9 +5954,8 @@ async call(parameters : Public.Procedures.StLength2d.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_length2d( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_length2d( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_length2d) );
@@ -6082,9 +5974,8 @@ async call(parameters : Public.Procedures.StLength_7e9c.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_length( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_length( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_length) );
@@ -6103,9 +5994,8 @@ async call(parameters : Public.Procedures.StLengthspheroid.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_lengthspheroid( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29504](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lengthspheroid( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29504](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_lengthspheroid) );
@@ -6124,9 +6014,8 @@ async call(parameters : Public.Procedures.StLength2dspheroid.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_length2dspheroid( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29504](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_length2dspheroid( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29504](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_length2dspheroid) );
@@ -6145,9 +6034,8 @@ async call(parameters : Public.Procedures.St_3dperimeter.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3dperimeter( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dperimeter( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_3dperimeter) );
@@ -6166,9 +6054,8 @@ async call(parameters : Public.Procedures.StPerimeter2d.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_perimeter2d( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_perimeter2d( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_perimeter2d) );
@@ -6187,9 +6074,8 @@ async call(parameters : Public.Procedures.StPerimeter_7e9c.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_perimeter( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_perimeter( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_perimeter) );
@@ -6208,9 +6094,8 @@ async call(parameters : Public.Procedures.StArea2d.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_area2d( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_area2d( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_area2d) );
@@ -6229,9 +6114,8 @@ async call(parameters : Public.Procedures.StArea_7e9c.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_area( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_area( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_area) );
@@ -6250,9 +6134,8 @@ async call(parameters : Public.Procedures.StIspolygoncw.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_ispolygoncw( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_ispolygoncw( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_ispolygoncw) );
@@ -6271,9 +6154,8 @@ async call(parameters : Public.Procedures.StIspolygonccw.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_ispolygonccw( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_ispolygonccw( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_ispolygonccw) );
@@ -6292,9 +6174,8 @@ async call(parameters : Public.Procedures.StDistancespheroidF223.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_distancespheroid(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[29504](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distancespheroid(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[29504](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distancespheroid) );
@@ -6313,9 +6194,8 @@ async call(parameters : Public.Procedures.StDistancespheroid_14de.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_distancespheroid(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distancespheroid(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distancespheroid) );
@@ -6334,9 +6214,8 @@ async call(parameters : Public.Procedures.StDistance_14de.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_distance(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distance(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distance) );
@@ -6355,9 +6234,8 @@ async call(parameters : Public.Procedures.StPointinsidecircle.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_pointinsidecircle( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointinsidecircle( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_pointinsidecircle) );
@@ -6376,9 +6254,8 @@ async call(parameters : Public.Procedures.StAzimuth_14de.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_azimuth(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_azimuth(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_azimuth) );
@@ -6397,9 +6274,8 @@ async call(parameters : Public.Procedures.StProject_335d.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_project(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) },azimuth => ${ typed[701](undefinedIsNull(parameters.azimuth)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_project(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) },azimuth => ${ typed[701](undefinedIsNull(parameters.azimuth)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_project) );
@@ -6418,9 +6294,8 @@ async call(parameters : Public.Procedures.StProjectCf0b.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_project(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_project(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_project) );
@@ -6439,9 +6314,8 @@ async call(parameters : Public.Procedures.StAngle_1afa.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_angle(pt1 => ${ typed[29508](undefinedIsNull(parameters.pt1)) },pt2 => ${ typed[29508](undefinedIsNull(parameters.pt2)) },pt3 => ${ typed[29508](undefinedIsNull(parameters.pt3)) },pt4 => ${ typed[29508](undefinedIsNull(parameters.pt4)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_angle(pt1 => ${ typed[29508](undefinedIsNull(parameters.pt1)) },pt2 => ${ typed[29508](undefinedIsNull(parameters.pt2)) },pt3 => ${ typed[29508](undefinedIsNull(parameters.pt3)) },pt4 => ${ typed[29508](undefinedIsNull(parameters.pt4)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_angle) );
@@ -6460,9 +6334,8 @@ async call(parameters : Public.Procedures.StLineextend.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_lineextend(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },distance_forward => ${ typed[701](undefinedIsNull(parameters.distanceForward)) },distance_backward => ${ typed[701](undefinedIsNull(parameters.distanceBackward)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lineextend(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },distance_forward => ${ typed[701](undefinedIsNull(parameters.distanceForward)) },distance_backward => ${ typed[701](undefinedIsNull(parameters.distanceBackward)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_lineextend) );
@@ -6481,9 +6354,8 @@ async call(parameters : Public.Procedures.StForce2d.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_force2d( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_force2d( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_force2d) );
@@ -6502,9 +6374,8 @@ async call(parameters : Public.Procedures.StForce3dz.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_force3dz(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },zvalue => ${ typed[701](undefinedIsNull(parameters.zvalue)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_force3dz(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },zvalue => ${ typed[701](undefinedIsNull(parameters.zvalue)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_force3dz) );
@@ -6523,9 +6394,8 @@ async call(parameters : Public.Procedures.StForce3d.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_force3d(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },zvalue => ${ typed[701](undefinedIsNull(parameters.zvalue)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_force3d(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },zvalue => ${ typed[701](undefinedIsNull(parameters.zvalue)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_force3d) );
@@ -6544,9 +6414,8 @@ async call(parameters : Public.Procedures.StForce3dm.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_force3dm(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },mvalue => ${ typed[701](undefinedIsNull(parameters.mvalue)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_force3dm(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },mvalue => ${ typed[701](undefinedIsNull(parameters.mvalue)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_force3dm) );
@@ -6565,9 +6434,8 @@ async call(parameters : Public.Procedures.StForce4d.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_force4d(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },zvalue => ${ typed[701](undefinedIsNull(parameters.zvalue)) },mvalue => ${ typed[701](undefinedIsNull(parameters.mvalue)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_force4d(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },zvalue => ${ typed[701](undefinedIsNull(parameters.zvalue)) },mvalue => ${ typed[701](undefinedIsNull(parameters.mvalue)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_force4d) );
@@ -6586,9 +6454,8 @@ async call(parameters : Public.Procedures.StForcecollection.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_forcecollection( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_forcecollection( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_forcecollection) );
@@ -6607,9 +6474,8 @@ async call(parameters : Public.Procedures.StCollectionextractFa24.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_collectionextract( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_collectionextract( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_collectionextract) );
@@ -6628,9 +6494,8 @@ async call(parameters : Public.Procedures.StCollectionextract_7e9c.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_collectionextract( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_collectionextract( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_collectionextract) );
@@ -6649,9 +6514,8 @@ async call(parameters : Public.Procedures.StCollectionhomogenize.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_collectionhomogenize( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_collectionhomogenize( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_collectionhomogenize) );
@@ -6670,9 +6534,8 @@ async call(parameters : Public.Procedures.StMulti.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_multi( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multi( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multi) );
@@ -6691,9 +6554,8 @@ async call(parameters : Public.Procedures.StForcecurve.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_forcecurve( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_forcecurve( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_forcecurve) );
@@ -6712,9 +6574,8 @@ async call(parameters : Public.Procedures.StForcesfs_7e9c.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_forcesfs( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_forcesfs( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_forcesfs) );
@@ -6733,9 +6594,8 @@ async call(parameters : Public.Procedures.StForcesfs_2ca2.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_forcesfs(argument_0 => ${ typed[29508](undefinedIsNull(parameters.argument_0)) },version => ${ typed[25](undefinedIsNull(parameters.version)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_forcesfs(argument_0 => ${ typed[29508](undefinedIsNull(parameters.argument_0)) },version => ${ typed[25](undefinedIsNull(parameters.version)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_forcesfs) );
@@ -6754,9 +6614,8 @@ async call(parameters : Public.Procedures.StExpand_9609.Parameters) {
               return Public.Types.Box3d.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_expand( ${ typed[29535](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_expand( ${ typed[29535](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].st_expand) );
@@ -6775,9 +6634,8 @@ async call(parameters : Public.Procedures.StExpand_7003.Parameters) {
               return Public.Types.Box3d.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_expand(box => ${ typed[29535](undefinedIsNull(parameters.box)) },dx => ${ typed[701](undefinedIsNull(parameters.dx)) },dy => ${ typed[701](undefinedIsNull(parameters.dy)) },dz => ${ typed[701](undefinedIsNull(parameters.dz)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_expand(box => ${ typed[29535](undefinedIsNull(parameters.box)) },dx => ${ typed[701](undefinedIsNull(parameters.dx)) },dy => ${ typed[701](undefinedIsNull(parameters.dy)) },dz => ${ typed[701](undefinedIsNull(parameters.dz)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].st_expand) );
@@ -6796,9 +6654,8 @@ async call(parameters : Public.Procedures.StExpand_2b18.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_expand( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_expand( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_expand) );
@@ -6817,9 +6674,8 @@ async call(parameters : Public.Procedures.StExpand_6be8.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_expand(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },dx => ${ typed[701](undefinedIsNull(parameters.dx)) },dy => ${ typed[701](undefinedIsNull(parameters.dy)) },dz => ${ typed[701](undefinedIsNull(parameters.dz)) },dm => ${ typed[701](undefinedIsNull(parameters.dm)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_expand(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },dx => ${ typed[701](undefinedIsNull(parameters.dx)) },dy => ${ typed[701](undefinedIsNull(parameters.dy)) },dz => ${ typed[701](undefinedIsNull(parameters.dz)) },dm => ${ typed[701](undefinedIsNull(parameters.dm)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_expand) );
@@ -6838,9 +6694,8 @@ async call(parameters : Public.Procedures.StEnvelope.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_envelope( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_envelope( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_envelope) );
@@ -6859,9 +6714,8 @@ async call(parameters : Public.Procedures.StBoundingdiagonal.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_boundingdiagonal(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },fits => ${ typed[16](undefinedIsNull(parameters.fits)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_boundingdiagonal(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },fits => ${ typed[16](undefinedIsNull(parameters.fits)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_boundingdiagonal) );
@@ -6880,9 +6734,8 @@ async call(parameters : Public.Procedures.StReverse.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_reverse( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_reverse( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_reverse) );
@@ -6901,9 +6754,8 @@ async call(parameters : Public.Procedures.StScroll.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_scroll( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_scroll( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_scroll) );
@@ -6922,9 +6774,8 @@ async call(parameters : Public.Procedures.PostgisGeosNoop.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_geos_noop( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_geos_noop( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].postgis_geos_noop) );
@@ -6943,9 +6794,8 @@ async call(parameters : Public.Procedures.StNormalize.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_normalize(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_normalize(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_normalize) );
@@ -6964,9 +6814,8 @@ async call(parameters : Public.Procedures.StZmflag.Parameters) {
               return PgCatalog.Types.Int2.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_zmflag( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_zmflag( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int2.parse(results?.[0].st_zmflag) );
@@ -6985,9 +6834,8 @@ async call(parameters : Public.Procedures.StNdims.Parameters) {
               return PgCatalog.Types.Int2.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_ndims( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_ndims( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int2.parse(results?.[0].st_ndims) );
@@ -7006,9 +6854,8 @@ async call(parameters : Public.Procedures.StAsewkt_7e9c.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asewkt( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asewkt( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asewkt) );
@@ -7027,9 +6874,8 @@ async call(parameters : Public.Procedures.StAsewktFa24.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asewkt( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asewkt( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asewkt) );
@@ -7048,9 +6894,8 @@ async call(parameters : Public.Procedures.StAstwkb_055b.Parameters) {
               return PgCatalog.Types.Bytea.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_astwkb(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },prec => ${ typed[23](undefinedIsNull(parameters.prec)) },prec_z => ${ typed[23](undefinedIsNull(parameters.precZ)) },prec_m => ${ typed[23](undefinedIsNull(parameters.precM)) },with_sizes => ${ typed[16](undefinedIsNull(parameters.withSizes)) },with_boxes => ${ typed[16](undefinedIsNull(parameters.withBoxes)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_astwkb(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },prec => ${ typed[23](undefinedIsNull(parameters.prec)) },prec_z => ${ typed[23](undefinedIsNull(parameters.precZ)) },prec_m => ${ typed[23](undefinedIsNull(parameters.precM)) },with_sizes => ${ typed[16](undefinedIsNull(parameters.withSizes)) },with_boxes => ${ typed[16](undefinedIsNull(parameters.withBoxes)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_astwkb) );
@@ -7069,9 +6914,8 @@ async call(parameters : Public.Procedures.StAstwkb_3d8c.Parameters) {
               return PgCatalog.Types.Bytea.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_astwkb(geom => ${ typed[29516](undefinedIsNull(parameters.geom)) },ids => ${ typed[1016](undefinedIsNull(parameters.ids)) },prec => ${ typed[23](undefinedIsNull(parameters.prec)) },prec_z => ${ typed[23](undefinedIsNull(parameters.precZ)) },prec_m => ${ typed[23](undefinedIsNull(parameters.precM)) },with_sizes => ${ typed[16](undefinedIsNull(parameters.withSizes)) },with_boxes => ${ typed[16](undefinedIsNull(parameters.withBoxes)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_astwkb(geom => ${ typed[29516](undefinedIsNull(parameters.geom)) },ids => ${ typed[1016](undefinedIsNull(parameters.ids)) },prec => ${ typed[23](undefinedIsNull(parameters.prec)) },prec_z => ${ typed[23](undefinedIsNull(parameters.precZ)) },prec_m => ${ typed[23](undefinedIsNull(parameters.precM)) },with_sizes => ${ typed[16](undefinedIsNull(parameters.withSizes)) },with_boxes => ${ typed[16](undefinedIsNull(parameters.withBoxes)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_astwkb) );
@@ -7090,9 +6934,8 @@ async call(parameters : Public.Procedures.StAsewkb_7e9c.Parameters) {
               return PgCatalog.Types.Bytea.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asewkb( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asewkb( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_asewkb) );
@@ -7111,9 +6954,8 @@ async call(parameters : Public.Procedures.StAshexewkb_7e9c.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_ashexewkb( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_ashexewkb( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_ashexewkb) );
@@ -7132,9 +6974,8 @@ async call(parameters : Public.Procedures.StAshexewkb_2ca2.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_ashexewkb( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_ashexewkb( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_ashexewkb) );
@@ -7153,9 +6994,8 @@ async call(parameters : Public.Procedures.StAsewkb_2ca2.Parameters) {
               return PgCatalog.Types.Bytea.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asewkb( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asewkb( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_asewkb) );
@@ -7174,9 +7014,8 @@ async call(parameters : Public.Procedures.StAslatlontext.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_aslatlontext(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },tmpl => ${ typed[25](undefinedIsNull(parameters.tmpl)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_aslatlontext(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },tmpl => ${ typed[25](undefinedIsNull(parameters.tmpl)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_aslatlontext) );
@@ -7195,9 +7034,8 @@ async call(parameters : Public.Procedures.Geomfromewkb.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geomfromewkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geomfromewkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geomfromewkb) );
@@ -7216,9 +7054,8 @@ async call(parameters : Public.Procedures.StGeomfromewkb.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geomfromewkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromewkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromewkb) );
@@ -7237,9 +7074,8 @@ async call(parameters : Public.Procedures.StGeomfromtwkb.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geomfromtwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromtwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromtwkb) );
@@ -7258,9 +7094,8 @@ async call(parameters : Public.Procedures.Geomfromewkt.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geomfromewkt( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geomfromewkt( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geomfromewkt) );
@@ -7279,9 +7114,8 @@ async call(parameters : Public.Procedures.StGeomfromewkt.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geomfromewkt( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromewkt( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromewkt) );
@@ -7300,9 +7134,8 @@ async call() {
               return PgCatalog.Types.Trigger.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_cache_bbox()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_cache_bbox()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Trigger.parse(results?.[0].postgis_cache_bbox) );
@@ -7321,9 +7154,8 @@ async call(parameters : Public.Procedures.StMakepoint_0aec.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_makepoint( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makepoint( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makepoint) );
@@ -7342,9 +7174,8 @@ async call(parameters : Public.Procedures.StMakepoint_81ec.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_makepoint( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makepoint( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makepoint) );
@@ -7363,9 +7194,8 @@ async call(parameters : Public.Procedures.StMakepoint_570b.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_makepoint( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makepoint( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makepoint) );
@@ -7384,9 +7214,8 @@ async call(parameters : Public.Procedures.StMakepointm.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_makepointm( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makepointm( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makepointm) );
@@ -7405,9 +7234,8 @@ async call(parameters : Public.Procedures.St_3dmakebox.Parameters) {
               return Public.Types.Box3d.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3dmakebox(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dmakebox(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].st_3dmakebox) );
@@ -7426,9 +7254,8 @@ async call(parameters : Public.Procedures.StMakeline_4a4c.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_makeline( ${ typed[29516](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makeline( ${ typed[29516](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makeline) );
@@ -7447,9 +7274,8 @@ async call(parameters : Public.Procedures.StLinefrommultipoint.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linefrommultipoint( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linefrommultipoint( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linefrommultipoint) );
@@ -7468,9 +7294,8 @@ async call(parameters : Public.Procedures.StMakeline_14de.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_makeline(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makeline(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makeline) );
@@ -7489,9 +7314,8 @@ async call(parameters : Public.Procedures.StAddpoint_14de.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_addpoint(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_addpoint(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_addpoint) );
@@ -7510,9 +7334,8 @@ async call(parameters : Public.Procedures.StScale_335d.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_scale( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_scale( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_scale) );
@@ -7531,9 +7354,8 @@ async call(parameters : Public.Procedures.StAddpointF3bd.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_addpoint(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_addpoint(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[23](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_addpoint) );
@@ -7552,9 +7374,8 @@ async call(parameters : Public.Procedures.StRemovepoint.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_removepoint( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_removepoint( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_removepoint) );
@@ -7573,9 +7394,8 @@ async call(parameters : Public.Procedures.StSetpoint.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_setpoint( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[29508](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_setpoint( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[29508](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_setpoint) );
@@ -7594,9 +7414,8 @@ async call(parameters : Public.Procedures.StMakeenvelope.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_makeenvelope( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[23](undefinedIsNull(parameters.argument_4)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makeenvelope( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[23](undefinedIsNull(parameters.argument_4)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makeenvelope) );
@@ -7615,9 +7434,8 @@ async call(parameters : Public.Procedures.StTileenvelope.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_tileenvelope(zoom => ${ typed[23](undefinedIsNull(parameters.zoom)) },x => ${ typed[23](undefinedIsNull(parameters.x)) },y => ${ typed[23](undefinedIsNull(parameters.y)) },bounds => ${ typed[29508](undefinedIsNull(parameters.bounds)) },margin => ${ typed[701](undefinedIsNull(parameters.margin)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_tileenvelope(zoom => ${ typed[23](undefinedIsNull(parameters.zoom)) },x => ${ typed[23](undefinedIsNull(parameters.x)) },y => ${ typed[23](undefinedIsNull(parameters.y)) },bounds => ${ typed[29508](undefinedIsNull(parameters.bounds)) },margin => ${ typed[701](undefinedIsNull(parameters.margin)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_tileenvelope) );
@@ -7636,9 +7454,8 @@ async call(parameters : Public.Procedures.StMakepolygonCd76.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_makepolygon( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29516](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makepolygon( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29516](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makepolygon) );
@@ -7657,9 +7474,8 @@ async call(parameters : Public.Procedures.StMakepolygon_7e9c.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_makepolygon( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makepolygon( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makepolygon) );
@@ -7678,9 +7494,8 @@ async call(parameters : Public.Procedures.StBuildarea.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_buildarea( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buildarea( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_buildarea) );
@@ -7699,9 +7514,8 @@ async call(parameters : Public.Procedures.StPolygonize_4a4c.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_polygonize( ${ typed[29516](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polygonize( ${ typed[29516](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_polygonize) );
@@ -7720,9 +7534,8 @@ async call(parameters : Public.Procedures.StClusterintersecting_4a4c.Parameters)
               return Public.Types.GeometryArray.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_clusterintersecting( ${ typed[29516](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_clusterintersecting( ${ typed[29516](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.GeometryArray.parse(results?.[0].st_clusterintersecting) );
@@ -7741,9 +7554,8 @@ async call(parameters : Public.Procedures.StClusterwithin_756d.Parameters) {
               return Public.Types.GeometryArray.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_clusterwithin( ${ typed[29516](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_clusterwithin( ${ typed[29516](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.GeometryArray.parse(results?.[0].st_clusterwithin) );
@@ -7762,9 +7574,8 @@ async call(parameters : Public.Procedures.StLinemerge_7e9c.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linemerge( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linemerge( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linemerge) );
@@ -7783,9 +7594,8 @@ async call(parameters : Public.Procedures.StLinemergeF473.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linemerge( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[16](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linemerge( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[16](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linemerge) );
@@ -7804,9 +7614,8 @@ async call(parameters : Public.Procedures.StAffine_5d4d.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_affine( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) }, ${ typed[701](undefinedIsNull(parameters.argument_5)) }, ${ typed[701](undefinedIsNull(parameters.argument_6)) }, ${ typed[701](undefinedIsNull(parameters.argument_7)) }, ${ typed[701](undefinedIsNull(parameters.argument_8)) }, ${ typed[701](undefinedIsNull(parameters.argument_9)) }, ${ typed[701](undefinedIsNull(parameters.argument_10)) }, ${ typed[701](undefinedIsNull(parameters.argument_11)) }, ${ typed[701](undefinedIsNull(parameters.argument_12)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_affine( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) }, ${ typed[701](undefinedIsNull(parameters.argument_5)) }, ${ typed[701](undefinedIsNull(parameters.argument_6)) }, ${ typed[701](undefinedIsNull(parameters.argument_7)) }, ${ typed[701](undefinedIsNull(parameters.argument_8)) }, ${ typed[701](undefinedIsNull(parameters.argument_9)) }, ${ typed[701](undefinedIsNull(parameters.argument_10)) }, ${ typed[701](undefinedIsNull(parameters.argument_11)) }, ${ typed[701](undefinedIsNull(parameters.argument_12)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_affine) );
@@ -7825,9 +7634,8 @@ async call(parameters : Public.Procedures.StAffineAe1f.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_affine( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) }, ${ typed[701](undefinedIsNull(parameters.argument_5)) }, ${ typed[701](undefinedIsNull(parameters.argument_6)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_affine( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) }, ${ typed[701](undefinedIsNull(parameters.argument_5)) }, ${ typed[701](undefinedIsNull(parameters.argument_6)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_affine) );
@@ -7846,9 +7654,8 @@ async call(parameters : Public.Procedures.StRotate_2b18.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_rotate( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_rotate( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_rotate) );
@@ -7867,9 +7674,8 @@ async call(parameters : Public.Procedures.StRotate_4294.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_rotate( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_rotate( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_rotate) );
@@ -7888,9 +7694,8 @@ async call(parameters : Public.Procedures.StRotateAb9e.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_rotate( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[29508](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_rotate( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[29508](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_rotate) );
@@ -7909,9 +7714,8 @@ async call(parameters : Public.Procedures.StRotatez.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_rotatez( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_rotatez( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_rotatez) );
@@ -7930,9 +7734,8 @@ async call(parameters : Public.Procedures.StRotatex.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_rotatex( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_rotatex( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_rotatex) );
@@ -7951,9 +7754,8 @@ async call(parameters : Public.Procedures.StRotatey.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_rotatey( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_rotatey( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_rotatey) );
@@ -7972,9 +7774,8 @@ async call(parameters : Public.Procedures.StTranslate_4294.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_translate( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_translate( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_translate) );
@@ -7993,9 +7794,8 @@ async call(parameters : Public.Procedures.StTranslate_335d.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_translate( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_translate( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_translate) );
@@ -8014,9 +7814,8 @@ async call(parameters : Public.Procedures.StScale_14de.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_scale( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_scale( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_scale) );
@@ -8035,9 +7834,8 @@ async call(parameters : Public.Procedures.StScale_09cb.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_scale(argument_0 => ${ typed[29508](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[29508](undefinedIsNull(parameters.argument_1)) },origin => ${ typed[29508](undefinedIsNull(parameters.origin)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_scale(argument_0 => ${ typed[29508](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[29508](undefinedIsNull(parameters.argument_1)) },origin => ${ typed[29508](undefinedIsNull(parameters.origin)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_scale) );
@@ -8056,9 +7854,8 @@ async call(parameters : Public.Procedures.StScale_4294.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_scale( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_scale( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_scale) );
@@ -8077,9 +7874,8 @@ async call(parameters : Public.Procedures.StTransscale.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_transscale( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_transscale( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_transscale) );
@@ -8098,9 +7894,8 @@ async call(parameters : Public.Procedures.StDump.Parameters) {
               return Public.Types.GeometryDump.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_dump( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dump( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_dump)).filter<Public.Types.GeometryDump>((r):r is Public.Types.GeometryDump => r !== null) );
@@ -8119,9 +7914,8 @@ async call(parameters : Public.Procedures.StDumprings.Parameters) {
               return Public.Types.GeometryDump.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_dumprings( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dumprings( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_dumprings)).filter<Public.Types.GeometryDump>((r):r is Public.Types.GeometryDump => r !== null) );
@@ -8140,9 +7934,8 @@ async call(parameters : Public.Procedures.StDumppoints.Parameters) {
               return Public.Types.GeometryDump.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_dumppoints( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dumppoints( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_dumppoints)).filter<Public.Types.GeometryDump>((r):r is Public.Types.GeometryDump => r !== null) );
@@ -8161,9 +7954,8 @@ async call(parameters : Public.Procedures.StDumpsegments.Parameters) {
               return Public.Types.GeometryDump.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_dumpsegments( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dumpsegments( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_dumpsegments)).filter<Public.Types.GeometryDump>((r):r is Public.Types.GeometryDump => r !== null) );
@@ -8182,9 +7974,8 @@ async call(parameters : Public.Procedures.PopulateGeometryColumns_23fc.Parameter
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.populate_geometry_columns(use_typmod => ${ typed[16](undefinedIsNull(parameters.useTypmod)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.populate_geometry_columns(use_typmod => ${ typed[16](undefinedIsNull(parameters.useTypmod)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].populate_geometry_columns) );
@@ -8203,9 +7994,8 @@ async call(parameters : Public.Procedures.PopulateGeometryColumns_4174.Parameter
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.populate_geometry_columns(tbl_oid => ${ typed[26](undefinedIsNull(parameters.tblOid)) },use_typmod => ${ typed[16](undefinedIsNull(parameters.useTypmod)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.populate_geometry_columns(tbl_oid => ${ typed[26](undefinedIsNull(parameters.tblOid)) },use_typmod => ${ typed[16](undefinedIsNull(parameters.useTypmod)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].populate_geometry_columns) );
@@ -8224,9 +8014,8 @@ async call(parameters : Public.Procedures.Addgeometrycolumn_8fbb.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.addgeometrycolumn(catalog_name => ${ typed[1043](undefinedIsNull(parameters.catalogName)) },schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) },new_srid_in => ${ typed[23](undefinedIsNull(parameters.newSridIn)) },new_type => ${ typed[1043](undefinedIsNull(parameters.newType)) },new_dim => ${ typed[23](undefinedIsNull(parameters.newDim)) },use_typmod => ${ typed[16](undefinedIsNull(parameters.useTypmod)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.addgeometrycolumn(catalog_name => ${ typed[1043](undefinedIsNull(parameters.catalogName)) },schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) },new_srid_in => ${ typed[23](undefinedIsNull(parameters.newSridIn)) },new_type => ${ typed[1043](undefinedIsNull(parameters.newType)) },new_dim => ${ typed[23](undefinedIsNull(parameters.newDim)) },use_typmod => ${ typed[16](undefinedIsNull(parameters.useTypmod)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].addgeometrycolumn) );
@@ -8245,9 +8034,8 @@ async call(parameters : Public.Procedures.Addgeometrycolumn_4617.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.addgeometrycolumn(schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) },new_srid => ${ typed[23](undefinedIsNull(parameters.newSrid)) },new_type => ${ typed[1043](undefinedIsNull(parameters.newType)) },new_dim => ${ typed[23](undefinedIsNull(parameters.newDim)) },use_typmod => ${ typed[16](undefinedIsNull(parameters.useTypmod)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.addgeometrycolumn(schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) },new_srid => ${ typed[23](undefinedIsNull(parameters.newSrid)) },new_type => ${ typed[1043](undefinedIsNull(parameters.newType)) },new_dim => ${ typed[23](undefinedIsNull(parameters.newDim)) },use_typmod => ${ typed[16](undefinedIsNull(parameters.useTypmod)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].addgeometrycolumn) );
@@ -8266,9 +8054,8 @@ async call(parameters : Public.Procedures.Addgeometrycolumn_093c.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.addgeometrycolumn(table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) },new_srid => ${ typed[23](undefinedIsNull(parameters.newSrid)) },new_type => ${ typed[1043](undefinedIsNull(parameters.newType)) },new_dim => ${ typed[23](undefinedIsNull(parameters.newDim)) },use_typmod => ${ typed[16](undefinedIsNull(parameters.useTypmod)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.addgeometrycolumn(table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) },new_srid => ${ typed[23](undefinedIsNull(parameters.newSrid)) },new_type => ${ typed[1043](undefinedIsNull(parameters.newType)) },new_dim => ${ typed[23](undefinedIsNull(parameters.newDim)) },use_typmod => ${ typed[16](undefinedIsNull(parameters.useTypmod)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].addgeometrycolumn) );
@@ -8287,9 +8074,8 @@ async call(parameters : Public.Procedures.Dropgeometrycolumn_0412.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.dropgeometrycolumn(catalog_name => ${ typed[1043](undefinedIsNull(parameters.catalogName)) },schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.dropgeometrycolumn(catalog_name => ${ typed[1043](undefinedIsNull(parameters.catalogName)) },schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].dropgeometrycolumn) );
@@ -8308,9 +8094,8 @@ async call(parameters : Public.Procedures.Dropgeometrycolumn_2253.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.dropgeometrycolumn(schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.dropgeometrycolumn(schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].dropgeometrycolumn) );
@@ -8329,9 +8114,8 @@ async call(parameters : Public.Procedures.DropgeometrycolumnF11a.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.dropgeometrycolumn(table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.dropgeometrycolumn(table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].dropgeometrycolumn) );
@@ -8350,9 +8134,8 @@ async call(parameters : Public.Procedures.Dropgeometrytable_2253.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.dropgeometrytable(catalog_name => ${ typed[1043](undefinedIsNull(parameters.catalogName)) },schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.dropgeometrytable(catalog_name => ${ typed[1043](undefinedIsNull(parameters.catalogName)) },schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].dropgeometrytable) );
@@ -8371,9 +8154,8 @@ async call(parameters : Public.Procedures.StSegmentize_2b18.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_segmentize( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_segmentize( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_segmentize) );
@@ -8392,9 +8174,8 @@ async call(parameters : Public.Procedures.DropgeometrytableF11a.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.dropgeometrytable(schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.dropgeometrytable(schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].dropgeometrytable) );
@@ -8413,9 +8194,8 @@ async call(parameters : Public.Procedures.DropgeometrytableBfde.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.dropgeometrytable(table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.dropgeometrytable(table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].dropgeometrytable) );
@@ -8434,9 +8214,8 @@ async call(parameters : Public.Procedures.UpdategeometrysridB2ee.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.updategeometrysrid(catalogn_name => ${ typed[1043](undefinedIsNull(parameters.catalognName)) },schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) },new_srid_in => ${ typed[23](undefinedIsNull(parameters.newSridIn)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.updategeometrysrid(catalogn_name => ${ typed[1043](undefinedIsNull(parameters.catalognName)) },schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) },new_srid_in => ${ typed[23](undefinedIsNull(parameters.newSridIn)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].updategeometrysrid) );
@@ -8455,9 +8234,8 @@ async call(parameters : Public.Procedures.Updategeometrysrid_7b58.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.updategeometrysrid( ${ typed[1043](undefinedIsNull(parameters.argument_0)) }, ${ typed[1043](undefinedIsNull(parameters.argument_1)) }, ${ typed[1043](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.updategeometrysrid( ${ typed[1043](undefinedIsNull(parameters.argument_0)) }, ${ typed[1043](undefinedIsNull(parameters.argument_1)) }, ${ typed[1043](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].updategeometrysrid) );
@@ -8476,9 +8254,8 @@ async call(parameters : Public.Procedures.Updategeometrysrid_11c8.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.updategeometrysrid( ${ typed[1043](undefinedIsNull(parameters.argument_0)) }, ${ typed[1043](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.updategeometrysrid( ${ typed[1043](undefinedIsNull(parameters.argument_0)) }, ${ typed[1043](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].updategeometrysrid) );
@@ -8497,9 +8274,8 @@ async call(parameters : Public.Procedures.FindSrid.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.find_srid( ${ typed[1043](undefinedIsNull(parameters.argument_0)) }, ${ typed[1043](undefinedIsNull(parameters.argument_1)) }, ${ typed[1043](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.find_srid( ${ typed[1043](undefinedIsNull(parameters.argument_0)) }, ${ typed[1043](undefinedIsNull(parameters.argument_1)) }, ${ typed[1043](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].find_srid) );
@@ -8518,9 +8294,8 @@ async call(parameters : Public.Procedures.GetProj4FromSrid.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.get_proj4_from_srid( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.get_proj4_from_srid( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].get_proj4_from_srid) );
@@ -8539,9 +8314,8 @@ async call(parameters : Public.Procedures.StSetsridFa24.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_setsrid(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_setsrid(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_setsrid) );
@@ -8560,9 +8334,8 @@ async call(parameters : Public.Procedures.StSrid_7e9c.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_srid(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_srid(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_srid) );
@@ -8581,9 +8354,8 @@ async call(parameters : Public.Procedures.PostgisTransformGeometry.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_transform_geometry(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },argument_1 => ${ typed[25](undefinedIsNull(parameters.argument_1)) },argument_2 => ${ typed[25](undefinedIsNull(parameters.argument_2)) },argument_3 => ${ typed[23](undefinedIsNull(parameters.argument_3)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_transform_geometry(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },argument_1 => ${ typed[25](undefinedIsNull(parameters.argument_1)) },argument_2 => ${ typed[25](undefinedIsNull(parameters.argument_2)) },argument_3 => ${ typed[23](undefinedIsNull(parameters.argument_3)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].postgis_transform_geometry) );
@@ -8602,9 +8374,8 @@ async call(parameters : Public.Procedures.PostgisSrsCodes.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_srs_codes(auth_name => ${ typed[25](undefinedIsNull(parameters.authName)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_srs_codes(auth_name => ${ typed[25](undefinedIsNull(parameters.authName)) })`);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.postgis_srs_codes)).filter<PgCatalog.Types.Text>((r):r is PgCatalog.Types.Text => r !== null) );
@@ -8622,9 +8393,8 @@ async call(parameters : Public.Procedures.PostgisSrs.Parameters) {
               return context.procTypes[29850].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.PostgisSrs;
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_srs(auth_name => ${ typed[25](undefinedIsNull(parameters.authName)) },auth_srid => ${ typed[25](undefinedIsNull(parameters.authSrid)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_srs(auth_name => ${ typed[25](undefinedIsNull(parameters.authName)) },auth_srid => ${ typed[25](undefinedIsNull(parameters.authSrid)) })`);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.postgis_srs)).filter<Public.Types.PostgisSrs>((r):r is Public.Types.PostgisSrs => r !== null) );
@@ -8642,9 +8412,8 @@ async call() {
               return context.procTypes[29851].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.PostgisSrsAll;
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_srs_all()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_srs_all()`);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.postgis_srs_all)).filter<Public.Types.PostgisSrsAll>((r):r is Public.Types.PostgisSrsAll => r !== null) );
@@ -8662,9 +8431,8 @@ async call(parameters : Public.Procedures.PostgisSrsSearch.Parameters) {
               return context.procTypes[29852].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.PostgisSrsSearch;
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_srs_search(bounds => ${ typed[29508](undefinedIsNull(parameters.bounds)) },authname => ${ typed[25](undefinedIsNull(parameters.authname)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_srs_search(bounds => ${ typed[29508](undefinedIsNull(parameters.bounds)) },authname => ${ typed[25](undefinedIsNull(parameters.authname)) })`);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.postgis_srs_search)).filter<Public.Types.PostgisSrsSearch>((r):r is Public.Types.PostgisSrsSearch => r !== null) );
@@ -8683,9 +8451,8 @@ async call(parameters : Public.Procedures.StTransformFa24.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_transform( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_transform( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_transform) );
@@ -8704,9 +8471,8 @@ async call(parameters : Public.Procedures.StTransform_2ca2.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_transform(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },to_proj => ${ typed[25](undefinedIsNull(parameters.toProj)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_transform(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },to_proj => ${ typed[25](undefinedIsNull(parameters.toProj)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_transform) );
@@ -8725,9 +8491,8 @@ async call(parameters : Public.Procedures.StTransform_4b67.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_transform(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },from_proj => ${ typed[25](undefinedIsNull(parameters.fromProj)) },to_proj => ${ typed[25](undefinedIsNull(parameters.toProj)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_transform(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },from_proj => ${ typed[25](undefinedIsNull(parameters.fromProj)) },to_proj => ${ typed[25](undefinedIsNull(parameters.toProj)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_transform) );
@@ -8746,9 +8511,8 @@ async call(parameters : Public.Procedures.StTransform_1623.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_transform(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },from_proj => ${ typed[25](undefinedIsNull(parameters.fromProj)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_transform(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },from_proj => ${ typed[25](undefinedIsNull(parameters.fromProj)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_transform) );
@@ -8767,9 +8531,8 @@ async call(parameters : Public.Procedures.PostgisTransformPipelineGeometry.Param
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_transform_pipeline_geometry(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },pipeline => ${ typed[25](undefinedIsNull(parameters.pipeline)) },forward => ${ typed[16](undefinedIsNull(parameters.forward)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_transform_pipeline_geometry(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },pipeline => ${ typed[25](undefinedIsNull(parameters.pipeline)) },forward => ${ typed[16](undefinedIsNull(parameters.forward)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].postgis_transform_pipeline_geometry) );
@@ -8788,9 +8551,8 @@ async call(parameters : Public.Procedures.StTransformpipeline.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_transformpipeline(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },pipeline => ${ typed[25](undefinedIsNull(parameters.pipeline)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_transformpipeline(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },pipeline => ${ typed[25](undefinedIsNull(parameters.pipeline)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_transformpipeline) );
@@ -8809,9 +8571,8 @@ async call(parameters : Public.Procedures.StInversetransformpipeline.Parameters)
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_inversetransformpipeline(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },pipeline => ${ typed[25](undefinedIsNull(parameters.pipeline)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_inversetransformpipeline(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },pipeline => ${ typed[25](undefinedIsNull(parameters.pipeline)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_inversetransformpipeline) );
@@ -8830,9 +8591,8 @@ async call() {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_version()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_version()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_version) );
@@ -8851,9 +8611,8 @@ async call() {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_liblwgeom_version()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_liblwgeom_version()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_liblwgeom_version) );
@@ -8872,9 +8631,8 @@ async call() {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_proj_version()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_proj_version()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_proj_version) );
@@ -8893,9 +8651,8 @@ async call() {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_wagyu_version()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_wagyu_version()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_wagyu_version) );
@@ -8914,9 +8671,8 @@ async call() {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_scripts_installed()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_scripts_installed()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_scripts_installed) );
@@ -8935,9 +8691,8 @@ async call() {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_lib_version()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_lib_version()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_lib_version) );
@@ -8956,9 +8711,8 @@ async call() {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_scripts_released()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_scripts_released()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_scripts_released) );
@@ -8977,9 +8731,8 @@ async call() {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_geos_version()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_geos_version()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_geos_version) );
@@ -8998,9 +8751,8 @@ async call() {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_geos_compiled_version()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_geos_compiled_version()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_geos_compiled_version) );
@@ -9019,9 +8771,8 @@ async call() {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_lib_revision()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_lib_revision()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_lib_revision) );
@@ -9040,9 +8791,8 @@ async call() {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_svn_version()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_svn_version()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_svn_version) );
@@ -9061,9 +8811,8 @@ async call() {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_libxml_version()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_libxml_version()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_libxml_version) );
@@ -9082,9 +8831,8 @@ async call() {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_scripts_build_date()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_scripts_build_date()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_scripts_build_date) );
@@ -9103,9 +8851,8 @@ async call() {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_lib_build_date()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_lib_build_date()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_lib_build_date) );
@@ -9124,9 +8871,8 @@ async call(parameters : Public.Procedures.PostgisExtensionsUpgrade.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_extensions_upgrade(target_version => ${ typed[25](undefinedIsNull(parameters.targetVersion)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_extensions_upgrade(target_version => ${ typed[25](undefinedIsNull(parameters.targetVersion)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_extensions_upgrade) );
@@ -9145,9 +8891,8 @@ async call(parameters : Public.Procedures.StLineinterpolatepoint_2b18.Parameters
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_lineinterpolatepoint( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lineinterpolatepoint( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_lineinterpolatepoint) );
@@ -9166,9 +8911,8 @@ async call(parameters : Public.Procedures.StLineinterpolatepoints_89cf.Parameter
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_lineinterpolatepoints(argument_0 => ${ typed[29508](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[701](undefinedIsNull(parameters.argument_1)) },repeat => ${ typed[16](undefinedIsNull(parameters.repeat)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lineinterpolatepoints(argument_0 => ${ typed[29508](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[701](undefinedIsNull(parameters.argument_1)) },repeat => ${ typed[16](undefinedIsNull(parameters.repeat)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_lineinterpolatepoints) );
@@ -9187,9 +8931,8 @@ async call(parameters : Public.Procedures.StLinesubstring_335d.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linesubstring( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linesubstring( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linesubstring) );
@@ -9208,9 +8951,8 @@ async call(parameters : Public.Procedures.StLinelocatepoint_14de.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linelocatepoint(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linelocatepoint(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_linelocatepoint) );
@@ -9229,9 +8971,8 @@ async call(parameters : Public.Procedures.StAddmeasure.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_addmeasure( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_addmeasure( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_addmeasure) );
@@ -9250,9 +8991,8 @@ async call(parameters : Public.Procedures.StClosestpointofapproach.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_closestpointofapproach( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_closestpointofapproach( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_closestpointofapproach) );
@@ -9271,9 +9011,8 @@ async call() {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_full_version()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_full_version()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_full_version) );
@@ -9292,9 +9031,8 @@ async call(parameters : Public.Procedures.Box2d_7e9c.Parameters) {
               return Public.Types.Box2d.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box2d( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box2d( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].box2d) );
@@ -9313,9 +9051,8 @@ async call(parameters : Public.Procedures.Box3d_7e9c.Parameters) {
               return Public.Types.Box3d.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box3d( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box3d( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].box3d) );
@@ -9334,9 +9071,8 @@ async call(parameters : Public.Procedures.Box_7e9c.Parameters) {
               return PgCatalog.Types.Box.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Box.parse(results?.[0].box) );
@@ -9355,9 +9091,8 @@ async call(parameters : Public.Procedures.Box2dD3c1.Parameters) {
               return Public.Types.Box2d.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box2d( ${ typed[29535](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box2d( ${ typed[29535](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].box2d) );
@@ -9376,9 +9111,8 @@ async call(parameters : Public.Procedures.Box3dAc3a.Parameters) {
               return Public.Types.Box3d.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box3d( ${ typed[29539](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box3d( ${ typed[29539](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].box3d) );
@@ -9397,9 +9131,8 @@ async call(parameters : Public.Procedures.BoxD3c1.Parameters) {
               return PgCatalog.Types.Box.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box( ${ typed[29535](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box( ${ typed[29535](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Box.parse(results?.[0].box) );
@@ -9418,9 +9151,8 @@ async call(parameters : Public.Procedures.Text.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.text( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.text( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].text) );
@@ -9439,9 +9171,8 @@ async call(parameters : Public.Procedures.Box3dtobox.Parameters) {
               return PgCatalog.Types.Box.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.box3dtobox( ${ typed[29535](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box3dtobox( ${ typed[29535](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Box.parse(results?.[0].box3dtobox) );
@@ -9460,9 +9191,8 @@ async call(parameters : Public.Procedures.GeometryAc3a.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry( ${ typed[29539](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[29539](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry) );
@@ -9481,9 +9211,8 @@ async call(parameters : Public.Procedures.GeometryD3c1.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry( ${ typed[29535](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[29535](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry) );
@@ -9502,9 +9231,8 @@ async call(parameters : Public.Procedures.GeometryE728.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry) );
@@ -9523,9 +9251,8 @@ async call(parameters : Public.Procedures.Geometry_2d19.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry) );
@@ -9544,9 +9271,8 @@ async call(parameters : Public.Procedures.Bytea_7e9c.Parameters) {
               return PgCatalog.Types.Bytea.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.bytea( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.bytea( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].bytea) );
@@ -9565,9 +9291,8 @@ async call(parameters : Public.Procedures.StSimplify_2b18.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_simplify( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_simplify( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_simplify) );
@@ -9586,9 +9311,8 @@ async call(parameters : Public.Procedures.StSimplify_89cf.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_simplify( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_simplify( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_simplify) );
@@ -9607,9 +9331,8 @@ async call(parameters : Public.Procedures.StSimplifyvw.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_simplifyvw( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_simplifyvw( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_simplifyvw) );
@@ -9628,9 +9351,8 @@ async call(parameters : Public.Procedures.StSeteffectivearea.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_seteffectivearea( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_seteffectivearea( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_seteffectivearea) );
@@ -9649,9 +9371,8 @@ async call(parameters : Public.Procedures.StFilterbym.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_filterbym( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[16](undefinedIsNull(parameters.argument_3)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_filterbym( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[16](undefinedIsNull(parameters.argument_3)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_filterbym) );
@@ -9670,9 +9391,8 @@ async call(parameters : Public.Procedures.StChaikinsmoothing.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_chaikinsmoothing( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_chaikinsmoothing( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_chaikinsmoothing) );
@@ -9691,9 +9411,8 @@ async call(parameters : Public.Procedures.StSnaptogrid_6be8.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_snaptogrid( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_snaptogrid( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_snaptogrid) );
@@ -9712,9 +9431,8 @@ async call(parameters : Public.Procedures.StSnaptogrid_335d.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_snaptogrid( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_snaptogrid( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_snaptogrid) );
@@ -9733,9 +9451,8 @@ async call(parameters : Public.Procedures.StSnaptogrid_2b18.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_snaptogrid( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_snaptogrid( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_snaptogrid) );
@@ -9754,9 +9471,8 @@ async call(parameters : Public.Procedures.StSnaptogrid_4ae3.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_snaptogrid(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) },argument_3 => ${ typed[701](undefinedIsNull(parameters.argument_3)) },argument_4 => ${ typed[701](undefinedIsNull(parameters.argument_4)) },argument_5 => ${ typed[701](undefinedIsNull(parameters.argument_5)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_snaptogrid(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) },argument_3 => ${ typed[701](undefinedIsNull(parameters.argument_3)) },argument_4 => ${ typed[701](undefinedIsNull(parameters.argument_4)) },argument_5 => ${ typed[701](undefinedIsNull(parameters.argument_5)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_snaptogrid) );
@@ -9775,9 +9491,8 @@ async call(parameters : Public.Procedures.StDistancecpa.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_distancecpa( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distancecpa( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distancecpa) );
@@ -9796,9 +9511,8 @@ async call(parameters : Public.Procedures.StCpawithin.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_cpawithin( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_cpawithin( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_cpawithin) );
@@ -9817,9 +9531,8 @@ async call(parameters : Public.Procedures.StIsvalidtrajectory.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_isvalidtrajectory( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isvalidtrajectory( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_isvalidtrajectory) );
@@ -9838,9 +9551,8 @@ async call(parameters : Public.Procedures.StIntersectionCf0b.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_intersection(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_intersection(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_intersection) );
@@ -9859,9 +9571,8 @@ async call(parameters : Public.Procedures.StBufferB011.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_buffer(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },radius => ${ typed[701](undefinedIsNull(parameters.radius)) },options => ${ typed[25](undefinedIsNull(parameters.options)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },radius => ${ typed[701](undefinedIsNull(parameters.radius)) },options => ${ typed[25](undefinedIsNull(parameters.options)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_buffer) );
@@ -9880,9 +9591,8 @@ async call(parameters : Public.Procedures.StBuffer_8d37.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_buffer(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },radius => ${ typed[701](undefinedIsNull(parameters.radius)) },quadsegs => ${ typed[23](undefinedIsNull(parameters.quadsegs)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },radius => ${ typed[701](undefinedIsNull(parameters.radius)) },quadsegs => ${ typed[23](undefinedIsNull(parameters.quadsegs)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_buffer) );
@@ -9900,9 +9610,8 @@ async call(parameters : Public.Procedures.StMinimumboundingradius.Parameters) {
               return context.procTypes[29926].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.StMinimumboundingradius;
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_minimumboundingradius(argument_0 => ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_minimumboundingradius(argument_0 => ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_minimumboundingradius)).filter<Public.Types.StMinimumboundingradius>((r):r is Public.Types.StMinimumboundingradius => r !== null) );
@@ -9921,9 +9630,8 @@ async call(parameters : Public.Procedures.StMinimumboundingcircle.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_minimumboundingcircle(inputgeom => ${ typed[29508](undefinedIsNull(parameters.inputgeom)) },segs_per_quarter => ${ typed[23](undefinedIsNull(parameters.segsPerQuarter)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_minimumboundingcircle(inputgeom => ${ typed[29508](undefinedIsNull(parameters.inputgeom)) },segs_per_quarter => ${ typed[23](undefinedIsNull(parameters.segsPerQuarter)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_minimumboundingcircle) );
@@ -9942,9 +9650,8 @@ async call(parameters : Public.Procedures.StOrientedenvelope.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_orientedenvelope( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_orientedenvelope( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_orientedenvelope) );
@@ -9963,9 +9670,8 @@ async call(parameters : Public.Procedures.StOffsetcurve.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_offsetcurve(line => ${ typed[29508](undefinedIsNull(parameters.line)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) },params => ${ typed[25](undefinedIsNull(parameters.params)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_offsetcurve(line => ${ typed[29508](undefinedIsNull(parameters.line)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) },params => ${ typed[25](undefinedIsNull(parameters.params)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_offsetcurve) );
@@ -9984,9 +9690,8 @@ async call(parameters : Public.Procedures.StGeneratepointsFa24.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_generatepoints(area => ${ typed[29508](undefinedIsNull(parameters.area)) },npoints => ${ typed[23](undefinedIsNull(parameters.npoints)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_generatepoints(area => ${ typed[29508](undefinedIsNull(parameters.area)) },npoints => ${ typed[23](undefinedIsNull(parameters.npoints)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_generatepoints) );
@@ -10005,9 +9710,8 @@ async call(parameters : Public.Procedures.StGeneratepoints_5ca3.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_generatepoints(area => ${ typed[29508](undefinedIsNull(parameters.area)) },npoints => ${ typed[23](undefinedIsNull(parameters.npoints)) },seed => ${ typed[23](undefinedIsNull(parameters.seed)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_generatepoints(area => ${ typed[29508](undefinedIsNull(parameters.area)) },npoints => ${ typed[23](undefinedIsNull(parameters.npoints)) },seed => ${ typed[23](undefinedIsNull(parameters.seed)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_generatepoints) );
@@ -10026,9 +9730,8 @@ async call(parameters : Public.Procedures.StConvexhull.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_convexhull( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_convexhull( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_convexhull) );
@@ -10047,9 +9750,8 @@ async call(parameters : Public.Procedures.StSimplifypreservetopology.Parameters)
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_simplifypreservetopology( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_simplifypreservetopology( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_simplifypreservetopology) );
@@ -10068,9 +9770,8 @@ async call(parameters : Public.Procedures.StIsvalidreason_7e9c.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_isvalidreason( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isvalidreason( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_isvalidreason) );
@@ -10089,9 +9790,8 @@ async call(parameters : Public.Procedures.StIsvaliddetail.Parameters) {
               return Public.Types.ValidDetail.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_isvaliddetail(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },flags => ${ typed[23](undefinedIsNull(parameters.flags)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isvaliddetail(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },flags => ${ typed[23](undefinedIsNull(parameters.flags)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.ValidDetail.parse(results?.[0].st_isvaliddetail) );
@@ -10110,9 +9810,8 @@ async call(parameters : Public.Procedures.StIsvalidreasonFa24.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_isvalidreason( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isvalidreason( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_isvalidreason) );
@@ -10131,9 +9830,8 @@ async call(parameters : Public.Procedures.StIsvalidFa24.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_isvalid( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isvalid( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_isvalid) );
@@ -10152,9 +9850,8 @@ async call(parameters : Public.Procedures.StHausdorffdistance_14de.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_hausdorffdistance(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_hausdorffdistance(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_hausdorffdistance) );
@@ -10173,9 +9870,8 @@ async call(parameters : Public.Procedures.StHausdorffdistanceCf0b.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_hausdorffdistance(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_hausdorffdistance(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_hausdorffdistance) );
@@ -10194,9 +9890,8 @@ async call(parameters : Public.Procedures.StFrechetdistance.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_frechetdistance(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_frechetdistance(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_frechetdistance) );
@@ -10214,9 +9909,8 @@ async call(parameters : Public.Procedures.StMaximuminscribedcircle.Parameters) {
               return context.procTypes[29944].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.StMaximuminscribedcircle;
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_maximuminscribedcircle(argument_0 => ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_maximuminscribedcircle(argument_0 => ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_maximuminscribedcircle)).filter<Public.Types.StMaximuminscribedcircle>((r):r is Public.Types.StMaximuminscribedcircle => r !== null) );
@@ -10234,9 +9928,8 @@ async call(parameters : Public.Procedures.StLargestemptycircle.Parameters) {
               return context.procTypes[29945].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.StLargestemptycircle;
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_largestemptycircle(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },boundary => ${ typed[29508](undefinedIsNull(parameters.boundary)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_largestemptycircle(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },boundary => ${ typed[29508](undefinedIsNull(parameters.boundary)) })`);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_largestemptycircle)).filter<Public.Types.StLargestemptycircle>((r):r is Public.Types.StLargestemptycircle => r !== null) );
@@ -10255,9 +9948,8 @@ async call(parameters : Public.Procedures.StDifference.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_difference(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_difference(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_difference) );
@@ -10276,9 +9968,8 @@ async call(parameters : Public.Procedures.StBoundary.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_boundary( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_boundary( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_boundary) );
@@ -10297,9 +9988,8 @@ async call(parameters : Public.Procedures.StPoints.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_points( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_points( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_points) );
@@ -10318,9 +10008,8 @@ async call(parameters : Public.Procedures.StSymdifference.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_symdifference(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_symdifference(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_symdifference) );
@@ -10339,9 +10028,8 @@ async call(parameters : Public.Procedures.StSymmetricdifference.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_symmetricdifference(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_symmetricdifference(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_symmetricdifference) );
@@ -10360,9 +10048,8 @@ async call(parameters : Public.Procedures.StUnion_14de.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_union(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_union(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_union) );
@@ -10381,9 +10068,8 @@ async call(parameters : Public.Procedures.StUnionCf0b.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_union(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_union(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_union) );
@@ -10402,9 +10088,8 @@ async call(parameters : Public.Procedures.StUnaryunion.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_unaryunion(argument_0 => ${ typed[29508](undefinedIsNull(parameters.argument_0)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_unaryunion(argument_0 => ${ typed[29508](undefinedIsNull(parameters.argument_0)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_unaryunion) );
@@ -10423,9 +10108,8 @@ async call(parameters : Public.Procedures.StRemoverepeatedpoints.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_removerepeatedpoints(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_removerepeatedpoints(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_removerepeatedpoints) );
@@ -10444,9 +10128,8 @@ async call(parameters : Public.Procedures.StClipbybox2d.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_clipbybox2d(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },box => ${ typed[29539](undefinedIsNull(parameters.box)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_clipbybox2d(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },box => ${ typed[29539](undefinedIsNull(parameters.box)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_clipbybox2d) );
@@ -10465,9 +10148,8 @@ async call(parameters : Public.Procedures.StSubdivide.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_subdivide(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },maxvertices => ${ typed[23](undefinedIsNull(parameters.maxvertices)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_subdivide(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },maxvertices => ${ typed[23](undefinedIsNull(parameters.maxvertices)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_subdivide)).filter<Public.Types.Geometry>((r):r is Public.Types.Geometry => r !== null) );
@@ -10486,9 +10168,8 @@ async call(parameters : Public.Procedures.StReduceprecision.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_reduceprecision(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_reduceprecision(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_reduceprecision) );
@@ -10507,9 +10188,8 @@ async call(parameters : Public.Procedures.StMakevalid_7e9c.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_makevalid( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makevalid( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makevalid) );
@@ -10528,9 +10208,8 @@ async call(parameters : Public.Procedures.StMakevalid_2ca2.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_makevalid(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },params => ${ typed[25](undefinedIsNull(parameters.params)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makevalid(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },params => ${ typed[25](undefinedIsNull(parameters.params)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makevalid) );
@@ -10549,9 +10228,8 @@ async call(parameters : Public.Procedures.StCleangeometry.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_cleangeometry( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_cleangeometry( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_cleangeometry) );
@@ -10570,9 +10248,8 @@ async call(parameters : Public.Procedures.StSplit.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_split(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_split(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_split) );
@@ -10591,9 +10268,8 @@ async call(parameters : Public.Procedures.StSharedpaths.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_sharedpaths(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_sharedpaths(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_sharedpaths) );
@@ -10612,9 +10288,8 @@ async call(parameters : Public.Procedures.StSnap.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_snap(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_snap(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_snap) );
@@ -10633,9 +10308,8 @@ async call(parameters : Public.Procedures.StRelatematch.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_relatematch( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_relatematch( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_relatematch) );
@@ -10654,9 +10328,8 @@ async call(parameters : Public.Procedures.StNode.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_node(g => ${ typed[29508](undefinedIsNull(parameters.g)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_node(g => ${ typed[29508](undefinedIsNull(parameters.g)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_node) );
@@ -10675,9 +10348,8 @@ async call(parameters : Public.Procedures.StDelaunaytriangles.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_delaunaytriangles(g1 => ${ typed[29508](undefinedIsNull(parameters.g1)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },flags => ${ typed[23](undefinedIsNull(parameters.flags)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_delaunaytriangles(g1 => ${ typed[29508](undefinedIsNull(parameters.g1)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },flags => ${ typed[23](undefinedIsNull(parameters.flags)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_delaunaytriangles) );
@@ -10696,9 +10368,8 @@ async call(parameters : Public.Procedures.StTriangulatepolygon.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_triangulatepolygon(g1 => ${ typed[29508](undefinedIsNull(parameters.g1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_triangulatepolygon(g1 => ${ typed[29508](undefinedIsNull(parameters.g1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_triangulatepolygon) );
@@ -10717,9 +10388,8 @@ async call(parameters : Public.Procedures.StVoronoipolygons.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_voronoipolygons(g1 => ${ typed[29508](undefinedIsNull(parameters.g1)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },extend_to => ${ typed[29508](undefinedIsNull(parameters.extendTo)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_voronoipolygons(g1 => ${ typed[29508](undefinedIsNull(parameters.g1)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },extend_to => ${ typed[29508](undefinedIsNull(parameters.extendTo)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_voronoipolygons) );
@@ -10738,9 +10408,8 @@ async call(parameters : Public.Procedures.StVoronoilines.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_voronoilines(g1 => ${ typed[29508](undefinedIsNull(parameters.g1)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },extend_to => ${ typed[29508](undefinedIsNull(parameters.extendTo)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_voronoilines(g1 => ${ typed[29508](undefinedIsNull(parameters.g1)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },extend_to => ${ typed[29508](undefinedIsNull(parameters.extendTo)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_voronoilines) );
@@ -10759,9 +10428,8 @@ async call(parameters : Public.Procedures.StCombinebbox_26c1.Parameters) {
               return Public.Types.Box3d.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_combinebbox( ${ typed[29535](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_combinebbox( ${ typed[29535](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].st_combinebbox) );
@@ -10780,9 +10448,8 @@ async call(parameters : Public.Procedures.StCombinebboxF3db.Parameters) {
               return Public.Types.Box3d.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_combinebbox( ${ typed[29535](undefinedIsNull(parameters.argument_0)) }, ${ typed[29535](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_combinebbox( ${ typed[29535](undefinedIsNull(parameters.argument_0)) }, ${ typed[29535](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].st_combinebbox) );
@@ -10801,9 +10468,8 @@ async call(parameters : Public.Procedures.StCombinebboxCe9a.Parameters) {
               return Public.Types.Box2d.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_combinebbox( ${ typed[29539](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_combinebbox( ${ typed[29539](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_combinebbox) );
@@ -10822,9 +10488,8 @@ async call(parameters : Public.Procedures.StCollect_14de.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_collect(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_collect(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_collect) );
@@ -10843,9 +10508,8 @@ async call(parameters : Public.Procedures.StCollect_4a4c.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_collect( ${ typed[29516](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_collect( ${ typed[29516](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_collect) );
@@ -10864,9 +10528,8 @@ async call(parameters : Public.Procedures.PgisGeometryAccumTransfn_2b9b.Paramete
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_geometry_accum_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_accum_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_geometry_accum_transfn) );
@@ -10885,9 +10548,8 @@ async call(parameters : Public.Procedures.PgisGeometryAccumTransfn_623d.Paramete
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_geometry_accum_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_accum_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_geometry_accum_transfn) );
@@ -10906,9 +10568,8 @@ async call(parameters : Public.Procedures.PgisGeometryAccumTransfn_3d24.Paramete
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_geometry_accum_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_accum_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_geometry_accum_transfn) );
@@ -10927,9 +10588,8 @@ async call(parameters : Public.Procedures.PgisGeometryCollectFinalfn.Parameters)
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_geometry_collect_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_collect_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].pgis_geometry_collect_finalfn) );
@@ -10948,9 +10608,8 @@ async call(parameters : Public.Procedures.PgisGeometryPolygonizeFinalfn.Paramete
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_geometry_polygonize_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_polygonize_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].pgis_geometry_polygonize_finalfn) );
@@ -10969,9 +10628,8 @@ async call(parameters : Public.Procedures.PgisGeometryClusterintersectingFinalfn
               return Public.Types.GeometryArray.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_geometry_clusterintersecting_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_clusterintersecting_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.GeometryArray.parse(results?.[0].pgis_geometry_clusterintersecting_finalfn) );
@@ -10990,9 +10648,8 @@ async call(parameters : Public.Procedures.PgisGeometryClusterwithinFinalfn.Param
               return Public.Types.GeometryArray.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_geometry_clusterwithin_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_clusterwithin_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.GeometryArray.parse(results?.[0].pgis_geometry_clusterwithin_finalfn) );
@@ -11011,9 +10668,8 @@ async call(parameters : Public.Procedures.PgisGeometryMakelineFinalfn.Parameters
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_geometry_makeline_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_makeline_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].pgis_geometry_makeline_finalfn) );
@@ -11032,9 +10688,8 @@ async call(parameters : Public.Procedures.PgisGeometryCoverageunionFinalfn.Param
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_geometry_coverageunion_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_coverageunion_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].pgis_geometry_coverageunion_finalfn) );
@@ -11053,9 +10708,8 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelTransfn_2b9b.
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_geometry_union_parallel_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_union_parallel_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_geometry_union_parallel_transfn) );
@@ -11074,9 +10728,8 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelTransfn_623d.
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_geometry_union_parallel_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_union_parallel_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_geometry_union_parallel_transfn) );
@@ -11095,9 +10748,8 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelCombinefn.Par
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_geometry_union_parallel_combinefn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_union_parallel_combinefn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_geometry_union_parallel_combinefn) );
@@ -11116,9 +10768,8 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelSerialfn.Para
               return PgCatalog.Types.Bytea.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_geometry_union_parallel_serialfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_union_parallel_serialfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].pgis_geometry_union_parallel_serialfn) );
@@ -11137,9 +10788,8 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelDeserialfn.Pa
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_geometry_union_parallel_deserialfn( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_union_parallel_deserialfn( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_geometry_union_parallel_deserialfn) );
@@ -11158,9 +10808,8 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelFinalfn.Param
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_geometry_union_parallel_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_union_parallel_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].pgis_geometry_union_parallel_finalfn) );
@@ -11179,9 +10828,8 @@ async call(parameters : Public.Procedures.StUnion_4a4c.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_union( ${ typed[29516](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_union( ${ typed[29516](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_union) );
@@ -11200,9 +10848,8 @@ async call(parameters : Public.Procedures.StCoverageunion_4a4c.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_coverageunion( ${ typed[29516](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_coverageunion( ${ typed[29516](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_coverageunion) );
@@ -11221,9 +10868,8 @@ async call(parameters : Public.Procedures.StRelate_14de.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_relate(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_relate(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_relate) );
@@ -11242,9 +10888,8 @@ async call(parameters : Public.Procedures.StRelateF3bd.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_relate(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_relate(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[23](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_relate) );
@@ -11263,9 +10908,8 @@ async call(parameters : Public.Procedures.StRelateC160.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_relate(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[25](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_relate(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[25](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_relate) );
@@ -11284,9 +10928,8 @@ async call(parameters : Public.Procedures.StDisjoint.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_disjoint(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_disjoint(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_disjoint) );
@@ -11305,9 +10948,8 @@ async call(parameters : Public.Procedures.PostgisIndexSupportfn.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_index_supportfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_index_supportfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].postgis_index_supportfn) );
@@ -11326,9 +10968,8 @@ async call(parameters : Public.Procedures.StLinecrossingdirection.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linecrossingdirection(line1 => ${ typed[29508](undefinedIsNull(parameters.line1)) },line2 => ${ typed[29508](undefinedIsNull(parameters.line2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linecrossingdirection(line1 => ${ typed[29508](undefinedIsNull(parameters.line1)) },line2 => ${ typed[29508](undefinedIsNull(parameters.line2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_linecrossingdirection) );
@@ -11347,9 +10988,8 @@ async call(parameters : Public.Procedures.StDwithinCf0b.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_dwithin(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dwithin(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_dwithin) );
@@ -11368,9 +11008,8 @@ async call(parameters : Public.Procedures.StTouches.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_touches(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_touches(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_touches) );
@@ -11389,9 +11028,8 @@ async call(parameters : Public.Procedures.StIntersects_14de.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_intersects(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_intersects(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_intersects) );
@@ -11410,9 +11048,8 @@ async call(parameters : Public.Procedures.StCrosses.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_crosses(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_crosses(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_crosses) );
@@ -11431,9 +11068,8 @@ async call(parameters : Public.Procedures.StContains.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_contains(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_contains(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_contains) );
@@ -11452,9 +11088,8 @@ async call(parameters : Public.Procedures.StContainsproperly.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_containsproperly(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_containsproperly(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_containsproperly) );
@@ -11473,9 +11108,8 @@ async call(parameters : Public.Procedures.StWithin.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_within(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_within(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_within) );
@@ -11494,9 +11128,8 @@ async call(parameters : Public.Procedures.StCovers_14de.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_covers(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_covers(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_covers) );
@@ -11515,9 +11148,8 @@ async call(parameters : Public.Procedures.StCoveredby_14de.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_coveredby(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_coveredby(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_coveredby) );
@@ -11536,9 +11168,8 @@ async call(parameters : Public.Procedures.StOverlaps.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_overlaps(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_overlaps(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_overlaps) );
@@ -11557,9 +11188,8 @@ async call(parameters : Public.Procedures.StDfullywithin.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_dfullywithin(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dfullywithin(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_dfullywithin) );
@@ -11578,9 +11208,8 @@ async call(parameters : Public.Procedures.St_3ddwithin.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3ddwithin(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3ddwithin(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_3ddwithin) );
@@ -11599,9 +11228,8 @@ async call(parameters : Public.Procedures.St_3ddfullywithin.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3ddfullywithin(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3ddfullywithin(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_3ddfullywithin) );
@@ -11620,9 +11248,8 @@ async call(parameters : Public.Procedures.St_3dintersects.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3dintersects(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dintersects(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_3dintersects) );
@@ -11641,9 +11268,8 @@ async call(parameters : Public.Procedures.StOrderingequals.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_orderingequals(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_orderingequals(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_orderingequals) );
@@ -11662,9 +11288,8 @@ async call(parameters : Public.Procedures.StEquals.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_equals(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_equals(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_equals) );
@@ -11683,9 +11308,8 @@ async call(parameters : Public.Procedures.StIsvalid_7e9c.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_isvalid( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isvalid( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_isvalid) );
@@ -11704,9 +11328,8 @@ async call(parameters : Public.Procedures.StMinimumclearance.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_minimumclearance( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_minimumclearance( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_minimumclearance) );
@@ -11725,9 +11348,8 @@ async call(parameters : Public.Procedures.StMinimumclearanceline.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_minimumclearanceline( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_minimumclearanceline( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_minimumclearanceline) );
@@ -11746,9 +11368,8 @@ async call(parameters : Public.Procedures.StCentroid_7e9c.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_centroid( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_centroid( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_centroid) );
@@ -11767,9 +11388,8 @@ async call(parameters : Public.Procedures.StGeometricmedian.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geometricmedian(g => ${ typed[29508](undefinedIsNull(parameters.g)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },max_iter => ${ typed[23](undefinedIsNull(parameters.maxIter)) },fail_if_not_converged => ${ typed[16](undefinedIsNull(parameters.failIfNotConverged)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geometricmedian(g => ${ typed[29508](undefinedIsNull(parameters.g)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },max_iter => ${ typed[23](undefinedIsNull(parameters.maxIter)) },fail_if_not_converged => ${ typed[16](undefinedIsNull(parameters.failIfNotConverged)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geometricmedian) );
@@ -11788,9 +11408,8 @@ async call(parameters : Public.Procedures.StIsring.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_isring( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isring( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_isring) );
@@ -11809,9 +11428,8 @@ async call(parameters : Public.Procedures.StPointonsurface.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_pointonsurface( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointonsurface( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_pointonsurface) );
@@ -11830,9 +11448,8 @@ async call(parameters : Public.Procedures.StIssimple.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_issimple( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_issimple( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_issimple) );
@@ -11851,9 +11468,8 @@ async call(parameters : Public.Procedures.StIscollection.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_iscollection( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_iscollection( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_iscollection) );
@@ -11872,9 +11488,8 @@ async call(parameters : Public.Procedures.Equals.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.equals(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.equals(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].equals) );
@@ -11893,9 +11508,8 @@ async call(parameters : Public.Procedures.StGeomfromgml_27e2.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geomfromgml( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromgml( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromgml) );
@@ -11914,9 +11528,8 @@ async call(parameters : Public.Procedures.StGeomfromgmlE728.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geomfromgml( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromgml( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromgml) );
@@ -11935,9 +11548,8 @@ async call(parameters : Public.Procedures.StGmltosqlE728.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_gmltosql( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_gmltosql( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_gmltosql) );
@@ -11956,9 +11568,8 @@ async call(parameters : Public.Procedures.StGmltosql_27e2.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_gmltosql( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_gmltosql( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_gmltosql) );
@@ -11977,9 +11588,8 @@ async call(parameters : Public.Procedures.StGeomfromkml.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geomfromkml( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromkml( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromkml) );
@@ -11998,9 +11608,8 @@ async call(parameters : Public.Procedures.StGeomfrommarc21.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geomfrommarc21(marc21xml => ${ typed[25](undefinedIsNull(parameters.marc21xml)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfrommarc21(marc21xml => ${ typed[25](undefinedIsNull(parameters.marc21xml)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfrommarc21) );
@@ -12019,9 +11628,8 @@ async call(parameters : Public.Procedures.StAsmarc21.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asmarc21(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },format => ${ typed[25](undefinedIsNull(parameters.format)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asmarc21(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },format => ${ typed[25](undefinedIsNull(parameters.format)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asmarc21) );
@@ -12040,9 +11648,8 @@ async call(parameters : Public.Procedures.StGeomfromgeojsonE728.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geomfromgeojson( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromgeojson( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromgeojson) );
@@ -12061,9 +11668,8 @@ async call(parameters : Public.Procedures.StGeomfromgeojson_608f.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geomfromgeojson( ${ typed[114](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromgeojson( ${ typed[114](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromgeojson) );
@@ -12082,9 +11688,8 @@ async call(parameters : Public.Procedures.StGeomfromgeojson_3c9d.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geomfromgeojson( ${ typed[3802](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromgeojson( ${ typed[3802](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromgeojson) );
@@ -12103,9 +11708,8 @@ async call() {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_libjson_version()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_libjson_version()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_libjson_version) );
@@ -12124,9 +11728,8 @@ async call(parameters : Public.Procedures.StLinefromencodedpolyline.Parameters) 
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linefromencodedpolyline(txtin => ${ typed[25](undefinedIsNull(parameters.txtin)) },nprecision => ${ typed[23](undefinedIsNull(parameters.nprecision)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linefromencodedpolyline(txtin => ${ typed[25](undefinedIsNull(parameters.txtin)) },nprecision => ${ typed[23](undefinedIsNull(parameters.nprecision)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linefromencodedpolyline) );
@@ -12145,9 +11748,8 @@ async call(parameters : Public.Procedures.StAsencodedpolyline.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asencodedpolyline(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },nprecision => ${ typed[23](undefinedIsNull(parameters.nprecision)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asencodedpolyline(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },nprecision => ${ typed[23](undefinedIsNull(parameters.nprecision)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asencodedpolyline) );
@@ -12166,9 +11768,8 @@ async call(parameters : Public.Procedures.StAssvg_5ca3.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_assvg(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },rel => ${ typed[23](undefinedIsNull(parameters.rel)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_assvg(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },rel => ${ typed[23](undefinedIsNull(parameters.rel)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_assvg) );
@@ -12187,9 +11788,8 @@ async call(parameters : Public.Procedures.StAsgml_5ca3.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asgml(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgml(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgml) );
@@ -12208,9 +11808,8 @@ async call(parameters : Public.Procedures.StAsgmlE482.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asgml(version => ${ typed[23](undefinedIsNull(parameters.version)) },geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) },id => ${ typed[25](undefinedIsNull(parameters.id)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgml(version => ${ typed[23](undefinedIsNull(parameters.version)) },geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) },id => ${ typed[25](undefinedIsNull(parameters.id)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgml) );
@@ -12229,9 +11828,8 @@ async call(parameters : Public.Procedures.StAskmlC46e.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_askml(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_askml(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_askml) );
@@ -12250,9 +11848,8 @@ async call(parameters : Public.Procedures.StAsgeojson_5ca3.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asgeojson(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgeojson(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgeojson) );
@@ -12271,9 +11868,8 @@ async call(parameters : Public.Procedures.StAsgeojsonF2c6.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asgeojson(r => ${ typed[2249](undefinedIsNull(parameters.r)) },geom_column => ${ typed[25](undefinedIsNull(parameters.geomColumn)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },pretty_bool => ${ typed[16](undefinedIsNull(parameters.prettyBool)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgeojson(r => ${ typed[2249](undefinedIsNull(parameters.r)) },geom_column => ${ typed[25](undefinedIsNull(parameters.geomColumn)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },pretty_bool => ${ typed[16](undefinedIsNull(parameters.prettyBool)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgeojson) );
@@ -12292,9 +11888,8 @@ async call(parameters : Public.Procedures.Json.Parameters) {
               return PgCatalog.Types.Json.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.json( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.json( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Json.parse(results?.[0].json) );
@@ -12313,9 +11908,8 @@ async call(parameters : Public.Procedures.Jsonb.Parameters) {
               return PgCatalog.Types.Jsonb.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.jsonb( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.jsonb( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Jsonb.parse(results?.[0].jsonb) );
@@ -12334,9 +11928,8 @@ async call(parameters : Public.Procedures.PgisAsmvtTransfn_647f.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_asmvt_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asmvt_transfn) );
@@ -12355,9 +11948,8 @@ async call(parameters : Public.Procedures.PgisAsmvtTransfn_27f4.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_asmvt_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asmvt_transfn) );
@@ -12376,9 +11968,8 @@ async call(parameters : Public.Procedures.PgisAsmvtTransfnF57f.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_asmvt_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asmvt_transfn) );
@@ -12397,9 +11988,8 @@ async call(parameters : Public.Procedures.PgisAsmvtTransfn_92c1.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_asmvt_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) }, ${ typed[25](undefinedIsNull(parameters.argument_4)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) }, ${ typed[25](undefinedIsNull(parameters.argument_4)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asmvt_transfn) );
@@ -12418,9 +12008,8 @@ async call(parameters : Public.Procedures.PgisAsmvtTransfnF5be.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_asmvt_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) }, ${ typed[25](undefinedIsNull(parameters.argument_4)) }, ${ typed[25](undefinedIsNull(parameters.argument_5)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) }, ${ typed[25](undefinedIsNull(parameters.argument_4)) }, ${ typed[25](undefinedIsNull(parameters.argument_5)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asmvt_transfn) );
@@ -12439,9 +12028,8 @@ async call(parameters : Public.Procedures.PgisAsmvtFinalfn.Parameters) {
               return PgCatalog.Types.Bytea.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_asmvt_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].pgis_asmvt_finalfn) );
@@ -12460,9 +12048,8 @@ async call(parameters : Public.Procedures.PgisAsmvtCombinefn.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_asmvt_combinefn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_combinefn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asmvt_combinefn) );
@@ -12481,9 +12068,8 @@ async call(parameters : Public.Procedures.PgisAsmvtSerialfn.Parameters) {
               return PgCatalog.Types.Bytea.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_asmvt_serialfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_serialfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].pgis_asmvt_serialfn) );
@@ -12502,9 +12088,8 @@ async call(parameters : Public.Procedures.PgisAsmvtDeserialfn.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_asmvt_deserialfn( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_deserialfn( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asmvt_deserialfn) );
@@ -12523,9 +12108,8 @@ async call(parameters : Public.Procedures.StAsmvtgeom.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asmvtgeom(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },bounds => ${ typed[29539](undefinedIsNull(parameters.bounds)) },extent => ${ typed[23](undefinedIsNull(parameters.extent)) },buffer => ${ typed[23](undefinedIsNull(parameters.buffer)) },clip_geom => ${ typed[16](undefinedIsNull(parameters.clipGeom)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asmvtgeom(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },bounds => ${ typed[29539](undefinedIsNull(parameters.bounds)) },extent => ${ typed[23](undefinedIsNull(parameters.extent)) },buffer => ${ typed[23](undefinedIsNull(parameters.buffer)) },clip_geom => ${ typed[16](undefinedIsNull(parameters.clipGeom)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_asmvtgeom) );
@@ -12544,9 +12128,8 @@ async call() {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_libprotobuf_version()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_libprotobuf_version()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_libprotobuf_version) );
@@ -12565,9 +12148,8 @@ async call(parameters : Public.Procedures.PgisAsgeobufTransfn_647f.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_asgeobuf_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asgeobuf_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asgeobuf_transfn) );
@@ -12586,9 +12168,8 @@ async call(parameters : Public.Procedures.PgisAsgeobufTransfn_27f4.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_asgeobuf_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asgeobuf_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asgeobuf_transfn) );
@@ -12607,9 +12188,8 @@ async call(parameters : Public.Procedures.PgisAsgeobufFinalfn.Parameters) {
               return PgCatalog.Types.Bytea.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_asgeobuf_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asgeobuf_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].pgis_asgeobuf_finalfn) );
@@ -12628,9 +12208,8 @@ async call(parameters : Public.Procedures.PgisAsflatgeobufTransfn_647f.Parameter
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_asflatgeobuf_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asflatgeobuf_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asflatgeobuf_transfn) );
@@ -12649,9 +12228,8 @@ async call(parameters : Public.Procedures.PgisAsflatgeobufTransfn_9633.Parameter
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_asflatgeobuf_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asflatgeobuf_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asflatgeobuf_transfn) );
@@ -12670,9 +12248,8 @@ async call(parameters : Public.Procedures.PgisAsflatgeobufTransfn_521f.Parameter
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_asflatgeobuf_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) }, ${ typed[25](undefinedIsNull(parameters.argument_3)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asflatgeobuf_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) }, ${ typed[25](undefinedIsNull(parameters.argument_3)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asflatgeobuf_transfn) );
@@ -12691,9 +12268,8 @@ async call(parameters : Public.Procedures.PgisAsflatgeobufFinalfn.Parameters) {
               return PgCatalog.Types.Bytea.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.pgis_asflatgeobuf_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asflatgeobuf_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].pgis_asflatgeobuf_finalfn) );
@@ -12712,9 +12288,8 @@ async call(parameters : Public.Procedures.StFromflatgeobuftotable.Parameters) {
               return PgCatalog.Types.Void.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_fromflatgeobuftotable( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[17](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_fromflatgeobuftotable( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[17](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].st_fromflatgeobuftotable) );
@@ -12733,9 +12308,8 @@ async call(parameters : Public.Procedures.StFromflatgeobuf.Parameters) {
               return PgCatalog.Types.Anyelement.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_fromflatgeobuf( ${ typed[2283](undefinedIsNull(parameters.argument_0)) }, ${ typed[17](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_fromflatgeobuf( ${ typed[2283](undefinedIsNull(parameters.argument_0)) }, ${ typed[17](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_fromflatgeobuf)).filter<PgCatalog.Types.Anyelement>((r):r is PgCatalog.Types.Anyelement => r !== null) );
@@ -12754,9 +12328,8 @@ async call(parameters : Public.Procedures.StGeohashFa24.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geohash(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },maxchars => ${ typed[23](undefinedIsNull(parameters.maxchars)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geohash(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },maxchars => ${ typed[23](undefinedIsNull(parameters.maxchars)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_geohash) );
@@ -12775,9 +12348,8 @@ async call(parameters : Public.Procedures.StBox2dfromgeohash.Parameters) {
               return Public.Types.Box2d.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_box2dfromgeohash( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_box2dfromgeohash( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_box2dfromgeohash) );
@@ -12796,9 +12368,8 @@ async call(parameters : Public.Procedures.StPointfromgeohash.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_pointfromgeohash( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointfromgeohash( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_pointfromgeohash) );
@@ -12817,9 +12388,8 @@ async call(parameters : Public.Procedures.StGeomfromgeohash.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geomfromgeohash( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromgeohash( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromgeohash) );
@@ -12838,9 +12408,8 @@ async call(parameters : Public.Procedures.StNumpoints.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_numpoints( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_numpoints( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_numpoints) );
@@ -12859,9 +12428,8 @@ async call(parameters : Public.Procedures.StNumgeometries.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_numgeometries( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_numgeometries( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_numgeometries) );
@@ -12880,9 +12448,8 @@ async call(parameters : Public.Procedures.StGeometryn.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geometryn( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geometryn( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geometryn) );
@@ -12901,9 +12468,8 @@ async call(parameters : Public.Procedures.StDimension.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_dimension( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dimension( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_dimension) );
@@ -12922,9 +12488,8 @@ async call(parameters : Public.Procedures.StExteriorring.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_exteriorring( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_exteriorring( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_exteriorring) );
@@ -12943,9 +12508,8 @@ async call(parameters : Public.Procedures.StNuminteriorrings.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_numinteriorrings( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_numinteriorrings( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_numinteriorrings) );
@@ -12964,9 +12528,8 @@ async call(parameters : Public.Procedures.StNuminteriorring.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_numinteriorring( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_numinteriorring( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_numinteriorring) );
@@ -12985,9 +12548,8 @@ async call(parameters : Public.Procedures.StInteriorringn.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_interiorringn( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_interiorringn( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_interiorringn) );
@@ -13006,9 +12568,8 @@ async call(parameters : Public.Procedures.Geometrytype_7e9c.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometrytype( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometrytype( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].geometrytype) );
@@ -13027,9 +12588,8 @@ async call(parameters : Public.Procedures.StGeometrytype.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geometrytype( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geometrytype( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_geometrytype) );
@@ -13048,9 +12608,8 @@ async call(parameters : Public.Procedures.StPointn.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_pointn( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointn( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_pointn) );
@@ -13069,9 +12628,8 @@ async call(parameters : Public.Procedures.StNumpatches.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_numpatches( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_numpatches( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_numpatches) );
@@ -13090,9 +12648,8 @@ async call(parameters : Public.Procedures.StPatchn.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_patchn( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_patchn( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_patchn) );
@@ -13111,9 +12668,8 @@ async call(parameters : Public.Procedures.StStartpoint.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_startpoint( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_startpoint( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_startpoint) );
@@ -13132,9 +12688,8 @@ async call(parameters : Public.Procedures.StEndpoint.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_endpoint( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_endpoint( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_endpoint) );
@@ -13153,9 +12708,8 @@ async call(parameters : Public.Procedures.StIsclosed.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_isclosed( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isclosed( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_isclosed) );
@@ -13174,9 +12728,8 @@ async call(parameters : Public.Procedures.StIsempty.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_isempty( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isempty( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_isempty) );
@@ -13195,9 +12748,8 @@ async call(parameters : Public.Procedures.StAsbinary_2ca2.Parameters) {
               return PgCatalog.Types.Bytea.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asbinary( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asbinary( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_asbinary) );
@@ -13216,9 +12768,8 @@ async call(parameters : Public.Procedures.StAsbinary_7e9c.Parameters) {
               return PgCatalog.Types.Bytea.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asbinary( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asbinary( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_asbinary) );
@@ -13237,9 +12788,8 @@ async call(parameters : Public.Procedures.StAstext_7e9c.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_astext( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_astext( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_astext) );
@@ -13258,9 +12808,8 @@ async call(parameters : Public.Procedures.StAstextFa24.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_astext( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_astext( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_astext) );
@@ -13279,9 +12828,8 @@ async call(parameters : Public.Procedures.StGeometryfromtextE728.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geometryfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geometryfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geometryfromtext) );
@@ -13300,9 +12848,8 @@ async call(parameters : Public.Procedures.StGeometryfromtext_27e2.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geometryfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geometryfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geometryfromtext) );
@@ -13321,9 +12868,8 @@ async call(parameters : Public.Procedures.StGeomfromtextE728.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geomfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromtext) );
@@ -13342,9 +12888,8 @@ async call(parameters : Public.Procedures.StGeomfromtext_27e2.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geomfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromtext) );
@@ -13363,9 +12908,8 @@ async call(parameters : Public.Procedures.StWkttosql.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_wkttosql( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_wkttosql( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_wkttosql) );
@@ -13384,9 +12928,8 @@ async call(parameters : Public.Procedures.StPointfromtextE728.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_pointfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_pointfromtext) );
@@ -13405,9 +12948,8 @@ async call(parameters : Public.Procedures.StPointfromtext_27e2.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_pointfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_pointfromtext) );
@@ -13426,9 +12968,8 @@ async call(parameters : Public.Procedures.StLinefromtextE728.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linefromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linefromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linefromtext) );
@@ -13447,9 +12988,8 @@ async call(parameters : Public.Procedures.StLinefromtext_27e2.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linefromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linefromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linefromtext) );
@@ -13468,9 +13008,8 @@ async call(parameters : Public.Procedures.StPolyfromtextE728.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_polyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_polyfromtext) );
@@ -13489,9 +13028,8 @@ async call(parameters : Public.Procedures.StPolyfromtext_27e2.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_polyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_polyfromtext) );
@@ -13510,9 +13048,8 @@ async call(parameters : Public.Procedures.StPolygonfromtext_27e2.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_polygonfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polygonfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_polygonfromtext) );
@@ -13531,9 +13068,8 @@ async call(parameters : Public.Procedures.StPolygonfromtextE728.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_polygonfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polygonfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_polygonfromtext) );
@@ -13552,9 +13088,8 @@ async call(parameters : Public.Procedures.StMlinefromtext_27e2.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_mlinefromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mlinefromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mlinefromtext) );
@@ -13573,9 +13108,8 @@ async call(parameters : Public.Procedures.StMlinefromtextE728.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_mlinefromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mlinefromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mlinefromtext) );
@@ -13594,9 +13128,8 @@ async call(parameters : Public.Procedures.StMultilinestringfromtextE728.Paramete
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_multilinestringfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multilinestringfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multilinestringfromtext) );
@@ -13615,9 +13148,8 @@ async call(parameters : Public.Procedures.StMultilinestringfromtext_27e2.Paramet
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_multilinestringfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multilinestringfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multilinestringfromtext) );
@@ -13636,9 +13168,8 @@ async call(parameters : Public.Procedures.StMpointfromtext_27e2.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_mpointfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpointfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mpointfromtext) );
@@ -13657,9 +13188,8 @@ async call(parameters : Public.Procedures.StMpointfromtextE728.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_mpointfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpointfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mpointfromtext) );
@@ -13678,9 +13208,8 @@ async call(parameters : Public.Procedures.StMultipointfromtext.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_multipointfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multipointfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multipointfromtext) );
@@ -13699,9 +13228,8 @@ async call(parameters : Public.Procedures.StMpolyfromtext_27e2.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_mpolyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpolyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mpolyfromtext) );
@@ -13720,9 +13248,8 @@ async call(parameters : Public.Procedures.StMpolyfromtextE728.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_mpolyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpolyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mpolyfromtext) );
@@ -13741,9 +13268,8 @@ async call(parameters : Public.Procedures.StMultipolygonfromtext_27e2.Parameters
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_multipolygonfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multipolygonfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multipolygonfromtext) );
@@ -13762,9 +13288,8 @@ async call(parameters : Public.Procedures.StMultipolygonfromtextE728.Parameters)
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_multipolygonfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multipolygonfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multipolygonfromtext) );
@@ -13783,9 +13308,8 @@ async call(parameters : Public.Procedures.StGeomcollfromtext_27e2.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geomcollfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomcollfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomcollfromtext) );
@@ -13804,9 +13328,8 @@ async call(parameters : Public.Procedures.StGeomcollfromtextE728.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geomcollfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomcollfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomcollfromtext) );
@@ -13825,9 +13348,8 @@ async call(parameters : Public.Procedures.StGeomfromwkb_2d19.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geomfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromwkb) );
@@ -13846,9 +13368,8 @@ async call(parameters : Public.Procedures.StGeomfromwkbD8af.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geomfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromwkb) );
@@ -13867,9 +13388,8 @@ async call(parameters : Public.Procedures.StPointfromwkbD8af.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_pointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_pointfromwkb) );
@@ -13888,9 +13408,8 @@ async call(parameters : Public.Procedures.StPointfromwkb_2d19.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_pointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_pointfromwkb) );
@@ -13909,9 +13428,8 @@ async call(parameters : Public.Procedures.StLinefromwkbD8af.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linefromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linefromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linefromwkb) );
@@ -13930,9 +13448,8 @@ async call(parameters : Public.Procedures.StLinefromwkb_2d19.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linefromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linefromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linefromwkb) );
@@ -13951,9 +13468,8 @@ async call(parameters : Public.Procedures.StLinestringfromwkbD8af.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linestringfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linestringfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linestringfromwkb) );
@@ -13972,9 +13488,8 @@ async call(parameters : Public.Procedures.StLinestringfromwkb_2d19.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linestringfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linestringfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linestringfromwkb) );
@@ -13993,9 +13508,8 @@ async call(parameters : Public.Procedures.StPolyfromwkbD8af.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_polyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_polyfromwkb) );
@@ -14014,9 +13528,8 @@ async call(parameters : Public.Procedures.StPolyfromwkb_2d19.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_polyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_polyfromwkb) );
@@ -14035,9 +13548,8 @@ async call(parameters : Public.Procedures.StPolygonfromwkbD8af.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_polygonfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polygonfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_polygonfromwkb) );
@@ -14056,9 +13568,8 @@ async call(parameters : Public.Procedures.StPolygonfromwkb_2d19.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_polygonfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polygonfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_polygonfromwkb) );
@@ -14077,9 +13588,8 @@ async call(parameters : Public.Procedures.StMpointfromwkbD8af.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_mpointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mpointfromwkb) );
@@ -14098,9 +13608,8 @@ async call(parameters : Public.Procedures.StMpointfromwkb_2d19.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_mpointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mpointfromwkb) );
@@ -14119,9 +13628,8 @@ async call(parameters : Public.Procedures.StMultipointfromwkbD8af.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_multipointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multipointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multipointfromwkb) );
@@ -14140,9 +13648,8 @@ async call(parameters : Public.Procedures.GeographyAnalyze.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_analyze( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_analyze( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_analyze) );
@@ -14161,9 +13668,8 @@ async call(parameters : Public.Procedures.StMultipointfromwkb_2d19.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_multipointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multipointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multipointfromwkb) );
@@ -14182,9 +13688,8 @@ async call(parameters : Public.Procedures.StMultilinefromwkb.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_multilinefromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multilinefromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multilinefromwkb) );
@@ -14203,9 +13708,8 @@ async call(parameters : Public.Procedures.StMlinefromwkbD8af.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_mlinefromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mlinefromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mlinefromwkb) );
@@ -14224,9 +13728,8 @@ async call(parameters : Public.Procedures.StMlinefromwkb_2d19.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_mlinefromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mlinefromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mlinefromwkb) );
@@ -14245,9 +13748,8 @@ async call(parameters : Public.Procedures.StMpolyfromwkbD8af.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_mpolyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpolyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mpolyfromwkb) );
@@ -14266,9 +13768,8 @@ async call(parameters : Public.Procedures.StMpolyfromwkb_2d19.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_mpolyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpolyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mpolyfromwkb) );
@@ -14287,9 +13788,8 @@ async call(parameters : Public.Procedures.StMultipolyfromwkbD8af.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_multipolyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multipolyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multipolyfromwkb) );
@@ -14308,9 +13808,8 @@ async call(parameters : Public.Procedures.StMultipolyfromwkb_2d19.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_multipolyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multipolyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multipolyfromwkb) );
@@ -14329,9 +13828,8 @@ async call(parameters : Public.Procedures.StGeomcollfromwkbD8af.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geomcollfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomcollfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomcollfromwkb) );
@@ -14350,9 +13848,8 @@ async call(parameters : Public.Procedures.StGeomcollfromwkb_2d19.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geomcollfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomcollfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomcollfromwkb) );
@@ -14371,9 +13868,8 @@ async call(parameters : Public.Procedures.StMaxdistance.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_maxdistance(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_maxdistance(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_maxdistance) );
@@ -14392,9 +13888,8 @@ async call(parameters : Public.Procedures.StClosestpoint_14de.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_closestpoint(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_closestpoint(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_closestpoint) );
@@ -14413,9 +13908,8 @@ async call(parameters : Public.Procedures.StShortestline_14de.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_shortestline(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_shortestline(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_shortestline) );
@@ -14434,9 +13928,8 @@ async call(parameters : Public.Procedures.StLongestline.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_longestline(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_longestline(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_longestline) );
@@ -14455,9 +13948,8 @@ async call(parameters : Public.Procedures.StSwapordinates.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_swapordinates(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },ords => ${ typed[2275](undefinedIsNull(parameters.ords)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_swapordinates(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },ords => ${ typed[2275](undefinedIsNull(parameters.ords)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_swapordinates) );
@@ -14476,9 +13968,8 @@ async call(parameters : Public.Procedures.StFlipcoordinates.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_flipcoordinates( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_flipcoordinates( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_flipcoordinates) );
@@ -14497,9 +13988,8 @@ async call(parameters : Public.Procedures.StBdpolyfromtext.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_bdpolyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_bdpolyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_bdpolyfromtext) );
@@ -14518,9 +14008,8 @@ async call(parameters : Public.Procedures.StBdmpolyfromtext.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_bdmpolyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_bdmpolyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_bdmpolyfromtext) );
@@ -14539,9 +14028,8 @@ async call(parameters : Public.Procedures.Unlockrows.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.unlockrows( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.unlockrows( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].unlockrows) );
@@ -14560,9 +14048,8 @@ async call(parameters : Public.Procedures.Geography_5f53.Parameters) {
               return Public.Types.Geography.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].geography) );
@@ -14581,9 +14068,8 @@ async call(parameters : Public.Procedures.Geography_2d19.Parameters) {
               return Public.Types.Geography.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].geography) );
@@ -14602,9 +14088,8 @@ async call(parameters : Public.Procedures.Bytea_1126.Parameters) {
               return PgCatalog.Types.Bytea.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.bytea( ${ typed[30214](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.bytea( ${ typed[30214](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].bytea) );
@@ -14623,9 +14108,8 @@ async call(parameters : Public.Procedures.StAstext_1126.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_astext( ${ typed[30214](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_astext( ${ typed[30214](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_astext) );
@@ -14644,9 +14128,8 @@ async call(parameters : Public.Procedures.StAstext_44eb.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_astext( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_astext( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_astext) );
@@ -14665,9 +14148,8 @@ async call(parameters : Public.Procedures.LockrowE9aa.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.lockrow( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[25](undefinedIsNull(parameters.argument_3)) }, ${ typed[1114](undefinedIsNull(parameters.argument_4)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.lockrow( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[25](undefinedIsNull(parameters.argument_3)) }, ${ typed[1114](undefinedIsNull(parameters.argument_4)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].lockrow) );
@@ -14686,9 +14168,8 @@ async call(parameters : Public.Procedures.Lockrow_02b4.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.lockrow( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[25](undefinedIsNull(parameters.argument_3)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.lockrow( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[25](undefinedIsNull(parameters.argument_3)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].lockrow) );
@@ -14707,9 +14188,8 @@ async call(parameters : Public.Procedures.Lockrow_27e1.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.lockrow( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.lockrow( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].lockrow) );
@@ -14728,9 +14208,8 @@ async call(parameters : Public.Procedures.Lockrow_9a8a.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.lockrow( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[1114](undefinedIsNull(parameters.argument_3)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.lockrow( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[1114](undefinedIsNull(parameters.argument_3)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].lockrow) );
@@ -14749,9 +14228,8 @@ async call(parameters : Public.Procedures.Addauth.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.addauth( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.addauth( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].addauth) );
@@ -14770,9 +14248,8 @@ async call(parameters : Public.Procedures.Checkauth_27e1.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.checkauth( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.checkauth( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].checkauth) );
@@ -14791,9 +14268,8 @@ async call(parameters : Public.Procedures.Checkauth_2ec2.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.checkauth( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.checkauth( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].checkauth) );
@@ -14812,9 +14288,8 @@ async call() {
               return PgCatalog.Types.Trigger.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.checkauthtrigger()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.checkauthtrigger()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Trigger.parse(results?.[0].checkauthtrigger) );
@@ -14833,9 +14308,8 @@ async call() {
               return PgCatalog.Types.Xid.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.gettransactionid()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gettransactionid()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Xid.parse(results?.[0].gettransactionid) );
@@ -14854,9 +14328,8 @@ async call() {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.enablelongtransactions()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.enablelongtransactions()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].enablelongtransactions) );
@@ -14875,9 +14348,8 @@ async call() {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.longtransactionsenabled()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.longtransactionsenabled()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].longtransactionsenabled) );
@@ -14896,9 +14368,8 @@ async call() {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.disablelongtransactions()`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.disablelongtransactions()`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].disablelongtransactions) );
@@ -14917,9 +14388,8 @@ async call(parameters : Public.Procedures.GeographyTypmodIn.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_typmod_in( ${ typed[1263](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_typmod_in( ${ typed[1263](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].geography_typmod_in) );
@@ -14938,9 +14408,8 @@ async call(parameters : Public.Procedures.GeographyTypmodOut.Parameters) {
               return PgCatalog.Types.Cstring.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_typmod_out( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_typmod_out( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].geography_typmod_out) );
@@ -14959,9 +14428,8 @@ async call(parameters : Public.Procedures.GeographyIn.Parameters) {
               return Public.Types.Geography.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].geography_in) );
@@ -14980,9 +14448,8 @@ async call(parameters : Public.Procedures.GeographyOut.Parameters) {
               return PgCatalog.Types.Cstring.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_out( ${ typed[30214](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_out( ${ typed[30214](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].geography_out) );
@@ -15001,9 +14468,8 @@ async call(parameters : Public.Procedures.GeographyRecv.Parameters) {
               return Public.Types.Geography.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_recv( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_recv( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].geography_recv) );
@@ -15022,9 +14488,8 @@ async call(parameters : Public.Procedures.GeographySend.Parameters) {
               return PgCatalog.Types.Bytea.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_send( ${ typed[30214](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_send( ${ typed[30214](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].geography_send) );
@@ -15043,9 +14508,8 @@ async call(parameters : Public.Procedures.StAstextE728.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_astext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_astext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_astext) );
@@ -15064,9 +14528,8 @@ async call(parameters : Public.Procedures.StGeographyfromtext.Parameters) {
               return Public.Types.Geography.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geographyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geographyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_geographyfromtext) );
@@ -15085,9 +14548,8 @@ async call(parameters : Public.Procedures.StGeogfromtext.Parameters) {
               return Public.Types.Geography.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geogfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geogfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_geogfromtext) );
@@ -15106,9 +14568,8 @@ async call(parameters : Public.Procedures.StGeogfromwkb.Parameters) {
               return Public.Types.Geography.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geogfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geogfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_geogfromwkb) );
@@ -15127,9 +14588,8 @@ async call(parameters : Public.Procedures.PostgisTypmodDims.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_typmod_dims( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_typmod_dims( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].postgis_typmod_dims) );
@@ -15148,9 +14608,8 @@ async call(parameters : Public.Procedures.PostgisTypmodSrid.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_typmod_srid( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_typmod_srid( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].postgis_typmod_srid) );
@@ -15169,9 +14628,8 @@ async call(parameters : Public.Procedures.PostgisTypmodType.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_typmod_type( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_typmod_type( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_typmod_type) );
@@ -15190,9 +14648,8 @@ async call(parameters : Public.Procedures.Geography_7e9c.Parameters) {
               return Public.Types.Geography.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography( ${ typed[29508](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].geography) );
@@ -15211,9 +14668,8 @@ async call(parameters : Public.Procedures.Geometry_1126.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry( ${ typed[30214](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[30214](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry) );
@@ -15232,9 +14688,8 @@ async call(parameters : Public.Procedures.GeographyGistConsistent.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_gist_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_gist_consistent) );
@@ -15253,9 +14708,8 @@ async call(parameters : Public.Procedures.GeographyGistCompress.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_gist_compress( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_compress( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geography_gist_compress) );
@@ -15274,9 +14728,8 @@ async call(parameters : Public.Procedures.GeographyGistPenalty.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_gist_penalty( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_penalty( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geography_gist_penalty) );
@@ -15295,9 +14748,8 @@ async call(parameters : Public.Procedures.GeographyGistPicksplit.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_gist_picksplit( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_picksplit( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geography_gist_picksplit) );
@@ -15316,9 +14768,8 @@ async call(parameters : Public.Procedures.GeographyGistUnion.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_gist_union( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_union( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geography_gist_union) );
@@ -15337,9 +14788,8 @@ async call(parameters : Public.Procedures.GeographyGistSame.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_gist_same( ${ typed[29539](undefinedIsNull(parameters.argument_0)) }, ${ typed[29539](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_same( ${ typed[29539](undefinedIsNull(parameters.argument_0)) }, ${ typed[29539](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geography_gist_same) );
@@ -15358,9 +14808,8 @@ async call(parameters : Public.Procedures.GeographyGistDecompress.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_gist_decompress( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_decompress( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geography_gist_decompress) );
@@ -15379,9 +14828,8 @@ async call(parameters : Public.Procedures.GeographyOverlaps.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_overlaps( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_overlaps( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_overlaps) );
@@ -15400,9 +14848,8 @@ async call(parameters : Public.Procedures.GeographyDistanceKnn.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_distance_knn( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_distance_knn( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geography_distance_knn) );
@@ -15421,9 +14868,8 @@ async call(parameters : Public.Procedures.GeographyGistDistance.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_gist_distance( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_distance( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geography_gist_distance) );
@@ -15442,9 +14888,8 @@ async call(parameters : Public.Procedures.OverlapsGeog_1632.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.overlaps_geog( ${ typed[29547](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_geog( ${ typed[29547](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_geog) );
@@ -15463,9 +14908,8 @@ async call(parameters : Public.Procedures.OverlapsGeogD1f5.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.overlaps_geog( ${ typed[29547](undefinedIsNull(parameters.argument_0)) }, ${ typed[29547](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_geog( ${ typed[29547](undefinedIsNull(parameters.argument_0)) }, ${ typed[29547](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_geog) );
@@ -15484,9 +14928,8 @@ async call(parameters : Public.Procedures.OverlapsGeogB3cf.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.overlaps_geog( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[29547](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_geog( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[29547](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_geog) );
@@ -15505,9 +14948,8 @@ async call(parameters : Public.Procedures.GeogBrinInclusionAddValue.Parameters) 
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geog_brin_inclusion_add_value( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[2281](undefinedIsNull(parameters.argument_3)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geog_brin_inclusion_add_value( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[2281](undefinedIsNull(parameters.argument_3)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geog_brin_inclusion_add_value) );
@@ -15526,9 +14968,8 @@ async call(parameters : Public.Procedures.GeographyLt.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_lt( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_lt( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_lt) );
@@ -15547,9 +14988,8 @@ async call(parameters : Public.Procedures.GeographyLe.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_le( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_le( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_le) );
@@ -15568,9 +15008,8 @@ async call(parameters : Public.Procedures.GeographyGt.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_gt( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gt( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_gt) );
@@ -15589,9 +15028,8 @@ async call(parameters : Public.Procedures.GeographyGe.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_ge( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_ge( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_ge) );
@@ -15610,9 +15048,8 @@ async call(parameters : Public.Procedures.GeographyEq.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_eq( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_eq( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_eq) );
@@ -15631,9 +15068,8 @@ async call(parameters : Public.Procedures.GeographyCmp.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_cmp( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_cmp( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].geography_cmp) );
@@ -15652,9 +15088,8 @@ async call(parameters : Public.Procedures.StAssvgD22b.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_assvg(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },rel => ${ typed[23](undefinedIsNull(parameters.rel)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_assvg(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },rel => ${ typed[23](undefinedIsNull(parameters.rel)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_assvg) );
@@ -15673,9 +15108,8 @@ async call(parameters : Public.Procedures.StAssvgE728.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_assvg( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_assvg( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_assvg) );
@@ -15694,9 +15128,8 @@ async call(parameters : Public.Procedures.StProjectF245.Parameters) {
               return Public.Types.Geography.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_project(geog_from => ${ typed[30214](undefinedIsNull(parameters.geogFrom)) },geog_to => ${ typed[30214](undefinedIsNull(parameters.geogTo)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_project(geog_from => ${ typed[30214](undefinedIsNull(parameters.geogFrom)) },geog_to => ${ typed[30214](undefinedIsNull(parameters.geogTo)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_project) );
@@ -15715,9 +15148,8 @@ async call(parameters : Public.Procedures.StAzimuthAeb8.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_azimuth(geog1 => ${ typed[30214](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[30214](undefinedIsNull(parameters.geog2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_azimuth(geog1 => ${ typed[30214](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[30214](undefinedIsNull(parameters.geog2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_azimuth) );
@@ -15736,9 +15168,8 @@ async call(parameters : Public.Procedures.StBuffer_49f7.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_buffer( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_buffer) );
@@ -15757,9 +15188,8 @@ async call(parameters : Public.Procedures.StAsgml_9c73.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asgml(version => ${ typed[23](undefinedIsNull(parameters.version)) },geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) },id => ${ typed[25](undefinedIsNull(parameters.id)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgml(version => ${ typed[23](undefinedIsNull(parameters.version)) },geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) },id => ${ typed[25](undefinedIsNull(parameters.id)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgml) );
@@ -15778,9 +15208,8 @@ async call(parameters : Public.Procedures.StAsgmlE8a8.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asgml(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) },id => ${ typed[25](undefinedIsNull(parameters.id)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgml(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) },id => ${ typed[25](undefinedIsNull(parameters.id)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgml) );
@@ -15799,9 +15228,8 @@ async call(parameters : Public.Procedures.StAsgmlE728.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asgml( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgml( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgml) );
@@ -15820,9 +15248,8 @@ async call(parameters : Public.Procedures.StAskmlAb1b.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_askml(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_askml(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_askml) );
@@ -15841,9 +15268,8 @@ async call(parameters : Public.Procedures.StAskmlE728.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_askml( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_askml( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_askml) );
@@ -15862,9 +15288,8 @@ async call(parameters : Public.Procedures.StAsgeojsonD22b.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asgeojson(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgeojson(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgeojson) );
@@ -15883,9 +15308,8 @@ async call(parameters : Public.Procedures.StAsgeojsonE728.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asgeojson( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgeojson( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgeojson) );
@@ -15904,9 +15328,8 @@ async call(parameters : Public.Procedures.StDistanceE193.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_distance(geog1 => ${ typed[30214](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[30214](undefinedIsNull(parameters.geog2)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distance(geog1 => ${ typed[30214](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[30214](undefinedIsNull(parameters.geog2)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distance) );
@@ -15925,9 +15348,8 @@ async call(parameters : Public.Procedures.StDistance_2ec2.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_distance( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distance( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distance) );
@@ -15946,9 +15368,8 @@ async call(parameters : Public.Procedures.StArea_5696.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_area(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_area(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_area) );
@@ -15967,9 +15388,8 @@ async call(parameters : Public.Procedures.StAreaE728.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_area( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_area( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_area) );
@@ -15988,9 +15408,8 @@ async call(parameters : Public.Procedures.StLength_5696.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_length(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_length(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_length) );
@@ -16009,9 +15428,8 @@ async call(parameters : Public.Procedures.StLengthE728.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_length( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_length( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_length) );
@@ -16030,9 +15448,8 @@ async call(parameters : Public.Procedures.StProject_44fa.Parameters) {
               return Public.Types.Geography.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_project(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) },azimuth => ${ typed[701](undefinedIsNull(parameters.azimuth)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_project(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) },azimuth => ${ typed[701](undefinedIsNull(parameters.azimuth)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_project) );
@@ -16051,9 +15468,8 @@ async call(parameters : Public.Procedures.StPerimeter_5696.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_perimeter(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_perimeter(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_perimeter) );
@@ -16072,9 +15488,8 @@ async call(parameters : Public.Procedures.StSegmentize_8ba5.Parameters) {
               return Public.Types.Geography.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_segmentize(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },max_segment_length => ${ typed[701](undefinedIsNull(parameters.maxSegmentLength)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_segmentize(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },max_segment_length => ${ typed[701](undefinedIsNull(parameters.maxSegmentLength)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_segmentize) );
@@ -16093,9 +15508,8 @@ async call(parameters : Public.Procedures.StAsbinary_1126.Parameters) {
               return PgCatalog.Types.Bytea.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asbinary( ${ typed[30214](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asbinary( ${ typed[30214](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_asbinary) );
@@ -16114,9 +15528,8 @@ async call(parameters : Public.Procedures.StAsbinary_1951.Parameters) {
               return PgCatalog.Types.Bytea.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asbinary( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asbinary( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_asbinary) );
@@ -16135,9 +15548,8 @@ async call(parameters : Public.Procedures.StAsewkt_1126.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asewkt( ${ typed[30214](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asewkt( ${ typed[30214](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asewkt) );
@@ -16156,9 +15568,8 @@ async call(parameters : Public.Procedures.StAsewkt_44eb.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asewkt( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asewkt( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asewkt) );
@@ -16177,9 +15588,8 @@ async call(parameters : Public.Procedures.StAsewktE728.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asewkt( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asewkt( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asewkt) );
@@ -16198,9 +15608,8 @@ async call(parameters : Public.Procedures.Geometrytype_1126.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometrytype( ${ typed[30214](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometrytype( ${ typed[30214](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].geometrytype) );
@@ -16219,9 +15628,8 @@ async call(parameters : Public.Procedures.StSummary_1126.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_summary( ${ typed[30214](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_summary( ${ typed[30214](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_summary) );
@@ -16240,9 +15648,8 @@ async call(parameters : Public.Procedures.StGeohash_44eb.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_geohash(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },maxchars => ${ typed[23](undefinedIsNull(parameters.maxchars)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geohash(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },maxchars => ${ typed[23](undefinedIsNull(parameters.maxchars)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_geohash) );
@@ -16261,9 +15668,8 @@ async call(parameters : Public.Procedures.StSrid_1126.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_srid(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_srid(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_srid) );
@@ -16282,9 +15688,8 @@ async call(parameters : Public.Procedures.StSetsrid_44eb.Parameters) {
               return Public.Types.Geography.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_setsrid(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_setsrid(geog => ${ typed[30214](undefinedIsNull(parameters.geog)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_setsrid) );
@@ -16303,9 +15708,8 @@ async call(parameters : Public.Procedures.StCentroid_5696.Parameters) {
               return Public.Types.Geography.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_centroid(argument_0 => ${ typed[30214](undefinedIsNull(parameters.argument_0)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_centroid(argument_0 => ${ typed[30214](undefinedIsNull(parameters.argument_0)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_centroid) );
@@ -16324,9 +15728,8 @@ async call(parameters : Public.Procedures.StCentroidE728.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_centroid( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_centroid( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_centroid) );
@@ -16345,9 +15748,8 @@ async call(parameters : Public.Procedures.StCoversAeb8.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_covers(geog1 => ${ typed[30214](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[30214](undefinedIsNull(parameters.geog2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_covers(geog1 => ${ typed[30214](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[30214](undefinedIsNull(parameters.geog2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_covers) );
@@ -16366,9 +15768,8 @@ async call(parameters : Public.Procedures.StDwithinBfd6.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_dwithin(geog1 => ${ typed[30214](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[30214](undefinedIsNull(parameters.geog2)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dwithin(geog1 => ${ typed[30214](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[30214](undefinedIsNull(parameters.geog2)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_dwithin) );
@@ -16387,9 +15788,8 @@ async call(parameters : Public.Procedures.StCoveredbyAeb8.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_coveredby(geog1 => ${ typed[30214](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[30214](undefinedIsNull(parameters.geog2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_coveredby(geog1 => ${ typed[30214](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[30214](undefinedIsNull(parameters.geog2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_coveredby) );
@@ -16408,9 +15808,8 @@ async call(parameters : Public.Procedures.StIntersectsAeb8.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_intersects(geog1 => ${ typed[30214](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[30214](undefinedIsNull(parameters.geog2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_intersects(geog1 => ${ typed[30214](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[30214](undefinedIsNull(parameters.geog2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_intersects) );
@@ -16429,9 +15828,8 @@ async call(parameters : Public.Procedures.StBuffer_8ba5.Parameters) {
               return Public.Types.Geography.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_buffer( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_buffer) );
@@ -16450,9 +15848,8 @@ async call(parameters : Public.Procedures.StBufferBe24.Parameters) {
               return Public.Types.Geography.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_buffer( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_buffer) );
@@ -16471,9 +15868,8 @@ async call(parameters : Public.Procedures.StBuffer_82e5.Parameters) {
               return Public.Types.Geography.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_buffer( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_buffer) );
@@ -16492,9 +15888,8 @@ async call(parameters : Public.Procedures.StBufferC349.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_buffer( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_buffer) );
@@ -16513,9 +15908,8 @@ async call(parameters : Public.Procedures.StBufferF7c6.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_buffer( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_buffer) );
@@ -16534,9 +15928,8 @@ async call(parameters : Public.Procedures.StIntersectionAeb8.Parameters) {
               return Public.Types.Geography.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_intersection( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_intersection( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[30214](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_intersection) );
@@ -16555,9 +15948,8 @@ async call(parameters : Public.Procedures.StIntersection_2ec2.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_intersection( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_intersection( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_intersection) );
@@ -16576,9 +15968,8 @@ async call(parameters : Public.Procedures.StCovers_2ec2.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_covers( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_covers( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_covers) );
@@ -16597,9 +15988,8 @@ async call(parameters : Public.Procedures.StCoveredby_2ec2.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_coveredby( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_coveredby( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_coveredby) );
@@ -16618,9 +16008,8 @@ async call(parameters : Public.Procedures.StDwithinEfc0.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_dwithin( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dwithin( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_dwithin) );
@@ -16639,9 +16028,8 @@ async call(parameters : Public.Procedures.StIntersects_2ec2.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_intersects( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_intersects( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_intersects) );
@@ -16660,9 +16048,8 @@ async call(parameters : Public.Procedures.StClosestpointE193.Parameters) {
               return Public.Types.Geography.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_closestpoint(argument_0 => ${ typed[30214](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[30214](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_closestpoint(argument_0 => ${ typed[30214](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[30214](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_closestpoint) );
@@ -16681,9 +16068,8 @@ async call(parameters : Public.Procedures.StClosestpoint_2ec2.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_closestpoint( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_closestpoint( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_closestpoint) );
@@ -16702,9 +16088,8 @@ async call(parameters : Public.Procedures.StShortestlineE193.Parameters) {
               return Public.Types.Geography.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_shortestline(argument_0 => ${ typed[30214](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[30214](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_shortestline(argument_0 => ${ typed[30214](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[30214](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_shortestline) );
@@ -16723,9 +16108,8 @@ async call(parameters : Public.Procedures.StShortestline_2ec2.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_shortestline( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_shortestline( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_shortestline) );
@@ -16744,9 +16128,8 @@ async call(parameters : Public.Procedures.StLinesubstring_44fa.Parameters) {
               return Public.Types.Geography.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linesubstring( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linesubstring( ${ typed[30214](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_linesubstring) );
@@ -16765,9 +16148,8 @@ async call(parameters : Public.Procedures.StLinesubstringE586.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linesubstring( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linesubstring( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linesubstring) );
@@ -16786,9 +16168,8 @@ async call(parameters : Public.Procedures.StLinelocatepointE193.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linelocatepoint(argument_0 => ${ typed[30214](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[30214](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linelocatepoint(argument_0 => ${ typed[30214](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[30214](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_linelocatepoint) );
@@ -16807,9 +16188,8 @@ async call(parameters : Public.Procedures.StLinelocatepoint_2ec2.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linelocatepoint( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linelocatepoint( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_linelocatepoint) );
@@ -16828,9 +16208,8 @@ async call(parameters : Public.Procedures.StLineinterpolatepoints_8013.Parameter
               return Public.Types.Geography.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_lineinterpolatepoints(argument_0 => ${ typed[30214](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[701](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) },repeat => ${ typed[16](undefinedIsNull(parameters.repeat)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lineinterpolatepoints(argument_0 => ${ typed[30214](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[701](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) },repeat => ${ typed[16](undefinedIsNull(parameters.repeat)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_lineinterpolatepoints) );
@@ -16849,9 +16228,8 @@ async call(parameters : Public.Procedures.StLineinterpolatepointsC349.Parameters
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_lineinterpolatepoints( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lineinterpolatepoints( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_lineinterpolatepoints) );
@@ -16870,9 +16248,8 @@ async call(parameters : Public.Procedures.StLineinterpolatepoint_6847.Parameters
               return Public.Types.Geography.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_lineinterpolatepoint(argument_0 => ${ typed[30214](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[701](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lineinterpolatepoint(argument_0 => ${ typed[30214](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[701](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_lineinterpolatepoint) );
@@ -16891,9 +16268,8 @@ async call(parameters : Public.Procedures.StLineinterpolatepointC349.Parameters)
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_lineinterpolatepoint( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lineinterpolatepoint( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_lineinterpolatepoint) );
@@ -16912,9 +16288,8 @@ async call(parameters : Public.Procedures.StDistancesphere_14de.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_distancesphere(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distancesphere(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distancesphere) );
@@ -16933,9 +16308,8 @@ async call(parameters : Public.Procedures.StDistancesphereCf0b.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_distancesphere(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },radius => ${ typed[701](undefinedIsNull(parameters.radius)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distancesphere(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) },radius => ${ typed[701](undefinedIsNull(parameters.radius)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distancesphere) );
@@ -16954,9 +16328,8 @@ async call(parameters : Public.Procedures.PostgisTypeName.Parameters) {
               return PgCatalog.Types.Varchar.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_type_name(geomname => ${ typed[1043](undefinedIsNull(parameters.geomname)) },coord_dimension => ${ typed[23](undefinedIsNull(parameters.coordDimension)) },use_new_name => ${ typed[16](undefinedIsNull(parameters.useNewName)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_type_name(geomname => ${ typed[1043](undefinedIsNull(parameters.geomname)) },coord_dimension => ${ typed[23](undefinedIsNull(parameters.coordDimension)) },use_new_name => ${ typed[16](undefinedIsNull(parameters.useNewName)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Varchar.parse(results?.[0].postgis_type_name) );
@@ -16975,9 +16348,8 @@ async call(parameters : Public.Procedures.PostgisConstraintSrid.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_constraint_srid(geomschema => ${ typed[25](undefinedIsNull(parameters.geomschema)) },geomtable => ${ typed[25](undefinedIsNull(parameters.geomtable)) },geomcolumn => ${ typed[25](undefinedIsNull(parameters.geomcolumn)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_constraint_srid(geomschema => ${ typed[25](undefinedIsNull(parameters.geomschema)) },geomtable => ${ typed[25](undefinedIsNull(parameters.geomtable)) },geomcolumn => ${ typed[25](undefinedIsNull(parameters.geomcolumn)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].postgis_constraint_srid) );
@@ -16996,9 +16368,8 @@ async call(parameters : Public.Procedures.PostgisConstraintDims.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_constraint_dims(geomschema => ${ typed[25](undefinedIsNull(parameters.geomschema)) },geomtable => ${ typed[25](undefinedIsNull(parameters.geomtable)) },geomcolumn => ${ typed[25](undefinedIsNull(parameters.geomcolumn)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_constraint_dims(geomschema => ${ typed[25](undefinedIsNull(parameters.geomschema)) },geomtable => ${ typed[25](undefinedIsNull(parameters.geomtable)) },geomcolumn => ${ typed[25](undefinedIsNull(parameters.geomcolumn)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].postgis_constraint_dims) );
@@ -17017,9 +16388,8 @@ async call(parameters : Public.Procedures.PostgisConstraintType.Parameters) {
               return PgCatalog.Types.Varchar.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.postgis_constraint_type(geomschema => ${ typed[25](undefinedIsNull(parameters.geomschema)) },geomtable => ${ typed[25](undefinedIsNull(parameters.geomtable)) },geomcolumn => ${ typed[25](undefinedIsNull(parameters.geomcolumn)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_constraint_type(geomschema => ${ typed[25](undefinedIsNull(parameters.geomschema)) },geomtable => ${ typed[25](undefinedIsNull(parameters.geomtable)) },geomcolumn => ${ typed[25](undefinedIsNull(parameters.geomcolumn)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Varchar.parse(results?.[0].postgis_constraint_type) );
@@ -17038,9 +16408,8 @@ async call(parameters : Public.Procedures.St_3ddistance.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3ddistance(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3ddistance(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_3ddistance) );
@@ -17059,9 +16428,8 @@ async call(parameters : Public.Procedures.St_3dmaxdistance.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3dmaxdistance(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dmaxdistance(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_3dmaxdistance) );
@@ -17080,9 +16448,8 @@ async call(parameters : Public.Procedures.St_3dclosestpoint.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3dclosestpoint(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dclosestpoint(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_3dclosestpoint) );
@@ -17101,9 +16468,8 @@ async call(parameters : Public.Procedures.St_3dshortestline.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3dshortestline(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dshortestline(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_3dshortestline) );
@@ -17122,9 +16488,8 @@ async call(parameters : Public.Procedures.St_3dlongestline.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3dlongestline(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dlongestline(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_3dlongestline) );
@@ -17143,9 +16508,8 @@ async call(parameters : Public.Procedures.StCoorddim.Parameters) {
               return PgCatalog.Types.Int2.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_coorddim(geometry => ${ typed[29508](undefinedIsNull(parameters.geometry)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_coorddim(geometry => ${ typed[29508](undefinedIsNull(parameters.geometry)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int2.parse(results?.[0].st_coorddim) );
@@ -17164,9 +16528,8 @@ async call(parameters : Public.Procedures.StCurvetoline.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_curvetoline(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },tol => ${ typed[701](undefinedIsNull(parameters.tol)) },toltype => ${ typed[23](undefinedIsNull(parameters.toltype)) },flags => ${ typed[23](undefinedIsNull(parameters.flags)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_curvetoline(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },tol => ${ typed[701](undefinedIsNull(parameters.tol)) },toltype => ${ typed[23](undefinedIsNull(parameters.toltype)) },flags => ${ typed[23](undefinedIsNull(parameters.flags)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_curvetoline) );
@@ -17185,9 +16548,8 @@ async call(parameters : Public.Procedures.StHasarc.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_hasarc(geometry => ${ typed[29508](undefinedIsNull(parameters.geometry)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_hasarc(geometry => ${ typed[29508](undefinedIsNull(parameters.geometry)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_hasarc) );
@@ -17206,9 +16568,8 @@ async call(parameters : Public.Procedures.StLinetocurve.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_linetocurve(geometry => ${ typed[29508](undefinedIsNull(parameters.geometry)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linetocurve(geometry => ${ typed[29508](undefinedIsNull(parameters.geometry)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linetocurve) );
@@ -17227,9 +16588,8 @@ async call(parameters : Public.Procedures.StPoint_0aec.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_point( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_point( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_point) );
@@ -17248,9 +16608,8 @@ async call(parameters : Public.Procedures.StPoint_0b7f.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_point(argument_0 => ${ typed[701](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[701](undefinedIsNull(parameters.argument_1)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_point(argument_0 => ${ typed[701](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[701](undefinedIsNull(parameters.argument_1)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_point) );
@@ -17269,9 +16628,8 @@ async call(parameters : Public.Procedures.StPointz.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_pointz(xcoordinate => ${ typed[701](undefinedIsNull(parameters.xcoordinate)) },ycoordinate => ${ typed[701](undefinedIsNull(parameters.ycoordinate)) },zcoordinate => ${ typed[701](undefinedIsNull(parameters.zcoordinate)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointz(xcoordinate => ${ typed[701](undefinedIsNull(parameters.xcoordinate)) },ycoordinate => ${ typed[701](undefinedIsNull(parameters.ycoordinate)) },zcoordinate => ${ typed[701](undefinedIsNull(parameters.zcoordinate)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_pointz) );
@@ -17290,9 +16648,8 @@ async call(parameters : Public.Procedures.StPointm.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_pointm(xcoordinate => ${ typed[701](undefinedIsNull(parameters.xcoordinate)) },ycoordinate => ${ typed[701](undefinedIsNull(parameters.ycoordinate)) },mcoordinate => ${ typed[701](undefinedIsNull(parameters.mcoordinate)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointm(xcoordinate => ${ typed[701](undefinedIsNull(parameters.xcoordinate)) },ycoordinate => ${ typed[701](undefinedIsNull(parameters.ycoordinate)) },mcoordinate => ${ typed[701](undefinedIsNull(parameters.mcoordinate)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_pointm) );
@@ -17311,9 +16668,8 @@ async call(parameters : Public.Procedures.StPointzm.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_pointzm(xcoordinate => ${ typed[701](undefinedIsNull(parameters.xcoordinate)) },ycoordinate => ${ typed[701](undefinedIsNull(parameters.ycoordinate)) },zcoordinate => ${ typed[701](undefinedIsNull(parameters.zcoordinate)) },mcoordinate => ${ typed[701](undefinedIsNull(parameters.mcoordinate)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointzm(xcoordinate => ${ typed[701](undefinedIsNull(parameters.xcoordinate)) },ycoordinate => ${ typed[701](undefinedIsNull(parameters.ycoordinate)) },zcoordinate => ${ typed[701](undefinedIsNull(parameters.zcoordinate)) },mcoordinate => ${ typed[701](undefinedIsNull(parameters.mcoordinate)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_pointzm) );
@@ -17332,9 +16688,8 @@ async call(parameters : Public.Procedures.StPolygon.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_polygon( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polygon( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_polygon) );
@@ -17353,9 +16708,8 @@ async call(parameters : Public.Procedures.StWkbtosql.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_wkbtosql(wkb => ${ typed[17](undefinedIsNull(parameters.wkb)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_wkbtosql(wkb => ${ typed[17](undefinedIsNull(parameters.wkb)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_wkbtosql) );
@@ -17374,9 +16728,8 @@ async call(parameters : Public.Procedures.StLocatebetween.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_locatebetween(geometry => ${ typed[29508](undefinedIsNull(parameters.geometry)) },frommeasure => ${ typed[701](undefinedIsNull(parameters.frommeasure)) },tomeasure => ${ typed[701](undefinedIsNull(parameters.tomeasure)) },leftrightoffset => ${ typed[701](undefinedIsNull(parameters.leftrightoffset)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_locatebetween(geometry => ${ typed[29508](undefinedIsNull(parameters.geometry)) },frommeasure => ${ typed[701](undefinedIsNull(parameters.frommeasure)) },tomeasure => ${ typed[701](undefinedIsNull(parameters.tomeasure)) },leftrightoffset => ${ typed[701](undefinedIsNull(parameters.leftrightoffset)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_locatebetween) );
@@ -17395,9 +16748,8 @@ async call(parameters : Public.Procedures.StLocatealong.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_locatealong(geometry => ${ typed[29508](undefinedIsNull(parameters.geometry)) },measure => ${ typed[701](undefinedIsNull(parameters.measure)) },leftrightoffset => ${ typed[701](undefinedIsNull(parameters.leftrightoffset)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_locatealong(geometry => ${ typed[29508](undefinedIsNull(parameters.geometry)) },measure => ${ typed[701](undefinedIsNull(parameters.measure)) },leftrightoffset => ${ typed[701](undefinedIsNull(parameters.leftrightoffset)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_locatealong) );
@@ -17416,9 +16768,8 @@ async call(parameters : Public.Procedures.StLocatebetweenelevations.Parameters) 
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_locatebetweenelevations(geometry => ${ typed[29508](undefinedIsNull(parameters.geometry)) },fromelevation => ${ typed[701](undefinedIsNull(parameters.fromelevation)) },toelevation => ${ typed[701](undefinedIsNull(parameters.toelevation)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_locatebetweenelevations(geometry => ${ typed[29508](undefinedIsNull(parameters.geometry)) },fromelevation => ${ typed[701](undefinedIsNull(parameters.fromelevation)) },toelevation => ${ typed[701](undefinedIsNull(parameters.toelevation)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_locatebetweenelevations) );
@@ -17437,9 +16788,8 @@ async call(parameters : Public.Procedures.StInterpolatepoint.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_interpolatepoint(line => ${ typed[29508](undefinedIsNull(parameters.line)) },point => ${ typed[29508](undefinedIsNull(parameters.point)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_interpolatepoint(line => ${ typed[29508](undefinedIsNull(parameters.line)) },point => ${ typed[29508](undefinedIsNull(parameters.point)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_interpolatepoint) );
@@ -17458,9 +16808,8 @@ async call(parameters : Public.Procedures.StHexagon.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_hexagon(size => ${ typed[701](undefinedIsNull(parameters.size)) },cell_i => ${ typed[23](undefinedIsNull(parameters.cellI)) },cell_j => ${ typed[23](undefinedIsNull(parameters.cellJ)) },origin => ${ typed[29508](undefinedIsNull(parameters.origin)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_hexagon(size => ${ typed[701](undefinedIsNull(parameters.size)) },cell_i => ${ typed[23](undefinedIsNull(parameters.cellI)) },cell_j => ${ typed[23](undefinedIsNull(parameters.cellJ)) },origin => ${ typed[29508](undefinedIsNull(parameters.origin)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_hexagon) );
@@ -17479,9 +16828,8 @@ async call(parameters : Public.Procedures.StSquare.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_square(size => ${ typed[701](undefinedIsNull(parameters.size)) },cell_i => ${ typed[23](undefinedIsNull(parameters.cellI)) },cell_j => ${ typed[23](undefinedIsNull(parameters.cellJ)) },origin => ${ typed[29508](undefinedIsNull(parameters.origin)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_square(size => ${ typed[701](undefinedIsNull(parameters.size)) },cell_i => ${ typed[23](undefinedIsNull(parameters.cellI)) },cell_j => ${ typed[23](undefinedIsNull(parameters.cellJ)) },origin => ${ typed[29508](undefinedIsNull(parameters.origin)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_square) );
@@ -17499,9 +16847,8 @@ async call(parameters : Public.Procedures.StHexagongrid.Parameters) {
               return context.procTypes[30415].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.StHexagongrid;
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_hexagongrid(size => ${ typed[701](undefinedIsNull(parameters.size)) },bounds => ${ typed[29508](undefinedIsNull(parameters.bounds)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_hexagongrid(size => ${ typed[701](undefinedIsNull(parameters.size)) },bounds => ${ typed[29508](undefinedIsNull(parameters.bounds)) })`);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_hexagongrid)).filter<Public.Types.StHexagongrid>((r):r is Public.Types.StHexagongrid => r !== null) );
@@ -17519,9 +16866,8 @@ async call(parameters : Public.Procedures.StSquaregrid.Parameters) {
               return context.procTypes[30416].parseFromPostgresIfPseudoType(context, result) as unknown as Public.Types.StSquaregrid;
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_squaregrid(size => ${ typed[701](undefinedIsNull(parameters.size)) },bounds => ${ typed[29508](undefinedIsNull(parameters.bounds)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_squaregrid(size => ${ typed[701](undefinedIsNull(parameters.size)) },bounds => ${ typed[29508](undefinedIsNull(parameters.bounds)) })`);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_squaregrid)).filter<Public.Types.StSquaregrid>((r):r is Public.Types.StSquaregrid => r !== null) );
@@ -17540,9 +16886,8 @@ async call(parameters : Public.Procedures.Contains_2dFd11.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.contains_2d( ${ typed[29543](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.contains_2d( ${ typed[29543](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].contains_2d) );
@@ -17561,9 +16906,8 @@ async call(parameters : Public.Procedures.IsContained_2dFd11.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.is_contained_2d( ${ typed[29543](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.is_contained_2d( ${ typed[29543](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].is_contained_2d) );
@@ -17582,9 +16926,8 @@ async call(parameters : Public.Procedures.Overlaps_2dFd11.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.overlaps_2d( ${ typed[29543](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_2d( ${ typed[29543](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_2d) );
@@ -17603,9 +16946,8 @@ async call(parameters : Public.Procedures.Overlaps_2dC063.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.overlaps_2d( ${ typed[29543](undefinedIsNull(parameters.argument_0)) }, ${ typed[29543](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_2d( ${ typed[29543](undefinedIsNull(parameters.argument_0)) }, ${ typed[29543](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_2d) );
@@ -17624,9 +16966,8 @@ async call(parameters : Public.Procedures.Contains_2dC063.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.contains_2d( ${ typed[29543](undefinedIsNull(parameters.argument_0)) }, ${ typed[29543](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.contains_2d( ${ typed[29543](undefinedIsNull(parameters.argument_0)) }, ${ typed[29543](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].contains_2d) );
@@ -17645,9 +16986,8 @@ async call(parameters : Public.Procedures.IsContained_2dC063.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.is_contained_2d( ${ typed[29543](undefinedIsNull(parameters.argument_0)) }, ${ typed[29543](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.is_contained_2d( ${ typed[29543](undefinedIsNull(parameters.argument_0)) }, ${ typed[29543](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].is_contained_2d) );
@@ -17666,9 +17006,8 @@ async call(parameters : Public.Procedures.Contains_2dE856.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.contains_2d( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29543](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.contains_2d( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29543](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].contains_2d) );
@@ -17687,9 +17026,8 @@ async call(parameters : Public.Procedures.IsContained_2dE856.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.is_contained_2d( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29543](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.is_contained_2d( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29543](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].is_contained_2d) );
@@ -17708,9 +17046,8 @@ async call(parameters : Public.Procedures.Overlaps_2dE856.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.overlaps_2d( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29543](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_2d( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29543](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_2d) );
@@ -17729,9 +17066,8 @@ async call(parameters : Public.Procedures.OverlapsNd_545f.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.overlaps_nd( ${ typed[29547](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_nd( ${ typed[29547](undefinedIsNull(parameters.argument_0)) }, ${ typed[29508](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_nd) );
@@ -17750,9 +17086,8 @@ async call(parameters : Public.Procedures.OverlapsNdD1f5.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.overlaps_nd( ${ typed[29547](undefinedIsNull(parameters.argument_0)) }, ${ typed[29547](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_nd( ${ typed[29547](undefinedIsNull(parameters.argument_0)) }, ${ typed[29547](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_nd) );
@@ -17771,9 +17106,8 @@ async call(parameters : Public.Procedures.OverlapsNd_87b1.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.overlaps_nd( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29547](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_nd( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[29547](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_nd) );
@@ -17792,9 +17126,8 @@ async call(parameters : Public.Procedures.Geom2dBrinInclusionAddValue.Parameters
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geom2d_brin_inclusion_add_value( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[2281](undefinedIsNull(parameters.argument_3)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geom2d_brin_inclusion_add_value( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[2281](undefinedIsNull(parameters.argument_3)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geom2d_brin_inclusion_add_value) );
@@ -17813,9 +17146,8 @@ async call(parameters : Public.Procedures.Geom3dBrinInclusionAddValue.Parameters
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geom3d_brin_inclusion_add_value( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[2281](undefinedIsNull(parameters.argument_3)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geom3d_brin_inclusion_add_value( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[2281](undefinedIsNull(parameters.argument_3)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geom3d_brin_inclusion_add_value) );
@@ -17834,9 +17166,8 @@ async call(parameters : Public.Procedures.Geom4dBrinInclusionAddValue.Parameters
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geom4d_brin_inclusion_add_value( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[2281](undefinedIsNull(parameters.argument_3)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geom4d_brin_inclusion_add_value( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[2281](undefinedIsNull(parameters.argument_3)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geom4d_brin_inclusion_add_value) );
@@ -17855,9 +17186,8 @@ async call(parameters : Public.Procedures.StSimplifypolygonhull.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_simplifypolygonhull(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },vertex_fraction => ${ typed[701](undefinedIsNull(parameters.vertexFraction)) },is_outer => ${ typed[16](undefinedIsNull(parameters.isOuter)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_simplifypolygonhull(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },vertex_fraction => ${ typed[701](undefinedIsNull(parameters.vertexFraction)) },is_outer => ${ typed[16](undefinedIsNull(parameters.isOuter)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_simplifypolygonhull) );
@@ -17876,9 +17206,8 @@ async call(parameters : Public.Procedures.StConcavehull.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_concavehull(param_geom => ${ typed[29508](undefinedIsNull(parameters.paramGeom)) },param_pctconvex => ${ typed[701](undefinedIsNull(parameters.paramPctconvex)) },param_allow_holes => ${ typed[16](undefinedIsNull(parameters.paramAllowHoles)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_concavehull(param_geom => ${ typed[29508](undefinedIsNull(parameters.paramGeom)) },param_pctconvex => ${ typed[701](undefinedIsNull(parameters.paramPctconvex)) },param_allow_holes => ${ typed[16](undefinedIsNull(parameters.paramAllowHoles)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_concavehull) );
@@ -17897,9 +17226,8 @@ async call(parameters : Public.Procedures.StAsx3d.Parameters) {
               return PgCatalog.Types.Text.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_asx3d(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asx3d(geom => ${ typed[29508](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asx3d) );
@@ -17918,9 +17246,8 @@ async call(parameters : Public.Procedures.StAngle_14de.Parameters) {
               return PgCatalog.Types.Float8.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_angle(line1 => ${ typed[29508](undefinedIsNull(parameters.line1)) },line2 => ${ typed[29508](undefinedIsNull(parameters.line2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_angle(line1 => ${ typed[29508](undefinedIsNull(parameters.line1)) },line2 => ${ typed[29508](undefinedIsNull(parameters.line2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_angle) );
@@ -17939,9 +17266,8 @@ async call(parameters : Public.Procedures.St_3dlineinterpolatepoint.Parameters) 
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_3dlineinterpolatepoint( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dlineinterpolatepoint( ${ typed[29508](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_3dlineinterpolatepoint) );
@@ -17960,9 +17286,8 @@ async call(parameters : Public.Procedures.GeometrySpgistConfig_2d.Parameters) {
               return PgCatalog.Types.Void.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_spgist_config_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_config_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_config_2d) );
@@ -17981,9 +17306,8 @@ async call(parameters : Public.Procedures.GeometrySpgistChoose_2d.Parameters) {
               return PgCatalog.Types.Void.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_spgist_choose_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_choose_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_choose_2d) );
@@ -18002,9 +17326,8 @@ async call(parameters : Public.Procedures.GeometrySpgistPicksplit_2d.Parameters)
               return PgCatalog.Types.Void.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_spgist_picksplit_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_picksplit_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_picksplit_2d) );
@@ -18023,9 +17346,8 @@ async call(parameters : Public.Procedures.GeometrySpgistInnerConsistent_2d.Param
               return PgCatalog.Types.Void.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_spgist_inner_consistent_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_inner_consistent_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_inner_consistent_2d) );
@@ -18044,9 +17366,8 @@ async call(parameters : Public.Procedures.GeometrySpgistLeafConsistent_2d.Parame
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_spgist_leaf_consistent_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_leaf_consistent_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_spgist_leaf_consistent_2d) );
@@ -18065,9 +17386,8 @@ async call(parameters : Public.Procedures.GeometrySpgistCompress_2d.Parameters) 
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_spgist_compress_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_compress_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_spgist_compress_2d) );
@@ -18086,9 +17406,8 @@ async call(parameters : Public.Procedures.GeometryOverlaps_3d.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_overlaps_3d(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_overlaps_3d(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_overlaps_3d) );
@@ -18107,9 +17426,8 @@ async call(parameters : Public.Procedures.GeometryContains_3d.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_contains_3d(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_contains_3d(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_contains_3d) );
@@ -18128,9 +17446,8 @@ async call(parameters : Public.Procedures.GeometryContained_3d.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_contained_3d(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_contained_3d(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_contained_3d) );
@@ -18149,9 +17466,8 @@ async call(parameters : Public.Procedures.GeometrySame_3d.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_same_3d(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_same_3d(geom1 => ${ typed[29508](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[29508](undefinedIsNull(parameters.geom2)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_same_3d) );
@@ -18170,9 +17486,8 @@ async call(parameters : Public.Procedures.GeometrySpgistConfig_3d.Parameters) {
               return PgCatalog.Types.Void.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_spgist_config_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_config_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_config_3d) );
@@ -18191,9 +17506,8 @@ async call(parameters : Public.Procedures.GeometrySpgistChoose_3d.Parameters) {
               return PgCatalog.Types.Void.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_spgist_choose_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_choose_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_choose_3d) );
@@ -18212,9 +17526,8 @@ async call(parameters : Public.Procedures.GeometrySpgistPicksplit_3d.Parameters)
               return PgCatalog.Types.Void.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_spgist_picksplit_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_picksplit_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_picksplit_3d) );
@@ -18233,9 +17546,8 @@ async call(parameters : Public.Procedures.GeometrySpgistInnerConsistent_3d.Param
               return PgCatalog.Types.Void.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_spgist_inner_consistent_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_inner_consistent_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_inner_consistent_3d) );
@@ -18254,9 +17566,8 @@ async call(parameters : Public.Procedures.GeometrySpgistLeafConsistent_3d.Parame
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_spgist_leaf_consistent_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_leaf_consistent_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_spgist_leaf_consistent_3d) );
@@ -18275,9 +17586,8 @@ async call(parameters : Public.Procedures.GeometrySpgistCompress_3d.Parameters) 
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_spgist_compress_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_compress_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_spgist_compress_3d) );
@@ -18296,9 +17606,8 @@ async call(parameters : Public.Procedures.GeometrySpgistConfigNd.Parameters) {
               return PgCatalog.Types.Void.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_spgist_config_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_config_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_config_nd) );
@@ -18317,9 +17626,8 @@ async call(parameters : Public.Procedures.GeometrySpgistChooseNd.Parameters) {
               return PgCatalog.Types.Void.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_spgist_choose_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_choose_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_choose_nd) );
@@ -18338,9 +17646,8 @@ async call(parameters : Public.Procedures.GeometrySpgistPicksplitNd.Parameters) 
               return PgCatalog.Types.Void.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_spgist_picksplit_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_picksplit_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_picksplit_nd) );
@@ -18359,9 +17666,8 @@ async call(parameters : Public.Procedures.GeometrySpgistInnerConsistentNd.Parame
               return PgCatalog.Types.Void.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_spgist_inner_consistent_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_inner_consistent_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_inner_consistent_nd) );
@@ -18380,9 +17686,8 @@ async call(parameters : Public.Procedures.GeometrySpgistLeafConsistentNd.Paramet
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_spgist_leaf_consistent_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_leaf_consistent_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_spgist_leaf_consistent_nd) );
@@ -18401,9 +17706,8 @@ async call(parameters : Public.Procedures.GeometrySpgistCompressNd.Parameters) {
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geometry_spgist_compress_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_compress_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_spgist_compress_nd) );
@@ -18422,9 +17726,8 @@ async call(parameters : Public.Procedures.GeographySpgistConfigNd.Parameters) {
               return PgCatalog.Types.Void.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_spgist_config_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_spgist_config_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geography_spgist_config_nd) );
@@ -18443,9 +17746,8 @@ async call(parameters : Public.Procedures.GeographySpgistChooseNd.Parameters) {
               return PgCatalog.Types.Void.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_spgist_choose_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_spgist_choose_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geography_spgist_choose_nd) );
@@ -18464,9 +17766,8 @@ async call(parameters : Public.Procedures.GeographySpgistPicksplitNd.Parameters)
               return PgCatalog.Types.Void.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_spgist_picksplit_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_spgist_picksplit_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geography_spgist_picksplit_nd) );
@@ -18485,9 +17786,8 @@ async call(parameters : Public.Procedures.GeographySpgistInnerConsistentNd.Param
               return PgCatalog.Types.Void.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_spgist_inner_consistent_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_spgist_inner_consistent_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geography_spgist_inner_consistent_nd) );
@@ -18506,9 +17806,8 @@ async call(parameters : Public.Procedures.GeographySpgistLeafConsistentNd.Parame
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_spgist_leaf_consistent_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_spgist_leaf_consistent_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_spgist_leaf_consistent_nd) );
@@ -18527,9 +17826,8 @@ async call(parameters : Public.Procedures.GeographySpgistCompressNd.Parameters) 
               return PgCatalog.Types.Internal.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.geography_spgist_compress_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_spgist_compress_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geography_spgist_compress_nd) );
@@ -18548,9 +17846,8 @@ async call(parameters : Public.Procedures.StLetters.Parameters) {
               return Public.Types.Geometry.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.st_letters(letters => ${ typed[25](undefinedIsNull(parameters.letters)) },font => ${ typed[114](undefinedIsNull(parameters.font)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_letters(letters => ${ typed[25](undefinedIsNull(parameters.letters)) },font => ${ typed[114](undefinedIsNull(parameters.font)) })`);
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_letters) );
