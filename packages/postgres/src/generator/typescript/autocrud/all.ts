@@ -26,7 +26,7 @@ export const AllOperation = {
       const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? \`ORDER BY \${options.sort.join(",")}\` : "";
       `,
-      `const response = await this.database.invoke( (sql) => sql\`${sql}\`);`,
+      `const response = await this.database.invoke( (sql) => sql\`${sql}\`, options);`,
 
       `return ${postgresToTypescript(context, node.table.type)}`,
 

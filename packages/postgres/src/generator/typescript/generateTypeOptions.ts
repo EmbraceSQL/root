@@ -21,9 +21,6 @@ const TypeOptionEntry = {
  */
 export async function generateTypeOptions(context: GenerationContext) {
   context.handlers = {
-    [ASTKind.Database]: {
-      before: async () => `// Type Options`,
-    },
     [ASTKind.Schema]: NamespaceVisitor,
     [ASTKind.Tables]: NamespaceVisitor,
     [ASTKind.Table]: NamespaceVisitor,
@@ -39,7 +36,7 @@ export async function generateTypeOptions(context: GenerationContext) {
       before: NamespaceVisitor.before,
       after: async (context, node) => {
         return [
-          `export type Options = {`,
+          `export type Options = InvokeQueryOptions & {`,
           ` ${node.attributes
             .map(
               (a) =>

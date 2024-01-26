@@ -20,7 +20,7 @@ export async function generateHeader(context: GenerationContext) {
         /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
         /* @typescript-eslint/no-redundant-type-constituents */
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
-        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
+        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort, InvokeQueryOptions } from "@embracesql/shared";
         import { Geometry } from "@embracesql/shared";
         import { DatabaseMetadata, Schema, Table, Column, Index, Procedure } from "@embracesql/shared";
     `;

@@ -13,7 +13,7 @@
         /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
         /* @typescript-eslint/no-redundant-type-constituents */
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
-        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
+        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort, InvokeQueryOptions } from "@embracesql/shared";
         import { Geometry } from "@embracesql/shared";
         import { DatabaseMetadata, Schema, Table, Column, Index, Procedure } from "@embracesql/shared";
     
@@ -1806,7 +1806,7 @@ get settings() { return this.context.settings as Settings };
             }
         
 
-          async call () {
+          async call (options?: InvokeQueryOptions) {
             const response = await this.database.invoke( (sql) => sql.unsafe(`
                 SELECT
   film_id,
@@ -1828,7 +1828,7 @@ get settings() { return this.context.settings as Settings };
 
 FROM 
   public.film f
-                `));
+                `), options);
             return response.map(r => ({ filmId: undefinedIsNull(PgCatalog.Types.Int4.parse(r.film_id)),title: undefinedIsNull(PgCatalog.Types.Varchar.parse(r.title)),releaseYear: undefinedIsNull(PgCatalog.Types.Int4.parse(r.release_year)),rating: undefinedIsNull(Public.Types.MpaaRating.parse(r.rating)),actors: undefinedIsNull(PgCatalog.Types.TextArray.parse(r.actors)) }));
           }
         
@@ -1861,7 +1861,7 @@ FROM
             }
         
 
-          async call (parameters: Scripts.Sample.Film.Rated.Parameters) {
+          async call (parameters: Scripts.Sample.Film.Rated.Parameters, options?: InvokeQueryOptions) {
             const response = await this.database.invoke( (sql) => sql.unsafe(`
                 SELECT
     *
@@ -1869,7 +1869,7 @@ FROM
     public.film
 WHERE
     rating = $1
-                `, [parameters.argument_1]));
+                `, [parameters.argument_1]), options);
             return response.map(r => ({ filmId: undefinedIsNull(PgCatalog.Types.Int4.parse(r.film_id)),title: undefinedIsNull(PgCatalog.Types.Varchar.parse(r.title)),description: undefinedIsNull(PgCatalog.Types.Text.parse(r.description)),releaseYear: undefinedIsNull(PgCatalog.Types.Int4.parse(r.release_year)),languageId: undefinedIsNull(PgCatalog.Types.Int2.parse(r.language_id)),rentalDuration: undefinedIsNull(PgCatalog.Types.Int2.parse(r.rental_duration)),rentalRate: undefinedIsNull(PgCatalog.Types.Numeric.parse(r.rental_rate)),length: undefinedIsNull(PgCatalog.Types.Int2.parse(r.length)),replacementCost: undefinedIsNull(PgCatalog.Types.Numeric.parse(r.replacement_cost)),rating: undefinedIsNull(Public.Types.MpaaRating.parse(r.rating)),lastUpdate: undefinedIsNull(PgCatalog.Types.Timestamp.parse(r.last_update)),specialFeatures: undefinedIsNull(PgCatalog.Types.TextArray.parse(r.special_features)),fulltext: undefinedIsNull(PgCatalog.Types.Tsvector.parse(r.fulltext)) }));
           }
         
@@ -1884,14 +1884,14 @@ WHERE
             }
         
 
-          async call () {
+          async call (options?: InvokeQueryOptions) {
             const response = await this.database.invoke( (sql) => sql.unsafe(`
                 SELECT
     COUNT(*)
 FROM
     public.film
 
-                `));
+                `), options);
             return response.map(r => ({ count: undefinedIsNull(PgCatalog.Types.Int8.parse(r.count)) }));
           }
         
@@ -1907,7 +1907,7 @@ FROM
             }
         
 
-          async call (parameters: Scripts.Sample.Pick.Parameters) {
+          async call (parameters: Scripts.Sample.Pick.Parameters, options?: InvokeQueryOptions) {
             const response = await this.database.invoke( (sql) => sql.unsafe(`
                 SELECT
     *
@@ -1915,7 +1915,7 @@ FROM
     public.film
 WHERE
     title = $1
-                `, [parameters.argument_1]));
+                `, [parameters.argument_1]), options);
             return response.map(r => ({ filmId: undefinedIsNull(PgCatalog.Types.Int4.parse(r.film_id)),title: undefinedIsNull(PgCatalog.Types.Varchar.parse(r.title)),description: undefinedIsNull(PgCatalog.Types.Text.parse(r.description)),releaseYear: undefinedIsNull(PgCatalog.Types.Int4.parse(r.release_year)),languageId: undefinedIsNull(PgCatalog.Types.Int2.parse(r.language_id)),rentalDuration: undefinedIsNull(PgCatalog.Types.Int2.parse(r.rental_duration)),rentalRate: undefinedIsNull(PgCatalog.Types.Numeric.parse(r.rental_rate)),length: undefinedIsNull(PgCatalog.Types.Int2.parse(r.length)),replacementCost: undefinedIsNull(PgCatalog.Types.Numeric.parse(r.replacement_cost)),rating: undefinedIsNull(Public.Types.MpaaRating.parse(r.rating)),lastUpdate: undefinedIsNull(PgCatalog.Types.Timestamp.parse(r.last_update)),specialFeatures: undefinedIsNull(PgCatalog.Types.TextArray.parse(r.special_features)),fulltext: undefinedIsNull(PgCatalog.Types.Tsvector.parse(r.fulltext)) }));
           }
         
@@ -1931,14 +1931,14 @@ WHERE
             }
         
 
-          async call () {
+          async call (options?: InvokeQueryOptions) {
             const response = await this.database.invoke( (sql) => sql.unsafe(`
                 SELECT
     COUNT(*)
 FROM
     public.actor
 
-                `));
+                `), options);
             return response.map(r => ({ count: undefinedIsNull(PgCatalog.Types.Int8.parse(r.count)) }));
           }
         
@@ -1984,14 +1984,14 @@ export class FilmInStock implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "film_in_stock"; }
-async call(parameters : Public.Procedures.FilmInStock.Parameters) {
+async call(parameters : Public.Procedures.FilmInStock.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               return context.procTypes[28923].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.film_in_stock(p_film_id => ${ typed[23](undefinedIsNull(parameters.pFilmId)) },p_store_id => ${ typed[23](undefinedIsNull(parameters.pStoreId)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.film_in_stock(p_film_id => ${ typed[23](undefinedIsNull(parameters.pFilmId)) },p_store_id => ${ typed[23](undefinedIsNull(parameters.pStoreId)) })`, options);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.film_in_stock)).filter<PgCatalog.Types.Int4>((r):r is PgCatalog.Types.Int4 => r !== null) );
@@ -2003,14 +2003,14 @@ export class FilmNotInStock implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "film_not_in_stock"; }
-async call(parameters : Public.Procedures.FilmNotInStock.Parameters) {
+async call(parameters : Public.Procedures.FilmNotInStock.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               return context.procTypes[28924].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.film_not_in_stock(p_film_id => ${ typed[23](undefinedIsNull(parameters.pFilmId)) },p_store_id => ${ typed[23](undefinedIsNull(parameters.pStoreId)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.film_not_in_stock(p_film_id => ${ typed[23](undefinedIsNull(parameters.pFilmId)) },p_store_id => ${ typed[23](undefinedIsNull(parameters.pStoreId)) })`, options);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.film_not_in_stock)).filter<PgCatalog.Types.Int4>((r):r is PgCatalog.Types.Int4 => r !== null) );
@@ -2022,7 +2022,7 @@ export class GetCustomerBalance implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "get_customer_balance"; }
-async call(parameters : Public.Procedures.GetCustomerBalance.Parameters) {
+async call(parameters : Public.Procedures.GetCustomerBalance.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2030,7 +2030,7 @@ async call(parameters : Public.Procedures.GetCustomerBalance.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.get_customer_balance(p_customer_id => ${ typed[23](undefinedIsNull(parameters.pCustomerId)) },p_effective_date => ${ typed[1114](undefinedIsNull(parameters.pEffectiveDate)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.get_customer_balance(p_customer_id => ${ typed[23](undefinedIsNull(parameters.pCustomerId)) },p_effective_date => ${ typed[1114](undefinedIsNull(parameters.pEffectiveDate)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Numeric.parse(results?.[0].get_customer_balance) );
@@ -2042,7 +2042,7 @@ export class InventoryHeldByCustomer implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "inventory_held_by_customer"; }
-async call(parameters : Public.Procedures.InventoryHeldByCustomer.Parameters) {
+async call(parameters : Public.Procedures.InventoryHeldByCustomer.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2050,7 +2050,7 @@ async call(parameters : Public.Procedures.InventoryHeldByCustomer.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.inventory_held_by_customer(p_inventory_id => ${ typed[23](undefinedIsNull(parameters.pInventoryId)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.inventory_held_by_customer(p_inventory_id => ${ typed[23](undefinedIsNull(parameters.pInventoryId)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].inventory_held_by_customer) );
@@ -2062,7 +2062,7 @@ export class InventoryInStock implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "inventory_in_stock"; }
-async call(parameters : Public.Procedures.InventoryInStock.Parameters) {
+async call(parameters : Public.Procedures.InventoryInStock.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2070,7 +2070,7 @@ async call(parameters : Public.Procedures.InventoryInStock.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.inventory_in_stock(p_inventory_id => ${ typed[23](undefinedIsNull(parameters.pInventoryId)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.inventory_in_stock(p_inventory_id => ${ typed[23](undefinedIsNull(parameters.pInventoryId)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].inventory_in_stock) );
@@ -2082,7 +2082,7 @@ export class LastDay implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "last_day"; }
-async call(parameters : Public.Procedures.LastDay.Parameters) {
+async call(parameters : Public.Procedures.LastDay.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2090,7 +2090,7 @@ async call(parameters : Public.Procedures.LastDay.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.last_day( ${ typed[1114](undefinedIsNull(parameters.argument_0)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.last_day( ${ typed[1114](undefinedIsNull(parameters.argument_0)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Date.parse(results?.[0].last_day) );
@@ -2102,7 +2102,7 @@ export class RewardsReport implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "rewards_report"; }
-async call(parameters : Public.Procedures.RewardsReport.Parameters) {
+async call(parameters : Public.Procedures.RewardsReport.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2110,7 +2110,7 @@ async call(parameters : Public.Procedures.RewardsReport.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.rewards_report(min_monthly_purchases => ${ typed[23](undefinedIsNull(parameters.minMonthlyPurchases)) },min_dollar_amount_purchased => ${ typed[1700](undefinedIsNull(parameters.minDollarAmountPurchased)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.rewards_report(min_monthly_purchases => ${ typed[23](undefinedIsNull(parameters.minMonthlyPurchases)) },min_dollar_amount_purchased => ${ typed[1700](undefinedIsNull(parameters.minDollarAmountPurchased)) })`, options);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.rewards_report)).filter<Public.Types.Customer>((r):r is Public.Types.Customer => r !== null) );
@@ -2172,7 +2172,7 @@ const response = await this.database.invoke( (sql) => sql`
       last_update = EXCLUDED.last_update
     RETURNING
       actor_id,film_id,last_update
-    `);
+    `, options);
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async all(options?: Public.Tables.FilmActor.Options) : Promise<Public.Types.FilmActor[]>{
@@ -2188,7 +2188,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.FilmActor.FilmActorPkey(this)}
@@ -2220,7 +2220,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.address === undefined ? sql`DEFAULT` : typed[1043](values.address) },${ values.address2 === undefined ? sql`DEFAULT` : typed[1043](values.address2) },${ values.district === undefined ? sql`DEFAULT` : typed[1043](values.district) },${ values.cityId === undefined ? sql`DEFAULT` : typed[21](values.cityId) },${ values.postalCode === undefined ? sql`DEFAULT` : typed[1043](values.postalCode) },${ values.phone === undefined ? sql`DEFAULT` : typed[1043](values.phone) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
       RETURNING
         address_id,address,address2,district,city_id,postal_code,phone,last_update
-    `);
+    `, options);
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -2232,7 +2232,7 @@ const response = await this.database.invoke( (sql) => sql`
       address = EXCLUDED.address,address2 = EXCLUDED.address2,district = EXCLUDED.district,city_id = EXCLUDED.city_id,postal_code = EXCLUDED.postal_code,phone = EXCLUDED.phone,last_update = EXCLUDED.last_update
     RETURNING
       address_id,address,address2,district,city_id,postal_code,phone,last_update
-    `);
+    `, options);
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async all(options?: Public.Tables.Address.Options) : Promise<Public.Types.Address[]>{
@@ -2248,7 +2248,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Address.AddressPkey(this)}
@@ -2280,7 +2280,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.city === undefined ? sql`DEFAULT` : typed[1043](values.city) },${ values.countryId === undefined ? sql`DEFAULT` : typed[21](values.countryId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
       RETURNING
         city_id,city,country_id,last_update
-    `);
+    `, options);
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -2292,7 +2292,7 @@ const response = await this.database.invoke( (sql) => sql`
       city = EXCLUDED.city,country_id = EXCLUDED.country_id,last_update = EXCLUDED.last_update
     RETURNING
       city_id,city,country_id,last_update
-    `);
+    `, options);
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async all(options?: Public.Tables.City.Options) : Promise<Public.Types.City[]>{
@@ -2308,7 +2308,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.City.CityPkey(this)}
@@ -2340,7 +2340,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId) },${ values.firstName === undefined ? sql`DEFAULT` : typed[1043](values.firstName) },${ values.lastName === undefined ? sql`DEFAULT` : typed[1043](values.lastName) },${ values.email === undefined ? sql`DEFAULT` : typed[1043](values.email) },${ values.addressId === undefined ? sql`DEFAULT` : typed[21](values.addressId) },${ values.activebool === undefined ? sql`DEFAULT` : typed[16](values.activebool) },${ values.createDate === undefined ? sql`DEFAULT` : typed[1082](values.createDate) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.active === undefined ? sql`DEFAULT` : typed[23](values.active) })
       RETURNING
         customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active
-    `);
+    `, options);
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -2352,7 +2352,7 @@ const response = await this.database.invoke( (sql) => sql`
       store_id = EXCLUDED.store_id,first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,email = EXCLUDED.email,address_id = EXCLUDED.address_id,activebool = EXCLUDED.activebool,create_date = EXCLUDED.create_date,last_update = EXCLUDED.last_update,active = EXCLUDED.active
     RETURNING
       customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active
-    `);
+    `, options);
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))[0]
 }
 async all(options?: Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]>{
@@ -2368,7 +2368,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Customer.CustomerPkey(this)}
@@ -2404,7 +2404,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.firstName === undefined ? sql`DEFAULT` : typed[1043](values.firstName) },${ values.lastName === undefined ? sql`DEFAULT` : typed[1043](values.lastName) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
       RETURNING
         actor_id,first_name,last_name,last_update
-    `);
+    `, options);
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -2416,7 +2416,7 @@ const response = await this.database.invoke( (sql) => sql`
       first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,last_update = EXCLUDED.last_update
     RETURNING
       actor_id,first_name,last_name,last_update
-    `);
+    `, options);
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async all(options?: Public.Tables.Actor.Options) : Promise<Public.Types.Actor[]>{
@@ -2432,7 +2432,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Actor.ActorPkey(this)}
@@ -2463,7 +2463,7 @@ const response = await this.database.invoke( (sql) => sql`
       last_update = EXCLUDED.last_update
     RETURNING
       film_id,category_id,last_update
-    `);
+    `, options);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undefinedIsNull(r.category_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async all(options?: Public.Tables.FilmCategory.Options) : Promise<Public.Types.FilmCategory[]>{
@@ -2479,7 +2479,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undefinedIsNull(r.category_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.FilmCategory.FilmCategoryPkey(this)}
@@ -2509,7 +2509,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId) },${ values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
       RETURNING
         inventory_id,film_id,store_id,last_update
-    `);
+    `, options);
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -2521,7 +2521,7 @@ const response = await this.database.invoke( (sql) => sql`
       film_id = EXCLUDED.film_id,store_id = EXCLUDED.store_id,last_update = EXCLUDED.last_update
     RETURNING
       inventory_id,film_id,store_id,last_update
-    `);
+    `, options);
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async all(options?: Public.Tables.Inventory.Options) : Promise<Public.Types.Inventory[]>{
@@ -2537,7 +2537,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Inventory.InventoryPkey(this)}
@@ -2569,7 +2569,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
       RETURNING
         category_id,name,last_update
-    `);
+    `, options);
 return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -2581,7 +2581,7 @@ const response = await this.database.invoke( (sql) => sql`
       name = EXCLUDED.name,last_update = EXCLUDED.last_update
     RETURNING
       category_id,name,last_update
-    `);
+    `, options);
 return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async all(options?: Public.Tables.Category.Options) : Promise<Public.Types.Category[]>{
@@ -2597,7 +2597,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Category.CategoryPkey(this)}
@@ -2627,7 +2627,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.country === undefined ? sql`DEFAULT` : typed[1043](values.country) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
       RETURNING
         country_id,country,last_update
-    `);
+    `, options);
 return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -2639,7 +2639,7 @@ const response = await this.database.invoke( (sql) => sql`
       country = EXCLUDED.country,last_update = EXCLUDED.last_update
     RETURNING
       country_id,country,last_update
-    `);
+    `, options);
 return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async all(options?: Public.Tables.Country.Options) : Promise<Public.Types.Country[]>{
@@ -2655,7 +2655,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Country.CountryPkey(this)}
@@ -2685,7 +2685,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.name === undefined ? sql`DEFAULT` : typed[1042](values.name) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
       RETURNING
         language_id,name,last_update
-    `);
+    `, options);
 return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -2697,7 +2697,7 @@ const response = await this.database.invoke( (sql) => sql`
       name = EXCLUDED.name,last_update = EXCLUDED.last_update
     RETURNING
       language_id,name,last_update
-    `);
+    `, options);
 return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async all(options?: Public.Tables.Language.Options) : Promise<Public.Types.Language[]>{
@@ -2713,7 +2713,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Language.LanguagePkey(this)}
@@ -2743,7 +2743,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.rentalDate === undefined ? sql`DEFAULT` : typed[1114](values.rentalDate) },${ values.inventoryId === undefined ? sql`DEFAULT` : typed[23](values.inventoryId) },${ values.customerId === undefined ? sql`DEFAULT` : typed[21](values.customerId) },${ values.returnDate === undefined ? sql`DEFAULT` : typed[1114](values.returnDate) },${ values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
       RETURNING
         rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update
-    `);
+    `, options);
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -2755,7 +2755,7 @@ const response = await this.database.invoke( (sql) => sql`
       rental_date = EXCLUDED.rental_date,inventory_id = EXCLUDED.inventory_id,customer_id = EXCLUDED.customer_id,return_date = EXCLUDED.return_date,staff_id = EXCLUDED.staff_id,last_update = EXCLUDED.last_update
     RETURNING
       rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update
-    `);
+    `, options);
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async all(options?: Public.Tables.Rental.Options) : Promise<Public.Types.Rental[]>{
@@ -2771,7 +2771,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Rental.RentalPkey(this)}
@@ -2805,7 +2805,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.firstName === undefined ? sql`DEFAULT` : typed[1043](values.firstName) },${ values.lastName === undefined ? sql`DEFAULT` : typed[1043](values.lastName) },${ values.addressId === undefined ? sql`DEFAULT` : typed[21](values.addressId) },${ values.email === undefined ? sql`DEFAULT` : typed[1043](values.email) },${ values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId) },${ values.active === undefined ? sql`DEFAULT` : typed[16](values.active) },${ values.username === undefined ? sql`DEFAULT` : typed[1043](values.username) },${ values.password === undefined ? sql`DEFAULT` : typed[1043](values.password) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.picture === undefined ? sql`DEFAULT` : typed[17](values.picture) })
       RETURNING
         staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture
-    `);
+    `, options);
 return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -2817,7 +2817,7 @@ const response = await this.database.invoke( (sql) => sql`
       first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,address_id = EXCLUDED.address_id,email = EXCLUDED.email,store_id = EXCLUDED.store_id,active = EXCLUDED.active,username = EXCLUDED.username,password = EXCLUDED.password,last_update = EXCLUDED.last_update,picture = EXCLUDED.picture
     RETURNING
       staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture
-    `);
+    `, options);
 return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))[0]
 }
 async all(options?: Public.Tables.Staff.Options) : Promise<Public.Types.Staff[]>{
@@ -2833,7 +2833,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Staff.StaffPkey(this)}
@@ -2863,7 +2863,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.managerStaffId === undefined ? sql`DEFAULT` : typed[21](values.managerStaffId) },${ values.addressId === undefined ? sql`DEFAULT` : typed[21](values.addressId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
       RETURNING
         store_id,manager_staff_id,address_id,last_update
-    `);
+    `, options);
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -2875,7 +2875,7 @@ const response = await this.database.invoke( (sql) => sql`
       manager_staff_id = EXCLUDED.manager_staff_id,address_id = EXCLUDED.address_id,last_update = EXCLUDED.last_update
     RETURNING
       store_id,manager_staff_id,address_id,last_update
-    `);
+    `, options);
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async all(options?: Public.Tables.Store.Options) : Promise<Public.Types.Store[]>{
@@ -2891,7 +2891,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Store.StorePkey(this)}
@@ -2923,7 +2923,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.customerId === undefined ? sql`DEFAULT` : typed[21](values.customerId) },${ values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId) },${ values.rentalId === undefined ? sql`DEFAULT` : typed[23](values.rentalId) },${ values.amount === undefined ? sql`DEFAULT` : typed[1700](values.amount) },${ values.paymentDate === undefined ? sql`DEFAULT` : typed[1114](values.paymentDate) })
       RETURNING
         payment_id,customer_id,staff_id,rental_id,amount,payment_date
-    `);
+    `, options);
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -2935,7 +2935,7 @@ const response = await this.database.invoke( (sql) => sql`
       customer_id = EXCLUDED.customer_id,staff_id = EXCLUDED.staff_id,rental_id = EXCLUDED.rental_id,amount = EXCLUDED.amount,payment_date = EXCLUDED.payment_date
     RETURNING
       payment_id,customer_id,staff_id,rental_id,amount,payment_date
-    `);
+    `, options);
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))[0]
 }
 async all(options?: Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]>{
@@ -2951,7 +2951,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Payment.PaymentPkey(this)}
@@ -2987,7 +2987,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.title === undefined ? sql`DEFAULT` : typed[1043](values.title) },${ values.description === undefined ? sql`DEFAULT` : typed[25](values.description) },${ values.releaseYear === undefined ? sql`DEFAULT` : typed[28920](values.releaseYear) },${ values.languageId === undefined ? sql`DEFAULT` : typed[21](values.languageId) },${ values.rentalDuration === undefined ? sql`DEFAULT` : typed[21](values.rentalDuration) },${ values.rentalRate === undefined ? sql`DEFAULT` : typed[1700](values.rentalRate) },${ values.length === undefined ? sql`DEFAULT` : typed[21](values.length) },${ values.replacementCost === undefined ? sql`DEFAULT` : typed[1700](values.replacementCost) },${ values.rating === undefined ? sql`DEFAULT` : typed[28908](values.rating) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.specialFeatures === undefined ? sql`DEFAULT` : typed[1009](values.specialFeatures) },${ values.fulltext === undefined ? sql`DEFAULT` : typed[3614](values.fulltext) })
       RETURNING
         film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
-    `);
+    `, options);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -2999,7 +2999,7 @@ const response = await this.database.invoke( (sql) => sql`
       title = EXCLUDED.title,description = EXCLUDED.description,release_year = EXCLUDED.release_year,language_id = EXCLUDED.language_id,rental_duration = EXCLUDED.rental_duration,rental_rate = EXCLUDED.rental_rate,length = EXCLUDED.length,replacement_cost = EXCLUDED.replacement_cost,rating = EXCLUDED.rating,last_update = EXCLUDED.last_update,special_features = EXCLUDED.special_features,fulltext = EXCLUDED.fulltext
     RETURNING
       film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
-    `);
+    `, options);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))[0]
 }
 async all(options?: Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
@@ -3015,7 +3015,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Film.FilmPkey(this)}
@@ -3045,11 +3045,10 @@ export namespace FilmActor {
 async read(parameters: Public.Types.FilmActorPkey, options?: Public.Types.FilmActorPkey.Options & Public.Tables.FilmActor.Options) : Promise<Public.Types.FilmActor>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       actor_id,film_id,last_update 
@@ -3060,7 +3059,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
@@ -3078,7 +3077,7 @@ const response = await this.database.invoke( (sql) => sql`
       actor_id = ${ values.actorId === undefined ? sql`actor_id` : typed[21](values.actorId) } , film_id = ${ values.filmId === undefined ? sql`film_id` : typed[21](values.filmId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       actor_id = ${ parameters.actorId === undefined ? sql`DEFAULT` : typed[21](parameters.actorId) } AND film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
-    RETURNING actor_id,film_id,last_update`);
+    RETURNING actor_id,film_id,last_update`, options);
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.FilmActorPkey, options?: Public.Types.FilmActorPkey.Options & Public.Tables.FilmActor.Options) {
@@ -3090,7 +3089,7 @@ async delete(parameters: Public.Types.FilmActorPkey, options?: Public.Types.Film
       public.film_actor 
     WHERE
       actor_id = ${ parameters.actorId === undefined ? sql`DEFAULT` : typed[21](parameters.actorId) } AND film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
-    RETURNING actor_id,film_id,last_update`);
+    RETURNING actor_id,film_id,last_update`, options);
  return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -3107,11 +3106,10 @@ async delete(parameters: Public.Types.FilmActorPkey, options?: Public.Types.Film
 async read(parameters: Public.Types.IdxFkFilmId, options?: Public.Types.IdxFkFilmId.Options & Public.Tables.FilmActor.Options) : Promise<Public.Types.FilmActor[]>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       actor_id,film_id,last_update 
@@ -3122,7 +3120,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 
@@ -3140,7 +3138,7 @@ const response = await this.database.invoke( (sql) => sql`
       actor_id = ${ values.actorId === undefined ? sql`actor_id` : typed[21](values.actorId) } , film_id = ${ values.filmId === undefined ? sql`film_id` : typed[21](values.filmId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
-    RETURNING actor_id,film_id,last_update`);
+    RETURNING actor_id,film_id,last_update`, options);
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 async delete(parameters: Public.Types.IdxFkFilmId, options?: Public.Types.IdxFkFilmId.Options & Public.Tables.FilmActor.Options) {
@@ -3152,7 +3150,7 @@ async delete(parameters: Public.Types.IdxFkFilmId, options?: Public.Types.IdxFkF
       public.film_actor 
     WHERE
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
-    RETURNING actor_id,film_id,last_update`);
+    RETURNING actor_id,film_id,last_update`, options);
  return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 }
@@ -3171,11 +3169,10 @@ export namespace Address {
 async read(parameters: Public.Types.AddressPkey, options?: Public.Types.AddressPkey.Options & Public.Tables.Address.Options) : Promise<Public.Types.Address>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       address_id,address,address2,district,city_id,postal_code,phone,last_update 
@@ -3186,7 +3183,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
@@ -3204,7 +3201,7 @@ const response = await this.database.invoke( (sql) => sql`
       address_id = ${ values.addressId === undefined ? sql`address_id` : typed[23](values.addressId) } , address = ${ values.address === undefined ? sql`address` : typed[1043](values.address) } , address2 = ${ values.address2 === undefined ? sql`address2` : typed[1043](values.address2) } , district = ${ values.district === undefined ? sql`district` : typed[1043](values.district) } , city_id = ${ values.cityId === undefined ? sql`city_id` : typed[21](values.cityId) } , postal_code = ${ values.postalCode === undefined ? sql`postal_code` : typed[1043](values.postalCode) } , phone = ${ values.phone === undefined ? sql`phone` : typed[1043](values.phone) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       address_id = ${ parameters.addressId === undefined ? sql`DEFAULT` : typed[23](parameters.addressId) }
-    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`);
+    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`, options);
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.AddressPkey, options?: Public.Types.AddressPkey.Options & Public.Tables.Address.Options) {
@@ -3216,7 +3213,7 @@ async delete(parameters: Public.Types.AddressPkey, options?: Public.Types.Addres
       public.address 
     WHERE
       address_id = ${ parameters.addressId === undefined ? sql`DEFAULT` : typed[23](parameters.addressId) }
-    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`);
+    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`, options);
  return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -3233,11 +3230,10 @@ async delete(parameters: Public.Types.AddressPkey, options?: Public.Types.Addres
 async read(parameters: Public.Types.IdxFkCityId, options?: Public.Types.IdxFkCityId.Options & Public.Tables.Address.Options) : Promise<Public.Types.Address[]>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       address_id,address,address2,district,city_id,postal_code,phone,last_update 
@@ -3248,7 +3244,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 
@@ -3266,7 +3262,7 @@ const response = await this.database.invoke( (sql) => sql`
       address_id = ${ values.addressId === undefined ? sql`address_id` : typed[23](values.addressId) } , address = ${ values.address === undefined ? sql`address` : typed[1043](values.address) } , address2 = ${ values.address2 === undefined ? sql`address2` : typed[1043](values.address2) } , district = ${ values.district === undefined ? sql`district` : typed[1043](values.district) } , city_id = ${ values.cityId === undefined ? sql`city_id` : typed[21](values.cityId) } , postal_code = ${ values.postalCode === undefined ? sql`postal_code` : typed[1043](values.postalCode) } , phone = ${ values.phone === undefined ? sql`phone` : typed[1043](values.phone) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       city_id = ${ parameters.cityId === undefined ? sql`DEFAULT` : typed[21](parameters.cityId) }
-    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`);
+    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`, options);
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 async delete(parameters: Public.Types.IdxFkCityId, options?: Public.Types.IdxFkCityId.Options & Public.Tables.Address.Options) {
@@ -3278,7 +3274,7 @@ async delete(parameters: Public.Types.IdxFkCityId, options?: Public.Types.IdxFkC
       public.address 
     WHERE
       city_id = ${ parameters.cityId === undefined ? sql`DEFAULT` : typed[21](parameters.cityId) }
-    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`);
+    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`, options);
  return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 }
@@ -3297,11 +3293,10 @@ export namespace City {
 async read(parameters: Public.Types.CityPkey, options?: Public.Types.CityPkey.Options & Public.Tables.City.Options) : Promise<Public.Types.City>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       city_id,city,country_id,last_update 
@@ -3312,7 +3307,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
@@ -3330,7 +3325,7 @@ const response = await this.database.invoke( (sql) => sql`
       city_id = ${ values.cityId === undefined ? sql`city_id` : typed[23](values.cityId) } , city = ${ values.city === undefined ? sql`city` : typed[1043](values.city) } , country_id = ${ values.countryId === undefined ? sql`country_id` : typed[21](values.countryId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       city_id = ${ parameters.cityId === undefined ? sql`DEFAULT` : typed[23](parameters.cityId) }
-    RETURNING city_id,city,country_id,last_update`);
+    RETURNING city_id,city,country_id,last_update`, options);
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.CityPkey, options?: Public.Types.CityPkey.Options & Public.Tables.City.Options) {
@@ -3342,7 +3337,7 @@ async delete(parameters: Public.Types.CityPkey, options?: Public.Types.CityPkey.
       public.city 
     WHERE
       city_id = ${ parameters.cityId === undefined ? sql`DEFAULT` : typed[23](parameters.cityId) }
-    RETURNING city_id,city,country_id,last_update`);
+    RETURNING city_id,city,country_id,last_update`, options);
  return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -3359,11 +3354,10 @@ async delete(parameters: Public.Types.CityPkey, options?: Public.Types.CityPkey.
 async read(parameters: Public.Types.IdxFkCountryId, options?: Public.Types.IdxFkCountryId.Options & Public.Tables.City.Options) : Promise<Public.Types.City[]>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       city_id,city,country_id,last_update 
@@ -3374,7 +3368,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 
@@ -3392,7 +3386,7 @@ const response = await this.database.invoke( (sql) => sql`
       city_id = ${ values.cityId === undefined ? sql`city_id` : typed[23](values.cityId) } , city = ${ values.city === undefined ? sql`city` : typed[1043](values.city) } , country_id = ${ values.countryId === undefined ? sql`country_id` : typed[21](values.countryId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       country_id = ${ parameters.countryId === undefined ? sql`DEFAULT` : typed[21](parameters.countryId) }
-    RETURNING city_id,city,country_id,last_update`);
+    RETURNING city_id,city,country_id,last_update`, options);
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 async delete(parameters: Public.Types.IdxFkCountryId, options?: Public.Types.IdxFkCountryId.Options & Public.Tables.City.Options) {
@@ -3404,7 +3398,7 @@ async delete(parameters: Public.Types.IdxFkCountryId, options?: Public.Types.Idx
       public.city 
     WHERE
       country_id = ${ parameters.countryId === undefined ? sql`DEFAULT` : typed[21](parameters.countryId) }
-    RETURNING city_id,city,country_id,last_update`);
+    RETURNING city_id,city,country_id,last_update`, options);
  return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 }
@@ -3423,11 +3417,10 @@ export namespace Customer {
 async read(parameters: Public.Types.CustomerPkey, options?: Public.Types.CustomerPkey.Options & Public.Tables.Customer.Options) : Promise<Public.Types.Customer>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
@@ -3438,7 +3431,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))[0]
 }
 
@@ -3456,7 +3449,7 @@ const response = await this.database.invoke( (sql) => sql`
       customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[23](values.customerId) } , store_id = ${ values.storeId === undefined ? sql`store_id` : typed[21](values.storeId) } , first_name = ${ values.firstName === undefined ? sql`first_name` : typed[1043](values.firstName) } , last_name = ${ values.lastName === undefined ? sql`last_name` : typed[1043](values.lastName) } , email = ${ values.email === undefined ? sql`email` : typed[1043](values.email) } , address_id = ${ values.addressId === undefined ? sql`address_id` : typed[21](values.addressId) } , activebool = ${ values.activebool === undefined ? sql`activebool` : typed[16](values.activebool) } , create_date = ${ values.createDate === undefined ? sql`create_date` : typed[1082](values.createDate) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , active = ${ values.active === undefined ? sql`active` : typed[23](values.active) } 
     WHERE
       customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[23](parameters.customerId) }
-    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`);
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, options);
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))[0]
 }
 async delete(parameters: Public.Types.CustomerPkey, options?: Public.Types.CustomerPkey.Options & Public.Tables.Customer.Options) {
@@ -3468,7 +3461,7 @@ async delete(parameters: Public.Types.CustomerPkey, options?: Public.Types.Custo
       public.customer 
     WHERE
       customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[23](parameters.customerId) }
-    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`);
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, options);
  return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))[0]
 }
 }
@@ -3485,11 +3478,10 @@ async delete(parameters: Public.Types.CustomerPkey, options?: Public.Types.Custo
 async read(parameters: Public.Types.IdxFkAddressId, options?: Public.Types.IdxFkAddressId.Options & Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
@@ -3500,7 +3492,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
 
@@ -3518,7 +3510,7 @@ const response = await this.database.invoke( (sql) => sql`
       customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[23](values.customerId) } , store_id = ${ values.storeId === undefined ? sql`store_id` : typed[21](values.storeId) } , first_name = ${ values.firstName === undefined ? sql`first_name` : typed[1043](values.firstName) } , last_name = ${ values.lastName === undefined ? sql`last_name` : typed[1043](values.lastName) } , email = ${ values.email === undefined ? sql`email` : typed[1043](values.email) } , address_id = ${ values.addressId === undefined ? sql`address_id` : typed[21](values.addressId) } , activebool = ${ values.activebool === undefined ? sql`activebool` : typed[16](values.activebool) } , create_date = ${ values.createDate === undefined ? sql`create_date` : typed[1082](values.createDate) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , active = ${ values.active === undefined ? sql`active` : typed[23](values.active) } 
     WHERE
       address_id = ${ parameters.addressId === undefined ? sql`DEFAULT` : typed[21](parameters.addressId) }
-    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`);
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, options);
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
 async delete(parameters: Public.Types.IdxFkAddressId, options?: Public.Types.IdxFkAddressId.Options & Public.Tables.Customer.Options) {
@@ -3530,7 +3522,7 @@ async delete(parameters: Public.Types.IdxFkAddressId, options?: Public.Types.Idx
       public.customer 
     WHERE
       address_id = ${ parameters.addressId === undefined ? sql`DEFAULT` : typed[21](parameters.addressId) }
-    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`);
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, options);
  return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
 }
@@ -3547,11 +3539,10 @@ async delete(parameters: Public.Types.IdxFkAddressId, options?: Public.Types.Idx
 async read(parameters: Public.Types.IdxFkStoreId, options?: Public.Types.IdxFkStoreId.Options & Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
@@ -3562,7 +3553,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
 
@@ -3580,7 +3571,7 @@ const response = await this.database.invoke( (sql) => sql`
       customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[23](values.customerId) } , store_id = ${ values.storeId === undefined ? sql`store_id` : typed[21](values.storeId) } , first_name = ${ values.firstName === undefined ? sql`first_name` : typed[1043](values.firstName) } , last_name = ${ values.lastName === undefined ? sql`last_name` : typed[1043](values.lastName) } , email = ${ values.email === undefined ? sql`email` : typed[1043](values.email) } , address_id = ${ values.addressId === undefined ? sql`address_id` : typed[21](values.addressId) } , activebool = ${ values.activebool === undefined ? sql`activebool` : typed[16](values.activebool) } , create_date = ${ values.createDate === undefined ? sql`create_date` : typed[1082](values.createDate) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , active = ${ values.active === undefined ? sql`active` : typed[23](values.active) } 
     WHERE
       store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[21](parameters.storeId) }
-    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`);
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, options);
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
 async delete(parameters: Public.Types.IdxFkStoreId, options?: Public.Types.IdxFkStoreId.Options & Public.Tables.Customer.Options) {
@@ -3592,7 +3583,7 @@ async delete(parameters: Public.Types.IdxFkStoreId, options?: Public.Types.IdxFk
       public.customer 
     WHERE
       store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[21](parameters.storeId) }
-    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`);
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, options);
  return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
 }
@@ -3609,11 +3600,10 @@ async delete(parameters: Public.Types.IdxFkStoreId, options?: Public.Types.IdxFk
 async read(parameters: Public.Types.IdxLastName, options?: Public.Types.IdxLastName.Options & Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
@@ -3624,7 +3614,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
 
@@ -3642,7 +3632,7 @@ const response = await this.database.invoke( (sql) => sql`
       customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[23](values.customerId) } , store_id = ${ values.storeId === undefined ? sql`store_id` : typed[21](values.storeId) } , first_name = ${ values.firstName === undefined ? sql`first_name` : typed[1043](values.firstName) } , last_name = ${ values.lastName === undefined ? sql`last_name` : typed[1043](values.lastName) } , email = ${ values.email === undefined ? sql`email` : typed[1043](values.email) } , address_id = ${ values.addressId === undefined ? sql`address_id` : typed[21](values.addressId) } , activebool = ${ values.activebool === undefined ? sql`activebool` : typed[16](values.activebool) } , create_date = ${ values.createDate === undefined ? sql`create_date` : typed[1082](values.createDate) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , active = ${ values.active === undefined ? sql`active` : typed[23](values.active) } 
     WHERE
       last_name = ${ parameters.lastName === undefined ? sql`DEFAULT` : typed[1043](parameters.lastName) }
-    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`);
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, options);
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
 async delete(parameters: Public.Types.IdxLastName, options?: Public.Types.IdxLastName.Options & Public.Tables.Customer.Options) {
@@ -3654,7 +3644,7 @@ async delete(parameters: Public.Types.IdxLastName, options?: Public.Types.IdxLas
       public.customer 
     WHERE
       last_name = ${ parameters.lastName === undefined ? sql`DEFAULT` : typed[1043](parameters.lastName) }
-    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`);
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, options);
  return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
 }
@@ -3673,11 +3663,10 @@ export namespace Actor {
 async read(parameters: Public.Types.ActorPkey, options?: Public.Types.ActorPkey.Options & Public.Tables.Actor.Options) : Promise<Public.Types.Actor>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       actor_id,first_name,last_name,last_update 
@@ -3688,7 +3677,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
@@ -3706,7 +3695,7 @@ const response = await this.database.invoke( (sql) => sql`
       actor_id = ${ values.actorId === undefined ? sql`actor_id` : typed[23](values.actorId) } , first_name = ${ values.firstName === undefined ? sql`first_name` : typed[1043](values.firstName) } , last_name = ${ values.lastName === undefined ? sql`last_name` : typed[1043](values.lastName) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       actor_id = ${ parameters.actorId === undefined ? sql`DEFAULT` : typed[23](parameters.actorId) }
-    RETURNING actor_id,first_name,last_name,last_update`);
+    RETURNING actor_id,first_name,last_name,last_update`, options);
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.ActorPkey, options?: Public.Types.ActorPkey.Options & Public.Tables.Actor.Options) {
@@ -3718,7 +3707,7 @@ async delete(parameters: Public.Types.ActorPkey, options?: Public.Types.ActorPke
       public.actor 
     WHERE
       actor_id = ${ parameters.actorId === undefined ? sql`DEFAULT` : typed[23](parameters.actorId) }
-    RETURNING actor_id,first_name,last_name,last_update`);
+    RETURNING actor_id,first_name,last_name,last_update`, options);
  return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -3735,11 +3724,10 @@ async delete(parameters: Public.Types.ActorPkey, options?: Public.Types.ActorPke
 async read(parameters: Public.Types.IdxActorLastName, options?: Public.Types.IdxActorLastName.Options & Public.Tables.Actor.Options) : Promise<Public.Types.Actor[]>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       actor_id,first_name,last_name,last_update 
@@ -3750,7 +3738,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 
@@ -3768,7 +3756,7 @@ const response = await this.database.invoke( (sql) => sql`
       actor_id = ${ values.actorId === undefined ? sql`actor_id` : typed[23](values.actorId) } , first_name = ${ values.firstName === undefined ? sql`first_name` : typed[1043](values.firstName) } , last_name = ${ values.lastName === undefined ? sql`last_name` : typed[1043](values.lastName) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       last_name = ${ parameters.lastName === undefined ? sql`DEFAULT` : typed[1043](parameters.lastName) }
-    RETURNING actor_id,first_name,last_name,last_update`);
+    RETURNING actor_id,first_name,last_name,last_update`, options);
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 async delete(parameters: Public.Types.IdxActorLastName, options?: Public.Types.IdxActorLastName.Options & Public.Tables.Actor.Options) {
@@ -3780,7 +3768,7 @@ async delete(parameters: Public.Types.IdxActorLastName, options?: Public.Types.I
       public.actor 
     WHERE
       last_name = ${ parameters.lastName === undefined ? sql`DEFAULT` : typed[1043](parameters.lastName) }
-    RETURNING actor_id,first_name,last_name,last_update`);
+    RETURNING actor_id,first_name,last_name,last_update`, options);
  return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 }
@@ -3799,11 +3787,10 @@ export namespace FilmCategory {
 async read(parameters: Public.Types.FilmCategoryPkey, options?: Public.Types.FilmCategoryPkey.Options & Public.Tables.FilmCategory.Options) : Promise<Public.Types.FilmCategory>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       film_id,category_id,last_update 
@@ -3814,7 +3801,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undefinedIsNull(r.category_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
@@ -3832,7 +3819,7 @@ const response = await this.database.invoke( (sql) => sql`
       film_id = ${ values.filmId === undefined ? sql`film_id` : typed[21](values.filmId) } , category_id = ${ values.categoryId === undefined ? sql`category_id` : typed[21](values.categoryId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) } AND category_id = ${ parameters.categoryId === undefined ? sql`DEFAULT` : typed[21](parameters.categoryId) }
-    RETURNING film_id,category_id,last_update`);
+    RETURNING film_id,category_id,last_update`, options);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undefinedIsNull(r.category_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.FilmCategoryPkey, options?: Public.Types.FilmCategoryPkey.Options & Public.Tables.FilmCategory.Options) {
@@ -3844,7 +3831,7 @@ async delete(parameters: Public.Types.FilmCategoryPkey, options?: Public.Types.F
       public.film_category 
     WHERE
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) } AND category_id = ${ parameters.categoryId === undefined ? sql`DEFAULT` : typed[21](parameters.categoryId) }
-    RETURNING film_id,category_id,last_update`);
+    RETURNING film_id,category_id,last_update`, options);
  return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undefinedIsNull(r.category_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -3863,11 +3850,10 @@ export namespace Inventory {
 async read(parameters: Public.Types.InventoryPkey, options?: Public.Types.InventoryPkey.Options & Public.Tables.Inventory.Options) : Promise<Public.Types.Inventory>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       inventory_id,film_id,store_id,last_update 
@@ -3878,7 +3864,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
@@ -3896,7 +3882,7 @@ const response = await this.database.invoke( (sql) => sql`
       inventory_id = ${ values.inventoryId === undefined ? sql`inventory_id` : typed[23](values.inventoryId) } , film_id = ${ values.filmId === undefined ? sql`film_id` : typed[21](values.filmId) } , store_id = ${ values.storeId === undefined ? sql`store_id` : typed[21](values.storeId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) }
-    RETURNING inventory_id,film_id,store_id,last_update`);
+    RETURNING inventory_id,film_id,store_id,last_update`, options);
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.InventoryPkey, options?: Public.Types.InventoryPkey.Options & Public.Tables.Inventory.Options) {
@@ -3908,7 +3894,7 @@ async delete(parameters: Public.Types.InventoryPkey, options?: Public.Types.Inve
       public.inventory 
     WHERE
       inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) }
-    RETURNING inventory_id,film_id,store_id,last_update`);
+    RETURNING inventory_id,film_id,store_id,last_update`, options);
  return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -3925,11 +3911,10 @@ async delete(parameters: Public.Types.InventoryPkey, options?: Public.Types.Inve
 async read(parameters: Public.Types.IdxStoreIdFilmId, options?: Public.Types.IdxStoreIdFilmId.Options & Public.Tables.Inventory.Options) : Promise<Public.Types.Inventory[]>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       inventory_id,film_id,store_id,last_update 
@@ -3940,7 +3925,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 
@@ -3958,7 +3943,7 @@ const response = await this.database.invoke( (sql) => sql`
       inventory_id = ${ values.inventoryId === undefined ? sql`inventory_id` : typed[23](values.inventoryId) } , film_id = ${ values.filmId === undefined ? sql`film_id` : typed[21](values.filmId) } , store_id = ${ values.storeId === undefined ? sql`store_id` : typed[21](values.storeId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[21](parameters.storeId) } AND film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
-    RETURNING inventory_id,film_id,store_id,last_update`);
+    RETURNING inventory_id,film_id,store_id,last_update`, options);
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 async delete(parameters: Public.Types.IdxStoreIdFilmId, options?: Public.Types.IdxStoreIdFilmId.Options & Public.Tables.Inventory.Options) {
@@ -3970,7 +3955,7 @@ async delete(parameters: Public.Types.IdxStoreIdFilmId, options?: Public.Types.I
       public.inventory 
     WHERE
       store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[21](parameters.storeId) } AND film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
-    RETURNING inventory_id,film_id,store_id,last_update`);
+    RETURNING inventory_id,film_id,store_id,last_update`, options);
  return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 }
@@ -3989,11 +3974,10 @@ export namespace Category {
 async read(parameters: Public.Types.CategoryPkey, options?: Public.Types.CategoryPkey.Options & Public.Tables.Category.Options) : Promise<Public.Types.Category>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       category_id,name,last_update 
@@ -4004,7 +3988,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
@@ -4022,7 +4006,7 @@ const response = await this.database.invoke( (sql) => sql`
       category_id = ${ values.categoryId === undefined ? sql`category_id` : typed[23](values.categoryId) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       category_id = ${ parameters.categoryId === undefined ? sql`DEFAULT` : typed[23](parameters.categoryId) }
-    RETURNING category_id,name,last_update`);
+    RETURNING category_id,name,last_update`, options);
 return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.CategoryPkey, options?: Public.Types.CategoryPkey.Options & Public.Tables.Category.Options) {
@@ -4034,7 +4018,7 @@ async delete(parameters: Public.Types.CategoryPkey, options?: Public.Types.Categ
       public.category 
     WHERE
       category_id = ${ parameters.categoryId === undefined ? sql`DEFAULT` : typed[23](parameters.categoryId) }
-    RETURNING category_id,name,last_update`);
+    RETURNING category_id,name,last_update`, options);
  return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -4053,11 +4037,10 @@ export namespace Country {
 async read(parameters: Public.Types.CountryPkey, options?: Public.Types.CountryPkey.Options & Public.Tables.Country.Options) : Promise<Public.Types.Country>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       country_id,country,last_update 
@@ -4068,7 +4051,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
@@ -4086,7 +4069,7 @@ const response = await this.database.invoke( (sql) => sql`
       country_id = ${ values.countryId === undefined ? sql`country_id` : typed[23](values.countryId) } , country = ${ values.country === undefined ? sql`country` : typed[1043](values.country) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       country_id = ${ parameters.countryId === undefined ? sql`DEFAULT` : typed[23](parameters.countryId) }
-    RETURNING country_id,country,last_update`);
+    RETURNING country_id,country,last_update`, options);
 return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.CountryPkey, options?: Public.Types.CountryPkey.Options & Public.Tables.Country.Options) {
@@ -4098,7 +4081,7 @@ async delete(parameters: Public.Types.CountryPkey, options?: Public.Types.Countr
       public.country 
     WHERE
       country_id = ${ parameters.countryId === undefined ? sql`DEFAULT` : typed[23](parameters.countryId) }
-    RETURNING country_id,country,last_update`);
+    RETURNING country_id,country,last_update`, options);
  return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -4117,11 +4100,10 @@ export namespace Language {
 async read(parameters: Public.Types.LanguagePkey, options?: Public.Types.LanguagePkey.Options & Public.Tables.Language.Options) : Promise<Public.Types.Language>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       language_id,name,last_update 
@@ -4132,7 +4114,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
@@ -4150,7 +4132,7 @@ const response = await this.database.invoke( (sql) => sql`
       language_id = ${ values.languageId === undefined ? sql`language_id` : typed[23](values.languageId) } , name = ${ values.name === undefined ? sql`name` : typed[1042](values.name) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       language_id = ${ parameters.languageId === undefined ? sql`DEFAULT` : typed[23](parameters.languageId) }
-    RETURNING language_id,name,last_update`);
+    RETURNING language_id,name,last_update`, options);
 return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.LanguagePkey, options?: Public.Types.LanguagePkey.Options & Public.Tables.Language.Options) {
@@ -4162,7 +4144,7 @@ async delete(parameters: Public.Types.LanguagePkey, options?: Public.Types.Langu
       public.language 
     WHERE
       language_id = ${ parameters.languageId === undefined ? sql`DEFAULT` : typed[23](parameters.languageId) }
-    RETURNING language_id,name,last_update`);
+    RETURNING language_id,name,last_update`, options);
  return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -4181,11 +4163,10 @@ export namespace Rental {
 async read(parameters: Public.Types.RentalPkey, options?: Public.Types.RentalPkey.Options & Public.Tables.Rental.Options) : Promise<Public.Types.Rental>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
@@ -4196,7 +4177,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
@@ -4214,7 +4195,7 @@ const response = await this.database.invoke( (sql) => sql`
       rental_id = ${ values.rentalId === undefined ? sql`rental_id` : typed[23](values.rentalId) } , rental_date = ${ values.rentalDate === undefined ? sql`rental_date` : typed[1114](values.rentalDate) } , inventory_id = ${ values.inventoryId === undefined ? sql`inventory_id` : typed[23](values.inventoryId) } , customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[21](values.customerId) } , return_date = ${ values.returnDate === undefined ? sql`return_date` : typed[1114](values.returnDate) } , staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       rental_id = ${ parameters.rentalId === undefined ? sql`DEFAULT` : typed[23](parameters.rentalId) }
-    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`);
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`, options);
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.RentalPkey, options?: Public.Types.RentalPkey.Options & Public.Tables.Rental.Options) {
@@ -4226,7 +4207,7 @@ async delete(parameters: Public.Types.RentalPkey, options?: Public.Types.RentalP
       public.rental 
     WHERE
       rental_id = ${ parameters.rentalId === undefined ? sql`DEFAULT` : typed[23](parameters.rentalId) }
-    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`);
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`, options);
  return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -4243,11 +4224,10 @@ async delete(parameters: Public.Types.RentalPkey, options?: Public.Types.RentalP
 async read(parameters: Public.Types.IdxFkInventoryId, options?: Public.Types.IdxFkInventoryId.Options & Public.Tables.Rental.Options) : Promise<Public.Types.Rental[]>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
@@ -4258,7 +4238,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 
@@ -4276,7 +4256,7 @@ const response = await this.database.invoke( (sql) => sql`
       rental_id = ${ values.rentalId === undefined ? sql`rental_id` : typed[23](values.rentalId) } , rental_date = ${ values.rentalDate === undefined ? sql`rental_date` : typed[1114](values.rentalDate) } , inventory_id = ${ values.inventoryId === undefined ? sql`inventory_id` : typed[23](values.inventoryId) } , customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[21](values.customerId) } , return_date = ${ values.returnDate === undefined ? sql`return_date` : typed[1114](values.returnDate) } , staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) }
-    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`);
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`, options);
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 async delete(parameters: Public.Types.IdxFkInventoryId, options?: Public.Types.IdxFkInventoryId.Options & Public.Tables.Rental.Options) {
@@ -4288,7 +4268,7 @@ async delete(parameters: Public.Types.IdxFkInventoryId, options?: Public.Types.I
       public.rental 
     WHERE
       inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) }
-    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`);
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`, options);
  return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 }
@@ -4305,11 +4285,10 @@ async delete(parameters: Public.Types.IdxFkInventoryId, options?: Public.Types.I
 async read(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, options?: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId.Options & Public.Tables.Rental.Options) : Promise<Public.Types.Rental>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
@@ -4320,7 +4299,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
@@ -4338,7 +4317,7 @@ const response = await this.database.invoke( (sql) => sql`
       rental_id = ${ values.rentalId === undefined ? sql`rental_id` : typed[23](values.rentalId) } , rental_date = ${ values.rentalDate === undefined ? sql`rental_date` : typed[1114](values.rentalDate) } , inventory_id = ${ values.inventoryId === undefined ? sql`inventory_id` : typed[23](values.inventoryId) } , customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[21](values.customerId) } , return_date = ${ values.returnDate === undefined ? sql`return_date` : typed[1114](values.returnDate) } , staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       rental_date = ${ parameters.rentalDate === undefined ? sql`DEFAULT` : typed[1114](parameters.rentalDate) } AND inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) } AND customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[21](parameters.customerId) }
-    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`);
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`, options);
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, options?: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId.Options & Public.Tables.Rental.Options) {
@@ -4350,7 +4329,7 @@ async delete(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerI
       public.rental 
     WHERE
       rental_date = ${ parameters.rentalDate === undefined ? sql`DEFAULT` : typed[1114](parameters.rentalDate) } AND inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) } AND customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[21](parameters.customerId) }
-    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`);
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`, options);
  return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -4369,11 +4348,10 @@ export namespace Staff {
 async read(parameters: Public.Types.StaffPkey, options?: Public.Types.StaffPkey.Options & Public.Tables.Staff.Options) : Promise<Public.Types.Staff>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture 
@@ -4384,7 +4362,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))[0]
 }
 
@@ -4402,7 +4380,7 @@ const response = await this.database.invoke( (sql) => sql`
       staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[23](values.staffId) } , first_name = ${ values.firstName === undefined ? sql`first_name` : typed[1043](values.firstName) } , last_name = ${ values.lastName === undefined ? sql`last_name` : typed[1043](values.lastName) } , address_id = ${ values.addressId === undefined ? sql`address_id` : typed[21](values.addressId) } , email = ${ values.email === undefined ? sql`email` : typed[1043](values.email) } , store_id = ${ values.storeId === undefined ? sql`store_id` : typed[21](values.storeId) } , active = ${ values.active === undefined ? sql`active` : typed[16](values.active) } , username = ${ values.username === undefined ? sql`username` : typed[1043](values.username) } , password = ${ values.password === undefined ? sql`password` : typed[1043](values.password) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , picture = ${ values.picture === undefined ? sql`picture` : typed[17](values.picture) } 
     WHERE
       staff_id = ${ parameters.staffId === undefined ? sql`DEFAULT` : typed[23](parameters.staffId) }
-    RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture`);
+    RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture`, options);
 return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))[0]
 }
 async delete(parameters: Public.Types.StaffPkey, options?: Public.Types.StaffPkey.Options & Public.Tables.Staff.Options) {
@@ -4414,7 +4392,7 @@ async delete(parameters: Public.Types.StaffPkey, options?: Public.Types.StaffPke
       public.staff 
     WHERE
       staff_id = ${ parameters.staffId === undefined ? sql`DEFAULT` : typed[23](parameters.staffId) }
-    RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture`);
+    RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture`, options);
  return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))[0]
 }
 }
@@ -4433,11 +4411,10 @@ export namespace Store {
 async read(parameters: Public.Types.StorePkey, options?: Public.Types.StorePkey.Options & Public.Tables.Store.Options) : Promise<Public.Types.Store>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       store_id,manager_staff_id,address_id,last_update 
@@ -4448,7 +4425,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
@@ -4466,7 +4443,7 @@ const response = await this.database.invoke( (sql) => sql`
       store_id = ${ values.storeId === undefined ? sql`store_id` : typed[23](values.storeId) } , manager_staff_id = ${ values.managerStaffId === undefined ? sql`manager_staff_id` : typed[21](values.managerStaffId) } , address_id = ${ values.addressId === undefined ? sql`address_id` : typed[21](values.addressId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[23](parameters.storeId) }
-    RETURNING store_id,manager_staff_id,address_id,last_update`);
+    RETURNING store_id,manager_staff_id,address_id,last_update`, options);
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.StorePkey, options?: Public.Types.StorePkey.Options & Public.Tables.Store.Options) {
@@ -4478,7 +4455,7 @@ async delete(parameters: Public.Types.StorePkey, options?: Public.Types.StorePke
       public.store 
     WHERE
       store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[23](parameters.storeId) }
-    RETURNING store_id,manager_staff_id,address_id,last_update`);
+    RETURNING store_id,manager_staff_id,address_id,last_update`, options);
  return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -4495,11 +4472,10 @@ async delete(parameters: Public.Types.StorePkey, options?: Public.Types.StorePke
 async read(parameters: Public.Types.IdxUnqManagerStaffId, options?: Public.Types.IdxUnqManagerStaffId.Options & Public.Tables.Store.Options) : Promise<Public.Types.Store>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       store_id,manager_staff_id,address_id,last_update 
@@ -4510,7 +4486,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 
@@ -4528,7 +4504,7 @@ const response = await this.database.invoke( (sql) => sql`
       store_id = ${ values.storeId === undefined ? sql`store_id` : typed[23](values.storeId) } , manager_staff_id = ${ values.managerStaffId === undefined ? sql`manager_staff_id` : typed[21](values.managerStaffId) } , address_id = ${ values.addressId === undefined ? sql`address_id` : typed[21](values.addressId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       manager_staff_id = ${ parameters.managerStaffId === undefined ? sql`DEFAULT` : typed[21](parameters.managerStaffId) }
-    RETURNING store_id,manager_staff_id,address_id,last_update`);
+    RETURNING store_id,manager_staff_id,address_id,last_update`, options);
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.IdxUnqManagerStaffId, options?: Public.Types.IdxUnqManagerStaffId.Options & Public.Tables.Store.Options) {
@@ -4540,7 +4516,7 @@ async delete(parameters: Public.Types.IdxUnqManagerStaffId, options?: Public.Typ
       public.store 
     WHERE
       manager_staff_id = ${ parameters.managerStaffId === undefined ? sql`DEFAULT` : typed[21](parameters.managerStaffId) }
-    RETURNING store_id,manager_staff_id,address_id,last_update`);
+    RETURNING store_id,manager_staff_id,address_id,last_update`, options);
  return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -4559,11 +4535,10 @@ export namespace Payment {
 async read(parameters: Public.Types.PaymentPkey, options?: Public.Types.PaymentPkey.Options & Public.Tables.Payment.Options) : Promise<Public.Types.Payment>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       payment_id,customer_id,staff_id,rental_id,amount,payment_date 
@@ -4574,7 +4549,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))[0]
 }
 
@@ -4592,7 +4567,7 @@ const response = await this.database.invoke( (sql) => sql`
       payment_id = ${ values.paymentId === undefined ? sql`payment_id` : typed[23](values.paymentId) } , customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[21](values.customerId) } , staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId) } , rental_id = ${ values.rentalId === undefined ? sql`rental_id` : typed[23](values.rentalId) } , amount = ${ values.amount === undefined ? sql`amount` : typed[1700](values.amount) } , payment_date = ${ values.paymentDate === undefined ? sql`payment_date` : typed[1114](values.paymentDate) } 
     WHERE
       payment_id = ${ parameters.paymentId === undefined ? sql`DEFAULT` : typed[23](parameters.paymentId) }
-    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`);
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, options);
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))[0]
 }
 async delete(parameters: Public.Types.PaymentPkey, options?: Public.Types.PaymentPkey.Options & Public.Tables.Payment.Options) {
@@ -4604,7 +4579,7 @@ async delete(parameters: Public.Types.PaymentPkey, options?: Public.Types.Paymen
       public.payment 
     WHERE
       payment_id = ${ parameters.paymentId === undefined ? sql`DEFAULT` : typed[23](parameters.paymentId) }
-    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`);
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, options);
  return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))[0]
 }
 }
@@ -4621,11 +4596,10 @@ async delete(parameters: Public.Types.PaymentPkey, options?: Public.Types.Paymen
 async read(parameters: Public.Types.IdxFkCustomerId, options?: Public.Types.IdxFkCustomerId.Options & Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       payment_id,customer_id,staff_id,rental_id,amount,payment_date 
@@ -4636,7 +4610,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
 
@@ -4654,7 +4628,7 @@ const response = await this.database.invoke( (sql) => sql`
       payment_id = ${ values.paymentId === undefined ? sql`payment_id` : typed[23](values.paymentId) } , customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[21](values.customerId) } , staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId) } , rental_id = ${ values.rentalId === undefined ? sql`rental_id` : typed[23](values.rentalId) } , amount = ${ values.amount === undefined ? sql`amount` : typed[1700](values.amount) } , payment_date = ${ values.paymentDate === undefined ? sql`payment_date` : typed[1114](values.paymentDate) } 
     WHERE
       customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[21](parameters.customerId) }
-    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`);
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, options);
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
 async delete(parameters: Public.Types.IdxFkCustomerId, options?: Public.Types.IdxFkCustomerId.Options & Public.Tables.Payment.Options) {
@@ -4666,7 +4640,7 @@ async delete(parameters: Public.Types.IdxFkCustomerId, options?: Public.Types.Id
       public.payment 
     WHERE
       customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[21](parameters.customerId) }
-    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`);
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, options);
  return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
 }
@@ -4683,11 +4657,10 @@ async delete(parameters: Public.Types.IdxFkCustomerId, options?: Public.Types.Id
 async read(parameters: Public.Types.IdxFkRentalId, options?: Public.Types.IdxFkRentalId.Options & Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       payment_id,customer_id,staff_id,rental_id,amount,payment_date 
@@ -4698,7 +4671,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
 
@@ -4716,7 +4689,7 @@ const response = await this.database.invoke( (sql) => sql`
       payment_id = ${ values.paymentId === undefined ? sql`payment_id` : typed[23](values.paymentId) } , customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[21](values.customerId) } , staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId) } , rental_id = ${ values.rentalId === undefined ? sql`rental_id` : typed[23](values.rentalId) } , amount = ${ values.amount === undefined ? sql`amount` : typed[1700](values.amount) } , payment_date = ${ values.paymentDate === undefined ? sql`payment_date` : typed[1114](values.paymentDate) } 
     WHERE
       rental_id = ${ parameters.rentalId === undefined ? sql`DEFAULT` : typed[23](parameters.rentalId) }
-    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`);
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, options);
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
 async delete(parameters: Public.Types.IdxFkRentalId, options?: Public.Types.IdxFkRentalId.Options & Public.Tables.Payment.Options) {
@@ -4728,7 +4701,7 @@ async delete(parameters: Public.Types.IdxFkRentalId, options?: Public.Types.IdxF
       public.payment 
     WHERE
       rental_id = ${ parameters.rentalId === undefined ? sql`DEFAULT` : typed[23](parameters.rentalId) }
-    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`);
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, options);
  return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
 }
@@ -4745,11 +4718,10 @@ async delete(parameters: Public.Types.IdxFkRentalId, options?: Public.Types.IdxF
 async read(parameters: Public.Types.IdxFkStaffId, options?: Public.Types.IdxFkStaffId.Options & Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       payment_id,customer_id,staff_id,rental_id,amount,payment_date 
@@ -4760,7 +4732,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
 
@@ -4778,7 +4750,7 @@ const response = await this.database.invoke( (sql) => sql`
       payment_id = ${ values.paymentId === undefined ? sql`payment_id` : typed[23](values.paymentId) } , customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[21](values.customerId) } , staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId) } , rental_id = ${ values.rentalId === undefined ? sql`rental_id` : typed[23](values.rentalId) } , amount = ${ values.amount === undefined ? sql`amount` : typed[1700](values.amount) } , payment_date = ${ values.paymentDate === undefined ? sql`payment_date` : typed[1114](values.paymentDate) } 
     WHERE
       staff_id = ${ parameters.staffId === undefined ? sql`DEFAULT` : typed[21](parameters.staffId) }
-    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`);
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, options);
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
 async delete(parameters: Public.Types.IdxFkStaffId, options?: Public.Types.IdxFkStaffId.Options & Public.Tables.Payment.Options) {
@@ -4790,7 +4762,7 @@ async delete(parameters: Public.Types.IdxFkStaffId, options?: Public.Types.IdxFk
       public.payment 
     WHERE
       staff_id = ${ parameters.staffId === undefined ? sql`DEFAULT` : typed[21](parameters.staffId) }
-    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`);
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, options);
  return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
 }
@@ -4809,11 +4781,10 @@ export namespace Film {
 async read(parameters: Public.Types.FilmPkey, options?: Public.Types.FilmPkey.Options & Public.Tables.Film.Options) : Promise<Public.Types.Film>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
@@ -4824,7 +4795,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))[0]
 }
 
@@ -4842,7 +4813,7 @@ const response = await this.database.invoke( (sql) => sql`
       film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[28920](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[28908](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
     WHERE
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[23](parameters.filmId) }
-    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`);
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, options);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))[0]
 }
 async delete(parameters: Public.Types.FilmPkey, options?: Public.Types.FilmPkey.Options & Public.Tables.Film.Options) {
@@ -4854,7 +4825,7 @@ async delete(parameters: Public.Types.FilmPkey, options?: Public.Types.FilmPkey.
       public.film 
     WHERE
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[23](parameters.filmId) }
-    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`);
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, options);
  return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))[0]
 }
 }
@@ -4871,11 +4842,10 @@ async delete(parameters: Public.Types.FilmPkey, options?: Public.Types.FilmPkey.
 async read(parameters: Public.Types.FilmFulltextIdx, options?: Public.Types.FilmFulltextIdx.Options & Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
@@ -4886,7 +4856,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
 
@@ -4904,7 +4874,7 @@ const response = await this.database.invoke( (sql) => sql`
       film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[28920](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[28908](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
     WHERE
       fulltext @@ ${sql.unsafe(`${options?.fulltext?.queryParser ?? "to_tsquery"}`)}(${options?.fulltext?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3614](parameters.fulltext) })
-    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`);
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, options);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
 async delete(parameters: Public.Types.FilmFulltextIdx, options?: Public.Types.FilmFulltextIdx.Options & Public.Tables.Film.Options) {
@@ -4916,7 +4886,7 @@ async delete(parameters: Public.Types.FilmFulltextIdx, options?: Public.Types.Fi
       public.film 
     WHERE
       fulltext @@ ${sql.unsafe(`${options?.fulltext?.queryParser ?? "to_tsquery"}`)}(${options?.fulltext?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3614](parameters.fulltext) })
-    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`);
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, options);
  return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
 }
@@ -4933,11 +4903,10 @@ async delete(parameters: Public.Types.FilmFulltextIdx, options?: Public.Types.Fi
 async read(parameters: Public.Types.IdxFkLanguageId, options?: Public.Types.IdxFkLanguageId.Options & Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
@@ -4948,7 +4917,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
 
@@ -4966,7 +4935,7 @@ const response = await this.database.invoke( (sql) => sql`
       film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[28920](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[28908](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
     WHERE
       language_id = ${ parameters.languageId === undefined ? sql`DEFAULT` : typed[21](parameters.languageId) }
-    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`);
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, options);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
 async delete(parameters: Public.Types.IdxFkLanguageId, options?: Public.Types.IdxFkLanguageId.Options & Public.Tables.Film.Options) {
@@ -4978,7 +4947,7 @@ async delete(parameters: Public.Types.IdxFkLanguageId, options?: Public.Types.Id
       public.film 
     WHERE
       language_id = ${ parameters.languageId === undefined ? sql`DEFAULT` : typed[21](parameters.languageId) }
-    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`);
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, options);
  return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
 }
@@ -4995,11 +4964,10 @@ async delete(parameters: Public.Types.IdxFkLanguageId, options?: Public.Types.Id
 async read(parameters: Public.Types.IdxTitle, options?: Public.Types.IdxTitle.Options & Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
@@ -5010,7 +4978,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
 
@@ -5028,7 +4996,7 @@ const response = await this.database.invoke( (sql) => sql`
       film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[28920](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[28908](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
     WHERE
       title = ${ parameters.title === undefined ? sql`DEFAULT` : typed[1043](parameters.title) }
-    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`);
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, options);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
 async delete(parameters: Public.Types.IdxTitle, options?: Public.Types.IdxTitle.Options & Public.Tables.Film.Options) {
@@ -5040,7 +5008,7 @@ async delete(parameters: Public.Types.IdxTitle, options?: Public.Types.IdxTitle.
       public.film 
     WHERE
       title = ${ parameters.title === undefined ? sql`DEFAULT` : typed[1043](parameters.title) }
-    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`);
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, options);
  return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
 }
@@ -41645,7 +41613,6 @@ export namespace Results {
 }
 }
 }
-// Type Options
 export namespace PgCatalog {
 export namespace Types {
 export namespace Bool {
@@ -41880,7 +41847,7 @@ export namespace Typdefault {
 export namespace Typacl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 typname?: PgCatalog.Types.Name.Options,
 typnamespace?: PgCatalog.Types.Oid.Options,
@@ -42040,7 +42007,7 @@ export namespace Attmissingval {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  attrelid?: PgCatalog.Types.Oid.Options,
 attname?: PgCatalog.Types.Name.Options,
 atttypid?: PgCatalog.Types.Oid.Options,
@@ -42206,7 +42173,7 @@ export type Options = never;
 export namespace Proacl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 proname?: PgCatalog.Types.Name.Options,
 pronamespace?: PgCatalog.Types.Oid.Options,
@@ -42401,7 +42368,7 @@ export namespace Relpartbound {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 relname?: PgCatalog.Types.Name.Options,
 relnamespace?: PgCatalog.Types.Oid.Options,
@@ -43198,7 +43165,7 @@ export namespace Adbin {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 adrelid?: PgCatalog.Types.Oid.Options,
 adnum?: PgCatalog.Types.Int2.Options,
@@ -43325,7 +43292,7 @@ export namespace Conbin {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 conname?: PgCatalog.Types.Name.Options,
 connamespace?: PgCatalog.Types.Oid.Options,
@@ -43378,7 +43345,7 @@ export namespace Inhdetachpending {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  inhrelid?: PgCatalog.Types.Oid.Options,
 inhparent?: PgCatalog.Types.Oid.Options,
 inhseqno?: PgCatalog.Types.Int4.Options,
@@ -43490,7 +43457,7 @@ export namespace Indpred {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  indexrelid?: PgCatalog.Types.Oid.Options,
 indrelid?: PgCatalog.Types.Oid.Options,
 indnatts?: PgCatalog.Types.Int2.Options,
@@ -43593,7 +43560,7 @@ export namespace Oprjoin {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 oprname?: PgCatalog.Types.Name.Options,
 oprnamespace?: PgCatalog.Types.Oid.Options,
@@ -43640,7 +43607,7 @@ export namespace Opfowner {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 opfmethod?: PgCatalog.Types.Oid.Options,
 opfname?: PgCatalog.Types.Name.Options,
@@ -43697,7 +43664,7 @@ export namespace Opckeytype {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 opcmethod?: PgCatalog.Types.Oid.Options,
 opcname?: PgCatalog.Types.Name.Options,
@@ -43733,7 +43700,7 @@ export namespace Amtype {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 amname?: PgCatalog.Types.Name.Options,
 amhandler?: PgCatalog.Types.Regproc.Options,
@@ -43789,7 +43756,7 @@ export namespace Amopsortfamily {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 amopfamily?: PgCatalog.Types.Oid.Options,
 amoplefttype?: PgCatalog.Types.Oid.Options,
@@ -43835,7 +43802,7 @@ export namespace Amproc {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 amprocfamily?: PgCatalog.Types.Oid.Options,
 amproclefttype?: PgCatalog.Types.Oid.Options,
@@ -43891,7 +43858,7 @@ export namespace Lanvalidator {
 export namespace Lanacl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 lanname?: PgCatalog.Types.Name.Options,
 lanowner?: PgCatalog.Types.Oid.Options,
@@ -43920,7 +43887,7 @@ export namespace Lomowner {
 export namespace Lomacl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 lomowner?: PgCatalog.Types.Oid.Options,
 lomacl?: PgCatalog.Types.AclitemArray.Options
@@ -43945,7 +43912,7 @@ export namespace Data {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  loid?: PgCatalog.Types.Oid.Options,
 pageno?: PgCatalog.Types.Int4.Options,
 data?: PgCatalog.Types.Bytea.Options
@@ -44065,7 +44032,7 @@ export namespace Aggminitval {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  aggfnoid?: PgCatalog.Types.Regproc.Options,
 aggkind?: PgCatalog.Types.Char.Options,
 aggnumdirectargs?: PgCatalog.Types.Int2.Options,
@@ -44239,7 +44206,7 @@ export namespace Stavalues5 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  starelid?: PgCatalog.Types.Oid.Options,
 staattnum?: PgCatalog.Types.Int2.Options,
 stainherit?: PgCatalog.Types.Bool.Options,
@@ -44320,7 +44287,7 @@ export namespace Stxexprs {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 stxrelid?: PgCatalog.Types.Oid.Options,
 stxname?: PgCatalog.Types.Name.Options,
@@ -44364,7 +44331,7 @@ export namespace Stxdmcv {
 export namespace Stxdexpr {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  stxoid?: PgCatalog.Types.Oid.Options,
 stxdinherit?: PgCatalog.Types.Bool.Options,
 stxdndistinct?: PgCatalog.Types.PgNdistinct.Options,
@@ -44417,7 +44384,7 @@ export namespace EvAction {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 rulename?: PgCatalog.Types.Name.Options,
 evClass?: PgCatalog.Types.Oid.Options,
@@ -44527,7 +44494,7 @@ export namespace Tgnewtable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 tgrelid?: PgCatalog.Types.Oid.Options,
 tgparentid?: PgCatalog.Types.Oid.Options,
@@ -44586,7 +44553,7 @@ export namespace Evtenabled {
 export namespace Evttags {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 evtname?: PgCatalog.Types.Name.Options,
 evtevent?: PgCatalog.Types.Name.Options,
@@ -44620,7 +44587,7 @@ export namespace Description {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options,
@@ -44661,7 +44628,7 @@ export namespace Castmethod {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 castsource?: PgCatalog.Types.Oid.Options,
 casttarget?: PgCatalog.Types.Oid.Options,
@@ -44694,7 +44661,7 @@ export namespace Enumlabel {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 enumtypid?: PgCatalog.Types.Oid.Options,
 enumsortorder?: PgCatalog.Types.Float4.Options,
@@ -44723,7 +44690,7 @@ export namespace Nspowner {
 export namespace Nspacl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 nspname?: PgCatalog.Types.Name.Options,
 nspowner?: PgCatalog.Types.Oid.Options,
@@ -44774,7 +44741,7 @@ export namespace Condefault {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 conname?: PgCatalog.Types.Name.Options,
 connamespace?: PgCatalog.Types.Oid.Options,
@@ -44824,7 +44791,7 @@ export namespace Deptype {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  classid?: PgCatalog.Types.Oid.Options,
 objid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options,
@@ -44921,7 +44888,7 @@ export namespace Datcollversion {
 export namespace Datacl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
 datdba?: PgCatalog.Types.Oid.Options,
@@ -44958,7 +44925,7 @@ export namespace Setrole {
 export namespace Setconfig {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  setdatabase?: PgCatalog.Types.Oid.Options,
 setrole?: PgCatalog.Types.Oid.Options,
 setconfig?: PgCatalog.Types.TextArray.Options
@@ -44989,7 +44956,7 @@ export type Options = never;
 export namespace Spcoptions {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 spcname?: PgCatalog.Types.Name.Options,
 spcowner?: PgCatalog.Types.Oid.Options,
@@ -45061,7 +45028,7 @@ export namespace Rolvaliduntil {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 rolname?: PgCatalog.Types.Name.Options,
 rolsuper?: PgCatalog.Types.Bool.Options,
@@ -45115,7 +45082,7 @@ export namespace SetOption {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 roleid?: PgCatalog.Types.Oid.Options,
 member?: PgCatalog.Types.Oid.Options,
@@ -45164,7 +45131,7 @@ export namespace Deptype {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  dbid?: PgCatalog.Types.Oid.Options,
 classid?: PgCatalog.Types.Oid.Options,
 objid?: PgCatalog.Types.Oid.Options,
@@ -45193,7 +45160,7 @@ export namespace Description {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 description?: PgCatalog.Types.Text.Options
@@ -45228,7 +45195,7 @@ export namespace Cfgparser {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 cfgname?: PgCatalog.Types.Name.Options,
 cfgnamespace?: PgCatalog.Types.Oid.Options,
@@ -45260,7 +45227,7 @@ export namespace Mapdict {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  mapcfg?: PgCatalog.Types.Oid.Options,
 maptokentype?: PgCatalog.Types.Int4.Options,
 mapseqno?: PgCatalog.Types.Int4.Options,
@@ -45301,7 +45268,7 @@ export namespace Dictinitoption {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 dictname?: PgCatalog.Types.Name.Options,
 dictnamespace?: PgCatalog.Types.Oid.Options,
@@ -45354,7 +45321,7 @@ export namespace Prslextype {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 prsname?: PgCatalog.Types.Name.Options,
 prsnamespace?: PgCatalog.Types.Oid.Options,
@@ -45394,7 +45361,7 @@ export namespace Tmpllexize {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 tmplname?: PgCatalog.Types.Name.Options,
 tmplnamespace?: PgCatalog.Types.Oid.Options,
@@ -45442,7 +45409,7 @@ export type Options = never;
 export namespace Extcondition {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 extname?: PgCatalog.Types.Name.Options,
 extowner?: PgCatalog.Types.Oid.Options,
@@ -45488,7 +45455,7 @@ export type Options = never;
 export namespace Fdwoptions {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 fdwname?: PgCatalog.Types.Name.Options,
 fdwowner?: PgCatalog.Types.Oid.Options,
@@ -45538,7 +45505,7 @@ export type Options = never;
 export namespace Srvoptions {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 srvname?: PgCatalog.Types.Name.Options,
 srvowner?: PgCatalog.Types.Oid.Options,
@@ -45571,7 +45538,7 @@ export namespace Umserver {
 export namespace Umoptions {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 umuser?: PgCatalog.Types.Oid.Options,
 umserver?: PgCatalog.Types.Oid.Options,
@@ -45595,7 +45562,7 @@ export namespace Ftserver {
 export namespace Ftoptions {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  ftrelid?: PgCatalog.Types.Oid.Options,
 ftserver?: PgCatalog.Types.Oid.Options,
 ftoptions?: PgCatalog.Types.TextArray.Options
@@ -45643,7 +45610,7 @@ export namespace Polwithcheck {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 polname?: PgCatalog.Types.Name.Options,
 polrelid?: PgCatalog.Types.Oid.Options,
@@ -45668,7 +45635,7 @@ export namespace Roname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  roident?: PgCatalog.Types.Oid.Options,
 roname?: PgCatalog.Types.Text.Options
 }
@@ -45700,7 +45667,7 @@ export namespace Defaclobjtype {
 export namespace Defaclacl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 defaclrole?: PgCatalog.Types.Oid.Options,
 defaclnamespace?: PgCatalog.Types.Oid.Options,
@@ -45735,7 +45702,7 @@ export namespace Privtype {
 export namespace Initprivs {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options,
@@ -45772,7 +45739,7 @@ export namespace Label {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options,
@@ -45804,7 +45771,7 @@ export namespace Label {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 provider?: PgCatalog.Types.Text.Options,
@@ -45875,7 +45842,7 @@ export namespace Collversion {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 collname?: PgCatalog.Types.Name.Options,
 collnamespace?: PgCatalog.Types.Oid.Options,
@@ -45907,7 +45874,7 @@ export namespace Parname {
 export namespace Paracl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 parname?: PgCatalog.Types.Text.Options,
 paracl?: PgCatalog.Types.AclitemArray.Options
@@ -45953,7 +45920,7 @@ export namespace Partexprs {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  partrelid?: PgCatalog.Types.Oid.Options,
 partstrat?: PgCatalog.Types.Char.Options,
 partnatts?: PgCatalog.Types.Int2.Options,
@@ -46003,7 +45970,7 @@ export namespace Rngsubdiff {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rngtypid?: PgCatalog.Types.Oid.Options,
 rngsubtype?: PgCatalog.Types.Oid.Options,
 rngmultitypid?: PgCatalog.Types.Oid.Options,
@@ -46042,7 +46009,7 @@ export namespace Trftosql {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 trftype?: PgCatalog.Types.Oid.Options,
 trflang?: PgCatalog.Types.Oid.Options,
@@ -46094,7 +46061,7 @@ export namespace Seqcycle {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  seqrelid?: PgCatalog.Types.Oid.Options,
 seqtypid?: PgCatalog.Types.Oid.Options,
 seqstart?: PgCatalog.Types.Int8.Options,
@@ -46154,7 +46121,7 @@ export namespace Pubviaroot {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 pubname?: PgCatalog.Types.Name.Options,
 pubowner?: PgCatalog.Types.Oid.Options,
@@ -46185,7 +46152,7 @@ export namespace Pnnspid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 pnpubid?: PgCatalog.Types.Oid.Options,
 pnnspid?: PgCatalog.Types.Oid.Options
@@ -46220,7 +46187,7 @@ export namespace Prattrs {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 prpubid?: PgCatalog.Types.Oid.Options,
 prrelid?: PgCatalog.Types.Oid.Options,
@@ -46315,7 +46282,7 @@ export namespace Suborigin {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 subdbid?: PgCatalog.Types.Oid.Options,
 subskiplsn?: PgCatalog.Types.PgLsn.Options,
@@ -46359,7 +46326,7 @@ export namespace Srsublsn {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  srsubid?: PgCatalog.Types.Oid.Options,
 srrelid?: PgCatalog.Types.Oid.Options,
 srsubstate?: PgCatalog.Types.Char.Options,
@@ -46433,7 +46400,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rolname?: PgCatalog.Types.Name.Options,
 rolsuper?: PgCatalog.Types.Bool.Options,
 rolinherit?: PgCatalog.Types.Bool.Options,
@@ -46496,7 +46463,7 @@ export namespace Valuntil {
 export namespace Useconfig {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  usename?: PgCatalog.Types.Name.Options,
 usesysid?: PgCatalog.Types.Oid.Options,
 usecreatedb?: PgCatalog.Types.Bool.Options,
@@ -46525,7 +46492,7 @@ export namespace Grosysid {
 export namespace Grolist {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  groname?: PgCatalog.Types.Name.Options,
 grosysid?: PgCatalog.Types.Oid.Options,
 grolist?: PgCatalog.Types.OidArray.Options
@@ -46578,7 +46545,7 @@ export namespace Valuntil {
 export namespace Useconfig {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  usename?: PgCatalog.Types.Name.Options,
 usesysid?: PgCatalog.Types.Oid.Options,
 usecreatedb?: PgCatalog.Types.Bool.Options,
@@ -46632,7 +46599,7 @@ export namespace WithCheck {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
 policyname?: PgCatalog.Types.Name.Options,
@@ -46667,7 +46634,7 @@ export namespace Definition {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
 rulename?: PgCatalog.Types.Name.Options,
@@ -46698,7 +46665,7 @@ export namespace Definition {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 viewname?: PgCatalog.Types.Name.Options,
 viewowner?: PgCatalog.Types.Name.Options,
@@ -46749,7 +46716,7 @@ export namespace Rowsecurity {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
 tableowner?: PgCatalog.Types.Name.Options,
@@ -46799,7 +46766,7 @@ export namespace Definition {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 matviewname?: PgCatalog.Types.Name.Options,
 matviewowner?: PgCatalog.Types.Name.Options,
@@ -46838,7 +46805,7 @@ export namespace Indexdef {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
 indexname?: PgCatalog.Types.Name.Options,
@@ -46905,7 +46872,7 @@ export namespace LastValue {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 sequencename?: PgCatalog.Types.Name.Options,
 sequenceowner?: PgCatalog.Types.Name.Options,
@@ -46987,7 +46954,7 @@ export type Options = never;
 export namespace ElemCountHistogram {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
 attname?: PgCatalog.Types.Name.Options,
@@ -47069,7 +47036,7 @@ export type Options = never;
 export namespace MostCommonBaseFreqs {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
 statisticsSchemaname?: PgCatalog.Types.Name.Options,
@@ -47170,7 +47137,7 @@ export type Options = never;
 export namespace ElemCountHistogram {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
 statisticsSchemaname?: PgCatalog.Types.Name.Options,
@@ -47217,7 +47184,7 @@ export namespace Rowfilter {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pubname?: PgCatalog.Types.Name.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
@@ -47309,7 +47276,7 @@ export namespace Waitstart {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  locktype?: PgCatalog.Types.Text.Options,
 database?: PgCatalog.Types.Oid.Options,
 relation?: PgCatalog.Types.Oid.Options,
@@ -47362,7 +47329,7 @@ export namespace CreationTime {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 statement?: PgCatalog.Types.Text.Options,
 isHoldable?: PgCatalog.Types.Bool.Options,
@@ -47395,7 +47362,7 @@ export namespace Comment {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Name.Options,
 defaultVersion?: PgCatalog.Types.Text.Options,
 installedVersion?: PgCatalog.Types.Text.Options,
@@ -47449,7 +47416,7 @@ export namespace Comment {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Name.Options,
 version?: PgCatalog.Types.Text.Options,
 installed?: PgCatalog.Types.Bool.Options,
@@ -47490,7 +47457,7 @@ export namespace Database {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  transaction?: PgCatalog.Types.Xid.Options,
 gid?: PgCatalog.Types.Text.Options,
 prepared?: PgCatalog.Types.Timestamptz.Options,
@@ -47538,7 +47505,7 @@ export namespace CustomPlans {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 statement?: PgCatalog.Types.Text.Options,
 prepareTime?: PgCatalog.Types.Timestamptz.Options,
@@ -47593,7 +47560,7 @@ export namespace Label {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options,
@@ -47691,7 +47658,7 @@ export namespace PendingRestart {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 setting?: PgCatalog.Types.Text.Options,
 unit?: PgCatalog.Types.Text.Options,
@@ -47750,7 +47717,7 @@ export namespace Error {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  sourcefile?: PgCatalog.Types.Text.Options,
 sourceline?: PgCatalog.Types.Int4.Options,
 seqno?: PgCatalog.Types.Int4.Options,
@@ -47813,7 +47780,7 @@ export namespace Error {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  ruleNumber?: PgCatalog.Types.Int4.Options,
 fileName?: PgCatalog.Types.Text.Options,
 lineNumber?: PgCatalog.Types.Int4.Options,
@@ -47866,7 +47833,7 @@ export namespace Error {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  mapNumber?: PgCatalog.Types.Int4.Options,
 fileName?: PgCatalog.Types.Text.Options,
 lineNumber?: PgCatalog.Types.Int4.Options,
@@ -47895,7 +47862,7 @@ export namespace IsDst {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  abbrev?: PgCatalog.Types.Text.Options,
 utcOffset?: PgCatalog.Types.Interval.Options,
 isDst?: PgCatalog.Types.Bool.Options
@@ -47925,7 +47892,7 @@ export namespace IsDst {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 abbrev?: PgCatalog.Types.Text.Options,
 utcOffset?: PgCatalog.Types.Interval.Options,
@@ -47946,7 +47913,7 @@ export namespace Setting {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 setting?: PgCatalog.Types.Text.Options
 }
@@ -47975,7 +47942,7 @@ export namespace AllocatedSize {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 off?: PgCatalog.Types.Int8.Options,
 size?: PgCatalog.Types.Int8.Options,
@@ -48031,7 +47998,7 @@ export namespace UsedBytes {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 ident?: PgCatalog.Types.Text.Options,
 parent?: PgCatalog.Types.Text.Options,
@@ -48177,7 +48144,7 @@ export namespace AutoanalyzeCount {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -48270,7 +48237,7 @@ export namespace NTupNewpageUpd {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -48419,7 +48386,7 @@ export namespace AutoanalyzeCount {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -48512,7 +48479,7 @@ export namespace NTupNewpageUpd {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -48661,7 +48628,7 @@ export namespace AutoanalyzeCount {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -48754,7 +48721,7 @@ export namespace NTupNewpageUpd {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -48828,7 +48795,7 @@ export namespace TidxBlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -48901,7 +48868,7 @@ export namespace TidxBlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -48974,7 +48941,7 @@ export namespace TidxBlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -49037,7 +49004,7 @@ export namespace IdxTupFetch {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 indexrelid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
@@ -49098,7 +49065,7 @@ export namespace IdxTupFetch {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 indexrelid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
@@ -49159,7 +49126,7 @@ export namespace IdxTupFetch {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 indexrelid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
@@ -49210,7 +49177,7 @@ export namespace IdxBlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 indexrelid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
@@ -49259,7 +49226,7 @@ export namespace IdxBlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 indexrelid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
@@ -49308,7 +49275,7 @@ export namespace IdxBlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 indexrelid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
@@ -49347,7 +49314,7 @@ export namespace BlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -49384,7 +49351,7 @@ export namespace BlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -49421,7 +49388,7 @@ export namespace BlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -49543,7 +49510,7 @@ export namespace BackendType {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
 pid?: PgCatalog.Types.Int4.Options,
@@ -49672,7 +49639,7 @@ export namespace ReplyTime {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 usesysid?: PgCatalog.Types.Oid.Options,
 usename?: PgCatalog.Types.Name.Options,
@@ -49744,7 +49711,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 blksZeroed?: PgCatalog.Types.Int8.Options,
 blksHit?: PgCatalog.Types.Int8.Options,
@@ -49835,7 +49802,7 @@ export namespace Conninfo {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 status?: PgCatalog.Types.Text.Options,
 receiveStartLsn?: PgCatalog.Types.PgLsn.Options,
@@ -49907,7 +49874,7 @@ export namespace IoDepth {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  statsReset?: PgCatalog.Types.Timestamptz.Options,
 prefetch?: PgCatalog.Types.Int8.Options,
 hit?: PgCatalog.Types.Int8.Options,
@@ -49974,7 +49941,7 @@ export namespace LatestEndTime {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  subid?: PgCatalog.Types.Oid.Options,
 subname?: PgCatalog.Types.Name.Options,
 pid?: PgCatalog.Types.Int4.Options,
@@ -50031,7 +49998,7 @@ export namespace IssuerDn {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 ssl?: PgCatalog.Types.Bool.Options,
 version?: PgCatalog.Types.Text.Options,
@@ -50071,7 +50038,7 @@ export namespace CredentialsDelegated {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 gssAuthenticated?: PgCatalog.Types.Bool.Options,
 principal?: PgCatalog.Types.Text.Options,
@@ -50163,7 +50130,7 @@ export namespace Conflicting {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  slotName?: PgCatalog.Types.Name.Options,
 plugin?: PgCatalog.Types.Name.Options,
 slotType?: PgCatalog.Types.Text.Options,
@@ -50236,7 +50203,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  slotName?: PgCatalog.Types.Text.Options,
 spillTxns?: PgCatalog.Types.Int8.Options,
 spillCount?: PgCatalog.Types.Int8.Options,
@@ -50393,7 +50360,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
 numbackends?: PgCatalog.Types.Int4.Options,
@@ -50468,7 +50435,7 @@ export namespace ConflActiveLogicalslot {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
 conflTablespace?: PgCatalog.Types.Int8.Options,
@@ -50513,7 +50480,7 @@ export namespace SelfTime {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  funcid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 funcname?: PgCatalog.Types.Name.Options,
@@ -50556,7 +50523,7 @@ export namespace SelfTime {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  funcid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 funcname?: PgCatalog.Types.Name.Options,
@@ -50604,7 +50571,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  archivedCount?: PgCatalog.Types.Int8.Options,
 lastArchivedWal?: PgCatalog.Types.Text.Options,
 lastArchivedTime?: PgCatalog.Types.Timestamptz.Options,
@@ -50673,7 +50640,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  checkpointsTimed?: PgCatalog.Types.Int8.Options,
 checkpointsReq?: PgCatalog.Types.Int8.Options,
 checkpointWriteTime?: PgCatalog.Types.Float8.Options,
@@ -50781,7 +50748,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  backendType?: PgCatalog.Types.Text.Options,
 object?: PgCatalog.Types.Text.Options,
 context?: PgCatalog.Types.Text.Options,
@@ -50851,7 +50818,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  walRecords?: PgCatalog.Types.Int8.Options,
 walFpi?: PgCatalog.Types.Int8.Options,
 walBytes?: PgCatalog.Types.Numeric.Options,
@@ -50927,7 +50894,7 @@ export namespace CurrentChildTableRelid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
@@ -51001,7 +50968,7 @@ export namespace NumDeadTuples {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
@@ -51079,7 +51046,7 @@ export namespace IndexRebuildCount {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
@@ -51178,7 +51145,7 @@ export namespace PartitionsDone {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
@@ -51231,7 +51198,7 @@ export namespace TablespacesStreamed {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 phase?: PgCatalog.Types.Text.Options,
 backupTotal?: PgCatalog.Types.Int8.Options,
@@ -51294,7 +51261,7 @@ export namespace TuplesExcluded {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
@@ -51339,7 +51306,7 @@ export namespace Usename {
 export namespace Umoptions {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  umid?: PgCatalog.Types.Oid.Options,
 srvid?: PgCatalog.Types.Oid.Options,
 srvname?: PgCatalog.Types.Name.Options,
@@ -51372,7 +51339,7 @@ export namespace LocalLsn {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  localId?: PgCatalog.Types.Oid.Options,
 externalId?: PgCatalog.Types.Text.Options,
 remoteLsn?: PgCatalog.Types.PgLsn.Options,
@@ -51408,7 +51375,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  subid?: PgCatalog.Types.Oid.Options,
 subname?: PgCatalog.Types.Name.Options,
 applyErrorCount?: PgCatalog.Types.Int8.Options,
@@ -51425,7 +51392,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51443,7 +51410,7 @@ export namespace Pronamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  proname?: PgCatalog.Types.Name.Options,
 proargtypes?: PgCatalog.Types.Oidvector.Options,
 pronamespace?: PgCatalog.Types.Oid.Options
@@ -51455,7 +51422,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51470,7 +51437,7 @@ export namespace Typnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  typname?: PgCatalog.Types.Name.Options,
 typnamespace?: PgCatalog.Types.Oid.Options
 }
@@ -51486,7 +51453,7 @@ export namespace Attname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  attrelid?: PgCatalog.Types.Oid.Options,
 attname?: PgCatalog.Types.Name.Options
 }
@@ -51502,7 +51469,7 @@ export namespace Attnum {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  attrelid?: PgCatalog.Types.Oid.Options,
 attnum?: PgCatalog.Types.Int2.Options
 }
@@ -51513,7 +51480,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51528,7 +51495,7 @@ export namespace Relnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relname?: PgCatalog.Types.Name.Options,
 relnamespace?: PgCatalog.Types.Oid.Options
 }
@@ -51544,7 +51511,7 @@ export namespace Relfilenode {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  reltablespace?: PgCatalog.Types.Oid.Options,
 relfilenode?: PgCatalog.Types.Oid.Options
 }
@@ -51560,7 +51527,7 @@ export namespace Adnum {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  adrelid?: PgCatalog.Types.Oid.Options,
 adnum?: PgCatalog.Types.Int2.Options
 }
@@ -51571,7 +51538,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51586,7 +51553,7 @@ export namespace Connamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  conname?: PgCatalog.Types.Name.Options,
 connamespace?: PgCatalog.Types.Oid.Options
 }
@@ -51607,7 +51574,7 @@ export namespace Conname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  conrelid?: PgCatalog.Types.Oid.Options,
 contypid?: PgCatalog.Types.Oid.Options,
 conname?: PgCatalog.Types.Name.Options
@@ -51619,7 +51586,7 @@ export namespace Contypid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  contypid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51629,7 +51596,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51639,7 +51606,7 @@ export namespace Conparentid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  conparentid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51654,7 +51621,7 @@ export namespace Inhseqno {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  inhrelid?: PgCatalog.Types.Oid.Options,
 inhseqno?: PgCatalog.Types.Int4.Options
 }
@@ -51665,7 +51632,7 @@ export namespace Inhparent {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  inhparent?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51675,7 +51642,7 @@ export namespace Indrelid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  indrelid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51685,7 +51652,7 @@ export namespace Indexrelid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  indexrelid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51695,7 +51662,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51720,7 +51687,7 @@ export namespace Oprnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oprname?: PgCatalog.Types.Name.Options,
 oprleft?: PgCatalog.Types.Oid.Options,
 oprright?: PgCatalog.Types.Oid.Options,
@@ -51743,7 +51710,7 @@ export namespace Opfnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  opfmethod?: PgCatalog.Types.Oid.Options,
 opfname?: PgCatalog.Types.Name.Options,
 opfnamespace?: PgCatalog.Types.Oid.Options
@@ -51755,7 +51722,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51775,7 +51742,7 @@ export namespace Opcnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  opcmethod?: PgCatalog.Types.Oid.Options,
 opcname?: PgCatalog.Types.Name.Options,
 opcnamespace?: PgCatalog.Types.Oid.Options
@@ -51787,7 +51754,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51797,7 +51764,7 @@ export namespace Amname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  amname?: PgCatalog.Types.Name.Options
 }
 }
@@ -51807,7 +51774,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51832,7 +51799,7 @@ export namespace Amopstrategy {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  amopfamily?: PgCatalog.Types.Oid.Options,
 amoplefttype?: PgCatalog.Types.Oid.Options,
 amoprighttype?: PgCatalog.Types.Oid.Options,
@@ -51855,7 +51822,7 @@ export namespace Amopfamily {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  amopopr?: PgCatalog.Types.Oid.Options,
 amoppurpose?: PgCatalog.Types.Char.Options,
 amopfamily?: PgCatalog.Types.Oid.Options
@@ -51867,7 +51834,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51892,7 +51859,7 @@ export namespace Amprocnum {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  amprocfamily?: PgCatalog.Types.Oid.Options,
 amproclefttype?: PgCatalog.Types.Oid.Options,
 amprocrighttype?: PgCatalog.Types.Oid.Options,
@@ -51905,7 +51872,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51915,7 +51882,7 @@ export namespace Lanname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  lanname?: PgCatalog.Types.Name.Options
 }
 }
@@ -51925,7 +51892,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51935,7 +51902,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51950,7 +51917,7 @@ export namespace Pageno {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  loid?: PgCatalog.Types.Oid.Options,
 pageno?: PgCatalog.Types.Int4.Options
 }
@@ -51961,7 +51928,7 @@ export namespace Aggfnoid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  aggfnoid?: PgCatalog.Types.Regproc.Options
 }
 }
@@ -51981,7 +51948,7 @@ export namespace Stainherit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  starelid?: PgCatalog.Types.Oid.Options,
 staattnum?: PgCatalog.Types.Int2.Options,
 stainherit?: PgCatalog.Types.Bool.Options
@@ -51993,7 +51960,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52008,7 +51975,7 @@ export namespace Stxnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  stxname?: PgCatalog.Types.Name.Options,
 stxnamespace?: PgCatalog.Types.Oid.Options
 }
@@ -52019,7 +51986,7 @@ export namespace Stxrelid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  stxrelid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52034,7 +52001,7 @@ export namespace Stxdinherit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  stxoid?: PgCatalog.Types.Oid.Options,
 stxdinherit?: PgCatalog.Types.Bool.Options
 }
@@ -52045,7 +52012,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52060,7 +52027,7 @@ export namespace Rulename {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  evClass?: PgCatalog.Types.Oid.Options,
 rulename?: PgCatalog.Types.Name.Options
 }
@@ -52071,7 +52038,7 @@ export namespace Tgconstraint {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tgconstraint?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52086,7 +52053,7 @@ export namespace Tgname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tgrelid?: PgCatalog.Types.Oid.Options,
 tgname?: PgCatalog.Types.Name.Options
 }
@@ -52097,7 +52064,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52107,7 +52074,7 @@ export namespace Evtname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  evtname?: PgCatalog.Types.Name.Options
 }
 }
@@ -52117,7 +52084,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52137,7 +52104,7 @@ export namespace Objsubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options
@@ -52149,7 +52116,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52164,7 +52131,7 @@ export namespace Casttarget {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  castsource?: PgCatalog.Types.Oid.Options,
 casttarget?: PgCatalog.Types.Oid.Options
 }
@@ -52175,7 +52142,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52190,7 +52157,7 @@ export namespace Enumlabel {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  enumtypid?: PgCatalog.Types.Oid.Options,
 enumlabel?: PgCatalog.Types.Name.Options
 }
@@ -52206,7 +52173,7 @@ export namespace Enumsortorder {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  enumtypid?: PgCatalog.Types.Oid.Options,
 enumsortorder?: PgCatalog.Types.Float4.Options
 }
@@ -52217,7 +52184,7 @@ export namespace Nspname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  nspname?: PgCatalog.Types.Name.Options
 }
 }
@@ -52227,7 +52194,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52252,7 +52219,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  connamespace?: PgCatalog.Types.Oid.Options,
 conforencoding?: PgCatalog.Types.Int4.Options,
 contoencoding?: PgCatalog.Types.Int4.Options,
@@ -52270,7 +52237,7 @@ export namespace Connamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  conname?: PgCatalog.Types.Name.Options,
 connamespace?: PgCatalog.Types.Oid.Options
 }
@@ -52281,7 +52248,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52301,7 +52268,7 @@ export namespace Objsubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  classid?: PgCatalog.Types.Oid.Options,
 objid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options
@@ -52323,7 +52290,7 @@ export namespace Refobjsubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  refclassid?: PgCatalog.Types.Oid.Options,
 refobjid?: PgCatalog.Types.Oid.Options,
 refobjsubid?: PgCatalog.Types.Int4.Options
@@ -52335,7 +52302,7 @@ export namespace Datname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  datname?: PgCatalog.Types.Name.Options
 }
 }
@@ -52345,7 +52312,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52360,7 +52327,7 @@ export namespace Setrole {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  setdatabase?: PgCatalog.Types.Oid.Options,
 setrole?: PgCatalog.Types.Oid.Options
 }
@@ -52371,7 +52338,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52381,7 +52348,7 @@ export namespace Spcname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  spcname?: PgCatalog.Types.Name.Options
 }
 }
@@ -52391,7 +52358,7 @@ export namespace Rolname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rolname?: PgCatalog.Types.Name.Options
 }
 }
@@ -52401,7 +52368,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52411,7 +52378,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52431,7 +52398,7 @@ export namespace Grantor {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  roleid?: PgCatalog.Types.Oid.Options,
 member?: PgCatalog.Types.Oid.Options,
 grantor?: PgCatalog.Types.Oid.Options
@@ -52453,7 +52420,7 @@ export namespace Grantor {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  member?: PgCatalog.Types.Oid.Options,
 roleid?: PgCatalog.Types.Oid.Options,
 grantor?: PgCatalog.Types.Oid.Options
@@ -52465,7 +52432,7 @@ export namespace Grantor {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52490,7 +52457,7 @@ export namespace Objsubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  dbid?: PgCatalog.Types.Oid.Options,
 classid?: PgCatalog.Types.Oid.Options,
 objid?: PgCatalog.Types.Oid.Options,
@@ -52508,7 +52475,7 @@ export namespace Refobjid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  refclassid?: PgCatalog.Types.Oid.Options,
 refobjid?: PgCatalog.Types.Oid.Options
 }
@@ -52524,7 +52491,7 @@ export namespace Classoid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options
 }
@@ -52540,7 +52507,7 @@ export namespace Cfgnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  cfgname?: PgCatalog.Types.Name.Options,
 cfgnamespace?: PgCatalog.Types.Oid.Options
 }
@@ -52551,7 +52518,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52571,7 +52538,7 @@ export namespace Mapseqno {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  mapcfg?: PgCatalog.Types.Oid.Options,
 maptokentype?: PgCatalog.Types.Int4.Options,
 mapseqno?: PgCatalog.Types.Int4.Options
@@ -52588,7 +52555,7 @@ export namespace Dictnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  dictname?: PgCatalog.Types.Name.Options,
 dictnamespace?: PgCatalog.Types.Oid.Options
 }
@@ -52599,7 +52566,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52614,7 +52581,7 @@ export namespace Prsnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  prsname?: PgCatalog.Types.Name.Options,
 prsnamespace?: PgCatalog.Types.Oid.Options
 }
@@ -52625,7 +52592,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52640,7 +52607,7 @@ export namespace Tmplnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tmplname?: PgCatalog.Types.Name.Options,
 tmplnamespace?: PgCatalog.Types.Oid.Options
 }
@@ -52651,7 +52618,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52661,7 +52628,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52671,7 +52638,7 @@ export namespace Extname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  extname?: PgCatalog.Types.Name.Options
 }
 }
@@ -52681,7 +52648,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52691,7 +52658,7 @@ export namespace Fdwname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  fdwname?: PgCatalog.Types.Name.Options
 }
 }
@@ -52701,7 +52668,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52711,7 +52678,7 @@ export namespace Srvname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  srvname?: PgCatalog.Types.Name.Options
 }
 }
@@ -52721,7 +52688,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52736,7 +52703,7 @@ export namespace Umserver {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  umuser?: PgCatalog.Types.Oid.Options,
 umserver?: PgCatalog.Types.Oid.Options
 }
@@ -52747,7 +52714,7 @@ export namespace Ftrelid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  ftrelid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52757,7 +52724,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52772,7 +52739,7 @@ export namespace Polname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  polrelid?: PgCatalog.Types.Oid.Options,
 polname?: PgCatalog.Types.Name.Options
 }
@@ -52783,7 +52750,7 @@ export namespace Roident {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  roident?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52793,7 +52760,7 @@ export namespace Roname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  roname?: PgCatalog.Types.Text.Options
 }
 }
@@ -52813,7 +52780,7 @@ export namespace Defaclobjtype {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  defaclrole?: PgCatalog.Types.Oid.Options,
 defaclnamespace?: PgCatalog.Types.Oid.Options,
 defaclobjtype?: PgCatalog.Types.Char.Options
@@ -52825,7 +52792,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52845,7 +52812,7 @@ export namespace Objsubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options
@@ -52872,7 +52839,7 @@ export namespace Provider {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options,
@@ -52895,7 +52862,7 @@ export namespace Provider {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 provider?: PgCatalog.Types.Text.Options
@@ -52917,7 +52884,7 @@ export namespace Collnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  collname?: PgCatalog.Types.Name.Options,
 collencoding?: PgCatalog.Types.Int4.Options,
 collnamespace?: PgCatalog.Types.Oid.Options
@@ -52929,7 +52896,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52939,7 +52906,7 @@ export namespace Parname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  parname?: PgCatalog.Types.Text.Options
 }
 }
@@ -52949,7 +52916,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52959,7 +52926,7 @@ export namespace Partrelid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  partrelid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52969,7 +52936,7 @@ export namespace Rngtypid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rngtypid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52979,7 +52946,7 @@ export namespace Rngmultitypid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rngmultitypid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52989,7 +52956,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53004,7 +52971,7 @@ export namespace Trflang {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  trftype?: PgCatalog.Types.Oid.Options,
 trflang?: PgCatalog.Types.Oid.Options
 }
@@ -53015,7 +52982,7 @@ export namespace Seqrelid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  seqrelid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53025,7 +52992,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53035,7 +53002,7 @@ export namespace Pubname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pubname?: PgCatalog.Types.Name.Options
 }
 }
@@ -53045,7 +53012,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53060,7 +53027,7 @@ export namespace Pnpubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pnnspid?: PgCatalog.Types.Oid.Options,
 pnpubid?: PgCatalog.Types.Oid.Options
 }
@@ -53071,7 +53038,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53086,7 +53053,7 @@ export namespace Prpubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  prrelid?: PgCatalog.Types.Oid.Options,
 prpubid?: PgCatalog.Types.Oid.Options
 }
@@ -53097,7 +53064,7 @@ export namespace Prpubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  prpubid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53107,7 +53074,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53122,7 +53089,7 @@ export namespace Subname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  subdbid?: PgCatalog.Types.Oid.Options,
 subname?: PgCatalog.Types.Name.Options
 }
@@ -53138,7 +53105,7 @@ export namespace Srsubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  srrelid?: PgCatalog.Types.Oid.Options,
 srsubid?: PgCatalog.Types.Oid.Options
 }
@@ -53309,7 +53276,7 @@ export namespace CatalogName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  catalogName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
@@ -53348,7 +53315,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantee?: InformationSchema.Types.SqlIdentifier.Options,
 roleName?: InformationSchema.Types.SqlIdentifier.Options,
 isGrantable?: InformationSchema.Types.YesOrNo.Options
@@ -53373,7 +53340,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantee?: InformationSchema.Types.SqlIdentifier.Options,
 roleName?: InformationSchema.Types.SqlIdentifier.Options,
 isGrantable?: InformationSchema.Types.YesOrNo.Options
@@ -53538,7 +53505,7 @@ export namespace IsDerivedReferenceAttribute {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
 udtName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -53616,7 +53583,7 @@ export namespace DefaultCollateName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  characterSetCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 characterSetSchema?: InformationSchema.Types.SqlIdentifier.Options,
 characterSetName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -53661,7 +53628,7 @@ export namespace SpecificName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
 constraintName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -53694,7 +53661,7 @@ export namespace CheckClause {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
 constraintName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -53725,7 +53692,7 @@ export namespace PadAttribute {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  collationCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 collationSchema?: InformationSchema.Types.SqlIdentifier.Options,
 collationName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -53766,7 +53733,7 @@ export namespace CharacterSetName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  collationCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 collationSchema?: InformationSchema.Types.SqlIdentifier.Options,
 collationName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -53804,7 +53771,7 @@ export namespace DependentColumn {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -53851,7 +53818,7 @@ export namespace ColumnName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  domainCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 domainSchema?: InformationSchema.Types.SqlIdentifier.Options,
 domainName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -53905,7 +53872,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -53955,7 +53922,7 @@ export namespace ColumnName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
 udtName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54189,7 +54156,7 @@ export namespace IsUpdatable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54275,7 +54242,7 @@ export namespace ConstraintName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54319,7 +54286,7 @@ export namespace ConstraintName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54372,7 +54339,7 @@ export namespace InitiallyDeferred {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
 constraintName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54417,7 +54384,7 @@ export namespace DomainName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
 udtName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54565,7 +54532,7 @@ export namespace DtdIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  domainCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 domainSchema?: InformationSchema.Types.SqlIdentifier.Options,
 domainName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54604,7 +54571,7 @@ export namespace RoleName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  roleName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
@@ -54657,7 +54624,7 @@ export namespace PositionInUniqueConstraint {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
 constraintName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54833,7 +54800,7 @@ export namespace ParameterDefault {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
 specificName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54917,7 +54884,7 @@ export namespace DeleteRule {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
 constraintName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54973,7 +54940,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55038,7 +55005,7 @@ export namespace ColumnName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
 specificName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55105,7 +55072,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55172,7 +55139,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55219,7 +55186,7 @@ export namespace RoutineName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
 specificName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55277,7 +55244,7 @@ export namespace SequenceName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
 specificName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55338,7 +55305,7 @@ export namespace TableName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
 specificName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55764,7 +55731,7 @@ export namespace ResultCastDtdIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
 specificName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55888,7 +55855,7 @@ export namespace SqlPath {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  catalogName?: InformationSchema.Types.SqlIdentifier.Options,
 schemaName?: InformationSchema.Types.SqlIdentifier.Options,
 schemaOwner?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55962,7 +55929,7 @@ export namespace CycleOption {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  sequenceCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 sequenceSchema?: InformationSchema.Types.SqlIdentifier.Options,
 sequenceName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56016,7 +55983,7 @@ export namespace Comments {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  featureId?: InformationSchema.Types.CharacterData.Options,
 featureName?: InformationSchema.Types.CharacterData.Options,
 subFeatureId?: InformationSchema.Types.CharacterData.Options,
@@ -56055,7 +56022,7 @@ export namespace Comments {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  implementationInfoId?: InformationSchema.Types.CharacterData.Options,
 implementationInfoName?: InformationSchema.Types.CharacterData.Options,
 integerValue?: InformationSchema.Types.CardinalNumber.Options,
@@ -56092,7 +56059,7 @@ export namespace Comments {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  featureId?: InformationSchema.Types.CharacterData.Options,
 featureName?: InformationSchema.Types.CharacterData.Options,
 isSupported?: InformationSchema.Types.YesOrNo.Options,
@@ -56124,7 +56091,7 @@ export namespace Comments {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  sizingId?: InformationSchema.Types.CardinalNumber.Options,
 sizingName?: InformationSchema.Types.CharacterData.Options,
 supportedValue?: InformationSchema.Types.CardinalNumber.Options,
@@ -56190,7 +56157,7 @@ export namespace NullsDistinct {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
 constraintName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56248,7 +56215,7 @@ export namespace WithHierarchy {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56303,7 +56270,7 @@ export namespace WithHierarchy {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56378,7 +56345,7 @@ export namespace CommitAction {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56437,7 +56404,7 @@ export namespace TransformType {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
 udtName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56487,7 +56454,7 @@ export namespace EventObjectColumn {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  triggerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 triggerSchema?: InformationSchema.Types.SqlIdentifier.Options,
 triggerName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56586,7 +56553,7 @@ export namespace Created {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  triggerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 triggerSchema?: InformationSchema.Types.SqlIdentifier.Options,
 triggerName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56645,7 +56612,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56694,7 +56661,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56748,7 +56715,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 objectCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56803,7 +56770,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 objectCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56963,7 +56930,7 @@ export namespace RefDtdIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  userDefinedTypeCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 userDefinedTypeSchema?: InformationSchema.Types.SqlIdentifier.Options,
 userDefinedTypeName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57034,7 +57001,7 @@ export namespace ColumnName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  viewCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 viewSchema?: InformationSchema.Types.SqlIdentifier.Options,
 viewName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57078,7 +57045,7 @@ export namespace SpecificName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57121,7 +57088,7 @@ export namespace TableName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  viewCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 viewSchema?: InformationSchema.Types.SqlIdentifier.Options,
 viewName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57184,7 +57151,7 @@ export namespace IsTriggerInsertableInto {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57226,7 +57193,7 @@ export namespace DtdIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objectCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 objectSchema?: InformationSchema.Types.SqlIdentifier.Options,
 objectName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57383,7 +57350,7 @@ export namespace DtdIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objectCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 objectSchema?: InformationSchema.Types.SqlIdentifier.Options,
 objectName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57437,7 +57404,7 @@ export namespace Attname {
 export namespace Attfdwoptions {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  nspname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
 attname?: PgCatalog.Types.Name.Options,
@@ -57475,7 +57442,7 @@ export namespace OptionValue {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57521,7 +57488,7 @@ export namespace ForeignDataWrapperLanguage {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 fdwowner?: PgCatalog.Types.Oid.Options,
 fdwoptions?: PgCatalog.Types.TextArray.Options,
@@ -57552,7 +57519,7 @@ export namespace OptionValue {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  foreignDataWrapperCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignDataWrapperName?: InformationSchema.Types.SqlIdentifier.Options,
 optionName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57588,7 +57555,7 @@ export namespace ForeignDataWrapperLanguage {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  foreignDataWrapperCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignDataWrapperName?: InformationSchema.Types.SqlIdentifier.Options,
 authorizationIdentifier?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57643,7 +57610,7 @@ export namespace AuthorizationIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 srvoptions?: PgCatalog.Types.TextArray.Options,
 foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57676,7 +57643,7 @@ export namespace OptionValue {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignServerName?: InformationSchema.Types.SqlIdentifier.Options,
 optionName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57722,7 +57689,7 @@ export namespace AuthorizationIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignServerName?: InformationSchema.Types.SqlIdentifier.Options,
 foreignDataWrapperCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57769,7 +57736,7 @@ export namespace AuthorizationIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  foreignTableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignTableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 foreignTableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57805,7 +57772,7 @@ export namespace OptionValue {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  foreignTableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignTableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 foreignTableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57842,7 +57809,7 @@ export namespace ForeignServerName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  foreignTableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignTableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 foreignTableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57887,7 +57854,7 @@ export namespace Srvowner {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 umoptions?: PgCatalog.Types.TextArray.Options,
 umuser?: PgCatalog.Types.Oid.Options,
@@ -57923,7 +57890,7 @@ export namespace OptionValue {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  authorizationIdentifier?: InformationSchema.Types.SqlIdentifier.Options,
 foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignServerName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57950,7 +57917,7 @@ export namespace ForeignServerName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  authorizationIdentifier?: InformationSchema.Types.SqlIdentifier.Options,
 foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignServerName?: InformationSchema.Types.SqlIdentifier.Options
@@ -58042,7 +58009,7 @@ export namespace Active {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  customerId?: PgCatalog.Types.Int4.Options,
 storeId?: PgCatalog.Types.Int2.Options,
 firstName?: PgCatalog.Types.Varchar.Options,
@@ -58079,7 +58046,7 @@ export namespace LastUpdate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  actorId?: PgCatalog.Types.Int4.Options,
 firstName?: PgCatalog.Types.Varchar.Options,
 lastName?: PgCatalog.Types.Varchar.Options,
@@ -58105,7 +58072,7 @@ export namespace LastUpdate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  categoryId?: PgCatalog.Types.Int4.Options,
 name?: PgCatalog.Types.Varchar.Options,
 lastUpdate?: PgCatalog.Types.Timestamp.Options
@@ -58195,7 +58162,7 @@ export namespace Fulltext {
         
             
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  filmId?: PgCatalog.Types.Int4.Options,
 title?: PgCatalog.Types.Varchar.Options,
 description?: PgCatalog.Types.Text.Options,
@@ -58230,7 +58197,7 @@ export namespace LastUpdate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  actorId?: PgCatalog.Types.Int2.Options,
 filmId?: PgCatalog.Types.Int2.Options,
 lastUpdate?: PgCatalog.Types.Timestamp.Options
@@ -58255,7 +58222,7 @@ export namespace LastUpdate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  filmId?: PgCatalog.Types.Int2.Options,
 categoryId?: PgCatalog.Types.Int2.Options,
 lastUpdate?: PgCatalog.Types.Timestamp.Options
@@ -58285,7 +58252,7 @@ export namespace FilmInfo {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  actorId?: PgCatalog.Types.Int4.Options,
 firstName?: PgCatalog.Types.Varchar.Options,
 lastName?: PgCatalog.Types.Varchar.Options,
@@ -58336,7 +58303,7 @@ export namespace LastUpdate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  addressId?: PgCatalog.Types.Int4.Options,
 address?: PgCatalog.Types.Varchar.Options,
 address2?: PgCatalog.Types.Varchar.Options,
@@ -58371,7 +58338,7 @@ export namespace LastUpdate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  cityId?: PgCatalog.Types.Int4.Options,
 city?: PgCatalog.Types.Varchar.Options,
 countryId?: PgCatalog.Types.Int2.Options,
@@ -58397,7 +58364,7 @@ export namespace LastUpdate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  countryId?: PgCatalog.Types.Int4.Options,
 country?: PgCatalog.Types.Varchar.Options,
 lastUpdate?: PgCatalog.Types.Timestamp.Options
@@ -58452,7 +58419,7 @@ export namespace Sid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  id?: PgCatalog.Types.Int4.Options,
 name?: PgCatalog.Types.Text.Options,
 address?: PgCatalog.Types.Varchar.Options,
@@ -58508,7 +58475,7 @@ export namespace Actors {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  fid?: PgCatalog.Types.Int4.Options,
 title?: PgCatalog.Types.Varchar.Options,
 description?: PgCatalog.Types.Text.Options,
@@ -58543,7 +58510,7 @@ export namespace LastUpdate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  inventoryId?: PgCatalog.Types.Int4.Options,
 filmId?: PgCatalog.Types.Int2.Options,
 storeId?: PgCatalog.Types.Int2.Options,
@@ -58569,7 +58536,7 @@ export namespace LastUpdate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  languageId?: PgCatalog.Types.Int4.Options,
 name?: PgCatalog.Types.Bpchar.Options,
 lastUpdate?: PgCatalog.Types.Timestamp.Options
@@ -58619,7 +58586,7 @@ export namespace Actors {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  fid?: PgCatalog.Types.Int4.Options,
 title?: PgCatalog.Types.Varchar.Options,
 description?: PgCatalog.Types.Text.Options,
@@ -58664,7 +58631,7 @@ export namespace PaymentDate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  paymentId?: PgCatalog.Types.Int4.Options,
 customerId?: PgCatalog.Types.Int2.Options,
 staffId?: PgCatalog.Types.Int2.Options,
@@ -58712,7 +58679,7 @@ export namespace LastUpdate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rentalId?: PgCatalog.Types.Int4.Options,
 rentalDate?: PgCatalog.Types.Timestamp.Options,
 inventoryId?: PgCatalog.Types.Int4.Options,
@@ -58736,7 +58703,7 @@ export namespace TotalSales {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  category?: PgCatalog.Types.Varchar.Options,
 totalSales?: PgCatalog.Types.Numeric.Options
 }
@@ -58800,7 +58767,7 @@ export namespace Picture {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  staffId?: PgCatalog.Types.Int4.Options,
 firstName?: PgCatalog.Types.Varchar.Options,
 lastName?: PgCatalog.Types.Varchar.Options,
@@ -58838,7 +58805,7 @@ export namespace LastUpdate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  storeId?: PgCatalog.Types.Int4.Options,
 managerStaffId?: PgCatalog.Types.Int2.Options,
 addressId?: PgCatalog.Types.Int2.Options,
@@ -58864,7 +58831,7 @@ export namespace TotalSales {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  store?: PgCatalog.Types.Text.Options,
 manager?: PgCatalog.Types.Text.Options,
 totalSales?: PgCatalog.Types.Numeric.Options
@@ -58914,7 +58881,7 @@ export namespace Sid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  id?: PgCatalog.Types.Int4.Options,
 name?: PgCatalog.Types.Text.Options,
 address?: PgCatalog.Types.Varchar.Options,
@@ -58934,7 +58901,7 @@ export namespace ActorId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  actorId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -58944,7 +58911,7 @@ export namespace AddressId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  addressId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -58954,7 +58921,7 @@ export namespace CategoryId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  categoryId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -58964,7 +58931,7 @@ export namespace CityId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  cityId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -58974,7 +58941,7 @@ export namespace CountryId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  countryId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -58984,7 +58951,7 @@ export namespace CustomerId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  customerId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -58999,7 +58966,7 @@ export namespace FilmId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  actorId?: PgCatalog.Types.Int2.Options,
 filmId?: PgCatalog.Types.Int2.Options
 }
@@ -59015,7 +58982,7 @@ export namespace CategoryId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  filmId?: PgCatalog.Types.Int2.Options,
 categoryId?: PgCatalog.Types.Int2.Options
 }
@@ -59026,7 +58993,7 @@ export namespace FilmId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  filmId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -59036,7 +59003,7 @@ export namespace InventoryId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  inventoryId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -59046,7 +59013,7 @@ export namespace LanguageId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  languageId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -59056,7 +59023,7 @@ export namespace PaymentId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  paymentId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -59066,7 +59033,7 @@ export namespace RentalId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rentalId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -59076,7 +59043,7 @@ export namespace StaffId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  staffId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -59086,7 +59053,7 @@ export namespace StoreId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  storeId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -59113,7 +59080,7 @@ export namespace Fulltext {
         
             
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  fulltext?: PgCatalog.Types.Tsvector.Options
 }
 }
@@ -59123,7 +59090,7 @@ export namespace LastName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  lastName?: PgCatalog.Types.Varchar.Options
 }
 }
@@ -59133,7 +59100,7 @@ export namespace AddressId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  addressId?: PgCatalog.Types.Int2.Options
 }
 }
@@ -59143,7 +59110,7 @@ export namespace CityId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  cityId?: PgCatalog.Types.Int2.Options
 }
 }
@@ -59153,7 +59120,7 @@ export namespace CountryId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  countryId?: PgCatalog.Types.Int2.Options
 }
 }
@@ -59163,7 +59130,7 @@ export namespace CustomerId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  customerId?: PgCatalog.Types.Int2.Options
 }
 }
@@ -59173,7 +59140,7 @@ export namespace FilmId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  filmId?: PgCatalog.Types.Int2.Options
 }
 }
@@ -59183,7 +59150,7 @@ export namespace InventoryId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  inventoryId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -59193,7 +59160,7 @@ export namespace LanguageId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  languageId?: PgCatalog.Types.Int2.Options
 }
 }
@@ -59203,7 +59170,7 @@ export namespace RentalId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rentalId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -59213,7 +59180,7 @@ export namespace StaffId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  staffId?: PgCatalog.Types.Int2.Options
 }
 }
@@ -59223,7 +59190,7 @@ export namespace StoreId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  storeId?: PgCatalog.Types.Int2.Options
 }
 }
@@ -59233,7 +59200,7 @@ export namespace LastName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  lastName?: PgCatalog.Types.Varchar.Options
 }
 }
@@ -59248,7 +59215,7 @@ export namespace FilmId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  storeId?: PgCatalog.Types.Int2.Options,
 filmId?: PgCatalog.Types.Int2.Options
 }
@@ -59259,7 +59226,7 @@ export namespace Title {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  title?: PgCatalog.Types.Varchar.Options
 }
 }
@@ -59269,7 +59236,7 @@ export namespace ManagerStaffId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  managerStaffId?: PgCatalog.Types.Int2.Options
 }
 }
@@ -59289,7 +59256,7 @@ export namespace CustomerId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rentalDate?: PgCatalog.Types.Timestamp.Options,
 inventoryId?: PgCatalog.Types.Int4.Options,
 customerId?: PgCatalog.Types.Int2.Options
@@ -59309,7 +59276,7 @@ export namespace PStoreId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pFilmId?: PgCatalog.Types.Int4.Options,
 pStoreId?: PgCatalog.Types.Int4.Options
 }
@@ -59327,7 +59294,7 @@ export namespace PStoreId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pFilmId?: PgCatalog.Types.Int4.Options,
 pStoreId?: PgCatalog.Types.Int4.Options
 }
@@ -59345,7 +59312,7 @@ export namespace PEffectiveDate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pCustomerId?: PgCatalog.Types.Int4.Options,
 pEffectiveDate?: PgCatalog.Types.Timestamp.Options
 }
@@ -59358,7 +59325,7 @@ export namespace PInventoryId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pInventoryId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -59370,7 +59337,7 @@ export namespace PInventoryId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pInventoryId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -59382,7 +59349,7 @@ export namespace Argument_0 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Timestamp.Options
 }
 }
@@ -59399,7 +59366,7 @@ export namespace MinDollarAmountPurchased {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  minMonthlyPurchases?: PgCatalog.Types.Int4.Options,
 minDollarAmountPurchased?: PgCatalog.Types.Numeric.Options
 }
@@ -59452,7 +59419,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59468,7 +59435,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59484,7 +59451,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59500,7 +59467,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59516,7 +59483,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59532,7 +59499,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59548,7 +59515,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59564,7 +59531,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59580,7 +59547,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59596,7 +59563,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59612,7 +59579,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59628,7 +59595,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59644,7 +59611,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59660,7 +59627,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59676,7 +59643,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59692,7 +59659,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59708,7 +59675,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59724,7 +59691,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59740,7 +59707,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59756,7 +59723,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59772,7 +59739,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59788,7 +59755,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59804,7 +59771,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59820,7 +59787,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59836,7 +59803,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59852,7 +59819,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59868,7 +59835,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59884,7 +59851,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59900,7 +59867,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59916,7 +59883,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59932,7 +59899,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59948,7 +59915,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59964,7 +59931,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59980,7 +59947,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59996,7 +59963,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60012,7 +59979,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60028,7 +59995,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60044,7 +60011,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60060,7 +60027,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60076,7 +60043,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60092,7 +60059,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60108,7 +60075,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60145,7 +60112,7 @@ export namespace Rating {
 export namespace Actors {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  filmId?: PgCatalog.Types.Int4.Options,
 title?: PgCatalog.Types.Varchar.Options,
 releaseYear?: PgCatalog.Types.Int4.Options,
@@ -60238,7 +60205,7 @@ export namespace Fulltext {
         
             
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  filmId?: PgCatalog.Types.Int4.Options,
 title?: PgCatalog.Types.Varchar.Options,
 description?: PgCatalog.Types.Text.Options,
@@ -60260,7 +60227,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_1?: Public.Types.MpaaRating.Options
 }
 }
@@ -60272,7 +60239,7 @@ export namespace Count {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  count?: PgCatalog.Types.Int8.Options
 }
 }
@@ -60360,7 +60327,7 @@ export namespace Fulltext {
         
             
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  filmId?: PgCatalog.Types.Int4.Options,
 title?: PgCatalog.Types.Varchar.Options,
 description?: PgCatalog.Types.Text.Options,
@@ -60382,7 +60349,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_1?: PgCatalog.Types.Text.Options
 }
 }
@@ -60395,7 +60362,7 @@ export namespace Count {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  count?: PgCatalog.Types.Int8.Options
 }
 }

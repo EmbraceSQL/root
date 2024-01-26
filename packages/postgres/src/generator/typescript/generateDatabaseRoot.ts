@@ -129,13 +129,16 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
             const parameters = node.parametersType
               ? `parameters: ${node.parametersType.typescriptNamespacedName}`
               : "";
+            const options = parameters.length
+              ? `, options?: InvokeQueryOptions`
+              : `options?: InvokeQueryOptions`;
             return [
               await NestedNamedClassVisitor.before(context, node),
               `
-          async call (${parameters}) {
+          async call (${parameters}${options}) {
             const response = await this.database.invoke( (sql) => sql.unsafe(\`
                 ${preparedSql}
-                \`${parameterPasses}));
+                \`${parameterPasses}), options);
             return response.map(r => ({ ${attributes.join(",")} }));
           }
         `,
@@ -232,6 +235,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
                     ` \${ typed[${a.type.id}](undefinedIsNull(parameters.${a.typescriptPropertyName})) }`,
                 )
                 .join(",") ?? "";
+            const optionsExpression = `, options`;
             const resultType = `${node.resultsType?.typescriptNamespacedName}`;
             // if there is a composite -- pseudo -- return type, this will
             // need to call back into the sql driver to parse the results
@@ -251,16 +255,19 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
             const parameters = node.parametersType
               ? `parameters : ${node.parametersType?.typescriptNamespacedName}`
               : ``;
+            const options = parameters.length
+              ? `, options?: InvokeQueryOptions`
+              : `options?: InvokeQueryOptions`;
             return [
               `export class ${node.typescriptName} implements HasDatabase {`,
               `  constructor(private hasDatabase: HasDatabase) {}`,
               `  get database() { return this.hasDatabase.database; }`,
               `  get name() { return "${node.name}"; }`,
 
-              `async call(${parameters}) {`,
+              `async call(${parameters}${options}) {`,
               `  ${parseResult}`,
               `  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;`,
-              `  const response = await this.database.invoke( (sql) => sql\`SELECT ${node.databaseName}(${parameterExpressions})\`);`,
+              `  const response = await this.database.invoke( (sql) => sql\`SELECT ${node.databaseName}(${parameterExpressions})\`${optionsExpression});`,
               `  const results = response;`,
               `
               const responseBody = ( ${(() => {

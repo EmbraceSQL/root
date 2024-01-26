@@ -53,7 +53,7 @@ export const UpdateOperation = {
     RETURNING ${sqlColumnNames}`;
 
     generationBuffer.push(
-      `const response = await this.database.invoke( (sql) => sql\`${sql}\`);`,
+      `const response = await this.database.invoke( (sql) => sql\`${sql}\`, options);`,
     );
 
     generationBuffer.push(

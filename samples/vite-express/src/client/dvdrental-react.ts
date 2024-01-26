@@ -40652,7 +40652,6 @@ export namespace Procedures {
 export namespace Tables {
 }
 }
-// Type Options
 export namespace PgCatalog {
 export namespace Types {
 export namespace Bool {
@@ -40887,7 +40886,7 @@ export namespace Typdefault {
 export namespace Typacl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 typname?: PgCatalog.Types.Name.Options,
 typnamespace?: PgCatalog.Types.Oid.Options,
@@ -41047,7 +41046,7 @@ export namespace Attmissingval {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  attrelid?: PgCatalog.Types.Oid.Options,
 attname?: PgCatalog.Types.Name.Options,
 atttypid?: PgCatalog.Types.Oid.Options,
@@ -41213,7 +41212,7 @@ export type Options = never;
 export namespace Proacl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 proname?: PgCatalog.Types.Name.Options,
 pronamespace?: PgCatalog.Types.Oid.Options,
@@ -41408,7 +41407,7 @@ export namespace Relpartbound {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 relname?: PgCatalog.Types.Name.Options,
 relnamespace?: PgCatalog.Types.Oid.Options,
@@ -42205,7 +42204,7 @@ export namespace Adbin {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 adrelid?: PgCatalog.Types.Oid.Options,
 adnum?: PgCatalog.Types.Int2.Options,
@@ -42332,7 +42331,7 @@ export namespace Conbin {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 conname?: PgCatalog.Types.Name.Options,
 connamespace?: PgCatalog.Types.Oid.Options,
@@ -42385,7 +42384,7 @@ export namespace Inhdetachpending {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  inhrelid?: PgCatalog.Types.Oid.Options,
 inhparent?: PgCatalog.Types.Oid.Options,
 inhseqno?: PgCatalog.Types.Int4.Options,
@@ -42497,7 +42496,7 @@ export namespace Indpred {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  indexrelid?: PgCatalog.Types.Oid.Options,
 indrelid?: PgCatalog.Types.Oid.Options,
 indnatts?: PgCatalog.Types.Int2.Options,
@@ -42600,7 +42599,7 @@ export namespace Oprjoin {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 oprname?: PgCatalog.Types.Name.Options,
 oprnamespace?: PgCatalog.Types.Oid.Options,
@@ -42647,7 +42646,7 @@ export namespace Opfowner {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 opfmethod?: PgCatalog.Types.Oid.Options,
 opfname?: PgCatalog.Types.Name.Options,
@@ -42704,7 +42703,7 @@ export namespace Opckeytype {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 opcmethod?: PgCatalog.Types.Oid.Options,
 opcname?: PgCatalog.Types.Name.Options,
@@ -42740,7 +42739,7 @@ export namespace Amtype {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 amname?: PgCatalog.Types.Name.Options,
 amhandler?: PgCatalog.Types.Regproc.Options,
@@ -42796,7 +42795,7 @@ export namespace Amopsortfamily {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 amopfamily?: PgCatalog.Types.Oid.Options,
 amoplefttype?: PgCatalog.Types.Oid.Options,
@@ -42842,7 +42841,7 @@ export namespace Amproc {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 amprocfamily?: PgCatalog.Types.Oid.Options,
 amproclefttype?: PgCatalog.Types.Oid.Options,
@@ -42898,7 +42897,7 @@ export namespace Lanvalidator {
 export namespace Lanacl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 lanname?: PgCatalog.Types.Name.Options,
 lanowner?: PgCatalog.Types.Oid.Options,
@@ -42927,7 +42926,7 @@ export namespace Lomowner {
 export namespace Lomacl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 lomowner?: PgCatalog.Types.Oid.Options,
 lomacl?: PgCatalog.Types.AclitemArray.Options
@@ -42952,7 +42951,7 @@ export namespace Data {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  loid?: PgCatalog.Types.Oid.Options,
 pageno?: PgCatalog.Types.Int4.Options,
 data?: PgCatalog.Types.Bytea.Options
@@ -43072,7 +43071,7 @@ export namespace Aggminitval {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  aggfnoid?: PgCatalog.Types.Regproc.Options,
 aggkind?: PgCatalog.Types.Char.Options,
 aggnumdirectargs?: PgCatalog.Types.Int2.Options,
@@ -43246,7 +43245,7 @@ export namespace Stavalues5 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  starelid?: PgCatalog.Types.Oid.Options,
 staattnum?: PgCatalog.Types.Int2.Options,
 stainherit?: PgCatalog.Types.Bool.Options,
@@ -43327,7 +43326,7 @@ export namespace Stxexprs {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 stxrelid?: PgCatalog.Types.Oid.Options,
 stxname?: PgCatalog.Types.Name.Options,
@@ -43371,7 +43370,7 @@ export namespace Stxdmcv {
 export namespace Stxdexpr {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  stxoid?: PgCatalog.Types.Oid.Options,
 stxdinherit?: PgCatalog.Types.Bool.Options,
 stxdndistinct?: PgCatalog.Types.PgNdistinct.Options,
@@ -43424,7 +43423,7 @@ export namespace EvAction {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 rulename?: PgCatalog.Types.Name.Options,
 evClass?: PgCatalog.Types.Oid.Options,
@@ -43534,7 +43533,7 @@ export namespace Tgnewtable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 tgrelid?: PgCatalog.Types.Oid.Options,
 tgparentid?: PgCatalog.Types.Oid.Options,
@@ -43593,7 +43592,7 @@ export namespace Evtenabled {
 export namespace Evttags {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 evtname?: PgCatalog.Types.Name.Options,
 evtevent?: PgCatalog.Types.Name.Options,
@@ -43627,7 +43626,7 @@ export namespace Description {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options,
@@ -43668,7 +43667,7 @@ export namespace Castmethod {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 castsource?: PgCatalog.Types.Oid.Options,
 casttarget?: PgCatalog.Types.Oid.Options,
@@ -43701,7 +43700,7 @@ export namespace Enumlabel {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 enumtypid?: PgCatalog.Types.Oid.Options,
 enumsortorder?: PgCatalog.Types.Float4.Options,
@@ -43730,7 +43729,7 @@ export namespace Nspowner {
 export namespace Nspacl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 nspname?: PgCatalog.Types.Name.Options,
 nspowner?: PgCatalog.Types.Oid.Options,
@@ -43781,7 +43780,7 @@ export namespace Condefault {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 conname?: PgCatalog.Types.Name.Options,
 connamespace?: PgCatalog.Types.Oid.Options,
@@ -43831,7 +43830,7 @@ export namespace Deptype {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  classid?: PgCatalog.Types.Oid.Options,
 objid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options,
@@ -43928,7 +43927,7 @@ export namespace Datcollversion {
 export namespace Datacl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
 datdba?: PgCatalog.Types.Oid.Options,
@@ -43965,7 +43964,7 @@ export namespace Setrole {
 export namespace Setconfig {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  setdatabase?: PgCatalog.Types.Oid.Options,
 setrole?: PgCatalog.Types.Oid.Options,
 setconfig?: PgCatalog.Types.TextArray.Options
@@ -43996,7 +43995,7 @@ export type Options = never;
 export namespace Spcoptions {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 spcname?: PgCatalog.Types.Name.Options,
 spcowner?: PgCatalog.Types.Oid.Options,
@@ -44068,7 +44067,7 @@ export namespace Rolvaliduntil {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 rolname?: PgCatalog.Types.Name.Options,
 rolsuper?: PgCatalog.Types.Bool.Options,
@@ -44122,7 +44121,7 @@ export namespace SetOption {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 roleid?: PgCatalog.Types.Oid.Options,
 member?: PgCatalog.Types.Oid.Options,
@@ -44171,7 +44170,7 @@ export namespace Deptype {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  dbid?: PgCatalog.Types.Oid.Options,
 classid?: PgCatalog.Types.Oid.Options,
 objid?: PgCatalog.Types.Oid.Options,
@@ -44200,7 +44199,7 @@ export namespace Description {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 description?: PgCatalog.Types.Text.Options
@@ -44235,7 +44234,7 @@ export namespace Cfgparser {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 cfgname?: PgCatalog.Types.Name.Options,
 cfgnamespace?: PgCatalog.Types.Oid.Options,
@@ -44267,7 +44266,7 @@ export namespace Mapdict {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  mapcfg?: PgCatalog.Types.Oid.Options,
 maptokentype?: PgCatalog.Types.Int4.Options,
 mapseqno?: PgCatalog.Types.Int4.Options,
@@ -44308,7 +44307,7 @@ export namespace Dictinitoption {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 dictname?: PgCatalog.Types.Name.Options,
 dictnamespace?: PgCatalog.Types.Oid.Options,
@@ -44361,7 +44360,7 @@ export namespace Prslextype {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 prsname?: PgCatalog.Types.Name.Options,
 prsnamespace?: PgCatalog.Types.Oid.Options,
@@ -44401,7 +44400,7 @@ export namespace Tmpllexize {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 tmplname?: PgCatalog.Types.Name.Options,
 tmplnamespace?: PgCatalog.Types.Oid.Options,
@@ -44449,7 +44448,7 @@ export type Options = never;
 export namespace Extcondition {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 extname?: PgCatalog.Types.Name.Options,
 extowner?: PgCatalog.Types.Oid.Options,
@@ -44495,7 +44494,7 @@ export type Options = never;
 export namespace Fdwoptions {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 fdwname?: PgCatalog.Types.Name.Options,
 fdwowner?: PgCatalog.Types.Oid.Options,
@@ -44545,7 +44544,7 @@ export type Options = never;
 export namespace Srvoptions {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 srvname?: PgCatalog.Types.Name.Options,
 srvowner?: PgCatalog.Types.Oid.Options,
@@ -44578,7 +44577,7 @@ export namespace Umserver {
 export namespace Umoptions {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 umuser?: PgCatalog.Types.Oid.Options,
 umserver?: PgCatalog.Types.Oid.Options,
@@ -44602,7 +44601,7 @@ export namespace Ftserver {
 export namespace Ftoptions {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  ftrelid?: PgCatalog.Types.Oid.Options,
 ftserver?: PgCatalog.Types.Oid.Options,
 ftoptions?: PgCatalog.Types.TextArray.Options
@@ -44650,7 +44649,7 @@ export namespace Polwithcheck {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 polname?: PgCatalog.Types.Name.Options,
 polrelid?: PgCatalog.Types.Oid.Options,
@@ -44675,7 +44674,7 @@ export namespace Roname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  roident?: PgCatalog.Types.Oid.Options,
 roname?: PgCatalog.Types.Text.Options
 }
@@ -44707,7 +44706,7 @@ export namespace Defaclobjtype {
 export namespace Defaclacl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 defaclrole?: PgCatalog.Types.Oid.Options,
 defaclnamespace?: PgCatalog.Types.Oid.Options,
@@ -44742,7 +44741,7 @@ export namespace Privtype {
 export namespace Initprivs {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options,
@@ -44779,7 +44778,7 @@ export namespace Label {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options,
@@ -44811,7 +44810,7 @@ export namespace Label {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 provider?: PgCatalog.Types.Text.Options,
@@ -44882,7 +44881,7 @@ export namespace Collversion {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 collname?: PgCatalog.Types.Name.Options,
 collnamespace?: PgCatalog.Types.Oid.Options,
@@ -44914,7 +44913,7 @@ export namespace Parname {
 export namespace Paracl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 parname?: PgCatalog.Types.Text.Options,
 paracl?: PgCatalog.Types.AclitemArray.Options
@@ -44960,7 +44959,7 @@ export namespace Partexprs {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  partrelid?: PgCatalog.Types.Oid.Options,
 partstrat?: PgCatalog.Types.Char.Options,
 partnatts?: PgCatalog.Types.Int2.Options,
@@ -45010,7 +45009,7 @@ export namespace Rngsubdiff {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rngtypid?: PgCatalog.Types.Oid.Options,
 rngsubtype?: PgCatalog.Types.Oid.Options,
 rngmultitypid?: PgCatalog.Types.Oid.Options,
@@ -45049,7 +45048,7 @@ export namespace Trftosql {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 trftype?: PgCatalog.Types.Oid.Options,
 trflang?: PgCatalog.Types.Oid.Options,
@@ -45101,7 +45100,7 @@ export namespace Seqcycle {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  seqrelid?: PgCatalog.Types.Oid.Options,
 seqtypid?: PgCatalog.Types.Oid.Options,
 seqstart?: PgCatalog.Types.Int8.Options,
@@ -45161,7 +45160,7 @@ export namespace Pubviaroot {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 pubname?: PgCatalog.Types.Name.Options,
 pubowner?: PgCatalog.Types.Oid.Options,
@@ -45192,7 +45191,7 @@ export namespace Pnnspid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 pnpubid?: PgCatalog.Types.Oid.Options,
 pnnspid?: PgCatalog.Types.Oid.Options
@@ -45227,7 +45226,7 @@ export namespace Prattrs {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 prpubid?: PgCatalog.Types.Oid.Options,
 prrelid?: PgCatalog.Types.Oid.Options,
@@ -45322,7 +45321,7 @@ export namespace Suborigin {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 subdbid?: PgCatalog.Types.Oid.Options,
 subskiplsn?: PgCatalog.Types.PgLsn.Options,
@@ -45366,7 +45365,7 @@ export namespace Srsublsn {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  srsubid?: PgCatalog.Types.Oid.Options,
 srrelid?: PgCatalog.Types.Oid.Options,
 srsubstate?: PgCatalog.Types.Char.Options,
@@ -45440,7 +45439,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rolname?: PgCatalog.Types.Name.Options,
 rolsuper?: PgCatalog.Types.Bool.Options,
 rolinherit?: PgCatalog.Types.Bool.Options,
@@ -45503,7 +45502,7 @@ export namespace Valuntil {
 export namespace Useconfig {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  usename?: PgCatalog.Types.Name.Options,
 usesysid?: PgCatalog.Types.Oid.Options,
 usecreatedb?: PgCatalog.Types.Bool.Options,
@@ -45532,7 +45531,7 @@ export namespace Grosysid {
 export namespace Grolist {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  groname?: PgCatalog.Types.Name.Options,
 grosysid?: PgCatalog.Types.Oid.Options,
 grolist?: PgCatalog.Types.OidArray.Options
@@ -45585,7 +45584,7 @@ export namespace Valuntil {
 export namespace Useconfig {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  usename?: PgCatalog.Types.Name.Options,
 usesysid?: PgCatalog.Types.Oid.Options,
 usecreatedb?: PgCatalog.Types.Bool.Options,
@@ -45639,7 +45638,7 @@ export namespace WithCheck {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
 policyname?: PgCatalog.Types.Name.Options,
@@ -45674,7 +45673,7 @@ export namespace Definition {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
 rulename?: PgCatalog.Types.Name.Options,
@@ -45705,7 +45704,7 @@ export namespace Definition {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 viewname?: PgCatalog.Types.Name.Options,
 viewowner?: PgCatalog.Types.Name.Options,
@@ -45756,7 +45755,7 @@ export namespace Rowsecurity {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
 tableowner?: PgCatalog.Types.Name.Options,
@@ -45806,7 +45805,7 @@ export namespace Definition {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 matviewname?: PgCatalog.Types.Name.Options,
 matviewowner?: PgCatalog.Types.Name.Options,
@@ -45845,7 +45844,7 @@ export namespace Indexdef {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
 indexname?: PgCatalog.Types.Name.Options,
@@ -45912,7 +45911,7 @@ export namespace LastValue {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 sequencename?: PgCatalog.Types.Name.Options,
 sequenceowner?: PgCatalog.Types.Name.Options,
@@ -45994,7 +45993,7 @@ export type Options = never;
 export namespace ElemCountHistogram {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
 attname?: PgCatalog.Types.Name.Options,
@@ -46076,7 +46075,7 @@ export type Options = never;
 export namespace MostCommonBaseFreqs {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
 statisticsSchemaname?: PgCatalog.Types.Name.Options,
@@ -46177,7 +46176,7 @@ export type Options = never;
 export namespace ElemCountHistogram {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
 statisticsSchemaname?: PgCatalog.Types.Name.Options,
@@ -46224,7 +46223,7 @@ export namespace Rowfilter {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pubname?: PgCatalog.Types.Name.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
@@ -46316,7 +46315,7 @@ export namespace Waitstart {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  locktype?: PgCatalog.Types.Text.Options,
 database?: PgCatalog.Types.Oid.Options,
 relation?: PgCatalog.Types.Oid.Options,
@@ -46369,7 +46368,7 @@ export namespace CreationTime {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 statement?: PgCatalog.Types.Text.Options,
 isHoldable?: PgCatalog.Types.Bool.Options,
@@ -46402,7 +46401,7 @@ export namespace Comment {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Name.Options,
 defaultVersion?: PgCatalog.Types.Text.Options,
 installedVersion?: PgCatalog.Types.Text.Options,
@@ -46456,7 +46455,7 @@ export namespace Comment {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Name.Options,
 version?: PgCatalog.Types.Text.Options,
 installed?: PgCatalog.Types.Bool.Options,
@@ -46497,7 +46496,7 @@ export namespace Database {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  transaction?: PgCatalog.Types.Xid.Options,
 gid?: PgCatalog.Types.Text.Options,
 prepared?: PgCatalog.Types.Timestamptz.Options,
@@ -46545,7 +46544,7 @@ export namespace CustomPlans {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 statement?: PgCatalog.Types.Text.Options,
 prepareTime?: PgCatalog.Types.Timestamptz.Options,
@@ -46600,7 +46599,7 @@ export namespace Label {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options,
@@ -46698,7 +46697,7 @@ export namespace PendingRestart {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 setting?: PgCatalog.Types.Text.Options,
 unit?: PgCatalog.Types.Text.Options,
@@ -46757,7 +46756,7 @@ export namespace Error {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  sourcefile?: PgCatalog.Types.Text.Options,
 sourceline?: PgCatalog.Types.Int4.Options,
 seqno?: PgCatalog.Types.Int4.Options,
@@ -46820,7 +46819,7 @@ export namespace Error {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  ruleNumber?: PgCatalog.Types.Int4.Options,
 fileName?: PgCatalog.Types.Text.Options,
 lineNumber?: PgCatalog.Types.Int4.Options,
@@ -46873,7 +46872,7 @@ export namespace Error {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  mapNumber?: PgCatalog.Types.Int4.Options,
 fileName?: PgCatalog.Types.Text.Options,
 lineNumber?: PgCatalog.Types.Int4.Options,
@@ -46902,7 +46901,7 @@ export namespace IsDst {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  abbrev?: PgCatalog.Types.Text.Options,
 utcOffset?: PgCatalog.Types.Interval.Options,
 isDst?: PgCatalog.Types.Bool.Options
@@ -46932,7 +46931,7 @@ export namespace IsDst {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 abbrev?: PgCatalog.Types.Text.Options,
 utcOffset?: PgCatalog.Types.Interval.Options,
@@ -46953,7 +46952,7 @@ export namespace Setting {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 setting?: PgCatalog.Types.Text.Options
 }
@@ -46982,7 +46981,7 @@ export namespace AllocatedSize {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 off?: PgCatalog.Types.Int8.Options,
 size?: PgCatalog.Types.Int8.Options,
@@ -47038,7 +47037,7 @@ export namespace UsedBytes {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 ident?: PgCatalog.Types.Text.Options,
 parent?: PgCatalog.Types.Text.Options,
@@ -47184,7 +47183,7 @@ export namespace AutoanalyzeCount {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -47277,7 +47276,7 @@ export namespace NTupNewpageUpd {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -47426,7 +47425,7 @@ export namespace AutoanalyzeCount {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -47519,7 +47518,7 @@ export namespace NTupNewpageUpd {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -47668,7 +47667,7 @@ export namespace AutoanalyzeCount {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -47761,7 +47760,7 @@ export namespace NTupNewpageUpd {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -47835,7 +47834,7 @@ export namespace TidxBlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -47908,7 +47907,7 @@ export namespace TidxBlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -47981,7 +47980,7 @@ export namespace TidxBlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -48044,7 +48043,7 @@ export namespace IdxTupFetch {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 indexrelid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
@@ -48105,7 +48104,7 @@ export namespace IdxTupFetch {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 indexrelid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
@@ -48166,7 +48165,7 @@ export namespace IdxTupFetch {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 indexrelid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
@@ -48217,7 +48216,7 @@ export namespace IdxBlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 indexrelid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
@@ -48266,7 +48265,7 @@ export namespace IdxBlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 indexrelid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
@@ -48315,7 +48314,7 @@ export namespace IdxBlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 indexrelid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
@@ -48354,7 +48353,7 @@ export namespace BlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -48391,7 +48390,7 @@ export namespace BlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -48428,7 +48427,7 @@ export namespace BlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -48550,7 +48549,7 @@ export namespace BackendType {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
 pid?: PgCatalog.Types.Int4.Options,
@@ -48679,7 +48678,7 @@ export namespace ReplyTime {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 usesysid?: PgCatalog.Types.Oid.Options,
 usename?: PgCatalog.Types.Name.Options,
@@ -48751,7 +48750,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 blksZeroed?: PgCatalog.Types.Int8.Options,
 blksHit?: PgCatalog.Types.Int8.Options,
@@ -48842,7 +48841,7 @@ export namespace Conninfo {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 status?: PgCatalog.Types.Text.Options,
 receiveStartLsn?: PgCatalog.Types.PgLsn.Options,
@@ -48914,7 +48913,7 @@ export namespace IoDepth {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  statsReset?: PgCatalog.Types.Timestamptz.Options,
 prefetch?: PgCatalog.Types.Int8.Options,
 hit?: PgCatalog.Types.Int8.Options,
@@ -48981,7 +48980,7 @@ export namespace LatestEndTime {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  subid?: PgCatalog.Types.Oid.Options,
 subname?: PgCatalog.Types.Name.Options,
 pid?: PgCatalog.Types.Int4.Options,
@@ -49038,7 +49037,7 @@ export namespace IssuerDn {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 ssl?: PgCatalog.Types.Bool.Options,
 version?: PgCatalog.Types.Text.Options,
@@ -49078,7 +49077,7 @@ export namespace CredentialsDelegated {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 gssAuthenticated?: PgCatalog.Types.Bool.Options,
 principal?: PgCatalog.Types.Text.Options,
@@ -49170,7 +49169,7 @@ export namespace Conflicting {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  slotName?: PgCatalog.Types.Name.Options,
 plugin?: PgCatalog.Types.Name.Options,
 slotType?: PgCatalog.Types.Text.Options,
@@ -49243,7 +49242,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  slotName?: PgCatalog.Types.Text.Options,
 spillTxns?: PgCatalog.Types.Int8.Options,
 spillCount?: PgCatalog.Types.Int8.Options,
@@ -49400,7 +49399,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
 numbackends?: PgCatalog.Types.Int4.Options,
@@ -49475,7 +49474,7 @@ export namespace ConflActiveLogicalslot {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
 conflTablespace?: PgCatalog.Types.Int8.Options,
@@ -49520,7 +49519,7 @@ export namespace SelfTime {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  funcid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 funcname?: PgCatalog.Types.Name.Options,
@@ -49563,7 +49562,7 @@ export namespace SelfTime {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  funcid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 funcname?: PgCatalog.Types.Name.Options,
@@ -49611,7 +49610,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  archivedCount?: PgCatalog.Types.Int8.Options,
 lastArchivedWal?: PgCatalog.Types.Text.Options,
 lastArchivedTime?: PgCatalog.Types.Timestamptz.Options,
@@ -49680,7 +49679,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  checkpointsTimed?: PgCatalog.Types.Int8.Options,
 checkpointsReq?: PgCatalog.Types.Int8.Options,
 checkpointWriteTime?: PgCatalog.Types.Float8.Options,
@@ -49788,7 +49787,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  backendType?: PgCatalog.Types.Text.Options,
 object?: PgCatalog.Types.Text.Options,
 context?: PgCatalog.Types.Text.Options,
@@ -49858,7 +49857,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  walRecords?: PgCatalog.Types.Int8.Options,
 walFpi?: PgCatalog.Types.Int8.Options,
 walBytes?: PgCatalog.Types.Numeric.Options,
@@ -49934,7 +49933,7 @@ export namespace CurrentChildTableRelid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
@@ -50008,7 +50007,7 @@ export namespace NumDeadTuples {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
@@ -50086,7 +50085,7 @@ export namespace IndexRebuildCount {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
@@ -50185,7 +50184,7 @@ export namespace PartitionsDone {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
@@ -50238,7 +50237,7 @@ export namespace TablespacesStreamed {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 phase?: PgCatalog.Types.Text.Options,
 backupTotal?: PgCatalog.Types.Int8.Options,
@@ -50301,7 +50300,7 @@ export namespace TuplesExcluded {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
@@ -50346,7 +50345,7 @@ export namespace Usename {
 export namespace Umoptions {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  umid?: PgCatalog.Types.Oid.Options,
 srvid?: PgCatalog.Types.Oid.Options,
 srvname?: PgCatalog.Types.Name.Options,
@@ -50379,7 +50378,7 @@ export namespace LocalLsn {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  localId?: PgCatalog.Types.Oid.Options,
 externalId?: PgCatalog.Types.Text.Options,
 remoteLsn?: PgCatalog.Types.PgLsn.Options,
@@ -50415,7 +50414,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  subid?: PgCatalog.Types.Oid.Options,
 subname?: PgCatalog.Types.Name.Options,
 applyErrorCount?: PgCatalog.Types.Int8.Options,
@@ -50432,7 +50431,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -50450,7 +50449,7 @@ export namespace Pronamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  proname?: PgCatalog.Types.Name.Options,
 proargtypes?: PgCatalog.Types.Oidvector.Options,
 pronamespace?: PgCatalog.Types.Oid.Options
@@ -50462,7 +50461,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -50477,7 +50476,7 @@ export namespace Typnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  typname?: PgCatalog.Types.Name.Options,
 typnamespace?: PgCatalog.Types.Oid.Options
 }
@@ -50493,7 +50492,7 @@ export namespace Attname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  attrelid?: PgCatalog.Types.Oid.Options,
 attname?: PgCatalog.Types.Name.Options
 }
@@ -50509,7 +50508,7 @@ export namespace Attnum {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  attrelid?: PgCatalog.Types.Oid.Options,
 attnum?: PgCatalog.Types.Int2.Options
 }
@@ -50520,7 +50519,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -50535,7 +50534,7 @@ export namespace Relnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relname?: PgCatalog.Types.Name.Options,
 relnamespace?: PgCatalog.Types.Oid.Options
 }
@@ -50551,7 +50550,7 @@ export namespace Relfilenode {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  reltablespace?: PgCatalog.Types.Oid.Options,
 relfilenode?: PgCatalog.Types.Oid.Options
 }
@@ -50567,7 +50566,7 @@ export namespace Adnum {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  adrelid?: PgCatalog.Types.Oid.Options,
 adnum?: PgCatalog.Types.Int2.Options
 }
@@ -50578,7 +50577,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -50593,7 +50592,7 @@ export namespace Connamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  conname?: PgCatalog.Types.Name.Options,
 connamespace?: PgCatalog.Types.Oid.Options
 }
@@ -50614,7 +50613,7 @@ export namespace Conname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  conrelid?: PgCatalog.Types.Oid.Options,
 contypid?: PgCatalog.Types.Oid.Options,
 conname?: PgCatalog.Types.Name.Options
@@ -50626,7 +50625,7 @@ export namespace Contypid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  contypid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -50636,7 +50635,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -50646,7 +50645,7 @@ export namespace Conparentid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  conparentid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -50661,7 +50660,7 @@ export namespace Inhseqno {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  inhrelid?: PgCatalog.Types.Oid.Options,
 inhseqno?: PgCatalog.Types.Int4.Options
 }
@@ -50672,7 +50671,7 @@ export namespace Inhparent {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  inhparent?: PgCatalog.Types.Oid.Options
 }
 }
@@ -50682,7 +50681,7 @@ export namespace Indrelid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  indrelid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -50692,7 +50691,7 @@ export namespace Indexrelid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  indexrelid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -50702,7 +50701,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -50727,7 +50726,7 @@ export namespace Oprnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oprname?: PgCatalog.Types.Name.Options,
 oprleft?: PgCatalog.Types.Oid.Options,
 oprright?: PgCatalog.Types.Oid.Options,
@@ -50750,7 +50749,7 @@ export namespace Opfnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  opfmethod?: PgCatalog.Types.Oid.Options,
 opfname?: PgCatalog.Types.Name.Options,
 opfnamespace?: PgCatalog.Types.Oid.Options
@@ -50762,7 +50761,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -50782,7 +50781,7 @@ export namespace Opcnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  opcmethod?: PgCatalog.Types.Oid.Options,
 opcname?: PgCatalog.Types.Name.Options,
 opcnamespace?: PgCatalog.Types.Oid.Options
@@ -50794,7 +50793,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -50804,7 +50803,7 @@ export namespace Amname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  amname?: PgCatalog.Types.Name.Options
 }
 }
@@ -50814,7 +50813,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -50839,7 +50838,7 @@ export namespace Amopstrategy {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  amopfamily?: PgCatalog.Types.Oid.Options,
 amoplefttype?: PgCatalog.Types.Oid.Options,
 amoprighttype?: PgCatalog.Types.Oid.Options,
@@ -50862,7 +50861,7 @@ export namespace Amopfamily {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  amopopr?: PgCatalog.Types.Oid.Options,
 amoppurpose?: PgCatalog.Types.Char.Options,
 amopfamily?: PgCatalog.Types.Oid.Options
@@ -50874,7 +50873,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -50899,7 +50898,7 @@ export namespace Amprocnum {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  amprocfamily?: PgCatalog.Types.Oid.Options,
 amproclefttype?: PgCatalog.Types.Oid.Options,
 amprocrighttype?: PgCatalog.Types.Oid.Options,
@@ -50912,7 +50911,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -50922,7 +50921,7 @@ export namespace Lanname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  lanname?: PgCatalog.Types.Name.Options
 }
 }
@@ -50932,7 +50931,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -50942,7 +50941,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -50957,7 +50956,7 @@ export namespace Pageno {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  loid?: PgCatalog.Types.Oid.Options,
 pageno?: PgCatalog.Types.Int4.Options
 }
@@ -50968,7 +50967,7 @@ export namespace Aggfnoid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  aggfnoid?: PgCatalog.Types.Regproc.Options
 }
 }
@@ -50988,7 +50987,7 @@ export namespace Stainherit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  starelid?: PgCatalog.Types.Oid.Options,
 staattnum?: PgCatalog.Types.Int2.Options,
 stainherit?: PgCatalog.Types.Bool.Options
@@ -51000,7 +50999,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51015,7 +51014,7 @@ export namespace Stxnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  stxname?: PgCatalog.Types.Name.Options,
 stxnamespace?: PgCatalog.Types.Oid.Options
 }
@@ -51026,7 +51025,7 @@ export namespace Stxrelid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  stxrelid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51041,7 +51040,7 @@ export namespace Stxdinherit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  stxoid?: PgCatalog.Types.Oid.Options,
 stxdinherit?: PgCatalog.Types.Bool.Options
 }
@@ -51052,7 +51051,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51067,7 +51066,7 @@ export namespace Rulename {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  evClass?: PgCatalog.Types.Oid.Options,
 rulename?: PgCatalog.Types.Name.Options
 }
@@ -51078,7 +51077,7 @@ export namespace Tgconstraint {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tgconstraint?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51093,7 +51092,7 @@ export namespace Tgname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tgrelid?: PgCatalog.Types.Oid.Options,
 tgname?: PgCatalog.Types.Name.Options
 }
@@ -51104,7 +51103,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51114,7 +51113,7 @@ export namespace Evtname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  evtname?: PgCatalog.Types.Name.Options
 }
 }
@@ -51124,7 +51123,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51144,7 +51143,7 @@ export namespace Objsubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options
@@ -51156,7 +51155,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51171,7 +51170,7 @@ export namespace Casttarget {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  castsource?: PgCatalog.Types.Oid.Options,
 casttarget?: PgCatalog.Types.Oid.Options
 }
@@ -51182,7 +51181,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51197,7 +51196,7 @@ export namespace Enumlabel {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  enumtypid?: PgCatalog.Types.Oid.Options,
 enumlabel?: PgCatalog.Types.Name.Options
 }
@@ -51213,7 +51212,7 @@ export namespace Enumsortorder {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  enumtypid?: PgCatalog.Types.Oid.Options,
 enumsortorder?: PgCatalog.Types.Float4.Options
 }
@@ -51224,7 +51223,7 @@ export namespace Nspname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  nspname?: PgCatalog.Types.Name.Options
 }
 }
@@ -51234,7 +51233,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51259,7 +51258,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  connamespace?: PgCatalog.Types.Oid.Options,
 conforencoding?: PgCatalog.Types.Int4.Options,
 contoencoding?: PgCatalog.Types.Int4.Options,
@@ -51277,7 +51276,7 @@ export namespace Connamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  conname?: PgCatalog.Types.Name.Options,
 connamespace?: PgCatalog.Types.Oid.Options
 }
@@ -51288,7 +51287,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51308,7 +51307,7 @@ export namespace Objsubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  classid?: PgCatalog.Types.Oid.Options,
 objid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options
@@ -51330,7 +51329,7 @@ export namespace Refobjsubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  refclassid?: PgCatalog.Types.Oid.Options,
 refobjid?: PgCatalog.Types.Oid.Options,
 refobjsubid?: PgCatalog.Types.Int4.Options
@@ -51342,7 +51341,7 @@ export namespace Datname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  datname?: PgCatalog.Types.Name.Options
 }
 }
@@ -51352,7 +51351,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51367,7 +51366,7 @@ export namespace Setrole {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  setdatabase?: PgCatalog.Types.Oid.Options,
 setrole?: PgCatalog.Types.Oid.Options
 }
@@ -51378,7 +51377,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51388,7 +51387,7 @@ export namespace Spcname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  spcname?: PgCatalog.Types.Name.Options
 }
 }
@@ -51398,7 +51397,7 @@ export namespace Rolname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rolname?: PgCatalog.Types.Name.Options
 }
 }
@@ -51408,7 +51407,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51418,7 +51417,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51438,7 +51437,7 @@ export namespace Grantor {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  roleid?: PgCatalog.Types.Oid.Options,
 member?: PgCatalog.Types.Oid.Options,
 grantor?: PgCatalog.Types.Oid.Options
@@ -51460,7 +51459,7 @@ export namespace Grantor {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  member?: PgCatalog.Types.Oid.Options,
 roleid?: PgCatalog.Types.Oid.Options,
 grantor?: PgCatalog.Types.Oid.Options
@@ -51472,7 +51471,7 @@ export namespace Grantor {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51497,7 +51496,7 @@ export namespace Objsubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  dbid?: PgCatalog.Types.Oid.Options,
 classid?: PgCatalog.Types.Oid.Options,
 objid?: PgCatalog.Types.Oid.Options,
@@ -51515,7 +51514,7 @@ export namespace Refobjid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  refclassid?: PgCatalog.Types.Oid.Options,
 refobjid?: PgCatalog.Types.Oid.Options
 }
@@ -51531,7 +51530,7 @@ export namespace Classoid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options
 }
@@ -51547,7 +51546,7 @@ export namespace Cfgnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  cfgname?: PgCatalog.Types.Name.Options,
 cfgnamespace?: PgCatalog.Types.Oid.Options
 }
@@ -51558,7 +51557,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51578,7 +51577,7 @@ export namespace Mapseqno {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  mapcfg?: PgCatalog.Types.Oid.Options,
 maptokentype?: PgCatalog.Types.Int4.Options,
 mapseqno?: PgCatalog.Types.Int4.Options
@@ -51595,7 +51594,7 @@ export namespace Dictnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  dictname?: PgCatalog.Types.Name.Options,
 dictnamespace?: PgCatalog.Types.Oid.Options
 }
@@ -51606,7 +51605,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51621,7 +51620,7 @@ export namespace Prsnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  prsname?: PgCatalog.Types.Name.Options,
 prsnamespace?: PgCatalog.Types.Oid.Options
 }
@@ -51632,7 +51631,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51647,7 +51646,7 @@ export namespace Tmplnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tmplname?: PgCatalog.Types.Name.Options,
 tmplnamespace?: PgCatalog.Types.Oid.Options
 }
@@ -51658,7 +51657,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51668,7 +51667,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51678,7 +51677,7 @@ export namespace Extname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  extname?: PgCatalog.Types.Name.Options
 }
 }
@@ -51688,7 +51687,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51698,7 +51697,7 @@ export namespace Fdwname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  fdwname?: PgCatalog.Types.Name.Options
 }
 }
@@ -51708,7 +51707,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51718,7 +51717,7 @@ export namespace Srvname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  srvname?: PgCatalog.Types.Name.Options
 }
 }
@@ -51728,7 +51727,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51743,7 +51742,7 @@ export namespace Umserver {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  umuser?: PgCatalog.Types.Oid.Options,
 umserver?: PgCatalog.Types.Oid.Options
 }
@@ -51754,7 +51753,7 @@ export namespace Ftrelid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  ftrelid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51764,7 +51763,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51779,7 +51778,7 @@ export namespace Polname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  polrelid?: PgCatalog.Types.Oid.Options,
 polname?: PgCatalog.Types.Name.Options
 }
@@ -51790,7 +51789,7 @@ export namespace Roident {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  roident?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51800,7 +51799,7 @@ export namespace Roname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  roname?: PgCatalog.Types.Text.Options
 }
 }
@@ -51820,7 +51819,7 @@ export namespace Defaclobjtype {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  defaclrole?: PgCatalog.Types.Oid.Options,
 defaclnamespace?: PgCatalog.Types.Oid.Options,
 defaclobjtype?: PgCatalog.Types.Char.Options
@@ -51832,7 +51831,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51852,7 +51851,7 @@ export namespace Objsubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options
@@ -51879,7 +51878,7 @@ export namespace Provider {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options,
@@ -51902,7 +51901,7 @@ export namespace Provider {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 provider?: PgCatalog.Types.Text.Options
@@ -51924,7 +51923,7 @@ export namespace Collnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  collname?: PgCatalog.Types.Name.Options,
 collencoding?: PgCatalog.Types.Int4.Options,
 collnamespace?: PgCatalog.Types.Oid.Options
@@ -51936,7 +51935,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51946,7 +51945,7 @@ export namespace Parname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  parname?: PgCatalog.Types.Text.Options
 }
 }
@@ -51956,7 +51955,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51966,7 +51965,7 @@ export namespace Partrelid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  partrelid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51976,7 +51975,7 @@ export namespace Rngtypid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rngtypid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51986,7 +51985,7 @@ export namespace Rngmultitypid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rngmultitypid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51996,7 +51995,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52011,7 +52010,7 @@ export namespace Trflang {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  trftype?: PgCatalog.Types.Oid.Options,
 trflang?: PgCatalog.Types.Oid.Options
 }
@@ -52022,7 +52021,7 @@ export namespace Seqrelid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  seqrelid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52032,7 +52031,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52042,7 +52041,7 @@ export namespace Pubname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pubname?: PgCatalog.Types.Name.Options
 }
 }
@@ -52052,7 +52051,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52067,7 +52066,7 @@ export namespace Pnpubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pnnspid?: PgCatalog.Types.Oid.Options,
 pnpubid?: PgCatalog.Types.Oid.Options
 }
@@ -52078,7 +52077,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52093,7 +52092,7 @@ export namespace Prpubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  prrelid?: PgCatalog.Types.Oid.Options,
 prpubid?: PgCatalog.Types.Oid.Options
 }
@@ -52104,7 +52103,7 @@ export namespace Prpubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  prpubid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52114,7 +52113,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52129,7 +52128,7 @@ export namespace Subname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  subdbid?: PgCatalog.Types.Oid.Options,
 subname?: PgCatalog.Types.Name.Options
 }
@@ -52145,7 +52144,7 @@ export namespace Srsubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  srrelid?: PgCatalog.Types.Oid.Options,
 srsubid?: PgCatalog.Types.Oid.Options
 }
@@ -52316,7 +52315,7 @@ export namespace CatalogName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  catalogName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
@@ -52355,7 +52354,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantee?: InformationSchema.Types.SqlIdentifier.Options,
 roleName?: InformationSchema.Types.SqlIdentifier.Options,
 isGrantable?: InformationSchema.Types.YesOrNo.Options
@@ -52380,7 +52379,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantee?: InformationSchema.Types.SqlIdentifier.Options,
 roleName?: InformationSchema.Types.SqlIdentifier.Options,
 isGrantable?: InformationSchema.Types.YesOrNo.Options
@@ -52545,7 +52544,7 @@ export namespace IsDerivedReferenceAttribute {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
 udtName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -52623,7 +52622,7 @@ export namespace DefaultCollateName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  characterSetCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 characterSetSchema?: InformationSchema.Types.SqlIdentifier.Options,
 characterSetName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -52668,7 +52667,7 @@ export namespace SpecificName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
 constraintName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -52701,7 +52700,7 @@ export namespace CheckClause {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
 constraintName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -52732,7 +52731,7 @@ export namespace PadAttribute {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  collationCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 collationSchema?: InformationSchema.Types.SqlIdentifier.Options,
 collationName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -52773,7 +52772,7 @@ export namespace CharacterSetName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  collationCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 collationSchema?: InformationSchema.Types.SqlIdentifier.Options,
 collationName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -52811,7 +52810,7 @@ export namespace DependentColumn {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -52858,7 +52857,7 @@ export namespace ColumnName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  domainCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 domainSchema?: InformationSchema.Types.SqlIdentifier.Options,
 domainName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -52912,7 +52911,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -52962,7 +52961,7 @@ export namespace ColumnName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
 udtName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -53196,7 +53195,7 @@ export namespace IsUpdatable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -53282,7 +53281,7 @@ export namespace ConstraintName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -53326,7 +53325,7 @@ export namespace ConstraintName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -53379,7 +53378,7 @@ export namespace InitiallyDeferred {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
 constraintName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -53424,7 +53423,7 @@ export namespace DomainName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
 udtName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -53572,7 +53571,7 @@ export namespace DtdIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  domainCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 domainSchema?: InformationSchema.Types.SqlIdentifier.Options,
 domainName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -53611,7 +53610,7 @@ export namespace RoleName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  roleName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
@@ -53664,7 +53663,7 @@ export namespace PositionInUniqueConstraint {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
 constraintName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -53840,7 +53839,7 @@ export namespace ParameterDefault {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
 specificName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -53924,7 +53923,7 @@ export namespace DeleteRule {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
 constraintName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -53980,7 +53979,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54045,7 +54044,7 @@ export namespace ColumnName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
 specificName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54112,7 +54111,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54179,7 +54178,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54226,7 +54225,7 @@ export namespace RoutineName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
 specificName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54284,7 +54283,7 @@ export namespace SequenceName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
 specificName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54345,7 +54344,7 @@ export namespace TableName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
 specificName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54771,7 +54770,7 @@ export namespace ResultCastDtdIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
 specificName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54895,7 +54894,7 @@ export namespace SqlPath {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  catalogName?: InformationSchema.Types.SqlIdentifier.Options,
 schemaName?: InformationSchema.Types.SqlIdentifier.Options,
 schemaOwner?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54969,7 +54968,7 @@ export namespace CycleOption {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  sequenceCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 sequenceSchema?: InformationSchema.Types.SqlIdentifier.Options,
 sequenceName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55023,7 +55022,7 @@ export namespace Comments {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  featureId?: InformationSchema.Types.CharacterData.Options,
 featureName?: InformationSchema.Types.CharacterData.Options,
 subFeatureId?: InformationSchema.Types.CharacterData.Options,
@@ -55062,7 +55061,7 @@ export namespace Comments {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  implementationInfoId?: InformationSchema.Types.CharacterData.Options,
 implementationInfoName?: InformationSchema.Types.CharacterData.Options,
 integerValue?: InformationSchema.Types.CardinalNumber.Options,
@@ -55099,7 +55098,7 @@ export namespace Comments {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  featureId?: InformationSchema.Types.CharacterData.Options,
 featureName?: InformationSchema.Types.CharacterData.Options,
 isSupported?: InformationSchema.Types.YesOrNo.Options,
@@ -55131,7 +55130,7 @@ export namespace Comments {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  sizingId?: InformationSchema.Types.CardinalNumber.Options,
 sizingName?: InformationSchema.Types.CharacterData.Options,
 supportedValue?: InformationSchema.Types.CardinalNumber.Options,
@@ -55197,7 +55196,7 @@ export namespace NullsDistinct {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
 constraintName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55255,7 +55254,7 @@ export namespace WithHierarchy {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55310,7 +55309,7 @@ export namespace WithHierarchy {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55385,7 +55384,7 @@ export namespace CommitAction {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55444,7 +55443,7 @@ export namespace TransformType {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
 udtName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55494,7 +55493,7 @@ export namespace EventObjectColumn {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  triggerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 triggerSchema?: InformationSchema.Types.SqlIdentifier.Options,
 triggerName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55593,7 +55592,7 @@ export namespace Created {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  triggerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 triggerSchema?: InformationSchema.Types.SqlIdentifier.Options,
 triggerName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55652,7 +55651,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55701,7 +55700,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55755,7 +55754,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 objectCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55810,7 +55809,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 objectCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55970,7 +55969,7 @@ export namespace RefDtdIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  userDefinedTypeCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 userDefinedTypeSchema?: InformationSchema.Types.SqlIdentifier.Options,
 userDefinedTypeName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56041,7 +56040,7 @@ export namespace ColumnName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  viewCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 viewSchema?: InformationSchema.Types.SqlIdentifier.Options,
 viewName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56085,7 +56084,7 @@ export namespace SpecificName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56128,7 +56127,7 @@ export namespace TableName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  viewCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 viewSchema?: InformationSchema.Types.SqlIdentifier.Options,
 viewName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56191,7 +56190,7 @@ export namespace IsTriggerInsertableInto {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56233,7 +56232,7 @@ export namespace DtdIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objectCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 objectSchema?: InformationSchema.Types.SqlIdentifier.Options,
 objectName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56390,7 +56389,7 @@ export namespace DtdIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objectCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 objectSchema?: InformationSchema.Types.SqlIdentifier.Options,
 objectName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56444,7 +56443,7 @@ export namespace Attname {
 export namespace Attfdwoptions {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  nspname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
 attname?: PgCatalog.Types.Name.Options,
@@ -56482,7 +56481,7 @@ export namespace OptionValue {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56528,7 +56527,7 @@ export namespace ForeignDataWrapperLanguage {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 fdwowner?: PgCatalog.Types.Oid.Options,
 fdwoptions?: PgCatalog.Types.TextArray.Options,
@@ -56559,7 +56558,7 @@ export namespace OptionValue {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  foreignDataWrapperCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignDataWrapperName?: InformationSchema.Types.SqlIdentifier.Options,
 optionName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56595,7 +56594,7 @@ export namespace ForeignDataWrapperLanguage {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  foreignDataWrapperCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignDataWrapperName?: InformationSchema.Types.SqlIdentifier.Options,
 authorizationIdentifier?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56650,7 +56649,7 @@ export namespace AuthorizationIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 srvoptions?: PgCatalog.Types.TextArray.Options,
 foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56683,7 +56682,7 @@ export namespace OptionValue {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignServerName?: InformationSchema.Types.SqlIdentifier.Options,
 optionName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56729,7 +56728,7 @@ export namespace AuthorizationIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignServerName?: InformationSchema.Types.SqlIdentifier.Options,
 foreignDataWrapperCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56776,7 +56775,7 @@ export namespace AuthorizationIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  foreignTableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignTableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 foreignTableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56812,7 +56811,7 @@ export namespace OptionValue {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  foreignTableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignTableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 foreignTableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56849,7 +56848,7 @@ export namespace ForeignServerName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  foreignTableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignTableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 foreignTableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56894,7 +56893,7 @@ export namespace Srvowner {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 umoptions?: PgCatalog.Types.TextArray.Options,
 umuser?: PgCatalog.Types.Oid.Options,
@@ -56930,7 +56929,7 @@ export namespace OptionValue {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  authorizationIdentifier?: InformationSchema.Types.SqlIdentifier.Options,
 foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignServerName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56957,7 +56956,7 @@ export namespace ForeignServerName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  authorizationIdentifier?: InformationSchema.Types.SqlIdentifier.Options,
 foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignServerName?: InformationSchema.Types.SqlIdentifier.Options
@@ -57049,7 +57048,7 @@ export namespace Active {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  customerId?: PgCatalog.Types.Int4.Options,
 storeId?: PgCatalog.Types.Int2.Options,
 firstName?: PgCatalog.Types.Varchar.Options,
@@ -57086,7 +57085,7 @@ export namespace LastUpdate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  actorId?: PgCatalog.Types.Int4.Options,
 firstName?: PgCatalog.Types.Varchar.Options,
 lastName?: PgCatalog.Types.Varchar.Options,
@@ -57112,7 +57111,7 @@ export namespace LastUpdate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  categoryId?: PgCatalog.Types.Int4.Options,
 name?: PgCatalog.Types.Varchar.Options,
 lastUpdate?: PgCatalog.Types.Timestamp.Options
@@ -57202,7 +57201,7 @@ export namespace Fulltext {
         
             
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  filmId?: PgCatalog.Types.Int4.Options,
 title?: PgCatalog.Types.Varchar.Options,
 description?: PgCatalog.Types.Text.Options,
@@ -57237,7 +57236,7 @@ export namespace LastUpdate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  actorId?: PgCatalog.Types.Int2.Options,
 filmId?: PgCatalog.Types.Int2.Options,
 lastUpdate?: PgCatalog.Types.Timestamp.Options
@@ -57262,7 +57261,7 @@ export namespace LastUpdate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  filmId?: PgCatalog.Types.Int2.Options,
 categoryId?: PgCatalog.Types.Int2.Options,
 lastUpdate?: PgCatalog.Types.Timestamp.Options
@@ -57292,7 +57291,7 @@ export namespace FilmInfo {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  actorId?: PgCatalog.Types.Int4.Options,
 firstName?: PgCatalog.Types.Varchar.Options,
 lastName?: PgCatalog.Types.Varchar.Options,
@@ -57343,7 +57342,7 @@ export namespace LastUpdate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  addressId?: PgCatalog.Types.Int4.Options,
 address?: PgCatalog.Types.Varchar.Options,
 address2?: PgCatalog.Types.Varchar.Options,
@@ -57378,7 +57377,7 @@ export namespace LastUpdate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  cityId?: PgCatalog.Types.Int4.Options,
 city?: PgCatalog.Types.Varchar.Options,
 countryId?: PgCatalog.Types.Int2.Options,
@@ -57404,7 +57403,7 @@ export namespace LastUpdate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  countryId?: PgCatalog.Types.Int4.Options,
 country?: PgCatalog.Types.Varchar.Options,
 lastUpdate?: PgCatalog.Types.Timestamp.Options
@@ -57459,7 +57458,7 @@ export namespace Sid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  id?: PgCatalog.Types.Int4.Options,
 name?: PgCatalog.Types.Text.Options,
 address?: PgCatalog.Types.Varchar.Options,
@@ -57515,7 +57514,7 @@ export namespace Actors {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  fid?: PgCatalog.Types.Int4.Options,
 title?: PgCatalog.Types.Varchar.Options,
 description?: PgCatalog.Types.Text.Options,
@@ -57550,7 +57549,7 @@ export namespace LastUpdate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  inventoryId?: PgCatalog.Types.Int4.Options,
 filmId?: PgCatalog.Types.Int2.Options,
 storeId?: PgCatalog.Types.Int2.Options,
@@ -57576,7 +57575,7 @@ export namespace LastUpdate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  languageId?: PgCatalog.Types.Int4.Options,
 name?: PgCatalog.Types.Bpchar.Options,
 lastUpdate?: PgCatalog.Types.Timestamp.Options
@@ -57626,7 +57625,7 @@ export namespace Actors {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  fid?: PgCatalog.Types.Int4.Options,
 title?: PgCatalog.Types.Varchar.Options,
 description?: PgCatalog.Types.Text.Options,
@@ -57671,7 +57670,7 @@ export namespace PaymentDate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  paymentId?: PgCatalog.Types.Int4.Options,
 customerId?: PgCatalog.Types.Int2.Options,
 staffId?: PgCatalog.Types.Int2.Options,
@@ -57719,7 +57718,7 @@ export namespace LastUpdate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rentalId?: PgCatalog.Types.Int4.Options,
 rentalDate?: PgCatalog.Types.Timestamp.Options,
 inventoryId?: PgCatalog.Types.Int4.Options,
@@ -57743,7 +57742,7 @@ export namespace TotalSales {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  category?: PgCatalog.Types.Varchar.Options,
 totalSales?: PgCatalog.Types.Numeric.Options
 }
@@ -57807,7 +57806,7 @@ export namespace Picture {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  staffId?: PgCatalog.Types.Int4.Options,
 firstName?: PgCatalog.Types.Varchar.Options,
 lastName?: PgCatalog.Types.Varchar.Options,
@@ -57845,7 +57844,7 @@ export namespace LastUpdate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  storeId?: PgCatalog.Types.Int4.Options,
 managerStaffId?: PgCatalog.Types.Int2.Options,
 addressId?: PgCatalog.Types.Int2.Options,
@@ -57871,7 +57870,7 @@ export namespace TotalSales {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  store?: PgCatalog.Types.Text.Options,
 manager?: PgCatalog.Types.Text.Options,
 totalSales?: PgCatalog.Types.Numeric.Options
@@ -57921,7 +57920,7 @@ export namespace Sid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  id?: PgCatalog.Types.Int4.Options,
 name?: PgCatalog.Types.Text.Options,
 address?: PgCatalog.Types.Varchar.Options,
@@ -57941,7 +57940,7 @@ export namespace ActorId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  actorId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -57951,7 +57950,7 @@ export namespace AddressId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  addressId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -57961,7 +57960,7 @@ export namespace CategoryId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  categoryId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -57971,7 +57970,7 @@ export namespace CityId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  cityId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -57981,7 +57980,7 @@ export namespace CountryId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  countryId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -57991,7 +57990,7 @@ export namespace CustomerId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  customerId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -58006,7 +58005,7 @@ export namespace FilmId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  actorId?: PgCatalog.Types.Int2.Options,
 filmId?: PgCatalog.Types.Int2.Options
 }
@@ -58022,7 +58021,7 @@ export namespace CategoryId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  filmId?: PgCatalog.Types.Int2.Options,
 categoryId?: PgCatalog.Types.Int2.Options
 }
@@ -58033,7 +58032,7 @@ export namespace FilmId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  filmId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -58043,7 +58042,7 @@ export namespace InventoryId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  inventoryId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -58053,7 +58052,7 @@ export namespace LanguageId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  languageId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -58063,7 +58062,7 @@ export namespace PaymentId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  paymentId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -58073,7 +58072,7 @@ export namespace RentalId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rentalId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -58083,7 +58082,7 @@ export namespace StaffId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  staffId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -58093,7 +58092,7 @@ export namespace StoreId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  storeId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -58120,7 +58119,7 @@ export namespace Fulltext {
         
             
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  fulltext?: PgCatalog.Types.Tsvector.Options
 }
 }
@@ -58130,7 +58129,7 @@ export namespace LastName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  lastName?: PgCatalog.Types.Varchar.Options
 }
 }
@@ -58140,7 +58139,7 @@ export namespace AddressId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  addressId?: PgCatalog.Types.Int2.Options
 }
 }
@@ -58150,7 +58149,7 @@ export namespace CityId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  cityId?: PgCatalog.Types.Int2.Options
 }
 }
@@ -58160,7 +58159,7 @@ export namespace CountryId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  countryId?: PgCatalog.Types.Int2.Options
 }
 }
@@ -58170,7 +58169,7 @@ export namespace CustomerId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  customerId?: PgCatalog.Types.Int2.Options
 }
 }
@@ -58180,7 +58179,7 @@ export namespace FilmId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  filmId?: PgCatalog.Types.Int2.Options
 }
 }
@@ -58190,7 +58189,7 @@ export namespace InventoryId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  inventoryId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -58200,7 +58199,7 @@ export namespace LanguageId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  languageId?: PgCatalog.Types.Int2.Options
 }
 }
@@ -58210,7 +58209,7 @@ export namespace RentalId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rentalId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -58220,7 +58219,7 @@ export namespace StaffId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  staffId?: PgCatalog.Types.Int2.Options
 }
 }
@@ -58230,7 +58229,7 @@ export namespace StoreId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  storeId?: PgCatalog.Types.Int2.Options
 }
 }
@@ -58240,7 +58239,7 @@ export namespace LastName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  lastName?: PgCatalog.Types.Varchar.Options
 }
 }
@@ -58255,7 +58254,7 @@ export namespace FilmId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  storeId?: PgCatalog.Types.Int2.Options,
 filmId?: PgCatalog.Types.Int2.Options
 }
@@ -58266,7 +58265,7 @@ export namespace Title {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  title?: PgCatalog.Types.Varchar.Options
 }
 }
@@ -58276,7 +58275,7 @@ export namespace ManagerStaffId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  managerStaffId?: PgCatalog.Types.Int2.Options
 }
 }
@@ -58296,7 +58295,7 @@ export namespace CustomerId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rentalDate?: PgCatalog.Types.Timestamp.Options,
 inventoryId?: PgCatalog.Types.Int4.Options,
 customerId?: PgCatalog.Types.Int2.Options
@@ -58316,7 +58315,7 @@ export namespace PStoreId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pFilmId?: PgCatalog.Types.Int4.Options,
 pStoreId?: PgCatalog.Types.Int4.Options
 }
@@ -58334,7 +58333,7 @@ export namespace PStoreId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pFilmId?: PgCatalog.Types.Int4.Options,
 pStoreId?: PgCatalog.Types.Int4.Options
 }
@@ -58352,7 +58351,7 @@ export namespace PEffectiveDate {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pCustomerId?: PgCatalog.Types.Int4.Options,
 pEffectiveDate?: PgCatalog.Types.Timestamp.Options
 }
@@ -58365,7 +58364,7 @@ export namespace PInventoryId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pInventoryId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -58377,7 +58376,7 @@ export namespace PInventoryId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pInventoryId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -58389,7 +58388,7 @@ export namespace Argument_0 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Timestamp.Options
 }
 }
@@ -58406,7 +58405,7 @@ export namespace MinDollarAmountPurchased {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  minMonthlyPurchases?: PgCatalog.Types.Int4.Options,
 minDollarAmountPurchased?: PgCatalog.Types.Numeric.Options
 }
@@ -58459,7 +58458,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58475,7 +58474,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58491,7 +58490,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58507,7 +58506,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58523,7 +58522,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58539,7 +58538,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58555,7 +58554,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58571,7 +58570,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58587,7 +58586,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58603,7 +58602,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58619,7 +58618,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58635,7 +58634,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58651,7 +58650,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58667,7 +58666,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58683,7 +58682,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58699,7 +58698,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58715,7 +58714,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58731,7 +58730,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58747,7 +58746,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58763,7 +58762,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58779,7 +58778,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58795,7 +58794,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58811,7 +58810,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58827,7 +58826,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58843,7 +58842,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58859,7 +58858,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58875,7 +58874,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58891,7 +58890,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58907,7 +58906,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58923,7 +58922,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58939,7 +58938,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58955,7 +58954,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58971,7 +58970,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -58987,7 +58986,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59003,7 +59002,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59019,7 +59018,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59035,7 +59034,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59051,7 +59050,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59067,7 +59066,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59083,7 +59082,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59099,7 +59098,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -59115,7 +59114,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }

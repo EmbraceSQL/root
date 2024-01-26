@@ -45,7 +45,7 @@ export const CreateOperation = {
         ${allSqlColumnNames}
     `;
       generationBuffer.push(
-        `const response = await this.database.invoke( (sql) => sql\`${sql}\`);`,
+        `const response = await this.database.invoke( (sql) => sql\`${sql}\`, options);`,
       );
 
       generationBuffer.push(
@@ -75,7 +75,7 @@ export const CreateOperation = {
     `;
     // run that SQL
     generationBuffer.push(
-      `const response = await this.database.invoke( (sql) => sql\`${sql}\`);`,
+      `const response = await this.database.invoke( (sql) => sql\`${sql}\`, options);`,
     );
 
     generationBuffer.push(

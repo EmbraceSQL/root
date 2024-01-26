@@ -13,7 +13,7 @@
         /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
         /* @typescript-eslint/no-redundant-type-constituents */
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
-        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort } from "@embracesql/shared";
+        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort, InvokeQueryOptions } from "@embracesql/shared";
         import { Geometry } from "@embracesql/shared";
         import { DatabaseMetadata, Schema, Table, Column, Index, Procedure } from "@embracesql/shared";
     
@@ -2013,7 +2013,7 @@ export class CubeIn implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_in"; }
-async call(parameters : Public.Procedures.CubeIn.Parameters) {
+async call(parameters : Public.Procedures.CubeIn.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2021,7 +2021,7 @@ async call(parameters : Public.Procedures.CubeIn.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`, options);
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_in) );
@@ -2033,7 +2033,7 @@ export class Cube_9c45 implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_9c45"; }
-async call(parameters : Public.Procedures.Cube_9c45.Parameters) {
+async call(parameters : Public.Procedures.Cube_9c45.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2041,7 +2041,7 @@ async call(parameters : Public.Procedures.Cube_9c45.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube( ${ typed[1022](undefinedIsNull(parameters.argument_0)) }, ${ typed[1022](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube( ${ typed[1022](undefinedIsNull(parameters.argument_0)) }, ${ typed[1022](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
@@ -2053,7 +2053,7 @@ export class Cube_2e6d implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_2e6d"; }
-async call(parameters : Public.Procedures.Cube_2e6d.Parameters) {
+async call(parameters : Public.Procedures.Cube_2e6d.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2061,7 +2061,7 @@ async call(parameters : Public.Procedures.Cube_2e6d.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube( ${ typed[1022](undefinedIsNull(parameters.argument_0)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube( ${ typed[1022](undefinedIsNull(parameters.argument_0)) })`, options);
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
@@ -2073,7 +2073,7 @@ export class CubeOut implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_out"; }
-async call(parameters : Public.Procedures.CubeOut.Parameters) {
+async call(parameters : Public.Procedures.CubeOut.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2081,7 +2081,7 @@ async call(parameters : Public.Procedures.CubeOut.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_out( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_out( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].cube_out) );
@@ -2093,7 +2093,7 @@ export class CubeEq implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_eq"; }
-async call(parameters : Public.Procedures.CubeEq.Parameters) {
+async call(parameters : Public.Procedures.CubeEq.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2101,7 +2101,7 @@ async call(parameters : Public.Procedures.CubeEq.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_eq( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_eq( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_eq) );
@@ -2113,7 +2113,7 @@ export class CubeNe implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_ne"; }
-async call(parameters : Public.Procedures.CubeNe.Parameters) {
+async call(parameters : Public.Procedures.CubeNe.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2121,7 +2121,7 @@ async call(parameters : Public.Procedures.CubeNe.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_ne( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_ne( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_ne) );
@@ -2133,7 +2133,7 @@ export class CubeLt implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_lt"; }
-async call(parameters : Public.Procedures.CubeLt.Parameters) {
+async call(parameters : Public.Procedures.CubeLt.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2141,7 +2141,7 @@ async call(parameters : Public.Procedures.CubeLt.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_lt( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_lt( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_lt) );
@@ -2153,7 +2153,7 @@ export class CubeGt implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_gt"; }
-async call(parameters : Public.Procedures.CubeGt.Parameters) {
+async call(parameters : Public.Procedures.CubeGt.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2161,7 +2161,7 @@ async call(parameters : Public.Procedures.CubeGt.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_gt( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_gt( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_gt) );
@@ -2173,7 +2173,7 @@ export class CubeLe implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_le"; }
-async call(parameters : Public.Procedures.CubeLe.Parameters) {
+async call(parameters : Public.Procedures.CubeLe.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2181,7 +2181,7 @@ async call(parameters : Public.Procedures.CubeLe.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_le( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_le( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_le) );
@@ -2193,7 +2193,7 @@ export class CubeGe implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_ge"; }
-async call(parameters : Public.Procedures.CubeGe.Parameters) {
+async call(parameters : Public.Procedures.CubeGe.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2201,7 +2201,7 @@ async call(parameters : Public.Procedures.CubeGe.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_ge( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_ge( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_ge) );
@@ -2213,7 +2213,7 @@ export class CubeCmp implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_cmp"; }
-async call(parameters : Public.Procedures.CubeCmp.Parameters) {
+async call(parameters : Public.Procedures.CubeCmp.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2221,7 +2221,7 @@ async call(parameters : Public.Procedures.CubeCmp.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_cmp( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_cmp( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].cube_cmp) );
@@ -2233,7 +2233,7 @@ export class CubeContains implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_contains"; }
-async call(parameters : Public.Procedures.CubeContains.Parameters) {
+async call(parameters : Public.Procedures.CubeContains.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2241,7 +2241,7 @@ async call(parameters : Public.Procedures.CubeContains.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_contains( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_contains( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_contains) );
@@ -2253,7 +2253,7 @@ export class CubeContained implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_contained"; }
-async call(parameters : Public.Procedures.CubeContained.Parameters) {
+async call(parameters : Public.Procedures.CubeContained.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2261,7 +2261,7 @@ async call(parameters : Public.Procedures.CubeContained.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_contained( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_contained( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_contained) );
@@ -2273,7 +2273,7 @@ export class CubeOverlap implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_overlap"; }
-async call(parameters : Public.Procedures.CubeOverlap.Parameters) {
+async call(parameters : Public.Procedures.CubeOverlap.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2281,7 +2281,7 @@ async call(parameters : Public.Procedures.CubeOverlap.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_overlap( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_overlap( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_overlap) );
@@ -2293,7 +2293,7 @@ export class CubeUnion implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_union"; }
-async call(parameters : Public.Procedures.CubeUnion.Parameters) {
+async call(parameters : Public.Procedures.CubeUnion.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2301,7 +2301,7 @@ async call(parameters : Public.Procedures.CubeUnion.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_union( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_union( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_union) );
@@ -2313,7 +2313,7 @@ export class CubeInter implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_inter"; }
-async call(parameters : Public.Procedures.CubeInter.Parameters) {
+async call(parameters : Public.Procedures.CubeInter.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2321,7 +2321,7 @@ async call(parameters : Public.Procedures.CubeInter.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_inter( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_inter( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_inter) );
@@ -2333,7 +2333,7 @@ export class CubeSize implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_size"; }
-async call(parameters : Public.Procedures.CubeSize.Parameters) {
+async call(parameters : Public.Procedures.CubeSize.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2341,7 +2341,7 @@ async call(parameters : Public.Procedures.CubeSize.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_size( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_size( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_size) );
@@ -2353,7 +2353,7 @@ export class CubeSubset implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_subset"; }
-async call(parameters : Public.Procedures.CubeSubset.Parameters) {
+async call(parameters : Public.Procedures.CubeSubset.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2361,7 +2361,7 @@ async call(parameters : Public.Procedures.CubeSubset.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_subset( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[1007](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_subset( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[1007](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_subset) );
@@ -2373,7 +2373,7 @@ export class CubeDistance implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_distance"; }
-async call(parameters : Public.Procedures.CubeDistance.Parameters) {
+async call(parameters : Public.Procedures.CubeDistance.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2381,7 +2381,7 @@ async call(parameters : Public.Procedures.CubeDistance.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_distance( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_distance( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_distance) );
@@ -2393,7 +2393,7 @@ export class DistanceChebyshev implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "distance_chebyshev"; }
-async call(parameters : Public.Procedures.DistanceChebyshev.Parameters) {
+async call(parameters : Public.Procedures.DistanceChebyshev.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2401,7 +2401,7 @@ async call(parameters : Public.Procedures.DistanceChebyshev.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.distance_chebyshev( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.distance_chebyshev( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].distance_chebyshev) );
@@ -2413,7 +2413,7 @@ export class DistanceTaxicab implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "distance_taxicab"; }
-async call(parameters : Public.Procedures.DistanceTaxicab.Parameters) {
+async call(parameters : Public.Procedures.DistanceTaxicab.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2421,7 +2421,7 @@ async call(parameters : Public.Procedures.DistanceTaxicab.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.distance_taxicab( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.distance_taxicab( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].distance_taxicab) );
@@ -2433,7 +2433,7 @@ export class CubeDim implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_dim"; }
-async call(parameters : Public.Procedures.CubeDim.Parameters) {
+async call(parameters : Public.Procedures.CubeDim.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2441,7 +2441,7 @@ async call(parameters : Public.Procedures.CubeDim.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_dim( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_dim( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].cube_dim) );
@@ -2453,7 +2453,7 @@ export class CubeLlCoord implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_ll_coord"; }
-async call(parameters : Public.Procedures.CubeLlCoord.Parameters) {
+async call(parameters : Public.Procedures.CubeLlCoord.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2461,7 +2461,7 @@ async call(parameters : Public.Procedures.CubeLlCoord.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_ll_coord( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_ll_coord( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_ll_coord) );
@@ -2473,7 +2473,7 @@ export class CubeUrCoord implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_ur_coord"; }
-async call(parameters : Public.Procedures.CubeUrCoord.Parameters) {
+async call(parameters : Public.Procedures.CubeUrCoord.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2481,7 +2481,7 @@ async call(parameters : Public.Procedures.CubeUrCoord.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_ur_coord( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_ur_coord( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_ur_coord) );
@@ -2493,7 +2493,7 @@ export class CubeCoord implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_coord"; }
-async call(parameters : Public.Procedures.CubeCoord.Parameters) {
+async call(parameters : Public.Procedures.CubeCoord.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2501,7 +2501,7 @@ async call(parameters : Public.Procedures.CubeCoord.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_coord( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_coord( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_coord) );
@@ -2513,7 +2513,7 @@ export class CubeCoordLlur implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_coord_llur"; }
-async call(parameters : Public.Procedures.CubeCoordLlur.Parameters) {
+async call(parameters : Public.Procedures.CubeCoordLlur.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2521,7 +2521,7 @@ async call(parameters : Public.Procedures.CubeCoordLlur.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_coord_llur( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_coord_llur( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_coord_llur) );
@@ -2533,7 +2533,7 @@ export class CubeA5b3 implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_a5b3"; }
-async call(parameters : Public.Procedures.CubeA5b3.Parameters) {
+async call(parameters : Public.Procedures.CubeA5b3.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2541,7 +2541,7 @@ async call(parameters : Public.Procedures.CubeA5b3.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube( ${ typed[701](undefinedIsNull(parameters.argument_0)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube( ${ typed[701](undefinedIsNull(parameters.argument_0)) })`, options);
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
@@ -2553,7 +2553,7 @@ export class Cube_0aec implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_0aec"; }
-async call(parameters : Public.Procedures.Cube_0aec.Parameters) {
+async call(parameters : Public.Procedures.Cube_0aec.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2561,7 +2561,7 @@ async call(parameters : Public.Procedures.Cube_0aec.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
@@ -2573,7 +2573,7 @@ export class Cube_5ffb implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_5ffb"; }
-async call(parameters : Public.Procedures.Cube_5ffb.Parameters) {
+async call(parameters : Public.Procedures.Cube_5ffb.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2581,7 +2581,7 @@ async call(parameters : Public.Procedures.Cube_5ffb.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
@@ -2593,7 +2593,7 @@ export class Cube_9e1c implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_9e1c"; }
-async call(parameters : Public.Procedures.Cube_9e1c.Parameters) {
+async call(parameters : Public.Procedures.Cube_9e1c.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2601,7 +2601,7 @@ async call(parameters : Public.Procedures.Cube_9e1c.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, options);
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
@@ -2613,7 +2613,7 @@ export class CubeIsPoint implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_is_point"; }
-async call(parameters : Public.Procedures.CubeIsPoint.Parameters) {
+async call(parameters : Public.Procedures.CubeIsPoint.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2621,7 +2621,7 @@ async call(parameters : Public.Procedures.CubeIsPoint.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_is_point( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_is_point( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_is_point) );
@@ -2633,7 +2633,7 @@ export class CubeEnlarge implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_enlarge"; }
-async call(parameters : Public.Procedures.CubeEnlarge.Parameters) {
+async call(parameters : Public.Procedures.CubeEnlarge.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2641,7 +2641,7 @@ async call(parameters : Public.Procedures.CubeEnlarge.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_enlarge( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_enlarge( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, options);
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_enlarge) );
@@ -2653,7 +2653,7 @@ export class GCubeConsistent implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "g_cube_consistent"; }
-async call(parameters : Public.Procedures.GCubeConsistent.Parameters) {
+async call(parameters : Public.Procedures.GCubeConsistent.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2661,7 +2661,7 @@ async call(parameters : Public.Procedures.GCubeConsistent.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.g_cube_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.g_cube_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].g_cube_consistent) );
@@ -2673,7 +2673,7 @@ export class GCubePenalty implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "g_cube_penalty"; }
-async call(parameters : Public.Procedures.GCubePenalty.Parameters) {
+async call(parameters : Public.Procedures.GCubePenalty.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2681,7 +2681,7 @@ async call(parameters : Public.Procedures.GCubePenalty.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.g_cube_penalty( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.g_cube_penalty( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].g_cube_penalty) );
@@ -2693,7 +2693,7 @@ export class GCubePicksplit implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "g_cube_picksplit"; }
-async call(parameters : Public.Procedures.GCubePicksplit.Parameters) {
+async call(parameters : Public.Procedures.GCubePicksplit.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2701,7 +2701,7 @@ async call(parameters : Public.Procedures.GCubePicksplit.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.g_cube_picksplit( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.g_cube_picksplit( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].g_cube_picksplit) );
@@ -2713,7 +2713,7 @@ export class GCubeUnion implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "g_cube_union"; }
-async call(parameters : Public.Procedures.GCubeUnion.Parameters) {
+async call(parameters : Public.Procedures.GCubeUnion.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2721,7 +2721,7 @@ async call(parameters : Public.Procedures.GCubeUnion.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.g_cube_union( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.g_cube_union( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].g_cube_union) );
@@ -2733,7 +2733,7 @@ export class GCubeSame implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "g_cube_same"; }
-async call(parameters : Public.Procedures.GCubeSame.Parameters) {
+async call(parameters : Public.Procedures.GCubeSame.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2741,7 +2741,7 @@ async call(parameters : Public.Procedures.GCubeSame.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.g_cube_same( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.g_cube_same( ${ typed[29217](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].g_cube_same) );
@@ -2753,7 +2753,7 @@ export class GCubeDistance implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "g_cube_distance"; }
-async call(parameters : Public.Procedures.GCubeDistance.Parameters) {
+async call(parameters : Public.Procedures.GCubeDistance.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2761,7 +2761,7 @@ async call(parameters : Public.Procedures.GCubeDistance.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.g_cube_distance( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.g_cube_distance( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[29217](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].g_cube_distance) );
@@ -2773,7 +2773,7 @@ export class CubeRecv implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_recv"; }
-async call(parameters : Public.Procedures.CubeRecv.Parameters) {
+async call(parameters : Public.Procedures.CubeRecv.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2781,7 +2781,7 @@ async call(parameters : Public.Procedures.CubeRecv.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_recv( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_recv( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_recv) );
@@ -2793,7 +2793,7 @@ export class CubeSend implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "cube_send"; }
-async call(parameters : Public.Procedures.CubeSend.Parameters) {
+async call(parameters : Public.Procedures.CubeSend.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2801,7 +2801,7 @@ async call(parameters : Public.Procedures.CubeSend.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_send( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_send( ${ typed[29217](undefinedIsNull(parameters.argument_0)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].cube_send) );
@@ -2813,7 +2813,7 @@ export class SetLimit implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "set_limit"; }
-async call(parameters : Public.Procedures.SetLimit.Parameters) {
+async call(parameters : Public.Procedures.SetLimit.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2821,7 +2821,7 @@ async call(parameters : Public.Procedures.SetLimit.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.set_limit( ${ typed[700](undefinedIsNull(parameters.argument_0)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.set_limit( ${ typed[700](undefinedIsNull(parameters.argument_0)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].set_limit) );
@@ -2833,7 +2833,7 @@ export class ShowLimit implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "show_limit"; }
-async call() {
+async call(options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2841,7 +2841,7 @@ async call() {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.show_limit()`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.show_limit()`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].show_limit) );
@@ -2853,7 +2853,7 @@ export class ShowTrgm implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "show_trgm"; }
-async call(parameters : Public.Procedures.ShowTrgm.Parameters) {
+async call(parameters : Public.Procedures.ShowTrgm.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2861,7 +2861,7 @@ async call(parameters : Public.Procedures.ShowTrgm.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.show_trgm( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.show_trgm( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.TextArray.parse(results?.[0].show_trgm) );
@@ -2873,7 +2873,7 @@ export class Similarity implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "similarity"; }
-async call(parameters : Public.Procedures.Similarity.Parameters) {
+async call(parameters : Public.Procedures.Similarity.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2881,7 +2881,7 @@ async call(parameters : Public.Procedures.Similarity.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.similarity( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.similarity( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].similarity) );
@@ -2893,7 +2893,7 @@ export class SimilarityOp implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "similarity_op"; }
-async call(parameters : Public.Procedures.SimilarityOp.Parameters) {
+async call(parameters : Public.Procedures.SimilarityOp.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2901,7 +2901,7 @@ async call(parameters : Public.Procedures.SimilarityOp.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.similarity_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.similarity_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].similarity_op) );
@@ -2913,7 +2913,7 @@ export class WordSimilarity implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "word_similarity"; }
-async call(parameters : Public.Procedures.WordSimilarity.Parameters) {
+async call(parameters : Public.Procedures.WordSimilarity.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2921,7 +2921,7 @@ async call(parameters : Public.Procedures.WordSimilarity.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.word_similarity( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.word_similarity( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].word_similarity) );
@@ -2933,7 +2933,7 @@ export class WordSimilarityOp implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "word_similarity_op"; }
-async call(parameters : Public.Procedures.WordSimilarityOp.Parameters) {
+async call(parameters : Public.Procedures.WordSimilarityOp.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2941,7 +2941,7 @@ async call(parameters : Public.Procedures.WordSimilarityOp.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.word_similarity_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.word_similarity_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].word_similarity_op) );
@@ -2953,7 +2953,7 @@ export class WordSimilarityCommutatorOp implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "word_similarity_commutator_op"; }
-async call(parameters : Public.Procedures.WordSimilarityCommutatorOp.Parameters) {
+async call(parameters : Public.Procedures.WordSimilarityCommutatorOp.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2961,7 +2961,7 @@ async call(parameters : Public.Procedures.WordSimilarityCommutatorOp.Parameters)
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.word_similarity_commutator_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.word_similarity_commutator_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].word_similarity_commutator_op) );
@@ -2973,7 +2973,7 @@ export class SimilarityDist implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "similarity_dist"; }
-async call(parameters : Public.Procedures.SimilarityDist.Parameters) {
+async call(parameters : Public.Procedures.SimilarityDist.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2981,7 +2981,7 @@ async call(parameters : Public.Procedures.SimilarityDist.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.similarity_dist( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.similarity_dist( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].similarity_dist) );
@@ -2993,7 +2993,7 @@ export class WordSimilarityDistOp implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "word_similarity_dist_op"; }
-async call(parameters : Public.Procedures.WordSimilarityDistOp.Parameters) {
+async call(parameters : Public.Procedures.WordSimilarityDistOp.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3001,7 +3001,7 @@ async call(parameters : Public.Procedures.WordSimilarityDistOp.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.word_similarity_dist_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.word_similarity_dist_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].word_similarity_dist_op) );
@@ -3013,7 +3013,7 @@ export class WordSimilarityDistCommutatorOp implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "word_similarity_dist_commutator_op"; }
-async call(parameters : Public.Procedures.WordSimilarityDistCommutatorOp.Parameters) {
+async call(parameters : Public.Procedures.WordSimilarityDistCommutatorOp.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3021,7 +3021,7 @@ async call(parameters : Public.Procedures.WordSimilarityDistCommutatorOp.Paramet
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.word_similarity_dist_commutator_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.word_similarity_dist_commutator_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].word_similarity_dist_commutator_op) );
@@ -3033,7 +3033,7 @@ export class GtrgmIn implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gtrgm_in"; }
-async call(parameters : Public.Procedures.GtrgmIn.Parameters) {
+async call(parameters : Public.Procedures.GtrgmIn.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3041,7 +3041,7 @@ async call(parameters : Public.Procedures.GtrgmIn.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`, options);
   const results = response;
 
               const responseBody = ( Public.Types.Gtrgm.parse(results?.[0].gtrgm_in) );
@@ -3053,7 +3053,7 @@ export class GtrgmOut implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gtrgm_out"; }
-async call(parameters : Public.Procedures.GtrgmOut.Parameters) {
+async call(parameters : Public.Procedures.GtrgmOut.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3061,7 +3061,7 @@ async call(parameters : Public.Procedures.GtrgmOut.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_out( ${ typed[29323](undefinedIsNull(parameters.argument_0)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_out( ${ typed[29323](undefinedIsNull(parameters.argument_0)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].gtrgm_out) );
@@ -3073,7 +3073,7 @@ export class GtrgmConsistent implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gtrgm_consistent"; }
-async call(parameters : Public.Procedures.GtrgmConsistent.Parameters) {
+async call(parameters : Public.Procedures.GtrgmConsistent.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3081,7 +3081,7 @@ async call(parameters : Public.Procedures.GtrgmConsistent.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].gtrgm_consistent) );
@@ -3093,7 +3093,7 @@ export class GtrgmDistance implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gtrgm_distance"; }
-async call(parameters : Public.Procedures.GtrgmDistance.Parameters) {
+async call(parameters : Public.Procedures.GtrgmDistance.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3101,7 +3101,7 @@ async call(parameters : Public.Procedures.GtrgmDistance.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_distance( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_distance( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].gtrgm_distance) );
@@ -3113,7 +3113,7 @@ export class GtrgmCompress implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gtrgm_compress"; }
-async call(parameters : Public.Procedures.GtrgmCompress.Parameters) {
+async call(parameters : Public.Procedures.GtrgmCompress.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3121,7 +3121,7 @@ async call(parameters : Public.Procedures.GtrgmCompress.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_compress( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_compress( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gtrgm_compress) );
@@ -3133,7 +3133,7 @@ export class GtrgmDecompress implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gtrgm_decompress"; }
-async call(parameters : Public.Procedures.GtrgmDecompress.Parameters) {
+async call(parameters : Public.Procedures.GtrgmDecompress.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3141,7 +3141,7 @@ async call(parameters : Public.Procedures.GtrgmDecompress.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_decompress( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_decompress( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gtrgm_decompress) );
@@ -3153,7 +3153,7 @@ export class GtrgmPenalty implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gtrgm_penalty"; }
-async call(parameters : Public.Procedures.GtrgmPenalty.Parameters) {
+async call(parameters : Public.Procedures.GtrgmPenalty.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3161,7 +3161,7 @@ async call(parameters : Public.Procedures.GtrgmPenalty.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_penalty( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_penalty( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gtrgm_penalty) );
@@ -3173,7 +3173,7 @@ export class GtrgmPicksplit implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gtrgm_picksplit"; }
-async call(parameters : Public.Procedures.GtrgmPicksplit.Parameters) {
+async call(parameters : Public.Procedures.GtrgmPicksplit.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3181,7 +3181,7 @@ async call(parameters : Public.Procedures.GtrgmPicksplit.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_picksplit( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_picksplit( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gtrgm_picksplit) );
@@ -3193,7 +3193,7 @@ export class GtrgmUnion implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gtrgm_union"; }
-async call(parameters : Public.Procedures.GtrgmUnion.Parameters) {
+async call(parameters : Public.Procedures.GtrgmUnion.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3201,7 +3201,7 @@ async call(parameters : Public.Procedures.GtrgmUnion.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_union( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_union( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( Public.Types.Gtrgm.parse(results?.[0].gtrgm_union) );
@@ -3213,7 +3213,7 @@ export class GtrgmSame implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gtrgm_same"; }
-async call(parameters : Public.Procedures.GtrgmSame.Parameters) {
+async call(parameters : Public.Procedures.GtrgmSame.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3221,7 +3221,7 @@ async call(parameters : Public.Procedures.GtrgmSame.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_same( ${ typed[29323](undefinedIsNull(parameters.argument_0)) }, ${ typed[29323](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_same( ${ typed[29323](undefinedIsNull(parameters.argument_0)) }, ${ typed[29323](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gtrgm_same) );
@@ -3233,7 +3233,7 @@ export class GinExtractValueTrgm implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gin_extract_value_trgm"; }
-async call(parameters : Public.Procedures.GinExtractValueTrgm.Parameters) {
+async call(parameters : Public.Procedures.GinExtractValueTrgm.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3241,7 +3241,7 @@ async call(parameters : Public.Procedures.GinExtractValueTrgm.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gin_extract_value_trgm( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gin_extract_value_trgm( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gin_extract_value_trgm) );
@@ -3253,7 +3253,7 @@ export class GinExtractQueryTrgm implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gin_extract_query_trgm"; }
-async call(parameters : Public.Procedures.GinExtractQueryTrgm.Parameters) {
+async call(parameters : Public.Procedures.GinExtractQueryTrgm.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3261,7 +3261,7 @@ async call(parameters : Public.Procedures.GinExtractQueryTrgm.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gin_extract_query_trgm( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[2281](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) }, ${ typed[2281](undefinedIsNull(parameters.argument_5)) }, ${ typed[2281](undefinedIsNull(parameters.argument_6)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gin_extract_query_trgm( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[2281](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) }, ${ typed[2281](undefinedIsNull(parameters.argument_5)) }, ${ typed[2281](undefinedIsNull(parameters.argument_6)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gin_extract_query_trgm) );
@@ -3273,7 +3273,7 @@ export class GinTrgmConsistent implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gin_trgm_consistent"; }
-async call(parameters : Public.Procedures.GinTrgmConsistent.Parameters) {
+async call(parameters : Public.Procedures.GinTrgmConsistent.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3281,7 +3281,7 @@ async call(parameters : Public.Procedures.GinTrgmConsistent.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gin_trgm_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[21](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) }, ${ typed[2281](undefinedIsNull(parameters.argument_5)) }, ${ typed[2281](undefinedIsNull(parameters.argument_6)) }, ${ typed[2281](undefinedIsNull(parameters.argument_7)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gin_trgm_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[21](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) }, ${ typed[2281](undefinedIsNull(parameters.argument_5)) }, ${ typed[2281](undefinedIsNull(parameters.argument_6)) }, ${ typed[2281](undefinedIsNull(parameters.argument_7)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].gin_trgm_consistent) );
@@ -3293,7 +3293,7 @@ export class GinTrgmTriconsistent implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gin_trgm_triconsistent"; }
-async call(parameters : Public.Procedures.GinTrgmTriconsistent.Parameters) {
+async call(parameters : Public.Procedures.GinTrgmTriconsistent.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3301,7 +3301,7 @@ async call(parameters : Public.Procedures.GinTrgmTriconsistent.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gin_trgm_triconsistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[21](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) }, ${ typed[2281](undefinedIsNull(parameters.argument_5)) }, ${ typed[2281](undefinedIsNull(parameters.argument_6)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gin_trgm_triconsistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[21](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) }, ${ typed[2281](undefinedIsNull(parameters.argument_5)) }, ${ typed[2281](undefinedIsNull(parameters.argument_6)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Char.parse(results?.[0].gin_trgm_triconsistent) );
@@ -3313,7 +3313,7 @@ export class StrictWordSimilarity implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "strict_word_similarity"; }
-async call(parameters : Public.Procedures.StrictWordSimilarity.Parameters) {
+async call(parameters : Public.Procedures.StrictWordSimilarity.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3321,7 +3321,7 @@ async call(parameters : Public.Procedures.StrictWordSimilarity.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.strict_word_similarity( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.strict_word_similarity( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].strict_word_similarity) );
@@ -3333,7 +3333,7 @@ export class StrictWordSimilarityOp implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "strict_word_similarity_op"; }
-async call(parameters : Public.Procedures.StrictWordSimilarityOp.Parameters) {
+async call(parameters : Public.Procedures.StrictWordSimilarityOp.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3341,7 +3341,7 @@ async call(parameters : Public.Procedures.StrictWordSimilarityOp.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.strict_word_similarity_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.strict_word_similarity_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].strict_word_similarity_op) );
@@ -3353,7 +3353,7 @@ export class StrictWordSimilarityCommutatorOp implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "strict_word_similarity_commutator_op"; }
-async call(parameters : Public.Procedures.StrictWordSimilarityCommutatorOp.Parameters) {
+async call(parameters : Public.Procedures.StrictWordSimilarityCommutatorOp.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3361,7 +3361,7 @@ async call(parameters : Public.Procedures.StrictWordSimilarityCommutatorOp.Param
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.strict_word_similarity_commutator_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.strict_word_similarity_commutator_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].strict_word_similarity_commutator_op) );
@@ -3373,7 +3373,7 @@ export class StrictWordSimilarityDistOp implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "strict_word_similarity_dist_op"; }
-async call(parameters : Public.Procedures.StrictWordSimilarityDistOp.Parameters) {
+async call(parameters : Public.Procedures.StrictWordSimilarityDistOp.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3381,7 +3381,7 @@ async call(parameters : Public.Procedures.StrictWordSimilarityDistOp.Parameters)
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.strict_word_similarity_dist_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.strict_word_similarity_dist_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].strict_word_similarity_dist_op) );
@@ -3393,7 +3393,7 @@ export class StrictWordSimilarityDistCommutatorOp implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "strict_word_similarity_dist_commutator_op"; }
-async call(parameters : Public.Procedures.StrictWordSimilarityDistCommutatorOp.Parameters) {
+async call(parameters : Public.Procedures.StrictWordSimilarityDistCommutatorOp.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3401,7 +3401,7 @@ async call(parameters : Public.Procedures.StrictWordSimilarityDistCommutatorOp.P
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.strict_word_similarity_dist_commutator_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.strict_word_similarity_dist_commutator_op( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float4.parse(results?.[0].strict_word_similarity_dist_commutator_op) );
@@ -3413,7 +3413,7 @@ export class GtrgmOptions implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "gtrgm_options"; }
-async call(parameters : Public.Procedures.GtrgmOptions.Parameters) {
+async call(parameters : Public.Procedures.GtrgmOptions.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3421,7 +3421,7 @@ async call(parameters : Public.Procedures.GtrgmOptions.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_options( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_options( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].gtrgm_options) );
@@ -3437,7 +3437,7 @@ export class Echo implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "echo"; }
-async call(parameters : Api.Procedures.Echo.Parameters) {
+async call(parameters : Api.Procedures.Echo.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3445,7 +3445,7 @@ async call(parameters : Api.Procedures.Echo.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT api.echo(message => ${ typed[25](undefinedIsNull(parameters.message)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT api.echo(message => ${ typed[25](undefinedIsNull(parameters.message)) })`, options);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].echo) );
@@ -3457,7 +3457,7 @@ export class EchoSet implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "echo_set"; }
-async call(parameters : Api.Procedures.EchoSet.Parameters) {
+async call(parameters : Api.Procedures.EchoSet.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3465,7 +3465,7 @@ async call(parameters : Api.Procedures.EchoSet.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT api.echo_set(message => ${ typed[25](undefinedIsNull(parameters.message)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT api.echo_set(message => ${ typed[25](undefinedIsNull(parameters.message)) })`, options);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.echo_set)).filter<PgCatalog.Types.Text>((r):r is PgCatalog.Types.Text => r !== null) );
@@ -3477,14 +3477,14 @@ export class EchoTable implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "echo_table"; }
-async call(parameters : Api.Procedures.EchoTable.Parameters) {
+async call(parameters : Api.Procedures.EchoTable.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               return context.procTypes[29396].parseFromPostgresIfPseudoType(context, result) as unknown as Api.Types.EchoTable;
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT api.echo_table(message => ${ typed[25](undefinedIsNull(parameters.message)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT api.echo_table(message => ${ typed[25](undefinedIsNull(parameters.message)) })`, options);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.echo_table)).filter<Api.Types.EchoTable>((r):r is Api.Types.EchoTable => r !== null) );
@@ -3496,7 +3496,7 @@ export class EchoType implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "echo_type"; }
-async call(parameters : Api.Procedures.EchoType.Parameters) {
+async call(parameters : Api.Procedures.EchoType.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3504,7 +3504,7 @@ async call(parameters : Api.Procedures.EchoType.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT api.echo_type(message => ${ typed[25](undefinedIsNull(parameters.message)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT api.echo_type(message => ${ typed[25](undefinedIsNull(parameters.message)) })`, options);
   const results = response;
 
               const responseBody = ( Api.Types.EchoType.parse(results?.[0].echo_type) );
@@ -3516,7 +3516,7 @@ export class EchoTypeArray implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "echo_type_array"; }
-async call(parameters : Api.Procedures.EchoTypeArray.Parameters) {
+async call(parameters : Api.Procedures.EchoTypeArray.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3524,7 +3524,7 @@ async call(parameters : Api.Procedures.EchoTypeArray.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT api.echo_type_array(message => ${ typed[25](undefinedIsNull(parameters.message)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT api.echo_type_array(message => ${ typed[25](undefinedIsNull(parameters.message)) })`, options);
   const results = response;
 
               const responseBody = ( Api.Types.EchoTypeArray.parse(results?.[0].echo_type_array) );
@@ -3536,7 +3536,7 @@ export class EchoTypeNested implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "echo_type_nested"; }
-async call(parameters : Api.Procedures.EchoTypeNested.Parameters) {
+async call(parameters : Api.Procedures.EchoTypeNested.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3544,7 +3544,7 @@ async call(parameters : Api.Procedures.EchoTypeNested.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT api.echo_type_nested(message => ${ typed[25](undefinedIsNull(parameters.message)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT api.echo_type_nested(message => ${ typed[25](undefinedIsNull(parameters.message)) })`, options);
   const results = response;
 
               const responseBody = ( Api.Types.EchoTypeNested.parse(results?.[0].echo_type_nested) );
@@ -3556,7 +3556,7 @@ export class EchoTypeSet implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "echo_type_set"; }
-async call(parameters : Api.Procedures.EchoTypeSet.Parameters) {
+async call(parameters : Api.Procedures.EchoTypeSet.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3564,7 +3564,7 @@ async call(parameters : Api.Procedures.EchoTypeSet.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT api.echo_type_set(message => ${ typed[25](undefinedIsNull(parameters.message)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT api.echo_type_set(message => ${ typed[25](undefinedIsNull(parameters.message)) })`, options);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.echo_type_set)).filter<Api.Types.EchoType>((r):r is Api.Types.EchoType => r !== null) );
@@ -3576,7 +3576,7 @@ export class EchoAnswer implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
   get name() { return "echo_answer"; }
-async call(parameters : Api.Procedures.EchoAnswer.Parameters) {
+async call(parameters : Api.Procedures.EchoAnswer.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -3584,7 +3584,7 @@ async call(parameters : Api.Procedures.EchoAnswer.Parameters) {
             };
           
   const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
-  const response = await this.database.invoke( (sql) => sql`SELECT api.echo_answer(message => ${ typed[29408](undefinedIsNull(parameters.message)) })`);
+  const response = await this.database.invoke( (sql) => sql`SELECT api.echo_answer(message => ${ typed[29408](undefinedIsNull(parameters.message)) })`, options);
   const results = response;
 
               const responseBody = ( Api.Types.Answer.parse(results?.[0].echo_answer) );
@@ -3670,7 +3670,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES ()
       RETURNING
         slug_id
-    `);
+    `, options);
 return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -3682,7 +3682,7 @@ const response = await this.database.invoke( (sql) => sql`
       
     RETURNING
       slug_id
-    `);
+    `, options);
 return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))[0]
 }
 async all(options?: Public.Tables.Slug.Options) : Promise<Public.Types.Slug[]>{
@@ -3698,7 +3698,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Slug.SlugPkey(this)}
@@ -3731,7 +3731,7 @@ const response = await this.database.invoke( (sql) => sql`
       question = EXCLUDED.question,answer = EXCLUDED.answer
     RETURNING
       question,answer
-    `);
+    `, options);
 return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))[0]
 }
 async all(options?: Api.Tables.QAndA.Options) : Promise<Api.Types.QAndA[]>{
@@ -3747,7 +3747,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
 }
 
@@ -3776,7 +3776,7 @@ const response = await this.database.invoke( (sql) => sql`
       country_code = EXCLUDED.country_code,time_zone = EXCLUDED.time_zone,gmt_offset = EXCLUDED.gmt_offset,dst_offset = EXCLUDED.dst_offset,raw_offset = EXCLUDED.raw_offset
     RETURNING
       country_code,time_zone,gmt_offset,dst_offset,raw_offset
-    `);
+    `, options);
 return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))[0]
 }
 async all(options?: Api.Tables.Timezones.Options) : Promise<Api.Types.Timezones[]>{
@@ -3792,7 +3792,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
 }
 
@@ -3824,7 +3824,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.point === undefined ? sql`DEFAULT` : typed[600](values.point) })
       RETURNING
         id,point
-    `);
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -3836,7 +3836,7 @@ const response = await this.database.invoke( (sql) => sql`
       point = EXCLUDED.point
     RETURNING
       id,point
-    `);
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
 }
 async all(options?: Api.Tables.Points.Options) : Promise<Api.Types.Points[]>{
@@ -3852,7 +3852,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))
 }
 public get ByPrimaryKey () { return new Api.Tables.Points.PointsPkey(this)}
@@ -3882,7 +3882,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.line === undefined ? sql`DEFAULT` : typed[628](values.line) })
       RETURNING
         id,line
-    `);
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -3894,7 +3894,7 @@ const response = await this.database.invoke( (sql) => sql`
       line = EXCLUDED.line
     RETURNING
       id,line
-    `);
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))[0]
 }
 async all(options?: Api.Tables.Lines.Options) : Promise<Api.Types.Lines[]>{
@@ -3910,7 +3910,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))
 }
 public get ByPrimaryKey () { return new Api.Tables.Lines.LinesPkey(this)}
@@ -3940,7 +3940,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.lineSegment === undefined ? sql`DEFAULT` : typed[601](values.lineSegment) })
       RETURNING
         id,line_segment
-    `);
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -3952,7 +3952,7 @@ const response = await this.database.invoke( (sql) => sql`
       line_segment = EXCLUDED.line_segment
     RETURNING
       id,line_segment
-    `);
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))[0]
 }
 async all(options?: Api.Tables.LineSegments.Options) : Promise<Api.Types.LineSegments[]>{
@@ -3968,7 +3968,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))
 }
 public get ByPrimaryKey () { return new Api.Tables.LineSegments.LineSegmentsPkey(this)}
@@ -3998,7 +3998,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.box === undefined ? sql`DEFAULT` : typed[603](values.box) })
       RETURNING
         id,box
-    `);
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -4010,7 +4010,7 @@ const response = await this.database.invoke( (sql) => sql`
       box = EXCLUDED.box
     RETURNING
       id,box
-    `);
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))[0]
 }
 async all(options?: Api.Tables.Boxes.Options) : Promise<Api.Types.Boxes[]>{
@@ -4026,7 +4026,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))
 }
 public get ByPrimaryKey () { return new Api.Tables.Boxes.BoxesPkey(this)}
@@ -4056,7 +4056,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.path === undefined ? sql`DEFAULT` : typed[602](values.path) })
       RETURNING
         id,path
-    `);
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -4068,7 +4068,7 @@ const response = await this.database.invoke( (sql) => sql`
       path = EXCLUDED.path
     RETURNING
       id,path
-    `);
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))[0]
 }
 async all(options?: Api.Tables.Paths.Options) : Promise<Api.Types.Paths[]>{
@@ -4084,7 +4084,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))
 }
 public get ByPrimaryKey () { return new Api.Tables.Paths.PathsPkey(this)}
@@ -4114,7 +4114,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.polygon === undefined ? sql`DEFAULT` : typed[604](values.polygon) })
       RETURNING
         id,polygon
-    `);
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -4126,7 +4126,7 @@ const response = await this.database.invoke( (sql) => sql`
       polygon = EXCLUDED.polygon
     RETURNING
       id,polygon
-    `);
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))[0]
 }
 async all(options?: Api.Tables.Polygons.Options) : Promise<Api.Types.Polygons[]>{
@@ -4142,7 +4142,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))
 }
 public get ByPrimaryKey () { return new Api.Tables.Polygons.PolygonsPkey(this)}
@@ -4172,7 +4172,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.circle === undefined ? sql`DEFAULT` : typed[718](values.circle) })
       RETURNING
         id,circle
-    `);
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -4184,7 +4184,7 @@ const response = await this.database.invoke( (sql) => sql`
       circle = EXCLUDED.circle
     RETURNING
       id,circle
-    `);
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))[0]
 }
 async all(options?: Api.Tables.Circles.Options) : Promise<Api.Types.Circles[]>{
@@ -4200,7 +4200,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `);
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))
 }
 public get ByPrimaryKey () { return new Api.Tables.Circles.CirclesPkey(this)}
@@ -4228,11 +4228,10 @@ export namespace Slug {
 async read(parameters: Public.Types.SlugPkey, options?: Public.Types.SlugPkey.Options & Public.Tables.Slug.Options) : Promise<Public.Types.Slug>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       slug_id 
@@ -4243,7 +4242,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))[0]
 }
 
@@ -4261,7 +4260,7 @@ const response = await this.database.invoke( (sql) => sql`
       slug_id = ${ values.slugId === undefined ? sql`slug_id` : typed[23](values.slugId) } 
     WHERE
       slug_id = ${ parameters.slugId === undefined ? sql`DEFAULT` : typed[23](parameters.slugId) }
-    RETURNING slug_id`);
+    RETURNING slug_id`, options);
 return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))[0]
 }
 async delete(parameters: Public.Types.SlugPkey, options?: Public.Types.SlugPkey.Options & Public.Tables.Slug.Options) {
@@ -4273,7 +4272,7 @@ async delete(parameters: Public.Types.SlugPkey, options?: Public.Types.SlugPkey.
       public.slug 
     WHERE
       slug_id = ${ parameters.slugId === undefined ? sql`DEFAULT` : typed[23](parameters.slugId) }
-    RETURNING slug_id`);
+    RETURNING slug_id`, options);
  return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))[0]
 }
 }
@@ -4296,11 +4295,10 @@ export namespace QAndA {
 async read(parameters: Api.Types.QAndAAnswer, options?: Api.Types.QAndAAnswer.Options & Api.Tables.QAndA.Options) : Promise<Api.Types.QAndA[]>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       question,answer 
@@ -4311,7 +4309,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
 }
 
@@ -4329,7 +4327,7 @@ const response = await this.database.invoke( (sql) => sql`
       question = ${ values.question === undefined ? sql`question` : typed[25](values.question) } , answer = ${ values.answer === undefined ? sql`answer` : typed[29408](values.answer) } 
     WHERE
       answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[29408](parameters.answer) }
-    RETURNING question,answer`);
+    RETURNING question,answer`, options);
 return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
 }
 async delete(parameters: Api.Types.QAndAAnswer, options?: Api.Types.QAndAAnswer.Options & Api.Tables.QAndA.Options) {
@@ -4341,7 +4339,7 @@ async delete(parameters: Api.Types.QAndAAnswer, options?: Api.Types.QAndAAnswer.
       api.q_and_a 
     WHERE
       answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[29408](parameters.answer) }
-    RETURNING question,answer`);
+    RETURNING question,answer`, options);
  return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
 }
 }
@@ -4360,11 +4358,10 @@ export namespace Timezones {
 async read(parameters: Api.Types.TrgmIdxGist, options?: Api.Types.TrgmIdxGist.Options & Api.Tables.Timezones.Options) : Promise<Api.Types.Timezones[]>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       country_code,time_zone,gmt_offset,dst_offset,raw_offset 
@@ -4375,7 +4372,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
 }
 
@@ -4393,7 +4390,7 @@ const response = await this.database.invoke( (sql) => sql`
       country_code = ${ values.countryCode === undefined ? sql`country_code` : typed[25](values.countryCode) } , time_zone = ${ values.timeZone === undefined ? sql`time_zone` : typed[25](values.timeZone) } , gmt_offset = ${ values.gmtOffset === undefined ? sql`gmt_offset` : typed[700](values.gmtOffset) } , dst_offset = ${ values.dstOffset === undefined ? sql`dst_offset` : typed[700](values.dstOffset) } , raw_offset = ${ values.rawOffset === undefined ? sql`raw_offset` : typed[700](values.rawOffset) } 
     WHERE
       time_zone % ${ parameters.timeZone === undefined ? sql`DEFAULT` : typed[25](parameters.timeZone) }
-    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`);
+    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`, options);
 return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
 }
 async delete(parameters: Api.Types.TrgmIdxGist, options?: Api.Types.TrgmIdxGist.Options & Api.Tables.Timezones.Options) {
@@ -4405,7 +4402,7 @@ async delete(parameters: Api.Types.TrgmIdxGist, options?: Api.Types.TrgmIdxGist.
       api.timezones 
     WHERE
       time_zone % ${ parameters.timeZone === undefined ? sql`DEFAULT` : typed[25](parameters.timeZone) }
-    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`);
+    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`, options);
  return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
 }
 }
@@ -4422,11 +4419,10 @@ async delete(parameters: Api.Types.TrgmIdxGist, options?: Api.Types.TrgmIdxGist.
 async read(parameters: Api.Types.TrgmIdxGin, options?: Api.Types.TrgmIdxGin.Options & Api.Tables.Timezones.Options) : Promise<Api.Types.Timezones[]>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       country_code,time_zone,gmt_offset,dst_offset,raw_offset 
@@ -4437,7 +4433,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
 }
 
@@ -4455,7 +4451,7 @@ const response = await this.database.invoke( (sql) => sql`
       country_code = ${ values.countryCode === undefined ? sql`country_code` : typed[25](values.countryCode) } , time_zone = ${ values.timeZone === undefined ? sql`time_zone` : typed[25](values.timeZone) } , gmt_offset = ${ values.gmtOffset === undefined ? sql`gmt_offset` : typed[700](values.gmtOffset) } , dst_offset = ${ values.dstOffset === undefined ? sql`dst_offset` : typed[700](values.dstOffset) } , raw_offset = ${ values.rawOffset === undefined ? sql`raw_offset` : typed[700](values.rawOffset) } 
     WHERE
       time_zone % ${ parameters.timeZone === undefined ? sql`DEFAULT` : typed[25](parameters.timeZone) }
-    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`);
+    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`, options);
 return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
 }
 async delete(parameters: Api.Types.TrgmIdxGin, options?: Api.Types.TrgmIdxGin.Options & Api.Tables.Timezones.Options) {
@@ -4467,7 +4463,7 @@ async delete(parameters: Api.Types.TrgmIdxGin, options?: Api.Types.TrgmIdxGin.Op
       api.timezones 
     WHERE
       time_zone % ${ parameters.timeZone === undefined ? sql`DEFAULT` : typed[25](parameters.timeZone) }
-    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`);
+    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`, options);
  return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
 }
 }
@@ -4486,11 +4482,10 @@ export namespace Points {
 async read(parameters: Api.Types.PointsPkey, options?: Api.Types.PointsPkey.Options & Api.Tables.Points.Options) : Promise<Api.Types.Points>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       id,point 
@@ -4501,7 +4496,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
 }
 
@@ -4519,7 +4514,7 @@ const response = await this.database.invoke( (sql) => sql`
       id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , point = ${ values.point === undefined ? sql`point` : typed[600](values.point) } 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,point`);
+    RETURNING id,point`, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
 }
 async delete(parameters: Api.Types.PointsPkey, options?: Api.Types.PointsPkey.Options & Api.Tables.Points.Options) {
@@ -4531,7 +4526,7 @@ async delete(parameters: Api.Types.PointsPkey, options?: Api.Types.PointsPkey.Op
       api.points 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,point`);
+    RETURNING id,point`, options);
  return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
 }
 }
@@ -4550,11 +4545,10 @@ export namespace Lines {
 async read(parameters: Api.Types.LinesPkey, options?: Api.Types.LinesPkey.Options & Api.Tables.Lines.Options) : Promise<Api.Types.Lines>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       id,line 
@@ -4565,7 +4559,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))[0]
 }
 
@@ -4583,7 +4577,7 @@ const response = await this.database.invoke( (sql) => sql`
       id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , line = ${ values.line === undefined ? sql`line` : typed[628](values.line) } 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,line`);
+    RETURNING id,line`, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))[0]
 }
 async delete(parameters: Api.Types.LinesPkey, options?: Api.Types.LinesPkey.Options & Api.Tables.Lines.Options) {
@@ -4595,7 +4589,7 @@ async delete(parameters: Api.Types.LinesPkey, options?: Api.Types.LinesPkey.Opti
       api.lines 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,line`);
+    RETURNING id,line`, options);
  return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))[0]
 }
 }
@@ -4614,11 +4608,10 @@ export namespace LineSegments {
 async read(parameters: Api.Types.LineSegmentsPkey, options?: Api.Types.LineSegmentsPkey.Options & Api.Tables.LineSegments.Options) : Promise<Api.Types.LineSegments>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       id,line_segment 
@@ -4629,7 +4622,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))[0]
 }
 
@@ -4647,7 +4640,7 @@ const response = await this.database.invoke( (sql) => sql`
       id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , line_segment = ${ values.lineSegment === undefined ? sql`line_segment` : typed[601](values.lineSegment) } 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,line_segment`);
+    RETURNING id,line_segment`, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))[0]
 }
 async delete(parameters: Api.Types.LineSegmentsPkey, options?: Api.Types.LineSegmentsPkey.Options & Api.Tables.LineSegments.Options) {
@@ -4659,7 +4652,7 @@ async delete(parameters: Api.Types.LineSegmentsPkey, options?: Api.Types.LineSeg
       api.line_segments 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,line_segment`);
+    RETURNING id,line_segment`, options);
  return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))[0]
 }
 }
@@ -4678,11 +4671,10 @@ export namespace Boxes {
 async read(parameters: Api.Types.BoxesPkey, options?: Api.Types.BoxesPkey.Options & Api.Tables.Boxes.Options) : Promise<Api.Types.Boxes>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       id,box 
@@ -4693,7 +4685,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))[0]
 }
 
@@ -4711,7 +4703,7 @@ const response = await this.database.invoke( (sql) => sql`
       id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , box = ${ values.box === undefined ? sql`box` : typed[603](values.box) } 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,box`);
+    RETURNING id,box`, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))[0]
 }
 async delete(parameters: Api.Types.BoxesPkey, options?: Api.Types.BoxesPkey.Options & Api.Tables.Boxes.Options) {
@@ -4723,7 +4715,7 @@ async delete(parameters: Api.Types.BoxesPkey, options?: Api.Types.BoxesPkey.Opti
       api.boxes 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,box`);
+    RETURNING id,box`, options);
  return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))[0]
 }
 }
@@ -4742,11 +4734,10 @@ export namespace Paths {
 async read(parameters: Api.Types.PathsPkey, options?: Api.Types.PathsPkey.Options & Api.Tables.Paths.Options) : Promise<Api.Types.Paths>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       id,path 
@@ -4757,7 +4748,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))[0]
 }
 
@@ -4775,7 +4766,7 @@ const response = await this.database.invoke( (sql) => sql`
       id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , path = ${ values.path === undefined ? sql`path` : typed[602](values.path) } 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,path`);
+    RETURNING id,path`, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))[0]
 }
 async delete(parameters: Api.Types.PathsPkey, options?: Api.Types.PathsPkey.Options & Api.Tables.Paths.Options) {
@@ -4787,7 +4778,7 @@ async delete(parameters: Api.Types.PathsPkey, options?: Api.Types.PathsPkey.Opti
       api.paths 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,path`);
+    RETURNING id,path`, options);
  return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))[0]
 }
 }
@@ -4806,11 +4797,10 @@ export namespace Polygons {
 async read(parameters: Api.Types.PolygonsPkey, options?: Api.Types.PolygonsPkey.Options & Api.Tables.Polygons.Options) : Promise<Api.Types.Polygons>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       id,polygon 
@@ -4821,7 +4811,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))[0]
 }
 
@@ -4839,7 +4829,7 @@ const response = await this.database.invoke( (sql) => sql`
       id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , polygon = ${ values.polygon === undefined ? sql`polygon` : typed[604](values.polygon) } 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,polygon`);
+    RETURNING id,polygon`, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))[0]
 }
 async delete(parameters: Api.Types.PolygonsPkey, options?: Api.Types.PolygonsPkey.Options & Api.Tables.Polygons.Options) {
@@ -4851,7 +4841,7 @@ async delete(parameters: Api.Types.PolygonsPkey, options?: Api.Types.PolygonsPke
       api.polygons 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,polygon`);
+    RETURNING id,polygon`, options);
  return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))[0]
 }
 }
@@ -4870,11 +4860,10 @@ export namespace Circles {
 async read(parameters: Api.Types.CirclesPkey, options?: Api.Types.CirclesPkey.Options & Api.Tables.Circles.Options) : Promise<Api.Types.Circles>{
 
       console.assert(parameters);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     -- 
     SELECT 
       id,circle 
@@ -4885,7 +4874,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))[0]
 }
 
@@ -4903,7 +4892,7 @@ const response = await this.database.invoke( (sql) => sql`
       id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , circle = ${ values.circle === undefined ? sql`circle` : typed[718](values.circle) } 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,circle`);
+    RETURNING id,circle`, options);
 return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))[0]
 }
 async delete(parameters: Api.Types.CirclesPkey, options?: Api.Types.CirclesPkey.Options & Api.Tables.Circles.Options) {
@@ -4915,7 +4904,7 @@ async delete(parameters: Api.Types.CirclesPkey, options?: Api.Types.CirclesPkey.
       api.circles 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,circle`);
+    RETURNING id,circle`, options);
  return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))[0]
 }
 }
@@ -42173,7 +42162,6 @@ export namespace Procedures {
 export namespace Tables {
 }
 }
-// Type Options
 export namespace PgCatalog {
 export namespace Types {
 export namespace Bool {
@@ -42408,7 +42396,7 @@ export namespace Typdefault {
 export namespace Typacl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 typname?: PgCatalog.Types.Name.Options,
 typnamespace?: PgCatalog.Types.Oid.Options,
@@ -42568,7 +42556,7 @@ export namespace Attmissingval {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  attrelid?: PgCatalog.Types.Oid.Options,
 attname?: PgCatalog.Types.Name.Options,
 atttypid?: PgCatalog.Types.Oid.Options,
@@ -42734,7 +42722,7 @@ export type Options = never;
 export namespace Proacl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 proname?: PgCatalog.Types.Name.Options,
 pronamespace?: PgCatalog.Types.Oid.Options,
@@ -42929,7 +42917,7 @@ export namespace Relpartbound {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 relname?: PgCatalog.Types.Name.Options,
 relnamespace?: PgCatalog.Types.Oid.Options,
@@ -43726,7 +43714,7 @@ export namespace Adbin {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 adrelid?: PgCatalog.Types.Oid.Options,
 adnum?: PgCatalog.Types.Int2.Options,
@@ -43853,7 +43841,7 @@ export namespace Conbin {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 conname?: PgCatalog.Types.Name.Options,
 connamespace?: PgCatalog.Types.Oid.Options,
@@ -43906,7 +43894,7 @@ export namespace Inhdetachpending {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  inhrelid?: PgCatalog.Types.Oid.Options,
 inhparent?: PgCatalog.Types.Oid.Options,
 inhseqno?: PgCatalog.Types.Int4.Options,
@@ -44018,7 +44006,7 @@ export namespace Indpred {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  indexrelid?: PgCatalog.Types.Oid.Options,
 indrelid?: PgCatalog.Types.Oid.Options,
 indnatts?: PgCatalog.Types.Int2.Options,
@@ -44121,7 +44109,7 @@ export namespace Oprjoin {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 oprname?: PgCatalog.Types.Name.Options,
 oprnamespace?: PgCatalog.Types.Oid.Options,
@@ -44168,7 +44156,7 @@ export namespace Opfowner {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 opfmethod?: PgCatalog.Types.Oid.Options,
 opfname?: PgCatalog.Types.Name.Options,
@@ -44225,7 +44213,7 @@ export namespace Opckeytype {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 opcmethod?: PgCatalog.Types.Oid.Options,
 opcname?: PgCatalog.Types.Name.Options,
@@ -44261,7 +44249,7 @@ export namespace Amtype {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 amname?: PgCatalog.Types.Name.Options,
 amhandler?: PgCatalog.Types.Regproc.Options,
@@ -44317,7 +44305,7 @@ export namespace Amopsortfamily {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 amopfamily?: PgCatalog.Types.Oid.Options,
 amoplefttype?: PgCatalog.Types.Oid.Options,
@@ -44363,7 +44351,7 @@ export namespace Amproc {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 amprocfamily?: PgCatalog.Types.Oid.Options,
 amproclefttype?: PgCatalog.Types.Oid.Options,
@@ -44419,7 +44407,7 @@ export namespace Lanvalidator {
 export namespace Lanacl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 lanname?: PgCatalog.Types.Name.Options,
 lanowner?: PgCatalog.Types.Oid.Options,
@@ -44448,7 +44436,7 @@ export namespace Lomowner {
 export namespace Lomacl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 lomowner?: PgCatalog.Types.Oid.Options,
 lomacl?: PgCatalog.Types.AclitemArray.Options
@@ -44473,7 +44461,7 @@ export namespace Data {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  loid?: PgCatalog.Types.Oid.Options,
 pageno?: PgCatalog.Types.Int4.Options,
 data?: PgCatalog.Types.Bytea.Options
@@ -44593,7 +44581,7 @@ export namespace Aggminitval {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  aggfnoid?: PgCatalog.Types.Regproc.Options,
 aggkind?: PgCatalog.Types.Char.Options,
 aggnumdirectargs?: PgCatalog.Types.Int2.Options,
@@ -44767,7 +44755,7 @@ export namespace Stavalues5 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  starelid?: PgCatalog.Types.Oid.Options,
 staattnum?: PgCatalog.Types.Int2.Options,
 stainherit?: PgCatalog.Types.Bool.Options,
@@ -44848,7 +44836,7 @@ export namespace Stxexprs {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 stxrelid?: PgCatalog.Types.Oid.Options,
 stxname?: PgCatalog.Types.Name.Options,
@@ -44892,7 +44880,7 @@ export namespace Stxdmcv {
 export namespace Stxdexpr {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  stxoid?: PgCatalog.Types.Oid.Options,
 stxdinherit?: PgCatalog.Types.Bool.Options,
 stxdndistinct?: PgCatalog.Types.PgNdistinct.Options,
@@ -44945,7 +44933,7 @@ export namespace EvAction {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 rulename?: PgCatalog.Types.Name.Options,
 evClass?: PgCatalog.Types.Oid.Options,
@@ -45055,7 +45043,7 @@ export namespace Tgnewtable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 tgrelid?: PgCatalog.Types.Oid.Options,
 tgparentid?: PgCatalog.Types.Oid.Options,
@@ -45114,7 +45102,7 @@ export namespace Evtenabled {
 export namespace Evttags {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 evtname?: PgCatalog.Types.Name.Options,
 evtevent?: PgCatalog.Types.Name.Options,
@@ -45148,7 +45136,7 @@ export namespace Description {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options,
@@ -45189,7 +45177,7 @@ export namespace Castmethod {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 castsource?: PgCatalog.Types.Oid.Options,
 casttarget?: PgCatalog.Types.Oid.Options,
@@ -45222,7 +45210,7 @@ export namespace Enumlabel {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 enumtypid?: PgCatalog.Types.Oid.Options,
 enumsortorder?: PgCatalog.Types.Float4.Options,
@@ -45251,7 +45239,7 @@ export namespace Nspowner {
 export namespace Nspacl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 nspname?: PgCatalog.Types.Name.Options,
 nspowner?: PgCatalog.Types.Oid.Options,
@@ -45302,7 +45290,7 @@ export namespace Condefault {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 conname?: PgCatalog.Types.Name.Options,
 connamespace?: PgCatalog.Types.Oid.Options,
@@ -45352,7 +45340,7 @@ export namespace Deptype {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  classid?: PgCatalog.Types.Oid.Options,
 objid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options,
@@ -45449,7 +45437,7 @@ export namespace Datcollversion {
 export namespace Datacl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
 datdba?: PgCatalog.Types.Oid.Options,
@@ -45486,7 +45474,7 @@ export namespace Setrole {
 export namespace Setconfig {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  setdatabase?: PgCatalog.Types.Oid.Options,
 setrole?: PgCatalog.Types.Oid.Options,
 setconfig?: PgCatalog.Types.TextArray.Options
@@ -45517,7 +45505,7 @@ export type Options = never;
 export namespace Spcoptions {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 spcname?: PgCatalog.Types.Name.Options,
 spcowner?: PgCatalog.Types.Oid.Options,
@@ -45589,7 +45577,7 @@ export namespace Rolvaliduntil {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 rolname?: PgCatalog.Types.Name.Options,
 rolsuper?: PgCatalog.Types.Bool.Options,
@@ -45643,7 +45631,7 @@ export namespace SetOption {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 roleid?: PgCatalog.Types.Oid.Options,
 member?: PgCatalog.Types.Oid.Options,
@@ -45692,7 +45680,7 @@ export namespace Deptype {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  dbid?: PgCatalog.Types.Oid.Options,
 classid?: PgCatalog.Types.Oid.Options,
 objid?: PgCatalog.Types.Oid.Options,
@@ -45721,7 +45709,7 @@ export namespace Description {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 description?: PgCatalog.Types.Text.Options
@@ -45756,7 +45744,7 @@ export namespace Cfgparser {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 cfgname?: PgCatalog.Types.Name.Options,
 cfgnamespace?: PgCatalog.Types.Oid.Options,
@@ -45788,7 +45776,7 @@ export namespace Mapdict {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  mapcfg?: PgCatalog.Types.Oid.Options,
 maptokentype?: PgCatalog.Types.Int4.Options,
 mapseqno?: PgCatalog.Types.Int4.Options,
@@ -45829,7 +45817,7 @@ export namespace Dictinitoption {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 dictname?: PgCatalog.Types.Name.Options,
 dictnamespace?: PgCatalog.Types.Oid.Options,
@@ -45882,7 +45870,7 @@ export namespace Prslextype {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 prsname?: PgCatalog.Types.Name.Options,
 prsnamespace?: PgCatalog.Types.Oid.Options,
@@ -45922,7 +45910,7 @@ export namespace Tmpllexize {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 tmplname?: PgCatalog.Types.Name.Options,
 tmplnamespace?: PgCatalog.Types.Oid.Options,
@@ -45970,7 +45958,7 @@ export type Options = never;
 export namespace Extcondition {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 extname?: PgCatalog.Types.Name.Options,
 extowner?: PgCatalog.Types.Oid.Options,
@@ -46016,7 +46004,7 @@ export type Options = never;
 export namespace Fdwoptions {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 fdwname?: PgCatalog.Types.Name.Options,
 fdwowner?: PgCatalog.Types.Oid.Options,
@@ -46066,7 +46054,7 @@ export type Options = never;
 export namespace Srvoptions {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 srvname?: PgCatalog.Types.Name.Options,
 srvowner?: PgCatalog.Types.Oid.Options,
@@ -46099,7 +46087,7 @@ export namespace Umserver {
 export namespace Umoptions {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 umuser?: PgCatalog.Types.Oid.Options,
 umserver?: PgCatalog.Types.Oid.Options,
@@ -46123,7 +46111,7 @@ export namespace Ftserver {
 export namespace Ftoptions {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  ftrelid?: PgCatalog.Types.Oid.Options,
 ftserver?: PgCatalog.Types.Oid.Options,
 ftoptions?: PgCatalog.Types.TextArray.Options
@@ -46171,7 +46159,7 @@ export namespace Polwithcheck {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 polname?: PgCatalog.Types.Name.Options,
 polrelid?: PgCatalog.Types.Oid.Options,
@@ -46196,7 +46184,7 @@ export namespace Roname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  roident?: PgCatalog.Types.Oid.Options,
 roname?: PgCatalog.Types.Text.Options
 }
@@ -46228,7 +46216,7 @@ export namespace Defaclobjtype {
 export namespace Defaclacl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 defaclrole?: PgCatalog.Types.Oid.Options,
 defaclnamespace?: PgCatalog.Types.Oid.Options,
@@ -46263,7 +46251,7 @@ export namespace Privtype {
 export namespace Initprivs {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options,
@@ -46300,7 +46288,7 @@ export namespace Label {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options,
@@ -46332,7 +46320,7 @@ export namespace Label {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 provider?: PgCatalog.Types.Text.Options,
@@ -46403,7 +46391,7 @@ export namespace Collversion {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 collname?: PgCatalog.Types.Name.Options,
 collnamespace?: PgCatalog.Types.Oid.Options,
@@ -46435,7 +46423,7 @@ export namespace Parname {
 export namespace Paracl {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 parname?: PgCatalog.Types.Text.Options,
 paracl?: PgCatalog.Types.AclitemArray.Options
@@ -46481,7 +46469,7 @@ export namespace Partexprs {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  partrelid?: PgCatalog.Types.Oid.Options,
 partstrat?: PgCatalog.Types.Char.Options,
 partnatts?: PgCatalog.Types.Int2.Options,
@@ -46531,7 +46519,7 @@ export namespace Rngsubdiff {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rngtypid?: PgCatalog.Types.Oid.Options,
 rngsubtype?: PgCatalog.Types.Oid.Options,
 rngmultitypid?: PgCatalog.Types.Oid.Options,
@@ -46570,7 +46558,7 @@ export namespace Trftosql {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 trftype?: PgCatalog.Types.Oid.Options,
 trflang?: PgCatalog.Types.Oid.Options,
@@ -46622,7 +46610,7 @@ export namespace Seqcycle {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  seqrelid?: PgCatalog.Types.Oid.Options,
 seqtypid?: PgCatalog.Types.Oid.Options,
 seqstart?: PgCatalog.Types.Int8.Options,
@@ -46682,7 +46670,7 @@ export namespace Pubviaroot {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 pubname?: PgCatalog.Types.Name.Options,
 pubowner?: PgCatalog.Types.Oid.Options,
@@ -46713,7 +46701,7 @@ export namespace Pnnspid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 pnpubid?: PgCatalog.Types.Oid.Options,
 pnnspid?: PgCatalog.Types.Oid.Options
@@ -46748,7 +46736,7 @@ export namespace Prattrs {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 prpubid?: PgCatalog.Types.Oid.Options,
 prrelid?: PgCatalog.Types.Oid.Options,
@@ -46843,7 +46831,7 @@ export namespace Suborigin {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 subdbid?: PgCatalog.Types.Oid.Options,
 subskiplsn?: PgCatalog.Types.PgLsn.Options,
@@ -46887,7 +46875,7 @@ export namespace Srsublsn {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  srsubid?: PgCatalog.Types.Oid.Options,
 srrelid?: PgCatalog.Types.Oid.Options,
 srsubstate?: PgCatalog.Types.Char.Options,
@@ -46961,7 +46949,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rolname?: PgCatalog.Types.Name.Options,
 rolsuper?: PgCatalog.Types.Bool.Options,
 rolinherit?: PgCatalog.Types.Bool.Options,
@@ -47024,7 +47012,7 @@ export namespace Valuntil {
 export namespace Useconfig {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  usename?: PgCatalog.Types.Name.Options,
 usesysid?: PgCatalog.Types.Oid.Options,
 usecreatedb?: PgCatalog.Types.Bool.Options,
@@ -47053,7 +47041,7 @@ export namespace Grosysid {
 export namespace Grolist {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  groname?: PgCatalog.Types.Name.Options,
 grosysid?: PgCatalog.Types.Oid.Options,
 grolist?: PgCatalog.Types.OidArray.Options
@@ -47106,7 +47094,7 @@ export namespace Valuntil {
 export namespace Useconfig {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  usename?: PgCatalog.Types.Name.Options,
 usesysid?: PgCatalog.Types.Oid.Options,
 usecreatedb?: PgCatalog.Types.Bool.Options,
@@ -47160,7 +47148,7 @@ export namespace WithCheck {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
 policyname?: PgCatalog.Types.Name.Options,
@@ -47195,7 +47183,7 @@ export namespace Definition {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
 rulename?: PgCatalog.Types.Name.Options,
@@ -47226,7 +47214,7 @@ export namespace Definition {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 viewname?: PgCatalog.Types.Name.Options,
 viewowner?: PgCatalog.Types.Name.Options,
@@ -47277,7 +47265,7 @@ export namespace Rowsecurity {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
 tableowner?: PgCatalog.Types.Name.Options,
@@ -47327,7 +47315,7 @@ export namespace Definition {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 matviewname?: PgCatalog.Types.Name.Options,
 matviewowner?: PgCatalog.Types.Name.Options,
@@ -47366,7 +47354,7 @@ export namespace Indexdef {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
 indexname?: PgCatalog.Types.Name.Options,
@@ -47433,7 +47421,7 @@ export namespace LastValue {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 sequencename?: PgCatalog.Types.Name.Options,
 sequenceowner?: PgCatalog.Types.Name.Options,
@@ -47515,7 +47503,7 @@ export type Options = never;
 export namespace ElemCountHistogram {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
 attname?: PgCatalog.Types.Name.Options,
@@ -47597,7 +47585,7 @@ export type Options = never;
 export namespace MostCommonBaseFreqs {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
 statisticsSchemaname?: PgCatalog.Types.Name.Options,
@@ -47698,7 +47686,7 @@ export type Options = never;
 export namespace ElemCountHistogram {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
 statisticsSchemaname?: PgCatalog.Types.Name.Options,
@@ -47745,7 +47733,7 @@ export namespace Rowfilter {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pubname?: PgCatalog.Types.Name.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 tablename?: PgCatalog.Types.Name.Options,
@@ -47837,7 +47825,7 @@ export namespace Waitstart {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  locktype?: PgCatalog.Types.Text.Options,
 database?: PgCatalog.Types.Oid.Options,
 relation?: PgCatalog.Types.Oid.Options,
@@ -47890,7 +47878,7 @@ export namespace CreationTime {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 statement?: PgCatalog.Types.Text.Options,
 isHoldable?: PgCatalog.Types.Bool.Options,
@@ -47923,7 +47911,7 @@ export namespace Comment {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Name.Options,
 defaultVersion?: PgCatalog.Types.Text.Options,
 installedVersion?: PgCatalog.Types.Text.Options,
@@ -47977,7 +47965,7 @@ export namespace Comment {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Name.Options,
 version?: PgCatalog.Types.Text.Options,
 installed?: PgCatalog.Types.Bool.Options,
@@ -48018,7 +48006,7 @@ export namespace Database {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  transaction?: PgCatalog.Types.Xid.Options,
 gid?: PgCatalog.Types.Text.Options,
 prepared?: PgCatalog.Types.Timestamptz.Options,
@@ -48066,7 +48054,7 @@ export namespace CustomPlans {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 statement?: PgCatalog.Types.Text.Options,
 prepareTime?: PgCatalog.Types.Timestamptz.Options,
@@ -48121,7 +48109,7 @@ export namespace Label {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options,
@@ -48219,7 +48207,7 @@ export namespace PendingRestart {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 setting?: PgCatalog.Types.Text.Options,
 unit?: PgCatalog.Types.Text.Options,
@@ -48278,7 +48266,7 @@ export namespace Error {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  sourcefile?: PgCatalog.Types.Text.Options,
 sourceline?: PgCatalog.Types.Int4.Options,
 seqno?: PgCatalog.Types.Int4.Options,
@@ -48341,7 +48329,7 @@ export namespace Error {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  ruleNumber?: PgCatalog.Types.Int4.Options,
 fileName?: PgCatalog.Types.Text.Options,
 lineNumber?: PgCatalog.Types.Int4.Options,
@@ -48394,7 +48382,7 @@ export namespace Error {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  mapNumber?: PgCatalog.Types.Int4.Options,
 fileName?: PgCatalog.Types.Text.Options,
 lineNumber?: PgCatalog.Types.Int4.Options,
@@ -48423,7 +48411,7 @@ export namespace IsDst {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  abbrev?: PgCatalog.Types.Text.Options,
 utcOffset?: PgCatalog.Types.Interval.Options,
 isDst?: PgCatalog.Types.Bool.Options
@@ -48453,7 +48441,7 @@ export namespace IsDst {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 abbrev?: PgCatalog.Types.Text.Options,
 utcOffset?: PgCatalog.Types.Interval.Options,
@@ -48474,7 +48462,7 @@ export namespace Setting {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 setting?: PgCatalog.Types.Text.Options
 }
@@ -48503,7 +48491,7 @@ export namespace AllocatedSize {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 off?: PgCatalog.Types.Int8.Options,
 size?: PgCatalog.Types.Int8.Options,
@@ -48559,7 +48547,7 @@ export namespace UsedBytes {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 ident?: PgCatalog.Types.Text.Options,
 parent?: PgCatalog.Types.Text.Options,
@@ -48705,7 +48693,7 @@ export namespace AutoanalyzeCount {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -48798,7 +48786,7 @@ export namespace NTupNewpageUpd {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -48947,7 +48935,7 @@ export namespace AutoanalyzeCount {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -49040,7 +49028,7 @@ export namespace NTupNewpageUpd {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -49189,7 +49177,7 @@ export namespace AutoanalyzeCount {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -49282,7 +49270,7 @@ export namespace NTupNewpageUpd {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -49356,7 +49344,7 @@ export namespace TidxBlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -49429,7 +49417,7 @@ export namespace TidxBlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -49502,7 +49490,7 @@ export namespace TidxBlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -49565,7 +49553,7 @@ export namespace IdxTupFetch {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 indexrelid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
@@ -49626,7 +49614,7 @@ export namespace IdxTupFetch {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 indexrelid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
@@ -49687,7 +49675,7 @@ export namespace IdxTupFetch {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 indexrelid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
@@ -49738,7 +49726,7 @@ export namespace IdxBlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 indexrelid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
@@ -49787,7 +49775,7 @@ export namespace IdxBlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 indexrelid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
@@ -49836,7 +49824,7 @@ export namespace IdxBlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 indexrelid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
@@ -49875,7 +49863,7 @@ export namespace BlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -49912,7 +49900,7 @@ export namespace BlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -49949,7 +49937,7 @@ export namespace BlksHit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
@@ -50071,7 +50059,7 @@ export namespace BackendType {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
 pid?: PgCatalog.Types.Int4.Options,
@@ -50200,7 +50188,7 @@ export namespace ReplyTime {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 usesysid?: PgCatalog.Types.Oid.Options,
 usename?: PgCatalog.Types.Name.Options,
@@ -50272,7 +50260,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  name?: PgCatalog.Types.Text.Options,
 blksZeroed?: PgCatalog.Types.Int8.Options,
 blksHit?: PgCatalog.Types.Int8.Options,
@@ -50363,7 +50351,7 @@ export namespace Conninfo {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 status?: PgCatalog.Types.Text.Options,
 receiveStartLsn?: PgCatalog.Types.PgLsn.Options,
@@ -50435,7 +50423,7 @@ export namespace IoDepth {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  statsReset?: PgCatalog.Types.Timestamptz.Options,
 prefetch?: PgCatalog.Types.Int8.Options,
 hit?: PgCatalog.Types.Int8.Options,
@@ -50502,7 +50490,7 @@ export namespace LatestEndTime {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  subid?: PgCatalog.Types.Oid.Options,
 subname?: PgCatalog.Types.Name.Options,
 pid?: PgCatalog.Types.Int4.Options,
@@ -50559,7 +50547,7 @@ export namespace IssuerDn {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 ssl?: PgCatalog.Types.Bool.Options,
 version?: PgCatalog.Types.Text.Options,
@@ -50599,7 +50587,7 @@ export namespace CredentialsDelegated {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 gssAuthenticated?: PgCatalog.Types.Bool.Options,
 principal?: PgCatalog.Types.Text.Options,
@@ -50691,7 +50679,7 @@ export namespace Conflicting {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  slotName?: PgCatalog.Types.Name.Options,
 plugin?: PgCatalog.Types.Name.Options,
 slotType?: PgCatalog.Types.Text.Options,
@@ -50764,7 +50752,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  slotName?: PgCatalog.Types.Text.Options,
 spillTxns?: PgCatalog.Types.Int8.Options,
 spillCount?: PgCatalog.Types.Int8.Options,
@@ -50921,7 +50909,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
 numbackends?: PgCatalog.Types.Int4.Options,
@@ -50996,7 +50984,7 @@ export namespace ConflActiveLogicalslot {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
 conflTablespace?: PgCatalog.Types.Int8.Options,
@@ -51041,7 +51029,7 @@ export namespace SelfTime {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  funcid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 funcname?: PgCatalog.Types.Name.Options,
@@ -51084,7 +51072,7 @@ export namespace SelfTime {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  funcid?: PgCatalog.Types.Oid.Options,
 schemaname?: PgCatalog.Types.Name.Options,
 funcname?: PgCatalog.Types.Name.Options,
@@ -51132,7 +51120,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  archivedCount?: PgCatalog.Types.Int8.Options,
 lastArchivedWal?: PgCatalog.Types.Text.Options,
 lastArchivedTime?: PgCatalog.Types.Timestamptz.Options,
@@ -51201,7 +51189,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  checkpointsTimed?: PgCatalog.Types.Int8.Options,
 checkpointsReq?: PgCatalog.Types.Int8.Options,
 checkpointWriteTime?: PgCatalog.Types.Float8.Options,
@@ -51309,7 +51297,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  backendType?: PgCatalog.Types.Text.Options,
 object?: PgCatalog.Types.Text.Options,
 context?: PgCatalog.Types.Text.Options,
@@ -51379,7 +51367,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  walRecords?: PgCatalog.Types.Int8.Options,
 walFpi?: PgCatalog.Types.Int8.Options,
 walBytes?: PgCatalog.Types.Numeric.Options,
@@ -51455,7 +51443,7 @@ export namespace CurrentChildTableRelid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
@@ -51529,7 +51517,7 @@ export namespace NumDeadTuples {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
@@ -51607,7 +51595,7 @@ export namespace IndexRebuildCount {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
@@ -51706,7 +51694,7 @@ export namespace PartitionsDone {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
@@ -51759,7 +51747,7 @@ export namespace TablespacesStreamed {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 phase?: PgCatalog.Types.Text.Options,
 backupTotal?: PgCatalog.Types.Int8.Options,
@@ -51822,7 +51810,7 @@ export namespace TuplesExcluded {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pid?: PgCatalog.Types.Int4.Options,
 datid?: PgCatalog.Types.Oid.Options,
 datname?: PgCatalog.Types.Name.Options,
@@ -51867,7 +51855,7 @@ export namespace Usename {
 export namespace Umoptions {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  umid?: PgCatalog.Types.Oid.Options,
 srvid?: PgCatalog.Types.Oid.Options,
 srvname?: PgCatalog.Types.Name.Options,
@@ -51900,7 +51888,7 @@ export namespace LocalLsn {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  localId?: PgCatalog.Types.Oid.Options,
 externalId?: PgCatalog.Types.Text.Options,
 remoteLsn?: PgCatalog.Types.PgLsn.Options,
@@ -51936,7 +51924,7 @@ export namespace StatsReset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  subid?: PgCatalog.Types.Oid.Options,
 subname?: PgCatalog.Types.Name.Options,
 applyErrorCount?: PgCatalog.Types.Int8.Options,
@@ -51953,7 +51941,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51971,7 +51959,7 @@ export namespace Pronamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  proname?: PgCatalog.Types.Name.Options,
 proargtypes?: PgCatalog.Types.Oidvector.Options,
 pronamespace?: PgCatalog.Types.Oid.Options
@@ -51983,7 +51971,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -51998,7 +51986,7 @@ export namespace Typnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  typname?: PgCatalog.Types.Name.Options,
 typnamespace?: PgCatalog.Types.Oid.Options
 }
@@ -52014,7 +52002,7 @@ export namespace Attname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  attrelid?: PgCatalog.Types.Oid.Options,
 attname?: PgCatalog.Types.Name.Options
 }
@@ -52030,7 +52018,7 @@ export namespace Attnum {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  attrelid?: PgCatalog.Types.Oid.Options,
 attnum?: PgCatalog.Types.Int2.Options
 }
@@ -52041,7 +52029,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52056,7 +52044,7 @@ export namespace Relnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  relname?: PgCatalog.Types.Name.Options,
 relnamespace?: PgCatalog.Types.Oid.Options
 }
@@ -52072,7 +52060,7 @@ export namespace Relfilenode {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  reltablespace?: PgCatalog.Types.Oid.Options,
 relfilenode?: PgCatalog.Types.Oid.Options
 }
@@ -52088,7 +52076,7 @@ export namespace Adnum {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  adrelid?: PgCatalog.Types.Oid.Options,
 adnum?: PgCatalog.Types.Int2.Options
 }
@@ -52099,7 +52087,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52114,7 +52102,7 @@ export namespace Connamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  conname?: PgCatalog.Types.Name.Options,
 connamespace?: PgCatalog.Types.Oid.Options
 }
@@ -52135,7 +52123,7 @@ export namespace Conname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  conrelid?: PgCatalog.Types.Oid.Options,
 contypid?: PgCatalog.Types.Oid.Options,
 conname?: PgCatalog.Types.Name.Options
@@ -52147,7 +52135,7 @@ export namespace Contypid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  contypid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52157,7 +52145,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52167,7 +52155,7 @@ export namespace Conparentid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  conparentid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52182,7 +52170,7 @@ export namespace Inhseqno {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  inhrelid?: PgCatalog.Types.Oid.Options,
 inhseqno?: PgCatalog.Types.Int4.Options
 }
@@ -52193,7 +52181,7 @@ export namespace Inhparent {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  inhparent?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52203,7 +52191,7 @@ export namespace Indrelid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  indrelid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52213,7 +52201,7 @@ export namespace Indexrelid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  indexrelid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52223,7 +52211,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52248,7 +52236,7 @@ export namespace Oprnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oprname?: PgCatalog.Types.Name.Options,
 oprleft?: PgCatalog.Types.Oid.Options,
 oprright?: PgCatalog.Types.Oid.Options,
@@ -52271,7 +52259,7 @@ export namespace Opfnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  opfmethod?: PgCatalog.Types.Oid.Options,
 opfname?: PgCatalog.Types.Name.Options,
 opfnamespace?: PgCatalog.Types.Oid.Options
@@ -52283,7 +52271,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52303,7 +52291,7 @@ export namespace Opcnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  opcmethod?: PgCatalog.Types.Oid.Options,
 opcname?: PgCatalog.Types.Name.Options,
 opcnamespace?: PgCatalog.Types.Oid.Options
@@ -52315,7 +52303,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52325,7 +52313,7 @@ export namespace Amname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  amname?: PgCatalog.Types.Name.Options
 }
 }
@@ -52335,7 +52323,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52360,7 +52348,7 @@ export namespace Amopstrategy {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  amopfamily?: PgCatalog.Types.Oid.Options,
 amoplefttype?: PgCatalog.Types.Oid.Options,
 amoprighttype?: PgCatalog.Types.Oid.Options,
@@ -52383,7 +52371,7 @@ export namespace Amopfamily {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  amopopr?: PgCatalog.Types.Oid.Options,
 amoppurpose?: PgCatalog.Types.Char.Options,
 amopfamily?: PgCatalog.Types.Oid.Options
@@ -52395,7 +52383,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52420,7 +52408,7 @@ export namespace Amprocnum {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  amprocfamily?: PgCatalog.Types.Oid.Options,
 amproclefttype?: PgCatalog.Types.Oid.Options,
 amprocrighttype?: PgCatalog.Types.Oid.Options,
@@ -52433,7 +52421,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52443,7 +52431,7 @@ export namespace Lanname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  lanname?: PgCatalog.Types.Name.Options
 }
 }
@@ -52453,7 +52441,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52463,7 +52451,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52478,7 +52466,7 @@ export namespace Pageno {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  loid?: PgCatalog.Types.Oid.Options,
 pageno?: PgCatalog.Types.Int4.Options
 }
@@ -52489,7 +52477,7 @@ export namespace Aggfnoid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  aggfnoid?: PgCatalog.Types.Regproc.Options
 }
 }
@@ -52509,7 +52497,7 @@ export namespace Stainherit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  starelid?: PgCatalog.Types.Oid.Options,
 staattnum?: PgCatalog.Types.Int2.Options,
 stainherit?: PgCatalog.Types.Bool.Options
@@ -52521,7 +52509,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52536,7 +52524,7 @@ export namespace Stxnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  stxname?: PgCatalog.Types.Name.Options,
 stxnamespace?: PgCatalog.Types.Oid.Options
 }
@@ -52547,7 +52535,7 @@ export namespace Stxrelid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  stxrelid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52562,7 +52550,7 @@ export namespace Stxdinherit {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  stxoid?: PgCatalog.Types.Oid.Options,
 stxdinherit?: PgCatalog.Types.Bool.Options
 }
@@ -52573,7 +52561,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52588,7 +52576,7 @@ export namespace Rulename {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  evClass?: PgCatalog.Types.Oid.Options,
 rulename?: PgCatalog.Types.Name.Options
 }
@@ -52599,7 +52587,7 @@ export namespace Tgconstraint {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tgconstraint?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52614,7 +52602,7 @@ export namespace Tgname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tgrelid?: PgCatalog.Types.Oid.Options,
 tgname?: PgCatalog.Types.Name.Options
 }
@@ -52625,7 +52613,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52635,7 +52623,7 @@ export namespace Evtname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  evtname?: PgCatalog.Types.Name.Options
 }
 }
@@ -52645,7 +52633,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52665,7 +52653,7 @@ export namespace Objsubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options
@@ -52677,7 +52665,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52692,7 +52680,7 @@ export namespace Casttarget {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  castsource?: PgCatalog.Types.Oid.Options,
 casttarget?: PgCatalog.Types.Oid.Options
 }
@@ -52703,7 +52691,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52718,7 +52706,7 @@ export namespace Enumlabel {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  enumtypid?: PgCatalog.Types.Oid.Options,
 enumlabel?: PgCatalog.Types.Name.Options
 }
@@ -52734,7 +52722,7 @@ export namespace Enumsortorder {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  enumtypid?: PgCatalog.Types.Oid.Options,
 enumsortorder?: PgCatalog.Types.Float4.Options
 }
@@ -52745,7 +52733,7 @@ export namespace Nspname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  nspname?: PgCatalog.Types.Name.Options
 }
 }
@@ -52755,7 +52743,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52780,7 +52768,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  connamespace?: PgCatalog.Types.Oid.Options,
 conforencoding?: PgCatalog.Types.Int4.Options,
 contoencoding?: PgCatalog.Types.Int4.Options,
@@ -52798,7 +52786,7 @@ export namespace Connamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  conname?: PgCatalog.Types.Name.Options,
 connamespace?: PgCatalog.Types.Oid.Options
 }
@@ -52809,7 +52797,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52829,7 +52817,7 @@ export namespace Objsubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  classid?: PgCatalog.Types.Oid.Options,
 objid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options
@@ -52851,7 +52839,7 @@ export namespace Refobjsubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  refclassid?: PgCatalog.Types.Oid.Options,
 refobjid?: PgCatalog.Types.Oid.Options,
 refobjsubid?: PgCatalog.Types.Int4.Options
@@ -52863,7 +52851,7 @@ export namespace Datname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  datname?: PgCatalog.Types.Name.Options
 }
 }
@@ -52873,7 +52861,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52888,7 +52876,7 @@ export namespace Setrole {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  setdatabase?: PgCatalog.Types.Oid.Options,
 setrole?: PgCatalog.Types.Oid.Options
 }
@@ -52899,7 +52887,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52909,7 +52897,7 @@ export namespace Spcname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  spcname?: PgCatalog.Types.Name.Options
 }
 }
@@ -52919,7 +52907,7 @@ export namespace Rolname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rolname?: PgCatalog.Types.Name.Options
 }
 }
@@ -52929,7 +52917,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52939,7 +52927,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -52959,7 +52947,7 @@ export namespace Grantor {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  roleid?: PgCatalog.Types.Oid.Options,
 member?: PgCatalog.Types.Oid.Options,
 grantor?: PgCatalog.Types.Oid.Options
@@ -52981,7 +52969,7 @@ export namespace Grantor {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  member?: PgCatalog.Types.Oid.Options,
 roleid?: PgCatalog.Types.Oid.Options,
 grantor?: PgCatalog.Types.Oid.Options
@@ -52993,7 +52981,7 @@ export namespace Grantor {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53018,7 +53006,7 @@ export namespace Objsubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  dbid?: PgCatalog.Types.Oid.Options,
 classid?: PgCatalog.Types.Oid.Options,
 objid?: PgCatalog.Types.Oid.Options,
@@ -53036,7 +53024,7 @@ export namespace Refobjid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  refclassid?: PgCatalog.Types.Oid.Options,
 refobjid?: PgCatalog.Types.Oid.Options
 }
@@ -53052,7 +53040,7 @@ export namespace Classoid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options
 }
@@ -53068,7 +53056,7 @@ export namespace Cfgnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  cfgname?: PgCatalog.Types.Name.Options,
 cfgnamespace?: PgCatalog.Types.Oid.Options
 }
@@ -53079,7 +53067,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53099,7 +53087,7 @@ export namespace Mapseqno {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  mapcfg?: PgCatalog.Types.Oid.Options,
 maptokentype?: PgCatalog.Types.Int4.Options,
 mapseqno?: PgCatalog.Types.Int4.Options
@@ -53116,7 +53104,7 @@ export namespace Dictnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  dictname?: PgCatalog.Types.Name.Options,
 dictnamespace?: PgCatalog.Types.Oid.Options
 }
@@ -53127,7 +53115,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53142,7 +53130,7 @@ export namespace Prsnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  prsname?: PgCatalog.Types.Name.Options,
 prsnamespace?: PgCatalog.Types.Oid.Options
 }
@@ -53153,7 +53141,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53168,7 +53156,7 @@ export namespace Tmplnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tmplname?: PgCatalog.Types.Name.Options,
 tmplnamespace?: PgCatalog.Types.Oid.Options
 }
@@ -53179,7 +53167,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53189,7 +53177,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53199,7 +53187,7 @@ export namespace Extname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  extname?: PgCatalog.Types.Name.Options
 }
 }
@@ -53209,7 +53197,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53219,7 +53207,7 @@ export namespace Fdwname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  fdwname?: PgCatalog.Types.Name.Options
 }
 }
@@ -53229,7 +53217,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53239,7 +53227,7 @@ export namespace Srvname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  srvname?: PgCatalog.Types.Name.Options
 }
 }
@@ -53249,7 +53237,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53264,7 +53252,7 @@ export namespace Umserver {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  umuser?: PgCatalog.Types.Oid.Options,
 umserver?: PgCatalog.Types.Oid.Options
 }
@@ -53275,7 +53263,7 @@ export namespace Ftrelid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  ftrelid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53285,7 +53273,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53300,7 +53288,7 @@ export namespace Polname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  polrelid?: PgCatalog.Types.Oid.Options,
 polname?: PgCatalog.Types.Name.Options
 }
@@ -53311,7 +53299,7 @@ export namespace Roident {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  roident?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53321,7 +53309,7 @@ export namespace Roname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  roname?: PgCatalog.Types.Text.Options
 }
 }
@@ -53341,7 +53329,7 @@ export namespace Defaclobjtype {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  defaclrole?: PgCatalog.Types.Oid.Options,
 defaclnamespace?: PgCatalog.Types.Oid.Options,
 defaclobjtype?: PgCatalog.Types.Char.Options
@@ -53353,7 +53341,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53373,7 +53361,7 @@ export namespace Objsubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options
@@ -53400,7 +53388,7 @@ export namespace Provider {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 objsubid?: PgCatalog.Types.Int4.Options,
@@ -53423,7 +53411,7 @@ export namespace Provider {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
 classoid?: PgCatalog.Types.Oid.Options,
 provider?: PgCatalog.Types.Text.Options
@@ -53445,7 +53433,7 @@ export namespace Collnamespace {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  collname?: PgCatalog.Types.Name.Options,
 collencoding?: PgCatalog.Types.Int4.Options,
 collnamespace?: PgCatalog.Types.Oid.Options
@@ -53457,7 +53445,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53467,7 +53455,7 @@ export namespace Parname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  parname?: PgCatalog.Types.Text.Options
 }
 }
@@ -53477,7 +53465,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53487,7 +53475,7 @@ export namespace Partrelid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  partrelid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53497,7 +53485,7 @@ export namespace Rngtypid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rngtypid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53507,7 +53495,7 @@ export namespace Rngmultitypid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  rngmultitypid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53517,7 +53505,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53532,7 +53520,7 @@ export namespace Trflang {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  trftype?: PgCatalog.Types.Oid.Options,
 trflang?: PgCatalog.Types.Oid.Options
 }
@@ -53543,7 +53531,7 @@ export namespace Seqrelid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  seqrelid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53553,7 +53541,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53563,7 +53551,7 @@ export namespace Pubname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pubname?: PgCatalog.Types.Name.Options
 }
 }
@@ -53573,7 +53561,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53588,7 +53576,7 @@ export namespace Pnpubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  pnnspid?: PgCatalog.Types.Oid.Options,
 pnpubid?: PgCatalog.Types.Oid.Options
 }
@@ -53599,7 +53587,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53614,7 +53602,7 @@ export namespace Prpubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  prrelid?: PgCatalog.Types.Oid.Options,
 prpubid?: PgCatalog.Types.Oid.Options
 }
@@ -53625,7 +53613,7 @@ export namespace Prpubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  prpubid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53635,7 +53623,7 @@ export namespace Oid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options
 }
 }
@@ -53650,7 +53638,7 @@ export namespace Subname {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  subdbid?: PgCatalog.Types.Oid.Options,
 subname?: PgCatalog.Types.Name.Options
 }
@@ -53666,7 +53654,7 @@ export namespace Srsubid {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  srrelid?: PgCatalog.Types.Oid.Options,
 srsubid?: PgCatalog.Types.Oid.Options
 }
@@ -53837,7 +53825,7 @@ export namespace CatalogName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  catalogName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
@@ -53876,7 +53864,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantee?: InformationSchema.Types.SqlIdentifier.Options,
 roleName?: InformationSchema.Types.SqlIdentifier.Options,
 isGrantable?: InformationSchema.Types.YesOrNo.Options
@@ -53901,7 +53889,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantee?: InformationSchema.Types.SqlIdentifier.Options,
 roleName?: InformationSchema.Types.SqlIdentifier.Options,
 isGrantable?: InformationSchema.Types.YesOrNo.Options
@@ -54066,7 +54054,7 @@ export namespace IsDerivedReferenceAttribute {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
 udtName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54144,7 +54132,7 @@ export namespace DefaultCollateName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  characterSetCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 characterSetSchema?: InformationSchema.Types.SqlIdentifier.Options,
 characterSetName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54189,7 +54177,7 @@ export namespace SpecificName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
 constraintName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54222,7 +54210,7 @@ export namespace CheckClause {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
 constraintName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54253,7 +54241,7 @@ export namespace PadAttribute {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  collationCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 collationSchema?: InformationSchema.Types.SqlIdentifier.Options,
 collationName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54294,7 +54282,7 @@ export namespace CharacterSetName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  collationCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 collationSchema?: InformationSchema.Types.SqlIdentifier.Options,
 collationName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54332,7 +54320,7 @@ export namespace DependentColumn {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54379,7 +54367,7 @@ export namespace ColumnName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  domainCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 domainSchema?: InformationSchema.Types.SqlIdentifier.Options,
 domainName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54433,7 +54421,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54483,7 +54471,7 @@ export namespace ColumnName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
 udtName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54717,7 +54705,7 @@ export namespace IsUpdatable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54803,7 +54791,7 @@ export namespace ConstraintName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54847,7 +54835,7 @@ export namespace ConstraintName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54900,7 +54888,7 @@ export namespace InitiallyDeferred {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
 constraintName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -54945,7 +54933,7 @@ export namespace DomainName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
 udtName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55093,7 +55081,7 @@ export namespace DtdIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  domainCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 domainSchema?: InformationSchema.Types.SqlIdentifier.Options,
 domainName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55132,7 +55120,7 @@ export namespace RoleName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  roleName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
@@ -55185,7 +55173,7 @@ export namespace PositionInUniqueConstraint {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
 constraintName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55361,7 +55349,7 @@ export namespace ParameterDefault {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
 specificName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55445,7 +55433,7 @@ export namespace DeleteRule {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
 constraintName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55501,7 +55489,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55566,7 +55554,7 @@ export namespace ColumnName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
 specificName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55633,7 +55621,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55700,7 +55688,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55747,7 +55735,7 @@ export namespace RoutineName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
 specificName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55805,7 +55793,7 @@ export namespace SequenceName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
 specificName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -55866,7 +55854,7 @@ export namespace TableName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
 specificName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56292,7 +56280,7 @@ export namespace ResultCastDtdIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  specificCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 specificSchema?: InformationSchema.Types.SqlIdentifier.Options,
 specificName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56416,7 +56404,7 @@ export namespace SqlPath {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  catalogName?: InformationSchema.Types.SqlIdentifier.Options,
 schemaName?: InformationSchema.Types.SqlIdentifier.Options,
 schemaOwner?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56490,7 +56478,7 @@ export namespace CycleOption {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  sequenceCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 sequenceSchema?: InformationSchema.Types.SqlIdentifier.Options,
 sequenceName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56544,7 +56532,7 @@ export namespace Comments {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  featureId?: InformationSchema.Types.CharacterData.Options,
 featureName?: InformationSchema.Types.CharacterData.Options,
 subFeatureId?: InformationSchema.Types.CharacterData.Options,
@@ -56583,7 +56571,7 @@ export namespace Comments {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  implementationInfoId?: InformationSchema.Types.CharacterData.Options,
 implementationInfoName?: InformationSchema.Types.CharacterData.Options,
 integerValue?: InformationSchema.Types.CardinalNumber.Options,
@@ -56620,7 +56608,7 @@ export namespace Comments {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  featureId?: InformationSchema.Types.CharacterData.Options,
 featureName?: InformationSchema.Types.CharacterData.Options,
 isSupported?: InformationSchema.Types.YesOrNo.Options,
@@ -56652,7 +56640,7 @@ export namespace Comments {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  sizingId?: InformationSchema.Types.CardinalNumber.Options,
 sizingName?: InformationSchema.Types.CharacterData.Options,
 supportedValue?: InformationSchema.Types.CardinalNumber.Options,
@@ -56718,7 +56706,7 @@ export namespace NullsDistinct {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  constraintCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 constraintSchema?: InformationSchema.Types.SqlIdentifier.Options,
 constraintName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56776,7 +56764,7 @@ export namespace WithHierarchy {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56831,7 +56819,7 @@ export namespace WithHierarchy {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56906,7 +56894,7 @@ export namespace CommitAction {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -56965,7 +56953,7 @@ export namespace TransformType {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 udtSchema?: InformationSchema.Types.SqlIdentifier.Options,
 udtName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57015,7 +57003,7 @@ export namespace EventObjectColumn {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  triggerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 triggerSchema?: InformationSchema.Types.SqlIdentifier.Options,
 triggerName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57114,7 +57102,7 @@ export namespace Created {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  triggerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 triggerSchema?: InformationSchema.Types.SqlIdentifier.Options,
 triggerName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57173,7 +57161,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57222,7 +57210,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 udtCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57276,7 +57264,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 objectCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57331,7 +57319,7 @@ export namespace IsGrantable {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  grantor?: InformationSchema.Types.SqlIdentifier.Options,
 grantee?: InformationSchema.Types.SqlIdentifier.Options,
 objectCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57491,7 +57479,7 @@ export namespace RefDtdIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  userDefinedTypeCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 userDefinedTypeSchema?: InformationSchema.Types.SqlIdentifier.Options,
 userDefinedTypeName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57562,7 +57550,7 @@ export namespace ColumnName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  viewCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 viewSchema?: InformationSchema.Types.SqlIdentifier.Options,
 viewName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57606,7 +57594,7 @@ export namespace SpecificName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57649,7 +57637,7 @@ export namespace TableName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  viewCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 viewSchema?: InformationSchema.Types.SqlIdentifier.Options,
 viewName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57712,7 +57700,7 @@ export namespace IsTriggerInsertableInto {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57754,7 +57742,7 @@ export namespace DtdIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objectCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 objectSchema?: InformationSchema.Types.SqlIdentifier.Options,
 objectName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57911,7 +57899,7 @@ export namespace DtdIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  objectCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 objectSchema?: InformationSchema.Types.SqlIdentifier.Options,
 objectName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -57965,7 +57953,7 @@ export namespace Attname {
 export namespace Attfdwoptions {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  nspname?: PgCatalog.Types.Name.Options,
 relname?: PgCatalog.Types.Name.Options,
 attname?: PgCatalog.Types.Name.Options,
@@ -58003,7 +57991,7 @@ export namespace OptionValue {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  tableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 tableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 tableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -58049,7 +58037,7 @@ export namespace ForeignDataWrapperLanguage {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 fdwowner?: PgCatalog.Types.Oid.Options,
 fdwoptions?: PgCatalog.Types.TextArray.Options,
@@ -58080,7 +58068,7 @@ export namespace OptionValue {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  foreignDataWrapperCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignDataWrapperName?: InformationSchema.Types.SqlIdentifier.Options,
 optionName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -58116,7 +58104,7 @@ export namespace ForeignDataWrapperLanguage {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  foreignDataWrapperCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignDataWrapperName?: InformationSchema.Types.SqlIdentifier.Options,
 authorizationIdentifier?: InformationSchema.Types.SqlIdentifier.Options,
@@ -58171,7 +58159,7 @@ export namespace AuthorizationIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 srvoptions?: PgCatalog.Types.TextArray.Options,
 foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -58204,7 +58192,7 @@ export namespace OptionValue {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignServerName?: InformationSchema.Types.SqlIdentifier.Options,
 optionName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -58250,7 +58238,7 @@ export namespace AuthorizationIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignServerName?: InformationSchema.Types.SqlIdentifier.Options,
 foreignDataWrapperCatalog?: InformationSchema.Types.SqlIdentifier.Options,
@@ -58297,7 +58285,7 @@ export namespace AuthorizationIdentifier {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  foreignTableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignTableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 foreignTableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -58333,7 +58321,7 @@ export namespace OptionValue {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  foreignTableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignTableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 foreignTableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -58370,7 +58358,7 @@ export namespace ForeignServerName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  foreignTableCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignTableSchema?: InformationSchema.Types.SqlIdentifier.Options,
 foreignTableName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -58415,7 +58403,7 @@ export namespace Srvowner {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
 umoptions?: PgCatalog.Types.TextArray.Options,
 umuser?: PgCatalog.Types.Oid.Options,
@@ -58451,7 +58439,7 @@ export namespace OptionValue {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  authorizationIdentifier?: InformationSchema.Types.SqlIdentifier.Options,
 foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignServerName?: InformationSchema.Types.SqlIdentifier.Options,
@@ -58478,7 +58466,7 @@ export namespace ForeignServerName {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  authorizationIdentifier?: InformationSchema.Types.SqlIdentifier.Options,
 foreignServerCatalog?: InformationSchema.Types.SqlIdentifier.Options,
 foreignServerName?: InformationSchema.Types.SqlIdentifier.Options
@@ -58525,7 +58513,7 @@ export namespace SlugId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  slugId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -58538,7 +58526,7 @@ export namespace SlugId {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  slugId?: PgCatalog.Types.Int4.Options
 }
 }
@@ -58551,7 +58539,7 @@ export namespace Argument_0 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Cstring.Options
 }
 }
@@ -58564,7 +58552,7 @@ export type Options = never;
 export namespace Argument_1 {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Float8Array.Options,
 argument_1?: PgCatalog.Types.Float8Array.Options
 }
@@ -58575,7 +58563,7 @@ export namespace Parameters {
 export namespace Argument_0 {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Float8Array.Options
 }
 }
@@ -58587,7 +58575,7 @@ export namespace Argument_0 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options
 }
 }
@@ -58604,7 +58592,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: Public.Types.Cube.Options
 }
@@ -58622,7 +58610,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: Public.Types.Cube.Options
 }
@@ -58640,7 +58628,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: Public.Types.Cube.Options
 }
@@ -58658,7 +58646,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: Public.Types.Cube.Options
 }
@@ -58676,7 +58664,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: Public.Types.Cube.Options
 }
@@ -58694,7 +58682,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: Public.Types.Cube.Options
 }
@@ -58712,7 +58700,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: Public.Types.Cube.Options
 }
@@ -58730,7 +58718,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: Public.Types.Cube.Options
 }
@@ -58748,7 +58736,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: Public.Types.Cube.Options
 }
@@ -58766,7 +58754,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: Public.Types.Cube.Options
 }
@@ -58784,7 +58772,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: Public.Types.Cube.Options
 }
@@ -58802,7 +58790,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: Public.Types.Cube.Options
 }
@@ -58815,7 +58803,7 @@ export namespace Argument_0 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options
 }
 }
@@ -58830,7 +58818,7 @@ export namespace Argument_0 {
 export namespace Argument_1 {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: PgCatalog.Types.Int4Array.Options
 }
@@ -58848,7 +58836,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: Public.Types.Cube.Options
 }
@@ -58866,7 +58854,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: Public.Types.Cube.Options
 }
@@ -58884,7 +58872,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: Public.Types.Cube.Options
 }
@@ -58897,7 +58885,7 @@ export namespace Argument_0 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options
 }
 }
@@ -58914,7 +58902,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: PgCatalog.Types.Int4.Options
 }
@@ -58932,7 +58920,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: PgCatalog.Types.Int4.Options
 }
@@ -58950,7 +58938,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: PgCatalog.Types.Int4.Options
 }
@@ -58968,7 +58956,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: PgCatalog.Types.Int4.Options
 }
@@ -58981,7 +58969,7 @@ export namespace Argument_0 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Float8.Options
 }
 }
@@ -58998,7 +58986,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Float8.Options,
 argument_1?: PgCatalog.Types.Float8.Options
 }
@@ -59016,7 +59004,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: PgCatalog.Types.Float8.Options
 }
@@ -59039,7 +59027,7 @@ export namespace Argument_2 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: PgCatalog.Types.Float8.Options,
 argument_2?: PgCatalog.Types.Float8.Options
@@ -59053,7 +59041,7 @@ export namespace Argument_0 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options
 }
 }
@@ -59075,7 +59063,7 @@ export namespace Argument_2 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: PgCatalog.Types.Float8.Options,
 argument_2?: PgCatalog.Types.Int4.Options
@@ -59109,7 +59097,7 @@ export namespace Argument_4 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Internal.Options,
 argument_1?: Public.Types.Cube.Options,
 argument_2?: PgCatalog.Types.Int2.Options,
@@ -59135,7 +59123,7 @@ export namespace Argument_2 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Internal.Options,
 argument_1?: PgCatalog.Types.Internal.Options,
 argument_2?: PgCatalog.Types.Internal.Options
@@ -59154,7 +59142,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Internal.Options,
 argument_1?: PgCatalog.Types.Internal.Options
 }
@@ -59172,7 +59160,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Internal.Options,
 argument_1?: PgCatalog.Types.Internal.Options
 }
@@ -59195,7 +59183,7 @@ export namespace Argument_2 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options,
 argument_1?: Public.Types.Cube.Options,
 argument_2?: PgCatalog.Types.Internal.Options
@@ -59229,7 +59217,7 @@ export namespace Argument_4 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Internal.Options,
 argument_1?: Public.Types.Cube.Options,
 argument_2?: PgCatalog.Types.Int2.Options,
@@ -59245,7 +59233,7 @@ export namespace Argument_0 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Internal.Options
 }
 }
@@ -59257,7 +59245,7 @@ export namespace Argument_0 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Cube.Options
 }
 }
@@ -59269,7 +59257,7 @@ export namespace Argument_0 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Float4.Options
 }
 }
@@ -59283,7 +59271,7 @@ export namespace Argument_0 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Text.Options
 }
 }
@@ -59300,7 +59288,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Text.Options,
 argument_1?: PgCatalog.Types.Text.Options
 }
@@ -59318,7 +59306,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Text.Options,
 argument_1?: PgCatalog.Types.Text.Options
 }
@@ -59336,7 +59324,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Text.Options,
 argument_1?: PgCatalog.Types.Text.Options
 }
@@ -59354,7 +59342,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Text.Options,
 argument_1?: PgCatalog.Types.Text.Options
 }
@@ -59372,7 +59360,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Text.Options,
 argument_1?: PgCatalog.Types.Text.Options
 }
@@ -59390,7 +59378,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Text.Options,
 argument_1?: PgCatalog.Types.Text.Options
 }
@@ -59408,7 +59396,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Text.Options,
 argument_1?: PgCatalog.Types.Text.Options
 }
@@ -59426,7 +59414,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Text.Options,
 argument_1?: PgCatalog.Types.Text.Options
 }
@@ -59439,7 +59427,7 @@ export namespace Argument_0 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Cstring.Options
 }
 }
@@ -59451,7 +59439,7 @@ export namespace Argument_0 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Gtrgm.Options
 }
 }
@@ -59483,7 +59471,7 @@ export namespace Argument_4 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Internal.Options,
 argument_1?: PgCatalog.Types.Text.Options,
 argument_2?: PgCatalog.Types.Int2.Options,
@@ -59519,7 +59507,7 @@ export namespace Argument_4 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Internal.Options,
 argument_1?: PgCatalog.Types.Text.Options,
 argument_2?: PgCatalog.Types.Int2.Options,
@@ -59535,7 +59523,7 @@ export namespace Argument_0 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Internal.Options
 }
 }
@@ -59547,7 +59535,7 @@ export namespace Argument_0 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Internal.Options
 }
 }
@@ -59569,7 +59557,7 @@ export namespace Argument_2 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Internal.Options,
 argument_1?: PgCatalog.Types.Internal.Options,
 argument_2?: PgCatalog.Types.Internal.Options
@@ -59588,7 +59576,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Internal.Options,
 argument_1?: PgCatalog.Types.Internal.Options
 }
@@ -59606,7 +59594,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Internal.Options,
 argument_1?: PgCatalog.Types.Internal.Options
 }
@@ -59629,7 +59617,7 @@ export namespace Argument_2 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: Public.Types.Gtrgm.Options,
 argument_1?: Public.Types.Gtrgm.Options,
 argument_2?: PgCatalog.Types.Internal.Options
@@ -59648,7 +59636,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Text.Options,
 argument_1?: PgCatalog.Types.Internal.Options
 }
@@ -59691,7 +59679,7 @@ export namespace Argument_6 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Text.Options,
 argument_1?: PgCatalog.Types.Internal.Options,
 argument_2?: PgCatalog.Types.Int2.Options,
@@ -59744,7 +59732,7 @@ export namespace Argument_7 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Internal.Options,
 argument_1?: PgCatalog.Types.Int2.Options,
 argument_2?: PgCatalog.Types.Text.Options,
@@ -59793,7 +59781,7 @@ export namespace Argument_6 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Internal.Options,
 argument_1?: PgCatalog.Types.Int2.Options,
 argument_2?: PgCatalog.Types.Text.Options,
@@ -59816,7 +59804,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Text.Options,
 argument_1?: PgCatalog.Types.Text.Options
 }
@@ -59834,7 +59822,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Text.Options,
 argument_1?: PgCatalog.Types.Text.Options
 }
@@ -59852,7 +59840,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Text.Options,
 argument_1?: PgCatalog.Types.Text.Options
 }
@@ -59870,7 +59858,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Text.Options,
 argument_1?: PgCatalog.Types.Text.Options
 }
@@ -59888,7 +59876,7 @@ export namespace Argument_1 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Text.Options,
 argument_1?: PgCatalog.Types.Text.Options
 }
@@ -59901,7 +59889,7 @@ export namespace Argument_0 {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  argument_0?: PgCatalog.Types.Internal.Options
 }
 }
@@ -59925,7 +59913,7 @@ export namespace At {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  echomessage?: PgCatalog.Types.Text.Options,
 at?: PgCatalog.Types.Timestamptz.Options
 }
@@ -59937,7 +59925,7 @@ export namespace EchoTypeNested {
 export namespace Echoes {
 export type Options = never;
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  echoes?: Api.Types.EchoTypeArray.Options
 }
 }
@@ -59963,7 +59951,7 @@ export namespace Answer {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  question?: PgCatalog.Types.Text.Options,
 answer?: Api.Types.Answer.Options
 }
@@ -59997,7 +59985,7 @@ export namespace RawOffset {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  countryCode?: PgCatalog.Types.Text.Options,
 timeZone?: PgCatalog.Types.Text.Options,
 gmtOffset?: PgCatalog.Types.Float4.Options,
@@ -60019,7 +60007,7 @@ export namespace Point {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  id?: PgCatalog.Types.Uuid.Options,
 point?: PgCatalog.Types.Point.Options
 }
@@ -60038,7 +60026,7 @@ export namespace Line {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  id?: PgCatalog.Types.Uuid.Options,
 line?: PgCatalog.Types.Line.Options
 }
@@ -60057,7 +60045,7 @@ export namespace LineSegment {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  id?: PgCatalog.Types.Uuid.Options,
 lineSegment?: PgCatalog.Types.Lseg.Options
 }
@@ -60076,7 +60064,7 @@ export namespace Box {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  id?: PgCatalog.Types.Uuid.Options,
 box?: PgCatalog.Types.Box.Options
 }
@@ -60095,7 +60083,7 @@ export namespace Path {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  id?: PgCatalog.Types.Uuid.Options,
 path?: PgCatalog.Types.Path.Options
 }
@@ -60114,7 +60102,7 @@ export namespace Polygon {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  id?: PgCatalog.Types.Uuid.Options,
 polygon?: PgCatalog.Types.Polygon.Options
 }
@@ -60133,7 +60121,7 @@ export namespace Circle {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  id?: PgCatalog.Types.Uuid.Options,
 circle?: PgCatalog.Types.Circle.Options
 }
@@ -60147,7 +60135,7 @@ export namespace Answer {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  answer?: Api.Types.Answer.Options
 }
 }
@@ -60157,7 +60145,7 @@ export namespace TimeZone {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  timeZone?: PgCatalog.Types.Text.Options
 }
 }
@@ -60167,7 +60155,7 @@ export namespace TimeZone {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  timeZone?: PgCatalog.Types.Text.Options
 }
 }
@@ -60177,7 +60165,7 @@ export namespace Id {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  id?: PgCatalog.Types.Uuid.Options
 }
 }
@@ -60187,7 +60175,7 @@ export namespace Id {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  id?: PgCatalog.Types.Uuid.Options
 }
 }
@@ -60197,7 +60185,7 @@ export namespace Id {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  id?: PgCatalog.Types.Uuid.Options
 }
 }
@@ -60207,7 +60195,7 @@ export namespace Id {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  id?: PgCatalog.Types.Uuid.Options
 }
 }
@@ -60217,7 +60205,7 @@ export namespace Id {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  id?: PgCatalog.Types.Uuid.Options
 }
 }
@@ -60227,7 +60215,7 @@ export namespace Id {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  id?: PgCatalog.Types.Uuid.Options
 }
 }
@@ -60237,7 +60225,7 @@ export namespace Id {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  id?: PgCatalog.Types.Uuid.Options
 }
 }
@@ -60252,7 +60240,7 @@ export namespace At {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  echomessage?: PgCatalog.Types.Text.Options,
 at?: PgCatalog.Types.Timestamptz.Options
 }
@@ -60266,7 +60254,7 @@ export namespace Message {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  message?: PgCatalog.Types.Text.Options
 }
 }
@@ -60278,7 +60266,7 @@ export namespace Message {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  message?: PgCatalog.Types.Text.Options
 }
 }
@@ -60290,7 +60278,7 @@ export namespace Message {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  message?: PgCatalog.Types.Text.Options
 }
 }
@@ -60302,7 +60290,7 @@ export namespace Message {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  message?: PgCatalog.Types.Text.Options
 }
 }
@@ -60314,7 +60302,7 @@ export namespace Message {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  message?: PgCatalog.Types.Text.Options
 }
 }
@@ -60326,7 +60314,7 @@ export namespace Message {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  message?: PgCatalog.Types.Text.Options
 }
 }
@@ -60338,7 +60326,7 @@ export namespace Message {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  message?: PgCatalog.Types.Text.Options
 }
 }
@@ -60350,7 +60338,7 @@ export namespace Message {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  message?: Api.Types.Answer.Options
 }
 }
@@ -60390,7 +60378,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60406,7 +60394,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60422,7 +60410,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60438,7 +60426,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60454,7 +60442,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60470,7 +60458,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60486,7 +60474,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60502,7 +60490,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60518,7 +60506,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60534,7 +60522,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60550,7 +60538,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60566,7 +60554,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60582,7 +60570,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60598,7 +60586,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60614,7 +60602,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60630,7 +60618,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60646,7 +60634,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60662,7 +60650,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60678,7 +60666,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60694,7 +60682,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60710,7 +60698,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60726,7 +60714,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60742,7 +60730,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60758,7 +60746,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60774,7 +60762,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60790,7 +60778,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60806,7 +60794,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60822,7 +60810,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60838,7 +60826,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60854,7 +60842,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60870,7 +60858,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60886,7 +60874,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60902,7 +60890,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60918,7 +60906,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60934,7 +60922,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60950,7 +60938,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60966,7 +60954,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60982,7 +60970,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -60998,7 +60986,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -61014,7 +61002,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -61030,7 +61018,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -61046,7 +61034,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -61062,7 +61050,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
@@ -61078,7 +61066,7 @@ export namespace ChunkSeq {
       export type Options = never;
     
 }
-export type Options = {
+export type Options = InvokeQueryOptions & {
  chunkId?: PgCatalog.Types.Oid.Options,
 chunkSeq?: PgCatalog.Types.Int4.Options
 }

@@ -1,4 +1,5 @@
 import { Context } from "./context";
+import { InvokeQueryOptions } from "@embracesql/shared";
 import postgres from "postgres";
 
 export { initializeContext } from "./context";
@@ -10,17 +11,6 @@ interface ConstructorOf<T> {
 }
 
 type InvokeQuery<T> = (sql: postgres.Sql) => Promise<T>;
-
-/**
- * Additional options to control running a query on the database.
- */
-export type InvokeQueryOptions = {
-  /**
-   * When greater than 0, retry the query on any error this number
-   * of times.
-   */
-  retries: number;
-};
 
 /**
  * A single postgres database. Inherit from this in generated code.
@@ -103,7 +93,11 @@ export abstract class PostgresDatabase {
    * This provides a hook point for middleware before and after
    * your natural query invocation to interact with the database.
    */
-  async invoke<T>(queryCallback: InvokeQuery<T>): Promise<T> {
+  async invoke<T>(
+    queryCallback: InvokeQuery<T>,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    options?: InvokeQueryOptions,
+  ): Promise<T> {
     return await queryCallback(this.context.sql);
   }
 }

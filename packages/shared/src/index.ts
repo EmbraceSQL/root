@@ -162,9 +162,27 @@ export type PartiallyOptional<T, U> =
 export type OneOrMany<T> = T | T[];
 
 /**
+ * Additional options to control running a query on the database.
+ */
+export type InvokeQueryOptions = {
+  /**
+   * When greater than 0, retry the query on any error this number
+   * of times.
+   */
+  retries?: number;
+  /**
+   * Use the database for security by specifing a `ROLE`.
+   *
+   * The invoked query will run as this `ROLE` rather than as
+   * the database connection string login.
+   */
+  role?: string;
+};
+
+/**
  * Multiple row reading operations have -- options
  */
-export type ReadOptions = {
+export type ReadOptions = InvokeQueryOptions & {
   /**
    * Pagination support, this defines the page size.
    */
