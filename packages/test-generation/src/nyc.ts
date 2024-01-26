@@ -17889,10 +17889,9 @@ export namespace Tables {
 
 async create(values: Partial<Public.Types.SpatialRefSys>, options?: Public.Tables.SpatialRefSys.Options): Promise<Public.Types.SpatialRefSys>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.spatial_ref_sys (srid,auth_name,auth_srid,srtext,proj4text)
     VALUES (${ values.srid === undefined ? sql`DEFAULT` : typed[23](values.srid) },${ values.authName === undefined ? sql`DEFAULT` : typed[1043](values.authName) },${ values.authSrid === undefined ? sql`DEFAULT` : typed[23](values.authSrid) },${ values.srtext === undefined ? sql`DEFAULT` : typed[1043](values.srtext) },${ values.proj4text === undefined ? sql`DEFAULT` : typed[1043](values.proj4text) })
@@ -17901,16 +17900,15 @@ const response = await sql`
       auth_name = EXCLUDED.auth_name,auth_srid = EXCLUDED.auth_srid,srtext = EXCLUDED.srtext,proj4text = EXCLUDED.proj4text
     RETURNING
       srid,auth_name,auth_srid,srtext,proj4text
-    `
+    `);
 return response.map(r => ({ srid: undefinedIsNull(r.srid),authName: undefinedIsNull(r.auth_name),authSrid: undefinedIsNull(r.auth_srid),srtext: undefinedIsNull(r.srtext),proj4text: undefinedIsNull(r.proj4text) }))[0]
 }
 async all(options?: Public.Tables.SpatialRefSys.Options) : Promise<Public.Types.SpatialRefSys[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       srid,auth_name,auth_srid,srtext,proj4text 
     FROM
@@ -17918,7 +17916,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ srid: undefinedIsNull(r.srid),authName: undefinedIsNull(r.auth_name),authSrid: undefinedIsNull(r.auth_srid),srtext: undefinedIsNull(r.srtext),proj4text: undefinedIsNull(r.proj4text) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.SpatialRefSys.SpatialRefSysPkey(this)}
@@ -17936,23 +17934,22 @@ get SpatialRefSysPkey () { return new Public.Tables.SpatialRefSys.SpatialRefSysP
 
 async create(values: Partial<Public.Types.NycCensusBlocks>, options?: Public.Tables.NycCensusBlocks.Options): Promise<Public.Types.NycCensusBlocks>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Public.Tables.NycCensusBlocks.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         public.nyc_census_blocks (blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom)
       VALUES (${ values.blkid === undefined ? sql`DEFAULT` : typed[1043](values.blkid) },${ values.popnTotal === undefined ? sql`DEFAULT` : typed[701](values.popnTotal) },${ values.popnWhite === undefined ? sql`DEFAULT` : typed[701](values.popnWhite) },${ values.popnBlack === undefined ? sql`DEFAULT` : typed[701](values.popnBlack) },${ values.popnNativ === undefined ? sql`DEFAULT` : typed[701](values.popnNativ) },${ values.popnAsian === undefined ? sql`DEFAULT` : typed[701](values.popnAsian) },${ values.popnOther === undefined ? sql`DEFAULT` : typed[701](values.popnOther) },${ values.boroname === undefined ? sql`DEFAULT` : typed[1043](values.boroname) },${ values.geom === undefined ? sql`DEFAULT` : typed[29508](values.geom) })
       RETURNING
         gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom
-    `
+    `);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),blkid: undefinedIsNull(r.blkid),popnTotal: undefinedIsNull(r.popn_total),popnWhite: undefinedIsNull(r.popn_white),popnBlack: undefinedIsNull(r.popn_black),popnNativ: undefinedIsNull(r.popn_nativ),popnAsian: undefinedIsNull(r.popn_asian),popnOther: undefinedIsNull(r.popn_other),boroname: undefinedIsNull(r.boroname),geom: undefinedIsNull(r.geom) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.nyc_census_blocks (gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom)
     VALUES (${ values.gid === undefined ? sql`DEFAULT` : typed[23](values.gid) },${ values.blkid === undefined ? sql`DEFAULT` : typed[1043](values.blkid) },${ values.popnTotal === undefined ? sql`DEFAULT` : typed[701](values.popnTotal) },${ values.popnWhite === undefined ? sql`DEFAULT` : typed[701](values.popnWhite) },${ values.popnBlack === undefined ? sql`DEFAULT` : typed[701](values.popnBlack) },${ values.popnNativ === undefined ? sql`DEFAULT` : typed[701](values.popnNativ) },${ values.popnAsian === undefined ? sql`DEFAULT` : typed[701](values.popnAsian) },${ values.popnOther === undefined ? sql`DEFAULT` : typed[701](values.popnOther) },${ values.boroname === undefined ? sql`DEFAULT` : typed[1043](values.boroname) },${ values.geom === undefined ? sql`DEFAULT` : typed[29508](values.geom) })
@@ -17961,16 +17958,15 @@ const response = await sql`
       blkid = EXCLUDED.blkid,popn_total = EXCLUDED.popn_total,popn_white = EXCLUDED.popn_white,popn_black = EXCLUDED.popn_black,popn_nativ = EXCLUDED.popn_nativ,popn_asian = EXCLUDED.popn_asian,popn_other = EXCLUDED.popn_other,boroname = EXCLUDED.boroname,geom = EXCLUDED.geom
     RETURNING
       gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom
-    `
+    `);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),blkid: undefinedIsNull(r.blkid),popnTotal: undefinedIsNull(r.popn_total),popnWhite: undefinedIsNull(r.popn_white),popnBlack: undefinedIsNull(r.popn_black),popnNativ: undefinedIsNull(r.popn_nativ),popnAsian: undefinedIsNull(r.popn_asian),popnOther: undefinedIsNull(r.popn_other),boroname: undefinedIsNull(r.boroname),geom: undefinedIsNull(r.geom) }))[0]
 }
 async all(options?: Public.Tables.NycCensusBlocks.Options) : Promise<Public.Types.NycCensusBlocks[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom 
     FROM
@@ -17978,7 +17974,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),blkid: undefinedIsNull(r.blkid),popnTotal: undefinedIsNull(r.popn_total),popnWhite: undefinedIsNull(r.popn_white),popnBlack: undefinedIsNull(r.popn_black),popnNativ: undefinedIsNull(r.popn_nativ),popnAsian: undefinedIsNull(r.popn_asian),popnOther: undefinedIsNull(r.popn_other),boroname: undefinedIsNull(r.boroname),geom: undefinedIsNull(r.geom) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.NycCensusBlocks.NycCensusBlocksPkey(this)}
@@ -17998,23 +17994,22 @@ get NycCensusBlocksGeomIdx () { return new Public.Tables.NycCensusBlocks.NycCens
 
 async create(values: Partial<Public.Types.NycHomicides>, options?: Public.Tables.NycHomicides.Options): Promise<Public.Types.NycHomicides>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Public.Tables.NycHomicides.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         public.nyc_homicides (incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom)
       VALUES (${ values.incidentD === undefined ? sql`DEFAULT` : typed[1082](values.incidentD) },${ values.boroname === undefined ? sql`DEFAULT` : typed[1043](values.boroname) },${ values.numVictim === undefined ? sql`DEFAULT` : typed[1043](values.numVictim) },${ values.primaryMo === undefined ? sql`DEFAULT` : typed[1043](values.primaryMo) },${ values.id === undefined ? sql`DEFAULT` : typed[701](values.id) },${ values.weapon === undefined ? sql`DEFAULT` : typed[1043](values.weapon) },${ values.lightDark === undefined ? sql`DEFAULT` : typed[1043](values.lightDark) },${ values.year === undefined ? sql`DEFAULT` : typed[701](values.year) },${ values.geom === undefined ? sql`DEFAULT` : typed[29508](values.geom) })
       RETURNING
         gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom
-    `
+    `);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),incidentD: undefinedIsNull(r.incident_d),boroname: undefinedIsNull(r.boroname),numVictim: undefinedIsNull(r.num_victim),primaryMo: undefinedIsNull(r.primary_mo),id: undefinedIsNull(r.id),weapon: undefinedIsNull(r.weapon),lightDark: undefinedIsNull(r.light_dark),year: undefinedIsNull(r.year),geom: undefinedIsNull(r.geom) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.nyc_homicides (gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom)
     VALUES (${ values.gid === undefined ? sql`DEFAULT` : typed[23](values.gid) },${ values.incidentD === undefined ? sql`DEFAULT` : typed[1082](values.incidentD) },${ values.boroname === undefined ? sql`DEFAULT` : typed[1043](values.boroname) },${ values.numVictim === undefined ? sql`DEFAULT` : typed[1043](values.numVictim) },${ values.primaryMo === undefined ? sql`DEFAULT` : typed[1043](values.primaryMo) },${ values.id === undefined ? sql`DEFAULT` : typed[701](values.id) },${ values.weapon === undefined ? sql`DEFAULT` : typed[1043](values.weapon) },${ values.lightDark === undefined ? sql`DEFAULT` : typed[1043](values.lightDark) },${ values.year === undefined ? sql`DEFAULT` : typed[701](values.year) },${ values.geom === undefined ? sql`DEFAULT` : typed[29508](values.geom) })
@@ -18023,16 +18018,15 @@ const response = await sql`
       incident_d = EXCLUDED.incident_d,boroname = EXCLUDED.boroname,num_victim = EXCLUDED.num_victim,primary_mo = EXCLUDED.primary_mo,id = EXCLUDED.id,weapon = EXCLUDED.weapon,light_dark = EXCLUDED.light_dark,year = EXCLUDED.year,geom = EXCLUDED.geom
     RETURNING
       gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom
-    `
+    `);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),incidentD: undefinedIsNull(r.incident_d),boroname: undefinedIsNull(r.boroname),numVictim: undefinedIsNull(r.num_victim),primaryMo: undefinedIsNull(r.primary_mo),id: undefinedIsNull(r.id),weapon: undefinedIsNull(r.weapon),lightDark: undefinedIsNull(r.light_dark),year: undefinedIsNull(r.year),geom: undefinedIsNull(r.geom) }))[0]
 }
 async all(options?: Public.Tables.NycHomicides.Options) : Promise<Public.Types.NycHomicides[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom 
     FROM
@@ -18040,7 +18034,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),incidentD: undefinedIsNull(r.incident_d),boroname: undefinedIsNull(r.boroname),numVictim: undefinedIsNull(r.num_victim),primaryMo: undefinedIsNull(r.primary_mo),id: undefinedIsNull(r.id),weapon: undefinedIsNull(r.weapon),lightDark: undefinedIsNull(r.light_dark),year: undefinedIsNull(r.year),geom: undefinedIsNull(r.geom) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.NycHomicides.NycHomicidesPkey(this)}
@@ -18060,23 +18054,22 @@ get NycHomicidesGeomIdx () { return new Public.Tables.NycHomicides.NycHomicidesG
 
 async create(values: Partial<Public.Types.NycNeighborhoods>, options?: Public.Tables.NycNeighborhoods.Options): Promise<Public.Types.NycNeighborhoods>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Public.Tables.NycNeighborhoods.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         public.nyc_neighborhoods (boroname,name,geom)
       VALUES (${ values.boroname === undefined ? sql`DEFAULT` : typed[1043](values.boroname) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.geom === undefined ? sql`DEFAULT` : typed[29508](values.geom) })
       RETURNING
         gid,boroname,name,geom
-    `
+    `);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),boroname: undefinedIsNull(r.boroname),name: undefinedIsNull(r.name),geom: undefinedIsNull(r.geom) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.nyc_neighborhoods (gid,boroname,name,geom)
     VALUES (${ values.gid === undefined ? sql`DEFAULT` : typed[23](values.gid) },${ values.boroname === undefined ? sql`DEFAULT` : typed[1043](values.boroname) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.geom === undefined ? sql`DEFAULT` : typed[29508](values.geom) })
@@ -18085,16 +18078,15 @@ const response = await sql`
       boroname = EXCLUDED.boroname,name = EXCLUDED.name,geom = EXCLUDED.geom
     RETURNING
       gid,boroname,name,geom
-    `
+    `);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),boroname: undefinedIsNull(r.boroname),name: undefinedIsNull(r.name),geom: undefinedIsNull(r.geom) }))[0]
 }
 async all(options?: Public.Tables.NycNeighborhoods.Options) : Promise<Public.Types.NycNeighborhoods[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       gid,boroname,name,geom 
     FROM
@@ -18102,7 +18094,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),boroname: undefinedIsNull(r.boroname),name: undefinedIsNull(r.name),geom: undefinedIsNull(r.geom) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.NycNeighborhoods.NycNeighborhoodsPkey(this)}
@@ -18122,23 +18114,22 @@ get NycNeighborhoodsGeomIdx () { return new Public.Tables.NycNeighborhoods.NycNe
 
 async create(values: Partial<Public.Types.NycStreets>, options?: Public.Tables.NycStreets.Options): Promise<Public.Types.NycStreets>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Public.Tables.NycStreets.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         public.nyc_streets (id,name,oneway,type,geom)
       VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[701](values.id) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.oneway === undefined ? sql`DEFAULT` : typed[1043](values.oneway) },${ values.type === undefined ? sql`DEFAULT` : typed[1043](values.type) },${ values.geom === undefined ? sql`DEFAULT` : typed[29508](values.geom) })
       RETURNING
         gid,id,name,oneway,type,geom
-    `
+    `);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),oneway: undefinedIsNull(r.oneway),type: undefinedIsNull(r.type),geom: undefinedIsNull(r.geom) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.nyc_streets (gid,id,name,oneway,type,geom)
     VALUES (${ values.gid === undefined ? sql`DEFAULT` : typed[23](values.gid) },${ values.id === undefined ? sql`DEFAULT` : typed[701](values.id) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.oneway === undefined ? sql`DEFAULT` : typed[1043](values.oneway) },${ values.type === undefined ? sql`DEFAULT` : typed[1043](values.type) },${ values.geom === undefined ? sql`DEFAULT` : typed[29508](values.geom) })
@@ -18147,16 +18138,15 @@ const response = await sql`
       id = EXCLUDED.id,name = EXCLUDED.name,oneway = EXCLUDED.oneway,type = EXCLUDED.type,geom = EXCLUDED.geom
     RETURNING
       gid,id,name,oneway,type,geom
-    `
+    `);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),oneway: undefinedIsNull(r.oneway),type: undefinedIsNull(r.type),geom: undefinedIsNull(r.geom) }))[0]
 }
 async all(options?: Public.Tables.NycStreets.Options) : Promise<Public.Types.NycStreets[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       gid,id,name,oneway,type,geom 
     FROM
@@ -18164,7 +18154,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),oneway: undefinedIsNull(r.oneway),type: undefinedIsNull(r.type),geom: undefinedIsNull(r.geom) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.NycStreets.NycStreetsPkey(this)}
@@ -18184,23 +18174,22 @@ get NycStreetsGeomIdx () { return new Public.Tables.NycStreets.NycStreetsGeomIdx
 
 async create(values: Partial<Public.Types.NycSubwayStations>, options?: Public.Tables.NycSubwayStations.Options): Promise<Public.Types.NycSubwayStations>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Public.Tables.NycSubwayStations.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         public.nyc_subway_stations (objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom)
       VALUES (${ values.objectid === undefined ? sql`DEFAULT` : typed[1700](values.objectid) },${ values.id === undefined ? sql`DEFAULT` : typed[1700](values.id) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.altName === undefined ? sql`DEFAULT` : typed[1043](values.altName) },${ values.crossSt === undefined ? sql`DEFAULT` : typed[1043](values.crossSt) },${ values.longName === undefined ? sql`DEFAULT` : typed[1043](values.longName) },${ values.label === undefined ? sql`DEFAULT` : typed[1043](values.label) },${ values.borough === undefined ? sql`DEFAULT` : typed[1043](values.borough) },${ values.nghbhd === undefined ? sql`DEFAULT` : typed[1043](values.nghbhd) },${ values.routes === undefined ? sql`DEFAULT` : typed[1043](values.routes) },${ values.transfers === undefined ? sql`DEFAULT` : typed[1043](values.transfers) },${ values.color === undefined ? sql`DEFAULT` : typed[1043](values.color) },${ values.express === undefined ? sql`DEFAULT` : typed[1043](values.express) },${ values.closed === undefined ? sql`DEFAULT` : typed[1043](values.closed) },${ values.geom === undefined ? sql`DEFAULT` : typed[29508](values.geom) })
       RETURNING
         gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom
-    `
+    `);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),objectid: undefinedIsNull(r.objectid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),altName: undefinedIsNull(r.alt_name),crossSt: undefinedIsNull(r.cross_st),longName: undefinedIsNull(r.long_name),label: undefinedIsNull(r.label),borough: undefinedIsNull(r.borough),nghbhd: undefinedIsNull(r.nghbhd),routes: undefinedIsNull(r.routes),transfers: undefinedIsNull(r.transfers),color: undefinedIsNull(r.color),express: undefinedIsNull(r.express),closed: undefinedIsNull(r.closed),geom: undefinedIsNull(r.geom) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.nyc_subway_stations (gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom)
     VALUES (${ values.gid === undefined ? sql`DEFAULT` : typed[23](values.gid) },${ values.objectid === undefined ? sql`DEFAULT` : typed[1700](values.objectid) },${ values.id === undefined ? sql`DEFAULT` : typed[1700](values.id) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.altName === undefined ? sql`DEFAULT` : typed[1043](values.altName) },${ values.crossSt === undefined ? sql`DEFAULT` : typed[1043](values.crossSt) },${ values.longName === undefined ? sql`DEFAULT` : typed[1043](values.longName) },${ values.label === undefined ? sql`DEFAULT` : typed[1043](values.label) },${ values.borough === undefined ? sql`DEFAULT` : typed[1043](values.borough) },${ values.nghbhd === undefined ? sql`DEFAULT` : typed[1043](values.nghbhd) },${ values.routes === undefined ? sql`DEFAULT` : typed[1043](values.routes) },${ values.transfers === undefined ? sql`DEFAULT` : typed[1043](values.transfers) },${ values.color === undefined ? sql`DEFAULT` : typed[1043](values.color) },${ values.express === undefined ? sql`DEFAULT` : typed[1043](values.express) },${ values.closed === undefined ? sql`DEFAULT` : typed[1043](values.closed) },${ values.geom === undefined ? sql`DEFAULT` : typed[29508](values.geom) })
@@ -18209,16 +18198,15 @@ const response = await sql`
       objectid = EXCLUDED.objectid,id = EXCLUDED.id,name = EXCLUDED.name,alt_name = EXCLUDED.alt_name,cross_st = EXCLUDED.cross_st,long_name = EXCLUDED.long_name,label = EXCLUDED.label,borough = EXCLUDED.borough,nghbhd = EXCLUDED.nghbhd,routes = EXCLUDED.routes,transfers = EXCLUDED.transfers,color = EXCLUDED.color,express = EXCLUDED.express,closed = EXCLUDED.closed,geom = EXCLUDED.geom
     RETURNING
       gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom
-    `
+    `);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),objectid: undefinedIsNull(r.objectid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),altName: undefinedIsNull(r.alt_name),crossSt: undefinedIsNull(r.cross_st),longName: undefinedIsNull(r.long_name),label: undefinedIsNull(r.label),borough: undefinedIsNull(r.borough),nghbhd: undefinedIsNull(r.nghbhd),routes: undefinedIsNull(r.routes),transfers: undefinedIsNull(r.transfers),color: undefinedIsNull(r.color),express: undefinedIsNull(r.express),closed: undefinedIsNull(r.closed),geom: undefinedIsNull(r.geom) }))[0]
 }
 async all(options?: Public.Tables.NycSubwayStations.Options) : Promise<Public.Types.NycSubwayStations[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom 
     FROM
@@ -18226,7 +18214,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),objectid: undefinedIsNull(r.objectid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),altName: undefinedIsNull(r.alt_name),crossSt: undefinedIsNull(r.cross_st),longName: undefinedIsNull(r.long_name),label: undefinedIsNull(r.label),borough: undefinedIsNull(r.borough),nghbhd: undefinedIsNull(r.nghbhd),routes: undefinedIsNull(r.routes),transfers: undefinedIsNull(r.transfers),color: undefinedIsNull(r.color),express: undefinedIsNull(r.express),closed: undefinedIsNull(r.closed),geom: undefinedIsNull(r.geom) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.NycSubwayStations.NycSubwayStationsPkey(this)}
@@ -18275,10 +18263,9 @@ async update(parameters: Public.Types.SpatialRefSysPkey, values: Partial<Public.
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.spatial_ref_sys 
@@ -18286,20 +18273,19 @@ const response = await sql`
       srid = ${ values.srid === undefined ? sql`srid` : typed[23](values.srid) } , auth_name = ${ values.authName === undefined ? sql`auth_name` : typed[1043](values.authName) } , auth_srid = ${ values.authSrid === undefined ? sql`auth_srid` : typed[23](values.authSrid) } , srtext = ${ values.srtext === undefined ? sql`srtext` : typed[1043](values.srtext) } , proj4text = ${ values.proj4text === undefined ? sql`proj4text` : typed[1043](values.proj4text) } 
     WHERE
       srid = ${ parameters.srid === undefined ? sql`DEFAULT` : typed[23](parameters.srid) }
-    RETURNING srid,auth_name,auth_srid,srtext,proj4text`
+    RETURNING srid,auth_name,auth_srid,srtext,proj4text`);
 return response.map(r => ({ srid: undefinedIsNull(r.srid),authName: undefinedIsNull(r.auth_name),authSrid: undefinedIsNull(r.auth_srid),srtext: undefinedIsNull(r.srtext),proj4text: undefinedIsNull(r.proj4text) }))[0]
 }
 async delete(parameters: Public.Types.SpatialRefSysPkey, options?: Public.Types.SpatialRefSysPkey.Options & Public.Tables.SpatialRefSys.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.spatial_ref_sys 
     WHERE
       srid = ${ parameters.srid === undefined ? sql`DEFAULT` : typed[23](parameters.srid) }
-    RETURNING srid,auth_name,auth_srid,srtext,proj4text`
+    RETURNING srid,auth_name,auth_srid,srtext,proj4text`);
  return response.map(r => ({ srid: undefinedIsNull(r.srid),authName: undefinedIsNull(r.auth_name),authSrid: undefinedIsNull(r.auth_srid),srtext: undefinedIsNull(r.srtext),proj4text: undefinedIsNull(r.proj4text) }))[0]
 }
 }
@@ -18341,10 +18327,9 @@ async update(parameters: Public.Types.NycCensusBlocksPkey, values: Partial<Publi
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.nyc_census_blocks 
@@ -18352,20 +18337,19 @@ const response = await sql`
       gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , blkid = ${ values.blkid === undefined ? sql`blkid` : typed[1043](values.blkid) } , popn_total = ${ values.popnTotal === undefined ? sql`popn_total` : typed[701](values.popnTotal) } , popn_white = ${ values.popnWhite === undefined ? sql`popn_white` : typed[701](values.popnWhite) } , popn_black = ${ values.popnBlack === undefined ? sql`popn_black` : typed[701](values.popnBlack) } , popn_nativ = ${ values.popnNativ === undefined ? sql`popn_nativ` : typed[701](values.popnNativ) } , popn_asian = ${ values.popnAsian === undefined ? sql`popn_asian` : typed[701](values.popnAsian) } , popn_other = ${ values.popnOther === undefined ? sql`popn_other` : typed[701](values.popnOther) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , geom = ${ values.geom === undefined ? sql`geom` : typed[29508](values.geom) } 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
-    RETURNING gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom`
+    RETURNING gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom`);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),blkid: undefinedIsNull(r.blkid),popnTotal: undefinedIsNull(r.popn_total),popnWhite: undefinedIsNull(r.popn_white),popnBlack: undefinedIsNull(r.popn_black),popnNativ: undefinedIsNull(r.popn_nativ),popnAsian: undefinedIsNull(r.popn_asian),popnOther: undefinedIsNull(r.popn_other),boroname: undefinedIsNull(r.boroname),geom: undefinedIsNull(r.geom) }))[0]
 }
 async delete(parameters: Public.Types.NycCensusBlocksPkey, options?: Public.Types.NycCensusBlocksPkey.Options & Public.Tables.NycCensusBlocks.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.nyc_census_blocks 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
-    RETURNING gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom`
+    RETURNING gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom`);
  return response.map(r => ({ gid: undefinedIsNull(r.gid),blkid: undefinedIsNull(r.blkid),popnTotal: undefinedIsNull(r.popn_total),popnWhite: undefinedIsNull(r.popn_white),popnBlack: undefinedIsNull(r.popn_black),popnNativ: undefinedIsNull(r.popn_nativ),popnAsian: undefinedIsNull(r.popn_asian),popnOther: undefinedIsNull(r.popn_other),boroname: undefinedIsNull(r.boroname),geom: undefinedIsNull(r.geom) }))[0]
 }
 }
@@ -18405,10 +18389,9 @@ async update(parameters: Public.Types.NycCensusBlocksGeomIdx, values: Partial<Pu
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.nyc_census_blocks 
@@ -18416,20 +18399,19 @@ const response = await sql`
       gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , blkid = ${ values.blkid === undefined ? sql`blkid` : typed[1043](values.blkid) } , popn_total = ${ values.popnTotal === undefined ? sql`popn_total` : typed[701](values.popnTotal) } , popn_white = ${ values.popnWhite === undefined ? sql`popn_white` : typed[701](values.popnWhite) } , popn_black = ${ values.popnBlack === undefined ? sql`popn_black` : typed[701](values.popnBlack) } , popn_nativ = ${ values.popnNativ === undefined ? sql`popn_nativ` : typed[701](values.popnNativ) } , popn_asian = ${ values.popnAsian === undefined ? sql`popn_asian` : typed[701](values.popnAsian) } , popn_other = ${ values.popnOther === undefined ? sql`popn_other` : typed[701](values.popnOther) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , geom = ${ values.geom === undefined ? sql`geom` : typed[29508](values.geom) } 
     WHERE
       geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[29508](parameters.geom) }
-    RETURNING gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom`
+    RETURNING gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom`);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),blkid: undefinedIsNull(r.blkid),popnTotal: undefinedIsNull(r.popn_total),popnWhite: undefinedIsNull(r.popn_white),popnBlack: undefinedIsNull(r.popn_black),popnNativ: undefinedIsNull(r.popn_nativ),popnAsian: undefinedIsNull(r.popn_asian),popnOther: undefinedIsNull(r.popn_other),boroname: undefinedIsNull(r.boroname),geom: undefinedIsNull(r.geom) }))
 }
 async delete(parameters: Public.Types.NycCensusBlocksGeomIdx, options?: Public.Types.NycCensusBlocksGeomIdx.Options & Public.Tables.NycCensusBlocks.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.nyc_census_blocks 
     WHERE
       geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[29508](parameters.geom) }
-    RETURNING gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom`
+    RETURNING gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom`);
  return response.map(r => ({ gid: undefinedIsNull(r.gid),blkid: undefinedIsNull(r.blkid),popnTotal: undefinedIsNull(r.popn_total),popnWhite: undefinedIsNull(r.popn_white),popnBlack: undefinedIsNull(r.popn_black),popnNativ: undefinedIsNull(r.popn_nativ),popnAsian: undefinedIsNull(r.popn_asian),popnOther: undefinedIsNull(r.popn_other),boroname: undefinedIsNull(r.boroname),geom: undefinedIsNull(r.geom) }))
 }
 }
@@ -18471,10 +18453,9 @@ async update(parameters: Public.Types.NycHomicidesPkey, values: Partial<Public.T
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.nyc_homicides 
@@ -18482,20 +18463,19 @@ const response = await sql`
       gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , incident_d = ${ values.incidentD === undefined ? sql`incident_d` : typed[1082](values.incidentD) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , num_victim = ${ values.numVictim === undefined ? sql`num_victim` : typed[1043](values.numVictim) } , primary_mo = ${ values.primaryMo === undefined ? sql`primary_mo` : typed[1043](values.primaryMo) } , id = ${ values.id === undefined ? sql`id` : typed[701](values.id) } , weapon = ${ values.weapon === undefined ? sql`weapon` : typed[1043](values.weapon) } , light_dark = ${ values.lightDark === undefined ? sql`light_dark` : typed[1043](values.lightDark) } , year = ${ values.year === undefined ? sql`year` : typed[701](values.year) } , geom = ${ values.geom === undefined ? sql`geom` : typed[29508](values.geom) } 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
-    RETURNING gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom`
+    RETURNING gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom`);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),incidentD: undefinedIsNull(r.incident_d),boroname: undefinedIsNull(r.boroname),numVictim: undefinedIsNull(r.num_victim),primaryMo: undefinedIsNull(r.primary_mo),id: undefinedIsNull(r.id),weapon: undefinedIsNull(r.weapon),lightDark: undefinedIsNull(r.light_dark),year: undefinedIsNull(r.year),geom: undefinedIsNull(r.geom) }))[0]
 }
 async delete(parameters: Public.Types.NycHomicidesPkey, options?: Public.Types.NycHomicidesPkey.Options & Public.Tables.NycHomicides.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.nyc_homicides 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
-    RETURNING gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom`
+    RETURNING gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom`);
  return response.map(r => ({ gid: undefinedIsNull(r.gid),incidentD: undefinedIsNull(r.incident_d),boroname: undefinedIsNull(r.boroname),numVictim: undefinedIsNull(r.num_victim),primaryMo: undefinedIsNull(r.primary_mo),id: undefinedIsNull(r.id),weapon: undefinedIsNull(r.weapon),lightDark: undefinedIsNull(r.light_dark),year: undefinedIsNull(r.year),geom: undefinedIsNull(r.geom) }))[0]
 }
 }
@@ -18535,10 +18515,9 @@ async update(parameters: Public.Types.NycHomicidesGeomIdx, values: Partial<Publi
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.nyc_homicides 
@@ -18546,20 +18525,19 @@ const response = await sql`
       gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , incident_d = ${ values.incidentD === undefined ? sql`incident_d` : typed[1082](values.incidentD) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , num_victim = ${ values.numVictim === undefined ? sql`num_victim` : typed[1043](values.numVictim) } , primary_mo = ${ values.primaryMo === undefined ? sql`primary_mo` : typed[1043](values.primaryMo) } , id = ${ values.id === undefined ? sql`id` : typed[701](values.id) } , weapon = ${ values.weapon === undefined ? sql`weapon` : typed[1043](values.weapon) } , light_dark = ${ values.lightDark === undefined ? sql`light_dark` : typed[1043](values.lightDark) } , year = ${ values.year === undefined ? sql`year` : typed[701](values.year) } , geom = ${ values.geom === undefined ? sql`geom` : typed[29508](values.geom) } 
     WHERE
       geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[29508](parameters.geom) }
-    RETURNING gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom`
+    RETURNING gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom`);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),incidentD: undefinedIsNull(r.incident_d),boroname: undefinedIsNull(r.boroname),numVictim: undefinedIsNull(r.num_victim),primaryMo: undefinedIsNull(r.primary_mo),id: undefinedIsNull(r.id),weapon: undefinedIsNull(r.weapon),lightDark: undefinedIsNull(r.light_dark),year: undefinedIsNull(r.year),geom: undefinedIsNull(r.geom) }))
 }
 async delete(parameters: Public.Types.NycHomicidesGeomIdx, options?: Public.Types.NycHomicidesGeomIdx.Options & Public.Tables.NycHomicides.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.nyc_homicides 
     WHERE
       geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[29508](parameters.geom) }
-    RETURNING gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom`
+    RETURNING gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom`);
  return response.map(r => ({ gid: undefinedIsNull(r.gid),incidentD: undefinedIsNull(r.incident_d),boroname: undefinedIsNull(r.boroname),numVictim: undefinedIsNull(r.num_victim),primaryMo: undefinedIsNull(r.primary_mo),id: undefinedIsNull(r.id),weapon: undefinedIsNull(r.weapon),lightDark: undefinedIsNull(r.light_dark),year: undefinedIsNull(r.year),geom: undefinedIsNull(r.geom) }))
 }
 }
@@ -18601,10 +18579,9 @@ async update(parameters: Public.Types.NycNeighborhoodsPkey, values: Partial<Publ
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.nyc_neighborhoods 
@@ -18612,20 +18589,19 @@ const response = await sql`
       gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , geom = ${ values.geom === undefined ? sql`geom` : typed[29508](values.geom) } 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
-    RETURNING gid,boroname,name,geom`
+    RETURNING gid,boroname,name,geom`);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),boroname: undefinedIsNull(r.boroname),name: undefinedIsNull(r.name),geom: undefinedIsNull(r.geom) }))[0]
 }
 async delete(parameters: Public.Types.NycNeighborhoodsPkey, options?: Public.Types.NycNeighborhoodsPkey.Options & Public.Tables.NycNeighborhoods.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.nyc_neighborhoods 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
-    RETURNING gid,boroname,name,geom`
+    RETURNING gid,boroname,name,geom`);
  return response.map(r => ({ gid: undefinedIsNull(r.gid),boroname: undefinedIsNull(r.boroname),name: undefinedIsNull(r.name),geom: undefinedIsNull(r.geom) }))[0]
 }
 }
@@ -18665,10 +18641,9 @@ async update(parameters: Public.Types.NycNeighborhoodsGeomIdx, values: Partial<P
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.nyc_neighborhoods 
@@ -18676,20 +18651,19 @@ const response = await sql`
       gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , geom = ${ values.geom === undefined ? sql`geom` : typed[29508](values.geom) } 
     WHERE
       geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[29508](parameters.geom) }
-    RETURNING gid,boroname,name,geom`
+    RETURNING gid,boroname,name,geom`);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),boroname: undefinedIsNull(r.boroname),name: undefinedIsNull(r.name),geom: undefinedIsNull(r.geom) }))
 }
 async delete(parameters: Public.Types.NycNeighborhoodsGeomIdx, options?: Public.Types.NycNeighborhoodsGeomIdx.Options & Public.Tables.NycNeighborhoods.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.nyc_neighborhoods 
     WHERE
       geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[29508](parameters.geom) }
-    RETURNING gid,boroname,name,geom`
+    RETURNING gid,boroname,name,geom`);
  return response.map(r => ({ gid: undefinedIsNull(r.gid),boroname: undefinedIsNull(r.boroname),name: undefinedIsNull(r.name),geom: undefinedIsNull(r.geom) }))
 }
 }
@@ -18731,10 +18705,9 @@ async update(parameters: Public.Types.NycStreetsPkey, values: Partial<Public.Tab
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.nyc_streets 
@@ -18742,20 +18715,19 @@ const response = await sql`
       gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , id = ${ values.id === undefined ? sql`id` : typed[701](values.id) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , oneway = ${ values.oneway === undefined ? sql`oneway` : typed[1043](values.oneway) } , type = ${ values.type === undefined ? sql`type` : typed[1043](values.type) } , geom = ${ values.geom === undefined ? sql`geom` : typed[29508](values.geom) } 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
-    RETURNING gid,id,name,oneway,type,geom`
+    RETURNING gid,id,name,oneway,type,geom`);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),oneway: undefinedIsNull(r.oneway),type: undefinedIsNull(r.type),geom: undefinedIsNull(r.geom) }))[0]
 }
 async delete(parameters: Public.Types.NycStreetsPkey, options?: Public.Types.NycStreetsPkey.Options & Public.Tables.NycStreets.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.nyc_streets 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
-    RETURNING gid,id,name,oneway,type,geom`
+    RETURNING gid,id,name,oneway,type,geom`);
  return response.map(r => ({ gid: undefinedIsNull(r.gid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),oneway: undefinedIsNull(r.oneway),type: undefinedIsNull(r.type),geom: undefinedIsNull(r.geom) }))[0]
 }
 }
@@ -18795,10 +18767,9 @@ async update(parameters: Public.Types.NycStreetsGeomIdx, values: Partial<Public.
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.nyc_streets 
@@ -18806,20 +18777,19 @@ const response = await sql`
       gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , id = ${ values.id === undefined ? sql`id` : typed[701](values.id) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , oneway = ${ values.oneway === undefined ? sql`oneway` : typed[1043](values.oneway) } , type = ${ values.type === undefined ? sql`type` : typed[1043](values.type) } , geom = ${ values.geom === undefined ? sql`geom` : typed[29508](values.geom) } 
     WHERE
       geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[29508](parameters.geom) }
-    RETURNING gid,id,name,oneway,type,geom`
+    RETURNING gid,id,name,oneway,type,geom`);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),oneway: undefinedIsNull(r.oneway),type: undefinedIsNull(r.type),geom: undefinedIsNull(r.geom) }))
 }
 async delete(parameters: Public.Types.NycStreetsGeomIdx, options?: Public.Types.NycStreetsGeomIdx.Options & Public.Tables.NycStreets.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.nyc_streets 
     WHERE
       geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[29508](parameters.geom) }
-    RETURNING gid,id,name,oneway,type,geom`
+    RETURNING gid,id,name,oneway,type,geom`);
  return response.map(r => ({ gid: undefinedIsNull(r.gid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),oneway: undefinedIsNull(r.oneway),type: undefinedIsNull(r.type),geom: undefinedIsNull(r.geom) }))
 }
 }
@@ -18861,10 +18831,9 @@ async update(parameters: Public.Types.NycSubwayStationsPkey, values: Partial<Pub
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.nyc_subway_stations 
@@ -18872,20 +18841,19 @@ const response = await sql`
       gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , objectid = ${ values.objectid === undefined ? sql`objectid` : typed[1700](values.objectid) } , id = ${ values.id === undefined ? sql`id` : typed[1700](values.id) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , alt_name = ${ values.altName === undefined ? sql`alt_name` : typed[1043](values.altName) } , cross_st = ${ values.crossSt === undefined ? sql`cross_st` : typed[1043](values.crossSt) } , long_name = ${ values.longName === undefined ? sql`long_name` : typed[1043](values.longName) } , label = ${ values.label === undefined ? sql`label` : typed[1043](values.label) } , borough = ${ values.borough === undefined ? sql`borough` : typed[1043](values.borough) } , nghbhd = ${ values.nghbhd === undefined ? sql`nghbhd` : typed[1043](values.nghbhd) } , routes = ${ values.routes === undefined ? sql`routes` : typed[1043](values.routes) } , transfers = ${ values.transfers === undefined ? sql`transfers` : typed[1043](values.transfers) } , color = ${ values.color === undefined ? sql`color` : typed[1043](values.color) } , express = ${ values.express === undefined ? sql`express` : typed[1043](values.express) } , closed = ${ values.closed === undefined ? sql`closed` : typed[1043](values.closed) } , geom = ${ values.geom === undefined ? sql`geom` : typed[29508](values.geom) } 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
-    RETURNING gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom`
+    RETURNING gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom`);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),objectid: undefinedIsNull(r.objectid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),altName: undefinedIsNull(r.alt_name),crossSt: undefinedIsNull(r.cross_st),longName: undefinedIsNull(r.long_name),label: undefinedIsNull(r.label),borough: undefinedIsNull(r.borough),nghbhd: undefinedIsNull(r.nghbhd),routes: undefinedIsNull(r.routes),transfers: undefinedIsNull(r.transfers),color: undefinedIsNull(r.color),express: undefinedIsNull(r.express),closed: undefinedIsNull(r.closed),geom: undefinedIsNull(r.geom) }))[0]
 }
 async delete(parameters: Public.Types.NycSubwayStationsPkey, options?: Public.Types.NycSubwayStationsPkey.Options & Public.Tables.NycSubwayStations.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.nyc_subway_stations 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
-    RETURNING gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom`
+    RETURNING gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom`);
  return response.map(r => ({ gid: undefinedIsNull(r.gid),objectid: undefinedIsNull(r.objectid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),altName: undefinedIsNull(r.alt_name),crossSt: undefinedIsNull(r.cross_st),longName: undefinedIsNull(r.long_name),label: undefinedIsNull(r.label),borough: undefinedIsNull(r.borough),nghbhd: undefinedIsNull(r.nghbhd),routes: undefinedIsNull(r.routes),transfers: undefinedIsNull(r.transfers),color: undefinedIsNull(r.color),express: undefinedIsNull(r.express),closed: undefinedIsNull(r.closed),geom: undefinedIsNull(r.geom) }))[0]
 }
 }
@@ -18925,10 +18893,9 @@ async update(parameters: Public.Types.NycSubwayStationsGeomIdx, values: Partial<
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.nyc_subway_stations 
@@ -18936,20 +18903,19 @@ const response = await sql`
       gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , objectid = ${ values.objectid === undefined ? sql`objectid` : typed[1700](values.objectid) } , id = ${ values.id === undefined ? sql`id` : typed[1700](values.id) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , alt_name = ${ values.altName === undefined ? sql`alt_name` : typed[1043](values.altName) } , cross_st = ${ values.crossSt === undefined ? sql`cross_st` : typed[1043](values.crossSt) } , long_name = ${ values.longName === undefined ? sql`long_name` : typed[1043](values.longName) } , label = ${ values.label === undefined ? sql`label` : typed[1043](values.label) } , borough = ${ values.borough === undefined ? sql`borough` : typed[1043](values.borough) } , nghbhd = ${ values.nghbhd === undefined ? sql`nghbhd` : typed[1043](values.nghbhd) } , routes = ${ values.routes === undefined ? sql`routes` : typed[1043](values.routes) } , transfers = ${ values.transfers === undefined ? sql`transfers` : typed[1043](values.transfers) } , color = ${ values.color === undefined ? sql`color` : typed[1043](values.color) } , express = ${ values.express === undefined ? sql`express` : typed[1043](values.express) } , closed = ${ values.closed === undefined ? sql`closed` : typed[1043](values.closed) } , geom = ${ values.geom === undefined ? sql`geom` : typed[29508](values.geom) } 
     WHERE
       geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[29508](parameters.geom) }
-    RETURNING gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom`
+    RETURNING gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom`);
 return response.map(r => ({ gid: undefinedIsNull(r.gid),objectid: undefinedIsNull(r.objectid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),altName: undefinedIsNull(r.alt_name),crossSt: undefinedIsNull(r.cross_st),longName: undefinedIsNull(r.long_name),label: undefinedIsNull(r.label),borough: undefinedIsNull(r.borough),nghbhd: undefinedIsNull(r.nghbhd),routes: undefinedIsNull(r.routes),transfers: undefinedIsNull(r.transfers),color: undefinedIsNull(r.color),express: undefinedIsNull(r.express),closed: undefinedIsNull(r.closed),geom: undefinedIsNull(r.geom) }))
 }
 async delete(parameters: Public.Types.NycSubwayStationsGeomIdx, options?: Public.Types.NycSubwayStationsGeomIdx.Options & Public.Tables.NycSubwayStations.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.nyc_subway_stations 
     WHERE
       geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[29508](parameters.geom) }
-    RETURNING gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom`
+    RETURNING gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom`);
  return response.map(r => ({ gid: undefinedIsNull(r.gid),objectid: undefinedIsNull(r.objectid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),altName: undefinedIsNull(r.alt_name),crossSt: undefinedIsNull(r.cross_st),longName: undefinedIsNull(r.long_name),label: undefinedIsNull(r.label),borough: undefinedIsNull(r.borough),nghbhd: undefinedIsNull(r.nghbhd),routes: undefinedIsNull(r.routes),transfers: undefinedIsNull(r.transfers),color: undefinedIsNull(r.color),express: undefinedIsNull(r.express),closed: undefinedIsNull(r.closed),geom: undefinedIsNull(r.geom) }))
 }
 }

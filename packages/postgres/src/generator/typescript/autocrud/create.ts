@@ -15,8 +15,7 @@ export const CreateOperation = {
     );
     generationBuffer.push(
       `
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       `,
     );
     const allSqlColumnNames = node.table.allColumns
@@ -45,7 +44,9 @@ export const CreateOperation = {
       RETURNING
         ${allSqlColumnNames}
     `;
-      generationBuffer.push(`const response = await sql\`${sql}\``);
+      generationBuffer.push(
+        `const response = await this.database.invoke( (sql) => sql\`${sql}\`);`,
+      );
 
       generationBuffer.push(
         `return ${postgresToTypescript(context, node.table.type)}[0]`,
@@ -73,7 +74,9 @@ export const CreateOperation = {
       ${allSqlColumnNames}
     `;
     // run that SQL
-    generationBuffer.push(`const response = await sql\`${sql}\``);
+    generationBuffer.push(
+      `const response = await this.database.invoke( (sql) => sql\`${sql}\`);`,
+    );
 
     generationBuffer.push(
       `return ${postgresToTypescript(context, node.table.type)}[0]`,

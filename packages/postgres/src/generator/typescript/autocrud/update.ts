@@ -38,8 +38,7 @@ export const UpdateOperation = {
       `
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       `,
     );
     // query using postgres driver bindings to the index
@@ -53,7 +52,9 @@ export const UpdateOperation = {
       ${sqlPredicate(context, node.index, PARAMETERS)}
     RETURNING ${sqlColumnNames}`;
 
-    generationBuffer.push(`const response = await sql\`${sql}\``);
+    generationBuffer.push(
+      `const response = await this.database.invoke( (sql) => sql\`${sql}\`);`,
+    );
 
     generationBuffer.push(
       `return ${postgresToTypescript(context, node.index.table.type)}${

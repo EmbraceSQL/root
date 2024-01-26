@@ -29,9 +29,8 @@ export const DeleteOperation = {
     return [
       `async ${node.typescriptPropertyName}(${parameters}, ${options}) {`,
       ` console.assert(parameters);`,
-      ` const sql = this.database.context.sql;`,
-      ` const typed = sql.typed as unknown as PostgresTypecasts;`,
-      ` const response = await sql\`${sql}\``,
+      ` const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;`,
+      ` const response = await this.database.invoke( (sql) => sql\`${sql}\`);`,
       ` return ${postgresToTypescript(context, node.index.table.type)}${
         node.index.unique ? "[0]" : ""
       }`,

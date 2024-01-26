@@ -2161,10 +2161,9 @@ export namespace Tables {
 
 async create(values: Partial<Public.Types.FilmActor>, options?: Public.Tables.FilmActor.Options): Promise<Public.Types.FilmActor>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.film_actor (actor_id,film_id,last_update)
     VALUES (${ values.actorId === undefined ? sql`DEFAULT` : typed[21](values.actorId) },${ values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
@@ -2173,16 +2172,15 @@ const response = await sql`
       last_update = EXCLUDED.last_update
     RETURNING
       actor_id,film_id,last_update
-    `
+    `);
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async all(options?: Public.Tables.FilmActor.Options) : Promise<Public.Types.FilmActor[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       actor_id,film_id,last_update 
     FROM
@@ -2190,7 +2188,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.FilmActor.FilmActorPkey(this)}
@@ -2210,23 +2208,22 @@ get IdxFkFilmId () { return new Public.Tables.FilmActor.IdxFkFilmId(this)}
 
 async create(values: Partial<Public.Types.Address>, options?: Public.Tables.Address.Options): Promise<Public.Types.Address>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Public.Tables.Address.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         public.address (address,address2,district,city_id,postal_code,phone,last_update)
       VALUES (${ values.address === undefined ? sql`DEFAULT` : typed[1043](values.address) },${ values.address2 === undefined ? sql`DEFAULT` : typed[1043](values.address2) },${ values.district === undefined ? sql`DEFAULT` : typed[1043](values.district) },${ values.cityId === undefined ? sql`DEFAULT` : typed[21](values.cityId) },${ values.postalCode === undefined ? sql`DEFAULT` : typed[1043](values.postalCode) },${ values.phone === undefined ? sql`DEFAULT` : typed[1043](values.phone) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
       RETURNING
         address_id,address,address2,district,city_id,postal_code,phone,last_update
-    `
+    `);
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.address (address_id,address,address2,district,city_id,postal_code,phone,last_update)
     VALUES (${ values.addressId === undefined ? sql`DEFAULT` : typed[23](values.addressId) },${ values.address === undefined ? sql`DEFAULT` : typed[1043](values.address) },${ values.address2 === undefined ? sql`DEFAULT` : typed[1043](values.address2) },${ values.district === undefined ? sql`DEFAULT` : typed[1043](values.district) },${ values.cityId === undefined ? sql`DEFAULT` : typed[21](values.cityId) },${ values.postalCode === undefined ? sql`DEFAULT` : typed[1043](values.postalCode) },${ values.phone === undefined ? sql`DEFAULT` : typed[1043](values.phone) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
@@ -2235,16 +2232,15 @@ const response = await sql`
       address = EXCLUDED.address,address2 = EXCLUDED.address2,district = EXCLUDED.district,city_id = EXCLUDED.city_id,postal_code = EXCLUDED.postal_code,phone = EXCLUDED.phone,last_update = EXCLUDED.last_update
     RETURNING
       address_id,address,address2,district,city_id,postal_code,phone,last_update
-    `
+    `);
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async all(options?: Public.Tables.Address.Options) : Promise<Public.Types.Address[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       address_id,address,address2,district,city_id,postal_code,phone,last_update 
     FROM
@@ -2252,7 +2248,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Address.AddressPkey(this)}
@@ -2272,23 +2268,22 @@ get IdxFkCityId () { return new Public.Tables.Address.IdxFkCityId(this)}
 
 async create(values: Partial<Public.Types.City>, options?: Public.Tables.City.Options): Promise<Public.Types.City>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Public.Tables.City.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         public.city (city,country_id,last_update)
       VALUES (${ values.city === undefined ? sql`DEFAULT` : typed[1043](values.city) },${ values.countryId === undefined ? sql`DEFAULT` : typed[21](values.countryId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
       RETURNING
         city_id,city,country_id,last_update
-    `
+    `);
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.city (city_id,city,country_id,last_update)
     VALUES (${ values.cityId === undefined ? sql`DEFAULT` : typed[23](values.cityId) },${ values.city === undefined ? sql`DEFAULT` : typed[1043](values.city) },${ values.countryId === undefined ? sql`DEFAULT` : typed[21](values.countryId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
@@ -2297,16 +2292,15 @@ const response = await sql`
       city = EXCLUDED.city,country_id = EXCLUDED.country_id,last_update = EXCLUDED.last_update
     RETURNING
       city_id,city,country_id,last_update
-    `
+    `);
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async all(options?: Public.Tables.City.Options) : Promise<Public.Types.City[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       city_id,city,country_id,last_update 
     FROM
@@ -2314,7 +2308,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.City.CityPkey(this)}
@@ -2334,23 +2328,22 @@ get IdxFkCountryId () { return new Public.Tables.City.IdxFkCountryId(this)}
 
 async create(values: Partial<Public.Types.Customer>, options?: Public.Tables.Customer.Options): Promise<Public.Types.Customer>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Public.Tables.Customer.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         public.customer (store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active)
       VALUES (${ values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId) },${ values.firstName === undefined ? sql`DEFAULT` : typed[1043](values.firstName) },${ values.lastName === undefined ? sql`DEFAULT` : typed[1043](values.lastName) },${ values.email === undefined ? sql`DEFAULT` : typed[1043](values.email) },${ values.addressId === undefined ? sql`DEFAULT` : typed[21](values.addressId) },${ values.activebool === undefined ? sql`DEFAULT` : typed[16](values.activebool) },${ values.createDate === undefined ? sql`DEFAULT` : typed[1082](values.createDate) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.active === undefined ? sql`DEFAULT` : typed[23](values.active) })
       RETURNING
         customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active
-    `
+    `);
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.customer (customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active)
     VALUES (${ values.customerId === undefined ? sql`DEFAULT` : typed[23](values.customerId) },${ values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId) },${ values.firstName === undefined ? sql`DEFAULT` : typed[1043](values.firstName) },${ values.lastName === undefined ? sql`DEFAULT` : typed[1043](values.lastName) },${ values.email === undefined ? sql`DEFAULT` : typed[1043](values.email) },${ values.addressId === undefined ? sql`DEFAULT` : typed[21](values.addressId) },${ values.activebool === undefined ? sql`DEFAULT` : typed[16](values.activebool) },${ values.createDate === undefined ? sql`DEFAULT` : typed[1082](values.createDate) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.active === undefined ? sql`DEFAULT` : typed[23](values.active) })
@@ -2359,16 +2352,15 @@ const response = await sql`
       store_id = EXCLUDED.store_id,first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,email = EXCLUDED.email,address_id = EXCLUDED.address_id,activebool = EXCLUDED.activebool,create_date = EXCLUDED.create_date,last_update = EXCLUDED.last_update,active = EXCLUDED.active
     RETURNING
       customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active
-    `
+    `);
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))[0]
 }
 async all(options?: Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
     FROM
@@ -2376,7 +2368,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Customer.CustomerPkey(this)}
@@ -2400,23 +2392,22 @@ get IdxLastName () { return new Public.Tables.Customer.IdxLastName(this)}
 
 async create(values: Partial<Public.Types.Actor>, options?: Public.Tables.Actor.Options): Promise<Public.Types.Actor>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Public.Tables.Actor.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         public.actor (first_name,last_name,last_update)
       VALUES (${ values.firstName === undefined ? sql`DEFAULT` : typed[1043](values.firstName) },${ values.lastName === undefined ? sql`DEFAULT` : typed[1043](values.lastName) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
       RETURNING
         actor_id,first_name,last_name,last_update
-    `
+    `);
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.actor (actor_id,first_name,last_name,last_update)
     VALUES (${ values.actorId === undefined ? sql`DEFAULT` : typed[23](values.actorId) },${ values.firstName === undefined ? sql`DEFAULT` : typed[1043](values.firstName) },${ values.lastName === undefined ? sql`DEFAULT` : typed[1043](values.lastName) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
@@ -2425,16 +2416,15 @@ const response = await sql`
       first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,last_update = EXCLUDED.last_update
     RETURNING
       actor_id,first_name,last_name,last_update
-    `
+    `);
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async all(options?: Public.Tables.Actor.Options) : Promise<Public.Types.Actor[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       actor_id,first_name,last_name,last_update 
     FROM
@@ -2442,7 +2432,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Actor.ActorPkey(this)}
@@ -2462,10 +2452,9 @@ get IdxActorLastName () { return new Public.Tables.Actor.IdxActorLastName(this)}
 
 async create(values: Partial<Public.Types.FilmCategory>, options?: Public.Tables.FilmCategory.Options): Promise<Public.Types.FilmCategory>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.film_category (film_id,category_id,last_update)
     VALUES (${ values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId) },${ values.categoryId === undefined ? sql`DEFAULT` : typed[21](values.categoryId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
@@ -2474,16 +2463,15 @@ const response = await sql`
       last_update = EXCLUDED.last_update
     RETURNING
       film_id,category_id,last_update
-    `
+    `);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undefinedIsNull(r.category_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async all(options?: Public.Tables.FilmCategory.Options) : Promise<Public.Types.FilmCategory[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       film_id,category_id,last_update 
     FROM
@@ -2491,7 +2479,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undefinedIsNull(r.category_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.FilmCategory.FilmCategoryPkey(this)}
@@ -2509,23 +2497,22 @@ get FilmCategoryPkey () { return new Public.Tables.FilmCategory.FilmCategoryPkey
 
 async create(values: Partial<Public.Types.Inventory>, options?: Public.Tables.Inventory.Options): Promise<Public.Types.Inventory>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Public.Tables.Inventory.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         public.inventory (film_id,store_id,last_update)
       VALUES (${ values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId) },${ values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
       RETURNING
         inventory_id,film_id,store_id,last_update
-    `
+    `);
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.inventory (inventory_id,film_id,store_id,last_update)
     VALUES (${ values.inventoryId === undefined ? sql`DEFAULT` : typed[23](values.inventoryId) },${ values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId) },${ values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
@@ -2534,16 +2521,15 @@ const response = await sql`
       film_id = EXCLUDED.film_id,store_id = EXCLUDED.store_id,last_update = EXCLUDED.last_update
     RETURNING
       inventory_id,film_id,store_id,last_update
-    `
+    `);
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async all(options?: Public.Tables.Inventory.Options) : Promise<Public.Types.Inventory[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       inventory_id,film_id,store_id,last_update 
     FROM
@@ -2551,7 +2537,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Inventory.InventoryPkey(this)}
@@ -2571,23 +2557,22 @@ get IdxStoreIdFilmId () { return new Public.Tables.Inventory.IdxStoreIdFilmId(th
 
 async create(values: Partial<Public.Types.Category>, options?: Public.Tables.Category.Options): Promise<Public.Types.Category>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Public.Tables.Category.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         public.category (name,last_update)
       VALUES (${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
       RETURNING
         category_id,name,last_update
-    `
+    `);
 return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.category (category_id,name,last_update)
     VALUES (${ values.categoryId === undefined ? sql`DEFAULT` : typed[23](values.categoryId) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
@@ -2596,16 +2581,15 @@ const response = await sql`
       name = EXCLUDED.name,last_update = EXCLUDED.last_update
     RETURNING
       category_id,name,last_update
-    `
+    `);
 return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async all(options?: Public.Tables.Category.Options) : Promise<Public.Types.Category[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       category_id,name,last_update 
     FROM
@@ -2613,7 +2597,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Category.CategoryPkey(this)}
@@ -2631,23 +2615,22 @@ get CategoryPkey () { return new Public.Tables.Category.CategoryPkey(this)}
 
 async create(values: Partial<Public.Types.Country>, options?: Public.Tables.Country.Options): Promise<Public.Types.Country>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Public.Tables.Country.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         public.country (country,last_update)
       VALUES (${ values.country === undefined ? sql`DEFAULT` : typed[1043](values.country) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
       RETURNING
         country_id,country,last_update
-    `
+    `);
 return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.country (country_id,country,last_update)
     VALUES (${ values.countryId === undefined ? sql`DEFAULT` : typed[23](values.countryId) },${ values.country === undefined ? sql`DEFAULT` : typed[1043](values.country) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
@@ -2656,16 +2639,15 @@ const response = await sql`
       country = EXCLUDED.country,last_update = EXCLUDED.last_update
     RETURNING
       country_id,country,last_update
-    `
+    `);
 return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async all(options?: Public.Tables.Country.Options) : Promise<Public.Types.Country[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       country_id,country,last_update 
     FROM
@@ -2673,7 +2655,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Country.CountryPkey(this)}
@@ -2691,23 +2673,22 @@ get CountryPkey () { return new Public.Tables.Country.CountryPkey(this)}
 
 async create(values: Partial<Public.Types.Language>, options?: Public.Tables.Language.Options): Promise<Public.Types.Language>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Public.Tables.Language.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         public.language (name,last_update)
       VALUES (${ values.name === undefined ? sql`DEFAULT` : typed[1042](values.name) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
       RETURNING
         language_id,name,last_update
-    `
+    `);
 return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.language (language_id,name,last_update)
     VALUES (${ values.languageId === undefined ? sql`DEFAULT` : typed[23](values.languageId) },${ values.name === undefined ? sql`DEFAULT` : typed[1042](values.name) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
@@ -2716,16 +2697,15 @@ const response = await sql`
       name = EXCLUDED.name,last_update = EXCLUDED.last_update
     RETURNING
       language_id,name,last_update
-    `
+    `);
 return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async all(options?: Public.Tables.Language.Options) : Promise<Public.Types.Language[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       language_id,name,last_update 
     FROM
@@ -2733,7 +2713,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Language.LanguagePkey(this)}
@@ -2751,23 +2731,22 @@ get LanguagePkey () { return new Public.Tables.Language.LanguagePkey(this)}
 
 async create(values: Partial<Public.Types.Rental>, options?: Public.Tables.Rental.Options): Promise<Public.Types.Rental>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Public.Tables.Rental.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         public.rental (rental_date,inventory_id,customer_id,return_date,staff_id,last_update)
       VALUES (${ values.rentalDate === undefined ? sql`DEFAULT` : typed[1114](values.rentalDate) },${ values.inventoryId === undefined ? sql`DEFAULT` : typed[23](values.inventoryId) },${ values.customerId === undefined ? sql`DEFAULT` : typed[21](values.customerId) },${ values.returnDate === undefined ? sql`DEFAULT` : typed[1114](values.returnDate) },${ values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
       RETURNING
         rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update
-    `
+    `);
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.rental (rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update)
     VALUES (${ values.rentalId === undefined ? sql`DEFAULT` : typed[23](values.rentalId) },${ values.rentalDate === undefined ? sql`DEFAULT` : typed[1114](values.rentalDate) },${ values.inventoryId === undefined ? sql`DEFAULT` : typed[23](values.inventoryId) },${ values.customerId === undefined ? sql`DEFAULT` : typed[21](values.customerId) },${ values.returnDate === undefined ? sql`DEFAULT` : typed[1114](values.returnDate) },${ values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
@@ -2776,16 +2755,15 @@ const response = await sql`
       rental_date = EXCLUDED.rental_date,inventory_id = EXCLUDED.inventory_id,customer_id = EXCLUDED.customer_id,return_date = EXCLUDED.return_date,staff_id = EXCLUDED.staff_id,last_update = EXCLUDED.last_update
     RETURNING
       rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update
-    `
+    `);
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async all(options?: Public.Tables.Rental.Options) : Promise<Public.Types.Rental[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
     FROM
@@ -2793,7 +2771,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Rental.RentalPkey(this)}
@@ -2815,23 +2793,22 @@ get IdxUnqRentalRentalDateInventoryIdCustomerId () { return new Public.Tables.Re
 
 async create(values: Partial<Public.Types.Staff>, options?: Public.Tables.Staff.Options): Promise<Public.Types.Staff>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Public.Tables.Staff.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         public.staff (first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture)
       VALUES (${ values.firstName === undefined ? sql`DEFAULT` : typed[1043](values.firstName) },${ values.lastName === undefined ? sql`DEFAULT` : typed[1043](values.lastName) },${ values.addressId === undefined ? sql`DEFAULT` : typed[21](values.addressId) },${ values.email === undefined ? sql`DEFAULT` : typed[1043](values.email) },${ values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId) },${ values.active === undefined ? sql`DEFAULT` : typed[16](values.active) },${ values.username === undefined ? sql`DEFAULT` : typed[1043](values.username) },${ values.password === undefined ? sql`DEFAULT` : typed[1043](values.password) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.picture === undefined ? sql`DEFAULT` : typed[17](values.picture) })
       RETURNING
         staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture
-    `
+    `);
 return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.staff (staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture)
     VALUES (${ values.staffId === undefined ? sql`DEFAULT` : typed[23](values.staffId) },${ values.firstName === undefined ? sql`DEFAULT` : typed[1043](values.firstName) },${ values.lastName === undefined ? sql`DEFAULT` : typed[1043](values.lastName) },${ values.addressId === undefined ? sql`DEFAULT` : typed[21](values.addressId) },${ values.email === undefined ? sql`DEFAULT` : typed[1043](values.email) },${ values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId) },${ values.active === undefined ? sql`DEFAULT` : typed[16](values.active) },${ values.username === undefined ? sql`DEFAULT` : typed[1043](values.username) },${ values.password === undefined ? sql`DEFAULT` : typed[1043](values.password) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.picture === undefined ? sql`DEFAULT` : typed[17](values.picture) })
@@ -2840,16 +2817,15 @@ const response = await sql`
       first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,address_id = EXCLUDED.address_id,email = EXCLUDED.email,store_id = EXCLUDED.store_id,active = EXCLUDED.active,username = EXCLUDED.username,password = EXCLUDED.password,last_update = EXCLUDED.last_update,picture = EXCLUDED.picture
     RETURNING
       staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture
-    `
+    `);
 return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))[0]
 }
 async all(options?: Public.Tables.Staff.Options) : Promise<Public.Types.Staff[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture 
     FROM
@@ -2857,7 +2833,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Staff.StaffPkey(this)}
@@ -2875,23 +2851,22 @@ get StaffPkey () { return new Public.Tables.Staff.StaffPkey(this)}
 
 async create(values: Partial<Public.Types.Store>, options?: Public.Tables.Store.Options): Promise<Public.Types.Store>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Public.Tables.Store.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         public.store (manager_staff_id,address_id,last_update)
       VALUES (${ values.managerStaffId === undefined ? sql`DEFAULT` : typed[21](values.managerStaffId) },${ values.addressId === undefined ? sql`DEFAULT` : typed[21](values.addressId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
       RETURNING
         store_id,manager_staff_id,address_id,last_update
-    `
+    `);
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.store (store_id,manager_staff_id,address_id,last_update)
     VALUES (${ values.storeId === undefined ? sql`DEFAULT` : typed[23](values.storeId) },${ values.managerStaffId === undefined ? sql`DEFAULT` : typed[21](values.managerStaffId) },${ values.addressId === undefined ? sql`DEFAULT` : typed[21](values.addressId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
@@ -2900,16 +2875,15 @@ const response = await sql`
       manager_staff_id = EXCLUDED.manager_staff_id,address_id = EXCLUDED.address_id,last_update = EXCLUDED.last_update
     RETURNING
       store_id,manager_staff_id,address_id,last_update
-    `
+    `);
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async all(options?: Public.Tables.Store.Options) : Promise<Public.Types.Store[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       store_id,manager_staff_id,address_id,last_update 
     FROM
@@ -2917,7 +2891,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Store.StorePkey(this)}
@@ -2937,23 +2911,22 @@ get IdxUnqManagerStaffId () { return new Public.Tables.Store.IdxUnqManagerStaffI
 
 async create(values: Partial<Public.Types.Payment>, options?: Public.Tables.Payment.Options): Promise<Public.Types.Payment>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Public.Tables.Payment.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         public.payment (customer_id,staff_id,rental_id,amount,payment_date)
       VALUES (${ values.customerId === undefined ? sql`DEFAULT` : typed[21](values.customerId) },${ values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId) },${ values.rentalId === undefined ? sql`DEFAULT` : typed[23](values.rentalId) },${ values.amount === undefined ? sql`DEFAULT` : typed[1700](values.amount) },${ values.paymentDate === undefined ? sql`DEFAULT` : typed[1114](values.paymentDate) })
       RETURNING
         payment_id,customer_id,staff_id,rental_id,amount,payment_date
-    `
+    `);
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.payment (payment_id,customer_id,staff_id,rental_id,amount,payment_date)
     VALUES (${ values.paymentId === undefined ? sql`DEFAULT` : typed[23](values.paymentId) },${ values.customerId === undefined ? sql`DEFAULT` : typed[21](values.customerId) },${ values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId) },${ values.rentalId === undefined ? sql`DEFAULT` : typed[23](values.rentalId) },${ values.amount === undefined ? sql`DEFAULT` : typed[1700](values.amount) },${ values.paymentDate === undefined ? sql`DEFAULT` : typed[1114](values.paymentDate) })
@@ -2962,16 +2935,15 @@ const response = await sql`
       customer_id = EXCLUDED.customer_id,staff_id = EXCLUDED.staff_id,rental_id = EXCLUDED.rental_id,amount = EXCLUDED.amount,payment_date = EXCLUDED.payment_date
     RETURNING
       payment_id,customer_id,staff_id,rental_id,amount,payment_date
-    `
+    `);
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))[0]
 }
 async all(options?: Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       payment_id,customer_id,staff_id,rental_id,amount,payment_date 
     FROM
@@ -2979,7 +2951,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Payment.PaymentPkey(this)}
@@ -3003,23 +2975,22 @@ get IdxFkStaffId () { return new Public.Tables.Payment.IdxFkStaffId(this)}
 
 async create(values: Partial<Public.Types.Film>, options?: Public.Tables.Film.Options): Promise<Public.Types.Film>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Public.Tables.Film.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         public.film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
       VALUES (${ values.title === undefined ? sql`DEFAULT` : typed[1043](values.title) },${ values.description === undefined ? sql`DEFAULT` : typed[25](values.description) },${ values.releaseYear === undefined ? sql`DEFAULT` : typed[28920](values.releaseYear) },${ values.languageId === undefined ? sql`DEFAULT` : typed[21](values.languageId) },${ values.rentalDuration === undefined ? sql`DEFAULT` : typed[21](values.rentalDuration) },${ values.rentalRate === undefined ? sql`DEFAULT` : typed[1700](values.rentalRate) },${ values.length === undefined ? sql`DEFAULT` : typed[21](values.length) },${ values.replacementCost === undefined ? sql`DEFAULT` : typed[1700](values.replacementCost) },${ values.rating === undefined ? sql`DEFAULT` : typed[28908](values.rating) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.specialFeatures === undefined ? sql`DEFAULT` : typed[1009](values.specialFeatures) },${ values.fulltext === undefined ? sql`DEFAULT` : typed[3614](values.fulltext) })
       RETURNING
         film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
-    `
+    `);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.film (film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
     VALUES (${ values.filmId === undefined ? sql`DEFAULT` : typed[23](values.filmId) },${ values.title === undefined ? sql`DEFAULT` : typed[1043](values.title) },${ values.description === undefined ? sql`DEFAULT` : typed[25](values.description) },${ values.releaseYear === undefined ? sql`DEFAULT` : typed[28920](values.releaseYear) },${ values.languageId === undefined ? sql`DEFAULT` : typed[21](values.languageId) },${ values.rentalDuration === undefined ? sql`DEFAULT` : typed[21](values.rentalDuration) },${ values.rentalRate === undefined ? sql`DEFAULT` : typed[1700](values.rentalRate) },${ values.length === undefined ? sql`DEFAULT` : typed[21](values.length) },${ values.replacementCost === undefined ? sql`DEFAULT` : typed[1700](values.replacementCost) },${ values.rating === undefined ? sql`DEFAULT` : typed[28908](values.rating) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.specialFeatures === undefined ? sql`DEFAULT` : typed[1009](values.specialFeatures) },${ values.fulltext === undefined ? sql`DEFAULT` : typed[3614](values.fulltext) })
@@ -3028,16 +2999,15 @@ const response = await sql`
       title = EXCLUDED.title,description = EXCLUDED.description,release_year = EXCLUDED.release_year,language_id = EXCLUDED.language_id,rental_duration = EXCLUDED.rental_duration,rental_rate = EXCLUDED.rental_rate,length = EXCLUDED.length,replacement_cost = EXCLUDED.replacement_cost,rating = EXCLUDED.rating,last_update = EXCLUDED.last_update,special_features = EXCLUDED.special_features,fulltext = EXCLUDED.fulltext
     RETURNING
       film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
-    `
+    `);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))[0]
 }
 async all(options?: Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
     FROM
@@ -3045,7 +3015,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Film.FilmPkey(this)}
@@ -3098,10 +3068,9 @@ async update(parameters: Public.Types.FilmActorPkey, values: Partial<Public.Tabl
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.film_actor 
@@ -3109,20 +3078,19 @@ const response = await sql`
       actor_id = ${ values.actorId === undefined ? sql`actor_id` : typed[21](values.actorId) } , film_id = ${ values.filmId === undefined ? sql`film_id` : typed[21](values.filmId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       actor_id = ${ parameters.actorId === undefined ? sql`DEFAULT` : typed[21](parameters.actorId) } AND film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
-    RETURNING actor_id,film_id,last_update`
+    RETURNING actor_id,film_id,last_update`);
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.FilmActorPkey, options?: Public.Types.FilmActorPkey.Options & Public.Tables.FilmActor.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.film_actor 
     WHERE
       actor_id = ${ parameters.actorId === undefined ? sql`DEFAULT` : typed[21](parameters.actorId) } AND film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
-    RETURNING actor_id,film_id,last_update`
+    RETURNING actor_id,film_id,last_update`);
  return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -3162,10 +3130,9 @@ async update(parameters: Public.Types.IdxFkFilmId, values: Partial<Public.Tables
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.film_actor 
@@ -3173,20 +3140,19 @@ const response = await sql`
       actor_id = ${ values.actorId === undefined ? sql`actor_id` : typed[21](values.actorId) } , film_id = ${ values.filmId === undefined ? sql`film_id` : typed[21](values.filmId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
-    RETURNING actor_id,film_id,last_update`
+    RETURNING actor_id,film_id,last_update`);
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 async delete(parameters: Public.Types.IdxFkFilmId, options?: Public.Types.IdxFkFilmId.Options & Public.Tables.FilmActor.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.film_actor 
     WHERE
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
-    RETURNING actor_id,film_id,last_update`
+    RETURNING actor_id,film_id,last_update`);
  return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 }
@@ -3228,10 +3194,9 @@ async update(parameters: Public.Types.AddressPkey, values: Partial<Public.Tables
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.address 
@@ -3239,20 +3204,19 @@ const response = await sql`
       address_id = ${ values.addressId === undefined ? sql`address_id` : typed[23](values.addressId) } , address = ${ values.address === undefined ? sql`address` : typed[1043](values.address) } , address2 = ${ values.address2 === undefined ? sql`address2` : typed[1043](values.address2) } , district = ${ values.district === undefined ? sql`district` : typed[1043](values.district) } , city_id = ${ values.cityId === undefined ? sql`city_id` : typed[21](values.cityId) } , postal_code = ${ values.postalCode === undefined ? sql`postal_code` : typed[1043](values.postalCode) } , phone = ${ values.phone === undefined ? sql`phone` : typed[1043](values.phone) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       address_id = ${ parameters.addressId === undefined ? sql`DEFAULT` : typed[23](parameters.addressId) }
-    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`
+    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`);
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.AddressPkey, options?: Public.Types.AddressPkey.Options & Public.Tables.Address.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.address 
     WHERE
       address_id = ${ parameters.addressId === undefined ? sql`DEFAULT` : typed[23](parameters.addressId) }
-    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`
+    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`);
  return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -3292,10 +3256,9 @@ async update(parameters: Public.Types.IdxFkCityId, values: Partial<Public.Tables
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.address 
@@ -3303,20 +3266,19 @@ const response = await sql`
       address_id = ${ values.addressId === undefined ? sql`address_id` : typed[23](values.addressId) } , address = ${ values.address === undefined ? sql`address` : typed[1043](values.address) } , address2 = ${ values.address2 === undefined ? sql`address2` : typed[1043](values.address2) } , district = ${ values.district === undefined ? sql`district` : typed[1043](values.district) } , city_id = ${ values.cityId === undefined ? sql`city_id` : typed[21](values.cityId) } , postal_code = ${ values.postalCode === undefined ? sql`postal_code` : typed[1043](values.postalCode) } , phone = ${ values.phone === undefined ? sql`phone` : typed[1043](values.phone) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       city_id = ${ parameters.cityId === undefined ? sql`DEFAULT` : typed[21](parameters.cityId) }
-    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`
+    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`);
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 async delete(parameters: Public.Types.IdxFkCityId, options?: Public.Types.IdxFkCityId.Options & Public.Tables.Address.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.address 
     WHERE
       city_id = ${ parameters.cityId === undefined ? sql`DEFAULT` : typed[21](parameters.cityId) }
-    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`
+    RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`);
  return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 }
@@ -3358,10 +3320,9 @@ async update(parameters: Public.Types.CityPkey, values: Partial<Public.Tables.Ci
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.city 
@@ -3369,20 +3330,19 @@ const response = await sql`
       city_id = ${ values.cityId === undefined ? sql`city_id` : typed[23](values.cityId) } , city = ${ values.city === undefined ? sql`city` : typed[1043](values.city) } , country_id = ${ values.countryId === undefined ? sql`country_id` : typed[21](values.countryId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       city_id = ${ parameters.cityId === undefined ? sql`DEFAULT` : typed[23](parameters.cityId) }
-    RETURNING city_id,city,country_id,last_update`
+    RETURNING city_id,city,country_id,last_update`);
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.CityPkey, options?: Public.Types.CityPkey.Options & Public.Tables.City.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.city 
     WHERE
       city_id = ${ parameters.cityId === undefined ? sql`DEFAULT` : typed[23](parameters.cityId) }
-    RETURNING city_id,city,country_id,last_update`
+    RETURNING city_id,city,country_id,last_update`);
  return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -3422,10 +3382,9 @@ async update(parameters: Public.Types.IdxFkCountryId, values: Partial<Public.Tab
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.city 
@@ -3433,20 +3392,19 @@ const response = await sql`
       city_id = ${ values.cityId === undefined ? sql`city_id` : typed[23](values.cityId) } , city = ${ values.city === undefined ? sql`city` : typed[1043](values.city) } , country_id = ${ values.countryId === undefined ? sql`country_id` : typed[21](values.countryId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       country_id = ${ parameters.countryId === undefined ? sql`DEFAULT` : typed[21](parameters.countryId) }
-    RETURNING city_id,city,country_id,last_update`
+    RETURNING city_id,city,country_id,last_update`);
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 async delete(parameters: Public.Types.IdxFkCountryId, options?: Public.Types.IdxFkCountryId.Options & Public.Tables.City.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.city 
     WHERE
       country_id = ${ parameters.countryId === undefined ? sql`DEFAULT` : typed[21](parameters.countryId) }
-    RETURNING city_id,city,country_id,last_update`
+    RETURNING city_id,city,country_id,last_update`);
  return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 }
@@ -3488,10 +3446,9 @@ async update(parameters: Public.Types.CustomerPkey, values: Partial<Public.Table
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.customer 
@@ -3499,20 +3456,19 @@ const response = await sql`
       customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[23](values.customerId) } , store_id = ${ values.storeId === undefined ? sql`store_id` : typed[21](values.storeId) } , first_name = ${ values.firstName === undefined ? sql`first_name` : typed[1043](values.firstName) } , last_name = ${ values.lastName === undefined ? sql`last_name` : typed[1043](values.lastName) } , email = ${ values.email === undefined ? sql`email` : typed[1043](values.email) } , address_id = ${ values.addressId === undefined ? sql`address_id` : typed[21](values.addressId) } , activebool = ${ values.activebool === undefined ? sql`activebool` : typed[16](values.activebool) } , create_date = ${ values.createDate === undefined ? sql`create_date` : typed[1082](values.createDate) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , active = ${ values.active === undefined ? sql`active` : typed[23](values.active) } 
     WHERE
       customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[23](parameters.customerId) }
-    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`);
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))[0]
 }
 async delete(parameters: Public.Types.CustomerPkey, options?: Public.Types.CustomerPkey.Options & Public.Tables.Customer.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.customer 
     WHERE
       customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[23](parameters.customerId) }
-    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`);
  return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))[0]
 }
 }
@@ -3552,10 +3508,9 @@ async update(parameters: Public.Types.IdxFkAddressId, values: Partial<Public.Tab
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.customer 
@@ -3563,20 +3518,19 @@ const response = await sql`
       customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[23](values.customerId) } , store_id = ${ values.storeId === undefined ? sql`store_id` : typed[21](values.storeId) } , first_name = ${ values.firstName === undefined ? sql`first_name` : typed[1043](values.firstName) } , last_name = ${ values.lastName === undefined ? sql`last_name` : typed[1043](values.lastName) } , email = ${ values.email === undefined ? sql`email` : typed[1043](values.email) } , address_id = ${ values.addressId === undefined ? sql`address_id` : typed[21](values.addressId) } , activebool = ${ values.activebool === undefined ? sql`activebool` : typed[16](values.activebool) } , create_date = ${ values.createDate === undefined ? sql`create_date` : typed[1082](values.createDate) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , active = ${ values.active === undefined ? sql`active` : typed[23](values.active) } 
     WHERE
       address_id = ${ parameters.addressId === undefined ? sql`DEFAULT` : typed[21](parameters.addressId) }
-    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`);
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
 async delete(parameters: Public.Types.IdxFkAddressId, options?: Public.Types.IdxFkAddressId.Options & Public.Tables.Customer.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.customer 
     WHERE
       address_id = ${ parameters.addressId === undefined ? sql`DEFAULT` : typed[21](parameters.addressId) }
-    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`);
  return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
 }
@@ -3616,10 +3570,9 @@ async update(parameters: Public.Types.IdxFkStoreId, values: Partial<Public.Table
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.customer 
@@ -3627,20 +3580,19 @@ const response = await sql`
       customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[23](values.customerId) } , store_id = ${ values.storeId === undefined ? sql`store_id` : typed[21](values.storeId) } , first_name = ${ values.firstName === undefined ? sql`first_name` : typed[1043](values.firstName) } , last_name = ${ values.lastName === undefined ? sql`last_name` : typed[1043](values.lastName) } , email = ${ values.email === undefined ? sql`email` : typed[1043](values.email) } , address_id = ${ values.addressId === undefined ? sql`address_id` : typed[21](values.addressId) } , activebool = ${ values.activebool === undefined ? sql`activebool` : typed[16](values.activebool) } , create_date = ${ values.createDate === undefined ? sql`create_date` : typed[1082](values.createDate) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , active = ${ values.active === undefined ? sql`active` : typed[23](values.active) } 
     WHERE
       store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[21](parameters.storeId) }
-    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`);
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
 async delete(parameters: Public.Types.IdxFkStoreId, options?: Public.Types.IdxFkStoreId.Options & Public.Tables.Customer.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.customer 
     WHERE
       store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[21](parameters.storeId) }
-    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`);
  return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
 }
@@ -3680,10 +3632,9 @@ async update(parameters: Public.Types.IdxLastName, values: Partial<Public.Tables
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.customer 
@@ -3691,20 +3642,19 @@ const response = await sql`
       customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[23](values.customerId) } , store_id = ${ values.storeId === undefined ? sql`store_id` : typed[21](values.storeId) } , first_name = ${ values.firstName === undefined ? sql`first_name` : typed[1043](values.firstName) } , last_name = ${ values.lastName === undefined ? sql`last_name` : typed[1043](values.lastName) } , email = ${ values.email === undefined ? sql`email` : typed[1043](values.email) } , address_id = ${ values.addressId === undefined ? sql`address_id` : typed[21](values.addressId) } , activebool = ${ values.activebool === undefined ? sql`activebool` : typed[16](values.activebool) } , create_date = ${ values.createDate === undefined ? sql`create_date` : typed[1082](values.createDate) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , active = ${ values.active === undefined ? sql`active` : typed[23](values.active) } 
     WHERE
       last_name = ${ parameters.lastName === undefined ? sql`DEFAULT` : typed[1043](parameters.lastName) }
-    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`);
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
 async delete(parameters: Public.Types.IdxLastName, options?: Public.Types.IdxLastName.Options & Public.Tables.Customer.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.customer 
     WHERE
       last_name = ${ parameters.lastName === undefined ? sql`DEFAULT` : typed[1043](parameters.lastName) }
-    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`
+    RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`);
  return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
 }
@@ -3746,10 +3696,9 @@ async update(parameters: Public.Types.ActorPkey, values: Partial<Public.Tables.A
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.actor 
@@ -3757,20 +3706,19 @@ const response = await sql`
       actor_id = ${ values.actorId === undefined ? sql`actor_id` : typed[23](values.actorId) } , first_name = ${ values.firstName === undefined ? sql`first_name` : typed[1043](values.firstName) } , last_name = ${ values.lastName === undefined ? sql`last_name` : typed[1043](values.lastName) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       actor_id = ${ parameters.actorId === undefined ? sql`DEFAULT` : typed[23](parameters.actorId) }
-    RETURNING actor_id,first_name,last_name,last_update`
+    RETURNING actor_id,first_name,last_name,last_update`);
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.ActorPkey, options?: Public.Types.ActorPkey.Options & Public.Tables.Actor.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.actor 
     WHERE
       actor_id = ${ parameters.actorId === undefined ? sql`DEFAULT` : typed[23](parameters.actorId) }
-    RETURNING actor_id,first_name,last_name,last_update`
+    RETURNING actor_id,first_name,last_name,last_update`);
  return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -3810,10 +3758,9 @@ async update(parameters: Public.Types.IdxActorLastName, values: Partial<Public.T
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.actor 
@@ -3821,20 +3768,19 @@ const response = await sql`
       actor_id = ${ values.actorId === undefined ? sql`actor_id` : typed[23](values.actorId) } , first_name = ${ values.firstName === undefined ? sql`first_name` : typed[1043](values.firstName) } , last_name = ${ values.lastName === undefined ? sql`last_name` : typed[1043](values.lastName) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       last_name = ${ parameters.lastName === undefined ? sql`DEFAULT` : typed[1043](parameters.lastName) }
-    RETURNING actor_id,first_name,last_name,last_update`
+    RETURNING actor_id,first_name,last_name,last_update`);
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 async delete(parameters: Public.Types.IdxActorLastName, options?: Public.Types.IdxActorLastName.Options & Public.Tables.Actor.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.actor 
     WHERE
       last_name = ${ parameters.lastName === undefined ? sql`DEFAULT` : typed[1043](parameters.lastName) }
-    RETURNING actor_id,first_name,last_name,last_update`
+    RETURNING actor_id,first_name,last_name,last_update`);
  return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 }
@@ -3876,10 +3822,9 @@ async update(parameters: Public.Types.FilmCategoryPkey, values: Partial<Public.T
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.film_category 
@@ -3887,20 +3832,19 @@ const response = await sql`
       film_id = ${ values.filmId === undefined ? sql`film_id` : typed[21](values.filmId) } , category_id = ${ values.categoryId === undefined ? sql`category_id` : typed[21](values.categoryId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) } AND category_id = ${ parameters.categoryId === undefined ? sql`DEFAULT` : typed[21](parameters.categoryId) }
-    RETURNING film_id,category_id,last_update`
+    RETURNING film_id,category_id,last_update`);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undefinedIsNull(r.category_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.FilmCategoryPkey, options?: Public.Types.FilmCategoryPkey.Options & Public.Tables.FilmCategory.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.film_category 
     WHERE
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) } AND category_id = ${ parameters.categoryId === undefined ? sql`DEFAULT` : typed[21](parameters.categoryId) }
-    RETURNING film_id,category_id,last_update`
+    RETURNING film_id,category_id,last_update`);
  return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undefinedIsNull(r.category_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -3942,10 +3886,9 @@ async update(parameters: Public.Types.InventoryPkey, values: Partial<Public.Tabl
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.inventory 
@@ -3953,20 +3896,19 @@ const response = await sql`
       inventory_id = ${ values.inventoryId === undefined ? sql`inventory_id` : typed[23](values.inventoryId) } , film_id = ${ values.filmId === undefined ? sql`film_id` : typed[21](values.filmId) } , store_id = ${ values.storeId === undefined ? sql`store_id` : typed[21](values.storeId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) }
-    RETURNING inventory_id,film_id,store_id,last_update`
+    RETURNING inventory_id,film_id,store_id,last_update`);
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.InventoryPkey, options?: Public.Types.InventoryPkey.Options & Public.Tables.Inventory.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.inventory 
     WHERE
       inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) }
-    RETURNING inventory_id,film_id,store_id,last_update`
+    RETURNING inventory_id,film_id,store_id,last_update`);
  return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -4006,10 +3948,9 @@ async update(parameters: Public.Types.IdxStoreIdFilmId, values: Partial<Public.T
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.inventory 
@@ -4017,20 +3958,19 @@ const response = await sql`
       inventory_id = ${ values.inventoryId === undefined ? sql`inventory_id` : typed[23](values.inventoryId) } , film_id = ${ values.filmId === undefined ? sql`film_id` : typed[21](values.filmId) } , store_id = ${ values.storeId === undefined ? sql`store_id` : typed[21](values.storeId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[21](parameters.storeId) } AND film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
-    RETURNING inventory_id,film_id,store_id,last_update`
+    RETURNING inventory_id,film_id,store_id,last_update`);
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 async delete(parameters: Public.Types.IdxStoreIdFilmId, options?: Public.Types.IdxStoreIdFilmId.Options & Public.Tables.Inventory.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.inventory 
     WHERE
       store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[21](parameters.storeId) } AND film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
-    RETURNING inventory_id,film_id,store_id,last_update`
+    RETURNING inventory_id,film_id,store_id,last_update`);
  return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 }
@@ -4072,10 +4012,9 @@ async update(parameters: Public.Types.CategoryPkey, values: Partial<Public.Table
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.category 
@@ -4083,20 +4022,19 @@ const response = await sql`
       category_id = ${ values.categoryId === undefined ? sql`category_id` : typed[23](values.categoryId) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       category_id = ${ parameters.categoryId === undefined ? sql`DEFAULT` : typed[23](parameters.categoryId) }
-    RETURNING category_id,name,last_update`
+    RETURNING category_id,name,last_update`);
 return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.CategoryPkey, options?: Public.Types.CategoryPkey.Options & Public.Tables.Category.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.category 
     WHERE
       category_id = ${ parameters.categoryId === undefined ? sql`DEFAULT` : typed[23](parameters.categoryId) }
-    RETURNING category_id,name,last_update`
+    RETURNING category_id,name,last_update`);
  return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -4138,10 +4076,9 @@ async update(parameters: Public.Types.CountryPkey, values: Partial<Public.Tables
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.country 
@@ -4149,20 +4086,19 @@ const response = await sql`
       country_id = ${ values.countryId === undefined ? sql`country_id` : typed[23](values.countryId) } , country = ${ values.country === undefined ? sql`country` : typed[1043](values.country) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       country_id = ${ parameters.countryId === undefined ? sql`DEFAULT` : typed[23](parameters.countryId) }
-    RETURNING country_id,country,last_update`
+    RETURNING country_id,country,last_update`);
 return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.CountryPkey, options?: Public.Types.CountryPkey.Options & Public.Tables.Country.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.country 
     WHERE
       country_id = ${ parameters.countryId === undefined ? sql`DEFAULT` : typed[23](parameters.countryId) }
-    RETURNING country_id,country,last_update`
+    RETURNING country_id,country,last_update`);
  return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -4204,10 +4140,9 @@ async update(parameters: Public.Types.LanguagePkey, values: Partial<Public.Table
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.language 
@@ -4215,20 +4150,19 @@ const response = await sql`
       language_id = ${ values.languageId === undefined ? sql`language_id` : typed[23](values.languageId) } , name = ${ values.name === undefined ? sql`name` : typed[1042](values.name) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       language_id = ${ parameters.languageId === undefined ? sql`DEFAULT` : typed[23](parameters.languageId) }
-    RETURNING language_id,name,last_update`
+    RETURNING language_id,name,last_update`);
 return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.LanguagePkey, options?: Public.Types.LanguagePkey.Options & Public.Tables.Language.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.language 
     WHERE
       language_id = ${ parameters.languageId === undefined ? sql`DEFAULT` : typed[23](parameters.languageId) }
-    RETURNING language_id,name,last_update`
+    RETURNING language_id,name,last_update`);
  return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -4270,10 +4204,9 @@ async update(parameters: Public.Types.RentalPkey, values: Partial<Public.Tables.
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.rental 
@@ -4281,20 +4214,19 @@ const response = await sql`
       rental_id = ${ values.rentalId === undefined ? sql`rental_id` : typed[23](values.rentalId) } , rental_date = ${ values.rentalDate === undefined ? sql`rental_date` : typed[1114](values.rentalDate) } , inventory_id = ${ values.inventoryId === undefined ? sql`inventory_id` : typed[23](values.inventoryId) } , customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[21](values.customerId) } , return_date = ${ values.returnDate === undefined ? sql`return_date` : typed[1114](values.returnDate) } , staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       rental_id = ${ parameters.rentalId === undefined ? sql`DEFAULT` : typed[23](parameters.rentalId) }
-    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`);
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.RentalPkey, options?: Public.Types.RentalPkey.Options & Public.Tables.Rental.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.rental 
     WHERE
       rental_id = ${ parameters.rentalId === undefined ? sql`DEFAULT` : typed[23](parameters.rentalId) }
-    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`);
  return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -4334,10 +4266,9 @@ async update(parameters: Public.Types.IdxFkInventoryId, values: Partial<Public.T
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.rental 
@@ -4345,20 +4276,19 @@ const response = await sql`
       rental_id = ${ values.rentalId === undefined ? sql`rental_id` : typed[23](values.rentalId) } , rental_date = ${ values.rentalDate === undefined ? sql`rental_date` : typed[1114](values.rentalDate) } , inventory_id = ${ values.inventoryId === undefined ? sql`inventory_id` : typed[23](values.inventoryId) } , customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[21](values.customerId) } , return_date = ${ values.returnDate === undefined ? sql`return_date` : typed[1114](values.returnDate) } , staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) }
-    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`);
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 async delete(parameters: Public.Types.IdxFkInventoryId, options?: Public.Types.IdxFkInventoryId.Options & Public.Tables.Rental.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.rental 
     WHERE
       inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) }
-    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`);
  return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
 }
@@ -4398,10 +4328,9 @@ async update(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerI
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.rental 
@@ -4409,20 +4338,19 @@ const response = await sql`
       rental_id = ${ values.rentalId === undefined ? sql`rental_id` : typed[23](values.rentalId) } , rental_date = ${ values.rentalDate === undefined ? sql`rental_date` : typed[1114](values.rentalDate) } , inventory_id = ${ values.inventoryId === undefined ? sql`inventory_id` : typed[23](values.inventoryId) } , customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[21](values.customerId) } , return_date = ${ values.returnDate === undefined ? sql`return_date` : typed[1114](values.returnDate) } , staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       rental_date = ${ parameters.rentalDate === undefined ? sql`DEFAULT` : typed[1114](parameters.rentalDate) } AND inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) } AND customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[21](parameters.customerId) }
-    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`);
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, options?: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId.Options & Public.Tables.Rental.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.rental 
     WHERE
       rental_date = ${ parameters.rentalDate === undefined ? sql`DEFAULT` : typed[1114](parameters.rentalDate) } AND inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) } AND customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[21](parameters.customerId) }
-    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`
+    RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`);
  return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -4464,10 +4392,9 @@ async update(parameters: Public.Types.StaffPkey, values: Partial<Public.Tables.S
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.staff 
@@ -4475,20 +4402,19 @@ const response = await sql`
       staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[23](values.staffId) } , first_name = ${ values.firstName === undefined ? sql`first_name` : typed[1043](values.firstName) } , last_name = ${ values.lastName === undefined ? sql`last_name` : typed[1043](values.lastName) } , address_id = ${ values.addressId === undefined ? sql`address_id` : typed[21](values.addressId) } , email = ${ values.email === undefined ? sql`email` : typed[1043](values.email) } , store_id = ${ values.storeId === undefined ? sql`store_id` : typed[21](values.storeId) } , active = ${ values.active === undefined ? sql`active` : typed[16](values.active) } , username = ${ values.username === undefined ? sql`username` : typed[1043](values.username) } , password = ${ values.password === undefined ? sql`password` : typed[1043](values.password) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , picture = ${ values.picture === undefined ? sql`picture` : typed[17](values.picture) } 
     WHERE
       staff_id = ${ parameters.staffId === undefined ? sql`DEFAULT` : typed[23](parameters.staffId) }
-    RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture`
+    RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture`);
 return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))[0]
 }
 async delete(parameters: Public.Types.StaffPkey, options?: Public.Types.StaffPkey.Options & Public.Tables.Staff.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.staff 
     WHERE
       staff_id = ${ parameters.staffId === undefined ? sql`DEFAULT` : typed[23](parameters.staffId) }
-    RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture`
+    RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture`);
  return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))[0]
 }
 }
@@ -4530,10 +4456,9 @@ async update(parameters: Public.Types.StorePkey, values: Partial<Public.Tables.S
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.store 
@@ -4541,20 +4466,19 @@ const response = await sql`
       store_id = ${ values.storeId === undefined ? sql`store_id` : typed[23](values.storeId) } , manager_staff_id = ${ values.managerStaffId === undefined ? sql`manager_staff_id` : typed[21](values.managerStaffId) } , address_id = ${ values.addressId === undefined ? sql`address_id` : typed[21](values.addressId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[23](parameters.storeId) }
-    RETURNING store_id,manager_staff_id,address_id,last_update`
+    RETURNING store_id,manager_staff_id,address_id,last_update`);
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.StorePkey, options?: Public.Types.StorePkey.Options & Public.Tables.Store.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.store 
     WHERE
       store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[23](parameters.storeId) }
-    RETURNING store_id,manager_staff_id,address_id,last_update`
+    RETURNING store_id,manager_staff_id,address_id,last_update`);
  return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -4594,10 +4518,9 @@ async update(parameters: Public.Types.IdxUnqManagerStaffId, values: Partial<Publ
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.store 
@@ -4605,20 +4528,19 @@ const response = await sql`
       store_id = ${ values.storeId === undefined ? sql`store_id` : typed[23](values.storeId) } , manager_staff_id = ${ values.managerStaffId === undefined ? sql`manager_staff_id` : typed[21](values.managerStaffId) } , address_id = ${ values.addressId === undefined ? sql`address_id` : typed[21](values.addressId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
     WHERE
       manager_staff_id = ${ parameters.managerStaffId === undefined ? sql`DEFAULT` : typed[21](parameters.managerStaffId) }
-    RETURNING store_id,manager_staff_id,address_id,last_update`
+    RETURNING store_id,manager_staff_id,address_id,last_update`);
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 async delete(parameters: Public.Types.IdxUnqManagerStaffId, options?: Public.Types.IdxUnqManagerStaffId.Options & Public.Tables.Store.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.store 
     WHERE
       manager_staff_id = ${ parameters.managerStaffId === undefined ? sql`DEFAULT` : typed[21](parameters.managerStaffId) }
-    RETURNING store_id,manager_staff_id,address_id,last_update`
+    RETURNING store_id,manager_staff_id,address_id,last_update`);
  return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
 }
@@ -4660,10 +4582,9 @@ async update(parameters: Public.Types.PaymentPkey, values: Partial<Public.Tables
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.payment 
@@ -4671,20 +4592,19 @@ const response = await sql`
       payment_id = ${ values.paymentId === undefined ? sql`payment_id` : typed[23](values.paymentId) } , customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[21](values.customerId) } , staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId) } , rental_id = ${ values.rentalId === undefined ? sql`rental_id` : typed[23](values.rentalId) } , amount = ${ values.amount === undefined ? sql`amount` : typed[1700](values.amount) } , payment_date = ${ values.paymentDate === undefined ? sql`payment_date` : typed[1114](values.paymentDate) } 
     WHERE
       payment_id = ${ parameters.paymentId === undefined ? sql`DEFAULT` : typed[23](parameters.paymentId) }
-    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`);
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))[0]
 }
 async delete(parameters: Public.Types.PaymentPkey, options?: Public.Types.PaymentPkey.Options & Public.Tables.Payment.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.payment 
     WHERE
       payment_id = ${ parameters.paymentId === undefined ? sql`DEFAULT` : typed[23](parameters.paymentId) }
-    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`);
  return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))[0]
 }
 }
@@ -4724,10 +4644,9 @@ async update(parameters: Public.Types.IdxFkCustomerId, values: Partial<Public.Ta
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.payment 
@@ -4735,20 +4654,19 @@ const response = await sql`
       payment_id = ${ values.paymentId === undefined ? sql`payment_id` : typed[23](values.paymentId) } , customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[21](values.customerId) } , staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId) } , rental_id = ${ values.rentalId === undefined ? sql`rental_id` : typed[23](values.rentalId) } , amount = ${ values.amount === undefined ? sql`amount` : typed[1700](values.amount) } , payment_date = ${ values.paymentDate === undefined ? sql`payment_date` : typed[1114](values.paymentDate) } 
     WHERE
       customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[21](parameters.customerId) }
-    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`);
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
 async delete(parameters: Public.Types.IdxFkCustomerId, options?: Public.Types.IdxFkCustomerId.Options & Public.Tables.Payment.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.payment 
     WHERE
       customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[21](parameters.customerId) }
-    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`);
  return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
 }
@@ -4788,10 +4706,9 @@ async update(parameters: Public.Types.IdxFkRentalId, values: Partial<Public.Tabl
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.payment 
@@ -4799,20 +4716,19 @@ const response = await sql`
       payment_id = ${ values.paymentId === undefined ? sql`payment_id` : typed[23](values.paymentId) } , customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[21](values.customerId) } , staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId) } , rental_id = ${ values.rentalId === undefined ? sql`rental_id` : typed[23](values.rentalId) } , amount = ${ values.amount === undefined ? sql`amount` : typed[1700](values.amount) } , payment_date = ${ values.paymentDate === undefined ? sql`payment_date` : typed[1114](values.paymentDate) } 
     WHERE
       rental_id = ${ parameters.rentalId === undefined ? sql`DEFAULT` : typed[23](parameters.rentalId) }
-    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`);
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
 async delete(parameters: Public.Types.IdxFkRentalId, options?: Public.Types.IdxFkRentalId.Options & Public.Tables.Payment.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.payment 
     WHERE
       rental_id = ${ parameters.rentalId === undefined ? sql`DEFAULT` : typed[23](parameters.rentalId) }
-    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`);
  return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
 }
@@ -4852,10 +4768,9 @@ async update(parameters: Public.Types.IdxFkStaffId, values: Partial<Public.Table
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.payment 
@@ -4863,20 +4778,19 @@ const response = await sql`
       payment_id = ${ values.paymentId === undefined ? sql`payment_id` : typed[23](values.paymentId) } , customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[21](values.customerId) } , staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId) } , rental_id = ${ values.rentalId === undefined ? sql`rental_id` : typed[23](values.rentalId) } , amount = ${ values.amount === undefined ? sql`amount` : typed[1700](values.amount) } , payment_date = ${ values.paymentDate === undefined ? sql`payment_date` : typed[1114](values.paymentDate) } 
     WHERE
       staff_id = ${ parameters.staffId === undefined ? sql`DEFAULT` : typed[21](parameters.staffId) }
-    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`);
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
 async delete(parameters: Public.Types.IdxFkStaffId, options?: Public.Types.IdxFkStaffId.Options & Public.Tables.Payment.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.payment 
     WHERE
       staff_id = ${ parameters.staffId === undefined ? sql`DEFAULT` : typed[21](parameters.staffId) }
-    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`
+    RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`);
  return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
 }
@@ -4918,10 +4832,9 @@ async update(parameters: Public.Types.FilmPkey, values: Partial<Public.Tables.Fi
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.film 
@@ -4929,20 +4842,19 @@ const response = await sql`
       film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[28920](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[28908](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
     WHERE
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[23](parameters.filmId) }
-    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))[0]
 }
 async delete(parameters: Public.Types.FilmPkey, options?: Public.Types.FilmPkey.Options & Public.Tables.Film.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.film 
     WHERE
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[23](parameters.filmId) }
-    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`);
  return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))[0]
 }
 }
@@ -4982,10 +4894,9 @@ async update(parameters: Public.Types.FilmFulltextIdx, values: Partial<Public.Ta
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.film 
@@ -4993,20 +4904,19 @@ const response = await sql`
       film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[28920](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[28908](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
     WHERE
       fulltext @@ ${sql.unsafe(`${options?.fulltext?.queryParser ?? "to_tsquery"}`)}(${options?.fulltext?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3614](parameters.fulltext) })
-    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
 async delete(parameters: Public.Types.FilmFulltextIdx, options?: Public.Types.FilmFulltextIdx.Options & Public.Tables.Film.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.film 
     WHERE
       fulltext @@ ${sql.unsafe(`${options?.fulltext?.queryParser ?? "to_tsquery"}`)}(${options?.fulltext?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3614](parameters.fulltext) })
-    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`);
  return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
 }
@@ -5046,10 +4956,9 @@ async update(parameters: Public.Types.IdxFkLanguageId, values: Partial<Public.Ta
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.film 
@@ -5057,20 +4966,19 @@ const response = await sql`
       film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[28920](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[28908](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
     WHERE
       language_id = ${ parameters.languageId === undefined ? sql`DEFAULT` : typed[21](parameters.languageId) }
-    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
 async delete(parameters: Public.Types.IdxFkLanguageId, options?: Public.Types.IdxFkLanguageId.Options & Public.Tables.Film.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.film 
     WHERE
       language_id = ${ parameters.languageId === undefined ? sql`DEFAULT` : typed[21](parameters.languageId) }
-    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`);
  return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
 }
@@ -5110,10 +5018,9 @@ async update(parameters: Public.Types.IdxTitle, values: Partial<Public.Tables.Fi
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.film 
@@ -5121,20 +5028,19 @@ const response = await sql`
       film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[28920](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[28908](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
     WHERE
       title = ${ parameters.title === undefined ? sql`DEFAULT` : typed[1043](parameters.title) }
-    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`);
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
 async delete(parameters: Public.Types.IdxTitle, options?: Public.Types.IdxTitle.Options & Public.Tables.Film.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.film 
     WHERE
       title = ${ parameters.title === undefined ? sql`DEFAULT` : typed[1043](parameters.title) }
-    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`
+    RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`);
  return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
 }

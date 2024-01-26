@@ -3658,23 +3658,22 @@ export namespace Tables {
 
 async create(values: Partial<Public.Types.Slug>, options?: Public.Tables.Slug.Options): Promise<Public.Types.Slug>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Public.Tables.Slug.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         public.slug ()
       VALUES ()
       RETURNING
         slug_id
-    `
+    `);
 return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.slug (slug_id)
     VALUES (${ values.slugId === undefined ? sql`DEFAULT` : typed[23](values.slugId) })
@@ -3683,16 +3682,15 @@ const response = await sql`
       
     RETURNING
       slug_id
-    `
+    `);
 return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))[0]
 }
 async all(options?: Public.Tables.Slug.Options) : Promise<Public.Types.Slug[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       slug_id 
     FROM
@@ -3700,7 +3698,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Slug.SlugPkey(this)}
@@ -3722,10 +3720,9 @@ export namespace Tables {
 
 async create(values: Partial<Api.Types.QAndA>, options?: Api.Tables.QAndA.Options): Promise<Api.Types.QAndA>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       api.q_and_a (question,answer)
     VALUES (${ values.question === undefined ? sql`DEFAULT` : typed[25](values.question) },${ values.answer === undefined ? sql`DEFAULT` : typed[29408](values.answer) })
@@ -3734,16 +3731,15 @@ const response = await sql`
       question = EXCLUDED.question,answer = EXCLUDED.answer
     RETURNING
       question,answer
-    `
+    `);
 return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))[0]
 }
 async all(options?: Api.Tables.QAndA.Options) : Promise<Api.Types.QAndA[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       question,answer 
     FROM
@@ -3751,7 +3747,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
 }
 
@@ -3769,10 +3765,9 @@ get QAndAAnswer () { return new Api.Tables.QAndA.QAndAAnswer(this)}
 
 async create(values: Partial<Api.Types.Timezones>, options?: Api.Tables.Timezones.Options): Promise<Api.Types.Timezones>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       api.timezones (country_code,time_zone,gmt_offset,dst_offset,raw_offset)
     VALUES (${ values.countryCode === undefined ? sql`DEFAULT` : typed[25](values.countryCode) },${ values.timeZone === undefined ? sql`DEFAULT` : typed[25](values.timeZone) },${ values.gmtOffset === undefined ? sql`DEFAULT` : typed[700](values.gmtOffset) },${ values.dstOffset === undefined ? sql`DEFAULT` : typed[700](values.dstOffset) },${ values.rawOffset === undefined ? sql`DEFAULT` : typed[700](values.rawOffset) })
@@ -3781,16 +3776,15 @@ const response = await sql`
       country_code = EXCLUDED.country_code,time_zone = EXCLUDED.time_zone,gmt_offset = EXCLUDED.gmt_offset,dst_offset = EXCLUDED.dst_offset,raw_offset = EXCLUDED.raw_offset
     RETURNING
       country_code,time_zone,gmt_offset,dst_offset,raw_offset
-    `
+    `);
 return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))[0]
 }
 async all(options?: Api.Tables.Timezones.Options) : Promise<Api.Types.Timezones[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       country_code,time_zone,gmt_offset,dst_offset,raw_offset 
     FROM
@@ -3798,7 +3792,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
 }
 
@@ -3818,23 +3812,22 @@ get TrgmIdxGin () { return new Api.Tables.Timezones.TrgmIdxGin(this)}
 
 async create(values: Partial<Api.Types.Points>, options?: Api.Tables.Points.Options): Promise<Api.Types.Points>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Api.Tables.Points.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         api.points (point)
       VALUES (${ values.point === undefined ? sql`DEFAULT` : typed[600](values.point) })
       RETURNING
         id,point
-    `
+    `);
 return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       api.points (id,point)
     VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.point === undefined ? sql`DEFAULT` : typed[600](values.point) })
@@ -3843,16 +3836,15 @@ const response = await sql`
       point = EXCLUDED.point
     RETURNING
       id,point
-    `
+    `);
 return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
 }
 async all(options?: Api.Tables.Points.Options) : Promise<Api.Types.Points[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       id,point 
     FROM
@@ -3860,7 +3852,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))
 }
 public get ByPrimaryKey () { return new Api.Tables.Points.PointsPkey(this)}
@@ -3878,23 +3870,22 @@ get PointsPkey () { return new Api.Tables.Points.PointsPkey(this)}
 
 async create(values: Partial<Api.Types.Lines>, options?: Api.Tables.Lines.Options): Promise<Api.Types.Lines>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Api.Tables.Lines.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         api.lines (line)
       VALUES (${ values.line === undefined ? sql`DEFAULT` : typed[628](values.line) })
       RETURNING
         id,line
-    `
+    `);
 return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       api.lines (id,line)
     VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.line === undefined ? sql`DEFAULT` : typed[628](values.line) })
@@ -3903,16 +3894,15 @@ const response = await sql`
       line = EXCLUDED.line
     RETURNING
       id,line
-    `
+    `);
 return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))[0]
 }
 async all(options?: Api.Tables.Lines.Options) : Promise<Api.Types.Lines[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       id,line 
     FROM
@@ -3920,7 +3910,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))
 }
 public get ByPrimaryKey () { return new Api.Tables.Lines.LinesPkey(this)}
@@ -3938,23 +3928,22 @@ get LinesPkey () { return new Api.Tables.Lines.LinesPkey(this)}
 
 async create(values: Partial<Api.Types.LineSegments>, options?: Api.Tables.LineSegments.Options): Promise<Api.Types.LineSegments>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Api.Tables.LineSegments.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         api.line_segments (line_segment)
       VALUES (${ values.lineSegment === undefined ? sql`DEFAULT` : typed[601](values.lineSegment) })
       RETURNING
         id,line_segment
-    `
+    `);
 return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       api.line_segments (id,line_segment)
     VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.lineSegment === undefined ? sql`DEFAULT` : typed[601](values.lineSegment) })
@@ -3963,16 +3952,15 @@ const response = await sql`
       line_segment = EXCLUDED.line_segment
     RETURNING
       id,line_segment
-    `
+    `);
 return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))[0]
 }
 async all(options?: Api.Tables.LineSegments.Options) : Promise<Api.Types.LineSegments[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       id,line_segment 
     FROM
@@ -3980,7 +3968,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))
 }
 public get ByPrimaryKey () { return new Api.Tables.LineSegments.LineSegmentsPkey(this)}
@@ -3998,23 +3986,22 @@ get LineSegmentsPkey () { return new Api.Tables.LineSegments.LineSegmentsPkey(th
 
 async create(values: Partial<Api.Types.Boxes>, options?: Api.Tables.Boxes.Options): Promise<Api.Types.Boxes>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Api.Tables.Boxes.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         api.boxes (box)
       VALUES (${ values.box === undefined ? sql`DEFAULT` : typed[603](values.box) })
       RETURNING
         id,box
-    `
+    `);
 return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       api.boxes (id,box)
     VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.box === undefined ? sql`DEFAULT` : typed[603](values.box) })
@@ -4023,16 +4010,15 @@ const response = await sql`
       box = EXCLUDED.box
     RETURNING
       id,box
-    `
+    `);
 return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))[0]
 }
 async all(options?: Api.Tables.Boxes.Options) : Promise<Api.Types.Boxes[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       id,box 
     FROM
@@ -4040,7 +4026,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))
 }
 public get ByPrimaryKey () { return new Api.Tables.Boxes.BoxesPkey(this)}
@@ -4058,23 +4044,22 @@ get BoxesPkey () { return new Api.Tables.Boxes.BoxesPkey(this)}
 
 async create(values: Partial<Api.Types.Paths>, options?: Api.Tables.Paths.Options): Promise<Api.Types.Paths>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Api.Tables.Paths.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         api.paths (path)
       VALUES (${ values.path === undefined ? sql`DEFAULT` : typed[602](values.path) })
       RETURNING
         id,path
-    `
+    `);
 return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       api.paths (id,path)
     VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.path === undefined ? sql`DEFAULT` : typed[602](values.path) })
@@ -4083,16 +4068,15 @@ const response = await sql`
       path = EXCLUDED.path
     RETURNING
       id,path
-    `
+    `);
 return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))[0]
 }
 async all(options?: Api.Tables.Paths.Options) : Promise<Api.Types.Paths[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       id,path 
     FROM
@@ -4100,7 +4084,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))
 }
 public get ByPrimaryKey () { return new Api.Tables.Paths.PathsPkey(this)}
@@ -4118,23 +4102,22 @@ get PathsPkey () { return new Api.Tables.Paths.PathsPkey(this)}
 
 async create(values: Partial<Api.Types.Polygons>, options?: Api.Tables.Polygons.Options): Promise<Api.Types.Polygons>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Api.Tables.Polygons.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         api.polygons (polygon)
       VALUES (${ values.polygon === undefined ? sql`DEFAULT` : typed[604](values.polygon) })
       RETURNING
         id,polygon
-    `
+    `);
 return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       api.polygons (id,polygon)
     VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.polygon === undefined ? sql`DEFAULT` : typed[604](values.polygon) })
@@ -4143,16 +4126,15 @@ const response = await sql`
       polygon = EXCLUDED.polygon
     RETURNING
       id,polygon
-    `
+    `);
 return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))[0]
 }
 async all(options?: Api.Tables.Polygons.Options) : Promise<Api.Types.Polygons[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       id,polygon 
     FROM
@@ -4160,7 +4142,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))
 }
 public get ByPrimaryKey () { return new Api.Tables.Polygons.PolygonsPkey(this)}
@@ -4178,23 +4160,22 @@ get PolygonsPkey () { return new Api.Tables.Polygons.PolygonsPkey(this)}
 
 async create(values: Partial<Api.Types.Circles>, options?: Api.Tables.Circles.Options): Promise<Api.Types.Circles>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
 
       if (!Api.Tables.Circles.includesPrimaryKey(values)) {
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
       --
       INSERT INTO
         api.circles (circle)
       VALUES (${ values.circle === undefined ? sql`DEFAULT` : typed[718](values.circle) })
       RETURNING
         id,circle
-    `
+    `);
 return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))[0]
 }
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       api.circles (id,circle)
     VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.circle === undefined ? sql`DEFAULT` : typed[718](values.circle) })
@@ -4203,16 +4184,15 @@ const response = await sql`
       circle = EXCLUDED.circle
     RETURNING
       id,circle
-    `
+    `);
 return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))[0]
 }
 async all(options?: Api.Tables.Circles.Options) : Promise<Api.Types.Circles[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       id,circle 
     FROM
@@ -4220,7 +4200,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))
 }
 public get ByPrimaryKey () { return new Api.Tables.Circles.CirclesPkey(this)}
@@ -4271,10 +4251,9 @@ async update(parameters: Public.Types.SlugPkey, values: Partial<Public.Tables.Sl
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.slug 
@@ -4282,20 +4261,19 @@ const response = await sql`
       slug_id = ${ values.slugId === undefined ? sql`slug_id` : typed[23](values.slugId) } 
     WHERE
       slug_id = ${ parameters.slugId === undefined ? sql`DEFAULT` : typed[23](parameters.slugId) }
-    RETURNING slug_id`
+    RETURNING slug_id`);
 return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))[0]
 }
 async delete(parameters: Public.Types.SlugPkey, options?: Public.Types.SlugPkey.Options & Public.Tables.Slug.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.slug 
     WHERE
       slug_id = ${ parameters.slugId === undefined ? sql`DEFAULT` : typed[23](parameters.slugId) }
-    RETURNING slug_id`
+    RETURNING slug_id`);
  return response.map(r => ({ slugId: undefinedIsNull(r.slug_id) }))[0]
 }
 }
@@ -4341,10 +4319,9 @@ async update(parameters: Api.Types.QAndAAnswer, values: Partial<Api.Tables.QAndA
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       api.q_and_a 
@@ -4352,20 +4329,19 @@ const response = await sql`
       question = ${ values.question === undefined ? sql`question` : typed[25](values.question) } , answer = ${ values.answer === undefined ? sql`answer` : typed[29408](values.answer) } 
     WHERE
       answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[29408](parameters.answer) }
-    RETURNING question,answer`
+    RETURNING question,answer`);
 return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
 }
 async delete(parameters: Api.Types.QAndAAnswer, options?: Api.Types.QAndAAnswer.Options & Api.Tables.QAndA.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       api.q_and_a 
     WHERE
       answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[29408](parameters.answer) }
-    RETURNING question,answer`
+    RETURNING question,answer`);
  return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
 }
 }
@@ -4407,10 +4383,9 @@ async update(parameters: Api.Types.TrgmIdxGist, values: Partial<Api.Tables.Timez
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       api.timezones 
@@ -4418,20 +4393,19 @@ const response = await sql`
       country_code = ${ values.countryCode === undefined ? sql`country_code` : typed[25](values.countryCode) } , time_zone = ${ values.timeZone === undefined ? sql`time_zone` : typed[25](values.timeZone) } , gmt_offset = ${ values.gmtOffset === undefined ? sql`gmt_offset` : typed[700](values.gmtOffset) } , dst_offset = ${ values.dstOffset === undefined ? sql`dst_offset` : typed[700](values.dstOffset) } , raw_offset = ${ values.rawOffset === undefined ? sql`raw_offset` : typed[700](values.rawOffset) } 
     WHERE
       time_zone % ${ parameters.timeZone === undefined ? sql`DEFAULT` : typed[25](parameters.timeZone) }
-    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`
+    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`);
 return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
 }
 async delete(parameters: Api.Types.TrgmIdxGist, options?: Api.Types.TrgmIdxGist.Options & Api.Tables.Timezones.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       api.timezones 
     WHERE
       time_zone % ${ parameters.timeZone === undefined ? sql`DEFAULT` : typed[25](parameters.timeZone) }
-    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`
+    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`);
  return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
 }
 }
@@ -4471,10 +4445,9 @@ async update(parameters: Api.Types.TrgmIdxGin, values: Partial<Api.Tables.Timezo
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       api.timezones 
@@ -4482,20 +4455,19 @@ const response = await sql`
       country_code = ${ values.countryCode === undefined ? sql`country_code` : typed[25](values.countryCode) } , time_zone = ${ values.timeZone === undefined ? sql`time_zone` : typed[25](values.timeZone) } , gmt_offset = ${ values.gmtOffset === undefined ? sql`gmt_offset` : typed[700](values.gmtOffset) } , dst_offset = ${ values.dstOffset === undefined ? sql`dst_offset` : typed[700](values.dstOffset) } , raw_offset = ${ values.rawOffset === undefined ? sql`raw_offset` : typed[700](values.rawOffset) } 
     WHERE
       time_zone % ${ parameters.timeZone === undefined ? sql`DEFAULT` : typed[25](parameters.timeZone) }
-    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`
+    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`);
 return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
 }
 async delete(parameters: Api.Types.TrgmIdxGin, options?: Api.Types.TrgmIdxGin.Options & Api.Tables.Timezones.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       api.timezones 
     WHERE
       time_zone % ${ parameters.timeZone === undefined ? sql`DEFAULT` : typed[25](parameters.timeZone) }
-    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`
+    RETURNING country_code,time_zone,gmt_offset,dst_offset,raw_offset`);
  return response.map(r => ({ countryCode: undefinedIsNull(r.country_code),timeZone: undefinedIsNull(r.time_zone),gmtOffset: undefinedIsNull(r.gmt_offset),dstOffset: undefinedIsNull(r.dst_offset),rawOffset: undefinedIsNull(r.raw_offset) }))
 }
 }
@@ -4537,10 +4509,9 @@ async update(parameters: Api.Types.PointsPkey, values: Partial<Api.Tables.Points
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       api.points 
@@ -4548,20 +4519,19 @@ const response = await sql`
       id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , point = ${ values.point === undefined ? sql`point` : typed[600](values.point) } 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,point`
+    RETURNING id,point`);
 return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
 }
 async delete(parameters: Api.Types.PointsPkey, options?: Api.Types.PointsPkey.Options & Api.Tables.Points.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       api.points 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,point`
+    RETURNING id,point`);
  return response.map(r => ({ id: undefinedIsNull(r.id),point: undefinedIsNull(r.point) }))[0]
 }
 }
@@ -4603,10 +4573,9 @@ async update(parameters: Api.Types.LinesPkey, values: Partial<Api.Tables.Lines.V
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       api.lines 
@@ -4614,20 +4583,19 @@ const response = await sql`
       id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , line = ${ values.line === undefined ? sql`line` : typed[628](values.line) } 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,line`
+    RETURNING id,line`);
 return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))[0]
 }
 async delete(parameters: Api.Types.LinesPkey, options?: Api.Types.LinesPkey.Options & Api.Tables.Lines.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       api.lines 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,line`
+    RETURNING id,line`);
  return response.map(r => ({ id: undefinedIsNull(r.id),line: undefinedIsNull(r.line) }))[0]
 }
 }
@@ -4669,10 +4637,9 @@ async update(parameters: Api.Types.LineSegmentsPkey, values: Partial<Api.Tables.
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       api.line_segments 
@@ -4680,20 +4647,19 @@ const response = await sql`
       id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , line_segment = ${ values.lineSegment === undefined ? sql`line_segment` : typed[601](values.lineSegment) } 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,line_segment`
+    RETURNING id,line_segment`);
 return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))[0]
 }
 async delete(parameters: Api.Types.LineSegmentsPkey, options?: Api.Types.LineSegmentsPkey.Options & Api.Tables.LineSegments.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       api.line_segments 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,line_segment`
+    RETURNING id,line_segment`);
  return response.map(r => ({ id: undefinedIsNull(r.id),lineSegment: undefinedIsNull(r.line_segment) }))[0]
 }
 }
@@ -4735,10 +4701,9 @@ async update(parameters: Api.Types.BoxesPkey, values: Partial<Api.Tables.Boxes.V
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       api.boxes 
@@ -4746,20 +4711,19 @@ const response = await sql`
       id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , box = ${ values.box === undefined ? sql`box` : typed[603](values.box) } 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,box`
+    RETURNING id,box`);
 return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))[0]
 }
 async delete(parameters: Api.Types.BoxesPkey, options?: Api.Types.BoxesPkey.Options & Api.Tables.Boxes.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       api.boxes 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,box`
+    RETURNING id,box`);
  return response.map(r => ({ id: undefinedIsNull(r.id),box: undefinedIsNull(r.box) }))[0]
 }
 }
@@ -4801,10 +4765,9 @@ async update(parameters: Api.Types.PathsPkey, values: Partial<Api.Tables.Paths.V
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       api.paths 
@@ -4812,20 +4775,19 @@ const response = await sql`
       id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , path = ${ values.path === undefined ? sql`path` : typed[602](values.path) } 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,path`
+    RETURNING id,path`);
 return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))[0]
 }
 async delete(parameters: Api.Types.PathsPkey, options?: Api.Types.PathsPkey.Options & Api.Tables.Paths.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       api.paths 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,path`
+    RETURNING id,path`);
  return response.map(r => ({ id: undefinedIsNull(r.id),path: undefinedIsNull(r.path) }))[0]
 }
 }
@@ -4867,10 +4829,9 @@ async update(parameters: Api.Types.PolygonsPkey, values: Partial<Api.Tables.Poly
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       api.polygons 
@@ -4878,20 +4839,19 @@ const response = await sql`
       id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , polygon = ${ values.polygon === undefined ? sql`polygon` : typed[604](values.polygon) } 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,polygon`
+    RETURNING id,polygon`);
 return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))[0]
 }
 async delete(parameters: Api.Types.PolygonsPkey, options?: Api.Types.PolygonsPkey.Options & Api.Tables.Polygons.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       api.polygons 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,polygon`
+    RETURNING id,polygon`);
  return response.map(r => ({ id: undefinedIsNull(r.id),polygon: undefinedIsNull(r.polygon) }))[0]
 }
 }
@@ -4933,10 +4893,9 @@ async update(parameters: Api.Types.CirclesPkey, values: Partial<Api.Tables.Circl
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       api.circles 
@@ -4944,20 +4903,19 @@ const response = await sql`
       id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , circle = ${ values.circle === undefined ? sql`circle` : typed[718](values.circle) } 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,circle`
+    RETURNING id,circle`);
 return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))[0]
 }
 async delete(parameters: Api.Types.CirclesPkey, options?: Api.Types.CirclesPkey.Options & Api.Tables.Circles.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       api.circles 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,circle`
+    RETURNING id,circle`);
  return response.map(r => ({ id: undefinedIsNull(r.id),circle: undefinedIsNull(r.circle) }))[0]
 }
 }

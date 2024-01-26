@@ -1848,9 +1848,8 @@ async call(parameters : Public.Procedures.FilmInStock.Parameters) {
               return context.procTypes[28923].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.film_in_stock(p_film_id => ${ typed[23](undefinedIsNull(parameters.pFilmId)) },p_store_id => ${ typed[23](undefinedIsNull(parameters.pStoreId)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.film_in_stock(p_film_id => ${ typed[23](undefinedIsNull(parameters.pFilmId)) },p_store_id => ${ typed[23](undefinedIsNull(parameters.pStoreId)) })`);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.film_in_stock)).filter<PgCatalog.Types.Int4>((r):r is PgCatalog.Types.Int4 => r !== null) );
@@ -1868,9 +1867,8 @@ async call(parameters : Public.Procedures.FilmNotInStock.Parameters) {
               return context.procTypes[28924].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.film_not_in_stock(p_film_id => ${ typed[23](undefinedIsNull(parameters.pFilmId)) },p_store_id => ${ typed[23](undefinedIsNull(parameters.pStoreId)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.film_not_in_stock(p_film_id => ${ typed[23](undefinedIsNull(parameters.pFilmId)) },p_store_id => ${ typed[23](undefinedIsNull(parameters.pStoreId)) })`);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.film_not_in_stock)).filter<PgCatalog.Types.Int4>((r):r is PgCatalog.Types.Int4 => r !== null) );
@@ -1889,9 +1887,8 @@ async call(parameters : Public.Procedures.GetCustomerBalance.Parameters) {
               return PgCatalog.Types.Numeric.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.get_customer_balance(p_customer_id => ${ typed[23](undefinedIsNull(parameters.pCustomerId)) },p_effective_date => ${ typed[1114](undefinedIsNull(parameters.pEffectiveDate)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.get_customer_balance(p_customer_id => ${ typed[23](undefinedIsNull(parameters.pCustomerId)) },p_effective_date => ${ typed[1114](undefinedIsNull(parameters.pEffectiveDate)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Numeric.parse(results?.[0].get_customer_balance) );
@@ -1910,9 +1907,8 @@ async call(parameters : Public.Procedures.InventoryHeldByCustomer.Parameters) {
               return PgCatalog.Types.Int4.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.inventory_held_by_customer(p_inventory_id => ${ typed[23](undefinedIsNull(parameters.pInventoryId)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.inventory_held_by_customer(p_inventory_id => ${ typed[23](undefinedIsNull(parameters.pInventoryId)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].inventory_held_by_customer) );
@@ -1931,9 +1927,8 @@ async call(parameters : Public.Procedures.InventoryInStock.Parameters) {
               return PgCatalog.Types.Bool.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.inventory_in_stock(p_inventory_id => ${ typed[23](undefinedIsNull(parameters.pInventoryId)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.inventory_in_stock(p_inventory_id => ${ typed[23](undefinedIsNull(parameters.pInventoryId)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].inventory_in_stock) );
@@ -1952,9 +1947,8 @@ async call(parameters : Public.Procedures.LastDay.Parameters) {
               return PgCatalog.Types.Date.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.last_day( ${ typed[1114](undefinedIsNull(parameters.argument_0)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.last_day( ${ typed[1114](undefinedIsNull(parameters.argument_0)) })`);
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Date.parse(results?.[0].last_day) );
@@ -1973,9 +1967,8 @@ async call(parameters : Public.Procedures.RewardsReport.Parameters) {
               return Public.Types.Customer.parse(result);
             };
           
-  const sql = this.database.context.sql;
-  const typed = sql.typed as unknown as PostgresTypecasts;
-  const response = await sql`SELECT public.rewards_report(min_monthly_purchases => ${ typed[23](undefinedIsNull(parameters.minMonthlyPurchases)) },min_dollar_amount_purchased => ${ typed[1700](undefinedIsNull(parameters.minDollarAmountPurchased)) })`
+  const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+  const response = await this.database.invoke( (sql) => sql`SELECT public.rewards_report(min_monthly_purchases => ${ typed[23](undefinedIsNull(parameters.minMonthlyPurchases)) },min_dollar_amount_purchased => ${ typed[1700](undefinedIsNull(parameters.minDollarAmountPurchased)) })`);
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.rewards_report)).filter<Public.Types.Customer>((r):r is Public.Types.Customer => r !== null) );

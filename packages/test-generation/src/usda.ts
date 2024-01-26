@@ -1752,10 +1752,9 @@ export namespace Tables {
 
 async create(values: Partial<Public.Types.NutData>, options?: Public.Tables.NutData.Options): Promise<Public.Types.NutData>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.nut_data (ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc)
     VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.nutrNo === undefined ? sql`DEFAULT` : typed[1042](values.nutrNo) },${ values.nutrVal === undefined ? sql`DEFAULT` : typed[701](values.nutrVal) },${ values.numDataPts === undefined ? sql`DEFAULT` : typed[701](values.numDataPts) },${ values.stdError === undefined ? sql`DEFAULT` : typed[701](values.stdError) },${ values.srcCd === undefined ? sql`DEFAULT` : typed[23](values.srcCd) },${ values.derivCd === undefined ? sql`DEFAULT` : typed[25](values.derivCd) },${ values.refNdbNo === undefined ? sql`DEFAULT` : typed[1042](values.refNdbNo) },${ values.addNutrMark === undefined ? sql`DEFAULT` : typed[1042](values.addNutrMark) },${ values.numStudies === undefined ? sql`DEFAULT` : typed[23](values.numStudies) },${ values.min === undefined ? sql`DEFAULT` : typed[701](values.min) },${ values.max === undefined ? sql`DEFAULT` : typed[701](values.max) },${ values.df === undefined ? sql`DEFAULT` : typed[23](values.df) },${ values.lowEb === undefined ? sql`DEFAULT` : typed[701](values.lowEb) },${ values.upEb === undefined ? sql`DEFAULT` : typed[701](values.upEb) },${ values.statCmt === undefined ? sql`DEFAULT` : typed[25](values.statCmt) },${ values.cc === undefined ? sql`DEFAULT` : typed[1042](values.cc) })
@@ -1764,16 +1763,15 @@ const response = await sql`
       nutr_val = EXCLUDED.nutr_val,num_data_pts = EXCLUDED.num_data_pts,std_error = EXCLUDED.std_error,src_cd = EXCLUDED.src_cd,deriv_cd = EXCLUDED.deriv_cd,ref_ndb_no = EXCLUDED.ref_ndb_no,add_nutr_mark = EXCLUDED.add_nutr_mark,num_studies = EXCLUDED.num_studies,min = EXCLUDED.min,max = EXCLUDED.max,df = EXCLUDED.df,low_eb = EXCLUDED.low_eb,up_eb = EXCLUDED.up_eb,stat_cmt = EXCLUDED.stat_cmt,cc = EXCLUDED.cc
     RETURNING
       ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc
-    `
+    `);
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))[0]
 }
 async all(options?: Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc 
     FROM
@@ -1781,7 +1779,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.NutData.NutDataPkey(this)}
@@ -1805,10 +1803,9 @@ get NutDataSrcCdIdx () { return new Public.Tables.NutData.NutDataSrcCdIdx(this)}
 
 async create(values: Partial<Public.Types.SrcCd>, options?: Public.Tables.SrcCd.Options): Promise<Public.Types.SrcCd>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.src_cd (src_cd,srccd_desc)
     VALUES (${ values.srcCd === undefined ? sql`DEFAULT` : typed[23](values.srcCd) },${ values.srccdDesc === undefined ? sql`DEFAULT` : typed[25](values.srccdDesc) })
@@ -1817,16 +1814,15 @@ const response = await sql`
       srccd_desc = EXCLUDED.srccd_desc
     RETURNING
       src_cd,srccd_desc
-    `
+    `);
 return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))[0]
 }
 async all(options?: Public.Tables.SrcCd.Options) : Promise<Public.Types.SrcCd[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       src_cd,srccd_desc 
     FROM
@@ -1834,7 +1830,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.SrcCd.SrcCdPkey(this)}
@@ -1852,10 +1848,9 @@ get SrcCdPkey () { return new Public.Tables.SrcCd.SrcCdPkey(this)}
 
 async create(values: Partial<Public.Types.Footnote>, options?: Public.Tables.Footnote.Options): Promise<Public.Types.Footnote>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.footnote (ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt)
     VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.footntNo === undefined ? sql`DEFAULT` : typed[1042](values.footntNo) },${ values.footntTyp === undefined ? sql`DEFAULT` : typed[1042](values.footntTyp) },${ values.nutrNo === undefined ? sql`DEFAULT` : typed[1042](values.nutrNo) },${ values.footntTxt === undefined ? sql`DEFAULT` : typed[25](values.footntTxt) })
@@ -1864,16 +1859,15 @@ const response = await sql`
       ndb_no = EXCLUDED.ndb_no,footnt_no = EXCLUDED.footnt_no,footnt_typ = EXCLUDED.footnt_typ,nutr_no = EXCLUDED.nutr_no,footnt_txt = EXCLUDED.footnt_txt
     RETURNING
       ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt
-    `
+    `);
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))[0]
 }
 async all(options?: Public.Tables.Footnote.Options) : Promise<Public.Types.Footnote[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt 
     FROM
@@ -1881,7 +1875,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))
 }
 
@@ -1899,10 +1893,9 @@ get FootnoteNdbNoIdx () { return new Public.Tables.Footnote.FootnoteNdbNoIdx(thi
 
 async create(values: Partial<Public.Types.NutrDef>, options?: Public.Tables.NutrDef.Options): Promise<Public.Types.NutrDef>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.nutr_def (nutr_no,units,tagname,nutrdesc,num_dec,sr_order)
     VALUES (${ values.nutrNo === undefined ? sql`DEFAULT` : typed[1042](values.nutrNo) },${ values.units === undefined ? sql`DEFAULT` : typed[25](values.units) },${ values.tagname === undefined ? sql`DEFAULT` : typed[25](values.tagname) },${ values.nutrdesc === undefined ? sql`DEFAULT` : typed[25](values.nutrdesc) },${ values.numDec === undefined ? sql`DEFAULT` : typed[21](values.numDec) },${ values.srOrder === undefined ? sql`DEFAULT` : typed[23](values.srOrder) })
@@ -1911,16 +1904,15 @@ const response = await sql`
       units = EXCLUDED.units,tagname = EXCLUDED.tagname,nutrdesc = EXCLUDED.nutrdesc,num_dec = EXCLUDED.num_dec,sr_order = EXCLUDED.sr_order
     RETURNING
       nutr_no,units,tagname,nutrdesc,num_dec,sr_order
-    `
+    `);
 return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))[0]
 }
 async all(options?: Public.Tables.NutrDef.Options) : Promise<Public.Types.NutrDef[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       nutr_no,units,tagname,nutrdesc,num_dec,sr_order 
     FROM
@@ -1928,7 +1920,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.NutrDef.NutrDefPkey(this)}
@@ -1946,10 +1938,9 @@ get NutrDefPkey () { return new Public.Tables.NutrDef.NutrDefPkey(this)}
 
 async create(values: Partial<Public.Types.DerivCd>, options?: Public.Tables.DerivCd.Options): Promise<Public.Types.DerivCd>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.deriv_cd (deriv_cd,derivcd_desc)
     VALUES (${ values.derivCd === undefined ? sql`DEFAULT` : typed[25](values.derivCd) },${ values.derivcdDesc === undefined ? sql`DEFAULT` : typed[25](values.derivcdDesc) })
@@ -1958,16 +1949,15 @@ const response = await sql`
       derivcd_desc = EXCLUDED.derivcd_desc
     RETURNING
       deriv_cd,derivcd_desc
-    `
+    `);
 return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))[0]
 }
 async all(options?: Public.Tables.DerivCd.Options) : Promise<Public.Types.DerivCd[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       deriv_cd,derivcd_desc 
     FROM
@@ -1975,7 +1965,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.DerivCd.DerivCdPkey(this)}
@@ -1993,10 +1983,9 @@ get DerivCdPkey () { return new Public.Tables.DerivCd.DerivCdPkey(this)}
 
 async create(values: Partial<Public.Types.FdGroup>, options?: Public.Tables.FdGroup.Options): Promise<Public.Types.FdGroup>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.fd_group (fdgrp_cd,fddrp_desc)
     VALUES (${ values.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](values.fdgrpCd) },${ values.fddrpDesc === undefined ? sql`DEFAULT` : typed[25](values.fddrpDesc) })
@@ -2005,16 +1994,15 @@ const response = await sql`
       fddrp_desc = EXCLUDED.fddrp_desc
     RETURNING
       fdgrp_cd,fddrp_desc
-    `
+    `);
 return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))[0]
 }
 async all(options?: Public.Tables.FdGroup.Options) : Promise<Public.Types.FdGroup[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       fdgrp_cd,fddrp_desc 
     FROM
@@ -2022,7 +2010,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.FdGroup.FdGroupPkey(this)}
@@ -2040,10 +2028,9 @@ get FdGroupPkey () { return new Public.Tables.FdGroup.FdGroupPkey(this)}
 
 async create(values: Partial<Public.Types.Weight>, options?: Public.Tables.Weight.Options): Promise<Public.Types.Weight>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.weight (ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev)
     VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.seq === undefined ? sql`DEFAULT` : typed[1042](values.seq) },${ values.amount === undefined ? sql`DEFAULT` : typed[701](values.amount) },${ values.msreDesc === undefined ? sql`DEFAULT` : typed[25](values.msreDesc) },${ values.gmWgt === undefined ? sql`DEFAULT` : typed[701](values.gmWgt) },${ values.numDataPts === undefined ? sql`DEFAULT` : typed[23](values.numDataPts) },${ values.stdDev === undefined ? sql`DEFAULT` : typed[701](values.stdDev) })
@@ -2052,16 +2039,15 @@ const response = await sql`
       amount = EXCLUDED.amount,msre_desc = EXCLUDED.msre_desc,gm_wgt = EXCLUDED.gm_wgt,num_data_pts = EXCLUDED.num_data_pts,std_dev = EXCLUDED.std_dev
     RETURNING
       ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev
-    `
+    `);
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))[0]
 }
 async all(options?: Public.Tables.Weight.Options) : Promise<Public.Types.Weight[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev 
     FROM
@@ -2069,7 +2055,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Weight.WeightPkey(this)}
@@ -2087,10 +2073,9 @@ get WeightPkey () { return new Public.Tables.Weight.WeightPkey(this)}
 
 async create(values: Partial<Public.Types.FoodDes>, options?: Public.Tables.FoodDes.Options): Promise<Public.Types.FoodDes>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.food_des (ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor)
     VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](values.fdgrpCd) },${ values.longDesc === undefined ? sql`DEFAULT` : typed[25](values.longDesc) },${ values.shrtDesc === undefined ? sql`DEFAULT` : typed[25](values.shrtDesc) },${ values.comname === undefined ? sql`DEFAULT` : typed[25](values.comname) },${ values.manufacname === undefined ? sql`DEFAULT` : typed[25](values.manufacname) },${ values.survey === undefined ? sql`DEFAULT` : typed[1042](values.survey) },${ values.refDesc === undefined ? sql`DEFAULT` : typed[25](values.refDesc) },${ values.refuse === undefined ? sql`DEFAULT` : typed[23](values.refuse) },${ values.sciname === undefined ? sql`DEFAULT` : typed[25](values.sciname) },${ values.nFactor === undefined ? sql`DEFAULT` : typed[701](values.nFactor) },${ values.proFactor === undefined ? sql`DEFAULT` : typed[701](values.proFactor) },${ values.fatFactor === undefined ? sql`DEFAULT` : typed[701](values.fatFactor) },${ values.choFactor === undefined ? sql`DEFAULT` : typed[701](values.choFactor) })
@@ -2099,16 +2084,15 @@ const response = await sql`
       fdgrp_cd = EXCLUDED.fdgrp_cd,long_desc = EXCLUDED.long_desc,shrt_desc = EXCLUDED.shrt_desc,comname = EXCLUDED.comname,manufacname = EXCLUDED.manufacname,survey = EXCLUDED.survey,ref_desc = EXCLUDED.ref_desc,refuse = EXCLUDED.refuse,sciname = EXCLUDED.sciname,n_factor = EXCLUDED.n_factor,pro_factor = EXCLUDED.pro_factor,fat_factor = EXCLUDED.fat_factor,cho_factor = EXCLUDED.cho_factor
     RETURNING
       ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor
-    `
+    `);
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))[0]
 }
 async all(options?: Public.Tables.FoodDes.Options) : Promise<Public.Types.FoodDes[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor 
     FROM
@@ -2116,7 +2100,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.FoodDes.FoodDesPkey(this)}
@@ -2136,10 +2120,9 @@ get FoodDesFdgrpCdIdx () { return new Public.Tables.FoodDes.FoodDesFdgrpCdIdx(th
 
 async create(values: Partial<Public.Types.DataSrc>, options?: Public.Tables.DataSrc.Options): Promise<Public.Types.DataSrc>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.data_src (datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page)
     VALUES (${ values.datasrcId === undefined ? sql`DEFAULT` : typed[1042](values.datasrcId) },${ values.authors === undefined ? sql`DEFAULT` : typed[25](values.authors) },${ values.title === undefined ? sql`DEFAULT` : typed[25](values.title) },${ values.year === undefined ? sql`DEFAULT` : typed[23](values.year) },${ values.journal === undefined ? sql`DEFAULT` : typed[25](values.journal) },${ values.volCity === undefined ? sql`DEFAULT` : typed[25](values.volCity) },${ values.issueState === undefined ? sql`DEFAULT` : typed[25](values.issueState) },${ values.startPage === undefined ? sql`DEFAULT` : typed[25](values.startPage) },${ values.endPage === undefined ? sql`DEFAULT` : typed[25](values.endPage) })
@@ -2148,16 +2131,15 @@ const response = await sql`
       authors = EXCLUDED.authors,title = EXCLUDED.title,year = EXCLUDED.year,journal = EXCLUDED.journal,vol_city = EXCLUDED.vol_city,issue_state = EXCLUDED.issue_state,start_page = EXCLUDED.start_page,end_page = EXCLUDED.end_page
     RETURNING
       datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page
-    `
+    `);
 return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))[0]
 }
 async all(options?: Public.Tables.DataSrc.Options) : Promise<Public.Types.DataSrc[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page 
     FROM
@@ -2165,7 +2147,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
 }
 
@@ -2185,10 +2167,9 @@ get DataSrcPkey () { return new Public.Tables.DataSrc.DataSrcPkey(this)}
 
 async create(values: Partial<Public.Types.Datsrcln>, options?: Public.Tables.Datsrcln.Options): Promise<Public.Types.Datsrcln>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       public.datsrcln (ndb_no,nutr_no,datasrc_id)
     VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.nutrNo === undefined ? sql`DEFAULT` : typed[1042](values.nutrNo) },${ values.datasrcId === undefined ? sql`DEFAULT` : typed[1042](values.datasrcId) })
@@ -2197,16 +2178,15 @@ const response = await sql`
       
     RETURNING
       ndb_no,nutr_no,datasrc_id
-    `
+    `);
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))[0]
 }
 async all(options?: Public.Tables.Datsrcln.Options) : Promise<Public.Types.Datsrcln[]>{
 
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     SELECT 
       ndb_no,nutr_no,datasrc_id 
     FROM
@@ -2214,7 +2194,7 @@ const response = await sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `
+    `);
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Datsrcln.DatsrclnPkey(this)}
@@ -2263,10 +2243,9 @@ async update(parameters: Public.Types.NutDataPkey, values: Partial<Public.Tables
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.nut_data 
@@ -2274,20 +2253,19 @@ const response = await sql`
       ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , nutr_val = ${ values.nutrVal === undefined ? sql`nutr_val` : typed[701](values.nutrVal) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[701](values.numDataPts) } , std_error = ${ values.stdError === undefined ? sql`std_error` : typed[701](values.stdError) } , src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , ref_ndb_no = ${ values.refNdbNo === undefined ? sql`ref_ndb_no` : typed[1042](values.refNdbNo) } , add_nutr_mark = ${ values.addNutrMark === undefined ? sql`add_nutr_mark` : typed[1042](values.addNutrMark) } , num_studies = ${ values.numStudies === undefined ? sql`num_studies` : typed[23](values.numStudies) } , min = ${ values.min === undefined ? sql`min` : typed[701](values.min) } , max = ${ values.max === undefined ? sql`max` : typed[701](values.max) } , df = ${ values.df === undefined ? sql`df` : typed[23](values.df) } , low_eb = ${ values.lowEb === undefined ? sql`low_eb` : typed[701](values.lowEb) } , up_eb = ${ values.upEb === undefined ? sql`up_eb` : typed[701](values.upEb) } , stat_cmt = ${ values.statCmt === undefined ? sql`stat_cmt` : typed[25](values.statCmt) } , cc = ${ values.cc === undefined ? sql`cc` : typed[1042](values.cc) } 
     WHERE
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`);
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))[0]
 }
 async delete(parameters: Public.Types.NutDataPkey, options?: Public.Types.NutDataPkey.Options & Public.Tables.NutData.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.nut_data 
     WHERE
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`);
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))[0]
 }
 }
@@ -2327,10 +2305,9 @@ async update(parameters: Public.Types.NutDataDerivCdIdx, values: Partial<Public.
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.nut_data 
@@ -2338,20 +2315,19 @@ const response = await sql`
       ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , nutr_val = ${ values.nutrVal === undefined ? sql`nutr_val` : typed[701](values.nutrVal) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[701](values.numDataPts) } , std_error = ${ values.stdError === undefined ? sql`std_error` : typed[701](values.stdError) } , src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , ref_ndb_no = ${ values.refNdbNo === undefined ? sql`ref_ndb_no` : typed[1042](values.refNdbNo) } , add_nutr_mark = ${ values.addNutrMark === undefined ? sql`add_nutr_mark` : typed[1042](values.addNutrMark) } , num_studies = ${ values.numStudies === undefined ? sql`num_studies` : typed[23](values.numStudies) } , min = ${ values.min === undefined ? sql`min` : typed[701](values.min) } , max = ${ values.max === undefined ? sql`max` : typed[701](values.max) } , df = ${ values.df === undefined ? sql`df` : typed[23](values.df) } , low_eb = ${ values.lowEb === undefined ? sql`low_eb` : typed[701](values.lowEb) } , up_eb = ${ values.upEb === undefined ? sql`up_eb` : typed[701](values.upEb) } , stat_cmt = ${ values.statCmt === undefined ? sql`stat_cmt` : typed[25](values.statCmt) } , cc = ${ values.cc === undefined ? sql`cc` : typed[1042](values.cc) } 
     WHERE
       deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`);
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
 async delete(parameters: Public.Types.NutDataDerivCdIdx, options?: Public.Types.NutDataDerivCdIdx.Options & Public.Tables.NutData.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.nut_data 
     WHERE
       deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`);
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
 }
@@ -2391,10 +2367,9 @@ async update(parameters: Public.Types.NutDataNutrNoIdx, values: Partial<Public.T
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.nut_data 
@@ -2402,20 +2377,19 @@ const response = await sql`
       ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , nutr_val = ${ values.nutrVal === undefined ? sql`nutr_val` : typed[701](values.nutrVal) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[701](values.numDataPts) } , std_error = ${ values.stdError === undefined ? sql`std_error` : typed[701](values.stdError) } , src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , ref_ndb_no = ${ values.refNdbNo === undefined ? sql`ref_ndb_no` : typed[1042](values.refNdbNo) } , add_nutr_mark = ${ values.addNutrMark === undefined ? sql`add_nutr_mark` : typed[1042](values.addNutrMark) } , num_studies = ${ values.numStudies === undefined ? sql`num_studies` : typed[23](values.numStudies) } , min = ${ values.min === undefined ? sql`min` : typed[701](values.min) } , max = ${ values.max === undefined ? sql`max` : typed[701](values.max) } , df = ${ values.df === undefined ? sql`df` : typed[23](values.df) } , low_eb = ${ values.lowEb === undefined ? sql`low_eb` : typed[701](values.lowEb) } , up_eb = ${ values.upEb === undefined ? sql`up_eb` : typed[701](values.upEb) } , stat_cmt = ${ values.statCmt === undefined ? sql`stat_cmt` : typed[25](values.statCmt) } , cc = ${ values.cc === undefined ? sql`cc` : typed[1042](values.cc) } 
     WHERE
       nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`);
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
 async delete(parameters: Public.Types.NutDataNutrNoIdx, options?: Public.Types.NutDataNutrNoIdx.Options & Public.Tables.NutData.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.nut_data 
     WHERE
       nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`);
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
 }
@@ -2455,10 +2429,9 @@ async update(parameters: Public.Types.NutDataSrcCdIdx, values: Partial<Public.Ta
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.nut_data 
@@ -2466,20 +2439,19 @@ const response = await sql`
       ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , nutr_val = ${ values.nutrVal === undefined ? sql`nutr_val` : typed[701](values.nutrVal) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[701](values.numDataPts) } , std_error = ${ values.stdError === undefined ? sql`std_error` : typed[701](values.stdError) } , src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , ref_ndb_no = ${ values.refNdbNo === undefined ? sql`ref_ndb_no` : typed[1042](values.refNdbNo) } , add_nutr_mark = ${ values.addNutrMark === undefined ? sql`add_nutr_mark` : typed[1042](values.addNutrMark) } , num_studies = ${ values.numStudies === undefined ? sql`num_studies` : typed[23](values.numStudies) } , min = ${ values.min === undefined ? sql`min` : typed[701](values.min) } , max = ${ values.max === undefined ? sql`max` : typed[701](values.max) } , df = ${ values.df === undefined ? sql`df` : typed[23](values.df) } , low_eb = ${ values.lowEb === undefined ? sql`low_eb` : typed[701](values.lowEb) } , up_eb = ${ values.upEb === undefined ? sql`up_eb` : typed[701](values.upEb) } , stat_cmt = ${ values.statCmt === undefined ? sql`stat_cmt` : typed[25](values.statCmt) } , cc = ${ values.cc === undefined ? sql`cc` : typed[1042](values.cc) } 
     WHERE
       src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`);
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
 async delete(parameters: Public.Types.NutDataSrcCdIdx, options?: Public.Types.NutDataSrcCdIdx.Options & Public.Tables.NutData.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.nut_data 
     WHERE
       src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`);
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
 }
@@ -2521,10 +2493,9 @@ async update(parameters: Public.Types.SrcCdPkey, values: Partial<Public.Tables.S
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.src_cd 
@@ -2532,20 +2503,19 @@ const response = await sql`
       src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , srccd_desc = ${ values.srccdDesc === undefined ? sql`srccd_desc` : typed[25](values.srccdDesc) } 
     WHERE
       src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
-    RETURNING src_cd,srccd_desc`
+    RETURNING src_cd,srccd_desc`);
 return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))[0]
 }
 async delete(parameters: Public.Types.SrcCdPkey, options?: Public.Types.SrcCdPkey.Options & Public.Tables.SrcCd.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.src_cd 
     WHERE
       src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
-    RETURNING src_cd,srccd_desc`
+    RETURNING src_cd,srccd_desc`);
  return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))[0]
 }
 }
@@ -2587,10 +2557,9 @@ async update(parameters: Public.Types.FootnoteNdbNoIdx, values: Partial<Public.T
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.footnote 
@@ -2598,20 +2567,19 @@ const response = await sql`
       ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , footnt_no = ${ values.footntNo === undefined ? sql`footnt_no` : typed[1042](values.footntNo) } , footnt_typ = ${ values.footntTyp === undefined ? sql`footnt_typ` : typed[1042](values.footntTyp) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , footnt_txt = ${ values.footntTxt === undefined ? sql`footnt_txt` : typed[25](values.footntTxt) } 
     WHERE
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt`
+    RETURNING ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt`);
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))
 }
 async delete(parameters: Public.Types.FootnoteNdbNoIdx, options?: Public.Types.FootnoteNdbNoIdx.Options & Public.Tables.Footnote.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.footnote 
     WHERE
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt`
+    RETURNING ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt`);
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))
 }
 }
@@ -2653,10 +2621,9 @@ async update(parameters: Public.Types.NutrDefPkey, values: Partial<Public.Tables
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.nutr_def 
@@ -2664,20 +2631,19 @@ const response = await sql`
       nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , units = ${ values.units === undefined ? sql`units` : typed[25](values.units) } , tagname = ${ values.tagname === undefined ? sql`tagname` : typed[25](values.tagname) } , nutrdesc = ${ values.nutrdesc === undefined ? sql`nutrdesc` : typed[25](values.nutrdesc) } , num_dec = ${ values.numDec === undefined ? sql`num_dec` : typed[21](values.numDec) } , sr_order = ${ values.srOrder === undefined ? sql`sr_order` : typed[23](values.srOrder) } 
     WHERE
       nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING nutr_no,units,tagname,nutrdesc,num_dec,sr_order`
+    RETURNING nutr_no,units,tagname,nutrdesc,num_dec,sr_order`);
 return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))[0]
 }
 async delete(parameters: Public.Types.NutrDefPkey, options?: Public.Types.NutrDefPkey.Options & Public.Tables.NutrDef.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.nutr_def 
     WHERE
       nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING nutr_no,units,tagname,nutrdesc,num_dec,sr_order`
+    RETURNING nutr_no,units,tagname,nutrdesc,num_dec,sr_order`);
  return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))[0]
 }
 }
@@ -2719,10 +2685,9 @@ async update(parameters: Public.Types.DerivCdPkey, values: Partial<Public.Tables
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.deriv_cd 
@@ -2730,20 +2695,19 @@ const response = await sql`
       deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , derivcd_desc = ${ values.derivcdDesc === undefined ? sql`derivcd_desc` : typed[25](values.derivcdDesc) } 
     WHERE
       deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
-    RETURNING deriv_cd,derivcd_desc`
+    RETURNING deriv_cd,derivcd_desc`);
 return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))[0]
 }
 async delete(parameters: Public.Types.DerivCdPkey, options?: Public.Types.DerivCdPkey.Options & Public.Tables.DerivCd.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.deriv_cd 
     WHERE
       deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
-    RETURNING deriv_cd,derivcd_desc`
+    RETURNING deriv_cd,derivcd_desc`);
  return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))[0]
 }
 }
@@ -2785,10 +2749,9 @@ async update(parameters: Public.Types.FdGroupPkey, values: Partial<Public.Tables
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.fd_group 
@@ -2796,20 +2759,19 @@ const response = await sql`
       fdgrp_cd = ${ values.fdgrpCd === undefined ? sql`fdgrp_cd` : typed[1042](values.fdgrpCd) } , fddrp_desc = ${ values.fddrpDesc === undefined ? sql`fddrp_desc` : typed[25](values.fddrpDesc) } 
     WHERE
       fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
-    RETURNING fdgrp_cd,fddrp_desc`
+    RETURNING fdgrp_cd,fddrp_desc`);
 return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))[0]
 }
 async delete(parameters: Public.Types.FdGroupPkey, options?: Public.Types.FdGroupPkey.Options & Public.Tables.FdGroup.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.fd_group 
     WHERE
       fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
-    RETURNING fdgrp_cd,fddrp_desc`
+    RETURNING fdgrp_cd,fddrp_desc`);
  return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))[0]
 }
 }
@@ -2851,10 +2813,9 @@ async update(parameters: Public.Types.WeightPkey, values: Partial<Public.Tables.
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.weight 
@@ -2862,20 +2823,19 @@ const response = await sql`
       ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , seq = ${ values.seq === undefined ? sql`seq` : typed[1042](values.seq) } , amount = ${ values.amount === undefined ? sql`amount` : typed[701](values.amount) } , msre_desc = ${ values.msreDesc === undefined ? sql`msre_desc` : typed[25](values.msreDesc) } , gm_wgt = ${ values.gmWgt === undefined ? sql`gm_wgt` : typed[701](values.gmWgt) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[23](values.numDataPts) } , std_dev = ${ values.stdDev === undefined ? sql`std_dev` : typed[701](values.stdDev) } 
     WHERE
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND seq = ${ parameters.seq === undefined ? sql`DEFAULT` : typed[1042](parameters.seq) }
-    RETURNING ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev`
+    RETURNING ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev`);
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))[0]
 }
 async delete(parameters: Public.Types.WeightPkey, options?: Public.Types.WeightPkey.Options & Public.Tables.Weight.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.weight 
     WHERE
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND seq = ${ parameters.seq === undefined ? sql`DEFAULT` : typed[1042](parameters.seq) }
-    RETURNING ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev`
+    RETURNING ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev`);
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))[0]
 }
 }
@@ -2917,10 +2877,9 @@ async update(parameters: Public.Types.FoodDesPkey, values: Partial<Public.Tables
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.food_des 
@@ -2928,20 +2887,19 @@ const response = await sql`
       ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , fdgrp_cd = ${ values.fdgrpCd === undefined ? sql`fdgrp_cd` : typed[1042](values.fdgrpCd) } , long_desc = ${ values.longDesc === undefined ? sql`long_desc` : typed[25](values.longDesc) } , shrt_desc = ${ values.shrtDesc === undefined ? sql`shrt_desc` : typed[25](values.shrtDesc) } , comname = ${ values.comname === undefined ? sql`comname` : typed[25](values.comname) } , manufacname = ${ values.manufacname === undefined ? sql`manufacname` : typed[25](values.manufacname) } , survey = ${ values.survey === undefined ? sql`survey` : typed[1042](values.survey) } , ref_desc = ${ values.refDesc === undefined ? sql`ref_desc` : typed[25](values.refDesc) } , refuse = ${ values.refuse === undefined ? sql`refuse` : typed[23](values.refuse) } , sciname = ${ values.sciname === undefined ? sql`sciname` : typed[25](values.sciname) } , n_factor = ${ values.nFactor === undefined ? sql`n_factor` : typed[701](values.nFactor) } , pro_factor = ${ values.proFactor === undefined ? sql`pro_factor` : typed[701](values.proFactor) } , fat_factor = ${ values.fatFactor === undefined ? sql`fat_factor` : typed[701](values.fatFactor) } , cho_factor = ${ values.choFactor === undefined ? sql`cho_factor` : typed[701](values.choFactor) } 
     WHERE
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) }
-    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`
+    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`);
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))[0]
 }
 async delete(parameters: Public.Types.FoodDesPkey, options?: Public.Types.FoodDesPkey.Options & Public.Tables.FoodDes.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.food_des 
     WHERE
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) }
-    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`
+    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`);
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))[0]
 }
 }
@@ -2981,10 +2939,9 @@ async update(parameters: Public.Types.FoodDesFdgrpCdIdx, values: Partial<Public.
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.food_des 
@@ -2992,20 +2949,19 @@ const response = await sql`
       ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , fdgrp_cd = ${ values.fdgrpCd === undefined ? sql`fdgrp_cd` : typed[1042](values.fdgrpCd) } , long_desc = ${ values.longDesc === undefined ? sql`long_desc` : typed[25](values.longDesc) } , shrt_desc = ${ values.shrtDesc === undefined ? sql`shrt_desc` : typed[25](values.shrtDesc) } , comname = ${ values.comname === undefined ? sql`comname` : typed[25](values.comname) } , manufacname = ${ values.manufacname === undefined ? sql`manufacname` : typed[25](values.manufacname) } , survey = ${ values.survey === undefined ? sql`survey` : typed[1042](values.survey) } , ref_desc = ${ values.refDesc === undefined ? sql`ref_desc` : typed[25](values.refDesc) } , refuse = ${ values.refuse === undefined ? sql`refuse` : typed[23](values.refuse) } , sciname = ${ values.sciname === undefined ? sql`sciname` : typed[25](values.sciname) } , n_factor = ${ values.nFactor === undefined ? sql`n_factor` : typed[701](values.nFactor) } , pro_factor = ${ values.proFactor === undefined ? sql`pro_factor` : typed[701](values.proFactor) } , fat_factor = ${ values.fatFactor === undefined ? sql`fat_factor` : typed[701](values.fatFactor) } , cho_factor = ${ values.choFactor === undefined ? sql`cho_factor` : typed[701](values.choFactor) } 
     WHERE
       fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
-    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`
+    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`);
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))
 }
 async delete(parameters: Public.Types.FoodDesFdgrpCdIdx, options?: Public.Types.FoodDesFdgrpCdIdx.Options & Public.Tables.FoodDes.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.food_des 
     WHERE
       fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
-    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`
+    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`);
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))
 }
 }
@@ -3047,10 +3003,9 @@ async update(parameters: Public.Types.DataSrcTitleFulltext, values: Partial<Publ
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.data_src 
@@ -3058,20 +3013,19 @@ const response = await sql`
       datasrc_id = ${ values.datasrcId === undefined ? sql`datasrc_id` : typed[1042](values.datasrcId) } , authors = ${ values.authors === undefined ? sql`authors` : typed[25](values.authors) } , title = ${ values.title === undefined ? sql`title` : typed[25](values.title) } , year = ${ values.year === undefined ? sql`year` : typed[23](values.year) } , journal = ${ values.journal === undefined ? sql`journal` : typed[25](values.journal) } , vol_city = ${ values.volCity === undefined ? sql`vol_city` : typed[25](values.volCity) } , issue_state = ${ values.issueState === undefined ? sql`issue_state` : typed[25](values.issueState) } , start_page = ${ values.startPage === undefined ? sql`start_page` : typed[25](values.startPage) } , end_page = ${ values.endPage === undefined ? sql`end_page` : typed[25](values.endPage) } 
     WHERE
       title @@ ${sql.unsafe(`${options?.title?.queryParser ?? "to_tsquery"}`)}(${options?.title?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.title === undefined ? sql`DEFAULT` : typed[3614](parameters.title) })
-    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`
+    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`);
 return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
 }
 async delete(parameters: Public.Types.DataSrcTitleFulltext, options?: Public.Types.DataSrcTitleFulltext.Options & Public.Tables.DataSrc.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.data_src 
     WHERE
       title @@ ${sql.unsafe(`${options?.title?.queryParser ?? "to_tsquery"}`)}(${options?.title?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.title === undefined ? sql`DEFAULT` : typed[3614](parameters.title) })
-    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`
+    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`);
  return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
 }
 }
@@ -3111,10 +3065,9 @@ async update(parameters: Public.Types.DataSrcPkey, values: Partial<Public.Tables
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.data_src 
@@ -3122,20 +3075,19 @@ const response = await sql`
       datasrc_id = ${ values.datasrcId === undefined ? sql`datasrc_id` : typed[1042](values.datasrcId) } , authors = ${ values.authors === undefined ? sql`authors` : typed[25](values.authors) } , title = ${ values.title === undefined ? sql`title` : typed[25](values.title) } , year = ${ values.year === undefined ? sql`year` : typed[23](values.year) } , journal = ${ values.journal === undefined ? sql`journal` : typed[25](values.journal) } , vol_city = ${ values.volCity === undefined ? sql`vol_city` : typed[25](values.volCity) } , issue_state = ${ values.issueState === undefined ? sql`issue_state` : typed[25](values.issueState) } , start_page = ${ values.startPage === undefined ? sql`start_page` : typed[25](values.startPage) } , end_page = ${ values.endPage === undefined ? sql`end_page` : typed[25](values.endPage) } 
     WHERE
       datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
-    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`
+    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`);
 return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))[0]
 }
 async delete(parameters: Public.Types.DataSrcPkey, options?: Public.Types.DataSrcPkey.Options & Public.Tables.DataSrc.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.data_src 
     WHERE
       datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
-    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`
+    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`);
  return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))[0]
 }
 }
@@ -3177,10 +3129,9 @@ async update(parameters: Public.Types.DatsrclnPkey, values: Partial<Public.Table
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.datsrcln 
@@ -3188,20 +3139,19 @@ const response = await sql`
       ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , datasrc_id = ${ values.datasrcId === undefined ? sql`datasrc_id` : typed[1042](values.datasrcId) } 
     WHERE
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) } AND datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
-    RETURNING ndb_no,nutr_no,datasrc_id`
+    RETURNING ndb_no,nutr_no,datasrc_id`);
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))[0]
 }
 async delete(parameters: Public.Types.DatsrclnPkey, options?: Public.Types.DatsrclnPkey.Options & Public.Tables.Datsrcln.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.datsrcln 
     WHERE
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) } AND datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
-    RETURNING ndb_no,nutr_no,datasrc_id`
+    RETURNING ndb_no,nutr_no,datasrc_id`);
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))[0]
 }
 }
@@ -3241,10 +3191,9 @@ async update(parameters: Public.Types.DatsrclnDatasrcIdIdx, values: Partial<Publ
 
       console.assert(parameters);
       console.assert(values);
-      const sql = this.database.context.sql;
-      const typed = sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
       
-const response = await sql`
+const response = await this.database.invoke( (sql) => sql`
     --
     UPDATE 
       public.datsrcln 
@@ -3252,20 +3201,19 @@ const response = await sql`
       ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , datasrc_id = ${ values.datasrcId === undefined ? sql`datasrc_id` : typed[1042](values.datasrcId) } 
     WHERE
       datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
-    RETURNING ndb_no,nutr_no,datasrc_id`
+    RETURNING ndb_no,nutr_no,datasrc_id`);
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))
 }
 async delete(parameters: Public.Types.DatsrclnDatasrcIdIdx, options?: Public.Types.DatsrclnDatasrcIdIdx.Options & Public.Tables.Datsrcln.Options) {
  console.assert(parameters);
- const sql = this.database.context.sql;
- const typed = sql.typed as unknown as PostgresTypecasts;
- const response = await sql`
+ const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
       public.datsrcln 
     WHERE
       datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
-    RETURNING ndb_no,nutr_no,datasrc_id`
+    RETURNING ndb_no,nutr_no,datasrc_id`);
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))
 }
 }
