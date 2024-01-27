@@ -73,7 +73,7 @@ export abstract class PostgresDatabase<TTypecast> {
    */
   async withTransaction<T>(body: (database: this) => Promise<T>) {
     const CurrentSubclass = this.cls;
-    if (this.context.sql.begin) {
+    if (this.context.sql.begin !== undefined) {
       // root transaction
       return await this.context.sql.begin(
         async (sql) =>
@@ -100,6 +100,22 @@ export abstract class PostgresDatabase<TTypecast> {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     options?: InvokeQueryOptions,
   ): Promise<T> {
-    return await queryCallback(this.context.sql);
+    // here is the middleware run stack
+    const runStack = async (database: this) => {
+      return queryCallback(database.context.sql);
+    };
+
+    // need a reserved or single connection throughout
+    // so that all effects are applied to the same session
+    if (this.context.sql.begin !== undefined) {
+      return this.withTransaction(async (database) => {
+        return runStack(database);
+      }) as T;
+    } else {
+      // if we are in a transaction, there won't be an option to reserve
+      // but the good news is the driver has already reserved a connection
+      // for the scope of the transaction
+      return runStack(this);
+    }
   }
 }

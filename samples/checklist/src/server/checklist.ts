@@ -1597,7 +1597,7 @@
               database: Database;
             }
           
-export class Database extends PostgresDatabase implements HasDatabase { 
+export class Database extends PostgresDatabase<PostgresTypecasts> implements HasDatabase { 
 get database() { return this };
 get settings() { return this.context.settings as Settings };
 
@@ -1717,7 +1717,7 @@ export namespace Tables {
 
 async create(values: Partial<Public.Types.Checklist>, options?: Public.Tables.Checklist.Options): Promise<Public.Types.Checklist>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 
       if (!Public.Tables.Checklist.includesPrimaryKey(values)) {
@@ -1746,7 +1746,7 @@ return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.na
 }
 async all(options?: Public.Tables.Checklist.Options) : Promise<Public.Types.Checklist[]>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -1775,7 +1775,7 @@ get ChecklistPkey () { return new Public.Tables.Checklist.ChecklistPkey(this)}
 
 async create(values: Partial<Public.Types.ChecklistItem>, options?: Public.Tables.ChecklistItem.Options): Promise<Public.Types.ChecklistItem>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 
       if (!Public.Tables.ChecklistItem.includesPrimaryKey(values)) {
@@ -1804,7 +1804,7 @@ return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNu
 }
 async all(options?: Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem[]>{
 
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -1845,7 +1845,7 @@ export namespace Checklist {
 async read(parameters: Public.Types.ChecklistPkey, options?: Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options) : Promise<Public.Types.Checklist>{
 
       console.assert(parameters);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -1867,7 +1867,7 @@ async update(parameters: Public.Types.ChecklistPkey, values: Partial<Public.Tabl
 
       console.assert(parameters);
       console.assert(values);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     --
@@ -1882,7 +1882,7 @@ return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.na
 }
 async delete(parameters: Public.Types.ChecklistPkey, options?: Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options) {
  console.assert(parameters);
- const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const typed = this.database.typed;
  const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
@@ -1908,7 +1908,7 @@ export namespace ChecklistItem {
 async read(parameters: Public.Types.ChecklistItemPkey, options?: Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem>{
 
       console.assert(parameters);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -1930,7 +1930,7 @@ async update(parameters: Public.Types.ChecklistItemPkey, values: Partial<Public.
 
       console.assert(parameters);
       console.assert(values);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     --
@@ -1945,7 +1945,7 @@ return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNu
 }
 async delete(parameters: Public.Types.ChecklistItemPkey, options?: Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options) {
  console.assert(parameters);
- const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const typed = this.database.typed;
  const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 
@@ -1969,7 +1969,7 @@ async delete(parameters: Public.Types.ChecklistItemPkey, options?: Public.Types.
 async read(parameters: Public.Types.ChecklistItemParent, options?: Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem[]>{
 
       console.assert(parameters);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
 const response = await this.database.invoke( (sql) => sql`
@@ -1991,7 +1991,7 @@ async update(parameters: Public.Types.ChecklistItemParent, values: Partial<Publi
 
       console.assert(parameters);
       console.assert(values);
-      const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+      const typed = this.database.typed;
       
 const response = await this.database.invoke( (sql) => sql`
     --
@@ -2006,7 +2006,7 @@ return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNu
 }
 async delete(parameters: Public.Types.ChecklistItemParent, options?: Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options) {
  console.assert(parameters);
- const typed = this.database.context.sql.typed as unknown as PostgresTypecasts;
+ const typed = this.database.typed;
  const response = await this.database.invoke( (sql) => sql`
     --
     DELETE FROM 

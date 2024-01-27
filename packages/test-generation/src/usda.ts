@@ -1493,96 +1493,96 @@
 ["InformationSchema.Types.UserMappings"]: Typecast
 [13823]: Typecast;
 ["InformationSchema.Types.UserMappingsArray"]: Typecast
-[30678]: Typecast;
+[37100]: Typecast;
 ["Public.Types.DataSrc"]: Typecast
-[30677]: Typecast;
+[37099]: Typecast;
 ["Public.Types.DataSrcArray"]: Typecast
-[30684]: Typecast;
+[37106]: Typecast;
 ["Public.Types.Datsrcln"]: Typecast
-[30683]: Typecast;
+[37105]: Typecast;
 ["Public.Types.DatsrclnArray"]: Typecast
-[30687]: Typecast;
+[37109]: Typecast;
 ["Public.Types.DerivCd"]: Typecast
-[30686]: Typecast;
+[37108]: Typecast;
 ["Public.Types.DerivCdArray"]: Typecast
-[30692]: Typecast;
+[37114]: Typecast;
 ["Public.Types.FdGroup"]: Typecast
-[30691]: Typecast;
+[37113]: Typecast;
 ["Public.Types.FdGroupArray"]: Typecast
-[30697]: Typecast;
+[37119]: Typecast;
 ["Public.Types.FoodDes"]: Typecast
-[30696]: Typecast;
+[37118]: Typecast;
 ["Public.Types.FoodDesArray"]: Typecast
-[30702]: Typecast;
+[37124]: Typecast;
 ["Public.Types.Footnote"]: Typecast
-[30701]: Typecast;
+[37123]: Typecast;
 ["Public.Types.FootnoteArray"]: Typecast
-[30707]: Typecast;
+[37129]: Typecast;
 ["Public.Types.NutData"]: Typecast
-[30706]: Typecast;
+[37128]: Typecast;
 ["Public.Types.NutDataArray"]: Typecast
-[30712]: Typecast;
+[37134]: Typecast;
 ["Public.Types.NutrDef"]: Typecast
-[30711]: Typecast;
+[37133]: Typecast;
 ["Public.Types.NutrDefArray"]: Typecast
-[30717]: Typecast;
+[37139]: Typecast;
 ["Public.Types.SrcCd"]: Typecast
-[30716]: Typecast;
+[37138]: Typecast;
 ["Public.Types.SrcCdArray"]: Typecast
-[30722]: Typecast;
+[37144]: Typecast;
 ["Public.Types.Weight"]: Typecast
-[30721]: Typecast;
+[37143]: Typecast;
 ["Public.Types.WeightArray"]: Typecast
-[30681]: Typecast;
+[37103]: Typecast;
 ["Public.Types.DataSrcTitleFulltext"]: Typecast
-[30725]: Typecast;
+[37147]: Typecast;
 ["Public.Types.DataSrcPkey"]: Typecast
-[30727]: Typecast;
+[37149]: Typecast;
 ["Public.Types.DatsrclnPkey"]: Typecast
-[30729]: Typecast;
+[37151]: Typecast;
 ["Public.Types.DerivCdPkey"]: Typecast
-[30731]: Typecast;
+[37153]: Typecast;
 ["Public.Types.FdGroupPkey"]: Typecast
-[30733]: Typecast;
+[37155]: Typecast;
 ["Public.Types.FoodDesPkey"]: Typecast
-[30735]: Typecast;
+[37157]: Typecast;
 ["Public.Types.NutDataPkey"]: Typecast
-[30737]: Typecast;
+[37159]: Typecast;
 ["Public.Types.NutrDefPkey"]: Typecast
-[30739]: Typecast;
+[37161]: Typecast;
 ["Public.Types.SrcCdPkey"]: Typecast
-[30741]: Typecast;
+[37163]: Typecast;
 ["Public.Types.WeightPkey"]: Typecast
-[30743]: Typecast;
+[37165]: Typecast;
 ["Public.Types.DatsrclnDatasrcIdIdx"]: Typecast
-[30744]: Typecast;
+[37166]: Typecast;
 ["Public.Types.FoodDesFdgrpCdIdx"]: Typecast
-[30745]: Typecast;
+[37167]: Typecast;
 ["Public.Types.FootnoteNdbNoIdx"]: Typecast
-[30746]: Typecast;
+[37168]: Typecast;
 ["Public.Types.NutDataDerivCdIdx"]: Typecast
-[30747]: Typecast;
+[37169]: Typecast;
 ["Public.Types.NutDataNutrNoIdx"]: Typecast
-[30748]: Typecast;
+[37170]: Typecast;
 ["Public.Types.NutDataSrcCdIdx"]: Typecast
-[30680]: Typecast;
-["PgToast.Types.PgToast_30676Index"]: Typecast
-[30689]: Typecast;
-["PgToast.Types.PgToast_30685Index"]: Typecast
-[30694]: Typecast;
-["PgToast.Types.PgToast_30690Index"]: Typecast
-[30699]: Typecast;
-["PgToast.Types.PgToast_30695Index"]: Typecast
-[30704]: Typecast;
-["PgToast.Types.PgToast_30700Index"]: Typecast
-[30709]: Typecast;
-["PgToast.Types.PgToast_30705Index"]: Typecast
-[30714]: Typecast;
-["PgToast.Types.PgToast_30710Index"]: Typecast
-[30719]: Typecast;
-["PgToast.Types.PgToast_30715Index"]: Typecast
-[30724]: Typecast;
-["PgToast.Types.PgToast_30720Index"]: Typecast
+[37102]: Typecast;
+["PgToast.Types.PgToast_37098Index"]: Typecast
+[37111]: Typecast;
+["PgToast.Types.PgToast_37107Index"]: Typecast
+[37116]: Typecast;
+["PgToast.Types.PgToast_37112Index"]: Typecast
+[37121]: Typecast;
+["PgToast.Types.PgToast_37117Index"]: Typecast
+[37126]: Typecast;
+["PgToast.Types.PgToast_37122Index"]: Typecast
+[37131]: Typecast;
+["PgToast.Types.PgToast_37127Index"]: Typecast
+[37136]: Typecast;
+["PgToast.Types.PgToast_37132Index"]: Typecast
+[37141]: Typecast;
+["PgToast.Types.PgToast_37137Index"]: Typecast
+[37146]: Typecast;
+["PgToast.Types.PgToast_37142Index"]: Typecast
 [2837]: Typecast;
 ["PgToast.Types.PgToast_1255Index"]: Typecast
 [4172]: Typecast;
@@ -1669,7 +1669,7 @@
               database: Database;
             }
           
-export class Database extends PostgresDatabase implements HasDatabase { 
+export class Database extends PostgresDatabase<PostgresTypecasts> implements HasDatabase { 
 get database() { return this };
 get settings() { return this.context.settings as Settings };
 
@@ -13773,47 +13773,47 @@ export type PrimaryKey = Public.Types.DatsrclnPkey;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_30676Index = {
+export type PgToast_37098Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_30685Index = {
+export type PgToast_37107Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_30690Index = {
+export type PgToast_37112Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_30695Index = {
+export type PgToast_37117Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_30700Index = {
+export type PgToast_37122Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_30705Index = {
+export type PgToast_37127Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_30710Index = {
+export type PgToast_37132Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_30715Index = {
+export type PgToast_37137Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_30720Index = {
+export type PgToast_37142Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -26582,11 +26582,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_30676Index {
+export namespace PgToast_37098Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_30676Index.is(from)) {
+if (PgToast.Types.PgToast_37098Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26597,11 +26597,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_30685Index {
+export namespace PgToast_37107Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_30685Index.is(from)) {
+if (PgToast.Types.PgToast_37107Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26612,11 +26612,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_30690Index {
+export namespace PgToast_37112Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_30690Index.is(from)) {
+if (PgToast.Types.PgToast_37112Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26627,11 +26627,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_30695Index {
+export namespace PgToast_37117Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_30695Index.is(from)) {
+if (PgToast.Types.PgToast_37117Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26642,11 +26642,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_30700Index {
+export namespace PgToast_37122Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_30700Index.is(from)) {
+if (PgToast.Types.PgToast_37122Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26657,11 +26657,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_30705Index {
+export namespace PgToast_37127Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_30705Index.is(from)) {
+if (PgToast.Types.PgToast_37127Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26672,11 +26672,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_30710Index {
+export namespace PgToast_37132Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_30710Index.is(from)) {
+if (PgToast.Types.PgToast_37132Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26687,11 +26687,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_30715Index {
+export namespace PgToast_37137Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_30715Index.is(from)) {
+if (PgToast.Types.PgToast_37137Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26702,11 +26702,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_30720Index {
+export namespace PgToast_37142Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_30720Index.is(from)) {
+if (PgToast.Types.PgToast_37142Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -32729,72 +32729,72 @@ export namespace Datsrcln {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_30676Index {
-export function is(value: any) : value is PgToast.Types.PgToast_30676Index {
+export namespace PgToast_37098Index {
+export function is(value: any) : value is PgToast.Types.PgToast_37098Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_30685Index {
-export function is(value: any) : value is PgToast.Types.PgToast_30685Index {
+export namespace PgToast_37107Index {
+export function is(value: any) : value is PgToast.Types.PgToast_37107Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_30690Index {
-export function is(value: any) : value is PgToast.Types.PgToast_30690Index {
+export namespace PgToast_37112Index {
+export function is(value: any) : value is PgToast.Types.PgToast_37112Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_30695Index {
-export function is(value: any) : value is PgToast.Types.PgToast_30695Index {
+export namespace PgToast_37117Index {
+export function is(value: any) : value is PgToast.Types.PgToast_37117Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_30700Index {
-export function is(value: any) : value is PgToast.Types.PgToast_30700Index {
+export namespace PgToast_37122Index {
+export function is(value: any) : value is PgToast.Types.PgToast_37122Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_30705Index {
-export function is(value: any) : value is PgToast.Types.PgToast_30705Index {
+export namespace PgToast_37127Index {
+export function is(value: any) : value is PgToast.Types.PgToast_37127Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_30710Index {
-export function is(value: any) : value is PgToast.Types.PgToast_30710Index {
+export namespace PgToast_37132Index {
+export function is(value: any) : value is PgToast.Types.PgToast_37132Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_30715Index {
-export function is(value: any) : value is PgToast.Types.PgToast_30715Index {
+export namespace PgToast_37137Index {
+export function is(value: any) : value is PgToast.Types.PgToast_37137Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_30720Index {
-export function is(value: any) : value is PgToast.Types.PgToast_30720Index {
+export namespace PgToast_37142Index {
+export function is(value: any) : value is PgToast.Types.PgToast_37142Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -37149,48 +37149,48 @@ export namespace Datsrcln {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_30676Index {
- export function equals(l: PgToast.Types.PgToast_30676Index|undefined, r: unknown) {
+export namespace PgToast_37098Index {
+ export function equals(l: PgToast.Types.PgToast_37098Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_30685Index {
- export function equals(l: PgToast.Types.PgToast_30685Index|undefined, r: unknown) {
+export namespace PgToast_37107Index {
+ export function equals(l: PgToast.Types.PgToast_37107Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_30690Index {
- export function equals(l: PgToast.Types.PgToast_30690Index|undefined, r: unknown) {
+export namespace PgToast_37112Index {
+ export function equals(l: PgToast.Types.PgToast_37112Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_30695Index {
- export function equals(l: PgToast.Types.PgToast_30695Index|undefined, r: unknown) {
+export namespace PgToast_37117Index {
+ export function equals(l: PgToast.Types.PgToast_37117Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_30700Index {
- export function equals(l: PgToast.Types.PgToast_30700Index|undefined, r: unknown) {
+export namespace PgToast_37122Index {
+ export function equals(l: PgToast.Types.PgToast_37122Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_30705Index {
- export function equals(l: PgToast.Types.PgToast_30705Index|undefined, r: unknown) {
+export namespace PgToast_37127Index {
+ export function equals(l: PgToast.Types.PgToast_37127Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_30710Index {
- export function equals(l: PgToast.Types.PgToast_30710Index|undefined, r: unknown) {
+export namespace PgToast_37132Index {
+ export function equals(l: PgToast.Types.PgToast_37132Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_30715Index {
- export function equals(l: PgToast.Types.PgToast_30715Index|undefined, r: unknown) {
+export namespace PgToast_37137Index {
+ export function equals(l: PgToast.Types.PgToast_37137Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_30720Index {
- export function equals(l: PgToast.Types.PgToast_30720Index|undefined, r: unknown) {
+export namespace PgToast_37142Index {
+ export function equals(l: PgToast.Types.PgToast_37142Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -54436,7 +54436,7 @@ export namespace Datsrcln {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_30676Index {
+export namespace PgToast_37098Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54452,7 +54452,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_30685Index {
+export namespace PgToast_37107Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54468,7 +54468,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_30690Index {
+export namespace PgToast_37112Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54484,7 +54484,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_30695Index {
+export namespace PgToast_37117Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54500,7 +54500,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_30700Index {
+export namespace PgToast_37122Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54516,7 +54516,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_30705Index {
+export namespace PgToast_37127Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54532,7 +54532,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_30710Index {
+export namespace PgToast_37132Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54548,7 +54548,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_30715Index {
+export namespace PgToast_37137Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54564,7 +54564,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_30720Index {
+export namespace PgToast_37142Index {
 export namespace ChunkId {
 
       export type Options = never;

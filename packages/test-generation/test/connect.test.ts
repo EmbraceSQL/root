@@ -6,6 +6,9 @@ import { Database } from "../src/dvdrental";
 describe("The database can", () => {
   let db: Database;
   beforeAll(async () => {
+    // no spanning transaction to roll back in this test
+    // this is read only and testing the 'live' path
+    // that would be used in an actual application
     db = await Database.connect(
       "postgres://postgres:postgres@localhost:5432/dvdrental",
     );

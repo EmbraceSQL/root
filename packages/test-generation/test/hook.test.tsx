@@ -142,16 +142,17 @@ describe("EmbraceSQL Hooks can", () => {
     const rendered = render(
       <input value={actor?.firstName} onChange={actor?.changeFirstName} />,
     );
+    const newFirstname = `Alec${Date.now()}`;
     act(() => {
       fireEvent.change(rendered.getByRole("textbox"), {
-        target: { value: "Alec" },
+        target: { value: newFirstname },
       });
     });
     // this should have tapped the server in the change handler
     // causing the hook to update
     await waitFor(() =>
       expect(result.current?.row).toMatchObject({
-        firstName: "Alec",
+        firstName: newFirstname,
         lastName: "Guiness",
       }),
     );
@@ -360,7 +361,7 @@ describe("EmbraceSQL Hooks can", () => {
       ),
     );
   });
-  it("read array valued procs", async () => {
+  it("read array returning proc", async () => {
     const wrapper = ({ children }: WithChildren) => (
       <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
     );
@@ -376,7 +377,7 @@ describe("EmbraceSQL Hooks can", () => {
       expect(result.current?.results?.length).toBeGreaterThan(0),
     );
   });
-  it("read array valued procs", async () => {
+  it("read rowset returning proc", async () => {
     const wrapper = ({ children }: WithChildren) => (
       <EmbraceSQLProvider client={client}>{children}</EmbraceSQLProvider>
     );
