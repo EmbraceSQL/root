@@ -13,7 +13,7 @@
         /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
         /* @typescript-eslint/no-redundant-type-constituents */
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
-        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort, InvokeQueryOptions } from "@embracesql/shared";
+        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort, InvokeQueryOptions as GenericInvokeQueryOptions } from "@embracesql/shared";
         import { Geometry } from "@embracesql/shared";
         import { DatabaseMetadata, Schema, Table, Column, Index, Procedure } from "@embracesql/shared";
     
@@ -1493,19 +1493,19 @@
 ["InformationSchema.Types.UserMappings"]: Typecast
 [13823]: Typecast;
 ["InformationSchema.Types.UserMappingsArray"]: Typecast
-[35644]: Typecast;
+[43504]: Typecast;
 ["Public.Types.CubeArray"]: Typecast
-[35639]: Typecast;
+[43499]: Typecast;
 ["Public.Types.Cube"]: Typecast
-[35745]: Typecast;
+[43605]: Typecast;
 ["Public.Types.Gtrgm"]: Typecast
-[35748]: Typecast;
+[43608]: Typecast;
 ["Public.Types.GtrgmArray"]: Typecast
-[35811]: Typecast;
+[43671]: Typecast;
 ["Public.Types.Slug"]: Typecast
-[35810]: Typecast;
+[43670]: Typecast;
 ["Public.Types.SlugArray"]: Typecast
-[35813]: Typecast;
+[43673]: Typecast;
 ["Public.Types.SlugPkey"]: Typecast
 
 ["Public.Procedures.CubeIn.Parameters"]: Typecast
@@ -1564,9 +1564,9 @@
 
 ["Public.Procedures.Cube_0aec.Parameters"]: Typecast
 
-["Public.Procedures.Cube_911b.Parameters"]: Typecast
+["Public.Procedures.CubeAb68.Parameters"]: Typecast
 
-["Public.Procedures.Cube_0856.Parameters"]: Typecast
+["Public.Procedures.Cube_785c.Parameters"]: Typecast
 
 ["Public.Procedures.CubeIsPoint.Parameters"]: Typecast
 
@@ -1647,75 +1647,75 @@
 ["Public.Procedures.StrictWordSimilarityDistCommutatorOp.Parameters"]: Typecast
 
 ["Public.Procedures.GtrgmOptions.Parameters"]: Typecast
-[35821]: Typecast;
+[43681]: Typecast;
 ["Api.Types.EchoType"]: Typecast
-[35820]: Typecast;
+[43680]: Typecast;
 ["Api.Types.EchoTypeArray"]: Typecast
-[35824]: Typecast;
+[43684]: Typecast;
 ["Api.Types.EchoTypeNested"]: Typecast
-[35823]: Typecast;
+[43683]: Typecast;
 ["Api.Types.EchoTypeNestedArray"]: Typecast
-[35830]: Typecast;
+[43690]: Typecast;
 ["Api.Types.Answer"]: Typecast
-[35829]: Typecast;
+[43689]: Typecast;
 ["Api.Types.AnswerArray"]: Typecast
-[35840]: Typecast;
+[43700]: Typecast;
 ["Api.Types.QAndA"]: Typecast
-[35839]: Typecast;
+[43699]: Typecast;
 ["Api.Types.QAndAArray"]: Typecast
-[35846]: Typecast;
+[43706]: Typecast;
 ["Api.Types.Timezones"]: Typecast
-[35845]: Typecast;
+[43705]: Typecast;
 ["Api.Types.TimezonesArray"]: Typecast
-[35853]: Typecast;
+[43713]: Typecast;
 ["Api.Types.Points"]: Typecast
-[35852]: Typecast;
+[43712]: Typecast;
 ["Api.Types.PointsArray"]: Typecast
-[35859]: Typecast;
+[43719]: Typecast;
 ["Api.Types.Lines"]: Typecast
-[35858]: Typecast;
+[43718]: Typecast;
 ["Api.Types.LinesArray"]: Typecast
-[35865]: Typecast;
+[43725]: Typecast;
 ["Api.Types.LineSegments"]: Typecast
-[35864]: Typecast;
+[43724]: Typecast;
 ["Api.Types.LineSegmentsArray"]: Typecast
-[35871]: Typecast;
+[43731]: Typecast;
 ["Api.Types.Boxes"]: Typecast
-[35870]: Typecast;
+[43730]: Typecast;
 ["Api.Types.BoxesArray"]: Typecast
-[35877]: Typecast;
+[43737]: Typecast;
 ["Api.Types.Paths"]: Typecast
-[35876]: Typecast;
+[43736]: Typecast;
 ["Api.Types.PathsArray"]: Typecast
-[35885]: Typecast;
+[43745]: Typecast;
 ["Api.Types.Polygons"]: Typecast
-[35884]: Typecast;
+[43744]: Typecast;
 ["Api.Types.PolygonsArray"]: Typecast
-[35893]: Typecast;
+[43753]: Typecast;
 ["Api.Types.Circles"]: Typecast
-[35892]: Typecast;
+[43752]: Typecast;
 ["Api.Types.CirclesArray"]: Typecast
-[35843]: Typecast;
+[43703]: Typecast;
 ["Api.Types.QAndAAnswer"]: Typecast
-[35849]: Typecast;
+[43709]: Typecast;
 ["Api.Types.TrgmIdxGist"]: Typecast
-[35850]: Typecast;
+[43710]: Typecast;
 ["Api.Types.TrgmIdxGin"]: Typecast
-[35855]: Typecast;
+[43715]: Typecast;
 ["Api.Types.PointsPkey"]: Typecast
-[35861]: Typecast;
+[43721]: Typecast;
 ["Api.Types.LinesPkey"]: Typecast
-[35867]: Typecast;
+[43727]: Typecast;
 ["Api.Types.LineSegmentsPkey"]: Typecast
-[35873]: Typecast;
+[43733]: Typecast;
 ["Api.Types.BoxesPkey"]: Typecast
-[35881]: Typecast;
+[43741]: Typecast;
 ["Api.Types.PathsPkey"]: Typecast
-[35889]: Typecast;
+[43749]: Typecast;
 ["Api.Types.PolygonsPkey"]: Typecast
-[35895]: Typecast;
+[43755]: Typecast;
 ["Api.Types.CirclesPkey"]: Typecast
-[35818]: Typecast;
+[43678]: Typecast;
 ["Api.Types.EchoTable"]: Typecast
 
 ["Api.Procedures.Echo.Parameters"]: Typecast
@@ -1733,14 +1733,14 @@
 ["Api.Procedures.EchoTypeSet.Parameters"]: Typecast
 
 ["Api.Procedures.EchoAnswer.Parameters"]: Typecast
-[35842]: Typecast;
-["PgToast.Types.PgToast_35838Index"]: Typecast
-[35848]: Typecast;
-["PgToast.Types.PgToast_35844Index"]: Typecast
-[35880]: Typecast;
-["PgToast.Types.PgToast_35875Index"]: Typecast
-[35888]: Typecast;
-["PgToast.Types.PgToast_35883Index"]: Typecast
+[43702]: Typecast;
+["PgToast.Types.PgToast_43698Index"]: Typecast
+[43708]: Typecast;
+["PgToast.Types.PgToast_43704Index"]: Typecast
+[43740]: Typecast;
+["PgToast.Types.PgToast_43735Index"]: Typecast
+[43748]: Typecast;
+["PgToast.Types.PgToast_43743Index"]: Typecast
 [2837]: Typecast;
 ["PgToast.Types.PgToast_1255Index"]: Typecast
 [4172]: Typecast;
@@ -1928,8 +1928,8 @@ get CubeCoord () { return new Public.Procedures.CubeCoord(this)}
 get CubeCoordLlur () { return new Public.Procedures.CubeCoordLlur(this)} 
 get CubeA5b3 () { return new Public.Procedures.CubeA5b3(this)} 
 get Cube_0aec () { return new Public.Procedures.Cube_0aec(this)} 
-get Cube_911b () { return new Public.Procedures.Cube_911b(this)} 
-get Cube_0856 () { return new Public.Procedures.Cube_0856(this)} 
+get CubeAb68 () { return new Public.Procedures.CubeAb68(this)} 
+get Cube_785c () { return new Public.Procedures.Cube_785c(this)} 
 get CubeIsPoint () { return new Public.Procedures.CubeIsPoint(this)} 
 get CubeEnlarge () { return new Public.Procedures.CubeEnlarge(this)} 
 get GCubeConsistent () { return new Public.Procedures.GCubeConsistent(this)} 
@@ -2081,7 +2081,7 @@ async call(parameters : Public.Procedures.CubeOut.Parameters, options?: InvokeQu
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_out( ${ typed[35639](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_out( ${ typed[43499](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].cube_out) );
@@ -2101,7 +2101,7 @@ async call(parameters : Public.Procedures.CubeEq.Parameters, options?: InvokeQue
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_eq( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[35639](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_eq( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[43499](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_eq) );
@@ -2121,7 +2121,7 @@ async call(parameters : Public.Procedures.CubeNe.Parameters, options?: InvokeQue
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_ne( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[35639](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_ne( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[43499](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_ne) );
@@ -2141,7 +2141,7 @@ async call(parameters : Public.Procedures.CubeLt.Parameters, options?: InvokeQue
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_lt( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[35639](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_lt( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[43499](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_lt) );
@@ -2161,7 +2161,7 @@ async call(parameters : Public.Procedures.CubeGt.Parameters, options?: InvokeQue
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_gt( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[35639](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_gt( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[43499](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_gt) );
@@ -2181,7 +2181,7 @@ async call(parameters : Public.Procedures.CubeLe.Parameters, options?: InvokeQue
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_le( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[35639](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_le( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[43499](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_le) );
@@ -2201,7 +2201,7 @@ async call(parameters : Public.Procedures.CubeGe.Parameters, options?: InvokeQue
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_ge( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[35639](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_ge( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[43499](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_ge) );
@@ -2221,7 +2221,7 @@ async call(parameters : Public.Procedures.CubeCmp.Parameters, options?: InvokeQu
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_cmp( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[35639](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_cmp( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[43499](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].cube_cmp) );
@@ -2241,7 +2241,7 @@ async call(parameters : Public.Procedures.CubeContains.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_contains( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[35639](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_contains( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[43499](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_contains) );
@@ -2261,7 +2261,7 @@ async call(parameters : Public.Procedures.CubeContained.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_contained( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[35639](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_contained( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[43499](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_contained) );
@@ -2281,7 +2281,7 @@ async call(parameters : Public.Procedures.CubeOverlap.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_overlap( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[35639](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_overlap( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[43499](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_overlap) );
@@ -2301,7 +2301,7 @@ async call(parameters : Public.Procedures.CubeUnion.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_union( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[35639](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_union( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[43499](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_union) );
@@ -2321,7 +2321,7 @@ async call(parameters : Public.Procedures.CubeInter.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_inter( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[35639](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_inter( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[43499](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_inter) );
@@ -2341,7 +2341,7 @@ async call(parameters : Public.Procedures.CubeSize.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_size( ${ typed[35639](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_size( ${ typed[43499](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_size) );
@@ -2361,7 +2361,7 @@ async call(parameters : Public.Procedures.CubeSubset.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_subset( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[1007](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_subset( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[1007](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_subset) );
@@ -2381,7 +2381,7 @@ async call(parameters : Public.Procedures.CubeDistance.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_distance( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[35639](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_distance( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[43499](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_distance) );
@@ -2401,7 +2401,7 @@ async call(parameters : Public.Procedures.DistanceChebyshev.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.distance_chebyshev( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[35639](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.distance_chebyshev( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[43499](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].distance_chebyshev) );
@@ -2421,7 +2421,7 @@ async call(parameters : Public.Procedures.DistanceTaxicab.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.distance_taxicab( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[35639](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.distance_taxicab( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[43499](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].distance_taxicab) );
@@ -2441,7 +2441,7 @@ async call(parameters : Public.Procedures.CubeDim.Parameters, options?: InvokeQu
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_dim( ${ typed[35639](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_dim( ${ typed[43499](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].cube_dim) );
@@ -2461,7 +2461,7 @@ async call(parameters : Public.Procedures.CubeLlCoord.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_ll_coord( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_ll_coord( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_ll_coord) );
@@ -2481,7 +2481,7 @@ async call(parameters : Public.Procedures.CubeUrCoord.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_ur_coord( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_ur_coord( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_ur_coord) );
@@ -2501,7 +2501,7 @@ async call(parameters : Public.Procedures.CubeCoord.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_coord( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_coord( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_coord) );
@@ -2521,7 +2521,7 @@ async call(parameters : Public.Procedures.CubeCoordLlur.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_coord_llur( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_coord_llur( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].cube_coord_llur) );
@@ -2569,11 +2569,11 @@ async call(parameters : Public.Procedures.Cube_0aec.Parameters, options?: Invoke
            
 }
 }
-export class Cube_911b implements HasDatabase {
+export class CubeAb68 implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
-  get name() { return "cube_911b"; }
-async call(parameters : Public.Procedures.Cube_911b.Parameters, options?: InvokeQueryOptions) {
+  get name() { return "cube_ab68"; }
+async call(parameters : Public.Procedures.CubeAb68.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2581,7 +2581,7 @@ async call(parameters : Public.Procedures.Cube_911b.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
@@ -2589,11 +2589,11 @@ async call(parameters : Public.Procedures.Cube_911b.Parameters, options?: Invoke
            
 }
 }
-export class Cube_0856 implements HasDatabase {
+export class Cube_785c implements HasDatabase {
   constructor(private hasDatabase: HasDatabase) {}
   get database() { return this.hasDatabase.database; }
-  get name() { return "cube_0856"; }
-async call(parameters : Public.Procedures.Cube_0856.Parameters, options?: InvokeQueryOptions) {
+  get name() { return "cube_785c"; }
+async call(parameters : Public.Procedures.Cube_785c.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
               console.assert(context);
@@ -2601,7 +2601,7 @@ async call(parameters : Public.Procedures.Cube_0856.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube) );
@@ -2621,7 +2621,7 @@ async call(parameters : Public.Procedures.CubeIsPoint.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_is_point( ${ typed[35639](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_is_point( ${ typed[43499](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].cube_is_point) );
@@ -2641,7 +2641,7 @@ async call(parameters : Public.Procedures.CubeEnlarge.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_enlarge( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_enlarge( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Cube.parse(results?.[0].cube_enlarge) );
@@ -2661,7 +2661,7 @@ async call(parameters : Public.Procedures.GCubeConsistent.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.g_cube_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[35639](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.g_cube_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[43499](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].g_cube_consistent) );
@@ -2741,7 +2741,7 @@ async call(parameters : Public.Procedures.GCubeSame.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.g_cube_same( ${ typed[35639](undefinedIsNull(parameters.argument_0)) }, ${ typed[35639](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.g_cube_same( ${ typed[43499](undefinedIsNull(parameters.argument_0)) }, ${ typed[43499](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].g_cube_same) );
@@ -2761,7 +2761,7 @@ async call(parameters : Public.Procedures.GCubeDistance.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.g_cube_distance( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[35639](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.g_cube_distance( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[43499](undefinedIsNull(parameters.argument_1)) }, ${ typed[21](undefinedIsNull(parameters.argument_2)) }, ${ typed[26](undefinedIsNull(parameters.argument_3)) }, ${ typed[2281](undefinedIsNull(parameters.argument_4)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].g_cube_distance) );
@@ -2801,7 +2801,7 @@ async call(parameters : Public.Procedures.CubeSend.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_send( ${ typed[35639](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.cube_send( ${ typed[43499](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].cube_send) );
@@ -3061,7 +3061,7 @@ async call(parameters : Public.Procedures.GtrgmOut.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_out( ${ typed[35745](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_out( ${ typed[43605](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].gtrgm_out) );
@@ -3221,7 +3221,7 @@ async call(parameters : Public.Procedures.GtrgmSame.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_same( ${ typed[35745](undefinedIsNull(parameters.argument_0)) }, ${ typed[35745](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gtrgm_same( ${ typed[43605](undefinedIsNull(parameters.argument_0)) }, ${ typed[43605](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].gtrgm_same) );
@@ -3480,7 +3480,7 @@ export class EchoTable implements HasDatabase {
 async call(parameters : Api.Procedures.EchoTable.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[35818].parseFromPostgresIfPseudoType(context, result) as unknown as Api.Types.EchoTable;
+              return context.procTypes[43678].parseFromPostgresIfPseudoType(context, result) as unknown as Api.Types.EchoTable;
             };
           
   const typed = this.database.typed;
@@ -3584,7 +3584,7 @@ async call(parameters : Api.Procedures.EchoAnswer.Parameters, options?: InvokeQu
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT api.echo_answer(message => ${ typed[35830](undefinedIsNull(parameters.message)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql) => sql`SELECT api.echo_answer(message => ${ typed[43690](undefinedIsNull(parameters.message)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Api.Types.Answer.parse(results?.[0].echo_answer) );
@@ -3725,7 +3725,7 @@ async create(values: Partial<Api.Types.QAndA>, options?: Api.Tables.QAndA.Option
 const response = await this.database.invoke( (sql) => sql`
     INSERT INTO
       api.q_and_a (question,answer)
-    VALUES (${ values.question === undefined ? sql`DEFAULT` : typed[25](values.question) },${ values.answer === undefined ? sql`DEFAULT` : typed[35830](values.answer) })
+    VALUES (${ values.question === undefined ? sql`DEFAULT` : typed[25](values.question) },${ values.answer === undefined ? sql`DEFAULT` : typed[43690](values.answer) })
     ON CONFLICT () DO UPDATE
     SET
       question = EXCLUDED.question,answer = EXCLUDED.answer
@@ -4305,7 +4305,7 @@ const response = await this.database.invoke( (sql) => sql`
     FROM
       api.q_and_a 
     WHERE
-      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[35830](parameters.answer) }
+      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[43690](parameters.answer) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
@@ -4324,9 +4324,9 @@ const response = await this.database.invoke( (sql) => sql`
     UPDATE 
       api.q_and_a 
     SET
-      question = ${ values.question === undefined ? sql`question` : typed[25](values.question) } , answer = ${ values.answer === undefined ? sql`answer` : typed[35830](values.answer) } 
+      question = ${ values.question === undefined ? sql`question` : typed[25](values.question) } , answer = ${ values.answer === undefined ? sql`answer` : typed[43690](values.answer) } 
     WHERE
-      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[35830](parameters.answer) }
+      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[43690](parameters.answer) }
     RETURNING question,answer`, {parameters, values, options});
 return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
 }
@@ -4338,7 +4338,7 @@ async delete(parameters: Api.Types.QAndAAnswer, options?: Api.Types.QAndAAnswer.
     DELETE FROM 
       api.q_and_a 
     WHERE
-      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[35830](parameters.answer) }
+      answer = ${ parameters.answer === undefined ? sql`DEFAULT` : typed[43690](parameters.answer) }
     RETURNING question,answer`, {parameters, options});
  return response.map(r => ({ question: undefinedIsNull(r.question),answer: undefinedIsNull(r.answer) }))
 }
@@ -4919,177 +4919,177 @@ export namespace Tables {
           // begin - operation dispatch map
           import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
           export class OperationDispatcher {
-            private dispatchMap: Record<string, OperationDispatchMethod>;
+            private dispatchMap: Record<string, OperationDispatchMethod<DatabaseHeaders>>;
             constructor(private database: Database){
               this.dispatchMap = {
 
           
-"Public.Procedures.CubeIn.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeIn.call(request.parameters as Public.Procedures.CubeIn.Parameters),
-"Public.Procedures.Cube_9c45.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Cube_9c45.call(request.parameters as Public.Procedures.Cube_9c45.Parameters),
-"Public.Procedures.Cube_2e6d.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Cube_2e6d.call(request.parameters as Public.Procedures.Cube_2e6d.Parameters),
-"Public.Procedures.CubeOut.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeOut.call(request.parameters as Public.Procedures.CubeOut.Parameters),
-"Public.Procedures.CubeEq.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeEq.call(request.parameters as Public.Procedures.CubeEq.Parameters),
-"Public.Procedures.CubeNe.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeNe.call(request.parameters as Public.Procedures.CubeNe.Parameters),
-"Public.Procedures.CubeLt.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeLt.call(request.parameters as Public.Procedures.CubeLt.Parameters),
-"Public.Procedures.CubeGt.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeGt.call(request.parameters as Public.Procedures.CubeGt.Parameters),
-"Public.Procedures.CubeLe.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeLe.call(request.parameters as Public.Procedures.CubeLe.Parameters),
-"Public.Procedures.CubeGe.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeGe.call(request.parameters as Public.Procedures.CubeGe.Parameters),
-"Public.Procedures.CubeCmp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeCmp.call(request.parameters as Public.Procedures.CubeCmp.Parameters),
-"Public.Procedures.CubeContains.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeContains.call(request.parameters as Public.Procedures.CubeContains.Parameters),
-"Public.Procedures.CubeContained.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeContained.call(request.parameters as Public.Procedures.CubeContained.Parameters),
-"Public.Procedures.CubeOverlap.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeOverlap.call(request.parameters as Public.Procedures.CubeOverlap.Parameters),
-"Public.Procedures.CubeUnion.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeUnion.call(request.parameters as Public.Procedures.CubeUnion.Parameters),
-"Public.Procedures.CubeInter.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeInter.call(request.parameters as Public.Procedures.CubeInter.Parameters),
-"Public.Procedures.CubeSize.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeSize.call(request.parameters as Public.Procedures.CubeSize.Parameters),
-"Public.Procedures.CubeSubset.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeSubset.call(request.parameters as Public.Procedures.CubeSubset.Parameters),
-"Public.Procedures.CubeDistance.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeDistance.call(request.parameters as Public.Procedures.CubeDistance.Parameters),
-"Public.Procedures.DistanceChebyshev.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.DistanceChebyshev.call(request.parameters as Public.Procedures.DistanceChebyshev.Parameters),
-"Public.Procedures.DistanceTaxicab.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.DistanceTaxicab.call(request.parameters as Public.Procedures.DistanceTaxicab.Parameters),
-"Public.Procedures.CubeDim.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeDim.call(request.parameters as Public.Procedures.CubeDim.Parameters),
-"Public.Procedures.CubeLlCoord.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeLlCoord.call(request.parameters as Public.Procedures.CubeLlCoord.Parameters),
-"Public.Procedures.CubeUrCoord.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeUrCoord.call(request.parameters as Public.Procedures.CubeUrCoord.Parameters),
-"Public.Procedures.CubeCoord.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeCoord.call(request.parameters as Public.Procedures.CubeCoord.Parameters),
-"Public.Procedures.CubeCoordLlur.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeCoordLlur.call(request.parameters as Public.Procedures.CubeCoordLlur.Parameters),
-"Public.Procedures.CubeA5b3.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeA5b3.call(request.parameters as Public.Procedures.CubeA5b3.Parameters),
-"Public.Procedures.Cube_0aec.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Cube_0aec.call(request.parameters as Public.Procedures.Cube_0aec.Parameters),
-"Public.Procedures.Cube_911b.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Cube_911b.call(request.parameters as Public.Procedures.Cube_911b.Parameters),
-"Public.Procedures.Cube_0856.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Cube_0856.call(request.parameters as Public.Procedures.Cube_0856.Parameters),
-"Public.Procedures.CubeIsPoint.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeIsPoint.call(request.parameters as Public.Procedures.CubeIsPoint.Parameters),
-"Public.Procedures.CubeEnlarge.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeEnlarge.call(request.parameters as Public.Procedures.CubeEnlarge.Parameters),
-"Public.Procedures.GCubeConsistent.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GCubeConsistent.call(request.parameters as Public.Procedures.GCubeConsistent.Parameters),
-"Public.Procedures.GCubePenalty.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GCubePenalty.call(request.parameters as Public.Procedures.GCubePenalty.Parameters),
-"Public.Procedures.GCubePicksplit.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GCubePicksplit.call(request.parameters as Public.Procedures.GCubePicksplit.Parameters),
-"Public.Procedures.GCubeUnion.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GCubeUnion.call(request.parameters as Public.Procedures.GCubeUnion.Parameters),
-"Public.Procedures.GCubeSame.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GCubeSame.call(request.parameters as Public.Procedures.GCubeSame.Parameters),
-"Public.Procedures.GCubeDistance.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GCubeDistance.call(request.parameters as Public.Procedures.GCubeDistance.Parameters),
-"Public.Procedures.CubeRecv.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeRecv.call(request.parameters as Public.Procedures.CubeRecv.Parameters),
-"Public.Procedures.CubeSend.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.CubeSend.call(request.parameters as Public.Procedures.CubeSend.Parameters),
-"Public.Procedures.SetLimit.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.SetLimit.call(request.parameters as Public.Procedures.SetLimit.Parameters),
-"Public.Procedures.ShowLimit.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.ShowLimit.call(),
-"Public.Procedures.ShowTrgm.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.ShowTrgm.call(request.parameters as Public.Procedures.ShowTrgm.Parameters),
-"Public.Procedures.Similarity.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.Similarity.call(request.parameters as Public.Procedures.Similarity.Parameters),
-"Public.Procedures.SimilarityOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.SimilarityOp.call(request.parameters as Public.Procedures.SimilarityOp.Parameters),
-"Public.Procedures.WordSimilarity.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.WordSimilarity.call(request.parameters as Public.Procedures.WordSimilarity.Parameters),
-"Public.Procedures.WordSimilarityOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.WordSimilarityOp.call(request.parameters as Public.Procedures.WordSimilarityOp.Parameters),
-"Public.Procedures.WordSimilarityCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.WordSimilarityCommutatorOp.call(request.parameters as Public.Procedures.WordSimilarityCommutatorOp.Parameters),
-"Public.Procedures.SimilarityDist.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.SimilarityDist.call(request.parameters as Public.Procedures.SimilarityDist.Parameters),
-"Public.Procedures.WordSimilarityDistOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.WordSimilarityDistOp.call(request.parameters as Public.Procedures.WordSimilarityDistOp.Parameters),
-"Public.Procedures.WordSimilarityDistCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.WordSimilarityDistCommutatorOp.call(request.parameters as Public.Procedures.WordSimilarityDistCommutatorOp.Parameters),
-"Public.Procedures.GtrgmIn.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmIn.call(request.parameters as Public.Procedures.GtrgmIn.Parameters),
-"Public.Procedures.GtrgmOut.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmOut.call(request.parameters as Public.Procedures.GtrgmOut.Parameters),
-"Public.Procedures.GtrgmConsistent.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmConsistent.call(request.parameters as Public.Procedures.GtrgmConsistent.Parameters),
-"Public.Procedures.GtrgmDistance.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmDistance.call(request.parameters as Public.Procedures.GtrgmDistance.Parameters),
-"Public.Procedures.GtrgmCompress.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmCompress.call(request.parameters as Public.Procedures.GtrgmCompress.Parameters),
-"Public.Procedures.GtrgmDecompress.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmDecompress.call(request.parameters as Public.Procedures.GtrgmDecompress.Parameters),
-"Public.Procedures.GtrgmPenalty.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmPenalty.call(request.parameters as Public.Procedures.GtrgmPenalty.Parameters),
-"Public.Procedures.GtrgmPicksplit.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmPicksplit.call(request.parameters as Public.Procedures.GtrgmPicksplit.Parameters),
-"Public.Procedures.GtrgmUnion.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmUnion.call(request.parameters as Public.Procedures.GtrgmUnion.Parameters),
-"Public.Procedures.GtrgmSame.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmSame.call(request.parameters as Public.Procedures.GtrgmSame.Parameters),
-"Public.Procedures.GinExtractValueTrgm.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GinExtractValueTrgm.call(request.parameters as Public.Procedures.GinExtractValueTrgm.Parameters),
-"Public.Procedures.GinExtractQueryTrgm.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GinExtractQueryTrgm.call(request.parameters as Public.Procedures.GinExtractQueryTrgm.Parameters),
-"Public.Procedures.GinTrgmConsistent.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GinTrgmConsistent.call(request.parameters as Public.Procedures.GinTrgmConsistent.Parameters),
-"Public.Procedures.GinTrgmTriconsistent.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GinTrgmTriconsistent.call(request.parameters as Public.Procedures.GinTrgmTriconsistent.Parameters),
-"Public.Procedures.StrictWordSimilarity.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StrictWordSimilarity.call(request.parameters as Public.Procedures.StrictWordSimilarity.Parameters),
-"Public.Procedures.StrictWordSimilarityOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StrictWordSimilarityOp.call(request.parameters as Public.Procedures.StrictWordSimilarityOp.Parameters),
-"Public.Procedures.StrictWordSimilarityCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StrictWordSimilarityCommutatorOp.call(request.parameters as Public.Procedures.StrictWordSimilarityCommutatorOp.Parameters),
-"Public.Procedures.StrictWordSimilarityDistOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StrictWordSimilarityDistOp.call(request.parameters as Public.Procedures.StrictWordSimilarityDistOp.Parameters),
-"Public.Procedures.StrictWordSimilarityDistCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.StrictWordSimilarityDistCommutatorOp.call(request.parameters as Public.Procedures.StrictWordSimilarityDistCommutatorOp.Parameters),
-"Public.Procedures.GtrgmOptions.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Procedures.GtrgmOptions.call(request.parameters as Public.Procedures.GtrgmOptions.Parameters),
-"Public.Tables.Slug.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Slug.create(request.values as Public.Tables.Slug.Values),
+"Public.Procedures.CubeIn.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeIn.call(request.parameters as Public.Procedures.CubeIn.Parameters),
+"Public.Procedures.Cube_9c45.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.Cube_9c45.call(request.parameters as Public.Procedures.Cube_9c45.Parameters),
+"Public.Procedures.Cube_2e6d.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.Cube_2e6d.call(request.parameters as Public.Procedures.Cube_2e6d.Parameters),
+"Public.Procedures.CubeOut.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeOut.call(request.parameters as Public.Procedures.CubeOut.Parameters),
+"Public.Procedures.CubeEq.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeEq.call(request.parameters as Public.Procedures.CubeEq.Parameters),
+"Public.Procedures.CubeNe.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeNe.call(request.parameters as Public.Procedures.CubeNe.Parameters),
+"Public.Procedures.CubeLt.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeLt.call(request.parameters as Public.Procedures.CubeLt.Parameters),
+"Public.Procedures.CubeGt.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeGt.call(request.parameters as Public.Procedures.CubeGt.Parameters),
+"Public.Procedures.CubeLe.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeLe.call(request.parameters as Public.Procedures.CubeLe.Parameters),
+"Public.Procedures.CubeGe.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeGe.call(request.parameters as Public.Procedures.CubeGe.Parameters),
+"Public.Procedures.CubeCmp.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeCmp.call(request.parameters as Public.Procedures.CubeCmp.Parameters),
+"Public.Procedures.CubeContains.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeContains.call(request.parameters as Public.Procedures.CubeContains.Parameters),
+"Public.Procedures.CubeContained.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeContained.call(request.parameters as Public.Procedures.CubeContained.Parameters),
+"Public.Procedures.CubeOverlap.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeOverlap.call(request.parameters as Public.Procedures.CubeOverlap.Parameters),
+"Public.Procedures.CubeUnion.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeUnion.call(request.parameters as Public.Procedures.CubeUnion.Parameters),
+"Public.Procedures.CubeInter.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeInter.call(request.parameters as Public.Procedures.CubeInter.Parameters),
+"Public.Procedures.CubeSize.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeSize.call(request.parameters as Public.Procedures.CubeSize.Parameters),
+"Public.Procedures.CubeSubset.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeSubset.call(request.parameters as Public.Procedures.CubeSubset.Parameters),
+"Public.Procedures.CubeDistance.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeDistance.call(request.parameters as Public.Procedures.CubeDistance.Parameters),
+"Public.Procedures.DistanceChebyshev.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.DistanceChebyshev.call(request.parameters as Public.Procedures.DistanceChebyshev.Parameters),
+"Public.Procedures.DistanceTaxicab.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.DistanceTaxicab.call(request.parameters as Public.Procedures.DistanceTaxicab.Parameters),
+"Public.Procedures.CubeDim.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeDim.call(request.parameters as Public.Procedures.CubeDim.Parameters),
+"Public.Procedures.CubeLlCoord.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeLlCoord.call(request.parameters as Public.Procedures.CubeLlCoord.Parameters),
+"Public.Procedures.CubeUrCoord.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeUrCoord.call(request.parameters as Public.Procedures.CubeUrCoord.Parameters),
+"Public.Procedures.CubeCoord.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeCoord.call(request.parameters as Public.Procedures.CubeCoord.Parameters),
+"Public.Procedures.CubeCoordLlur.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeCoordLlur.call(request.parameters as Public.Procedures.CubeCoordLlur.Parameters),
+"Public.Procedures.CubeA5b3.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeA5b3.call(request.parameters as Public.Procedures.CubeA5b3.Parameters),
+"Public.Procedures.Cube_0aec.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.Cube_0aec.call(request.parameters as Public.Procedures.Cube_0aec.Parameters),
+"Public.Procedures.CubeAb68.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeAb68.call(request.parameters as Public.Procedures.CubeAb68.Parameters),
+"Public.Procedures.Cube_785c.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.Cube_785c.call(request.parameters as Public.Procedures.Cube_785c.Parameters),
+"Public.Procedures.CubeIsPoint.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeIsPoint.call(request.parameters as Public.Procedures.CubeIsPoint.Parameters),
+"Public.Procedures.CubeEnlarge.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeEnlarge.call(request.parameters as Public.Procedures.CubeEnlarge.Parameters),
+"Public.Procedures.GCubeConsistent.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GCubeConsistent.call(request.parameters as Public.Procedures.GCubeConsistent.Parameters),
+"Public.Procedures.GCubePenalty.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GCubePenalty.call(request.parameters as Public.Procedures.GCubePenalty.Parameters),
+"Public.Procedures.GCubePicksplit.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GCubePicksplit.call(request.parameters as Public.Procedures.GCubePicksplit.Parameters),
+"Public.Procedures.GCubeUnion.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GCubeUnion.call(request.parameters as Public.Procedures.GCubeUnion.Parameters),
+"Public.Procedures.GCubeSame.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GCubeSame.call(request.parameters as Public.Procedures.GCubeSame.Parameters),
+"Public.Procedures.GCubeDistance.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GCubeDistance.call(request.parameters as Public.Procedures.GCubeDistance.Parameters),
+"Public.Procedures.CubeRecv.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeRecv.call(request.parameters as Public.Procedures.CubeRecv.Parameters),
+"Public.Procedures.CubeSend.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeSend.call(request.parameters as Public.Procedures.CubeSend.Parameters),
+"Public.Procedures.SetLimit.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.SetLimit.call(request.parameters as Public.Procedures.SetLimit.Parameters),
+"Public.Procedures.ShowLimit.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.ShowLimit.call(),
+"Public.Procedures.ShowTrgm.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.ShowTrgm.call(request.parameters as Public.Procedures.ShowTrgm.Parameters),
+"Public.Procedures.Similarity.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.Similarity.call(request.parameters as Public.Procedures.Similarity.Parameters),
+"Public.Procedures.SimilarityOp.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.SimilarityOp.call(request.parameters as Public.Procedures.SimilarityOp.Parameters),
+"Public.Procedures.WordSimilarity.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.WordSimilarity.call(request.parameters as Public.Procedures.WordSimilarity.Parameters),
+"Public.Procedures.WordSimilarityOp.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.WordSimilarityOp.call(request.parameters as Public.Procedures.WordSimilarityOp.Parameters),
+"Public.Procedures.WordSimilarityCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.WordSimilarityCommutatorOp.call(request.parameters as Public.Procedures.WordSimilarityCommutatorOp.Parameters),
+"Public.Procedures.SimilarityDist.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.SimilarityDist.call(request.parameters as Public.Procedures.SimilarityDist.Parameters),
+"Public.Procedures.WordSimilarityDistOp.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.WordSimilarityDistOp.call(request.parameters as Public.Procedures.WordSimilarityDistOp.Parameters),
+"Public.Procedures.WordSimilarityDistCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.WordSimilarityDistCommutatorOp.call(request.parameters as Public.Procedures.WordSimilarityDistCommutatorOp.Parameters),
+"Public.Procedures.GtrgmIn.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GtrgmIn.call(request.parameters as Public.Procedures.GtrgmIn.Parameters),
+"Public.Procedures.GtrgmOut.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GtrgmOut.call(request.parameters as Public.Procedures.GtrgmOut.Parameters),
+"Public.Procedures.GtrgmConsistent.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GtrgmConsistent.call(request.parameters as Public.Procedures.GtrgmConsistent.Parameters),
+"Public.Procedures.GtrgmDistance.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GtrgmDistance.call(request.parameters as Public.Procedures.GtrgmDistance.Parameters),
+"Public.Procedures.GtrgmCompress.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GtrgmCompress.call(request.parameters as Public.Procedures.GtrgmCompress.Parameters),
+"Public.Procedures.GtrgmDecompress.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GtrgmDecompress.call(request.parameters as Public.Procedures.GtrgmDecompress.Parameters),
+"Public.Procedures.GtrgmPenalty.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GtrgmPenalty.call(request.parameters as Public.Procedures.GtrgmPenalty.Parameters),
+"Public.Procedures.GtrgmPicksplit.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GtrgmPicksplit.call(request.parameters as Public.Procedures.GtrgmPicksplit.Parameters),
+"Public.Procedures.GtrgmUnion.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GtrgmUnion.call(request.parameters as Public.Procedures.GtrgmUnion.Parameters),
+"Public.Procedures.GtrgmSame.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GtrgmSame.call(request.parameters as Public.Procedures.GtrgmSame.Parameters),
+"Public.Procedures.GinExtractValueTrgm.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GinExtractValueTrgm.call(request.parameters as Public.Procedures.GinExtractValueTrgm.Parameters),
+"Public.Procedures.GinExtractQueryTrgm.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GinExtractQueryTrgm.call(request.parameters as Public.Procedures.GinExtractQueryTrgm.Parameters),
+"Public.Procedures.GinTrgmConsistent.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GinTrgmConsistent.call(request.parameters as Public.Procedures.GinTrgmConsistent.Parameters),
+"Public.Procedures.GinTrgmTriconsistent.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GinTrgmTriconsistent.call(request.parameters as Public.Procedures.GinTrgmTriconsistent.Parameters),
+"Public.Procedures.StrictWordSimilarity.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.StrictWordSimilarity.call(request.parameters as Public.Procedures.StrictWordSimilarity.Parameters),
+"Public.Procedures.StrictWordSimilarityOp.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.StrictWordSimilarityOp.call(request.parameters as Public.Procedures.StrictWordSimilarityOp.Parameters),
+"Public.Procedures.StrictWordSimilarityCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.StrictWordSimilarityCommutatorOp.call(request.parameters as Public.Procedures.StrictWordSimilarityCommutatorOp.Parameters),
+"Public.Procedures.StrictWordSimilarityDistOp.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.StrictWordSimilarityDistOp.call(request.parameters as Public.Procedures.StrictWordSimilarityDistOp.Parameters),
+"Public.Procedures.StrictWordSimilarityDistCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.StrictWordSimilarityDistCommutatorOp.call(request.parameters as Public.Procedures.StrictWordSimilarityDistCommutatorOp.Parameters),
+"Public.Procedures.GtrgmOptions.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GtrgmOptions.call(request.parameters as Public.Procedures.GtrgmOptions.Parameters),
+"Public.Tables.Slug.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Slug.create(request.values as Public.Tables.Slug.Values),
 
-             "Public.Tables.Slug.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+             "Public.Tables.Slug.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
               database.Public.Tables.Slug.all(request.options as Public.Tables.Slug.Options),
             
-"Public.Tables.Slug.SlugPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Slug.SlugPkey.read(request.parameters as Public.Types.SlugPkey,request.options as Public.Tables.Slug.Options),
-"Public.Tables.Slug.SlugPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Slug.SlugPkey.update(request.parameters as Public.Types.SlugPkey,request.values as Partial<Public.Tables.Slug.Values>),
-"Public.Tables.Slug.SlugPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Slug.SlugPkey.delete(request.parameters as Public.Types.SlugPkey),
-"Api.Procedures.Echo.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.Echo.call(request.parameters as Api.Procedures.Echo.Parameters),
-"Api.Procedures.EchoSet.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.EchoSet.call(request.parameters as Api.Procedures.EchoSet.Parameters),
-"Api.Procedures.EchoTable.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.EchoTable.call(request.parameters as Api.Procedures.EchoTable.Parameters),
-"Api.Procedures.EchoType.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.EchoType.call(request.parameters as Api.Procedures.EchoType.Parameters),
-"Api.Procedures.EchoTypeArray.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.EchoTypeArray.call(request.parameters as Api.Procedures.EchoTypeArray.Parameters),
-"Api.Procedures.EchoTypeNested.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.EchoTypeNested.call(request.parameters as Api.Procedures.EchoTypeNested.Parameters),
-"Api.Procedures.EchoTypeSet.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.EchoTypeSet.call(request.parameters as Api.Procedures.EchoTypeSet.Parameters),
-"Api.Procedures.EchoAnswer.call": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Procedures.EchoAnswer.call(request.parameters as Api.Procedures.EchoAnswer.Parameters),
-"Api.Tables.QAndA.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.QAndA.create(request.values as Api.Tables.QAndA.Values),
+"Public.Tables.Slug.SlugPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Slug.SlugPkey.read(request.parameters as Public.Types.SlugPkey,request.options as Public.Tables.Slug.Options),
+"Public.Tables.Slug.SlugPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Slug.SlugPkey.update(request.parameters as Public.Types.SlugPkey,request.values as Partial<Public.Tables.Slug.Values>),
+"Public.Tables.Slug.SlugPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Slug.SlugPkey.delete(request.parameters as Public.Types.SlugPkey),
+"Api.Procedures.Echo.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Procedures.Echo.call(request.parameters as Api.Procedures.Echo.Parameters),
+"Api.Procedures.EchoSet.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Procedures.EchoSet.call(request.parameters as Api.Procedures.EchoSet.Parameters),
+"Api.Procedures.EchoTable.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Procedures.EchoTable.call(request.parameters as Api.Procedures.EchoTable.Parameters),
+"Api.Procedures.EchoType.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Procedures.EchoType.call(request.parameters as Api.Procedures.EchoType.Parameters),
+"Api.Procedures.EchoTypeArray.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Procedures.EchoTypeArray.call(request.parameters as Api.Procedures.EchoTypeArray.Parameters),
+"Api.Procedures.EchoTypeNested.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Procedures.EchoTypeNested.call(request.parameters as Api.Procedures.EchoTypeNested.Parameters),
+"Api.Procedures.EchoTypeSet.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Procedures.EchoTypeSet.call(request.parameters as Api.Procedures.EchoTypeSet.Parameters),
+"Api.Procedures.EchoAnswer.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Procedures.EchoAnswer.call(request.parameters as Api.Procedures.EchoAnswer.Parameters),
+"Api.Tables.QAndA.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.QAndA.create(request.values as Api.Tables.QAndA.Values),
 
-             "Api.Tables.QAndA.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+             "Api.Tables.QAndA.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
               database.Api.Tables.QAndA.all(request.options as Api.Tables.QAndA.Options),
             
-"Api.Tables.QAndA.QAndAAnswer.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.QAndA.QAndAAnswer.read(request.parameters as Api.Types.QAndAAnswer,request.options as Api.Tables.QAndA.Options),
-"Api.Tables.QAndA.QAndAAnswer.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.QAndA.QAndAAnswer.update(request.parameters as Api.Types.QAndAAnswer,request.values as Partial<Api.Tables.QAndA.Values>),
-"Api.Tables.QAndA.QAndAAnswer.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.QAndA.QAndAAnswer.delete(request.parameters as Api.Types.QAndAAnswer),
-"Api.Tables.Timezones.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.create(request.values as Api.Tables.Timezones.Values),
+"Api.Tables.QAndA.QAndAAnswer.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.QAndA.QAndAAnswer.read(request.parameters as Api.Types.QAndAAnswer,request.options as Api.Tables.QAndA.Options),
+"Api.Tables.QAndA.QAndAAnswer.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.QAndA.QAndAAnswer.update(request.parameters as Api.Types.QAndAAnswer,request.values as Partial<Api.Tables.QAndA.Values>),
+"Api.Tables.QAndA.QAndAAnswer.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.QAndA.QAndAAnswer.delete(request.parameters as Api.Types.QAndAAnswer),
+"Api.Tables.Timezones.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Timezones.create(request.values as Api.Tables.Timezones.Values),
 
-             "Api.Tables.Timezones.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+             "Api.Tables.Timezones.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
               database.Api.Tables.Timezones.all(request.options as Api.Tables.Timezones.Options),
             
-"Api.Tables.Timezones.TrgmIdxGist.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGist.read(request.parameters as Api.Types.TrgmIdxGist,request.options as Api.Tables.Timezones.Options),
-"Api.Tables.Timezones.TrgmIdxGist.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGist.update(request.parameters as Api.Types.TrgmIdxGist,request.values as Partial<Api.Tables.Timezones.Values>),
-"Api.Tables.Timezones.TrgmIdxGist.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGist.delete(request.parameters as Api.Types.TrgmIdxGist),
-"Api.Tables.Timezones.TrgmIdxGin.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGin.read(request.parameters as Api.Types.TrgmIdxGin,request.options as Api.Tables.Timezones.Options),
-"Api.Tables.Timezones.TrgmIdxGin.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGin.update(request.parameters as Api.Types.TrgmIdxGin,request.values as Partial<Api.Tables.Timezones.Values>),
-"Api.Tables.Timezones.TrgmIdxGin.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Timezones.TrgmIdxGin.delete(request.parameters as Api.Types.TrgmIdxGin),
-"Api.Tables.Points.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Points.create(request.values as Api.Tables.Points.Values),
+"Api.Tables.Timezones.TrgmIdxGist.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Timezones.TrgmIdxGist.read(request.parameters as Api.Types.TrgmIdxGist,request.options as Api.Tables.Timezones.Options),
+"Api.Tables.Timezones.TrgmIdxGist.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Timezones.TrgmIdxGist.update(request.parameters as Api.Types.TrgmIdxGist,request.values as Partial<Api.Tables.Timezones.Values>),
+"Api.Tables.Timezones.TrgmIdxGist.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Timezones.TrgmIdxGist.delete(request.parameters as Api.Types.TrgmIdxGist),
+"Api.Tables.Timezones.TrgmIdxGin.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Timezones.TrgmIdxGin.read(request.parameters as Api.Types.TrgmIdxGin,request.options as Api.Tables.Timezones.Options),
+"Api.Tables.Timezones.TrgmIdxGin.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Timezones.TrgmIdxGin.update(request.parameters as Api.Types.TrgmIdxGin,request.values as Partial<Api.Tables.Timezones.Values>),
+"Api.Tables.Timezones.TrgmIdxGin.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Timezones.TrgmIdxGin.delete(request.parameters as Api.Types.TrgmIdxGin),
+"Api.Tables.Points.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Points.create(request.values as Api.Tables.Points.Values),
 
-             "Api.Tables.Points.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+             "Api.Tables.Points.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
               database.Api.Tables.Points.all(request.options as Api.Tables.Points.Options),
             
-"Api.Tables.Points.PointsPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Points.PointsPkey.read(request.parameters as Api.Types.PointsPkey,request.options as Api.Tables.Points.Options),
-"Api.Tables.Points.PointsPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Points.PointsPkey.update(request.parameters as Api.Types.PointsPkey,request.values as Partial<Api.Tables.Points.Values>),
-"Api.Tables.Points.PointsPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Points.PointsPkey.delete(request.parameters as Api.Types.PointsPkey),
-"Api.Tables.Lines.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Lines.create(request.values as Api.Tables.Lines.Values),
+"Api.Tables.Points.PointsPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Points.PointsPkey.read(request.parameters as Api.Types.PointsPkey,request.options as Api.Tables.Points.Options),
+"Api.Tables.Points.PointsPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Points.PointsPkey.update(request.parameters as Api.Types.PointsPkey,request.values as Partial<Api.Tables.Points.Values>),
+"Api.Tables.Points.PointsPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Points.PointsPkey.delete(request.parameters as Api.Types.PointsPkey),
+"Api.Tables.Lines.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Lines.create(request.values as Api.Tables.Lines.Values),
 
-             "Api.Tables.Lines.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+             "Api.Tables.Lines.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
               database.Api.Tables.Lines.all(request.options as Api.Tables.Lines.Options),
             
-"Api.Tables.Lines.LinesPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Lines.LinesPkey.read(request.parameters as Api.Types.LinesPkey,request.options as Api.Tables.Lines.Options),
-"Api.Tables.Lines.LinesPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Lines.LinesPkey.update(request.parameters as Api.Types.LinesPkey,request.values as Partial<Api.Tables.Lines.Values>),
-"Api.Tables.Lines.LinesPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Lines.LinesPkey.delete(request.parameters as Api.Types.LinesPkey),
-"Api.Tables.LineSegments.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.LineSegments.create(request.values as Api.Tables.LineSegments.Values),
+"Api.Tables.Lines.LinesPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Lines.LinesPkey.read(request.parameters as Api.Types.LinesPkey,request.options as Api.Tables.Lines.Options),
+"Api.Tables.Lines.LinesPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Lines.LinesPkey.update(request.parameters as Api.Types.LinesPkey,request.values as Partial<Api.Tables.Lines.Values>),
+"Api.Tables.Lines.LinesPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Lines.LinesPkey.delete(request.parameters as Api.Types.LinesPkey),
+"Api.Tables.LineSegments.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.LineSegments.create(request.values as Api.Tables.LineSegments.Values),
 
-             "Api.Tables.LineSegments.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+             "Api.Tables.LineSegments.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
               database.Api.Tables.LineSegments.all(request.options as Api.Tables.LineSegments.Options),
             
-"Api.Tables.LineSegments.LineSegmentsPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.LineSegments.LineSegmentsPkey.read(request.parameters as Api.Types.LineSegmentsPkey,request.options as Api.Tables.LineSegments.Options),
-"Api.Tables.LineSegments.LineSegmentsPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.LineSegments.LineSegmentsPkey.update(request.parameters as Api.Types.LineSegmentsPkey,request.values as Partial<Api.Tables.LineSegments.Values>),
-"Api.Tables.LineSegments.LineSegmentsPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.LineSegments.LineSegmentsPkey.delete(request.parameters as Api.Types.LineSegmentsPkey),
-"Api.Tables.Boxes.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Boxes.create(request.values as Api.Tables.Boxes.Values),
+"Api.Tables.LineSegments.LineSegmentsPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.LineSegments.LineSegmentsPkey.read(request.parameters as Api.Types.LineSegmentsPkey,request.options as Api.Tables.LineSegments.Options),
+"Api.Tables.LineSegments.LineSegmentsPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.LineSegments.LineSegmentsPkey.update(request.parameters as Api.Types.LineSegmentsPkey,request.values as Partial<Api.Tables.LineSegments.Values>),
+"Api.Tables.LineSegments.LineSegmentsPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.LineSegments.LineSegmentsPkey.delete(request.parameters as Api.Types.LineSegmentsPkey),
+"Api.Tables.Boxes.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Boxes.create(request.values as Api.Tables.Boxes.Values),
 
-             "Api.Tables.Boxes.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+             "Api.Tables.Boxes.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
               database.Api.Tables.Boxes.all(request.options as Api.Tables.Boxes.Options),
             
-"Api.Tables.Boxes.BoxesPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Boxes.BoxesPkey.read(request.parameters as Api.Types.BoxesPkey,request.options as Api.Tables.Boxes.Options),
-"Api.Tables.Boxes.BoxesPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Boxes.BoxesPkey.update(request.parameters as Api.Types.BoxesPkey,request.values as Partial<Api.Tables.Boxes.Values>),
-"Api.Tables.Boxes.BoxesPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Boxes.BoxesPkey.delete(request.parameters as Api.Types.BoxesPkey),
-"Api.Tables.Paths.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Paths.create(request.values as Api.Tables.Paths.Values),
+"Api.Tables.Boxes.BoxesPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Boxes.BoxesPkey.read(request.parameters as Api.Types.BoxesPkey,request.options as Api.Tables.Boxes.Options),
+"Api.Tables.Boxes.BoxesPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Boxes.BoxesPkey.update(request.parameters as Api.Types.BoxesPkey,request.values as Partial<Api.Tables.Boxes.Values>),
+"Api.Tables.Boxes.BoxesPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Boxes.BoxesPkey.delete(request.parameters as Api.Types.BoxesPkey),
+"Api.Tables.Paths.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Paths.create(request.values as Api.Tables.Paths.Values),
 
-             "Api.Tables.Paths.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+             "Api.Tables.Paths.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
               database.Api.Tables.Paths.all(request.options as Api.Tables.Paths.Options),
             
-"Api.Tables.Paths.PathsPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Paths.PathsPkey.read(request.parameters as Api.Types.PathsPkey,request.options as Api.Tables.Paths.Options),
-"Api.Tables.Paths.PathsPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Paths.PathsPkey.update(request.parameters as Api.Types.PathsPkey,request.values as Partial<Api.Tables.Paths.Values>),
-"Api.Tables.Paths.PathsPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Paths.PathsPkey.delete(request.parameters as Api.Types.PathsPkey),
-"Api.Tables.Polygons.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Polygons.create(request.values as Api.Tables.Polygons.Values),
+"Api.Tables.Paths.PathsPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Paths.PathsPkey.read(request.parameters as Api.Types.PathsPkey,request.options as Api.Tables.Paths.Options),
+"Api.Tables.Paths.PathsPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Paths.PathsPkey.update(request.parameters as Api.Types.PathsPkey,request.values as Partial<Api.Tables.Paths.Values>),
+"Api.Tables.Paths.PathsPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Paths.PathsPkey.delete(request.parameters as Api.Types.PathsPkey),
+"Api.Tables.Polygons.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Polygons.create(request.values as Api.Tables.Polygons.Values),
 
-             "Api.Tables.Polygons.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+             "Api.Tables.Polygons.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
               database.Api.Tables.Polygons.all(request.options as Api.Tables.Polygons.Options),
             
-"Api.Tables.Polygons.PolygonsPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Polygons.PolygonsPkey.read(request.parameters as Api.Types.PolygonsPkey,request.options as Api.Tables.Polygons.Options),
-"Api.Tables.Polygons.PolygonsPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Polygons.PolygonsPkey.update(request.parameters as Api.Types.PolygonsPkey,request.values as Partial<Api.Tables.Polygons.Values>),
-"Api.Tables.Polygons.PolygonsPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Polygons.PolygonsPkey.delete(request.parameters as Api.Types.PolygonsPkey),
-"Api.Tables.Circles.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Circles.create(request.values as Api.Tables.Circles.Values),
+"Api.Tables.Polygons.PolygonsPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Polygons.PolygonsPkey.read(request.parameters as Api.Types.PolygonsPkey,request.options as Api.Tables.Polygons.Options),
+"Api.Tables.Polygons.PolygonsPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Polygons.PolygonsPkey.update(request.parameters as Api.Types.PolygonsPkey,request.values as Partial<Api.Tables.Polygons.Values>),
+"Api.Tables.Polygons.PolygonsPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Polygons.PolygonsPkey.delete(request.parameters as Api.Types.PolygonsPkey),
+"Api.Tables.Circles.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Circles.create(request.values as Api.Tables.Circles.Values),
 
-             "Api.Tables.Circles.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+             "Api.Tables.Circles.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
               database.Api.Tables.Circles.all(request.options as Api.Tables.Circles.Options),
             
-"Api.Tables.Circles.CirclesPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Circles.CirclesPkey.read(request.parameters as Api.Types.CirclesPkey,request.options as Api.Tables.Circles.Options),
-"Api.Tables.Circles.CirclesPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Circles.CirclesPkey.update(request.parameters as Api.Types.CirclesPkey,request.values as Partial<Api.Tables.Circles.Values>),
-"Api.Tables.Circles.CirclesPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Api.Tables.Circles.CirclesPkey.delete(request.parameters as Api.Types.CirclesPkey),
+"Api.Tables.Circles.CirclesPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Circles.CirclesPkey.read(request.parameters as Api.Types.CirclesPkey,request.options as Api.Tables.Circles.Options),
+"Api.Tables.Circles.CirclesPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Circles.CirclesPkey.update(request.parameters as Api.Types.CirclesPkey,request.values as Partial<Api.Tables.Circles.Values>),
+"Api.Tables.Circles.CirclesPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Circles.CirclesPkey.delete(request.parameters as Api.Types.CirclesPkey),
 }
 }
 
-            async dispatch(request: EmbraceSQLRequest<object, object, object>) {
+            async dispatch(request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) {
               if (!this.dispatchMap[request.operation]) {
                 throw new Error(`${request.operation} not available`);
               }
@@ -5098,6 +5098,11 @@ export namespace Tables {
             
 }
 
+export type DatabaseRole = "postgres" | "pg_database_owner" | "pg_read_all_data" | "pg_write_all_data" | "pg_monitor" | "pg_read_all_settings" | "pg_read_all_stats" | "pg_stat_scan_tables" | "pg_read_server_files" | "pg_write_server_files" | "pg_execute_server_program" | "pg_signal_backend" | "pg_checkpoint" | "pg_use_reserved_connections" | "pg_create_subscription" | "wballard" | "no_access";
+export type DatabaseHeaders = {
+ ROLE?: DatabaseRole;
+}
+export type InvokeQueryOptions = GenericInvokeQueryOptions<DatabaseHeaders>;
 export namespace PgCatalog {
 export namespace Types {
 
@@ -14986,7 +14991,7 @@ argument_0: Nullable<PgCatalog.Types.Float8>;
 argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace Cube_911b {
+export namespace CubeAb68 {
 
 
 export type Parameters = {
@@ -14994,7 +14999,7 @@ argument_0: Nullable<Public.Types.Cube>;
 argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace Cube_0856 {
+export namespace Cube_785c {
 
 
 export type Parameters = {
@@ -15939,22 +15944,22 @@ export type PrimaryKey = Api.Types.CirclesPkey;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_35838Index = {
+export type PgToast_43698Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_35844Index = {
+export type PgToast_43704Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_35875Index = {
+export type PgToast_43735Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_35883Index = {
+export type PgToast_43743Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -28732,14 +28737,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace Cube_911b {
+export namespace CubeAb68 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.Cube_911b.Parameters.is(from)) {
+if (Public.Procedures.CubeAb68.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Cube.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -28751,14 +28756,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace Cube_0856 {
+export namespace Cube_785c {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.Cube_0856.Parameters.is(from)) {
+if (Public.Procedures.Cube_785c.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Cube.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -30255,11 +30260,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_35838Index {
+export namespace PgToast_43698Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_35838Index.is(from)) {
+if (PgToast.Types.PgToast_43698Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -30270,11 +30275,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_35844Index {
+export namespace PgToast_43704Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_35844Index.is(from)) {
+if (PgToast.Types.PgToast_43704Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -30285,11 +30290,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_35875Index {
+export namespace PgToast_43735Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_35875Index.is(from)) {
+if (PgToast.Types.PgToast_43735Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -30300,11 +30305,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_35883Index {
+export namespace PgToast_43743Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_35883Index.is(from)) {
+if (PgToast.Types.PgToast_43743Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -36258,9 +36263,9 @@ return false;
 }
 }
 }
-export namespace Cube_911b {
+export namespace CubeAb68 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.Cube_911b.Parameters {
+export function is(value: any) : value is Public.Procedures.CubeAb68.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -36268,9 +36273,9 @@ return false;
 }
 }
 }
-export namespace Cube_0856 {
+export namespace Cube_785c {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.Cube_0856.Parameters {
+export function is(value: any) : value is Public.Procedures.Cube_785c.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -36970,32 +36975,32 @@ export namespace Circles {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_35838Index {
-export function is(value: any) : value is PgToast.Types.PgToast_35838Index {
+export namespace PgToast_43698Index {
+export function is(value: any) : value is PgToast.Types.PgToast_43698Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_35844Index {
-export function is(value: any) : value is PgToast.Types.PgToast_35844Index {
+export namespace PgToast_43704Index {
+export function is(value: any) : value is PgToast.Types.PgToast_43704Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_35875Index {
-export function is(value: any) : value is PgToast.Types.PgToast_35875Index {
+export namespace PgToast_43735Index {
+export function is(value: any) : value is PgToast.Types.PgToast_43735Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_35883Index {
-export function is(value: any) : value is PgToast.Types.PgToast_35883Index {
+export namespace PgToast_43743Index {
+export function is(value: any) : value is PgToast.Types.PgToast_43743Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -41375,16 +41380,16 @@ export namespace Parameters {
  }
 }
 }
-export namespace Cube_911b {
+export namespace CubeAb68 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.Cube_911b.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.CubeAb68.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace Cube_0856 {
+export namespace Cube_785c {
 export namespace Parameters {
- export function equals(l: Public.Procedures.Cube_0856.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.Cube_785c.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -41936,23 +41941,23 @@ export namespace Circles {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_35838Index {
- export function equals(l: PgToast.Types.PgToast_35838Index|undefined, r: unknown) {
+export namespace PgToast_43698Index {
+ export function equals(l: PgToast.Types.PgToast_43698Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_35844Index {
- export function equals(l: PgToast.Types.PgToast_35844Index|undefined, r: unknown) {
+export namespace PgToast_43704Index {
+ export function equals(l: PgToast.Types.PgToast_43704Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_35875Index {
- export function equals(l: PgToast.Types.PgToast_35875Index|undefined, r: unknown) {
+export namespace PgToast_43735Index {
+ export function equals(l: PgToast.Types.PgToast_43735Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_35883Index {
- export function equals(l: PgToast.Types.PgToast_35883Index|undefined, r: unknown) {
+export namespace PgToast_43743Index {
+ export function equals(l: PgToast.Types.PgToast_43743Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -58992,7 +58997,7 @@ argument_1?: PgCatalog.Types.Float8.Options
 }
 }
 }
-export namespace Cube_911b {
+export namespace CubeAb68 {
 export namespace Parameters {
 export namespace Argument_0 {
 
@@ -59010,7 +59015,7 @@ argument_1?: PgCatalog.Types.Float8.Options
 }
 }
 }
-export namespace Cube_0856 {
+export namespace Cube_785c {
 export namespace Parameters {
 export namespace Argument_0 {
 
@@ -60367,7 +60372,7 @@ export namespace Circles {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_35838Index {
+export namespace PgToast_43698Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -60383,7 +60388,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_35844Index {
+export namespace PgToast_43704Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -60399,7 +60404,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_35875Index {
+export namespace PgToast_43735Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -60415,7 +60420,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_35883Index {
+export namespace PgToast_43743Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -61503,9 +61508,9 @@ get Procedures()   {
 {
  name: "cube_0aec"},
 {
- name: "cube_911b"},
+ name: "cube_ab68"},
 {
- name: "cube_0856"},
+ name: "cube_785c"},
 {
  name: "cube_is_point"},
 {

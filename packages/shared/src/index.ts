@@ -8,10 +8,24 @@ export * from "./debounce";
 export let NEVER: never;
 
 /**
+ * Headers are the classic string name/value pairs.
+ */
+export type Headers = Record<string, string>;
+
+/**
  * Invocation context for a single database operation.
  */
-export type EmbraceSQLInvocation<P = object, V = object, O = object> = {
-  headers?: Record<string, string>;
+export type EmbraceSQLInvocation<
+  P = object,
+  V = object,
+  O = object,
+  H = Headers,
+> = {
+  /**
+   * Header values can be generically augmented with well known
+   * headers.
+   */
+  headers?: H & Headers;
   parameters?: P;
   values?: V;
   options?: O;
@@ -23,20 +37,21 @@ export type EmbraceSQLInvocation<P = object, V = object, O = object> = {
  * The notion of headers is inspired by HTTP and allows you to specify
  * additional metadata.
  */
-export type EmbraceSQLRequest<P, V = never, O = never> = EmbraceSQLInvocation<
+export type EmbraceSQLRequest<
   P,
-  V,
-  O
-> & {
+  V = never,
+  O = never,
+  H = Headers,
+> = EmbraceSQLInvocation<P, V, O, H> & {
   operation: string;
 };
 
 /**
  * Message format for EmbraceSQL.
  */
-export type EmbraceSQLResponse<R> = {
+export type EmbraceSQLResponse<R, H = Headers> = {
   operation: string;
-  headers?: Record<string, string>;
+  headers?: H & Headers;
   results?: R;
 };
 
@@ -44,8 +59,8 @@ export type EmbraceSQLResponse<R> = {
  * Operation dispatch. This has a vague type on purpose to allow
  * selecting the proper operation via HTTP/S + JSON.
  */
-export type OperationDispatchMethod = (
-  request: EmbraceSQLRequest<object, object, object>,
+export type OperationDispatchMethod<H = Headers> = (
+  request: EmbraceSQLRequest<object, object, object, H>,
 ) => Promise<unknown>;
 
 export type GenerationContextProps = {
@@ -174,19 +189,19 @@ export type OneOrMany<T> = T | T[];
 /**
  * Additional options to control running a query on the database.
  */
-export type InvokeQueryOptions = {
+export type InvokeQueryOptions<H = Headers> = {
   /**
    * When greater than 0, retry the query on any error this number
    * of times.
    */
   retries?: number;
   /**
-   * Use the database for security by specifing a `ROLE`.
+   * Contains options supplied as headers from hooks or HTTP/S client
+   * requests.
    *
-   * The invoked query will run as this `ROLE` rather than as
-   * the database connection string login.
+   * You can also directly set any headers you see fit.
    */
-  role?: string;
+  headers?: H & Headers;
 };
 
 /**

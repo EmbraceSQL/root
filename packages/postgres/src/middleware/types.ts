@@ -1,3 +1,11 @@
+import { Context } from "../context";
+import { InvokeQueryOptions } from "@embracesql/shared";
+
+/**
+ * The default middleware context type.
+ */
+export type MiddlewareContext = Context & InvokeQueryOptions;
+
 /**
  * 'next' function, passed to a middleware to chain along.
  */
@@ -27,6 +35,13 @@ export class MiddlewareDispatcher<T> {
    */
   use(...mw: Middleware<T>[]): void {
     this.middlewares.push(...mw);
+  }
+
+  /**
+   * Remove all middleware.
+   */
+  clear() {
+    this.middlewares = [];
   }
 
   /**

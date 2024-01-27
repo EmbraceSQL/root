@@ -13,7 +13,7 @@
         /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
         /* @typescript-eslint/no-redundant-type-constituents */
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
-        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort, InvokeQueryOptions } from "@embracesql/shared";
+        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort, InvokeQueryOptions as GenericInvokeQueryOptions } from "@embracesql/shared";
         import { Geometry } from "@embracesql/shared";
         import { DatabaseMetadata, Schema, Table, Column, Index, Procedure } from "@embracesql/shared";
     
@@ -2260,6 +2260,11 @@ return response.results?.map(r => Scripts.Tally.Results.parse(r)) as Scripts.Tal
 }(this)
 }
 
+export type DatabaseRole = "postgres" | "pg_database_owner" | "pg_read_all_data" | "pg_write_all_data" | "pg_monitor" | "pg_read_all_settings" | "pg_read_all_stats" | "pg_stat_scan_tables" | "pg_read_server_files" | "pg_write_server_files" | "pg_execute_server_program" | "pg_signal_backend" | "pg_checkpoint" | "pg_use_reserved_connections" | "pg_create_subscription" | "wballard" | "no_access";
+export type DatabaseHeaders = {
+ ROLE?: DatabaseRole;
+}
+export type InvokeQueryOptions = GenericInvokeQueryOptions<DatabaseHeaders>;
 export namespace PgCatalog {
 export namespace Types {
 
@@ -13241,12 +13246,12 @@ export type PrimaryKey = Public.Types.FilmPkey;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_35375Index = {
+export type PgToast_43235Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_35461Index = {
+export type PgToast_43321Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -27035,11 +27040,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_35375Index {
+export namespace PgToast_43235Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_35375Index.is(from)) {
+if (PgToast.Types.PgToast_43235Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -27050,11 +27055,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_35461Index {
+export namespace PgToast_43321Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_35461Index.is(from)) {
+if (PgToast.Types.PgToast_43321Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -33662,16 +33667,16 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_35375Index {
-export function is(value: any) : value is PgToast.Types.PgToast_35375Index {
+export namespace PgToast_43235Index {
+export function is(value: any) : value is PgToast.Types.PgToast_43235Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_35461Index {
-export function is(value: any) : value is PgToast.Types.PgToast_35461Index {
+export namespace PgToast_43321Index {
+export function is(value: any) : value is PgToast.Types.PgToast_43321Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -38377,13 +38382,13 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_35375Index {
- export function equals(l: PgToast.Types.PgToast_35375Index|undefined, r: unknown) {
+export namespace PgToast_43235Index {
+ export function equals(l: PgToast.Types.PgToast_43235Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_35461Index {
- export function equals(l: PgToast.Types.PgToast_35461Index|undefined, r: unknown) {
+export namespace PgToast_43321Index {
+ export function equals(l: PgToast.Types.PgToast_43321Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -56439,7 +56444,7 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_35375Index {
+export namespace PgToast_43235Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -56455,7 +56460,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_35461Index {
+export namespace PgToast_43321Index {
 export namespace ChunkId {
 
       export type Options = never;

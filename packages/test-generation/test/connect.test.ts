@@ -1,4 +1,4 @@
-import { Database } from "../src/dvdrental";
+import { Database } from "../src/marshalling";
 
 /**
  * Works-at-all.
@@ -10,7 +10,7 @@ describe("The database can", () => {
     // this is read only and testing the 'live' path
     // that would be used in an actual application
     db = await Database.connect(
-      "postgres://postgres:postgres@localhost:5432/dvdrental",
+      "postgres://postgres:postgres@localhost:5432/marshalling",
     );
   });
   afterAll(async () => {
@@ -20,9 +20,29 @@ describe("The database can", () => {
     expect(db).toBeTruthy();
   });
   it("call a proc", async () => {
-    const value = await db.Public.Procedures.LastDay.call({
-      argument_0: new Date(),
+    const value = await db.Api.Procedures.Echo.call({
+      message: "Hello",
     });
     expect(value).toBeTruthy();
+  });
+  it("call a proc with an allowed role", async () => {
+    const ret = await db.Api.Procedures.Echo.call(
+      {
+        message: "Hello",
+      },
+      { headers: { ROLE: "postgres" } },
+    );
+    expect(ret).toBe("Hello");
+  });
+  it("call a proc with an disallowed role", async () => {
+    await expect(async () => {
+      const ret = await db.Api.Procedures.Echo.call(
+        {
+          message: "Hello",
+        },
+        { headers: { ROLE: "no_access" } },
+      );
+      console.assert(ret);
+    }).rejects.toThrow();
   });
 });

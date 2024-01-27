@@ -104,6 +104,20 @@ export const generateSchemaDefinitions = async (context: GenerationContext) => {
       ...context,
       skipSchemas: [],
       handlers: {
+        [ASTKind.Database]: {
+          before: async (_, node) => {
+            // roles, it's a a string subtype
+            return [
+              `export type DatabaseRole = ${node.roles
+                .map((r) => `"${r}"`)
+                .join(" | ")};`,
+              `export type DatabaseHeaders = {`,
+              ` ROLE?: DatabaseRole;`,
+              `}`,
+              `export type InvokeQueryOptions = GenericInvokeQueryOptions<DatabaseHeaders>;`,
+            ].join("\n");
+          },
+        },
         [ASTKind.Schema]: NamespaceVisitor,
         [ASTKind.Types]: NamespaceVisitor,
         [ASTKind.Type]: TypeDefiner,

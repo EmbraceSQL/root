@@ -1,5 +1,6 @@
 import { Context } from "./context";
-import { MiddlewareDispatcher } from "./middleware/types";
+import databaseRole from "./middleware/role";
+import { MiddlewareContext, MiddlewareDispatcher } from "./middleware/types";
 import { EmbraceSQLInvocation, InvokeQueryOptions } from "@embracesql/shared";
 import postgres from "postgres";
 
@@ -16,11 +17,13 @@ type InvokeQuery<T> = (sql: postgres.Sql) => Promise<T>;
 /**
  * A single postgres database. Inherit from this in generated code.
  */
-export abstract class PostgresDatabase<TTypecast> extends MiddlewareDispatcher<
-  Context & InvokeQueryOptions
-> {
+export abstract class PostgresDatabase<
+  TTypecast,
+> extends MiddlewareDispatcher<MiddlewareContext> {
   constructor(public context: Context) {
     super();
+    // hooking up the default middleware, you can always `clear` this
+    this.use(databaseRole);
   }
 
   /**
@@ -112,8 +115,13 @@ export abstract class PostgresDatabase<TTypecast> extends MiddlewareDispatcher<
   ): Promise<T> {
     // here is the middleware run stack
     const runStack = async (database: this) => {
+      // pick up the headers
+      const headers = request?.options?.headers ?? {};
       // first the middleware
-      await this.dispatch({ ...this.context, ...(request ?? {}) });
+      await this.dispatch({ ...database.context, headers });
+      const check_it = await database.context
+        .sql`SELECT SESSION_USER, CURRENT_USER`;
+      console.assert(check_it);
       return queryCallback(database.context.sql);
     };
 

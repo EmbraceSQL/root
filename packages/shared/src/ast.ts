@@ -303,7 +303,10 @@ export class DatabaseNode extends ContainerNode {
   private types = new Map<string | number, TypeNode>();
   private tables = new Map<string | number, TableNode>();
 
-  constructor(public name: string) {
+  constructor(
+    public name: string,
+    public roles: string[],
+  ) {
     super(name, ASTKind.Database);
   }
 

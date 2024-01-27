@@ -13,7 +13,7 @@
         /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
         /* @typescript-eslint/no-redundant-type-constituents */
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
-        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort, InvokeQueryOptions } from "@embracesql/shared";
+        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort, InvokeQueryOptions as GenericInvokeQueryOptions } from "@embracesql/shared";
         import { Geometry } from "@embracesql/shared";
         import { DatabaseMetadata, Schema, Table, Column, Index, Procedure } from "@embracesql/shared";
     
@@ -1493,96 +1493,96 @@
 ["InformationSchema.Types.UserMappings"]: Typecast
 [13823]: Typecast;
 ["InformationSchema.Types.UserMappingsArray"]: Typecast
-[37100]: Typecast;
+[44960]: Typecast;
 ["Public.Types.DataSrc"]: Typecast
-[37099]: Typecast;
+[44959]: Typecast;
 ["Public.Types.DataSrcArray"]: Typecast
-[37106]: Typecast;
+[44966]: Typecast;
 ["Public.Types.Datsrcln"]: Typecast
-[37105]: Typecast;
+[44965]: Typecast;
 ["Public.Types.DatsrclnArray"]: Typecast
-[37109]: Typecast;
+[44969]: Typecast;
 ["Public.Types.DerivCd"]: Typecast
-[37108]: Typecast;
+[44968]: Typecast;
 ["Public.Types.DerivCdArray"]: Typecast
-[37114]: Typecast;
+[44974]: Typecast;
 ["Public.Types.FdGroup"]: Typecast
-[37113]: Typecast;
+[44973]: Typecast;
 ["Public.Types.FdGroupArray"]: Typecast
-[37119]: Typecast;
+[44979]: Typecast;
 ["Public.Types.FoodDes"]: Typecast
-[37118]: Typecast;
+[44978]: Typecast;
 ["Public.Types.FoodDesArray"]: Typecast
-[37124]: Typecast;
+[44984]: Typecast;
 ["Public.Types.Footnote"]: Typecast
-[37123]: Typecast;
+[44983]: Typecast;
 ["Public.Types.FootnoteArray"]: Typecast
-[37129]: Typecast;
+[44989]: Typecast;
 ["Public.Types.NutData"]: Typecast
-[37128]: Typecast;
+[44988]: Typecast;
 ["Public.Types.NutDataArray"]: Typecast
-[37134]: Typecast;
+[44994]: Typecast;
 ["Public.Types.NutrDef"]: Typecast
-[37133]: Typecast;
+[44993]: Typecast;
 ["Public.Types.NutrDefArray"]: Typecast
-[37139]: Typecast;
+[44999]: Typecast;
 ["Public.Types.SrcCd"]: Typecast
-[37138]: Typecast;
+[44998]: Typecast;
 ["Public.Types.SrcCdArray"]: Typecast
-[37144]: Typecast;
+[45004]: Typecast;
 ["Public.Types.Weight"]: Typecast
-[37143]: Typecast;
+[45003]: Typecast;
 ["Public.Types.WeightArray"]: Typecast
-[37103]: Typecast;
+[44963]: Typecast;
 ["Public.Types.DataSrcTitleFulltext"]: Typecast
-[37147]: Typecast;
+[45007]: Typecast;
 ["Public.Types.DataSrcPkey"]: Typecast
-[37149]: Typecast;
+[45009]: Typecast;
 ["Public.Types.DatsrclnPkey"]: Typecast
-[37151]: Typecast;
+[45011]: Typecast;
 ["Public.Types.DerivCdPkey"]: Typecast
-[37153]: Typecast;
+[45013]: Typecast;
 ["Public.Types.FdGroupPkey"]: Typecast
-[37155]: Typecast;
+[45015]: Typecast;
 ["Public.Types.FoodDesPkey"]: Typecast
-[37157]: Typecast;
+[45017]: Typecast;
 ["Public.Types.NutDataPkey"]: Typecast
-[37159]: Typecast;
+[45019]: Typecast;
 ["Public.Types.NutrDefPkey"]: Typecast
-[37161]: Typecast;
+[45021]: Typecast;
 ["Public.Types.SrcCdPkey"]: Typecast
-[37163]: Typecast;
+[45023]: Typecast;
 ["Public.Types.WeightPkey"]: Typecast
-[37165]: Typecast;
+[45025]: Typecast;
 ["Public.Types.DatsrclnDatasrcIdIdx"]: Typecast
-[37166]: Typecast;
+[45026]: Typecast;
 ["Public.Types.FoodDesFdgrpCdIdx"]: Typecast
-[37167]: Typecast;
+[45027]: Typecast;
 ["Public.Types.FootnoteNdbNoIdx"]: Typecast
-[37168]: Typecast;
+[45028]: Typecast;
 ["Public.Types.NutDataDerivCdIdx"]: Typecast
-[37169]: Typecast;
+[45029]: Typecast;
 ["Public.Types.NutDataNutrNoIdx"]: Typecast
-[37170]: Typecast;
+[45030]: Typecast;
 ["Public.Types.NutDataSrcCdIdx"]: Typecast
-[37102]: Typecast;
-["PgToast.Types.PgToast_37098Index"]: Typecast
-[37111]: Typecast;
-["PgToast.Types.PgToast_37107Index"]: Typecast
-[37116]: Typecast;
-["PgToast.Types.PgToast_37112Index"]: Typecast
-[37121]: Typecast;
-["PgToast.Types.PgToast_37117Index"]: Typecast
-[37126]: Typecast;
-["PgToast.Types.PgToast_37122Index"]: Typecast
-[37131]: Typecast;
-["PgToast.Types.PgToast_37127Index"]: Typecast
-[37136]: Typecast;
-["PgToast.Types.PgToast_37132Index"]: Typecast
-[37141]: Typecast;
-["PgToast.Types.PgToast_37137Index"]: Typecast
-[37146]: Typecast;
-["PgToast.Types.PgToast_37142Index"]: Typecast
+[44962]: Typecast;
+["PgToast.Types.PgToast_44958Index"]: Typecast
+[44971]: Typecast;
+["PgToast.Types.PgToast_44967Index"]: Typecast
+[44976]: Typecast;
+["PgToast.Types.PgToast_44972Index"]: Typecast
+[44981]: Typecast;
+["PgToast.Types.PgToast_44977Index"]: Typecast
+[44986]: Typecast;
+["PgToast.Types.PgToast_44982Index"]: Typecast
+[44991]: Typecast;
+["PgToast.Types.PgToast_44987Index"]: Typecast
+[44996]: Typecast;
+["PgToast.Types.PgToast_44992Index"]: Typecast
+[45001]: Typecast;
+["PgToast.Types.PgToast_44997Index"]: Typecast
+[45006]: Typecast;
+["PgToast.Types.PgToast_45002Index"]: Typecast
 [2837]: Typecast;
 ["PgToast.Types.PgToast_1255Index"]: Typecast
 [4172]: Typecast;
@@ -3208,113 +3208,113 @@ async delete(parameters: Public.Types.DatsrclnDatasrcIdIdx, options?: Public.Typ
           // begin - operation dispatch map
           import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
           export class OperationDispatcher {
-            private dispatchMap: Record<string, OperationDispatchMethod>;
+            private dispatchMap: Record<string, OperationDispatchMethod<DatabaseHeaders>>;
             constructor(private database: Database){
               this.dispatchMap = {
 
           
-"Public.Tables.NutData.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.create(request.values as Public.Tables.NutData.Values),
+"Public.Tables.NutData.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.create(request.values as Public.Tables.NutData.Values),
 
-             "Public.Tables.NutData.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+             "Public.Tables.NutData.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
               database.Public.Tables.NutData.all(request.options as Public.Tables.NutData.Options),
             
-"Public.Tables.NutData.NutDataPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataPkey.read(request.parameters as Public.Types.NutDataPkey,request.options as Public.Tables.NutData.Options),
-"Public.Tables.NutData.NutDataPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataPkey.update(request.parameters as Public.Types.NutDataPkey,request.values as Partial<Public.Tables.NutData.Values>),
-"Public.Tables.NutData.NutDataPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataPkey.delete(request.parameters as Public.Types.NutDataPkey),
-"Public.Tables.NutData.NutDataDerivCdIdx.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataDerivCdIdx.read(request.parameters as Public.Types.NutDataDerivCdIdx,request.options as Public.Tables.NutData.Options),
-"Public.Tables.NutData.NutDataDerivCdIdx.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataDerivCdIdx.update(request.parameters as Public.Types.NutDataDerivCdIdx,request.values as Partial<Public.Tables.NutData.Values>),
-"Public.Tables.NutData.NutDataDerivCdIdx.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataDerivCdIdx.delete(request.parameters as Public.Types.NutDataDerivCdIdx),
-"Public.Tables.NutData.NutDataNutrNoIdx.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataNutrNoIdx.read(request.parameters as Public.Types.NutDataNutrNoIdx,request.options as Public.Tables.NutData.Options),
-"Public.Tables.NutData.NutDataNutrNoIdx.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataNutrNoIdx.update(request.parameters as Public.Types.NutDataNutrNoIdx,request.values as Partial<Public.Tables.NutData.Values>),
-"Public.Tables.NutData.NutDataNutrNoIdx.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataNutrNoIdx.delete(request.parameters as Public.Types.NutDataNutrNoIdx),
-"Public.Tables.NutData.NutDataSrcCdIdx.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataSrcCdIdx.read(request.parameters as Public.Types.NutDataSrcCdIdx,request.options as Public.Tables.NutData.Options),
-"Public.Tables.NutData.NutDataSrcCdIdx.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataSrcCdIdx.update(request.parameters as Public.Types.NutDataSrcCdIdx,request.values as Partial<Public.Tables.NutData.Values>),
-"Public.Tables.NutData.NutDataSrcCdIdx.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutData.NutDataSrcCdIdx.delete(request.parameters as Public.Types.NutDataSrcCdIdx),
-"Public.Tables.SrcCd.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.SrcCd.create(request.values as Public.Tables.SrcCd.Values),
+"Public.Tables.NutData.NutDataPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataPkey.read(request.parameters as Public.Types.NutDataPkey,request.options as Public.Tables.NutData.Options),
+"Public.Tables.NutData.NutDataPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataPkey.update(request.parameters as Public.Types.NutDataPkey,request.values as Partial<Public.Tables.NutData.Values>),
+"Public.Tables.NutData.NutDataPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataPkey.delete(request.parameters as Public.Types.NutDataPkey),
+"Public.Tables.NutData.NutDataDerivCdIdx.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataDerivCdIdx.read(request.parameters as Public.Types.NutDataDerivCdIdx,request.options as Public.Tables.NutData.Options),
+"Public.Tables.NutData.NutDataDerivCdIdx.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataDerivCdIdx.update(request.parameters as Public.Types.NutDataDerivCdIdx,request.values as Partial<Public.Tables.NutData.Values>),
+"Public.Tables.NutData.NutDataDerivCdIdx.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataDerivCdIdx.delete(request.parameters as Public.Types.NutDataDerivCdIdx),
+"Public.Tables.NutData.NutDataNutrNoIdx.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataNutrNoIdx.read(request.parameters as Public.Types.NutDataNutrNoIdx,request.options as Public.Tables.NutData.Options),
+"Public.Tables.NutData.NutDataNutrNoIdx.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataNutrNoIdx.update(request.parameters as Public.Types.NutDataNutrNoIdx,request.values as Partial<Public.Tables.NutData.Values>),
+"Public.Tables.NutData.NutDataNutrNoIdx.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataNutrNoIdx.delete(request.parameters as Public.Types.NutDataNutrNoIdx),
+"Public.Tables.NutData.NutDataSrcCdIdx.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataSrcCdIdx.read(request.parameters as Public.Types.NutDataSrcCdIdx,request.options as Public.Tables.NutData.Options),
+"Public.Tables.NutData.NutDataSrcCdIdx.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataSrcCdIdx.update(request.parameters as Public.Types.NutDataSrcCdIdx,request.values as Partial<Public.Tables.NutData.Values>),
+"Public.Tables.NutData.NutDataSrcCdIdx.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataSrcCdIdx.delete(request.parameters as Public.Types.NutDataSrcCdIdx),
+"Public.Tables.SrcCd.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.SrcCd.create(request.values as Public.Tables.SrcCd.Values),
 
-             "Public.Tables.SrcCd.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+             "Public.Tables.SrcCd.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
               database.Public.Tables.SrcCd.all(request.options as Public.Tables.SrcCd.Options),
             
-"Public.Tables.SrcCd.SrcCdPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.SrcCd.SrcCdPkey.read(request.parameters as Public.Types.SrcCdPkey,request.options as Public.Tables.SrcCd.Options),
-"Public.Tables.SrcCd.SrcCdPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.SrcCd.SrcCdPkey.update(request.parameters as Public.Types.SrcCdPkey,request.values as Partial<Public.Tables.SrcCd.Values>),
-"Public.Tables.SrcCd.SrcCdPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.SrcCd.SrcCdPkey.delete(request.parameters as Public.Types.SrcCdPkey),
-"Public.Tables.Footnote.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Footnote.create(request.values as Public.Tables.Footnote.Values),
+"Public.Tables.SrcCd.SrcCdPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.SrcCd.SrcCdPkey.read(request.parameters as Public.Types.SrcCdPkey,request.options as Public.Tables.SrcCd.Options),
+"Public.Tables.SrcCd.SrcCdPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.SrcCd.SrcCdPkey.update(request.parameters as Public.Types.SrcCdPkey,request.values as Partial<Public.Tables.SrcCd.Values>),
+"Public.Tables.SrcCd.SrcCdPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.SrcCd.SrcCdPkey.delete(request.parameters as Public.Types.SrcCdPkey),
+"Public.Tables.Footnote.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Footnote.create(request.values as Public.Tables.Footnote.Values),
 
-             "Public.Tables.Footnote.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+             "Public.Tables.Footnote.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
               database.Public.Tables.Footnote.all(request.options as Public.Tables.Footnote.Options),
             
-"Public.Tables.Footnote.FootnoteNdbNoIdx.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Footnote.FootnoteNdbNoIdx.read(request.parameters as Public.Types.FootnoteNdbNoIdx,request.options as Public.Tables.Footnote.Options),
-"Public.Tables.Footnote.FootnoteNdbNoIdx.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Footnote.FootnoteNdbNoIdx.update(request.parameters as Public.Types.FootnoteNdbNoIdx,request.values as Partial<Public.Tables.Footnote.Values>),
-"Public.Tables.Footnote.FootnoteNdbNoIdx.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Footnote.FootnoteNdbNoIdx.delete(request.parameters as Public.Types.FootnoteNdbNoIdx),
-"Public.Tables.NutrDef.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutrDef.create(request.values as Public.Tables.NutrDef.Values),
+"Public.Tables.Footnote.FootnoteNdbNoIdx.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Footnote.FootnoteNdbNoIdx.read(request.parameters as Public.Types.FootnoteNdbNoIdx,request.options as Public.Tables.Footnote.Options),
+"Public.Tables.Footnote.FootnoteNdbNoIdx.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Footnote.FootnoteNdbNoIdx.update(request.parameters as Public.Types.FootnoteNdbNoIdx,request.values as Partial<Public.Tables.Footnote.Values>),
+"Public.Tables.Footnote.FootnoteNdbNoIdx.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Footnote.FootnoteNdbNoIdx.delete(request.parameters as Public.Types.FootnoteNdbNoIdx),
+"Public.Tables.NutrDef.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutrDef.create(request.values as Public.Tables.NutrDef.Values),
 
-             "Public.Tables.NutrDef.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+             "Public.Tables.NutrDef.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
               database.Public.Tables.NutrDef.all(request.options as Public.Tables.NutrDef.Options),
             
-"Public.Tables.NutrDef.NutrDefPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutrDef.NutrDefPkey.read(request.parameters as Public.Types.NutrDefPkey,request.options as Public.Tables.NutrDef.Options),
-"Public.Tables.NutrDef.NutrDefPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutrDef.NutrDefPkey.update(request.parameters as Public.Types.NutrDefPkey,request.values as Partial<Public.Tables.NutrDef.Values>),
-"Public.Tables.NutrDef.NutrDefPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.NutrDef.NutrDefPkey.delete(request.parameters as Public.Types.NutrDefPkey),
-"Public.Tables.DerivCd.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DerivCd.create(request.values as Public.Tables.DerivCd.Values),
+"Public.Tables.NutrDef.NutrDefPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutrDef.NutrDefPkey.read(request.parameters as Public.Types.NutrDefPkey,request.options as Public.Tables.NutrDef.Options),
+"Public.Tables.NutrDef.NutrDefPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutrDef.NutrDefPkey.update(request.parameters as Public.Types.NutrDefPkey,request.values as Partial<Public.Tables.NutrDef.Values>),
+"Public.Tables.NutrDef.NutrDefPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutrDef.NutrDefPkey.delete(request.parameters as Public.Types.NutrDefPkey),
+"Public.Tables.DerivCd.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.DerivCd.create(request.values as Public.Tables.DerivCd.Values),
 
-             "Public.Tables.DerivCd.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+             "Public.Tables.DerivCd.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
               database.Public.Tables.DerivCd.all(request.options as Public.Tables.DerivCd.Options),
             
-"Public.Tables.DerivCd.DerivCdPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DerivCd.DerivCdPkey.read(request.parameters as Public.Types.DerivCdPkey,request.options as Public.Tables.DerivCd.Options),
-"Public.Tables.DerivCd.DerivCdPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DerivCd.DerivCdPkey.update(request.parameters as Public.Types.DerivCdPkey,request.values as Partial<Public.Tables.DerivCd.Values>),
-"Public.Tables.DerivCd.DerivCdPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DerivCd.DerivCdPkey.delete(request.parameters as Public.Types.DerivCdPkey),
-"Public.Tables.FdGroup.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FdGroup.create(request.values as Public.Tables.FdGroup.Values),
+"Public.Tables.DerivCd.DerivCdPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.DerivCd.DerivCdPkey.read(request.parameters as Public.Types.DerivCdPkey,request.options as Public.Tables.DerivCd.Options),
+"Public.Tables.DerivCd.DerivCdPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.DerivCd.DerivCdPkey.update(request.parameters as Public.Types.DerivCdPkey,request.values as Partial<Public.Tables.DerivCd.Values>),
+"Public.Tables.DerivCd.DerivCdPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.DerivCd.DerivCdPkey.delete(request.parameters as Public.Types.DerivCdPkey),
+"Public.Tables.FdGroup.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.FdGroup.create(request.values as Public.Tables.FdGroup.Values),
 
-             "Public.Tables.FdGroup.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+             "Public.Tables.FdGroup.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
               database.Public.Tables.FdGroup.all(request.options as Public.Tables.FdGroup.Options),
             
-"Public.Tables.FdGroup.FdGroupPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FdGroup.FdGroupPkey.read(request.parameters as Public.Types.FdGroupPkey,request.options as Public.Tables.FdGroup.Options),
-"Public.Tables.FdGroup.FdGroupPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FdGroup.FdGroupPkey.update(request.parameters as Public.Types.FdGroupPkey,request.values as Partial<Public.Tables.FdGroup.Values>),
-"Public.Tables.FdGroup.FdGroupPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FdGroup.FdGroupPkey.delete(request.parameters as Public.Types.FdGroupPkey),
-"Public.Tables.Weight.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Weight.create(request.values as Public.Tables.Weight.Values),
+"Public.Tables.FdGroup.FdGroupPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.FdGroup.FdGroupPkey.read(request.parameters as Public.Types.FdGroupPkey,request.options as Public.Tables.FdGroup.Options),
+"Public.Tables.FdGroup.FdGroupPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.FdGroup.FdGroupPkey.update(request.parameters as Public.Types.FdGroupPkey,request.values as Partial<Public.Tables.FdGroup.Values>),
+"Public.Tables.FdGroup.FdGroupPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.FdGroup.FdGroupPkey.delete(request.parameters as Public.Types.FdGroupPkey),
+"Public.Tables.Weight.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Weight.create(request.values as Public.Tables.Weight.Values),
 
-             "Public.Tables.Weight.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+             "Public.Tables.Weight.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
               database.Public.Tables.Weight.all(request.options as Public.Tables.Weight.Options),
             
-"Public.Tables.Weight.WeightPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Weight.WeightPkey.read(request.parameters as Public.Types.WeightPkey,request.options as Public.Tables.Weight.Options),
-"Public.Tables.Weight.WeightPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Weight.WeightPkey.update(request.parameters as Public.Types.WeightPkey,request.values as Partial<Public.Tables.Weight.Values>),
-"Public.Tables.Weight.WeightPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Weight.WeightPkey.delete(request.parameters as Public.Types.WeightPkey),
-"Public.Tables.FoodDes.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FoodDes.create(request.values as Public.Tables.FoodDes.Values),
+"Public.Tables.Weight.WeightPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Weight.WeightPkey.read(request.parameters as Public.Types.WeightPkey,request.options as Public.Tables.Weight.Options),
+"Public.Tables.Weight.WeightPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Weight.WeightPkey.update(request.parameters as Public.Types.WeightPkey,request.values as Partial<Public.Tables.Weight.Values>),
+"Public.Tables.Weight.WeightPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Weight.WeightPkey.delete(request.parameters as Public.Types.WeightPkey),
+"Public.Tables.FoodDes.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.FoodDes.create(request.values as Public.Tables.FoodDes.Values),
 
-             "Public.Tables.FoodDes.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+             "Public.Tables.FoodDes.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
               database.Public.Tables.FoodDes.all(request.options as Public.Tables.FoodDes.Options),
             
-"Public.Tables.FoodDes.FoodDesPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FoodDes.FoodDesPkey.read(request.parameters as Public.Types.FoodDesPkey,request.options as Public.Tables.FoodDes.Options),
-"Public.Tables.FoodDes.FoodDesPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FoodDes.FoodDesPkey.update(request.parameters as Public.Types.FoodDesPkey,request.values as Partial<Public.Tables.FoodDes.Values>),
-"Public.Tables.FoodDes.FoodDesPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FoodDes.FoodDesPkey.delete(request.parameters as Public.Types.FoodDesPkey),
-"Public.Tables.FoodDes.FoodDesFdgrpCdIdx.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FoodDes.FoodDesFdgrpCdIdx.read(request.parameters as Public.Types.FoodDesFdgrpCdIdx,request.options as Public.Tables.FoodDes.Options),
-"Public.Tables.FoodDes.FoodDesFdgrpCdIdx.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FoodDes.FoodDesFdgrpCdIdx.update(request.parameters as Public.Types.FoodDesFdgrpCdIdx,request.values as Partial<Public.Tables.FoodDes.Values>),
-"Public.Tables.FoodDes.FoodDesFdgrpCdIdx.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.FoodDes.FoodDesFdgrpCdIdx.delete(request.parameters as Public.Types.FoodDesFdgrpCdIdx),
-"Public.Tables.DataSrc.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DataSrc.create(request.values as Public.Tables.DataSrc.Values),
+"Public.Tables.FoodDes.FoodDesPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.FoodDes.FoodDesPkey.read(request.parameters as Public.Types.FoodDesPkey,request.options as Public.Tables.FoodDes.Options),
+"Public.Tables.FoodDes.FoodDesPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.FoodDes.FoodDesPkey.update(request.parameters as Public.Types.FoodDesPkey,request.values as Partial<Public.Tables.FoodDes.Values>),
+"Public.Tables.FoodDes.FoodDesPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.FoodDes.FoodDesPkey.delete(request.parameters as Public.Types.FoodDesPkey),
+"Public.Tables.FoodDes.FoodDesFdgrpCdIdx.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.FoodDes.FoodDesFdgrpCdIdx.read(request.parameters as Public.Types.FoodDesFdgrpCdIdx,request.options as Public.Tables.FoodDes.Options),
+"Public.Tables.FoodDes.FoodDesFdgrpCdIdx.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.FoodDes.FoodDesFdgrpCdIdx.update(request.parameters as Public.Types.FoodDesFdgrpCdIdx,request.values as Partial<Public.Tables.FoodDes.Values>),
+"Public.Tables.FoodDes.FoodDesFdgrpCdIdx.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.FoodDes.FoodDesFdgrpCdIdx.delete(request.parameters as Public.Types.FoodDesFdgrpCdIdx),
+"Public.Tables.DataSrc.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.DataSrc.create(request.values as Public.Tables.DataSrc.Values),
 
-             "Public.Tables.DataSrc.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+             "Public.Tables.DataSrc.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
               database.Public.Tables.DataSrc.all(request.options as Public.Tables.DataSrc.Options),
             
-"Public.Tables.DataSrc.DataSrcTitleFulltext.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DataSrc.DataSrcTitleFulltext.read(request.parameters as Public.Types.DataSrcTitleFulltext,request.options as Public.Tables.DataSrc.Options),
-"Public.Tables.DataSrc.DataSrcTitleFulltext.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DataSrc.DataSrcTitleFulltext.update(request.parameters as Public.Types.DataSrcTitleFulltext,request.values as Partial<Public.Tables.DataSrc.Values>),
-"Public.Tables.DataSrc.DataSrcTitleFulltext.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DataSrc.DataSrcTitleFulltext.delete(request.parameters as Public.Types.DataSrcTitleFulltext),
-"Public.Tables.DataSrc.DataSrcPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DataSrc.DataSrcPkey.read(request.parameters as Public.Types.DataSrcPkey,request.options as Public.Tables.DataSrc.Options),
-"Public.Tables.DataSrc.DataSrcPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DataSrc.DataSrcPkey.update(request.parameters as Public.Types.DataSrcPkey,request.values as Partial<Public.Tables.DataSrc.Values>),
-"Public.Tables.DataSrc.DataSrcPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.DataSrc.DataSrcPkey.delete(request.parameters as Public.Types.DataSrcPkey),
-"Public.Tables.Datsrcln.create": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Datsrcln.create(request.values as Public.Tables.Datsrcln.Values),
+"Public.Tables.DataSrc.DataSrcTitleFulltext.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.DataSrc.DataSrcTitleFulltext.read(request.parameters as Public.Types.DataSrcTitleFulltext,request.options as Public.Tables.DataSrc.Options),
+"Public.Tables.DataSrc.DataSrcTitleFulltext.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.DataSrc.DataSrcTitleFulltext.update(request.parameters as Public.Types.DataSrcTitleFulltext,request.values as Partial<Public.Tables.DataSrc.Values>),
+"Public.Tables.DataSrc.DataSrcTitleFulltext.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.DataSrc.DataSrcTitleFulltext.delete(request.parameters as Public.Types.DataSrcTitleFulltext),
+"Public.Tables.DataSrc.DataSrcPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.DataSrc.DataSrcPkey.read(request.parameters as Public.Types.DataSrcPkey,request.options as Public.Tables.DataSrc.Options),
+"Public.Tables.DataSrc.DataSrcPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.DataSrc.DataSrcPkey.update(request.parameters as Public.Types.DataSrcPkey,request.values as Partial<Public.Tables.DataSrc.Values>),
+"Public.Tables.DataSrc.DataSrcPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.DataSrc.DataSrcPkey.delete(request.parameters as Public.Types.DataSrcPkey),
+"Public.Tables.Datsrcln.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Datsrcln.create(request.values as Public.Tables.Datsrcln.Values),
 
-             "Public.Tables.Datsrcln.all": async (request: EmbraceSQLRequest<object, object, object>) =>
+             "Public.Tables.Datsrcln.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
               database.Public.Tables.Datsrcln.all(request.options as Public.Tables.Datsrcln.Options),
             
-"Public.Tables.Datsrcln.DatsrclnPkey.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Datsrcln.DatsrclnPkey.read(request.parameters as Public.Types.DatsrclnPkey,request.options as Public.Tables.Datsrcln.Options),
-"Public.Tables.Datsrcln.DatsrclnPkey.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Datsrcln.DatsrclnPkey.update(request.parameters as Public.Types.DatsrclnPkey,request.values as Partial<Public.Tables.Datsrcln.Values>),
-"Public.Tables.Datsrcln.DatsrclnPkey.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Datsrcln.DatsrclnPkey.delete(request.parameters as Public.Types.DatsrclnPkey),
-"Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.read": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.read(request.parameters as Public.Types.DatsrclnDatasrcIdIdx,request.options as Public.Tables.Datsrcln.Options),
-"Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.update": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.update(request.parameters as Public.Types.DatsrclnDatasrcIdIdx,request.values as Partial<Public.Tables.Datsrcln.Values>),
-"Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.delete": async (request: EmbraceSQLRequest<object, object, object>) => database.Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.delete(request.parameters as Public.Types.DatsrclnDatasrcIdIdx),
+"Public.Tables.Datsrcln.DatsrclnPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Datsrcln.DatsrclnPkey.read(request.parameters as Public.Types.DatsrclnPkey,request.options as Public.Tables.Datsrcln.Options),
+"Public.Tables.Datsrcln.DatsrclnPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Datsrcln.DatsrclnPkey.update(request.parameters as Public.Types.DatsrclnPkey,request.values as Partial<Public.Tables.Datsrcln.Values>),
+"Public.Tables.Datsrcln.DatsrclnPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Datsrcln.DatsrclnPkey.delete(request.parameters as Public.Types.DatsrclnPkey),
+"Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.read(request.parameters as Public.Types.DatsrclnDatasrcIdIdx,request.options as Public.Tables.Datsrcln.Options),
+"Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.update(request.parameters as Public.Types.DatsrclnDatasrcIdIdx,request.values as Partial<Public.Tables.Datsrcln.Values>),
+"Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.delete(request.parameters as Public.Types.DatsrclnDatasrcIdIdx),
 }
 }
 
-            async dispatch(request: EmbraceSQLRequest<object, object, object>) {
+            async dispatch(request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) {
               if (!this.dispatchMap[request.operation]) {
                 throw new Error(`${request.operation} not available`);
               }
@@ -3323,6 +3323,11 @@ async delete(parameters: Public.Types.DatsrclnDatasrcIdIdx, options?: Public.Typ
             
 }
 
+export type DatabaseRole = "postgres" | "pg_database_owner" | "pg_read_all_data" | "pg_write_all_data" | "pg_monitor" | "pg_read_all_settings" | "pg_read_all_stats" | "pg_stat_scan_tables" | "pg_read_server_files" | "pg_write_server_files" | "pg_execute_server_program" | "pg_signal_backend" | "pg_checkpoint" | "pg_use_reserved_connections" | "pg_create_subscription" | "wballard" | "no_access";
+export type DatabaseHeaders = {
+ ROLE?: DatabaseRole;
+}
+export type InvokeQueryOptions = GenericInvokeQueryOptions<DatabaseHeaders>;
 export namespace PgCatalog {
 export namespace Types {
 
@@ -13773,47 +13778,47 @@ export type PrimaryKey = Public.Types.DatsrclnPkey;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_37098Index = {
+export type PgToast_44958Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_37107Index = {
+export type PgToast_44967Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_37112Index = {
+export type PgToast_44972Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_37117Index = {
+export type PgToast_44977Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_37122Index = {
+export type PgToast_44982Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_37127Index = {
+export type PgToast_44987Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_37132Index = {
+export type PgToast_44992Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_37137Index = {
+export type PgToast_44997Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_37142Index = {
+export type PgToast_45002Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -26582,11 +26587,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_37098Index {
+export namespace PgToast_44958Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_37098Index.is(from)) {
+if (PgToast.Types.PgToast_44958Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26597,11 +26602,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_37107Index {
+export namespace PgToast_44967Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_37107Index.is(from)) {
+if (PgToast.Types.PgToast_44967Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26612,11 +26617,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_37112Index {
+export namespace PgToast_44972Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_37112Index.is(from)) {
+if (PgToast.Types.PgToast_44972Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26627,11 +26632,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_37117Index {
+export namespace PgToast_44977Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_37117Index.is(from)) {
+if (PgToast.Types.PgToast_44977Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26642,11 +26647,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_37122Index {
+export namespace PgToast_44982Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_37122Index.is(from)) {
+if (PgToast.Types.PgToast_44982Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26657,11 +26662,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_37127Index {
+export namespace PgToast_44987Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_37127Index.is(from)) {
+if (PgToast.Types.PgToast_44987Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26672,11 +26677,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_37132Index {
+export namespace PgToast_44992Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_37132Index.is(from)) {
+if (PgToast.Types.PgToast_44992Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26687,11 +26692,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_37137Index {
+export namespace PgToast_44997Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_37137Index.is(from)) {
+if (PgToast.Types.PgToast_44997Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26702,11 +26707,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_37142Index {
+export namespace PgToast_45002Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_37142Index.is(from)) {
+if (PgToast.Types.PgToast_45002Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -32729,72 +32734,72 @@ export namespace Datsrcln {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_37098Index {
-export function is(value: any) : value is PgToast.Types.PgToast_37098Index {
+export namespace PgToast_44958Index {
+export function is(value: any) : value is PgToast.Types.PgToast_44958Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_37107Index {
-export function is(value: any) : value is PgToast.Types.PgToast_37107Index {
+export namespace PgToast_44967Index {
+export function is(value: any) : value is PgToast.Types.PgToast_44967Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_37112Index {
-export function is(value: any) : value is PgToast.Types.PgToast_37112Index {
+export namespace PgToast_44972Index {
+export function is(value: any) : value is PgToast.Types.PgToast_44972Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_37117Index {
-export function is(value: any) : value is PgToast.Types.PgToast_37117Index {
+export namespace PgToast_44977Index {
+export function is(value: any) : value is PgToast.Types.PgToast_44977Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_37122Index {
-export function is(value: any) : value is PgToast.Types.PgToast_37122Index {
+export namespace PgToast_44982Index {
+export function is(value: any) : value is PgToast.Types.PgToast_44982Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_37127Index {
-export function is(value: any) : value is PgToast.Types.PgToast_37127Index {
+export namespace PgToast_44987Index {
+export function is(value: any) : value is PgToast.Types.PgToast_44987Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_37132Index {
-export function is(value: any) : value is PgToast.Types.PgToast_37132Index {
+export namespace PgToast_44992Index {
+export function is(value: any) : value is PgToast.Types.PgToast_44992Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_37137Index {
-export function is(value: any) : value is PgToast.Types.PgToast_37137Index {
+export namespace PgToast_44997Index {
+export function is(value: any) : value is PgToast.Types.PgToast_44997Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_37142Index {
-export function is(value: any) : value is PgToast.Types.PgToast_37142Index {
+export namespace PgToast_45002Index {
+export function is(value: any) : value is PgToast.Types.PgToast_45002Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -37149,48 +37154,48 @@ export namespace Datsrcln {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_37098Index {
- export function equals(l: PgToast.Types.PgToast_37098Index|undefined, r: unknown) {
+export namespace PgToast_44958Index {
+ export function equals(l: PgToast.Types.PgToast_44958Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_37107Index {
- export function equals(l: PgToast.Types.PgToast_37107Index|undefined, r: unknown) {
+export namespace PgToast_44967Index {
+ export function equals(l: PgToast.Types.PgToast_44967Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_37112Index {
- export function equals(l: PgToast.Types.PgToast_37112Index|undefined, r: unknown) {
+export namespace PgToast_44972Index {
+ export function equals(l: PgToast.Types.PgToast_44972Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_37117Index {
- export function equals(l: PgToast.Types.PgToast_37117Index|undefined, r: unknown) {
+export namespace PgToast_44977Index {
+ export function equals(l: PgToast.Types.PgToast_44977Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_37122Index {
- export function equals(l: PgToast.Types.PgToast_37122Index|undefined, r: unknown) {
+export namespace PgToast_44982Index {
+ export function equals(l: PgToast.Types.PgToast_44982Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_37127Index {
- export function equals(l: PgToast.Types.PgToast_37127Index|undefined, r: unknown) {
+export namespace PgToast_44987Index {
+ export function equals(l: PgToast.Types.PgToast_44987Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_37132Index {
- export function equals(l: PgToast.Types.PgToast_37132Index|undefined, r: unknown) {
+export namespace PgToast_44992Index {
+ export function equals(l: PgToast.Types.PgToast_44992Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_37137Index {
- export function equals(l: PgToast.Types.PgToast_37137Index|undefined, r: unknown) {
+export namespace PgToast_44997Index {
+ export function equals(l: PgToast.Types.PgToast_44997Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_37142Index {
- export function equals(l: PgToast.Types.PgToast_37142Index|undefined, r: unknown) {
+export namespace PgToast_45002Index {
+ export function equals(l: PgToast.Types.PgToast_45002Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -54436,7 +54441,7 @@ export namespace Datsrcln {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_37098Index {
+export namespace PgToast_44958Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54452,7 +54457,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_37107Index {
+export namespace PgToast_44967Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54468,7 +54473,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_37112Index {
+export namespace PgToast_44972Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54484,7 +54489,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_37117Index {
+export namespace PgToast_44977Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54500,7 +54505,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_37122Index {
+export namespace PgToast_44982Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54516,7 +54521,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_37127Index {
+export namespace PgToast_44987Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54532,7 +54537,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_37132Index {
+export namespace PgToast_44992Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54548,7 +54553,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_37137Index {
+export namespace PgToast_44997Index {
 export namespace ChunkId {
 
       export type Options = never;
@@ -54564,7 +54569,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_37142Index {
+export namespace PgToast_45002Index {
 export namespace ChunkId {
 
       export type Options = never;

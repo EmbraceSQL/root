@@ -20,7 +20,7 @@ const FunctionOperationNodeVisitor = {
     }
     return `"${
       node.typescriptNamespacedName
-    }.call": async (request: EmbraceSQLRequest<object, object, object>) => database.${
+    }.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.${
       node.typescriptNamespacedName
     }.call(${callee.join(",")}),`;
   },
@@ -42,7 +42,7 @@ export const generateOperationDispatcher = async (
           // begin - operation dispatch map
           import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
           export class OperationDispatcher {
-            private dispatchMap: Record<string, OperationDispatchMethod>;
+            private dispatchMap: Record<string, OperationDispatchMethod<DatabaseHeaders>>;
             constructor(private database: Database){
               this.dispatchMap = {
 
@@ -53,7 +53,7 @@ export const generateOperationDispatcher = async (
             `}`, // dispatch map
             `}`, // constructor
             `
-            async dispatch(request: EmbraceSQLRequest<object, object, object>) {
+            async dispatch(request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) {
               if (!this.dispatchMap[request.operation]) {
                 throw new Error(\`\${request.operation} not available\`);
               }
@@ -74,7 +74,7 @@ export const generateOperationDispatcher = async (
           );
           return `"${
             node.typescriptNamespacedPropertyName
-          }": async (request: EmbraceSQLRequest<object, object, object>) => database.${
+          }": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.${
             node.typescriptNamespacedPropertyName
           }(${callee.join(",")}),`;
         },
@@ -89,7 +89,7 @@ export const generateOperationDispatcher = async (
             `
              "${
                node.typescriptNamespacedPropertyName
-             }": async (request: EmbraceSQLRequest<object, object, object>) =>
+             }": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
               database.${node.typescriptNamespacedPropertyName}(${callee.join(
                 ",",
               )}),
@@ -106,7 +106,7 @@ export const generateOperationDispatcher = async (
           );
           return `"${
             node.typescriptNamespacedPropertyName
-          }": async (request: EmbraceSQLRequest<object, object, object>) => database.${
+          }": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.${
             node.typescriptNamespacedPropertyName
           }(${callee.join(",")}),`;
         },
@@ -122,7 +122,7 @@ export const generateOperationDispatcher = async (
           );
           return `"${
             node.typescriptNamespacedPropertyName
-          }": async (request: EmbraceSQLRequest<object, object, object>) => database.${
+          }": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.${
             node.typescriptNamespacedPropertyName
           }(${callee.join(",")}),`;
         },
@@ -135,7 +135,7 @@ export const generateOperationDispatcher = async (
           );
           return `"${
             node.typescriptNamespacedPropertyName
-          }": async (request: EmbraceSQLRequest<object, object, object>) => database.${
+          }": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.${
             node.typescriptNamespacedPropertyName
           }(${callee.join(",")}),`;
         },

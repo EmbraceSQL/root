@@ -4,6 +4,17 @@ CREATE DATABASE marshalling WITH TEMPLATE = template0 ENCODING = 'UTF8';
 
 ALTER DATABASE marshalling OWNER TO postgres;
 
+DO
+$do$
+BEGIN
+   IF NOT EXISTS (
+      SELECT FROM pg_catalog.pg_roles
+      WHERE  rolname = 'no_access') THEN
+      CREATE ROLE no_access;
+   END IF;
+END
+$do$;
+
 \connect marshalling
 CREATE EXTENSION CUBE;
 

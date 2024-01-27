@@ -133,8 +133,11 @@ export const initializeContext = async (
 
   const databaseName = (await sql` SELECT current_database();`)[0]
     .current_database;
+  const databaseRoles = (await sql`SELECT rolname FROM pg_roles`).map(
+    (r) => r.rolname as string,
+  );
   // we're generating a database -- so this is the root object
-  const database = new DatabaseNode(databaseName);
+  const database = new DatabaseNode(databaseName, databaseRoles);
   const generationContext = {
     ...props,
     database,

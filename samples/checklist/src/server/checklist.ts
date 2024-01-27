@@ -1729,7 +1729,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.name === undefined ? sql`DEFAULT` : typed[25](values.name) },${ values.createdAt === undefined ? sql`DEFAULT` : typed[1114](values.createdAt) })
       RETURNING
         id,name,created_at
-    `, options);
+    `, {values, options});
 return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -1741,7 +1741,7 @@ const response = await this.database.invoke( (sql) => sql`
       name = EXCLUDED.name,created_at = EXCLUDED.created_at
     RETURNING
       id,name,created_at
-    `, options);
+    `, {values, options});
 return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
 }
 async all(options?: Public.Tables.Checklist.Options) : Promise<Public.Types.Checklist[]>{
@@ -1757,7 +1757,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {options});
 return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Checklist.ChecklistPkey(this)}
@@ -1787,7 +1787,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.checklistId === undefined ? sql`DEFAULT` : typed[2950](values.checklistId) },${ values.title === undefined ? sql`DEFAULT` : typed[25](values.title) },${ values.checked === undefined ? sql`DEFAULT` : typed[16](values.checked) },${ values.createdAt === undefined ? sql`DEFAULT` : typed[1114](values.createdAt) })
       RETURNING
         id,checklist_id,title,checked,created_at
-    `, options);
+    `, {values, options});
 return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -1799,7 +1799,7 @@ const response = await this.database.invoke( (sql) => sql`
       checklist_id = EXCLUDED.checklist_id,title = EXCLUDED.title,checked = EXCLUDED.checked,created_at = EXCLUDED.created_at
     RETURNING
       id,checklist_id,title,checked,created_at
-    `, options);
+    `, {values, options});
 return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
 }
 async all(options?: Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem[]>{
@@ -1815,7 +1815,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {options});
 return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.ChecklistItem.ChecklistItemPkey(this)}
@@ -1859,7 +1859,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
 }
 
@@ -1877,7 +1877,7 @@ const response = await this.database.invoke( (sql) => sql`
       id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , name = ${ values.name === undefined ? sql`name` : typed[25](values.name) } , created_at = ${ values.createdAt === undefined ? sql`created_at` : typed[1114](values.createdAt) } 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,name,created_at`, options);
+    RETURNING id,name,created_at`, {parameters, values, options});
 return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
 }
 async delete(parameters: Public.Types.ChecklistPkey, options?: Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options) {
@@ -1889,7 +1889,7 @@ async delete(parameters: Public.Types.ChecklistPkey, options?: Public.Types.Chec
       public.checklist 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,name,created_at`, options);
+    RETURNING id,name,created_at`, {parameters, options});
  return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
 }
 }
@@ -1922,7 +1922,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
 }
 
@@ -1940,7 +1940,7 @@ const response = await this.database.invoke( (sql) => sql`
       id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , checklist_id = ${ values.checklistId === undefined ? sql`checklist_id` : typed[2950](values.checklistId) } , title = ${ values.title === undefined ? sql`title` : typed[25](values.title) } , checked = ${ values.checked === undefined ? sql`checked` : typed[16](values.checked) } , created_at = ${ values.createdAt === undefined ? sql`created_at` : typed[1114](values.createdAt) } 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,checklist_id,title,checked,created_at`, options);
+    RETURNING id,checklist_id,title,checked,created_at`, {parameters, values, options});
 return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
 }
 async delete(parameters: Public.Types.ChecklistItemPkey, options?: Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options) {
@@ -1952,7 +1952,7 @@ async delete(parameters: Public.Types.ChecklistItemPkey, options?: Public.Types.
       public.checklist_item 
     WHERE
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
-    RETURNING id,checklist_id,title,checked,created_at`, options);
+    RETURNING id,checklist_id,title,checked,created_at`, {parameters, options});
  return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
 }
 }
@@ -1983,7 +1983,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))
 }
 
@@ -2001,7 +2001,7 @@ const response = await this.database.invoke( (sql) => sql`
       id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , checklist_id = ${ values.checklistId === undefined ? sql`checklist_id` : typed[2950](values.checklistId) } , title = ${ values.title === undefined ? sql`title` : typed[25](values.title) } , checked = ${ values.checked === undefined ? sql`checked` : typed[16](values.checked) } , created_at = ${ values.createdAt === undefined ? sql`created_at` : typed[1114](values.createdAt) } 
     WHERE
       checklist_id = ${ parameters.checklistId === undefined ? sql`DEFAULT` : typed[2950](parameters.checklistId) }
-    RETURNING id,checklist_id,title,checked,created_at`, options);
+    RETURNING id,checklist_id,title,checked,created_at`, {parameters, values, options});
 return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))
 }
 async delete(parameters: Public.Types.ChecklistItemParent, options?: Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options) {
@@ -2013,7 +2013,7 @@ async delete(parameters: Public.Types.ChecklistItemParent, options?: Public.Type
       public.checklist_item 
     WHERE
       checklist_id = ${ parameters.checklistId === undefined ? sql`DEFAULT` : typed[2950](parameters.checklistId) }
-    RETURNING id,checklist_id,title,checked,created_at`, options);
+    RETURNING id,checklist_id,title,checked,created_at`, {parameters, options});
  return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))
 }
 }
