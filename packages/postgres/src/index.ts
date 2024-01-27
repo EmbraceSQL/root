@@ -1,4 +1,5 @@
 import { Context } from "./context";
+import { MiddlewareDispatcher } from "./middleware/types";
 import { InvokeQueryOptions } from "@embracesql/shared";
 import postgres from "postgres";
 
@@ -15,8 +16,12 @@ type InvokeQuery<T> = (sql: postgres.Sql) => Promise<T>;
 /**
  * A single postgres database. Inherit from this in generated code.
  */
-export abstract class PostgresDatabase<TTypecast> {
-  constructor(public context: Context) {}
+export abstract class PostgresDatabase<TTypecast> extends MiddlewareDispatcher<
+  Context & InvokeQueryOptions
+> {
+  constructor(public context: Context) {
+    super();
+  }
 
   /**
    * Clean up the connection.
@@ -54,6 +59,7 @@ export abstract class PostgresDatabase<TTypecast> {
         this.context.sql
           .begin(async (sql) => {
             resolveReady({
+              // this is 'the change' -- adding in a new sql that is in transaction
               database: new CurrentSubclass({ ...this.context, sql }),
               commit: () => resolve(true),
               rollback: (message?: string) => reject(message),
@@ -92,8 +98,12 @@ export abstract class PostgresDatabase<TTypecast> {
   /**
    * Invoke a query.
    *
-   * This provides a hook point for middleware before and after
-   * your natural query invocation to interact with the database.
+   * A query will run in an existing transaction, or begin one if no transaction
+   * is in process.
+   *
+   * Middleware registered with `use` will be invoked before, and assuming
+   * all middleware is successful, `queryCallback` will be invoke to generate
+   * the final return results from the database.
    */
   async invoke<T>(
     queryCallback: InvokeQuery<T>,
@@ -102,6 +112,8 @@ export abstract class PostgresDatabase<TTypecast> {
   ): Promise<T> {
     // here is the middleware run stack
     const runStack = async (database: this) => {
+      // first the middleware
+      await this.dispatch({ ...this.context, ...(options ?? {}) });
       return queryCallback(database.context.sql);
     };
 
