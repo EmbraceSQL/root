@@ -1,0 +1,74 @@
+import RoleSource from "!!raw-loader!../../packages/postgres/src/middleware/role.ts";
+import RoleSQLSource from "!!raw-loader!../../packages/test-generation/test/security/sql.test.ts";
+import RoleClientSource from "!!raw-loader!../../packages/test-generation/test/security/client.test.ts";
+import CodeBlock from "@theme/CodeBlock";
+
+# Security
+
+EmbraceSQL also embraces security 👮.
+
+However, we don't pretend to know your security requirements, so we provide
+the ability to inject *middleware* into the EmbraceSQL processing stack to
+let you secure however you like.
+
+## SQL Middleware
+
+SQL middleware is inspired by HTTP middleware stacks. The idea is you can put
+in zero or more middleware functions into your SQL processing stack which allows
+you to:
+* Run an SQL statement before your actual query
+
+### Database Security
+
+Most folks won't do this, but you plenty well can have a database user for
+each of your actual users, and collect their username and password, send those
+along on the database connection URL (make sure HTTPS!) and use the database
+as the security provider.
+
+Old 🎓.
+
+### `ROLE` Based Security 
+
+The SQL standard has a notion of `ROLE` that you can use to set permissions
+within your database. EmbraceSQL comes out of the box with `ROLE` based security
+available.
+
+The idea is straightforward, when you go to invoke an EmbraceSQL request, you
+supply a `ROLE` header, and that becomes the database `ROLE` for the invocation
+of the query. 
+
+This way one single *service account* can switch security level on the fly.
+
+
+<CodeBlock language="typescript" >
+  {RoleSource}
+</CodeBlock>
+
+Here is an example of using a `ROLE` header in a *server side* scenario.
+
+<CodeBlock language="typescript" >
+  {RoleSQLSource}
+</CodeBlock>
+
+Here is an example of passing along a `ROLE` via HTTP client. Note that for
+this to be a *secure* security approach, you will need to prevent client
+side tampering.
+
+
+<CodeBlock language="typescript" >
+  {RoleSQLSource}
+</CodeBlock>
+
+## Express Middleware
+
+If you are using EmbraceSQL mounted in Express, everything you already know
+about middleware still applies for authentication and authorization.
+
+Some ideas:
+* Use JWT to identify individual users and then set the database `ROLE` header.
+* Use user session cookies to set the database `ROLE` header.
+
+## NextJS Functions
+
+Similar to Express, in your route handler running server side, 
+you can intercept and set the `ROLE` header before transmission to the database.
