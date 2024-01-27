@@ -8,6 +8,7 @@ import { GenerationContext, AllOperationNode } from "@embracesql/shared";
 export const AllOperation = {
   async before(context: GenerationContext, node: AllOperationNode) {
     const parameters = ``;
+    const requestExpression = `{options}`;
     const options = `options?: ${node.table.typescriptNamespacedName}.Options`;
     const returns = `Promise<${node.table.type.typescriptNamespacedName}[]>`;
     // query using postgres driver bindings to the index
@@ -26,7 +27,7 @@ export const AllOperation = {
       const typed = this.database.typed;
       const orderBy = options?.sort ? \`ORDER BY \${options.sort.join(",")}\` : "";
       `,
-      `const response = await this.database.invoke( (sql) => sql\`${sql}\`, options);`,
+      `const response = await this.database.invoke( (sql) => sql\`${sql}\`, ${requestExpression});`,
 
       `return ${postgresToTypescript(context, node.table.type)}`,
 

@@ -11,6 +11,7 @@ import {
   GenerationContext,
   NamedASTNode,
   NamespaceVisitor,
+  PARAMETERS,
 } from "@embracesql/shared";
 
 /**
@@ -102,13 +103,16 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
         [ASTKind.ScriptFolder]: NestedNamedClassVisitor,
         [ASTKind.Script]: {
           before: async (context, node) => {
-            const parameterPasses = node.parametersType?.attributes?.length
+            const parametersExpression = node.parametersType?.attributes?.length
               ? ", [" +
                 node.parametersType.attributes
                   .map((a) => `parameters.${a.typescriptPropertyName}`)
                   .join(",") +
                 "]"
               : "";
+            const requestExpression = parametersExpression
+              ? `{parameters, options}`
+              : `{options}`;
             // just a bit of escaping of the passsed sql script
             const preparedSql = node.script.replace("`", "\\`");
 
@@ -138,7 +142,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
           async call (${parameters}${options}) {
             const response = await this.database.invoke( (sql) => sql.unsafe(\`
                 ${preparedSql}
-                \`${parameterPasses}), options);
+                \`${parametersExpression}), ${requestExpression});
             return response.map(r => ({ ${attributes.join(",")} }));
           }
         `,
@@ -235,7 +239,9 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
                     ` \${ typed[${a.type.id}](undefinedIsNull(parameters.${a.typescriptPropertyName})) }`,
                 )
                 .join(",") ?? "";
-            const optionsExpression = `, options`;
+            const requestExpression = parameterExpressions
+              ? `{${PARAMETERS}, options}`
+              : `{options}`;
             const resultType = `${node.resultsType?.typescriptNamespacedName}`;
             // if there is a composite -- pseudo -- return type, this will
             // need to call back into the sql driver to parse the results
@@ -267,7 +273,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
               `async call(${parameters}${options}) {`,
               `  ${parseResult}`,
               `  const typed = this.database.typed;`,
-              `  const response = await this.database.invoke( (sql) => sql\`SELECT ${node.databaseName}(${parameterExpressions})\`${optionsExpression});`,
+              `  const response = await this.database.invoke( (sql) => sql\`SELECT ${node.databaseName}(${parameterExpressions})\`, ${requestExpression});`,
               `  const results = response;`,
               `
               const responseBody = ( ${(() => {

@@ -8,17 +8,27 @@ export * from "./debounce";
 export let NEVER: never;
 
 /**
+ * Invocation context for a single database operation.
+ */
+export type EmbraceSQLInvocation<P = object, V = object, O = object> = {
+  headers?: Record<string, string>;
+  parameters?: P;
+  values?: V;
+  options?: O;
+};
+
+/**
  * Message format for EmbraceSQL.
  *
  * The notion of headers is inspired by HTTP and allows you to specify
  * additional metadata.
  */
-export type EmbraceSQLRequest<P, V = never, O = never> = {
+export type EmbraceSQLRequest<P, V = never, O = never> = EmbraceSQLInvocation<
+  P,
+  V,
+  O
+> & {
   operation: string;
-  headers?: Record<string, string>;
-  parameters?: P;
-  values?: V;
-  options?: O;
 };
 
 /**

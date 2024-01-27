@@ -1,5 +1,9 @@
 import { postgresToTypescript, postgresValueExpression } from "./shared";
-import { CreateOperationNode, GenerationContext } from "@embracesql/shared";
+import {
+  CreateOperationNode,
+  GenerationContext,
+  VALUES,
+} from "@embracesql/shared";
 
 /**
  * AutoCRUD creates or upserts a row by table.
@@ -9,6 +13,7 @@ export const CreateOperation = {
     const valuesType = `Partial<${node.table.type.typescriptNamespacedName}>`;
     const optionType = `${node.table.typescriptNamespacedName}.Options`;
     const generationBuffer = [""];
+    const requestExpression = `{${VALUES}, options}`;
 
     generationBuffer.push(
       `async create(values: ${valuesType}, options?: ${optionType}): Promise<${node.table.type.typescriptNamespacedName}>{`,
@@ -45,7 +50,7 @@ export const CreateOperation = {
         ${allSqlColumnNames}
     `;
       generationBuffer.push(
-        `const response = await this.database.invoke( (sql) => sql\`${sql}\`, options);`,
+        `const response = await this.database.invoke( (sql) => sql\`${sql}\`, ${requestExpression});`,
       );
 
       generationBuffer.push(
@@ -61,7 +66,7 @@ export const CreateOperation = {
     INSERT INTO
       ${node.table.databaseName} (${allSqlColumnNames})
     VALUES (${node.table.type.attributes
-      .map((a) => postgresValueExpression(context, a, "values"))
+      .map((a) => postgresValueExpression(context, a, VALUES))
       .join(",")})
     ON CONFLICT (${node.table.columnsInPrimaryKey
       .map((a) => a.name)
@@ -75,7 +80,7 @@ export const CreateOperation = {
     `;
     // run that SQL
     generationBuffer.push(
-      `const response = await this.database.invoke( (sql) => sql\`${sql}\`, options);`,
+      `const response = await this.database.invoke( (sql) => sql\`${sql}\`, ${requestExpression});`,
     );
 
     generationBuffer.push(

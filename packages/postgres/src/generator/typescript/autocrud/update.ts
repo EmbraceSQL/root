@@ -22,6 +22,7 @@ export const UpdateOperation = {
   async before(context: GenerationContext, node: UpdateOperationNode) {
     const generationBuffer = [""];
     const parameters = `${PARAMETERS}: ${node.index.type.typescriptNamespacedName}, ${VALUES}: Partial<${node.index.table.typescriptNamespacedName}.Values>`;
+    const requestExpression = `{${PARAMETERS}, ${VALUES}, options}`;
     const optionType = `${node.index.type.typescriptNamespacedName}.Options & ${node.index.table.typescriptNamespacedName}.Options`;
     const options = `options?: ${optionType}`;
     const returns = node.index.unique
@@ -53,7 +54,7 @@ export const UpdateOperation = {
     RETURNING ${sqlColumnNames}`;
 
     generationBuffer.push(
-      `const response = await this.database.invoke( (sql) => sql\`${sql}\`, options);`,
+      `const response = await this.database.invoke( (sql) => sql\`${sql}\`, ${requestExpression});`,
     );
 
     generationBuffer.push(

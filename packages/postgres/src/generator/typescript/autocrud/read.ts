@@ -14,6 +14,7 @@ import {
 export const ReadOperation = {
   async before(context: GenerationContext, node: ReadOperationNode) {
     const parameters = `${PARAMETERS}: ${node.index.type.typescriptNamespacedName}`;
+    const requestExpression = `{${PARAMETERS}, ...(options ?? {})}`;
     const optionType = `${node.index.type.typescriptNamespacedName}.Options & ${node.index.table.typescriptNamespacedName}.Options`;
     const options = `options?: ${optionType}`;
     const returns = node.index.unique
@@ -40,7 +41,7 @@ export const ReadOperation = {
       const typed = this.database.typed;
       const orderBy = options?.sort ? \`ORDER BY \${options.sort.join(",")}\` : "";
       `,
-      `const response = await this.database.invoke( (sql) => sql\`${sql}\`, options);`,
+      `const response = await this.database.invoke( (sql) => sql\`${sql}\`, ${requestExpression});`,
 
       `return ${postgresToTypescript(context, node.index.table.type)}${
         node.index.unique ? "[0]" : ""

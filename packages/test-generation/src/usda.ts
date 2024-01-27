@@ -1763,7 +1763,7 @@ const response = await this.database.invoke( (sql) => sql`
       nutr_val = EXCLUDED.nutr_val,num_data_pts = EXCLUDED.num_data_pts,std_error = EXCLUDED.std_error,src_cd = EXCLUDED.src_cd,deriv_cd = EXCLUDED.deriv_cd,ref_ndb_no = EXCLUDED.ref_ndb_no,add_nutr_mark = EXCLUDED.add_nutr_mark,num_studies = EXCLUDED.num_studies,min = EXCLUDED.min,max = EXCLUDED.max,df = EXCLUDED.df,low_eb = EXCLUDED.low_eb,up_eb = EXCLUDED.up_eb,stat_cmt = EXCLUDED.stat_cmt,cc = EXCLUDED.cc
     RETURNING
       ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc
-    `, options);
+    `, {values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))[0]
 }
 async all(options?: Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
@@ -1779,7 +1779,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.NutData.NutDataPkey(this)}
@@ -1814,7 +1814,7 @@ const response = await this.database.invoke( (sql) => sql`
       srccd_desc = EXCLUDED.srccd_desc
     RETURNING
       src_cd,srccd_desc
-    `, options);
+    `, {values, options});
 return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))[0]
 }
 async all(options?: Public.Tables.SrcCd.Options) : Promise<Public.Types.SrcCd[]>{
@@ -1830,7 +1830,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {options});
 return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.SrcCd.SrcCdPkey(this)}
@@ -1859,7 +1859,7 @@ const response = await this.database.invoke( (sql) => sql`
       ndb_no = EXCLUDED.ndb_no,footnt_no = EXCLUDED.footnt_no,footnt_typ = EXCLUDED.footnt_typ,nutr_no = EXCLUDED.nutr_no,footnt_txt = EXCLUDED.footnt_txt
     RETURNING
       ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt
-    `, options);
+    `, {values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))[0]
 }
 async all(options?: Public.Tables.Footnote.Options) : Promise<Public.Types.Footnote[]>{
@@ -1875,7 +1875,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))
 }
 
@@ -1904,7 +1904,7 @@ const response = await this.database.invoke( (sql) => sql`
       units = EXCLUDED.units,tagname = EXCLUDED.tagname,nutrdesc = EXCLUDED.nutrdesc,num_dec = EXCLUDED.num_dec,sr_order = EXCLUDED.sr_order
     RETURNING
       nutr_no,units,tagname,nutrdesc,num_dec,sr_order
-    `, options);
+    `, {values, options});
 return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))[0]
 }
 async all(options?: Public.Tables.NutrDef.Options) : Promise<Public.Types.NutrDef[]>{
@@ -1920,7 +1920,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {options});
 return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.NutrDef.NutrDefPkey(this)}
@@ -1949,7 +1949,7 @@ const response = await this.database.invoke( (sql) => sql`
       derivcd_desc = EXCLUDED.derivcd_desc
     RETURNING
       deriv_cd,derivcd_desc
-    `, options);
+    `, {values, options});
 return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))[0]
 }
 async all(options?: Public.Tables.DerivCd.Options) : Promise<Public.Types.DerivCd[]>{
@@ -1965,7 +1965,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {options});
 return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.DerivCd.DerivCdPkey(this)}
@@ -1994,7 +1994,7 @@ const response = await this.database.invoke( (sql) => sql`
       fddrp_desc = EXCLUDED.fddrp_desc
     RETURNING
       fdgrp_cd,fddrp_desc
-    `, options);
+    `, {values, options});
 return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))[0]
 }
 async all(options?: Public.Tables.FdGroup.Options) : Promise<Public.Types.FdGroup[]>{
@@ -2010,7 +2010,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {options});
 return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.FdGroup.FdGroupPkey(this)}
@@ -2039,7 +2039,7 @@ const response = await this.database.invoke( (sql) => sql`
       amount = EXCLUDED.amount,msre_desc = EXCLUDED.msre_desc,gm_wgt = EXCLUDED.gm_wgt,num_data_pts = EXCLUDED.num_data_pts,std_dev = EXCLUDED.std_dev
     RETURNING
       ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev
-    `, options);
+    `, {values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))[0]
 }
 async all(options?: Public.Tables.Weight.Options) : Promise<Public.Types.Weight[]>{
@@ -2055,7 +2055,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Weight.WeightPkey(this)}
@@ -2084,7 +2084,7 @@ const response = await this.database.invoke( (sql) => sql`
       fdgrp_cd = EXCLUDED.fdgrp_cd,long_desc = EXCLUDED.long_desc,shrt_desc = EXCLUDED.shrt_desc,comname = EXCLUDED.comname,manufacname = EXCLUDED.manufacname,survey = EXCLUDED.survey,ref_desc = EXCLUDED.ref_desc,refuse = EXCLUDED.refuse,sciname = EXCLUDED.sciname,n_factor = EXCLUDED.n_factor,pro_factor = EXCLUDED.pro_factor,fat_factor = EXCLUDED.fat_factor,cho_factor = EXCLUDED.cho_factor
     RETURNING
       ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor
-    `, options);
+    `, {values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))[0]
 }
 async all(options?: Public.Tables.FoodDes.Options) : Promise<Public.Types.FoodDes[]>{
@@ -2100,7 +2100,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.FoodDes.FoodDesPkey(this)}
@@ -2131,7 +2131,7 @@ const response = await this.database.invoke( (sql) => sql`
       authors = EXCLUDED.authors,title = EXCLUDED.title,year = EXCLUDED.year,journal = EXCLUDED.journal,vol_city = EXCLUDED.vol_city,issue_state = EXCLUDED.issue_state,start_page = EXCLUDED.start_page,end_page = EXCLUDED.end_page
     RETURNING
       datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page
-    `, options);
+    `, {values, options});
 return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))[0]
 }
 async all(options?: Public.Tables.DataSrc.Options) : Promise<Public.Types.DataSrc[]>{
@@ -2147,7 +2147,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {options});
 return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
 }
 
@@ -2178,7 +2178,7 @@ const response = await this.database.invoke( (sql) => sql`
       
     RETURNING
       ndb_no,nutr_no,datasrc_id
-    `, options);
+    `, {values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))[0]
 }
 async all(options?: Public.Tables.Datsrcln.Options) : Promise<Public.Types.Datsrcln[]>{
@@ -2194,7 +2194,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.Datsrcln.DatsrclnPkey(this)}
@@ -2234,7 +2234,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))[0]
 }
 
@@ -2252,7 +2252,7 @@ const response = await this.database.invoke( (sql) => sql`
       ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , nutr_val = ${ values.nutrVal === undefined ? sql`nutr_val` : typed[701](values.nutrVal) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[701](values.numDataPts) } , std_error = ${ values.stdError === undefined ? sql`std_error` : typed[701](values.stdError) } , src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , ref_ndb_no = ${ values.refNdbNo === undefined ? sql`ref_ndb_no` : typed[1042](values.refNdbNo) } , add_nutr_mark = ${ values.addNutrMark === undefined ? sql`add_nutr_mark` : typed[1042](values.addNutrMark) } , num_studies = ${ values.numStudies === undefined ? sql`num_studies` : typed[23](values.numStudies) } , min = ${ values.min === undefined ? sql`min` : typed[701](values.min) } , max = ${ values.max === undefined ? sql`max` : typed[701](values.max) } , df = ${ values.df === undefined ? sql`df` : typed[23](values.df) } , low_eb = ${ values.lowEb === undefined ? sql`low_eb` : typed[701](values.lowEb) } , up_eb = ${ values.upEb === undefined ? sql`up_eb` : typed[701](values.upEb) } , stat_cmt = ${ values.statCmt === undefined ? sql`stat_cmt` : typed[25](values.statCmt) } , cc = ${ values.cc === undefined ? sql`cc` : typed[1042](values.cc) } 
     WHERE
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, options);
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))[0]
 }
 async delete(parameters: Public.Types.NutDataPkey, options?: Public.Types.NutDataPkey.Options & Public.Tables.NutData.Options) {
@@ -2264,7 +2264,7 @@ async delete(parameters: Public.Types.NutDataPkey, options?: Public.Types.NutDat
       public.nut_data 
     WHERE
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, options);
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, {parameters, options});
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))[0]
 }
 }
@@ -2295,7 +2295,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
 
@@ -2313,7 +2313,7 @@ const response = await this.database.invoke( (sql) => sql`
       ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , nutr_val = ${ values.nutrVal === undefined ? sql`nutr_val` : typed[701](values.nutrVal) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[701](values.numDataPts) } , std_error = ${ values.stdError === undefined ? sql`std_error` : typed[701](values.stdError) } , src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , ref_ndb_no = ${ values.refNdbNo === undefined ? sql`ref_ndb_no` : typed[1042](values.refNdbNo) } , add_nutr_mark = ${ values.addNutrMark === undefined ? sql`add_nutr_mark` : typed[1042](values.addNutrMark) } , num_studies = ${ values.numStudies === undefined ? sql`num_studies` : typed[23](values.numStudies) } , min = ${ values.min === undefined ? sql`min` : typed[701](values.min) } , max = ${ values.max === undefined ? sql`max` : typed[701](values.max) } , df = ${ values.df === undefined ? sql`df` : typed[23](values.df) } , low_eb = ${ values.lowEb === undefined ? sql`low_eb` : typed[701](values.lowEb) } , up_eb = ${ values.upEb === undefined ? sql`up_eb` : typed[701](values.upEb) } , stat_cmt = ${ values.statCmt === undefined ? sql`stat_cmt` : typed[25](values.statCmt) } , cc = ${ values.cc === undefined ? sql`cc` : typed[1042](values.cc) } 
     WHERE
       deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, options);
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
 async delete(parameters: Public.Types.NutDataDerivCdIdx, options?: Public.Types.NutDataDerivCdIdx.Options & Public.Tables.NutData.Options) {
@@ -2325,7 +2325,7 @@ async delete(parameters: Public.Types.NutDataDerivCdIdx, options?: Public.Types.
       public.nut_data 
     WHERE
       deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, options);
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, {parameters, options});
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
 }
@@ -2356,7 +2356,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
 
@@ -2374,7 +2374,7 @@ const response = await this.database.invoke( (sql) => sql`
       ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , nutr_val = ${ values.nutrVal === undefined ? sql`nutr_val` : typed[701](values.nutrVal) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[701](values.numDataPts) } , std_error = ${ values.stdError === undefined ? sql`std_error` : typed[701](values.stdError) } , src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , ref_ndb_no = ${ values.refNdbNo === undefined ? sql`ref_ndb_no` : typed[1042](values.refNdbNo) } , add_nutr_mark = ${ values.addNutrMark === undefined ? sql`add_nutr_mark` : typed[1042](values.addNutrMark) } , num_studies = ${ values.numStudies === undefined ? sql`num_studies` : typed[23](values.numStudies) } , min = ${ values.min === undefined ? sql`min` : typed[701](values.min) } , max = ${ values.max === undefined ? sql`max` : typed[701](values.max) } , df = ${ values.df === undefined ? sql`df` : typed[23](values.df) } , low_eb = ${ values.lowEb === undefined ? sql`low_eb` : typed[701](values.lowEb) } , up_eb = ${ values.upEb === undefined ? sql`up_eb` : typed[701](values.upEb) } , stat_cmt = ${ values.statCmt === undefined ? sql`stat_cmt` : typed[25](values.statCmt) } , cc = ${ values.cc === undefined ? sql`cc` : typed[1042](values.cc) } 
     WHERE
       nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, options);
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
 async delete(parameters: Public.Types.NutDataNutrNoIdx, options?: Public.Types.NutDataNutrNoIdx.Options & Public.Tables.NutData.Options) {
@@ -2386,7 +2386,7 @@ async delete(parameters: Public.Types.NutDataNutrNoIdx, options?: Public.Types.N
       public.nut_data 
     WHERE
       nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, options);
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, {parameters, options});
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
 }
@@ -2417,7 +2417,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
 
@@ -2435,7 +2435,7 @@ const response = await this.database.invoke( (sql) => sql`
       ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , nutr_val = ${ values.nutrVal === undefined ? sql`nutr_val` : typed[701](values.nutrVal) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[701](values.numDataPts) } , std_error = ${ values.stdError === undefined ? sql`std_error` : typed[701](values.stdError) } , src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , ref_ndb_no = ${ values.refNdbNo === undefined ? sql`ref_ndb_no` : typed[1042](values.refNdbNo) } , add_nutr_mark = ${ values.addNutrMark === undefined ? sql`add_nutr_mark` : typed[1042](values.addNutrMark) } , num_studies = ${ values.numStudies === undefined ? sql`num_studies` : typed[23](values.numStudies) } , min = ${ values.min === undefined ? sql`min` : typed[701](values.min) } , max = ${ values.max === undefined ? sql`max` : typed[701](values.max) } , df = ${ values.df === undefined ? sql`df` : typed[23](values.df) } , low_eb = ${ values.lowEb === undefined ? sql`low_eb` : typed[701](values.lowEb) } , up_eb = ${ values.upEb === undefined ? sql`up_eb` : typed[701](values.upEb) } , stat_cmt = ${ values.statCmt === undefined ? sql`stat_cmt` : typed[25](values.statCmt) } , cc = ${ values.cc === undefined ? sql`cc` : typed[1042](values.cc) } 
     WHERE
       src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, options);
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
 async delete(parameters: Public.Types.NutDataSrcCdIdx, options?: Public.Types.NutDataSrcCdIdx.Options & Public.Tables.NutData.Options) {
@@ -2447,7 +2447,7 @@ async delete(parameters: Public.Types.NutDataSrcCdIdx, options?: Public.Types.Nu
       public.nut_data 
     WHERE
       src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
-    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, options);
+    RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, {parameters, options});
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
 }
@@ -2480,7 +2480,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))[0]
 }
 
@@ -2498,7 +2498,7 @@ const response = await this.database.invoke( (sql) => sql`
       src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , srccd_desc = ${ values.srccdDesc === undefined ? sql`srccd_desc` : typed[25](values.srccdDesc) } 
     WHERE
       src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
-    RETURNING src_cd,srccd_desc`, options);
+    RETURNING src_cd,srccd_desc`, {parameters, values, options});
 return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))[0]
 }
 async delete(parameters: Public.Types.SrcCdPkey, options?: Public.Types.SrcCdPkey.Options & Public.Tables.SrcCd.Options) {
@@ -2510,7 +2510,7 @@ async delete(parameters: Public.Types.SrcCdPkey, options?: Public.Types.SrcCdPke
       public.src_cd 
     WHERE
       src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
-    RETURNING src_cd,srccd_desc`, options);
+    RETURNING src_cd,srccd_desc`, {parameters, options});
  return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))[0]
 }
 }
@@ -2543,7 +2543,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))
 }
 
@@ -2561,7 +2561,7 @@ const response = await this.database.invoke( (sql) => sql`
       ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , footnt_no = ${ values.footntNo === undefined ? sql`footnt_no` : typed[1042](values.footntNo) } , footnt_typ = ${ values.footntTyp === undefined ? sql`footnt_typ` : typed[1042](values.footntTyp) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , footnt_txt = ${ values.footntTxt === undefined ? sql`footnt_txt` : typed[25](values.footntTxt) } 
     WHERE
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt`, options);
+    RETURNING ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))
 }
 async delete(parameters: Public.Types.FootnoteNdbNoIdx, options?: Public.Types.FootnoteNdbNoIdx.Options & Public.Tables.Footnote.Options) {
@@ -2573,7 +2573,7 @@ async delete(parameters: Public.Types.FootnoteNdbNoIdx, options?: Public.Types.F
       public.footnote 
     WHERE
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt`, options);
+    RETURNING ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt`, {parameters, options});
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))
 }
 }
@@ -2606,7 +2606,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))[0]
 }
 
@@ -2624,7 +2624,7 @@ const response = await this.database.invoke( (sql) => sql`
       nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , units = ${ values.units === undefined ? sql`units` : typed[25](values.units) } , tagname = ${ values.tagname === undefined ? sql`tagname` : typed[25](values.tagname) } , nutrdesc = ${ values.nutrdesc === undefined ? sql`nutrdesc` : typed[25](values.nutrdesc) } , num_dec = ${ values.numDec === undefined ? sql`num_dec` : typed[21](values.numDec) } , sr_order = ${ values.srOrder === undefined ? sql`sr_order` : typed[23](values.srOrder) } 
     WHERE
       nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING nutr_no,units,tagname,nutrdesc,num_dec,sr_order`, options);
+    RETURNING nutr_no,units,tagname,nutrdesc,num_dec,sr_order`, {parameters, values, options});
 return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))[0]
 }
 async delete(parameters: Public.Types.NutrDefPkey, options?: Public.Types.NutrDefPkey.Options & Public.Tables.NutrDef.Options) {
@@ -2636,7 +2636,7 @@ async delete(parameters: Public.Types.NutrDefPkey, options?: Public.Types.NutrDe
       public.nutr_def 
     WHERE
       nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
-    RETURNING nutr_no,units,tagname,nutrdesc,num_dec,sr_order`, options);
+    RETURNING nutr_no,units,tagname,nutrdesc,num_dec,sr_order`, {parameters, options});
  return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))[0]
 }
 }
@@ -2669,7 +2669,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))[0]
 }
 
@@ -2687,7 +2687,7 @@ const response = await this.database.invoke( (sql) => sql`
       deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , derivcd_desc = ${ values.derivcdDesc === undefined ? sql`derivcd_desc` : typed[25](values.derivcdDesc) } 
     WHERE
       deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
-    RETURNING deriv_cd,derivcd_desc`, options);
+    RETURNING deriv_cd,derivcd_desc`, {parameters, values, options});
 return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))[0]
 }
 async delete(parameters: Public.Types.DerivCdPkey, options?: Public.Types.DerivCdPkey.Options & Public.Tables.DerivCd.Options) {
@@ -2699,7 +2699,7 @@ async delete(parameters: Public.Types.DerivCdPkey, options?: Public.Types.DerivC
       public.deriv_cd 
     WHERE
       deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
-    RETURNING deriv_cd,derivcd_desc`, options);
+    RETURNING deriv_cd,derivcd_desc`, {parameters, options});
  return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))[0]
 }
 }
@@ -2732,7 +2732,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))[0]
 }
 
@@ -2750,7 +2750,7 @@ const response = await this.database.invoke( (sql) => sql`
       fdgrp_cd = ${ values.fdgrpCd === undefined ? sql`fdgrp_cd` : typed[1042](values.fdgrpCd) } , fddrp_desc = ${ values.fddrpDesc === undefined ? sql`fddrp_desc` : typed[25](values.fddrpDesc) } 
     WHERE
       fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
-    RETURNING fdgrp_cd,fddrp_desc`, options);
+    RETURNING fdgrp_cd,fddrp_desc`, {parameters, values, options});
 return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))[0]
 }
 async delete(parameters: Public.Types.FdGroupPkey, options?: Public.Types.FdGroupPkey.Options & Public.Tables.FdGroup.Options) {
@@ -2762,7 +2762,7 @@ async delete(parameters: Public.Types.FdGroupPkey, options?: Public.Types.FdGrou
       public.fd_group 
     WHERE
       fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
-    RETURNING fdgrp_cd,fddrp_desc`, options);
+    RETURNING fdgrp_cd,fddrp_desc`, {parameters, options});
  return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))[0]
 }
 }
@@ -2795,7 +2795,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))[0]
 }
 
@@ -2813,7 +2813,7 @@ const response = await this.database.invoke( (sql) => sql`
       ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , seq = ${ values.seq === undefined ? sql`seq` : typed[1042](values.seq) } , amount = ${ values.amount === undefined ? sql`amount` : typed[701](values.amount) } , msre_desc = ${ values.msreDesc === undefined ? sql`msre_desc` : typed[25](values.msreDesc) } , gm_wgt = ${ values.gmWgt === undefined ? sql`gm_wgt` : typed[701](values.gmWgt) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[23](values.numDataPts) } , std_dev = ${ values.stdDev === undefined ? sql`std_dev` : typed[701](values.stdDev) } 
     WHERE
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND seq = ${ parameters.seq === undefined ? sql`DEFAULT` : typed[1042](parameters.seq) }
-    RETURNING ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev`, options);
+    RETURNING ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))[0]
 }
 async delete(parameters: Public.Types.WeightPkey, options?: Public.Types.WeightPkey.Options & Public.Tables.Weight.Options) {
@@ -2825,7 +2825,7 @@ async delete(parameters: Public.Types.WeightPkey, options?: Public.Types.WeightP
       public.weight 
     WHERE
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND seq = ${ parameters.seq === undefined ? sql`DEFAULT` : typed[1042](parameters.seq) }
-    RETURNING ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev`, options);
+    RETURNING ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev`, {parameters, options});
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))[0]
 }
 }
@@ -2858,7 +2858,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))[0]
 }
 
@@ -2876,7 +2876,7 @@ const response = await this.database.invoke( (sql) => sql`
       ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , fdgrp_cd = ${ values.fdgrpCd === undefined ? sql`fdgrp_cd` : typed[1042](values.fdgrpCd) } , long_desc = ${ values.longDesc === undefined ? sql`long_desc` : typed[25](values.longDesc) } , shrt_desc = ${ values.shrtDesc === undefined ? sql`shrt_desc` : typed[25](values.shrtDesc) } , comname = ${ values.comname === undefined ? sql`comname` : typed[25](values.comname) } , manufacname = ${ values.manufacname === undefined ? sql`manufacname` : typed[25](values.manufacname) } , survey = ${ values.survey === undefined ? sql`survey` : typed[1042](values.survey) } , ref_desc = ${ values.refDesc === undefined ? sql`ref_desc` : typed[25](values.refDesc) } , refuse = ${ values.refuse === undefined ? sql`refuse` : typed[23](values.refuse) } , sciname = ${ values.sciname === undefined ? sql`sciname` : typed[25](values.sciname) } , n_factor = ${ values.nFactor === undefined ? sql`n_factor` : typed[701](values.nFactor) } , pro_factor = ${ values.proFactor === undefined ? sql`pro_factor` : typed[701](values.proFactor) } , fat_factor = ${ values.fatFactor === undefined ? sql`fat_factor` : typed[701](values.fatFactor) } , cho_factor = ${ values.choFactor === undefined ? sql`cho_factor` : typed[701](values.choFactor) } 
     WHERE
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) }
-    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`, options);
+    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))[0]
 }
 async delete(parameters: Public.Types.FoodDesPkey, options?: Public.Types.FoodDesPkey.Options & Public.Tables.FoodDes.Options) {
@@ -2888,7 +2888,7 @@ async delete(parameters: Public.Types.FoodDesPkey, options?: Public.Types.FoodDe
       public.food_des 
     WHERE
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) }
-    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`, options);
+    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`, {parameters, options});
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))[0]
 }
 }
@@ -2919,7 +2919,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))
 }
 
@@ -2937,7 +2937,7 @@ const response = await this.database.invoke( (sql) => sql`
       ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , fdgrp_cd = ${ values.fdgrpCd === undefined ? sql`fdgrp_cd` : typed[1042](values.fdgrpCd) } , long_desc = ${ values.longDesc === undefined ? sql`long_desc` : typed[25](values.longDesc) } , shrt_desc = ${ values.shrtDesc === undefined ? sql`shrt_desc` : typed[25](values.shrtDesc) } , comname = ${ values.comname === undefined ? sql`comname` : typed[25](values.comname) } , manufacname = ${ values.manufacname === undefined ? sql`manufacname` : typed[25](values.manufacname) } , survey = ${ values.survey === undefined ? sql`survey` : typed[1042](values.survey) } , ref_desc = ${ values.refDesc === undefined ? sql`ref_desc` : typed[25](values.refDesc) } , refuse = ${ values.refuse === undefined ? sql`refuse` : typed[23](values.refuse) } , sciname = ${ values.sciname === undefined ? sql`sciname` : typed[25](values.sciname) } , n_factor = ${ values.nFactor === undefined ? sql`n_factor` : typed[701](values.nFactor) } , pro_factor = ${ values.proFactor === undefined ? sql`pro_factor` : typed[701](values.proFactor) } , fat_factor = ${ values.fatFactor === undefined ? sql`fat_factor` : typed[701](values.fatFactor) } , cho_factor = ${ values.choFactor === undefined ? sql`cho_factor` : typed[701](values.choFactor) } 
     WHERE
       fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
-    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`, options);
+    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))
 }
 async delete(parameters: Public.Types.FoodDesFdgrpCdIdx, options?: Public.Types.FoodDesFdgrpCdIdx.Options & Public.Tables.FoodDes.Options) {
@@ -2949,7 +2949,7 @@ async delete(parameters: Public.Types.FoodDesFdgrpCdIdx, options?: Public.Types.
       public.food_des 
     WHERE
       fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
-    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`, options);
+    RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`, {parameters, options});
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))
 }
 }
@@ -2982,7 +2982,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
 }
 
@@ -3000,7 +3000,7 @@ const response = await this.database.invoke( (sql) => sql`
       datasrc_id = ${ values.datasrcId === undefined ? sql`datasrc_id` : typed[1042](values.datasrcId) } , authors = ${ values.authors === undefined ? sql`authors` : typed[25](values.authors) } , title = ${ values.title === undefined ? sql`title` : typed[25](values.title) } , year = ${ values.year === undefined ? sql`year` : typed[23](values.year) } , journal = ${ values.journal === undefined ? sql`journal` : typed[25](values.journal) } , vol_city = ${ values.volCity === undefined ? sql`vol_city` : typed[25](values.volCity) } , issue_state = ${ values.issueState === undefined ? sql`issue_state` : typed[25](values.issueState) } , start_page = ${ values.startPage === undefined ? sql`start_page` : typed[25](values.startPage) } , end_page = ${ values.endPage === undefined ? sql`end_page` : typed[25](values.endPage) } 
     WHERE
       title @@ ${sql.unsafe(`${options?.title?.queryParser ?? "to_tsquery"}`)}(${options?.title?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.title === undefined ? sql`DEFAULT` : typed[3614](parameters.title) })
-    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`, options);
+    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`, {parameters, values, options});
 return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
 }
 async delete(parameters: Public.Types.DataSrcTitleFulltext, options?: Public.Types.DataSrcTitleFulltext.Options & Public.Tables.DataSrc.Options) {
@@ -3012,7 +3012,7 @@ async delete(parameters: Public.Types.DataSrcTitleFulltext, options?: Public.Typ
       public.data_src 
     WHERE
       title @@ ${sql.unsafe(`${options?.title?.queryParser ?? "to_tsquery"}`)}(${options?.title?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.title === undefined ? sql`DEFAULT` : typed[3614](parameters.title) })
-    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`, options);
+    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`, {parameters, options});
  return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
 }
 }
@@ -3043,7 +3043,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))[0]
 }
 
@@ -3061,7 +3061,7 @@ const response = await this.database.invoke( (sql) => sql`
       datasrc_id = ${ values.datasrcId === undefined ? sql`datasrc_id` : typed[1042](values.datasrcId) } , authors = ${ values.authors === undefined ? sql`authors` : typed[25](values.authors) } , title = ${ values.title === undefined ? sql`title` : typed[25](values.title) } , year = ${ values.year === undefined ? sql`year` : typed[23](values.year) } , journal = ${ values.journal === undefined ? sql`journal` : typed[25](values.journal) } , vol_city = ${ values.volCity === undefined ? sql`vol_city` : typed[25](values.volCity) } , issue_state = ${ values.issueState === undefined ? sql`issue_state` : typed[25](values.issueState) } , start_page = ${ values.startPage === undefined ? sql`start_page` : typed[25](values.startPage) } , end_page = ${ values.endPage === undefined ? sql`end_page` : typed[25](values.endPage) } 
     WHERE
       datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
-    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`, options);
+    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`, {parameters, values, options});
 return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))[0]
 }
 async delete(parameters: Public.Types.DataSrcPkey, options?: Public.Types.DataSrcPkey.Options & Public.Tables.DataSrc.Options) {
@@ -3073,7 +3073,7 @@ async delete(parameters: Public.Types.DataSrcPkey, options?: Public.Types.DataSr
       public.data_src 
     WHERE
       datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
-    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`, options);
+    RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`, {parameters, options});
  return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))[0]
 }
 }
@@ -3106,7 +3106,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))[0]
 }
 
@@ -3124,7 +3124,7 @@ const response = await this.database.invoke( (sql) => sql`
       ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , datasrc_id = ${ values.datasrcId === undefined ? sql`datasrc_id` : typed[1042](values.datasrcId) } 
     WHERE
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) } AND datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
-    RETURNING ndb_no,nutr_no,datasrc_id`, options);
+    RETURNING ndb_no,nutr_no,datasrc_id`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))[0]
 }
 async delete(parameters: Public.Types.DatsrclnPkey, options?: Public.Types.DatsrclnPkey.Options & Public.Tables.Datsrcln.Options) {
@@ -3136,7 +3136,7 @@ async delete(parameters: Public.Types.DatsrclnPkey, options?: Public.Types.Datsr
       public.datsrcln 
     WHERE
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) } AND datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
-    RETURNING ndb_no,nutr_no,datasrc_id`, options);
+    RETURNING ndb_no,nutr_no,datasrc_id`, {parameters, options});
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))[0]
 }
 }
@@ -3167,7 +3167,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))
 }
 
@@ -3185,7 +3185,7 @@ const response = await this.database.invoke( (sql) => sql`
       ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , datasrc_id = ${ values.datasrcId === undefined ? sql`datasrc_id` : typed[1042](values.datasrcId) } 
     WHERE
       datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
-    RETURNING ndb_no,nutr_no,datasrc_id`, options);
+    RETURNING ndb_no,nutr_no,datasrc_id`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))
 }
 async delete(parameters: Public.Types.DatsrclnDatasrcIdIdx, options?: Public.Types.DatsrclnDatasrcIdIdx.Options & Public.Tables.Datsrcln.Options) {
@@ -3197,7 +3197,7 @@ async delete(parameters: Public.Types.DatsrclnDatasrcIdIdx, options?: Public.Typ
       public.datsrcln 
     WHERE
       datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
-    RETURNING ndb_no,nutr_no,datasrc_id`, options);
+    RETURNING ndb_no,nutr_no,datasrc_id`, {parameters, options});
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))
 }
 }

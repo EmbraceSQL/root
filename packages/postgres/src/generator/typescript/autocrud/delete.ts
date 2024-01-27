@@ -1,5 +1,9 @@
 import { postgresToTypescript, sqlPredicate } from "./shared";
-import { DeleteOperationNode, GenerationContext } from "@embracesql/shared";
+import {
+  DeleteOperationNode,
+  GenerationContext,
+  PARAMETERS,
+} from "@embracesql/shared";
 
 /**
  * AutoCRUD deletes rows by index.
@@ -12,6 +16,7 @@ import { DeleteOperationNode, GenerationContext } from "@embracesql/shared";
 export const DeleteOperation = {
   async before(context: GenerationContext, node: DeleteOperationNode) {
     const parameters = `parameters: ${node.index.type.typescriptNamespacedName}`;
+    const requestExpression = `{${PARAMETERS}, options}`;
     const optionType = `${node.index.type.typescriptNamespacedName}.Options & ${node.index.table.typescriptNamespacedName}.Options`;
     const options = `options?: ${optionType}`;
     const sqlColumnNames = node.index.table.type.attributes
@@ -23,14 +28,14 @@ export const DeleteOperation = {
     DELETE FROM 
       ${node.index.table.databaseName} 
     WHERE
-      ${sqlPredicate(context, node.index, "parameters")}
+      ${sqlPredicate(context, node.index, PARAMETERS)}
     RETURNING ${sqlColumnNames}`;
 
     return [
       `async ${node.typescriptPropertyName}(${parameters}, ${options}) {`,
       ` console.assert(parameters);`,
       ` const typed = this.database.typed;`,
-      ` const response = await this.database.invoke( (sql) => sql\`${sql}\`, options);`,
+      ` const response = await this.database.invoke( (sql) => sql\`${sql}\`, ${requestExpression});`,
       ` return ${postgresToTypescript(context, node.index.table.type)}${
         node.index.unique ? "[0]" : ""
       }`,

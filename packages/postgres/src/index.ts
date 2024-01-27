@@ -1,6 +1,6 @@
 import { Context } from "./context";
 import { MiddlewareDispatcher } from "./middleware/types";
-import { InvokeQueryOptions } from "@embracesql/shared";
+import { EmbraceSQLInvocation, InvokeQueryOptions } from "@embracesql/shared";
 import postgres from "postgres";
 
 export { initializeContext } from "./context";
@@ -108,12 +108,12 @@ export abstract class PostgresDatabase<TTypecast> extends MiddlewareDispatcher<
   async invoke<T>(
     queryCallback: InvokeQuery<T>,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    options?: InvokeQueryOptions,
+    request?: EmbraceSQLInvocation<object, object, InvokeQueryOptions>,
   ): Promise<T> {
     // here is the middleware run stack
     const runStack = async (database: this) => {
       // first the middleware
-      await this.dispatch({ ...this.context, ...(options ?? {}) });
+      await this.dispatch({ ...this.context, ...(request ?? {}) });
       return queryCallback(database.context.sql);
     };
 

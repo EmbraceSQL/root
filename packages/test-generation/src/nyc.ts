@@ -3815,7 +3815,7 @@ async call(parameters : Public.Procedures.StForcepolygoncw.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_forcepolygoncw( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_forcepolygoncw( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_forcepolygoncw) );
@@ -3835,7 +3835,7 @@ async call(parameters : Public.Procedures.SpheroidIn.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.spheroid_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.spheroid_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Spheroid.parse(results?.[0].spheroid_in) );
@@ -3855,7 +3855,7 @@ async call(parameters : Public.Procedures.SpheroidOut.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.spheroid_out( ${ typed[35926](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.spheroid_out( ${ typed[35926](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].spheroid_out) );
@@ -3875,7 +3875,7 @@ async call(parameters : Public.Procedures.GeometryIn.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry_in) );
@@ -3895,7 +3895,7 @@ async call(parameters : Public.Procedures.GeometryOut.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_out( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_out( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].geometry_out) );
@@ -3915,7 +3915,7 @@ async call(parameters : Public.Procedures.GeometryTypmodIn.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_typmod_in( ${ typed[1263](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_typmod_in( ${ typed[1263](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].geometry_typmod_in) );
@@ -3935,7 +3935,7 @@ async call(parameters : Public.Procedures.GeometryTypmodOut.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_typmod_out( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_typmod_out( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].geometry_typmod_out) );
@@ -3955,7 +3955,7 @@ async call(parameters : Public.Procedures.GeometryAnalyze.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_analyze( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_analyze( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_analyze) );
@@ -3975,7 +3975,7 @@ async call(parameters : Public.Procedures.GeometryRecv.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_recv( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_recv( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry_recv) );
@@ -3995,7 +3995,7 @@ async call(parameters : Public.Procedures.GeometrySend.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_send( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_send( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].geometry_send) );
@@ -4015,7 +4015,7 @@ async call(parameters : Public.Procedures.GeometryEb4f.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry) );
@@ -4035,7 +4035,7 @@ async call(parameters : Public.Procedures.Geometry_8997.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[600](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[600](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry) );
@@ -4055,7 +4055,7 @@ async call(parameters : Public.Procedures.Point.Parameters, options?: InvokeQuer
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.point( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.point( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Point.parse(results?.[0].point) );
@@ -4075,7 +4075,7 @@ async call(parameters : Public.Procedures.GeometryB0d8.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[602](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[602](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry) );
@@ -4095,7 +4095,7 @@ async call(parameters : Public.Procedures.Path.Parameters, options?: InvokeQuery
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.path( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.path( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Path.parse(results?.[0].path) );
@@ -4115,7 +4115,7 @@ async call(parameters : Public.Procedures.GeometryF1be.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[604](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[604](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry) );
@@ -4135,7 +4135,7 @@ async call(parameters : Public.Procedures.Polygon.Parameters, options?: InvokeQu
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.polygon( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.polygon( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Polygon.parse(results?.[0].polygon) );
@@ -4155,7 +4155,7 @@ async call(parameters : Public.Procedures.StX.Parameters, options?: InvokeQueryO
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_x( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_x( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_x) );
@@ -4175,7 +4175,7 @@ async call(parameters : Public.Procedures.StY.Parameters, options?: InvokeQueryO
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_y( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_y( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_y) );
@@ -4195,7 +4195,7 @@ async call(parameters : Public.Procedures.StZ.Parameters, options?: InvokeQueryO
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_z( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_z( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_z) );
@@ -4215,7 +4215,7 @@ async call(parameters : Public.Procedures.StM.Parameters, options?: InvokeQueryO
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_m( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_m( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_m) );
@@ -4235,7 +4235,7 @@ async call(parameters : Public.Procedures.Box3dIn.Parameters, options?: InvokeQu
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.box3d_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box3d_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].box3d_in) );
@@ -4255,7 +4255,7 @@ async call(parameters : Public.Procedures.Box3dOut.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.box3d_out( ${ typed[35957](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box3d_out( ${ typed[35957](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].box3d_out) );
@@ -4275,7 +4275,7 @@ async call(parameters : Public.Procedures.Box2dIn.Parameters, options?: InvokeQu
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.box2d_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box2d_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].box2d_in) );
@@ -4295,7 +4295,7 @@ async call(parameters : Public.Procedures.Box2dOut.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.box2d_out( ${ typed[35961](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box2d_out( ${ typed[35961](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].box2d_out) );
@@ -4315,7 +4315,7 @@ async call(parameters : Public.Procedures.Box2dfIn.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.box2df_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box2df_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box2df.parse(results?.[0].box2df_in) );
@@ -4335,7 +4335,7 @@ async call(parameters : Public.Procedures.Box2dfOut.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.box2df_out( ${ typed[35965](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box2df_out( ${ typed[35965](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].box2df_out) );
@@ -4355,7 +4355,7 @@ async call(parameters : Public.Procedures.GidxIn.Parameters, options?: InvokeQue
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gidx_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gidx_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Gidx.parse(results?.[0].gidx_in) );
@@ -4375,7 +4375,7 @@ async call(parameters : Public.Procedures.GidxOut.Parameters, options?: InvokeQu
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gidx_out( ${ typed[35969](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gidx_out( ${ typed[35969](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].gidx_out) );
@@ -4395,7 +4395,7 @@ async call(parameters : Public.Procedures.GeometryLt.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_lt(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_lt(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_lt) );
@@ -4415,7 +4415,7 @@ async call(parameters : Public.Procedures.GeometryLe.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_le(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_le(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_le) );
@@ -4435,7 +4435,7 @@ async call(parameters : Public.Procedures.GeometryGt.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gt(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gt(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_gt) );
@@ -4455,7 +4455,7 @@ async call(parameters : Public.Procedures.GeometryGe.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_ge(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_ge(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_ge) );
@@ -4475,7 +4475,7 @@ async call(parameters : Public.Procedures.GeometryEq.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_eq(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_eq(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_eq) );
@@ -4495,7 +4495,7 @@ async call(parameters : Public.Procedures.GeometryCmp.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_cmp(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_cmp(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].geometry_cmp) );
@@ -4515,7 +4515,7 @@ async call(parameters : Public.Procedures.GeometrySortsupport.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_sortsupport( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_sortsupport( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_sortsupport) );
@@ -4535,7 +4535,7 @@ async call(parameters : Public.Procedures.GeometryHash.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_hash( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_hash( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].geometry_hash) );
@@ -4555,7 +4555,7 @@ async call(parameters : Public.Procedures.GeometryGistDistance_2d.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_distance_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_distance_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geometry_gist_distance_2d) );
@@ -4575,7 +4575,7 @@ async call(parameters : Public.Procedures.GeometryGistConsistent_2d.Parameters, 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_consistent_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_consistent_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_gist_consistent_2d) );
@@ -4595,7 +4595,7 @@ async call(parameters : Public.Procedures.GeometryGistCompress_2d.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_compress_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_compress_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_compress_2d) );
@@ -4615,7 +4615,7 @@ async call(parameters : Public.Procedures.GeometryGistPenalty_2d.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_penalty_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_penalty_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_penalty_2d) );
@@ -4635,7 +4635,7 @@ async call(parameters : Public.Procedures.GeometryGistPicksplit_2d.Parameters, o
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_picksplit_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_picksplit_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_picksplit_2d) );
@@ -4655,7 +4655,7 @@ async call(parameters : Public.Procedures.GeometryGistUnion_2d.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_union_2d( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_union_2d( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_union_2d) );
@@ -4675,7 +4675,7 @@ async call(parameters : Public.Procedures.GeometryGistSame_2d.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_same_2d(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_same_2d(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_same_2d) );
@@ -4695,7 +4695,7 @@ async call(parameters : Public.Procedures.GeometryGistDecompress_2d.Parameters, 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_decompress_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_decompress_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_decompress_2d) );
@@ -4715,7 +4715,7 @@ async call(parameters : Public.Procedures.GeometryGistSortsupport_2d.Parameters,
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_sortsupport_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_sortsupport_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_gist_sortsupport_2d) );
@@ -4735,7 +4735,7 @@ async call(parameters : Public.Procedures.StForcerhr.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_forcerhr( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_forcerhr( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_forcerhr) );
@@ -4755,7 +4755,7 @@ async call(parameters : Public.Procedures.PostgisNoop.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_noop( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_noop( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].postgis_noop) );
@@ -4775,7 +4775,7 @@ async call(parameters : Public.Procedures.StForcepolygonccw.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_forcepolygonccw( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_forcepolygonccw( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_forcepolygonccw) );
@@ -4795,7 +4795,7 @@ async call(parameters : Public.Procedures.GserializedGistSel_2d.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gserialized_gist_sel_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gserialized_gist_sel_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].gserialized_gist_sel_2d) );
@@ -4815,7 +4815,7 @@ async call(parameters : Public.Procedures.GserializedGistSelNd.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gserialized_gist_sel_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gserialized_gist_sel_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].gserialized_gist_sel_nd) );
@@ -4835,7 +4835,7 @@ async call(parameters : Public.Procedures.GserializedGistJoinsel_2d.Parameters, 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gserialized_gist_joinsel_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[21](undefinedIsNull(parameters.argument_3)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gserialized_gist_joinsel_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[21](undefinedIsNull(parameters.argument_3)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].gserialized_gist_joinsel_2d) );
@@ -4855,7 +4855,7 @@ async call(parameters : Public.Procedures.GserializedGistJoinselNd.Parameters, o
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gserialized_gist_joinsel_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[21](undefinedIsNull(parameters.argument_3)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gserialized_gist_joinsel_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[21](undefinedIsNull(parameters.argument_3)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].gserialized_gist_joinsel_nd) );
@@ -4875,7 +4875,7 @@ async call(parameters : Public.Procedures.GeometryOverlaps.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_overlaps(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_overlaps(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_overlaps) );
@@ -4895,7 +4895,7 @@ async call(parameters : Public.Procedures.GeometrySame.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_same(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_same(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_same) );
@@ -4915,7 +4915,7 @@ async call(parameters : Public.Procedures.GeometryDistanceCentroid.Parameters, o
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_distance_centroid(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_distance_centroid(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geometry_distance_centroid) );
@@ -4935,7 +4935,7 @@ async call(parameters : Public.Procedures.GeometryDistanceBox.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_distance_box(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_distance_box(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geometry_distance_box) );
@@ -4955,7 +4955,7 @@ async call(parameters : Public.Procedures.GeometryContains.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_contains(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_contains(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_contains) );
@@ -4975,7 +4975,7 @@ async call(parameters : Public.Procedures.GeometryWithin.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_within(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_within(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_within) );
@@ -4995,7 +4995,7 @@ async call(parameters : Public.Procedures.GeometryLeft.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_left(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_left(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_left) );
@@ -5015,7 +5015,7 @@ async call(parameters : Public.Procedures.GeometryOverleft.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_overleft(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_overleft(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_overleft) );
@@ -5035,7 +5035,7 @@ async call(parameters : Public.Procedures.GeometryBelow.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_below(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_below(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_below) );
@@ -5055,7 +5055,7 @@ async call(parameters : Public.Procedures.GeometryOverbelow.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_overbelow(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_overbelow(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_overbelow) );
@@ -5075,7 +5075,7 @@ async call(parameters : Public.Procedures.GeometryOverright.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_overright(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_overright(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_overright) );
@@ -5095,7 +5095,7 @@ async call(parameters : Public.Procedures.GeometryRight.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_right(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_right(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_right) );
@@ -5115,7 +5115,7 @@ async call(parameters : Public.Procedures.GeometryOverabove.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_overabove(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_overabove(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_overabove) );
@@ -5135,7 +5135,7 @@ async call(parameters : Public.Procedures.GeometryAbove.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_above(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_above(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_above) );
@@ -5155,7 +5155,7 @@ async call(parameters : Public.Procedures.GeometryGistConsistentNd.Parameters, o
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_consistent_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_consistent_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_gist_consistent_nd) );
@@ -5175,7 +5175,7 @@ async call(parameters : Public.Procedures.GeometryGistCompressNd.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_compress_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_compress_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_compress_nd) );
@@ -5195,7 +5195,7 @@ async call(parameters : Public.Procedures.GeometryGistPenaltyNd.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_penalty_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_penalty_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_penalty_nd) );
@@ -5215,7 +5215,7 @@ async call(parameters : Public.Procedures.GeometryGistPicksplitNd.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_picksplit_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_picksplit_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_picksplit_nd) );
@@ -5235,7 +5235,7 @@ async call(parameters : Public.Procedures.GeometryGistUnionNd.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_union_nd( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_union_nd( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_union_nd) );
@@ -5255,7 +5255,7 @@ async call(parameters : Public.Procedures.GeometryGistSameNd.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_same_nd( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_same_nd( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_same_nd) );
@@ -5275,7 +5275,7 @@ async call(parameters : Public.Procedures.GeometryGistDecompressNd.Parameters, o
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_decompress_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_decompress_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_gist_decompress_nd) );
@@ -5295,7 +5295,7 @@ async call(parameters : Public.Procedures.GeometryOverlapsNd.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_overlaps_nd( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_overlaps_nd( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_overlaps_nd) );
@@ -5315,7 +5315,7 @@ async call(parameters : Public.Procedures.GeometryContainsNd.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_contains_nd( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_contains_nd( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_contains_nd) );
@@ -5335,7 +5335,7 @@ async call(parameters : Public.Procedures.GeometryWithinNd.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_within_nd( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_within_nd( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_within_nd) );
@@ -5355,7 +5355,7 @@ async call(parameters : Public.Procedures.GeometrySameNd.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_same_nd( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_same_nd( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_same_nd) );
@@ -5375,7 +5375,7 @@ async call(parameters : Public.Procedures.GeometryDistanceCentroidNd.Parameters,
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_distance_centroid_nd( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_distance_centroid_nd( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geometry_distance_centroid_nd) );
@@ -5395,7 +5395,7 @@ async call(parameters : Public.Procedures.GeometryDistanceCpa.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_distance_cpa( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_distance_cpa( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geometry_distance_cpa) );
@@ -5415,7 +5415,7 @@ async call(parameters : Public.Procedures.GeometryGistDistanceNd.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_distance_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_gist_distance_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geometry_gist_distance_nd) );
@@ -5435,7 +5435,7 @@ async call(parameters : Public.Procedures.StShiftlongitude.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_shiftlongitude( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_shiftlongitude( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_shiftlongitude) );
@@ -5455,7 +5455,7 @@ async call(parameters : Public.Procedures.StWrapx.Parameters, options?: InvokeQu
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_wrapx(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },wrap => ${ typed[701](undefinedIsNull(parameters.wrap)) },move => ${ typed[701](undefinedIsNull(parameters.move)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_wrapx(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },wrap => ${ typed[701](undefinedIsNull(parameters.wrap)) },move => ${ typed[701](undefinedIsNull(parameters.move)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_wrapx) );
@@ -5475,7 +5475,7 @@ async call(parameters : Public.Procedures.StXmin.Parameters, options?: InvokeQue
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_xmin( ${ typed[35957](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_xmin( ${ typed[35957](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_xmin) );
@@ -5495,7 +5495,7 @@ async call(parameters : Public.Procedures.StYmin.Parameters, options?: InvokeQue
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_ymin( ${ typed[35957](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_ymin( ${ typed[35957](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_ymin) );
@@ -5515,7 +5515,7 @@ async call(parameters : Public.Procedures.StZmin.Parameters, options?: InvokeQue
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_zmin( ${ typed[35957](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_zmin( ${ typed[35957](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_zmin) );
@@ -5535,7 +5535,7 @@ async call(parameters : Public.Procedures.StXmax.Parameters, options?: InvokeQue
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_xmax( ${ typed[35957](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_xmax( ${ typed[35957](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_xmax) );
@@ -5555,7 +5555,7 @@ async call(parameters : Public.Procedures.StYmax.Parameters, options?: InvokeQue
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_ymax( ${ typed[35957](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_ymax( ${ typed[35957](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_ymax) );
@@ -5575,7 +5575,7 @@ async call(parameters : Public.Procedures.StZmax.Parameters, options?: InvokeQue
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_zmax( ${ typed[35957](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_zmax( ${ typed[35957](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_zmax) );
@@ -5595,7 +5595,7 @@ async call(parameters : Public.Procedures.StExpandC017.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_expand( ${ typed[35961](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_expand( ${ typed[35961](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_expand) );
@@ -5615,7 +5615,7 @@ async call(parameters : Public.Procedures.StExpand_6ae4.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_expand(box => ${ typed[35961](undefinedIsNull(parameters.box)) },dx => ${ typed[701](undefinedIsNull(parameters.dx)) },dy => ${ typed[701](undefinedIsNull(parameters.dy)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_expand(box => ${ typed[35961](undefinedIsNull(parameters.box)) },dx => ${ typed[701](undefinedIsNull(parameters.dx)) },dy => ${ typed[701](undefinedIsNull(parameters.dy)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_expand) );
@@ -5635,7 +5635,7 @@ async call(parameters : Public.Procedures.PostgisGetbbox.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_getbbox( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_getbbox( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].postgis_getbbox) );
@@ -5655,7 +5655,7 @@ async call(parameters : Public.Procedures.StMakebox2d.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makebox2d(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makebox2d(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_makebox2d) );
@@ -5675,7 +5675,7 @@ async call(parameters : Public.Procedures.StEstimatedextentD2f5.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_estimatedextent( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[16](undefinedIsNull(parameters.argument_3)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_estimatedextent( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[16](undefinedIsNull(parameters.argument_3)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_estimatedextent) );
@@ -5695,7 +5695,7 @@ async call(parameters : Public.Procedures.StEstimatedextent_27e1.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_estimatedextent( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_estimatedextent( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_estimatedextent) );
@@ -5715,7 +5715,7 @@ async call(parameters : Public.Procedures.StEstimatedextent_2ec2.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_estimatedextent( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_estimatedextent( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_estimatedextent) );
@@ -5735,7 +5735,7 @@ async call(parameters : Public.Procedures.StFindextent_27e1.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_findextent( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_findextent( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_findextent) );
@@ -5755,7 +5755,7 @@ async call(parameters : Public.Procedures.StFindextent_2ec2.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_findextent( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_findextent( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_findextent) );
@@ -5775,7 +5775,7 @@ async call(parameters : Public.Procedures.PostgisAddbbox.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_addbbox( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_addbbox( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].postgis_addbbox) );
@@ -5795,7 +5795,7 @@ async call(parameters : Public.Procedures.PostgisDropbbox.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_dropbbox( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_dropbbox( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].postgis_dropbbox) );
@@ -5815,7 +5815,7 @@ async call(parameters : Public.Procedures.PostgisHasbbox.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_hasbbox( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_hasbbox( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].postgis_hasbbox) );
@@ -5835,7 +5835,7 @@ async call(parameters : Public.Procedures.StQuantizecoordinates.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_quantizecoordinates(g => ${ typed[35930](undefinedIsNull(parameters.g)) },prec_x => ${ typed[23](undefinedIsNull(parameters.precX)) },prec_y => ${ typed[23](undefinedIsNull(parameters.precY)) },prec_z => ${ typed[23](undefinedIsNull(parameters.precZ)) },prec_m => ${ typed[23](undefinedIsNull(parameters.precM)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_quantizecoordinates(g => ${ typed[35930](undefinedIsNull(parameters.g)) },prec_x => ${ typed[23](undefinedIsNull(parameters.precX)) },prec_y => ${ typed[23](undefinedIsNull(parameters.precY)) },prec_z => ${ typed[23](undefinedIsNull(parameters.precZ)) },prec_m => ${ typed[23](undefinedIsNull(parameters.precM)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_quantizecoordinates) );
@@ -5855,7 +5855,7 @@ async call(parameters : Public.Procedures.StMemsize.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_memsize( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_memsize( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_memsize) );
@@ -5875,7 +5875,7 @@ async call(parameters : Public.Procedures.StSummary_5277.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_summary( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_summary( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_summary) );
@@ -5895,7 +5895,7 @@ async call(parameters : Public.Procedures.StNpoints.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_npoints( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_npoints( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_npoints) );
@@ -5915,7 +5915,7 @@ async call(parameters : Public.Procedures.StNrings.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_nrings( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_nrings( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_nrings) );
@@ -5935,7 +5935,7 @@ async call(parameters : Public.Procedures.St_3dlength.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dlength( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dlength( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_3dlength) );
@@ -5955,7 +5955,7 @@ async call(parameters : Public.Procedures.StLength2d.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_length2d( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_length2d( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_length2d) );
@@ -5975,7 +5975,7 @@ async call(parameters : Public.Procedures.StLength_5277.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_length( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_length( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_length) );
@@ -5995,7 +5995,7 @@ async call(parameters : Public.Procedures.StLengthspheroid.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lengthspheroid( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35926](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lengthspheroid( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35926](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_lengthspheroid) );
@@ -6015,7 +6015,7 @@ async call(parameters : Public.Procedures.StLength2dspheroid.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_length2dspheroid( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35926](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_length2dspheroid( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35926](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_length2dspheroid) );
@@ -6035,7 +6035,7 @@ async call(parameters : Public.Procedures.St_3dperimeter.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dperimeter( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dperimeter( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_3dperimeter) );
@@ -6055,7 +6055,7 @@ async call(parameters : Public.Procedures.StPerimeter2d.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_perimeter2d( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_perimeter2d( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_perimeter2d) );
@@ -6075,7 +6075,7 @@ async call(parameters : Public.Procedures.StPerimeter_5277.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_perimeter( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_perimeter( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_perimeter) );
@@ -6095,7 +6095,7 @@ async call(parameters : Public.Procedures.StArea2d.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_area2d( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_area2d( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_area2d) );
@@ -6115,7 +6115,7 @@ async call(parameters : Public.Procedures.StArea_5277.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_area( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_area( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_area) );
@@ -6135,7 +6135,7 @@ async call(parameters : Public.Procedures.StIspolygoncw.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_ispolygoncw( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_ispolygoncw( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_ispolygoncw) );
@@ -6155,7 +6155,7 @@ async call(parameters : Public.Procedures.StIspolygonccw.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_ispolygonccw( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_ispolygonccw( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_ispolygonccw) );
@@ -6175,7 +6175,7 @@ async call(parameters : Public.Procedures.StDistancespheroidDdc5.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distancespheroid(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[35926](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distancespheroid(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[35926](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distancespheroid) );
@@ -6195,7 +6195,7 @@ async call(parameters : Public.Procedures.StDistancespheroidBf41.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distancespheroid(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distancespheroid(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distancespheroid) );
@@ -6215,7 +6215,7 @@ async call(parameters : Public.Procedures.StDistanceBf41.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distance(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distance(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distance) );
@@ -6235,7 +6235,7 @@ async call(parameters : Public.Procedures.StPointinsidecircle.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointinsidecircle( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointinsidecircle( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_pointinsidecircle) );
@@ -6255,7 +6255,7 @@ async call(parameters : Public.Procedures.StAzimuthBf41.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_azimuth(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_azimuth(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_azimuth) );
@@ -6275,7 +6275,7 @@ async call(parameters : Public.Procedures.StProject_0263.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_project(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) },azimuth => ${ typed[701](undefinedIsNull(parameters.azimuth)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_project(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) },azimuth => ${ typed[701](undefinedIsNull(parameters.azimuth)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_project) );
@@ -6295,7 +6295,7 @@ async call(parameters : Public.Procedures.StProject_0130.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_project(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_project(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_project) );
@@ -6315,7 +6315,7 @@ async call(parameters : Public.Procedures.StAngle_3ed2.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_angle(pt1 => ${ typed[35930](undefinedIsNull(parameters.pt1)) },pt2 => ${ typed[35930](undefinedIsNull(parameters.pt2)) },pt3 => ${ typed[35930](undefinedIsNull(parameters.pt3)) },pt4 => ${ typed[35930](undefinedIsNull(parameters.pt4)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_angle(pt1 => ${ typed[35930](undefinedIsNull(parameters.pt1)) },pt2 => ${ typed[35930](undefinedIsNull(parameters.pt2)) },pt3 => ${ typed[35930](undefinedIsNull(parameters.pt3)) },pt4 => ${ typed[35930](undefinedIsNull(parameters.pt4)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_angle) );
@@ -6335,7 +6335,7 @@ async call(parameters : Public.Procedures.StLineextend.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lineextend(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },distance_forward => ${ typed[701](undefinedIsNull(parameters.distanceForward)) },distance_backward => ${ typed[701](undefinedIsNull(parameters.distanceBackward)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lineextend(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },distance_forward => ${ typed[701](undefinedIsNull(parameters.distanceForward)) },distance_backward => ${ typed[701](undefinedIsNull(parameters.distanceBackward)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_lineextend) );
@@ -6355,7 +6355,7 @@ async call(parameters : Public.Procedures.StForce2d.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_force2d( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_force2d( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_force2d) );
@@ -6375,7 +6375,7 @@ async call(parameters : Public.Procedures.StForce3dz.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_force3dz(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },zvalue => ${ typed[701](undefinedIsNull(parameters.zvalue)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_force3dz(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },zvalue => ${ typed[701](undefinedIsNull(parameters.zvalue)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_force3dz) );
@@ -6395,7 +6395,7 @@ async call(parameters : Public.Procedures.StForce3d.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_force3d(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },zvalue => ${ typed[701](undefinedIsNull(parameters.zvalue)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_force3d(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },zvalue => ${ typed[701](undefinedIsNull(parameters.zvalue)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_force3d) );
@@ -6415,7 +6415,7 @@ async call(parameters : Public.Procedures.StForce3dm.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_force3dm(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },mvalue => ${ typed[701](undefinedIsNull(parameters.mvalue)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_force3dm(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },mvalue => ${ typed[701](undefinedIsNull(parameters.mvalue)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_force3dm) );
@@ -6435,7 +6435,7 @@ async call(parameters : Public.Procedures.StForce4d.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_force4d(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },zvalue => ${ typed[701](undefinedIsNull(parameters.zvalue)) },mvalue => ${ typed[701](undefinedIsNull(parameters.mvalue)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_force4d(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },zvalue => ${ typed[701](undefinedIsNull(parameters.zvalue)) },mvalue => ${ typed[701](undefinedIsNull(parameters.mvalue)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_force4d) );
@@ -6455,7 +6455,7 @@ async call(parameters : Public.Procedures.StForcecollection.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_forcecollection( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_forcecollection( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_forcecollection) );
@@ -6475,7 +6475,7 @@ async call(parameters : Public.Procedures.StCollectionextract_0495.Parameters, o
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_collectionextract( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_collectionextract( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_collectionextract) );
@@ -6495,7 +6495,7 @@ async call(parameters : Public.Procedures.StCollectionextract_5277.Parameters, o
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_collectionextract( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_collectionextract( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_collectionextract) );
@@ -6515,7 +6515,7 @@ async call(parameters : Public.Procedures.StCollectionhomogenize.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_collectionhomogenize( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_collectionhomogenize( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_collectionhomogenize) );
@@ -6535,7 +6535,7 @@ async call(parameters : Public.Procedures.StMulti.Parameters, options?: InvokeQu
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multi( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multi( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multi) );
@@ -6555,7 +6555,7 @@ async call(parameters : Public.Procedures.StForcecurve.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_forcecurve( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_forcecurve( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_forcecurve) );
@@ -6575,7 +6575,7 @@ async call(parameters : Public.Procedures.StForcesfs_5277.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_forcesfs( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_forcesfs( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_forcesfs) );
@@ -6595,7 +6595,7 @@ async call(parameters : Public.Procedures.StForcesfs_0f45.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_forcesfs(argument_0 => ${ typed[35930](undefinedIsNull(parameters.argument_0)) },version => ${ typed[25](undefinedIsNull(parameters.version)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_forcesfs(argument_0 => ${ typed[35930](undefinedIsNull(parameters.argument_0)) },version => ${ typed[25](undefinedIsNull(parameters.version)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_forcesfs) );
@@ -6615,7 +6615,7 @@ async call(parameters : Public.Procedures.StExpandFd4b.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_expand( ${ typed[35957](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_expand( ${ typed[35957](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].st_expand) );
@@ -6635,7 +6635,7 @@ async call(parameters : Public.Procedures.StExpandA297.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_expand(box => ${ typed[35957](undefinedIsNull(parameters.box)) },dx => ${ typed[701](undefinedIsNull(parameters.dx)) },dy => ${ typed[701](undefinedIsNull(parameters.dy)) },dz => ${ typed[701](undefinedIsNull(parameters.dz)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_expand(box => ${ typed[35957](undefinedIsNull(parameters.box)) },dx => ${ typed[701](undefinedIsNull(parameters.dx)) },dy => ${ typed[701](undefinedIsNull(parameters.dy)) },dz => ${ typed[701](undefinedIsNull(parameters.dz)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].st_expand) );
@@ -6655,7 +6655,7 @@ async call(parameters : Public.Procedures.StExpandD0fc.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_expand( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_expand( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_expand) );
@@ -6675,7 +6675,7 @@ async call(parameters : Public.Procedures.StExpand_435c.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_expand(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },dx => ${ typed[701](undefinedIsNull(parameters.dx)) },dy => ${ typed[701](undefinedIsNull(parameters.dy)) },dz => ${ typed[701](undefinedIsNull(parameters.dz)) },dm => ${ typed[701](undefinedIsNull(parameters.dm)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_expand(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },dx => ${ typed[701](undefinedIsNull(parameters.dx)) },dy => ${ typed[701](undefinedIsNull(parameters.dy)) },dz => ${ typed[701](undefinedIsNull(parameters.dz)) },dm => ${ typed[701](undefinedIsNull(parameters.dm)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_expand) );
@@ -6695,7 +6695,7 @@ async call(parameters : Public.Procedures.StEnvelope.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_envelope( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_envelope( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_envelope) );
@@ -6715,7 +6715,7 @@ async call(parameters : Public.Procedures.StBoundingdiagonal.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_boundingdiagonal(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },fits => ${ typed[16](undefinedIsNull(parameters.fits)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_boundingdiagonal(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },fits => ${ typed[16](undefinedIsNull(parameters.fits)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_boundingdiagonal) );
@@ -6735,7 +6735,7 @@ async call(parameters : Public.Procedures.StReverse.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_reverse( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_reverse( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_reverse) );
@@ -6755,7 +6755,7 @@ async call(parameters : Public.Procedures.StScroll.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_scroll( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_scroll( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_scroll) );
@@ -6775,7 +6775,7 @@ async call(parameters : Public.Procedures.PostgisGeosNoop.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_geos_noop( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_geos_noop( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].postgis_geos_noop) );
@@ -6795,7 +6795,7 @@ async call(parameters : Public.Procedures.StNormalize.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_normalize(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_normalize(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_normalize) );
@@ -6815,7 +6815,7 @@ async call(parameters : Public.Procedures.StZmflag.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_zmflag( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_zmflag( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int2.parse(results?.[0].st_zmflag) );
@@ -6835,7 +6835,7 @@ async call(parameters : Public.Procedures.StNdims.Parameters, options?: InvokeQu
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_ndims( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_ndims( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int2.parse(results?.[0].st_ndims) );
@@ -6855,7 +6855,7 @@ async call(parameters : Public.Procedures.StAsewkt_5277.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asewkt( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asewkt( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asewkt) );
@@ -6875,7 +6875,7 @@ async call(parameters : Public.Procedures.StAsewkt_0495.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asewkt( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asewkt( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asewkt) );
@@ -6895,7 +6895,7 @@ async call(parameters : Public.Procedures.StAstwkbCe6d.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_astwkb(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },prec => ${ typed[23](undefinedIsNull(parameters.prec)) },prec_z => ${ typed[23](undefinedIsNull(parameters.precZ)) },prec_m => ${ typed[23](undefinedIsNull(parameters.precM)) },with_sizes => ${ typed[16](undefinedIsNull(parameters.withSizes)) },with_boxes => ${ typed[16](undefinedIsNull(parameters.withBoxes)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_astwkb(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },prec => ${ typed[23](undefinedIsNull(parameters.prec)) },prec_z => ${ typed[23](undefinedIsNull(parameters.precZ)) },prec_m => ${ typed[23](undefinedIsNull(parameters.precM)) },with_sizes => ${ typed[16](undefinedIsNull(parameters.withSizes)) },with_boxes => ${ typed[16](undefinedIsNull(parameters.withBoxes)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_astwkb) );
@@ -6915,7 +6915,7 @@ async call(parameters : Public.Procedures.StAstwkb_609d.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_astwkb(geom => ${ typed[35938](undefinedIsNull(parameters.geom)) },ids => ${ typed[1016](undefinedIsNull(parameters.ids)) },prec => ${ typed[23](undefinedIsNull(parameters.prec)) },prec_z => ${ typed[23](undefinedIsNull(parameters.precZ)) },prec_m => ${ typed[23](undefinedIsNull(parameters.precM)) },with_sizes => ${ typed[16](undefinedIsNull(parameters.withSizes)) },with_boxes => ${ typed[16](undefinedIsNull(parameters.withBoxes)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_astwkb(geom => ${ typed[35938](undefinedIsNull(parameters.geom)) },ids => ${ typed[1016](undefinedIsNull(parameters.ids)) },prec => ${ typed[23](undefinedIsNull(parameters.prec)) },prec_z => ${ typed[23](undefinedIsNull(parameters.precZ)) },prec_m => ${ typed[23](undefinedIsNull(parameters.precM)) },with_sizes => ${ typed[16](undefinedIsNull(parameters.withSizes)) },with_boxes => ${ typed[16](undefinedIsNull(parameters.withBoxes)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_astwkb) );
@@ -6935,7 +6935,7 @@ async call(parameters : Public.Procedures.StAsewkb_5277.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asewkb( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asewkb( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_asewkb) );
@@ -6955,7 +6955,7 @@ async call(parameters : Public.Procedures.StAshexewkb_5277.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_ashexewkb( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_ashexewkb( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_ashexewkb) );
@@ -6975,7 +6975,7 @@ async call(parameters : Public.Procedures.StAshexewkb_0f45.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_ashexewkb( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_ashexewkb( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_ashexewkb) );
@@ -6995,7 +6995,7 @@ async call(parameters : Public.Procedures.StAsewkb_0f45.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asewkb( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asewkb( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_asewkb) );
@@ -7015,7 +7015,7 @@ async call(parameters : Public.Procedures.StAslatlontext.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_aslatlontext(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },tmpl => ${ typed[25](undefinedIsNull(parameters.tmpl)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_aslatlontext(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },tmpl => ${ typed[25](undefinedIsNull(parameters.tmpl)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_aslatlontext) );
@@ -7035,7 +7035,7 @@ async call(parameters : Public.Procedures.Geomfromewkb.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geomfromewkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geomfromewkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geomfromewkb) );
@@ -7055,7 +7055,7 @@ async call(parameters : Public.Procedures.StGeomfromewkb.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromewkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromewkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromewkb) );
@@ -7075,7 +7075,7 @@ async call(parameters : Public.Procedures.StGeomfromtwkb.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromtwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromtwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromtwkb) );
@@ -7095,7 +7095,7 @@ async call(parameters : Public.Procedures.Geomfromewkt.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geomfromewkt( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geomfromewkt( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geomfromewkt) );
@@ -7115,7 +7115,7 @@ async call(parameters : Public.Procedures.StGeomfromewkt.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromewkt( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromewkt( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromewkt) );
@@ -7135,7 +7135,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_cache_bbox()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_cache_bbox()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Trigger.parse(results?.[0].postgis_cache_bbox) );
@@ -7155,7 +7155,7 @@ async call(parameters : Public.Procedures.StMakepoint_0aec.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makepoint( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makepoint( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makepoint) );
@@ -7175,7 +7175,7 @@ async call(parameters : Public.Procedures.StMakepoint_81ec.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makepoint( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makepoint( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makepoint) );
@@ -7195,7 +7195,7 @@ async call(parameters : Public.Procedures.StMakepoint_570b.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makepoint( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makepoint( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makepoint) );
@@ -7215,7 +7215,7 @@ async call(parameters : Public.Procedures.StMakepointm.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makepointm( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makepointm( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makepointm) );
@@ -7235,7 +7235,7 @@ async call(parameters : Public.Procedures.St_3dmakebox.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dmakebox(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dmakebox(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].st_3dmakebox) );
@@ -7255,7 +7255,7 @@ async call(parameters : Public.Procedures.StMakeline_7469.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makeline( ${ typed[35938](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makeline( ${ typed[35938](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makeline) );
@@ -7275,7 +7275,7 @@ async call(parameters : Public.Procedures.StLinefrommultipoint.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linefrommultipoint( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linefrommultipoint( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linefrommultipoint) );
@@ -7295,7 +7295,7 @@ async call(parameters : Public.Procedures.StMakelineBf41.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makeline(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makeline(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makeline) );
@@ -7315,7 +7315,7 @@ async call(parameters : Public.Procedures.StAddpointBf41.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_addpoint(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_addpoint(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_addpoint) );
@@ -7335,7 +7335,7 @@ async call(parameters : Public.Procedures.StScale_0263.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_scale( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_scale( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_scale) );
@@ -7355,7 +7355,7 @@ async call(parameters : Public.Procedures.StAddpoint_5d32.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_addpoint(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_addpoint(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_addpoint) );
@@ -7375,7 +7375,7 @@ async call(parameters : Public.Procedures.StRemovepoint.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_removepoint( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_removepoint( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_removepoint) );
@@ -7395,7 +7395,7 @@ async call(parameters : Public.Procedures.StSetpoint.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_setpoint( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[35930](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_setpoint( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[35930](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_setpoint) );
@@ -7415,7 +7415,7 @@ async call(parameters : Public.Procedures.StMakeenvelope.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makeenvelope( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[23](undefinedIsNull(parameters.argument_4)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makeenvelope( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[23](undefinedIsNull(parameters.argument_4)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makeenvelope) );
@@ -7435,7 +7435,7 @@ async call(parameters : Public.Procedures.StTileenvelope.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_tileenvelope(zoom => ${ typed[23](undefinedIsNull(parameters.zoom)) },x => ${ typed[23](undefinedIsNull(parameters.x)) },y => ${ typed[23](undefinedIsNull(parameters.y)) },bounds => ${ typed[35930](undefinedIsNull(parameters.bounds)) },margin => ${ typed[701](undefinedIsNull(parameters.margin)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_tileenvelope(zoom => ${ typed[23](undefinedIsNull(parameters.zoom)) },x => ${ typed[23](undefinedIsNull(parameters.x)) },y => ${ typed[23](undefinedIsNull(parameters.y)) },bounds => ${ typed[35930](undefinedIsNull(parameters.bounds)) },margin => ${ typed[701](undefinedIsNull(parameters.margin)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_tileenvelope) );
@@ -7455,7 +7455,7 @@ async call(parameters : Public.Procedures.StMakepolygonAe56.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makepolygon( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35938](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makepolygon( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35938](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makepolygon) );
@@ -7475,7 +7475,7 @@ async call(parameters : Public.Procedures.StMakepolygon_5277.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makepolygon( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makepolygon( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makepolygon) );
@@ -7495,7 +7495,7 @@ async call(parameters : Public.Procedures.StBuildarea.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buildarea( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buildarea( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_buildarea) );
@@ -7515,7 +7515,7 @@ async call(parameters : Public.Procedures.StPolygonize_7469.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polygonize( ${ typed[35938](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polygonize( ${ typed[35938](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_polygonize) );
@@ -7535,7 +7535,7 @@ async call(parameters : Public.Procedures.StClusterintersecting_7469.Parameters,
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_clusterintersecting( ${ typed[35938](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_clusterintersecting( ${ typed[35938](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.GeometryArray.parse(results?.[0].st_clusterintersecting) );
@@ -7555,7 +7555,7 @@ async call(parameters : Public.Procedures.StClusterwithinF01d.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_clusterwithin( ${ typed[35938](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_clusterwithin( ${ typed[35938](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.GeometryArray.parse(results?.[0].st_clusterwithin) );
@@ -7575,7 +7575,7 @@ async call(parameters : Public.Procedures.StLinemerge_5277.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linemerge( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linemerge( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linemerge) );
@@ -7595,7 +7595,7 @@ async call(parameters : Public.Procedures.StLinemerge_7ad4.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linemerge( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[16](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linemerge( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[16](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linemerge) );
@@ -7615,7 +7615,7 @@ async call(parameters : Public.Procedures.StAffineFeed.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_affine( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) }, ${ typed[701](undefinedIsNull(parameters.argument_5)) }, ${ typed[701](undefinedIsNull(parameters.argument_6)) }, ${ typed[701](undefinedIsNull(parameters.argument_7)) }, ${ typed[701](undefinedIsNull(parameters.argument_8)) }, ${ typed[701](undefinedIsNull(parameters.argument_9)) }, ${ typed[701](undefinedIsNull(parameters.argument_10)) }, ${ typed[701](undefinedIsNull(parameters.argument_11)) }, ${ typed[701](undefinedIsNull(parameters.argument_12)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_affine( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) }, ${ typed[701](undefinedIsNull(parameters.argument_5)) }, ${ typed[701](undefinedIsNull(parameters.argument_6)) }, ${ typed[701](undefinedIsNull(parameters.argument_7)) }, ${ typed[701](undefinedIsNull(parameters.argument_8)) }, ${ typed[701](undefinedIsNull(parameters.argument_9)) }, ${ typed[701](undefinedIsNull(parameters.argument_10)) }, ${ typed[701](undefinedIsNull(parameters.argument_11)) }, ${ typed[701](undefinedIsNull(parameters.argument_12)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_affine) );
@@ -7635,7 +7635,7 @@ async call(parameters : Public.Procedures.StAffineC9bc.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_affine( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) }, ${ typed[701](undefinedIsNull(parameters.argument_5)) }, ${ typed[701](undefinedIsNull(parameters.argument_6)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_affine( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) }, ${ typed[701](undefinedIsNull(parameters.argument_5)) }, ${ typed[701](undefinedIsNull(parameters.argument_6)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_affine) );
@@ -7655,7 +7655,7 @@ async call(parameters : Public.Procedures.StRotateD0fc.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_rotate( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_rotate( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_rotate) );
@@ -7675,7 +7675,7 @@ async call(parameters : Public.Procedures.StRotate_365c.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_rotate( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_rotate( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_rotate) );
@@ -7695,7 +7695,7 @@ async call(parameters : Public.Procedures.StRotateF55c.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_rotate( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[35930](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_rotate( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[35930](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_rotate) );
@@ -7715,7 +7715,7 @@ async call(parameters : Public.Procedures.StRotatez.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_rotatez( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_rotatez( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_rotatez) );
@@ -7735,7 +7735,7 @@ async call(parameters : Public.Procedures.StRotatex.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_rotatex( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_rotatex( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_rotatex) );
@@ -7755,7 +7755,7 @@ async call(parameters : Public.Procedures.StRotatey.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_rotatey( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_rotatey( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_rotatey) );
@@ -7775,7 +7775,7 @@ async call(parameters : Public.Procedures.StTranslate_365c.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_translate( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_translate( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_translate) );
@@ -7795,7 +7795,7 @@ async call(parameters : Public.Procedures.StTranslate_0263.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_translate( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_translate( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_translate) );
@@ -7815,7 +7815,7 @@ async call(parameters : Public.Procedures.StScaleBf41.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_scale( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_scale( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_scale) );
@@ -7835,7 +7835,7 @@ async call(parameters : Public.Procedures.StScaleF9c1.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_scale(argument_0 => ${ typed[35930](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[35930](undefinedIsNull(parameters.argument_1)) },origin => ${ typed[35930](undefinedIsNull(parameters.origin)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_scale(argument_0 => ${ typed[35930](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[35930](undefinedIsNull(parameters.argument_1)) },origin => ${ typed[35930](undefinedIsNull(parameters.origin)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_scale) );
@@ -7855,7 +7855,7 @@ async call(parameters : Public.Procedures.StScale_365c.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_scale( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_scale( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_scale) );
@@ -7875,7 +7875,7 @@ async call(parameters : Public.Procedures.StTransscale.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_transscale( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_transscale( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_transscale) );
@@ -7895,7 +7895,7 @@ async call(parameters : Public.Procedures.StDump.Parameters, options?: InvokeQue
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dump( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dump( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_dump)).filter<Public.Types.GeometryDump>((r):r is Public.Types.GeometryDump => r !== null) );
@@ -7915,7 +7915,7 @@ async call(parameters : Public.Procedures.StDumprings.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dumprings( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dumprings( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_dumprings)).filter<Public.Types.GeometryDump>((r):r is Public.Types.GeometryDump => r !== null) );
@@ -7935,7 +7935,7 @@ async call(parameters : Public.Procedures.StDumppoints.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dumppoints( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dumppoints( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_dumppoints)).filter<Public.Types.GeometryDump>((r):r is Public.Types.GeometryDump => r !== null) );
@@ -7955,7 +7955,7 @@ async call(parameters : Public.Procedures.StDumpsegments.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dumpsegments( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dumpsegments( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_dumpsegments)).filter<Public.Types.GeometryDump>((r):r is Public.Types.GeometryDump => r !== null) );
@@ -7975,7 +7975,7 @@ async call(parameters : Public.Procedures.PopulateGeometryColumns_23fc.Parameter
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.populate_geometry_columns(use_typmod => ${ typed[16](undefinedIsNull(parameters.useTypmod)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.populate_geometry_columns(use_typmod => ${ typed[16](undefinedIsNull(parameters.useTypmod)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].populate_geometry_columns) );
@@ -7995,7 +7995,7 @@ async call(parameters : Public.Procedures.PopulateGeometryColumns_4174.Parameter
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.populate_geometry_columns(tbl_oid => ${ typed[26](undefinedIsNull(parameters.tblOid)) },use_typmod => ${ typed[16](undefinedIsNull(parameters.useTypmod)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.populate_geometry_columns(tbl_oid => ${ typed[26](undefinedIsNull(parameters.tblOid)) },use_typmod => ${ typed[16](undefinedIsNull(parameters.useTypmod)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].populate_geometry_columns) );
@@ -8015,7 +8015,7 @@ async call(parameters : Public.Procedures.Addgeometrycolumn_8fbb.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.addgeometrycolumn(catalog_name => ${ typed[1043](undefinedIsNull(parameters.catalogName)) },schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) },new_srid_in => ${ typed[23](undefinedIsNull(parameters.newSridIn)) },new_type => ${ typed[1043](undefinedIsNull(parameters.newType)) },new_dim => ${ typed[23](undefinedIsNull(parameters.newDim)) },use_typmod => ${ typed[16](undefinedIsNull(parameters.useTypmod)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.addgeometrycolumn(catalog_name => ${ typed[1043](undefinedIsNull(parameters.catalogName)) },schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) },new_srid_in => ${ typed[23](undefinedIsNull(parameters.newSridIn)) },new_type => ${ typed[1043](undefinedIsNull(parameters.newType)) },new_dim => ${ typed[23](undefinedIsNull(parameters.newDim)) },use_typmod => ${ typed[16](undefinedIsNull(parameters.useTypmod)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].addgeometrycolumn) );
@@ -8035,7 +8035,7 @@ async call(parameters : Public.Procedures.Addgeometrycolumn_4617.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.addgeometrycolumn(schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) },new_srid => ${ typed[23](undefinedIsNull(parameters.newSrid)) },new_type => ${ typed[1043](undefinedIsNull(parameters.newType)) },new_dim => ${ typed[23](undefinedIsNull(parameters.newDim)) },use_typmod => ${ typed[16](undefinedIsNull(parameters.useTypmod)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.addgeometrycolumn(schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) },new_srid => ${ typed[23](undefinedIsNull(parameters.newSrid)) },new_type => ${ typed[1043](undefinedIsNull(parameters.newType)) },new_dim => ${ typed[23](undefinedIsNull(parameters.newDim)) },use_typmod => ${ typed[16](undefinedIsNull(parameters.useTypmod)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].addgeometrycolumn) );
@@ -8055,7 +8055,7 @@ async call(parameters : Public.Procedures.Addgeometrycolumn_093c.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.addgeometrycolumn(table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) },new_srid => ${ typed[23](undefinedIsNull(parameters.newSrid)) },new_type => ${ typed[1043](undefinedIsNull(parameters.newType)) },new_dim => ${ typed[23](undefinedIsNull(parameters.newDim)) },use_typmod => ${ typed[16](undefinedIsNull(parameters.useTypmod)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.addgeometrycolumn(table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) },new_srid => ${ typed[23](undefinedIsNull(parameters.newSrid)) },new_type => ${ typed[1043](undefinedIsNull(parameters.newType)) },new_dim => ${ typed[23](undefinedIsNull(parameters.newDim)) },use_typmod => ${ typed[16](undefinedIsNull(parameters.useTypmod)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].addgeometrycolumn) );
@@ -8075,7 +8075,7 @@ async call(parameters : Public.Procedures.Dropgeometrycolumn_0412.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.dropgeometrycolumn(catalog_name => ${ typed[1043](undefinedIsNull(parameters.catalogName)) },schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.dropgeometrycolumn(catalog_name => ${ typed[1043](undefinedIsNull(parameters.catalogName)) },schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].dropgeometrycolumn) );
@@ -8095,7 +8095,7 @@ async call(parameters : Public.Procedures.Dropgeometrycolumn_2253.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.dropgeometrycolumn(schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.dropgeometrycolumn(schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].dropgeometrycolumn) );
@@ -8115,7 +8115,7 @@ async call(parameters : Public.Procedures.DropgeometrycolumnF11a.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.dropgeometrycolumn(table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.dropgeometrycolumn(table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].dropgeometrycolumn) );
@@ -8135,7 +8135,7 @@ async call(parameters : Public.Procedures.Dropgeometrytable_2253.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.dropgeometrytable(catalog_name => ${ typed[1043](undefinedIsNull(parameters.catalogName)) },schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.dropgeometrytable(catalog_name => ${ typed[1043](undefinedIsNull(parameters.catalogName)) },schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].dropgeometrytable) );
@@ -8155,7 +8155,7 @@ async call(parameters : Public.Procedures.StSegmentizeD0fc.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_segmentize( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_segmentize( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_segmentize) );
@@ -8175,7 +8175,7 @@ async call(parameters : Public.Procedures.DropgeometrytableF11a.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.dropgeometrytable(schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.dropgeometrytable(schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].dropgeometrytable) );
@@ -8195,7 +8195,7 @@ async call(parameters : Public.Procedures.DropgeometrytableBfde.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.dropgeometrytable(table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.dropgeometrytable(table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].dropgeometrytable) );
@@ -8215,7 +8215,7 @@ async call(parameters : Public.Procedures.UpdategeometrysridB2ee.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.updategeometrysrid(catalogn_name => ${ typed[1043](undefinedIsNull(parameters.catalognName)) },schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) },new_srid_in => ${ typed[23](undefinedIsNull(parameters.newSridIn)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.updategeometrysrid(catalogn_name => ${ typed[1043](undefinedIsNull(parameters.catalognName)) },schema_name => ${ typed[1043](undefinedIsNull(parameters.schemaName)) },table_name => ${ typed[1043](undefinedIsNull(parameters.tableName)) },column_name => ${ typed[1043](undefinedIsNull(parameters.columnName)) },new_srid_in => ${ typed[23](undefinedIsNull(parameters.newSridIn)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].updategeometrysrid) );
@@ -8235,7 +8235,7 @@ async call(parameters : Public.Procedures.Updategeometrysrid_7b58.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.updategeometrysrid( ${ typed[1043](undefinedIsNull(parameters.argument_0)) }, ${ typed[1043](undefinedIsNull(parameters.argument_1)) }, ${ typed[1043](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.updategeometrysrid( ${ typed[1043](undefinedIsNull(parameters.argument_0)) }, ${ typed[1043](undefinedIsNull(parameters.argument_1)) }, ${ typed[1043](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].updategeometrysrid) );
@@ -8255,7 +8255,7 @@ async call(parameters : Public.Procedures.Updategeometrysrid_11c8.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.updategeometrysrid( ${ typed[1043](undefinedIsNull(parameters.argument_0)) }, ${ typed[1043](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.updategeometrysrid( ${ typed[1043](undefinedIsNull(parameters.argument_0)) }, ${ typed[1043](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].updategeometrysrid) );
@@ -8275,7 +8275,7 @@ async call(parameters : Public.Procedures.FindSrid.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.find_srid( ${ typed[1043](undefinedIsNull(parameters.argument_0)) }, ${ typed[1043](undefinedIsNull(parameters.argument_1)) }, ${ typed[1043](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.find_srid( ${ typed[1043](undefinedIsNull(parameters.argument_0)) }, ${ typed[1043](undefinedIsNull(parameters.argument_1)) }, ${ typed[1043](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].find_srid) );
@@ -8295,7 +8295,7 @@ async call(parameters : Public.Procedures.GetProj4FromSrid.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.get_proj4_from_srid( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.get_proj4_from_srid( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].get_proj4_from_srid) );
@@ -8315,7 +8315,7 @@ async call(parameters : Public.Procedures.StSetsrid_0495.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_setsrid(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_setsrid(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_setsrid) );
@@ -8335,7 +8335,7 @@ async call(parameters : Public.Procedures.StSrid_5277.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_srid(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_srid(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_srid) );
@@ -8355,7 +8355,7 @@ async call(parameters : Public.Procedures.PostgisTransformGeometry.Parameters, o
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_transform_geometry(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },argument_1 => ${ typed[25](undefinedIsNull(parameters.argument_1)) },argument_2 => ${ typed[25](undefinedIsNull(parameters.argument_2)) },argument_3 => ${ typed[23](undefinedIsNull(parameters.argument_3)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_transform_geometry(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },argument_1 => ${ typed[25](undefinedIsNull(parameters.argument_1)) },argument_2 => ${ typed[25](undefinedIsNull(parameters.argument_2)) },argument_3 => ${ typed[23](undefinedIsNull(parameters.argument_3)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].postgis_transform_geometry) );
@@ -8375,7 +8375,7 @@ async call(parameters : Public.Procedures.PostgisSrsCodes.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_srs_codes(auth_name => ${ typed[25](undefinedIsNull(parameters.authName)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_srs_codes(auth_name => ${ typed[25](undefinedIsNull(parameters.authName)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.postgis_srs_codes)).filter<PgCatalog.Types.Text>((r):r is PgCatalog.Types.Text => r !== null) );
@@ -8394,7 +8394,7 @@ async call(parameters : Public.Procedures.PostgisSrs.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_srs(auth_name => ${ typed[25](undefinedIsNull(parameters.authName)) },auth_srid => ${ typed[25](undefinedIsNull(parameters.authSrid)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_srs(auth_name => ${ typed[25](undefinedIsNull(parameters.authName)) },auth_srid => ${ typed[25](undefinedIsNull(parameters.authSrid)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.postgis_srs)).filter<Public.Types.PostgisSrs>((r):r is Public.Types.PostgisSrs => r !== null) );
@@ -8413,7 +8413,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_srs_all()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_srs_all()`, {options});
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.postgis_srs_all)).filter<Public.Types.PostgisSrsAll>((r):r is Public.Types.PostgisSrsAll => r !== null) );
@@ -8432,7 +8432,7 @@ async call(parameters : Public.Procedures.PostgisSrsSearch.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_srs_search(bounds => ${ typed[35930](undefinedIsNull(parameters.bounds)) },authname => ${ typed[25](undefinedIsNull(parameters.authname)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_srs_search(bounds => ${ typed[35930](undefinedIsNull(parameters.bounds)) },authname => ${ typed[25](undefinedIsNull(parameters.authname)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.postgis_srs_search)).filter<Public.Types.PostgisSrsSearch>((r):r is Public.Types.PostgisSrsSearch => r !== null) );
@@ -8452,7 +8452,7 @@ async call(parameters : Public.Procedures.StTransform_0495.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_transform( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_transform( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_transform) );
@@ -8472,7 +8472,7 @@ async call(parameters : Public.Procedures.StTransform_0f45.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_transform(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },to_proj => ${ typed[25](undefinedIsNull(parameters.toProj)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_transform(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },to_proj => ${ typed[25](undefinedIsNull(parameters.toProj)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_transform) );
@@ -8492,7 +8492,7 @@ async call(parameters : Public.Procedures.StTransformCaaf.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_transform(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },from_proj => ${ typed[25](undefinedIsNull(parameters.fromProj)) },to_proj => ${ typed[25](undefinedIsNull(parameters.toProj)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_transform(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },from_proj => ${ typed[25](undefinedIsNull(parameters.fromProj)) },to_proj => ${ typed[25](undefinedIsNull(parameters.toProj)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_transform) );
@@ -8512,7 +8512,7 @@ async call(parameters : Public.Procedures.StTransform_57ea.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_transform(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },from_proj => ${ typed[25](undefinedIsNull(parameters.fromProj)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_transform(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },from_proj => ${ typed[25](undefinedIsNull(parameters.fromProj)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_transform) );
@@ -8532,7 +8532,7 @@ async call(parameters : Public.Procedures.PostgisTransformPipelineGeometry.Param
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_transform_pipeline_geometry(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },pipeline => ${ typed[25](undefinedIsNull(parameters.pipeline)) },forward => ${ typed[16](undefinedIsNull(parameters.forward)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_transform_pipeline_geometry(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },pipeline => ${ typed[25](undefinedIsNull(parameters.pipeline)) },forward => ${ typed[16](undefinedIsNull(parameters.forward)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].postgis_transform_pipeline_geometry) );
@@ -8552,7 +8552,7 @@ async call(parameters : Public.Procedures.StTransformpipeline.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_transformpipeline(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },pipeline => ${ typed[25](undefinedIsNull(parameters.pipeline)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_transformpipeline(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },pipeline => ${ typed[25](undefinedIsNull(parameters.pipeline)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_transformpipeline) );
@@ -8572,7 +8572,7 @@ async call(parameters : Public.Procedures.StInversetransformpipeline.Parameters,
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_inversetransformpipeline(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },pipeline => ${ typed[25](undefinedIsNull(parameters.pipeline)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_inversetransformpipeline(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },pipeline => ${ typed[25](undefinedIsNull(parameters.pipeline)) },to_srid => ${ typed[23](undefinedIsNull(parameters.toSrid)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_inversetransformpipeline) );
@@ -8592,7 +8592,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_version()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_version()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_version) );
@@ -8612,7 +8612,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_liblwgeom_version()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_liblwgeom_version()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_liblwgeom_version) );
@@ -8632,7 +8632,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_proj_version()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_proj_version()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_proj_version) );
@@ -8652,7 +8652,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_wagyu_version()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_wagyu_version()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_wagyu_version) );
@@ -8672,7 +8672,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_scripts_installed()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_scripts_installed()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_scripts_installed) );
@@ -8692,7 +8692,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_lib_version()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_lib_version()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_lib_version) );
@@ -8712,7 +8712,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_scripts_released()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_scripts_released()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_scripts_released) );
@@ -8732,7 +8732,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_geos_version()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_geos_version()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_geos_version) );
@@ -8752,7 +8752,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_geos_compiled_version()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_geos_compiled_version()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_geos_compiled_version) );
@@ -8772,7 +8772,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_lib_revision()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_lib_revision()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_lib_revision) );
@@ -8792,7 +8792,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_svn_version()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_svn_version()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_svn_version) );
@@ -8812,7 +8812,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_libxml_version()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_libxml_version()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_libxml_version) );
@@ -8832,7 +8832,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_scripts_build_date()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_scripts_build_date()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_scripts_build_date) );
@@ -8852,7 +8852,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_lib_build_date()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_lib_build_date()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_lib_build_date) );
@@ -8872,7 +8872,7 @@ async call(parameters : Public.Procedures.PostgisExtensionsUpgrade.Parameters, o
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_extensions_upgrade(target_version => ${ typed[25](undefinedIsNull(parameters.targetVersion)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_extensions_upgrade(target_version => ${ typed[25](undefinedIsNull(parameters.targetVersion)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_extensions_upgrade) );
@@ -8892,7 +8892,7 @@ async call(parameters : Public.Procedures.StLineinterpolatepointD0fc.Parameters,
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lineinterpolatepoint( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lineinterpolatepoint( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_lineinterpolatepoint) );
@@ -8912,7 +8912,7 @@ async call(parameters : Public.Procedures.StLineinterpolatepoints_19d2.Parameter
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lineinterpolatepoints(argument_0 => ${ typed[35930](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[701](undefinedIsNull(parameters.argument_1)) },repeat => ${ typed[16](undefinedIsNull(parameters.repeat)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lineinterpolatepoints(argument_0 => ${ typed[35930](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[701](undefinedIsNull(parameters.argument_1)) },repeat => ${ typed[16](undefinedIsNull(parameters.repeat)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_lineinterpolatepoints) );
@@ -8932,7 +8932,7 @@ async call(parameters : Public.Procedures.StLinesubstring_0263.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linesubstring( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linesubstring( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linesubstring) );
@@ -8952,7 +8952,7 @@ async call(parameters : Public.Procedures.StLinelocatepointBf41.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linelocatepoint(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linelocatepoint(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_linelocatepoint) );
@@ -8972,7 +8972,7 @@ async call(parameters : Public.Procedures.StAddmeasure.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_addmeasure( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_addmeasure( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_addmeasure) );
@@ -8992,7 +8992,7 @@ async call(parameters : Public.Procedures.StClosestpointofapproach.Parameters, o
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_closestpointofapproach( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_closestpointofapproach( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_closestpointofapproach) );
@@ -9012,7 +9012,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_full_version()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_full_version()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_full_version) );
@@ -9032,7 +9032,7 @@ async call(parameters : Public.Procedures.Box2d_5277.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.box2d( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box2d( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].box2d) );
@@ -9052,7 +9052,7 @@ async call(parameters : Public.Procedures.Box3d_5277.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.box3d( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box3d( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].box3d) );
@@ -9072,7 +9072,7 @@ async call(parameters : Public.Procedures.Box_5277.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.box( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Box.parse(results?.[0].box) );
@@ -9092,7 +9092,7 @@ async call(parameters : Public.Procedures.Box2d_0433.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.box2d( ${ typed[35957](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box2d( ${ typed[35957](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].box2d) );
@@ -9112,7 +9112,7 @@ async call(parameters : Public.Procedures.Box3d_0ec2.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.box3d( ${ typed[35961](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box3d( ${ typed[35961](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].box3d) );
@@ -9132,7 +9132,7 @@ async call(parameters : Public.Procedures.Box_0433.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.box( ${ typed[35957](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box( ${ typed[35957](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Box.parse(results?.[0].box) );
@@ -9152,7 +9152,7 @@ async call(parameters : Public.Procedures.Text.Parameters, options?: InvokeQuery
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.text( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.text( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].text) );
@@ -9172,7 +9172,7 @@ async call(parameters : Public.Procedures.Box3dtobox.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.box3dtobox( ${ typed[35957](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.box3dtobox( ${ typed[35957](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Box.parse(results?.[0].box3dtobox) );
@@ -9192,7 +9192,7 @@ async call(parameters : Public.Procedures.Geometry_0ec2.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[35961](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[35961](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry) );
@@ -9212,7 +9212,7 @@ async call(parameters : Public.Procedures.Geometry_0433.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[35957](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[35957](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry) );
@@ -9232,7 +9232,7 @@ async call(parameters : Public.Procedures.GeometryE728.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry) );
@@ -9252,7 +9252,7 @@ async call(parameters : Public.Procedures.Geometry_2d19.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry) );
@@ -9272,7 +9272,7 @@ async call(parameters : Public.Procedures.Bytea_5277.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.bytea( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.bytea( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].bytea) );
@@ -9292,7 +9292,7 @@ async call(parameters : Public.Procedures.StSimplifyD0fc.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_simplify( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_simplify( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_simplify) );
@@ -9312,7 +9312,7 @@ async call(parameters : Public.Procedures.StSimplify_19d2.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_simplify( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_simplify( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_simplify) );
@@ -9332,7 +9332,7 @@ async call(parameters : Public.Procedures.StSimplifyvw.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_simplifyvw( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_simplifyvw( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_simplifyvw) );
@@ -9352,7 +9352,7 @@ async call(parameters : Public.Procedures.StSeteffectivearea.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_seteffectivearea( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_seteffectivearea( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_seteffectivearea) );
@@ -9372,7 +9372,7 @@ async call(parameters : Public.Procedures.StFilterbym.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_filterbym( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[16](undefinedIsNull(parameters.argument_3)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_filterbym( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[16](undefinedIsNull(parameters.argument_3)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_filterbym) );
@@ -9392,7 +9392,7 @@ async call(parameters : Public.Procedures.StChaikinsmoothing.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_chaikinsmoothing( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_chaikinsmoothing( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_chaikinsmoothing) );
@@ -9412,7 +9412,7 @@ async call(parameters : Public.Procedures.StSnaptogrid_435c.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_snaptogrid( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_snaptogrid( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[701](undefinedIsNull(parameters.argument_3)) }, ${ typed[701](undefinedIsNull(parameters.argument_4)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_snaptogrid) );
@@ -9432,7 +9432,7 @@ async call(parameters : Public.Procedures.StSnaptogrid_0263.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_snaptogrid( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_snaptogrid( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_snaptogrid) );
@@ -9452,7 +9452,7 @@ async call(parameters : Public.Procedures.StSnaptogridD0fc.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_snaptogrid( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_snaptogrid( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_snaptogrid) );
@@ -9472,7 +9472,7 @@ async call(parameters : Public.Procedures.StSnaptogrid_0a5e.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_snaptogrid(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) },argument_3 => ${ typed[701](undefinedIsNull(parameters.argument_3)) },argument_4 => ${ typed[701](undefinedIsNull(parameters.argument_4)) },argument_5 => ${ typed[701](undefinedIsNull(parameters.argument_5)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_snaptogrid(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) },argument_3 => ${ typed[701](undefinedIsNull(parameters.argument_3)) },argument_4 => ${ typed[701](undefinedIsNull(parameters.argument_4)) },argument_5 => ${ typed[701](undefinedIsNull(parameters.argument_5)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_snaptogrid) );
@@ -9492,7 +9492,7 @@ async call(parameters : Public.Procedures.StDistancecpa.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distancecpa( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distancecpa( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distancecpa) );
@@ -9512,7 +9512,7 @@ async call(parameters : Public.Procedures.StCpawithin.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_cpawithin( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_cpawithin( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_cpawithin) );
@@ -9532,7 +9532,7 @@ async call(parameters : Public.Procedures.StIsvalidtrajectory.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isvalidtrajectory( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isvalidtrajectory( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_isvalidtrajectory) );
@@ -9552,7 +9552,7 @@ async call(parameters : Public.Procedures.StIntersection_0130.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_intersection(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_intersection(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_intersection) );
@@ -9572,7 +9572,7 @@ async call(parameters : Public.Procedures.StBuffer_14dd.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },radius => ${ typed[701](undefinedIsNull(parameters.radius)) },options => ${ typed[25](undefinedIsNull(parameters.options)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },radius => ${ typed[701](undefinedIsNull(parameters.radius)) },options => ${ typed[25](undefinedIsNull(parameters.options)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_buffer) );
@@ -9592,7 +9592,7 @@ async call(parameters : Public.Procedures.StBufferAe9b.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },radius => ${ typed[701](undefinedIsNull(parameters.radius)) },quadsegs => ${ typed[23](undefinedIsNull(parameters.quadsegs)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },radius => ${ typed[701](undefinedIsNull(parameters.radius)) },quadsegs => ${ typed[23](undefinedIsNull(parameters.quadsegs)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_buffer) );
@@ -9611,7 +9611,7 @@ async call(parameters : Public.Procedures.StMinimumboundingradius.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_minimumboundingradius(argument_0 => ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_minimumboundingradius(argument_0 => ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_minimumboundingradius)).filter<Public.Types.StMinimumboundingradius>((r):r is Public.Types.StMinimumboundingradius => r !== null) );
@@ -9631,7 +9631,7 @@ async call(parameters : Public.Procedures.StMinimumboundingcircle.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_minimumboundingcircle(inputgeom => ${ typed[35930](undefinedIsNull(parameters.inputgeom)) },segs_per_quarter => ${ typed[23](undefinedIsNull(parameters.segsPerQuarter)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_minimumboundingcircle(inputgeom => ${ typed[35930](undefinedIsNull(parameters.inputgeom)) },segs_per_quarter => ${ typed[23](undefinedIsNull(parameters.segsPerQuarter)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_minimumboundingcircle) );
@@ -9651,7 +9651,7 @@ async call(parameters : Public.Procedures.StOrientedenvelope.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_orientedenvelope( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_orientedenvelope( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_orientedenvelope) );
@@ -9671,7 +9671,7 @@ async call(parameters : Public.Procedures.StOffsetcurve.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_offsetcurve(line => ${ typed[35930](undefinedIsNull(parameters.line)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) },params => ${ typed[25](undefinedIsNull(parameters.params)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_offsetcurve(line => ${ typed[35930](undefinedIsNull(parameters.line)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) },params => ${ typed[25](undefinedIsNull(parameters.params)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_offsetcurve) );
@@ -9691,7 +9691,7 @@ async call(parameters : Public.Procedures.StGeneratepoints_0495.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_generatepoints(area => ${ typed[35930](undefinedIsNull(parameters.area)) },npoints => ${ typed[23](undefinedIsNull(parameters.npoints)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_generatepoints(area => ${ typed[35930](undefinedIsNull(parameters.area)) },npoints => ${ typed[23](undefinedIsNull(parameters.npoints)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_generatepoints) );
@@ -9711,7 +9711,7 @@ async call(parameters : Public.Procedures.StGeneratepointsE443.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_generatepoints(area => ${ typed[35930](undefinedIsNull(parameters.area)) },npoints => ${ typed[23](undefinedIsNull(parameters.npoints)) },seed => ${ typed[23](undefinedIsNull(parameters.seed)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_generatepoints(area => ${ typed[35930](undefinedIsNull(parameters.area)) },npoints => ${ typed[23](undefinedIsNull(parameters.npoints)) },seed => ${ typed[23](undefinedIsNull(parameters.seed)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_generatepoints) );
@@ -9731,7 +9731,7 @@ async call(parameters : Public.Procedures.StConvexhull.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_convexhull( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_convexhull( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_convexhull) );
@@ -9751,7 +9751,7 @@ async call(parameters : Public.Procedures.StSimplifypreservetopology.Parameters,
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_simplifypreservetopology( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_simplifypreservetopology( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_simplifypreservetopology) );
@@ -9771,7 +9771,7 @@ async call(parameters : Public.Procedures.StIsvalidreason_5277.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isvalidreason( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isvalidreason( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_isvalidreason) );
@@ -9791,7 +9791,7 @@ async call(parameters : Public.Procedures.StIsvaliddetail.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isvaliddetail(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },flags => ${ typed[23](undefinedIsNull(parameters.flags)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isvaliddetail(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },flags => ${ typed[23](undefinedIsNull(parameters.flags)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.ValidDetail.parse(results?.[0].st_isvaliddetail) );
@@ -9811,7 +9811,7 @@ async call(parameters : Public.Procedures.StIsvalidreason_0495.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isvalidreason( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isvalidreason( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_isvalidreason) );
@@ -9831,7 +9831,7 @@ async call(parameters : Public.Procedures.StIsvalid_0495.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isvalid( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isvalid( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_isvalid) );
@@ -9851,7 +9851,7 @@ async call(parameters : Public.Procedures.StHausdorffdistanceBf41.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_hausdorffdistance(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_hausdorffdistance(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_hausdorffdistance) );
@@ -9871,7 +9871,7 @@ async call(parameters : Public.Procedures.StHausdorffdistance_0130.Parameters, o
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_hausdorffdistance(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_hausdorffdistance(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_hausdorffdistance) );
@@ -9891,7 +9891,7 @@ async call(parameters : Public.Procedures.StFrechetdistance.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_frechetdistance(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_frechetdistance(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_frechetdistance) );
@@ -9910,7 +9910,7 @@ async call(parameters : Public.Procedures.StMaximuminscribedcircle.Parameters, o
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_maximuminscribedcircle(argument_0 => ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_maximuminscribedcircle(argument_0 => ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_maximuminscribedcircle)).filter<Public.Types.StMaximuminscribedcircle>((r):r is Public.Types.StMaximuminscribedcircle => r !== null) );
@@ -9929,7 +9929,7 @@ async call(parameters : Public.Procedures.StLargestemptycircle.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_largestemptycircle(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },boundary => ${ typed[35930](undefinedIsNull(parameters.boundary)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_largestemptycircle(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },boundary => ${ typed[35930](undefinedIsNull(parameters.boundary)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_largestemptycircle)).filter<Public.Types.StLargestemptycircle>((r):r is Public.Types.StLargestemptycircle => r !== null) );
@@ -9949,7 +9949,7 @@ async call(parameters : Public.Procedures.StDifference.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_difference(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_difference(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_difference) );
@@ -9969,7 +9969,7 @@ async call(parameters : Public.Procedures.StBoundary.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_boundary( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_boundary( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_boundary) );
@@ -9989,7 +9989,7 @@ async call(parameters : Public.Procedures.StPoints.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_points( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_points( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_points) );
@@ -10009,7 +10009,7 @@ async call(parameters : Public.Procedures.StSymdifference.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_symdifference(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_symdifference(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_symdifference) );
@@ -10029,7 +10029,7 @@ async call(parameters : Public.Procedures.StSymmetricdifference.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_symmetricdifference(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_symmetricdifference(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_symmetricdifference) );
@@ -10049,7 +10049,7 @@ async call(parameters : Public.Procedures.StUnionBf41.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_union(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_union(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_union) );
@@ -10069,7 +10069,7 @@ async call(parameters : Public.Procedures.StUnion_0130.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_union(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_union(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_union) );
@@ -10089,7 +10089,7 @@ async call(parameters : Public.Procedures.StUnaryunion.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_unaryunion(argument_0 => ${ typed[35930](undefinedIsNull(parameters.argument_0)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_unaryunion(argument_0 => ${ typed[35930](undefinedIsNull(parameters.argument_0)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_unaryunion) );
@@ -10109,7 +10109,7 @@ async call(parameters : Public.Procedures.StRemoverepeatedpoints.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_removerepeatedpoints(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_removerepeatedpoints(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_removerepeatedpoints) );
@@ -10129,7 +10129,7 @@ async call(parameters : Public.Procedures.StClipbybox2d.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_clipbybox2d(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },box => ${ typed[35961](undefinedIsNull(parameters.box)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_clipbybox2d(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },box => ${ typed[35961](undefinedIsNull(parameters.box)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_clipbybox2d) );
@@ -10149,7 +10149,7 @@ async call(parameters : Public.Procedures.StSubdivide.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_subdivide(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },maxvertices => ${ typed[23](undefinedIsNull(parameters.maxvertices)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_subdivide(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },maxvertices => ${ typed[23](undefinedIsNull(parameters.maxvertices)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_subdivide)).filter<Public.Types.Geometry>((r):r is Public.Types.Geometry => r !== null) );
@@ -10169,7 +10169,7 @@ async call(parameters : Public.Procedures.StReduceprecision.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_reduceprecision(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_reduceprecision(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },gridsize => ${ typed[701](undefinedIsNull(parameters.gridsize)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_reduceprecision) );
@@ -10189,7 +10189,7 @@ async call(parameters : Public.Procedures.StMakevalid_5277.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makevalid( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makevalid( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makevalid) );
@@ -10209,7 +10209,7 @@ async call(parameters : Public.Procedures.StMakevalid_0f45.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makevalid(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },params => ${ typed[25](undefinedIsNull(parameters.params)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_makevalid(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },params => ${ typed[25](undefinedIsNull(parameters.params)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_makevalid) );
@@ -10229,7 +10229,7 @@ async call(parameters : Public.Procedures.StCleangeometry.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_cleangeometry( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_cleangeometry( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_cleangeometry) );
@@ -10249,7 +10249,7 @@ async call(parameters : Public.Procedures.StSplit.Parameters, options?: InvokeQu
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_split(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_split(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_split) );
@@ -10269,7 +10269,7 @@ async call(parameters : Public.Procedures.StSharedpaths.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_sharedpaths(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_sharedpaths(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_sharedpaths) );
@@ -10289,7 +10289,7 @@ async call(parameters : Public.Procedures.StSnap.Parameters, options?: InvokeQue
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_snap(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_snap(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_snap) );
@@ -10309,7 +10309,7 @@ async call(parameters : Public.Procedures.StRelatematch.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_relatematch( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_relatematch( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_relatematch) );
@@ -10329,7 +10329,7 @@ async call(parameters : Public.Procedures.StNode.Parameters, options?: InvokeQue
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_node(g => ${ typed[35930](undefinedIsNull(parameters.g)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_node(g => ${ typed[35930](undefinedIsNull(parameters.g)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_node) );
@@ -10349,7 +10349,7 @@ async call(parameters : Public.Procedures.StDelaunaytriangles.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_delaunaytriangles(g1 => ${ typed[35930](undefinedIsNull(parameters.g1)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },flags => ${ typed[23](undefinedIsNull(parameters.flags)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_delaunaytriangles(g1 => ${ typed[35930](undefinedIsNull(parameters.g1)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },flags => ${ typed[23](undefinedIsNull(parameters.flags)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_delaunaytriangles) );
@@ -10369,7 +10369,7 @@ async call(parameters : Public.Procedures.StTriangulatepolygon.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_triangulatepolygon(g1 => ${ typed[35930](undefinedIsNull(parameters.g1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_triangulatepolygon(g1 => ${ typed[35930](undefinedIsNull(parameters.g1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_triangulatepolygon) );
@@ -10389,7 +10389,7 @@ async call(parameters : Public.Procedures.StVoronoipolygons.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_voronoipolygons(g1 => ${ typed[35930](undefinedIsNull(parameters.g1)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },extend_to => ${ typed[35930](undefinedIsNull(parameters.extendTo)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_voronoipolygons(g1 => ${ typed[35930](undefinedIsNull(parameters.g1)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },extend_to => ${ typed[35930](undefinedIsNull(parameters.extendTo)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_voronoipolygons) );
@@ -10409,7 +10409,7 @@ async call(parameters : Public.Procedures.StVoronoilines.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_voronoilines(g1 => ${ typed[35930](undefinedIsNull(parameters.g1)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },extend_to => ${ typed[35930](undefinedIsNull(parameters.extendTo)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_voronoilines(g1 => ${ typed[35930](undefinedIsNull(parameters.g1)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },extend_to => ${ typed[35930](undefinedIsNull(parameters.extendTo)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_voronoilines) );
@@ -10429,7 +10429,7 @@ async call(parameters : Public.Procedures.StCombinebbox_071b.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_combinebbox( ${ typed[35957](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_combinebbox( ${ typed[35957](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].st_combinebbox) );
@@ -10449,7 +10449,7 @@ async call(parameters : Public.Procedures.StCombinebboxBafd.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_combinebbox( ${ typed[35957](undefinedIsNull(parameters.argument_0)) }, ${ typed[35957](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_combinebbox( ${ typed[35957](undefinedIsNull(parameters.argument_0)) }, ${ typed[35957](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box3d.parse(results?.[0].st_combinebbox) );
@@ -10469,7 +10469,7 @@ async call(parameters : Public.Procedures.StCombinebboxD312.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_combinebbox( ${ typed[35961](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_combinebbox( ${ typed[35961](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_combinebbox) );
@@ -10489,7 +10489,7 @@ async call(parameters : Public.Procedures.StCollectBf41.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_collect(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_collect(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_collect) );
@@ -10509,7 +10509,7 @@ async call(parameters : Public.Procedures.StCollect_7469.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_collect( ${ typed[35938](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_collect( ${ typed[35938](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_collect) );
@@ -10529,7 +10529,7 @@ async call(parameters : Public.Procedures.PgisGeometryAccumTransfn_50e9.Paramete
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_accum_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_accum_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_geometry_accum_transfn) );
@@ -10549,7 +10549,7 @@ async call(parameters : Public.Procedures.PgisGeometryAccumTransfn_4870.Paramete
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_accum_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_accum_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_geometry_accum_transfn) );
@@ -10569,7 +10569,7 @@ async call(parameters : Public.Procedures.PgisGeometryAccumTransfnD97f.Parameter
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_accum_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_accum_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_geometry_accum_transfn) );
@@ -10589,7 +10589,7 @@ async call(parameters : Public.Procedures.PgisGeometryCollectFinalfn.Parameters,
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_collect_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_collect_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].pgis_geometry_collect_finalfn) );
@@ -10609,7 +10609,7 @@ async call(parameters : Public.Procedures.PgisGeometryPolygonizeFinalfn.Paramete
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_polygonize_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_polygonize_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].pgis_geometry_polygonize_finalfn) );
@@ -10629,7 +10629,7 @@ async call(parameters : Public.Procedures.PgisGeometryClusterintersectingFinalfn
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_clusterintersecting_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_clusterintersecting_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.GeometryArray.parse(results?.[0].pgis_geometry_clusterintersecting_finalfn) );
@@ -10649,7 +10649,7 @@ async call(parameters : Public.Procedures.PgisGeometryClusterwithinFinalfn.Param
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_clusterwithin_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_clusterwithin_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.GeometryArray.parse(results?.[0].pgis_geometry_clusterwithin_finalfn) );
@@ -10669,7 +10669,7 @@ async call(parameters : Public.Procedures.PgisGeometryMakelineFinalfn.Parameters
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_makeline_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_makeline_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].pgis_geometry_makeline_finalfn) );
@@ -10689,7 +10689,7 @@ async call(parameters : Public.Procedures.PgisGeometryCoverageunionFinalfn.Param
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_coverageunion_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_coverageunion_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].pgis_geometry_coverageunion_finalfn) );
@@ -10709,7 +10709,7 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelTransfn_50e9.
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_union_parallel_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_union_parallel_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_geometry_union_parallel_transfn) );
@@ -10729,7 +10729,7 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelTransfn_4870.
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_union_parallel_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_union_parallel_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_geometry_union_parallel_transfn) );
@@ -10749,7 +10749,7 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelCombinefn.Par
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_union_parallel_combinefn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_union_parallel_combinefn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_geometry_union_parallel_combinefn) );
@@ -10769,7 +10769,7 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelSerialfn.Para
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_union_parallel_serialfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_union_parallel_serialfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].pgis_geometry_union_parallel_serialfn) );
@@ -10789,7 +10789,7 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelDeserialfn.Pa
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_union_parallel_deserialfn( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_union_parallel_deserialfn( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_geometry_union_parallel_deserialfn) );
@@ -10809,7 +10809,7 @@ async call(parameters : Public.Procedures.PgisGeometryUnionParallelFinalfn.Param
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_union_parallel_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_geometry_union_parallel_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].pgis_geometry_union_parallel_finalfn) );
@@ -10829,7 +10829,7 @@ async call(parameters : Public.Procedures.StUnion_7469.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_union( ${ typed[35938](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_union( ${ typed[35938](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_union) );
@@ -10849,7 +10849,7 @@ async call(parameters : Public.Procedures.StCoverageunion_7469.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_coverageunion( ${ typed[35938](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_coverageunion( ${ typed[35938](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_coverageunion) );
@@ -10869,7 +10869,7 @@ async call(parameters : Public.Procedures.StRelateBf41.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_relate(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_relate(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_relate) );
@@ -10889,7 +10889,7 @@ async call(parameters : Public.Procedures.StRelate_5d32.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_relate(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_relate(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_relate) );
@@ -10909,7 +10909,7 @@ async call(parameters : Public.Procedures.StRelateBb3c.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_relate(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[25](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_relate(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[25](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_relate) );
@@ -10929,7 +10929,7 @@ async call(parameters : Public.Procedures.StDisjoint.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_disjoint(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_disjoint(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_disjoint) );
@@ -10949,7 +10949,7 @@ async call(parameters : Public.Procedures.PostgisIndexSupportfn.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_index_supportfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_index_supportfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].postgis_index_supportfn) );
@@ -10969,7 +10969,7 @@ async call(parameters : Public.Procedures.StLinecrossingdirection.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linecrossingdirection(line1 => ${ typed[35930](undefinedIsNull(parameters.line1)) },line2 => ${ typed[35930](undefinedIsNull(parameters.line2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linecrossingdirection(line1 => ${ typed[35930](undefinedIsNull(parameters.line1)) },line2 => ${ typed[35930](undefinedIsNull(parameters.line2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_linecrossingdirection) );
@@ -10989,7 +10989,7 @@ async call(parameters : Public.Procedures.StDwithin_0130.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dwithin(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dwithin(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_dwithin) );
@@ -11009,7 +11009,7 @@ async call(parameters : Public.Procedures.StTouches.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_touches(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_touches(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_touches) );
@@ -11029,7 +11029,7 @@ async call(parameters : Public.Procedures.StIntersectsBf41.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_intersects(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_intersects(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_intersects) );
@@ -11049,7 +11049,7 @@ async call(parameters : Public.Procedures.StCrosses.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_crosses(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_crosses(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_crosses) );
@@ -11069,7 +11069,7 @@ async call(parameters : Public.Procedures.StContains.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_contains(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_contains(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_contains) );
@@ -11089,7 +11089,7 @@ async call(parameters : Public.Procedures.StContainsproperly.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_containsproperly(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_containsproperly(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_containsproperly) );
@@ -11109,7 +11109,7 @@ async call(parameters : Public.Procedures.StWithin.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_within(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_within(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_within) );
@@ -11129,7 +11129,7 @@ async call(parameters : Public.Procedures.StCoversBf41.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_covers(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_covers(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_covers) );
@@ -11149,7 +11149,7 @@ async call(parameters : Public.Procedures.StCoveredbyBf41.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_coveredby(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_coveredby(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_coveredby) );
@@ -11169,7 +11169,7 @@ async call(parameters : Public.Procedures.StOverlaps.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_overlaps(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_overlaps(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_overlaps) );
@@ -11189,7 +11189,7 @@ async call(parameters : Public.Procedures.StDfullywithin.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dfullywithin(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dfullywithin(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_dfullywithin) );
@@ -11209,7 +11209,7 @@ async call(parameters : Public.Procedures.St_3ddwithin.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3ddwithin(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3ddwithin(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_3ddwithin) );
@@ -11229,7 +11229,7 @@ async call(parameters : Public.Procedures.St_3ddfullywithin.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3ddfullywithin(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3ddfullywithin(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },argument_2 => ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_3ddfullywithin) );
@@ -11249,7 +11249,7 @@ async call(parameters : Public.Procedures.St_3dintersects.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dintersects(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dintersects(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_3dintersects) );
@@ -11269,7 +11269,7 @@ async call(parameters : Public.Procedures.StOrderingequals.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_orderingequals(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_orderingequals(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_orderingequals) );
@@ -11289,7 +11289,7 @@ async call(parameters : Public.Procedures.StEquals.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_equals(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_equals(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_equals) );
@@ -11309,7 +11309,7 @@ async call(parameters : Public.Procedures.StIsvalid_5277.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isvalid( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isvalid( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_isvalid) );
@@ -11329,7 +11329,7 @@ async call(parameters : Public.Procedures.StMinimumclearance.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_minimumclearance( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_minimumclearance( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_minimumclearance) );
@@ -11349,7 +11349,7 @@ async call(parameters : Public.Procedures.StMinimumclearanceline.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_minimumclearanceline( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_minimumclearanceline( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_minimumclearanceline) );
@@ -11369,7 +11369,7 @@ async call(parameters : Public.Procedures.StCentroid_5277.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_centroid( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_centroid( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_centroid) );
@@ -11389,7 +11389,7 @@ async call(parameters : Public.Procedures.StGeometricmedian.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geometricmedian(g => ${ typed[35930](undefinedIsNull(parameters.g)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },max_iter => ${ typed[23](undefinedIsNull(parameters.maxIter)) },fail_if_not_converged => ${ typed[16](undefinedIsNull(parameters.failIfNotConverged)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geometricmedian(g => ${ typed[35930](undefinedIsNull(parameters.g)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },max_iter => ${ typed[23](undefinedIsNull(parameters.maxIter)) },fail_if_not_converged => ${ typed[16](undefinedIsNull(parameters.failIfNotConverged)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geometricmedian) );
@@ -11409,7 +11409,7 @@ async call(parameters : Public.Procedures.StIsring.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isring( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isring( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_isring) );
@@ -11429,7 +11429,7 @@ async call(parameters : Public.Procedures.StPointonsurface.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointonsurface( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointonsurface( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_pointonsurface) );
@@ -11449,7 +11449,7 @@ async call(parameters : Public.Procedures.StIssimple.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_issimple( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_issimple( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_issimple) );
@@ -11469,7 +11469,7 @@ async call(parameters : Public.Procedures.StIscollection.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_iscollection( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_iscollection( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_iscollection) );
@@ -11489,7 +11489,7 @@ async call(parameters : Public.Procedures.Equals.Parameters, options?: InvokeQue
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.equals(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.equals(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].equals) );
@@ -11509,7 +11509,7 @@ async call(parameters : Public.Procedures.StGeomfromgml_27e2.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromgml( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromgml( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromgml) );
@@ -11529,7 +11529,7 @@ async call(parameters : Public.Procedures.StGeomfromgmlE728.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromgml( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromgml( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromgml) );
@@ -11549,7 +11549,7 @@ async call(parameters : Public.Procedures.StGmltosqlE728.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_gmltosql( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_gmltosql( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_gmltosql) );
@@ -11569,7 +11569,7 @@ async call(parameters : Public.Procedures.StGmltosql_27e2.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_gmltosql( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_gmltosql( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_gmltosql) );
@@ -11589,7 +11589,7 @@ async call(parameters : Public.Procedures.StGeomfromkml.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromkml( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromkml( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromkml) );
@@ -11609,7 +11609,7 @@ async call(parameters : Public.Procedures.StGeomfrommarc21.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfrommarc21(marc21xml => ${ typed[25](undefinedIsNull(parameters.marc21xml)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfrommarc21(marc21xml => ${ typed[25](undefinedIsNull(parameters.marc21xml)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfrommarc21) );
@@ -11629,7 +11629,7 @@ async call(parameters : Public.Procedures.StAsmarc21.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asmarc21(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },format => ${ typed[25](undefinedIsNull(parameters.format)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asmarc21(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },format => ${ typed[25](undefinedIsNull(parameters.format)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asmarc21) );
@@ -11649,7 +11649,7 @@ async call(parameters : Public.Procedures.StGeomfromgeojsonE728.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromgeojson( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromgeojson( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromgeojson) );
@@ -11669,7 +11669,7 @@ async call(parameters : Public.Procedures.StGeomfromgeojson_608f.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromgeojson( ${ typed[114](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromgeojson( ${ typed[114](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromgeojson) );
@@ -11689,7 +11689,7 @@ async call(parameters : Public.Procedures.StGeomfromgeojson_3c9d.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromgeojson( ${ typed[3802](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromgeojson( ${ typed[3802](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromgeojson) );
@@ -11709,7 +11709,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_libjson_version()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_libjson_version()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_libjson_version) );
@@ -11729,7 +11729,7 @@ async call(parameters : Public.Procedures.StLinefromencodedpolyline.Parameters, 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linefromencodedpolyline(txtin => ${ typed[25](undefinedIsNull(parameters.txtin)) },nprecision => ${ typed[23](undefinedIsNull(parameters.nprecision)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linefromencodedpolyline(txtin => ${ typed[25](undefinedIsNull(parameters.txtin)) },nprecision => ${ typed[23](undefinedIsNull(parameters.nprecision)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linefromencodedpolyline) );
@@ -11749,7 +11749,7 @@ async call(parameters : Public.Procedures.StAsencodedpolyline.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asencodedpolyline(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },nprecision => ${ typed[23](undefinedIsNull(parameters.nprecision)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asencodedpolyline(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },nprecision => ${ typed[23](undefinedIsNull(parameters.nprecision)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asencodedpolyline) );
@@ -11769,7 +11769,7 @@ async call(parameters : Public.Procedures.StAssvgE443.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_assvg(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },rel => ${ typed[23](undefinedIsNull(parameters.rel)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_assvg(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },rel => ${ typed[23](undefinedIsNull(parameters.rel)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_assvg) );
@@ -11789,7 +11789,7 @@ async call(parameters : Public.Procedures.StAsgmlE443.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgml(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgml(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgml) );
@@ -11809,7 +11809,7 @@ async call(parameters : Public.Procedures.StAsgmlD757.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgml(version => ${ typed[23](undefinedIsNull(parameters.version)) },geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) },id => ${ typed[25](undefinedIsNull(parameters.id)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgml(version => ${ typed[23](undefinedIsNull(parameters.version)) },geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) },id => ${ typed[25](undefinedIsNull(parameters.id)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgml) );
@@ -11829,7 +11829,7 @@ async call(parameters : Public.Procedures.StAskml_370b.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_askml(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_askml(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_askml) );
@@ -11849,7 +11849,7 @@ async call(parameters : Public.Procedures.StAsgeojsonE443.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgeojson(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgeojson(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgeojson) );
@@ -11869,7 +11869,7 @@ async call(parameters : Public.Procedures.StAsgeojsonF2c6.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgeojson(r => ${ typed[2249](undefinedIsNull(parameters.r)) },geom_column => ${ typed[25](undefinedIsNull(parameters.geomColumn)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },pretty_bool => ${ typed[16](undefinedIsNull(parameters.prettyBool)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgeojson(r => ${ typed[2249](undefinedIsNull(parameters.r)) },geom_column => ${ typed[25](undefinedIsNull(parameters.geomColumn)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },pretty_bool => ${ typed[16](undefinedIsNull(parameters.prettyBool)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgeojson) );
@@ -11889,7 +11889,7 @@ async call(parameters : Public.Procedures.Json.Parameters, options?: InvokeQuery
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.json( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.json( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Json.parse(results?.[0].json) );
@@ -11909,7 +11909,7 @@ async call(parameters : Public.Procedures.Jsonb.Parameters, options?: InvokeQuer
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.jsonb( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.jsonb( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Jsonb.parse(results?.[0].jsonb) );
@@ -11929,7 +11929,7 @@ async call(parameters : Public.Procedures.PgisAsmvtTransfn_647f.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asmvt_transfn) );
@@ -11949,7 +11949,7 @@ async call(parameters : Public.Procedures.PgisAsmvtTransfn_27f4.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asmvt_transfn) );
@@ -11969,7 +11969,7 @@ async call(parameters : Public.Procedures.PgisAsmvtTransfnF57f.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asmvt_transfn) );
@@ -11989,7 +11989,7 @@ async call(parameters : Public.Procedures.PgisAsmvtTransfn_92c1.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) }, ${ typed[25](undefinedIsNull(parameters.argument_4)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) }, ${ typed[25](undefinedIsNull(parameters.argument_4)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asmvt_transfn) );
@@ -12009,7 +12009,7 @@ async call(parameters : Public.Procedures.PgisAsmvtTransfnF5be.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) }, ${ typed[25](undefinedIsNull(parameters.argument_4)) }, ${ typed[25](undefinedIsNull(parameters.argument_5)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[23](undefinedIsNull(parameters.argument_3)) }, ${ typed[25](undefinedIsNull(parameters.argument_4)) }, ${ typed[25](undefinedIsNull(parameters.argument_5)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asmvt_transfn) );
@@ -12029,7 +12029,7 @@ async call(parameters : Public.Procedures.PgisAsmvtFinalfn.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].pgis_asmvt_finalfn) );
@@ -12049,7 +12049,7 @@ async call(parameters : Public.Procedures.PgisAsmvtCombinefn.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_combinefn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_combinefn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asmvt_combinefn) );
@@ -12069,7 +12069,7 @@ async call(parameters : Public.Procedures.PgisAsmvtSerialfn.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_serialfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_serialfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].pgis_asmvt_serialfn) );
@@ -12089,7 +12089,7 @@ async call(parameters : Public.Procedures.PgisAsmvtDeserialfn.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_deserialfn( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asmvt_deserialfn( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asmvt_deserialfn) );
@@ -12109,7 +12109,7 @@ async call(parameters : Public.Procedures.StAsmvtgeom.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asmvtgeom(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },bounds => ${ typed[35961](undefinedIsNull(parameters.bounds)) },extent => ${ typed[23](undefinedIsNull(parameters.extent)) },buffer => ${ typed[23](undefinedIsNull(parameters.buffer)) },clip_geom => ${ typed[16](undefinedIsNull(parameters.clipGeom)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asmvtgeom(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },bounds => ${ typed[35961](undefinedIsNull(parameters.bounds)) },extent => ${ typed[23](undefinedIsNull(parameters.extent)) },buffer => ${ typed[23](undefinedIsNull(parameters.buffer)) },clip_geom => ${ typed[16](undefinedIsNull(parameters.clipGeom)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_asmvtgeom) );
@@ -12129,7 +12129,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_libprotobuf_version()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_libprotobuf_version()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_libprotobuf_version) );
@@ -12149,7 +12149,7 @@ async call(parameters : Public.Procedures.PgisAsgeobufTransfn_647f.Parameters, o
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asgeobuf_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asgeobuf_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asgeobuf_transfn) );
@@ -12169,7 +12169,7 @@ async call(parameters : Public.Procedures.PgisAsgeobufTransfn_27f4.Parameters, o
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asgeobuf_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asgeobuf_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asgeobuf_transfn) );
@@ -12189,7 +12189,7 @@ async call(parameters : Public.Procedures.PgisAsgeobufFinalfn.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asgeobuf_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asgeobuf_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].pgis_asgeobuf_finalfn) );
@@ -12209,7 +12209,7 @@ async call(parameters : Public.Procedures.PgisAsflatgeobufTransfn_647f.Parameter
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asflatgeobuf_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asflatgeobuf_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asflatgeobuf_transfn) );
@@ -12229,7 +12229,7 @@ async call(parameters : Public.Procedures.PgisAsflatgeobufTransfn_9633.Parameter
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asflatgeobuf_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asflatgeobuf_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asflatgeobuf_transfn) );
@@ -12249,7 +12249,7 @@ async call(parameters : Public.Procedures.PgisAsflatgeobufTransfn_521f.Parameter
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asflatgeobuf_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) }, ${ typed[25](undefinedIsNull(parameters.argument_3)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asflatgeobuf_transfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2283](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) }, ${ typed[25](undefinedIsNull(parameters.argument_3)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].pgis_asflatgeobuf_transfn) );
@@ -12269,7 +12269,7 @@ async call(parameters : Public.Procedures.PgisAsflatgeobufFinalfn.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asflatgeobuf_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.pgis_asflatgeobuf_finalfn( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].pgis_asflatgeobuf_finalfn) );
@@ -12289,7 +12289,7 @@ async call(parameters : Public.Procedures.StFromflatgeobuftotable.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_fromflatgeobuftotable( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[17](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_fromflatgeobuftotable( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[17](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].st_fromflatgeobuftotable) );
@@ -12309,7 +12309,7 @@ async call(parameters : Public.Procedures.StFromflatgeobuf.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_fromflatgeobuf( ${ typed[2283](undefinedIsNull(parameters.argument_0)) }, ${ typed[17](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_fromflatgeobuf( ${ typed[2283](undefinedIsNull(parameters.argument_0)) }, ${ typed[17](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_fromflatgeobuf)).filter<PgCatalog.Types.Anyelement>((r):r is PgCatalog.Types.Anyelement => r !== null) );
@@ -12329,7 +12329,7 @@ async call(parameters : Public.Procedures.StGeohash_0495.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geohash(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },maxchars => ${ typed[23](undefinedIsNull(parameters.maxchars)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geohash(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },maxchars => ${ typed[23](undefinedIsNull(parameters.maxchars)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_geohash) );
@@ -12349,7 +12349,7 @@ async call(parameters : Public.Procedures.StBox2dfromgeohash.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_box2dfromgeohash( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_box2dfromgeohash( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Box2d.parse(results?.[0].st_box2dfromgeohash) );
@@ -12369,7 +12369,7 @@ async call(parameters : Public.Procedures.StPointfromgeohash.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointfromgeohash( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointfromgeohash( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_pointfromgeohash) );
@@ -12389,7 +12389,7 @@ async call(parameters : Public.Procedures.StGeomfromgeohash.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromgeohash( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromgeohash( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromgeohash) );
@@ -12409,7 +12409,7 @@ async call(parameters : Public.Procedures.StNumpoints.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_numpoints( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_numpoints( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_numpoints) );
@@ -12429,7 +12429,7 @@ async call(parameters : Public.Procedures.StNumgeometries.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_numgeometries( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_numgeometries( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_numgeometries) );
@@ -12449,7 +12449,7 @@ async call(parameters : Public.Procedures.StGeometryn.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geometryn( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geometryn( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geometryn) );
@@ -12469,7 +12469,7 @@ async call(parameters : Public.Procedures.StDimension.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dimension( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dimension( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_dimension) );
@@ -12489,7 +12489,7 @@ async call(parameters : Public.Procedures.StExteriorring.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_exteriorring( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_exteriorring( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_exteriorring) );
@@ -12509,7 +12509,7 @@ async call(parameters : Public.Procedures.StNuminteriorrings.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_numinteriorrings( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_numinteriorrings( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_numinteriorrings) );
@@ -12529,7 +12529,7 @@ async call(parameters : Public.Procedures.StNuminteriorring.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_numinteriorring( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_numinteriorring( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_numinteriorring) );
@@ -12549,7 +12549,7 @@ async call(parameters : Public.Procedures.StInteriorringn.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_interiorringn( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_interiorringn( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_interiorringn) );
@@ -12569,7 +12569,7 @@ async call(parameters : Public.Procedures.Geometrytype_5277.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometrytype( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometrytype( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].geometrytype) );
@@ -12589,7 +12589,7 @@ async call(parameters : Public.Procedures.StGeometrytype.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geometrytype( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geometrytype( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_geometrytype) );
@@ -12609,7 +12609,7 @@ async call(parameters : Public.Procedures.StPointn.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointn( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointn( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_pointn) );
@@ -12629,7 +12629,7 @@ async call(parameters : Public.Procedures.StNumpatches.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_numpatches( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_numpatches( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_numpatches) );
@@ -12649,7 +12649,7 @@ async call(parameters : Public.Procedures.StPatchn.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_patchn( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_patchn( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_patchn) );
@@ -12669,7 +12669,7 @@ async call(parameters : Public.Procedures.StStartpoint.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_startpoint( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_startpoint( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_startpoint) );
@@ -12689,7 +12689,7 @@ async call(parameters : Public.Procedures.StEndpoint.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_endpoint( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_endpoint( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_endpoint) );
@@ -12709,7 +12709,7 @@ async call(parameters : Public.Procedures.StIsclosed.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isclosed( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isclosed( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_isclosed) );
@@ -12729,7 +12729,7 @@ async call(parameters : Public.Procedures.StIsempty.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isempty( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_isempty( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_isempty) );
@@ -12749,7 +12749,7 @@ async call(parameters : Public.Procedures.StAsbinary_0f45.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asbinary( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asbinary( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_asbinary) );
@@ -12769,7 +12769,7 @@ async call(parameters : Public.Procedures.StAsbinary_5277.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asbinary( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asbinary( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_asbinary) );
@@ -12789,7 +12789,7 @@ async call(parameters : Public.Procedures.StAstext_5277.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_astext( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_astext( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_astext) );
@@ -12809,7 +12809,7 @@ async call(parameters : Public.Procedures.StAstext_0495.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_astext( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_astext( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_astext) );
@@ -12829,7 +12829,7 @@ async call(parameters : Public.Procedures.StGeometryfromtextE728.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geometryfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geometryfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geometryfromtext) );
@@ -12849,7 +12849,7 @@ async call(parameters : Public.Procedures.StGeometryfromtext_27e2.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geometryfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geometryfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geometryfromtext) );
@@ -12869,7 +12869,7 @@ async call(parameters : Public.Procedures.StGeomfromtextE728.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromtext) );
@@ -12889,7 +12889,7 @@ async call(parameters : Public.Procedures.StGeomfromtext_27e2.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromtext) );
@@ -12909,7 +12909,7 @@ async call(parameters : Public.Procedures.StWkttosql.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_wkttosql( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_wkttosql( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_wkttosql) );
@@ -12929,7 +12929,7 @@ async call(parameters : Public.Procedures.StPointfromtextE728.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_pointfromtext) );
@@ -12949,7 +12949,7 @@ async call(parameters : Public.Procedures.StPointfromtext_27e2.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_pointfromtext) );
@@ -12969,7 +12969,7 @@ async call(parameters : Public.Procedures.StLinefromtextE728.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linefromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linefromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linefromtext) );
@@ -12989,7 +12989,7 @@ async call(parameters : Public.Procedures.StLinefromtext_27e2.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linefromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linefromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linefromtext) );
@@ -13009,7 +13009,7 @@ async call(parameters : Public.Procedures.StPolyfromtextE728.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_polyfromtext) );
@@ -13029,7 +13029,7 @@ async call(parameters : Public.Procedures.StPolyfromtext_27e2.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_polyfromtext) );
@@ -13049,7 +13049,7 @@ async call(parameters : Public.Procedures.StPolygonfromtext_27e2.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polygonfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polygonfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_polygonfromtext) );
@@ -13069,7 +13069,7 @@ async call(parameters : Public.Procedures.StPolygonfromtextE728.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polygonfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polygonfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_polygonfromtext) );
@@ -13089,7 +13089,7 @@ async call(parameters : Public.Procedures.StMlinefromtext_27e2.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mlinefromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mlinefromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mlinefromtext) );
@@ -13109,7 +13109,7 @@ async call(parameters : Public.Procedures.StMlinefromtextE728.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mlinefromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mlinefromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mlinefromtext) );
@@ -13129,7 +13129,7 @@ async call(parameters : Public.Procedures.StMultilinestringfromtextE728.Paramete
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multilinestringfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multilinestringfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multilinestringfromtext) );
@@ -13149,7 +13149,7 @@ async call(parameters : Public.Procedures.StMultilinestringfromtext_27e2.Paramet
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multilinestringfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multilinestringfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multilinestringfromtext) );
@@ -13169,7 +13169,7 @@ async call(parameters : Public.Procedures.StMpointfromtext_27e2.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpointfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpointfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mpointfromtext) );
@@ -13189,7 +13189,7 @@ async call(parameters : Public.Procedures.StMpointfromtextE728.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpointfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpointfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mpointfromtext) );
@@ -13209,7 +13209,7 @@ async call(parameters : Public.Procedures.StMultipointfromtext.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multipointfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multipointfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multipointfromtext) );
@@ -13229,7 +13229,7 @@ async call(parameters : Public.Procedures.StMpolyfromtext_27e2.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpolyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpolyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mpolyfromtext) );
@@ -13249,7 +13249,7 @@ async call(parameters : Public.Procedures.StMpolyfromtextE728.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpolyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpolyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mpolyfromtext) );
@@ -13269,7 +13269,7 @@ async call(parameters : Public.Procedures.StMultipolygonfromtext_27e2.Parameters
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multipolygonfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multipolygonfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multipolygonfromtext) );
@@ -13289,7 +13289,7 @@ async call(parameters : Public.Procedures.StMultipolygonfromtextE728.Parameters,
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multipolygonfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multipolygonfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multipolygonfromtext) );
@@ -13309,7 +13309,7 @@ async call(parameters : Public.Procedures.StGeomcollfromtext_27e2.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomcollfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomcollfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomcollfromtext) );
@@ -13329,7 +13329,7 @@ async call(parameters : Public.Procedures.StGeomcollfromtextE728.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomcollfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomcollfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomcollfromtext) );
@@ -13349,7 +13349,7 @@ async call(parameters : Public.Procedures.StGeomfromwkb_2d19.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromwkb) );
@@ -13369,7 +13369,7 @@ async call(parameters : Public.Procedures.StGeomfromwkbD8af.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomfromwkb) );
@@ -13389,7 +13389,7 @@ async call(parameters : Public.Procedures.StPointfromwkbD8af.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_pointfromwkb) );
@@ -13409,7 +13409,7 @@ async call(parameters : Public.Procedures.StPointfromwkb_2d19.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_pointfromwkb) );
@@ -13429,7 +13429,7 @@ async call(parameters : Public.Procedures.StLinefromwkbD8af.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linefromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linefromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linefromwkb) );
@@ -13449,7 +13449,7 @@ async call(parameters : Public.Procedures.StLinefromwkb_2d19.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linefromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linefromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linefromwkb) );
@@ -13469,7 +13469,7 @@ async call(parameters : Public.Procedures.StLinestringfromwkbD8af.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linestringfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linestringfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linestringfromwkb) );
@@ -13489,7 +13489,7 @@ async call(parameters : Public.Procedures.StLinestringfromwkb_2d19.Parameters, o
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linestringfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linestringfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linestringfromwkb) );
@@ -13509,7 +13509,7 @@ async call(parameters : Public.Procedures.StPolyfromwkbD8af.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_polyfromwkb) );
@@ -13529,7 +13529,7 @@ async call(parameters : Public.Procedures.StPolyfromwkb_2d19.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_polyfromwkb) );
@@ -13549,7 +13549,7 @@ async call(parameters : Public.Procedures.StPolygonfromwkbD8af.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polygonfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polygonfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_polygonfromwkb) );
@@ -13569,7 +13569,7 @@ async call(parameters : Public.Procedures.StPolygonfromwkb_2d19.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polygonfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polygonfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_polygonfromwkb) );
@@ -13589,7 +13589,7 @@ async call(parameters : Public.Procedures.StMpointfromwkbD8af.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mpointfromwkb) );
@@ -13609,7 +13609,7 @@ async call(parameters : Public.Procedures.StMpointfromwkb_2d19.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mpointfromwkb) );
@@ -13629,7 +13629,7 @@ async call(parameters : Public.Procedures.StMultipointfromwkbD8af.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multipointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multipointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multipointfromwkb) );
@@ -13649,7 +13649,7 @@ async call(parameters : Public.Procedures.GeographyAnalyze.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_analyze( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_analyze( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_analyze) );
@@ -13669,7 +13669,7 @@ async call(parameters : Public.Procedures.StMultipointfromwkb_2d19.Parameters, o
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multipointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multipointfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multipointfromwkb) );
@@ -13689,7 +13689,7 @@ async call(parameters : Public.Procedures.StMultilinefromwkb.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multilinefromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multilinefromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multilinefromwkb) );
@@ -13709,7 +13709,7 @@ async call(parameters : Public.Procedures.StMlinefromwkbD8af.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mlinefromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mlinefromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mlinefromwkb) );
@@ -13729,7 +13729,7 @@ async call(parameters : Public.Procedures.StMlinefromwkb_2d19.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mlinefromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mlinefromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mlinefromwkb) );
@@ -13749,7 +13749,7 @@ async call(parameters : Public.Procedures.StMpolyfromwkbD8af.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpolyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpolyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mpolyfromwkb) );
@@ -13769,7 +13769,7 @@ async call(parameters : Public.Procedures.StMpolyfromwkb_2d19.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpolyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_mpolyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_mpolyfromwkb) );
@@ -13789,7 +13789,7 @@ async call(parameters : Public.Procedures.StMultipolyfromwkbD8af.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multipolyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multipolyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multipolyfromwkb) );
@@ -13809,7 +13809,7 @@ async call(parameters : Public.Procedures.StMultipolyfromwkb_2d19.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multipolyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_multipolyfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_multipolyfromwkb) );
@@ -13829,7 +13829,7 @@ async call(parameters : Public.Procedures.StGeomcollfromwkbD8af.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomcollfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomcollfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomcollfromwkb) );
@@ -13849,7 +13849,7 @@ async call(parameters : Public.Procedures.StGeomcollfromwkb_2d19.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomcollfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geomcollfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_geomcollfromwkb) );
@@ -13869,7 +13869,7 @@ async call(parameters : Public.Procedures.StMaxdistance.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_maxdistance(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_maxdistance(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_maxdistance) );
@@ -13889,7 +13889,7 @@ async call(parameters : Public.Procedures.StClosestpointBf41.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_closestpoint(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_closestpoint(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_closestpoint) );
@@ -13909,7 +13909,7 @@ async call(parameters : Public.Procedures.StShortestlineBf41.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_shortestline(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_shortestline(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_shortestline) );
@@ -13929,7 +13929,7 @@ async call(parameters : Public.Procedures.StLongestline.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_longestline(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_longestline(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_longestline) );
@@ -13949,7 +13949,7 @@ async call(parameters : Public.Procedures.StSwapordinates.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_swapordinates(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },ords => ${ typed[2275](undefinedIsNull(parameters.ords)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_swapordinates(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },ords => ${ typed[2275](undefinedIsNull(parameters.ords)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_swapordinates) );
@@ -13969,7 +13969,7 @@ async call(parameters : Public.Procedures.StFlipcoordinates.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_flipcoordinates( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_flipcoordinates( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_flipcoordinates) );
@@ -13989,7 +13989,7 @@ async call(parameters : Public.Procedures.StBdpolyfromtext.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_bdpolyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_bdpolyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_bdpolyfromtext) );
@@ -14009,7 +14009,7 @@ async call(parameters : Public.Procedures.StBdmpolyfromtext.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_bdmpolyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_bdmpolyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_bdmpolyfromtext) );
@@ -14029,7 +14029,7 @@ async call(parameters : Public.Procedures.Unlockrows.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.unlockrows( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.unlockrows( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].unlockrows) );
@@ -14049,7 +14049,7 @@ async call(parameters : Public.Procedures.GeographyD5f8.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) }, ${ typed[16](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].geography) );
@@ -14069,7 +14069,7 @@ async call(parameters : Public.Procedures.Geography_2d19.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].geography) );
@@ -14089,7 +14089,7 @@ async call(parameters : Public.Procedures.Bytea_1e8e.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.bytea( ${ typed[36636](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.bytea( ${ typed[36636](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].bytea) );
@@ -14109,7 +14109,7 @@ async call(parameters : Public.Procedures.StAstext_1e8e.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_astext( ${ typed[36636](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_astext( ${ typed[36636](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_astext) );
@@ -14129,7 +14129,7 @@ async call(parameters : Public.Procedures.StAstextD8b5.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_astext( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_astext( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_astext) );
@@ -14149,7 +14149,7 @@ async call(parameters : Public.Procedures.LockrowE9aa.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.lockrow( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[25](undefinedIsNull(parameters.argument_3)) }, ${ typed[1114](undefinedIsNull(parameters.argument_4)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.lockrow( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[25](undefinedIsNull(parameters.argument_3)) }, ${ typed[1114](undefinedIsNull(parameters.argument_4)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].lockrow) );
@@ -14169,7 +14169,7 @@ async call(parameters : Public.Procedures.Lockrow_02b4.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.lockrow( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[25](undefinedIsNull(parameters.argument_3)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.lockrow( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[25](undefinedIsNull(parameters.argument_3)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].lockrow) );
@@ -14189,7 +14189,7 @@ async call(parameters : Public.Procedures.Lockrow_27e1.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.lockrow( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.lockrow( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].lockrow) );
@@ -14209,7 +14209,7 @@ async call(parameters : Public.Procedures.Lockrow_9a8a.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.lockrow( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[1114](undefinedIsNull(parameters.argument_3)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.lockrow( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) }, ${ typed[1114](undefinedIsNull(parameters.argument_3)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].lockrow) );
@@ -14229,7 +14229,7 @@ async call(parameters : Public.Procedures.Addauth.Parameters, options?: InvokeQu
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.addauth( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.addauth( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].addauth) );
@@ -14249,7 +14249,7 @@ async call(parameters : Public.Procedures.Checkauth_27e1.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.checkauth( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.checkauth( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].checkauth) );
@@ -14269,7 +14269,7 @@ async call(parameters : Public.Procedures.Checkauth_2ec2.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.checkauth( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.checkauth( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].checkauth) );
@@ -14289,7 +14289,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.checkauthtrigger()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.checkauthtrigger()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Trigger.parse(results?.[0].checkauthtrigger) );
@@ -14309,7 +14309,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.gettransactionid()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.gettransactionid()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Xid.parse(results?.[0].gettransactionid) );
@@ -14329,7 +14329,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.enablelongtransactions()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.enablelongtransactions()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].enablelongtransactions) );
@@ -14349,7 +14349,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.longtransactionsenabled()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.longtransactionsenabled()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].longtransactionsenabled) );
@@ -14369,7 +14369,7 @@ async call(options?: InvokeQueryOptions) {
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.disablelongtransactions()`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.disablelongtransactions()`, {options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].disablelongtransactions) );
@@ -14389,7 +14389,7 @@ async call(parameters : Public.Procedures.GeographyTypmodIn.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_typmod_in( ${ typed[1263](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_typmod_in( ${ typed[1263](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].geography_typmod_in) );
@@ -14409,7 +14409,7 @@ async call(parameters : Public.Procedures.GeographyTypmodOut.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_typmod_out( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_typmod_out( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].geography_typmod_out) );
@@ -14429,7 +14429,7 @@ async call(parameters : Public.Procedures.GeographyIn.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_in( ${ typed[2275](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].geography_in) );
@@ -14449,7 +14449,7 @@ async call(parameters : Public.Procedures.GeographyOut.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_out( ${ typed[36636](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_out( ${ typed[36636](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Cstring.parse(results?.[0].geography_out) );
@@ -14469,7 +14469,7 @@ async call(parameters : Public.Procedures.GeographyRecv.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_recv( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_recv( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[26](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].geography_recv) );
@@ -14489,7 +14489,7 @@ async call(parameters : Public.Procedures.GeographySend.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_send( ${ typed[36636](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_send( ${ typed[36636](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].geography_send) );
@@ -14509,7 +14509,7 @@ async call(parameters : Public.Procedures.StAstextE728.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_astext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_astext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_astext) );
@@ -14529,7 +14529,7 @@ async call(parameters : Public.Procedures.StGeographyfromtext.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geographyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geographyfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_geographyfromtext) );
@@ -14549,7 +14549,7 @@ async call(parameters : Public.Procedures.StGeogfromtext.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geogfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geogfromtext( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_geogfromtext) );
@@ -14569,7 +14569,7 @@ async call(parameters : Public.Procedures.StGeogfromwkb.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geogfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geogfromwkb( ${ typed[17](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_geogfromwkb) );
@@ -14589,7 +14589,7 @@ async call(parameters : Public.Procedures.PostgisTypmodDims.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_typmod_dims( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_typmod_dims( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].postgis_typmod_dims) );
@@ -14609,7 +14609,7 @@ async call(parameters : Public.Procedures.PostgisTypmodSrid.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_typmod_srid( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_typmod_srid( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].postgis_typmod_srid) );
@@ -14629,7 +14629,7 @@ async call(parameters : Public.Procedures.PostgisTypmodType.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_typmod_type( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_typmod_type( ${ typed[23](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].postgis_typmod_type) );
@@ -14649,7 +14649,7 @@ async call(parameters : Public.Procedures.Geography_5277.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography( ${ typed[35930](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].geography) );
@@ -14669,7 +14669,7 @@ async call(parameters : Public.Procedures.Geometry_1e8e.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[36636](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry( ${ typed[36636](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].geometry) );
@@ -14689,7 +14689,7 @@ async call(parameters : Public.Procedures.GeographyGistConsistent.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_consistent( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_gist_consistent) );
@@ -14709,7 +14709,7 @@ async call(parameters : Public.Procedures.GeographyGistCompress.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_compress( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_compress( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geography_gist_compress) );
@@ -14729,7 +14729,7 @@ async call(parameters : Public.Procedures.GeographyGistPenalty.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_penalty( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_penalty( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geography_gist_penalty) );
@@ -14749,7 +14749,7 @@ async call(parameters : Public.Procedures.GeographyGistPicksplit.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_picksplit( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_picksplit( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geography_gist_picksplit) );
@@ -14769,7 +14769,7 @@ async call(parameters : Public.Procedures.GeographyGistUnion.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_union( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_union( ${ typed[17](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geography_gist_union) );
@@ -14789,7 +14789,7 @@ async call(parameters : Public.Procedures.GeographyGistSame.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_same( ${ typed[35961](undefinedIsNull(parameters.argument_0)) }, ${ typed[35961](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_same( ${ typed[35961](undefinedIsNull(parameters.argument_0)) }, ${ typed[35961](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geography_gist_same) );
@@ -14809,7 +14809,7 @@ async call(parameters : Public.Procedures.GeographyGistDecompress.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_decompress( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_decompress( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geography_gist_decompress) );
@@ -14829,7 +14829,7 @@ async call(parameters : Public.Procedures.GeographyOverlaps.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_overlaps( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_overlaps( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_overlaps) );
@@ -14849,7 +14849,7 @@ async call(parameters : Public.Procedures.GeographyDistanceKnn.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_distance_knn( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_distance_knn( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geography_distance_knn) );
@@ -14869,7 +14869,7 @@ async call(parameters : Public.Procedures.GeographyGistDistance.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_distance( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gist_distance( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].geography_gist_distance) );
@@ -14889,7 +14889,7 @@ async call(parameters : Public.Procedures.OverlapsGeogEfa0.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_geog( ${ typed[35969](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_geog( ${ typed[35969](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_geog) );
@@ -14909,7 +14909,7 @@ async call(parameters : Public.Procedures.OverlapsGeogD963.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_geog( ${ typed[35969](undefinedIsNull(parameters.argument_0)) }, ${ typed[35969](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_geog( ${ typed[35969](undefinedIsNull(parameters.argument_0)) }, ${ typed[35969](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_geog) );
@@ -14929,7 +14929,7 @@ async call(parameters : Public.Procedures.OverlapsGeog_7769.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_geog( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[35969](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_geog( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[35969](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_geog) );
@@ -14949,7 +14949,7 @@ async call(parameters : Public.Procedures.GeogBrinInclusionAddValue.Parameters, 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geog_brin_inclusion_add_value( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[2281](undefinedIsNull(parameters.argument_3)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geog_brin_inclusion_add_value( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[2281](undefinedIsNull(parameters.argument_3)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geog_brin_inclusion_add_value) );
@@ -14969,7 +14969,7 @@ async call(parameters : Public.Procedures.GeographyLt.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_lt( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_lt( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_lt) );
@@ -14989,7 +14989,7 @@ async call(parameters : Public.Procedures.GeographyLe.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_le( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_le( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_le) );
@@ -15009,7 +15009,7 @@ async call(parameters : Public.Procedures.GeographyGt.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gt( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_gt( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_gt) );
@@ -15029,7 +15029,7 @@ async call(parameters : Public.Procedures.GeographyGe.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_ge( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_ge( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_ge) );
@@ -15049,7 +15049,7 @@ async call(parameters : Public.Procedures.GeographyEq.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_eq( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_eq( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_eq) );
@@ -15069,7 +15069,7 @@ async call(parameters : Public.Procedures.GeographyCmp.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_cmp( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_cmp( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].geography_cmp) );
@@ -15089,7 +15089,7 @@ async call(parameters : Public.Procedures.StAssvgE7fc.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_assvg(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },rel => ${ typed[23](undefinedIsNull(parameters.rel)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_assvg(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },rel => ${ typed[23](undefinedIsNull(parameters.rel)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_assvg) );
@@ -15109,7 +15109,7 @@ async call(parameters : Public.Procedures.StAssvgE728.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_assvg( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_assvg( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_assvg) );
@@ -15129,7 +15129,7 @@ async call(parameters : Public.Procedures.StProject_28a9.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_project(geog_from => ${ typed[36636](undefinedIsNull(parameters.geogFrom)) },geog_to => ${ typed[36636](undefinedIsNull(parameters.geogTo)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_project(geog_from => ${ typed[36636](undefinedIsNull(parameters.geogFrom)) },geog_to => ${ typed[36636](undefinedIsNull(parameters.geogTo)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_project) );
@@ -15149,7 +15149,7 @@ async call(parameters : Public.Procedures.StAzimuth_295b.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_azimuth(geog1 => ${ typed[36636](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[36636](undefinedIsNull(parameters.geog2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_azimuth(geog1 => ${ typed[36636](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[36636](undefinedIsNull(parameters.geog2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_azimuth) );
@@ -15169,7 +15169,7 @@ async call(parameters : Public.Procedures.StBuffer_49f7.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_buffer) );
@@ -15189,7 +15189,7 @@ async call(parameters : Public.Procedures.StAsgml_4ee1.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgml(version => ${ typed[23](undefinedIsNull(parameters.version)) },geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) },id => ${ typed[25](undefinedIsNull(parameters.id)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgml(version => ${ typed[23](undefinedIsNull(parameters.version)) },geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) },id => ${ typed[25](undefinedIsNull(parameters.id)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgml) );
@@ -15209,7 +15209,7 @@ async call(parameters : Public.Procedures.StAsgmlCb44.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgml(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) },id => ${ typed[25](undefinedIsNull(parameters.id)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgml(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) },id => ${ typed[25](undefinedIsNull(parameters.id)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgml) );
@@ -15229,7 +15229,7 @@ async call(parameters : Public.Procedures.StAsgmlE728.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgml( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgml( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgml) );
@@ -15249,7 +15249,7 @@ async call(parameters : Public.Procedures.StAskml_5ad8.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_askml(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_askml(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },nprefix => ${ typed[25](undefinedIsNull(parameters.nprefix)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_askml) );
@@ -15269,7 +15269,7 @@ async call(parameters : Public.Procedures.StAskmlE728.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_askml( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_askml( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_askml) );
@@ -15289,7 +15289,7 @@ async call(parameters : Public.Procedures.StAsgeojsonE7fc.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgeojson(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgeojson(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgeojson) );
@@ -15309,7 +15309,7 @@ async call(parameters : Public.Procedures.StAsgeojsonE728.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgeojson( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asgeojson( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asgeojson) );
@@ -15329,7 +15329,7 @@ async call(parameters : Public.Procedures.StDistance_2b13.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distance(geog1 => ${ typed[36636](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[36636](undefinedIsNull(parameters.geog2)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distance(geog1 => ${ typed[36636](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[36636](undefinedIsNull(parameters.geog2)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distance) );
@@ -15349,7 +15349,7 @@ async call(parameters : Public.Procedures.StDistance_2ec2.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distance( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distance( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distance) );
@@ -15369,7 +15369,7 @@ async call(parameters : Public.Procedures.StAreaD2bb.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_area(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_area(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_area) );
@@ -15389,7 +15389,7 @@ async call(parameters : Public.Procedures.StAreaE728.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_area( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_area( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_area) );
@@ -15409,7 +15409,7 @@ async call(parameters : Public.Procedures.StLengthD2bb.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_length(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_length(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_length) );
@@ -15429,7 +15429,7 @@ async call(parameters : Public.Procedures.StLengthE728.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_length( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_length( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_length) );
@@ -15449,7 +15449,7 @@ async call(parameters : Public.Procedures.StProjectB38d.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_project(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) },azimuth => ${ typed[701](undefinedIsNull(parameters.azimuth)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_project(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },distance => ${ typed[701](undefinedIsNull(parameters.distance)) },azimuth => ${ typed[701](undefinedIsNull(parameters.azimuth)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_project) );
@@ -15469,7 +15469,7 @@ async call(parameters : Public.Procedures.StPerimeterD2bb.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_perimeter(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_perimeter(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_perimeter) );
@@ -15489,7 +15489,7 @@ async call(parameters : Public.Procedures.StSegmentize_02c9.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_segmentize(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },max_segment_length => ${ typed[701](undefinedIsNull(parameters.maxSegmentLength)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_segmentize(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },max_segment_length => ${ typed[701](undefinedIsNull(parameters.maxSegmentLength)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_segmentize) );
@@ -15509,7 +15509,7 @@ async call(parameters : Public.Procedures.StAsbinary_1e8e.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asbinary( ${ typed[36636](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asbinary( ${ typed[36636](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_asbinary) );
@@ -15529,7 +15529,7 @@ async call(parameters : Public.Procedures.StAsbinaryEb1f.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asbinary( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asbinary( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bytea.parse(results?.[0].st_asbinary) );
@@ -15549,7 +15549,7 @@ async call(parameters : Public.Procedures.StAsewkt_1e8e.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asewkt( ${ typed[36636](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asewkt( ${ typed[36636](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asewkt) );
@@ -15569,7 +15569,7 @@ async call(parameters : Public.Procedures.StAsewktD8b5.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asewkt( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asewkt( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asewkt) );
@@ -15589,7 +15589,7 @@ async call(parameters : Public.Procedures.StAsewktE728.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asewkt( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asewkt( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asewkt) );
@@ -15609,7 +15609,7 @@ async call(parameters : Public.Procedures.Geometrytype_1e8e.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometrytype( ${ typed[36636](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometrytype( ${ typed[36636](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].geometrytype) );
@@ -15629,7 +15629,7 @@ async call(parameters : Public.Procedures.StSummary_1e8e.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_summary( ${ typed[36636](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_summary( ${ typed[36636](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_summary) );
@@ -15649,7 +15649,7 @@ async call(parameters : Public.Procedures.StGeohashD8b5.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geohash(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },maxchars => ${ typed[23](undefinedIsNull(parameters.maxchars)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_geohash(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },maxchars => ${ typed[23](undefinedIsNull(parameters.maxchars)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_geohash) );
@@ -15669,7 +15669,7 @@ async call(parameters : Public.Procedures.StSrid_1e8e.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_srid(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_srid(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].st_srid) );
@@ -15689,7 +15689,7 @@ async call(parameters : Public.Procedures.StSetsridD8b5.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_setsrid(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_setsrid(geog => ${ typed[36636](undefinedIsNull(parameters.geog)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_setsrid) );
@@ -15709,7 +15709,7 @@ async call(parameters : Public.Procedures.StCentroidD2bb.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_centroid(argument_0 => ${ typed[36636](undefinedIsNull(parameters.argument_0)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_centroid(argument_0 => ${ typed[36636](undefinedIsNull(parameters.argument_0)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_centroid) );
@@ -15729,7 +15729,7 @@ async call(parameters : Public.Procedures.StCentroidE728.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_centroid( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_centroid( ${ typed[25](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_centroid) );
@@ -15749,7 +15749,7 @@ async call(parameters : Public.Procedures.StCovers_295b.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_covers(geog1 => ${ typed[36636](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[36636](undefinedIsNull(parameters.geog2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_covers(geog1 => ${ typed[36636](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[36636](undefinedIsNull(parameters.geog2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_covers) );
@@ -15769,7 +15769,7 @@ async call(parameters : Public.Procedures.StDwithin_3a74.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dwithin(geog1 => ${ typed[36636](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[36636](undefinedIsNull(parameters.geog2)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dwithin(geog1 => ${ typed[36636](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[36636](undefinedIsNull(parameters.geog2)) },tolerance => ${ typed[701](undefinedIsNull(parameters.tolerance)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_dwithin) );
@@ -15789,7 +15789,7 @@ async call(parameters : Public.Procedures.StCoveredby_295b.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_coveredby(geog1 => ${ typed[36636](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[36636](undefinedIsNull(parameters.geog2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_coveredby(geog1 => ${ typed[36636](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[36636](undefinedIsNull(parameters.geog2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_coveredby) );
@@ -15809,7 +15809,7 @@ async call(parameters : Public.Procedures.StIntersects_295b.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_intersects(geog1 => ${ typed[36636](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[36636](undefinedIsNull(parameters.geog2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_intersects(geog1 => ${ typed[36636](undefinedIsNull(parameters.geog1)) },geog2 => ${ typed[36636](undefinedIsNull(parameters.geog2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_intersects) );
@@ -15829,7 +15829,7 @@ async call(parameters : Public.Procedures.StBuffer_02c9.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_buffer) );
@@ -15849,7 +15849,7 @@ async call(parameters : Public.Procedures.StBuffer_82bb.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[23](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_buffer) );
@@ -15869,7 +15869,7 @@ async call(parameters : Public.Procedures.StBufferF3f5.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_buffer) );
@@ -15889,7 +15889,7 @@ async call(parameters : Public.Procedures.StBufferC349.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_buffer) );
@@ -15909,7 +15909,7 @@ async call(parameters : Public.Procedures.StBufferF7c6.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_buffer( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[25](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_buffer) );
@@ -15929,7 +15929,7 @@ async call(parameters : Public.Procedures.StIntersection_295b.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_intersection( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_intersection( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[36636](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_intersection) );
@@ -15949,7 +15949,7 @@ async call(parameters : Public.Procedures.StIntersection_2ec2.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_intersection( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_intersection( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_intersection) );
@@ -15969,7 +15969,7 @@ async call(parameters : Public.Procedures.StCovers_2ec2.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_covers( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_covers( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_covers) );
@@ -15989,7 +15989,7 @@ async call(parameters : Public.Procedures.StCoveredby_2ec2.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_coveredby( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_coveredby( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_coveredby) );
@@ -16009,7 +16009,7 @@ async call(parameters : Public.Procedures.StDwithinEfc0.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dwithin( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_dwithin( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_dwithin) );
@@ -16029,7 +16029,7 @@ async call(parameters : Public.Procedures.StIntersects_2ec2.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_intersects( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_intersects( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_intersects) );
@@ -16049,7 +16049,7 @@ async call(parameters : Public.Procedures.StClosestpoint_2b13.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_closestpoint(argument_0 => ${ typed[36636](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[36636](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_closestpoint(argument_0 => ${ typed[36636](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[36636](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_closestpoint) );
@@ -16069,7 +16069,7 @@ async call(parameters : Public.Procedures.StClosestpoint_2ec2.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_closestpoint( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_closestpoint( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_closestpoint) );
@@ -16089,7 +16089,7 @@ async call(parameters : Public.Procedures.StShortestline_2b13.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_shortestline(argument_0 => ${ typed[36636](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[36636](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_shortestline(argument_0 => ${ typed[36636](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[36636](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_shortestline) );
@@ -16109,7 +16109,7 @@ async call(parameters : Public.Procedures.StShortestline_2ec2.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_shortestline( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_shortestline( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_shortestline) );
@@ -16129,7 +16129,7 @@ async call(parameters : Public.Procedures.StLinesubstringB38d.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linesubstring( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linesubstring( ${ typed[36636](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_linesubstring) );
@@ -16149,7 +16149,7 @@ async call(parameters : Public.Procedures.StLinesubstringE586.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linesubstring( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linesubstring( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) }, ${ typed[701](undefinedIsNull(parameters.argument_2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linesubstring) );
@@ -16169,7 +16169,7 @@ async call(parameters : Public.Procedures.StLinelocatepoint_2b13.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linelocatepoint(argument_0 => ${ typed[36636](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[36636](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linelocatepoint(argument_0 => ${ typed[36636](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[36636](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_linelocatepoint) );
@@ -16189,7 +16189,7 @@ async call(parameters : Public.Procedures.StLinelocatepoint_2ec2.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linelocatepoint( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linelocatepoint( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[25](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_linelocatepoint) );
@@ -16209,7 +16209,7 @@ async call(parameters : Public.Procedures.StLineinterpolatepointsE01a.Parameters
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lineinterpolatepoints(argument_0 => ${ typed[36636](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[701](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) },repeat => ${ typed[16](undefinedIsNull(parameters.repeat)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lineinterpolatepoints(argument_0 => ${ typed[36636](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[701](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) },repeat => ${ typed[16](undefinedIsNull(parameters.repeat)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_lineinterpolatepoints) );
@@ -16229,7 +16229,7 @@ async call(parameters : Public.Procedures.StLineinterpolatepointsC349.Parameters
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lineinterpolatepoints( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lineinterpolatepoints( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_lineinterpolatepoints) );
@@ -16249,7 +16249,7 @@ async call(parameters : Public.Procedures.StLineinterpolatepointE362.Parameters,
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lineinterpolatepoint(argument_0 => ${ typed[36636](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[701](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lineinterpolatepoint(argument_0 => ${ typed[36636](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[701](undefinedIsNull(parameters.argument_1)) },use_spheroid => ${ typed[16](undefinedIsNull(parameters.useSpheroid)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geography.parse(results?.[0].st_lineinterpolatepoint) );
@@ -16269,7 +16269,7 @@ async call(parameters : Public.Procedures.StLineinterpolatepointC349.Parameters,
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lineinterpolatepoint( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_lineinterpolatepoint( ${ typed[25](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_lineinterpolatepoint) );
@@ -16289,7 +16289,7 @@ async call(parameters : Public.Procedures.StDistancesphereBf41.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distancesphere(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distancesphere(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distancesphere) );
@@ -16309,7 +16309,7 @@ async call(parameters : Public.Procedures.StDistancesphere_0130.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distancesphere(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },radius => ${ typed[701](undefinedIsNull(parameters.radius)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_distancesphere(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) },radius => ${ typed[701](undefinedIsNull(parameters.radius)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_distancesphere) );
@@ -16329,7 +16329,7 @@ async call(parameters : Public.Procedures.PostgisTypeName.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_type_name(geomname => ${ typed[1043](undefinedIsNull(parameters.geomname)) },coord_dimension => ${ typed[23](undefinedIsNull(parameters.coordDimension)) },use_new_name => ${ typed[16](undefinedIsNull(parameters.useNewName)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_type_name(geomname => ${ typed[1043](undefinedIsNull(parameters.geomname)) },coord_dimension => ${ typed[23](undefinedIsNull(parameters.coordDimension)) },use_new_name => ${ typed[16](undefinedIsNull(parameters.useNewName)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Varchar.parse(results?.[0].postgis_type_name) );
@@ -16349,7 +16349,7 @@ async call(parameters : Public.Procedures.PostgisConstraintSrid.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_constraint_srid(geomschema => ${ typed[25](undefinedIsNull(parameters.geomschema)) },geomtable => ${ typed[25](undefinedIsNull(parameters.geomtable)) },geomcolumn => ${ typed[25](undefinedIsNull(parameters.geomcolumn)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_constraint_srid(geomschema => ${ typed[25](undefinedIsNull(parameters.geomschema)) },geomtable => ${ typed[25](undefinedIsNull(parameters.geomtable)) },geomcolumn => ${ typed[25](undefinedIsNull(parameters.geomcolumn)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].postgis_constraint_srid) );
@@ -16369,7 +16369,7 @@ async call(parameters : Public.Procedures.PostgisConstraintDims.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_constraint_dims(geomschema => ${ typed[25](undefinedIsNull(parameters.geomschema)) },geomtable => ${ typed[25](undefinedIsNull(parameters.geomtable)) },geomcolumn => ${ typed[25](undefinedIsNull(parameters.geomcolumn)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_constraint_dims(geomschema => ${ typed[25](undefinedIsNull(parameters.geomschema)) },geomtable => ${ typed[25](undefinedIsNull(parameters.geomtable)) },geomcolumn => ${ typed[25](undefinedIsNull(parameters.geomcolumn)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].postgis_constraint_dims) );
@@ -16389,7 +16389,7 @@ async call(parameters : Public.Procedures.PostgisConstraintType.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_constraint_type(geomschema => ${ typed[25](undefinedIsNull(parameters.geomschema)) },geomtable => ${ typed[25](undefinedIsNull(parameters.geomtable)) },geomcolumn => ${ typed[25](undefinedIsNull(parameters.geomcolumn)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.postgis_constraint_type(geomschema => ${ typed[25](undefinedIsNull(parameters.geomschema)) },geomtable => ${ typed[25](undefinedIsNull(parameters.geomtable)) },geomcolumn => ${ typed[25](undefinedIsNull(parameters.geomcolumn)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Varchar.parse(results?.[0].postgis_constraint_type) );
@@ -16409,7 +16409,7 @@ async call(parameters : Public.Procedures.St_3ddistance.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3ddistance(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3ddistance(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_3ddistance) );
@@ -16429,7 +16429,7 @@ async call(parameters : Public.Procedures.St_3dmaxdistance.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dmaxdistance(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dmaxdistance(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_3dmaxdistance) );
@@ -16449,7 +16449,7 @@ async call(parameters : Public.Procedures.St_3dclosestpoint.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dclosestpoint(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dclosestpoint(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_3dclosestpoint) );
@@ -16469,7 +16469,7 @@ async call(parameters : Public.Procedures.St_3dshortestline.Parameters, options?
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dshortestline(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dshortestline(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_3dshortestline) );
@@ -16489,7 +16489,7 @@ async call(parameters : Public.Procedures.St_3dlongestline.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dlongestline(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dlongestline(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_3dlongestline) );
@@ -16509,7 +16509,7 @@ async call(parameters : Public.Procedures.StCoorddim.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_coorddim(geometry => ${ typed[35930](undefinedIsNull(parameters.geometry)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_coorddim(geometry => ${ typed[35930](undefinedIsNull(parameters.geometry)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int2.parse(results?.[0].st_coorddim) );
@@ -16529,7 +16529,7 @@ async call(parameters : Public.Procedures.StCurvetoline.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_curvetoline(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },tol => ${ typed[701](undefinedIsNull(parameters.tol)) },toltype => ${ typed[23](undefinedIsNull(parameters.toltype)) },flags => ${ typed[23](undefinedIsNull(parameters.flags)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_curvetoline(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },tol => ${ typed[701](undefinedIsNull(parameters.tol)) },toltype => ${ typed[23](undefinedIsNull(parameters.toltype)) },flags => ${ typed[23](undefinedIsNull(parameters.flags)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_curvetoline) );
@@ -16549,7 +16549,7 @@ async call(parameters : Public.Procedures.StHasarc.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_hasarc(geometry => ${ typed[35930](undefinedIsNull(parameters.geometry)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_hasarc(geometry => ${ typed[35930](undefinedIsNull(parameters.geometry)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].st_hasarc) );
@@ -16569,7 +16569,7 @@ async call(parameters : Public.Procedures.StLinetocurve.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linetocurve(geometry => ${ typed[35930](undefinedIsNull(parameters.geometry)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_linetocurve(geometry => ${ typed[35930](undefinedIsNull(parameters.geometry)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_linetocurve) );
@@ -16589,7 +16589,7 @@ async call(parameters : Public.Procedures.StPoint_0aec.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_point( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_point( ${ typed[701](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_point) );
@@ -16609,7 +16609,7 @@ async call(parameters : Public.Procedures.StPoint_0b7f.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_point(argument_0 => ${ typed[701](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[701](undefinedIsNull(parameters.argument_1)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_point(argument_0 => ${ typed[701](undefinedIsNull(parameters.argument_0)) },argument_1 => ${ typed[701](undefinedIsNull(parameters.argument_1)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_point) );
@@ -16629,7 +16629,7 @@ async call(parameters : Public.Procedures.StPointz.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointz(xcoordinate => ${ typed[701](undefinedIsNull(parameters.xcoordinate)) },ycoordinate => ${ typed[701](undefinedIsNull(parameters.ycoordinate)) },zcoordinate => ${ typed[701](undefinedIsNull(parameters.zcoordinate)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointz(xcoordinate => ${ typed[701](undefinedIsNull(parameters.xcoordinate)) },ycoordinate => ${ typed[701](undefinedIsNull(parameters.ycoordinate)) },zcoordinate => ${ typed[701](undefinedIsNull(parameters.zcoordinate)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_pointz) );
@@ -16649,7 +16649,7 @@ async call(parameters : Public.Procedures.StPointm.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointm(xcoordinate => ${ typed[701](undefinedIsNull(parameters.xcoordinate)) },ycoordinate => ${ typed[701](undefinedIsNull(parameters.ycoordinate)) },mcoordinate => ${ typed[701](undefinedIsNull(parameters.mcoordinate)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointm(xcoordinate => ${ typed[701](undefinedIsNull(parameters.xcoordinate)) },ycoordinate => ${ typed[701](undefinedIsNull(parameters.ycoordinate)) },mcoordinate => ${ typed[701](undefinedIsNull(parameters.mcoordinate)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_pointm) );
@@ -16669,7 +16669,7 @@ async call(parameters : Public.Procedures.StPointzm.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointzm(xcoordinate => ${ typed[701](undefinedIsNull(parameters.xcoordinate)) },ycoordinate => ${ typed[701](undefinedIsNull(parameters.ycoordinate)) },zcoordinate => ${ typed[701](undefinedIsNull(parameters.zcoordinate)) },mcoordinate => ${ typed[701](undefinedIsNull(parameters.mcoordinate)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_pointzm(xcoordinate => ${ typed[701](undefinedIsNull(parameters.xcoordinate)) },ycoordinate => ${ typed[701](undefinedIsNull(parameters.ycoordinate)) },zcoordinate => ${ typed[701](undefinedIsNull(parameters.zcoordinate)) },mcoordinate => ${ typed[701](undefinedIsNull(parameters.mcoordinate)) },srid => ${ typed[23](undefinedIsNull(parameters.srid)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_pointzm) );
@@ -16689,7 +16689,7 @@ async call(parameters : Public.Procedures.StPolygon.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polygon( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_polygon( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[23](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_polygon) );
@@ -16709,7 +16709,7 @@ async call(parameters : Public.Procedures.StWkbtosql.Parameters, options?: Invok
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_wkbtosql(wkb => ${ typed[17](undefinedIsNull(parameters.wkb)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_wkbtosql(wkb => ${ typed[17](undefinedIsNull(parameters.wkb)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_wkbtosql) );
@@ -16729,7 +16729,7 @@ async call(parameters : Public.Procedures.StLocatebetween.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_locatebetween(geometry => ${ typed[35930](undefinedIsNull(parameters.geometry)) },frommeasure => ${ typed[701](undefinedIsNull(parameters.frommeasure)) },tomeasure => ${ typed[701](undefinedIsNull(parameters.tomeasure)) },leftrightoffset => ${ typed[701](undefinedIsNull(parameters.leftrightoffset)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_locatebetween(geometry => ${ typed[35930](undefinedIsNull(parameters.geometry)) },frommeasure => ${ typed[701](undefinedIsNull(parameters.frommeasure)) },tomeasure => ${ typed[701](undefinedIsNull(parameters.tomeasure)) },leftrightoffset => ${ typed[701](undefinedIsNull(parameters.leftrightoffset)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_locatebetween) );
@@ -16749,7 +16749,7 @@ async call(parameters : Public.Procedures.StLocatealong.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_locatealong(geometry => ${ typed[35930](undefinedIsNull(parameters.geometry)) },measure => ${ typed[701](undefinedIsNull(parameters.measure)) },leftrightoffset => ${ typed[701](undefinedIsNull(parameters.leftrightoffset)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_locatealong(geometry => ${ typed[35930](undefinedIsNull(parameters.geometry)) },measure => ${ typed[701](undefinedIsNull(parameters.measure)) },leftrightoffset => ${ typed[701](undefinedIsNull(parameters.leftrightoffset)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_locatealong) );
@@ -16769,7 +16769,7 @@ async call(parameters : Public.Procedures.StLocatebetweenelevations.Parameters, 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_locatebetweenelevations(geometry => ${ typed[35930](undefinedIsNull(parameters.geometry)) },fromelevation => ${ typed[701](undefinedIsNull(parameters.fromelevation)) },toelevation => ${ typed[701](undefinedIsNull(parameters.toelevation)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_locatebetweenelevations(geometry => ${ typed[35930](undefinedIsNull(parameters.geometry)) },fromelevation => ${ typed[701](undefinedIsNull(parameters.fromelevation)) },toelevation => ${ typed[701](undefinedIsNull(parameters.toelevation)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_locatebetweenelevations) );
@@ -16789,7 +16789,7 @@ async call(parameters : Public.Procedures.StInterpolatepoint.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_interpolatepoint(line => ${ typed[35930](undefinedIsNull(parameters.line)) },point => ${ typed[35930](undefinedIsNull(parameters.point)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_interpolatepoint(line => ${ typed[35930](undefinedIsNull(parameters.line)) },point => ${ typed[35930](undefinedIsNull(parameters.point)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_interpolatepoint) );
@@ -16809,7 +16809,7 @@ async call(parameters : Public.Procedures.StHexagon.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_hexagon(size => ${ typed[701](undefinedIsNull(parameters.size)) },cell_i => ${ typed[23](undefinedIsNull(parameters.cellI)) },cell_j => ${ typed[23](undefinedIsNull(parameters.cellJ)) },origin => ${ typed[35930](undefinedIsNull(parameters.origin)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_hexagon(size => ${ typed[701](undefinedIsNull(parameters.size)) },cell_i => ${ typed[23](undefinedIsNull(parameters.cellI)) },cell_j => ${ typed[23](undefinedIsNull(parameters.cellJ)) },origin => ${ typed[35930](undefinedIsNull(parameters.origin)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_hexagon) );
@@ -16829,7 +16829,7 @@ async call(parameters : Public.Procedures.StSquare.Parameters, options?: InvokeQ
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_square(size => ${ typed[701](undefinedIsNull(parameters.size)) },cell_i => ${ typed[23](undefinedIsNull(parameters.cellI)) },cell_j => ${ typed[23](undefinedIsNull(parameters.cellJ)) },origin => ${ typed[35930](undefinedIsNull(parameters.origin)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_square(size => ${ typed[701](undefinedIsNull(parameters.size)) },cell_i => ${ typed[23](undefinedIsNull(parameters.cellI)) },cell_j => ${ typed[23](undefinedIsNull(parameters.cellJ)) },origin => ${ typed[35930](undefinedIsNull(parameters.origin)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_square) );
@@ -16848,7 +16848,7 @@ async call(parameters : Public.Procedures.StHexagongrid.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_hexagongrid(size => ${ typed[701](undefinedIsNull(parameters.size)) },bounds => ${ typed[35930](undefinedIsNull(parameters.bounds)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_hexagongrid(size => ${ typed[701](undefinedIsNull(parameters.size)) },bounds => ${ typed[35930](undefinedIsNull(parameters.bounds)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_hexagongrid)).filter<Public.Types.StHexagongrid>((r):r is Public.Types.StHexagongrid => r !== null) );
@@ -16867,7 +16867,7 @@ async call(parameters : Public.Procedures.StSquaregrid.Parameters, options?: Inv
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_squaregrid(size => ${ typed[701](undefinedIsNull(parameters.size)) },bounds => ${ typed[35930](undefinedIsNull(parameters.bounds)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_squaregrid(size => ${ typed[701](undefinedIsNull(parameters.size)) },bounds => ${ typed[35930](undefinedIsNull(parameters.bounds)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.st_squaregrid)).filter<Public.Types.StSquaregrid>((r):r is Public.Types.StSquaregrid => r !== null) );
@@ -16887,7 +16887,7 @@ async call(parameters : Public.Procedures.Contains_2d_9ef0.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.contains_2d( ${ typed[35965](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.contains_2d( ${ typed[35965](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].contains_2d) );
@@ -16907,7 +16907,7 @@ async call(parameters : Public.Procedures.IsContained_2d_9ef0.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.is_contained_2d( ${ typed[35965](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.is_contained_2d( ${ typed[35965](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].is_contained_2d) );
@@ -16927,7 +16927,7 @@ async call(parameters : Public.Procedures.Overlaps_2d_9ef0.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_2d( ${ typed[35965](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_2d( ${ typed[35965](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_2d) );
@@ -16947,7 +16947,7 @@ async call(parameters : Public.Procedures.Overlaps_2d_0beb.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_2d( ${ typed[35965](undefinedIsNull(parameters.argument_0)) }, ${ typed[35965](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_2d( ${ typed[35965](undefinedIsNull(parameters.argument_0)) }, ${ typed[35965](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_2d) );
@@ -16967,7 +16967,7 @@ async call(parameters : Public.Procedures.Contains_2d_0beb.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.contains_2d( ${ typed[35965](undefinedIsNull(parameters.argument_0)) }, ${ typed[35965](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.contains_2d( ${ typed[35965](undefinedIsNull(parameters.argument_0)) }, ${ typed[35965](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].contains_2d) );
@@ -16987,7 +16987,7 @@ async call(parameters : Public.Procedures.IsContained_2d_0beb.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.is_contained_2d( ${ typed[35965](undefinedIsNull(parameters.argument_0)) }, ${ typed[35965](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.is_contained_2d( ${ typed[35965](undefinedIsNull(parameters.argument_0)) }, ${ typed[35965](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].is_contained_2d) );
@@ -17007,7 +17007,7 @@ async call(parameters : Public.Procedures.Contains_2dB0b2.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.contains_2d( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35965](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.contains_2d( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35965](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].contains_2d) );
@@ -17027,7 +17027,7 @@ async call(parameters : Public.Procedures.IsContained_2dB0b2.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.is_contained_2d( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35965](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.is_contained_2d( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35965](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].is_contained_2d) );
@@ -17047,7 +17047,7 @@ async call(parameters : Public.Procedures.Overlaps_2dB0b2.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_2d( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35965](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_2d( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35965](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_2d) );
@@ -17067,7 +17067,7 @@ async call(parameters : Public.Procedures.OverlapsNd_8c91.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_nd( ${ typed[35969](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_nd( ${ typed[35969](undefinedIsNull(parameters.argument_0)) }, ${ typed[35930](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_nd) );
@@ -17087,7 +17087,7 @@ async call(parameters : Public.Procedures.OverlapsNdD963.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_nd( ${ typed[35969](undefinedIsNull(parameters.argument_0)) }, ${ typed[35969](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_nd( ${ typed[35969](undefinedIsNull(parameters.argument_0)) }, ${ typed[35969](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_nd) );
@@ -17107,7 +17107,7 @@ async call(parameters : Public.Procedures.OverlapsNd_23e0.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_nd( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35969](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.overlaps_nd( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[35969](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].overlaps_nd) );
@@ -17127,7 +17127,7 @@ async call(parameters : Public.Procedures.Geom2dBrinInclusionAddValue.Parameters
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geom2d_brin_inclusion_add_value( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[2281](undefinedIsNull(parameters.argument_3)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geom2d_brin_inclusion_add_value( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[2281](undefinedIsNull(parameters.argument_3)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geom2d_brin_inclusion_add_value) );
@@ -17147,7 +17147,7 @@ async call(parameters : Public.Procedures.Geom3dBrinInclusionAddValue.Parameters
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geom3d_brin_inclusion_add_value( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[2281](undefinedIsNull(parameters.argument_3)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geom3d_brin_inclusion_add_value( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[2281](undefinedIsNull(parameters.argument_3)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geom3d_brin_inclusion_add_value) );
@@ -17167,7 +17167,7 @@ async call(parameters : Public.Procedures.Geom4dBrinInclusionAddValue.Parameters
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geom4d_brin_inclusion_add_value( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[2281](undefinedIsNull(parameters.argument_3)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geom4d_brin_inclusion_add_value( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) }, ${ typed[2281](undefinedIsNull(parameters.argument_2)) }, ${ typed[2281](undefinedIsNull(parameters.argument_3)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geom4d_brin_inclusion_add_value) );
@@ -17187,7 +17187,7 @@ async call(parameters : Public.Procedures.StSimplifypolygonhull.Parameters, opti
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_simplifypolygonhull(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },vertex_fraction => ${ typed[701](undefinedIsNull(parameters.vertexFraction)) },is_outer => ${ typed[16](undefinedIsNull(parameters.isOuter)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_simplifypolygonhull(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },vertex_fraction => ${ typed[701](undefinedIsNull(parameters.vertexFraction)) },is_outer => ${ typed[16](undefinedIsNull(parameters.isOuter)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_simplifypolygonhull) );
@@ -17207,7 +17207,7 @@ async call(parameters : Public.Procedures.StConcavehull.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_concavehull(param_geom => ${ typed[35930](undefinedIsNull(parameters.paramGeom)) },param_pctconvex => ${ typed[701](undefinedIsNull(parameters.paramPctconvex)) },param_allow_holes => ${ typed[16](undefinedIsNull(parameters.paramAllowHoles)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_concavehull(param_geom => ${ typed[35930](undefinedIsNull(parameters.paramGeom)) },param_pctconvex => ${ typed[701](undefinedIsNull(parameters.paramPctconvex)) },param_allow_holes => ${ typed[16](undefinedIsNull(parameters.paramAllowHoles)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_concavehull) );
@@ -17227,7 +17227,7 @@ async call(parameters : Public.Procedures.StAsx3d.Parameters, options?: InvokeQu
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asx3d(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_asx3d(geom => ${ typed[35930](undefinedIsNull(parameters.geom)) },maxdecimaldigits => ${ typed[23](undefinedIsNull(parameters.maxdecimaldigits)) },options => ${ typed[23](undefinedIsNull(parameters.options)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Text.parse(results?.[0].st_asx3d) );
@@ -17247,7 +17247,7 @@ async call(parameters : Public.Procedures.StAngleBf41.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_angle(line1 => ${ typed[35930](undefinedIsNull(parameters.line1)) },line2 => ${ typed[35930](undefinedIsNull(parameters.line2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_angle(line1 => ${ typed[35930](undefinedIsNull(parameters.line1)) },line2 => ${ typed[35930](undefinedIsNull(parameters.line2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Float8.parse(results?.[0].st_angle) );
@@ -17267,7 +17267,7 @@ async call(parameters : Public.Procedures.St_3dlineinterpolatepoint.Parameters, 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dlineinterpolatepoint( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_3dlineinterpolatepoint( ${ typed[35930](undefinedIsNull(parameters.argument_0)) }, ${ typed[701](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_3dlineinterpolatepoint) );
@@ -17287,7 +17287,7 @@ async call(parameters : Public.Procedures.GeometrySpgistConfig_2d.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_config_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_config_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_config_2d) );
@@ -17307,7 +17307,7 @@ async call(parameters : Public.Procedures.GeometrySpgistChoose_2d.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_choose_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_choose_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_choose_2d) );
@@ -17327,7 +17327,7 @@ async call(parameters : Public.Procedures.GeometrySpgistPicksplit_2d.Parameters,
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_picksplit_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_picksplit_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_picksplit_2d) );
@@ -17347,7 +17347,7 @@ async call(parameters : Public.Procedures.GeometrySpgistInnerConsistent_2d.Param
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_inner_consistent_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_inner_consistent_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_inner_consistent_2d) );
@@ -17367,7 +17367,7 @@ async call(parameters : Public.Procedures.GeometrySpgistLeafConsistent_2d.Parame
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_leaf_consistent_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_leaf_consistent_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_spgist_leaf_consistent_2d) );
@@ -17387,7 +17387,7 @@ async call(parameters : Public.Procedures.GeometrySpgistCompress_2d.Parameters, 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_compress_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_compress_2d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_spgist_compress_2d) );
@@ -17407,7 +17407,7 @@ async call(parameters : Public.Procedures.GeometryOverlaps_3d.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_overlaps_3d(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_overlaps_3d(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_overlaps_3d) );
@@ -17427,7 +17427,7 @@ async call(parameters : Public.Procedures.GeometryContains_3d.Parameters, option
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_contains_3d(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_contains_3d(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_contains_3d) );
@@ -17447,7 +17447,7 @@ async call(parameters : Public.Procedures.GeometryContained_3d.Parameters, optio
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_contained_3d(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_contained_3d(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_contained_3d) );
@@ -17467,7 +17467,7 @@ async call(parameters : Public.Procedures.GeometrySame_3d.Parameters, options?: 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_same_3d(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_same_3d(geom1 => ${ typed[35930](undefinedIsNull(parameters.geom1)) },geom2 => ${ typed[35930](undefinedIsNull(parameters.geom2)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_same_3d) );
@@ -17487,7 +17487,7 @@ async call(parameters : Public.Procedures.GeometrySpgistConfig_3d.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_config_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_config_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_config_3d) );
@@ -17507,7 +17507,7 @@ async call(parameters : Public.Procedures.GeometrySpgistChoose_3d.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_choose_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_choose_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_choose_3d) );
@@ -17527,7 +17527,7 @@ async call(parameters : Public.Procedures.GeometrySpgistPicksplit_3d.Parameters,
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_picksplit_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_picksplit_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_picksplit_3d) );
@@ -17547,7 +17547,7 @@ async call(parameters : Public.Procedures.GeometrySpgistInnerConsistent_3d.Param
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_inner_consistent_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_inner_consistent_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_inner_consistent_3d) );
@@ -17567,7 +17567,7 @@ async call(parameters : Public.Procedures.GeometrySpgistLeafConsistent_3d.Parame
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_leaf_consistent_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_leaf_consistent_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_spgist_leaf_consistent_3d) );
@@ -17587,7 +17587,7 @@ async call(parameters : Public.Procedures.GeometrySpgistCompress_3d.Parameters, 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_compress_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_compress_3d( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_spgist_compress_3d) );
@@ -17607,7 +17607,7 @@ async call(parameters : Public.Procedures.GeometrySpgistConfigNd.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_config_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_config_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_config_nd) );
@@ -17627,7 +17627,7 @@ async call(parameters : Public.Procedures.GeometrySpgistChooseNd.Parameters, opt
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_choose_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_choose_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_choose_nd) );
@@ -17647,7 +17647,7 @@ async call(parameters : Public.Procedures.GeometrySpgistPicksplitNd.Parameters, 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_picksplit_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_picksplit_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_picksplit_nd) );
@@ -17667,7 +17667,7 @@ async call(parameters : Public.Procedures.GeometrySpgistInnerConsistentNd.Parame
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_inner_consistent_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_inner_consistent_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geometry_spgist_inner_consistent_nd) );
@@ -17687,7 +17687,7 @@ async call(parameters : Public.Procedures.GeometrySpgistLeafConsistentNd.Paramet
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_leaf_consistent_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_leaf_consistent_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geometry_spgist_leaf_consistent_nd) );
@@ -17707,7 +17707,7 @@ async call(parameters : Public.Procedures.GeometrySpgistCompressNd.Parameters, o
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_compress_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geometry_spgist_compress_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geometry_spgist_compress_nd) );
@@ -17727,7 +17727,7 @@ async call(parameters : Public.Procedures.GeographySpgistConfigNd.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_spgist_config_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_spgist_config_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geography_spgist_config_nd) );
@@ -17747,7 +17747,7 @@ async call(parameters : Public.Procedures.GeographySpgistChooseNd.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_spgist_choose_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_spgist_choose_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geography_spgist_choose_nd) );
@@ -17767,7 +17767,7 @@ async call(parameters : Public.Procedures.GeographySpgistPicksplitNd.Parameters,
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_spgist_picksplit_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_spgist_picksplit_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geography_spgist_picksplit_nd) );
@@ -17787,7 +17787,7 @@ async call(parameters : Public.Procedures.GeographySpgistInnerConsistentNd.Param
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_spgist_inner_consistent_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_spgist_inner_consistent_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Void.parse(results?.[0].geography_spgist_inner_consistent_nd) );
@@ -17807,7 +17807,7 @@ async call(parameters : Public.Procedures.GeographySpgistLeafConsistentNd.Parame
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_spgist_leaf_consistent_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_spgist_leaf_consistent_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) }, ${ typed[2281](undefinedIsNull(parameters.argument_1)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].geography_spgist_leaf_consistent_nd) );
@@ -17827,7 +17827,7 @@ async call(parameters : Public.Procedures.GeographySpgistCompressNd.Parameters, 
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_spgist_compress_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.geography_spgist_compress_nd( ${ typed[2281](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Internal.parse(results?.[0].geography_spgist_compress_nd) );
@@ -17847,7 +17847,7 @@ async call(parameters : Public.Procedures.StLetters.Parameters, options?: Invoke
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.st_letters(letters => ${ typed[25](undefinedIsNull(parameters.letters)) },font => ${ typed[114](undefinedIsNull(parameters.font)) })`, options);
+  const response = await this.database.invoke( (sql) => sql`SELECT public.st_letters(letters => ${ typed[25](undefinedIsNull(parameters.letters)) },font => ${ typed[114](undefinedIsNull(parameters.font)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( Public.Types.Geometry.parse(results?.[0].st_letters) );
@@ -17900,7 +17900,7 @@ const response = await this.database.invoke( (sql) => sql`
       auth_name = EXCLUDED.auth_name,auth_srid = EXCLUDED.auth_srid,srtext = EXCLUDED.srtext,proj4text = EXCLUDED.proj4text
     RETURNING
       srid,auth_name,auth_srid,srtext,proj4text
-    `, options);
+    `, {values, options});
 return response.map(r => ({ srid: undefinedIsNull(r.srid),authName: undefinedIsNull(r.auth_name),authSrid: undefinedIsNull(r.auth_srid),srtext: undefinedIsNull(r.srtext),proj4text: undefinedIsNull(r.proj4text) }))[0]
 }
 async all(options?: Public.Tables.SpatialRefSys.Options) : Promise<Public.Types.SpatialRefSys[]>{
@@ -17916,7 +17916,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {options});
 return response.map(r => ({ srid: undefinedIsNull(r.srid),authName: undefinedIsNull(r.auth_name),authSrid: undefinedIsNull(r.auth_srid),srtext: undefinedIsNull(r.srtext),proj4text: undefinedIsNull(r.proj4text) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.SpatialRefSys.SpatialRefSysPkey(this)}
@@ -17946,7 +17946,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.blkid === undefined ? sql`DEFAULT` : typed[1043](values.blkid) },${ values.popnTotal === undefined ? sql`DEFAULT` : typed[701](values.popnTotal) },${ values.popnWhite === undefined ? sql`DEFAULT` : typed[701](values.popnWhite) },${ values.popnBlack === undefined ? sql`DEFAULT` : typed[701](values.popnBlack) },${ values.popnNativ === undefined ? sql`DEFAULT` : typed[701](values.popnNativ) },${ values.popnAsian === undefined ? sql`DEFAULT` : typed[701](values.popnAsian) },${ values.popnOther === undefined ? sql`DEFAULT` : typed[701](values.popnOther) },${ values.boroname === undefined ? sql`DEFAULT` : typed[1043](values.boroname) },${ values.geom === undefined ? sql`DEFAULT` : typed[35930](values.geom) })
       RETURNING
         gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom
-    `, options);
+    `, {values, options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),blkid: undefinedIsNull(r.blkid),popnTotal: undefinedIsNull(r.popn_total),popnWhite: undefinedIsNull(r.popn_white),popnBlack: undefinedIsNull(r.popn_black),popnNativ: undefinedIsNull(r.popn_nativ),popnAsian: undefinedIsNull(r.popn_asian),popnOther: undefinedIsNull(r.popn_other),boroname: undefinedIsNull(r.boroname),geom: undefinedIsNull(r.geom) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -17958,7 +17958,7 @@ const response = await this.database.invoke( (sql) => sql`
       blkid = EXCLUDED.blkid,popn_total = EXCLUDED.popn_total,popn_white = EXCLUDED.popn_white,popn_black = EXCLUDED.popn_black,popn_nativ = EXCLUDED.popn_nativ,popn_asian = EXCLUDED.popn_asian,popn_other = EXCLUDED.popn_other,boroname = EXCLUDED.boroname,geom = EXCLUDED.geom
     RETURNING
       gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom
-    `, options);
+    `, {values, options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),blkid: undefinedIsNull(r.blkid),popnTotal: undefinedIsNull(r.popn_total),popnWhite: undefinedIsNull(r.popn_white),popnBlack: undefinedIsNull(r.popn_black),popnNativ: undefinedIsNull(r.popn_nativ),popnAsian: undefinedIsNull(r.popn_asian),popnOther: undefinedIsNull(r.popn_other),boroname: undefinedIsNull(r.boroname),geom: undefinedIsNull(r.geom) }))[0]
 }
 async all(options?: Public.Tables.NycCensusBlocks.Options) : Promise<Public.Types.NycCensusBlocks[]>{
@@ -17974,7 +17974,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),blkid: undefinedIsNull(r.blkid),popnTotal: undefinedIsNull(r.popn_total),popnWhite: undefinedIsNull(r.popn_white),popnBlack: undefinedIsNull(r.popn_black),popnNativ: undefinedIsNull(r.popn_nativ),popnAsian: undefinedIsNull(r.popn_asian),popnOther: undefinedIsNull(r.popn_other),boroname: undefinedIsNull(r.boroname),geom: undefinedIsNull(r.geom) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.NycCensusBlocks.NycCensusBlocksPkey(this)}
@@ -18006,7 +18006,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.incidentD === undefined ? sql`DEFAULT` : typed[1082](values.incidentD) },${ values.boroname === undefined ? sql`DEFAULT` : typed[1043](values.boroname) },${ values.numVictim === undefined ? sql`DEFAULT` : typed[1043](values.numVictim) },${ values.primaryMo === undefined ? sql`DEFAULT` : typed[1043](values.primaryMo) },${ values.id === undefined ? sql`DEFAULT` : typed[701](values.id) },${ values.weapon === undefined ? sql`DEFAULT` : typed[1043](values.weapon) },${ values.lightDark === undefined ? sql`DEFAULT` : typed[1043](values.lightDark) },${ values.year === undefined ? sql`DEFAULT` : typed[701](values.year) },${ values.geom === undefined ? sql`DEFAULT` : typed[35930](values.geom) })
       RETURNING
         gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom
-    `, options);
+    `, {values, options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),incidentD: undefinedIsNull(r.incident_d),boroname: undefinedIsNull(r.boroname),numVictim: undefinedIsNull(r.num_victim),primaryMo: undefinedIsNull(r.primary_mo),id: undefinedIsNull(r.id),weapon: undefinedIsNull(r.weapon),lightDark: undefinedIsNull(r.light_dark),year: undefinedIsNull(r.year),geom: undefinedIsNull(r.geom) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -18018,7 +18018,7 @@ const response = await this.database.invoke( (sql) => sql`
       incident_d = EXCLUDED.incident_d,boroname = EXCLUDED.boroname,num_victim = EXCLUDED.num_victim,primary_mo = EXCLUDED.primary_mo,id = EXCLUDED.id,weapon = EXCLUDED.weapon,light_dark = EXCLUDED.light_dark,year = EXCLUDED.year,geom = EXCLUDED.geom
     RETURNING
       gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom
-    `, options);
+    `, {values, options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),incidentD: undefinedIsNull(r.incident_d),boroname: undefinedIsNull(r.boroname),numVictim: undefinedIsNull(r.num_victim),primaryMo: undefinedIsNull(r.primary_mo),id: undefinedIsNull(r.id),weapon: undefinedIsNull(r.weapon),lightDark: undefinedIsNull(r.light_dark),year: undefinedIsNull(r.year),geom: undefinedIsNull(r.geom) }))[0]
 }
 async all(options?: Public.Tables.NycHomicides.Options) : Promise<Public.Types.NycHomicides[]>{
@@ -18034,7 +18034,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),incidentD: undefinedIsNull(r.incident_d),boroname: undefinedIsNull(r.boroname),numVictim: undefinedIsNull(r.num_victim),primaryMo: undefinedIsNull(r.primary_mo),id: undefinedIsNull(r.id),weapon: undefinedIsNull(r.weapon),lightDark: undefinedIsNull(r.light_dark),year: undefinedIsNull(r.year),geom: undefinedIsNull(r.geom) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.NycHomicides.NycHomicidesPkey(this)}
@@ -18066,7 +18066,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.boroname === undefined ? sql`DEFAULT` : typed[1043](values.boroname) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.geom === undefined ? sql`DEFAULT` : typed[35930](values.geom) })
       RETURNING
         gid,boroname,name,geom
-    `, options);
+    `, {values, options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),boroname: undefinedIsNull(r.boroname),name: undefinedIsNull(r.name),geom: undefinedIsNull(r.geom) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -18078,7 +18078,7 @@ const response = await this.database.invoke( (sql) => sql`
       boroname = EXCLUDED.boroname,name = EXCLUDED.name,geom = EXCLUDED.geom
     RETURNING
       gid,boroname,name,geom
-    `, options);
+    `, {values, options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),boroname: undefinedIsNull(r.boroname),name: undefinedIsNull(r.name),geom: undefinedIsNull(r.geom) }))[0]
 }
 async all(options?: Public.Tables.NycNeighborhoods.Options) : Promise<Public.Types.NycNeighborhoods[]>{
@@ -18094,7 +18094,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),boroname: undefinedIsNull(r.boroname),name: undefinedIsNull(r.name),geom: undefinedIsNull(r.geom) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.NycNeighborhoods.NycNeighborhoodsPkey(this)}
@@ -18126,7 +18126,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[701](values.id) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.oneway === undefined ? sql`DEFAULT` : typed[1043](values.oneway) },${ values.type === undefined ? sql`DEFAULT` : typed[1043](values.type) },${ values.geom === undefined ? sql`DEFAULT` : typed[35930](values.geom) })
       RETURNING
         gid,id,name,oneway,type,geom
-    `, options);
+    `, {values, options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),oneway: undefinedIsNull(r.oneway),type: undefinedIsNull(r.type),geom: undefinedIsNull(r.geom) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -18138,7 +18138,7 @@ const response = await this.database.invoke( (sql) => sql`
       id = EXCLUDED.id,name = EXCLUDED.name,oneway = EXCLUDED.oneway,type = EXCLUDED.type,geom = EXCLUDED.geom
     RETURNING
       gid,id,name,oneway,type,geom
-    `, options);
+    `, {values, options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),oneway: undefinedIsNull(r.oneway),type: undefinedIsNull(r.type),geom: undefinedIsNull(r.geom) }))[0]
 }
 async all(options?: Public.Tables.NycStreets.Options) : Promise<Public.Types.NycStreets[]>{
@@ -18154,7 +18154,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),oneway: undefinedIsNull(r.oneway),type: undefinedIsNull(r.type),geom: undefinedIsNull(r.geom) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.NycStreets.NycStreetsPkey(this)}
@@ -18186,7 +18186,7 @@ const response = await this.database.invoke( (sql) => sql`
       VALUES (${ values.objectid === undefined ? sql`DEFAULT` : typed[1700](values.objectid) },${ values.id === undefined ? sql`DEFAULT` : typed[1700](values.id) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.altName === undefined ? sql`DEFAULT` : typed[1043](values.altName) },${ values.crossSt === undefined ? sql`DEFAULT` : typed[1043](values.crossSt) },${ values.longName === undefined ? sql`DEFAULT` : typed[1043](values.longName) },${ values.label === undefined ? sql`DEFAULT` : typed[1043](values.label) },${ values.borough === undefined ? sql`DEFAULT` : typed[1043](values.borough) },${ values.nghbhd === undefined ? sql`DEFAULT` : typed[1043](values.nghbhd) },${ values.routes === undefined ? sql`DEFAULT` : typed[1043](values.routes) },${ values.transfers === undefined ? sql`DEFAULT` : typed[1043](values.transfers) },${ values.color === undefined ? sql`DEFAULT` : typed[1043](values.color) },${ values.express === undefined ? sql`DEFAULT` : typed[1043](values.express) },${ values.closed === undefined ? sql`DEFAULT` : typed[1043](values.closed) },${ values.geom === undefined ? sql`DEFAULT` : typed[35930](values.geom) })
       RETURNING
         gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom
-    `, options);
+    `, {values, options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),objectid: undefinedIsNull(r.objectid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),altName: undefinedIsNull(r.alt_name),crossSt: undefinedIsNull(r.cross_st),longName: undefinedIsNull(r.long_name),label: undefinedIsNull(r.label),borough: undefinedIsNull(r.borough),nghbhd: undefinedIsNull(r.nghbhd),routes: undefinedIsNull(r.routes),transfers: undefinedIsNull(r.transfers),color: undefinedIsNull(r.color),express: undefinedIsNull(r.express),closed: undefinedIsNull(r.closed),geom: undefinedIsNull(r.geom) }))[0]
 }
 const response = await this.database.invoke( (sql) => sql`
@@ -18198,7 +18198,7 @@ const response = await this.database.invoke( (sql) => sql`
       objectid = EXCLUDED.objectid,id = EXCLUDED.id,name = EXCLUDED.name,alt_name = EXCLUDED.alt_name,cross_st = EXCLUDED.cross_st,long_name = EXCLUDED.long_name,label = EXCLUDED.label,borough = EXCLUDED.borough,nghbhd = EXCLUDED.nghbhd,routes = EXCLUDED.routes,transfers = EXCLUDED.transfers,color = EXCLUDED.color,express = EXCLUDED.express,closed = EXCLUDED.closed,geom = EXCLUDED.geom
     RETURNING
       gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom
-    `, options);
+    `, {values, options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),objectid: undefinedIsNull(r.objectid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),altName: undefinedIsNull(r.alt_name),crossSt: undefinedIsNull(r.cross_st),longName: undefinedIsNull(r.long_name),label: undefinedIsNull(r.label),borough: undefinedIsNull(r.borough),nghbhd: undefinedIsNull(r.nghbhd),routes: undefinedIsNull(r.routes),transfers: undefinedIsNull(r.transfers),color: undefinedIsNull(r.color),express: undefinedIsNull(r.express),closed: undefinedIsNull(r.closed),geom: undefinedIsNull(r.geom) }))[0]
 }
 async all(options?: Public.Tables.NycSubwayStations.Options) : Promise<Public.Types.NycSubwayStations[]>{
@@ -18214,7 +18214,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),objectid: undefinedIsNull(r.objectid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),altName: undefinedIsNull(r.alt_name),crossSt: undefinedIsNull(r.cross_st),longName: undefinedIsNull(r.long_name),label: undefinedIsNull(r.label),borough: undefinedIsNull(r.borough),nghbhd: undefinedIsNull(r.nghbhd),routes: undefinedIsNull(r.routes),transfers: undefinedIsNull(r.transfers),color: undefinedIsNull(r.color),express: undefinedIsNull(r.express),closed: undefinedIsNull(r.closed),geom: undefinedIsNull(r.geom) }))
 }
 public get ByPrimaryKey () { return new Public.Tables.NycSubwayStations.NycSubwayStationsPkey(this)}
@@ -18254,7 +18254,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ srid: undefinedIsNull(r.srid),authName: undefinedIsNull(r.auth_name),authSrid: undefinedIsNull(r.auth_srid),srtext: undefinedIsNull(r.srtext),proj4text: undefinedIsNull(r.proj4text) }))[0]
 }
 
@@ -18272,7 +18272,7 @@ const response = await this.database.invoke( (sql) => sql`
       srid = ${ values.srid === undefined ? sql`srid` : typed[23](values.srid) } , auth_name = ${ values.authName === undefined ? sql`auth_name` : typed[1043](values.authName) } , auth_srid = ${ values.authSrid === undefined ? sql`auth_srid` : typed[23](values.authSrid) } , srtext = ${ values.srtext === undefined ? sql`srtext` : typed[1043](values.srtext) } , proj4text = ${ values.proj4text === undefined ? sql`proj4text` : typed[1043](values.proj4text) } 
     WHERE
       srid = ${ parameters.srid === undefined ? sql`DEFAULT` : typed[23](parameters.srid) }
-    RETURNING srid,auth_name,auth_srid,srtext,proj4text`, options);
+    RETURNING srid,auth_name,auth_srid,srtext,proj4text`, {parameters, values, options});
 return response.map(r => ({ srid: undefinedIsNull(r.srid),authName: undefinedIsNull(r.auth_name),authSrid: undefinedIsNull(r.auth_srid),srtext: undefinedIsNull(r.srtext),proj4text: undefinedIsNull(r.proj4text) }))[0]
 }
 async delete(parameters: Public.Types.SpatialRefSysPkey, options?: Public.Types.SpatialRefSysPkey.Options & Public.Tables.SpatialRefSys.Options) {
@@ -18284,7 +18284,7 @@ async delete(parameters: Public.Types.SpatialRefSysPkey, options?: Public.Types.
       public.spatial_ref_sys 
     WHERE
       srid = ${ parameters.srid === undefined ? sql`DEFAULT` : typed[23](parameters.srid) }
-    RETURNING srid,auth_name,auth_srid,srtext,proj4text`, options);
+    RETURNING srid,auth_name,auth_srid,srtext,proj4text`, {parameters, options});
  return response.map(r => ({ srid: undefinedIsNull(r.srid),authName: undefinedIsNull(r.auth_name),authSrid: undefinedIsNull(r.auth_srid),srtext: undefinedIsNull(r.srtext),proj4text: undefinedIsNull(r.proj4text) }))[0]
 }
 }
@@ -18317,7 +18317,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),blkid: undefinedIsNull(r.blkid),popnTotal: undefinedIsNull(r.popn_total),popnWhite: undefinedIsNull(r.popn_white),popnBlack: undefinedIsNull(r.popn_black),popnNativ: undefinedIsNull(r.popn_nativ),popnAsian: undefinedIsNull(r.popn_asian),popnOther: undefinedIsNull(r.popn_other),boroname: undefinedIsNull(r.boroname),geom: undefinedIsNull(r.geom) }))[0]
 }
 
@@ -18335,7 +18335,7 @@ const response = await this.database.invoke( (sql) => sql`
       gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , blkid = ${ values.blkid === undefined ? sql`blkid` : typed[1043](values.blkid) } , popn_total = ${ values.popnTotal === undefined ? sql`popn_total` : typed[701](values.popnTotal) } , popn_white = ${ values.popnWhite === undefined ? sql`popn_white` : typed[701](values.popnWhite) } , popn_black = ${ values.popnBlack === undefined ? sql`popn_black` : typed[701](values.popnBlack) } , popn_nativ = ${ values.popnNativ === undefined ? sql`popn_nativ` : typed[701](values.popnNativ) } , popn_asian = ${ values.popnAsian === undefined ? sql`popn_asian` : typed[701](values.popnAsian) } , popn_other = ${ values.popnOther === undefined ? sql`popn_other` : typed[701](values.popnOther) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , geom = ${ values.geom === undefined ? sql`geom` : typed[35930](values.geom) } 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
-    RETURNING gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom`, options);
+    RETURNING gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom`, {parameters, values, options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),blkid: undefinedIsNull(r.blkid),popnTotal: undefinedIsNull(r.popn_total),popnWhite: undefinedIsNull(r.popn_white),popnBlack: undefinedIsNull(r.popn_black),popnNativ: undefinedIsNull(r.popn_nativ),popnAsian: undefinedIsNull(r.popn_asian),popnOther: undefinedIsNull(r.popn_other),boroname: undefinedIsNull(r.boroname),geom: undefinedIsNull(r.geom) }))[0]
 }
 async delete(parameters: Public.Types.NycCensusBlocksPkey, options?: Public.Types.NycCensusBlocksPkey.Options & Public.Tables.NycCensusBlocks.Options) {
@@ -18347,7 +18347,7 @@ async delete(parameters: Public.Types.NycCensusBlocksPkey, options?: Public.Type
       public.nyc_census_blocks 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
-    RETURNING gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom`, options);
+    RETURNING gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom`, {parameters, options});
  return response.map(r => ({ gid: undefinedIsNull(r.gid),blkid: undefinedIsNull(r.blkid),popnTotal: undefinedIsNull(r.popn_total),popnWhite: undefinedIsNull(r.popn_white),popnBlack: undefinedIsNull(r.popn_black),popnNativ: undefinedIsNull(r.popn_nativ),popnAsian: undefinedIsNull(r.popn_asian),popnOther: undefinedIsNull(r.popn_other),boroname: undefinedIsNull(r.boroname),geom: undefinedIsNull(r.geom) }))[0]
 }
 }
@@ -18378,7 +18378,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),blkid: undefinedIsNull(r.blkid),popnTotal: undefinedIsNull(r.popn_total),popnWhite: undefinedIsNull(r.popn_white),popnBlack: undefinedIsNull(r.popn_black),popnNativ: undefinedIsNull(r.popn_nativ),popnAsian: undefinedIsNull(r.popn_asian),popnOther: undefinedIsNull(r.popn_other),boroname: undefinedIsNull(r.boroname),geom: undefinedIsNull(r.geom) }))
 }
 
@@ -18396,7 +18396,7 @@ const response = await this.database.invoke( (sql) => sql`
       gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , blkid = ${ values.blkid === undefined ? sql`blkid` : typed[1043](values.blkid) } , popn_total = ${ values.popnTotal === undefined ? sql`popn_total` : typed[701](values.popnTotal) } , popn_white = ${ values.popnWhite === undefined ? sql`popn_white` : typed[701](values.popnWhite) } , popn_black = ${ values.popnBlack === undefined ? sql`popn_black` : typed[701](values.popnBlack) } , popn_nativ = ${ values.popnNativ === undefined ? sql`popn_nativ` : typed[701](values.popnNativ) } , popn_asian = ${ values.popnAsian === undefined ? sql`popn_asian` : typed[701](values.popnAsian) } , popn_other = ${ values.popnOther === undefined ? sql`popn_other` : typed[701](values.popnOther) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , geom = ${ values.geom === undefined ? sql`geom` : typed[35930](values.geom) } 
     WHERE
       geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[35930](parameters.geom) }
-    RETURNING gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom`, options);
+    RETURNING gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom`, {parameters, values, options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),blkid: undefinedIsNull(r.blkid),popnTotal: undefinedIsNull(r.popn_total),popnWhite: undefinedIsNull(r.popn_white),popnBlack: undefinedIsNull(r.popn_black),popnNativ: undefinedIsNull(r.popn_nativ),popnAsian: undefinedIsNull(r.popn_asian),popnOther: undefinedIsNull(r.popn_other),boroname: undefinedIsNull(r.boroname),geom: undefinedIsNull(r.geom) }))
 }
 async delete(parameters: Public.Types.NycCensusBlocksGeomIdx, options?: Public.Types.NycCensusBlocksGeomIdx.Options & Public.Tables.NycCensusBlocks.Options) {
@@ -18408,7 +18408,7 @@ async delete(parameters: Public.Types.NycCensusBlocksGeomIdx, options?: Public.T
       public.nyc_census_blocks 
     WHERE
       geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[35930](parameters.geom) }
-    RETURNING gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom`, options);
+    RETURNING gid,blkid,popn_total,popn_white,popn_black,popn_nativ,popn_asian,popn_other,boroname,geom`, {parameters, options});
  return response.map(r => ({ gid: undefinedIsNull(r.gid),blkid: undefinedIsNull(r.blkid),popnTotal: undefinedIsNull(r.popn_total),popnWhite: undefinedIsNull(r.popn_white),popnBlack: undefinedIsNull(r.popn_black),popnNativ: undefinedIsNull(r.popn_nativ),popnAsian: undefinedIsNull(r.popn_asian),popnOther: undefinedIsNull(r.popn_other),boroname: undefinedIsNull(r.boroname),geom: undefinedIsNull(r.geom) }))
 }
 }
@@ -18441,7 +18441,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),incidentD: undefinedIsNull(r.incident_d),boroname: undefinedIsNull(r.boroname),numVictim: undefinedIsNull(r.num_victim),primaryMo: undefinedIsNull(r.primary_mo),id: undefinedIsNull(r.id),weapon: undefinedIsNull(r.weapon),lightDark: undefinedIsNull(r.light_dark),year: undefinedIsNull(r.year),geom: undefinedIsNull(r.geom) }))[0]
 }
 
@@ -18459,7 +18459,7 @@ const response = await this.database.invoke( (sql) => sql`
       gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , incident_d = ${ values.incidentD === undefined ? sql`incident_d` : typed[1082](values.incidentD) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , num_victim = ${ values.numVictim === undefined ? sql`num_victim` : typed[1043](values.numVictim) } , primary_mo = ${ values.primaryMo === undefined ? sql`primary_mo` : typed[1043](values.primaryMo) } , id = ${ values.id === undefined ? sql`id` : typed[701](values.id) } , weapon = ${ values.weapon === undefined ? sql`weapon` : typed[1043](values.weapon) } , light_dark = ${ values.lightDark === undefined ? sql`light_dark` : typed[1043](values.lightDark) } , year = ${ values.year === undefined ? sql`year` : typed[701](values.year) } , geom = ${ values.geom === undefined ? sql`geom` : typed[35930](values.geom) } 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
-    RETURNING gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom`, options);
+    RETURNING gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom`, {parameters, values, options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),incidentD: undefinedIsNull(r.incident_d),boroname: undefinedIsNull(r.boroname),numVictim: undefinedIsNull(r.num_victim),primaryMo: undefinedIsNull(r.primary_mo),id: undefinedIsNull(r.id),weapon: undefinedIsNull(r.weapon),lightDark: undefinedIsNull(r.light_dark),year: undefinedIsNull(r.year),geom: undefinedIsNull(r.geom) }))[0]
 }
 async delete(parameters: Public.Types.NycHomicidesPkey, options?: Public.Types.NycHomicidesPkey.Options & Public.Tables.NycHomicides.Options) {
@@ -18471,7 +18471,7 @@ async delete(parameters: Public.Types.NycHomicidesPkey, options?: Public.Types.N
       public.nyc_homicides 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
-    RETURNING gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom`, options);
+    RETURNING gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom`, {parameters, options});
  return response.map(r => ({ gid: undefinedIsNull(r.gid),incidentD: undefinedIsNull(r.incident_d),boroname: undefinedIsNull(r.boroname),numVictim: undefinedIsNull(r.num_victim),primaryMo: undefinedIsNull(r.primary_mo),id: undefinedIsNull(r.id),weapon: undefinedIsNull(r.weapon),lightDark: undefinedIsNull(r.light_dark),year: undefinedIsNull(r.year),geom: undefinedIsNull(r.geom) }))[0]
 }
 }
@@ -18502,7 +18502,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),incidentD: undefinedIsNull(r.incident_d),boroname: undefinedIsNull(r.boroname),numVictim: undefinedIsNull(r.num_victim),primaryMo: undefinedIsNull(r.primary_mo),id: undefinedIsNull(r.id),weapon: undefinedIsNull(r.weapon),lightDark: undefinedIsNull(r.light_dark),year: undefinedIsNull(r.year),geom: undefinedIsNull(r.geom) }))
 }
 
@@ -18520,7 +18520,7 @@ const response = await this.database.invoke( (sql) => sql`
       gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , incident_d = ${ values.incidentD === undefined ? sql`incident_d` : typed[1082](values.incidentD) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , num_victim = ${ values.numVictim === undefined ? sql`num_victim` : typed[1043](values.numVictim) } , primary_mo = ${ values.primaryMo === undefined ? sql`primary_mo` : typed[1043](values.primaryMo) } , id = ${ values.id === undefined ? sql`id` : typed[701](values.id) } , weapon = ${ values.weapon === undefined ? sql`weapon` : typed[1043](values.weapon) } , light_dark = ${ values.lightDark === undefined ? sql`light_dark` : typed[1043](values.lightDark) } , year = ${ values.year === undefined ? sql`year` : typed[701](values.year) } , geom = ${ values.geom === undefined ? sql`geom` : typed[35930](values.geom) } 
     WHERE
       geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[35930](parameters.geom) }
-    RETURNING gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom`, options);
+    RETURNING gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom`, {parameters, values, options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),incidentD: undefinedIsNull(r.incident_d),boroname: undefinedIsNull(r.boroname),numVictim: undefinedIsNull(r.num_victim),primaryMo: undefinedIsNull(r.primary_mo),id: undefinedIsNull(r.id),weapon: undefinedIsNull(r.weapon),lightDark: undefinedIsNull(r.light_dark),year: undefinedIsNull(r.year),geom: undefinedIsNull(r.geom) }))
 }
 async delete(parameters: Public.Types.NycHomicidesGeomIdx, options?: Public.Types.NycHomicidesGeomIdx.Options & Public.Tables.NycHomicides.Options) {
@@ -18532,7 +18532,7 @@ async delete(parameters: Public.Types.NycHomicidesGeomIdx, options?: Public.Type
       public.nyc_homicides 
     WHERE
       geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[35930](parameters.geom) }
-    RETURNING gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom`, options);
+    RETURNING gid,incident_d,boroname,num_victim,primary_mo,id,weapon,light_dark,year,geom`, {parameters, options});
  return response.map(r => ({ gid: undefinedIsNull(r.gid),incidentD: undefinedIsNull(r.incident_d),boroname: undefinedIsNull(r.boroname),numVictim: undefinedIsNull(r.num_victim),primaryMo: undefinedIsNull(r.primary_mo),id: undefinedIsNull(r.id),weapon: undefinedIsNull(r.weapon),lightDark: undefinedIsNull(r.light_dark),year: undefinedIsNull(r.year),geom: undefinedIsNull(r.geom) }))
 }
 }
@@ -18565,7 +18565,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),boroname: undefinedIsNull(r.boroname),name: undefinedIsNull(r.name),geom: undefinedIsNull(r.geom) }))[0]
 }
 
@@ -18583,7 +18583,7 @@ const response = await this.database.invoke( (sql) => sql`
       gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , geom = ${ values.geom === undefined ? sql`geom` : typed[35930](values.geom) } 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
-    RETURNING gid,boroname,name,geom`, options);
+    RETURNING gid,boroname,name,geom`, {parameters, values, options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),boroname: undefinedIsNull(r.boroname),name: undefinedIsNull(r.name),geom: undefinedIsNull(r.geom) }))[0]
 }
 async delete(parameters: Public.Types.NycNeighborhoodsPkey, options?: Public.Types.NycNeighborhoodsPkey.Options & Public.Tables.NycNeighborhoods.Options) {
@@ -18595,7 +18595,7 @@ async delete(parameters: Public.Types.NycNeighborhoodsPkey, options?: Public.Typ
       public.nyc_neighborhoods 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
-    RETURNING gid,boroname,name,geom`, options);
+    RETURNING gid,boroname,name,geom`, {parameters, options});
  return response.map(r => ({ gid: undefinedIsNull(r.gid),boroname: undefinedIsNull(r.boroname),name: undefinedIsNull(r.name),geom: undefinedIsNull(r.geom) }))[0]
 }
 }
@@ -18626,7 +18626,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),boroname: undefinedIsNull(r.boroname),name: undefinedIsNull(r.name),geom: undefinedIsNull(r.geom) }))
 }
 
@@ -18644,7 +18644,7 @@ const response = await this.database.invoke( (sql) => sql`
       gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , boroname = ${ values.boroname === undefined ? sql`boroname` : typed[1043](values.boroname) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , geom = ${ values.geom === undefined ? sql`geom` : typed[35930](values.geom) } 
     WHERE
       geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[35930](parameters.geom) }
-    RETURNING gid,boroname,name,geom`, options);
+    RETURNING gid,boroname,name,geom`, {parameters, values, options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),boroname: undefinedIsNull(r.boroname),name: undefinedIsNull(r.name),geom: undefinedIsNull(r.geom) }))
 }
 async delete(parameters: Public.Types.NycNeighborhoodsGeomIdx, options?: Public.Types.NycNeighborhoodsGeomIdx.Options & Public.Tables.NycNeighborhoods.Options) {
@@ -18656,7 +18656,7 @@ async delete(parameters: Public.Types.NycNeighborhoodsGeomIdx, options?: Public.
       public.nyc_neighborhoods 
     WHERE
       geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[35930](parameters.geom) }
-    RETURNING gid,boroname,name,geom`, options);
+    RETURNING gid,boroname,name,geom`, {parameters, options});
  return response.map(r => ({ gid: undefinedIsNull(r.gid),boroname: undefinedIsNull(r.boroname),name: undefinedIsNull(r.name),geom: undefinedIsNull(r.geom) }))
 }
 }
@@ -18689,7 +18689,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),oneway: undefinedIsNull(r.oneway),type: undefinedIsNull(r.type),geom: undefinedIsNull(r.geom) }))[0]
 }
 
@@ -18707,7 +18707,7 @@ const response = await this.database.invoke( (sql) => sql`
       gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , id = ${ values.id === undefined ? sql`id` : typed[701](values.id) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , oneway = ${ values.oneway === undefined ? sql`oneway` : typed[1043](values.oneway) } , type = ${ values.type === undefined ? sql`type` : typed[1043](values.type) } , geom = ${ values.geom === undefined ? sql`geom` : typed[35930](values.geom) } 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
-    RETURNING gid,id,name,oneway,type,geom`, options);
+    RETURNING gid,id,name,oneway,type,geom`, {parameters, values, options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),oneway: undefinedIsNull(r.oneway),type: undefinedIsNull(r.type),geom: undefinedIsNull(r.geom) }))[0]
 }
 async delete(parameters: Public.Types.NycStreetsPkey, options?: Public.Types.NycStreetsPkey.Options & Public.Tables.NycStreets.Options) {
@@ -18719,7 +18719,7 @@ async delete(parameters: Public.Types.NycStreetsPkey, options?: Public.Types.Nyc
       public.nyc_streets 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
-    RETURNING gid,id,name,oneway,type,geom`, options);
+    RETURNING gid,id,name,oneway,type,geom`, {parameters, options});
  return response.map(r => ({ gid: undefinedIsNull(r.gid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),oneway: undefinedIsNull(r.oneway),type: undefinedIsNull(r.type),geom: undefinedIsNull(r.geom) }))[0]
 }
 }
@@ -18750,7 +18750,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),oneway: undefinedIsNull(r.oneway),type: undefinedIsNull(r.type),geom: undefinedIsNull(r.geom) }))
 }
 
@@ -18768,7 +18768,7 @@ const response = await this.database.invoke( (sql) => sql`
       gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , id = ${ values.id === undefined ? sql`id` : typed[701](values.id) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , oneway = ${ values.oneway === undefined ? sql`oneway` : typed[1043](values.oneway) } , type = ${ values.type === undefined ? sql`type` : typed[1043](values.type) } , geom = ${ values.geom === undefined ? sql`geom` : typed[35930](values.geom) } 
     WHERE
       geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[35930](parameters.geom) }
-    RETURNING gid,id,name,oneway,type,geom`, options);
+    RETURNING gid,id,name,oneway,type,geom`, {parameters, values, options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),oneway: undefinedIsNull(r.oneway),type: undefinedIsNull(r.type),geom: undefinedIsNull(r.geom) }))
 }
 async delete(parameters: Public.Types.NycStreetsGeomIdx, options?: Public.Types.NycStreetsGeomIdx.Options & Public.Tables.NycStreets.Options) {
@@ -18780,7 +18780,7 @@ async delete(parameters: Public.Types.NycStreetsGeomIdx, options?: Public.Types.
       public.nyc_streets 
     WHERE
       geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[35930](parameters.geom) }
-    RETURNING gid,id,name,oneway,type,geom`, options);
+    RETURNING gid,id,name,oneway,type,geom`, {parameters, options});
  return response.map(r => ({ gid: undefinedIsNull(r.gid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),oneway: undefinedIsNull(r.oneway),type: undefinedIsNull(r.type),geom: undefinedIsNull(r.geom) }))
 }
 }
@@ -18813,7 +18813,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),objectid: undefinedIsNull(r.objectid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),altName: undefinedIsNull(r.alt_name),crossSt: undefinedIsNull(r.cross_st),longName: undefinedIsNull(r.long_name),label: undefinedIsNull(r.label),borough: undefinedIsNull(r.borough),nghbhd: undefinedIsNull(r.nghbhd),routes: undefinedIsNull(r.routes),transfers: undefinedIsNull(r.transfers),color: undefinedIsNull(r.color),express: undefinedIsNull(r.express),closed: undefinedIsNull(r.closed),geom: undefinedIsNull(r.geom) }))[0]
 }
 
@@ -18831,7 +18831,7 @@ const response = await this.database.invoke( (sql) => sql`
       gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , objectid = ${ values.objectid === undefined ? sql`objectid` : typed[1700](values.objectid) } , id = ${ values.id === undefined ? sql`id` : typed[1700](values.id) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , alt_name = ${ values.altName === undefined ? sql`alt_name` : typed[1043](values.altName) } , cross_st = ${ values.crossSt === undefined ? sql`cross_st` : typed[1043](values.crossSt) } , long_name = ${ values.longName === undefined ? sql`long_name` : typed[1043](values.longName) } , label = ${ values.label === undefined ? sql`label` : typed[1043](values.label) } , borough = ${ values.borough === undefined ? sql`borough` : typed[1043](values.borough) } , nghbhd = ${ values.nghbhd === undefined ? sql`nghbhd` : typed[1043](values.nghbhd) } , routes = ${ values.routes === undefined ? sql`routes` : typed[1043](values.routes) } , transfers = ${ values.transfers === undefined ? sql`transfers` : typed[1043](values.transfers) } , color = ${ values.color === undefined ? sql`color` : typed[1043](values.color) } , express = ${ values.express === undefined ? sql`express` : typed[1043](values.express) } , closed = ${ values.closed === undefined ? sql`closed` : typed[1043](values.closed) } , geom = ${ values.geom === undefined ? sql`geom` : typed[35930](values.geom) } 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
-    RETURNING gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom`, options);
+    RETURNING gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom`, {parameters, values, options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),objectid: undefinedIsNull(r.objectid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),altName: undefinedIsNull(r.alt_name),crossSt: undefinedIsNull(r.cross_st),longName: undefinedIsNull(r.long_name),label: undefinedIsNull(r.label),borough: undefinedIsNull(r.borough),nghbhd: undefinedIsNull(r.nghbhd),routes: undefinedIsNull(r.routes),transfers: undefinedIsNull(r.transfers),color: undefinedIsNull(r.color),express: undefinedIsNull(r.express),closed: undefinedIsNull(r.closed),geom: undefinedIsNull(r.geom) }))[0]
 }
 async delete(parameters: Public.Types.NycSubwayStationsPkey, options?: Public.Types.NycSubwayStationsPkey.Options & Public.Tables.NycSubwayStations.Options) {
@@ -18843,7 +18843,7 @@ async delete(parameters: Public.Types.NycSubwayStationsPkey, options?: Public.Ty
       public.nyc_subway_stations 
     WHERE
       gid = ${ parameters.gid === undefined ? sql`DEFAULT` : typed[23](parameters.gid) }
-    RETURNING gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom`, options);
+    RETURNING gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom`, {parameters, options});
  return response.map(r => ({ gid: undefinedIsNull(r.gid),objectid: undefinedIsNull(r.objectid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),altName: undefinedIsNull(r.alt_name),crossSt: undefinedIsNull(r.cross_st),longName: undefinedIsNull(r.long_name),label: undefinedIsNull(r.label),borough: undefinedIsNull(r.borough),nghbhd: undefinedIsNull(r.nghbhd),routes: undefinedIsNull(r.routes),transfers: undefinedIsNull(r.transfers),color: undefinedIsNull(r.color),express: undefinedIsNull(r.express),closed: undefinedIsNull(r.closed),geom: undefinedIsNull(r.geom) }))[0]
 }
 }
@@ -18874,7 +18874,7 @@ const response = await this.database.invoke( (sql) => sql`
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, options);
+    `, {parameters, ...(options ?? {})});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),objectid: undefinedIsNull(r.objectid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),altName: undefinedIsNull(r.alt_name),crossSt: undefinedIsNull(r.cross_st),longName: undefinedIsNull(r.long_name),label: undefinedIsNull(r.label),borough: undefinedIsNull(r.borough),nghbhd: undefinedIsNull(r.nghbhd),routes: undefinedIsNull(r.routes),transfers: undefinedIsNull(r.transfers),color: undefinedIsNull(r.color),express: undefinedIsNull(r.express),closed: undefinedIsNull(r.closed),geom: undefinedIsNull(r.geom) }))
 }
 
@@ -18892,7 +18892,7 @@ const response = await this.database.invoke( (sql) => sql`
       gid = ${ values.gid === undefined ? sql`gid` : typed[23](values.gid) } , objectid = ${ values.objectid === undefined ? sql`objectid` : typed[1700](values.objectid) } , id = ${ values.id === undefined ? sql`id` : typed[1700](values.id) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , alt_name = ${ values.altName === undefined ? sql`alt_name` : typed[1043](values.altName) } , cross_st = ${ values.crossSt === undefined ? sql`cross_st` : typed[1043](values.crossSt) } , long_name = ${ values.longName === undefined ? sql`long_name` : typed[1043](values.longName) } , label = ${ values.label === undefined ? sql`label` : typed[1043](values.label) } , borough = ${ values.borough === undefined ? sql`borough` : typed[1043](values.borough) } , nghbhd = ${ values.nghbhd === undefined ? sql`nghbhd` : typed[1043](values.nghbhd) } , routes = ${ values.routes === undefined ? sql`routes` : typed[1043](values.routes) } , transfers = ${ values.transfers === undefined ? sql`transfers` : typed[1043](values.transfers) } , color = ${ values.color === undefined ? sql`color` : typed[1043](values.color) } , express = ${ values.express === undefined ? sql`express` : typed[1043](values.express) } , closed = ${ values.closed === undefined ? sql`closed` : typed[1043](values.closed) } , geom = ${ values.geom === undefined ? sql`geom` : typed[35930](values.geom) } 
     WHERE
       geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[35930](parameters.geom) }
-    RETURNING gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom`, options);
+    RETURNING gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom`, {parameters, values, options});
 return response.map(r => ({ gid: undefinedIsNull(r.gid),objectid: undefinedIsNull(r.objectid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),altName: undefinedIsNull(r.alt_name),crossSt: undefinedIsNull(r.cross_st),longName: undefinedIsNull(r.long_name),label: undefinedIsNull(r.label),borough: undefinedIsNull(r.borough),nghbhd: undefinedIsNull(r.nghbhd),routes: undefinedIsNull(r.routes),transfers: undefinedIsNull(r.transfers),color: undefinedIsNull(r.color),express: undefinedIsNull(r.express),closed: undefinedIsNull(r.closed),geom: undefinedIsNull(r.geom) }))
 }
 async delete(parameters: Public.Types.NycSubwayStationsGeomIdx, options?: Public.Types.NycSubwayStationsGeomIdx.Options & Public.Tables.NycSubwayStations.Options) {
@@ -18904,7 +18904,7 @@ async delete(parameters: Public.Types.NycSubwayStationsGeomIdx, options?: Public
       public.nyc_subway_stations 
     WHERE
       geom = ${ parameters.geom === undefined ? sql`DEFAULT` : typed[35930](parameters.geom) }
-    RETURNING gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom`, options);
+    RETURNING gid,objectid,id,name,alt_name,cross_st,long_name,label,borough,nghbhd,routes,transfers,color,express,closed,geom`, {parameters, options});
  return response.map(r => ({ gid: undefinedIsNull(r.gid),objectid: undefinedIsNull(r.objectid),id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),altName: undefinedIsNull(r.alt_name),crossSt: undefinedIsNull(r.cross_st),longName: undefinedIsNull(r.long_name),label: undefinedIsNull(r.label),borough: undefinedIsNull(r.borough),nghbhd: undefinedIsNull(r.nghbhd),routes: undefinedIsNull(r.routes),transfers: undefinedIsNull(r.transfers),color: undefinedIsNull(r.color),express: undefinedIsNull(r.express),closed: undefinedIsNull(r.closed),geom: undefinedIsNull(r.geom) }))
 }
 }
