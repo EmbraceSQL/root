@@ -18,6 +18,7 @@ const FunctionOperationNodeVisitor = {
         `request.parameters as ${node.parametersType.typescriptNamespacedName}`,
       );
     }
+    callee.push(`request.options`);
     return `"${
       node.typescriptNamespacedName
     }.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.${
@@ -72,6 +73,7 @@ export const generateOperationDispatcher = async (
           callee.push(
             `request.values as ${node.table.typescriptNamespacedName}.Values`,
           );
+          callee.push(`request.options`);
           return `"${
             node.typescriptNamespacedPropertyName
           }": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.${
@@ -82,9 +84,7 @@ export const generateOperationDispatcher = async (
       [ASTKind.AllOperation]: {
         before: async (_: GenerationContext, node: AllOperationNode) => {
           const callee: string[] = [];
-          callee.push(
-            `request.options as ${node.table.typescriptNamespacedName}.Options`,
-          );
+          callee.push(`request.options`);
           return [
             `
              "${
@@ -102,7 +102,7 @@ export const generateOperationDispatcher = async (
           const callee: string[] = [];
           callee.push(
             `request.parameters as ${node.index.type.typescriptNamespacedName}`,
-            `request.options as ${node.index.table.typescriptNamespacedName}.Options`,
+            `request.options`,
           );
           return `"${
             node.typescriptNamespacedPropertyName
@@ -120,6 +120,7 @@ export const generateOperationDispatcher = async (
           callee.push(
             `request.values as Partial<${node.index.table.typescriptNamespacedName}.Values>`,
           );
+          callee.push(`request.options`);
           return `"${
             node.typescriptNamespacedPropertyName
           }": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.${
@@ -133,6 +134,7 @@ export const generateOperationDispatcher = async (
           callee.push(
             `request.parameters as ${node.index.type.typescriptNamespacedName}`,
           );
+          callee.push(`request.options`);
           return `"${
             node.typescriptNamespacedPropertyName
           }": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.${

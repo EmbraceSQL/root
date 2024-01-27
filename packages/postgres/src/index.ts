@@ -116,12 +116,16 @@ export abstract class PostgresDatabase<
     // here is the middleware run stack
     const runStack = async (database: this) => {
       // pick up the headers
-      const headers = request?.options?.headers ?? {};
       // first the middleware
-      await this.dispatch({ ...database.context, headers });
-      const check_it = await database.context
-        .sql`SELECT SESSION_USER, CURRENT_USER`;
-      console.assert(check_it);
+      await this.dispatch({
+        ...database.context,
+        // combine all the headers
+        headers: {
+          // TODO: default headers
+          ...(request?.headers ?? {}),
+          ...(request?.options?.headers ?? {}),
+        },
+      });
       return queryCallback(database.context.sql);
     };
 

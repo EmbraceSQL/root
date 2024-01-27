@@ -50,8 +50,8 @@ export const EmbraceSQLExpress = (props?: EmbraceSQLProps) => {
           res.status(200).json(response).end();
         })
         .catch((reason) => {
-          console.error(reason);
           res.status(500);
+          res.end((reason as Error).message);
         });
       return;
     } else {

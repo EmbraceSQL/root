@@ -1,4 +1,8 @@
-import { EmbraceSQLRequest, EmbraceSQLResponse } from "@embracesql/shared";
+import {
+  EmbraceSQLRequest,
+  EmbraceSQLResponse,
+  HasHeaders,
+} from "@embracesql/shared";
 
 export * from "./typescript/generateClient";
 
@@ -39,23 +43,38 @@ export class EmbraceSQLClient implements _HasClient {
    * You can call the server yourself this way, but it isn't particularly convenient
    * compared to using generated react hooks!
    */
-  async invoke<Parameters, Values, Response, Options>(
+  async invoke<
+    Parameters,
+    Values,
+    Response,
+    Options extends HasHeaders = HasHeaders,
+  >(
     request: EmbraceSQLRequest<Parameters, Values, Options>,
   ): Promise<EmbraceSQLResponse<Response>> {
+    // assemble all the headers
+    const headers = {
+      ...this.props.headers,
+      ...(request.options?.headers ?? {}),
+      "Content-Type": "application/json",
+    };
     // it's always POST JSON in EmbraceSQL
     const props = {
       ...this.props,
-      headers: {
-        ...this.props.headers,
-        "Content-Type": "application/json",
-      },
+      // headers will be sent along to HTTP
+      headers,
     };
     const response = await fetch(this.props.url, {
       ...props,
       method: "POST",
       cache: "no-cache",
       redirect: "follow",
-      body: JSON.stringify(request),
+      body: JSON.stringify({
+        ...request,
+        // headers need to be lifted from call options
+        // otherwise we were gonna have yet another parameter at the client
+        // call site
+        headers,
+      }),
     });
 
     // it'll be JSON back or an exception

@@ -449,7 +449,7 @@ export class AbstractTypeNode extends ContainerNode {
   typescriptTypeOptions(context: GenerationContext) {
     return (
       this.parser?.typescriptTypeOptions(context) ??
-      `export type Options = never;`
+      `export type Options = InvokeQueryOptions;`
     );
   }
 }

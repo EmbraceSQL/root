@@ -13,6 +13,13 @@ export let NEVER: never;
 export type Headers = Record<string, string>;
 
 /**
+ * If you've headers and you know it 👏.
+ */
+export type HasHeaders = {
+  headers?: Headers;
+};
+
+/**
  * Invocation context for a single database operation.
  */
 export type EmbraceSQLInvocation<

@@ -46,7 +46,7 @@ export class PGTypeTsVector extends PGTypeText {
         Phrase = "phraseto_tsquery",
         Web = "websearch_to_tsquery",
         }
-        export type Options = {
+        export type Options = InvokeQueryOptions & {
             queryParser?: FulltextParser;
             configuration?: string;
         }

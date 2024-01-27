@@ -123,7 +123,7 @@ export class PGCatalogType implements GeneratesTypeScript {
   typescriptTypeOptions(context: Context): string {
     console.assert(context);
     return `
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     `;
   }
 }

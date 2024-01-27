@@ -13,7 +13,8 @@ embracesqlcli generate react --database postgres://postgres:postgres@localhost/d
 # marshalling samples -- these are just to test typescript<->postgres conversions
 # gonna keep all the schemas here
 echo marshalling
-embracesqlcli generate node --database postgres://postgres:postgres@localhost/marshalling > ./src/marshalling.ts
+embracesqlcli generate express --database postgres://postgres:postgres@localhost/marshalling > ./src/marshalling.ts
+embracesqlcli generate client --database postgres://postgres:postgres@localhost/marshalling > ./src/marshalling-browser.ts
 
 # and some GIS
 echo nyc

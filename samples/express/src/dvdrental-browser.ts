@@ -13,7 +13,7 @@
         /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
         /* @typescript-eslint/no-redundant-type-constituents */
         import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
-        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort, InvokeQueryOptions } from "@embracesql/shared";
+        import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort, InvokeQueryOptions as GenericInvokeQueryOptions } from "@embracesql/shared";
         import { Geometry } from "@embracesql/shared";
         import { DatabaseMetadata, Schema, Table, Column, Index, Procedure } from "@embracesql/shared";
     
@@ -36,10 +36,11 @@ import { EmbraceSQLClient as BaseClient, EmbraceSQLClientProps, HasClient } from
           public FilmInStock = new class extends HasClient {
         
 
-          public async call(parameters: Public.Procedures.FilmInStock.Parameters) : Promise<PgCatalog.Types.Int4[]> {
-            const response = await this.client.invoke<Public.Procedures.FilmInStock.Parameters, never, PgCatalog.Types.Int4[], never>({
+          public async call(parameters: Public.Procedures.FilmInStock.Parameters, options?: Public.Procedures.FilmInStock.Parameters.Options) : Promise<PgCatalog.Types.Int4[]> {
+            const response = await this.client.invoke<Public.Procedures.FilmInStock.Parameters, never, PgCatalog.Types.Int4[], Public.Procedures.FilmInStock.Parameters.Options>({
               operation: "Public.Procedures.FilmInStock.call",
               parameters,
+              options
             });
         
 return response.results?.map(r => PgCatalog.Types.Int4.parse(r)) as PgCatalog.Types.Int4[] ?? [];
@@ -49,10 +50,11 @@ return response.results?.map(r => PgCatalog.Types.Int4.parse(r)) as PgCatalog.Ty
           public FilmNotInStock = new class extends HasClient {
         
 
-          public async call(parameters: Public.Procedures.FilmNotInStock.Parameters) : Promise<PgCatalog.Types.Int4[]> {
-            const response = await this.client.invoke<Public.Procedures.FilmNotInStock.Parameters, never, PgCatalog.Types.Int4[], never>({
+          public async call(parameters: Public.Procedures.FilmNotInStock.Parameters, options?: Public.Procedures.FilmNotInStock.Parameters.Options) : Promise<PgCatalog.Types.Int4[]> {
+            const response = await this.client.invoke<Public.Procedures.FilmNotInStock.Parameters, never, PgCatalog.Types.Int4[], Public.Procedures.FilmNotInStock.Parameters.Options>({
               operation: "Public.Procedures.FilmNotInStock.call",
               parameters,
+              options
             });
         
 return response.results?.map(r => PgCatalog.Types.Int4.parse(r)) as PgCatalog.Types.Int4[] ?? [];
@@ -62,10 +64,11 @@ return response.results?.map(r => PgCatalog.Types.Int4.parse(r)) as PgCatalog.Ty
           public GetCustomerBalance = new class extends HasClient {
         
 
-          public async call(parameters: Public.Procedures.GetCustomerBalance.Parameters) : Promise<PgCatalog.Types.Numeric | undefined> {
-            const response = await this.client.invoke<Public.Procedures.GetCustomerBalance.Parameters, never, PgCatalog.Types.Numeric | undefined, never>({
+          public async call(parameters: Public.Procedures.GetCustomerBalance.Parameters, options?: Public.Procedures.GetCustomerBalance.Parameters.Options) : Promise<PgCatalog.Types.Numeric | undefined> {
+            const response = await this.client.invoke<Public.Procedures.GetCustomerBalance.Parameters, never, PgCatalog.Types.Numeric | undefined, Public.Procedures.GetCustomerBalance.Parameters.Options>({
               operation: "Public.Procedures.GetCustomerBalance.call",
               parameters,
+              options
             });
         
 return response.results ? nullIsUndefined(PgCatalog.Types.Numeric.parse(response.results)) : undefined;
@@ -75,10 +78,11 @@ return response.results ? nullIsUndefined(PgCatalog.Types.Numeric.parse(response
           public InventoryHeldByCustomer = new class extends HasClient {
         
 
-          public async call(parameters: Public.Procedures.InventoryHeldByCustomer.Parameters) : Promise<PgCatalog.Types.Int4 | undefined> {
-            const response = await this.client.invoke<Public.Procedures.InventoryHeldByCustomer.Parameters, never, PgCatalog.Types.Int4 | undefined, never>({
+          public async call(parameters: Public.Procedures.InventoryHeldByCustomer.Parameters, options?: Public.Procedures.InventoryHeldByCustomer.Parameters.Options) : Promise<PgCatalog.Types.Int4 | undefined> {
+            const response = await this.client.invoke<Public.Procedures.InventoryHeldByCustomer.Parameters, never, PgCatalog.Types.Int4 | undefined, Public.Procedures.InventoryHeldByCustomer.Parameters.Options>({
               operation: "Public.Procedures.InventoryHeldByCustomer.call",
               parameters,
+              options
             });
         
 return response.results ? nullIsUndefined(PgCatalog.Types.Int4.parse(response.results)) : undefined;
@@ -88,10 +92,11 @@ return response.results ? nullIsUndefined(PgCatalog.Types.Int4.parse(response.re
           public InventoryInStock = new class extends HasClient {
         
 
-          public async call(parameters: Public.Procedures.InventoryInStock.Parameters) : Promise<PgCatalog.Types.Bool | undefined> {
-            const response = await this.client.invoke<Public.Procedures.InventoryInStock.Parameters, never, PgCatalog.Types.Bool | undefined, never>({
+          public async call(parameters: Public.Procedures.InventoryInStock.Parameters, options?: Public.Procedures.InventoryInStock.Parameters.Options) : Promise<PgCatalog.Types.Bool | undefined> {
+            const response = await this.client.invoke<Public.Procedures.InventoryInStock.Parameters, never, PgCatalog.Types.Bool | undefined, Public.Procedures.InventoryInStock.Parameters.Options>({
               operation: "Public.Procedures.InventoryInStock.call",
               parameters,
+              options
             });
         
 return response.results ? nullIsUndefined(PgCatalog.Types.Bool.parse(response.results)) : undefined;
@@ -101,10 +106,11 @@ return response.results ? nullIsUndefined(PgCatalog.Types.Bool.parse(response.re
           public LastDay = new class extends HasClient {
         
 
-          public async call(parameters: Public.Procedures.LastDay.Parameters) : Promise<PgCatalog.Types.Date | undefined> {
-            const response = await this.client.invoke<Public.Procedures.LastDay.Parameters, never, PgCatalog.Types.Date | undefined, never>({
+          public async call(parameters: Public.Procedures.LastDay.Parameters, options?: Public.Procedures.LastDay.Parameters.Options) : Promise<PgCatalog.Types.Date | undefined> {
+            const response = await this.client.invoke<Public.Procedures.LastDay.Parameters, never, PgCatalog.Types.Date | undefined, Public.Procedures.LastDay.Parameters.Options>({
               operation: "Public.Procedures.LastDay.call",
               parameters,
+              options
             });
         
 return response.results ? nullIsUndefined(PgCatalog.Types.Date.parse(response.results)) : undefined;
@@ -114,10 +120,11 @@ return response.results ? nullIsUndefined(PgCatalog.Types.Date.parse(response.re
           public RewardsReport = new class extends HasClient {
         
 
-          public async call(parameters: Public.Procedures.RewardsReport.Parameters) : Promise<Public.Types.Customer[]> {
-            const response = await this.client.invoke<Public.Procedures.RewardsReport.Parameters, never, Public.Types.Customer[], never>({
+          public async call(parameters: Public.Procedures.RewardsReport.Parameters, options?: Public.Procedures.RewardsReport.Parameters.Options) : Promise<Public.Types.Customer[]> {
+            const response = await this.client.invoke<Public.Procedures.RewardsReport.Parameters, never, Public.Types.Customer[], Public.Procedures.RewardsReport.Parameters.Options>({
               operation: "Public.Procedures.RewardsReport.call",
               parameters,
+              options
             });
         
 return response.results?.map(r => Public.Types.Customer.parse(r)) as Public.Types.Customer[] ?? [];
@@ -2198,6 +2205,11 @@ return (
 }(this)
 }
 
+export type DatabaseRole = "postgres" | "pg_database_owner" | "pg_read_all_data" | "pg_write_all_data" | "pg_monitor" | "pg_read_all_settings" | "pg_read_all_stats" | "pg_stat_scan_tables" | "pg_read_server_files" | "pg_write_server_files" | "pg_execute_server_program" | "pg_signal_backend" | "pg_checkpoint" | "pg_use_reserved_connections" | "pg_create_subscription" | "wballard" | "no_access";
+export type DatabaseHeaders = {
+ ROLE?: DatabaseRole;
+}
+export type InvokeQueryOptions = GenericInvokeQueryOptions<DatabaseHeaders>;
 export namespace PgCatalog {
 export namespace Types {
 
@@ -13179,12 +13191,12 @@ export type PrimaryKey = Public.Types.FilmPkey;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_35375Index = {
+export type PgToast_46703Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_35461Index = {
+export type PgToast_46789Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -26744,11 +26756,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_35375Index {
+export namespace PgToast_46703Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_35375Index.is(from)) {
+if (PgToast.Types.PgToast_46703Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26759,11 +26771,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_35461Index {
+export namespace PgToast_46789Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_35461Index.is(from)) {
+if (PgToast.Types.PgToast_46789Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -33223,16 +33235,16 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_35375Index {
-export function is(value: any) : value is PgToast.Types.PgToast_35375Index {
+export namespace PgToast_46703Index {
+export function is(value: any) : value is PgToast.Types.PgToast_46703Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_35461Index {
-export function is(value: any) : value is PgToast.Types.PgToast_35461Index {
+export namespace PgToast_46789Index {
+export function is(value: any) : value is PgToast.Types.PgToast_46789Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -37866,13 +37878,13 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_35375Index {
- export function equals(l: PgToast.Types.PgToast_35375Index|undefined, r: unknown) {
+export namespace PgToast_46703Index {
+ export function equals(l: PgToast.Types.PgToast_46703Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_35461Index {
- export function equals(l: PgToast.Types.PgToast_35461Index|undefined, r: unknown) {
+export namespace PgToast_46789Index {
+ export function equals(l: PgToast.Types.PgToast_46789Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -38086,235 +38098,235 @@ export namespace PgCatalog {
 export namespace Types {
 export namespace Bool {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Bytea {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Char {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Name {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Int8 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Int2 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Int2vector {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Int4 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Regproc {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Text {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Xid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Cid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Oidvector {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgType {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typlen {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typbyval {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typtype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typcategory {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typispreferred {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typisdefined {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typdelim {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typsubscript {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typelem {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typarray {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typinput {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typoutput {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typreceive {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typsend {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typmodin {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typmodout {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typanalyze {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typalign {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typstorage {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typnotnull {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typbasetype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typtypmod {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typndims {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typcollation {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typdefaultbin {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typdefault {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typacl {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
@@ -38354,126 +38366,126 @@ typacl?: PgCatalog.Types.AclitemArray.Options
 export namespace PgAttribute {
 export namespace Attrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Atttypid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attlen {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attnum {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attcacheoff {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Atttypmod {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attndims {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attbyval {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attalign {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attstorage {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attcompression {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attnotnull {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Atthasdef {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Atthasmissing {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attidentity {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attgenerated {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attisdropped {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attislocal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attinhcount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attstattarget {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attcollation {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attacl {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Attoptions {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Attfdwoptions {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Attmissingval {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -38508,139 +38520,139 @@ attmissingval?: PgCatalog.Types.Anyarray.Options
 export namespace PgProc {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Proname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Pronamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Proowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Prolang {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Procost {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Prorows {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Provariadic {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Prosupport {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Prokind {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Prosecdef {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Proleakproof {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Proisstrict {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Proretset {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Provolatile {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Proparallel {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Pronargs {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Pronargdefaults {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Prorettype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Proargtypes {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Proallargtypes {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Proargmodes {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Proargnames {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Proargdefaults {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Protrftypes {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Prosrc {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Probin {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Prosqlbody {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Proconfig {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Proacl {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
@@ -38678,163 +38690,163 @@ proacl?: PgCatalog.Types.AclitemArray.Options
 export namespace PgClass {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Reltype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Reloftype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relam {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relfilenode {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Reltablespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relpages {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Reltuples {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relallvisible {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Reltoastrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relhasindex {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relisshared {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relpersistence {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relkind {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relnatts {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relchecks {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relhasrules {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relhastriggers {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relhassubclass {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relrowsecurity {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relforcerowsecurity {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relispopulated {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relreplident {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relispartition {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relrewrite {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relfrozenxid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relminmxid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relacl {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Reloptions {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Relpartbound {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -38875,232 +38887,232 @@ relpartbound?: PgCatalog.Types.PgNodeTree.Options
 }
 export namespace Json {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Xml {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PgNodeTree {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PgNdistinct {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PgDependencies {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PgMcvList {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PgDdlCommand {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Xid8 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Point {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Lseg {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Path {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Box {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Polygon {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Line {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Float4 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Float8 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Unknown {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Circle {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Money {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Macaddr {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Inet {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Cidr {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Macaddr8 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Aclitem {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Bpchar {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Varchar {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Date {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Time {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Timestamp {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Timestamptz {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Interval {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Timetz {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Bit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Varbit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Numeric {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Refcursor {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Regprocedure {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Regoper {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Regoperator {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Regclass {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Regcollation {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Regtype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Regrole {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Regnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Uuid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PgLsn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tsvector {
@@ -39118,7 +39130,7 @@ export namespace Tsvector {
         Phrase = "phraseto_tsquery",
         Web = "websearch_to_tsquery",
         }
-        export type Options = {
+        export type Options = InvokeQueryOptions & {
             queryParser?: FulltextParser;
             configuration?: string;
         }
@@ -39127,7 +39139,7 @@ export namespace Tsvector {
 }
 export namespace Gtsvector {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tsquery {
@@ -39145,7 +39157,7 @@ export namespace Tsquery {
         Phrase = "phraseto_tsquery",
         Web = "websearch_to_tsquery",
         }
-        export type Options = {
+        export type Options = InvokeQueryOptions & {
             queryParser?: FulltextParser;
             configuration?: string;
         }
@@ -39154,484 +39166,484 @@ export namespace Tsquery {
 }
 export namespace Regconfig {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Regdictionary {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Jsonb {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Jsonpath {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TxidSnapshot {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PgSnapshot {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Int4range {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Numrange {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tsrange {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tstzrange {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Daterange {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Int8range {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Int4multirange {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Nummultirange {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tsmultirange {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tstzmultirange {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datemultirange {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Int8multirange {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Record {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RecordArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Cstring {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Any {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Anyarray {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Void {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Trigger {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace EventTrigger {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LanguageHandler {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Internal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Anyelement {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Anynonarray {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Anyenum {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace FdwHandler {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IndexAmHandler {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TsmHandler {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableAmHandler {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Anyrange {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Anycompatible {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Anycompatiblearray {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Anycompatiblenonarray {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Anycompatiblerange {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Anymultirange {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Anycompatiblemultirange {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PgBrinBloomSummary {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PgBrinMinmaxMultiSummary {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BoolArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ByteaArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace CharArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace NameArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Int8Array {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Int2Array {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Int2vectorArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Int4Array {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace RegprocArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace TextArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace OidArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace TidArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace XidArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace CidArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace OidvectorArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgTypeArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgAttributeArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgProcArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgClassArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace JsonArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace XmlArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Xid8Array {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PointArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace LsegArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PathArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace BoxArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PolygonArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace LineArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Float4Array {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Float8Array {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace CircleArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace MoneyArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace MacaddrArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace InetArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace CidrArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Macaddr8Array {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace AclitemArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace BpcharArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace VarcharArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace DateArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace TimeArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace TimestampArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace TimestamptzArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace IntervalArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace TimetzArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace BitArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace VarbitArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace NumericArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace RefcursorArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace RegprocedureArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace RegoperArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace RegoperatorArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace RegclassArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace RegcollationArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace RegtypeArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace RegroleArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace RegnamespaceArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace UuidArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgLsnArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace TsvectorArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace GtsvectorArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace TsqueryArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace RegconfigArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace RegdictionaryArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace JsonbArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace JsonpathArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace TxidSnapshotArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgSnapshotArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Int4rangeArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace NumrangeArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace TsrangeArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace TstzrangeArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace DaterangeArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Int8rangeArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Int4multirangeArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace NummultirangeArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace TsmultirangeArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace TstzmultirangeArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace DatemultirangeArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Int8multirangeArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace CstringArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgAttrdef {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Adrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Adnum {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Adbin {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -39642,123 +39654,123 @@ adbin?: PgCatalog.Types.PgNodeTree.Options
 }
 }
 export namespace PgAttrdefArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgConstraint {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Conname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Connamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Contype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Condeferrable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Condeferred {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Convalidated {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Conrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Contypid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Conindid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Conparentid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Confrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Confupdtype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Confdeltype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Confmatchtype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Conislocal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Coninhcount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Connoinherit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Conkey {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Confkey {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Conpfeqop {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Conppeqop {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Conffeqop {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Confdelsetcols {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Conexclop {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Conbin {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -39791,27 +39803,27 @@ conbin?: PgCatalog.Types.PgNodeTree.Options
 }
 }
 export namespace PgConstraintArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgInherits {
 export namespace Inhrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Inhparent {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Inhseqno {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Inhdetachpending {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -39822,108 +39834,108 @@ inhdetachpending?: PgCatalog.Types.Bool.Options
 }
 }
 export namespace PgInheritsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgIndex {
 export namespace Indexrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indnatts {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indnkeyatts {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indisunique {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indnullsnotdistinct {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indisprimary {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indisexclusion {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indimmediate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indisclustered {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indisvalid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indcheckxmin {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indisready {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indislive {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indisreplident {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indkey {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indcollation {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Indclass {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Indoption {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indexprs {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indpred {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -39951,82 +39963,82 @@ indpred?: PgCatalog.Types.PgNodeTree.Options
 }
 }
 export namespace PgIndexArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgOperator {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Oprname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Oprnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Oprowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Oprkind {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Oprcanmerge {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Oprcanhash {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Oprleft {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Oprright {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Oprresult {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Oprcom {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Oprnegate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Oprcode {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Oprrest {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Oprjoin {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -40048,32 +40060,32 @@ oprjoin?: PgCatalog.Types.Regproc.Options
 }
 }
 export namespace PgOperatorArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgOpfamily {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Opfmethod {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Opfname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Opfnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Opfowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -40085,52 +40097,52 @@ opfowner?: PgCatalog.Types.Oid.Options
 }
 }
 export namespace PgOpfamilyArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgOpclass {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Opcmethod {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Opcname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Opcnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Opcowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Opcfamily {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Opcintype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Opcdefault {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Opckeytype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -40146,27 +40158,27 @@ opckeytype?: PgCatalog.Types.Oid.Options
 }
 }
 export namespace PgOpclassArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgAm {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amhandler {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amtype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -40177,52 +40189,52 @@ amtype?: PgCatalog.Types.Char.Options
 }
 }
 export namespace PgAmArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgAmop {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amopfamily {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amoplefttype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amoprighttype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amopstrategy {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amoppurpose {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amopopr {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amopmethod {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amopsortfamily {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -40238,37 +40250,37 @@ amopsortfamily?: PgCatalog.Types.Oid.Options
 }
 }
 export namespace PgAmopArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgAmproc {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amprocfamily {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amproclefttype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amprocrighttype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amprocnum {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amproc {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -40281,51 +40293,51 @@ amproc?: PgCatalog.Types.Regproc.Options
 }
 }
 export namespace PgAmprocArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgLanguage {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Lanname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Lanowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Lanispl {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Lanpltrusted {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Lanplcallfoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Laninline {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Lanvalidator {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Lanacl {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
@@ -40340,21 +40352,21 @@ lanacl?: PgCatalog.Types.AclitemArray.Options
 }
 }
 export namespace PgLanguageArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgLargeobjectMetadata {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Lomowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Lomacl {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
@@ -40363,22 +40375,22 @@ lomacl?: PgCatalog.Types.AclitemArray.Options
 }
 }
 export namespace PgLargeobjectMetadataArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgLargeobject {
 export namespace Loid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Pageno {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Data {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -40388,117 +40400,117 @@ data?: PgCatalog.Types.Bytea.Options
 }
 }
 export namespace PgLargeobjectArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgAggregate {
 export namespace Aggfnoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Aggkind {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Aggnumdirectargs {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Aggtransfn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Aggfinalfn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Aggcombinefn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Aggserialfn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Aggdeserialfn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Aggmtransfn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Aggminvtransfn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Aggmfinalfn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Aggfinalextra {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Aggmfinalextra {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Aggfinalmodify {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Aggmfinalmodify {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Aggsortop {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Aggtranstype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Aggtransspace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Aggmtranstype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Aggmtransspace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Agginitval {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Aggminitval {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -40527,152 +40539,152 @@ aggminitval?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgAggregateArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatistic {
 export namespace Starelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Staattnum {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stainherit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stanullfrac {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stawidth {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stadistinct {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stakind1 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stakind2 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stakind3 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stakind4 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stakind5 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Staop1 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Staop2 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Staop3 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Staop4 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Staop5 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stacoll1 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stacoll2 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stacoll3 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stacoll4 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stacoll5 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stanumbers1 {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Stanumbers2 {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Stanumbers3 {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Stanumbers4 {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Stanumbers5 {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Stavalues1 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stavalues2 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stavalues3 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stavalues4 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stavalues5 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -40710,50 +40722,50 @@ stavalues5?: PgCatalog.Types.Anyarray.Options
 }
 }
 export namespace PgStatisticArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatisticExt {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stxrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stxname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stxnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stxowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stxstattarget {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stxkeys {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stxkind {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Stxexprs {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -40769,36 +40781,36 @@ stxexprs?: PgCatalog.Types.PgNodeTree.Options
 }
 }
 export namespace PgStatisticExtArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatisticExtData {
 export namespace Stxoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stxdinherit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stxdndistinct {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stxddependencies {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stxdmcv {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stxdexpr {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  stxoid?: PgCatalog.Types.Oid.Options,
@@ -40810,47 +40822,47 @@ stxdexpr?: PgCatalog.Types.PgStatisticArray.Options
 }
 }
 export namespace PgStatisticExtDataArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgRewrite {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rulename {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace EvClass {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace EvType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace EvEnabled {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsInstead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace EvQual {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace EvAction {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -40865,102 +40877,102 @@ evAction?: PgCatalog.Types.PgNodeTree.Options
 }
 }
 export namespace PgRewriteArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgTrigger {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tgrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tgparentid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tgname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tgfoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tgtype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tgenabled {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tgisinternal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tgconstrrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tgconstrindid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tgconstraint {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tgdeferrable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tginitdeferred {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tgnargs {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tgattr {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tgargs {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tgqual {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tgoldtable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tgnewtable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -40986,41 +40998,41 @@ tgnewtable?: PgCatalog.Types.Name.Options
 }
 }
 export namespace PgTriggerArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgEventTrigger {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Evtname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Evtevent {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Evtowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Evtfoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Evtenabled {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Evttags {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
@@ -41033,27 +41045,27 @@ evttags?: PgCatalog.Types.TextArray.Options
 }
 }
 export namespace PgEventTriggerArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgDescription {
 export namespace Objoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Classoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Objsubid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Description {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -41064,37 +41076,37 @@ description?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgDescriptionArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgCast {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Castsource {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Casttarget {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Castfunc {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Castcontext {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Castmethod {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -41107,27 +41119,27 @@ castmethod?: PgCatalog.Types.Char.Options
 }
 }
 export namespace PgCastArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgEnum {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Enumtypid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Enumsortorder {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Enumlabel {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -41138,26 +41150,26 @@ enumlabel?: PgCatalog.Types.Name.Options
 }
 }
 export namespace PgEnumArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgNamespace {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Nspname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Nspowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Nspacl {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
@@ -41167,47 +41179,47 @@ nspacl?: PgCatalog.Types.AclitemArray.Options
 }
 }
 export namespace PgNamespaceArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgConversion {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Conname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Connamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Conowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Conforencoding {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Contoencoding {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Conproc {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Condefault {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -41222,42 +41234,42 @@ condefault?: PgCatalog.Types.Bool.Options
 }
 }
 export namespace PgConversionArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgDepend {
 export namespace Classid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Objid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Objsubid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Refclassid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Refobjid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Refobjsubid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Deptype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -41271,91 +41283,91 @@ deptype?: PgCatalog.Types.Char.Options
 }
 }
 export namespace PgDependArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgDatabase {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datdba {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Encoding {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datlocprovider {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datistemplate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datallowconn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datconnlimit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datfrozenxid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datminmxid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Dattablespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datcollate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datctype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Daticulocale {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Daticurules {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datcollversion {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datacl {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
@@ -41378,21 +41390,21 @@ datacl?: PgCatalog.Types.AclitemArray.Options
 }
 }
 export namespace PgDatabaseArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgDbRoleSetting {
 export namespace Setdatabase {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Setrole {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Setconfig {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  setdatabase?: PgCatalog.Types.Oid.Options,
@@ -41401,29 +41413,29 @@ setconfig?: PgCatalog.Types.TextArray.Options
 }
 }
 export namespace PgDbRoleSettingArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgTablespace {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Spcname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Spcowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Spcacl {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Spcoptions {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
@@ -41434,67 +41446,67 @@ spcoptions?: PgCatalog.Types.TextArray.Options
 }
 }
 export namespace PgTablespaceArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgAuthid {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rolname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rolsuper {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rolinherit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rolcreaterole {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rolcreatedb {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rolcanlogin {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rolreplication {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rolbypassrls {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rolconnlimit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rolpassword {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rolvaliduntil {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -41513,42 +41525,42 @@ rolvaliduntil?: PgCatalog.Types.Timestamptz.Options
 }
 }
 export namespace PgAuthidArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgAuthMembers {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Roleid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Member {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Grantor {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AdminOption {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace InheritOption {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SetOption {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -41562,42 +41574,42 @@ setOption?: PgCatalog.Types.Bool.Options
 }
 }
 export namespace PgAuthMembersArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgShdepend {
 export namespace Dbid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Classid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Objid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Objsubid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Refclassid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Refobjid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Deptype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -41611,22 +41623,22 @@ deptype?: PgCatalog.Types.Char.Options
 }
 }
 export namespace PgShdependArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgShdescription {
 export namespace Objoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Classoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Description {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -41636,32 +41648,32 @@ description?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgShdescriptionArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgTsConfig {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Cfgname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Cfgnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Cfgowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Cfgparser {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -41673,27 +41685,27 @@ cfgparser?: PgCatalog.Types.Oid.Options
 }
 }
 export namespace PgTsConfigArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgTsConfigMap {
 export namespace Mapcfg {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Maptokentype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Mapseqno {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Mapdict {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -41704,37 +41716,37 @@ mapdict?: PgCatalog.Types.Oid.Options
 }
 }
 export namespace PgTsConfigMapArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgTsDict {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Dictname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Dictnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Dictowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Dicttemplate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Dictinitoption {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -41747,47 +41759,47 @@ dictinitoption?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgTsDictArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgTsParser {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Prsname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Prsnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Prsstart {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Prstoken {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Prsend {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Prsheadline {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Prslextype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -41802,32 +41814,32 @@ prslextype?: PgCatalog.Types.Regproc.Options
 }
 }
 export namespace PgTsParserArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgTsTemplate {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tmplname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tmplnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tmplinit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tmpllexize {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -41839,44 +41851,44 @@ tmpllexize?: PgCatalog.Types.Regproc.Options
 }
 }
 export namespace PgTsTemplateArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgExtension {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Extname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Extowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Extnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Extrelocatable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Extversion {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Extconfig {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Extcondition {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
@@ -41890,39 +41902,39 @@ extcondition?: PgCatalog.Types.TextArray.Options
 }
 }
 export namespace PgExtensionArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgForeignDataWrapper {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Fdwname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Fdwowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Fdwhandler {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Fdwvalidator {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Fdwacl {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Fdwoptions {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
@@ -41935,44 +41947,44 @@ fdwoptions?: PgCatalog.Types.TextArray.Options
 }
 }
 export namespace PgForeignDataWrapperArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgForeignServer {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Srvname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Srvowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Srvfdw {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Srvtype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Srvversion {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Srvacl {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Srvoptions {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
@@ -41986,26 +41998,26 @@ srvoptions?: PgCatalog.Types.TextArray.Options
 }
 }
 export namespace PgForeignServerArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgUserMapping {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Umuser {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Umserver {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Umoptions {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
@@ -42015,21 +42027,21 @@ umoptions?: PgCatalog.Types.TextArray.Options
 }
 }
 export namespace PgUserMappingArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgForeignTable {
 export namespace Ftrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Ftserver {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Ftoptions {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  ftrelid?: PgCatalog.Types.Oid.Options,
@@ -42038,45 +42050,45 @@ ftoptions?: PgCatalog.Types.TextArray.Options
 }
 }
 export namespace PgForeignTableArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgPolicy {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Polname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Polrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Polcmd {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Polpermissive {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Polroles {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Polqual {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Polwithcheck {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -42091,17 +42103,17 @@ polwithcheck?: PgCatalog.Types.PgNodeTree.Options
 }
 }
 export namespace PgPolicyArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgReplicationOrigin {
 export namespace Roident {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Roname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -42110,31 +42122,31 @@ roname?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgReplicationOriginArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgDefaultAcl {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Defaclrole {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Defaclnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Defaclobjtype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Defaclacl {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
@@ -42145,31 +42157,31 @@ defaclacl?: PgCatalog.Types.AclitemArray.Options
 }
 }
 export namespace PgDefaultAclArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgInitPrivs {
 export namespace Objoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Classoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Objsubid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Privtype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Initprivs {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  objoid?: PgCatalog.Types.Oid.Options,
@@ -42180,32 +42192,32 @@ initprivs?: PgCatalog.Types.AclitemArray.Options
 }
 }
 export namespace PgInitPrivsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgSeclabel {
 export namespace Objoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Classoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Objsubid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Provider {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Label {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -42217,27 +42229,27 @@ label?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgSeclabelArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgShseclabel {
 export namespace Objoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Classoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Provider {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Label {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -42248,67 +42260,67 @@ label?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgShseclabelArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgCollation {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Collname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Collnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Collowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Collprovider {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Collisdeterministic {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Collencoding {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Collcollate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Collctype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Colliculocale {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Collicurules {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Collversion {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -42327,21 +42339,21 @@ collversion?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgCollationArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgParameterAcl {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Parname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Paracl {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  oid?: PgCatalog.Types.Oid.Options,
@@ -42350,43 +42362,43 @@ paracl?: PgCatalog.Types.AclitemArray.Options
 }
 }
 export namespace PgParameterAclArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgPartitionedTable {
 export namespace Partrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Partstrat {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Partnatts {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Partdefid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Partattrs {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Partclass {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Partcollation {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Partexprs {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -42401,42 +42413,42 @@ partexprs?: PgCatalog.Types.PgNodeTree.Options
 }
 }
 export namespace PgPartitionedTableArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgRange {
 export namespace Rngtypid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rngsubtype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rngmultitypid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rngcollation {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rngsubopc {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rngcanonical {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rngsubdiff {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -42450,32 +42462,32 @@ rngsubdiff?: PgCatalog.Types.Regproc.Options
 }
 }
 export namespace PgRangeArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgTransform {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Trftype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Trflang {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Trffromsql {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Trftosql {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -42487,47 +42499,47 @@ trftosql?: PgCatalog.Types.Regproc.Options
 }
 }
 export namespace PgTransformArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgSequence {
 export namespace Seqrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Seqtypid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Seqstart {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Seqincrement {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Seqmax {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Seqmin {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Seqcache {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Seqcycle {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -42542,52 +42554,52 @@ seqcycle?: PgCatalog.Types.Bool.Options
 }
 }
 export namespace PgSequenceArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgPublication {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Pubname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Pubowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Puballtables {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Pubinsert {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Pubupdate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Pubdelete {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Pubtruncate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Pubviaroot {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -42603,22 +42615,22 @@ pubviaroot?: PgCatalog.Types.Bool.Options
 }
 }
 export namespace PgPublicationArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgPublicationNamespace {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Pnpubid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Pnnspid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -42628,32 +42640,32 @@ pnnspid?: PgCatalog.Types.Oid.Options
 }
 }
 export namespace PgPublicationNamespaceArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgPublicationRel {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Prpubid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Prrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Prqual {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Prattrs {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -42665,90 +42677,90 @@ prattrs?: PgCatalog.Types.Int2vector.Options
 }
 }
 export namespace PgPublicationRelArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgSubscription {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Subdbid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Subskiplsn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Subname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Subowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Subenabled {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Subbinary {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Substream {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Subtwophasestate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Subdisableonerr {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Subpasswordrequired {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Subrunasowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Subconninfo {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Subslotname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Subsynccommit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Subpublications {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Suborigin {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -42772,27 +42784,27 @@ suborigin?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgSubscriptionArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgSubscriptionRel {
 export namespace Srsubid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Srrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Srsubstate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Srsublsn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -42803,70 +42815,70 @@ srsublsn?: PgCatalog.Types.PgLsn.Options
 }
 }
 export namespace PgSubscriptionRelArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgRoles {
 export namespace Rolname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rolsuper {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rolinherit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rolcreaterole {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rolcreatedb {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rolcanlogin {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rolreplication {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rolconnlimit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rolpassword {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rolvaliduntil {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rolbypassrls {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rolconfig {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -42886,51 +42898,51 @@ oid?: PgCatalog.Types.Oid.Options
 }
 }
 export namespace PgRolesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgShadow {
 export namespace Usename {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Usesysid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Usecreatedb {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Usesuper {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Userepl {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Usebypassrls {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Passwd {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Valuntil {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Useconfig {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  usename?: PgCatalog.Types.Name.Options,
@@ -42945,21 +42957,21 @@ useconfig?: PgCatalog.Types.TextArray.Options
 }
 }
 export namespace PgShadowArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgGroup {
 export namespace Groname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Grosysid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Grolist {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  groname?: PgCatalog.Types.Name.Options,
@@ -42968,51 +42980,51 @@ grolist?: PgCatalog.Types.OidArray.Options
 }
 }
 export namespace PgGroupArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgUser {
 export namespace Usename {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Usesysid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Usecreatedb {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Usesuper {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Userepl {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Usebypassrls {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Passwd {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Valuntil {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Useconfig {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  usename?: PgCatalog.Types.Name.Options,
@@ -43027,45 +43039,45 @@ useconfig?: PgCatalog.Types.TextArray.Options
 }
 }
 export namespace PgUserArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgPolicies {
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tablename {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Policyname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Permissive {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Roles {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Cmd {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Qual {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace WithCheck {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -43080,27 +43092,27 @@ withCheck?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgPoliciesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgRules {
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tablename {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rulename {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Definition {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -43111,27 +43123,27 @@ definition?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgRulesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgViews {
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Viewname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Viewowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Definition {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -43142,47 +43154,47 @@ definition?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgViewsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgTables {
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tablename {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tableowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tablespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Hasindexes {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Hasrules {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Hastriggers {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rowsecurity {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -43197,42 +43209,42 @@ rowsecurity?: PgCatalog.Types.Bool.Options
 }
 }
 export namespace PgTablesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgMatviews {
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Matviewname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Matviewowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tablespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Hasindexes {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Ispopulated {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Definition {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -43246,32 +43258,32 @@ definition?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgMatviewsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgIndexes {
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tablename {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indexname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tablespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indexdef {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -43283,62 +43295,62 @@ indexdef?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgIndexesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgSequences {
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Sequencename {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Sequenceowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DataType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StartValue {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MinValue {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MaxValue {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IncrementBy {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Cycle {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CacheSize {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastValue {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -43356,72 +43368,72 @@ lastValue?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgSequencesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStats {
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tablename {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Inherited {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NullFrac {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AvgWidth {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NDistinct {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MostCommonVals {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MostCommonFreqs {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace HistogramBounds {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Correlation {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MostCommonElems {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MostCommonElemFreqs {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ElemCountHistogram {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
@@ -43441,69 +43453,69 @@ elemCountHistogram?: PgCatalog.Types.Float4Array.Options
 }
 }
 export namespace PgStatsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatsExt {
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tablename {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StatisticsSchemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StatisticsName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StatisticsOwner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attnames {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Exprs {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Kinds {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Inherited {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NDistinct {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Dependencies {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MostCommonVals {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace MostCommonValNulls {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace MostCommonFreqs {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace MostCommonBaseFreqs {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
@@ -43524,87 +43536,87 @@ mostCommonBaseFreqs?: PgCatalog.Types.Float8Array.Options
 }
 }
 export namespace PgStatsExtArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatsExtExprs {
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tablename {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StatisticsSchemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StatisticsName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StatisticsOwner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Expr {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Inherited {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NullFrac {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AvgWidth {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NDistinct {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MostCommonVals {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MostCommonFreqs {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace HistogramBounds {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Correlation {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MostCommonElems {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MostCommonElemFreqs {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ElemCountHistogram {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  schemaname?: PgCatalog.Types.Name.Options,
@@ -43627,30 +43639,30 @@ elemCountHistogram?: PgCatalog.Types.Float4Array.Options
 }
 }
 export namespace PgStatsExtExprsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgPublicationTables {
 export namespace Pubname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tablename {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attnames {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Rowfilter {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -43662,87 +43674,87 @@ rowfilter?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgPublicationTablesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgLocks {
 export namespace Locktype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Database {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relation {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Page {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tuple {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Virtualxid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Transactionid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Classid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Objid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Objsubid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Virtualtransaction {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Pid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Mode {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Granted {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Fastpath {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Waitstart {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -43765,37 +43777,37 @@ waitstart?: PgCatalog.Types.Timestamptz.Options
 }
 }
 export namespace PgLocksArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgCursors {
 export namespace Name {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Statement {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsHoldable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsBinary {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsScrollable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CreationTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -43808,27 +43820,27 @@ creationTime?: PgCatalog.Types.Timestamptz.Options
 }
 }
 export namespace PgCursorsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgAvailableExtensions {
 export namespace Name {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DefaultVersion {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace InstalledVersion {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Comment {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -43839,50 +43851,50 @@ comment?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgAvailableExtensionsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgAvailableExtensionVersions {
 export namespace Name {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Version {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Installed {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Superuser {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Trusted {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relocatable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Schema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Requires {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Comment {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -43898,32 +43910,32 @@ comment?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgAvailableExtensionVersionsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgPreparedXacts {
 export namespace Transaction {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Gid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Prepared {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Owner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Database {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -43935,43 +43947,43 @@ database?: PgCatalog.Types.Name.Options
 }
 }
 export namespace PgPreparedXactsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgPreparedStatements {
 export namespace Name {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Statement {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PrepareTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ParameterTypes {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ResultTypes {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace FromSql {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace GenericPlans {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CustomPlans {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -43986,47 +43998,47 @@ customPlans?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgPreparedStatementsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgSeclabels {
 export namespace Objoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Classoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Objsubid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Objtype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Objnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Objname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Provider {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Label {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -44041,90 +44053,90 @@ label?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgSeclabelsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgSettings {
 export namespace Name {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Setting {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Unit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Category {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ShortDesc {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ExtraDesc {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Context {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Vartype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Source {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MinVal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MaxVal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Enumvals {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace BootVal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResetVal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Sourcefile {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Sourceline {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PendingRestart {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -44148,42 +44160,42 @@ pendingRestart?: PgCatalog.Types.Bool.Options
 }
 }
 export namespace PgSettingsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgFileSettings {
 export namespace Sourcefile {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Sourceline {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Seqno {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Name {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Setting {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Applied {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Error {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -44197,56 +44209,56 @@ error?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgFileSettingsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgHbaFileRules {
 export namespace RuleNumber {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace FileName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LineNumber {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Type {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Database {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace UserName {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Address {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Netmask {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AuthMethod {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Options {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Error {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -44264,42 +44276,42 @@ error?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgHbaFileRulesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgIdentFileMappings {
 export namespace MapNumber {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace FileName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LineNumber {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MapName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SysName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PgUsername {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Error {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -44313,22 +44325,22 @@ error?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgIdentFileMappingsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgTimezoneAbbrevs {
 export namespace Abbrev {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UtcOffset {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsDst {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -44338,27 +44350,27 @@ isDst?: PgCatalog.Types.Bool.Options
 }
 }
 export namespace PgTimezoneAbbrevsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgTimezoneNames {
 export namespace Name {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Abbrev {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UtcOffset {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsDst {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -44369,17 +44381,17 @@ isDst?: PgCatalog.Types.Bool.Options
 }
 }
 export namespace PgTimezoneNamesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgConfig {
 export namespace Name {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Setting {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -44388,27 +44400,27 @@ setting?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgConfigArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgShmemAllocations {
 export namespace Name {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Off {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Size {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AllocatedSize {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -44419,52 +44431,52 @@ allocatedSize?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgShmemAllocationsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgBackendMemoryContexts {
 export namespace Name {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Ident {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Parent {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Level {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TotalBytes {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TotalNblocks {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace FreeBytes {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace FreeChunks {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UsedBytes {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -44480,137 +44492,137 @@ usedBytes?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgBackendMemoryContextsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatAllTables {
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SeqScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastSeqScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SeqTupRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastIdxScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxTupFetch {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupIns {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupUpd {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupDel {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupHotUpd {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupNewpageUpd {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NLiveTup {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NDeadTup {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NModSinceAnalyze {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NInsSinceVacuum {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastVacuum {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastAutovacuum {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastAnalyze {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastAutoanalyze {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace VacuumCount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AutovacuumCount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AnalyzeCount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AutoanalyzeCount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -44643,67 +44655,67 @@ autoanalyzeCount?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatAllTablesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatXactAllTables {
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SeqScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SeqTupRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxTupFetch {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupIns {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupUpd {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupDel {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupHotUpd {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupNewpageUpd {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -44722,137 +44734,137 @@ nTupNewpageUpd?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatXactAllTablesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatSysTables {
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SeqScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastSeqScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SeqTupRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastIdxScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxTupFetch {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupIns {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupUpd {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupDel {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupHotUpd {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupNewpageUpd {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NLiveTup {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NDeadTup {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NModSinceAnalyze {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NInsSinceVacuum {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastVacuum {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastAutovacuum {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastAnalyze {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastAutoanalyze {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace VacuumCount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AutovacuumCount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AnalyzeCount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AutoanalyzeCount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -44885,67 +44897,67 @@ autoanalyzeCount?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatSysTablesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatXactSysTables {
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SeqScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SeqTupRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxTupFetch {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupIns {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupUpd {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupDel {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupHotUpd {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupNewpageUpd {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -44964,137 +44976,137 @@ nTupNewpageUpd?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatXactSysTablesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatUserTables {
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SeqScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastSeqScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SeqTupRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastIdxScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxTupFetch {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupIns {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupUpd {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupDel {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupHotUpd {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupNewpageUpd {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NLiveTup {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NDeadTup {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NModSinceAnalyze {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NInsSinceVacuum {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastVacuum {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastAutovacuum {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastAnalyze {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastAutoanalyze {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace VacuumCount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AutovacuumCount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AnalyzeCount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AutoanalyzeCount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -45127,67 +45139,67 @@ autoanalyzeCount?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatUserTablesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatXactUserTables {
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SeqScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SeqTupRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxTupFetch {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupIns {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupUpd {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupDel {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupHotUpd {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NTupNewpageUpd {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -45206,62 +45218,62 @@ nTupNewpageUpd?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatXactUserTablesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatioAllTables {
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace HeapBlksRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace HeapBlksHit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxBlksRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxBlksHit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ToastBlksRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ToastBlksHit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TidxBlksRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TidxBlksHit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -45279,62 +45291,62 @@ tidxBlksHit?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatioAllTablesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatioSysTables {
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace HeapBlksRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace HeapBlksHit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxBlksRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxBlksHit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ToastBlksRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ToastBlksHit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TidxBlksRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TidxBlksHit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -45352,62 +45364,62 @@ tidxBlksHit?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatioSysTablesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatioUserTables {
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace HeapBlksRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace HeapBlksHit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxBlksRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxBlksHit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ToastBlksRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ToastBlksHit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TidxBlksRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TidxBlksHit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -45425,52 +45437,52 @@ tidxBlksHit?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatioUserTablesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatAllIndexes {
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indexrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indexrelname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastIdxScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxTupRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxTupFetch {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -45486,52 +45498,52 @@ idxTupFetch?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatAllIndexesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatSysIndexes {
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indexrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indexrelname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastIdxScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxTupRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxTupFetch {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -45547,52 +45559,52 @@ idxTupFetch?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatSysIndexesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatUserIndexes {
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indexrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indexrelname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastIdxScan {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxTupRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxTupFetch {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -45608,42 +45620,42 @@ idxTupFetch?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatUserIndexesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatioAllIndexes {
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indexrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indexrelname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxBlksRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxBlksHit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -45657,42 +45669,42 @@ idxBlksHit?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatioAllIndexesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatioSysIndexes {
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indexrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indexrelname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxBlksRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxBlksHit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -45706,42 +45718,42 @@ idxBlksHit?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatioSysIndexesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatioUserIndexes {
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indexrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Indexrelname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxBlksRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdxBlksHit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -45755,32 +45767,32 @@ idxBlksHit?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatioUserIndexesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatioAllSequences {
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BlksRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BlksHit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -45792,32 +45804,32 @@ blksHit?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatioAllSequencesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatioSysSequences {
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BlksRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BlksHit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -45829,32 +45841,32 @@ blksHit?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatioSysSequencesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatioUserSequences {
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BlksRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BlksHit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -45866,117 +45878,117 @@ blksHit?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatioUserSequencesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatActivity {
 export namespace Datid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Pid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LeaderPid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Usesysid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Usename {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ApplicationName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ClientAddr {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ClientHostname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ClientPort {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BackendStart {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace XactStart {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace QueryStart {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StateChange {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace WaitEventType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace WaitEvent {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace State {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BackendXid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BackendXmin {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace QueryId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Query {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BackendType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -46005,107 +46017,107 @@ backendType?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgStatActivityArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatReplication {
 export namespace Pid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Usesysid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Usename {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ApplicationName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ClientAddr {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ClientHostname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ClientPort {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BackendStart {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BackendXmin {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace State {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SentLsn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace WriteLsn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace FlushLsn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ReplayLsn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace WriteLag {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace FlushLag {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ReplayLag {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SyncPriority {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SyncState {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ReplyTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -46132,52 +46144,52 @@ replyTime?: PgCatalog.Types.Timestamptz.Options
 }
 }
 export namespace PgStatReplicationArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatSlru {
 export namespace Name {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BlksZeroed {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BlksHit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BlksRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BlksWritten {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BlksExists {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Flushes {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Truncates {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StatsReset {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -46193,82 +46205,82 @@ statsReset?: PgCatalog.Types.Timestamptz.Options
 }
 }
 export namespace PgStatSlruArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatWalReceiver {
 export namespace Pid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Status {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ReceiveStartLsn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ReceiveStartTli {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace WrittenLsn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace FlushedLsn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ReceivedTli {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastMsgSendTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastMsgReceiptTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LatestEndLsn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LatestEndTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SlotName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SenderHost {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SenderPort {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Conninfo {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -46290,57 +46302,57 @@ conninfo?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgStatWalReceiverArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatRecoveryPrefetch {
 export namespace StatsReset {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Prefetch {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Hit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SkipInit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SkipNew {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SkipFpw {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SkipRep {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace WalDistance {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BlockDistance {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IoDepth {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -46357,57 +46369,57 @@ ioDepth?: PgCatalog.Types.Int4.Options
 }
 }
 export namespace PgStatRecoveryPrefetchArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatSubscription {
 export namespace Subid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Subname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Pid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LeaderPid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ReceivedLsn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastMsgSendTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastMsgReceiptTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LatestEndLsn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LatestEndTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -46424,47 +46436,47 @@ latestEndTime?: PgCatalog.Types.Timestamptz.Options
 }
 }
 export namespace PgStatSubscriptionArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatSsl {
 export namespace Pid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Ssl {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Version {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Cipher {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Bits {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ClientDn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ClientSerial {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IssuerDn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -46479,32 +46491,32 @@ issuerDn?: PgCatalog.Types.Text.Options
 }
 }
 export namespace PgStatSslArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatGssapi {
 export namespace Pid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace GssAuthenticated {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Principal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Encrypted {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CredentialsDelegated {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -46516,87 +46528,87 @@ credentialsDelegated?: PgCatalog.Types.Bool.Options
 }
 }
 export namespace PgStatGssapiArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgReplicationSlots {
 export namespace SlotName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Plugin {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SlotType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Database {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Temporary {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Active {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ActivePid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Xmin {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CatalogXmin {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RestartLsn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConfirmedFlushLsn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace WalStatus {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SafeWalSize {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TwoPhase {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Conflicting {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -46619,57 +46631,57 @@ conflicting?: PgCatalog.Types.Bool.Options
 }
 }
 export namespace PgReplicationSlotsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatReplicationSlots {
 export namespace SlotName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpillTxns {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpillCount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpillBytes {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StreamTxns {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StreamCount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StreamBytes {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TotalTxns {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TotalBytes {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StatsReset {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -46686,147 +46698,147 @@ statsReset?: PgCatalog.Types.Timestamptz.Options
 }
 }
 export namespace PgStatReplicationSlotsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatDatabase {
 export namespace Datid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Numbackends {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace XactCommit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace XactRollback {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BlksRead {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BlksHit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TupReturned {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TupFetched {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TupInserted {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TupUpdated {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TupDeleted {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Conflicts {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TempFiles {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TempBytes {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Deadlocks {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChecksumFailures {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChecksumLastFailure {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BlkReadTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BlkWriteTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SessionTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ActiveTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdleInTransactionTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Sessions {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SessionsAbandoned {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SessionsFatal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SessionsKilled {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StatsReset {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -46861,47 +46873,47 @@ statsReset?: PgCatalog.Types.Timestamptz.Options
 }
 }
 export namespace PgStatDatabaseArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatDatabaseConflicts {
 export namespace Datid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConflTablespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConflLock {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConflSnapshot {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConflBufferpin {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConflDeadlock {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConflActiveLogicalslot {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -46916,37 +46928,37 @@ conflActiveLogicalslot?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatDatabaseConflictsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatUserFunctions {
 export namespace Funcid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Funcname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Calls {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TotalTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SelfTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -46959,37 +46971,37 @@ selfTime?: PgCatalog.Types.Float8.Options
 }
 }
 export namespace PgStatUserFunctionsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatXactUserFunctions {
 export namespace Funcid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Schemaname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Funcname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Calls {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TotalTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SelfTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -47002,42 +47014,42 @@ selfTime?: PgCatalog.Types.Float8.Options
 }
 }
 export namespace PgStatXactUserFunctionsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatArchiver {
 export namespace ArchivedCount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastArchivedWal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastArchivedTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace FailedCount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastFailedWal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastFailedTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StatsReset {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -47051,62 +47063,62 @@ statsReset?: PgCatalog.Types.Timestamptz.Options
 }
 }
 export namespace PgStatArchiverArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatBgwriter {
 export namespace CheckpointsTimed {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CheckpointsReq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CheckpointWriteTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CheckpointSyncTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BuffersCheckpoint {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BuffersClean {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MaxwrittenClean {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BuffersBackend {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BuffersBackendFsync {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BuffersAlloc {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StatsReset {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -47124,97 +47136,97 @@ statsReset?: PgCatalog.Types.Timestamptz.Options
 }
 }
 export namespace PgStatBgwriterArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatIo {
 export namespace BackendType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Object {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Context {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Reads {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ReadTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Writes {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace WriteTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Writebacks {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace WritebackTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Extends {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ExtendTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace OpBytes {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Hits {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Evictions {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Reuses {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Fsyncs {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace FsyncTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StatsReset {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -47239,52 +47251,52 @@ statsReset?: PgCatalog.Types.Timestamptz.Options
 }
 }
 export namespace PgStatIoArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatWal {
 export namespace WalRecords {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace WalFpi {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace WalBytes {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace WalBuffersFull {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace WalWrite {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace WalSync {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace WalWriteTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace WalSyncTime {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StatsReset {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -47300,67 +47312,67 @@ statsReset?: PgCatalog.Types.Timestamptz.Options
 }
 }
 export namespace PgStatWalArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatProgressAnalyze {
 export namespace Pid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Phase {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SampleBlksTotal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SampleBlksScanned {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ExtStatsTotal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ExtStatsComputed {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChildTablesTotal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChildTablesDone {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CurrentChildTableRelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -47379,62 +47391,62 @@ currentChildTableRelid?: PgCatalog.Types.Oid.Options
 }
 }
 export namespace PgStatProgressAnalyzeArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatProgressVacuum {
 export namespace Pid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Phase {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace HeapBlksTotal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace HeapBlksScanned {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace HeapBlksVacuumed {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IndexVacuumCount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MaxDeadTuples {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumDeadTuples {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -47452,67 +47464,67 @@ numDeadTuples?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatProgressVacuumArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatProgressCluster {
 export namespace Pid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Command {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Phase {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ClusterIndexRelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace HeapTuplesScanned {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace HeapTuplesWritten {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace HeapBlksTotal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace HeapBlksScanned {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IndexRebuildCount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -47531,87 +47543,87 @@ indexRebuildCount?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatProgressClusterArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatProgressCreateIndex {
 export namespace Pid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IndexRelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Command {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Phase {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LockersTotal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LockersDone {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CurrentLockerPid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BlocksTotal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BlocksDone {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TuplesTotal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TuplesDone {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PartitionsTotal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PartitionsDone {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -47634,37 +47646,37 @@ partitionsDone?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatProgressCreateIndexArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatProgressBasebackup {
 export namespace Pid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Phase {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BackupTotal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BackupStreamed {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TablespacesTotal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TablespacesStreamed {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -47677,57 +47689,57 @@ tablespacesStreamed?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatProgressBasebackupArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatProgressCopy {
 export namespace Pid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Datname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Command {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Type {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BytesProcessed {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace BytesTotal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TuplesProcessed {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TuplesExcluded {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -47744,36 +47756,36 @@ tuplesExcluded?: PgCatalog.Types.Int8.Options
 }
 }
 export namespace PgStatProgressCopyArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgUserMappings {
 export namespace Umid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Srvid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Srvname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Umuser {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Usename {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Umoptions {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  umid?: PgCatalog.Types.Oid.Options,
@@ -47785,27 +47797,27 @@ umoptions?: PgCatalog.Types.TextArray.Options
 }
 }
 export namespace PgUserMappingsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgReplicationOriginStatus {
 export namespace LocalId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ExternalId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RemoteLsn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LocalLsn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -47816,32 +47828,32 @@ localLsn?: PgCatalog.Types.PgLsn.Options
 }
 }
 export namespace PgReplicationOriginStatusArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgStatSubscriptionStats {
 export namespace Subid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Subname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ApplyErrorCount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SyncErrorCount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StatsReset {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -47853,12 +47865,12 @@ statsReset?: PgCatalog.Types.Timestamptz.Options
 }
 }
 export namespace PgStatSubscriptionStatsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgProcOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -47868,15 +47880,15 @@ export type Options = InvokeQueryOptions & {
 export namespace PgProcPronameArgsNspIndex {
 export namespace Proname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Proargtypes {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Pronamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -47888,7 +47900,7 @@ pronamespace?: PgCatalog.Types.Oid.Options
 export namespace PgTypeOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -47898,12 +47910,12 @@ export type Options = InvokeQueryOptions & {
 export namespace PgTypeTypnameNspIndex {
 export namespace Typname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Typnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -47914,12 +47926,12 @@ typnamespace?: PgCatalog.Types.Oid.Options
 export namespace PgAttributeRelidAttnamIndex {
 export namespace Attrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -47930,12 +47942,12 @@ attname?: PgCatalog.Types.Name.Options
 export namespace PgAttributeRelidAttnumIndex {
 export namespace Attrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attnum {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -47946,7 +47958,7 @@ attnum?: PgCatalog.Types.Int2.Options
 export namespace PgClassOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -47956,12 +47968,12 @@ export type Options = InvokeQueryOptions & {
 export namespace PgClassRelnameNspIndex {
 export namespace Relname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -47972,12 +47984,12 @@ relnamespace?: PgCatalog.Types.Oid.Options
 export namespace PgClassTblspcRelfilenodeIndex {
 export namespace Reltablespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relfilenode {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -47988,12 +48000,12 @@ relfilenode?: PgCatalog.Types.Oid.Options
 export namespace PgAttrdefAdrelidAdnumIndex {
 export namespace Adrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Adnum {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48004,7 +48016,7 @@ adnum?: PgCatalog.Types.Int2.Options
 export namespace PgAttrdefOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48014,12 +48026,12 @@ export type Options = InvokeQueryOptions & {
 export namespace PgConstraintConnameNspIndex {
 export namespace Conname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Connamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48030,17 +48042,17 @@ connamespace?: PgCatalog.Types.Oid.Options
 export namespace PgConstraintConrelidContypidConnameIndex {
 export namespace Conrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Contypid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Conname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48052,7 +48064,7 @@ conname?: PgCatalog.Types.Name.Options
 export namespace PgConstraintContypidIndex {
 export namespace Contypid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48062,7 +48074,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgConstraintOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48072,7 +48084,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgConstraintConparentidIndex {
 export namespace Conparentid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48082,12 +48094,12 @@ export type Options = InvokeQueryOptions & {
 export namespace PgInheritsRelidSeqnoIndex {
 export namespace Inhrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Inhseqno {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48098,7 +48110,7 @@ inhseqno?: PgCatalog.Types.Int4.Options
 export namespace PgInheritsParentIndex {
 export namespace Inhparent {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48108,7 +48120,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgIndexIndrelidIndex {
 export namespace Indrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48118,7 +48130,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgIndexIndexrelidIndex {
 export namespace Indexrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48128,7 +48140,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgOperatorOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48138,22 +48150,22 @@ export type Options = InvokeQueryOptions & {
 export namespace PgOperatorOprnameLRNIndex {
 export namespace Oprname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Oprleft {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Oprright {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Oprnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48166,17 +48178,17 @@ oprnamespace?: PgCatalog.Types.Oid.Options
 export namespace PgOpfamilyAmNameNspIndex {
 export namespace Opfmethod {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Opfname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Opfnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48188,7 +48200,7 @@ opfnamespace?: PgCatalog.Types.Oid.Options
 export namespace PgOpfamilyOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48198,17 +48210,17 @@ export type Options = InvokeQueryOptions & {
 export namespace PgOpclassAmNameNspIndex {
 export namespace Opcmethod {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Opcname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Opcnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48220,7 +48232,7 @@ opcnamespace?: PgCatalog.Types.Oid.Options
 export namespace PgOpclassOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48230,7 +48242,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgAmNameIndex {
 export namespace Amname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48240,7 +48252,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgAmOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48250,22 +48262,22 @@ export type Options = InvokeQueryOptions & {
 export namespace PgAmopFamStratIndex {
 export namespace Amopfamily {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amoplefttype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amoprighttype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amopstrategy {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48278,17 +48290,17 @@ amopstrategy?: PgCatalog.Types.Int2.Options
 export namespace PgAmopOprFamIndex {
 export namespace Amopopr {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amoppurpose {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amopfamily {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48300,7 +48312,7 @@ amopfamily?: PgCatalog.Types.Oid.Options
 export namespace PgAmopOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48310,22 +48322,22 @@ export type Options = InvokeQueryOptions & {
 export namespace PgAmprocFamProcIndex {
 export namespace Amprocfamily {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amproclefttype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amprocrighttype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amprocnum {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48338,7 +48350,7 @@ amprocnum?: PgCatalog.Types.Int2.Options
 export namespace PgAmprocOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48348,7 +48360,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgLanguageNameIndex {
 export namespace Lanname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48358,7 +48370,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgLanguageOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48368,7 +48380,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgLargeobjectMetadataOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48378,12 +48390,12 @@ export type Options = InvokeQueryOptions & {
 export namespace PgLargeobjectLoidPnIndex {
 export namespace Loid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Pageno {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48394,7 +48406,7 @@ pageno?: PgCatalog.Types.Int4.Options
 export namespace PgAggregateFnoidIndex {
 export namespace Aggfnoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48404,17 +48416,17 @@ export type Options = InvokeQueryOptions & {
 export namespace PgStatisticRelidAttInhIndex {
 export namespace Starelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Staattnum {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stainherit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48426,7 +48438,7 @@ stainherit?: PgCatalog.Types.Bool.Options
 export namespace PgStatisticExtOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48436,12 +48448,12 @@ export type Options = InvokeQueryOptions & {
 export namespace PgStatisticExtNameIndex {
 export namespace Stxname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stxnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48452,7 +48464,7 @@ stxnamespace?: PgCatalog.Types.Oid.Options
 export namespace PgStatisticExtRelidIndex {
 export namespace Stxrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48462,12 +48474,12 @@ export type Options = InvokeQueryOptions & {
 export namespace PgStatisticExtDataStxoidInhIndex {
 export namespace Stxoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Stxdinherit {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48478,7 +48490,7 @@ stxdinherit?: PgCatalog.Types.Bool.Options
 export namespace PgRewriteOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48488,12 +48500,12 @@ export type Options = InvokeQueryOptions & {
 export namespace PgRewriteRelRulenameIndex {
 export namespace EvClass {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rulename {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48504,7 +48516,7 @@ rulename?: PgCatalog.Types.Name.Options
 export namespace PgTriggerTgconstraintIndex {
 export namespace Tgconstraint {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48514,12 +48526,12 @@ export type Options = InvokeQueryOptions & {
 export namespace PgTriggerTgrelidTgnameIndex {
 export namespace Tgrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tgname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48530,7 +48542,7 @@ tgname?: PgCatalog.Types.Name.Options
 export namespace PgTriggerOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48540,7 +48552,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgEventTriggerEvtnameIndex {
 export namespace Evtname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48550,7 +48562,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgEventTriggerOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48560,17 +48572,17 @@ export type Options = InvokeQueryOptions & {
 export namespace PgDescriptionOCOIndex {
 export namespace Objoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Classoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Objsubid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48582,7 +48594,7 @@ objsubid?: PgCatalog.Types.Int4.Options
 export namespace PgCastOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48592,12 +48604,12 @@ export type Options = InvokeQueryOptions & {
 export namespace PgCastSourceTargetIndex {
 export namespace Castsource {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Casttarget {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48608,7 +48620,7 @@ casttarget?: PgCatalog.Types.Oid.Options
 export namespace PgEnumOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48618,12 +48630,12 @@ export type Options = InvokeQueryOptions & {
 export namespace PgEnumTypidLabelIndex {
 export namespace Enumtypid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Enumlabel {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48634,12 +48646,12 @@ enumlabel?: PgCatalog.Types.Name.Options
 export namespace PgEnumTypidSortorderIndex {
 export namespace Enumtypid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Enumsortorder {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48650,7 +48662,7 @@ enumsortorder?: PgCatalog.Types.Float4.Options
 export namespace PgNamespaceNspnameIndex {
 export namespace Nspname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48660,7 +48672,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgNamespaceOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48670,22 +48682,22 @@ export type Options = InvokeQueryOptions & {
 export namespace PgConversionDefaultIndex {
 export namespace Connamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Conforencoding {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Contoencoding {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48698,12 +48710,12 @@ oid?: PgCatalog.Types.Oid.Options
 export namespace PgConversionNameNspIndex {
 export namespace Conname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Connamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48714,7 +48726,7 @@ connamespace?: PgCatalog.Types.Oid.Options
 export namespace PgConversionOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48724,17 +48736,17 @@ export type Options = InvokeQueryOptions & {
 export namespace PgDependDependerIndex {
 export namespace Classid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Objid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Objsubid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48746,17 +48758,17 @@ objsubid?: PgCatalog.Types.Int4.Options
 export namespace PgDependReferenceIndex {
 export namespace Refclassid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Refobjid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Refobjsubid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48768,7 +48780,7 @@ refobjsubid?: PgCatalog.Types.Int4.Options
 export namespace PgDatabaseDatnameIndex {
 export namespace Datname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48778,7 +48790,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgDatabaseOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48788,12 +48800,12 @@ export type Options = InvokeQueryOptions & {
 export namespace PgDbRoleSettingDatabaseidRolIndex {
 export namespace Setdatabase {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Setrole {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48804,7 +48816,7 @@ setrole?: PgCatalog.Types.Oid.Options
 export namespace PgTablespaceOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48814,7 +48826,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgTablespaceSpcnameIndex {
 export namespace Spcname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48824,7 +48836,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgAuthidRolnameIndex {
 export namespace Rolname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48834,7 +48846,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgAuthidOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48844,7 +48856,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgAuthMembersOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48854,17 +48866,17 @@ export type Options = InvokeQueryOptions & {
 export namespace PgAuthMembersRoleMemberIndex {
 export namespace Roleid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Member {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Grantor {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48876,17 +48888,17 @@ grantor?: PgCatalog.Types.Oid.Options
 export namespace PgAuthMembersMemberRoleIndex {
 export namespace Member {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Roleid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Grantor {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48898,7 +48910,7 @@ grantor?: PgCatalog.Types.Oid.Options
 export namespace PgAuthMembersGrantorIndex {
 export namespace Grantor {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48908,22 +48920,22 @@ export type Options = InvokeQueryOptions & {
 export namespace PgShdependDependerIndex {
 export namespace Dbid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Classid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Objid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Objsubid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48936,12 +48948,12 @@ objsubid?: PgCatalog.Types.Int4.Options
 export namespace PgShdependReferenceIndex {
 export namespace Refclassid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Refobjid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48952,12 +48964,12 @@ refobjid?: PgCatalog.Types.Oid.Options
 export namespace PgShdescriptionOCIndex {
 export namespace Objoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Classoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48968,12 +48980,12 @@ classoid?: PgCatalog.Types.Oid.Options
 export namespace PgTsConfigCfgnameIndex {
 export namespace Cfgname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Cfgnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48984,7 +48996,7 @@ cfgnamespace?: PgCatalog.Types.Oid.Options
 export namespace PgTsConfigOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -48994,17 +49006,17 @@ export type Options = InvokeQueryOptions & {
 export namespace PgTsConfigMapIndex {
 export namespace Mapcfg {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Maptokentype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Mapseqno {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49016,12 +49028,12 @@ mapseqno?: PgCatalog.Types.Int4.Options
 export namespace PgTsDictDictnameIndex {
 export namespace Dictname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Dictnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49032,7 +49044,7 @@ dictnamespace?: PgCatalog.Types.Oid.Options
 export namespace PgTsDictOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49042,12 +49054,12 @@ export type Options = InvokeQueryOptions & {
 export namespace PgTsParserPrsnameIndex {
 export namespace Prsname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Prsnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49058,7 +49070,7 @@ prsnamespace?: PgCatalog.Types.Oid.Options
 export namespace PgTsParserOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49068,12 +49080,12 @@ export type Options = InvokeQueryOptions & {
 export namespace PgTsTemplateTmplnameIndex {
 export namespace Tmplname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Tmplnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49084,7 +49096,7 @@ tmplnamespace?: PgCatalog.Types.Oid.Options
 export namespace PgTsTemplateOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49094,7 +49106,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgExtensionOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49104,7 +49116,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgExtensionNameIndex {
 export namespace Extname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49114,7 +49126,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgForeignDataWrapperOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49124,7 +49136,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgForeignDataWrapperNameIndex {
 export namespace Fdwname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49134,7 +49146,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgForeignServerOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49144,7 +49156,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgForeignServerNameIndex {
 export namespace Srvname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49154,7 +49166,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgUserMappingOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49164,12 +49176,12 @@ export type Options = InvokeQueryOptions & {
 export namespace PgUserMappingUserServerIndex {
 export namespace Umuser {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Umserver {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49180,7 +49192,7 @@ umserver?: PgCatalog.Types.Oid.Options
 export namespace PgForeignTableRelidIndex {
 export namespace Ftrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49190,7 +49202,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgPolicyOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49200,12 +49212,12 @@ export type Options = InvokeQueryOptions & {
 export namespace PgPolicyPolrelidPolnameIndex {
 export namespace Polrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Polname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49216,7 +49228,7 @@ polname?: PgCatalog.Types.Name.Options
 export namespace PgReplicationOriginRoiidentIndex {
 export namespace Roident {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49226,7 +49238,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgReplicationOriginRonameIndex {
 export namespace Roname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49236,17 +49248,17 @@ export type Options = InvokeQueryOptions & {
 export namespace PgDefaultAclRoleNspObjIndex {
 export namespace Defaclrole {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Defaclnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Defaclobjtype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49258,7 +49270,7 @@ defaclobjtype?: PgCatalog.Types.Char.Options
 export namespace PgDefaultAclOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49268,17 +49280,17 @@ export type Options = InvokeQueryOptions & {
 export namespace PgInitPrivsOCOIndex {
 export namespace Objoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Classoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Objsubid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49290,22 +49302,22 @@ objsubid?: PgCatalog.Types.Int4.Options
 export namespace PgSeclabelObjectIndex {
 export namespace Objoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Classoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Objsubid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Provider {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49318,17 +49330,17 @@ provider?: PgCatalog.Types.Text.Options
 export namespace PgShseclabelObjectIndex {
 export namespace Objoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Classoid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Provider {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49340,17 +49352,17 @@ provider?: PgCatalog.Types.Text.Options
 export namespace PgCollationNameEncNspIndex {
 export namespace Collname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Collencoding {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Collnamespace {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49362,7 +49374,7 @@ collnamespace?: PgCatalog.Types.Oid.Options
 export namespace PgCollationOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49372,7 +49384,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgParameterAclParnameIndex {
 export namespace Parname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49382,7 +49394,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgParameterAclOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49392,7 +49404,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgPartitionedTablePartrelidIndex {
 export namespace Partrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49402,7 +49414,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgRangeRngtypidIndex {
 export namespace Rngtypid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49412,7 +49424,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgRangeRngmultitypidIndex {
 export namespace Rngmultitypid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49422,7 +49434,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgTransformOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49432,12 +49444,12 @@ export type Options = InvokeQueryOptions & {
 export namespace PgTransformTypeLangIndex {
 export namespace Trftype {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Trflang {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49448,7 +49460,7 @@ trflang?: PgCatalog.Types.Oid.Options
 export namespace PgSequenceSeqrelidIndex {
 export namespace Seqrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49458,7 +49470,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgPublicationOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49468,7 +49480,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgPublicationPubnameIndex {
 export namespace Pubname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49478,7 +49490,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgPublicationNamespaceOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49488,12 +49500,12 @@ export type Options = InvokeQueryOptions & {
 export namespace PgPublicationNamespacePnnspidPnpubidIndex {
 export namespace Pnnspid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Pnpubid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49504,7 +49516,7 @@ pnpubid?: PgCatalog.Types.Oid.Options
 export namespace PgPublicationRelOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49514,12 +49526,12 @@ export type Options = InvokeQueryOptions & {
 export namespace PgPublicationRelPrrelidPrpubidIndex {
 export namespace Prrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Prpubid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49530,7 +49542,7 @@ prpubid?: PgCatalog.Types.Oid.Options
 export namespace PgPublicationRelPrpubidIndex {
 export namespace Prpubid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49540,7 +49552,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PgSubscriptionOidIndex {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49550,12 +49562,12 @@ export type Options = InvokeQueryOptions & {
 export namespace PgSubscriptionSubnameIndex {
 export namespace Subdbid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Subname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49566,12 +49578,12 @@ subname?: PgCatalog.Types.Name.Options
 export namespace PgSubscriptionRelSrrelidSrsubidIndex {
 export namespace Srrelid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Srsubid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49717,32 +49729,32 @@ export namespace InformationSchema {
 export namespace Types {
 export namespace CardinalNumber {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CardinalNumberArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace CharacterData {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterDataArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace SqlIdentifier {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SqlIdentifierArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace InformationSchemaCatalogName {
 export namespace CatalogName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49750,38 +49762,38 @@ export type Options = InvokeQueryOptions & {
 }
 }
 export namespace InformationSchemaCatalogNameArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace TimeStamp {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TimeStampArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace YesOrNo {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace YesOrNoArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ApplicableRoles {
 export namespace Grantee {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoleName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsGrantable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49791,22 +49803,22 @@ isGrantable?: InformationSchema.Types.YesOrNo.Options
 }
 }
 export namespace ApplicableRolesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace AdministrableRoleAuthorizations {
 export namespace Grantee {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoleName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsGrantable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -49816,162 +49828,162 @@ isGrantable?: InformationSchema.Types.YesOrNo.Options
 }
 }
 export namespace AdministrableRoleAuthorizationsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Attributes {
 export namespace UdtCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AttributeName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace OrdinalPosition {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AttributeDefault {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsNullable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DataType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterMaximumLength {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterOctetLength {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericPrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericPrecisionRadix {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericScale {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DatetimePrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IntervalType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IntervalPrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AttributeUdtCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AttributeUdtSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AttributeUdtName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ScopeCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ScopeSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ScopeName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MaximumCardinality {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DtdIdentifier {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsDerivedReferenceAttribute {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -50009,47 +50021,47 @@ isDerivedReferenceAttribute?: InformationSchema.Types.YesOrNo.Options
 }
 }
 export namespace AttributesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace CharacterSets {
 export namespace CharacterSetCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterRepertoire {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace FormOfUse {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DefaultCollateCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DefaultCollateSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DefaultCollateName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -50064,37 +50076,37 @@ defaultCollateName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace CharacterSetsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace CheckConstraintRoutineUsage {
 export namespace ConstraintCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConstraintSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConstraintName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -50107,27 +50119,27 @@ specificName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace CheckConstraintRoutineUsageArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace CheckConstraints {
 export namespace ConstraintCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConstraintSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConstraintName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CheckClause {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -50138,27 +50150,27 @@ checkClause?: InformationSchema.Types.CharacterData.Options
 }
 }
 export namespace CheckConstraintsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Collations {
 export namespace CollationCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PadAttribute {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -50169,37 +50181,37 @@ padAttribute?: InformationSchema.Types.CharacterData.Options
 }
 }
 export namespace CollationsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace CollationCharacterSetApplicability {
 export namespace CollationCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -50212,32 +50224,32 @@ characterSetName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace CollationCharacterSetApplicabilityArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ColumnColumnUsage {
 export namespace TableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ColumnName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DependentColumn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -50249,42 +50261,42 @@ dependentColumn?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace ColumnColumnUsageArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ColumnDomainUsage {
 export namespace DomainCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DomainSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DomainName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ColumnName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -50298,47 +50310,47 @@ columnName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace ColumnDomainUsageArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ColumnPrivileges {
 export namespace Grantor {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Grantee {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ColumnName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PrivilegeType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsGrantable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -50353,42 +50365,42 @@ isGrantable?: InformationSchema.Types.YesOrNo.Options
 }
 }
 export namespace ColumnPrivilegesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ColumnUdtUsage {
 export namespace UdtCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ColumnName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -50402,227 +50414,227 @@ columnName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace ColumnUdtUsageArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Columns {
 export namespace TableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ColumnName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace OrdinalPosition {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ColumnDefault {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsNullable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DataType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterMaximumLength {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterOctetLength {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericPrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericPrecisionRadix {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericScale {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DatetimePrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IntervalType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IntervalPrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DomainCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DomainSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DomainName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ScopeCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ScopeSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ScopeName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MaximumCardinality {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DtdIdentifier {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsSelfReferencing {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsIdentity {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdentityGeneration {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdentityStart {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdentityIncrement {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdentityMaximum {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdentityMinimum {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IdentityCycle {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsGenerated {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace GenerationExpression {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsUpdatable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -50673,42 +50685,42 @@ isUpdatable?: InformationSchema.Types.YesOrNo.Options
 }
 }
 export namespace ColumnsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ConstraintColumnUsage {
 export namespace TableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ColumnName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConstraintCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConstraintSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConstraintName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -50722,37 +50734,37 @@ constraintName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace ConstraintColumnUsageArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ConstraintTableUsage {
 export namespace TableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConstraintCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConstraintSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConstraintName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -50765,47 +50777,47 @@ constraintName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace ConstraintTableUsageArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace DomainConstraints {
 export namespace ConstraintCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConstraintSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConstraintName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DomainCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DomainSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DomainName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsDeferrable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace InitiallyDeferred {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -50820,37 +50832,37 @@ initiallyDeferred?: InformationSchema.Types.YesOrNo.Options
 }
 }
 export namespace DomainConstraintsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace DomainUdtUsage {
 export namespace UdtCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DomainCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DomainSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DomainName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -50863,142 +50875,142 @@ domainName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace DomainUdtUsageArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Domains {
 export namespace DomainCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DomainSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DomainName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DataType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterMaximumLength {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterOctetLength {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericPrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericPrecisionRadix {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericScale {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DatetimePrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IntervalType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IntervalPrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DomainDefault {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ScopeCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ScopeSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ScopeName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MaximumCardinality {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DtdIdentifier {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -51032,12 +51044,12 @@ dtdIdentifier?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace DomainsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace EnabledRoles {
 export namespace RoleName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -51045,52 +51057,52 @@ export type Options = InvokeQueryOptions & {
 }
 }
 export namespace EnabledRolesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace KeyColumnUsage {
 export namespace ConstraintCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConstraintSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConstraintName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ColumnName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace OrdinalPosition {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PositionInUniqueConstraint {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -51106,167 +51118,167 @@ positionInUniqueConstraint?: InformationSchema.Types.CardinalNumber.Options
 }
 }
 export namespace KeyColumnUsageArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Parameters {
 export namespace SpecificCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace OrdinalPosition {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ParameterMode {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsResult {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AsLocator {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ParameterName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DataType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterMaximumLength {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterOctetLength {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericPrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericPrecisionRadix {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericScale {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DatetimePrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IntervalType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IntervalPrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ScopeCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ScopeSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ScopeName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MaximumCardinality {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DtdIdentifier {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ParameterDefault {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -51305,52 +51317,52 @@ parameterDefault?: InformationSchema.Types.CharacterData.Options
 }
 }
 export namespace ParametersArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ReferentialConstraints {
 export namespace ConstraintCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConstraintSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConstraintName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UniqueConstraintCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UniqueConstraintSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UniqueConstraintName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MatchOption {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UpdateRule {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DeleteRule {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -51366,47 +51378,47 @@ deleteRule?: InformationSchema.Types.CharacterData.Options
 }
 }
 export namespace ReferentialConstraintsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace RoleColumnGrants {
 export namespace Grantor {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Grantee {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ColumnName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PrivilegeType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsGrantable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -51421,57 +51433,57 @@ isGrantable?: InformationSchema.Types.YesOrNo.Options
 }
 }
 export namespace RoleColumnGrantsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace RoutineColumnUsage {
 export namespace SpecificCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ColumnName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -51488,57 +51500,57 @@ columnName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace RoutineColumnUsageArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace RoutinePrivileges {
 export namespace Grantor {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Grantee {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PrivilegeType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsGrantable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -51555,57 +51567,57 @@ isGrantable?: InformationSchema.Types.YesOrNo.Options
 }
 }
 export namespace RoutinePrivilegesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace RoleRoutineGrants {
 export namespace Grantor {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Grantee {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PrivilegeType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsGrantable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -51622,37 +51634,37 @@ isGrantable?: InformationSchema.Types.YesOrNo.Options
 }
 }
 export namespace RoleRoutineGrantsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace RoutineRoutineUsage {
 export namespace SpecificCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -51665,52 +51677,52 @@ routineName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace RoutineRoutineUsageArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace RoutineSequenceUsage {
 export namespace SpecificCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SequenceCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SequenceSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SequenceName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -51726,52 +51738,52 @@ sequenceName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace RoutineSequenceUsageArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace RoutineTableUsage {
 export namespace SpecificCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -51787,417 +51799,417 @@ tableName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace RoutineTableUsageArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Routines {
 export namespace SpecificCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ModuleCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ModuleSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ModuleName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DataType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterMaximumLength {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterOctetLength {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericPrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericPrecisionRadix {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericScale {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DatetimePrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IntervalType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IntervalPrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TypeUdtCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TypeUdtSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TypeUdtName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ScopeCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ScopeSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ScopeName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MaximumCardinality {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DtdIdentifier {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineBody {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RoutineDefinition {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ExternalName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ExternalLanguage {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ParameterStyle {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsDeterministic {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SqlDataAccess {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsNullCall {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SqlPath {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SchemaLevelRoutine {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MaxDynamicResultSets {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsUserDefinedCast {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsImplicitlyInvocable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SecurityType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ToSqlSpecificCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ToSqlSpecificSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ToSqlSpecificName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AsLocator {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Created {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastAltered {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NewSavepointLevel {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsUdtDependent {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastFromDataType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastAsLocator {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastCharMaxLength {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastCharOctetLength {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastCharSetCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastCharSetSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastCharSetName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastCollationCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastCollationSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastCollationName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastNumericPrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastNumericPrecisionRadix {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastNumericScale {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastDatetimePrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastIntervalType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastIntervalPrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastTypeUdtCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastTypeUdtSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastTypeUdtName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastScopeCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastScopeSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastScopeName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastMaximumCardinality {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ResultCastDtdIdentifier {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -52286,42 +52298,42 @@ resultCastDtdIdentifier?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace RoutinesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Schemata {
 export namespace CatalogName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SchemaName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SchemaOwner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DefaultCharacterSetCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DefaultCharacterSetSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DefaultCharacterSetName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SqlPath {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -52335,67 +52347,67 @@ sqlPath?: InformationSchema.Types.CharacterData.Options
 }
 }
 export namespace SchemataArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Sequences {
 export namespace SequenceCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SequenceSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SequenceName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DataType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericPrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericPrecisionRadix {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericScale {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StartValue {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MinimumValue {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MaximumValue {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Increment {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CycleOption {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -52414,42 +52426,42 @@ cycleOption?: InformationSchema.Types.YesOrNo.Options
 }
 }
 export namespace SequencesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace SqlFeatures {
 export namespace FeatureId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace FeatureName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SubFeatureId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SubFeatureName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsSupported {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsVerifiedBy {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Comments {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -52463,32 +52475,32 @@ comments?: InformationSchema.Types.CharacterData.Options
 }
 }
 export namespace SqlFeaturesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace SqlImplementationInfo {
 export namespace ImplementationInfoId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ImplementationInfoName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IntegerValue {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterValue {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Comments {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -52500,32 +52512,32 @@ comments?: InformationSchema.Types.CharacterData.Options
 }
 }
 export namespace SqlImplementationInfoArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace SqlParts {
 export namespace FeatureId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace FeatureName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsSupported {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsVerifiedBy {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Comments {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -52537,27 +52549,27 @@ comments?: InformationSchema.Types.CharacterData.Options
 }
 }
 export namespace SqlPartsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace SqlSizing {
 export namespace SizingId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SizingName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SupportedValue {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Comments {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -52568,62 +52580,62 @@ comments?: InformationSchema.Types.CharacterData.Options
 }
 }
 export namespace SqlSizingArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace TableConstraints {
 export namespace ConstraintCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConstraintSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConstraintName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ConstraintType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsDeferrable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace InitiallyDeferred {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Enforced {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NullsDistinct {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -52641,47 +52653,47 @@ nullsDistinct?: InformationSchema.Types.YesOrNo.Options
 }
 }
 export namespace TableConstraintsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace TablePrivileges {
 export namespace Grantor {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Grantee {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PrivilegeType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsGrantable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace WithHierarchy {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -52696,47 +52708,47 @@ withHierarchy?: InformationSchema.Types.YesOrNo.Options
 }
 }
 export namespace TablePrivilegesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace RoleTableGrants {
 export namespace Grantor {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Grantee {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PrivilegeType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsGrantable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace WithHierarchy {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -52751,67 +52763,67 @@ withHierarchy?: InformationSchema.Types.YesOrNo.Options
 }
 }
 export namespace RoleTableGrantsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Tables {
 export namespace TableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SelfReferencingColumnName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ReferenceGeneration {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UserDefinedTypeCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UserDefinedTypeSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UserDefinedTypeName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsInsertableInto {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsTyped {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CommitAction {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -52830,47 +52842,47 @@ commitAction?: InformationSchema.Types.CharacterData.Options
 }
 }
 export namespace TablesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Transforms {
 export namespace UdtCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace GroupName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TransformType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -52885,42 +52897,42 @@ transformType?: InformationSchema.Types.CharacterData.Options
 }
 }
 export namespace TransformsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace TriggeredUpdateColumns {
 export namespace TriggerCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TriggerSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TriggerName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace EventObjectCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace EventObjectSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace EventObjectTable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace EventObjectColumn {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -52934,92 +52946,92 @@ eventObjectColumn?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace TriggeredUpdateColumnsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Triggers {
 export namespace TriggerCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TriggerSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TriggerName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace EventManipulation {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace EventObjectCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace EventObjectSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace EventObjectTable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ActionOrder {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ActionCondition {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ActionStatement {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ActionOrientation {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ActionTiming {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ActionReferenceOldTable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ActionReferenceNewTable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ActionReferenceOldRow {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ActionReferenceNewRow {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Created {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -53043,42 +53055,42 @@ created?: InformationSchema.Types.TimeStamp.Options
 }
 }
 export namespace TriggersArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace UdtPrivileges {
 export namespace Grantor {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Grantee {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PrivilegeType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsGrantable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -53092,42 +53104,42 @@ isGrantable?: InformationSchema.Types.YesOrNo.Options
 }
 }
 export namespace UdtPrivilegesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace RoleUdtGrants {
 export namespace Grantor {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Grantee {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PrivilegeType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsGrantable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -53141,47 +53153,47 @@ isGrantable?: InformationSchema.Types.YesOrNo.Options
 }
 }
 export namespace RoleUdtGrantsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace UsagePrivileges {
 export namespace Grantor {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Grantee {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ObjectCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ObjectSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ObjectName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ObjectType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PrivilegeType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsGrantable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -53196,47 +53208,47 @@ isGrantable?: InformationSchema.Types.YesOrNo.Options
 }
 }
 export namespace UsagePrivilegesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace RoleUsageGrants {
 export namespace Grantor {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Grantee {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ObjectCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ObjectSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ObjectName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ObjectType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PrivilegeType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsGrantable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -53251,152 +53263,152 @@ isGrantable?: InformationSchema.Types.YesOrNo.Options
 }
 }
 export namespace RoleUsageGrantsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace UserDefinedTypes {
 export namespace UserDefinedTypeCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UserDefinedTypeSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UserDefinedTypeName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UserDefinedTypeCategory {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsInstantiable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsFinal {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace OrderingForm {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace OrderingCategory {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace OrderingRoutineCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace OrderingRoutineSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace OrderingRoutineName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ReferenceType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DataType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterMaximumLength {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterOctetLength {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericPrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericPrecisionRadix {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericScale {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DatetimePrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IntervalType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IntervalPrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SourceDtdIdentifier {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RefDtdIdentifier {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -53432,42 +53444,42 @@ refDtdIdentifier?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace UserDefinedTypesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ViewColumnUsage {
 export namespace ViewCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ViewSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ViewName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ColumnName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -53481,37 +53493,37 @@ columnName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace ViewColumnUsageArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ViewRoutineUsage {
 export namespace TableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecificName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -53524,37 +53536,37 @@ specificName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace ViewRoutineUsageArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ViewTableUsage {
 export namespace ViewCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ViewSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ViewName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -53567,57 +53579,57 @@ tableName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace ViewTableUsageArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Views {
 export namespace TableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ViewDefinition {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CheckOption {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsUpdatable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsInsertableInto {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsTriggerUpdatable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsTriggerDeletable {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IsTriggerInsertableInto {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -53634,32 +53646,32 @@ isTriggerInsertableInto?: InformationSchema.Types.YesOrNo.Options
 }
 }
 export namespace ViewsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace DataTypePrivileges {
 export namespace ObjectCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ObjectSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ObjectName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ObjectType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DtdIdentifier {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -53671,152 +53683,152 @@ dtdIdentifier?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace DataTypePrivilegesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ElementTypes {
 export namespace ObjectCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ObjectSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ObjectName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ObjectType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollectionTypeIdentifier {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DataType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterMaximumLength {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterOctetLength {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CharacterSetName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CollationName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericPrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericPrecisionRadix {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace NumericScale {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DatetimePrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IntervalType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace IntervalPrecision {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DomainDefault {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace UdtName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ScopeCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ScopeSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ScopeName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MaximumCardinality {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace DtdIdentifier {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -53852,26 +53864,26 @@ dtdIdentifier?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace ElementTypesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgForeignTableColumns {
 export namespace Nspname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Relname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attname {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Attfdwoptions {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export type Options = InvokeQueryOptions & {
  nspname?: PgCatalog.Types.Name.Options,
@@ -53883,32 +53895,32 @@ attfdwoptions?: PgCatalog.Types.TextArray.Options
 export namespace ColumnOptions {
 export namespace TableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ColumnName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace OptionName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace OptionValue {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -53921,40 +53933,40 @@ optionValue?: InformationSchema.Types.CharacterData.Options
 }
 }
 export namespace ColumnOptionsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgForeignDataWrappers {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Fdwowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Fdwoptions {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ForeignDataWrapperCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignDataWrapperName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AuthorizationIdentifier {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignDataWrapperLanguage {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -53970,22 +53982,22 @@ foreignDataWrapperLanguage?: InformationSchema.Types.CharacterData.Options
 export namespace ForeignDataWrapperOptions {
 export namespace ForeignDataWrapperCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignDataWrapperName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace OptionName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace OptionValue {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -53996,32 +54008,32 @@ optionValue?: InformationSchema.Types.CharacterData.Options
 }
 }
 export namespace ForeignDataWrapperOptionsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ForeignDataWrappers {
 export namespace ForeignDataWrapperCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignDataWrapperName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AuthorizationIdentifier {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LibraryName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignDataWrapperLanguage {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -54033,50 +54045,50 @@ foreignDataWrapperLanguage?: InformationSchema.Types.CharacterData.Options
 }
 }
 export namespace ForeignDataWrappersArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgForeignServers {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Srvoptions {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ForeignServerCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignServerName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignDataWrapperCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignDataWrapperName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignServerType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignServerVersion {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AuthorizationIdentifier {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -54094,22 +54106,22 @@ authorizationIdentifier?: InformationSchema.Types.SqlIdentifier.Options
 export namespace ForeignServerOptions {
 export namespace ForeignServerCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignServerName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace OptionName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace OptionValue {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -54120,42 +54132,42 @@ optionValue?: InformationSchema.Types.CharacterData.Options
 }
 }
 export namespace ForeignServerOptionsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ForeignServers {
 export namespace ForeignServerCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignServerName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignDataWrapperCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignDataWrapperName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignServerType {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignServerVersion {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AuthorizationIdentifier {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -54169,40 +54181,40 @@ authorizationIdentifier?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace ForeignServersArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgForeignTables {
 export namespace ForeignTableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignTableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignTableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Ftoptions {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ForeignServerCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignServerName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AuthorizationIdentifier {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -54218,27 +54230,27 @@ authorizationIdentifier?: InformationSchema.Types.SqlIdentifier.Options
 export namespace ForeignTableOptions {
 export namespace ForeignTableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignTableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignTableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace OptionName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace OptionValue {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -54250,32 +54262,32 @@ optionValue?: InformationSchema.Types.CharacterData.Options
 }
 }
 export namespace ForeignTableOptionsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ForeignTables {
 export namespace ForeignTableCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignTableSchema {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignTableName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignServerCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignServerName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -54287,40 +54299,40 @@ foreignServerName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace ForeignTablesArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace PgUserMappings {
 export namespace Oid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Umoptions {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Umuser {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AuthorizationIdentifier {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignServerCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignServerName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Srvowner {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -54336,27 +54348,27 @@ srvowner?: InformationSchema.Types.SqlIdentifier.Options
 export namespace UserMappingOptions {
 export namespace AuthorizationIdentifier {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignServerCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignServerName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace OptionName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace OptionValue {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -54368,22 +54380,22 @@ optionValue?: InformationSchema.Types.CharacterData.Options
 }
 }
 export namespace UserMappingOptionsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace UserMappings {
 export namespace AuthorizationIdentifier {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignServerCatalog {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ForeignServerName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -54393,7 +54405,7 @@ foreignServerName?: InformationSchema.Types.SqlIdentifier.Options
 }
 }
 export namespace UserMappingsArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 }
 export namespace Procedures {
@@ -54413,69 +54425,69 @@ export namespace Public {
 export namespace Types {
 export namespace MpaaRating {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MpaaRatingArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Year {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace YearArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Customer {
 export namespace CustomerId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StoreId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace FirstName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Email {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AddressId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Activebool {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CreateDate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastUpdate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Active {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -54492,27 +54504,27 @@ active?: PgCatalog.Types.Int4.Options
 }
 }
 export namespace CustomerArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Actor {
 export namespace ActorId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace FirstName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastUpdate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -54523,22 +54535,22 @@ lastUpdate?: PgCatalog.Types.Timestamp.Options
 }
 }
 export namespace ActorArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Category {
 export namespace CategoryId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Name {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastUpdate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -54548,66 +54560,66 @@ lastUpdate?: PgCatalog.Types.Timestamp.Options
 }
 }
 export namespace CategoryArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Film {
 export namespace FilmId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Title {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Description {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ReleaseYear {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LanguageId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RentalDuration {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RentalRate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Length {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ReplacementCost {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rating {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastUpdate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace SpecialFeatures {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Fulltext {
 
@@ -54624,7 +54636,7 @@ export namespace Fulltext {
         Phrase = "phraseto_tsquery",
         Web = "websearch_to_tsquery",
         }
-        export type Options = {
+        export type Options = InvokeQueryOptions & {
             queryParser?: FulltextParser;
             configuration?: string;
         }
@@ -54648,22 +54660,22 @@ fulltext?: PgCatalog.Types.Tsvector.Options
 }
 }
 export namespace FilmArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace FilmActor {
 export namespace ActorId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace FilmId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastUpdate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -54673,22 +54685,22 @@ lastUpdate?: PgCatalog.Types.Timestamp.Options
 }
 }
 export namespace FilmActorArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace FilmCategory {
 export namespace FilmId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CategoryId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastUpdate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -54698,27 +54710,27 @@ lastUpdate?: PgCatalog.Types.Timestamp.Options
 }
 }
 export namespace FilmCategoryArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ActorInfo {
 export namespace ActorId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace FirstName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace FilmInfo {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -54729,47 +54741,47 @@ filmInfo?: PgCatalog.Types.Text.Options
 }
 }
 export namespace ActorInfoArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Address {
 export namespace AddressId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Address {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Address2 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace District {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CityId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PostalCode {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Phone {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastUpdate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -54784,27 +54796,27 @@ lastUpdate?: PgCatalog.Types.Timestamp.Options
 }
 }
 export namespace AddressArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace City {
 export namespace CityId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace City {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CountryId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastUpdate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -54815,22 +54827,22 @@ lastUpdate?: PgCatalog.Types.Timestamp.Options
 }
 }
 export namespace CityArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Country {
 export namespace CountryId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Country {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastUpdate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -54840,52 +54852,52 @@ lastUpdate?: PgCatalog.Types.Timestamp.Options
 }
 }
 export namespace CountryArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace CustomerList {
 export namespace Id {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Name {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Address {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ZipCode {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Phone {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace City {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Country {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Notes {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Sid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -54901,47 +54913,47 @@ sid?: PgCatalog.Types.Int2.Options
 }
 }
 export namespace CustomerListArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace FilmList {
 export namespace Fid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Title {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Description {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Category {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Price {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Length {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rating {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Actors {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -54956,27 +54968,27 @@ actors?: PgCatalog.Types.Text.Options
 }
 }
 export namespace FilmListArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Inventory {
 export namespace InventoryId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace FilmId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StoreId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastUpdate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -54987,22 +54999,22 @@ lastUpdate?: PgCatalog.Types.Timestamp.Options
 }
 }
 export namespace InventoryArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Language {
 export namespace LanguageId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Name {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastUpdate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55012,47 +55024,47 @@ lastUpdate?: PgCatalog.Types.Timestamp.Options
 }
 }
 export namespace LanguageArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace NicerButSlowerFilmList {
 export namespace Fid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Title {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Description {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Category {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Price {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Length {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Rating {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Actors {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55067,37 +55079,37 @@ actors?: PgCatalog.Types.Text.Options
 }
 }
 export namespace NicerButSlowerFilmListArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Payment {
 export namespace PaymentId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CustomerId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StaffId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RentalId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Amount {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PaymentDate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55110,42 +55122,42 @@ paymentDate?: PgCatalog.Types.Timestamp.Options
 }
 }
 export namespace PaymentArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Rental {
 export namespace RentalId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace RentalDate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace InventoryId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CustomerId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ReturnDate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StaffId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastUpdate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55159,17 +55171,17 @@ lastUpdate?: PgCatalog.Types.Timestamp.Options
 }
 }
 export namespace RentalArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace SalesByFilmCategory {
 export namespace Category {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TotalSales {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55178,62 +55190,62 @@ totalSales?: PgCatalog.Types.Numeric.Options
 }
 }
 export namespace SalesByFilmCategoryArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Staff {
 export namespace StaffId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace FirstName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AddressId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Email {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace StoreId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Active {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Username {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Password {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastUpdate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Picture {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55251,27 +55263,27 @@ picture?: PgCatalog.Types.Bytea.Options
 }
 }
 export namespace StaffArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace Store {
 export namespace StoreId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ManagerStaffId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace AddressId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace LastUpdate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55282,22 +55294,22 @@ lastUpdate?: PgCatalog.Types.Timestamp.Options
 }
 }
 export namespace StoreArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace SalesByStore {
 export namespace Store {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Manager {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace TotalSales {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55307,47 +55319,47 @@ totalSales?: PgCatalog.Types.Numeric.Options
 }
 }
 export namespace SalesByStoreArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace StaffList {
 export namespace Id {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Name {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Address {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ZipCode {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Phone {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace City {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Country {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace Sid {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55362,12 +55374,12 @@ sid?: PgCatalog.Types.Int2.Options
 }
 }
 export namespace StaffListArray {
-export type Options = never;
+export type Options = InvokeQueryOptions;
 }
 export namespace ActorPkey {
 export namespace ActorId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55377,7 +55389,7 @@ export type Options = InvokeQueryOptions & {
 export namespace AddressPkey {
 export namespace AddressId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55387,7 +55399,7 @@ export type Options = InvokeQueryOptions & {
 export namespace CategoryPkey {
 export namespace CategoryId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55397,7 +55409,7 @@ export type Options = InvokeQueryOptions & {
 export namespace CityPkey {
 export namespace CityId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55407,7 +55419,7 @@ export type Options = InvokeQueryOptions & {
 export namespace CountryPkey {
 export namespace CountryId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55417,7 +55429,7 @@ export type Options = InvokeQueryOptions & {
 export namespace CustomerPkey {
 export namespace CustomerId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55427,12 +55439,12 @@ export type Options = InvokeQueryOptions & {
 export namespace FilmActorPkey {
 export namespace ActorId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace FilmId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55443,12 +55455,12 @@ filmId?: PgCatalog.Types.Int2.Options
 export namespace FilmCategoryPkey {
 export namespace FilmId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CategoryId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55459,7 +55471,7 @@ categoryId?: PgCatalog.Types.Int2.Options
 export namespace FilmPkey {
 export namespace FilmId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55469,7 +55481,7 @@ export type Options = InvokeQueryOptions & {
 export namespace InventoryPkey {
 export namespace InventoryId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55479,7 +55491,7 @@ export type Options = InvokeQueryOptions & {
 export namespace LanguagePkey {
 export namespace LanguageId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55489,7 +55501,7 @@ export type Options = InvokeQueryOptions & {
 export namespace PaymentPkey {
 export namespace PaymentId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55499,7 +55511,7 @@ export type Options = InvokeQueryOptions & {
 export namespace RentalPkey {
 export namespace RentalId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55509,7 +55521,7 @@ export type Options = InvokeQueryOptions & {
 export namespace StaffPkey {
 export namespace StaffId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55519,7 +55531,7 @@ export type Options = InvokeQueryOptions & {
 export namespace StorePkey {
 export namespace StoreId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55542,7 +55554,7 @@ export namespace Fulltext {
         Phrase = "phraseto_tsquery",
         Web = "websearch_to_tsquery",
         }
-        export type Options = {
+        export type Options = InvokeQueryOptions & {
             queryParser?: FulltextParser;
             configuration?: string;
         }
@@ -55556,7 +55568,7 @@ export type Options = InvokeQueryOptions & {
 export namespace IdxActorLastName {
 export namespace LastName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55566,7 +55578,7 @@ export type Options = InvokeQueryOptions & {
 export namespace IdxFkAddressId {
 export namespace AddressId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55576,7 +55588,7 @@ export type Options = InvokeQueryOptions & {
 export namespace IdxFkCityId {
 export namespace CityId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55586,7 +55598,7 @@ export type Options = InvokeQueryOptions & {
 export namespace IdxFkCountryId {
 export namespace CountryId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55596,7 +55608,7 @@ export type Options = InvokeQueryOptions & {
 export namespace IdxFkCustomerId {
 export namespace CustomerId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55606,7 +55618,7 @@ export type Options = InvokeQueryOptions & {
 export namespace IdxFkFilmId {
 export namespace FilmId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55616,7 +55628,7 @@ export type Options = InvokeQueryOptions & {
 export namespace IdxFkInventoryId {
 export namespace InventoryId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55626,7 +55638,7 @@ export type Options = InvokeQueryOptions & {
 export namespace IdxFkLanguageId {
 export namespace LanguageId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55636,7 +55648,7 @@ export type Options = InvokeQueryOptions & {
 export namespace IdxFkRentalId {
 export namespace RentalId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55646,7 +55658,7 @@ export type Options = InvokeQueryOptions & {
 export namespace IdxFkStaffId {
 export namespace StaffId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55656,7 +55668,7 @@ export type Options = InvokeQueryOptions & {
 export namespace IdxFkStoreId {
 export namespace StoreId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55666,7 +55678,7 @@ export type Options = InvokeQueryOptions & {
 export namespace IdxLastName {
 export namespace LastName {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55676,12 +55688,12 @@ export type Options = InvokeQueryOptions & {
 export namespace IdxStoreIdFilmId {
 export namespace StoreId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace FilmId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55692,7 +55704,7 @@ filmId?: PgCatalog.Types.Int2.Options
 export namespace IdxTitle {
 export namespace Title {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55702,7 +55714,7 @@ export type Options = InvokeQueryOptions & {
 export namespace IdxUnqManagerStaffId {
 export namespace ManagerStaffId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55712,17 +55724,17 @@ export type Options = InvokeQueryOptions & {
 export namespace IdxUnqRentalRentalDateInventoryIdCustomerId {
 export namespace RentalDate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace InventoryId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace CustomerId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55737,12 +55749,12 @@ export namespace FilmInStock {
 export namespace Parameters {
 export namespace PFilmId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PStoreId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55755,12 +55767,12 @@ export namespace FilmNotInStock {
 export namespace Parameters {
 export namespace PFilmId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PStoreId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55773,12 +55785,12 @@ export namespace GetCustomerBalance {
 export namespace Parameters {
 export namespace PCustomerId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace PEffectiveDate {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55791,7 +55803,7 @@ export namespace InventoryHeldByCustomer {
 export namespace Parameters {
 export namespace PInventoryId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55803,7 +55815,7 @@ export namespace InventoryInStock {
 export namespace Parameters {
 export namespace PInventoryId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55815,7 +55827,7 @@ export namespace LastDay {
 export namespace Parameters {
 export namespace Argument_0 {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55827,12 +55839,12 @@ export namespace RewardsReport {
 export namespace Parameters {
 export namespace MinMonthlyPurchases {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace MinDollarAmountPurchased {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55877,15 +55889,15 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_35375Index {
+export namespace PgToast_46703Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55893,15 +55905,15 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_35461Index {
+export namespace PgToast_46789Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55912,12 +55924,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_1255Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55928,12 +55940,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_1247Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55944,12 +55956,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_2604Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55960,12 +55972,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_2606Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55976,12 +55988,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_2612Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -55992,12 +56004,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_2600Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56008,12 +56020,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_2619Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56024,12 +56036,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_3381Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56040,12 +56052,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_3429Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56056,12 +56068,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_2618Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56072,12 +56084,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_2620Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56088,12 +56100,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_3466Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56104,12 +56116,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_2609Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56120,12 +56132,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_2615Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56136,12 +56148,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_1262Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56152,12 +56164,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_2964Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56168,12 +56180,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_1213Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56184,12 +56196,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_1260Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56200,12 +56212,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_2396Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56216,12 +56228,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_3600Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56232,12 +56244,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_3079Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56248,12 +56260,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_2328Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56264,12 +56276,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_1417Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56280,12 +56292,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_1418Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56296,12 +56308,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_3118Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56312,12 +56324,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_3256Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56328,12 +56340,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_6000Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56344,12 +56356,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_826Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56360,12 +56372,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_3394Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56376,12 +56388,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_3596Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56392,12 +56404,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_3592Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56408,12 +56420,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_3456Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56424,12 +56436,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_6243Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56440,12 +56452,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_3350Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56456,12 +56468,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_6106Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56472,12 +56484,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_6100Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56488,12 +56500,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_13658Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56504,12 +56516,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_13663Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56520,12 +56532,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_13668Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {
@@ -56536,12 +56548,12 @@ chunkSeq?: PgCatalog.Types.Int4.Options
 export namespace PgToast_13673Index {
 export namespace ChunkId {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export namespace ChunkSeq {
 
-      export type Options = never;
+      export type Options = InvokeQueryOptions;
     
 }
 export type Options = InvokeQueryOptions & {

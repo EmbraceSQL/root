@@ -81,21 +81,27 @@ const FunctionalOperation = {
       ? `${node.resultsType?.typescriptNamespacedName}[]`
       : `${node.resultsType?.typescriptNamespacedName} | undefined`;
 
+    const optionType = node.parametersType
+      ? `${node.parametersType.typescriptNamespacedName}.Options`
+      : `InvokeQueryOptions`;
+
     const callBody = () => {
       if (node.parametersType) {
         const parametersType = `${node.parametersType.typescriptNamespacedName}`;
         return `
-          public async call(parameters: ${parametersType}) : Promise<${returnType}> {
-            const response = await this.client.invoke<${parametersType}, never, ${returnType}, never>({
+          public async call(parameters: ${parametersType}, options?: ${optionType}) : Promise<${returnType}> {
+            const response = await this.client.invoke<${parametersType}, never, ${returnType}, ${optionType}>({
               operation: "${node.typescriptNamespacedName}.call",
               parameters,
+              options
             });
         `;
       } else {
         return `
-          public async call() : Promise<${returnType}> {
-            const response = await this.client.invoke<never, never, ${returnType}, never>({
+          public async call(options?: ${optionType}) : Promise<${returnType}> {
+            const response = await this.client.invoke<never, never, ${returnType}, ${optionType}>({
               operation: "${node.typescriptNamespacedName}.call",
+              options
             });
         `;
       }
