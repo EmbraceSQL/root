@@ -1493,24 +1493,24 @@
 ["InformationSchema.Types.UserMappings"]: Typecast
 [13823]: Typecast;
 ["InformationSchema.Types.UserMappingsArray"]: Typecast
-[47228]: Typecast;
+[49378]: Typecast;
 ["Public.Types.Checklist"]: Typecast
-[47227]: Typecast;
+[49377]: Typecast;
 ["Public.Types.ChecklistArray"]: Typecast
-[47237]: Typecast;
+[49387]: Typecast;
 ["Public.Types.ChecklistItem"]: Typecast
-[47236]: Typecast;
+[49386]: Typecast;
 ["Public.Types.ChecklistItemArray"]: Typecast
-[47233]: Typecast;
+[49383]: Typecast;
 ["Public.Types.ChecklistPkey"]: Typecast
-[47243]: Typecast;
+[49393]: Typecast;
 ["Public.Types.ChecklistItemPkey"]: Typecast
-[47250]: Typecast;
+[49400]: Typecast;
 ["Public.Types.ChecklistItemParent"]: Typecast
-[47232]: Typecast;
-["PgToast.Types.PgToast_47226Index"]: Typecast
-[47242]: Typecast;
-["PgToast.Types.PgToast_47235Index"]: Typecast
+[49382]: Typecast;
+["PgToast.Types.PgToast_49376Index"]: Typecast
+[49392]: Typecast;
+["PgToast.Types.PgToast_49385Index"]: Typecast
 [2837]: Typecast;
 ["PgToast.Types.PgToast_1255Index"]: Typecast
 [4172]: Typecast;
@@ -1726,7 +1726,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.checklist (name,created_at)
-      VALUES (${ values.name === undefined ? sql`DEFAULT` : typed[25](values.name) },${ values.createdAt === undefined ? sql`DEFAULT` : typed[1114](values.createdAt) })
+      VALUES (${ (request.values === undefined || request.values.name === undefined) ? sql`DEFAULT` : typed[25](request.values.name) },${ (request.values === undefined || request.values.createdAt === undefined) ? sql`DEFAULT` : typed[1114](request.values.createdAt) })
       RETURNING
         id,name,created_at
     `, {values, options});
@@ -1735,7 +1735,7 @@ return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.na
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.checklist (id,name,created_at)
-    VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.name === undefined ? sql`DEFAULT` : typed[25](values.name) },${ values.createdAt === undefined ? sql`DEFAULT` : typed[1114](values.createdAt) })
+    VALUES (${ (request.values === undefined || request.values.id === undefined) ? sql`DEFAULT` : typed[2950](request.values.id) },${ (request.values === undefined || request.values.name === undefined) ? sql`DEFAULT` : typed[25](request.values.name) },${ (request.values === undefined || request.values.createdAt === undefined) ? sql`DEFAULT` : typed[1114](request.values.createdAt) })
     ON CONFLICT (id) DO UPDATE
     SET
       name = EXCLUDED.name,created_at = EXCLUDED.created_at
@@ -1784,7 +1784,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.checklist_item (checklist_id,title,checked,created_at)
-      VALUES (${ values.checklistId === undefined ? sql`DEFAULT` : typed[2950](values.checklistId) },${ values.title === undefined ? sql`DEFAULT` : typed[25](values.title) },${ values.checked === undefined ? sql`DEFAULT` : typed[16](values.checked) },${ values.createdAt === undefined ? sql`DEFAULT` : typed[1114](values.createdAt) })
+      VALUES (${ (request.values === undefined || request.values.checklistId === undefined) ? sql`DEFAULT` : typed[2950](request.values.checklistId) },${ (request.values === undefined || request.values.title === undefined) ? sql`DEFAULT` : typed[25](request.values.title) },${ (request.values === undefined || request.values.checked === undefined) ? sql`DEFAULT` : typed[16](request.values.checked) },${ (request.values === undefined || request.values.createdAt === undefined) ? sql`DEFAULT` : typed[1114](request.values.createdAt) })
       RETURNING
         id,checklist_id,title,checked,created_at
     `, {values, options});
@@ -1793,7 +1793,7 @@ return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNu
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.checklist_item (id,checklist_id,title,checked,created_at)
-    VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.checklistId === undefined ? sql`DEFAULT` : typed[2950](values.checklistId) },${ values.title === undefined ? sql`DEFAULT` : typed[25](values.title) },${ values.checked === undefined ? sql`DEFAULT` : typed[16](values.checked) },${ values.createdAt === undefined ? sql`DEFAULT` : typed[1114](values.createdAt) })
+    VALUES (${ (request.values === undefined || request.values.id === undefined) ? sql`DEFAULT` : typed[2950](request.values.id) },${ (request.values === undefined || request.values.checklistId === undefined) ? sql`DEFAULT` : typed[2950](request.values.checklistId) },${ (request.values === undefined || request.values.title === undefined) ? sql`DEFAULT` : typed[25](request.values.title) },${ (request.values === undefined || request.values.checked === undefined) ? sql`DEFAULT` : typed[16](request.values.checked) },${ (request.values === undefined || request.values.createdAt === undefined) ? sql`DEFAULT` : typed[1114](request.values.createdAt) })
     ON CONFLICT (id) DO UPDATE
     SET
       checklist_id = EXCLUDED.checklist_id,title = EXCLUDED.title,checked = EXCLUDED.checked,created_at = EXCLUDED.created_at
@@ -1848,19 +1848,21 @@ async read(parameters: Public.Types.ChecklistPkey, options?: Public.Types.Checkl
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Checklist, Public.Types.ChecklistPkey, never, Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       id,name,created_at 
     FROM
       public.checklist 
     WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+      id = ${ (request.parameters === undefined || request.parameters.id === undefined) ? sql`DEFAULT` : typed[2950](request.parameters.id) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
+    `
+  return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.ChecklistPkey, values: Partial<Public.Tables.Checklist.Values>, options?: Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options) : Promise<Public.Types.Checklist>{
 
@@ -1873,9 +1875,9 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.checklist 
     SET
-      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , name = ${ values.name === undefined ? sql`name` : typed[25](values.name) } , created_at = ${ values.createdAt === undefined ? sql`created_at` : typed[1114](values.createdAt) } 
+      id = ${ (request.values === undefined || request.values.id === undefined) ? sql`id` : typed[2950](request.values.id) } , name = ${ (request.values === undefined || request.values.name === undefined) ? sql`name` : typed[25](request.values.name) } , created_at = ${ (request.values === undefined || request.values.createdAt === undefined) ? sql`created_at` : typed[1114](request.values.createdAt) } 
     WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+      id = ${ (request.parameters === undefined || request.parameters.id === undefined) ? sql`DEFAULT` : typed[2950](request.parameters.id) }
     RETURNING id,name,created_at`, {parameters, values, options});
 return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
 }
@@ -1887,7 +1889,7 @@ async delete(parameters: Public.Types.ChecklistPkey, options?: Public.Types.Chec
     DELETE FROM 
       public.checklist 
     WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+      id = ${ (request.parameters === undefined || request.parameters.id === undefined) ? sql`DEFAULT` : typed[2950](request.parameters.id) }
     RETURNING id,name,created_at`, {parameters, options});
  return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
 }
@@ -1910,19 +1912,21 @@ async read(parameters: Public.Types.ChecklistItemPkey, options?: Public.Types.Ch
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.ChecklistItem, Public.Types.ChecklistItemPkey, never, Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       id,checklist_id,title,checked,created_at 
     FROM
       public.checklist_item 
     WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+      id = ${ (request.parameters === undefined || request.parameters.id === undefined) ? sql`DEFAULT` : typed[2950](request.parameters.id) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
+    `
+  return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.ChecklistItemPkey, values: Partial<Public.Tables.ChecklistItem.Values>, options?: Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem>{
 
@@ -1935,9 +1939,9 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.checklist_item 
     SET
-      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , checklist_id = ${ values.checklistId === undefined ? sql`checklist_id` : typed[2950](values.checklistId) } , title = ${ values.title === undefined ? sql`title` : typed[25](values.title) } , checked = ${ values.checked === undefined ? sql`checked` : typed[16](values.checked) } , created_at = ${ values.createdAt === undefined ? sql`created_at` : typed[1114](values.createdAt) } 
+      id = ${ (request.values === undefined || request.values.id === undefined) ? sql`id` : typed[2950](request.values.id) } , checklist_id = ${ (request.values === undefined || request.values.checklistId === undefined) ? sql`checklist_id` : typed[2950](request.values.checklistId) } , title = ${ (request.values === undefined || request.values.title === undefined) ? sql`title` : typed[25](request.values.title) } , checked = ${ (request.values === undefined || request.values.checked === undefined) ? sql`checked` : typed[16](request.values.checked) } , created_at = ${ (request.values === undefined || request.values.createdAt === undefined) ? sql`created_at` : typed[1114](request.values.createdAt) } 
     WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+      id = ${ (request.parameters === undefined || request.parameters.id === undefined) ? sql`DEFAULT` : typed[2950](request.parameters.id) }
     RETURNING id,checklist_id,title,checked,created_at`, {parameters, values, options});
 return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
 }
@@ -1949,7 +1953,7 @@ async delete(parameters: Public.Types.ChecklistItemPkey, options?: Public.Types.
     DELETE FROM 
       public.checklist_item 
     WHERE
-      id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
+      id = ${ (request.parameters === undefined || request.parameters.id === undefined) ? sql`DEFAULT` : typed[2950](request.parameters.id) }
     RETURNING id,checklist_id,title,checked,created_at`, {parameters, options});
  return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
 }
@@ -1970,19 +1974,21 @@ async read(parameters: Public.Types.ChecklistItemParent, options?: Public.Types.
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.ChecklistItem[], Public.Types.ChecklistItemParent, never, Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       id,checklist_id,title,checked,created_at 
     FROM
       public.checklist_item 
     WHERE
-      checklist_id = ${ parameters.checklistId === undefined ? sql`DEFAULT` : typed[2950](parameters.checklistId) }
+      checklist_id = ${ (request.parameters === undefined || request.parameters.checklistId === undefined) ? sql`DEFAULT` : typed[2950](request.parameters.checklistId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))
+    `
+  return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.ChecklistItemParent, values: Partial<Public.Tables.ChecklistItem.Values>, options?: Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem[]>{
 
@@ -1995,9 +2001,9 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.checklist_item 
     SET
-      id = ${ values.id === undefined ? sql`id` : typed[2950](values.id) } , checklist_id = ${ values.checklistId === undefined ? sql`checklist_id` : typed[2950](values.checklistId) } , title = ${ values.title === undefined ? sql`title` : typed[25](values.title) } , checked = ${ values.checked === undefined ? sql`checked` : typed[16](values.checked) } , created_at = ${ values.createdAt === undefined ? sql`created_at` : typed[1114](values.createdAt) } 
+      id = ${ (request.values === undefined || request.values.id === undefined) ? sql`id` : typed[2950](request.values.id) } , checklist_id = ${ (request.values === undefined || request.values.checklistId === undefined) ? sql`checklist_id` : typed[2950](request.values.checklistId) } , title = ${ (request.values === undefined || request.values.title === undefined) ? sql`title` : typed[25](request.values.title) } , checked = ${ (request.values === undefined || request.values.checked === undefined) ? sql`checked` : typed[16](request.values.checked) } , created_at = ${ (request.values === undefined || request.values.createdAt === undefined) ? sql`created_at` : typed[1114](request.values.createdAt) } 
     WHERE
-      checklist_id = ${ parameters.checklistId === undefined ? sql`DEFAULT` : typed[2950](parameters.checklistId) }
+      checklist_id = ${ (request.parameters === undefined || request.parameters.checklistId === undefined) ? sql`DEFAULT` : typed[2950](request.parameters.checklistId) }
     RETURNING id,checklist_id,title,checked,created_at`, {parameters, values, options});
 return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))
 }
@@ -2009,7 +2015,7 @@ async delete(parameters: Public.Types.ChecklistItemParent, options?: Public.Type
     DELETE FROM 
       public.checklist_item 
     WHERE
-      checklist_id = ${ parameters.checklistId === undefined ? sql`DEFAULT` : typed[2950](parameters.checklistId) }
+      checklist_id = ${ (request.parameters === undefined || request.parameters.checklistId === undefined) ? sql`DEFAULT` : typed[2950](request.parameters.checklistId) }
     RETURNING id,checklist_id,title,checked,created_at`, {parameters, options});
  return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))
 }
@@ -11849,12 +11855,12 @@ export type PrimaryKey = Public.Types.ChecklistItemPkey;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_47226Index = {
+export type PgToast_49376Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_47235Index = {
+export type PgToast_49385Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -24129,11 +24135,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_47226Index {
+export namespace PgToast_49376Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_47226Index.is(from)) {
+if (PgToast.Types.PgToast_49376Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -24144,11 +24150,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_47235Index {
+export namespace PgToast_49385Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_47235Index.is(from)) {
+if (PgToast.Types.PgToast_49385Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -29702,16 +29708,16 @@ export namespace ChecklistItem {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_47226Index {
-export function is(value: any) : value is PgToast.Types.PgToast_47226Index {
+export namespace PgToast_49376Index {
+export function is(value: any) : value is PgToast.Types.PgToast_49376Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_47235Index {
-export function is(value: any) : value is PgToast.Types.PgToast_47235Index {
+export namespace PgToast_49385Index {
+export function is(value: any) : value is PgToast.Types.PgToast_49385Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -33905,13 +33911,13 @@ export namespace ChecklistItem {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_47226Index {
- export function equals(l: PgToast.Types.PgToast_47226Index|undefined, r: unknown) {
+export namespace PgToast_49376Index {
+ export function equals(l: PgToast.Types.PgToast_49376Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_47235Index {
- export function equals(l: PgToast.Types.PgToast_47235Index|undefined, r: unknown) {
+export namespace PgToast_49385Index {
+ export function equals(l: PgToast.Types.PgToast_49385Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -50554,7 +50560,7 @@ export namespace ChecklistItem {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_47226Index {
+export namespace PgToast_49376Index {
 export namespace ChunkId {
 
       export type Options = InvokeQueryOptions;
@@ -50570,7 +50576,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_47235Index {
+export namespace PgToast_49385Index {
 export namespace ChunkId {
 
       export type Options = InvokeQueryOptions;

@@ -1,4 +1,5 @@
 import CodeBlock from "@theme/CodeBlock";
+import TestSource from "!!raw-loader!../../packages/test-generation/test/middleware.test.ts";
 
 # Middleware
 
@@ -32,3 +33,12 @@ You can use this for:
 * default values that rely on code outside the database
 * validating input that relies on code outside the database
 * calling external APIs before finally going to the database
+
+## Example
+
+Here is an example of using middleware to affect parameters and values
+hoisted up from a unit test.
+
+<CodeBlock language="typescript" >
+  {TestSource}
+</CodeBlock>
