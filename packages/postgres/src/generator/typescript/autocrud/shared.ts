@@ -3,7 +3,6 @@
  * driver result row to a type checked object.
  */
 import {
-  PARAMETERS,
   ASTKind,
   AbstractTypeNode,
   GenerationContext,
@@ -11,10 +10,8 @@ import {
   NamedASTNode,
   NamedType,
   TableNode,
-  VALUES,
   isNodeType,
 } from "@embracesql/shared";
-import { camelCase } from "change-case";
 
 /**
  * Generate code to map a postgres row object names to typescript style names.
@@ -72,19 +69,15 @@ export function emptyTypescriptRow(
 export function postgresValueExpression(
   context: GenerationContext,
   node: NamedType & NamedASTNode,
-  holder: typeof PARAMETERS | typeof VALUES,
+  holder: string,
   defaultToSelfAssign = false,
 ) {
   console.assert(context);
   const undefinedExpression = defaultToSelfAssign
     ? `sql\`${node.name}\``
     : "sql`DEFAULT`";
-  const valueExpression = `typed[${node.type.id}](${camelCase(holder)}.${
-    node.typescriptPropertyName
-  })`;
-  const combinedExpression = `${camelCase(holder)}.${
-    node.typescriptPropertyName
-  } === undefined ? ${undefinedExpression} : ${valueExpression}`;
+  const valueExpression = `typed[${node.type.id}](${holder}.${node.typescriptPropertyName})`;
+  const combinedExpression = `(${holder} === undefined || ${holder}.${node.typescriptPropertyName} === undefined) ? ${undefinedExpression} : ${valueExpression}`;
   return `\${ ${combinedExpression} }`;
 }
 
@@ -94,7 +87,7 @@ export function postgresValueExpression(
 export function sqlPredicate(
   context: GenerationContext,
   node: IndexNode,
-  holder: typeof PARAMETERS | typeof VALUES,
+  holder: string,
 ) {
   // looking up the operator from the index - default needs to be =
   // but can be different for % say in pg_trgm
@@ -104,7 +97,7 @@ export function sqlPredicate(
         `${a.name} ${node.operators[i]} ${a.type.postgresWrapReadParameter(
           {
             ...context,
-            currentSymbolName: `options?.${a.typescriptPropertyName}`,
+            currentSymbolName: `request.options?.${a.typescriptPropertyName}`,
           },
           postgresValueExpression(context, a, holder),
         )}`,
@@ -124,7 +117,7 @@ export function sqlPredicate(
 export function sqlSetExpressions(
   context: GenerationContext,
   node: TableNode,
-  holder: typeof PARAMETERS | typeof VALUES,
+  holder: string,
   defaultToSelfAssign = false,
 ) {
   return node.allColumns

@@ -1493,96 +1493,96 @@
 ["InformationSchema.Types.UserMappings"]: Typecast
 [13823]: Typecast;
 ["InformationSchema.Types.UserMappingsArray"]: Typecast
-[48428]: Typecast;
+[50578]: Typecast;
 ["Public.Types.DataSrc"]: Typecast
-[48427]: Typecast;
+[50577]: Typecast;
 ["Public.Types.DataSrcArray"]: Typecast
-[48434]: Typecast;
+[50584]: Typecast;
 ["Public.Types.Datsrcln"]: Typecast
-[48433]: Typecast;
+[50583]: Typecast;
 ["Public.Types.DatsrclnArray"]: Typecast
-[48437]: Typecast;
+[50587]: Typecast;
 ["Public.Types.DerivCd"]: Typecast
-[48436]: Typecast;
+[50586]: Typecast;
 ["Public.Types.DerivCdArray"]: Typecast
-[48442]: Typecast;
+[50592]: Typecast;
 ["Public.Types.FdGroup"]: Typecast
-[48441]: Typecast;
+[50591]: Typecast;
 ["Public.Types.FdGroupArray"]: Typecast
-[48447]: Typecast;
+[50597]: Typecast;
 ["Public.Types.FoodDes"]: Typecast
-[48446]: Typecast;
+[50596]: Typecast;
 ["Public.Types.FoodDesArray"]: Typecast
-[48452]: Typecast;
+[50602]: Typecast;
 ["Public.Types.Footnote"]: Typecast
-[48451]: Typecast;
+[50601]: Typecast;
 ["Public.Types.FootnoteArray"]: Typecast
-[48457]: Typecast;
+[50607]: Typecast;
 ["Public.Types.NutData"]: Typecast
-[48456]: Typecast;
+[50606]: Typecast;
 ["Public.Types.NutDataArray"]: Typecast
-[48462]: Typecast;
+[50612]: Typecast;
 ["Public.Types.NutrDef"]: Typecast
-[48461]: Typecast;
+[50611]: Typecast;
 ["Public.Types.NutrDefArray"]: Typecast
-[48467]: Typecast;
+[50617]: Typecast;
 ["Public.Types.SrcCd"]: Typecast
-[48466]: Typecast;
+[50616]: Typecast;
 ["Public.Types.SrcCdArray"]: Typecast
-[48472]: Typecast;
+[50622]: Typecast;
 ["Public.Types.Weight"]: Typecast
-[48471]: Typecast;
+[50621]: Typecast;
 ["Public.Types.WeightArray"]: Typecast
-[48431]: Typecast;
+[50581]: Typecast;
 ["Public.Types.DataSrcTitleFulltext"]: Typecast
-[48475]: Typecast;
+[50625]: Typecast;
 ["Public.Types.DataSrcPkey"]: Typecast
-[48477]: Typecast;
+[50627]: Typecast;
 ["Public.Types.DatsrclnPkey"]: Typecast
-[48479]: Typecast;
+[50629]: Typecast;
 ["Public.Types.DerivCdPkey"]: Typecast
-[48481]: Typecast;
+[50631]: Typecast;
 ["Public.Types.FdGroupPkey"]: Typecast
-[48483]: Typecast;
+[50633]: Typecast;
 ["Public.Types.FoodDesPkey"]: Typecast
-[48485]: Typecast;
+[50635]: Typecast;
 ["Public.Types.NutDataPkey"]: Typecast
-[48487]: Typecast;
+[50637]: Typecast;
 ["Public.Types.NutrDefPkey"]: Typecast
-[48489]: Typecast;
+[50639]: Typecast;
 ["Public.Types.SrcCdPkey"]: Typecast
-[48491]: Typecast;
+[50641]: Typecast;
 ["Public.Types.WeightPkey"]: Typecast
-[48493]: Typecast;
+[50643]: Typecast;
 ["Public.Types.DatsrclnDatasrcIdIdx"]: Typecast
-[48494]: Typecast;
+[50644]: Typecast;
 ["Public.Types.FoodDesFdgrpCdIdx"]: Typecast
-[48495]: Typecast;
+[50645]: Typecast;
 ["Public.Types.FootnoteNdbNoIdx"]: Typecast
-[48496]: Typecast;
+[50646]: Typecast;
 ["Public.Types.NutDataDerivCdIdx"]: Typecast
-[48497]: Typecast;
+[50647]: Typecast;
 ["Public.Types.NutDataNutrNoIdx"]: Typecast
-[48498]: Typecast;
+[50648]: Typecast;
 ["Public.Types.NutDataSrcCdIdx"]: Typecast
-[48430]: Typecast;
-["PgToast.Types.PgToast_48426Index"]: Typecast
-[48439]: Typecast;
-["PgToast.Types.PgToast_48435Index"]: Typecast
-[48444]: Typecast;
-["PgToast.Types.PgToast_48440Index"]: Typecast
-[48449]: Typecast;
-["PgToast.Types.PgToast_48445Index"]: Typecast
-[48454]: Typecast;
-["PgToast.Types.PgToast_48450Index"]: Typecast
-[48459]: Typecast;
-["PgToast.Types.PgToast_48455Index"]: Typecast
-[48464]: Typecast;
-["PgToast.Types.PgToast_48460Index"]: Typecast
-[48469]: Typecast;
-["PgToast.Types.PgToast_48465Index"]: Typecast
-[48474]: Typecast;
-["PgToast.Types.PgToast_48470Index"]: Typecast
+[50580]: Typecast;
+["PgToast.Types.PgToast_50576Index"]: Typecast
+[50589]: Typecast;
+["PgToast.Types.PgToast_50585Index"]: Typecast
+[50594]: Typecast;
+["PgToast.Types.PgToast_50590Index"]: Typecast
+[50599]: Typecast;
+["PgToast.Types.PgToast_50595Index"]: Typecast
+[50604]: Typecast;
+["PgToast.Types.PgToast_50600Index"]: Typecast
+[50609]: Typecast;
+["PgToast.Types.PgToast_50605Index"]: Typecast
+[50614]: Typecast;
+["PgToast.Types.PgToast_50610Index"]: Typecast
+[50619]: Typecast;
+["PgToast.Types.PgToast_50615Index"]: Typecast
+[50624]: Typecast;
+["PgToast.Types.PgToast_50620Index"]: Typecast
 [2837]: Typecast;
 ["PgToast.Types.PgToast_1255Index"]: Typecast
 [4172]: Typecast;
@@ -1757,7 +1757,7 @@ async create(values: Partial<Public.Types.NutData>, options?: Public.Tables.NutD
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.nut_data (ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc)
-    VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.nutrNo === undefined ? sql`DEFAULT` : typed[1042](values.nutrNo) },${ values.nutrVal === undefined ? sql`DEFAULT` : typed[701](values.nutrVal) },${ values.numDataPts === undefined ? sql`DEFAULT` : typed[701](values.numDataPts) },${ values.stdError === undefined ? sql`DEFAULT` : typed[701](values.stdError) },${ values.srcCd === undefined ? sql`DEFAULT` : typed[23](values.srcCd) },${ values.derivCd === undefined ? sql`DEFAULT` : typed[25](values.derivCd) },${ values.refNdbNo === undefined ? sql`DEFAULT` : typed[1042](values.refNdbNo) },${ values.addNutrMark === undefined ? sql`DEFAULT` : typed[1042](values.addNutrMark) },${ values.numStudies === undefined ? sql`DEFAULT` : typed[23](values.numStudies) },${ values.min === undefined ? sql`DEFAULT` : typed[701](values.min) },${ values.max === undefined ? sql`DEFAULT` : typed[701](values.max) },${ values.df === undefined ? sql`DEFAULT` : typed[23](values.df) },${ values.lowEb === undefined ? sql`DEFAULT` : typed[701](values.lowEb) },${ values.upEb === undefined ? sql`DEFAULT` : typed[701](values.upEb) },${ values.statCmt === undefined ? sql`DEFAULT` : typed[25](values.statCmt) },${ values.cc === undefined ? sql`DEFAULT` : typed[1042](values.cc) })
+    VALUES (${ (request.values === undefined || request.values.ndbNo === undefined) ? sql`DEFAULT` : typed[1042](request.values.ndbNo) },${ (request.values === undefined || request.values.nutrNo === undefined) ? sql`DEFAULT` : typed[1042](request.values.nutrNo) },${ (request.values === undefined || request.values.nutrVal === undefined) ? sql`DEFAULT` : typed[701](request.values.nutrVal) },${ (request.values === undefined || request.values.numDataPts === undefined) ? sql`DEFAULT` : typed[701](request.values.numDataPts) },${ (request.values === undefined || request.values.stdError === undefined) ? sql`DEFAULT` : typed[701](request.values.stdError) },${ (request.values === undefined || request.values.srcCd === undefined) ? sql`DEFAULT` : typed[23](request.values.srcCd) },${ (request.values === undefined || request.values.derivCd === undefined) ? sql`DEFAULT` : typed[25](request.values.derivCd) },${ (request.values === undefined || request.values.refNdbNo === undefined) ? sql`DEFAULT` : typed[1042](request.values.refNdbNo) },${ (request.values === undefined || request.values.addNutrMark === undefined) ? sql`DEFAULT` : typed[1042](request.values.addNutrMark) },${ (request.values === undefined || request.values.numStudies === undefined) ? sql`DEFAULT` : typed[23](request.values.numStudies) },${ (request.values === undefined || request.values.min === undefined) ? sql`DEFAULT` : typed[701](request.values.min) },${ (request.values === undefined || request.values.max === undefined) ? sql`DEFAULT` : typed[701](request.values.max) },${ (request.values === undefined || request.values.df === undefined) ? sql`DEFAULT` : typed[23](request.values.df) },${ (request.values === undefined || request.values.lowEb === undefined) ? sql`DEFAULT` : typed[701](request.values.lowEb) },${ (request.values === undefined || request.values.upEb === undefined) ? sql`DEFAULT` : typed[701](request.values.upEb) },${ (request.values === undefined || request.values.statCmt === undefined) ? sql`DEFAULT` : typed[25](request.values.statCmt) },${ (request.values === undefined || request.values.cc === undefined) ? sql`DEFAULT` : typed[1042](request.values.cc) })
     ON CONFLICT (ndb_no,nutr_no) DO UPDATE
     SET
       nutr_val = EXCLUDED.nutr_val,num_data_pts = EXCLUDED.num_data_pts,std_error = EXCLUDED.std_error,src_cd = EXCLUDED.src_cd,deriv_cd = EXCLUDED.deriv_cd,ref_ndb_no = EXCLUDED.ref_ndb_no,add_nutr_mark = EXCLUDED.add_nutr_mark,num_studies = EXCLUDED.num_studies,min = EXCLUDED.min,max = EXCLUDED.max,df = EXCLUDED.df,low_eb = EXCLUDED.low_eb,up_eb = EXCLUDED.up_eb,stat_cmt = EXCLUDED.stat_cmt,cc = EXCLUDED.cc
@@ -1808,7 +1808,7 @@ async create(values: Partial<Public.Types.SrcCd>, options?: Public.Tables.SrcCd.
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.src_cd (src_cd,srccd_desc)
-    VALUES (${ values.srcCd === undefined ? sql`DEFAULT` : typed[23](values.srcCd) },${ values.srccdDesc === undefined ? sql`DEFAULT` : typed[25](values.srccdDesc) })
+    VALUES (${ (request.values === undefined || request.values.srcCd === undefined) ? sql`DEFAULT` : typed[23](request.values.srcCd) },${ (request.values === undefined || request.values.srccdDesc === undefined) ? sql`DEFAULT` : typed[25](request.values.srccdDesc) })
     ON CONFLICT (src_cd) DO UPDATE
     SET
       srccd_desc = EXCLUDED.srccd_desc
@@ -1853,7 +1853,7 @@ async create(values: Partial<Public.Types.Footnote>, options?: Public.Tables.Foo
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.footnote (ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt)
-    VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.footntNo === undefined ? sql`DEFAULT` : typed[1042](values.footntNo) },${ values.footntTyp === undefined ? sql`DEFAULT` : typed[1042](values.footntTyp) },${ values.nutrNo === undefined ? sql`DEFAULT` : typed[1042](values.nutrNo) },${ values.footntTxt === undefined ? sql`DEFAULT` : typed[25](values.footntTxt) })
+    VALUES (${ (request.values === undefined || request.values.ndbNo === undefined) ? sql`DEFAULT` : typed[1042](request.values.ndbNo) },${ (request.values === undefined || request.values.footntNo === undefined) ? sql`DEFAULT` : typed[1042](request.values.footntNo) },${ (request.values === undefined || request.values.footntTyp === undefined) ? sql`DEFAULT` : typed[1042](request.values.footntTyp) },${ (request.values === undefined || request.values.nutrNo === undefined) ? sql`DEFAULT` : typed[1042](request.values.nutrNo) },${ (request.values === undefined || request.values.footntTxt === undefined) ? sql`DEFAULT` : typed[25](request.values.footntTxt) })
     ON CONFLICT () DO UPDATE
     SET
       ndb_no = EXCLUDED.ndb_no,footnt_no = EXCLUDED.footnt_no,footnt_typ = EXCLUDED.footnt_typ,nutr_no = EXCLUDED.nutr_no,footnt_txt = EXCLUDED.footnt_txt
@@ -1898,7 +1898,7 @@ async create(values: Partial<Public.Types.NutrDef>, options?: Public.Tables.Nutr
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.nutr_def (nutr_no,units,tagname,nutrdesc,num_dec,sr_order)
-    VALUES (${ values.nutrNo === undefined ? sql`DEFAULT` : typed[1042](values.nutrNo) },${ values.units === undefined ? sql`DEFAULT` : typed[25](values.units) },${ values.tagname === undefined ? sql`DEFAULT` : typed[25](values.tagname) },${ values.nutrdesc === undefined ? sql`DEFAULT` : typed[25](values.nutrdesc) },${ values.numDec === undefined ? sql`DEFAULT` : typed[21](values.numDec) },${ values.srOrder === undefined ? sql`DEFAULT` : typed[23](values.srOrder) })
+    VALUES (${ (request.values === undefined || request.values.nutrNo === undefined) ? sql`DEFAULT` : typed[1042](request.values.nutrNo) },${ (request.values === undefined || request.values.units === undefined) ? sql`DEFAULT` : typed[25](request.values.units) },${ (request.values === undefined || request.values.tagname === undefined) ? sql`DEFAULT` : typed[25](request.values.tagname) },${ (request.values === undefined || request.values.nutrdesc === undefined) ? sql`DEFAULT` : typed[25](request.values.nutrdesc) },${ (request.values === undefined || request.values.numDec === undefined) ? sql`DEFAULT` : typed[21](request.values.numDec) },${ (request.values === undefined || request.values.srOrder === undefined) ? sql`DEFAULT` : typed[23](request.values.srOrder) })
     ON CONFLICT (nutr_no) DO UPDATE
     SET
       units = EXCLUDED.units,tagname = EXCLUDED.tagname,nutrdesc = EXCLUDED.nutrdesc,num_dec = EXCLUDED.num_dec,sr_order = EXCLUDED.sr_order
@@ -1943,7 +1943,7 @@ async create(values: Partial<Public.Types.DerivCd>, options?: Public.Tables.Deri
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.deriv_cd (deriv_cd,derivcd_desc)
-    VALUES (${ values.derivCd === undefined ? sql`DEFAULT` : typed[25](values.derivCd) },${ values.derivcdDesc === undefined ? sql`DEFAULT` : typed[25](values.derivcdDesc) })
+    VALUES (${ (request.values === undefined || request.values.derivCd === undefined) ? sql`DEFAULT` : typed[25](request.values.derivCd) },${ (request.values === undefined || request.values.derivcdDesc === undefined) ? sql`DEFAULT` : typed[25](request.values.derivcdDesc) })
     ON CONFLICT (deriv_cd) DO UPDATE
     SET
       derivcd_desc = EXCLUDED.derivcd_desc
@@ -1988,7 +1988,7 @@ async create(values: Partial<Public.Types.FdGroup>, options?: Public.Tables.FdGr
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.fd_group (fdgrp_cd,fddrp_desc)
-    VALUES (${ values.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](values.fdgrpCd) },${ values.fddrpDesc === undefined ? sql`DEFAULT` : typed[25](values.fddrpDesc) })
+    VALUES (${ (request.values === undefined || request.values.fdgrpCd === undefined) ? sql`DEFAULT` : typed[1042](request.values.fdgrpCd) },${ (request.values === undefined || request.values.fddrpDesc === undefined) ? sql`DEFAULT` : typed[25](request.values.fddrpDesc) })
     ON CONFLICT (fdgrp_cd) DO UPDATE
     SET
       fddrp_desc = EXCLUDED.fddrp_desc
@@ -2033,7 +2033,7 @@ async create(values: Partial<Public.Types.Weight>, options?: Public.Tables.Weigh
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.weight (ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev)
-    VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.seq === undefined ? sql`DEFAULT` : typed[1042](values.seq) },${ values.amount === undefined ? sql`DEFAULT` : typed[701](values.amount) },${ values.msreDesc === undefined ? sql`DEFAULT` : typed[25](values.msreDesc) },${ values.gmWgt === undefined ? sql`DEFAULT` : typed[701](values.gmWgt) },${ values.numDataPts === undefined ? sql`DEFAULT` : typed[23](values.numDataPts) },${ values.stdDev === undefined ? sql`DEFAULT` : typed[701](values.stdDev) })
+    VALUES (${ (request.values === undefined || request.values.ndbNo === undefined) ? sql`DEFAULT` : typed[1042](request.values.ndbNo) },${ (request.values === undefined || request.values.seq === undefined) ? sql`DEFAULT` : typed[1042](request.values.seq) },${ (request.values === undefined || request.values.amount === undefined) ? sql`DEFAULT` : typed[701](request.values.amount) },${ (request.values === undefined || request.values.msreDesc === undefined) ? sql`DEFAULT` : typed[25](request.values.msreDesc) },${ (request.values === undefined || request.values.gmWgt === undefined) ? sql`DEFAULT` : typed[701](request.values.gmWgt) },${ (request.values === undefined || request.values.numDataPts === undefined) ? sql`DEFAULT` : typed[23](request.values.numDataPts) },${ (request.values === undefined || request.values.stdDev === undefined) ? sql`DEFAULT` : typed[701](request.values.stdDev) })
     ON CONFLICT (ndb_no,seq) DO UPDATE
     SET
       amount = EXCLUDED.amount,msre_desc = EXCLUDED.msre_desc,gm_wgt = EXCLUDED.gm_wgt,num_data_pts = EXCLUDED.num_data_pts,std_dev = EXCLUDED.std_dev
@@ -2078,7 +2078,7 @@ async create(values: Partial<Public.Types.FoodDes>, options?: Public.Tables.Food
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.food_des (ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor)
-    VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](values.fdgrpCd) },${ values.longDesc === undefined ? sql`DEFAULT` : typed[25](values.longDesc) },${ values.shrtDesc === undefined ? sql`DEFAULT` : typed[25](values.shrtDesc) },${ values.comname === undefined ? sql`DEFAULT` : typed[25](values.comname) },${ values.manufacname === undefined ? sql`DEFAULT` : typed[25](values.manufacname) },${ values.survey === undefined ? sql`DEFAULT` : typed[1042](values.survey) },${ values.refDesc === undefined ? sql`DEFAULT` : typed[25](values.refDesc) },${ values.refuse === undefined ? sql`DEFAULT` : typed[23](values.refuse) },${ values.sciname === undefined ? sql`DEFAULT` : typed[25](values.sciname) },${ values.nFactor === undefined ? sql`DEFAULT` : typed[701](values.nFactor) },${ values.proFactor === undefined ? sql`DEFAULT` : typed[701](values.proFactor) },${ values.fatFactor === undefined ? sql`DEFAULT` : typed[701](values.fatFactor) },${ values.choFactor === undefined ? sql`DEFAULT` : typed[701](values.choFactor) })
+    VALUES (${ (request.values === undefined || request.values.ndbNo === undefined) ? sql`DEFAULT` : typed[1042](request.values.ndbNo) },${ (request.values === undefined || request.values.fdgrpCd === undefined) ? sql`DEFAULT` : typed[1042](request.values.fdgrpCd) },${ (request.values === undefined || request.values.longDesc === undefined) ? sql`DEFAULT` : typed[25](request.values.longDesc) },${ (request.values === undefined || request.values.shrtDesc === undefined) ? sql`DEFAULT` : typed[25](request.values.shrtDesc) },${ (request.values === undefined || request.values.comname === undefined) ? sql`DEFAULT` : typed[25](request.values.comname) },${ (request.values === undefined || request.values.manufacname === undefined) ? sql`DEFAULT` : typed[25](request.values.manufacname) },${ (request.values === undefined || request.values.survey === undefined) ? sql`DEFAULT` : typed[1042](request.values.survey) },${ (request.values === undefined || request.values.refDesc === undefined) ? sql`DEFAULT` : typed[25](request.values.refDesc) },${ (request.values === undefined || request.values.refuse === undefined) ? sql`DEFAULT` : typed[23](request.values.refuse) },${ (request.values === undefined || request.values.sciname === undefined) ? sql`DEFAULT` : typed[25](request.values.sciname) },${ (request.values === undefined || request.values.nFactor === undefined) ? sql`DEFAULT` : typed[701](request.values.nFactor) },${ (request.values === undefined || request.values.proFactor === undefined) ? sql`DEFAULT` : typed[701](request.values.proFactor) },${ (request.values === undefined || request.values.fatFactor === undefined) ? sql`DEFAULT` : typed[701](request.values.fatFactor) },${ (request.values === undefined || request.values.choFactor === undefined) ? sql`DEFAULT` : typed[701](request.values.choFactor) })
     ON CONFLICT (ndb_no) DO UPDATE
     SET
       fdgrp_cd = EXCLUDED.fdgrp_cd,long_desc = EXCLUDED.long_desc,shrt_desc = EXCLUDED.shrt_desc,comname = EXCLUDED.comname,manufacname = EXCLUDED.manufacname,survey = EXCLUDED.survey,ref_desc = EXCLUDED.ref_desc,refuse = EXCLUDED.refuse,sciname = EXCLUDED.sciname,n_factor = EXCLUDED.n_factor,pro_factor = EXCLUDED.pro_factor,fat_factor = EXCLUDED.fat_factor,cho_factor = EXCLUDED.cho_factor
@@ -2125,7 +2125,7 @@ async create(values: Partial<Public.Types.DataSrc>, options?: Public.Tables.Data
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.data_src (datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page)
-    VALUES (${ values.datasrcId === undefined ? sql`DEFAULT` : typed[1042](values.datasrcId) },${ values.authors === undefined ? sql`DEFAULT` : typed[25](values.authors) },${ values.title === undefined ? sql`DEFAULT` : typed[25](values.title) },${ values.year === undefined ? sql`DEFAULT` : typed[23](values.year) },${ values.journal === undefined ? sql`DEFAULT` : typed[25](values.journal) },${ values.volCity === undefined ? sql`DEFAULT` : typed[25](values.volCity) },${ values.issueState === undefined ? sql`DEFAULT` : typed[25](values.issueState) },${ values.startPage === undefined ? sql`DEFAULT` : typed[25](values.startPage) },${ values.endPage === undefined ? sql`DEFAULT` : typed[25](values.endPage) })
+    VALUES (${ (request.values === undefined || request.values.datasrcId === undefined) ? sql`DEFAULT` : typed[1042](request.values.datasrcId) },${ (request.values === undefined || request.values.authors === undefined) ? sql`DEFAULT` : typed[25](request.values.authors) },${ (request.values === undefined || request.values.title === undefined) ? sql`DEFAULT` : typed[25](request.values.title) },${ (request.values === undefined || request.values.year === undefined) ? sql`DEFAULT` : typed[23](request.values.year) },${ (request.values === undefined || request.values.journal === undefined) ? sql`DEFAULT` : typed[25](request.values.journal) },${ (request.values === undefined || request.values.volCity === undefined) ? sql`DEFAULT` : typed[25](request.values.volCity) },${ (request.values === undefined || request.values.issueState === undefined) ? sql`DEFAULT` : typed[25](request.values.issueState) },${ (request.values === undefined || request.values.startPage === undefined) ? sql`DEFAULT` : typed[25](request.values.startPage) },${ (request.values === undefined || request.values.endPage === undefined) ? sql`DEFAULT` : typed[25](request.values.endPage) })
     ON CONFLICT (datasrc_id) DO UPDATE
     SET
       authors = EXCLUDED.authors,title = EXCLUDED.title,year = EXCLUDED.year,journal = EXCLUDED.journal,vol_city = EXCLUDED.vol_city,issue_state = EXCLUDED.issue_state,start_page = EXCLUDED.start_page,end_page = EXCLUDED.end_page
@@ -2172,7 +2172,7 @@ async create(values: Partial<Public.Types.Datsrcln>, options?: Public.Tables.Dat
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.datsrcln (ndb_no,nutr_no,datasrc_id)
-    VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.nutrNo === undefined ? sql`DEFAULT` : typed[1042](values.nutrNo) },${ values.datasrcId === undefined ? sql`DEFAULT` : typed[1042](values.datasrcId) })
+    VALUES (${ (request.values === undefined || request.values.ndbNo === undefined) ? sql`DEFAULT` : typed[1042](request.values.ndbNo) },${ (request.values === undefined || request.values.nutrNo === undefined) ? sql`DEFAULT` : typed[1042](request.values.nutrNo) },${ (request.values === undefined || request.values.datasrcId === undefined) ? sql`DEFAULT` : typed[1042](request.values.datasrcId) })
     ON CONFLICT (ndb_no,nutr_no,datasrc_id) DO UPDATE
     SET
       
@@ -2223,19 +2223,21 @@ async read(parameters: Public.Types.NutDataPkey, options?: Public.Types.NutDataP
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.NutData, Public.Types.NutDataPkey, never, Public.Types.NutDataPkey.Options & Public.Tables.NutData.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc 
     FROM
       public.nut_data 
     WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+      ndb_no = ${ (request.parameters === undefined || request.parameters.ndbNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.ndbNo) } AND nutr_no = ${ (request.parameters === undefined || request.parameters.nutrNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.nutrNo) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))[0]
+    `
+  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.NutDataPkey, values: Partial<Public.Tables.NutData.Values>, options?: Public.Types.NutDataPkey.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData>{
 
@@ -2248,12 +2250,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.nut_data 
     SET
-      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , nutr_val = ${ values.nutrVal === undefined ? sql`nutr_val` : typed[701](values.nutrVal) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[701](values.numDataPts) } , std_error = ${ values.stdError === undefined ? sql`std_error` : typed[701](values.stdError) } , src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , ref_ndb_no = ${ values.refNdbNo === undefined ? sql`ref_ndb_no` : typed[1042](values.refNdbNo) } , add_nutr_mark = ${ values.addNutrMark === undefined ? sql`add_nutr_mark` : typed[1042](values.addNutrMark) } , num_studies = ${ values.numStudies === undefined ? sql`num_studies` : typed[23](values.numStudies) } , min = ${ values.min === undefined ? sql`min` : typed[701](values.min) } , max = ${ values.max === undefined ? sql`max` : typed[701](values.max) } , df = ${ values.df === undefined ? sql`df` : typed[23](values.df) } , low_eb = ${ values.lowEb === undefined ? sql`low_eb` : typed[701](values.lowEb) } , up_eb = ${ values.upEb === undefined ? sql`up_eb` : typed[701](values.upEb) } , stat_cmt = ${ values.statCmt === undefined ? sql`stat_cmt` : typed[25](values.statCmt) } , cc = ${ values.cc === undefined ? sql`cc` : typed[1042](values.cc) } 
+      ndb_no = ${ (request.values === undefined || request.values.ndbNo === undefined) ? sql`ndb_no` : typed[1042](request.values.ndbNo) } , nutr_no = ${ (request.values === undefined || request.values.nutrNo === undefined) ? sql`nutr_no` : typed[1042](request.values.nutrNo) } , nutr_val = ${ (request.values === undefined || request.values.nutrVal === undefined) ? sql`nutr_val` : typed[701](request.values.nutrVal) } , num_data_pts = ${ (request.values === undefined || request.values.numDataPts === undefined) ? sql`num_data_pts` : typed[701](request.values.numDataPts) } , std_error = ${ (request.values === undefined || request.values.stdError === undefined) ? sql`std_error` : typed[701](request.values.stdError) } , src_cd = ${ (request.values === undefined || request.values.srcCd === undefined) ? sql`src_cd` : typed[23](request.values.srcCd) } , deriv_cd = ${ (request.values === undefined || request.values.derivCd === undefined) ? sql`deriv_cd` : typed[25](request.values.derivCd) } , ref_ndb_no = ${ (request.values === undefined || request.values.refNdbNo === undefined) ? sql`ref_ndb_no` : typed[1042](request.values.refNdbNo) } , add_nutr_mark = ${ (request.values === undefined || request.values.addNutrMark === undefined) ? sql`add_nutr_mark` : typed[1042](request.values.addNutrMark) } , num_studies = ${ (request.values === undefined || request.values.numStudies === undefined) ? sql`num_studies` : typed[23](request.values.numStudies) } , min = ${ (request.values === undefined || request.values.min === undefined) ? sql`min` : typed[701](request.values.min) } , max = ${ (request.values === undefined || request.values.max === undefined) ? sql`max` : typed[701](request.values.max) } , df = ${ (request.values === undefined || request.values.df === undefined) ? sql`df` : typed[23](request.values.df) } , low_eb = ${ (request.values === undefined || request.values.lowEb === undefined) ? sql`low_eb` : typed[701](request.values.lowEb) } , up_eb = ${ (request.values === undefined || request.values.upEb === undefined) ? sql`up_eb` : typed[701](request.values.upEb) } , stat_cmt = ${ (request.values === undefined || request.values.statCmt === undefined) ? sql`stat_cmt` : typed[25](request.values.statCmt) } , cc = ${ (request.values === undefined || request.values.cc === undefined) ? sql`cc` : typed[1042](request.values.cc) } 
     WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+      ndb_no = ${ (request.parameters === undefined || request.parameters.ndbNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.ndbNo) } AND nutr_no = ${ (request.parameters === undefined || request.parameters.nutrNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.nutrNo) }
     RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))[0]
-},
+}
 async delete(parameters: Public.Types.NutDataPkey, options?: Public.Types.NutDataPkey.Options & Public.Tables.NutData.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -2262,7 +2264,7 @@ async delete(parameters: Public.Types.NutDataPkey, options?: Public.Types.NutDat
     DELETE FROM 
       public.nut_data 
     WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+      ndb_no = ${ (request.parameters === undefined || request.parameters.ndbNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.ndbNo) } AND nutr_no = ${ (request.parameters === undefined || request.parameters.nutrNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.nutrNo) }
     RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, {parameters, options});
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))[0]
 }
@@ -2283,19 +2285,21 @@ async read(parameters: Public.Types.NutDataDerivCdIdx, options?: Public.Types.Nu
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.NutData[], Public.Types.NutDataDerivCdIdx, never, Public.Types.NutDataDerivCdIdx.Options & Public.Tables.NutData.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc 
     FROM
       public.nut_data 
     WHERE
-      deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
+      deriv_cd = ${ (request.parameters === undefined || request.parameters.derivCd === undefined) ? sql`DEFAULT` : typed[25](request.parameters.derivCd) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
+    `
+  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.NutDataDerivCdIdx, values: Partial<Public.Tables.NutData.Values>, options?: Public.Types.NutDataDerivCdIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
 
@@ -2308,12 +2312,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.nut_data 
     SET
-      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , nutr_val = ${ values.nutrVal === undefined ? sql`nutr_val` : typed[701](values.nutrVal) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[701](values.numDataPts) } , std_error = ${ values.stdError === undefined ? sql`std_error` : typed[701](values.stdError) } , src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , ref_ndb_no = ${ values.refNdbNo === undefined ? sql`ref_ndb_no` : typed[1042](values.refNdbNo) } , add_nutr_mark = ${ values.addNutrMark === undefined ? sql`add_nutr_mark` : typed[1042](values.addNutrMark) } , num_studies = ${ values.numStudies === undefined ? sql`num_studies` : typed[23](values.numStudies) } , min = ${ values.min === undefined ? sql`min` : typed[701](values.min) } , max = ${ values.max === undefined ? sql`max` : typed[701](values.max) } , df = ${ values.df === undefined ? sql`df` : typed[23](values.df) } , low_eb = ${ values.lowEb === undefined ? sql`low_eb` : typed[701](values.lowEb) } , up_eb = ${ values.upEb === undefined ? sql`up_eb` : typed[701](values.upEb) } , stat_cmt = ${ values.statCmt === undefined ? sql`stat_cmt` : typed[25](values.statCmt) } , cc = ${ values.cc === undefined ? sql`cc` : typed[1042](values.cc) } 
+      ndb_no = ${ (request.values === undefined || request.values.ndbNo === undefined) ? sql`ndb_no` : typed[1042](request.values.ndbNo) } , nutr_no = ${ (request.values === undefined || request.values.nutrNo === undefined) ? sql`nutr_no` : typed[1042](request.values.nutrNo) } , nutr_val = ${ (request.values === undefined || request.values.nutrVal === undefined) ? sql`nutr_val` : typed[701](request.values.nutrVal) } , num_data_pts = ${ (request.values === undefined || request.values.numDataPts === undefined) ? sql`num_data_pts` : typed[701](request.values.numDataPts) } , std_error = ${ (request.values === undefined || request.values.stdError === undefined) ? sql`std_error` : typed[701](request.values.stdError) } , src_cd = ${ (request.values === undefined || request.values.srcCd === undefined) ? sql`src_cd` : typed[23](request.values.srcCd) } , deriv_cd = ${ (request.values === undefined || request.values.derivCd === undefined) ? sql`deriv_cd` : typed[25](request.values.derivCd) } , ref_ndb_no = ${ (request.values === undefined || request.values.refNdbNo === undefined) ? sql`ref_ndb_no` : typed[1042](request.values.refNdbNo) } , add_nutr_mark = ${ (request.values === undefined || request.values.addNutrMark === undefined) ? sql`add_nutr_mark` : typed[1042](request.values.addNutrMark) } , num_studies = ${ (request.values === undefined || request.values.numStudies === undefined) ? sql`num_studies` : typed[23](request.values.numStudies) } , min = ${ (request.values === undefined || request.values.min === undefined) ? sql`min` : typed[701](request.values.min) } , max = ${ (request.values === undefined || request.values.max === undefined) ? sql`max` : typed[701](request.values.max) } , df = ${ (request.values === undefined || request.values.df === undefined) ? sql`df` : typed[23](request.values.df) } , low_eb = ${ (request.values === undefined || request.values.lowEb === undefined) ? sql`low_eb` : typed[701](request.values.lowEb) } , up_eb = ${ (request.values === undefined || request.values.upEb === undefined) ? sql`up_eb` : typed[701](request.values.upEb) } , stat_cmt = ${ (request.values === undefined || request.values.statCmt === undefined) ? sql`stat_cmt` : typed[25](request.values.statCmt) } , cc = ${ (request.values === undefined || request.values.cc === undefined) ? sql`cc` : typed[1042](request.values.cc) } 
     WHERE
-      deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
+      deriv_cd = ${ (request.parameters === undefined || request.parameters.derivCd === undefined) ? sql`DEFAULT` : typed[25](request.parameters.derivCd) }
     RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
-},
+}
 async delete(parameters: Public.Types.NutDataDerivCdIdx, options?: Public.Types.NutDataDerivCdIdx.Options & Public.Tables.NutData.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -2322,7 +2326,7 @@ async delete(parameters: Public.Types.NutDataDerivCdIdx, options?: Public.Types.
     DELETE FROM 
       public.nut_data 
     WHERE
-      deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
+      deriv_cd = ${ (request.parameters === undefined || request.parameters.derivCd === undefined) ? sql`DEFAULT` : typed[25](request.parameters.derivCd) }
     RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, {parameters, options});
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
@@ -2343,19 +2347,21 @@ async read(parameters: Public.Types.NutDataNutrNoIdx, options?: Public.Types.Nut
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.NutData[], Public.Types.NutDataNutrNoIdx, never, Public.Types.NutDataNutrNoIdx.Options & Public.Tables.NutData.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc 
     FROM
       public.nut_data 
     WHERE
-      nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+      nutr_no = ${ (request.parameters === undefined || request.parameters.nutrNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.nutrNo) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
+    `
+  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.NutDataNutrNoIdx, values: Partial<Public.Tables.NutData.Values>, options?: Public.Types.NutDataNutrNoIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
 
@@ -2368,12 +2374,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.nut_data 
     SET
-      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , nutr_val = ${ values.nutrVal === undefined ? sql`nutr_val` : typed[701](values.nutrVal) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[701](values.numDataPts) } , std_error = ${ values.stdError === undefined ? sql`std_error` : typed[701](values.stdError) } , src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , ref_ndb_no = ${ values.refNdbNo === undefined ? sql`ref_ndb_no` : typed[1042](values.refNdbNo) } , add_nutr_mark = ${ values.addNutrMark === undefined ? sql`add_nutr_mark` : typed[1042](values.addNutrMark) } , num_studies = ${ values.numStudies === undefined ? sql`num_studies` : typed[23](values.numStudies) } , min = ${ values.min === undefined ? sql`min` : typed[701](values.min) } , max = ${ values.max === undefined ? sql`max` : typed[701](values.max) } , df = ${ values.df === undefined ? sql`df` : typed[23](values.df) } , low_eb = ${ values.lowEb === undefined ? sql`low_eb` : typed[701](values.lowEb) } , up_eb = ${ values.upEb === undefined ? sql`up_eb` : typed[701](values.upEb) } , stat_cmt = ${ values.statCmt === undefined ? sql`stat_cmt` : typed[25](values.statCmt) } , cc = ${ values.cc === undefined ? sql`cc` : typed[1042](values.cc) } 
+      ndb_no = ${ (request.values === undefined || request.values.ndbNo === undefined) ? sql`ndb_no` : typed[1042](request.values.ndbNo) } , nutr_no = ${ (request.values === undefined || request.values.nutrNo === undefined) ? sql`nutr_no` : typed[1042](request.values.nutrNo) } , nutr_val = ${ (request.values === undefined || request.values.nutrVal === undefined) ? sql`nutr_val` : typed[701](request.values.nutrVal) } , num_data_pts = ${ (request.values === undefined || request.values.numDataPts === undefined) ? sql`num_data_pts` : typed[701](request.values.numDataPts) } , std_error = ${ (request.values === undefined || request.values.stdError === undefined) ? sql`std_error` : typed[701](request.values.stdError) } , src_cd = ${ (request.values === undefined || request.values.srcCd === undefined) ? sql`src_cd` : typed[23](request.values.srcCd) } , deriv_cd = ${ (request.values === undefined || request.values.derivCd === undefined) ? sql`deriv_cd` : typed[25](request.values.derivCd) } , ref_ndb_no = ${ (request.values === undefined || request.values.refNdbNo === undefined) ? sql`ref_ndb_no` : typed[1042](request.values.refNdbNo) } , add_nutr_mark = ${ (request.values === undefined || request.values.addNutrMark === undefined) ? sql`add_nutr_mark` : typed[1042](request.values.addNutrMark) } , num_studies = ${ (request.values === undefined || request.values.numStudies === undefined) ? sql`num_studies` : typed[23](request.values.numStudies) } , min = ${ (request.values === undefined || request.values.min === undefined) ? sql`min` : typed[701](request.values.min) } , max = ${ (request.values === undefined || request.values.max === undefined) ? sql`max` : typed[701](request.values.max) } , df = ${ (request.values === undefined || request.values.df === undefined) ? sql`df` : typed[23](request.values.df) } , low_eb = ${ (request.values === undefined || request.values.lowEb === undefined) ? sql`low_eb` : typed[701](request.values.lowEb) } , up_eb = ${ (request.values === undefined || request.values.upEb === undefined) ? sql`up_eb` : typed[701](request.values.upEb) } , stat_cmt = ${ (request.values === undefined || request.values.statCmt === undefined) ? sql`stat_cmt` : typed[25](request.values.statCmt) } , cc = ${ (request.values === undefined || request.values.cc === undefined) ? sql`cc` : typed[1042](request.values.cc) } 
     WHERE
-      nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+      nutr_no = ${ (request.parameters === undefined || request.parameters.nutrNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.nutrNo) }
     RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
-},
+}
 async delete(parameters: Public.Types.NutDataNutrNoIdx, options?: Public.Types.NutDataNutrNoIdx.Options & Public.Tables.NutData.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -2382,7 +2388,7 @@ async delete(parameters: Public.Types.NutDataNutrNoIdx, options?: Public.Types.N
     DELETE FROM 
       public.nut_data 
     WHERE
-      nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+      nutr_no = ${ (request.parameters === undefined || request.parameters.nutrNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.nutrNo) }
     RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, {parameters, options});
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
@@ -2403,19 +2409,21 @@ async read(parameters: Public.Types.NutDataSrcCdIdx, options?: Public.Types.NutD
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.NutData[], Public.Types.NutDataSrcCdIdx, never, Public.Types.NutDataSrcCdIdx.Options & Public.Tables.NutData.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc 
     FROM
       public.nut_data 
     WHERE
-      src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
+      src_cd = ${ (request.parameters === undefined || request.parameters.srcCd === undefined) ? sql`DEFAULT` : typed[23](request.parameters.srcCd) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
+    `
+  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.NutDataSrcCdIdx, values: Partial<Public.Tables.NutData.Values>, options?: Public.Types.NutDataSrcCdIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
 
@@ -2428,12 +2436,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.nut_data 
     SET
-      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , nutr_val = ${ values.nutrVal === undefined ? sql`nutr_val` : typed[701](values.nutrVal) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[701](values.numDataPts) } , std_error = ${ values.stdError === undefined ? sql`std_error` : typed[701](values.stdError) } , src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , ref_ndb_no = ${ values.refNdbNo === undefined ? sql`ref_ndb_no` : typed[1042](values.refNdbNo) } , add_nutr_mark = ${ values.addNutrMark === undefined ? sql`add_nutr_mark` : typed[1042](values.addNutrMark) } , num_studies = ${ values.numStudies === undefined ? sql`num_studies` : typed[23](values.numStudies) } , min = ${ values.min === undefined ? sql`min` : typed[701](values.min) } , max = ${ values.max === undefined ? sql`max` : typed[701](values.max) } , df = ${ values.df === undefined ? sql`df` : typed[23](values.df) } , low_eb = ${ values.lowEb === undefined ? sql`low_eb` : typed[701](values.lowEb) } , up_eb = ${ values.upEb === undefined ? sql`up_eb` : typed[701](values.upEb) } , stat_cmt = ${ values.statCmt === undefined ? sql`stat_cmt` : typed[25](values.statCmt) } , cc = ${ values.cc === undefined ? sql`cc` : typed[1042](values.cc) } 
+      ndb_no = ${ (request.values === undefined || request.values.ndbNo === undefined) ? sql`ndb_no` : typed[1042](request.values.ndbNo) } , nutr_no = ${ (request.values === undefined || request.values.nutrNo === undefined) ? sql`nutr_no` : typed[1042](request.values.nutrNo) } , nutr_val = ${ (request.values === undefined || request.values.nutrVal === undefined) ? sql`nutr_val` : typed[701](request.values.nutrVal) } , num_data_pts = ${ (request.values === undefined || request.values.numDataPts === undefined) ? sql`num_data_pts` : typed[701](request.values.numDataPts) } , std_error = ${ (request.values === undefined || request.values.stdError === undefined) ? sql`std_error` : typed[701](request.values.stdError) } , src_cd = ${ (request.values === undefined || request.values.srcCd === undefined) ? sql`src_cd` : typed[23](request.values.srcCd) } , deriv_cd = ${ (request.values === undefined || request.values.derivCd === undefined) ? sql`deriv_cd` : typed[25](request.values.derivCd) } , ref_ndb_no = ${ (request.values === undefined || request.values.refNdbNo === undefined) ? sql`ref_ndb_no` : typed[1042](request.values.refNdbNo) } , add_nutr_mark = ${ (request.values === undefined || request.values.addNutrMark === undefined) ? sql`add_nutr_mark` : typed[1042](request.values.addNutrMark) } , num_studies = ${ (request.values === undefined || request.values.numStudies === undefined) ? sql`num_studies` : typed[23](request.values.numStudies) } , min = ${ (request.values === undefined || request.values.min === undefined) ? sql`min` : typed[701](request.values.min) } , max = ${ (request.values === undefined || request.values.max === undefined) ? sql`max` : typed[701](request.values.max) } , df = ${ (request.values === undefined || request.values.df === undefined) ? sql`df` : typed[23](request.values.df) } , low_eb = ${ (request.values === undefined || request.values.lowEb === undefined) ? sql`low_eb` : typed[701](request.values.lowEb) } , up_eb = ${ (request.values === undefined || request.values.upEb === undefined) ? sql`up_eb` : typed[701](request.values.upEb) } , stat_cmt = ${ (request.values === undefined || request.values.statCmt === undefined) ? sql`stat_cmt` : typed[25](request.values.statCmt) } , cc = ${ (request.values === undefined || request.values.cc === undefined) ? sql`cc` : typed[1042](request.values.cc) } 
     WHERE
-      src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
+      src_cd = ${ (request.parameters === undefined || request.parameters.srcCd === undefined) ? sql`DEFAULT` : typed[23](request.parameters.srcCd) }
     RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
-},
+}
 async delete(parameters: Public.Types.NutDataSrcCdIdx, options?: Public.Types.NutDataSrcCdIdx.Options & Public.Tables.NutData.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -2442,7 +2450,7 @@ async delete(parameters: Public.Types.NutDataSrcCdIdx, options?: Public.Types.Nu
     DELETE FROM 
       public.nut_data 
     WHERE
-      src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
+      src_cd = ${ (request.parameters === undefined || request.parameters.srcCd === undefined) ? sql`DEFAULT` : typed[23](request.parameters.srcCd) }
     RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, {parameters, options});
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
@@ -2465,19 +2473,21 @@ async read(parameters: Public.Types.SrcCdPkey, options?: Public.Types.SrcCdPkey.
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.SrcCd, Public.Types.SrcCdPkey, never, Public.Types.SrcCdPkey.Options & Public.Tables.SrcCd.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       src_cd,srccd_desc 
     FROM
       public.src_cd 
     WHERE
-      src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
+      src_cd = ${ (request.parameters === undefined || request.parameters.srcCd === undefined) ? sql`DEFAULT` : typed[23](request.parameters.srcCd) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))[0]
+    `
+  return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.SrcCdPkey, values: Partial<Public.Tables.SrcCd.Values>, options?: Public.Types.SrcCdPkey.Options & Public.Tables.SrcCd.Options) : Promise<Public.Types.SrcCd>{
 
@@ -2490,12 +2500,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.src_cd 
     SET
-      src_cd = ${ values.srcCd === undefined ? sql`src_cd` : typed[23](values.srcCd) } , srccd_desc = ${ values.srccdDesc === undefined ? sql`srccd_desc` : typed[25](values.srccdDesc) } 
+      src_cd = ${ (request.values === undefined || request.values.srcCd === undefined) ? sql`src_cd` : typed[23](request.values.srcCd) } , srccd_desc = ${ (request.values === undefined || request.values.srccdDesc === undefined) ? sql`srccd_desc` : typed[25](request.values.srccdDesc) } 
     WHERE
-      src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
+      src_cd = ${ (request.parameters === undefined || request.parameters.srcCd === undefined) ? sql`DEFAULT` : typed[23](request.parameters.srcCd) }
     RETURNING src_cd,srccd_desc`, {parameters, values, options});
 return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))[0]
-},
+}
 async delete(parameters: Public.Types.SrcCdPkey, options?: Public.Types.SrcCdPkey.Options & Public.Tables.SrcCd.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -2504,7 +2514,7 @@ async delete(parameters: Public.Types.SrcCdPkey, options?: Public.Types.SrcCdPke
     DELETE FROM 
       public.src_cd 
     WHERE
-      src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
+      src_cd = ${ (request.parameters === undefined || request.parameters.srcCd === undefined) ? sql`DEFAULT` : typed[23](request.parameters.srcCd) }
     RETURNING src_cd,srccd_desc`, {parameters, options});
  return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))[0]
 }
@@ -2527,19 +2537,21 @@ async read(parameters: Public.Types.FootnoteNdbNoIdx, options?: Public.Types.Foo
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Footnote[], Public.Types.FootnoteNdbNoIdx, never, Public.Types.FootnoteNdbNoIdx.Options & Public.Tables.Footnote.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt 
     FROM
       public.footnote 
     WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+      ndb_no = ${ (request.parameters === undefined || request.parameters.ndbNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.ndbNo) } AND nutr_no = ${ (request.parameters === undefined || request.parameters.nutrNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.nutrNo) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))
+    `
+  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.FootnoteNdbNoIdx, values: Partial<Public.Tables.Footnote.Values>, options?: Public.Types.FootnoteNdbNoIdx.Options & Public.Tables.Footnote.Options) : Promise<Public.Types.Footnote[]>{
 
@@ -2552,12 +2564,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.footnote 
     SET
-      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , footnt_no = ${ values.footntNo === undefined ? sql`footnt_no` : typed[1042](values.footntNo) } , footnt_typ = ${ values.footntTyp === undefined ? sql`footnt_typ` : typed[1042](values.footntTyp) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , footnt_txt = ${ values.footntTxt === undefined ? sql`footnt_txt` : typed[25](values.footntTxt) } 
+      ndb_no = ${ (request.values === undefined || request.values.ndbNo === undefined) ? sql`ndb_no` : typed[1042](request.values.ndbNo) } , footnt_no = ${ (request.values === undefined || request.values.footntNo === undefined) ? sql`footnt_no` : typed[1042](request.values.footntNo) } , footnt_typ = ${ (request.values === undefined || request.values.footntTyp === undefined) ? sql`footnt_typ` : typed[1042](request.values.footntTyp) } , nutr_no = ${ (request.values === undefined || request.values.nutrNo === undefined) ? sql`nutr_no` : typed[1042](request.values.nutrNo) } , footnt_txt = ${ (request.values === undefined || request.values.footntTxt === undefined) ? sql`footnt_txt` : typed[25](request.values.footntTxt) } 
     WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+      ndb_no = ${ (request.parameters === undefined || request.parameters.ndbNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.ndbNo) } AND nutr_no = ${ (request.parameters === undefined || request.parameters.nutrNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.nutrNo) }
     RETURNING ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))
-},
+}
 async delete(parameters: Public.Types.FootnoteNdbNoIdx, options?: Public.Types.FootnoteNdbNoIdx.Options & Public.Tables.Footnote.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -2566,7 +2578,7 @@ async delete(parameters: Public.Types.FootnoteNdbNoIdx, options?: Public.Types.F
     DELETE FROM 
       public.footnote 
     WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+      ndb_no = ${ (request.parameters === undefined || request.parameters.ndbNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.ndbNo) } AND nutr_no = ${ (request.parameters === undefined || request.parameters.nutrNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.nutrNo) }
     RETURNING ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt`, {parameters, options});
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))
 }
@@ -2589,19 +2601,21 @@ async read(parameters: Public.Types.NutrDefPkey, options?: Public.Types.NutrDefP
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.NutrDef, Public.Types.NutrDefPkey, never, Public.Types.NutrDefPkey.Options & Public.Tables.NutrDef.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       nutr_no,units,tagname,nutrdesc,num_dec,sr_order 
     FROM
       public.nutr_def 
     WHERE
-      nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+      nutr_no = ${ (request.parameters === undefined || request.parameters.nutrNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.nutrNo) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))[0]
+    `
+  return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.NutrDefPkey, values: Partial<Public.Tables.NutrDef.Values>, options?: Public.Types.NutrDefPkey.Options & Public.Tables.NutrDef.Options) : Promise<Public.Types.NutrDef>{
 
@@ -2614,12 +2628,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.nutr_def 
     SET
-      nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , units = ${ values.units === undefined ? sql`units` : typed[25](values.units) } , tagname = ${ values.tagname === undefined ? sql`tagname` : typed[25](values.tagname) } , nutrdesc = ${ values.nutrdesc === undefined ? sql`nutrdesc` : typed[25](values.nutrdesc) } , num_dec = ${ values.numDec === undefined ? sql`num_dec` : typed[21](values.numDec) } , sr_order = ${ values.srOrder === undefined ? sql`sr_order` : typed[23](values.srOrder) } 
+      nutr_no = ${ (request.values === undefined || request.values.nutrNo === undefined) ? sql`nutr_no` : typed[1042](request.values.nutrNo) } , units = ${ (request.values === undefined || request.values.units === undefined) ? sql`units` : typed[25](request.values.units) } , tagname = ${ (request.values === undefined || request.values.tagname === undefined) ? sql`tagname` : typed[25](request.values.tagname) } , nutrdesc = ${ (request.values === undefined || request.values.nutrdesc === undefined) ? sql`nutrdesc` : typed[25](request.values.nutrdesc) } , num_dec = ${ (request.values === undefined || request.values.numDec === undefined) ? sql`num_dec` : typed[21](request.values.numDec) } , sr_order = ${ (request.values === undefined || request.values.srOrder === undefined) ? sql`sr_order` : typed[23](request.values.srOrder) } 
     WHERE
-      nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+      nutr_no = ${ (request.parameters === undefined || request.parameters.nutrNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.nutrNo) }
     RETURNING nutr_no,units,tagname,nutrdesc,num_dec,sr_order`, {parameters, values, options});
 return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))[0]
-},
+}
 async delete(parameters: Public.Types.NutrDefPkey, options?: Public.Types.NutrDefPkey.Options & Public.Tables.NutrDef.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -2628,7 +2642,7 @@ async delete(parameters: Public.Types.NutrDefPkey, options?: Public.Types.NutrDe
     DELETE FROM 
       public.nutr_def 
     WHERE
-      nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
+      nutr_no = ${ (request.parameters === undefined || request.parameters.nutrNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.nutrNo) }
     RETURNING nutr_no,units,tagname,nutrdesc,num_dec,sr_order`, {parameters, options});
  return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))[0]
 }
@@ -2651,19 +2665,21 @@ async read(parameters: Public.Types.DerivCdPkey, options?: Public.Types.DerivCdP
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.DerivCd, Public.Types.DerivCdPkey, never, Public.Types.DerivCdPkey.Options & Public.Tables.DerivCd.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       deriv_cd,derivcd_desc 
     FROM
       public.deriv_cd 
     WHERE
-      deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
+      deriv_cd = ${ (request.parameters === undefined || request.parameters.derivCd === undefined) ? sql`DEFAULT` : typed[25](request.parameters.derivCd) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))[0]
+    `
+  return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.DerivCdPkey, values: Partial<Public.Tables.DerivCd.Values>, options?: Public.Types.DerivCdPkey.Options & Public.Tables.DerivCd.Options) : Promise<Public.Types.DerivCd>{
 
@@ -2676,12 +2692,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.deriv_cd 
     SET
-      deriv_cd = ${ values.derivCd === undefined ? sql`deriv_cd` : typed[25](values.derivCd) } , derivcd_desc = ${ values.derivcdDesc === undefined ? sql`derivcd_desc` : typed[25](values.derivcdDesc) } 
+      deriv_cd = ${ (request.values === undefined || request.values.derivCd === undefined) ? sql`deriv_cd` : typed[25](request.values.derivCd) } , derivcd_desc = ${ (request.values === undefined || request.values.derivcdDesc === undefined) ? sql`derivcd_desc` : typed[25](request.values.derivcdDesc) } 
     WHERE
-      deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
+      deriv_cd = ${ (request.parameters === undefined || request.parameters.derivCd === undefined) ? sql`DEFAULT` : typed[25](request.parameters.derivCd) }
     RETURNING deriv_cd,derivcd_desc`, {parameters, values, options});
 return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))[0]
-},
+}
 async delete(parameters: Public.Types.DerivCdPkey, options?: Public.Types.DerivCdPkey.Options & Public.Tables.DerivCd.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -2690,7 +2706,7 @@ async delete(parameters: Public.Types.DerivCdPkey, options?: Public.Types.DerivC
     DELETE FROM 
       public.deriv_cd 
     WHERE
-      deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
+      deriv_cd = ${ (request.parameters === undefined || request.parameters.derivCd === undefined) ? sql`DEFAULT` : typed[25](request.parameters.derivCd) }
     RETURNING deriv_cd,derivcd_desc`, {parameters, options});
  return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))[0]
 }
@@ -2713,19 +2729,21 @@ async read(parameters: Public.Types.FdGroupPkey, options?: Public.Types.FdGroupP
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.FdGroup, Public.Types.FdGroupPkey, never, Public.Types.FdGroupPkey.Options & Public.Tables.FdGroup.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       fdgrp_cd,fddrp_desc 
     FROM
       public.fd_group 
     WHERE
-      fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
+      fdgrp_cd = ${ (request.parameters === undefined || request.parameters.fdgrpCd === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.fdgrpCd) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))[0]
+    `
+  return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.FdGroupPkey, values: Partial<Public.Tables.FdGroup.Values>, options?: Public.Types.FdGroupPkey.Options & Public.Tables.FdGroup.Options) : Promise<Public.Types.FdGroup>{
 
@@ -2738,12 +2756,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.fd_group 
     SET
-      fdgrp_cd = ${ values.fdgrpCd === undefined ? sql`fdgrp_cd` : typed[1042](values.fdgrpCd) } , fddrp_desc = ${ values.fddrpDesc === undefined ? sql`fddrp_desc` : typed[25](values.fddrpDesc) } 
+      fdgrp_cd = ${ (request.values === undefined || request.values.fdgrpCd === undefined) ? sql`fdgrp_cd` : typed[1042](request.values.fdgrpCd) } , fddrp_desc = ${ (request.values === undefined || request.values.fddrpDesc === undefined) ? sql`fddrp_desc` : typed[25](request.values.fddrpDesc) } 
     WHERE
-      fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
+      fdgrp_cd = ${ (request.parameters === undefined || request.parameters.fdgrpCd === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.fdgrpCd) }
     RETURNING fdgrp_cd,fddrp_desc`, {parameters, values, options});
 return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))[0]
-},
+}
 async delete(parameters: Public.Types.FdGroupPkey, options?: Public.Types.FdGroupPkey.Options & Public.Tables.FdGroup.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -2752,7 +2770,7 @@ async delete(parameters: Public.Types.FdGroupPkey, options?: Public.Types.FdGrou
     DELETE FROM 
       public.fd_group 
     WHERE
-      fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
+      fdgrp_cd = ${ (request.parameters === undefined || request.parameters.fdgrpCd === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.fdgrpCd) }
     RETURNING fdgrp_cd,fddrp_desc`, {parameters, options});
  return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))[0]
 }
@@ -2775,19 +2793,21 @@ async read(parameters: Public.Types.WeightPkey, options?: Public.Types.WeightPke
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Weight, Public.Types.WeightPkey, never, Public.Types.WeightPkey.Options & Public.Tables.Weight.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev 
     FROM
       public.weight 
     WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND seq = ${ parameters.seq === undefined ? sql`DEFAULT` : typed[1042](parameters.seq) }
+      ndb_no = ${ (request.parameters === undefined || request.parameters.ndbNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.ndbNo) } AND seq = ${ (request.parameters === undefined || request.parameters.seq === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.seq) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))[0]
+    `
+  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.WeightPkey, values: Partial<Public.Tables.Weight.Values>, options?: Public.Types.WeightPkey.Options & Public.Tables.Weight.Options) : Promise<Public.Types.Weight>{
 
@@ -2800,12 +2820,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.weight 
     SET
-      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , seq = ${ values.seq === undefined ? sql`seq` : typed[1042](values.seq) } , amount = ${ values.amount === undefined ? sql`amount` : typed[701](values.amount) } , msre_desc = ${ values.msreDesc === undefined ? sql`msre_desc` : typed[25](values.msreDesc) } , gm_wgt = ${ values.gmWgt === undefined ? sql`gm_wgt` : typed[701](values.gmWgt) } , num_data_pts = ${ values.numDataPts === undefined ? sql`num_data_pts` : typed[23](values.numDataPts) } , std_dev = ${ values.stdDev === undefined ? sql`std_dev` : typed[701](values.stdDev) } 
+      ndb_no = ${ (request.values === undefined || request.values.ndbNo === undefined) ? sql`ndb_no` : typed[1042](request.values.ndbNo) } , seq = ${ (request.values === undefined || request.values.seq === undefined) ? sql`seq` : typed[1042](request.values.seq) } , amount = ${ (request.values === undefined || request.values.amount === undefined) ? sql`amount` : typed[701](request.values.amount) } , msre_desc = ${ (request.values === undefined || request.values.msreDesc === undefined) ? sql`msre_desc` : typed[25](request.values.msreDesc) } , gm_wgt = ${ (request.values === undefined || request.values.gmWgt === undefined) ? sql`gm_wgt` : typed[701](request.values.gmWgt) } , num_data_pts = ${ (request.values === undefined || request.values.numDataPts === undefined) ? sql`num_data_pts` : typed[23](request.values.numDataPts) } , std_dev = ${ (request.values === undefined || request.values.stdDev === undefined) ? sql`std_dev` : typed[701](request.values.stdDev) } 
     WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND seq = ${ parameters.seq === undefined ? sql`DEFAULT` : typed[1042](parameters.seq) }
+      ndb_no = ${ (request.parameters === undefined || request.parameters.ndbNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.ndbNo) } AND seq = ${ (request.parameters === undefined || request.parameters.seq === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.seq) }
     RETURNING ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))[0]
-},
+}
 async delete(parameters: Public.Types.WeightPkey, options?: Public.Types.WeightPkey.Options & Public.Tables.Weight.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -2814,7 +2834,7 @@ async delete(parameters: Public.Types.WeightPkey, options?: Public.Types.WeightP
     DELETE FROM 
       public.weight 
     WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND seq = ${ parameters.seq === undefined ? sql`DEFAULT` : typed[1042](parameters.seq) }
+      ndb_no = ${ (request.parameters === undefined || request.parameters.ndbNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.ndbNo) } AND seq = ${ (request.parameters === undefined || request.parameters.seq === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.seq) }
     RETURNING ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev`, {parameters, options});
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))[0]
 }
@@ -2837,19 +2857,21 @@ async read(parameters: Public.Types.FoodDesPkey, options?: Public.Types.FoodDesP
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.FoodDes, Public.Types.FoodDesPkey, never, Public.Types.FoodDesPkey.Options & Public.Tables.FoodDes.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor 
     FROM
       public.food_des 
     WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) }
+      ndb_no = ${ (request.parameters === undefined || request.parameters.ndbNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.ndbNo) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))[0]
+    `
+  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.FoodDesPkey, values: Partial<Public.Tables.FoodDes.Values>, options?: Public.Types.FoodDesPkey.Options & Public.Tables.FoodDes.Options) : Promise<Public.Types.FoodDes>{
 
@@ -2862,12 +2884,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.food_des 
     SET
-      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , fdgrp_cd = ${ values.fdgrpCd === undefined ? sql`fdgrp_cd` : typed[1042](values.fdgrpCd) } , long_desc = ${ values.longDesc === undefined ? sql`long_desc` : typed[25](values.longDesc) } , shrt_desc = ${ values.shrtDesc === undefined ? sql`shrt_desc` : typed[25](values.shrtDesc) } , comname = ${ values.comname === undefined ? sql`comname` : typed[25](values.comname) } , manufacname = ${ values.manufacname === undefined ? sql`manufacname` : typed[25](values.manufacname) } , survey = ${ values.survey === undefined ? sql`survey` : typed[1042](values.survey) } , ref_desc = ${ values.refDesc === undefined ? sql`ref_desc` : typed[25](values.refDesc) } , refuse = ${ values.refuse === undefined ? sql`refuse` : typed[23](values.refuse) } , sciname = ${ values.sciname === undefined ? sql`sciname` : typed[25](values.sciname) } , n_factor = ${ values.nFactor === undefined ? sql`n_factor` : typed[701](values.nFactor) } , pro_factor = ${ values.proFactor === undefined ? sql`pro_factor` : typed[701](values.proFactor) } , fat_factor = ${ values.fatFactor === undefined ? sql`fat_factor` : typed[701](values.fatFactor) } , cho_factor = ${ values.choFactor === undefined ? sql`cho_factor` : typed[701](values.choFactor) } 
+      ndb_no = ${ (request.values === undefined || request.values.ndbNo === undefined) ? sql`ndb_no` : typed[1042](request.values.ndbNo) } , fdgrp_cd = ${ (request.values === undefined || request.values.fdgrpCd === undefined) ? sql`fdgrp_cd` : typed[1042](request.values.fdgrpCd) } , long_desc = ${ (request.values === undefined || request.values.longDesc === undefined) ? sql`long_desc` : typed[25](request.values.longDesc) } , shrt_desc = ${ (request.values === undefined || request.values.shrtDesc === undefined) ? sql`shrt_desc` : typed[25](request.values.shrtDesc) } , comname = ${ (request.values === undefined || request.values.comname === undefined) ? sql`comname` : typed[25](request.values.comname) } , manufacname = ${ (request.values === undefined || request.values.manufacname === undefined) ? sql`manufacname` : typed[25](request.values.manufacname) } , survey = ${ (request.values === undefined || request.values.survey === undefined) ? sql`survey` : typed[1042](request.values.survey) } , ref_desc = ${ (request.values === undefined || request.values.refDesc === undefined) ? sql`ref_desc` : typed[25](request.values.refDesc) } , refuse = ${ (request.values === undefined || request.values.refuse === undefined) ? sql`refuse` : typed[23](request.values.refuse) } , sciname = ${ (request.values === undefined || request.values.sciname === undefined) ? sql`sciname` : typed[25](request.values.sciname) } , n_factor = ${ (request.values === undefined || request.values.nFactor === undefined) ? sql`n_factor` : typed[701](request.values.nFactor) } , pro_factor = ${ (request.values === undefined || request.values.proFactor === undefined) ? sql`pro_factor` : typed[701](request.values.proFactor) } , fat_factor = ${ (request.values === undefined || request.values.fatFactor === undefined) ? sql`fat_factor` : typed[701](request.values.fatFactor) } , cho_factor = ${ (request.values === undefined || request.values.choFactor === undefined) ? sql`cho_factor` : typed[701](request.values.choFactor) } 
     WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) }
+      ndb_no = ${ (request.parameters === undefined || request.parameters.ndbNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.ndbNo) }
     RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))[0]
-},
+}
 async delete(parameters: Public.Types.FoodDesPkey, options?: Public.Types.FoodDesPkey.Options & Public.Tables.FoodDes.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -2876,7 +2898,7 @@ async delete(parameters: Public.Types.FoodDesPkey, options?: Public.Types.FoodDe
     DELETE FROM 
       public.food_des 
     WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) }
+      ndb_no = ${ (request.parameters === undefined || request.parameters.ndbNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.ndbNo) }
     RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`, {parameters, options});
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))[0]
 }
@@ -2897,19 +2919,21 @@ async read(parameters: Public.Types.FoodDesFdgrpCdIdx, options?: Public.Types.Fo
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.FoodDes[], Public.Types.FoodDesFdgrpCdIdx, never, Public.Types.FoodDesFdgrpCdIdx.Options & Public.Tables.FoodDes.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor 
     FROM
       public.food_des 
     WHERE
-      fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
+      fdgrp_cd = ${ (request.parameters === undefined || request.parameters.fdgrpCd === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.fdgrpCd) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))
+    `
+  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.FoodDesFdgrpCdIdx, values: Partial<Public.Tables.FoodDes.Values>, options?: Public.Types.FoodDesFdgrpCdIdx.Options & Public.Tables.FoodDes.Options) : Promise<Public.Types.FoodDes[]>{
 
@@ -2922,12 +2946,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.food_des 
     SET
-      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , fdgrp_cd = ${ values.fdgrpCd === undefined ? sql`fdgrp_cd` : typed[1042](values.fdgrpCd) } , long_desc = ${ values.longDesc === undefined ? sql`long_desc` : typed[25](values.longDesc) } , shrt_desc = ${ values.shrtDesc === undefined ? sql`shrt_desc` : typed[25](values.shrtDesc) } , comname = ${ values.comname === undefined ? sql`comname` : typed[25](values.comname) } , manufacname = ${ values.manufacname === undefined ? sql`manufacname` : typed[25](values.manufacname) } , survey = ${ values.survey === undefined ? sql`survey` : typed[1042](values.survey) } , ref_desc = ${ values.refDesc === undefined ? sql`ref_desc` : typed[25](values.refDesc) } , refuse = ${ values.refuse === undefined ? sql`refuse` : typed[23](values.refuse) } , sciname = ${ values.sciname === undefined ? sql`sciname` : typed[25](values.sciname) } , n_factor = ${ values.nFactor === undefined ? sql`n_factor` : typed[701](values.nFactor) } , pro_factor = ${ values.proFactor === undefined ? sql`pro_factor` : typed[701](values.proFactor) } , fat_factor = ${ values.fatFactor === undefined ? sql`fat_factor` : typed[701](values.fatFactor) } , cho_factor = ${ values.choFactor === undefined ? sql`cho_factor` : typed[701](values.choFactor) } 
+      ndb_no = ${ (request.values === undefined || request.values.ndbNo === undefined) ? sql`ndb_no` : typed[1042](request.values.ndbNo) } , fdgrp_cd = ${ (request.values === undefined || request.values.fdgrpCd === undefined) ? sql`fdgrp_cd` : typed[1042](request.values.fdgrpCd) } , long_desc = ${ (request.values === undefined || request.values.longDesc === undefined) ? sql`long_desc` : typed[25](request.values.longDesc) } , shrt_desc = ${ (request.values === undefined || request.values.shrtDesc === undefined) ? sql`shrt_desc` : typed[25](request.values.shrtDesc) } , comname = ${ (request.values === undefined || request.values.comname === undefined) ? sql`comname` : typed[25](request.values.comname) } , manufacname = ${ (request.values === undefined || request.values.manufacname === undefined) ? sql`manufacname` : typed[25](request.values.manufacname) } , survey = ${ (request.values === undefined || request.values.survey === undefined) ? sql`survey` : typed[1042](request.values.survey) } , ref_desc = ${ (request.values === undefined || request.values.refDesc === undefined) ? sql`ref_desc` : typed[25](request.values.refDesc) } , refuse = ${ (request.values === undefined || request.values.refuse === undefined) ? sql`refuse` : typed[23](request.values.refuse) } , sciname = ${ (request.values === undefined || request.values.sciname === undefined) ? sql`sciname` : typed[25](request.values.sciname) } , n_factor = ${ (request.values === undefined || request.values.nFactor === undefined) ? sql`n_factor` : typed[701](request.values.nFactor) } , pro_factor = ${ (request.values === undefined || request.values.proFactor === undefined) ? sql`pro_factor` : typed[701](request.values.proFactor) } , fat_factor = ${ (request.values === undefined || request.values.fatFactor === undefined) ? sql`fat_factor` : typed[701](request.values.fatFactor) } , cho_factor = ${ (request.values === undefined || request.values.choFactor === undefined) ? sql`cho_factor` : typed[701](request.values.choFactor) } 
     WHERE
-      fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
+      fdgrp_cd = ${ (request.parameters === undefined || request.parameters.fdgrpCd === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.fdgrpCd) }
     RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))
-},
+}
 async delete(parameters: Public.Types.FoodDesFdgrpCdIdx, options?: Public.Types.FoodDesFdgrpCdIdx.Options & Public.Tables.FoodDes.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -2936,7 +2960,7 @@ async delete(parameters: Public.Types.FoodDesFdgrpCdIdx, options?: Public.Types.
     DELETE FROM 
       public.food_des 
     WHERE
-      fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
+      fdgrp_cd = ${ (request.parameters === undefined || request.parameters.fdgrpCd === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.fdgrpCd) }
     RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`, {parameters, options});
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))
 }
@@ -2959,19 +2983,21 @@ async read(parameters: Public.Types.DataSrcTitleFulltext, options?: Public.Types
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.DataSrc[], Public.Types.DataSrcTitleFulltext, never, Public.Types.DataSrcTitleFulltext.Options & Public.Tables.DataSrc.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page 
     FROM
       public.data_src 
     WHERE
-      title @@ ${sql.unsafe(`${options?.title?.queryParser ?? "to_tsquery"}`)}(${options?.title?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.title === undefined ? sql`DEFAULT` : typed[3614](parameters.title) })
+      title @@ ${sql.unsafe(`${request.options?.title?.queryParser ?? "to_tsquery"}`)}(${request.options?.title?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ (request.parameters === undefined || request.parameters.title === undefined) ? sql`DEFAULT` : typed[3614](request.parameters.title) })
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
+    `
+  return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.DataSrcTitleFulltext, values: Partial<Public.Tables.DataSrc.Values>, options?: Public.Types.DataSrcTitleFulltext.Options & Public.Tables.DataSrc.Options) : Promise<Public.Types.DataSrc[]>{
 
@@ -2984,12 +3010,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.data_src 
     SET
-      datasrc_id = ${ values.datasrcId === undefined ? sql`datasrc_id` : typed[1042](values.datasrcId) } , authors = ${ values.authors === undefined ? sql`authors` : typed[25](values.authors) } , title = ${ values.title === undefined ? sql`title` : typed[25](values.title) } , year = ${ values.year === undefined ? sql`year` : typed[23](values.year) } , journal = ${ values.journal === undefined ? sql`journal` : typed[25](values.journal) } , vol_city = ${ values.volCity === undefined ? sql`vol_city` : typed[25](values.volCity) } , issue_state = ${ values.issueState === undefined ? sql`issue_state` : typed[25](values.issueState) } , start_page = ${ values.startPage === undefined ? sql`start_page` : typed[25](values.startPage) } , end_page = ${ values.endPage === undefined ? sql`end_page` : typed[25](values.endPage) } 
+      datasrc_id = ${ (request.values === undefined || request.values.datasrcId === undefined) ? sql`datasrc_id` : typed[1042](request.values.datasrcId) } , authors = ${ (request.values === undefined || request.values.authors === undefined) ? sql`authors` : typed[25](request.values.authors) } , title = ${ (request.values === undefined || request.values.title === undefined) ? sql`title` : typed[25](request.values.title) } , year = ${ (request.values === undefined || request.values.year === undefined) ? sql`year` : typed[23](request.values.year) } , journal = ${ (request.values === undefined || request.values.journal === undefined) ? sql`journal` : typed[25](request.values.journal) } , vol_city = ${ (request.values === undefined || request.values.volCity === undefined) ? sql`vol_city` : typed[25](request.values.volCity) } , issue_state = ${ (request.values === undefined || request.values.issueState === undefined) ? sql`issue_state` : typed[25](request.values.issueState) } , start_page = ${ (request.values === undefined || request.values.startPage === undefined) ? sql`start_page` : typed[25](request.values.startPage) } , end_page = ${ (request.values === undefined || request.values.endPage === undefined) ? sql`end_page` : typed[25](request.values.endPage) } 
     WHERE
-      title @@ ${sql.unsafe(`${options?.title?.queryParser ?? "to_tsquery"}`)}(${options?.title?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.title === undefined ? sql`DEFAULT` : typed[3614](parameters.title) })
+      title @@ ${sql.unsafe(`${request.options?.title?.queryParser ?? "to_tsquery"}`)}(${request.options?.title?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ (request.parameters === undefined || request.parameters.title === undefined) ? sql`DEFAULT` : typed[3614](request.parameters.title) })
     RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`, {parameters, values, options});
 return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
-},
+}
 async delete(parameters: Public.Types.DataSrcTitleFulltext, options?: Public.Types.DataSrcTitleFulltext.Options & Public.Tables.DataSrc.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -2998,7 +3024,7 @@ async delete(parameters: Public.Types.DataSrcTitleFulltext, options?: Public.Typ
     DELETE FROM 
       public.data_src 
     WHERE
-      title @@ ${sql.unsafe(`${options?.title?.queryParser ?? "to_tsquery"}`)}(${options?.title?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.title === undefined ? sql`DEFAULT` : typed[3614](parameters.title) })
+      title @@ ${sql.unsafe(`${request.options?.title?.queryParser ?? "to_tsquery"}`)}(${request.options?.title?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ (request.parameters === undefined || request.parameters.title === undefined) ? sql`DEFAULT` : typed[3614](request.parameters.title) })
     RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`, {parameters, options});
  return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
 }
@@ -3019,19 +3045,21 @@ async read(parameters: Public.Types.DataSrcPkey, options?: Public.Types.DataSrcP
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.DataSrc, Public.Types.DataSrcPkey, never, Public.Types.DataSrcPkey.Options & Public.Tables.DataSrc.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page 
     FROM
       public.data_src 
     WHERE
-      datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
+      datasrc_id = ${ (request.parameters === undefined || request.parameters.datasrcId === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.datasrcId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))[0]
+    `
+  return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.DataSrcPkey, values: Partial<Public.Tables.DataSrc.Values>, options?: Public.Types.DataSrcPkey.Options & Public.Tables.DataSrc.Options) : Promise<Public.Types.DataSrc>{
 
@@ -3044,12 +3072,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.data_src 
     SET
-      datasrc_id = ${ values.datasrcId === undefined ? sql`datasrc_id` : typed[1042](values.datasrcId) } , authors = ${ values.authors === undefined ? sql`authors` : typed[25](values.authors) } , title = ${ values.title === undefined ? sql`title` : typed[25](values.title) } , year = ${ values.year === undefined ? sql`year` : typed[23](values.year) } , journal = ${ values.journal === undefined ? sql`journal` : typed[25](values.journal) } , vol_city = ${ values.volCity === undefined ? sql`vol_city` : typed[25](values.volCity) } , issue_state = ${ values.issueState === undefined ? sql`issue_state` : typed[25](values.issueState) } , start_page = ${ values.startPage === undefined ? sql`start_page` : typed[25](values.startPage) } , end_page = ${ values.endPage === undefined ? sql`end_page` : typed[25](values.endPage) } 
+      datasrc_id = ${ (request.values === undefined || request.values.datasrcId === undefined) ? sql`datasrc_id` : typed[1042](request.values.datasrcId) } , authors = ${ (request.values === undefined || request.values.authors === undefined) ? sql`authors` : typed[25](request.values.authors) } , title = ${ (request.values === undefined || request.values.title === undefined) ? sql`title` : typed[25](request.values.title) } , year = ${ (request.values === undefined || request.values.year === undefined) ? sql`year` : typed[23](request.values.year) } , journal = ${ (request.values === undefined || request.values.journal === undefined) ? sql`journal` : typed[25](request.values.journal) } , vol_city = ${ (request.values === undefined || request.values.volCity === undefined) ? sql`vol_city` : typed[25](request.values.volCity) } , issue_state = ${ (request.values === undefined || request.values.issueState === undefined) ? sql`issue_state` : typed[25](request.values.issueState) } , start_page = ${ (request.values === undefined || request.values.startPage === undefined) ? sql`start_page` : typed[25](request.values.startPage) } , end_page = ${ (request.values === undefined || request.values.endPage === undefined) ? sql`end_page` : typed[25](request.values.endPage) } 
     WHERE
-      datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
+      datasrc_id = ${ (request.parameters === undefined || request.parameters.datasrcId === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.datasrcId) }
     RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`, {parameters, values, options});
 return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))[0]
-},
+}
 async delete(parameters: Public.Types.DataSrcPkey, options?: Public.Types.DataSrcPkey.Options & Public.Tables.DataSrc.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3058,7 +3086,7 @@ async delete(parameters: Public.Types.DataSrcPkey, options?: Public.Types.DataSr
     DELETE FROM 
       public.data_src 
     WHERE
-      datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
+      datasrc_id = ${ (request.parameters === undefined || request.parameters.datasrcId === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.datasrcId) }
     RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`, {parameters, options});
  return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))[0]
 }
@@ -3081,19 +3109,21 @@ async read(parameters: Public.Types.DatsrclnPkey, options?: Public.Types.Datsrcl
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Datsrcln, Public.Types.DatsrclnPkey, never, Public.Types.DatsrclnPkey.Options & Public.Tables.Datsrcln.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       ndb_no,nutr_no,datasrc_id 
     FROM
       public.datsrcln 
     WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) } AND datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
+      ndb_no = ${ (request.parameters === undefined || request.parameters.ndbNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.ndbNo) } AND nutr_no = ${ (request.parameters === undefined || request.parameters.nutrNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.nutrNo) } AND datasrc_id = ${ (request.parameters === undefined || request.parameters.datasrcId === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.datasrcId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))[0]
+    `
+  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.DatsrclnPkey, values: Partial<Public.Tables.Datsrcln.Values>, options?: Public.Types.DatsrclnPkey.Options & Public.Tables.Datsrcln.Options) : Promise<Public.Types.Datsrcln>{
 
@@ -3106,12 +3136,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.datsrcln 
     SET
-      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , datasrc_id = ${ values.datasrcId === undefined ? sql`datasrc_id` : typed[1042](values.datasrcId) } 
+      ndb_no = ${ (request.values === undefined || request.values.ndbNo === undefined) ? sql`ndb_no` : typed[1042](request.values.ndbNo) } , nutr_no = ${ (request.values === undefined || request.values.nutrNo === undefined) ? sql`nutr_no` : typed[1042](request.values.nutrNo) } , datasrc_id = ${ (request.values === undefined || request.values.datasrcId === undefined) ? sql`datasrc_id` : typed[1042](request.values.datasrcId) } 
     WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) } AND datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
+      ndb_no = ${ (request.parameters === undefined || request.parameters.ndbNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.ndbNo) } AND nutr_no = ${ (request.parameters === undefined || request.parameters.nutrNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.nutrNo) } AND datasrc_id = ${ (request.parameters === undefined || request.parameters.datasrcId === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.datasrcId) }
     RETURNING ndb_no,nutr_no,datasrc_id`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))[0]
-},
+}
 async delete(parameters: Public.Types.DatsrclnPkey, options?: Public.Types.DatsrclnPkey.Options & Public.Tables.Datsrcln.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3120,7 +3150,7 @@ async delete(parameters: Public.Types.DatsrclnPkey, options?: Public.Types.Datsr
     DELETE FROM 
       public.datsrcln 
     WHERE
-      ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) } AND datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
+      ndb_no = ${ (request.parameters === undefined || request.parameters.ndbNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.ndbNo) } AND nutr_no = ${ (request.parameters === undefined || request.parameters.nutrNo === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.nutrNo) } AND datasrc_id = ${ (request.parameters === undefined || request.parameters.datasrcId === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.datasrcId) }
     RETURNING ndb_no,nutr_no,datasrc_id`, {parameters, options});
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))[0]
 }
@@ -3141,19 +3171,21 @@ async read(parameters: Public.Types.DatsrclnDatasrcIdIdx, options?: Public.Types
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Datsrcln[], Public.Types.DatsrclnDatasrcIdIdx, never, Public.Types.DatsrclnDatasrcIdIdx.Options & Public.Tables.Datsrcln.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       ndb_no,nutr_no,datasrc_id 
     FROM
       public.datsrcln 
     WHERE
-      datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
+      datasrc_id = ${ (request.parameters === undefined || request.parameters.datasrcId === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.datasrcId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))
+    `
+  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.DatsrclnDatasrcIdIdx, values: Partial<Public.Tables.Datsrcln.Values>, options?: Public.Types.DatsrclnDatasrcIdIdx.Options & Public.Tables.Datsrcln.Options) : Promise<Public.Types.Datsrcln[]>{
 
@@ -3166,12 +3198,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.datsrcln 
     SET
-      ndb_no = ${ values.ndbNo === undefined ? sql`ndb_no` : typed[1042](values.ndbNo) } , nutr_no = ${ values.nutrNo === undefined ? sql`nutr_no` : typed[1042](values.nutrNo) } , datasrc_id = ${ values.datasrcId === undefined ? sql`datasrc_id` : typed[1042](values.datasrcId) } 
+      ndb_no = ${ (request.values === undefined || request.values.ndbNo === undefined) ? sql`ndb_no` : typed[1042](request.values.ndbNo) } , nutr_no = ${ (request.values === undefined || request.values.nutrNo === undefined) ? sql`nutr_no` : typed[1042](request.values.nutrNo) } , datasrc_id = ${ (request.values === undefined || request.values.datasrcId === undefined) ? sql`datasrc_id` : typed[1042](request.values.datasrcId) } 
     WHERE
-      datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
+      datasrc_id = ${ (request.parameters === undefined || request.parameters.datasrcId === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.datasrcId) }
     RETURNING ndb_no,nutr_no,datasrc_id`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))
-},
+}
 async delete(parameters: Public.Types.DatsrclnDatasrcIdIdx, options?: Public.Types.DatsrclnDatasrcIdIdx.Options & Public.Tables.Datsrcln.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3180,7 +3212,7 @@ async delete(parameters: Public.Types.DatsrclnDatasrcIdIdx, options?: Public.Typ
     DELETE FROM 
       public.datsrcln 
     WHERE
-      datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
+      datasrc_id = ${ (request.parameters === undefined || request.parameters.datasrcId === undefined) ? sql`DEFAULT` : typed[1042](request.parameters.datasrcId) }
     RETURNING ndb_no,nutr_no,datasrc_id`, {parameters, options});
  return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))
 }
@@ -13762,47 +13794,47 @@ export type PrimaryKey = Public.Types.DatsrclnPkey;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_48426Index = {
+export type PgToast_50576Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_48435Index = {
+export type PgToast_50585Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_48440Index = {
+export type PgToast_50590Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_48445Index = {
+export type PgToast_50595Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_48450Index = {
+export type PgToast_50600Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_48455Index = {
+export type PgToast_50605Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_48460Index = {
+export type PgToast_50610Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_48465Index = {
+export type PgToast_50615Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_48470Index = {
+export type PgToast_50620Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -26571,11 +26603,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_48426Index {
+export namespace PgToast_50576Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_48426Index.is(from)) {
+if (PgToast.Types.PgToast_50576Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26586,11 +26618,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_48435Index {
+export namespace PgToast_50585Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_48435Index.is(from)) {
+if (PgToast.Types.PgToast_50585Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26601,11 +26633,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_48440Index {
+export namespace PgToast_50590Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_48440Index.is(from)) {
+if (PgToast.Types.PgToast_50590Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26616,11 +26648,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_48445Index {
+export namespace PgToast_50595Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_48445Index.is(from)) {
+if (PgToast.Types.PgToast_50595Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26631,11 +26663,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_48450Index {
+export namespace PgToast_50600Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_48450Index.is(from)) {
+if (PgToast.Types.PgToast_50600Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26646,11 +26678,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_48455Index {
+export namespace PgToast_50605Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_48455Index.is(from)) {
+if (PgToast.Types.PgToast_50605Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26661,11 +26693,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_48460Index {
+export namespace PgToast_50610Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_48460Index.is(from)) {
+if (PgToast.Types.PgToast_50610Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26676,11 +26708,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_48465Index {
+export namespace PgToast_50615Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_48465Index.is(from)) {
+if (PgToast.Types.PgToast_50615Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -26691,11 +26723,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_48470Index {
+export namespace PgToast_50620Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_48470Index.is(from)) {
+if (PgToast.Types.PgToast_50620Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -32718,72 +32750,72 @@ export namespace Datsrcln {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_48426Index {
-export function is(value: any) : value is PgToast.Types.PgToast_48426Index {
+export namespace PgToast_50576Index {
+export function is(value: any) : value is PgToast.Types.PgToast_50576Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_48435Index {
-export function is(value: any) : value is PgToast.Types.PgToast_48435Index {
+export namespace PgToast_50585Index {
+export function is(value: any) : value is PgToast.Types.PgToast_50585Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_48440Index {
-export function is(value: any) : value is PgToast.Types.PgToast_48440Index {
+export namespace PgToast_50590Index {
+export function is(value: any) : value is PgToast.Types.PgToast_50590Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_48445Index {
-export function is(value: any) : value is PgToast.Types.PgToast_48445Index {
+export namespace PgToast_50595Index {
+export function is(value: any) : value is PgToast.Types.PgToast_50595Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_48450Index {
-export function is(value: any) : value is PgToast.Types.PgToast_48450Index {
+export namespace PgToast_50600Index {
+export function is(value: any) : value is PgToast.Types.PgToast_50600Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_48455Index {
-export function is(value: any) : value is PgToast.Types.PgToast_48455Index {
+export namespace PgToast_50605Index {
+export function is(value: any) : value is PgToast.Types.PgToast_50605Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_48460Index {
-export function is(value: any) : value is PgToast.Types.PgToast_48460Index {
+export namespace PgToast_50610Index {
+export function is(value: any) : value is PgToast.Types.PgToast_50610Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_48465Index {
-export function is(value: any) : value is PgToast.Types.PgToast_48465Index {
+export namespace PgToast_50615Index {
+export function is(value: any) : value is PgToast.Types.PgToast_50615Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_48470Index {
-export function is(value: any) : value is PgToast.Types.PgToast_48470Index {
+export namespace PgToast_50620Index {
+export function is(value: any) : value is PgToast.Types.PgToast_50620Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -37138,48 +37170,48 @@ export namespace Datsrcln {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_48426Index {
- export function equals(l: PgToast.Types.PgToast_48426Index|undefined, r: unknown) {
+export namespace PgToast_50576Index {
+ export function equals(l: PgToast.Types.PgToast_50576Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_48435Index {
- export function equals(l: PgToast.Types.PgToast_48435Index|undefined, r: unknown) {
+export namespace PgToast_50585Index {
+ export function equals(l: PgToast.Types.PgToast_50585Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_48440Index {
- export function equals(l: PgToast.Types.PgToast_48440Index|undefined, r: unknown) {
+export namespace PgToast_50590Index {
+ export function equals(l: PgToast.Types.PgToast_50590Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_48445Index {
- export function equals(l: PgToast.Types.PgToast_48445Index|undefined, r: unknown) {
+export namespace PgToast_50595Index {
+ export function equals(l: PgToast.Types.PgToast_50595Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_48450Index {
- export function equals(l: PgToast.Types.PgToast_48450Index|undefined, r: unknown) {
+export namespace PgToast_50600Index {
+ export function equals(l: PgToast.Types.PgToast_50600Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_48455Index {
- export function equals(l: PgToast.Types.PgToast_48455Index|undefined, r: unknown) {
+export namespace PgToast_50605Index {
+ export function equals(l: PgToast.Types.PgToast_50605Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_48460Index {
- export function equals(l: PgToast.Types.PgToast_48460Index|undefined, r: unknown) {
+export namespace PgToast_50610Index {
+ export function equals(l: PgToast.Types.PgToast_50610Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_48465Index {
- export function equals(l: PgToast.Types.PgToast_48465Index|undefined, r: unknown) {
+export namespace PgToast_50615Index {
+ export function equals(l: PgToast.Types.PgToast_50615Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_48470Index {
- export function equals(l: PgToast.Types.PgToast_48470Index|undefined, r: unknown) {
+export namespace PgToast_50620Index {
+ export function equals(l: PgToast.Types.PgToast_50620Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -54425,7 +54457,7 @@ export namespace Datsrcln {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_48426Index {
+export namespace PgToast_50576Index {
 export namespace ChunkId {
 
       export type Options = InvokeQueryOptions;
@@ -54441,7 +54473,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_48435Index {
+export namespace PgToast_50585Index {
 export namespace ChunkId {
 
       export type Options = InvokeQueryOptions;
@@ -54457,7 +54489,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_48440Index {
+export namespace PgToast_50590Index {
 export namespace ChunkId {
 
       export type Options = InvokeQueryOptions;
@@ -54473,7 +54505,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_48445Index {
+export namespace PgToast_50595Index {
 export namespace ChunkId {
 
       export type Options = InvokeQueryOptions;
@@ -54489,7 +54521,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_48450Index {
+export namespace PgToast_50600Index {
 export namespace ChunkId {
 
       export type Options = InvokeQueryOptions;
@@ -54505,7 +54537,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_48455Index {
+export namespace PgToast_50605Index {
 export namespace ChunkId {
 
       export type Options = InvokeQueryOptions;
@@ -54521,7 +54553,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_48460Index {
+export namespace PgToast_50610Index {
 export namespace ChunkId {
 
       export type Options = InvokeQueryOptions;
@@ -54537,7 +54569,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_48465Index {
+export namespace PgToast_50615Index {
 export namespace ChunkId {
 
       export type Options = InvokeQueryOptions;
@@ -54553,7 +54585,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_48470Index {
+export namespace PgToast_50620Index {
 export namespace ChunkId {
 
       export type Options = InvokeQueryOptions;

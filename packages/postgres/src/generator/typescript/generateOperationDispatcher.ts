@@ -7,6 +7,8 @@ import {
   UpdateOperationNode,
   DeleteOperationNode,
   AllOperationNode,
+  REQUEST_OPTIONS,
+  REQUEST_PARAMETERS,
 } from "@embracesql/shared";
 
 const FunctionOperationNodeVisitor = {
@@ -15,10 +17,10 @@ const FunctionOperationNodeVisitor = {
     // parameters go first!
     if (node.parametersType) {
       callee.push(
-        `request.parameters as ${node.parametersType.typescriptNamespacedName}`,
+        `${REQUEST_PARAMETERS} as ${node.parametersType.typescriptNamespacedName}`,
       );
     }
-    callee.push(`request.options`);
+    callee.push(`${REQUEST_OPTIONS}`);
     return `"${
       node.typescriptNamespacedName
     }.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.${
@@ -73,7 +75,7 @@ export const generateOperationDispatcher = async (
           callee.push(
             `request.values as ${node.table.typescriptNamespacedName}.Values`,
           );
-          callee.push(`request.options`);
+          callee.push(`${REQUEST_OPTIONS}`);
           return `"${
             node.typescriptNamespacedPropertyName
           }": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.${
@@ -84,7 +86,7 @@ export const generateOperationDispatcher = async (
       [ASTKind.AllOperation]: {
         before: async (_: GenerationContext, node: AllOperationNode) => {
           const callee: string[] = [];
-          callee.push(`request.options`);
+          callee.push(`${REQUEST_OPTIONS}`);
           return [
             `
              "${
@@ -101,8 +103,8 @@ export const generateOperationDispatcher = async (
         before: async (_: GenerationContext, node: ReadOperationNode) => {
           const callee: string[] = [];
           callee.push(
-            `request.parameters as ${node.index.type.typescriptNamespacedName}`,
-            `request.options`,
+            `${REQUEST_PARAMETERS} as ${node.index.type.typescriptNamespacedName}`,
+            `${REQUEST_OPTIONS}`,
           );
           return `"${
             node.typescriptNamespacedPropertyName
@@ -115,12 +117,12 @@ export const generateOperationDispatcher = async (
         before: async (_: GenerationContext, node: UpdateOperationNode) => {
           const callee: string[] = [];
           callee.push(
-            `request.parameters as ${node.index.type.typescriptNamespacedName}`,
+            `${REQUEST_PARAMETERS} as ${node.index.type.typescriptNamespacedName}`,
           );
           callee.push(
             `request.values as Partial<${node.index.table.typescriptNamespacedName}.Values>`,
           );
-          callee.push(`request.options`);
+          callee.push(`${REQUEST_OPTIONS}`);
           return `"${
             node.typescriptNamespacedPropertyName
           }": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.${
@@ -132,9 +134,9 @@ export const generateOperationDispatcher = async (
         before: async (_: GenerationContext, node: DeleteOperationNode) => {
           const callee: string[] = [];
           callee.push(
-            `request.parameters as ${node.index.type.typescriptNamespacedName}`,
+            `${REQUEST_PARAMETERS} as ${node.index.type.typescriptNamespacedName}`,
           );
-          callee.push(`request.options`);
+          callee.push(`${REQUEST_OPTIONS}`);
           return `"${
             node.typescriptNamespacedPropertyName
           }": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.${

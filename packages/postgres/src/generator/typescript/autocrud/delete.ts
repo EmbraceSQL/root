@@ -2,7 +2,9 @@ import { postgresToTypescript, sqlPredicate } from "./shared";
 import {
   DeleteOperationNode,
   GenerationContext,
+  OPTIONS,
   PARAMETERS,
+  REQUEST_PARAMETERS,
 } from "@embracesql/shared";
 
 /**
@@ -15,10 +17,10 @@ import {
  */
 export const DeleteOperation = {
   async before(context: GenerationContext, node: DeleteOperationNode) {
-    const parameters = `parameters: ${node.index.type.typescriptNamespacedName}`;
-    const requestExpression = `{${PARAMETERS}, options}`;
+    const parameters = `${PARAMETERS}: ${node.index.type.typescriptNamespacedName}`;
+    const requestExpression = `{${PARAMETERS}, ${OPTIONS}}`;
     const optionType = `${node.index.type.typescriptNamespacedName}.Options & ${node.index.table.typescriptNamespacedName}.Options`;
-    const options = `options?: ${optionType}`;
+    const options = `${OPTIONS}?: ${optionType}`;
     const sqlColumnNames = node.index.table.type.attributes
       .map((a) => a.name)
       .join(",");
@@ -28,7 +30,7 @@ export const DeleteOperation = {
     DELETE FROM 
       ${node.index.table.databaseName} 
     WHERE
-      ${sqlPredicate(context, node.index, PARAMETERS)}
+      ${sqlPredicate(context, node.index, REQUEST_PARAMETERS)}
     RETURNING ${sqlColumnNames}`;
 
     return [

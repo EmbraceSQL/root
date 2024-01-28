@@ -2,6 +2,8 @@ import { postgresToTypescript, postgresValueExpression } from "./shared";
 import {
   CreateOperationNode,
   GenerationContext,
+  OPTIONS,
+  REQUEST_VALUES,
   VALUES,
 } from "@embracesql/shared";
 
@@ -13,10 +15,10 @@ export const CreateOperation = {
     const valuesType = `Partial<${node.table.type.typescriptNamespacedName}>`;
     const optionType = `${node.table.typescriptNamespacedName}.Options`;
     const generationBuffer = [""];
-    const requestExpression = `{${VALUES}, options}`;
+    const requestExpression = `{${VALUES}, ${OPTIONS}}`;
 
     generationBuffer.push(
-      `async create(values: ${valuesType}, options?: ${optionType}): Promise<${node.table.type.typescriptNamespacedName}>{`,
+      `async create(values: ${valuesType}, ${OPTIONS}?: ${optionType}): Promise<${node.table.type.typescriptNamespacedName}>{`,
     );
     generationBuffer.push(
       `
@@ -44,7 +46,7 @@ export const CreateOperation = {
       INSERT INTO
         ${node.table.databaseName} (${sqlColumnNamesWithoutPrimaryKey})
       VALUES (${node.table.columnsNotInPrimaryKey
-        .map((a) => postgresValueExpression(context, a, "values"))
+        .map((a) => postgresValueExpression(context, a, REQUEST_VALUES))
         .join(",")})
       RETURNING
         ${allSqlColumnNames}
@@ -66,7 +68,7 @@ export const CreateOperation = {
     INSERT INTO
       ${node.table.databaseName} (${allSqlColumnNames})
     VALUES (${node.table.type.attributes
-      .map((a) => postgresValueExpression(context, a, VALUES))
+      .map((a) => postgresValueExpression(context, a, REQUEST_VALUES))
       .join(",")})
     ON CONFLICT (${node.table.columnsInPrimaryKey
       .map((a) => a.name)

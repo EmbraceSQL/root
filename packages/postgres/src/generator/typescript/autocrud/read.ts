@@ -3,6 +3,8 @@ import {
   PARAMETERS,
   GenerationContext,
   ReadOperationNode,
+  REQUEST_PARAMETERS,
+  OPTIONS,
 } from "@embracesql/shared";
 
 /**
@@ -13,13 +15,16 @@ import {
  */
 export const ReadOperation = {
   async before(context: GenerationContext, node: ReadOperationNode) {
-    const parameters = `${PARAMETERS}: ${node.index.type.typescriptNamespacedName}`;
-    const requestExpression = `{${PARAMETERS}, ...(options ?? {})}`;
-    const optionType = `${node.index.type.typescriptNamespacedName}.Options & ${node.index.table.typescriptNamespacedName}.Options`;
-    const options = `options?: ${optionType}`;
-    const returns = node.index.unique
-      ? `Promise<${node.index.table.type.typescriptNamespacedName}>`
-      : `Promise<${node.index.table.type.typescriptNamespacedName}[]>`;
+    const parametersType = `${node.index.type.typescriptNamespacedName}`;
+    const parameters = `${PARAMETERS}: ${parametersType}`;
+    const requestExpression = `{${PARAMETERS}, ${OPTIONS}}`;
+    const optionsType = `${node.index.type.typescriptNamespacedName}.Options & ${node.index.table.typescriptNamespacedName}.Options`;
+    const options = `${OPTIONS}?: ${optionsType}`;
+    const returnType = node.index.unique
+      ? `${node.index.table.type.typescriptNamespacedName}`
+      : `${node.index.table.type.typescriptNamespacedName}[]`;
+    const returns = `Promise<${returnType}>`;
+    const invokeGeneric = `${returnType}, ${node.index.type.typescriptNamespacedName}, never, ${optionsType}`;
 
     // query using postgres driver bindings to the index
     const sql = `
@@ -29,7 +34,7 @@ export const ReadOperation = {
     FROM
       ${node.index.table.databaseName} 
     WHERE
-      ${sqlPredicate(context, node.index, PARAMETERS)}
+      ${sqlPredicate(context, node.index, REQUEST_PARAMETERS)}
     \${sql.unsafe(\`\${orderBy}\`)}
     LIMIT \${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET \${options?.offsetNumberOfRows ?? 0} 
@@ -41,12 +46,12 @@ export const ReadOperation = {
       const typed = this.database.typed;
       const orderBy = options?.sort ? \`ORDER BY \${options.sort.join(",")}\` : "";
       `,
-      `const response = await this.database.invoke( (sql, request) => sql\`${sql}\`, ${requestExpression});`,
-
-      `return ${postgresToTypescript(context, node.index.table.type)}${
+      `return await this.database.invoke<${invokeGeneric}>( async (sql, request) => {`,
+      `  const response = await sql\`${sql}\``,
+      `  return ${postgresToTypescript(context, node.index.table.type)}${
         node.index.unique ? "[0]" : ""
       }`,
-
+      `}, ${requestExpression});`,
       `}`,
     ].join("\n");
   },

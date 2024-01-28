@@ -29,6 +29,7 @@ export const RESULTS = "results";
  * Think -- things that go in a WHERE clause.
  */
 export const PARAMETERS = "parameters";
+export const REQUEST_PARAMETERS = "request.parameters";
 
 /**
  * Common name for passed in values to set or read.
@@ -37,6 +38,7 @@ export const PARAMETERS = "parameters";
  * or in the SET <column>=<value> clause.
  */
 export const VALUES = "values";
+export const REQUEST_VALUES = "request.values";
 
 /**
  * Common name for the options parameter.
@@ -45,6 +47,7 @@ export const VALUES = "values";
  * put. 🪣
  */
 export const OPTIONS = "options";
+export const REQUEST_OPTIONS = "request.options";
 
 /**
  * Enumeration tags for quick type discrimination via `switch`.

@@ -3127,7 +3127,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       actor_id = ${ parameters.actorId === undefined ? sql`DEFAULT` : typed[21](parameters.actorId) } AND film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
     RETURNING actor_id,film_id,last_update`, {parameters, values, options});
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.FilmActorPkey, options?: Public.Types.FilmActorPkey.Options & Public.Tables.FilmActor.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3187,7 +3187,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
     RETURNING actor_id,film_id,last_update`, {parameters, values, options});
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))
-},
+}
 async delete(parameters: Public.Types.IdxFkFilmId, options?: Public.Types.IdxFkFilmId.Options & Public.Tables.FilmActor.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3249,7 +3249,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       address_id = ${ parameters.addressId === undefined ? sql`DEFAULT` : typed[23](parameters.addressId) }
     RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`, {parameters, values, options});
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.AddressPkey, options?: Public.Types.AddressPkey.Options & Public.Tables.Address.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3309,7 +3309,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       city_id = ${ parameters.cityId === undefined ? sql`DEFAULT` : typed[21](parameters.cityId) }
     RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`, {parameters, values, options});
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))
-},
+}
 async delete(parameters: Public.Types.IdxFkCityId, options?: Public.Types.IdxFkCityId.Options & Public.Tables.Address.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3371,7 +3371,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       city_id = ${ parameters.cityId === undefined ? sql`DEFAULT` : typed[23](parameters.cityId) }
     RETURNING city_id,city,country_id,last_update`, {parameters, values, options});
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.CityPkey, options?: Public.Types.CityPkey.Options & Public.Tables.City.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3431,7 +3431,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       country_id = ${ parameters.countryId === undefined ? sql`DEFAULT` : typed[21](parameters.countryId) }
     RETURNING city_id,city,country_id,last_update`, {parameters, values, options});
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))
-},
+}
 async delete(parameters: Public.Types.IdxFkCountryId, options?: Public.Types.IdxFkCountryId.Options & Public.Tables.City.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3493,7 +3493,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[23](parameters.customerId) }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, {parameters, values, options});
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))[0]
-},
+}
 async delete(parameters: Public.Types.CustomerPkey, options?: Public.Types.CustomerPkey.Options & Public.Tables.Customer.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3553,7 +3553,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       address_id = ${ parameters.addressId === undefined ? sql`DEFAULT` : typed[21](parameters.addressId) }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, {parameters, values, options});
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
-},
+}
 async delete(parameters: Public.Types.IdxFkAddressId, options?: Public.Types.IdxFkAddressId.Options & Public.Tables.Customer.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3613,7 +3613,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[21](parameters.storeId) }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, {parameters, values, options});
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
-},
+}
 async delete(parameters: Public.Types.IdxFkStoreId, options?: Public.Types.IdxFkStoreId.Options & Public.Tables.Customer.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3673,7 +3673,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       last_name = ${ parameters.lastName === undefined ? sql`DEFAULT` : typed[1043](parameters.lastName) }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, {parameters, values, options});
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
-},
+}
 async delete(parameters: Public.Types.IdxLastName, options?: Public.Types.IdxLastName.Options & Public.Tables.Customer.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3735,7 +3735,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       actor_id = ${ parameters.actorId === undefined ? sql`DEFAULT` : typed[23](parameters.actorId) }
     RETURNING actor_id,first_name,last_name,last_update`, {parameters, values, options});
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.ActorPkey, options?: Public.Types.ActorPkey.Options & Public.Tables.Actor.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3795,7 +3795,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       last_name = ${ parameters.lastName === undefined ? sql`DEFAULT` : typed[1043](parameters.lastName) }
     RETURNING actor_id,first_name,last_name,last_update`, {parameters, values, options});
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))
-},
+}
 async delete(parameters: Public.Types.IdxActorLastName, options?: Public.Types.IdxActorLastName.Options & Public.Tables.Actor.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3857,7 +3857,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) } AND category_id = ${ parameters.categoryId === undefined ? sql`DEFAULT` : typed[21](parameters.categoryId) }
     RETURNING film_id,category_id,last_update`, {parameters, values, options});
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undefinedIsNull(r.category_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.FilmCategoryPkey, options?: Public.Types.FilmCategoryPkey.Options & Public.Tables.FilmCategory.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3919,7 +3919,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) }
     RETURNING inventory_id,film_id,store_id,last_update`, {parameters, values, options});
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.InventoryPkey, options?: Public.Types.InventoryPkey.Options & Public.Tables.Inventory.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3979,7 +3979,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[21](parameters.storeId) } AND film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
     RETURNING inventory_id,film_id,store_id,last_update`, {parameters, values, options});
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))
-},
+}
 async delete(parameters: Public.Types.IdxStoreIdFilmId, options?: Public.Types.IdxStoreIdFilmId.Options & Public.Tables.Inventory.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4041,7 +4041,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       category_id = ${ parameters.categoryId === undefined ? sql`DEFAULT` : typed[23](parameters.categoryId) }
     RETURNING category_id,name,last_update`, {parameters, values, options});
 return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.CategoryPkey, options?: Public.Types.CategoryPkey.Options & Public.Tables.Category.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4103,7 +4103,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       country_id = ${ parameters.countryId === undefined ? sql`DEFAULT` : typed[23](parameters.countryId) }
     RETURNING country_id,country,last_update`, {parameters, values, options});
 return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.CountryPkey, options?: Public.Types.CountryPkey.Options & Public.Tables.Country.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4165,7 +4165,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       language_id = ${ parameters.languageId === undefined ? sql`DEFAULT` : typed[23](parameters.languageId) }
     RETURNING language_id,name,last_update`, {parameters, values, options});
 return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.LanguagePkey, options?: Public.Types.LanguagePkey.Options & Public.Tables.Language.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4227,7 +4227,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       rental_id = ${ parameters.rentalId === undefined ? sql`DEFAULT` : typed[23](parameters.rentalId) }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`, {parameters, values, options});
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.RentalPkey, options?: Public.Types.RentalPkey.Options & Public.Tables.Rental.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4287,7 +4287,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`, {parameters, values, options});
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))
-},
+}
 async delete(parameters: Public.Types.IdxFkInventoryId, options?: Public.Types.IdxFkInventoryId.Options & Public.Tables.Rental.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4347,7 +4347,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       rental_date = ${ parameters.rentalDate === undefined ? sql`DEFAULT` : typed[1114](parameters.rentalDate) } AND inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) } AND customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[21](parameters.customerId) }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`, {parameters, values, options});
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, options?: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId.Options & Public.Tables.Rental.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4409,7 +4409,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       staff_id = ${ parameters.staffId === undefined ? sql`DEFAULT` : typed[23](parameters.staffId) }
     RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture`, {parameters, values, options});
 return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))[0]
-},
+}
 async delete(parameters: Public.Types.StaffPkey, options?: Public.Types.StaffPkey.Options & Public.Tables.Staff.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4471,7 +4471,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[23](parameters.storeId) }
     RETURNING store_id,manager_staff_id,address_id,last_update`, {parameters, values, options});
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.StorePkey, options?: Public.Types.StorePkey.Options & Public.Tables.Store.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4531,7 +4531,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       manager_staff_id = ${ parameters.managerStaffId === undefined ? sql`DEFAULT` : typed[21](parameters.managerStaffId) }
     RETURNING store_id,manager_staff_id,address_id,last_update`, {parameters, values, options});
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.IdxUnqManagerStaffId, options?: Public.Types.IdxUnqManagerStaffId.Options & Public.Tables.Store.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4593,7 +4593,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       payment_id = ${ parameters.paymentId === undefined ? sql`DEFAULT` : typed[23](parameters.paymentId) }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, {parameters, values, options});
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))[0]
-},
+}
 async delete(parameters: Public.Types.PaymentPkey, options?: Public.Types.PaymentPkey.Options & Public.Tables.Payment.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4653,7 +4653,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[21](parameters.customerId) }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, {parameters, values, options});
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
-},
+}
 async delete(parameters: Public.Types.IdxFkCustomerId, options?: Public.Types.IdxFkCustomerId.Options & Public.Tables.Payment.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4713,7 +4713,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       rental_id = ${ parameters.rentalId === undefined ? sql`DEFAULT` : typed[23](parameters.rentalId) }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, {parameters, values, options});
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
-},
+}
 async delete(parameters: Public.Types.IdxFkRentalId, options?: Public.Types.IdxFkRentalId.Options & Public.Tables.Payment.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4773,7 +4773,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       staff_id = ${ parameters.staffId === undefined ? sql`DEFAULT` : typed[21](parameters.staffId) }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, {parameters, values, options});
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
-},
+}
 async delete(parameters: Public.Types.IdxFkStaffId, options?: Public.Types.IdxFkStaffId.Options & Public.Tables.Payment.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4835,7 +4835,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[23](parameters.filmId) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, {parameters, values, options});
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))[0]
-},
+}
 async delete(parameters: Public.Types.FilmPkey, options?: Public.Types.FilmPkey.Options & Public.Tables.Film.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4895,7 +4895,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       fulltext @@ ${sql.unsafe(`${options?.fulltext?.queryParser ?? "to_tsquery"}`)}(${options?.fulltext?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3614](parameters.fulltext) })
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, {parameters, values, options});
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
-},
+}
 async delete(parameters: Public.Types.FilmFulltextIdx, options?: Public.Types.FilmFulltextIdx.Options & Public.Tables.Film.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4955,7 +4955,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       language_id = ${ parameters.languageId === undefined ? sql`DEFAULT` : typed[21](parameters.languageId) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, {parameters, values, options});
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
-},
+}
 async delete(parameters: Public.Types.IdxFkLanguageId, options?: Public.Types.IdxFkLanguageId.Options & Public.Tables.Film.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -5015,7 +5015,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       title = ${ parameters.title === undefined ? sql`DEFAULT` : typed[1043](parameters.title) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, {parameters, values, options});
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
-},
+}
 async delete(parameters: Public.Types.IdxTitle, options?: Public.Types.IdxTitle.Options & Public.Tables.Film.Options) {
  console.assert(parameters);
  const typed = this.database.typed;

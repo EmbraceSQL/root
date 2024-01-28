@@ -8,6 +8,9 @@ import {
   GenerationContext,
   UpdateOperationNode,
   VALUES,
+  OPTIONS,
+  REQUEST_VALUES,
+  REQUEST_PARAMETERS,
 } from "@embracesql/shared";
 
 /**
@@ -21,9 +24,9 @@ import {
 export const UpdateOperation = {
   async before(context: GenerationContext, node: UpdateOperationNode) {
     const parameters = `${PARAMETERS}: ${node.index.type.typescriptNamespacedName}, ${VALUES}: Partial<${node.index.table.typescriptNamespacedName}.Values>`;
-    const requestExpression = `{${PARAMETERS}, ${VALUES}, options}`;
+    const requestExpression = `{${PARAMETERS}, ${VALUES}, ${OPTIONS}}`;
     const optionType = `${node.index.type.typescriptNamespacedName}.Options & ${node.index.table.typescriptNamespacedName}.Options`;
-    const options = `options?: ${optionType}`;
+    const options = `${OPTIONS}?: ${optionType}`;
     const returns = node.index.unique
       ? `Promise<${node.index.table.type.typescriptNamespacedName}>`
       : `Promise<${node.index.table.type.typescriptNamespacedName}[]>`;
@@ -36,9 +39,9 @@ export const UpdateOperation = {
     UPDATE 
       ${node.index.table.databaseName} 
     SET
-      ${sqlSetExpressions(context, node.index.table, VALUES, true)} 
+      ${sqlSetExpressions(context, node.index.table, REQUEST_VALUES, true)} 
     WHERE
-      ${sqlPredicate(context, node.index, PARAMETERS)}
+      ${sqlPredicate(context, node.index, REQUEST_PARAMETERS)}
     RETURNING ${sqlColumnNames}`;
 
     return [

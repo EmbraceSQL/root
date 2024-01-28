@@ -1878,7 +1878,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
     RETURNING id,name,created_at`, {parameters, values, options});
 return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
-},
+}
 async delete(parameters: Public.Types.ChecklistPkey, options?: Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -1940,7 +1940,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
     RETURNING id,checklist_id,title,checked,created_at`, {parameters, values, options});
 return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
-},
+}
 async delete(parameters: Public.Types.ChecklistItemPkey, options?: Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -2000,7 +2000,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       checklist_id = ${ parameters.checklistId === undefined ? sql`DEFAULT` : typed[2950](parameters.checklistId) }
     RETURNING id,checklist_id,title,checked,created_at`, {parameters, values, options});
 return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))
-},
+}
 async delete(parameters: Public.Types.ChecklistItemParent, options?: Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options) {
  console.assert(parameters);
  const typed = this.database.typed;

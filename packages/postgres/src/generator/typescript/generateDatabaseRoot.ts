@@ -11,7 +11,9 @@ import {
   GenerationContext,
   NamedASTNode,
   NamespaceVisitor,
+  OPTIONS,
   PARAMETERS,
+  REQUEST_PARAMETERS,
 } from "@embracesql/shared";
 
 /**
@@ -106,13 +108,19 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
             const parametersExpression = node.parametersType?.attributes?.length
               ? ", [" +
                 node.parametersType.attributes
-                  .map((a) => `parameters.${a.typescriptPropertyName}`)
+                  .map(
+                    (a) =>
+                      `undefinedIsNull(${REQUEST_PARAMETERS.replace(
+                        ".",
+                        "?.",
+                      )}?.${a.typescriptPropertyName})`,
+                  )
                   .join(",") +
                 "]"
               : "";
             const requestExpression = parametersExpression
-              ? `{parameters, options}`
-              : `{options}`;
+              ? `{${PARAMETERS}, ${OPTIONS}}`
+              : `{${OPTIONS}}`;
             // just a bit of escaping of the passsed sql script
             const preparedSql = node.script.replace("`", "\\`");
 
@@ -131,11 +139,11 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
             // and here is the really defensive part...
             console.assert(attributes.length);
             const parameters = node.parametersType
-              ? `parameters: ${node.parametersType.typescriptNamespacedName}`
+              ? `${PARAMETERS}: ${node.parametersType.typescriptNamespacedName}`
               : "";
             const options = parameters.length
-              ? `, options?: InvokeQueryOptions`
-              : `options?: InvokeQueryOptions`;
+              ? `, ${OPTIONS}?: InvokeQueryOptions`
+              : `${OPTIONS}?: InvokeQueryOptions`;
             return [
               await NestedNamedClassVisitor.before(context, node),
               `
@@ -236,12 +244,17 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
                 .map(
                   (a) =>
                     (a.named ? `${a.name} =>` : ``) +
-                    ` \${ typed[${a.type.id}](undefinedIsNull(parameters.${a.typescriptPropertyName})) }`,
+                    ` \${ typed[${
+                      a.type.id
+                    }](undefinedIsNull(${REQUEST_PARAMETERS.replace(
+                      ".",
+                      "?.",
+                    )}?.${a.typescriptPropertyName})) }`,
                 )
                 .join(",") ?? "";
             const requestExpression = parameterExpressions
-              ? `{${PARAMETERS}, options}`
-              : `{options}`;
+              ? `{${PARAMETERS}, ${OPTIONS}}`
+              : `{${OPTIONS}}`;
             const resultType = `${node.resultsType?.typescriptNamespacedName}`;
             // if there is a composite -- pseudo -- return type, this will
             // need to call back into the sql driver to parse the results
@@ -259,11 +272,11 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
           `;
             // function call start, passing in parameters
             const parameters = node.parametersType
-              ? `parameters : ${node.parametersType?.typescriptNamespacedName}`
+              ? `${PARAMETERS} : ${node.parametersType?.typescriptNamespacedName}`
               : ``;
             const options = parameters.length
-              ? `, options?: InvokeQueryOptions`
-              : `options?: InvokeQueryOptions`;
+              ? `, ${OPTIONS}?: InvokeQueryOptions`
+              : `${OPTIONS}?: InvokeQueryOptions`;
             return [
               `export class ${node.typescriptName} implements HasDatabase {`,
               `  constructor(private hasDatabase: HasDatabase) {}`,
@@ -273,19 +286,18 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
               `async call(${parameters}${options}) {`,
               `  ${parseResult}`,
               `  const typed = this.database.typed;`,
-              `  const response = await this.database.invoke( (sql, request) => sql\`SELECT ${node.databaseName}(${parameterExpressions})\`, ${requestExpression});`,
-              `  const results = response;`,
+              `  return await this.database.invoke( async (sql, request) => {`,
+              `    const results = await  sql\`SELECT ${node.databaseName}(${parameterExpressions})\`;`,
               `
-              const responseBody = ( ${(() => {
-                // table cast of a defined type
-                if (node.returnsMany) {
-                  return `results.map(x => parseResult(this.database.context, x.${node.nameInDatabase})).filter<${resultType}>((r):r is ${resultType} => r !== null)`;
-                }
-                // default to the scalar case
-                return `${resultType}.parse(results?.[0].${node.nameInDatabase})`;
-              })()} );
-              return responseBody;
-           `,
+                   return ${(() => {
+                     // table cast of a defined type
+                     if (node.returnsMany) {
+                       return `results.map(x => parseResult(this.database.context, x.${node.nameInDatabase})).filter<${resultType}>((r):r is ${resultType} => r !== null)`;
+                     }
+                     // default to the scalar case
+                     return `${resultType}.parse(results?.[0].${node.nameInDatabase})`;
+                   })()};`,
+              `}, ${requestExpression});`,
               `}`,
             ].join("\n");
           },

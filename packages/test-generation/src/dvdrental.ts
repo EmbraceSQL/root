@@ -1493,165 +1493,165 @@
 ["InformationSchema.Types.UserMappings"]: Typecast
 [13823]: Typecast;
 ["InformationSchema.Types.UserMappingsArray"]: Typecast
-[46659]: Typecast;
+[48809]: Typecast;
 ["Public.Types.MpaaRating"]: Typecast
-[46658]: Typecast;
+[48808]: Typecast;
 ["Public.Types.MpaaRatingArray"]: Typecast
-[46670]: Typecast;
+[48820]: Typecast;
 ["Public.Types.Year"]: Typecast
-[46669]: Typecast;
+[48819]: Typecast;
 ["Public.Types.YearArray"]: Typecast
-[46683]: Typecast;
+[48833]: Typecast;
 ["Public.Types.Customer"]: Typecast
-[46682]: Typecast;
+[48832]: Typecast;
 ["Public.Types.CustomerArray"]: Typecast
-[46693]: Typecast;
+[48843]: Typecast;
 ["Public.Types.Actor"]: Typecast
-[46692]: Typecast;
+[48842]: Typecast;
 ["Public.Types.ActorArray"]: Typecast
-[46699]: Typecast;
+[48849]: Typecast;
 ["Public.Types.Category"]: Typecast
-[46698]: Typecast;
+[48848]: Typecast;
 ["Public.Types.CategoryArray"]: Typecast
-[46705]: Typecast;
+[48855]: Typecast;
 ["Public.Types.Film"]: Typecast
-[46704]: Typecast;
+[48854]: Typecast;
 ["Public.Types.FilmArray"]: Typecast
-[46716]: Typecast;
+[48866]: Typecast;
 ["Public.Types.FilmActor"]: Typecast
-[46715]: Typecast;
+[48865]: Typecast;
 ["Public.Types.FilmActorArray"]: Typecast
-[46720]: Typecast;
+[48870]: Typecast;
 ["Public.Types.FilmCategory"]: Typecast
-[46719]: Typecast;
+[48869]: Typecast;
 ["Public.Types.FilmCategoryArray"]: Typecast
-[46724]: Typecast;
+[48874]: Typecast;
 ["Public.Types.ActorInfo"]: Typecast
-[46723]: Typecast;
+[48873]: Typecast;
 ["Public.Types.ActorInfoArray"]: Typecast
-[46730]: Typecast;
+[48880]: Typecast;
 ["Public.Types.Address"]: Typecast
-[46729]: Typecast;
+[48879]: Typecast;
 ["Public.Types.AddressArray"]: Typecast
-[46736]: Typecast;
+[48886]: Typecast;
 ["Public.Types.City"]: Typecast
-[46735]: Typecast;
+[48885]: Typecast;
 ["Public.Types.CityArray"]: Typecast
-[46742]: Typecast;
+[48892]: Typecast;
 ["Public.Types.Country"]: Typecast
-[46741]: Typecast;
+[48891]: Typecast;
 ["Public.Types.CountryArray"]: Typecast
-[46747]: Typecast;
+[48897]: Typecast;
 ["Public.Types.CustomerList"]: Typecast
-[46746]: Typecast;
+[48896]: Typecast;
 ["Public.Types.CustomerListArray"]: Typecast
-[46752]: Typecast;
+[48902]: Typecast;
 ["Public.Types.FilmList"]: Typecast
-[46751]: Typecast;
+[48901]: Typecast;
 ["Public.Types.FilmListArray"]: Typecast
-[46758]: Typecast;
+[48908]: Typecast;
 ["Public.Types.Inventory"]: Typecast
-[46757]: Typecast;
+[48907]: Typecast;
 ["Public.Types.InventoryArray"]: Typecast
-[46764]: Typecast;
+[48914]: Typecast;
 ["Public.Types.Language"]: Typecast
-[46763]: Typecast;
+[48913]: Typecast;
 ["Public.Types.LanguageArray"]: Typecast
-[46769]: Typecast;
+[48919]: Typecast;
 ["Public.Types.NicerButSlowerFilmList"]: Typecast
-[46768]: Typecast;
+[48918]: Typecast;
 ["Public.Types.NicerButSlowerFilmListArray"]: Typecast
-[46775]: Typecast;
+[48925]: Typecast;
 ["Public.Types.Payment"]: Typecast
-[46774]: Typecast;
+[48924]: Typecast;
 ["Public.Types.PaymentArray"]: Typecast
-[46780]: Typecast;
+[48930]: Typecast;
 ["Public.Types.Rental"]: Typecast
-[46779]: Typecast;
+[48929]: Typecast;
 ["Public.Types.RentalArray"]: Typecast
-[46785]: Typecast;
+[48935]: Typecast;
 ["Public.Types.SalesByFilmCategory"]: Typecast
-[46784]: Typecast;
+[48934]: Typecast;
 ["Public.Types.SalesByFilmCategoryArray"]: Typecast
-[46791]: Typecast;
+[48941]: Typecast;
 ["Public.Types.Staff"]: Typecast
-[46790]: Typecast;
+[48940]: Typecast;
 ["Public.Types.StaffArray"]: Typecast
-[46800]: Typecast;
+[48950]: Typecast;
 ["Public.Types.Store"]: Typecast
-[46799]: Typecast;
+[48949]: Typecast;
 ["Public.Types.StoreArray"]: Typecast
-[46805]: Typecast;
+[48955]: Typecast;
 ["Public.Types.SalesByStore"]: Typecast
-[46804]: Typecast;
+[48954]: Typecast;
 ["Public.Types.SalesByStoreArray"]: Typecast
-[46810]: Typecast;
+[48960]: Typecast;
 ["Public.Types.StaffList"]: Typecast
-[46809]: Typecast;
+[48959]: Typecast;
 ["Public.Types.StaffListArray"]: Typecast
-[46813]: Typecast;
+[48963]: Typecast;
 ["Public.Types.ActorPkey"]: Typecast
-[46815]: Typecast;
+[48965]: Typecast;
 ["Public.Types.AddressPkey"]: Typecast
-[46817]: Typecast;
+[48967]: Typecast;
 ["Public.Types.CategoryPkey"]: Typecast
-[46819]: Typecast;
+[48969]: Typecast;
 ["Public.Types.CityPkey"]: Typecast
-[46821]: Typecast;
+[48971]: Typecast;
 ["Public.Types.CountryPkey"]: Typecast
-[46823]: Typecast;
+[48973]: Typecast;
 ["Public.Types.CustomerPkey"]: Typecast
-[46825]: Typecast;
+[48975]: Typecast;
 ["Public.Types.FilmActorPkey"]: Typecast
-[46827]: Typecast;
+[48977]: Typecast;
 ["Public.Types.FilmCategoryPkey"]: Typecast
-[46829]: Typecast;
+[48979]: Typecast;
 ["Public.Types.FilmPkey"]: Typecast
-[46831]: Typecast;
+[48981]: Typecast;
 ["Public.Types.InventoryPkey"]: Typecast
-[46833]: Typecast;
+[48983]: Typecast;
 ["Public.Types.LanguagePkey"]: Typecast
-[46835]: Typecast;
+[48985]: Typecast;
 ["Public.Types.PaymentPkey"]: Typecast
-[46837]: Typecast;
+[48987]: Typecast;
 ["Public.Types.RentalPkey"]: Typecast
-[46839]: Typecast;
+[48989]: Typecast;
 ["Public.Types.StaffPkey"]: Typecast
-[46841]: Typecast;
+[48991]: Typecast;
 ["Public.Types.StorePkey"]: Typecast
-[46843]: Typecast;
+[48993]: Typecast;
 ["Public.Types.FilmFulltextIdx"]: Typecast
-[46844]: Typecast;
+[48994]: Typecast;
 ["Public.Types.IdxActorLastName"]: Typecast
-[46845]: Typecast;
+[48995]: Typecast;
 ["Public.Types.IdxFkAddressId"]: Typecast
-[46846]: Typecast;
+[48996]: Typecast;
 ["Public.Types.IdxFkCityId"]: Typecast
-[46847]: Typecast;
+[48997]: Typecast;
 ["Public.Types.IdxFkCountryId"]: Typecast
-[46848]: Typecast;
+[48998]: Typecast;
 ["Public.Types.IdxFkCustomerId"]: Typecast
-[46849]: Typecast;
+[48999]: Typecast;
 ["Public.Types.IdxFkFilmId"]: Typecast
-[46850]: Typecast;
+[49000]: Typecast;
 ["Public.Types.IdxFkInventoryId"]: Typecast
-[46851]: Typecast;
+[49001]: Typecast;
 ["Public.Types.IdxFkLanguageId"]: Typecast
-[46852]: Typecast;
+[49002]: Typecast;
 ["Public.Types.IdxFkRentalId"]: Typecast
-[46853]: Typecast;
+[49003]: Typecast;
 ["Public.Types.IdxFkStaffId"]: Typecast
-[46854]: Typecast;
+[49004]: Typecast;
 ["Public.Types.IdxFkStoreId"]: Typecast
-[46855]: Typecast;
+[49005]: Typecast;
 ["Public.Types.IdxLastName"]: Typecast
-[46856]: Typecast;
+[49006]: Typecast;
 ["Public.Types.IdxStoreIdFilmId"]: Typecast
-[46857]: Typecast;
+[49007]: Typecast;
 ["Public.Types.IdxTitle"]: Typecast
-[46858]: Typecast;
+[49008]: Typecast;
 ["Public.Types.IdxUnqManagerStaffId"]: Typecast
-[46859]: Typecast;
+[49009]: Typecast;
 ["Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId"]: Typecast
 
 ["Public.Procedures.FilmInStock.Parameters"]: Typecast
@@ -1667,10 +1667,10 @@
 ["Public.Procedures.LastDay.Parameters"]: Typecast
 
 ["Public.Procedures.RewardsReport.Parameters"]: Typecast
-[46713]: Typecast;
-["PgToast.Types.PgToast_46703Index"]: Typecast
-[46796]: Typecast;
-["PgToast.Types.PgToast_46789Index"]: Typecast
+[48863]: Typecast;
+["PgToast.Types.PgToast_48853Index"]: Typecast
+[48946]: Typecast;
+["PgToast.Types.PgToast_48939Index"]: Typecast
 [2837]: Typecast;
 ["PgToast.Types.PgToast_1255Index"]: Typecast
 [4172]: Typecast;
@@ -1869,7 +1869,7 @@ FROM
     public.film
 WHERE
     rating = $1
-                `, [parameters.argument_1]), {parameters, options});
+                `, [undefinedIsNull(request?.parameters?.argument_1)]), {parameters, options});
             return response.map(r => ({ filmId: undefinedIsNull(PgCatalog.Types.Int4.parse(r.film_id)),title: undefinedIsNull(PgCatalog.Types.Varchar.parse(r.title)),description: undefinedIsNull(PgCatalog.Types.Text.parse(r.description)),releaseYear: undefinedIsNull(PgCatalog.Types.Int4.parse(r.release_year)),languageId: undefinedIsNull(PgCatalog.Types.Int2.parse(r.language_id)),rentalDuration: undefinedIsNull(PgCatalog.Types.Int2.parse(r.rental_duration)),rentalRate: undefinedIsNull(PgCatalog.Types.Numeric.parse(r.rental_rate)),length: undefinedIsNull(PgCatalog.Types.Int2.parse(r.length)),replacementCost: undefinedIsNull(PgCatalog.Types.Numeric.parse(r.replacement_cost)),rating: undefinedIsNull(Public.Types.MpaaRating.parse(r.rating)),lastUpdate: undefinedIsNull(PgCatalog.Types.Timestamp.parse(r.last_update)),specialFeatures: undefinedIsNull(PgCatalog.Types.TextArray.parse(r.special_features)),fulltext: undefinedIsNull(PgCatalog.Types.Tsvector.parse(r.fulltext)) }));
           }
         
@@ -1915,7 +1915,7 @@ FROM
     public.film
 WHERE
     title = $1
-                `, [parameters.argument_1]), {parameters, options});
+                `, [undefinedIsNull(request?.parameters?.argument_1)]), {parameters, options});
             return response.map(r => ({ filmId: undefinedIsNull(PgCatalog.Types.Int4.parse(r.film_id)),title: undefinedIsNull(PgCatalog.Types.Varchar.parse(r.title)),description: undefinedIsNull(PgCatalog.Types.Text.parse(r.description)),releaseYear: undefinedIsNull(PgCatalog.Types.Int4.parse(r.release_year)),languageId: undefinedIsNull(PgCatalog.Types.Int2.parse(r.language_id)),rentalDuration: undefinedIsNull(PgCatalog.Types.Int2.parse(r.rental_duration)),rentalRate: undefinedIsNull(PgCatalog.Types.Numeric.parse(r.rental_rate)),length: undefinedIsNull(PgCatalog.Types.Int2.parse(r.length)),replacementCost: undefinedIsNull(PgCatalog.Types.Numeric.parse(r.replacement_cost)),rating: undefinedIsNull(Public.Types.MpaaRating.parse(r.rating)),lastUpdate: undefinedIsNull(PgCatalog.Types.Timestamp.parse(r.last_update)),specialFeatures: undefinedIsNull(PgCatalog.Types.TextArray.parse(r.special_features)),fulltext: undefinedIsNull(PgCatalog.Types.Tsvector.parse(r.fulltext)) }));
           }
         
@@ -1987,16 +1987,15 @@ export class FilmInStock implements HasDatabase {
 async call(parameters : Public.Procedures.FilmInStock.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[46673].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
+              return context.procTypes[48823].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql, request) => sql`SELECT public.film_in_stock(p_film_id => ${ typed[23](undefinedIsNull(parameters.pFilmId)) },p_store_id => ${ typed[23](undefinedIsNull(parameters.pStoreId)) })`, {parameters, options});
-  const results = response;
+  return await this.database.invoke( async (sql, request) => {
+    const results = await  sql`SELECT public.film_in_stock(p_film_id => ${ typed[23](undefinedIsNull(request?.parameters?.pFilmId)) },p_store_id => ${ typed[23](undefinedIsNull(request?.parameters?.pStoreId)) })`;
 
-              const responseBody = ( results.map(x => parseResult(this.database.context, x.film_in_stock)).filter<PgCatalog.Types.Int4>((r):r is PgCatalog.Types.Int4 => r !== null) );
-              return responseBody;
-           
+                   return results.map(x => parseResult(this.database.context, x.film_in_stock)).filter<PgCatalog.Types.Int4>((r):r is PgCatalog.Types.Int4 => r !== null);
+}, {parameters, options});
 }
 }
 export class FilmNotInStock implements HasDatabase {
@@ -2006,16 +2005,15 @@ export class FilmNotInStock implements HasDatabase {
 async call(parameters : Public.Procedures.FilmNotInStock.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[46674].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
+              return context.procTypes[48824].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql, request) => sql`SELECT public.film_not_in_stock(p_film_id => ${ typed[23](undefinedIsNull(parameters.pFilmId)) },p_store_id => ${ typed[23](undefinedIsNull(parameters.pStoreId)) })`, {parameters, options});
-  const results = response;
+  return await this.database.invoke( async (sql, request) => {
+    const results = await  sql`SELECT public.film_not_in_stock(p_film_id => ${ typed[23](undefinedIsNull(request?.parameters?.pFilmId)) },p_store_id => ${ typed[23](undefinedIsNull(request?.parameters?.pStoreId)) })`;
 
-              const responseBody = ( results.map(x => parseResult(this.database.context, x.film_not_in_stock)).filter<PgCatalog.Types.Int4>((r):r is PgCatalog.Types.Int4 => r !== null) );
-              return responseBody;
-           
+                   return results.map(x => parseResult(this.database.context, x.film_not_in_stock)).filter<PgCatalog.Types.Int4>((r):r is PgCatalog.Types.Int4 => r !== null);
+}, {parameters, options});
 }
 }
 export class GetCustomerBalance implements HasDatabase {
@@ -2030,12 +2028,11 @@ async call(parameters : Public.Procedures.GetCustomerBalance.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql, request) => sql`SELECT public.get_customer_balance(p_customer_id => ${ typed[23](undefinedIsNull(parameters.pCustomerId)) },p_effective_date => ${ typed[1114](undefinedIsNull(parameters.pEffectiveDate)) })`, {parameters, options});
-  const results = response;
+  return await this.database.invoke( async (sql, request) => {
+    const results = await  sql`SELECT public.get_customer_balance(p_customer_id => ${ typed[23](undefinedIsNull(request?.parameters?.pCustomerId)) },p_effective_date => ${ typed[1114](undefinedIsNull(request?.parameters?.pEffectiveDate)) })`;
 
-              const responseBody = ( PgCatalog.Types.Numeric.parse(results?.[0].get_customer_balance) );
-              return responseBody;
-           
+                   return PgCatalog.Types.Numeric.parse(results?.[0].get_customer_balance);
+}, {parameters, options});
 }
 }
 export class InventoryHeldByCustomer implements HasDatabase {
@@ -2050,12 +2047,11 @@ async call(parameters : Public.Procedures.InventoryHeldByCustomer.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql, request) => sql`SELECT public.inventory_held_by_customer(p_inventory_id => ${ typed[23](undefinedIsNull(parameters.pInventoryId)) })`, {parameters, options});
-  const results = response;
+  return await this.database.invoke( async (sql, request) => {
+    const results = await  sql`SELECT public.inventory_held_by_customer(p_inventory_id => ${ typed[23](undefinedIsNull(request?.parameters?.pInventoryId)) })`;
 
-              const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].inventory_held_by_customer) );
-              return responseBody;
-           
+                   return PgCatalog.Types.Int4.parse(results?.[0].inventory_held_by_customer);
+}, {parameters, options});
 }
 }
 export class InventoryInStock implements HasDatabase {
@@ -2070,12 +2066,11 @@ async call(parameters : Public.Procedures.InventoryInStock.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql, request) => sql`SELECT public.inventory_in_stock(p_inventory_id => ${ typed[23](undefinedIsNull(parameters.pInventoryId)) })`, {parameters, options});
-  const results = response;
+  return await this.database.invoke( async (sql, request) => {
+    const results = await  sql`SELECT public.inventory_in_stock(p_inventory_id => ${ typed[23](undefinedIsNull(request?.parameters?.pInventoryId)) })`;
 
-              const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].inventory_in_stock) );
-              return responseBody;
-           
+                   return PgCatalog.Types.Bool.parse(results?.[0].inventory_in_stock);
+}, {parameters, options});
 }
 }
 export class LastDay implements HasDatabase {
@@ -2090,12 +2085,11 @@ async call(parameters : Public.Procedures.LastDay.Parameters, options?: InvokeQu
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql, request) => sql`SELECT public.last_day( ${ typed[1114](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
-  const results = response;
+  return await this.database.invoke( async (sql, request) => {
+    const results = await  sql`SELECT public.last_day( ${ typed[1114](undefinedIsNull(request?.parameters?.argument_0)) })`;
 
-              const responseBody = ( PgCatalog.Types.Date.parse(results?.[0].last_day) );
-              return responseBody;
-           
+                   return PgCatalog.Types.Date.parse(results?.[0].last_day);
+}, {parameters, options});
 }
 }
 export class RewardsReport implements HasDatabase {
@@ -2110,12 +2104,11 @@ async call(parameters : Public.Procedures.RewardsReport.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql, request) => sql`SELECT public.rewards_report(min_monthly_purchases => ${ typed[23](undefinedIsNull(parameters.minMonthlyPurchases)) },min_dollar_amount_purchased => ${ typed[1700](undefinedIsNull(parameters.minDollarAmountPurchased)) })`, {parameters, options});
-  const results = response;
+  return await this.database.invoke( async (sql, request) => {
+    const results = await  sql`SELECT public.rewards_report(min_monthly_purchases => ${ typed[23](undefinedIsNull(request?.parameters?.minMonthlyPurchases)) },min_dollar_amount_purchased => ${ typed[1700](undefinedIsNull(request?.parameters?.minDollarAmountPurchased)) })`;
 
-              const responseBody = ( results.map(x => parseResult(this.database.context, x.rewards_report)).filter<Public.Types.Customer>((r):r is Public.Types.Customer => r !== null) );
-              return responseBody;
-           
+                   return results.map(x => parseResult(this.database.context, x.rewards_report)).filter<Public.Types.Customer>((r):r is Public.Types.Customer => r !== null);
+}, {parameters, options});
 }
 }
 }
@@ -2166,7 +2159,7 @@ async create(values: Partial<Public.Types.FilmActor>, options?: Public.Tables.Fi
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.film_actor (actor_id,film_id,last_update)
-    VALUES (${ values.actorId === undefined ? sql`DEFAULT` : typed[21](values.actorId) },${ values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
+    VALUES (${ (request.values === undefined || request.values.actorId === undefined) ? sql`DEFAULT` : typed[21](request.values.actorId) },${ (request.values === undefined || request.values.filmId === undefined) ? sql`DEFAULT` : typed[21](request.values.filmId) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) })
     ON CONFLICT (actor_id,film_id) DO UPDATE
     SET
       last_update = EXCLUDED.last_update
@@ -2217,7 +2210,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.address (address,address2,district,city_id,postal_code,phone,last_update)
-      VALUES (${ values.address === undefined ? sql`DEFAULT` : typed[1043](values.address) },${ values.address2 === undefined ? sql`DEFAULT` : typed[1043](values.address2) },${ values.district === undefined ? sql`DEFAULT` : typed[1043](values.district) },${ values.cityId === undefined ? sql`DEFAULT` : typed[21](values.cityId) },${ values.postalCode === undefined ? sql`DEFAULT` : typed[1043](values.postalCode) },${ values.phone === undefined ? sql`DEFAULT` : typed[1043](values.phone) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
+      VALUES (${ (request.values === undefined || request.values.address === undefined) ? sql`DEFAULT` : typed[1043](request.values.address) },${ (request.values === undefined || request.values.address2 === undefined) ? sql`DEFAULT` : typed[1043](request.values.address2) },${ (request.values === undefined || request.values.district === undefined) ? sql`DEFAULT` : typed[1043](request.values.district) },${ (request.values === undefined || request.values.cityId === undefined) ? sql`DEFAULT` : typed[21](request.values.cityId) },${ (request.values === undefined || request.values.postalCode === undefined) ? sql`DEFAULT` : typed[1043](request.values.postalCode) },${ (request.values === undefined || request.values.phone === undefined) ? sql`DEFAULT` : typed[1043](request.values.phone) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) })
       RETURNING
         address_id,address,address2,district,city_id,postal_code,phone,last_update
     `, {values, options});
@@ -2226,7 +2219,7 @@ return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: un
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.address (address_id,address,address2,district,city_id,postal_code,phone,last_update)
-    VALUES (${ values.addressId === undefined ? sql`DEFAULT` : typed[23](values.addressId) },${ values.address === undefined ? sql`DEFAULT` : typed[1043](values.address) },${ values.address2 === undefined ? sql`DEFAULT` : typed[1043](values.address2) },${ values.district === undefined ? sql`DEFAULT` : typed[1043](values.district) },${ values.cityId === undefined ? sql`DEFAULT` : typed[21](values.cityId) },${ values.postalCode === undefined ? sql`DEFAULT` : typed[1043](values.postalCode) },${ values.phone === undefined ? sql`DEFAULT` : typed[1043](values.phone) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
+    VALUES (${ (request.values === undefined || request.values.addressId === undefined) ? sql`DEFAULT` : typed[23](request.values.addressId) },${ (request.values === undefined || request.values.address === undefined) ? sql`DEFAULT` : typed[1043](request.values.address) },${ (request.values === undefined || request.values.address2 === undefined) ? sql`DEFAULT` : typed[1043](request.values.address2) },${ (request.values === undefined || request.values.district === undefined) ? sql`DEFAULT` : typed[1043](request.values.district) },${ (request.values === undefined || request.values.cityId === undefined) ? sql`DEFAULT` : typed[21](request.values.cityId) },${ (request.values === undefined || request.values.postalCode === undefined) ? sql`DEFAULT` : typed[1043](request.values.postalCode) },${ (request.values === undefined || request.values.phone === undefined) ? sql`DEFAULT` : typed[1043](request.values.phone) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) })
     ON CONFLICT (address_id) DO UPDATE
     SET
       address = EXCLUDED.address,address2 = EXCLUDED.address2,district = EXCLUDED.district,city_id = EXCLUDED.city_id,postal_code = EXCLUDED.postal_code,phone = EXCLUDED.phone,last_update = EXCLUDED.last_update
@@ -2277,7 +2270,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.city (city,country_id,last_update)
-      VALUES (${ values.city === undefined ? sql`DEFAULT` : typed[1043](values.city) },${ values.countryId === undefined ? sql`DEFAULT` : typed[21](values.countryId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
+      VALUES (${ (request.values === undefined || request.values.city === undefined) ? sql`DEFAULT` : typed[1043](request.values.city) },${ (request.values === undefined || request.values.countryId === undefined) ? sql`DEFAULT` : typed[21](request.values.countryId) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) })
       RETURNING
         city_id,city,country_id,last_update
     `, {values, options});
@@ -2286,7 +2279,7 @@ return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIs
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.city (city_id,city,country_id,last_update)
-    VALUES (${ values.cityId === undefined ? sql`DEFAULT` : typed[23](values.cityId) },${ values.city === undefined ? sql`DEFAULT` : typed[1043](values.city) },${ values.countryId === undefined ? sql`DEFAULT` : typed[21](values.countryId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
+    VALUES (${ (request.values === undefined || request.values.cityId === undefined) ? sql`DEFAULT` : typed[23](request.values.cityId) },${ (request.values === undefined || request.values.city === undefined) ? sql`DEFAULT` : typed[1043](request.values.city) },${ (request.values === undefined || request.values.countryId === undefined) ? sql`DEFAULT` : typed[21](request.values.countryId) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) })
     ON CONFLICT (city_id) DO UPDATE
     SET
       city = EXCLUDED.city,country_id = EXCLUDED.country_id,last_update = EXCLUDED.last_update
@@ -2337,7 +2330,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.customer (store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active)
-      VALUES (${ values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId) },${ values.firstName === undefined ? sql`DEFAULT` : typed[1043](values.firstName) },${ values.lastName === undefined ? sql`DEFAULT` : typed[1043](values.lastName) },${ values.email === undefined ? sql`DEFAULT` : typed[1043](values.email) },${ values.addressId === undefined ? sql`DEFAULT` : typed[21](values.addressId) },${ values.activebool === undefined ? sql`DEFAULT` : typed[16](values.activebool) },${ values.createDate === undefined ? sql`DEFAULT` : typed[1082](values.createDate) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.active === undefined ? sql`DEFAULT` : typed[23](values.active) })
+      VALUES (${ (request.values === undefined || request.values.storeId === undefined) ? sql`DEFAULT` : typed[21](request.values.storeId) },${ (request.values === undefined || request.values.firstName === undefined) ? sql`DEFAULT` : typed[1043](request.values.firstName) },${ (request.values === undefined || request.values.lastName === undefined) ? sql`DEFAULT` : typed[1043](request.values.lastName) },${ (request.values === undefined || request.values.email === undefined) ? sql`DEFAULT` : typed[1043](request.values.email) },${ (request.values === undefined || request.values.addressId === undefined) ? sql`DEFAULT` : typed[21](request.values.addressId) },${ (request.values === undefined || request.values.activebool === undefined) ? sql`DEFAULT` : typed[16](request.values.activebool) },${ (request.values === undefined || request.values.createDate === undefined) ? sql`DEFAULT` : typed[1082](request.values.createDate) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) },${ (request.values === undefined || request.values.active === undefined) ? sql`DEFAULT` : typed[23](request.values.active) })
       RETURNING
         customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active
     `, {values, options});
@@ -2346,7 +2339,7 @@ return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: 
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.customer (customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active)
-    VALUES (${ values.customerId === undefined ? sql`DEFAULT` : typed[23](values.customerId) },${ values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId) },${ values.firstName === undefined ? sql`DEFAULT` : typed[1043](values.firstName) },${ values.lastName === undefined ? sql`DEFAULT` : typed[1043](values.lastName) },${ values.email === undefined ? sql`DEFAULT` : typed[1043](values.email) },${ values.addressId === undefined ? sql`DEFAULT` : typed[21](values.addressId) },${ values.activebool === undefined ? sql`DEFAULT` : typed[16](values.activebool) },${ values.createDate === undefined ? sql`DEFAULT` : typed[1082](values.createDate) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.active === undefined ? sql`DEFAULT` : typed[23](values.active) })
+    VALUES (${ (request.values === undefined || request.values.customerId === undefined) ? sql`DEFAULT` : typed[23](request.values.customerId) },${ (request.values === undefined || request.values.storeId === undefined) ? sql`DEFAULT` : typed[21](request.values.storeId) },${ (request.values === undefined || request.values.firstName === undefined) ? sql`DEFAULT` : typed[1043](request.values.firstName) },${ (request.values === undefined || request.values.lastName === undefined) ? sql`DEFAULT` : typed[1043](request.values.lastName) },${ (request.values === undefined || request.values.email === undefined) ? sql`DEFAULT` : typed[1043](request.values.email) },${ (request.values === undefined || request.values.addressId === undefined) ? sql`DEFAULT` : typed[21](request.values.addressId) },${ (request.values === undefined || request.values.activebool === undefined) ? sql`DEFAULT` : typed[16](request.values.activebool) },${ (request.values === undefined || request.values.createDate === undefined) ? sql`DEFAULT` : typed[1082](request.values.createDate) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) },${ (request.values === undefined || request.values.active === undefined) ? sql`DEFAULT` : typed[23](request.values.active) })
     ON CONFLICT (customer_id) DO UPDATE
     SET
       store_id = EXCLUDED.store_id,first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,email = EXCLUDED.email,address_id = EXCLUDED.address_id,activebool = EXCLUDED.activebool,create_date = EXCLUDED.create_date,last_update = EXCLUDED.last_update,active = EXCLUDED.active
@@ -2401,7 +2394,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.actor (first_name,last_name,last_update)
-      VALUES (${ values.firstName === undefined ? sql`DEFAULT` : typed[1043](values.firstName) },${ values.lastName === undefined ? sql`DEFAULT` : typed[1043](values.lastName) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
+      VALUES (${ (request.values === undefined || request.values.firstName === undefined) ? sql`DEFAULT` : typed[1043](request.values.firstName) },${ (request.values === undefined || request.values.lastName === undefined) ? sql`DEFAULT` : typed[1043](request.values.lastName) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) })
       RETURNING
         actor_id,first_name,last_name,last_update
     `, {values, options});
@@ -2410,7 +2403,7 @@ return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: unde
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.actor (actor_id,first_name,last_name,last_update)
-    VALUES (${ values.actorId === undefined ? sql`DEFAULT` : typed[23](values.actorId) },${ values.firstName === undefined ? sql`DEFAULT` : typed[1043](values.firstName) },${ values.lastName === undefined ? sql`DEFAULT` : typed[1043](values.lastName) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
+    VALUES (${ (request.values === undefined || request.values.actorId === undefined) ? sql`DEFAULT` : typed[23](request.values.actorId) },${ (request.values === undefined || request.values.firstName === undefined) ? sql`DEFAULT` : typed[1043](request.values.firstName) },${ (request.values === undefined || request.values.lastName === undefined) ? sql`DEFAULT` : typed[1043](request.values.lastName) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) })
     ON CONFLICT (actor_id) DO UPDATE
     SET
       first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,last_update = EXCLUDED.last_update
@@ -2457,7 +2450,7 @@ async create(values: Partial<Public.Types.FilmCategory>, options?: Public.Tables
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.film_category (film_id,category_id,last_update)
-    VALUES (${ values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId) },${ values.categoryId === undefined ? sql`DEFAULT` : typed[21](values.categoryId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
+    VALUES (${ (request.values === undefined || request.values.filmId === undefined) ? sql`DEFAULT` : typed[21](request.values.filmId) },${ (request.values === undefined || request.values.categoryId === undefined) ? sql`DEFAULT` : typed[21](request.values.categoryId) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) })
     ON CONFLICT (film_id,category_id) DO UPDATE
     SET
       last_update = EXCLUDED.last_update
@@ -2506,7 +2499,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.inventory (film_id,store_id,last_update)
-      VALUES (${ values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId) },${ values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
+      VALUES (${ (request.values === undefined || request.values.filmId === undefined) ? sql`DEFAULT` : typed[21](request.values.filmId) },${ (request.values === undefined || request.values.storeId === undefined) ? sql`DEFAULT` : typed[21](request.values.storeId) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) })
       RETURNING
         inventory_id,film_id,store_id,last_update
     `, {values, options});
@@ -2515,7 +2508,7 @@ return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId:
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.inventory (inventory_id,film_id,store_id,last_update)
-    VALUES (${ values.inventoryId === undefined ? sql`DEFAULT` : typed[23](values.inventoryId) },${ values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId) },${ values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
+    VALUES (${ (request.values === undefined || request.values.inventoryId === undefined) ? sql`DEFAULT` : typed[23](request.values.inventoryId) },${ (request.values === undefined || request.values.filmId === undefined) ? sql`DEFAULT` : typed[21](request.values.filmId) },${ (request.values === undefined || request.values.storeId === undefined) ? sql`DEFAULT` : typed[21](request.values.storeId) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) })
     ON CONFLICT (inventory_id) DO UPDATE
     SET
       film_id = EXCLUDED.film_id,store_id = EXCLUDED.store_id,last_update = EXCLUDED.last_update
@@ -2566,7 +2559,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.category (name,last_update)
-      VALUES (${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
+      VALUES (${ (request.values === undefined || request.values.name === undefined) ? sql`DEFAULT` : typed[1043](request.values.name) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) })
       RETURNING
         category_id,name,last_update
     `, {values, options});
@@ -2575,7 +2568,7 @@ return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: und
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.category (category_id,name,last_update)
-    VALUES (${ values.categoryId === undefined ? sql`DEFAULT` : typed[23](values.categoryId) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
+    VALUES (${ (request.values === undefined || request.values.categoryId === undefined) ? sql`DEFAULT` : typed[23](request.values.categoryId) },${ (request.values === undefined || request.values.name === undefined) ? sql`DEFAULT` : typed[1043](request.values.name) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) })
     ON CONFLICT (category_id) DO UPDATE
     SET
       name = EXCLUDED.name,last_update = EXCLUDED.last_update
@@ -2624,7 +2617,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.country (country,last_update)
-      VALUES (${ values.country === undefined ? sql`DEFAULT` : typed[1043](values.country) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
+      VALUES (${ (request.values === undefined || request.values.country === undefined) ? sql`DEFAULT` : typed[1043](request.values.country) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) })
       RETURNING
         country_id,country,last_update
     `, {values, options});
@@ -2633,7 +2626,7 @@ return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: un
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.country (country_id,country,last_update)
-    VALUES (${ values.countryId === undefined ? sql`DEFAULT` : typed[23](values.countryId) },${ values.country === undefined ? sql`DEFAULT` : typed[1043](values.country) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
+    VALUES (${ (request.values === undefined || request.values.countryId === undefined) ? sql`DEFAULT` : typed[23](request.values.countryId) },${ (request.values === undefined || request.values.country === undefined) ? sql`DEFAULT` : typed[1043](request.values.country) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) })
     ON CONFLICT (country_id) DO UPDATE
     SET
       country = EXCLUDED.country,last_update = EXCLUDED.last_update
@@ -2682,7 +2675,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.language (name,last_update)
-      VALUES (${ values.name === undefined ? sql`DEFAULT` : typed[1042](values.name) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
+      VALUES (${ (request.values === undefined || request.values.name === undefined) ? sql`DEFAULT` : typed[1042](request.values.name) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) })
       RETURNING
         language_id,name,last_update
     `, {values, options});
@@ -2691,7 +2684,7 @@ return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: und
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.language (language_id,name,last_update)
-    VALUES (${ values.languageId === undefined ? sql`DEFAULT` : typed[23](values.languageId) },${ values.name === undefined ? sql`DEFAULT` : typed[1042](values.name) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
+    VALUES (${ (request.values === undefined || request.values.languageId === undefined) ? sql`DEFAULT` : typed[23](request.values.languageId) },${ (request.values === undefined || request.values.name === undefined) ? sql`DEFAULT` : typed[1042](request.values.name) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) })
     ON CONFLICT (language_id) DO UPDATE
     SET
       name = EXCLUDED.name,last_update = EXCLUDED.last_update
@@ -2740,7 +2733,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.rental (rental_date,inventory_id,customer_id,return_date,staff_id,last_update)
-      VALUES (${ values.rentalDate === undefined ? sql`DEFAULT` : typed[1114](values.rentalDate) },${ values.inventoryId === undefined ? sql`DEFAULT` : typed[23](values.inventoryId) },${ values.customerId === undefined ? sql`DEFAULT` : typed[21](values.customerId) },${ values.returnDate === undefined ? sql`DEFAULT` : typed[1114](values.returnDate) },${ values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
+      VALUES (${ (request.values === undefined || request.values.rentalDate === undefined) ? sql`DEFAULT` : typed[1114](request.values.rentalDate) },${ (request.values === undefined || request.values.inventoryId === undefined) ? sql`DEFAULT` : typed[23](request.values.inventoryId) },${ (request.values === undefined || request.values.customerId === undefined) ? sql`DEFAULT` : typed[21](request.values.customerId) },${ (request.values === undefined || request.values.returnDate === undefined) ? sql`DEFAULT` : typed[1114](request.values.returnDate) },${ (request.values === undefined || request.values.staffId === undefined) ? sql`DEFAULT` : typed[21](request.values.staffId) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) })
       RETURNING
         rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update
     `, {values, options});
@@ -2749,7 +2742,7 @@ return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: u
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.rental (rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update)
-    VALUES (${ values.rentalId === undefined ? sql`DEFAULT` : typed[23](values.rentalId) },${ values.rentalDate === undefined ? sql`DEFAULT` : typed[1114](values.rentalDate) },${ values.inventoryId === undefined ? sql`DEFAULT` : typed[23](values.inventoryId) },${ values.customerId === undefined ? sql`DEFAULT` : typed[21](values.customerId) },${ values.returnDate === undefined ? sql`DEFAULT` : typed[1114](values.returnDate) },${ values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
+    VALUES (${ (request.values === undefined || request.values.rentalId === undefined) ? sql`DEFAULT` : typed[23](request.values.rentalId) },${ (request.values === undefined || request.values.rentalDate === undefined) ? sql`DEFAULT` : typed[1114](request.values.rentalDate) },${ (request.values === undefined || request.values.inventoryId === undefined) ? sql`DEFAULT` : typed[23](request.values.inventoryId) },${ (request.values === undefined || request.values.customerId === undefined) ? sql`DEFAULT` : typed[21](request.values.customerId) },${ (request.values === undefined || request.values.returnDate === undefined) ? sql`DEFAULT` : typed[1114](request.values.returnDate) },${ (request.values === undefined || request.values.staffId === undefined) ? sql`DEFAULT` : typed[21](request.values.staffId) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) })
     ON CONFLICT (rental_id) DO UPDATE
     SET
       rental_date = EXCLUDED.rental_date,inventory_id = EXCLUDED.inventory_id,customer_id = EXCLUDED.customer_id,return_date = EXCLUDED.return_date,staff_id = EXCLUDED.staff_id,last_update = EXCLUDED.last_update
@@ -2802,7 +2795,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.staff (first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture)
-      VALUES (${ values.firstName === undefined ? sql`DEFAULT` : typed[1043](values.firstName) },${ values.lastName === undefined ? sql`DEFAULT` : typed[1043](values.lastName) },${ values.addressId === undefined ? sql`DEFAULT` : typed[21](values.addressId) },${ values.email === undefined ? sql`DEFAULT` : typed[1043](values.email) },${ values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId) },${ values.active === undefined ? sql`DEFAULT` : typed[16](values.active) },${ values.username === undefined ? sql`DEFAULT` : typed[1043](values.username) },${ values.password === undefined ? sql`DEFAULT` : typed[1043](values.password) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.picture === undefined ? sql`DEFAULT` : typed[17](values.picture) })
+      VALUES (${ (request.values === undefined || request.values.firstName === undefined) ? sql`DEFAULT` : typed[1043](request.values.firstName) },${ (request.values === undefined || request.values.lastName === undefined) ? sql`DEFAULT` : typed[1043](request.values.lastName) },${ (request.values === undefined || request.values.addressId === undefined) ? sql`DEFAULT` : typed[21](request.values.addressId) },${ (request.values === undefined || request.values.email === undefined) ? sql`DEFAULT` : typed[1043](request.values.email) },${ (request.values === undefined || request.values.storeId === undefined) ? sql`DEFAULT` : typed[21](request.values.storeId) },${ (request.values === undefined || request.values.active === undefined) ? sql`DEFAULT` : typed[16](request.values.active) },${ (request.values === undefined || request.values.username === undefined) ? sql`DEFAULT` : typed[1043](request.values.username) },${ (request.values === undefined || request.values.password === undefined) ? sql`DEFAULT` : typed[1043](request.values.password) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) },${ (request.values === undefined || request.values.picture === undefined) ? sql`DEFAULT` : typed[17](request.values.picture) })
       RETURNING
         staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture
     `, {values, options});
@@ -2811,7 +2804,7 @@ return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: unde
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.staff (staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture)
-    VALUES (${ values.staffId === undefined ? sql`DEFAULT` : typed[23](values.staffId) },${ values.firstName === undefined ? sql`DEFAULT` : typed[1043](values.firstName) },${ values.lastName === undefined ? sql`DEFAULT` : typed[1043](values.lastName) },${ values.addressId === undefined ? sql`DEFAULT` : typed[21](values.addressId) },${ values.email === undefined ? sql`DEFAULT` : typed[1043](values.email) },${ values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId) },${ values.active === undefined ? sql`DEFAULT` : typed[16](values.active) },${ values.username === undefined ? sql`DEFAULT` : typed[1043](values.username) },${ values.password === undefined ? sql`DEFAULT` : typed[1043](values.password) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.picture === undefined ? sql`DEFAULT` : typed[17](values.picture) })
+    VALUES (${ (request.values === undefined || request.values.staffId === undefined) ? sql`DEFAULT` : typed[23](request.values.staffId) },${ (request.values === undefined || request.values.firstName === undefined) ? sql`DEFAULT` : typed[1043](request.values.firstName) },${ (request.values === undefined || request.values.lastName === undefined) ? sql`DEFAULT` : typed[1043](request.values.lastName) },${ (request.values === undefined || request.values.addressId === undefined) ? sql`DEFAULT` : typed[21](request.values.addressId) },${ (request.values === undefined || request.values.email === undefined) ? sql`DEFAULT` : typed[1043](request.values.email) },${ (request.values === undefined || request.values.storeId === undefined) ? sql`DEFAULT` : typed[21](request.values.storeId) },${ (request.values === undefined || request.values.active === undefined) ? sql`DEFAULT` : typed[16](request.values.active) },${ (request.values === undefined || request.values.username === undefined) ? sql`DEFAULT` : typed[1043](request.values.username) },${ (request.values === undefined || request.values.password === undefined) ? sql`DEFAULT` : typed[1043](request.values.password) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) },${ (request.values === undefined || request.values.picture === undefined) ? sql`DEFAULT` : typed[17](request.values.picture) })
     ON CONFLICT (staff_id) DO UPDATE
     SET
       first_name = EXCLUDED.first_name,last_name = EXCLUDED.last_name,address_id = EXCLUDED.address_id,email = EXCLUDED.email,store_id = EXCLUDED.store_id,active = EXCLUDED.active,username = EXCLUDED.username,password = EXCLUDED.password,last_update = EXCLUDED.last_update,picture = EXCLUDED.picture
@@ -2860,7 +2853,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.store (manager_staff_id,address_id,last_update)
-      VALUES (${ values.managerStaffId === undefined ? sql`DEFAULT` : typed[21](values.managerStaffId) },${ values.addressId === undefined ? sql`DEFAULT` : typed[21](values.addressId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
+      VALUES (${ (request.values === undefined || request.values.managerStaffId === undefined) ? sql`DEFAULT` : typed[21](request.values.managerStaffId) },${ (request.values === undefined || request.values.addressId === undefined) ? sql`DEFAULT` : typed[21](request.values.addressId) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) })
       RETURNING
         store_id,manager_staff_id,address_id,last_update
     `, {values, options});
@@ -2869,7 +2862,7 @@ return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId:
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.store (store_id,manager_staff_id,address_id,last_update)
-    VALUES (${ values.storeId === undefined ? sql`DEFAULT` : typed[23](values.storeId) },${ values.managerStaffId === undefined ? sql`DEFAULT` : typed[21](values.managerStaffId) },${ values.addressId === undefined ? sql`DEFAULT` : typed[21](values.addressId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
+    VALUES (${ (request.values === undefined || request.values.storeId === undefined) ? sql`DEFAULT` : typed[23](request.values.storeId) },${ (request.values === undefined || request.values.managerStaffId === undefined) ? sql`DEFAULT` : typed[21](request.values.managerStaffId) },${ (request.values === undefined || request.values.addressId === undefined) ? sql`DEFAULT` : typed[21](request.values.addressId) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) })
     ON CONFLICT (store_id) DO UPDATE
     SET
       manager_staff_id = EXCLUDED.manager_staff_id,address_id = EXCLUDED.address_id,last_update = EXCLUDED.last_update
@@ -2920,7 +2913,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.payment (customer_id,staff_id,rental_id,amount,payment_date)
-      VALUES (${ values.customerId === undefined ? sql`DEFAULT` : typed[21](values.customerId) },${ values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId) },${ values.rentalId === undefined ? sql`DEFAULT` : typed[23](values.rentalId) },${ values.amount === undefined ? sql`DEFAULT` : typed[1700](values.amount) },${ values.paymentDate === undefined ? sql`DEFAULT` : typed[1114](values.paymentDate) })
+      VALUES (${ (request.values === undefined || request.values.customerId === undefined) ? sql`DEFAULT` : typed[21](request.values.customerId) },${ (request.values === undefined || request.values.staffId === undefined) ? sql`DEFAULT` : typed[21](request.values.staffId) },${ (request.values === undefined || request.values.rentalId === undefined) ? sql`DEFAULT` : typed[23](request.values.rentalId) },${ (request.values === undefined || request.values.amount === undefined) ? sql`DEFAULT` : typed[1700](request.values.amount) },${ (request.values === undefined || request.values.paymentDate === undefined) ? sql`DEFAULT` : typed[1114](request.values.paymentDate) })
       RETURNING
         payment_id,customer_id,staff_id,rental_id,amount,payment_date
     `, {values, options});
@@ -2929,7 +2922,7 @@ return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId:
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.payment (payment_id,customer_id,staff_id,rental_id,amount,payment_date)
-    VALUES (${ values.paymentId === undefined ? sql`DEFAULT` : typed[23](values.paymentId) },${ values.customerId === undefined ? sql`DEFAULT` : typed[21](values.customerId) },${ values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId) },${ values.rentalId === undefined ? sql`DEFAULT` : typed[23](values.rentalId) },${ values.amount === undefined ? sql`DEFAULT` : typed[1700](values.amount) },${ values.paymentDate === undefined ? sql`DEFAULT` : typed[1114](values.paymentDate) })
+    VALUES (${ (request.values === undefined || request.values.paymentId === undefined) ? sql`DEFAULT` : typed[23](request.values.paymentId) },${ (request.values === undefined || request.values.customerId === undefined) ? sql`DEFAULT` : typed[21](request.values.customerId) },${ (request.values === undefined || request.values.staffId === undefined) ? sql`DEFAULT` : typed[21](request.values.staffId) },${ (request.values === undefined || request.values.rentalId === undefined) ? sql`DEFAULT` : typed[23](request.values.rentalId) },${ (request.values === undefined || request.values.amount === undefined) ? sql`DEFAULT` : typed[1700](request.values.amount) },${ (request.values === undefined || request.values.paymentDate === undefined) ? sql`DEFAULT` : typed[1114](request.values.paymentDate) })
     ON CONFLICT (payment_id) DO UPDATE
     SET
       customer_id = EXCLUDED.customer_id,staff_id = EXCLUDED.staff_id,rental_id = EXCLUDED.rental_id,amount = EXCLUDED.amount,payment_date = EXCLUDED.payment_date
@@ -2984,7 +2977,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
-      VALUES (${ values.title === undefined ? sql`DEFAULT` : typed[1043](values.title) },${ values.description === undefined ? sql`DEFAULT` : typed[25](values.description) },${ values.releaseYear === undefined ? sql`DEFAULT` : typed[46670](values.releaseYear) },${ values.languageId === undefined ? sql`DEFAULT` : typed[21](values.languageId) },${ values.rentalDuration === undefined ? sql`DEFAULT` : typed[21](values.rentalDuration) },${ values.rentalRate === undefined ? sql`DEFAULT` : typed[1700](values.rentalRate) },${ values.length === undefined ? sql`DEFAULT` : typed[21](values.length) },${ values.replacementCost === undefined ? sql`DEFAULT` : typed[1700](values.replacementCost) },${ values.rating === undefined ? sql`DEFAULT` : typed[46659](values.rating) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.specialFeatures === undefined ? sql`DEFAULT` : typed[1009](values.specialFeatures) },${ values.fulltext === undefined ? sql`DEFAULT` : typed[3614](values.fulltext) })
+      VALUES (${ (request.values === undefined || request.values.title === undefined) ? sql`DEFAULT` : typed[1043](request.values.title) },${ (request.values === undefined || request.values.description === undefined) ? sql`DEFAULT` : typed[25](request.values.description) },${ (request.values === undefined || request.values.releaseYear === undefined) ? sql`DEFAULT` : typed[48820](request.values.releaseYear) },${ (request.values === undefined || request.values.languageId === undefined) ? sql`DEFAULT` : typed[21](request.values.languageId) },${ (request.values === undefined || request.values.rentalDuration === undefined) ? sql`DEFAULT` : typed[21](request.values.rentalDuration) },${ (request.values === undefined || request.values.rentalRate === undefined) ? sql`DEFAULT` : typed[1700](request.values.rentalRate) },${ (request.values === undefined || request.values.length === undefined) ? sql`DEFAULT` : typed[21](request.values.length) },${ (request.values === undefined || request.values.replacementCost === undefined) ? sql`DEFAULT` : typed[1700](request.values.replacementCost) },${ (request.values === undefined || request.values.rating === undefined) ? sql`DEFAULT` : typed[48809](request.values.rating) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) },${ (request.values === undefined || request.values.specialFeatures === undefined) ? sql`DEFAULT` : typed[1009](request.values.specialFeatures) },${ (request.values === undefined || request.values.fulltext === undefined) ? sql`DEFAULT` : typed[3614](request.values.fulltext) })
       RETURNING
         film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
     `, {values, options});
@@ -2993,7 +2986,7 @@ return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedI
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.film (film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
-    VALUES (${ values.filmId === undefined ? sql`DEFAULT` : typed[23](values.filmId) },${ values.title === undefined ? sql`DEFAULT` : typed[1043](values.title) },${ values.description === undefined ? sql`DEFAULT` : typed[25](values.description) },${ values.releaseYear === undefined ? sql`DEFAULT` : typed[46670](values.releaseYear) },${ values.languageId === undefined ? sql`DEFAULT` : typed[21](values.languageId) },${ values.rentalDuration === undefined ? sql`DEFAULT` : typed[21](values.rentalDuration) },${ values.rentalRate === undefined ? sql`DEFAULT` : typed[1700](values.rentalRate) },${ values.length === undefined ? sql`DEFAULT` : typed[21](values.length) },${ values.replacementCost === undefined ? sql`DEFAULT` : typed[1700](values.replacementCost) },${ values.rating === undefined ? sql`DEFAULT` : typed[46659](values.rating) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.specialFeatures === undefined ? sql`DEFAULT` : typed[1009](values.specialFeatures) },${ values.fulltext === undefined ? sql`DEFAULT` : typed[3614](values.fulltext) })
+    VALUES (${ (request.values === undefined || request.values.filmId === undefined) ? sql`DEFAULT` : typed[23](request.values.filmId) },${ (request.values === undefined || request.values.title === undefined) ? sql`DEFAULT` : typed[1043](request.values.title) },${ (request.values === undefined || request.values.description === undefined) ? sql`DEFAULT` : typed[25](request.values.description) },${ (request.values === undefined || request.values.releaseYear === undefined) ? sql`DEFAULT` : typed[48820](request.values.releaseYear) },${ (request.values === undefined || request.values.languageId === undefined) ? sql`DEFAULT` : typed[21](request.values.languageId) },${ (request.values === undefined || request.values.rentalDuration === undefined) ? sql`DEFAULT` : typed[21](request.values.rentalDuration) },${ (request.values === undefined || request.values.rentalRate === undefined) ? sql`DEFAULT` : typed[1700](request.values.rentalRate) },${ (request.values === undefined || request.values.length === undefined) ? sql`DEFAULT` : typed[21](request.values.length) },${ (request.values === undefined || request.values.replacementCost === undefined) ? sql`DEFAULT` : typed[1700](request.values.replacementCost) },${ (request.values === undefined || request.values.rating === undefined) ? sql`DEFAULT` : typed[48809](request.values.rating) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) },${ (request.values === undefined || request.values.specialFeatures === undefined) ? sql`DEFAULT` : typed[1009](request.values.specialFeatures) },${ (request.values === undefined || request.values.fulltext === undefined) ? sql`DEFAULT` : typed[3614](request.values.fulltext) })
     ON CONFLICT (film_id) DO UPDATE
     SET
       title = EXCLUDED.title,description = EXCLUDED.description,release_year = EXCLUDED.release_year,language_id = EXCLUDED.language_id,rental_duration = EXCLUDED.rental_duration,rental_rate = EXCLUDED.rental_rate,length = EXCLUDED.length,replacement_cost = EXCLUDED.replacement_cost,rating = EXCLUDED.rating,last_update = EXCLUDED.last_update,special_features = EXCLUDED.special_features,fulltext = EXCLUDED.fulltext
@@ -3048,19 +3041,21 @@ async read(parameters: Public.Types.FilmActorPkey, options?: Public.Types.FilmAc
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.FilmActor, Public.Types.FilmActorPkey, never, Public.Types.FilmActorPkey.Options & Public.Tables.FilmActor.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       actor_id,film_id,last_update 
     FROM
       public.film_actor 
     WHERE
-      actor_id = ${ parameters.actorId === undefined ? sql`DEFAULT` : typed[21](parameters.actorId) } AND film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
+      actor_id = ${ (request.parameters === undefined || request.parameters.actorId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.actorId) } AND film_id = ${ (request.parameters === undefined || request.parameters.filmId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.filmId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+    `
+  return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.FilmActorPkey, values: Partial<Public.Tables.FilmActor.Values>, options?: Public.Types.FilmActorPkey.Options & Public.Tables.FilmActor.Options) : Promise<Public.Types.FilmActor>{
 
@@ -3073,12 +3068,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.film_actor 
     SET
-      actor_id = ${ values.actorId === undefined ? sql`actor_id` : typed[21](values.actorId) } , film_id = ${ values.filmId === undefined ? sql`film_id` : typed[21](values.filmId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
+      actor_id = ${ (request.values === undefined || request.values.actorId === undefined) ? sql`actor_id` : typed[21](request.values.actorId) } , film_id = ${ (request.values === undefined || request.values.filmId === undefined) ? sql`film_id` : typed[21](request.values.filmId) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } 
     WHERE
-      actor_id = ${ parameters.actorId === undefined ? sql`DEFAULT` : typed[21](parameters.actorId) } AND film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
+      actor_id = ${ (request.parameters === undefined || request.parameters.actorId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.actorId) } AND film_id = ${ (request.parameters === undefined || request.parameters.filmId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.filmId) }
     RETURNING actor_id,film_id,last_update`, {parameters, values, options});
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.FilmActorPkey, options?: Public.Types.FilmActorPkey.Options & Public.Tables.FilmActor.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3087,7 +3082,7 @@ async delete(parameters: Public.Types.FilmActorPkey, options?: Public.Types.Film
     DELETE FROM 
       public.film_actor 
     WHERE
-      actor_id = ${ parameters.actorId === undefined ? sql`DEFAULT` : typed[21](parameters.actorId) } AND film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
+      actor_id = ${ (request.parameters === undefined || request.parameters.actorId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.actorId) } AND film_id = ${ (request.parameters === undefined || request.parameters.filmId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.filmId) }
     RETURNING actor_id,film_id,last_update`, {parameters, options});
  return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -3108,19 +3103,21 @@ async read(parameters: Public.Types.IdxFkFilmId, options?: Public.Types.IdxFkFil
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.FilmActor[], Public.Types.IdxFkFilmId, never, Public.Types.IdxFkFilmId.Options & Public.Tables.FilmActor.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       actor_id,film_id,last_update 
     FROM
       public.film_actor 
     WHERE
-      film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
+      film_id = ${ (request.parameters === undefined || request.parameters.filmId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.filmId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))
+    `
+  return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.IdxFkFilmId, values: Partial<Public.Tables.FilmActor.Values>, options?: Public.Types.IdxFkFilmId.Options & Public.Tables.FilmActor.Options) : Promise<Public.Types.FilmActor[]>{
 
@@ -3133,12 +3130,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.film_actor 
     SET
-      actor_id = ${ values.actorId === undefined ? sql`actor_id` : typed[21](values.actorId) } , film_id = ${ values.filmId === undefined ? sql`film_id` : typed[21](values.filmId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
+      actor_id = ${ (request.values === undefined || request.values.actorId === undefined) ? sql`actor_id` : typed[21](request.values.actorId) } , film_id = ${ (request.values === undefined || request.values.filmId === undefined) ? sql`film_id` : typed[21](request.values.filmId) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } 
     WHERE
-      film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
+      film_id = ${ (request.parameters === undefined || request.parameters.filmId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.filmId) }
     RETURNING actor_id,film_id,last_update`, {parameters, values, options});
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))
-},
+}
 async delete(parameters: Public.Types.IdxFkFilmId, options?: Public.Types.IdxFkFilmId.Options & Public.Tables.FilmActor.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3147,7 +3144,7 @@ async delete(parameters: Public.Types.IdxFkFilmId, options?: Public.Types.IdxFkF
     DELETE FROM 
       public.film_actor 
     WHERE
-      film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
+      film_id = ${ (request.parameters === undefined || request.parameters.filmId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.filmId) }
     RETURNING actor_id,film_id,last_update`, {parameters, options});
  return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -3170,19 +3167,21 @@ async read(parameters: Public.Types.AddressPkey, options?: Public.Types.AddressP
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Address, Public.Types.AddressPkey, never, Public.Types.AddressPkey.Options & Public.Tables.Address.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       address_id,address,address2,district,city_id,postal_code,phone,last_update 
     FROM
       public.address 
     WHERE
-      address_id = ${ parameters.addressId === undefined ? sql`DEFAULT` : typed[23](parameters.addressId) }
+      address_id = ${ (request.parameters === undefined || request.parameters.addressId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.addressId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+    `
+  return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.AddressPkey, values: Partial<Public.Tables.Address.Values>, options?: Public.Types.AddressPkey.Options & Public.Tables.Address.Options) : Promise<Public.Types.Address>{
 
@@ -3195,12 +3194,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.address 
     SET
-      address_id = ${ values.addressId === undefined ? sql`address_id` : typed[23](values.addressId) } , address = ${ values.address === undefined ? sql`address` : typed[1043](values.address) } , address2 = ${ values.address2 === undefined ? sql`address2` : typed[1043](values.address2) } , district = ${ values.district === undefined ? sql`district` : typed[1043](values.district) } , city_id = ${ values.cityId === undefined ? sql`city_id` : typed[21](values.cityId) } , postal_code = ${ values.postalCode === undefined ? sql`postal_code` : typed[1043](values.postalCode) } , phone = ${ values.phone === undefined ? sql`phone` : typed[1043](values.phone) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
+      address_id = ${ (request.values === undefined || request.values.addressId === undefined) ? sql`address_id` : typed[23](request.values.addressId) } , address = ${ (request.values === undefined || request.values.address === undefined) ? sql`address` : typed[1043](request.values.address) } , address2 = ${ (request.values === undefined || request.values.address2 === undefined) ? sql`address2` : typed[1043](request.values.address2) } , district = ${ (request.values === undefined || request.values.district === undefined) ? sql`district` : typed[1043](request.values.district) } , city_id = ${ (request.values === undefined || request.values.cityId === undefined) ? sql`city_id` : typed[21](request.values.cityId) } , postal_code = ${ (request.values === undefined || request.values.postalCode === undefined) ? sql`postal_code` : typed[1043](request.values.postalCode) } , phone = ${ (request.values === undefined || request.values.phone === undefined) ? sql`phone` : typed[1043](request.values.phone) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } 
     WHERE
-      address_id = ${ parameters.addressId === undefined ? sql`DEFAULT` : typed[23](parameters.addressId) }
+      address_id = ${ (request.parameters === undefined || request.parameters.addressId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.addressId) }
     RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`, {parameters, values, options});
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.AddressPkey, options?: Public.Types.AddressPkey.Options & Public.Tables.Address.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3209,7 +3208,7 @@ async delete(parameters: Public.Types.AddressPkey, options?: Public.Types.Addres
     DELETE FROM 
       public.address 
     WHERE
-      address_id = ${ parameters.addressId === undefined ? sql`DEFAULT` : typed[23](parameters.addressId) }
+      address_id = ${ (request.parameters === undefined || request.parameters.addressId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.addressId) }
     RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`, {parameters, options});
  return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -3230,19 +3229,21 @@ async read(parameters: Public.Types.IdxFkCityId, options?: Public.Types.IdxFkCit
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Address[], Public.Types.IdxFkCityId, never, Public.Types.IdxFkCityId.Options & Public.Tables.Address.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       address_id,address,address2,district,city_id,postal_code,phone,last_update 
     FROM
       public.address 
     WHERE
-      city_id = ${ parameters.cityId === undefined ? sql`DEFAULT` : typed[21](parameters.cityId) }
+      city_id = ${ (request.parameters === undefined || request.parameters.cityId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.cityId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))
+    `
+  return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.IdxFkCityId, values: Partial<Public.Tables.Address.Values>, options?: Public.Types.IdxFkCityId.Options & Public.Tables.Address.Options) : Promise<Public.Types.Address[]>{
 
@@ -3255,12 +3256,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.address 
     SET
-      address_id = ${ values.addressId === undefined ? sql`address_id` : typed[23](values.addressId) } , address = ${ values.address === undefined ? sql`address` : typed[1043](values.address) } , address2 = ${ values.address2 === undefined ? sql`address2` : typed[1043](values.address2) } , district = ${ values.district === undefined ? sql`district` : typed[1043](values.district) } , city_id = ${ values.cityId === undefined ? sql`city_id` : typed[21](values.cityId) } , postal_code = ${ values.postalCode === undefined ? sql`postal_code` : typed[1043](values.postalCode) } , phone = ${ values.phone === undefined ? sql`phone` : typed[1043](values.phone) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
+      address_id = ${ (request.values === undefined || request.values.addressId === undefined) ? sql`address_id` : typed[23](request.values.addressId) } , address = ${ (request.values === undefined || request.values.address === undefined) ? sql`address` : typed[1043](request.values.address) } , address2 = ${ (request.values === undefined || request.values.address2 === undefined) ? sql`address2` : typed[1043](request.values.address2) } , district = ${ (request.values === undefined || request.values.district === undefined) ? sql`district` : typed[1043](request.values.district) } , city_id = ${ (request.values === undefined || request.values.cityId === undefined) ? sql`city_id` : typed[21](request.values.cityId) } , postal_code = ${ (request.values === undefined || request.values.postalCode === undefined) ? sql`postal_code` : typed[1043](request.values.postalCode) } , phone = ${ (request.values === undefined || request.values.phone === undefined) ? sql`phone` : typed[1043](request.values.phone) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } 
     WHERE
-      city_id = ${ parameters.cityId === undefined ? sql`DEFAULT` : typed[21](parameters.cityId) }
+      city_id = ${ (request.parameters === undefined || request.parameters.cityId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.cityId) }
     RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`, {parameters, values, options});
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))
-},
+}
 async delete(parameters: Public.Types.IdxFkCityId, options?: Public.Types.IdxFkCityId.Options & Public.Tables.Address.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3269,7 +3270,7 @@ async delete(parameters: Public.Types.IdxFkCityId, options?: Public.Types.IdxFkC
     DELETE FROM 
       public.address 
     WHERE
-      city_id = ${ parameters.cityId === undefined ? sql`DEFAULT` : typed[21](parameters.cityId) }
+      city_id = ${ (request.parameters === undefined || request.parameters.cityId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.cityId) }
     RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`, {parameters, options});
  return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -3292,19 +3293,21 @@ async read(parameters: Public.Types.CityPkey, options?: Public.Types.CityPkey.Op
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.City, Public.Types.CityPkey, never, Public.Types.CityPkey.Options & Public.Tables.City.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       city_id,city,country_id,last_update 
     FROM
       public.city 
     WHERE
-      city_id = ${ parameters.cityId === undefined ? sql`DEFAULT` : typed[23](parameters.cityId) }
+      city_id = ${ (request.parameters === undefined || request.parameters.cityId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.cityId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+    `
+  return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.CityPkey, values: Partial<Public.Tables.City.Values>, options?: Public.Types.CityPkey.Options & Public.Tables.City.Options) : Promise<Public.Types.City>{
 
@@ -3317,12 +3320,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.city 
     SET
-      city_id = ${ values.cityId === undefined ? sql`city_id` : typed[23](values.cityId) } , city = ${ values.city === undefined ? sql`city` : typed[1043](values.city) } , country_id = ${ values.countryId === undefined ? sql`country_id` : typed[21](values.countryId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
+      city_id = ${ (request.values === undefined || request.values.cityId === undefined) ? sql`city_id` : typed[23](request.values.cityId) } , city = ${ (request.values === undefined || request.values.city === undefined) ? sql`city` : typed[1043](request.values.city) } , country_id = ${ (request.values === undefined || request.values.countryId === undefined) ? sql`country_id` : typed[21](request.values.countryId) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } 
     WHERE
-      city_id = ${ parameters.cityId === undefined ? sql`DEFAULT` : typed[23](parameters.cityId) }
+      city_id = ${ (request.parameters === undefined || request.parameters.cityId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.cityId) }
     RETURNING city_id,city,country_id,last_update`, {parameters, values, options});
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.CityPkey, options?: Public.Types.CityPkey.Options & Public.Tables.City.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3331,7 +3334,7 @@ async delete(parameters: Public.Types.CityPkey, options?: Public.Types.CityPkey.
     DELETE FROM 
       public.city 
     WHERE
-      city_id = ${ parameters.cityId === undefined ? sql`DEFAULT` : typed[23](parameters.cityId) }
+      city_id = ${ (request.parameters === undefined || request.parameters.cityId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.cityId) }
     RETURNING city_id,city,country_id,last_update`, {parameters, options});
  return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -3352,19 +3355,21 @@ async read(parameters: Public.Types.IdxFkCountryId, options?: Public.Types.IdxFk
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.City[], Public.Types.IdxFkCountryId, never, Public.Types.IdxFkCountryId.Options & Public.Tables.City.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       city_id,city,country_id,last_update 
     FROM
       public.city 
     WHERE
-      country_id = ${ parameters.countryId === undefined ? sql`DEFAULT` : typed[21](parameters.countryId) }
+      country_id = ${ (request.parameters === undefined || request.parameters.countryId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.countryId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))
+    `
+  return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.IdxFkCountryId, values: Partial<Public.Tables.City.Values>, options?: Public.Types.IdxFkCountryId.Options & Public.Tables.City.Options) : Promise<Public.Types.City[]>{
 
@@ -3377,12 +3382,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.city 
     SET
-      city_id = ${ values.cityId === undefined ? sql`city_id` : typed[23](values.cityId) } , city = ${ values.city === undefined ? sql`city` : typed[1043](values.city) } , country_id = ${ values.countryId === undefined ? sql`country_id` : typed[21](values.countryId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
+      city_id = ${ (request.values === undefined || request.values.cityId === undefined) ? sql`city_id` : typed[23](request.values.cityId) } , city = ${ (request.values === undefined || request.values.city === undefined) ? sql`city` : typed[1043](request.values.city) } , country_id = ${ (request.values === undefined || request.values.countryId === undefined) ? sql`country_id` : typed[21](request.values.countryId) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } 
     WHERE
-      country_id = ${ parameters.countryId === undefined ? sql`DEFAULT` : typed[21](parameters.countryId) }
+      country_id = ${ (request.parameters === undefined || request.parameters.countryId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.countryId) }
     RETURNING city_id,city,country_id,last_update`, {parameters, values, options});
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))
-},
+}
 async delete(parameters: Public.Types.IdxFkCountryId, options?: Public.Types.IdxFkCountryId.Options & Public.Tables.City.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3391,7 +3396,7 @@ async delete(parameters: Public.Types.IdxFkCountryId, options?: Public.Types.Idx
     DELETE FROM 
       public.city 
     WHERE
-      country_id = ${ parameters.countryId === undefined ? sql`DEFAULT` : typed[21](parameters.countryId) }
+      country_id = ${ (request.parameters === undefined || request.parameters.countryId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.countryId) }
     RETURNING city_id,city,country_id,last_update`, {parameters, options});
  return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -3414,19 +3419,21 @@ async read(parameters: Public.Types.CustomerPkey, options?: Public.Types.Custome
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Customer, Public.Types.CustomerPkey, never, Public.Types.CustomerPkey.Options & Public.Tables.Customer.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
     FROM
       public.customer 
     WHERE
-      customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[23](parameters.customerId) }
+      customer_id = ${ (request.parameters === undefined || request.parameters.customerId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.customerId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))[0]
+    `
+  return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.CustomerPkey, values: Partial<Public.Tables.Customer.Values>, options?: Public.Types.CustomerPkey.Options & Public.Tables.Customer.Options) : Promise<Public.Types.Customer>{
 
@@ -3439,12 +3446,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.customer 
     SET
-      customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[23](values.customerId) } , store_id = ${ values.storeId === undefined ? sql`store_id` : typed[21](values.storeId) } , first_name = ${ values.firstName === undefined ? sql`first_name` : typed[1043](values.firstName) } , last_name = ${ values.lastName === undefined ? sql`last_name` : typed[1043](values.lastName) } , email = ${ values.email === undefined ? sql`email` : typed[1043](values.email) } , address_id = ${ values.addressId === undefined ? sql`address_id` : typed[21](values.addressId) } , activebool = ${ values.activebool === undefined ? sql`activebool` : typed[16](values.activebool) } , create_date = ${ values.createDate === undefined ? sql`create_date` : typed[1082](values.createDate) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , active = ${ values.active === undefined ? sql`active` : typed[23](values.active) } 
+      customer_id = ${ (request.values === undefined || request.values.customerId === undefined) ? sql`customer_id` : typed[23](request.values.customerId) } , store_id = ${ (request.values === undefined || request.values.storeId === undefined) ? sql`store_id` : typed[21](request.values.storeId) } , first_name = ${ (request.values === undefined || request.values.firstName === undefined) ? sql`first_name` : typed[1043](request.values.firstName) } , last_name = ${ (request.values === undefined || request.values.lastName === undefined) ? sql`last_name` : typed[1043](request.values.lastName) } , email = ${ (request.values === undefined || request.values.email === undefined) ? sql`email` : typed[1043](request.values.email) } , address_id = ${ (request.values === undefined || request.values.addressId === undefined) ? sql`address_id` : typed[21](request.values.addressId) } , activebool = ${ (request.values === undefined || request.values.activebool === undefined) ? sql`activebool` : typed[16](request.values.activebool) } , create_date = ${ (request.values === undefined || request.values.createDate === undefined) ? sql`create_date` : typed[1082](request.values.createDate) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } , active = ${ (request.values === undefined || request.values.active === undefined) ? sql`active` : typed[23](request.values.active) } 
     WHERE
-      customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[23](parameters.customerId) }
+      customer_id = ${ (request.parameters === undefined || request.parameters.customerId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.customerId) }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, {parameters, values, options});
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))[0]
-},
+}
 async delete(parameters: Public.Types.CustomerPkey, options?: Public.Types.CustomerPkey.Options & Public.Tables.Customer.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3453,7 +3460,7 @@ async delete(parameters: Public.Types.CustomerPkey, options?: Public.Types.Custo
     DELETE FROM 
       public.customer 
     WHERE
-      customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[23](parameters.customerId) }
+      customer_id = ${ (request.parameters === undefined || request.parameters.customerId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.customerId) }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, {parameters, options});
  return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))[0]
 }
@@ -3474,19 +3481,21 @@ async read(parameters: Public.Types.IdxFkAddressId, options?: Public.Types.IdxFk
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Customer[], Public.Types.IdxFkAddressId, never, Public.Types.IdxFkAddressId.Options & Public.Tables.Customer.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
     FROM
       public.customer 
     WHERE
-      address_id = ${ parameters.addressId === undefined ? sql`DEFAULT` : typed[21](parameters.addressId) }
+      address_id = ${ (request.parameters === undefined || request.parameters.addressId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.addressId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
+    `
+  return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.IdxFkAddressId, values: Partial<Public.Tables.Customer.Values>, options?: Public.Types.IdxFkAddressId.Options & Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]>{
 
@@ -3499,12 +3508,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.customer 
     SET
-      customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[23](values.customerId) } , store_id = ${ values.storeId === undefined ? sql`store_id` : typed[21](values.storeId) } , first_name = ${ values.firstName === undefined ? sql`first_name` : typed[1043](values.firstName) } , last_name = ${ values.lastName === undefined ? sql`last_name` : typed[1043](values.lastName) } , email = ${ values.email === undefined ? sql`email` : typed[1043](values.email) } , address_id = ${ values.addressId === undefined ? sql`address_id` : typed[21](values.addressId) } , activebool = ${ values.activebool === undefined ? sql`activebool` : typed[16](values.activebool) } , create_date = ${ values.createDate === undefined ? sql`create_date` : typed[1082](values.createDate) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , active = ${ values.active === undefined ? sql`active` : typed[23](values.active) } 
+      customer_id = ${ (request.values === undefined || request.values.customerId === undefined) ? sql`customer_id` : typed[23](request.values.customerId) } , store_id = ${ (request.values === undefined || request.values.storeId === undefined) ? sql`store_id` : typed[21](request.values.storeId) } , first_name = ${ (request.values === undefined || request.values.firstName === undefined) ? sql`first_name` : typed[1043](request.values.firstName) } , last_name = ${ (request.values === undefined || request.values.lastName === undefined) ? sql`last_name` : typed[1043](request.values.lastName) } , email = ${ (request.values === undefined || request.values.email === undefined) ? sql`email` : typed[1043](request.values.email) } , address_id = ${ (request.values === undefined || request.values.addressId === undefined) ? sql`address_id` : typed[21](request.values.addressId) } , activebool = ${ (request.values === undefined || request.values.activebool === undefined) ? sql`activebool` : typed[16](request.values.activebool) } , create_date = ${ (request.values === undefined || request.values.createDate === undefined) ? sql`create_date` : typed[1082](request.values.createDate) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } , active = ${ (request.values === undefined || request.values.active === undefined) ? sql`active` : typed[23](request.values.active) } 
     WHERE
-      address_id = ${ parameters.addressId === undefined ? sql`DEFAULT` : typed[21](parameters.addressId) }
+      address_id = ${ (request.parameters === undefined || request.parameters.addressId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.addressId) }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, {parameters, values, options});
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
-},
+}
 async delete(parameters: Public.Types.IdxFkAddressId, options?: Public.Types.IdxFkAddressId.Options & Public.Tables.Customer.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3513,7 +3522,7 @@ async delete(parameters: Public.Types.IdxFkAddressId, options?: Public.Types.Idx
     DELETE FROM 
       public.customer 
     WHERE
-      address_id = ${ parameters.addressId === undefined ? sql`DEFAULT` : typed[21](parameters.addressId) }
+      address_id = ${ (request.parameters === undefined || request.parameters.addressId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.addressId) }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, {parameters, options});
  return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
@@ -3534,19 +3543,21 @@ async read(parameters: Public.Types.IdxFkStoreId, options?: Public.Types.IdxFkSt
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Customer[], Public.Types.IdxFkStoreId, never, Public.Types.IdxFkStoreId.Options & Public.Tables.Customer.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
     FROM
       public.customer 
     WHERE
-      store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[21](parameters.storeId) }
+      store_id = ${ (request.parameters === undefined || request.parameters.storeId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.storeId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
+    `
+  return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.IdxFkStoreId, values: Partial<Public.Tables.Customer.Values>, options?: Public.Types.IdxFkStoreId.Options & Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]>{
 
@@ -3559,12 +3570,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.customer 
     SET
-      customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[23](values.customerId) } , store_id = ${ values.storeId === undefined ? sql`store_id` : typed[21](values.storeId) } , first_name = ${ values.firstName === undefined ? sql`first_name` : typed[1043](values.firstName) } , last_name = ${ values.lastName === undefined ? sql`last_name` : typed[1043](values.lastName) } , email = ${ values.email === undefined ? sql`email` : typed[1043](values.email) } , address_id = ${ values.addressId === undefined ? sql`address_id` : typed[21](values.addressId) } , activebool = ${ values.activebool === undefined ? sql`activebool` : typed[16](values.activebool) } , create_date = ${ values.createDate === undefined ? sql`create_date` : typed[1082](values.createDate) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , active = ${ values.active === undefined ? sql`active` : typed[23](values.active) } 
+      customer_id = ${ (request.values === undefined || request.values.customerId === undefined) ? sql`customer_id` : typed[23](request.values.customerId) } , store_id = ${ (request.values === undefined || request.values.storeId === undefined) ? sql`store_id` : typed[21](request.values.storeId) } , first_name = ${ (request.values === undefined || request.values.firstName === undefined) ? sql`first_name` : typed[1043](request.values.firstName) } , last_name = ${ (request.values === undefined || request.values.lastName === undefined) ? sql`last_name` : typed[1043](request.values.lastName) } , email = ${ (request.values === undefined || request.values.email === undefined) ? sql`email` : typed[1043](request.values.email) } , address_id = ${ (request.values === undefined || request.values.addressId === undefined) ? sql`address_id` : typed[21](request.values.addressId) } , activebool = ${ (request.values === undefined || request.values.activebool === undefined) ? sql`activebool` : typed[16](request.values.activebool) } , create_date = ${ (request.values === undefined || request.values.createDate === undefined) ? sql`create_date` : typed[1082](request.values.createDate) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } , active = ${ (request.values === undefined || request.values.active === undefined) ? sql`active` : typed[23](request.values.active) } 
     WHERE
-      store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[21](parameters.storeId) }
+      store_id = ${ (request.parameters === undefined || request.parameters.storeId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.storeId) }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, {parameters, values, options});
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
-},
+}
 async delete(parameters: Public.Types.IdxFkStoreId, options?: Public.Types.IdxFkStoreId.Options & Public.Tables.Customer.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3573,7 +3584,7 @@ async delete(parameters: Public.Types.IdxFkStoreId, options?: Public.Types.IdxFk
     DELETE FROM 
       public.customer 
     WHERE
-      store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[21](parameters.storeId) }
+      store_id = ${ (request.parameters === undefined || request.parameters.storeId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.storeId) }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, {parameters, options});
  return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
@@ -3594,19 +3605,21 @@ async read(parameters: Public.Types.IdxLastName, options?: Public.Types.IdxLastN
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Customer[], Public.Types.IdxLastName, never, Public.Types.IdxLastName.Options & Public.Tables.Customer.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
     FROM
       public.customer 
     WHERE
-      last_name = ${ parameters.lastName === undefined ? sql`DEFAULT` : typed[1043](parameters.lastName) }
+      last_name = ${ (request.parameters === undefined || request.parameters.lastName === undefined) ? sql`DEFAULT` : typed[1043](request.parameters.lastName) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
+    `
+  return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.IdxLastName, values: Partial<Public.Tables.Customer.Values>, options?: Public.Types.IdxLastName.Options & Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]>{
 
@@ -3619,12 +3632,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.customer 
     SET
-      customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[23](values.customerId) } , store_id = ${ values.storeId === undefined ? sql`store_id` : typed[21](values.storeId) } , first_name = ${ values.firstName === undefined ? sql`first_name` : typed[1043](values.firstName) } , last_name = ${ values.lastName === undefined ? sql`last_name` : typed[1043](values.lastName) } , email = ${ values.email === undefined ? sql`email` : typed[1043](values.email) } , address_id = ${ values.addressId === undefined ? sql`address_id` : typed[21](values.addressId) } , activebool = ${ values.activebool === undefined ? sql`activebool` : typed[16](values.activebool) } , create_date = ${ values.createDate === undefined ? sql`create_date` : typed[1082](values.createDate) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , active = ${ values.active === undefined ? sql`active` : typed[23](values.active) } 
+      customer_id = ${ (request.values === undefined || request.values.customerId === undefined) ? sql`customer_id` : typed[23](request.values.customerId) } , store_id = ${ (request.values === undefined || request.values.storeId === undefined) ? sql`store_id` : typed[21](request.values.storeId) } , first_name = ${ (request.values === undefined || request.values.firstName === undefined) ? sql`first_name` : typed[1043](request.values.firstName) } , last_name = ${ (request.values === undefined || request.values.lastName === undefined) ? sql`last_name` : typed[1043](request.values.lastName) } , email = ${ (request.values === undefined || request.values.email === undefined) ? sql`email` : typed[1043](request.values.email) } , address_id = ${ (request.values === undefined || request.values.addressId === undefined) ? sql`address_id` : typed[21](request.values.addressId) } , activebool = ${ (request.values === undefined || request.values.activebool === undefined) ? sql`activebool` : typed[16](request.values.activebool) } , create_date = ${ (request.values === undefined || request.values.createDate === undefined) ? sql`create_date` : typed[1082](request.values.createDate) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } , active = ${ (request.values === undefined || request.values.active === undefined) ? sql`active` : typed[23](request.values.active) } 
     WHERE
-      last_name = ${ parameters.lastName === undefined ? sql`DEFAULT` : typed[1043](parameters.lastName) }
+      last_name = ${ (request.parameters === undefined || request.parameters.lastName === undefined) ? sql`DEFAULT` : typed[1043](request.parameters.lastName) }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, {parameters, values, options});
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
-},
+}
 async delete(parameters: Public.Types.IdxLastName, options?: Public.Types.IdxLastName.Options & Public.Tables.Customer.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3633,7 +3646,7 @@ async delete(parameters: Public.Types.IdxLastName, options?: Public.Types.IdxLas
     DELETE FROM 
       public.customer 
     WHERE
-      last_name = ${ parameters.lastName === undefined ? sql`DEFAULT` : typed[1043](parameters.lastName) }
+      last_name = ${ (request.parameters === undefined || request.parameters.lastName === undefined) ? sql`DEFAULT` : typed[1043](request.parameters.lastName) }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, {parameters, options});
  return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
@@ -3656,19 +3669,21 @@ async read(parameters: Public.Types.ActorPkey, options?: Public.Types.ActorPkey.
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Actor, Public.Types.ActorPkey, never, Public.Types.ActorPkey.Options & Public.Tables.Actor.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       actor_id,first_name,last_name,last_update 
     FROM
       public.actor 
     WHERE
-      actor_id = ${ parameters.actorId === undefined ? sql`DEFAULT` : typed[23](parameters.actorId) }
+      actor_id = ${ (request.parameters === undefined || request.parameters.actorId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.actorId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+    `
+  return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.ActorPkey, values: Partial<Public.Tables.Actor.Values>, options?: Public.Types.ActorPkey.Options & Public.Tables.Actor.Options) : Promise<Public.Types.Actor>{
 
@@ -3681,12 +3696,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.actor 
     SET
-      actor_id = ${ values.actorId === undefined ? sql`actor_id` : typed[23](values.actorId) } , first_name = ${ values.firstName === undefined ? sql`first_name` : typed[1043](values.firstName) } , last_name = ${ values.lastName === undefined ? sql`last_name` : typed[1043](values.lastName) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
+      actor_id = ${ (request.values === undefined || request.values.actorId === undefined) ? sql`actor_id` : typed[23](request.values.actorId) } , first_name = ${ (request.values === undefined || request.values.firstName === undefined) ? sql`first_name` : typed[1043](request.values.firstName) } , last_name = ${ (request.values === undefined || request.values.lastName === undefined) ? sql`last_name` : typed[1043](request.values.lastName) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } 
     WHERE
-      actor_id = ${ parameters.actorId === undefined ? sql`DEFAULT` : typed[23](parameters.actorId) }
+      actor_id = ${ (request.parameters === undefined || request.parameters.actorId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.actorId) }
     RETURNING actor_id,first_name,last_name,last_update`, {parameters, values, options});
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.ActorPkey, options?: Public.Types.ActorPkey.Options & Public.Tables.Actor.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3695,7 +3710,7 @@ async delete(parameters: Public.Types.ActorPkey, options?: Public.Types.ActorPke
     DELETE FROM 
       public.actor 
     WHERE
-      actor_id = ${ parameters.actorId === undefined ? sql`DEFAULT` : typed[23](parameters.actorId) }
+      actor_id = ${ (request.parameters === undefined || request.parameters.actorId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.actorId) }
     RETURNING actor_id,first_name,last_name,last_update`, {parameters, options});
  return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -3716,19 +3731,21 @@ async read(parameters: Public.Types.IdxActorLastName, options?: Public.Types.Idx
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Actor[], Public.Types.IdxActorLastName, never, Public.Types.IdxActorLastName.Options & Public.Tables.Actor.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       actor_id,first_name,last_name,last_update 
     FROM
       public.actor 
     WHERE
-      last_name = ${ parameters.lastName === undefined ? sql`DEFAULT` : typed[1043](parameters.lastName) }
+      last_name = ${ (request.parameters === undefined || request.parameters.lastName === undefined) ? sql`DEFAULT` : typed[1043](request.parameters.lastName) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))
+    `
+  return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.IdxActorLastName, values: Partial<Public.Tables.Actor.Values>, options?: Public.Types.IdxActorLastName.Options & Public.Tables.Actor.Options) : Promise<Public.Types.Actor[]>{
 
@@ -3741,12 +3758,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.actor 
     SET
-      actor_id = ${ values.actorId === undefined ? sql`actor_id` : typed[23](values.actorId) } , first_name = ${ values.firstName === undefined ? sql`first_name` : typed[1043](values.firstName) } , last_name = ${ values.lastName === undefined ? sql`last_name` : typed[1043](values.lastName) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
+      actor_id = ${ (request.values === undefined || request.values.actorId === undefined) ? sql`actor_id` : typed[23](request.values.actorId) } , first_name = ${ (request.values === undefined || request.values.firstName === undefined) ? sql`first_name` : typed[1043](request.values.firstName) } , last_name = ${ (request.values === undefined || request.values.lastName === undefined) ? sql`last_name` : typed[1043](request.values.lastName) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } 
     WHERE
-      last_name = ${ parameters.lastName === undefined ? sql`DEFAULT` : typed[1043](parameters.lastName) }
+      last_name = ${ (request.parameters === undefined || request.parameters.lastName === undefined) ? sql`DEFAULT` : typed[1043](request.parameters.lastName) }
     RETURNING actor_id,first_name,last_name,last_update`, {parameters, values, options});
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))
-},
+}
 async delete(parameters: Public.Types.IdxActorLastName, options?: Public.Types.IdxActorLastName.Options & Public.Tables.Actor.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3755,7 +3772,7 @@ async delete(parameters: Public.Types.IdxActorLastName, options?: Public.Types.I
     DELETE FROM 
       public.actor 
     WHERE
-      last_name = ${ parameters.lastName === undefined ? sql`DEFAULT` : typed[1043](parameters.lastName) }
+      last_name = ${ (request.parameters === undefined || request.parameters.lastName === undefined) ? sql`DEFAULT` : typed[1043](request.parameters.lastName) }
     RETURNING actor_id,first_name,last_name,last_update`, {parameters, options});
  return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -3778,19 +3795,21 @@ async read(parameters: Public.Types.FilmCategoryPkey, options?: Public.Types.Fil
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.FilmCategory, Public.Types.FilmCategoryPkey, never, Public.Types.FilmCategoryPkey.Options & Public.Tables.FilmCategory.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       film_id,category_id,last_update 
     FROM
       public.film_category 
     WHERE
-      film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) } AND category_id = ${ parameters.categoryId === undefined ? sql`DEFAULT` : typed[21](parameters.categoryId) }
+      film_id = ${ (request.parameters === undefined || request.parameters.filmId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.filmId) } AND category_id = ${ (request.parameters === undefined || request.parameters.categoryId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.categoryId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undefinedIsNull(r.category_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+    `
+  return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undefinedIsNull(r.category_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.FilmCategoryPkey, values: Partial<Public.Tables.FilmCategory.Values>, options?: Public.Types.FilmCategoryPkey.Options & Public.Tables.FilmCategory.Options) : Promise<Public.Types.FilmCategory>{
 
@@ -3803,12 +3822,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.film_category 
     SET
-      film_id = ${ values.filmId === undefined ? sql`film_id` : typed[21](values.filmId) } , category_id = ${ values.categoryId === undefined ? sql`category_id` : typed[21](values.categoryId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
+      film_id = ${ (request.values === undefined || request.values.filmId === undefined) ? sql`film_id` : typed[21](request.values.filmId) } , category_id = ${ (request.values === undefined || request.values.categoryId === undefined) ? sql`category_id` : typed[21](request.values.categoryId) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } 
     WHERE
-      film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) } AND category_id = ${ parameters.categoryId === undefined ? sql`DEFAULT` : typed[21](parameters.categoryId) }
+      film_id = ${ (request.parameters === undefined || request.parameters.filmId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.filmId) } AND category_id = ${ (request.parameters === undefined || request.parameters.categoryId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.categoryId) }
     RETURNING film_id,category_id,last_update`, {parameters, values, options});
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undefinedIsNull(r.category_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.FilmCategoryPkey, options?: Public.Types.FilmCategoryPkey.Options & Public.Tables.FilmCategory.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3817,7 +3836,7 @@ async delete(parameters: Public.Types.FilmCategoryPkey, options?: Public.Types.F
     DELETE FROM 
       public.film_category 
     WHERE
-      film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) } AND category_id = ${ parameters.categoryId === undefined ? sql`DEFAULT` : typed[21](parameters.categoryId) }
+      film_id = ${ (request.parameters === undefined || request.parameters.filmId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.filmId) } AND category_id = ${ (request.parameters === undefined || request.parameters.categoryId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.categoryId) }
     RETURNING film_id,category_id,last_update`, {parameters, options});
  return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undefinedIsNull(r.category_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -3840,19 +3859,21 @@ async read(parameters: Public.Types.InventoryPkey, options?: Public.Types.Invent
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Inventory, Public.Types.InventoryPkey, never, Public.Types.InventoryPkey.Options & Public.Tables.Inventory.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       inventory_id,film_id,store_id,last_update 
     FROM
       public.inventory 
     WHERE
-      inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) }
+      inventory_id = ${ (request.parameters === undefined || request.parameters.inventoryId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.inventoryId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+    `
+  return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.InventoryPkey, values: Partial<Public.Tables.Inventory.Values>, options?: Public.Types.InventoryPkey.Options & Public.Tables.Inventory.Options) : Promise<Public.Types.Inventory>{
 
@@ -3865,12 +3886,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.inventory 
     SET
-      inventory_id = ${ values.inventoryId === undefined ? sql`inventory_id` : typed[23](values.inventoryId) } , film_id = ${ values.filmId === undefined ? sql`film_id` : typed[21](values.filmId) } , store_id = ${ values.storeId === undefined ? sql`store_id` : typed[21](values.storeId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
+      inventory_id = ${ (request.values === undefined || request.values.inventoryId === undefined) ? sql`inventory_id` : typed[23](request.values.inventoryId) } , film_id = ${ (request.values === undefined || request.values.filmId === undefined) ? sql`film_id` : typed[21](request.values.filmId) } , store_id = ${ (request.values === undefined || request.values.storeId === undefined) ? sql`store_id` : typed[21](request.values.storeId) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } 
     WHERE
-      inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) }
+      inventory_id = ${ (request.parameters === undefined || request.parameters.inventoryId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.inventoryId) }
     RETURNING inventory_id,film_id,store_id,last_update`, {parameters, values, options});
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.InventoryPkey, options?: Public.Types.InventoryPkey.Options & Public.Tables.Inventory.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3879,7 +3900,7 @@ async delete(parameters: Public.Types.InventoryPkey, options?: Public.Types.Inve
     DELETE FROM 
       public.inventory 
     WHERE
-      inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) }
+      inventory_id = ${ (request.parameters === undefined || request.parameters.inventoryId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.inventoryId) }
     RETURNING inventory_id,film_id,store_id,last_update`, {parameters, options});
  return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -3900,19 +3921,21 @@ async read(parameters: Public.Types.IdxStoreIdFilmId, options?: Public.Types.Idx
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Inventory[], Public.Types.IdxStoreIdFilmId, never, Public.Types.IdxStoreIdFilmId.Options & Public.Tables.Inventory.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       inventory_id,film_id,store_id,last_update 
     FROM
       public.inventory 
     WHERE
-      store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[21](parameters.storeId) } AND film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
+      store_id = ${ (request.parameters === undefined || request.parameters.storeId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.storeId) } AND film_id = ${ (request.parameters === undefined || request.parameters.filmId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.filmId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))
+    `
+  return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.IdxStoreIdFilmId, values: Partial<Public.Tables.Inventory.Values>, options?: Public.Types.IdxStoreIdFilmId.Options & Public.Tables.Inventory.Options) : Promise<Public.Types.Inventory[]>{
 
@@ -3925,12 +3948,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.inventory 
     SET
-      inventory_id = ${ values.inventoryId === undefined ? sql`inventory_id` : typed[23](values.inventoryId) } , film_id = ${ values.filmId === undefined ? sql`film_id` : typed[21](values.filmId) } , store_id = ${ values.storeId === undefined ? sql`store_id` : typed[21](values.storeId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
+      inventory_id = ${ (request.values === undefined || request.values.inventoryId === undefined) ? sql`inventory_id` : typed[23](request.values.inventoryId) } , film_id = ${ (request.values === undefined || request.values.filmId === undefined) ? sql`film_id` : typed[21](request.values.filmId) } , store_id = ${ (request.values === undefined || request.values.storeId === undefined) ? sql`store_id` : typed[21](request.values.storeId) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } 
     WHERE
-      store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[21](parameters.storeId) } AND film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
+      store_id = ${ (request.parameters === undefined || request.parameters.storeId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.storeId) } AND film_id = ${ (request.parameters === undefined || request.parameters.filmId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.filmId) }
     RETURNING inventory_id,film_id,store_id,last_update`, {parameters, values, options});
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))
-},
+}
 async delete(parameters: Public.Types.IdxStoreIdFilmId, options?: Public.Types.IdxStoreIdFilmId.Options & Public.Tables.Inventory.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -3939,7 +3962,7 @@ async delete(parameters: Public.Types.IdxStoreIdFilmId, options?: Public.Types.I
     DELETE FROM 
       public.inventory 
     WHERE
-      store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[21](parameters.storeId) } AND film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
+      store_id = ${ (request.parameters === undefined || request.parameters.storeId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.storeId) } AND film_id = ${ (request.parameters === undefined || request.parameters.filmId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.filmId) }
     RETURNING inventory_id,film_id,store_id,last_update`, {parameters, options});
  return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -3962,19 +3985,21 @@ async read(parameters: Public.Types.CategoryPkey, options?: Public.Types.Categor
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Category, Public.Types.CategoryPkey, never, Public.Types.CategoryPkey.Options & Public.Tables.Category.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       category_id,name,last_update 
     FROM
       public.category 
     WHERE
-      category_id = ${ parameters.categoryId === undefined ? sql`DEFAULT` : typed[23](parameters.categoryId) }
+      category_id = ${ (request.parameters === undefined || request.parameters.categoryId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.categoryId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+    `
+  return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.CategoryPkey, values: Partial<Public.Tables.Category.Values>, options?: Public.Types.CategoryPkey.Options & Public.Tables.Category.Options) : Promise<Public.Types.Category>{
 
@@ -3987,12 +4012,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.category 
     SET
-      category_id = ${ values.categoryId === undefined ? sql`category_id` : typed[23](values.categoryId) } , name = ${ values.name === undefined ? sql`name` : typed[1043](values.name) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
+      category_id = ${ (request.values === undefined || request.values.categoryId === undefined) ? sql`category_id` : typed[23](request.values.categoryId) } , name = ${ (request.values === undefined || request.values.name === undefined) ? sql`name` : typed[1043](request.values.name) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } 
     WHERE
-      category_id = ${ parameters.categoryId === undefined ? sql`DEFAULT` : typed[23](parameters.categoryId) }
+      category_id = ${ (request.parameters === undefined || request.parameters.categoryId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.categoryId) }
     RETURNING category_id,name,last_update`, {parameters, values, options});
 return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.CategoryPkey, options?: Public.Types.CategoryPkey.Options & Public.Tables.Category.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4001,7 +4026,7 @@ async delete(parameters: Public.Types.CategoryPkey, options?: Public.Types.Categ
     DELETE FROM 
       public.category 
     WHERE
-      category_id = ${ parameters.categoryId === undefined ? sql`DEFAULT` : typed[23](parameters.categoryId) }
+      category_id = ${ (request.parameters === undefined || request.parameters.categoryId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.categoryId) }
     RETURNING category_id,name,last_update`, {parameters, options});
  return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -4024,19 +4049,21 @@ async read(parameters: Public.Types.CountryPkey, options?: Public.Types.CountryP
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Country, Public.Types.CountryPkey, never, Public.Types.CountryPkey.Options & Public.Tables.Country.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       country_id,country,last_update 
     FROM
       public.country 
     WHERE
-      country_id = ${ parameters.countryId === undefined ? sql`DEFAULT` : typed[23](parameters.countryId) }
+      country_id = ${ (request.parameters === undefined || request.parameters.countryId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.countryId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+    `
+  return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.CountryPkey, values: Partial<Public.Tables.Country.Values>, options?: Public.Types.CountryPkey.Options & Public.Tables.Country.Options) : Promise<Public.Types.Country>{
 
@@ -4049,12 +4076,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.country 
     SET
-      country_id = ${ values.countryId === undefined ? sql`country_id` : typed[23](values.countryId) } , country = ${ values.country === undefined ? sql`country` : typed[1043](values.country) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
+      country_id = ${ (request.values === undefined || request.values.countryId === undefined) ? sql`country_id` : typed[23](request.values.countryId) } , country = ${ (request.values === undefined || request.values.country === undefined) ? sql`country` : typed[1043](request.values.country) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } 
     WHERE
-      country_id = ${ parameters.countryId === undefined ? sql`DEFAULT` : typed[23](parameters.countryId) }
+      country_id = ${ (request.parameters === undefined || request.parameters.countryId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.countryId) }
     RETURNING country_id,country,last_update`, {parameters, values, options});
 return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.CountryPkey, options?: Public.Types.CountryPkey.Options & Public.Tables.Country.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4063,7 +4090,7 @@ async delete(parameters: Public.Types.CountryPkey, options?: Public.Types.Countr
     DELETE FROM 
       public.country 
     WHERE
-      country_id = ${ parameters.countryId === undefined ? sql`DEFAULT` : typed[23](parameters.countryId) }
+      country_id = ${ (request.parameters === undefined || request.parameters.countryId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.countryId) }
     RETURNING country_id,country,last_update`, {parameters, options});
  return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -4086,19 +4113,21 @@ async read(parameters: Public.Types.LanguagePkey, options?: Public.Types.Languag
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Language, Public.Types.LanguagePkey, never, Public.Types.LanguagePkey.Options & Public.Tables.Language.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       language_id,name,last_update 
     FROM
       public.language 
     WHERE
-      language_id = ${ parameters.languageId === undefined ? sql`DEFAULT` : typed[23](parameters.languageId) }
+      language_id = ${ (request.parameters === undefined || request.parameters.languageId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.languageId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+    `
+  return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.LanguagePkey, values: Partial<Public.Tables.Language.Values>, options?: Public.Types.LanguagePkey.Options & Public.Tables.Language.Options) : Promise<Public.Types.Language>{
 
@@ -4111,12 +4140,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.language 
     SET
-      language_id = ${ values.languageId === undefined ? sql`language_id` : typed[23](values.languageId) } , name = ${ values.name === undefined ? sql`name` : typed[1042](values.name) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
+      language_id = ${ (request.values === undefined || request.values.languageId === undefined) ? sql`language_id` : typed[23](request.values.languageId) } , name = ${ (request.values === undefined || request.values.name === undefined) ? sql`name` : typed[1042](request.values.name) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } 
     WHERE
-      language_id = ${ parameters.languageId === undefined ? sql`DEFAULT` : typed[23](parameters.languageId) }
+      language_id = ${ (request.parameters === undefined || request.parameters.languageId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.languageId) }
     RETURNING language_id,name,last_update`, {parameters, values, options});
 return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.LanguagePkey, options?: Public.Types.LanguagePkey.Options & Public.Tables.Language.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4125,7 +4154,7 @@ async delete(parameters: Public.Types.LanguagePkey, options?: Public.Types.Langu
     DELETE FROM 
       public.language 
     WHERE
-      language_id = ${ parameters.languageId === undefined ? sql`DEFAULT` : typed[23](parameters.languageId) }
+      language_id = ${ (request.parameters === undefined || request.parameters.languageId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.languageId) }
     RETURNING language_id,name,last_update`, {parameters, options});
  return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -4148,19 +4177,21 @@ async read(parameters: Public.Types.RentalPkey, options?: Public.Types.RentalPke
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Rental, Public.Types.RentalPkey, never, Public.Types.RentalPkey.Options & Public.Tables.Rental.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
     FROM
       public.rental 
     WHERE
-      rental_id = ${ parameters.rentalId === undefined ? sql`DEFAULT` : typed[23](parameters.rentalId) }
+      rental_id = ${ (request.parameters === undefined || request.parameters.rentalId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.rentalId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+    `
+  return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.RentalPkey, values: Partial<Public.Tables.Rental.Values>, options?: Public.Types.RentalPkey.Options & Public.Tables.Rental.Options) : Promise<Public.Types.Rental>{
 
@@ -4173,12 +4204,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.rental 
     SET
-      rental_id = ${ values.rentalId === undefined ? sql`rental_id` : typed[23](values.rentalId) } , rental_date = ${ values.rentalDate === undefined ? sql`rental_date` : typed[1114](values.rentalDate) } , inventory_id = ${ values.inventoryId === undefined ? sql`inventory_id` : typed[23](values.inventoryId) } , customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[21](values.customerId) } , return_date = ${ values.returnDate === undefined ? sql`return_date` : typed[1114](values.returnDate) } , staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
+      rental_id = ${ (request.values === undefined || request.values.rentalId === undefined) ? sql`rental_id` : typed[23](request.values.rentalId) } , rental_date = ${ (request.values === undefined || request.values.rentalDate === undefined) ? sql`rental_date` : typed[1114](request.values.rentalDate) } , inventory_id = ${ (request.values === undefined || request.values.inventoryId === undefined) ? sql`inventory_id` : typed[23](request.values.inventoryId) } , customer_id = ${ (request.values === undefined || request.values.customerId === undefined) ? sql`customer_id` : typed[21](request.values.customerId) } , return_date = ${ (request.values === undefined || request.values.returnDate === undefined) ? sql`return_date` : typed[1114](request.values.returnDate) } , staff_id = ${ (request.values === undefined || request.values.staffId === undefined) ? sql`staff_id` : typed[21](request.values.staffId) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } 
     WHERE
-      rental_id = ${ parameters.rentalId === undefined ? sql`DEFAULT` : typed[23](parameters.rentalId) }
+      rental_id = ${ (request.parameters === undefined || request.parameters.rentalId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.rentalId) }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`, {parameters, values, options});
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.RentalPkey, options?: Public.Types.RentalPkey.Options & Public.Tables.Rental.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4187,7 +4218,7 @@ async delete(parameters: Public.Types.RentalPkey, options?: Public.Types.RentalP
     DELETE FROM 
       public.rental 
     WHERE
-      rental_id = ${ parameters.rentalId === undefined ? sql`DEFAULT` : typed[23](parameters.rentalId) }
+      rental_id = ${ (request.parameters === undefined || request.parameters.rentalId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.rentalId) }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`, {parameters, options});
  return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -4208,19 +4239,21 @@ async read(parameters: Public.Types.IdxFkInventoryId, options?: Public.Types.Idx
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Rental[], Public.Types.IdxFkInventoryId, never, Public.Types.IdxFkInventoryId.Options & Public.Tables.Rental.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
     FROM
       public.rental 
     WHERE
-      inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) }
+      inventory_id = ${ (request.parameters === undefined || request.parameters.inventoryId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.inventoryId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))
+    `
+  return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.IdxFkInventoryId, values: Partial<Public.Tables.Rental.Values>, options?: Public.Types.IdxFkInventoryId.Options & Public.Tables.Rental.Options) : Promise<Public.Types.Rental[]>{
 
@@ -4233,12 +4266,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.rental 
     SET
-      rental_id = ${ values.rentalId === undefined ? sql`rental_id` : typed[23](values.rentalId) } , rental_date = ${ values.rentalDate === undefined ? sql`rental_date` : typed[1114](values.rentalDate) } , inventory_id = ${ values.inventoryId === undefined ? sql`inventory_id` : typed[23](values.inventoryId) } , customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[21](values.customerId) } , return_date = ${ values.returnDate === undefined ? sql`return_date` : typed[1114](values.returnDate) } , staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
+      rental_id = ${ (request.values === undefined || request.values.rentalId === undefined) ? sql`rental_id` : typed[23](request.values.rentalId) } , rental_date = ${ (request.values === undefined || request.values.rentalDate === undefined) ? sql`rental_date` : typed[1114](request.values.rentalDate) } , inventory_id = ${ (request.values === undefined || request.values.inventoryId === undefined) ? sql`inventory_id` : typed[23](request.values.inventoryId) } , customer_id = ${ (request.values === undefined || request.values.customerId === undefined) ? sql`customer_id` : typed[21](request.values.customerId) } , return_date = ${ (request.values === undefined || request.values.returnDate === undefined) ? sql`return_date` : typed[1114](request.values.returnDate) } , staff_id = ${ (request.values === undefined || request.values.staffId === undefined) ? sql`staff_id` : typed[21](request.values.staffId) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } 
     WHERE
-      inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) }
+      inventory_id = ${ (request.parameters === undefined || request.parameters.inventoryId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.inventoryId) }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`, {parameters, values, options});
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))
-},
+}
 async delete(parameters: Public.Types.IdxFkInventoryId, options?: Public.Types.IdxFkInventoryId.Options & Public.Tables.Rental.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4247,7 +4280,7 @@ async delete(parameters: Public.Types.IdxFkInventoryId, options?: Public.Types.I
     DELETE FROM 
       public.rental 
     WHERE
-      inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) }
+      inventory_id = ${ (request.parameters === undefined || request.parameters.inventoryId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.inventoryId) }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`, {parameters, options});
  return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
@@ -4268,19 +4301,21 @@ async read(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId,
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Rental, Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, never, Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId.Options & Public.Tables.Rental.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
     FROM
       public.rental 
     WHERE
-      rental_date = ${ parameters.rentalDate === undefined ? sql`DEFAULT` : typed[1114](parameters.rentalDate) } AND inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) } AND customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[21](parameters.customerId) }
+      rental_date = ${ (request.parameters === undefined || request.parameters.rentalDate === undefined) ? sql`DEFAULT` : typed[1114](request.parameters.rentalDate) } AND inventory_id = ${ (request.parameters === undefined || request.parameters.inventoryId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.inventoryId) } AND customer_id = ${ (request.parameters === undefined || request.parameters.customerId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.customerId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+    `
+  return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, values: Partial<Public.Tables.Rental.Values>, options?: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId.Options & Public.Tables.Rental.Options) : Promise<Public.Types.Rental>{
 
@@ -4293,12 +4328,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.rental 
     SET
-      rental_id = ${ values.rentalId === undefined ? sql`rental_id` : typed[23](values.rentalId) } , rental_date = ${ values.rentalDate === undefined ? sql`rental_date` : typed[1114](values.rentalDate) } , inventory_id = ${ values.inventoryId === undefined ? sql`inventory_id` : typed[23](values.inventoryId) } , customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[21](values.customerId) } , return_date = ${ values.returnDate === undefined ? sql`return_date` : typed[1114](values.returnDate) } , staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
+      rental_id = ${ (request.values === undefined || request.values.rentalId === undefined) ? sql`rental_id` : typed[23](request.values.rentalId) } , rental_date = ${ (request.values === undefined || request.values.rentalDate === undefined) ? sql`rental_date` : typed[1114](request.values.rentalDate) } , inventory_id = ${ (request.values === undefined || request.values.inventoryId === undefined) ? sql`inventory_id` : typed[23](request.values.inventoryId) } , customer_id = ${ (request.values === undefined || request.values.customerId === undefined) ? sql`customer_id` : typed[21](request.values.customerId) } , return_date = ${ (request.values === undefined || request.values.returnDate === undefined) ? sql`return_date` : typed[1114](request.values.returnDate) } , staff_id = ${ (request.values === undefined || request.values.staffId === undefined) ? sql`staff_id` : typed[21](request.values.staffId) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } 
     WHERE
-      rental_date = ${ parameters.rentalDate === undefined ? sql`DEFAULT` : typed[1114](parameters.rentalDate) } AND inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) } AND customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[21](parameters.customerId) }
+      rental_date = ${ (request.parameters === undefined || request.parameters.rentalDate === undefined) ? sql`DEFAULT` : typed[1114](request.parameters.rentalDate) } AND inventory_id = ${ (request.parameters === undefined || request.parameters.inventoryId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.inventoryId) } AND customer_id = ${ (request.parameters === undefined || request.parameters.customerId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.customerId) }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`, {parameters, values, options});
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, options?: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId.Options & Public.Tables.Rental.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4307,7 +4342,7 @@ async delete(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerI
     DELETE FROM 
       public.rental 
     WHERE
-      rental_date = ${ parameters.rentalDate === undefined ? sql`DEFAULT` : typed[1114](parameters.rentalDate) } AND inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) } AND customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[21](parameters.customerId) }
+      rental_date = ${ (request.parameters === undefined || request.parameters.rentalDate === undefined) ? sql`DEFAULT` : typed[1114](request.parameters.rentalDate) } AND inventory_id = ${ (request.parameters === undefined || request.parameters.inventoryId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.inventoryId) } AND customer_id = ${ (request.parameters === undefined || request.parameters.customerId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.customerId) }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`, {parameters, options});
  return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -4330,19 +4365,21 @@ async read(parameters: Public.Types.StaffPkey, options?: Public.Types.StaffPkey.
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Staff, Public.Types.StaffPkey, never, Public.Types.StaffPkey.Options & Public.Tables.Staff.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture 
     FROM
       public.staff 
     WHERE
-      staff_id = ${ parameters.staffId === undefined ? sql`DEFAULT` : typed[23](parameters.staffId) }
+      staff_id = ${ (request.parameters === undefined || request.parameters.staffId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.staffId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))[0]
+    `
+  return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.StaffPkey, values: Partial<Public.Tables.Staff.Values>, options?: Public.Types.StaffPkey.Options & Public.Tables.Staff.Options) : Promise<Public.Types.Staff>{
 
@@ -4355,12 +4392,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.staff 
     SET
-      staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[23](values.staffId) } , first_name = ${ values.firstName === undefined ? sql`first_name` : typed[1043](values.firstName) } , last_name = ${ values.lastName === undefined ? sql`last_name` : typed[1043](values.lastName) } , address_id = ${ values.addressId === undefined ? sql`address_id` : typed[21](values.addressId) } , email = ${ values.email === undefined ? sql`email` : typed[1043](values.email) } , store_id = ${ values.storeId === undefined ? sql`store_id` : typed[21](values.storeId) } , active = ${ values.active === undefined ? sql`active` : typed[16](values.active) } , username = ${ values.username === undefined ? sql`username` : typed[1043](values.username) } , password = ${ values.password === undefined ? sql`password` : typed[1043](values.password) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , picture = ${ values.picture === undefined ? sql`picture` : typed[17](values.picture) } 
+      staff_id = ${ (request.values === undefined || request.values.staffId === undefined) ? sql`staff_id` : typed[23](request.values.staffId) } , first_name = ${ (request.values === undefined || request.values.firstName === undefined) ? sql`first_name` : typed[1043](request.values.firstName) } , last_name = ${ (request.values === undefined || request.values.lastName === undefined) ? sql`last_name` : typed[1043](request.values.lastName) } , address_id = ${ (request.values === undefined || request.values.addressId === undefined) ? sql`address_id` : typed[21](request.values.addressId) } , email = ${ (request.values === undefined || request.values.email === undefined) ? sql`email` : typed[1043](request.values.email) } , store_id = ${ (request.values === undefined || request.values.storeId === undefined) ? sql`store_id` : typed[21](request.values.storeId) } , active = ${ (request.values === undefined || request.values.active === undefined) ? sql`active` : typed[16](request.values.active) } , username = ${ (request.values === undefined || request.values.username === undefined) ? sql`username` : typed[1043](request.values.username) } , password = ${ (request.values === undefined || request.values.password === undefined) ? sql`password` : typed[1043](request.values.password) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } , picture = ${ (request.values === undefined || request.values.picture === undefined) ? sql`picture` : typed[17](request.values.picture) } 
     WHERE
-      staff_id = ${ parameters.staffId === undefined ? sql`DEFAULT` : typed[23](parameters.staffId) }
+      staff_id = ${ (request.parameters === undefined || request.parameters.staffId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.staffId) }
     RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture`, {parameters, values, options});
 return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))[0]
-},
+}
 async delete(parameters: Public.Types.StaffPkey, options?: Public.Types.StaffPkey.Options & Public.Tables.Staff.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4369,7 +4406,7 @@ async delete(parameters: Public.Types.StaffPkey, options?: Public.Types.StaffPke
     DELETE FROM 
       public.staff 
     WHERE
-      staff_id = ${ parameters.staffId === undefined ? sql`DEFAULT` : typed[23](parameters.staffId) }
+      staff_id = ${ (request.parameters === undefined || request.parameters.staffId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.staffId) }
     RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture`, {parameters, options});
  return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))[0]
 }
@@ -4392,19 +4429,21 @@ async read(parameters: Public.Types.StorePkey, options?: Public.Types.StorePkey.
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Store, Public.Types.StorePkey, never, Public.Types.StorePkey.Options & Public.Tables.Store.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       store_id,manager_staff_id,address_id,last_update 
     FROM
       public.store 
     WHERE
-      store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[23](parameters.storeId) }
+      store_id = ${ (request.parameters === undefined || request.parameters.storeId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.storeId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+    `
+  return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.StorePkey, values: Partial<Public.Tables.Store.Values>, options?: Public.Types.StorePkey.Options & Public.Tables.Store.Options) : Promise<Public.Types.Store>{
 
@@ -4417,12 +4456,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.store 
     SET
-      store_id = ${ values.storeId === undefined ? sql`store_id` : typed[23](values.storeId) } , manager_staff_id = ${ values.managerStaffId === undefined ? sql`manager_staff_id` : typed[21](values.managerStaffId) } , address_id = ${ values.addressId === undefined ? sql`address_id` : typed[21](values.addressId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
+      store_id = ${ (request.values === undefined || request.values.storeId === undefined) ? sql`store_id` : typed[23](request.values.storeId) } , manager_staff_id = ${ (request.values === undefined || request.values.managerStaffId === undefined) ? sql`manager_staff_id` : typed[21](request.values.managerStaffId) } , address_id = ${ (request.values === undefined || request.values.addressId === undefined) ? sql`address_id` : typed[21](request.values.addressId) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } 
     WHERE
-      store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[23](parameters.storeId) }
+      store_id = ${ (request.parameters === undefined || request.parameters.storeId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.storeId) }
     RETURNING store_id,manager_staff_id,address_id,last_update`, {parameters, values, options});
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.StorePkey, options?: Public.Types.StorePkey.Options & Public.Tables.Store.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4431,7 +4470,7 @@ async delete(parameters: Public.Types.StorePkey, options?: Public.Types.StorePke
     DELETE FROM 
       public.store 
     WHERE
-      store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[23](parameters.storeId) }
+      store_id = ${ (request.parameters === undefined || request.parameters.storeId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.storeId) }
     RETURNING store_id,manager_staff_id,address_id,last_update`, {parameters, options});
  return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -4452,19 +4491,21 @@ async read(parameters: Public.Types.IdxUnqManagerStaffId, options?: Public.Types
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Store, Public.Types.IdxUnqManagerStaffId, never, Public.Types.IdxUnqManagerStaffId.Options & Public.Tables.Store.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       store_id,manager_staff_id,address_id,last_update 
     FROM
       public.store 
     WHERE
-      manager_staff_id = ${ parameters.managerStaffId === undefined ? sql`DEFAULT` : typed[21](parameters.managerStaffId) }
+      manager_staff_id = ${ (request.parameters === undefined || request.parameters.managerStaffId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.managerStaffId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+    `
+  return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.IdxUnqManagerStaffId, values: Partial<Public.Tables.Store.Values>, options?: Public.Types.IdxUnqManagerStaffId.Options & Public.Tables.Store.Options) : Promise<Public.Types.Store>{
 
@@ -4477,12 +4518,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.store 
     SET
-      store_id = ${ values.storeId === undefined ? sql`store_id` : typed[23](values.storeId) } , manager_staff_id = ${ values.managerStaffId === undefined ? sql`manager_staff_id` : typed[21](values.managerStaffId) } , address_id = ${ values.addressId === undefined ? sql`address_id` : typed[21](values.addressId) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } 
+      store_id = ${ (request.values === undefined || request.values.storeId === undefined) ? sql`store_id` : typed[23](request.values.storeId) } , manager_staff_id = ${ (request.values === undefined || request.values.managerStaffId === undefined) ? sql`manager_staff_id` : typed[21](request.values.managerStaffId) } , address_id = ${ (request.values === undefined || request.values.addressId === undefined) ? sql`address_id` : typed[21](request.values.addressId) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } 
     WHERE
-      manager_staff_id = ${ parameters.managerStaffId === undefined ? sql`DEFAULT` : typed[21](parameters.managerStaffId) }
+      manager_staff_id = ${ (request.parameters === undefined || request.parameters.managerStaffId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.managerStaffId) }
     RETURNING store_id,manager_staff_id,address_id,last_update`, {parameters, values, options});
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-},
+}
 async delete(parameters: Public.Types.IdxUnqManagerStaffId, options?: Public.Types.IdxUnqManagerStaffId.Options & Public.Tables.Store.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4491,7 +4532,7 @@ async delete(parameters: Public.Types.IdxUnqManagerStaffId, options?: Public.Typ
     DELETE FROM 
       public.store 
     WHERE
-      manager_staff_id = ${ parameters.managerStaffId === undefined ? sql`DEFAULT` : typed[21](parameters.managerStaffId) }
+      manager_staff_id = ${ (request.parameters === undefined || request.parameters.managerStaffId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.managerStaffId) }
     RETURNING store_id,manager_staff_id,address_id,last_update`, {parameters, options});
  return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
@@ -4514,19 +4555,21 @@ async read(parameters: Public.Types.PaymentPkey, options?: Public.Types.PaymentP
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Payment, Public.Types.PaymentPkey, never, Public.Types.PaymentPkey.Options & Public.Tables.Payment.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       payment_id,customer_id,staff_id,rental_id,amount,payment_date 
     FROM
       public.payment 
     WHERE
-      payment_id = ${ parameters.paymentId === undefined ? sql`DEFAULT` : typed[23](parameters.paymentId) }
+      payment_id = ${ (request.parameters === undefined || request.parameters.paymentId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.paymentId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))[0]
+    `
+  return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.PaymentPkey, values: Partial<Public.Tables.Payment.Values>, options?: Public.Types.PaymentPkey.Options & Public.Tables.Payment.Options) : Promise<Public.Types.Payment>{
 
@@ -4539,12 +4582,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.payment 
     SET
-      payment_id = ${ values.paymentId === undefined ? sql`payment_id` : typed[23](values.paymentId) } , customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[21](values.customerId) } , staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId) } , rental_id = ${ values.rentalId === undefined ? sql`rental_id` : typed[23](values.rentalId) } , amount = ${ values.amount === undefined ? sql`amount` : typed[1700](values.amount) } , payment_date = ${ values.paymentDate === undefined ? sql`payment_date` : typed[1114](values.paymentDate) } 
+      payment_id = ${ (request.values === undefined || request.values.paymentId === undefined) ? sql`payment_id` : typed[23](request.values.paymentId) } , customer_id = ${ (request.values === undefined || request.values.customerId === undefined) ? sql`customer_id` : typed[21](request.values.customerId) } , staff_id = ${ (request.values === undefined || request.values.staffId === undefined) ? sql`staff_id` : typed[21](request.values.staffId) } , rental_id = ${ (request.values === undefined || request.values.rentalId === undefined) ? sql`rental_id` : typed[23](request.values.rentalId) } , amount = ${ (request.values === undefined || request.values.amount === undefined) ? sql`amount` : typed[1700](request.values.amount) } , payment_date = ${ (request.values === undefined || request.values.paymentDate === undefined) ? sql`payment_date` : typed[1114](request.values.paymentDate) } 
     WHERE
-      payment_id = ${ parameters.paymentId === undefined ? sql`DEFAULT` : typed[23](parameters.paymentId) }
+      payment_id = ${ (request.parameters === undefined || request.parameters.paymentId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.paymentId) }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, {parameters, values, options});
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))[0]
-},
+}
 async delete(parameters: Public.Types.PaymentPkey, options?: Public.Types.PaymentPkey.Options & Public.Tables.Payment.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4553,7 +4596,7 @@ async delete(parameters: Public.Types.PaymentPkey, options?: Public.Types.Paymen
     DELETE FROM 
       public.payment 
     WHERE
-      payment_id = ${ parameters.paymentId === undefined ? sql`DEFAULT` : typed[23](parameters.paymentId) }
+      payment_id = ${ (request.parameters === undefined || request.parameters.paymentId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.paymentId) }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, {parameters, options});
  return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))[0]
 }
@@ -4574,19 +4617,21 @@ async read(parameters: Public.Types.IdxFkCustomerId, options?: Public.Types.IdxF
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Payment[], Public.Types.IdxFkCustomerId, never, Public.Types.IdxFkCustomerId.Options & Public.Tables.Payment.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       payment_id,customer_id,staff_id,rental_id,amount,payment_date 
     FROM
       public.payment 
     WHERE
-      customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[21](parameters.customerId) }
+      customer_id = ${ (request.parameters === undefined || request.parameters.customerId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.customerId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
+    `
+  return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.IdxFkCustomerId, values: Partial<Public.Tables.Payment.Values>, options?: Public.Types.IdxFkCustomerId.Options & Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]>{
 
@@ -4599,12 +4644,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.payment 
     SET
-      payment_id = ${ values.paymentId === undefined ? sql`payment_id` : typed[23](values.paymentId) } , customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[21](values.customerId) } , staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId) } , rental_id = ${ values.rentalId === undefined ? sql`rental_id` : typed[23](values.rentalId) } , amount = ${ values.amount === undefined ? sql`amount` : typed[1700](values.amount) } , payment_date = ${ values.paymentDate === undefined ? sql`payment_date` : typed[1114](values.paymentDate) } 
+      payment_id = ${ (request.values === undefined || request.values.paymentId === undefined) ? sql`payment_id` : typed[23](request.values.paymentId) } , customer_id = ${ (request.values === undefined || request.values.customerId === undefined) ? sql`customer_id` : typed[21](request.values.customerId) } , staff_id = ${ (request.values === undefined || request.values.staffId === undefined) ? sql`staff_id` : typed[21](request.values.staffId) } , rental_id = ${ (request.values === undefined || request.values.rentalId === undefined) ? sql`rental_id` : typed[23](request.values.rentalId) } , amount = ${ (request.values === undefined || request.values.amount === undefined) ? sql`amount` : typed[1700](request.values.amount) } , payment_date = ${ (request.values === undefined || request.values.paymentDate === undefined) ? sql`payment_date` : typed[1114](request.values.paymentDate) } 
     WHERE
-      customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[21](parameters.customerId) }
+      customer_id = ${ (request.parameters === undefined || request.parameters.customerId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.customerId) }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, {parameters, values, options});
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
-},
+}
 async delete(parameters: Public.Types.IdxFkCustomerId, options?: Public.Types.IdxFkCustomerId.Options & Public.Tables.Payment.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4613,7 +4658,7 @@ async delete(parameters: Public.Types.IdxFkCustomerId, options?: Public.Types.Id
     DELETE FROM 
       public.payment 
     WHERE
-      customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[21](parameters.customerId) }
+      customer_id = ${ (request.parameters === undefined || request.parameters.customerId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.customerId) }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, {parameters, options});
  return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
@@ -4634,19 +4679,21 @@ async read(parameters: Public.Types.IdxFkRentalId, options?: Public.Types.IdxFkR
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Payment[], Public.Types.IdxFkRentalId, never, Public.Types.IdxFkRentalId.Options & Public.Tables.Payment.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       payment_id,customer_id,staff_id,rental_id,amount,payment_date 
     FROM
       public.payment 
     WHERE
-      rental_id = ${ parameters.rentalId === undefined ? sql`DEFAULT` : typed[23](parameters.rentalId) }
+      rental_id = ${ (request.parameters === undefined || request.parameters.rentalId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.rentalId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
+    `
+  return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.IdxFkRentalId, values: Partial<Public.Tables.Payment.Values>, options?: Public.Types.IdxFkRentalId.Options & Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]>{
 
@@ -4659,12 +4706,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.payment 
     SET
-      payment_id = ${ values.paymentId === undefined ? sql`payment_id` : typed[23](values.paymentId) } , customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[21](values.customerId) } , staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId) } , rental_id = ${ values.rentalId === undefined ? sql`rental_id` : typed[23](values.rentalId) } , amount = ${ values.amount === undefined ? sql`amount` : typed[1700](values.amount) } , payment_date = ${ values.paymentDate === undefined ? sql`payment_date` : typed[1114](values.paymentDate) } 
+      payment_id = ${ (request.values === undefined || request.values.paymentId === undefined) ? sql`payment_id` : typed[23](request.values.paymentId) } , customer_id = ${ (request.values === undefined || request.values.customerId === undefined) ? sql`customer_id` : typed[21](request.values.customerId) } , staff_id = ${ (request.values === undefined || request.values.staffId === undefined) ? sql`staff_id` : typed[21](request.values.staffId) } , rental_id = ${ (request.values === undefined || request.values.rentalId === undefined) ? sql`rental_id` : typed[23](request.values.rentalId) } , amount = ${ (request.values === undefined || request.values.amount === undefined) ? sql`amount` : typed[1700](request.values.amount) } , payment_date = ${ (request.values === undefined || request.values.paymentDate === undefined) ? sql`payment_date` : typed[1114](request.values.paymentDate) } 
     WHERE
-      rental_id = ${ parameters.rentalId === undefined ? sql`DEFAULT` : typed[23](parameters.rentalId) }
+      rental_id = ${ (request.parameters === undefined || request.parameters.rentalId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.rentalId) }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, {parameters, values, options});
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
-},
+}
 async delete(parameters: Public.Types.IdxFkRentalId, options?: Public.Types.IdxFkRentalId.Options & Public.Tables.Payment.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4673,7 +4720,7 @@ async delete(parameters: Public.Types.IdxFkRentalId, options?: Public.Types.IdxF
     DELETE FROM 
       public.payment 
     WHERE
-      rental_id = ${ parameters.rentalId === undefined ? sql`DEFAULT` : typed[23](parameters.rentalId) }
+      rental_id = ${ (request.parameters === undefined || request.parameters.rentalId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.rentalId) }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, {parameters, options});
  return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
@@ -4694,19 +4741,21 @@ async read(parameters: Public.Types.IdxFkStaffId, options?: Public.Types.IdxFkSt
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Payment[], Public.Types.IdxFkStaffId, never, Public.Types.IdxFkStaffId.Options & Public.Tables.Payment.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       payment_id,customer_id,staff_id,rental_id,amount,payment_date 
     FROM
       public.payment 
     WHERE
-      staff_id = ${ parameters.staffId === undefined ? sql`DEFAULT` : typed[21](parameters.staffId) }
+      staff_id = ${ (request.parameters === undefined || request.parameters.staffId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.staffId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
+    `
+  return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.IdxFkStaffId, values: Partial<Public.Tables.Payment.Values>, options?: Public.Types.IdxFkStaffId.Options & Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]>{
 
@@ -4719,12 +4768,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.payment 
     SET
-      payment_id = ${ values.paymentId === undefined ? sql`payment_id` : typed[23](values.paymentId) } , customer_id = ${ values.customerId === undefined ? sql`customer_id` : typed[21](values.customerId) } , staff_id = ${ values.staffId === undefined ? sql`staff_id` : typed[21](values.staffId) } , rental_id = ${ values.rentalId === undefined ? sql`rental_id` : typed[23](values.rentalId) } , amount = ${ values.amount === undefined ? sql`amount` : typed[1700](values.amount) } , payment_date = ${ values.paymentDate === undefined ? sql`payment_date` : typed[1114](values.paymentDate) } 
+      payment_id = ${ (request.values === undefined || request.values.paymentId === undefined) ? sql`payment_id` : typed[23](request.values.paymentId) } , customer_id = ${ (request.values === undefined || request.values.customerId === undefined) ? sql`customer_id` : typed[21](request.values.customerId) } , staff_id = ${ (request.values === undefined || request.values.staffId === undefined) ? sql`staff_id` : typed[21](request.values.staffId) } , rental_id = ${ (request.values === undefined || request.values.rentalId === undefined) ? sql`rental_id` : typed[23](request.values.rentalId) } , amount = ${ (request.values === undefined || request.values.amount === undefined) ? sql`amount` : typed[1700](request.values.amount) } , payment_date = ${ (request.values === undefined || request.values.paymentDate === undefined) ? sql`payment_date` : typed[1114](request.values.paymentDate) } 
     WHERE
-      staff_id = ${ parameters.staffId === undefined ? sql`DEFAULT` : typed[21](parameters.staffId) }
+      staff_id = ${ (request.parameters === undefined || request.parameters.staffId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.staffId) }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, {parameters, values, options});
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
-},
+}
 async delete(parameters: Public.Types.IdxFkStaffId, options?: Public.Types.IdxFkStaffId.Options & Public.Tables.Payment.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4733,7 +4782,7 @@ async delete(parameters: Public.Types.IdxFkStaffId, options?: Public.Types.IdxFk
     DELETE FROM 
       public.payment 
     WHERE
-      staff_id = ${ parameters.staffId === undefined ? sql`DEFAULT` : typed[21](parameters.staffId) }
+      staff_id = ${ (request.parameters === undefined || request.parameters.staffId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.staffId) }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, {parameters, options});
  return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
@@ -4756,19 +4805,21 @@ async read(parameters: Public.Types.FilmPkey, options?: Public.Types.FilmPkey.Op
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Film, Public.Types.FilmPkey, never, Public.Types.FilmPkey.Options & Public.Tables.Film.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
     FROM
       public.film 
     WHERE
-      film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[23](parameters.filmId) }
+      film_id = ${ (request.parameters === undefined || request.parameters.filmId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.filmId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))[0]
+    `
+  return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))[0]
+}, {parameters, options});
 }
 async update(parameters: Public.Types.FilmPkey, values: Partial<Public.Tables.Film.Values>, options?: Public.Types.FilmPkey.Options & Public.Tables.Film.Options) : Promise<Public.Types.Film>{
 
@@ -4781,12 +4832,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.film 
     SET
-      film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[46670](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[46659](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
+      film_id = ${ (request.values === undefined || request.values.filmId === undefined) ? sql`film_id` : typed[23](request.values.filmId) } , title = ${ (request.values === undefined || request.values.title === undefined) ? sql`title` : typed[1043](request.values.title) } , description = ${ (request.values === undefined || request.values.description === undefined) ? sql`description` : typed[25](request.values.description) } , release_year = ${ (request.values === undefined || request.values.releaseYear === undefined) ? sql`release_year` : typed[48820](request.values.releaseYear) } , language_id = ${ (request.values === undefined || request.values.languageId === undefined) ? sql`language_id` : typed[21](request.values.languageId) } , rental_duration = ${ (request.values === undefined || request.values.rentalDuration === undefined) ? sql`rental_duration` : typed[21](request.values.rentalDuration) } , rental_rate = ${ (request.values === undefined || request.values.rentalRate === undefined) ? sql`rental_rate` : typed[1700](request.values.rentalRate) } , length = ${ (request.values === undefined || request.values.length === undefined) ? sql`length` : typed[21](request.values.length) } , replacement_cost = ${ (request.values === undefined || request.values.replacementCost === undefined) ? sql`replacement_cost` : typed[1700](request.values.replacementCost) } , rating = ${ (request.values === undefined || request.values.rating === undefined) ? sql`rating` : typed[48809](request.values.rating) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } , special_features = ${ (request.values === undefined || request.values.specialFeatures === undefined) ? sql`special_features` : typed[1009](request.values.specialFeatures) } , fulltext = ${ (request.values === undefined || request.values.fulltext === undefined) ? sql`fulltext` : typed[3614](request.values.fulltext) } 
     WHERE
-      film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[23](parameters.filmId) }
+      film_id = ${ (request.parameters === undefined || request.parameters.filmId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.filmId) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, {parameters, values, options});
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))[0]
-},
+}
 async delete(parameters: Public.Types.FilmPkey, options?: Public.Types.FilmPkey.Options & Public.Tables.Film.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4795,7 +4846,7 @@ async delete(parameters: Public.Types.FilmPkey, options?: Public.Types.FilmPkey.
     DELETE FROM 
       public.film 
     WHERE
-      film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[23](parameters.filmId) }
+      film_id = ${ (request.parameters === undefined || request.parameters.filmId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.filmId) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, {parameters, options});
  return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))[0]
 }
@@ -4816,19 +4867,21 @@ async read(parameters: Public.Types.FilmFulltextIdx, options?: Public.Types.Film
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Film[], Public.Types.FilmFulltextIdx, never, Public.Types.FilmFulltextIdx.Options & Public.Tables.Film.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
     FROM
       public.film 
     WHERE
-      fulltext @@ ${sql.unsafe(`${options?.fulltext?.queryParser ?? "to_tsquery"}`)}(${options?.fulltext?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3614](parameters.fulltext) })
+      fulltext @@ ${sql.unsafe(`${request.options?.fulltext?.queryParser ?? "to_tsquery"}`)}(${request.options?.fulltext?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ (request.parameters === undefined || request.parameters.fulltext === undefined) ? sql`DEFAULT` : typed[3614](request.parameters.fulltext) })
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
+    `
+  return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.FilmFulltextIdx, values: Partial<Public.Tables.Film.Values>, options?: Public.Types.FilmFulltextIdx.Options & Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
 
@@ -4841,12 +4894,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.film 
     SET
-      film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[46670](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[46659](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
+      film_id = ${ (request.values === undefined || request.values.filmId === undefined) ? sql`film_id` : typed[23](request.values.filmId) } , title = ${ (request.values === undefined || request.values.title === undefined) ? sql`title` : typed[1043](request.values.title) } , description = ${ (request.values === undefined || request.values.description === undefined) ? sql`description` : typed[25](request.values.description) } , release_year = ${ (request.values === undefined || request.values.releaseYear === undefined) ? sql`release_year` : typed[48820](request.values.releaseYear) } , language_id = ${ (request.values === undefined || request.values.languageId === undefined) ? sql`language_id` : typed[21](request.values.languageId) } , rental_duration = ${ (request.values === undefined || request.values.rentalDuration === undefined) ? sql`rental_duration` : typed[21](request.values.rentalDuration) } , rental_rate = ${ (request.values === undefined || request.values.rentalRate === undefined) ? sql`rental_rate` : typed[1700](request.values.rentalRate) } , length = ${ (request.values === undefined || request.values.length === undefined) ? sql`length` : typed[21](request.values.length) } , replacement_cost = ${ (request.values === undefined || request.values.replacementCost === undefined) ? sql`replacement_cost` : typed[1700](request.values.replacementCost) } , rating = ${ (request.values === undefined || request.values.rating === undefined) ? sql`rating` : typed[48809](request.values.rating) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } , special_features = ${ (request.values === undefined || request.values.specialFeatures === undefined) ? sql`special_features` : typed[1009](request.values.specialFeatures) } , fulltext = ${ (request.values === undefined || request.values.fulltext === undefined) ? sql`fulltext` : typed[3614](request.values.fulltext) } 
     WHERE
-      fulltext @@ ${sql.unsafe(`${options?.fulltext?.queryParser ?? "to_tsquery"}`)}(${options?.fulltext?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3614](parameters.fulltext) })
+      fulltext @@ ${sql.unsafe(`${request.options?.fulltext?.queryParser ?? "to_tsquery"}`)}(${request.options?.fulltext?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ (request.parameters === undefined || request.parameters.fulltext === undefined) ? sql`DEFAULT` : typed[3614](request.parameters.fulltext) })
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, {parameters, values, options});
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
-},
+}
 async delete(parameters: Public.Types.FilmFulltextIdx, options?: Public.Types.FilmFulltextIdx.Options & Public.Tables.Film.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4855,7 +4908,7 @@ async delete(parameters: Public.Types.FilmFulltextIdx, options?: Public.Types.Fi
     DELETE FROM 
       public.film 
     WHERE
-      fulltext @@ ${sql.unsafe(`${options?.fulltext?.queryParser ?? "to_tsquery"}`)}(${options?.fulltext?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3614](parameters.fulltext) })
+      fulltext @@ ${sql.unsafe(`${request.options?.fulltext?.queryParser ?? "to_tsquery"}`)}(${request.options?.fulltext?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ (request.parameters === undefined || request.parameters.fulltext === undefined) ? sql`DEFAULT` : typed[3614](request.parameters.fulltext) })
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, {parameters, options});
  return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
@@ -4876,19 +4929,21 @@ async read(parameters: Public.Types.IdxFkLanguageId, options?: Public.Types.IdxF
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Film[], Public.Types.IdxFkLanguageId, never, Public.Types.IdxFkLanguageId.Options & Public.Tables.Film.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
     FROM
       public.film 
     WHERE
-      language_id = ${ parameters.languageId === undefined ? sql`DEFAULT` : typed[21](parameters.languageId) }
+      language_id = ${ (request.parameters === undefined || request.parameters.languageId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.languageId) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
+    `
+  return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.IdxFkLanguageId, values: Partial<Public.Tables.Film.Values>, options?: Public.Types.IdxFkLanguageId.Options & Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
 
@@ -4901,12 +4956,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.film 
     SET
-      film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[46670](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[46659](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
+      film_id = ${ (request.values === undefined || request.values.filmId === undefined) ? sql`film_id` : typed[23](request.values.filmId) } , title = ${ (request.values === undefined || request.values.title === undefined) ? sql`title` : typed[1043](request.values.title) } , description = ${ (request.values === undefined || request.values.description === undefined) ? sql`description` : typed[25](request.values.description) } , release_year = ${ (request.values === undefined || request.values.releaseYear === undefined) ? sql`release_year` : typed[48820](request.values.releaseYear) } , language_id = ${ (request.values === undefined || request.values.languageId === undefined) ? sql`language_id` : typed[21](request.values.languageId) } , rental_duration = ${ (request.values === undefined || request.values.rentalDuration === undefined) ? sql`rental_duration` : typed[21](request.values.rentalDuration) } , rental_rate = ${ (request.values === undefined || request.values.rentalRate === undefined) ? sql`rental_rate` : typed[1700](request.values.rentalRate) } , length = ${ (request.values === undefined || request.values.length === undefined) ? sql`length` : typed[21](request.values.length) } , replacement_cost = ${ (request.values === undefined || request.values.replacementCost === undefined) ? sql`replacement_cost` : typed[1700](request.values.replacementCost) } , rating = ${ (request.values === undefined || request.values.rating === undefined) ? sql`rating` : typed[48809](request.values.rating) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } , special_features = ${ (request.values === undefined || request.values.specialFeatures === undefined) ? sql`special_features` : typed[1009](request.values.specialFeatures) } , fulltext = ${ (request.values === undefined || request.values.fulltext === undefined) ? sql`fulltext` : typed[3614](request.values.fulltext) } 
     WHERE
-      language_id = ${ parameters.languageId === undefined ? sql`DEFAULT` : typed[21](parameters.languageId) }
+      language_id = ${ (request.parameters === undefined || request.parameters.languageId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.languageId) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, {parameters, values, options});
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
-},
+}
 async delete(parameters: Public.Types.IdxFkLanguageId, options?: Public.Types.IdxFkLanguageId.Options & Public.Tables.Film.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4915,7 +4970,7 @@ async delete(parameters: Public.Types.IdxFkLanguageId, options?: Public.Types.Id
     DELETE FROM 
       public.film 
     WHERE
-      language_id = ${ parameters.languageId === undefined ? sql`DEFAULT` : typed[21](parameters.languageId) }
+      language_id = ${ (request.parameters === undefined || request.parameters.languageId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.languageId) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, {parameters, options});
  return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
@@ -4936,19 +4991,21 @@ async read(parameters: Public.Types.IdxTitle, options?: Public.Types.IdxTitle.Op
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql, request) => sql`
+return await this.database.invoke<Public.Types.Film[], Public.Types.IdxTitle, never, Public.Types.IdxTitle.Options & Public.Tables.Film.Options>( async (sql, request) => {
+  const response = await sql`
     -- 
     SELECT 
       film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
     FROM
       public.film 
     WHERE
-      title = ${ parameters.title === undefined ? sql`DEFAULT` : typed[1043](parameters.title) }
+      title = ${ (request.parameters === undefined || request.parameters.title === undefined) ? sql`DEFAULT` : typed[1043](request.parameters.title) }
     ${sql.unsafe(`${orderBy}`)}
     LIMIT ${options?.limitNumberOfRows ?? Number.MAX_SAFE_INTEGER} 
     OFFSET ${options?.offsetNumberOfRows ?? 0} 
-    `, {parameters, ...(options ?? {})});
-return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
+    `
+  return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
+}, {parameters, options});
 }
 async update(parameters: Public.Types.IdxTitle, values: Partial<Public.Tables.Film.Values>, options?: Public.Types.IdxTitle.Options & Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
 
@@ -4961,12 +5018,12 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.film 
     SET
-      film_id = ${ values.filmId === undefined ? sql`film_id` : typed[23](values.filmId) } , title = ${ values.title === undefined ? sql`title` : typed[1043](values.title) } , description = ${ values.description === undefined ? sql`description` : typed[25](values.description) } , release_year = ${ values.releaseYear === undefined ? sql`release_year` : typed[46670](values.releaseYear) } , language_id = ${ values.languageId === undefined ? sql`language_id` : typed[21](values.languageId) } , rental_duration = ${ values.rentalDuration === undefined ? sql`rental_duration` : typed[21](values.rentalDuration) } , rental_rate = ${ values.rentalRate === undefined ? sql`rental_rate` : typed[1700](values.rentalRate) } , length = ${ values.length === undefined ? sql`length` : typed[21](values.length) } , replacement_cost = ${ values.replacementCost === undefined ? sql`replacement_cost` : typed[1700](values.replacementCost) } , rating = ${ values.rating === undefined ? sql`rating` : typed[46659](values.rating) } , last_update = ${ values.lastUpdate === undefined ? sql`last_update` : typed[1114](values.lastUpdate) } , special_features = ${ values.specialFeatures === undefined ? sql`special_features` : typed[1009](values.specialFeatures) } , fulltext = ${ values.fulltext === undefined ? sql`fulltext` : typed[3614](values.fulltext) } 
+      film_id = ${ (request.values === undefined || request.values.filmId === undefined) ? sql`film_id` : typed[23](request.values.filmId) } , title = ${ (request.values === undefined || request.values.title === undefined) ? sql`title` : typed[1043](request.values.title) } , description = ${ (request.values === undefined || request.values.description === undefined) ? sql`description` : typed[25](request.values.description) } , release_year = ${ (request.values === undefined || request.values.releaseYear === undefined) ? sql`release_year` : typed[48820](request.values.releaseYear) } , language_id = ${ (request.values === undefined || request.values.languageId === undefined) ? sql`language_id` : typed[21](request.values.languageId) } , rental_duration = ${ (request.values === undefined || request.values.rentalDuration === undefined) ? sql`rental_duration` : typed[21](request.values.rentalDuration) } , rental_rate = ${ (request.values === undefined || request.values.rentalRate === undefined) ? sql`rental_rate` : typed[1700](request.values.rentalRate) } , length = ${ (request.values === undefined || request.values.length === undefined) ? sql`length` : typed[21](request.values.length) } , replacement_cost = ${ (request.values === undefined || request.values.replacementCost === undefined) ? sql`replacement_cost` : typed[1700](request.values.replacementCost) } , rating = ${ (request.values === undefined || request.values.rating === undefined) ? sql`rating` : typed[48809](request.values.rating) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } , special_features = ${ (request.values === undefined || request.values.specialFeatures === undefined) ? sql`special_features` : typed[1009](request.values.specialFeatures) } , fulltext = ${ (request.values === undefined || request.values.fulltext === undefined) ? sql`fulltext` : typed[3614](request.values.fulltext) } 
     WHERE
-      title = ${ parameters.title === undefined ? sql`DEFAULT` : typed[1043](parameters.title) }
+      title = ${ (request.parameters === undefined || request.parameters.title === undefined) ? sql`DEFAULT` : typed[1043](request.parameters.title) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, {parameters, values, options});
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
-},
+}
 async delete(parameters: Public.Types.IdxTitle, options?: Public.Types.IdxTitle.Options & Public.Tables.Film.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
@@ -4975,7 +5032,7 @@ async delete(parameters: Public.Types.IdxTitle, options?: Public.Types.IdxTitle.
     DELETE FROM 
       public.film 
     WHERE
-      title = ${ parameters.title === undefined ? sql`DEFAULT` : typed[1043](parameters.title) }
+      title = ${ (request.parameters === undefined || request.parameters.title === undefined) ? sql`DEFAULT` : typed[1043](request.parameters.title) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, {parameters, options});
  return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
@@ -16173,12 +16230,12 @@ export type PrimaryKey = Public.Types.FilmPkey;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_46703Index = {
+export type PgToast_48853Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_46789Index = {
+export type PgToast_48939Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -29967,11 +30024,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_46703Index {
+export namespace PgToast_48853Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_46703Index.is(from)) {
+if (PgToast.Types.PgToast_48853Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -29982,11 +30039,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_46789Index {
+export namespace PgToast_48939Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_46789Index.is(from)) {
+if (PgToast.Types.PgToast_48939Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -36594,16 +36651,16 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_46703Index {
-export function is(value: any) : value is PgToast.Types.PgToast_46703Index {
+export namespace PgToast_48853Index {
+export function is(value: any) : value is PgToast.Types.PgToast_48853Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_46789Index {
-export function is(value: any) : value is PgToast.Types.PgToast_46789Index {
+export namespace PgToast_48939Index {
+export function is(value: any) : value is PgToast.Types.PgToast_48939Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -41309,13 +41366,13 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_46703Index {
- export function equals(l: PgToast.Types.PgToast_46703Index|undefined, r: unknown) {
+export namespace PgToast_48853Index {
+ export function equals(l: PgToast.Types.PgToast_48853Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_46789Index {
- export function equals(l: PgToast.Types.PgToast_46789Index|undefined, r: unknown) {
+export namespace PgToast_48939Index {
+ export function equals(l: PgToast.Types.PgToast_48939Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -59371,7 +59428,7 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_46703Index {
+export namespace PgToast_48853Index {
 export namespace ChunkId {
 
       export type Options = InvokeQueryOptions;
@@ -59387,7 +59444,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_46789Index {
+export namespace PgToast_48939Index {
 export namespace ChunkId {
 
       export type Options = InvokeQueryOptions;

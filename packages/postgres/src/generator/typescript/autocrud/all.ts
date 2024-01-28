@@ -1,5 +1,9 @@
 import { postgresToTypescript } from "./shared";
-import { GenerationContext, AllOperationNode } from "@embracesql/shared";
+import {
+  GenerationContext,
+  AllOperationNode,
+  OPTIONS,
+} from "@embracesql/shared";
 
 /**
  * AutoCRUD read all the rows in the table. All of them. No fooling.
@@ -8,8 +12,8 @@ import { GenerationContext, AllOperationNode } from "@embracesql/shared";
 export const AllOperation = {
   async before(context: GenerationContext, node: AllOperationNode) {
     const parameters = ``;
-    const requestExpression = `{options}`;
-    const options = `options?: ${node.table.typescriptNamespacedName}.Options`;
+    const requestExpression = `{${OPTIONS}}`;
+    const options = `${OPTIONS}?: ${node.table.typescriptNamespacedName}.Options`;
     const returns = `Promise<${node.table.type.typescriptNamespacedName}[]>`;
     // query using postgres driver bindings to the index
     const sql = `

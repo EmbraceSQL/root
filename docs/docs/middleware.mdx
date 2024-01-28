@@ -1,0 +1,34 @@
+import CodeBlock from "@theme/CodeBlock";
+
+# Middleware
+
+It's a common pattern: middlware. EmbraceSQL uses this pattern inside the 
+database invocation stack to allow you to:
+
+* view and modify `parameters`
+* view and modify `values`
+
+## Parameters
+
+When EmbraceSQL say `parameters`, it means data used to filter data in `WHERE`
+clauses. 
+
+Middleware is provides the ability to `get` and `set` `parameters`.
+
+You can use this for:
+* dynamic query alternation
+* security
+* logging
+
+## Values
+
+When EmbraceSQL says `values` it means data that will be sent to and stored
+in the database via `INSERT` and `UPDATE`.
+
+Middleware is provides the ability to `get` and `set` `values`.
+
+You can use this for:
+* an in-code alternative to row modifying triggers
+* default values that rely on code outside the database
+* validating input that relies on code outside the database
+* calling external APIs before finally going to the database
