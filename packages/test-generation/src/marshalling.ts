@@ -12,7 +12,7 @@
         /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
         /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
         /* @typescript-eslint/no-redundant-type-constituents */
-        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
+        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER, EmbraceSQLOptions} from "@embracesql/shared";
         import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort, InvokeQueryOptions as GenericInvokeQueryOptions } from "@embracesql/shared";
         import { Geometry } from "@embracesql/shared";
         import { DatabaseMetadata, Schema, Table, Column, Index, Procedure } from "@embracesql/shared";
@@ -4919,177 +4919,177 @@ export namespace Tables {
           // begin - operation dispatch map
           import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
           export class OperationDispatcher {
-            private dispatchMap: Record<string, OperationDispatchMethod<DatabaseHeaders>>;
+            private dispatchMap: Record<string, OperationDispatchMethod>;
             constructor(private database: Database){
               this.dispatchMap = {
 
           
-"Public.Procedures.CubeIn.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeIn.call(request.parameters as Public.Procedures.CubeIn.Parameters,request.options),
-"Public.Procedures.Cube_9c45.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.Cube_9c45.call(request.parameters as Public.Procedures.Cube_9c45.Parameters,request.options),
-"Public.Procedures.Cube_2e6d.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.Cube_2e6d.call(request.parameters as Public.Procedures.Cube_2e6d.Parameters,request.options),
-"Public.Procedures.CubeOut.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeOut.call(request.parameters as Public.Procedures.CubeOut.Parameters,request.options),
-"Public.Procedures.CubeEq.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeEq.call(request.parameters as Public.Procedures.CubeEq.Parameters,request.options),
-"Public.Procedures.CubeNe.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeNe.call(request.parameters as Public.Procedures.CubeNe.Parameters,request.options),
-"Public.Procedures.CubeLt.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeLt.call(request.parameters as Public.Procedures.CubeLt.Parameters,request.options),
-"Public.Procedures.CubeGt.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeGt.call(request.parameters as Public.Procedures.CubeGt.Parameters,request.options),
-"Public.Procedures.CubeLe.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeLe.call(request.parameters as Public.Procedures.CubeLe.Parameters,request.options),
-"Public.Procedures.CubeGe.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeGe.call(request.parameters as Public.Procedures.CubeGe.Parameters,request.options),
-"Public.Procedures.CubeCmp.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeCmp.call(request.parameters as Public.Procedures.CubeCmp.Parameters,request.options),
-"Public.Procedures.CubeContains.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeContains.call(request.parameters as Public.Procedures.CubeContains.Parameters,request.options),
-"Public.Procedures.CubeContained.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeContained.call(request.parameters as Public.Procedures.CubeContained.Parameters,request.options),
-"Public.Procedures.CubeOverlap.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeOverlap.call(request.parameters as Public.Procedures.CubeOverlap.Parameters,request.options),
-"Public.Procedures.CubeUnion.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeUnion.call(request.parameters as Public.Procedures.CubeUnion.Parameters,request.options),
-"Public.Procedures.CubeInter.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeInter.call(request.parameters as Public.Procedures.CubeInter.Parameters,request.options),
-"Public.Procedures.CubeSize.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeSize.call(request.parameters as Public.Procedures.CubeSize.Parameters,request.options),
-"Public.Procedures.CubeSubset.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeSubset.call(request.parameters as Public.Procedures.CubeSubset.Parameters,request.options),
-"Public.Procedures.CubeDistance.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeDistance.call(request.parameters as Public.Procedures.CubeDistance.Parameters,request.options),
-"Public.Procedures.DistanceChebyshev.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.DistanceChebyshev.call(request.parameters as Public.Procedures.DistanceChebyshev.Parameters,request.options),
-"Public.Procedures.DistanceTaxicab.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.DistanceTaxicab.call(request.parameters as Public.Procedures.DistanceTaxicab.Parameters,request.options),
-"Public.Procedures.CubeDim.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeDim.call(request.parameters as Public.Procedures.CubeDim.Parameters,request.options),
-"Public.Procedures.CubeLlCoord.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeLlCoord.call(request.parameters as Public.Procedures.CubeLlCoord.Parameters,request.options),
-"Public.Procedures.CubeUrCoord.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeUrCoord.call(request.parameters as Public.Procedures.CubeUrCoord.Parameters,request.options),
-"Public.Procedures.CubeCoord.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeCoord.call(request.parameters as Public.Procedures.CubeCoord.Parameters,request.options),
-"Public.Procedures.CubeCoordLlur.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeCoordLlur.call(request.parameters as Public.Procedures.CubeCoordLlur.Parameters,request.options),
-"Public.Procedures.CubeA5b3.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeA5b3.call(request.parameters as Public.Procedures.CubeA5b3.Parameters,request.options),
-"Public.Procedures.Cube_0aec.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.Cube_0aec.call(request.parameters as Public.Procedures.Cube_0aec.Parameters,request.options),
-"Public.Procedures.Cube_4aa1.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.Cube_4aa1.call(request.parameters as Public.Procedures.Cube_4aa1.Parameters,request.options),
-"Public.Procedures.CubeB0e0.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeB0e0.call(request.parameters as Public.Procedures.CubeB0e0.Parameters,request.options),
-"Public.Procedures.CubeIsPoint.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeIsPoint.call(request.parameters as Public.Procedures.CubeIsPoint.Parameters,request.options),
-"Public.Procedures.CubeEnlarge.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeEnlarge.call(request.parameters as Public.Procedures.CubeEnlarge.Parameters,request.options),
-"Public.Procedures.GCubeConsistent.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GCubeConsistent.call(request.parameters as Public.Procedures.GCubeConsistent.Parameters,request.options),
-"Public.Procedures.GCubePenalty.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GCubePenalty.call(request.parameters as Public.Procedures.GCubePenalty.Parameters,request.options),
-"Public.Procedures.GCubePicksplit.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GCubePicksplit.call(request.parameters as Public.Procedures.GCubePicksplit.Parameters,request.options),
-"Public.Procedures.GCubeUnion.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GCubeUnion.call(request.parameters as Public.Procedures.GCubeUnion.Parameters,request.options),
-"Public.Procedures.GCubeSame.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GCubeSame.call(request.parameters as Public.Procedures.GCubeSame.Parameters,request.options),
-"Public.Procedures.GCubeDistance.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GCubeDistance.call(request.parameters as Public.Procedures.GCubeDistance.Parameters,request.options),
-"Public.Procedures.CubeRecv.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeRecv.call(request.parameters as Public.Procedures.CubeRecv.Parameters,request.options),
-"Public.Procedures.CubeSend.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.CubeSend.call(request.parameters as Public.Procedures.CubeSend.Parameters,request.options),
-"Public.Procedures.SetLimit.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.SetLimit.call(request.parameters as Public.Procedures.SetLimit.Parameters,request.options),
-"Public.Procedures.ShowLimit.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.ShowLimit.call(request.options),
-"Public.Procedures.ShowTrgm.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.ShowTrgm.call(request.parameters as Public.Procedures.ShowTrgm.Parameters,request.options),
-"Public.Procedures.Similarity.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.Similarity.call(request.parameters as Public.Procedures.Similarity.Parameters,request.options),
-"Public.Procedures.SimilarityOp.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.SimilarityOp.call(request.parameters as Public.Procedures.SimilarityOp.Parameters,request.options),
-"Public.Procedures.WordSimilarity.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.WordSimilarity.call(request.parameters as Public.Procedures.WordSimilarity.Parameters,request.options),
-"Public.Procedures.WordSimilarityOp.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.WordSimilarityOp.call(request.parameters as Public.Procedures.WordSimilarityOp.Parameters,request.options),
-"Public.Procedures.WordSimilarityCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.WordSimilarityCommutatorOp.call(request.parameters as Public.Procedures.WordSimilarityCommutatorOp.Parameters,request.options),
-"Public.Procedures.SimilarityDist.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.SimilarityDist.call(request.parameters as Public.Procedures.SimilarityDist.Parameters,request.options),
-"Public.Procedures.WordSimilarityDistOp.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.WordSimilarityDistOp.call(request.parameters as Public.Procedures.WordSimilarityDistOp.Parameters,request.options),
-"Public.Procedures.WordSimilarityDistCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.WordSimilarityDistCommutatorOp.call(request.parameters as Public.Procedures.WordSimilarityDistCommutatorOp.Parameters,request.options),
-"Public.Procedures.GtrgmIn.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GtrgmIn.call(request.parameters as Public.Procedures.GtrgmIn.Parameters,request.options),
-"Public.Procedures.GtrgmOut.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GtrgmOut.call(request.parameters as Public.Procedures.GtrgmOut.Parameters,request.options),
-"Public.Procedures.GtrgmConsistent.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GtrgmConsistent.call(request.parameters as Public.Procedures.GtrgmConsistent.Parameters,request.options),
-"Public.Procedures.GtrgmDistance.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GtrgmDistance.call(request.parameters as Public.Procedures.GtrgmDistance.Parameters,request.options),
-"Public.Procedures.GtrgmCompress.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GtrgmCompress.call(request.parameters as Public.Procedures.GtrgmCompress.Parameters,request.options),
-"Public.Procedures.GtrgmDecompress.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GtrgmDecompress.call(request.parameters as Public.Procedures.GtrgmDecompress.Parameters,request.options),
-"Public.Procedures.GtrgmPenalty.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GtrgmPenalty.call(request.parameters as Public.Procedures.GtrgmPenalty.Parameters,request.options),
-"Public.Procedures.GtrgmPicksplit.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GtrgmPicksplit.call(request.parameters as Public.Procedures.GtrgmPicksplit.Parameters,request.options),
-"Public.Procedures.GtrgmUnion.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GtrgmUnion.call(request.parameters as Public.Procedures.GtrgmUnion.Parameters,request.options),
-"Public.Procedures.GtrgmSame.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GtrgmSame.call(request.parameters as Public.Procedures.GtrgmSame.Parameters,request.options),
-"Public.Procedures.GinExtractValueTrgm.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GinExtractValueTrgm.call(request.parameters as Public.Procedures.GinExtractValueTrgm.Parameters,request.options),
-"Public.Procedures.GinExtractQueryTrgm.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GinExtractQueryTrgm.call(request.parameters as Public.Procedures.GinExtractQueryTrgm.Parameters,request.options),
-"Public.Procedures.GinTrgmConsistent.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GinTrgmConsistent.call(request.parameters as Public.Procedures.GinTrgmConsistent.Parameters,request.options),
-"Public.Procedures.GinTrgmTriconsistent.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GinTrgmTriconsistent.call(request.parameters as Public.Procedures.GinTrgmTriconsistent.Parameters,request.options),
-"Public.Procedures.StrictWordSimilarity.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.StrictWordSimilarity.call(request.parameters as Public.Procedures.StrictWordSimilarity.Parameters,request.options),
-"Public.Procedures.StrictWordSimilarityOp.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.StrictWordSimilarityOp.call(request.parameters as Public.Procedures.StrictWordSimilarityOp.Parameters,request.options),
-"Public.Procedures.StrictWordSimilarityCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.StrictWordSimilarityCommutatorOp.call(request.parameters as Public.Procedures.StrictWordSimilarityCommutatorOp.Parameters,request.options),
-"Public.Procedures.StrictWordSimilarityDistOp.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.StrictWordSimilarityDistOp.call(request.parameters as Public.Procedures.StrictWordSimilarityDistOp.Parameters,request.options),
-"Public.Procedures.StrictWordSimilarityDistCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.StrictWordSimilarityDistCommutatorOp.call(request.parameters as Public.Procedures.StrictWordSimilarityDistCommutatorOp.Parameters,request.options),
-"Public.Procedures.GtrgmOptions.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Procedures.GtrgmOptions.call(request.parameters as Public.Procedures.GtrgmOptions.Parameters,request.options),
-"Public.Tables.Slug.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Slug.create(request.values as Public.Tables.Slug.Values,request.options),
+"Public.Procedures.CubeIn.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeIn.call(request.parameters as Public.Procedures.CubeIn.Parameters,request.options),
+"Public.Procedures.Cube_9c45.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.Cube_9c45.call(request.parameters as Public.Procedures.Cube_9c45.Parameters,request.options),
+"Public.Procedures.Cube_2e6d.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.Cube_2e6d.call(request.parameters as Public.Procedures.Cube_2e6d.Parameters,request.options),
+"Public.Procedures.CubeOut.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeOut.call(request.parameters as Public.Procedures.CubeOut.Parameters,request.options),
+"Public.Procedures.CubeEq.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeEq.call(request.parameters as Public.Procedures.CubeEq.Parameters,request.options),
+"Public.Procedures.CubeNe.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeNe.call(request.parameters as Public.Procedures.CubeNe.Parameters,request.options),
+"Public.Procedures.CubeLt.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeLt.call(request.parameters as Public.Procedures.CubeLt.Parameters,request.options),
+"Public.Procedures.CubeGt.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeGt.call(request.parameters as Public.Procedures.CubeGt.Parameters,request.options),
+"Public.Procedures.CubeLe.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeLe.call(request.parameters as Public.Procedures.CubeLe.Parameters,request.options),
+"Public.Procedures.CubeGe.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeGe.call(request.parameters as Public.Procedures.CubeGe.Parameters,request.options),
+"Public.Procedures.CubeCmp.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeCmp.call(request.parameters as Public.Procedures.CubeCmp.Parameters,request.options),
+"Public.Procedures.CubeContains.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeContains.call(request.parameters as Public.Procedures.CubeContains.Parameters,request.options),
+"Public.Procedures.CubeContained.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeContained.call(request.parameters as Public.Procedures.CubeContained.Parameters,request.options),
+"Public.Procedures.CubeOverlap.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeOverlap.call(request.parameters as Public.Procedures.CubeOverlap.Parameters,request.options),
+"Public.Procedures.CubeUnion.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeUnion.call(request.parameters as Public.Procedures.CubeUnion.Parameters,request.options),
+"Public.Procedures.CubeInter.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeInter.call(request.parameters as Public.Procedures.CubeInter.Parameters,request.options),
+"Public.Procedures.CubeSize.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeSize.call(request.parameters as Public.Procedures.CubeSize.Parameters,request.options),
+"Public.Procedures.CubeSubset.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeSubset.call(request.parameters as Public.Procedures.CubeSubset.Parameters,request.options),
+"Public.Procedures.CubeDistance.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeDistance.call(request.parameters as Public.Procedures.CubeDistance.Parameters,request.options),
+"Public.Procedures.DistanceChebyshev.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.DistanceChebyshev.call(request.parameters as Public.Procedures.DistanceChebyshev.Parameters,request.options),
+"Public.Procedures.DistanceTaxicab.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.DistanceTaxicab.call(request.parameters as Public.Procedures.DistanceTaxicab.Parameters,request.options),
+"Public.Procedures.CubeDim.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeDim.call(request.parameters as Public.Procedures.CubeDim.Parameters,request.options),
+"Public.Procedures.CubeLlCoord.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeLlCoord.call(request.parameters as Public.Procedures.CubeLlCoord.Parameters,request.options),
+"Public.Procedures.CubeUrCoord.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeUrCoord.call(request.parameters as Public.Procedures.CubeUrCoord.Parameters,request.options),
+"Public.Procedures.CubeCoord.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeCoord.call(request.parameters as Public.Procedures.CubeCoord.Parameters,request.options),
+"Public.Procedures.CubeCoordLlur.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeCoordLlur.call(request.parameters as Public.Procedures.CubeCoordLlur.Parameters,request.options),
+"Public.Procedures.CubeA5b3.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeA5b3.call(request.parameters as Public.Procedures.CubeA5b3.Parameters,request.options),
+"Public.Procedures.Cube_0aec.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.Cube_0aec.call(request.parameters as Public.Procedures.Cube_0aec.Parameters,request.options),
+"Public.Procedures.Cube_4aa1.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.Cube_4aa1.call(request.parameters as Public.Procedures.Cube_4aa1.Parameters,request.options),
+"Public.Procedures.CubeB0e0.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeB0e0.call(request.parameters as Public.Procedures.CubeB0e0.Parameters,request.options),
+"Public.Procedures.CubeIsPoint.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeIsPoint.call(request.parameters as Public.Procedures.CubeIsPoint.Parameters,request.options),
+"Public.Procedures.CubeEnlarge.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeEnlarge.call(request.parameters as Public.Procedures.CubeEnlarge.Parameters,request.options),
+"Public.Procedures.GCubeConsistent.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.GCubeConsistent.call(request.parameters as Public.Procedures.GCubeConsistent.Parameters,request.options),
+"Public.Procedures.GCubePenalty.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.GCubePenalty.call(request.parameters as Public.Procedures.GCubePenalty.Parameters,request.options),
+"Public.Procedures.GCubePicksplit.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.GCubePicksplit.call(request.parameters as Public.Procedures.GCubePicksplit.Parameters,request.options),
+"Public.Procedures.GCubeUnion.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.GCubeUnion.call(request.parameters as Public.Procedures.GCubeUnion.Parameters,request.options),
+"Public.Procedures.GCubeSame.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.GCubeSame.call(request.parameters as Public.Procedures.GCubeSame.Parameters,request.options),
+"Public.Procedures.GCubeDistance.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.GCubeDistance.call(request.parameters as Public.Procedures.GCubeDistance.Parameters,request.options),
+"Public.Procedures.CubeRecv.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeRecv.call(request.parameters as Public.Procedures.CubeRecv.Parameters,request.options),
+"Public.Procedures.CubeSend.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.CubeSend.call(request.parameters as Public.Procedures.CubeSend.Parameters,request.options),
+"Public.Procedures.SetLimit.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.SetLimit.call(request.parameters as Public.Procedures.SetLimit.Parameters,request.options),
+"Public.Procedures.ShowLimit.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.ShowLimit.call(request.options),
+"Public.Procedures.ShowTrgm.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.ShowTrgm.call(request.parameters as Public.Procedures.ShowTrgm.Parameters,request.options),
+"Public.Procedures.Similarity.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.Similarity.call(request.parameters as Public.Procedures.Similarity.Parameters,request.options),
+"Public.Procedures.SimilarityOp.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.SimilarityOp.call(request.parameters as Public.Procedures.SimilarityOp.Parameters,request.options),
+"Public.Procedures.WordSimilarity.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.WordSimilarity.call(request.parameters as Public.Procedures.WordSimilarity.Parameters,request.options),
+"Public.Procedures.WordSimilarityOp.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.WordSimilarityOp.call(request.parameters as Public.Procedures.WordSimilarityOp.Parameters,request.options),
+"Public.Procedures.WordSimilarityCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.WordSimilarityCommutatorOp.call(request.parameters as Public.Procedures.WordSimilarityCommutatorOp.Parameters,request.options),
+"Public.Procedures.SimilarityDist.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.SimilarityDist.call(request.parameters as Public.Procedures.SimilarityDist.Parameters,request.options),
+"Public.Procedures.WordSimilarityDistOp.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.WordSimilarityDistOp.call(request.parameters as Public.Procedures.WordSimilarityDistOp.Parameters,request.options),
+"Public.Procedures.WordSimilarityDistCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.WordSimilarityDistCommutatorOp.call(request.parameters as Public.Procedures.WordSimilarityDistCommutatorOp.Parameters,request.options),
+"Public.Procedures.GtrgmIn.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.GtrgmIn.call(request.parameters as Public.Procedures.GtrgmIn.Parameters,request.options),
+"Public.Procedures.GtrgmOut.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.GtrgmOut.call(request.parameters as Public.Procedures.GtrgmOut.Parameters,request.options),
+"Public.Procedures.GtrgmConsistent.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.GtrgmConsistent.call(request.parameters as Public.Procedures.GtrgmConsistent.Parameters,request.options),
+"Public.Procedures.GtrgmDistance.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.GtrgmDistance.call(request.parameters as Public.Procedures.GtrgmDistance.Parameters,request.options),
+"Public.Procedures.GtrgmCompress.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.GtrgmCompress.call(request.parameters as Public.Procedures.GtrgmCompress.Parameters,request.options),
+"Public.Procedures.GtrgmDecompress.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.GtrgmDecompress.call(request.parameters as Public.Procedures.GtrgmDecompress.Parameters,request.options),
+"Public.Procedures.GtrgmPenalty.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.GtrgmPenalty.call(request.parameters as Public.Procedures.GtrgmPenalty.Parameters,request.options),
+"Public.Procedures.GtrgmPicksplit.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.GtrgmPicksplit.call(request.parameters as Public.Procedures.GtrgmPicksplit.Parameters,request.options),
+"Public.Procedures.GtrgmUnion.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.GtrgmUnion.call(request.parameters as Public.Procedures.GtrgmUnion.Parameters,request.options),
+"Public.Procedures.GtrgmSame.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.GtrgmSame.call(request.parameters as Public.Procedures.GtrgmSame.Parameters,request.options),
+"Public.Procedures.GinExtractValueTrgm.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.GinExtractValueTrgm.call(request.parameters as Public.Procedures.GinExtractValueTrgm.Parameters,request.options),
+"Public.Procedures.GinExtractQueryTrgm.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.GinExtractQueryTrgm.call(request.parameters as Public.Procedures.GinExtractQueryTrgm.Parameters,request.options),
+"Public.Procedures.GinTrgmConsistent.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.GinTrgmConsistent.call(request.parameters as Public.Procedures.GinTrgmConsistent.Parameters,request.options),
+"Public.Procedures.GinTrgmTriconsistent.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.GinTrgmTriconsistent.call(request.parameters as Public.Procedures.GinTrgmTriconsistent.Parameters,request.options),
+"Public.Procedures.StrictWordSimilarity.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.StrictWordSimilarity.call(request.parameters as Public.Procedures.StrictWordSimilarity.Parameters,request.options),
+"Public.Procedures.StrictWordSimilarityOp.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.StrictWordSimilarityOp.call(request.parameters as Public.Procedures.StrictWordSimilarityOp.Parameters,request.options),
+"Public.Procedures.StrictWordSimilarityCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.StrictWordSimilarityCommutatorOp.call(request.parameters as Public.Procedures.StrictWordSimilarityCommutatorOp.Parameters,request.options),
+"Public.Procedures.StrictWordSimilarityDistOp.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.StrictWordSimilarityDistOp.call(request.parameters as Public.Procedures.StrictWordSimilarityDistOp.Parameters,request.options),
+"Public.Procedures.StrictWordSimilarityDistCommutatorOp.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.StrictWordSimilarityDistCommutatorOp.call(request.parameters as Public.Procedures.StrictWordSimilarityDistCommutatorOp.Parameters,request.options),
+"Public.Procedures.GtrgmOptions.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Procedures.GtrgmOptions.call(request.parameters as Public.Procedures.GtrgmOptions.Parameters,request.options),
+"Public.Tables.Slug.create": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.Slug.create(request.values as Public.Tables.Slug.Values,request.options),
 
-             "Public.Tables.Slug.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
+             "Public.Tables.Slug.all": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) =>
               database.Public.Tables.Slug.all(request.options),
             
-"Public.Tables.Slug.SlugPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Slug.SlugPkey.read(request.parameters as Public.Types.SlugPkey,request.options),
-"Public.Tables.Slug.SlugPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Slug.SlugPkey.update(request.parameters as Public.Types.SlugPkey,request.values as Partial<Public.Tables.Slug.Values>,request.options),
-"Public.Tables.Slug.SlugPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Slug.SlugPkey.delete(request.parameters as Public.Types.SlugPkey,request.options),
-"Api.Procedures.Echo.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Procedures.Echo.call(request.parameters as Api.Procedures.Echo.Parameters,request.options),
-"Api.Procedures.EchoSet.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Procedures.EchoSet.call(request.parameters as Api.Procedures.EchoSet.Parameters,request.options),
-"Api.Procedures.EchoTable.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Procedures.EchoTable.call(request.parameters as Api.Procedures.EchoTable.Parameters,request.options),
-"Api.Procedures.EchoType.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Procedures.EchoType.call(request.parameters as Api.Procedures.EchoType.Parameters,request.options),
-"Api.Procedures.EchoTypeArray.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Procedures.EchoTypeArray.call(request.parameters as Api.Procedures.EchoTypeArray.Parameters,request.options),
-"Api.Procedures.EchoTypeNested.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Procedures.EchoTypeNested.call(request.parameters as Api.Procedures.EchoTypeNested.Parameters,request.options),
-"Api.Procedures.EchoTypeSet.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Procedures.EchoTypeSet.call(request.parameters as Api.Procedures.EchoTypeSet.Parameters,request.options),
-"Api.Procedures.EchoAnswer.call": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Procedures.EchoAnswer.call(request.parameters as Api.Procedures.EchoAnswer.Parameters,request.options),
-"Api.Tables.QAndA.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.QAndA.create(request.values as Api.Tables.QAndA.Values,request.options),
+"Public.Tables.Slug.SlugPkey.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.Slug.SlugPkey.read(request.parameters as Public.Types.SlugPkey,request.options),
+"Public.Tables.Slug.SlugPkey.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.Slug.SlugPkey.update(request.parameters as Public.Types.SlugPkey,request.values as Partial<Public.Tables.Slug.Values>,request.options),
+"Public.Tables.Slug.SlugPkey.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.Slug.SlugPkey.delete(request.parameters as Public.Types.SlugPkey,request.options),
+"Api.Procedures.Echo.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Procedures.Echo.call(request.parameters as Api.Procedures.Echo.Parameters,request.options),
+"Api.Procedures.EchoSet.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Procedures.EchoSet.call(request.parameters as Api.Procedures.EchoSet.Parameters,request.options),
+"Api.Procedures.EchoTable.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Procedures.EchoTable.call(request.parameters as Api.Procedures.EchoTable.Parameters,request.options),
+"Api.Procedures.EchoType.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Procedures.EchoType.call(request.parameters as Api.Procedures.EchoType.Parameters,request.options),
+"Api.Procedures.EchoTypeArray.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Procedures.EchoTypeArray.call(request.parameters as Api.Procedures.EchoTypeArray.Parameters,request.options),
+"Api.Procedures.EchoTypeNested.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Procedures.EchoTypeNested.call(request.parameters as Api.Procedures.EchoTypeNested.Parameters,request.options),
+"Api.Procedures.EchoTypeSet.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Procedures.EchoTypeSet.call(request.parameters as Api.Procedures.EchoTypeSet.Parameters,request.options),
+"Api.Procedures.EchoAnswer.call": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Procedures.EchoAnswer.call(request.parameters as Api.Procedures.EchoAnswer.Parameters,request.options),
+"Api.Tables.QAndA.create": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.QAndA.create(request.values as Api.Tables.QAndA.Values,request.options),
 
-             "Api.Tables.QAndA.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
+             "Api.Tables.QAndA.all": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) =>
               database.Api.Tables.QAndA.all(request.options),
             
-"Api.Tables.QAndA.QAndAAnswer.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.QAndA.QAndAAnswer.read(request.parameters as Api.Types.QAndAAnswer,request.options),
-"Api.Tables.QAndA.QAndAAnswer.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.QAndA.QAndAAnswer.update(request.parameters as Api.Types.QAndAAnswer,request.values as Partial<Api.Tables.QAndA.Values>,request.options),
-"Api.Tables.QAndA.QAndAAnswer.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.QAndA.QAndAAnswer.delete(request.parameters as Api.Types.QAndAAnswer,request.options),
-"Api.Tables.Timezones.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Timezones.create(request.values as Api.Tables.Timezones.Values,request.options),
+"Api.Tables.QAndA.QAndAAnswer.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.QAndA.QAndAAnswer.read(request.parameters as Api.Types.QAndAAnswer,request.options),
+"Api.Tables.QAndA.QAndAAnswer.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.QAndA.QAndAAnswer.update(request.parameters as Api.Types.QAndAAnswer,request.values as Partial<Api.Tables.QAndA.Values>,request.options),
+"Api.Tables.QAndA.QAndAAnswer.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.QAndA.QAndAAnswer.delete(request.parameters as Api.Types.QAndAAnswer,request.options),
+"Api.Tables.Timezones.create": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Timezones.create(request.values as Api.Tables.Timezones.Values,request.options),
 
-             "Api.Tables.Timezones.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
+             "Api.Tables.Timezones.all": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) =>
               database.Api.Tables.Timezones.all(request.options),
             
-"Api.Tables.Timezones.TrgmIdxGist.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Timezones.TrgmIdxGist.read(request.parameters as Api.Types.TrgmIdxGist,request.options),
-"Api.Tables.Timezones.TrgmIdxGist.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Timezones.TrgmIdxGist.update(request.parameters as Api.Types.TrgmIdxGist,request.values as Partial<Api.Tables.Timezones.Values>,request.options),
-"Api.Tables.Timezones.TrgmIdxGist.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Timezones.TrgmIdxGist.delete(request.parameters as Api.Types.TrgmIdxGist,request.options),
-"Api.Tables.Timezones.TrgmIdxGin.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Timezones.TrgmIdxGin.read(request.parameters as Api.Types.TrgmIdxGin,request.options),
-"Api.Tables.Timezones.TrgmIdxGin.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Timezones.TrgmIdxGin.update(request.parameters as Api.Types.TrgmIdxGin,request.values as Partial<Api.Tables.Timezones.Values>,request.options),
-"Api.Tables.Timezones.TrgmIdxGin.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Timezones.TrgmIdxGin.delete(request.parameters as Api.Types.TrgmIdxGin,request.options),
-"Api.Tables.Points.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Points.create(request.values as Api.Tables.Points.Values,request.options),
+"Api.Tables.Timezones.TrgmIdxGist.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Timezones.TrgmIdxGist.read(request.parameters as Api.Types.TrgmIdxGist,request.options),
+"Api.Tables.Timezones.TrgmIdxGist.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Timezones.TrgmIdxGist.update(request.parameters as Api.Types.TrgmIdxGist,request.values as Partial<Api.Tables.Timezones.Values>,request.options),
+"Api.Tables.Timezones.TrgmIdxGist.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Timezones.TrgmIdxGist.delete(request.parameters as Api.Types.TrgmIdxGist,request.options),
+"Api.Tables.Timezones.TrgmIdxGin.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Timezones.TrgmIdxGin.read(request.parameters as Api.Types.TrgmIdxGin,request.options),
+"Api.Tables.Timezones.TrgmIdxGin.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Timezones.TrgmIdxGin.update(request.parameters as Api.Types.TrgmIdxGin,request.values as Partial<Api.Tables.Timezones.Values>,request.options),
+"Api.Tables.Timezones.TrgmIdxGin.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Timezones.TrgmIdxGin.delete(request.parameters as Api.Types.TrgmIdxGin,request.options),
+"Api.Tables.Points.create": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Points.create(request.values as Api.Tables.Points.Values,request.options),
 
-             "Api.Tables.Points.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
+             "Api.Tables.Points.all": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) =>
               database.Api.Tables.Points.all(request.options),
             
-"Api.Tables.Points.PointsPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Points.PointsPkey.read(request.parameters as Api.Types.PointsPkey,request.options),
-"Api.Tables.Points.PointsPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Points.PointsPkey.update(request.parameters as Api.Types.PointsPkey,request.values as Partial<Api.Tables.Points.Values>,request.options),
-"Api.Tables.Points.PointsPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Points.PointsPkey.delete(request.parameters as Api.Types.PointsPkey,request.options),
-"Api.Tables.Lines.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Lines.create(request.values as Api.Tables.Lines.Values,request.options),
+"Api.Tables.Points.PointsPkey.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Points.PointsPkey.read(request.parameters as Api.Types.PointsPkey,request.options),
+"Api.Tables.Points.PointsPkey.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Points.PointsPkey.update(request.parameters as Api.Types.PointsPkey,request.values as Partial<Api.Tables.Points.Values>,request.options),
+"Api.Tables.Points.PointsPkey.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Points.PointsPkey.delete(request.parameters as Api.Types.PointsPkey,request.options),
+"Api.Tables.Lines.create": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Lines.create(request.values as Api.Tables.Lines.Values,request.options),
 
-             "Api.Tables.Lines.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
+             "Api.Tables.Lines.all": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) =>
               database.Api.Tables.Lines.all(request.options),
             
-"Api.Tables.Lines.LinesPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Lines.LinesPkey.read(request.parameters as Api.Types.LinesPkey,request.options),
-"Api.Tables.Lines.LinesPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Lines.LinesPkey.update(request.parameters as Api.Types.LinesPkey,request.values as Partial<Api.Tables.Lines.Values>,request.options),
-"Api.Tables.Lines.LinesPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Lines.LinesPkey.delete(request.parameters as Api.Types.LinesPkey,request.options),
-"Api.Tables.LineSegments.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.LineSegments.create(request.values as Api.Tables.LineSegments.Values,request.options),
+"Api.Tables.Lines.LinesPkey.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Lines.LinesPkey.read(request.parameters as Api.Types.LinesPkey,request.options),
+"Api.Tables.Lines.LinesPkey.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Lines.LinesPkey.update(request.parameters as Api.Types.LinesPkey,request.values as Partial<Api.Tables.Lines.Values>,request.options),
+"Api.Tables.Lines.LinesPkey.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Lines.LinesPkey.delete(request.parameters as Api.Types.LinesPkey,request.options),
+"Api.Tables.LineSegments.create": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.LineSegments.create(request.values as Api.Tables.LineSegments.Values,request.options),
 
-             "Api.Tables.LineSegments.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
+             "Api.Tables.LineSegments.all": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) =>
               database.Api.Tables.LineSegments.all(request.options),
             
-"Api.Tables.LineSegments.LineSegmentsPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.LineSegments.LineSegmentsPkey.read(request.parameters as Api.Types.LineSegmentsPkey,request.options),
-"Api.Tables.LineSegments.LineSegmentsPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.LineSegments.LineSegmentsPkey.update(request.parameters as Api.Types.LineSegmentsPkey,request.values as Partial<Api.Tables.LineSegments.Values>,request.options),
-"Api.Tables.LineSegments.LineSegmentsPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.LineSegments.LineSegmentsPkey.delete(request.parameters as Api.Types.LineSegmentsPkey,request.options),
-"Api.Tables.Boxes.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Boxes.create(request.values as Api.Tables.Boxes.Values,request.options),
+"Api.Tables.LineSegments.LineSegmentsPkey.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.LineSegments.LineSegmentsPkey.read(request.parameters as Api.Types.LineSegmentsPkey,request.options),
+"Api.Tables.LineSegments.LineSegmentsPkey.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.LineSegments.LineSegmentsPkey.update(request.parameters as Api.Types.LineSegmentsPkey,request.values as Partial<Api.Tables.LineSegments.Values>,request.options),
+"Api.Tables.LineSegments.LineSegmentsPkey.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.LineSegments.LineSegmentsPkey.delete(request.parameters as Api.Types.LineSegmentsPkey,request.options),
+"Api.Tables.Boxes.create": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Boxes.create(request.values as Api.Tables.Boxes.Values,request.options),
 
-             "Api.Tables.Boxes.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
+             "Api.Tables.Boxes.all": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) =>
               database.Api.Tables.Boxes.all(request.options),
             
-"Api.Tables.Boxes.BoxesPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Boxes.BoxesPkey.read(request.parameters as Api.Types.BoxesPkey,request.options),
-"Api.Tables.Boxes.BoxesPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Boxes.BoxesPkey.update(request.parameters as Api.Types.BoxesPkey,request.values as Partial<Api.Tables.Boxes.Values>,request.options),
-"Api.Tables.Boxes.BoxesPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Boxes.BoxesPkey.delete(request.parameters as Api.Types.BoxesPkey,request.options),
-"Api.Tables.Paths.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Paths.create(request.values as Api.Tables.Paths.Values,request.options),
+"Api.Tables.Boxes.BoxesPkey.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Boxes.BoxesPkey.read(request.parameters as Api.Types.BoxesPkey,request.options),
+"Api.Tables.Boxes.BoxesPkey.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Boxes.BoxesPkey.update(request.parameters as Api.Types.BoxesPkey,request.values as Partial<Api.Tables.Boxes.Values>,request.options),
+"Api.Tables.Boxes.BoxesPkey.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Boxes.BoxesPkey.delete(request.parameters as Api.Types.BoxesPkey,request.options),
+"Api.Tables.Paths.create": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Paths.create(request.values as Api.Tables.Paths.Values,request.options),
 
-             "Api.Tables.Paths.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
+             "Api.Tables.Paths.all": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) =>
               database.Api.Tables.Paths.all(request.options),
             
-"Api.Tables.Paths.PathsPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Paths.PathsPkey.read(request.parameters as Api.Types.PathsPkey,request.options),
-"Api.Tables.Paths.PathsPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Paths.PathsPkey.update(request.parameters as Api.Types.PathsPkey,request.values as Partial<Api.Tables.Paths.Values>,request.options),
-"Api.Tables.Paths.PathsPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Paths.PathsPkey.delete(request.parameters as Api.Types.PathsPkey,request.options),
-"Api.Tables.Polygons.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Polygons.create(request.values as Api.Tables.Polygons.Values,request.options),
+"Api.Tables.Paths.PathsPkey.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Paths.PathsPkey.read(request.parameters as Api.Types.PathsPkey,request.options),
+"Api.Tables.Paths.PathsPkey.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Paths.PathsPkey.update(request.parameters as Api.Types.PathsPkey,request.values as Partial<Api.Tables.Paths.Values>,request.options),
+"Api.Tables.Paths.PathsPkey.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Paths.PathsPkey.delete(request.parameters as Api.Types.PathsPkey,request.options),
+"Api.Tables.Polygons.create": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Polygons.create(request.values as Api.Tables.Polygons.Values,request.options),
 
-             "Api.Tables.Polygons.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
+             "Api.Tables.Polygons.all": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) =>
               database.Api.Tables.Polygons.all(request.options),
             
-"Api.Tables.Polygons.PolygonsPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Polygons.PolygonsPkey.read(request.parameters as Api.Types.PolygonsPkey,request.options),
-"Api.Tables.Polygons.PolygonsPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Polygons.PolygonsPkey.update(request.parameters as Api.Types.PolygonsPkey,request.values as Partial<Api.Tables.Polygons.Values>,request.options),
-"Api.Tables.Polygons.PolygonsPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Polygons.PolygonsPkey.delete(request.parameters as Api.Types.PolygonsPkey,request.options),
-"Api.Tables.Circles.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Circles.create(request.values as Api.Tables.Circles.Values,request.options),
+"Api.Tables.Polygons.PolygonsPkey.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Polygons.PolygonsPkey.read(request.parameters as Api.Types.PolygonsPkey,request.options),
+"Api.Tables.Polygons.PolygonsPkey.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Polygons.PolygonsPkey.update(request.parameters as Api.Types.PolygonsPkey,request.values as Partial<Api.Tables.Polygons.Values>,request.options),
+"Api.Tables.Polygons.PolygonsPkey.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Polygons.PolygonsPkey.delete(request.parameters as Api.Types.PolygonsPkey,request.options),
+"Api.Tables.Circles.create": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Circles.create(request.values as Api.Tables.Circles.Values,request.options),
 
-             "Api.Tables.Circles.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
+             "Api.Tables.Circles.all": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) =>
               database.Api.Tables.Circles.all(request.options),
             
-"Api.Tables.Circles.CirclesPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Circles.CirclesPkey.read(request.parameters as Api.Types.CirclesPkey,request.options),
-"Api.Tables.Circles.CirclesPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Circles.CirclesPkey.update(request.parameters as Api.Types.CirclesPkey,request.values as Partial<Api.Tables.Circles.Values>,request.options),
-"Api.Tables.Circles.CirclesPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Api.Tables.Circles.CirclesPkey.delete(request.parameters as Api.Types.CirclesPkey,request.options),
+"Api.Tables.Circles.CirclesPkey.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Circles.CirclesPkey.read(request.parameters as Api.Types.CirclesPkey,request.options),
+"Api.Tables.Circles.CirclesPkey.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Circles.CirclesPkey.update(request.parameters as Api.Types.CirclesPkey,request.values as Partial<Api.Tables.Circles.Values>,request.options),
+"Api.Tables.Circles.CirclesPkey.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Api.Tables.Circles.CirclesPkey.delete(request.parameters as Api.Types.CirclesPkey,request.options),
 }
 }
 
-            async dispatch(request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) {
+            async dispatch(request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) {
               if (!this.dispatchMap[request.operation]) {
                 throw new Error(`${request.operation} not available`);
               }

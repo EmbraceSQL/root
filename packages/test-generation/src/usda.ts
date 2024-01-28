@@ -12,7 +12,7 @@
         /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
         /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
         /* @typescript-eslint/no-redundant-type-constituents */
-        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER} from "@embracesql/shared";
+        import {UUID, JsDate, JSONValue, JSONObject, Empty, Nullable, NullableMembers, undefinedIsNull, nullIsUndefined, NEVER, EmbraceSQLOptions} from "@embracesql/shared";
         import type { PartiallyOptional, PossiblyEmpty, ReadOptions, Sort, InvokeQueryOptions as GenericInvokeQueryOptions } from "@embracesql/shared";
         import { Geometry } from "@embracesql/shared";
         import { DatabaseMetadata, Schema, Table, Column, Index, Procedure } from "@embracesql/shared";
@@ -3208,113 +3208,113 @@ async delete(parameters: Public.Types.DatsrclnDatasrcIdIdx, options?: Public.Typ
           // begin - operation dispatch map
           import { EmbraceSQLRequest, OperationDispatchMethod } from "@embracesql/shared";
           export class OperationDispatcher {
-            private dispatchMap: Record<string, OperationDispatchMethod<DatabaseHeaders>>;
+            private dispatchMap: Record<string, OperationDispatchMethod>;
             constructor(private database: Database){
               this.dispatchMap = {
 
           
-"Public.Tables.NutData.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.create(request.values as Public.Tables.NutData.Values,request.options),
+"Public.Tables.NutData.create": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.NutData.create(request.values as Public.Tables.NutData.Values,request.options),
 
-             "Public.Tables.NutData.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
+             "Public.Tables.NutData.all": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) =>
               database.Public.Tables.NutData.all(request.options),
             
-"Public.Tables.NutData.NutDataPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataPkey.read(request.parameters as Public.Types.NutDataPkey,request.options),
-"Public.Tables.NutData.NutDataPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataPkey.update(request.parameters as Public.Types.NutDataPkey,request.values as Partial<Public.Tables.NutData.Values>,request.options),
-"Public.Tables.NutData.NutDataPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataPkey.delete(request.parameters as Public.Types.NutDataPkey,request.options),
-"Public.Tables.NutData.NutDataDerivCdIdx.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataDerivCdIdx.read(request.parameters as Public.Types.NutDataDerivCdIdx,request.options),
-"Public.Tables.NutData.NutDataDerivCdIdx.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataDerivCdIdx.update(request.parameters as Public.Types.NutDataDerivCdIdx,request.values as Partial<Public.Tables.NutData.Values>,request.options),
-"Public.Tables.NutData.NutDataDerivCdIdx.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataDerivCdIdx.delete(request.parameters as Public.Types.NutDataDerivCdIdx,request.options),
-"Public.Tables.NutData.NutDataNutrNoIdx.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataNutrNoIdx.read(request.parameters as Public.Types.NutDataNutrNoIdx,request.options),
-"Public.Tables.NutData.NutDataNutrNoIdx.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataNutrNoIdx.update(request.parameters as Public.Types.NutDataNutrNoIdx,request.values as Partial<Public.Tables.NutData.Values>,request.options),
-"Public.Tables.NutData.NutDataNutrNoIdx.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataNutrNoIdx.delete(request.parameters as Public.Types.NutDataNutrNoIdx,request.options),
-"Public.Tables.NutData.NutDataSrcCdIdx.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataSrcCdIdx.read(request.parameters as Public.Types.NutDataSrcCdIdx,request.options),
-"Public.Tables.NutData.NutDataSrcCdIdx.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataSrcCdIdx.update(request.parameters as Public.Types.NutDataSrcCdIdx,request.values as Partial<Public.Tables.NutData.Values>,request.options),
-"Public.Tables.NutData.NutDataSrcCdIdx.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutData.NutDataSrcCdIdx.delete(request.parameters as Public.Types.NutDataSrcCdIdx,request.options),
-"Public.Tables.SrcCd.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.SrcCd.create(request.values as Public.Tables.SrcCd.Values,request.options),
+"Public.Tables.NutData.NutDataPkey.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.NutData.NutDataPkey.read(request.parameters as Public.Types.NutDataPkey,request.options),
+"Public.Tables.NutData.NutDataPkey.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.NutData.NutDataPkey.update(request.parameters as Public.Types.NutDataPkey,request.values as Partial<Public.Tables.NutData.Values>,request.options),
+"Public.Tables.NutData.NutDataPkey.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.NutData.NutDataPkey.delete(request.parameters as Public.Types.NutDataPkey,request.options),
+"Public.Tables.NutData.NutDataDerivCdIdx.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.NutData.NutDataDerivCdIdx.read(request.parameters as Public.Types.NutDataDerivCdIdx,request.options),
+"Public.Tables.NutData.NutDataDerivCdIdx.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.NutData.NutDataDerivCdIdx.update(request.parameters as Public.Types.NutDataDerivCdIdx,request.values as Partial<Public.Tables.NutData.Values>,request.options),
+"Public.Tables.NutData.NutDataDerivCdIdx.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.NutData.NutDataDerivCdIdx.delete(request.parameters as Public.Types.NutDataDerivCdIdx,request.options),
+"Public.Tables.NutData.NutDataNutrNoIdx.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.NutData.NutDataNutrNoIdx.read(request.parameters as Public.Types.NutDataNutrNoIdx,request.options),
+"Public.Tables.NutData.NutDataNutrNoIdx.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.NutData.NutDataNutrNoIdx.update(request.parameters as Public.Types.NutDataNutrNoIdx,request.values as Partial<Public.Tables.NutData.Values>,request.options),
+"Public.Tables.NutData.NutDataNutrNoIdx.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.NutData.NutDataNutrNoIdx.delete(request.parameters as Public.Types.NutDataNutrNoIdx,request.options),
+"Public.Tables.NutData.NutDataSrcCdIdx.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.NutData.NutDataSrcCdIdx.read(request.parameters as Public.Types.NutDataSrcCdIdx,request.options),
+"Public.Tables.NutData.NutDataSrcCdIdx.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.NutData.NutDataSrcCdIdx.update(request.parameters as Public.Types.NutDataSrcCdIdx,request.values as Partial<Public.Tables.NutData.Values>,request.options),
+"Public.Tables.NutData.NutDataSrcCdIdx.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.NutData.NutDataSrcCdIdx.delete(request.parameters as Public.Types.NutDataSrcCdIdx,request.options),
+"Public.Tables.SrcCd.create": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.SrcCd.create(request.values as Public.Tables.SrcCd.Values,request.options),
 
-             "Public.Tables.SrcCd.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
+             "Public.Tables.SrcCd.all": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) =>
               database.Public.Tables.SrcCd.all(request.options),
             
-"Public.Tables.SrcCd.SrcCdPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.SrcCd.SrcCdPkey.read(request.parameters as Public.Types.SrcCdPkey,request.options),
-"Public.Tables.SrcCd.SrcCdPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.SrcCd.SrcCdPkey.update(request.parameters as Public.Types.SrcCdPkey,request.values as Partial<Public.Tables.SrcCd.Values>,request.options),
-"Public.Tables.SrcCd.SrcCdPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.SrcCd.SrcCdPkey.delete(request.parameters as Public.Types.SrcCdPkey,request.options),
-"Public.Tables.Footnote.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Footnote.create(request.values as Public.Tables.Footnote.Values,request.options),
+"Public.Tables.SrcCd.SrcCdPkey.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.SrcCd.SrcCdPkey.read(request.parameters as Public.Types.SrcCdPkey,request.options),
+"Public.Tables.SrcCd.SrcCdPkey.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.SrcCd.SrcCdPkey.update(request.parameters as Public.Types.SrcCdPkey,request.values as Partial<Public.Tables.SrcCd.Values>,request.options),
+"Public.Tables.SrcCd.SrcCdPkey.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.SrcCd.SrcCdPkey.delete(request.parameters as Public.Types.SrcCdPkey,request.options),
+"Public.Tables.Footnote.create": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.Footnote.create(request.values as Public.Tables.Footnote.Values,request.options),
 
-             "Public.Tables.Footnote.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
+             "Public.Tables.Footnote.all": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) =>
               database.Public.Tables.Footnote.all(request.options),
             
-"Public.Tables.Footnote.FootnoteNdbNoIdx.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Footnote.FootnoteNdbNoIdx.read(request.parameters as Public.Types.FootnoteNdbNoIdx,request.options),
-"Public.Tables.Footnote.FootnoteNdbNoIdx.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Footnote.FootnoteNdbNoIdx.update(request.parameters as Public.Types.FootnoteNdbNoIdx,request.values as Partial<Public.Tables.Footnote.Values>,request.options),
-"Public.Tables.Footnote.FootnoteNdbNoIdx.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Footnote.FootnoteNdbNoIdx.delete(request.parameters as Public.Types.FootnoteNdbNoIdx,request.options),
-"Public.Tables.NutrDef.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutrDef.create(request.values as Public.Tables.NutrDef.Values,request.options),
+"Public.Tables.Footnote.FootnoteNdbNoIdx.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.Footnote.FootnoteNdbNoIdx.read(request.parameters as Public.Types.FootnoteNdbNoIdx,request.options),
+"Public.Tables.Footnote.FootnoteNdbNoIdx.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.Footnote.FootnoteNdbNoIdx.update(request.parameters as Public.Types.FootnoteNdbNoIdx,request.values as Partial<Public.Tables.Footnote.Values>,request.options),
+"Public.Tables.Footnote.FootnoteNdbNoIdx.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.Footnote.FootnoteNdbNoIdx.delete(request.parameters as Public.Types.FootnoteNdbNoIdx,request.options),
+"Public.Tables.NutrDef.create": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.NutrDef.create(request.values as Public.Tables.NutrDef.Values,request.options),
 
-             "Public.Tables.NutrDef.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
+             "Public.Tables.NutrDef.all": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) =>
               database.Public.Tables.NutrDef.all(request.options),
             
-"Public.Tables.NutrDef.NutrDefPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutrDef.NutrDefPkey.read(request.parameters as Public.Types.NutrDefPkey,request.options),
-"Public.Tables.NutrDef.NutrDefPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutrDef.NutrDefPkey.update(request.parameters as Public.Types.NutrDefPkey,request.values as Partial<Public.Tables.NutrDef.Values>,request.options),
-"Public.Tables.NutrDef.NutrDefPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.NutrDef.NutrDefPkey.delete(request.parameters as Public.Types.NutrDefPkey,request.options),
-"Public.Tables.DerivCd.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.DerivCd.create(request.values as Public.Tables.DerivCd.Values,request.options),
+"Public.Tables.NutrDef.NutrDefPkey.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.NutrDef.NutrDefPkey.read(request.parameters as Public.Types.NutrDefPkey,request.options),
+"Public.Tables.NutrDef.NutrDefPkey.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.NutrDef.NutrDefPkey.update(request.parameters as Public.Types.NutrDefPkey,request.values as Partial<Public.Tables.NutrDef.Values>,request.options),
+"Public.Tables.NutrDef.NutrDefPkey.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.NutrDef.NutrDefPkey.delete(request.parameters as Public.Types.NutrDefPkey,request.options),
+"Public.Tables.DerivCd.create": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.DerivCd.create(request.values as Public.Tables.DerivCd.Values,request.options),
 
-             "Public.Tables.DerivCd.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
+             "Public.Tables.DerivCd.all": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) =>
               database.Public.Tables.DerivCd.all(request.options),
             
-"Public.Tables.DerivCd.DerivCdPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.DerivCd.DerivCdPkey.read(request.parameters as Public.Types.DerivCdPkey,request.options),
-"Public.Tables.DerivCd.DerivCdPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.DerivCd.DerivCdPkey.update(request.parameters as Public.Types.DerivCdPkey,request.values as Partial<Public.Tables.DerivCd.Values>,request.options),
-"Public.Tables.DerivCd.DerivCdPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.DerivCd.DerivCdPkey.delete(request.parameters as Public.Types.DerivCdPkey,request.options),
-"Public.Tables.FdGroup.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.FdGroup.create(request.values as Public.Tables.FdGroup.Values,request.options),
+"Public.Tables.DerivCd.DerivCdPkey.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.DerivCd.DerivCdPkey.read(request.parameters as Public.Types.DerivCdPkey,request.options),
+"Public.Tables.DerivCd.DerivCdPkey.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.DerivCd.DerivCdPkey.update(request.parameters as Public.Types.DerivCdPkey,request.values as Partial<Public.Tables.DerivCd.Values>,request.options),
+"Public.Tables.DerivCd.DerivCdPkey.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.DerivCd.DerivCdPkey.delete(request.parameters as Public.Types.DerivCdPkey,request.options),
+"Public.Tables.FdGroup.create": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.FdGroup.create(request.values as Public.Tables.FdGroup.Values,request.options),
 
-             "Public.Tables.FdGroup.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
+             "Public.Tables.FdGroup.all": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) =>
               database.Public.Tables.FdGroup.all(request.options),
             
-"Public.Tables.FdGroup.FdGroupPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.FdGroup.FdGroupPkey.read(request.parameters as Public.Types.FdGroupPkey,request.options),
-"Public.Tables.FdGroup.FdGroupPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.FdGroup.FdGroupPkey.update(request.parameters as Public.Types.FdGroupPkey,request.values as Partial<Public.Tables.FdGroup.Values>,request.options),
-"Public.Tables.FdGroup.FdGroupPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.FdGroup.FdGroupPkey.delete(request.parameters as Public.Types.FdGroupPkey,request.options),
-"Public.Tables.Weight.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Weight.create(request.values as Public.Tables.Weight.Values,request.options),
+"Public.Tables.FdGroup.FdGroupPkey.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.FdGroup.FdGroupPkey.read(request.parameters as Public.Types.FdGroupPkey,request.options),
+"Public.Tables.FdGroup.FdGroupPkey.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.FdGroup.FdGroupPkey.update(request.parameters as Public.Types.FdGroupPkey,request.values as Partial<Public.Tables.FdGroup.Values>,request.options),
+"Public.Tables.FdGroup.FdGroupPkey.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.FdGroup.FdGroupPkey.delete(request.parameters as Public.Types.FdGroupPkey,request.options),
+"Public.Tables.Weight.create": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.Weight.create(request.values as Public.Tables.Weight.Values,request.options),
 
-             "Public.Tables.Weight.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
+             "Public.Tables.Weight.all": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) =>
               database.Public.Tables.Weight.all(request.options),
             
-"Public.Tables.Weight.WeightPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Weight.WeightPkey.read(request.parameters as Public.Types.WeightPkey,request.options),
-"Public.Tables.Weight.WeightPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Weight.WeightPkey.update(request.parameters as Public.Types.WeightPkey,request.values as Partial<Public.Tables.Weight.Values>,request.options),
-"Public.Tables.Weight.WeightPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Weight.WeightPkey.delete(request.parameters as Public.Types.WeightPkey,request.options),
-"Public.Tables.FoodDes.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.FoodDes.create(request.values as Public.Tables.FoodDes.Values,request.options),
+"Public.Tables.Weight.WeightPkey.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.Weight.WeightPkey.read(request.parameters as Public.Types.WeightPkey,request.options),
+"Public.Tables.Weight.WeightPkey.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.Weight.WeightPkey.update(request.parameters as Public.Types.WeightPkey,request.values as Partial<Public.Tables.Weight.Values>,request.options),
+"Public.Tables.Weight.WeightPkey.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.Weight.WeightPkey.delete(request.parameters as Public.Types.WeightPkey,request.options),
+"Public.Tables.FoodDes.create": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.FoodDes.create(request.values as Public.Tables.FoodDes.Values,request.options),
 
-             "Public.Tables.FoodDes.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
+             "Public.Tables.FoodDes.all": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) =>
               database.Public.Tables.FoodDes.all(request.options),
             
-"Public.Tables.FoodDes.FoodDesPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.FoodDes.FoodDesPkey.read(request.parameters as Public.Types.FoodDesPkey,request.options),
-"Public.Tables.FoodDes.FoodDesPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.FoodDes.FoodDesPkey.update(request.parameters as Public.Types.FoodDesPkey,request.values as Partial<Public.Tables.FoodDes.Values>,request.options),
-"Public.Tables.FoodDes.FoodDesPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.FoodDes.FoodDesPkey.delete(request.parameters as Public.Types.FoodDesPkey,request.options),
-"Public.Tables.FoodDes.FoodDesFdgrpCdIdx.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.FoodDes.FoodDesFdgrpCdIdx.read(request.parameters as Public.Types.FoodDesFdgrpCdIdx,request.options),
-"Public.Tables.FoodDes.FoodDesFdgrpCdIdx.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.FoodDes.FoodDesFdgrpCdIdx.update(request.parameters as Public.Types.FoodDesFdgrpCdIdx,request.values as Partial<Public.Tables.FoodDes.Values>,request.options),
-"Public.Tables.FoodDes.FoodDesFdgrpCdIdx.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.FoodDes.FoodDesFdgrpCdIdx.delete(request.parameters as Public.Types.FoodDesFdgrpCdIdx,request.options),
-"Public.Tables.DataSrc.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.DataSrc.create(request.values as Public.Tables.DataSrc.Values,request.options),
+"Public.Tables.FoodDes.FoodDesPkey.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.FoodDes.FoodDesPkey.read(request.parameters as Public.Types.FoodDesPkey,request.options),
+"Public.Tables.FoodDes.FoodDesPkey.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.FoodDes.FoodDesPkey.update(request.parameters as Public.Types.FoodDesPkey,request.values as Partial<Public.Tables.FoodDes.Values>,request.options),
+"Public.Tables.FoodDes.FoodDesPkey.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.FoodDes.FoodDesPkey.delete(request.parameters as Public.Types.FoodDesPkey,request.options),
+"Public.Tables.FoodDes.FoodDesFdgrpCdIdx.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.FoodDes.FoodDesFdgrpCdIdx.read(request.parameters as Public.Types.FoodDesFdgrpCdIdx,request.options),
+"Public.Tables.FoodDes.FoodDesFdgrpCdIdx.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.FoodDes.FoodDesFdgrpCdIdx.update(request.parameters as Public.Types.FoodDesFdgrpCdIdx,request.values as Partial<Public.Tables.FoodDes.Values>,request.options),
+"Public.Tables.FoodDes.FoodDesFdgrpCdIdx.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.FoodDes.FoodDesFdgrpCdIdx.delete(request.parameters as Public.Types.FoodDesFdgrpCdIdx,request.options),
+"Public.Tables.DataSrc.create": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.DataSrc.create(request.values as Public.Tables.DataSrc.Values,request.options),
 
-             "Public.Tables.DataSrc.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
+             "Public.Tables.DataSrc.all": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) =>
               database.Public.Tables.DataSrc.all(request.options),
             
-"Public.Tables.DataSrc.DataSrcTitleFulltext.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.DataSrc.DataSrcTitleFulltext.read(request.parameters as Public.Types.DataSrcTitleFulltext,request.options),
-"Public.Tables.DataSrc.DataSrcTitleFulltext.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.DataSrc.DataSrcTitleFulltext.update(request.parameters as Public.Types.DataSrcTitleFulltext,request.values as Partial<Public.Tables.DataSrc.Values>,request.options),
-"Public.Tables.DataSrc.DataSrcTitleFulltext.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.DataSrc.DataSrcTitleFulltext.delete(request.parameters as Public.Types.DataSrcTitleFulltext,request.options),
-"Public.Tables.DataSrc.DataSrcPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.DataSrc.DataSrcPkey.read(request.parameters as Public.Types.DataSrcPkey,request.options),
-"Public.Tables.DataSrc.DataSrcPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.DataSrc.DataSrcPkey.update(request.parameters as Public.Types.DataSrcPkey,request.values as Partial<Public.Tables.DataSrc.Values>,request.options),
-"Public.Tables.DataSrc.DataSrcPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.DataSrc.DataSrcPkey.delete(request.parameters as Public.Types.DataSrcPkey,request.options),
-"Public.Tables.Datsrcln.create": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Datsrcln.create(request.values as Public.Tables.Datsrcln.Values,request.options),
+"Public.Tables.DataSrc.DataSrcTitleFulltext.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.DataSrc.DataSrcTitleFulltext.read(request.parameters as Public.Types.DataSrcTitleFulltext,request.options),
+"Public.Tables.DataSrc.DataSrcTitleFulltext.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.DataSrc.DataSrcTitleFulltext.update(request.parameters as Public.Types.DataSrcTitleFulltext,request.values as Partial<Public.Tables.DataSrc.Values>,request.options),
+"Public.Tables.DataSrc.DataSrcTitleFulltext.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.DataSrc.DataSrcTitleFulltext.delete(request.parameters as Public.Types.DataSrcTitleFulltext,request.options),
+"Public.Tables.DataSrc.DataSrcPkey.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.DataSrc.DataSrcPkey.read(request.parameters as Public.Types.DataSrcPkey,request.options),
+"Public.Tables.DataSrc.DataSrcPkey.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.DataSrc.DataSrcPkey.update(request.parameters as Public.Types.DataSrcPkey,request.values as Partial<Public.Tables.DataSrc.Values>,request.options),
+"Public.Tables.DataSrc.DataSrcPkey.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.DataSrc.DataSrcPkey.delete(request.parameters as Public.Types.DataSrcPkey,request.options),
+"Public.Tables.Datsrcln.create": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.Datsrcln.create(request.values as Public.Tables.Datsrcln.Values,request.options),
 
-             "Public.Tables.Datsrcln.all": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) =>
+             "Public.Tables.Datsrcln.all": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) =>
               database.Public.Tables.Datsrcln.all(request.options),
             
-"Public.Tables.Datsrcln.DatsrclnPkey.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Datsrcln.DatsrclnPkey.read(request.parameters as Public.Types.DatsrclnPkey,request.options),
-"Public.Tables.Datsrcln.DatsrclnPkey.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Datsrcln.DatsrclnPkey.update(request.parameters as Public.Types.DatsrclnPkey,request.values as Partial<Public.Tables.Datsrcln.Values>,request.options),
-"Public.Tables.Datsrcln.DatsrclnPkey.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Datsrcln.DatsrclnPkey.delete(request.parameters as Public.Types.DatsrclnPkey,request.options),
-"Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.read": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.read(request.parameters as Public.Types.DatsrclnDatasrcIdIdx,request.options),
-"Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.update": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.update(request.parameters as Public.Types.DatsrclnDatasrcIdIdx,request.values as Partial<Public.Tables.Datsrcln.Values>,request.options),
-"Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.delete": async (request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) => database.Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.delete(request.parameters as Public.Types.DatsrclnDatasrcIdIdx,request.options),
+"Public.Tables.Datsrcln.DatsrclnPkey.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.Datsrcln.DatsrclnPkey.read(request.parameters as Public.Types.DatsrclnPkey,request.options),
+"Public.Tables.Datsrcln.DatsrclnPkey.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.Datsrcln.DatsrclnPkey.update(request.parameters as Public.Types.DatsrclnPkey,request.values as Partial<Public.Tables.Datsrcln.Values>,request.options),
+"Public.Tables.Datsrcln.DatsrclnPkey.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.Datsrcln.DatsrclnPkey.delete(request.parameters as Public.Types.DatsrclnPkey,request.options),
+"Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.read": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.read(request.parameters as Public.Types.DatsrclnDatasrcIdIdx,request.options),
+"Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.update": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.update(request.parameters as Public.Types.DatsrclnDatasrcIdIdx,request.values as Partial<Public.Tables.Datsrcln.Values>,request.options),
+"Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.delete": async (request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) => database.Public.Tables.Datsrcln.DatsrclnDatasrcIdIdx.delete(request.parameters as Public.Types.DatsrclnDatasrcIdIdx,request.options),
 }
 }
 
-            async dispatch(request: EmbraceSQLRequest<object, object, object, DatabaseHeaders>) {
+            async dispatch(request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>) {
               if (!this.dispatchMap[request.operation]) {
                 throw new Error(`${request.operation} not available`);
               }

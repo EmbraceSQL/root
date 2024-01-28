@@ -1,10 +1,12 @@
 import { Context } from "../context";
-import { InvokeQueryOptions } from "@embracesql/shared";
+import { EmbraceSQLInvocation, InvokeQueryOptions } from "@embracesql/shared";
 
 /**
  * The default middleware context type.
  */
-export type MiddlewareContext = Context & InvokeQueryOptions;
+export type MiddlewareContext = Context & {
+  request?: EmbraceSQLInvocation<object, object, InvokeQueryOptions>;
+};
 
 /**
  * 'next' function, passed to a middleware to chain along.

@@ -20,19 +20,18 @@ export type HasHeaders = {
 };
 
 /**
+ * Options - extend this one with case specific options.
+ */
+export type EmbraceSQLOptions = HasHeaders;
+
+/**
  * Invocation context for a single database operation.
  */
 export type EmbraceSQLInvocation<
   P = object,
   V = object,
-  O = object,
-  H = Headers,
+  O extends HasHeaders = EmbraceSQLOptions,
 > = {
-  /**
-   * Header values can be generically augmented with well known
-   * headers.
-   */
-  headers?: H & Headers;
   parameters?: P;
   values?: V;
   options?: O;
@@ -47,18 +46,20 @@ export type EmbraceSQLInvocation<
 export type EmbraceSQLRequest<
   P,
   V = never,
-  O = never,
-  H = Headers,
-> = EmbraceSQLInvocation<P, V, O, H> & {
+  O extends EmbraceSQLOptions = EmbraceSQLOptions,
+> = EmbraceSQLInvocation<P, V, O> & {
   operation: string;
 };
 
 /**
  * Message format for EmbraceSQL.
  */
-export type EmbraceSQLResponse<R, H = Headers> = {
-  operation: string;
-  headers?: H & Headers;
+export type EmbraceSQLResponse<
+  R,
+  P,
+  V = never,
+  O extends EmbraceSQLOptions = EmbraceSQLOptions,
+> = EmbraceSQLRequest<P, V, O> & {
   results?: R;
 };
 
@@ -66,8 +67,8 @@ export type EmbraceSQLResponse<R, H = Headers> = {
  * Operation dispatch. This has a vague type on purpose to allow
  * selecting the proper operation via HTTP/S + JSON.
  */
-export type OperationDispatchMethod<H = Headers> = (
-  request: EmbraceSQLRequest<object, object, object, H>,
+export type OperationDispatchMethod = (
+  request: EmbraceSQLRequest<object, object, EmbraceSQLOptions>,
 ) => Promise<unknown>;
 
 export type GenerationContextProps = {

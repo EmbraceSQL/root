@@ -119,12 +119,7 @@ export abstract class PostgresDatabase<
       // first the middleware
       await this.dispatch({
         ...database.context,
-        // combine all the headers
-        headers: {
-          // TODO: default headers
-          ...(request?.headers ?? {}),
-          ...(request?.options?.headers ?? {}),
-        },
+        request,
       });
       return queryCallback(database.context.sql);
     };

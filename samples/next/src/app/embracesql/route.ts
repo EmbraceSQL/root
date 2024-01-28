@@ -22,9 +22,8 @@ function embraceSQL(postgresUrl: string) {
       }
       // now we are 🥘
       const results = await dispatcher.dispatch(request);
-      const response: EmbraceSQLResponse<unknown> = {
-        operation: request.operation,
-        headers: request.headers ?? {},
+      const response: EmbraceSQLResponse<unknown, object, object> = {
+        ...request,
         results,
       };
       return Response.json(response);

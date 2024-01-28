@@ -42,9 +42,8 @@ export const EmbraceSQLExpress = (props?: EmbraceSQLProps) => {
       props
         .dispatch(request)
         .then((results) => {
-          const response: EmbraceSQLResponse<unknown> = {
-            operation: request.operation,
-            headers: request.headers ?? {},
+          const response: EmbraceSQLResponse<unknown, object, object> = {
+            ...request,
             results,
           };
           res.status(200).json(response).end();

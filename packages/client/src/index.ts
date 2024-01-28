@@ -50,8 +50,8 @@ export class EmbraceSQLClient implements _HasClient {
     Options extends HasHeaders = HasHeaders,
   >(
     request: EmbraceSQLRequest<Parameters, Values, Options>,
-  ): Promise<EmbraceSQLResponse<Response>> {
-    // assemble all the headers
+  ): Promise<EmbraceSQLResponse<Response, Parameters, Values, Options>> {
+    // assemble all the headers to make them available to HTTP
     const headers = {
       ...this.props.headers,
       ...(request.options?.headers ?? {}),
@@ -70,15 +70,16 @@ export class EmbraceSQLClient implements _HasClient {
       redirect: "follow",
       body: JSON.stringify({
         ...request,
-        // headers need to be lifted from call options
-        // otherwise we were gonna have yet another parameter at the client
-        // call site
-        headers,
       }),
     });
 
     // it'll be JSON back or an exception
-    return (await response.json()) as unknown as EmbraceSQLResponse<Response>;
+    return (await response.json()) as unknown as EmbraceSQLResponse<
+      Response,
+      Parameters,
+      Values,
+      Options
+    >;
   }
 
   get client() {

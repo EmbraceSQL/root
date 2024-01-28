@@ -10,9 +10,9 @@ export default async function databaseRole(
   context: MiddlewareContext,
   next: Next,
 ) {
-  if (context.headers?.ROLE) {
+  if (context.request?.options?.headers?.ROLE) {
     await context.sql.unsafe(
-      `SET LOCAL SESSION AUTHORIZATION '${context.headers.ROLE}';`,
+      `SET LOCAL SESSION AUTHORIZATION '${context.request.options.headers.ROLE}';`,
     );
   }
   return next();
