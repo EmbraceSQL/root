@@ -39,6 +39,14 @@ export const PARAMETERS = "parameters";
 export const VALUES = "values";
 
 /**
+ * Common name for the options parameter.
+ *
+ * This is where ... we put things that we didn't know where else to
+ * put. 🪣
+ */
+export const OPTIONS = "options";
+
+/**
  * Enumeration tags for quick type discrimination via `switch`.
  *
  * These will use conventional ANSI SQL naming rather than database

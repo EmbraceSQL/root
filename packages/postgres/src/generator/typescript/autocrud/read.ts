@@ -41,7 +41,7 @@ export const ReadOperation = {
       const typed = this.database.typed;
       const orderBy = options?.sort ? \`ORDER BY \${options.sort.join(",")}\` : "";
       `,
-      `const response = await this.database.invoke( (sql) => sql\`${sql}\`, ${requestExpression});`,
+      `const response = await this.database.invoke( (sql, request) => sql\`${sql}\`, ${requestExpression});`,
 
       `return ${postgresToTypescript(context, node.index.table.type)}${
         node.index.unique ? "[0]" : ""

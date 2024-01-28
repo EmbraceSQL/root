@@ -1810,7 +1810,7 @@ get settings() { return this.context.settings as Settings };
         
 
           async call (options?: InvokeQueryOptions) {
-            const response = await this.database.invoke( (sql) => sql.unsafe(`
+            const response = await this.database.invoke( (sql, request) => sql.unsafe(`
                 SELECT
   film_id,
   title,
@@ -1865,7 +1865,7 @@ FROM
         
 
           async call (parameters: Scripts.Sample.Film.Rated.Parameters, options?: InvokeQueryOptions) {
-            const response = await this.database.invoke( (sql) => sql.unsafe(`
+            const response = await this.database.invoke( (sql, request) => sql.unsafe(`
                 SELECT
     *
 FROM 
@@ -1888,7 +1888,7 @@ WHERE
         
 
           async call (options?: InvokeQueryOptions) {
-            const response = await this.database.invoke( (sql) => sql.unsafe(`
+            const response = await this.database.invoke( (sql, request) => sql.unsafe(`
                 SELECT
     COUNT(*)
 FROM
@@ -1911,7 +1911,7 @@ FROM
         
 
           async call (parameters: Scripts.Sample.Pick.Parameters, options?: InvokeQueryOptions) {
-            const response = await this.database.invoke( (sql) => sql.unsafe(`
+            const response = await this.database.invoke( (sql, request) => sql.unsafe(`
                 SELECT
     *
 FROM
@@ -1935,7 +1935,7 @@ WHERE
         
 
           async call (options?: InvokeQueryOptions) {
-            const response = await this.database.invoke( (sql) => sql.unsafe(`
+            const response = await this.database.invoke( (sql, request) => sql.unsafe(`
                 SELECT
     COUNT(*)
 FROM
@@ -2020,7 +2020,7 @@ async call(parameters : Public.Procedures.FilmInStock.Parameters, options?: Invo
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.film_in_stock(p_film_id => ${ typed[23](undefinedIsNull(parameters.pFilmId)) },p_store_id => ${ typed[23](undefinedIsNull(parameters.pStoreId)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql, request) => sql`SELECT public.film_in_stock(p_film_id => ${ typed[23](undefinedIsNull(parameters.pFilmId)) },p_store_id => ${ typed[23](undefinedIsNull(parameters.pStoreId)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.film_in_stock)).filter<PgCatalog.Types.Int4>((r):r is PgCatalog.Types.Int4 => r !== null) );
@@ -2039,7 +2039,7 @@ async call(parameters : Public.Procedures.FilmNotInStock.Parameters, options?: I
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.film_not_in_stock(p_film_id => ${ typed[23](undefinedIsNull(parameters.pFilmId)) },p_store_id => ${ typed[23](undefinedIsNull(parameters.pStoreId)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql, request) => sql`SELECT public.film_not_in_stock(p_film_id => ${ typed[23](undefinedIsNull(parameters.pFilmId)) },p_store_id => ${ typed[23](undefinedIsNull(parameters.pStoreId)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.film_not_in_stock)).filter<PgCatalog.Types.Int4>((r):r is PgCatalog.Types.Int4 => r !== null) );
@@ -2059,7 +2059,7 @@ async call(parameters : Public.Procedures.GetCustomerBalance.Parameters, options
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.get_customer_balance(p_customer_id => ${ typed[23](undefinedIsNull(parameters.pCustomerId)) },p_effective_date => ${ typed[1114](undefinedIsNull(parameters.pEffectiveDate)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql, request) => sql`SELECT public.get_customer_balance(p_customer_id => ${ typed[23](undefinedIsNull(parameters.pCustomerId)) },p_effective_date => ${ typed[1114](undefinedIsNull(parameters.pEffectiveDate)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Numeric.parse(results?.[0].get_customer_balance) );
@@ -2079,7 +2079,7 @@ async call(parameters : Public.Procedures.InventoryHeldByCustomer.Parameters, op
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.inventory_held_by_customer(p_inventory_id => ${ typed[23](undefinedIsNull(parameters.pInventoryId)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql, request) => sql`SELECT public.inventory_held_by_customer(p_inventory_id => ${ typed[23](undefinedIsNull(parameters.pInventoryId)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Int4.parse(results?.[0].inventory_held_by_customer) );
@@ -2099,7 +2099,7 @@ async call(parameters : Public.Procedures.InventoryInStock.Parameters, options?:
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.inventory_in_stock(p_inventory_id => ${ typed[23](undefinedIsNull(parameters.pInventoryId)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql, request) => sql`SELECT public.inventory_in_stock(p_inventory_id => ${ typed[23](undefinedIsNull(parameters.pInventoryId)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Bool.parse(results?.[0].inventory_in_stock) );
@@ -2119,7 +2119,7 @@ async call(parameters : Public.Procedures.LastDay.Parameters, options?: InvokeQu
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.last_day( ${ typed[1114](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql, request) => sql`SELECT public.last_day( ${ typed[1114](undefinedIsNull(parameters.argument_0)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( PgCatalog.Types.Date.parse(results?.[0].last_day) );
@@ -2139,7 +2139,7 @@ async call(parameters : Public.Procedures.RewardsReport.Parameters, options?: In
             };
           
   const typed = this.database.typed;
-  const response = await this.database.invoke( (sql) => sql`SELECT public.rewards_report(min_monthly_purchases => ${ typed[23](undefinedIsNull(parameters.minMonthlyPurchases)) },min_dollar_amount_purchased => ${ typed[1700](undefinedIsNull(parameters.minDollarAmountPurchased)) })`, {parameters, options});
+  const response = await this.database.invoke( (sql, request) => sql`SELECT public.rewards_report(min_monthly_purchases => ${ typed[23](undefinedIsNull(parameters.minMonthlyPurchases)) },min_dollar_amount_purchased => ${ typed[1700](undefinedIsNull(parameters.minDollarAmountPurchased)) })`, {parameters, options});
   const results = response;
 
               const responseBody = ( results.map(x => parseResult(this.database.context, x.rewards_report)).filter<Public.Types.Customer>((r):r is Public.Types.Customer => r !== null) );
@@ -2208,7 +2208,7 @@ async create(values: Partial<Public.Types.FilmActor>, options?: Public.Tables.Fi
 
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.film_actor (actor_id,film_id,last_update)
     VALUES (${ values.actorId === undefined ? sql`DEFAULT` : typed[21](values.actorId) },${ values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
@@ -2225,7 +2225,7 @@ async all(options?: Public.Tables.FilmActor.Options) : Promise<Public.Types.Film
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       actor_id,film_id,last_update 
     FROM
@@ -2258,7 +2258,7 @@ async create(values: Partial<Public.Types.Address>, options?: Public.Tables.Addr
 
       if (!Public.Tables.Address.includesPrimaryKey(values)) {
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.address (address,address2,district,city_id,postal_code,phone,last_update)
@@ -2268,7 +2268,7 @@ const response = await this.database.invoke( (sql) => sql`
     `, {values, options});
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.address (address_id,address,address2,district,city_id,postal_code,phone,last_update)
     VALUES (${ values.addressId === undefined ? sql`DEFAULT` : typed[23](values.addressId) },${ values.address === undefined ? sql`DEFAULT` : typed[1043](values.address) },${ values.address2 === undefined ? sql`DEFAULT` : typed[1043](values.address2) },${ values.district === undefined ? sql`DEFAULT` : typed[1043](values.district) },${ values.cityId === undefined ? sql`DEFAULT` : typed[21](values.cityId) },${ values.postalCode === undefined ? sql`DEFAULT` : typed[1043](values.postalCode) },${ values.phone === undefined ? sql`DEFAULT` : typed[1043](values.phone) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
@@ -2285,7 +2285,7 @@ async all(options?: Public.Tables.Address.Options) : Promise<Public.Types.Addres
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       address_id,address,address2,district,city_id,postal_code,phone,last_update 
     FROM
@@ -2318,7 +2318,7 @@ async create(values: Partial<Public.Types.City>, options?: Public.Tables.City.Op
 
       if (!Public.Tables.City.includesPrimaryKey(values)) {
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.city (city,country_id,last_update)
@@ -2328,7 +2328,7 @@ const response = await this.database.invoke( (sql) => sql`
     `, {values, options});
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.city (city_id,city,country_id,last_update)
     VALUES (${ values.cityId === undefined ? sql`DEFAULT` : typed[23](values.cityId) },${ values.city === undefined ? sql`DEFAULT` : typed[1043](values.city) },${ values.countryId === undefined ? sql`DEFAULT` : typed[21](values.countryId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
@@ -2345,7 +2345,7 @@ async all(options?: Public.Tables.City.Options) : Promise<Public.Types.City[]>{
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       city_id,city,country_id,last_update 
     FROM
@@ -2378,7 +2378,7 @@ async create(values: Partial<Public.Types.Customer>, options?: Public.Tables.Cus
 
       if (!Public.Tables.Customer.includesPrimaryKey(values)) {
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.customer (store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active)
@@ -2388,7 +2388,7 @@ const response = await this.database.invoke( (sql) => sql`
     `, {values, options});
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))[0]
 }
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.customer (customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active)
     VALUES (${ values.customerId === undefined ? sql`DEFAULT` : typed[23](values.customerId) },${ values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId) },${ values.firstName === undefined ? sql`DEFAULT` : typed[1043](values.firstName) },${ values.lastName === undefined ? sql`DEFAULT` : typed[1043](values.lastName) },${ values.email === undefined ? sql`DEFAULT` : typed[1043](values.email) },${ values.addressId === undefined ? sql`DEFAULT` : typed[21](values.addressId) },${ values.activebool === undefined ? sql`DEFAULT` : typed[16](values.activebool) },${ values.createDate === undefined ? sql`DEFAULT` : typed[1082](values.createDate) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.active === undefined ? sql`DEFAULT` : typed[23](values.active) })
@@ -2405,7 +2405,7 @@ async all(options?: Public.Tables.Customer.Options) : Promise<Public.Types.Custo
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
     FROM
@@ -2442,7 +2442,7 @@ async create(values: Partial<Public.Types.Actor>, options?: Public.Tables.Actor.
 
       if (!Public.Tables.Actor.includesPrimaryKey(values)) {
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.actor (first_name,last_name,last_update)
@@ -2452,7 +2452,7 @@ const response = await this.database.invoke( (sql) => sql`
     `, {values, options});
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.actor (actor_id,first_name,last_name,last_update)
     VALUES (${ values.actorId === undefined ? sql`DEFAULT` : typed[23](values.actorId) },${ values.firstName === undefined ? sql`DEFAULT` : typed[1043](values.firstName) },${ values.lastName === undefined ? sql`DEFAULT` : typed[1043](values.lastName) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
@@ -2469,7 +2469,7 @@ async all(options?: Public.Tables.Actor.Options) : Promise<Public.Types.Actor[]>
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       actor_id,first_name,last_name,last_update 
     FROM
@@ -2499,7 +2499,7 @@ async create(values: Partial<Public.Types.FilmCategory>, options?: Public.Tables
 
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.film_category (film_id,category_id,last_update)
     VALUES (${ values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId) },${ values.categoryId === undefined ? sql`DEFAULT` : typed[21](values.categoryId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
@@ -2516,7 +2516,7 @@ async all(options?: Public.Tables.FilmCategory.Options) : Promise<Public.Types.F
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       film_id,category_id,last_update 
     FROM
@@ -2547,7 +2547,7 @@ async create(values: Partial<Public.Types.Inventory>, options?: Public.Tables.In
 
       if (!Public.Tables.Inventory.includesPrimaryKey(values)) {
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.inventory (film_id,store_id,last_update)
@@ -2557,7 +2557,7 @@ const response = await this.database.invoke( (sql) => sql`
     `, {values, options});
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.inventory (inventory_id,film_id,store_id,last_update)
     VALUES (${ values.inventoryId === undefined ? sql`DEFAULT` : typed[23](values.inventoryId) },${ values.filmId === undefined ? sql`DEFAULT` : typed[21](values.filmId) },${ values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
@@ -2574,7 +2574,7 @@ async all(options?: Public.Tables.Inventory.Options) : Promise<Public.Types.Inve
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       inventory_id,film_id,store_id,last_update 
     FROM
@@ -2607,7 +2607,7 @@ async create(values: Partial<Public.Types.Category>, options?: Public.Tables.Cat
 
       if (!Public.Tables.Category.includesPrimaryKey(values)) {
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.category (name,last_update)
@@ -2617,7 +2617,7 @@ const response = await this.database.invoke( (sql) => sql`
     `, {values, options});
 return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.category (category_id,name,last_update)
     VALUES (${ values.categoryId === undefined ? sql`DEFAULT` : typed[23](values.categoryId) },${ values.name === undefined ? sql`DEFAULT` : typed[1043](values.name) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
@@ -2634,7 +2634,7 @@ async all(options?: Public.Tables.Category.Options) : Promise<Public.Types.Categ
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       category_id,name,last_update 
     FROM
@@ -2665,7 +2665,7 @@ async create(values: Partial<Public.Types.Country>, options?: Public.Tables.Coun
 
       if (!Public.Tables.Country.includesPrimaryKey(values)) {
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.country (country,last_update)
@@ -2675,7 +2675,7 @@ const response = await this.database.invoke( (sql) => sql`
     `, {values, options});
 return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.country (country_id,country,last_update)
     VALUES (${ values.countryId === undefined ? sql`DEFAULT` : typed[23](values.countryId) },${ values.country === undefined ? sql`DEFAULT` : typed[1043](values.country) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
@@ -2692,7 +2692,7 @@ async all(options?: Public.Tables.Country.Options) : Promise<Public.Types.Countr
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       country_id,country,last_update 
     FROM
@@ -2723,7 +2723,7 @@ async create(values: Partial<Public.Types.Language>, options?: Public.Tables.Lan
 
       if (!Public.Tables.Language.includesPrimaryKey(values)) {
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.language (name,last_update)
@@ -2733,7 +2733,7 @@ const response = await this.database.invoke( (sql) => sql`
     `, {values, options});
 return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.language (language_id,name,last_update)
     VALUES (${ values.languageId === undefined ? sql`DEFAULT` : typed[23](values.languageId) },${ values.name === undefined ? sql`DEFAULT` : typed[1042](values.name) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
@@ -2750,7 +2750,7 @@ async all(options?: Public.Tables.Language.Options) : Promise<Public.Types.Langu
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       language_id,name,last_update 
     FROM
@@ -2781,7 +2781,7 @@ async create(values: Partial<Public.Types.Rental>, options?: Public.Tables.Renta
 
       if (!Public.Tables.Rental.includesPrimaryKey(values)) {
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.rental (rental_date,inventory_id,customer_id,return_date,staff_id,last_update)
@@ -2791,7 +2791,7 @@ const response = await this.database.invoke( (sql) => sql`
     `, {values, options});
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.rental (rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update)
     VALUES (${ values.rentalId === undefined ? sql`DEFAULT` : typed[23](values.rentalId) },${ values.rentalDate === undefined ? sql`DEFAULT` : typed[1114](values.rentalDate) },${ values.inventoryId === undefined ? sql`DEFAULT` : typed[23](values.inventoryId) },${ values.customerId === undefined ? sql`DEFAULT` : typed[21](values.customerId) },${ values.returnDate === undefined ? sql`DEFAULT` : typed[1114](values.returnDate) },${ values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
@@ -2808,7 +2808,7 @@ async all(options?: Public.Tables.Rental.Options) : Promise<Public.Types.Rental[
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
     FROM
@@ -2843,7 +2843,7 @@ async create(values: Partial<Public.Types.Staff>, options?: Public.Tables.Staff.
 
       if (!Public.Tables.Staff.includesPrimaryKey(values)) {
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.staff (first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture)
@@ -2853,7 +2853,7 @@ const response = await this.database.invoke( (sql) => sql`
     `, {values, options});
 return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))[0]
 }
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.staff (staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture)
     VALUES (${ values.staffId === undefined ? sql`DEFAULT` : typed[23](values.staffId) },${ values.firstName === undefined ? sql`DEFAULT` : typed[1043](values.firstName) },${ values.lastName === undefined ? sql`DEFAULT` : typed[1043](values.lastName) },${ values.addressId === undefined ? sql`DEFAULT` : typed[21](values.addressId) },${ values.email === undefined ? sql`DEFAULT` : typed[1043](values.email) },${ values.storeId === undefined ? sql`DEFAULT` : typed[21](values.storeId) },${ values.active === undefined ? sql`DEFAULT` : typed[16](values.active) },${ values.username === undefined ? sql`DEFAULT` : typed[1043](values.username) },${ values.password === undefined ? sql`DEFAULT` : typed[1043](values.password) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.picture === undefined ? sql`DEFAULT` : typed[17](values.picture) })
@@ -2870,7 +2870,7 @@ async all(options?: Public.Tables.Staff.Options) : Promise<Public.Types.Staff[]>
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture 
     FROM
@@ -2901,7 +2901,7 @@ async create(values: Partial<Public.Types.Store>, options?: Public.Tables.Store.
 
       if (!Public.Tables.Store.includesPrimaryKey(values)) {
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.store (manager_staff_id,address_id,last_update)
@@ -2911,7 +2911,7 @@ const response = await this.database.invoke( (sql) => sql`
     `, {values, options});
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.store (store_id,manager_staff_id,address_id,last_update)
     VALUES (${ values.storeId === undefined ? sql`DEFAULT` : typed[23](values.storeId) },${ values.managerStaffId === undefined ? sql`DEFAULT` : typed[21](values.managerStaffId) },${ values.addressId === undefined ? sql`DEFAULT` : typed[21](values.addressId) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) })
@@ -2928,7 +2928,7 @@ async all(options?: Public.Tables.Store.Options) : Promise<Public.Types.Store[]>
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       store_id,manager_staff_id,address_id,last_update 
     FROM
@@ -2961,7 +2961,7 @@ async create(values: Partial<Public.Types.Payment>, options?: Public.Tables.Paym
 
       if (!Public.Tables.Payment.includesPrimaryKey(values)) {
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.payment (customer_id,staff_id,rental_id,amount,payment_date)
@@ -2971,7 +2971,7 @@ const response = await this.database.invoke( (sql) => sql`
     `, {values, options});
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))[0]
 }
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.payment (payment_id,customer_id,staff_id,rental_id,amount,payment_date)
     VALUES (${ values.paymentId === undefined ? sql`DEFAULT` : typed[23](values.paymentId) },${ values.customerId === undefined ? sql`DEFAULT` : typed[21](values.customerId) },${ values.staffId === undefined ? sql`DEFAULT` : typed[21](values.staffId) },${ values.rentalId === undefined ? sql`DEFAULT` : typed[23](values.rentalId) },${ values.amount === undefined ? sql`DEFAULT` : typed[1700](values.amount) },${ values.paymentDate === undefined ? sql`DEFAULT` : typed[1114](values.paymentDate) })
@@ -2988,7 +2988,7 @@ async all(options?: Public.Tables.Payment.Options) : Promise<Public.Types.Paymen
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       payment_id,customer_id,staff_id,rental_id,amount,payment_date 
     FROM
@@ -3025,7 +3025,7 @@ async create(values: Partial<Public.Types.Film>, options?: Public.Tables.Film.Op
 
       if (!Public.Tables.Film.includesPrimaryKey(values)) {
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
@@ -3035,7 +3035,7 @@ const response = await this.database.invoke( (sql) => sql`
     `, {values, options});
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))[0]
 }
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.film (film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
     VALUES (${ values.filmId === undefined ? sql`DEFAULT` : typed[23](values.filmId) },${ values.title === undefined ? sql`DEFAULT` : typed[1043](values.title) },${ values.description === undefined ? sql`DEFAULT` : typed[25](values.description) },${ values.releaseYear === undefined ? sql`DEFAULT` : typed[46670](values.releaseYear) },${ values.languageId === undefined ? sql`DEFAULT` : typed[21](values.languageId) },${ values.rentalDuration === undefined ? sql`DEFAULT` : typed[21](values.rentalDuration) },${ values.rentalRate === undefined ? sql`DEFAULT` : typed[1700](values.rentalRate) },${ values.length === undefined ? sql`DEFAULT` : typed[21](values.length) },${ values.replacementCost === undefined ? sql`DEFAULT` : typed[1700](values.replacementCost) },${ values.rating === undefined ? sql`DEFAULT` : typed[46659](values.rating) },${ values.lastUpdate === undefined ? sql`DEFAULT` : typed[1114](values.lastUpdate) },${ values.specialFeatures === undefined ? sql`DEFAULT` : typed[1009](values.specialFeatures) },${ values.fulltext === undefined ? sql`DEFAULT` : typed[3614](values.fulltext) })
@@ -3052,7 +3052,7 @@ async all(options?: Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
     FROM
@@ -3097,7 +3097,7 @@ async read(parameters: Public.Types.FilmActorPkey, options?: Public.Types.FilmAc
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       actor_id,film_id,last_update 
@@ -3111,14 +3111,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-
 async update(parameters: Public.Types.FilmActorPkey, values: Partial<Public.Tables.FilmActor.Values>, options?: Public.Types.FilmActorPkey.Options & Public.Tables.FilmActor.Options) : Promise<Public.Types.FilmActor>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.film_actor 
@@ -3128,11 +3127,11 @@ const response = await this.database.invoke( (sql) => sql`
       actor_id = ${ parameters.actorId === undefined ? sql`DEFAULT` : typed[21](parameters.actorId) } AND film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
     RETURNING actor_id,film_id,last_update`, {parameters, values, options});
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-}
+},
 async delete(parameters: Public.Types.FilmActorPkey, options?: Public.Types.FilmActorPkey.Options & Public.Tables.FilmActor.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.film_actor 
@@ -3158,7 +3157,7 @@ async read(parameters: Public.Types.IdxFkFilmId, options?: Public.Types.IdxFkFil
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       actor_id,film_id,last_update 
@@ -3172,14 +3171,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
-
 async update(parameters: Public.Types.IdxFkFilmId, values: Partial<Public.Tables.FilmActor.Values>, options?: Public.Types.IdxFkFilmId.Options & Public.Tables.FilmActor.Options) : Promise<Public.Types.FilmActor[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.film_actor 
@@ -3189,11 +3187,11 @@ const response = await this.database.invoke( (sql) => sql`
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
     RETURNING actor_id,film_id,last_update`, {parameters, values, options});
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),filmId: undefinedIsNull(r.film_id),lastUpdate: undefinedIsNull(r.last_update) }))
-}
+},
 async delete(parameters: Public.Types.IdxFkFilmId, options?: Public.Types.IdxFkFilmId.Options & Public.Tables.FilmActor.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.film_actor 
@@ -3221,7 +3219,7 @@ async read(parameters: Public.Types.AddressPkey, options?: Public.Types.AddressP
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       address_id,address,address2,district,city_id,postal_code,phone,last_update 
@@ -3235,14 +3233,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-
 async update(parameters: Public.Types.AddressPkey, values: Partial<Public.Tables.Address.Values>, options?: Public.Types.AddressPkey.Options & Public.Tables.Address.Options) : Promise<Public.Types.Address>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.address 
@@ -3252,11 +3249,11 @@ const response = await this.database.invoke( (sql) => sql`
       address_id = ${ parameters.addressId === undefined ? sql`DEFAULT` : typed[23](parameters.addressId) }
     RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`, {parameters, values, options});
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-}
+},
 async delete(parameters: Public.Types.AddressPkey, options?: Public.Types.AddressPkey.Options & Public.Tables.Address.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.address 
@@ -3282,7 +3279,7 @@ async read(parameters: Public.Types.IdxFkCityId, options?: Public.Types.IdxFkCit
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       address_id,address,address2,district,city_id,postal_code,phone,last_update 
@@ -3296,14 +3293,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))
 }
-
 async update(parameters: Public.Types.IdxFkCityId, values: Partial<Public.Tables.Address.Values>, options?: Public.Types.IdxFkCityId.Options & Public.Tables.Address.Options) : Promise<Public.Types.Address[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.address 
@@ -3313,11 +3309,11 @@ const response = await this.database.invoke( (sql) => sql`
       city_id = ${ parameters.cityId === undefined ? sql`DEFAULT` : typed[21](parameters.cityId) }
     RETURNING address_id,address,address2,district,city_id,postal_code,phone,last_update`, {parameters, values, options});
 return response.map(r => ({ addressId: undefinedIsNull(r.address_id),address: undefinedIsNull(r.address),address2: undefinedIsNull(r.address2),district: undefinedIsNull(r.district),cityId: undefinedIsNull(r.city_id),postalCode: undefinedIsNull(r.postal_code),phone: undefinedIsNull(r.phone),lastUpdate: undefinedIsNull(r.last_update) }))
-}
+},
 async delete(parameters: Public.Types.IdxFkCityId, options?: Public.Types.IdxFkCityId.Options & Public.Tables.Address.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.address 
@@ -3345,7 +3341,7 @@ async read(parameters: Public.Types.CityPkey, options?: Public.Types.CityPkey.Op
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       city_id,city,country_id,last_update 
@@ -3359,14 +3355,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-
 async update(parameters: Public.Types.CityPkey, values: Partial<Public.Tables.City.Values>, options?: Public.Types.CityPkey.Options & Public.Tables.City.Options) : Promise<Public.Types.City>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.city 
@@ -3376,11 +3371,11 @@ const response = await this.database.invoke( (sql) => sql`
       city_id = ${ parameters.cityId === undefined ? sql`DEFAULT` : typed[23](parameters.cityId) }
     RETURNING city_id,city,country_id,last_update`, {parameters, values, options});
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-}
+},
 async delete(parameters: Public.Types.CityPkey, options?: Public.Types.CityPkey.Options & Public.Tables.City.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.city 
@@ -3406,7 +3401,7 @@ async read(parameters: Public.Types.IdxFkCountryId, options?: Public.Types.IdxFk
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       city_id,city,country_id,last_update 
@@ -3420,14 +3415,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
-
 async update(parameters: Public.Types.IdxFkCountryId, values: Partial<Public.Tables.City.Values>, options?: Public.Types.IdxFkCountryId.Options & Public.Tables.City.Options) : Promise<Public.Types.City[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.city 
@@ -3437,11 +3431,11 @@ const response = await this.database.invoke( (sql) => sql`
       country_id = ${ parameters.countryId === undefined ? sql`DEFAULT` : typed[21](parameters.countryId) }
     RETURNING city_id,city,country_id,last_update`, {parameters, values, options});
 return response.map(r => ({ cityId: undefinedIsNull(r.city_id),city: undefinedIsNull(r.city),countryId: undefinedIsNull(r.country_id),lastUpdate: undefinedIsNull(r.last_update) }))
-}
+},
 async delete(parameters: Public.Types.IdxFkCountryId, options?: Public.Types.IdxFkCountryId.Options & Public.Tables.City.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.city 
@@ -3469,7 +3463,7 @@ async read(parameters: Public.Types.CustomerPkey, options?: Public.Types.Custome
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
@@ -3483,14 +3477,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))[0]
 }
-
 async update(parameters: Public.Types.CustomerPkey, values: Partial<Public.Tables.Customer.Values>, options?: Public.Types.CustomerPkey.Options & Public.Tables.Customer.Options) : Promise<Public.Types.Customer>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.customer 
@@ -3500,11 +3493,11 @@ const response = await this.database.invoke( (sql) => sql`
       customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[23](parameters.customerId) }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, {parameters, values, options});
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))[0]
-}
+},
 async delete(parameters: Public.Types.CustomerPkey, options?: Public.Types.CustomerPkey.Options & Public.Tables.Customer.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.customer 
@@ -3530,7 +3523,7 @@ async read(parameters: Public.Types.IdxFkAddressId, options?: Public.Types.IdxFk
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
@@ -3544,14 +3537,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
-
 async update(parameters: Public.Types.IdxFkAddressId, values: Partial<Public.Tables.Customer.Values>, options?: Public.Types.IdxFkAddressId.Options & Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.customer 
@@ -3561,11 +3553,11 @@ const response = await this.database.invoke( (sql) => sql`
       address_id = ${ parameters.addressId === undefined ? sql`DEFAULT` : typed[21](parameters.addressId) }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, {parameters, values, options});
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
-}
+},
 async delete(parameters: Public.Types.IdxFkAddressId, options?: Public.Types.IdxFkAddressId.Options & Public.Tables.Customer.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.customer 
@@ -3591,7 +3583,7 @@ async read(parameters: Public.Types.IdxFkStoreId, options?: Public.Types.IdxFkSt
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
@@ -3605,14 +3597,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
-
 async update(parameters: Public.Types.IdxFkStoreId, values: Partial<Public.Tables.Customer.Values>, options?: Public.Types.IdxFkStoreId.Options & Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.customer 
@@ -3622,11 +3613,11 @@ const response = await this.database.invoke( (sql) => sql`
       store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[21](parameters.storeId) }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, {parameters, values, options});
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
-}
+},
 async delete(parameters: Public.Types.IdxFkStoreId, options?: Public.Types.IdxFkStoreId.Options & Public.Tables.Customer.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.customer 
@@ -3652,7 +3643,7 @@ async read(parameters: Public.Types.IdxLastName, options?: Public.Types.IdxLastN
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active 
@@ -3666,14 +3657,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
 }
-
 async update(parameters: Public.Types.IdxLastName, values: Partial<Public.Tables.Customer.Values>, options?: Public.Types.IdxLastName.Options & Public.Tables.Customer.Options) : Promise<Public.Types.Customer[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.customer 
@@ -3683,11 +3673,11 @@ const response = await this.database.invoke( (sql) => sql`
       last_name = ${ parameters.lastName === undefined ? sql`DEFAULT` : typed[1043](parameters.lastName) }
     RETURNING customer_id,store_id,first_name,last_name,email,address_id,activebool,create_date,last_update,active`, {parameters, values, options});
 return response.map(r => ({ customerId: undefinedIsNull(r.customer_id),storeId: undefinedIsNull(r.store_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),email: undefinedIsNull(r.email),addressId: undefinedIsNull(r.address_id),activebool: undefinedIsNull(r.activebool),createDate: undefinedIsNull(r.create_date),lastUpdate: undefinedIsNull(r.last_update),active: undefinedIsNull(r.active) }))
-}
+},
 async delete(parameters: Public.Types.IdxLastName, options?: Public.Types.IdxLastName.Options & Public.Tables.Customer.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.customer 
@@ -3715,7 +3705,7 @@ async read(parameters: Public.Types.ActorPkey, options?: Public.Types.ActorPkey.
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       actor_id,first_name,last_name,last_update 
@@ -3729,14 +3719,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-
 async update(parameters: Public.Types.ActorPkey, values: Partial<Public.Tables.Actor.Values>, options?: Public.Types.ActorPkey.Options & Public.Tables.Actor.Options) : Promise<Public.Types.Actor>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.actor 
@@ -3746,11 +3735,11 @@ const response = await this.database.invoke( (sql) => sql`
       actor_id = ${ parameters.actorId === undefined ? sql`DEFAULT` : typed[23](parameters.actorId) }
     RETURNING actor_id,first_name,last_name,last_update`, {parameters, values, options});
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-}
+},
 async delete(parameters: Public.Types.ActorPkey, options?: Public.Types.ActorPkey.Options & Public.Tables.Actor.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.actor 
@@ -3776,7 +3765,7 @@ async read(parameters: Public.Types.IdxActorLastName, options?: Public.Types.Idx
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       actor_id,first_name,last_name,last_update 
@@ -3790,14 +3779,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))
 }
-
 async update(parameters: Public.Types.IdxActorLastName, values: Partial<Public.Tables.Actor.Values>, options?: Public.Types.IdxActorLastName.Options & Public.Tables.Actor.Options) : Promise<Public.Types.Actor[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.actor 
@@ -3807,11 +3795,11 @@ const response = await this.database.invoke( (sql) => sql`
       last_name = ${ parameters.lastName === undefined ? sql`DEFAULT` : typed[1043](parameters.lastName) }
     RETURNING actor_id,first_name,last_name,last_update`, {parameters, values, options});
 return response.map(r => ({ actorId: undefinedIsNull(r.actor_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),lastUpdate: undefinedIsNull(r.last_update) }))
-}
+},
 async delete(parameters: Public.Types.IdxActorLastName, options?: Public.Types.IdxActorLastName.Options & Public.Tables.Actor.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.actor 
@@ -3839,7 +3827,7 @@ async read(parameters: Public.Types.FilmCategoryPkey, options?: Public.Types.Fil
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       film_id,category_id,last_update 
@@ -3853,14 +3841,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undefinedIsNull(r.category_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-
 async update(parameters: Public.Types.FilmCategoryPkey, values: Partial<Public.Tables.FilmCategory.Values>, options?: Public.Types.FilmCategoryPkey.Options & Public.Tables.FilmCategory.Options) : Promise<Public.Types.FilmCategory>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.film_category 
@@ -3870,11 +3857,11 @@ const response = await this.database.invoke( (sql) => sql`
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) } AND category_id = ${ parameters.categoryId === undefined ? sql`DEFAULT` : typed[21](parameters.categoryId) }
     RETURNING film_id,category_id,last_update`, {parameters, values, options});
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),categoryId: undefinedIsNull(r.category_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-}
+},
 async delete(parameters: Public.Types.FilmCategoryPkey, options?: Public.Types.FilmCategoryPkey.Options & Public.Tables.FilmCategory.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.film_category 
@@ -3902,7 +3889,7 @@ async read(parameters: Public.Types.InventoryPkey, options?: Public.Types.Invent
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       inventory_id,film_id,store_id,last_update 
@@ -3916,14 +3903,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-
 async update(parameters: Public.Types.InventoryPkey, values: Partial<Public.Tables.Inventory.Values>, options?: Public.Types.InventoryPkey.Options & Public.Tables.Inventory.Options) : Promise<Public.Types.Inventory>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.inventory 
@@ -3933,11 +3919,11 @@ const response = await this.database.invoke( (sql) => sql`
       inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) }
     RETURNING inventory_id,film_id,store_id,last_update`, {parameters, values, options});
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-}
+},
 async delete(parameters: Public.Types.InventoryPkey, options?: Public.Types.InventoryPkey.Options & Public.Tables.Inventory.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.inventory 
@@ -3963,7 +3949,7 @@ async read(parameters: Public.Types.IdxStoreIdFilmId, options?: Public.Types.Idx
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       inventory_id,film_id,store_id,last_update 
@@ -3977,14 +3963,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
-
 async update(parameters: Public.Types.IdxStoreIdFilmId, values: Partial<Public.Tables.Inventory.Values>, options?: Public.Types.IdxStoreIdFilmId.Options & Public.Tables.Inventory.Options) : Promise<Public.Types.Inventory[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.inventory 
@@ -3994,11 +3979,11 @@ const response = await this.database.invoke( (sql) => sql`
       store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[21](parameters.storeId) } AND film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[21](parameters.filmId) }
     RETURNING inventory_id,film_id,store_id,last_update`, {parameters, values, options});
 return response.map(r => ({ inventoryId: undefinedIsNull(r.inventory_id),filmId: undefinedIsNull(r.film_id),storeId: undefinedIsNull(r.store_id),lastUpdate: undefinedIsNull(r.last_update) }))
-}
+},
 async delete(parameters: Public.Types.IdxStoreIdFilmId, options?: Public.Types.IdxStoreIdFilmId.Options & Public.Tables.Inventory.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.inventory 
@@ -4026,7 +4011,7 @@ async read(parameters: Public.Types.CategoryPkey, options?: Public.Types.Categor
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       category_id,name,last_update 
@@ -4040,14 +4025,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-
 async update(parameters: Public.Types.CategoryPkey, values: Partial<Public.Tables.Category.Values>, options?: Public.Types.CategoryPkey.Options & Public.Tables.Category.Options) : Promise<Public.Types.Category>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.category 
@@ -4057,11 +4041,11 @@ const response = await this.database.invoke( (sql) => sql`
       category_id = ${ parameters.categoryId === undefined ? sql`DEFAULT` : typed[23](parameters.categoryId) }
     RETURNING category_id,name,last_update`, {parameters, values, options});
 return response.map(r => ({ categoryId: undefinedIsNull(r.category_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-}
+},
 async delete(parameters: Public.Types.CategoryPkey, options?: Public.Types.CategoryPkey.Options & Public.Tables.Category.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.category 
@@ -4089,7 +4073,7 @@ async read(parameters: Public.Types.CountryPkey, options?: Public.Types.CountryP
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       country_id,country,last_update 
@@ -4103,14 +4087,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-
 async update(parameters: Public.Types.CountryPkey, values: Partial<Public.Tables.Country.Values>, options?: Public.Types.CountryPkey.Options & Public.Tables.Country.Options) : Promise<Public.Types.Country>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.country 
@@ -4120,11 +4103,11 @@ const response = await this.database.invoke( (sql) => sql`
       country_id = ${ parameters.countryId === undefined ? sql`DEFAULT` : typed[23](parameters.countryId) }
     RETURNING country_id,country,last_update`, {parameters, values, options});
 return response.map(r => ({ countryId: undefinedIsNull(r.country_id),country: undefinedIsNull(r.country),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-}
+},
 async delete(parameters: Public.Types.CountryPkey, options?: Public.Types.CountryPkey.Options & Public.Tables.Country.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.country 
@@ -4152,7 +4135,7 @@ async read(parameters: Public.Types.LanguagePkey, options?: Public.Types.Languag
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       language_id,name,last_update 
@@ -4166,14 +4149,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-
 async update(parameters: Public.Types.LanguagePkey, values: Partial<Public.Tables.Language.Values>, options?: Public.Types.LanguagePkey.Options & Public.Tables.Language.Options) : Promise<Public.Types.Language>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.language 
@@ -4183,11 +4165,11 @@ const response = await this.database.invoke( (sql) => sql`
       language_id = ${ parameters.languageId === undefined ? sql`DEFAULT` : typed[23](parameters.languageId) }
     RETURNING language_id,name,last_update`, {parameters, values, options});
 return response.map(r => ({ languageId: undefinedIsNull(r.language_id),name: undefinedIsNull(r.name),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-}
+},
 async delete(parameters: Public.Types.LanguagePkey, options?: Public.Types.LanguagePkey.Options & Public.Tables.Language.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.language 
@@ -4215,7 +4197,7 @@ async read(parameters: Public.Types.RentalPkey, options?: Public.Types.RentalPke
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
@@ -4229,14 +4211,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-
 async update(parameters: Public.Types.RentalPkey, values: Partial<Public.Tables.Rental.Values>, options?: Public.Types.RentalPkey.Options & Public.Tables.Rental.Options) : Promise<Public.Types.Rental>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.rental 
@@ -4246,11 +4227,11 @@ const response = await this.database.invoke( (sql) => sql`
       rental_id = ${ parameters.rentalId === undefined ? sql`DEFAULT` : typed[23](parameters.rentalId) }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`, {parameters, values, options});
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-}
+},
 async delete(parameters: Public.Types.RentalPkey, options?: Public.Types.RentalPkey.Options & Public.Tables.Rental.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.rental 
@@ -4276,7 +4257,7 @@ async read(parameters: Public.Types.IdxFkInventoryId, options?: Public.Types.Idx
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
@@ -4290,14 +4271,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))
 }
-
 async update(parameters: Public.Types.IdxFkInventoryId, values: Partial<Public.Tables.Rental.Values>, options?: Public.Types.IdxFkInventoryId.Options & Public.Tables.Rental.Options) : Promise<Public.Types.Rental[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.rental 
@@ -4307,11 +4287,11 @@ const response = await this.database.invoke( (sql) => sql`
       inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`, {parameters, values, options});
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))
-}
+},
 async delete(parameters: Public.Types.IdxFkInventoryId, options?: Public.Types.IdxFkInventoryId.Options & Public.Tables.Rental.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.rental 
@@ -4337,7 +4317,7 @@ async read(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId,
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update 
@@ -4351,14 +4331,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-
 async update(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, values: Partial<Public.Tables.Rental.Values>, options?: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId.Options & Public.Tables.Rental.Options) : Promise<Public.Types.Rental>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.rental 
@@ -4368,11 +4347,11 @@ const response = await this.database.invoke( (sql) => sql`
       rental_date = ${ parameters.rentalDate === undefined ? sql`DEFAULT` : typed[1114](parameters.rentalDate) } AND inventory_id = ${ parameters.inventoryId === undefined ? sql`DEFAULT` : typed[23](parameters.inventoryId) } AND customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[21](parameters.customerId) }
     RETURNING rental_id,rental_date,inventory_id,customer_id,return_date,staff_id,last_update`, {parameters, values, options});
 return response.map(r => ({ rentalId: undefinedIsNull(r.rental_id),rentalDate: undefinedIsNull(r.rental_date),inventoryId: undefinedIsNull(r.inventory_id),customerId: undefinedIsNull(r.customer_id),returnDate: undefinedIsNull(r.return_date),staffId: undefinedIsNull(r.staff_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-}
+},
 async delete(parameters: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId, options?: Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId.Options & Public.Tables.Rental.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.rental 
@@ -4400,7 +4379,7 @@ async read(parameters: Public.Types.StaffPkey, options?: Public.Types.StaffPkey.
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture 
@@ -4414,14 +4393,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))[0]
 }
-
 async update(parameters: Public.Types.StaffPkey, values: Partial<Public.Tables.Staff.Values>, options?: Public.Types.StaffPkey.Options & Public.Tables.Staff.Options) : Promise<Public.Types.Staff>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.staff 
@@ -4431,11 +4409,11 @@ const response = await this.database.invoke( (sql) => sql`
       staff_id = ${ parameters.staffId === undefined ? sql`DEFAULT` : typed[23](parameters.staffId) }
     RETURNING staff_id,first_name,last_name,address_id,email,store_id,active,username,password,last_update,picture`, {parameters, values, options});
 return response.map(r => ({ staffId: undefinedIsNull(r.staff_id),firstName: undefinedIsNull(r.first_name),lastName: undefinedIsNull(r.last_name),addressId: undefinedIsNull(r.address_id),email: undefinedIsNull(r.email),storeId: undefinedIsNull(r.store_id),active: undefinedIsNull(r.active),username: undefinedIsNull(r.username),password: undefinedIsNull(r.password),lastUpdate: undefinedIsNull(r.last_update),picture: undefinedIsNull(r.picture) }))[0]
-}
+},
 async delete(parameters: Public.Types.StaffPkey, options?: Public.Types.StaffPkey.Options & Public.Tables.Staff.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.staff 
@@ -4463,7 +4441,7 @@ async read(parameters: Public.Types.StorePkey, options?: Public.Types.StorePkey.
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       store_id,manager_staff_id,address_id,last_update 
@@ -4477,14 +4455,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-
 async update(parameters: Public.Types.StorePkey, values: Partial<Public.Tables.Store.Values>, options?: Public.Types.StorePkey.Options & Public.Tables.Store.Options) : Promise<Public.Types.Store>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.store 
@@ -4494,11 +4471,11 @@ const response = await this.database.invoke( (sql) => sql`
       store_id = ${ parameters.storeId === undefined ? sql`DEFAULT` : typed[23](parameters.storeId) }
     RETURNING store_id,manager_staff_id,address_id,last_update`, {parameters, values, options});
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-}
+},
 async delete(parameters: Public.Types.StorePkey, options?: Public.Types.StorePkey.Options & Public.Tables.Store.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.store 
@@ -4524,7 +4501,7 @@ async read(parameters: Public.Types.IdxUnqManagerStaffId, options?: Public.Types
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       store_id,manager_staff_id,address_id,last_update 
@@ -4538,14 +4515,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
 }
-
 async update(parameters: Public.Types.IdxUnqManagerStaffId, values: Partial<Public.Tables.Store.Values>, options?: Public.Types.IdxUnqManagerStaffId.Options & Public.Tables.Store.Options) : Promise<Public.Types.Store>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.store 
@@ -4555,11 +4531,11 @@ const response = await this.database.invoke( (sql) => sql`
       manager_staff_id = ${ parameters.managerStaffId === undefined ? sql`DEFAULT` : typed[21](parameters.managerStaffId) }
     RETURNING store_id,manager_staff_id,address_id,last_update`, {parameters, values, options});
 return response.map(r => ({ storeId: undefinedIsNull(r.store_id),managerStaffId: undefinedIsNull(r.manager_staff_id),addressId: undefinedIsNull(r.address_id),lastUpdate: undefinedIsNull(r.last_update) }))[0]
-}
+},
 async delete(parameters: Public.Types.IdxUnqManagerStaffId, options?: Public.Types.IdxUnqManagerStaffId.Options & Public.Tables.Store.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.store 
@@ -4587,7 +4563,7 @@ async read(parameters: Public.Types.PaymentPkey, options?: Public.Types.PaymentP
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       payment_id,customer_id,staff_id,rental_id,amount,payment_date 
@@ -4601,14 +4577,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))[0]
 }
-
 async update(parameters: Public.Types.PaymentPkey, values: Partial<Public.Tables.Payment.Values>, options?: Public.Types.PaymentPkey.Options & Public.Tables.Payment.Options) : Promise<Public.Types.Payment>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.payment 
@@ -4618,11 +4593,11 @@ const response = await this.database.invoke( (sql) => sql`
       payment_id = ${ parameters.paymentId === undefined ? sql`DEFAULT` : typed[23](parameters.paymentId) }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, {parameters, values, options});
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))[0]
-}
+},
 async delete(parameters: Public.Types.PaymentPkey, options?: Public.Types.PaymentPkey.Options & Public.Tables.Payment.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.payment 
@@ -4648,7 +4623,7 @@ async read(parameters: Public.Types.IdxFkCustomerId, options?: Public.Types.IdxF
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       payment_id,customer_id,staff_id,rental_id,amount,payment_date 
@@ -4662,14 +4637,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
-
 async update(parameters: Public.Types.IdxFkCustomerId, values: Partial<Public.Tables.Payment.Values>, options?: Public.Types.IdxFkCustomerId.Options & Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.payment 
@@ -4679,11 +4653,11 @@ const response = await this.database.invoke( (sql) => sql`
       customer_id = ${ parameters.customerId === undefined ? sql`DEFAULT` : typed[21](parameters.customerId) }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, {parameters, values, options});
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
-}
+},
 async delete(parameters: Public.Types.IdxFkCustomerId, options?: Public.Types.IdxFkCustomerId.Options & Public.Tables.Payment.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.payment 
@@ -4709,7 +4683,7 @@ async read(parameters: Public.Types.IdxFkRentalId, options?: Public.Types.IdxFkR
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       payment_id,customer_id,staff_id,rental_id,amount,payment_date 
@@ -4723,14 +4697,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
-
 async update(parameters: Public.Types.IdxFkRentalId, values: Partial<Public.Tables.Payment.Values>, options?: Public.Types.IdxFkRentalId.Options & Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.payment 
@@ -4740,11 +4713,11 @@ const response = await this.database.invoke( (sql) => sql`
       rental_id = ${ parameters.rentalId === undefined ? sql`DEFAULT` : typed[23](parameters.rentalId) }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, {parameters, values, options});
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
-}
+},
 async delete(parameters: Public.Types.IdxFkRentalId, options?: Public.Types.IdxFkRentalId.Options & Public.Tables.Payment.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.payment 
@@ -4770,7 +4743,7 @@ async read(parameters: Public.Types.IdxFkStaffId, options?: Public.Types.IdxFkSt
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       payment_id,customer_id,staff_id,rental_id,amount,payment_date 
@@ -4784,14 +4757,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
 }
-
 async update(parameters: Public.Types.IdxFkStaffId, values: Partial<Public.Tables.Payment.Values>, options?: Public.Types.IdxFkStaffId.Options & Public.Tables.Payment.Options) : Promise<Public.Types.Payment[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.payment 
@@ -4801,11 +4773,11 @@ const response = await this.database.invoke( (sql) => sql`
       staff_id = ${ parameters.staffId === undefined ? sql`DEFAULT` : typed[21](parameters.staffId) }
     RETURNING payment_id,customer_id,staff_id,rental_id,amount,payment_date`, {parameters, values, options});
 return response.map(r => ({ paymentId: undefinedIsNull(r.payment_id),customerId: undefinedIsNull(r.customer_id),staffId: undefinedIsNull(r.staff_id),rentalId: undefinedIsNull(r.rental_id),amount: undefinedIsNull(r.amount),paymentDate: undefinedIsNull(r.payment_date) }))
-}
+},
 async delete(parameters: Public.Types.IdxFkStaffId, options?: Public.Types.IdxFkStaffId.Options & Public.Tables.Payment.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.payment 
@@ -4833,7 +4805,7 @@ async read(parameters: Public.Types.FilmPkey, options?: Public.Types.FilmPkey.Op
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
@@ -4847,14 +4819,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))[0]
 }
-
 async update(parameters: Public.Types.FilmPkey, values: Partial<Public.Tables.Film.Values>, options?: Public.Types.FilmPkey.Options & Public.Tables.Film.Options) : Promise<Public.Types.Film>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.film 
@@ -4864,11 +4835,11 @@ const response = await this.database.invoke( (sql) => sql`
       film_id = ${ parameters.filmId === undefined ? sql`DEFAULT` : typed[23](parameters.filmId) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, {parameters, values, options});
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))[0]
-}
+},
 async delete(parameters: Public.Types.FilmPkey, options?: Public.Types.FilmPkey.Options & Public.Tables.Film.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.film 
@@ -4894,7 +4865,7 @@ async read(parameters: Public.Types.FilmFulltextIdx, options?: Public.Types.Film
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
@@ -4908,14 +4879,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
-
 async update(parameters: Public.Types.FilmFulltextIdx, values: Partial<Public.Tables.Film.Values>, options?: Public.Types.FilmFulltextIdx.Options & Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.film 
@@ -4925,11 +4895,11 @@ const response = await this.database.invoke( (sql) => sql`
       fulltext @@ ${sql.unsafe(`${options?.fulltext?.queryParser ?? "to_tsquery"}`)}(${options?.fulltext?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.fulltext === undefined ? sql`DEFAULT` : typed[3614](parameters.fulltext) })
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, {parameters, values, options});
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
-}
+},
 async delete(parameters: Public.Types.FilmFulltextIdx, options?: Public.Types.FilmFulltextIdx.Options & Public.Tables.Film.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.film 
@@ -4955,7 +4925,7 @@ async read(parameters: Public.Types.IdxFkLanguageId, options?: Public.Types.IdxF
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
@@ -4969,14 +4939,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
-
 async update(parameters: Public.Types.IdxFkLanguageId, values: Partial<Public.Tables.Film.Values>, options?: Public.Types.IdxFkLanguageId.Options & Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.film 
@@ -4986,11 +4955,11 @@ const response = await this.database.invoke( (sql) => sql`
       language_id = ${ parameters.languageId === undefined ? sql`DEFAULT` : typed[21](parameters.languageId) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, {parameters, values, options});
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
-}
+},
 async delete(parameters: Public.Types.IdxFkLanguageId, options?: Public.Types.IdxFkLanguageId.Options & Public.Tables.Film.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.film 
@@ -5016,7 +4985,7 @@ async read(parameters: Public.Types.IdxTitle, options?: Public.Types.IdxTitle.Op
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext 
@@ -5030,14 +4999,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
 }
-
 async update(parameters: Public.Types.IdxTitle, values: Partial<Public.Tables.Film.Values>, options?: Public.Types.IdxTitle.Options & Public.Tables.Film.Options) : Promise<Public.Types.Film[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.film 
@@ -5047,11 +5015,11 @@ const response = await this.database.invoke( (sql) => sql`
       title = ${ parameters.title === undefined ? sql`DEFAULT` : typed[1043](parameters.title) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, {parameters, values, options});
 return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedIsNull(r.title),description: undefinedIsNull(r.description),releaseYear: undefinedIsNull(r.release_year),languageId: undefinedIsNull(r.language_id),rentalDuration: undefinedIsNull(r.rental_duration),rentalRate: undefinedIsNull(r.rental_rate),length: undefinedIsNull(r.length),replacementCost: undefinedIsNull(r.replacement_cost),rating: undefinedIsNull(r.rating),lastUpdate: undefinedIsNull(r.last_update),specialFeatures: undefinedIsNull(r.special_features),fulltext: undefinedIsNull(r.fulltext) }))
-}
+},
 async delete(parameters: Public.Types.IdxTitle, options?: Public.Types.IdxTitle.Options & Public.Tables.Film.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.film 

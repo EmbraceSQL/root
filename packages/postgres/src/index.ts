@@ -1,7 +1,7 @@
 import { Context } from "./context";
 import databaseRole from "./middleware/role";
 import { MiddlewareContext, MiddlewareDispatcher } from "./middleware/types";
-import { EmbraceSQLInvocation, InvokeQueryOptions } from "@embracesql/shared";
+import { EmbraceSQLInvocation, EmbraceSQLOptions } from "@embracesql/shared";
 import postgres from "postgres";
 
 export { initializeContext } from "./context";
@@ -12,7 +12,12 @@ interface ConstructorOf<T> {
   new (context: Context): T;
 }
 
-type InvokeQuery<T> = (sql: postgres.Sql) => Promise<T>;
+type InvokeQuery<
+  R,
+  P,
+  V = never,
+  O extends EmbraceSQLOptions = EmbraceSQLOptions,
+> = (sql: postgres.Sql, request: EmbraceSQLInvocation<P, V, O>) => Promise<R>;
 
 /**
  * A single postgres database. Inherit from this in generated code.
@@ -108,20 +113,30 @@ export abstract class PostgresDatabase<
    * all middleware is successful, `queryCallback` will be invoke to generate
    * the final return results from the database.
    */
-  async invoke<T>(
-    queryCallback: InvokeQuery<T>,
+  async invoke<
+    R,
+    P,
+    V = never,
+    O extends EmbraceSQLOptions = EmbraceSQLOptions,
+  >(
+    queryCallback: InvokeQuery<R, P, V, O>,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    request?: EmbraceSQLInvocation<object, object, InvokeQueryOptions>,
-  ): Promise<T> {
+    request: EmbraceSQLInvocation<P, V, O>,
+  ): Promise<R> {
     // here is the middleware run stack
     const runStack = async (database: this) => {
       // pick up the headers
       // first the middleware
       await this.dispatch({
         ...database.context,
-        request,
+        // types get erased at this level
+        request: request as EmbraceSQLInvocation<
+          object,
+          object,
+          EmbraceSQLOptions
+        >,
       });
-      return queryCallback(database.context.sql);
+      return queryCallback(database.context.sql, request);
     };
 
     // need a reserved or single connection throughout
@@ -129,7 +144,7 @@ export abstract class PostgresDatabase<
     if (this.context.sql.begin !== undefined) {
       return this.withTransaction(async (database) => {
         return runStack(database);
-      }) as T;
+      }) as R;
     } else {
       // if we are in a transaction, there won't be an option to reserve
       // but the good news is the driver has already reserved a connection

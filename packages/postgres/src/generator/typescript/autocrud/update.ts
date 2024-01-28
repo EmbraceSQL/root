@@ -20,7 +20,6 @@ import {
  */
 export const UpdateOperation = {
   async before(context: GenerationContext, node: UpdateOperationNode) {
-    const generationBuffer = [""];
     const parameters = `${PARAMETERS}: ${node.index.type.typescriptNamespacedName}, ${VALUES}: Partial<${node.index.table.typescriptNamespacedName}.Values>`;
     const requestExpression = `{${PARAMETERS}, ${VALUES}, options}`;
     const optionType = `${node.index.type.typescriptNamespacedName}.Options & ${node.index.table.typescriptNamespacedName}.Options`;
@@ -31,17 +30,6 @@ export const UpdateOperation = {
     const sqlColumnNames = node.index.table.type.attributes
       .map((a) => a.name)
       .join(",");
-
-    generationBuffer.push(
-      `async ${node.typescriptPropertyName}(${parameters}, ${options}) : ${returns}{`,
-    );
-    generationBuffer.push(
-      `
-      console.assert(parameters);
-      console.assert(values);
-      const typed = this.database.typed;
-      `,
-    );
     // query using postgres driver bindings to the index
     const sql = `
     --
@@ -53,18 +41,19 @@ export const UpdateOperation = {
       ${sqlPredicate(context, node.index, PARAMETERS)}
     RETURNING ${sqlColumnNames}`;
 
-    generationBuffer.push(
-      `const response = await this.database.invoke( (sql) => sql\`${sql}\`, ${requestExpression});`,
-    );
+    return [
+      `async ${node.typescriptPropertyName}(${parameters}, ${options}) : ${returns}{`,
+      `
+      console.assert(parameters);
+      console.assert(values);
+      const typed = this.database.typed;
+      `,
+      `const response = await this.database.invoke( (sql, request) => sql\`${sql}\`, ${requestExpression});`,
 
-    generationBuffer.push(
       `return ${postgresToTypescript(context, node.index.table.type)}${
         node.index.unique ? "[0]" : ""
       }`,
-    );
-
-    generationBuffer.push(`}`);
-
-    return generationBuffer.join("\n");
+      `}`,
+    ].join("\n");
   },
 };

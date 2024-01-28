@@ -1722,7 +1722,7 @@ async create(values: Partial<Public.Types.Checklist>, options?: Public.Tables.Ch
 
       if (!Public.Tables.Checklist.includesPrimaryKey(values)) {
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.checklist (name,created_at)
@@ -1732,7 +1732,7 @@ const response = await this.database.invoke( (sql) => sql`
     `, {values, options});
 return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
 }
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.checklist (id,name,created_at)
     VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.name === undefined ? sql`DEFAULT` : typed[25](values.name) },${ values.createdAt === undefined ? sql`DEFAULT` : typed[1114](values.createdAt) })
@@ -1749,7 +1749,7 @@ async all(options?: Public.Tables.Checklist.Options) : Promise<Public.Types.Chec
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       id,name,created_at 
     FROM
@@ -1780,7 +1780,7 @@ async create(values: Partial<Public.Types.ChecklistItem>, options?: Public.Table
 
       if (!Public.Tables.ChecklistItem.includesPrimaryKey(values)) {
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.checklist_item (checklist_id,title,checked,created_at)
@@ -1790,7 +1790,7 @@ const response = await this.database.invoke( (sql) => sql`
     `, {values, options});
 return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
 }
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.checklist_item (id,checklist_id,title,checked,created_at)
     VALUES (${ values.id === undefined ? sql`DEFAULT` : typed[2950](values.id) },${ values.checklistId === undefined ? sql`DEFAULT` : typed[2950](values.checklistId) },${ values.title === undefined ? sql`DEFAULT` : typed[25](values.title) },${ values.checked === undefined ? sql`DEFAULT` : typed[16](values.checked) },${ values.createdAt === undefined ? sql`DEFAULT` : typed[1114](values.createdAt) })
@@ -1807,7 +1807,7 @@ async all(options?: Public.Tables.ChecklistItem.Options) : Promise<Public.Types.
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       id,checklist_id,title,checked,created_at 
     FROM
@@ -1848,7 +1848,7 @@ async read(parameters: Public.Types.ChecklistPkey, options?: Public.Types.Checkl
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       id,name,created_at 
@@ -1862,14 +1862,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
 }
-
 async update(parameters: Public.Types.ChecklistPkey, values: Partial<Public.Tables.Checklist.Values>, options?: Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options) : Promise<Public.Types.Checklist>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.checklist 
@@ -1879,11 +1878,11 @@ const response = await this.database.invoke( (sql) => sql`
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
     RETURNING id,name,created_at`, {parameters, values, options});
 return response.map(r => ({ id: undefinedIsNull(r.id),name: undefinedIsNull(r.name),createdAt: undefinedIsNull(r.created_at) }))[0]
-}
+},
 async delete(parameters: Public.Types.ChecklistPkey, options?: Public.Types.ChecklistPkey.Options & Public.Tables.Checklist.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.checklist 
@@ -1911,7 +1910,7 @@ async read(parameters: Public.Types.ChecklistItemPkey, options?: Public.Types.Ch
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       id,checklist_id,title,checked,created_at 
@@ -1925,14 +1924,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
 }
-
 async update(parameters: Public.Types.ChecklistItemPkey, values: Partial<Public.Tables.ChecklistItem.Values>, options?: Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.checklist_item 
@@ -1942,11 +1940,11 @@ const response = await this.database.invoke( (sql) => sql`
       id = ${ parameters.id === undefined ? sql`DEFAULT` : typed[2950](parameters.id) }
     RETURNING id,checklist_id,title,checked,created_at`, {parameters, values, options});
 return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))[0]
-}
+},
 async delete(parameters: Public.Types.ChecklistItemPkey, options?: Public.Types.ChecklistItemPkey.Options & Public.Tables.ChecklistItem.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.checklist_item 
@@ -1972,7 +1970,7 @@ async read(parameters: Public.Types.ChecklistItemParent, options?: Public.Types.
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       id,checklist_id,title,checked,created_at 
@@ -1986,14 +1984,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))
 }
-
 async update(parameters: Public.Types.ChecklistItemParent, values: Partial<Public.Tables.ChecklistItem.Values>, options?: Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options) : Promise<Public.Types.ChecklistItem[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.checklist_item 
@@ -2003,11 +2000,11 @@ const response = await this.database.invoke( (sql) => sql`
       checklist_id = ${ parameters.checklistId === undefined ? sql`DEFAULT` : typed[2950](parameters.checklistId) }
     RETURNING id,checklist_id,title,checked,created_at`, {parameters, values, options});
 return response.map(r => ({ id: undefinedIsNull(r.id),checklistId: undefinedIsNull(r.checklist_id),title: undefinedIsNull(r.title),checked: undefinedIsNull(r.checked),createdAt: undefinedIsNull(r.created_at) }))
-}
+},
 async delete(parameters: Public.Types.ChecklistItemParent, options?: Public.Types.ChecklistItemParent.Options & Public.Tables.ChecklistItem.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.checklist_item 

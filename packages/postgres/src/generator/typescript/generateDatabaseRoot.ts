@@ -140,7 +140,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
               await NestedNamedClassVisitor.before(context, node),
               `
           async call (${parameters}${options}) {
-            const response = await this.database.invoke( (sql) => sql.unsafe(\`
+            const response = await this.database.invoke( (sql, request) => sql.unsafe(\`
                 ${preparedSql}
                 \`${parametersExpression}), ${requestExpression});
             return response.map(r => ({ ${attributes.join(",")} }));
@@ -273,7 +273,7 @@ export const generateDatabaseRoot = async (context: GenerationContext) => {
               `async call(${parameters}${options}) {`,
               `  ${parseResult}`,
               `  const typed = this.database.typed;`,
-              `  const response = await this.database.invoke( (sql) => sql\`SELECT ${node.databaseName}(${parameterExpressions})\`, ${requestExpression});`,
+              `  const response = await this.database.invoke( (sql, request) => sql\`SELECT ${node.databaseName}(${parameterExpressions})\`, ${requestExpression});`,
               `  const results = response;`,
               `
               const responseBody = ( ${(() => {

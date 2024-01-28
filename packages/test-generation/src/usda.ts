@@ -1754,7 +1754,7 @@ async create(values: Partial<Public.Types.NutData>, options?: Public.Tables.NutD
 
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.nut_data (ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc)
     VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.nutrNo === undefined ? sql`DEFAULT` : typed[1042](values.nutrNo) },${ values.nutrVal === undefined ? sql`DEFAULT` : typed[701](values.nutrVal) },${ values.numDataPts === undefined ? sql`DEFAULT` : typed[701](values.numDataPts) },${ values.stdError === undefined ? sql`DEFAULT` : typed[701](values.stdError) },${ values.srcCd === undefined ? sql`DEFAULT` : typed[23](values.srcCd) },${ values.derivCd === undefined ? sql`DEFAULT` : typed[25](values.derivCd) },${ values.refNdbNo === undefined ? sql`DEFAULT` : typed[1042](values.refNdbNo) },${ values.addNutrMark === undefined ? sql`DEFAULT` : typed[1042](values.addNutrMark) },${ values.numStudies === undefined ? sql`DEFAULT` : typed[23](values.numStudies) },${ values.min === undefined ? sql`DEFAULT` : typed[701](values.min) },${ values.max === undefined ? sql`DEFAULT` : typed[701](values.max) },${ values.df === undefined ? sql`DEFAULT` : typed[23](values.df) },${ values.lowEb === undefined ? sql`DEFAULT` : typed[701](values.lowEb) },${ values.upEb === undefined ? sql`DEFAULT` : typed[701](values.upEb) },${ values.statCmt === undefined ? sql`DEFAULT` : typed[25](values.statCmt) },${ values.cc === undefined ? sql`DEFAULT` : typed[1042](values.cc) })
@@ -1771,7 +1771,7 @@ async all(options?: Public.Tables.NutData.Options) : Promise<Public.Types.NutDat
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc 
     FROM
@@ -1805,7 +1805,7 @@ async create(values: Partial<Public.Types.SrcCd>, options?: Public.Tables.SrcCd.
 
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.src_cd (src_cd,srccd_desc)
     VALUES (${ values.srcCd === undefined ? sql`DEFAULT` : typed[23](values.srcCd) },${ values.srccdDesc === undefined ? sql`DEFAULT` : typed[25](values.srccdDesc) })
@@ -1822,7 +1822,7 @@ async all(options?: Public.Tables.SrcCd.Options) : Promise<Public.Types.SrcCd[]>
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       src_cd,srccd_desc 
     FROM
@@ -1850,7 +1850,7 @@ async create(values: Partial<Public.Types.Footnote>, options?: Public.Tables.Foo
 
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.footnote (ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt)
     VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.footntNo === undefined ? sql`DEFAULT` : typed[1042](values.footntNo) },${ values.footntTyp === undefined ? sql`DEFAULT` : typed[1042](values.footntTyp) },${ values.nutrNo === undefined ? sql`DEFAULT` : typed[1042](values.nutrNo) },${ values.footntTxt === undefined ? sql`DEFAULT` : typed[25](values.footntTxt) })
@@ -1867,7 +1867,7 @@ async all(options?: Public.Tables.Footnote.Options) : Promise<Public.Types.Footn
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt 
     FROM
@@ -1895,7 +1895,7 @@ async create(values: Partial<Public.Types.NutrDef>, options?: Public.Tables.Nutr
 
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.nutr_def (nutr_no,units,tagname,nutrdesc,num_dec,sr_order)
     VALUES (${ values.nutrNo === undefined ? sql`DEFAULT` : typed[1042](values.nutrNo) },${ values.units === undefined ? sql`DEFAULT` : typed[25](values.units) },${ values.tagname === undefined ? sql`DEFAULT` : typed[25](values.tagname) },${ values.nutrdesc === undefined ? sql`DEFAULT` : typed[25](values.nutrdesc) },${ values.numDec === undefined ? sql`DEFAULT` : typed[21](values.numDec) },${ values.srOrder === undefined ? sql`DEFAULT` : typed[23](values.srOrder) })
@@ -1912,7 +1912,7 @@ async all(options?: Public.Tables.NutrDef.Options) : Promise<Public.Types.NutrDe
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       nutr_no,units,tagname,nutrdesc,num_dec,sr_order 
     FROM
@@ -1940,7 +1940,7 @@ async create(values: Partial<Public.Types.DerivCd>, options?: Public.Tables.Deri
 
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.deriv_cd (deriv_cd,derivcd_desc)
     VALUES (${ values.derivCd === undefined ? sql`DEFAULT` : typed[25](values.derivCd) },${ values.derivcdDesc === undefined ? sql`DEFAULT` : typed[25](values.derivcdDesc) })
@@ -1957,7 +1957,7 @@ async all(options?: Public.Tables.DerivCd.Options) : Promise<Public.Types.DerivC
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       deriv_cd,derivcd_desc 
     FROM
@@ -1985,7 +1985,7 @@ async create(values: Partial<Public.Types.FdGroup>, options?: Public.Tables.FdGr
 
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.fd_group (fdgrp_cd,fddrp_desc)
     VALUES (${ values.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](values.fdgrpCd) },${ values.fddrpDesc === undefined ? sql`DEFAULT` : typed[25](values.fddrpDesc) })
@@ -2002,7 +2002,7 @@ async all(options?: Public.Tables.FdGroup.Options) : Promise<Public.Types.FdGrou
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       fdgrp_cd,fddrp_desc 
     FROM
@@ -2030,7 +2030,7 @@ async create(values: Partial<Public.Types.Weight>, options?: Public.Tables.Weigh
 
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.weight (ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev)
     VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.seq === undefined ? sql`DEFAULT` : typed[1042](values.seq) },${ values.amount === undefined ? sql`DEFAULT` : typed[701](values.amount) },${ values.msreDesc === undefined ? sql`DEFAULT` : typed[25](values.msreDesc) },${ values.gmWgt === undefined ? sql`DEFAULT` : typed[701](values.gmWgt) },${ values.numDataPts === undefined ? sql`DEFAULT` : typed[23](values.numDataPts) },${ values.stdDev === undefined ? sql`DEFAULT` : typed[701](values.stdDev) })
@@ -2047,7 +2047,7 @@ async all(options?: Public.Tables.Weight.Options) : Promise<Public.Types.Weight[
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev 
     FROM
@@ -2075,7 +2075,7 @@ async create(values: Partial<Public.Types.FoodDes>, options?: Public.Tables.Food
 
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.food_des (ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor)
     VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](values.fdgrpCd) },${ values.longDesc === undefined ? sql`DEFAULT` : typed[25](values.longDesc) },${ values.shrtDesc === undefined ? sql`DEFAULT` : typed[25](values.shrtDesc) },${ values.comname === undefined ? sql`DEFAULT` : typed[25](values.comname) },${ values.manufacname === undefined ? sql`DEFAULT` : typed[25](values.manufacname) },${ values.survey === undefined ? sql`DEFAULT` : typed[1042](values.survey) },${ values.refDesc === undefined ? sql`DEFAULT` : typed[25](values.refDesc) },${ values.refuse === undefined ? sql`DEFAULT` : typed[23](values.refuse) },${ values.sciname === undefined ? sql`DEFAULT` : typed[25](values.sciname) },${ values.nFactor === undefined ? sql`DEFAULT` : typed[701](values.nFactor) },${ values.proFactor === undefined ? sql`DEFAULT` : typed[701](values.proFactor) },${ values.fatFactor === undefined ? sql`DEFAULT` : typed[701](values.fatFactor) },${ values.choFactor === undefined ? sql`DEFAULT` : typed[701](values.choFactor) })
@@ -2092,7 +2092,7 @@ async all(options?: Public.Tables.FoodDes.Options) : Promise<Public.Types.FoodDe
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor 
     FROM
@@ -2122,7 +2122,7 @@ async create(values: Partial<Public.Types.DataSrc>, options?: Public.Tables.Data
 
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.data_src (datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page)
     VALUES (${ values.datasrcId === undefined ? sql`DEFAULT` : typed[1042](values.datasrcId) },${ values.authors === undefined ? sql`DEFAULT` : typed[25](values.authors) },${ values.title === undefined ? sql`DEFAULT` : typed[25](values.title) },${ values.year === undefined ? sql`DEFAULT` : typed[23](values.year) },${ values.journal === undefined ? sql`DEFAULT` : typed[25](values.journal) },${ values.volCity === undefined ? sql`DEFAULT` : typed[25](values.volCity) },${ values.issueState === undefined ? sql`DEFAULT` : typed[25](values.issueState) },${ values.startPage === undefined ? sql`DEFAULT` : typed[25](values.startPage) },${ values.endPage === undefined ? sql`DEFAULT` : typed[25](values.endPage) })
@@ -2139,7 +2139,7 @@ async all(options?: Public.Tables.DataSrc.Options) : Promise<Public.Types.DataSr
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page 
     FROM
@@ -2169,7 +2169,7 @@ async create(values: Partial<Public.Types.Datsrcln>, options?: Public.Tables.Dat
 
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.datsrcln (ndb_no,nutr_no,datasrc_id)
     VALUES (${ values.ndbNo === undefined ? sql`DEFAULT` : typed[1042](values.ndbNo) },${ values.nutrNo === undefined ? sql`DEFAULT` : typed[1042](values.nutrNo) },${ values.datasrcId === undefined ? sql`DEFAULT` : typed[1042](values.datasrcId) })
@@ -2186,7 +2186,7 @@ async all(options?: Public.Tables.Datsrcln.Options) : Promise<Public.Types.Datsr
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     SELECT 
       ndb_no,nutr_no,datasrc_id 
     FROM
@@ -2223,7 +2223,7 @@ async read(parameters: Public.Types.NutDataPkey, options?: Public.Types.NutDataP
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc 
@@ -2237,14 +2237,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))[0]
 }
-
 async update(parameters: Public.Types.NutDataPkey, values: Partial<Public.Tables.NutData.Values>, options?: Public.Types.NutDataPkey.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.nut_data 
@@ -2254,11 +2253,11 @@ const response = await this.database.invoke( (sql) => sql`
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
     RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))[0]
-}
+},
 async delete(parameters: Public.Types.NutDataPkey, options?: Public.Types.NutDataPkey.Options & Public.Tables.NutData.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.nut_data 
@@ -2284,7 +2283,7 @@ async read(parameters: Public.Types.NutDataDerivCdIdx, options?: Public.Types.Nu
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc 
@@ -2298,14 +2297,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
-
 async update(parameters: Public.Types.NutDataDerivCdIdx, values: Partial<Public.Tables.NutData.Values>, options?: Public.Types.NutDataDerivCdIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.nut_data 
@@ -2315,11 +2313,11 @@ const response = await this.database.invoke( (sql) => sql`
       deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
     RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
-}
+},
 async delete(parameters: Public.Types.NutDataDerivCdIdx, options?: Public.Types.NutDataDerivCdIdx.Options & Public.Tables.NutData.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.nut_data 
@@ -2345,7 +2343,7 @@ async read(parameters: Public.Types.NutDataNutrNoIdx, options?: Public.Types.Nut
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc 
@@ -2359,14 +2357,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
-
 async update(parameters: Public.Types.NutDataNutrNoIdx, values: Partial<Public.Tables.NutData.Values>, options?: Public.Types.NutDataNutrNoIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.nut_data 
@@ -2376,11 +2373,11 @@ const response = await this.database.invoke( (sql) => sql`
       nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
     RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
-}
+},
 async delete(parameters: Public.Types.NutDataNutrNoIdx, options?: Public.Types.NutDataNutrNoIdx.Options & Public.Tables.NutData.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.nut_data 
@@ -2406,7 +2403,7 @@ async read(parameters: Public.Types.NutDataSrcCdIdx, options?: Public.Types.NutD
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc 
@@ -2420,14 +2417,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
 }
-
 async update(parameters: Public.Types.NutDataSrcCdIdx, values: Partial<Public.Tables.NutData.Values>, options?: Public.Types.NutDataSrcCdIdx.Options & Public.Tables.NutData.Options) : Promise<Public.Types.NutData[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.nut_data 
@@ -2437,11 +2433,11 @@ const response = await this.database.invoke( (sql) => sql`
       src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
     RETURNING ndb_no,nutr_no,nutr_val,num_data_pts,std_error,src_cd,deriv_cd,ref_ndb_no,add_nutr_mark,num_studies,min,max,df,low_eb,up_eb,stat_cmt,cc`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),nutrVal: undefinedIsNull(r.nutr_val),numDataPts: undefinedIsNull(r.num_data_pts),stdError: undefinedIsNull(r.std_error),srcCd: undefinedIsNull(r.src_cd),derivCd: undefinedIsNull(r.deriv_cd),refNdbNo: undefinedIsNull(r.ref_ndb_no),addNutrMark: undefinedIsNull(r.add_nutr_mark),numStudies: undefinedIsNull(r.num_studies),min: undefinedIsNull(r.min),max: undefinedIsNull(r.max),df: undefinedIsNull(r.df),lowEb: undefinedIsNull(r.low_eb),upEb: undefinedIsNull(r.up_eb),statCmt: undefinedIsNull(r.stat_cmt),cc: undefinedIsNull(r.cc) }))
-}
+},
 async delete(parameters: Public.Types.NutDataSrcCdIdx, options?: Public.Types.NutDataSrcCdIdx.Options & Public.Tables.NutData.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.nut_data 
@@ -2469,7 +2465,7 @@ async read(parameters: Public.Types.SrcCdPkey, options?: Public.Types.SrcCdPkey.
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       src_cd,srccd_desc 
@@ -2483,14 +2479,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))[0]
 }
-
 async update(parameters: Public.Types.SrcCdPkey, values: Partial<Public.Tables.SrcCd.Values>, options?: Public.Types.SrcCdPkey.Options & Public.Tables.SrcCd.Options) : Promise<Public.Types.SrcCd>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.src_cd 
@@ -2500,11 +2495,11 @@ const response = await this.database.invoke( (sql) => sql`
       src_cd = ${ parameters.srcCd === undefined ? sql`DEFAULT` : typed[23](parameters.srcCd) }
     RETURNING src_cd,srccd_desc`, {parameters, values, options});
 return response.map(r => ({ srcCd: undefinedIsNull(r.src_cd),srccdDesc: undefinedIsNull(r.srccd_desc) }))[0]
-}
+},
 async delete(parameters: Public.Types.SrcCdPkey, options?: Public.Types.SrcCdPkey.Options & Public.Tables.SrcCd.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.src_cd 
@@ -2532,7 +2527,7 @@ async read(parameters: Public.Types.FootnoteNdbNoIdx, options?: Public.Types.Foo
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt 
@@ -2546,14 +2541,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))
 }
-
 async update(parameters: Public.Types.FootnoteNdbNoIdx, values: Partial<Public.Tables.Footnote.Values>, options?: Public.Types.FootnoteNdbNoIdx.Options & Public.Tables.Footnote.Options) : Promise<Public.Types.Footnote[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.footnote 
@@ -2563,11 +2557,11 @@ const response = await this.database.invoke( (sql) => sql`
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
     RETURNING ndb_no,footnt_no,footnt_typ,nutr_no,footnt_txt`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),footntNo: undefinedIsNull(r.footnt_no),footntTyp: undefinedIsNull(r.footnt_typ),nutrNo: undefinedIsNull(r.nutr_no),footntTxt: undefinedIsNull(r.footnt_txt) }))
-}
+},
 async delete(parameters: Public.Types.FootnoteNdbNoIdx, options?: Public.Types.FootnoteNdbNoIdx.Options & Public.Tables.Footnote.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.footnote 
@@ -2595,7 +2589,7 @@ async read(parameters: Public.Types.NutrDefPkey, options?: Public.Types.NutrDefP
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       nutr_no,units,tagname,nutrdesc,num_dec,sr_order 
@@ -2609,14 +2603,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))[0]
 }
-
 async update(parameters: Public.Types.NutrDefPkey, values: Partial<Public.Tables.NutrDef.Values>, options?: Public.Types.NutrDefPkey.Options & Public.Tables.NutrDef.Options) : Promise<Public.Types.NutrDef>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.nutr_def 
@@ -2626,11 +2619,11 @@ const response = await this.database.invoke( (sql) => sql`
       nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) }
     RETURNING nutr_no,units,tagname,nutrdesc,num_dec,sr_order`, {parameters, values, options});
 return response.map(r => ({ nutrNo: undefinedIsNull(r.nutr_no),units: undefinedIsNull(r.units),tagname: undefinedIsNull(r.tagname),nutrdesc: undefinedIsNull(r.nutrdesc),numDec: undefinedIsNull(r.num_dec),srOrder: undefinedIsNull(r.sr_order) }))[0]
-}
+},
 async delete(parameters: Public.Types.NutrDefPkey, options?: Public.Types.NutrDefPkey.Options & Public.Tables.NutrDef.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.nutr_def 
@@ -2658,7 +2651,7 @@ async read(parameters: Public.Types.DerivCdPkey, options?: Public.Types.DerivCdP
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       deriv_cd,derivcd_desc 
@@ -2672,14 +2665,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))[0]
 }
-
 async update(parameters: Public.Types.DerivCdPkey, values: Partial<Public.Tables.DerivCd.Values>, options?: Public.Types.DerivCdPkey.Options & Public.Tables.DerivCd.Options) : Promise<Public.Types.DerivCd>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.deriv_cd 
@@ -2689,11 +2681,11 @@ const response = await this.database.invoke( (sql) => sql`
       deriv_cd = ${ parameters.derivCd === undefined ? sql`DEFAULT` : typed[25](parameters.derivCd) }
     RETURNING deriv_cd,derivcd_desc`, {parameters, values, options});
 return response.map(r => ({ derivCd: undefinedIsNull(r.deriv_cd),derivcdDesc: undefinedIsNull(r.derivcd_desc) }))[0]
-}
+},
 async delete(parameters: Public.Types.DerivCdPkey, options?: Public.Types.DerivCdPkey.Options & Public.Tables.DerivCd.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.deriv_cd 
@@ -2721,7 +2713,7 @@ async read(parameters: Public.Types.FdGroupPkey, options?: Public.Types.FdGroupP
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       fdgrp_cd,fddrp_desc 
@@ -2735,14 +2727,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))[0]
 }
-
 async update(parameters: Public.Types.FdGroupPkey, values: Partial<Public.Tables.FdGroup.Values>, options?: Public.Types.FdGroupPkey.Options & Public.Tables.FdGroup.Options) : Promise<Public.Types.FdGroup>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.fd_group 
@@ -2752,11 +2743,11 @@ const response = await this.database.invoke( (sql) => sql`
       fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
     RETURNING fdgrp_cd,fddrp_desc`, {parameters, values, options});
 return response.map(r => ({ fdgrpCd: undefinedIsNull(r.fdgrp_cd),fddrpDesc: undefinedIsNull(r.fddrp_desc) }))[0]
-}
+},
 async delete(parameters: Public.Types.FdGroupPkey, options?: Public.Types.FdGroupPkey.Options & Public.Tables.FdGroup.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.fd_group 
@@ -2784,7 +2775,7 @@ async read(parameters: Public.Types.WeightPkey, options?: Public.Types.WeightPke
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev 
@@ -2798,14 +2789,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))[0]
 }
-
 async update(parameters: Public.Types.WeightPkey, values: Partial<Public.Tables.Weight.Values>, options?: Public.Types.WeightPkey.Options & Public.Tables.Weight.Options) : Promise<Public.Types.Weight>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.weight 
@@ -2815,11 +2805,11 @@ const response = await this.database.invoke( (sql) => sql`
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND seq = ${ parameters.seq === undefined ? sql`DEFAULT` : typed[1042](parameters.seq) }
     RETURNING ndb_no,seq,amount,msre_desc,gm_wgt,num_data_pts,std_dev`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),seq: undefinedIsNull(r.seq),amount: undefinedIsNull(r.amount),msreDesc: undefinedIsNull(r.msre_desc),gmWgt: undefinedIsNull(r.gm_wgt),numDataPts: undefinedIsNull(r.num_data_pts),stdDev: undefinedIsNull(r.std_dev) }))[0]
-}
+},
 async delete(parameters: Public.Types.WeightPkey, options?: Public.Types.WeightPkey.Options & Public.Tables.Weight.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.weight 
@@ -2847,7 +2837,7 @@ async read(parameters: Public.Types.FoodDesPkey, options?: Public.Types.FoodDesP
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor 
@@ -2861,14 +2851,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))[0]
 }
-
 async update(parameters: Public.Types.FoodDesPkey, values: Partial<Public.Tables.FoodDes.Values>, options?: Public.Types.FoodDesPkey.Options & Public.Tables.FoodDes.Options) : Promise<Public.Types.FoodDes>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.food_des 
@@ -2878,11 +2867,11 @@ const response = await this.database.invoke( (sql) => sql`
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) }
     RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))[0]
-}
+},
 async delete(parameters: Public.Types.FoodDesPkey, options?: Public.Types.FoodDesPkey.Options & Public.Tables.FoodDes.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.food_des 
@@ -2908,7 +2897,7 @@ async read(parameters: Public.Types.FoodDesFdgrpCdIdx, options?: Public.Types.Fo
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor 
@@ -2922,14 +2911,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))
 }
-
 async update(parameters: Public.Types.FoodDesFdgrpCdIdx, values: Partial<Public.Tables.FoodDes.Values>, options?: Public.Types.FoodDesFdgrpCdIdx.Options & Public.Tables.FoodDes.Options) : Promise<Public.Types.FoodDes[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.food_des 
@@ -2939,11 +2927,11 @@ const response = await this.database.invoke( (sql) => sql`
       fdgrp_cd = ${ parameters.fdgrpCd === undefined ? sql`DEFAULT` : typed[1042](parameters.fdgrpCd) }
     RETURNING ndb_no,fdgrp_cd,long_desc,shrt_desc,comname,manufacname,survey,ref_desc,refuse,sciname,n_factor,pro_factor,fat_factor,cho_factor`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),fdgrpCd: undefinedIsNull(r.fdgrp_cd),longDesc: undefinedIsNull(r.long_desc),shrtDesc: undefinedIsNull(r.shrt_desc),comname: undefinedIsNull(r.comname),manufacname: undefinedIsNull(r.manufacname),survey: undefinedIsNull(r.survey),refDesc: undefinedIsNull(r.ref_desc),refuse: undefinedIsNull(r.refuse),sciname: undefinedIsNull(r.sciname),nFactor: undefinedIsNull(r.n_factor),proFactor: undefinedIsNull(r.pro_factor),fatFactor: undefinedIsNull(r.fat_factor),choFactor: undefinedIsNull(r.cho_factor) }))
-}
+},
 async delete(parameters: Public.Types.FoodDesFdgrpCdIdx, options?: Public.Types.FoodDesFdgrpCdIdx.Options & Public.Tables.FoodDes.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.food_des 
@@ -2971,7 +2959,7 @@ async read(parameters: Public.Types.DataSrcTitleFulltext, options?: Public.Types
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page 
@@ -2985,14 +2973,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
 }
-
 async update(parameters: Public.Types.DataSrcTitleFulltext, values: Partial<Public.Tables.DataSrc.Values>, options?: Public.Types.DataSrcTitleFulltext.Options & Public.Tables.DataSrc.Options) : Promise<Public.Types.DataSrc[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.data_src 
@@ -3002,11 +2989,11 @@ const response = await this.database.invoke( (sql) => sql`
       title @@ ${sql.unsafe(`${options?.title?.queryParser ?? "to_tsquery"}`)}(${options?.title?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ parameters.title === undefined ? sql`DEFAULT` : typed[3614](parameters.title) })
     RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`, {parameters, values, options});
 return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))
-}
+},
 async delete(parameters: Public.Types.DataSrcTitleFulltext, options?: Public.Types.DataSrcTitleFulltext.Options & Public.Tables.DataSrc.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.data_src 
@@ -3032,7 +3019,7 @@ async read(parameters: Public.Types.DataSrcPkey, options?: Public.Types.DataSrcP
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page 
@@ -3046,14 +3033,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))[0]
 }
-
 async update(parameters: Public.Types.DataSrcPkey, values: Partial<Public.Tables.DataSrc.Values>, options?: Public.Types.DataSrcPkey.Options & Public.Tables.DataSrc.Options) : Promise<Public.Types.DataSrc>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.data_src 
@@ -3063,11 +3049,11 @@ const response = await this.database.invoke( (sql) => sql`
       datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
     RETURNING datasrc_id,authors,title,year,journal,vol_city,issue_state,start_page,end_page`, {parameters, values, options});
 return response.map(r => ({ datasrcId: undefinedIsNull(r.datasrc_id),authors: undefinedIsNull(r.authors),title: undefinedIsNull(r.title),year: undefinedIsNull(r.year),journal: undefinedIsNull(r.journal),volCity: undefinedIsNull(r.vol_city),issueState: undefinedIsNull(r.issue_state),startPage: undefinedIsNull(r.start_page),endPage: undefinedIsNull(r.end_page) }))[0]
-}
+},
 async delete(parameters: Public.Types.DataSrcPkey, options?: Public.Types.DataSrcPkey.Options & Public.Tables.DataSrc.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.data_src 
@@ -3095,7 +3081,7 @@ async read(parameters: Public.Types.DatsrclnPkey, options?: Public.Types.Datsrcl
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       ndb_no,nutr_no,datasrc_id 
@@ -3109,14 +3095,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))[0]
 }
-
 async update(parameters: Public.Types.DatsrclnPkey, values: Partial<Public.Tables.Datsrcln.Values>, options?: Public.Types.DatsrclnPkey.Options & Public.Tables.Datsrcln.Options) : Promise<Public.Types.Datsrcln>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.datsrcln 
@@ -3126,11 +3111,11 @@ const response = await this.database.invoke( (sql) => sql`
       ndb_no = ${ parameters.ndbNo === undefined ? sql`DEFAULT` : typed[1042](parameters.ndbNo) } AND nutr_no = ${ parameters.nutrNo === undefined ? sql`DEFAULT` : typed[1042](parameters.nutrNo) } AND datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
     RETURNING ndb_no,nutr_no,datasrc_id`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))[0]
-}
+},
 async delete(parameters: Public.Types.DatsrclnPkey, options?: Public.Types.DatsrclnPkey.Options & Public.Tables.Datsrcln.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.datsrcln 
@@ -3156,7 +3141,7 @@ async read(parameters: Public.Types.DatsrclnDatasrcIdIdx, options?: Public.Types
       const typed = this.database.typed;
       const orderBy = options?.sort ? `ORDER BY ${options.sort.join(",")}` : "";
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     -- 
     SELECT 
       ndb_no,nutr_no,datasrc_id 
@@ -3170,14 +3155,13 @@ const response = await this.database.invoke( (sql) => sql`
     `, {parameters, ...(options ?? {})});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))
 }
-
 async update(parameters: Public.Types.DatsrclnDatasrcIdIdx, values: Partial<Public.Tables.Datsrcln.Values>, options?: Public.Types.DatsrclnDatasrcIdIdx.Options & Public.Tables.Datsrcln.Options) : Promise<Public.Types.Datsrcln[]>{
 
       console.assert(parameters);
       console.assert(values);
       const typed = this.database.typed;
       
-const response = await this.database.invoke( (sql) => sql`
+const response = await this.database.invoke( (sql, request) => sql`
     --
     UPDATE 
       public.datsrcln 
@@ -3187,11 +3171,11 @@ const response = await this.database.invoke( (sql) => sql`
       datasrc_id = ${ parameters.datasrcId === undefined ? sql`DEFAULT` : typed[1042](parameters.datasrcId) }
     RETURNING ndb_no,nutr_no,datasrc_id`, {parameters, values, options});
 return response.map(r => ({ ndbNo: undefinedIsNull(r.ndb_no),nutrNo: undefinedIsNull(r.nutr_no),datasrcId: undefinedIsNull(r.datasrc_id) }))
-}
+},
 async delete(parameters: Public.Types.DatsrclnDatasrcIdIdx, options?: Public.Types.DatsrclnDatasrcIdIdx.Options & Public.Tables.Datsrcln.Options) {
  console.assert(parameters);
  const typed = this.database.typed;
- const response = await this.database.invoke( (sql) => sql`
+ const response = await this.database.invoke( (sql, request) => sql`
     --
     DELETE FROM 
       public.datsrcln 
