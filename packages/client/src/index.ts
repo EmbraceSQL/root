@@ -2,6 +2,7 @@ import {
   EmbraceSQLRequest,
   EmbraceSQLResponse,
   HasHeaders,
+  InvokeQueryOptions,
 } from "@embracesql/shared";
 
 export * from "./typescript/generateClient";
@@ -12,13 +13,10 @@ export type EmbraceSQLClientProps = {
    */
   url: string;
   /**
-   * Any headers you like are passed along to your EmbraceSQL
-   * server.
-   *
-   * These are useful for security, particularly `authorization`
-   * and cors: `origin` and `credentials`.
+   * Generic options.
    */
-  headers?: Record<string, string>;
+  options?: InvokeQueryOptions;
+
   /**
    * CORS mode!
    */
@@ -53,7 +51,9 @@ export class EmbraceSQLClient implements _HasClient {
   ): Promise<EmbraceSQLResponse<Response, Parameters, Values, Options>> {
     // assemble all the headers to make them available to HTTP
     const headers = {
-      ...this.props.headers,
+      // start with client specified headers
+      ...(this.props.options?.headers ?? {}),
+      // and override with request specified headers
       ...(request.options?.headers ?? {}),
       "Content-Type": "application/json",
     };
@@ -70,6 +70,12 @@ export class EmbraceSQLClient implements _HasClient {
       redirect: "follow",
       body: JSON.stringify({
         ...request,
+        options: {
+          // combine client and request options
+          ...(this.props.options ?? {}),
+          // with request options taking preference
+          ...(request.options ?? {}),
+        },
       }),
     });
 

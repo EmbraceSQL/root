@@ -140,7 +140,7 @@ export async function generateClient(context: GenerationContext) {
   // wrap all this up in a class
   generationBuffer.push(`
   export class EmbraceSQLClient extends BaseClient {
-    constructor(props: EmbraceSQLClientProps) {
+    constructor(props: EmbraceSQLClientProps & {options?: InvokeQueryOptions}) {
       super(props);
     }
 
