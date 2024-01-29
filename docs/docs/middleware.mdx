@@ -11,12 +11,26 @@ database invocation stack to allow you to:
 * provide [security](./security)
 * run additional SQL statements in the same transaction as your actual query
 
+## Concepts
+
+Middleware are just asynchronous functions with two parameters `(context, next)`. 
+
+Middleware acts by working on a shared `context`. 
+Modifying this shared context affects the action of subsequent
+middlware and the final call of your actual query.
+
+When your middleware is complete, you call `next` which hands off to the next
+middleware.
+
+You can throw and `Error` at any time to abort processing a request.
+
+
 ## Parameters
 
-When EmbraceSQL say `parameters`, it means data used to filter data in `WHERE`
+When EmbraceSQL says `parameters`, it means data used to filter data in `WHERE`
 clauses. 
 
-Middleware is provides the ability to `get` and `set` `parameters`.
+Middleware provides the ability to `get` and `set` `parameters`.
 
 You can use this for:
 * dynamic query alternation
@@ -28,7 +42,7 @@ You can use this for:
 When EmbraceSQL says `values` it means data that will be sent to and stored
 in the database via `INSERT` and `UPDATE`.
 
-Middleware is provides the ability to `get` and `set` `values`.
+Middleware provides the ability to `get` and `set` `values`.
 
 You can use this for:
 * an in-code alternative to row modifying triggers
