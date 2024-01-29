@@ -9,16 +9,9 @@ EmbraceSQL also embraces security 👮.
 
 However, we don't pretend to know your security requirements, so we provide
 the ability to inject [middleware](./middleware) into the EmbraceSQL processing stack to
-let you secure however you like.
+let you secure however you 
 
-## SQL Middleware
-
-SQL middleware is inspired by HTTP middleware stacks. The idea is you can put
-in zero or more middleware functions into your SQL processing stack which allows
-you to:
-* Run an SQL statement before your actual query
-
-### Database Security
+## Database Security
 
 Most folks won't do this, but you plenty well can have a database user for
 each of your actual users, and collect their username and password, send those
@@ -27,7 +20,7 @@ as the security provider.
 
 Old 🎓.
 
-### `ROLE` Based Security 
+## `ROLE` Based Security 
 
 The SQL standard has a notion of `ROLE` that you can use to set permissions
 within your database. EmbraceSQL comes out of the box with `ROLE` based security
