@@ -1,6 +1,6 @@
 {
   "name": "@embracesql/vite",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Use EmbraceSQL with Vite, Express, and React.",
   "type": "module",
   "main": "src/index.ts",
@@ -10,8 +10,8 @@
   "author": "Will Ballard <wballard@mailframe.net>",
   "license": "ISC",
   "dependencies": {
-    "@embracesql/express": "^0.1.1",
-    "@embracesql/react": "^0.1.1",
+    "@embracesql/express": "^0.1.2",
+    "@embracesql/react": "^0.1.2",
     "@vitejs/plugin-react": "^4.2.1",
     "express": "^4.0.0",
     "react-dom": "^18.2.0",
