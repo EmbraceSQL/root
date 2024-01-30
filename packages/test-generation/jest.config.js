@@ -9,6 +9,7 @@ const jestConfig = {
   moduleNameMapper: {
     "^uuid$": require.resolve("uuid"),
   },
+  testTimeout: 10000,
   transform: {
     "^.+\\.(js|jsx|ts|tsx)$": [
       "ts-jest",

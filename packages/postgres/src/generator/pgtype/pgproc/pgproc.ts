@@ -114,7 +114,7 @@ export class PGProcs {
         proc.proc.proargtypes
           .flatMap((t) => t)
           .forEach((oid, i) => {
-            const type = context.database.resolveType(oid)!;
+            const type = context.database.resolveType(oid);
             new AttributeNode(
               parametersType,
               proc.proc.proargnames[i]
@@ -237,7 +237,7 @@ export class PGProcPseudoType extends PGCatalogType {
     return this.proc.proc.proallargtypes
       .flatMap((x) => x)
       .map((oid, i) => {
-        const type = context.database.resolveType(oid)!;
+        const type = context.database.resolveType(oid);
         return {
           name: this.proc.proc.proargnames[i],
           type,

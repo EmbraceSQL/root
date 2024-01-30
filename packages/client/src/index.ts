@@ -1,7 +1,6 @@
 import {
   EmbraceSQLRequest,
   EmbraceSQLResponse,
-  HasHeaders,
   InvokeQueryOptions,
 } from "@embracesql/shared";
 
@@ -45,7 +44,7 @@ export class EmbraceSQLClient implements _HasClient {
     Parameters,
     Values,
     Response,
-    Options extends HasHeaders = HasHeaders,
+    Options extends InvokeQueryOptions = InvokeQueryOptions,
   >(
     request: EmbraceSQLRequest<Parameters, Values, Options>,
   ): Promise<EmbraceSQLResponse<Response, Parameters, Values, Options>> {
@@ -63,29 +62,42 @@ export class EmbraceSQLClient implements _HasClient {
       // headers will be sent along to HTTP
       headers,
     };
-    const response = await fetch(this.props.url, {
-      ...props,
-      method: "POST",
-      cache: "no-cache",
-      redirect: "follow",
-      body: JSON.stringify({
-        ...request,
-        options: {
-          // combine client and request options
-          ...(this.props.options ?? {}),
-          // with request options taking preference
-          ...(request.options ?? {}),
-        },
-      }),
-    });
 
-    // it'll be JSON back or an exception
-    return (await response.json()) as unknown as EmbraceSQLResponse<
-      Response,
-      Parameters,
-      Values,
-      Options
-    >;
+    // actual trip to the network happens here
+    let finalError: Error | undefined = undefined;
+
+    for (let retry = 0; retry < (request?.options?.retries ?? 1); retry += 1) {
+      try {
+        const response = await fetch(this.props.url, {
+          ...props,
+          method: "POST",
+          cache: "no-cache",
+          redirect: "follow",
+          body: JSON.stringify({
+            ...request,
+            options: {
+              // combine client and request options
+              ...(this.props.options ?? {}),
+              // with request options taking preference
+              ...(request.options ?? {}),
+            },
+          }),
+        });
+
+        // it'll be JSON back or an exception
+        return (await response.json()) as unknown as EmbraceSQLResponse<
+          Response,
+          Parameters,
+          Values,
+          Options
+        >;
+      } catch (e) {
+        finalError = e as Error;
+      }
+    }
+
+    // if we got here, we're past all the retries and it is time to throw
+    throw finalError;
   }
 
   get client() {

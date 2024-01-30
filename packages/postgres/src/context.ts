@@ -204,7 +204,7 @@ export const initializeContext = async (
                 resultsType,
                 a.name,
                 i,
-                context.database.resolveType(a.type)!,
+                context.database.resolveType(a.type),
                 true,
                 true,
               ),
@@ -228,7 +228,7 @@ export const initializeContext = async (
                   // so manufacture names
                   oneBasedArgumentNamefromZeroBasedIndex(i),
                   i,
-                  context.database.resolveType(a)!,
+                  context.database.resolveType(a),
                   true,
                   false,
                 ),

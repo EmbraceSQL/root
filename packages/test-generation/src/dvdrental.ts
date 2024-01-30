@@ -1493,165 +1493,165 @@
 ["InformationSchema.Types.UserMappings"]: Typecast
 [13823]: Typecast;
 ["InformationSchema.Types.UserMappingsArray"]: Typecast
-[50886]: Typecast;
+[81524]: Typecast;
 ["Public.Types.MpaaRating"]: Typecast
-[50885]: Typecast;
+[81523]: Typecast;
 ["Public.Types.MpaaRatingArray"]: Typecast
-[50898]: Typecast;
+[81536]: Typecast;
 ["Public.Types.Year"]: Typecast
-[50897]: Typecast;
+[81535]: Typecast;
 ["Public.Types.YearArray"]: Typecast
-[50911]: Typecast;
+[81549]: Typecast;
 ["Public.Types.Customer"]: Typecast
-[50910]: Typecast;
+[81548]: Typecast;
 ["Public.Types.CustomerArray"]: Typecast
-[50921]: Typecast;
+[81559]: Typecast;
 ["Public.Types.Actor"]: Typecast
-[50920]: Typecast;
+[81558]: Typecast;
 ["Public.Types.ActorArray"]: Typecast
-[50927]: Typecast;
+[81565]: Typecast;
 ["Public.Types.Category"]: Typecast
-[50926]: Typecast;
+[81564]: Typecast;
 ["Public.Types.CategoryArray"]: Typecast
-[50933]: Typecast;
+[81571]: Typecast;
 ["Public.Types.Film"]: Typecast
-[50932]: Typecast;
+[81570]: Typecast;
 ["Public.Types.FilmArray"]: Typecast
-[50944]: Typecast;
+[81582]: Typecast;
 ["Public.Types.FilmActor"]: Typecast
-[50943]: Typecast;
+[81581]: Typecast;
 ["Public.Types.FilmActorArray"]: Typecast
-[50948]: Typecast;
+[81586]: Typecast;
 ["Public.Types.FilmCategory"]: Typecast
-[50947]: Typecast;
+[81585]: Typecast;
 ["Public.Types.FilmCategoryArray"]: Typecast
-[50952]: Typecast;
+[81590]: Typecast;
 ["Public.Types.ActorInfo"]: Typecast
-[50951]: Typecast;
+[81589]: Typecast;
 ["Public.Types.ActorInfoArray"]: Typecast
-[50958]: Typecast;
+[81596]: Typecast;
 ["Public.Types.Address"]: Typecast
-[50957]: Typecast;
+[81595]: Typecast;
 ["Public.Types.AddressArray"]: Typecast
-[50964]: Typecast;
+[81602]: Typecast;
 ["Public.Types.City"]: Typecast
-[50963]: Typecast;
+[81601]: Typecast;
 ["Public.Types.CityArray"]: Typecast
-[50970]: Typecast;
+[81608]: Typecast;
 ["Public.Types.Country"]: Typecast
-[50969]: Typecast;
+[81607]: Typecast;
 ["Public.Types.CountryArray"]: Typecast
-[50975]: Typecast;
+[81613]: Typecast;
 ["Public.Types.CustomerList"]: Typecast
-[50974]: Typecast;
+[81612]: Typecast;
 ["Public.Types.CustomerListArray"]: Typecast
-[50980]: Typecast;
+[81618]: Typecast;
 ["Public.Types.FilmList"]: Typecast
-[50979]: Typecast;
+[81617]: Typecast;
 ["Public.Types.FilmListArray"]: Typecast
-[50986]: Typecast;
+[81624]: Typecast;
 ["Public.Types.Inventory"]: Typecast
-[50985]: Typecast;
+[81623]: Typecast;
 ["Public.Types.InventoryArray"]: Typecast
-[50992]: Typecast;
+[81630]: Typecast;
 ["Public.Types.Language"]: Typecast
-[50991]: Typecast;
+[81629]: Typecast;
 ["Public.Types.LanguageArray"]: Typecast
-[50997]: Typecast;
+[81635]: Typecast;
 ["Public.Types.NicerButSlowerFilmList"]: Typecast
-[50996]: Typecast;
+[81634]: Typecast;
 ["Public.Types.NicerButSlowerFilmListArray"]: Typecast
-[51003]: Typecast;
+[81641]: Typecast;
 ["Public.Types.Payment"]: Typecast
-[51002]: Typecast;
+[81640]: Typecast;
 ["Public.Types.PaymentArray"]: Typecast
-[51008]: Typecast;
+[81646]: Typecast;
 ["Public.Types.Rental"]: Typecast
-[51007]: Typecast;
+[81645]: Typecast;
 ["Public.Types.RentalArray"]: Typecast
-[51013]: Typecast;
+[81651]: Typecast;
 ["Public.Types.SalesByFilmCategory"]: Typecast
-[51012]: Typecast;
+[81650]: Typecast;
 ["Public.Types.SalesByFilmCategoryArray"]: Typecast
-[51019]: Typecast;
+[81657]: Typecast;
 ["Public.Types.Staff"]: Typecast
-[51018]: Typecast;
+[81656]: Typecast;
 ["Public.Types.StaffArray"]: Typecast
-[51028]: Typecast;
+[81666]: Typecast;
 ["Public.Types.Store"]: Typecast
-[51027]: Typecast;
+[81665]: Typecast;
 ["Public.Types.StoreArray"]: Typecast
-[51033]: Typecast;
+[81671]: Typecast;
 ["Public.Types.SalesByStore"]: Typecast
-[51032]: Typecast;
+[81670]: Typecast;
 ["Public.Types.SalesByStoreArray"]: Typecast
-[51038]: Typecast;
+[81676]: Typecast;
 ["Public.Types.StaffList"]: Typecast
-[51037]: Typecast;
+[81675]: Typecast;
 ["Public.Types.StaffListArray"]: Typecast
-[51041]: Typecast;
+[81679]: Typecast;
 ["Public.Types.ActorPkey"]: Typecast
-[51043]: Typecast;
+[81681]: Typecast;
 ["Public.Types.AddressPkey"]: Typecast
-[51045]: Typecast;
+[81683]: Typecast;
 ["Public.Types.CategoryPkey"]: Typecast
-[51047]: Typecast;
+[81685]: Typecast;
 ["Public.Types.CityPkey"]: Typecast
-[51049]: Typecast;
+[81687]: Typecast;
 ["Public.Types.CountryPkey"]: Typecast
-[51051]: Typecast;
+[81689]: Typecast;
 ["Public.Types.CustomerPkey"]: Typecast
-[51053]: Typecast;
+[81691]: Typecast;
 ["Public.Types.FilmActorPkey"]: Typecast
-[51055]: Typecast;
+[81693]: Typecast;
 ["Public.Types.FilmCategoryPkey"]: Typecast
-[51057]: Typecast;
+[81695]: Typecast;
 ["Public.Types.FilmPkey"]: Typecast
-[51059]: Typecast;
+[81697]: Typecast;
 ["Public.Types.InventoryPkey"]: Typecast
-[51061]: Typecast;
+[81699]: Typecast;
 ["Public.Types.LanguagePkey"]: Typecast
-[51063]: Typecast;
+[81701]: Typecast;
 ["Public.Types.PaymentPkey"]: Typecast
-[51065]: Typecast;
+[81703]: Typecast;
 ["Public.Types.RentalPkey"]: Typecast
-[51067]: Typecast;
+[81705]: Typecast;
 ["Public.Types.StaffPkey"]: Typecast
-[51069]: Typecast;
+[81707]: Typecast;
 ["Public.Types.StorePkey"]: Typecast
-[51071]: Typecast;
+[81709]: Typecast;
 ["Public.Types.FilmFulltextIdx"]: Typecast
-[51072]: Typecast;
+[81710]: Typecast;
 ["Public.Types.IdxActorLastName"]: Typecast
-[51073]: Typecast;
+[81711]: Typecast;
 ["Public.Types.IdxFkAddressId"]: Typecast
-[51074]: Typecast;
+[81712]: Typecast;
 ["Public.Types.IdxFkCityId"]: Typecast
-[51075]: Typecast;
+[81713]: Typecast;
 ["Public.Types.IdxFkCountryId"]: Typecast
-[51076]: Typecast;
+[81714]: Typecast;
 ["Public.Types.IdxFkCustomerId"]: Typecast
-[51077]: Typecast;
+[81715]: Typecast;
 ["Public.Types.IdxFkFilmId"]: Typecast
-[51078]: Typecast;
+[81716]: Typecast;
 ["Public.Types.IdxFkInventoryId"]: Typecast
-[51079]: Typecast;
+[81717]: Typecast;
 ["Public.Types.IdxFkLanguageId"]: Typecast
-[51080]: Typecast;
+[81718]: Typecast;
 ["Public.Types.IdxFkRentalId"]: Typecast
-[51081]: Typecast;
+[81719]: Typecast;
 ["Public.Types.IdxFkStaffId"]: Typecast
-[51082]: Typecast;
+[81720]: Typecast;
 ["Public.Types.IdxFkStoreId"]: Typecast
-[51083]: Typecast;
+[81721]: Typecast;
 ["Public.Types.IdxLastName"]: Typecast
-[51084]: Typecast;
+[81722]: Typecast;
 ["Public.Types.IdxStoreIdFilmId"]: Typecast
-[51085]: Typecast;
+[81723]: Typecast;
 ["Public.Types.IdxTitle"]: Typecast
-[51086]: Typecast;
+[81724]: Typecast;
 ["Public.Types.IdxUnqManagerStaffId"]: Typecast
-[51087]: Typecast;
+[81725]: Typecast;
 ["Public.Types.IdxUnqRentalRentalDateInventoryIdCustomerId"]: Typecast
 
 ["Public.Procedures.FilmInStock.Parameters"]: Typecast
@@ -1667,10 +1667,10 @@
 ["Public.Procedures.LastDay.Parameters"]: Typecast
 
 ["Public.Procedures.RewardsReport.Parameters"]: Typecast
-[50941]: Typecast;
-["PgToast.Types.PgToast_50931Index"]: Typecast
-[51024]: Typecast;
-["PgToast.Types.PgToast_51017Index"]: Typecast
+[81579]: Typecast;
+["PgToast.Types.PgToast_81569Index"]: Typecast
+[81662]: Typecast;
+["PgToast.Types.PgToast_81655Index"]: Typecast
 [2837]: Typecast;
 ["PgToast.Types.PgToast_1255Index"]: Typecast
 [4172]: Typecast;
@@ -1987,7 +1987,7 @@ export class FilmInStock implements HasDatabase {
 async call(parameters : Public.Procedures.FilmInStock.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[50901].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
+              return context.procTypes[81539].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
             };
           
   const typed = this.database.typed;
@@ -2005,7 +2005,7 @@ export class FilmNotInStock implements HasDatabase {
 async call(parameters : Public.Procedures.FilmNotInStock.Parameters, options?: InvokeQueryOptions) {
   
             const parseResult = (context: Context, result: unknown) => {
-              return context.procTypes[50902].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
+              return context.procTypes[81540].parseFromPostgresIfPseudoType(context, result) as unknown as PgCatalog.Types.Int4;
             };
           
   const typed = this.database.typed;
@@ -2977,7 +2977,7 @@ const response = await this.database.invoke( (sql, request) => sql`
       --
       INSERT INTO
         public.film (title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
-      VALUES (${ (request.values === undefined || request.values.title === undefined) ? sql`DEFAULT` : typed[1043](request.values.title) },${ (request.values === undefined || request.values.description === undefined) ? sql`DEFAULT` : typed[25](request.values.description) },${ (request.values === undefined || request.values.releaseYear === undefined) ? sql`DEFAULT` : typed[50898](request.values.releaseYear) },${ (request.values === undefined || request.values.languageId === undefined) ? sql`DEFAULT` : typed[21](request.values.languageId) },${ (request.values === undefined || request.values.rentalDuration === undefined) ? sql`DEFAULT` : typed[21](request.values.rentalDuration) },${ (request.values === undefined || request.values.rentalRate === undefined) ? sql`DEFAULT` : typed[1700](request.values.rentalRate) },${ (request.values === undefined || request.values.length === undefined) ? sql`DEFAULT` : typed[21](request.values.length) },${ (request.values === undefined || request.values.replacementCost === undefined) ? sql`DEFAULT` : typed[1700](request.values.replacementCost) },${ (request.values === undefined || request.values.rating === undefined) ? sql`DEFAULT` : typed[50886](request.values.rating) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) },${ (request.values === undefined || request.values.specialFeatures === undefined) ? sql`DEFAULT` : typed[1009](request.values.specialFeatures) },${ (request.values === undefined || request.values.fulltext === undefined) ? sql`DEFAULT` : typed[3614](request.values.fulltext) })
+      VALUES (${ (request.values === undefined || request.values.title === undefined) ? sql`DEFAULT` : typed[1043](request.values.title) },${ (request.values === undefined || request.values.description === undefined) ? sql`DEFAULT` : typed[25](request.values.description) },${ (request.values === undefined || request.values.releaseYear === undefined) ? sql`DEFAULT` : typed[81536](request.values.releaseYear) },${ (request.values === undefined || request.values.languageId === undefined) ? sql`DEFAULT` : typed[21](request.values.languageId) },${ (request.values === undefined || request.values.rentalDuration === undefined) ? sql`DEFAULT` : typed[21](request.values.rentalDuration) },${ (request.values === undefined || request.values.rentalRate === undefined) ? sql`DEFAULT` : typed[1700](request.values.rentalRate) },${ (request.values === undefined || request.values.length === undefined) ? sql`DEFAULT` : typed[21](request.values.length) },${ (request.values === undefined || request.values.replacementCost === undefined) ? sql`DEFAULT` : typed[1700](request.values.replacementCost) },${ (request.values === undefined || request.values.rating === undefined) ? sql`DEFAULT` : typed[81524](request.values.rating) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) },${ (request.values === undefined || request.values.specialFeatures === undefined) ? sql`DEFAULT` : typed[1009](request.values.specialFeatures) },${ (request.values === undefined || request.values.fulltext === undefined) ? sql`DEFAULT` : typed[3614](request.values.fulltext) })
       RETURNING
         film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext
     `, {values, options});
@@ -2986,7 +2986,7 @@ return response.map(r => ({ filmId: undefinedIsNull(r.film_id),title: undefinedI
 const response = await this.database.invoke( (sql, request) => sql`
     INSERT INTO
       public.film (film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext)
-    VALUES (${ (request.values === undefined || request.values.filmId === undefined) ? sql`DEFAULT` : typed[23](request.values.filmId) },${ (request.values === undefined || request.values.title === undefined) ? sql`DEFAULT` : typed[1043](request.values.title) },${ (request.values === undefined || request.values.description === undefined) ? sql`DEFAULT` : typed[25](request.values.description) },${ (request.values === undefined || request.values.releaseYear === undefined) ? sql`DEFAULT` : typed[50898](request.values.releaseYear) },${ (request.values === undefined || request.values.languageId === undefined) ? sql`DEFAULT` : typed[21](request.values.languageId) },${ (request.values === undefined || request.values.rentalDuration === undefined) ? sql`DEFAULT` : typed[21](request.values.rentalDuration) },${ (request.values === undefined || request.values.rentalRate === undefined) ? sql`DEFAULT` : typed[1700](request.values.rentalRate) },${ (request.values === undefined || request.values.length === undefined) ? sql`DEFAULT` : typed[21](request.values.length) },${ (request.values === undefined || request.values.replacementCost === undefined) ? sql`DEFAULT` : typed[1700](request.values.replacementCost) },${ (request.values === undefined || request.values.rating === undefined) ? sql`DEFAULT` : typed[50886](request.values.rating) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) },${ (request.values === undefined || request.values.specialFeatures === undefined) ? sql`DEFAULT` : typed[1009](request.values.specialFeatures) },${ (request.values === undefined || request.values.fulltext === undefined) ? sql`DEFAULT` : typed[3614](request.values.fulltext) })
+    VALUES (${ (request.values === undefined || request.values.filmId === undefined) ? sql`DEFAULT` : typed[23](request.values.filmId) },${ (request.values === undefined || request.values.title === undefined) ? sql`DEFAULT` : typed[1043](request.values.title) },${ (request.values === undefined || request.values.description === undefined) ? sql`DEFAULT` : typed[25](request.values.description) },${ (request.values === undefined || request.values.releaseYear === undefined) ? sql`DEFAULT` : typed[81536](request.values.releaseYear) },${ (request.values === undefined || request.values.languageId === undefined) ? sql`DEFAULT` : typed[21](request.values.languageId) },${ (request.values === undefined || request.values.rentalDuration === undefined) ? sql`DEFAULT` : typed[21](request.values.rentalDuration) },${ (request.values === undefined || request.values.rentalRate === undefined) ? sql`DEFAULT` : typed[1700](request.values.rentalRate) },${ (request.values === undefined || request.values.length === undefined) ? sql`DEFAULT` : typed[21](request.values.length) },${ (request.values === undefined || request.values.replacementCost === undefined) ? sql`DEFAULT` : typed[1700](request.values.replacementCost) },${ (request.values === undefined || request.values.rating === undefined) ? sql`DEFAULT` : typed[81524](request.values.rating) },${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`DEFAULT` : typed[1114](request.values.lastUpdate) },${ (request.values === undefined || request.values.specialFeatures === undefined) ? sql`DEFAULT` : typed[1009](request.values.specialFeatures) },${ (request.values === undefined || request.values.fulltext === undefined) ? sql`DEFAULT` : typed[3614](request.values.fulltext) })
     ON CONFLICT (film_id) DO UPDATE
     SET
       title = EXCLUDED.title,description = EXCLUDED.description,release_year = EXCLUDED.release_year,language_id = EXCLUDED.language_id,rental_duration = EXCLUDED.rental_duration,rental_rate = EXCLUDED.rental_rate,length = EXCLUDED.length,replacement_cost = EXCLUDED.replacement_cost,rating = EXCLUDED.rating,last_update = EXCLUDED.last_update,special_features = EXCLUDED.special_features,fulltext = EXCLUDED.fulltext
@@ -4832,7 +4832,7 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.film 
     SET
-      film_id = ${ (request.values === undefined || request.values.filmId === undefined) ? sql`film_id` : typed[23](request.values.filmId) } , title = ${ (request.values === undefined || request.values.title === undefined) ? sql`title` : typed[1043](request.values.title) } , description = ${ (request.values === undefined || request.values.description === undefined) ? sql`description` : typed[25](request.values.description) } , release_year = ${ (request.values === undefined || request.values.releaseYear === undefined) ? sql`release_year` : typed[50898](request.values.releaseYear) } , language_id = ${ (request.values === undefined || request.values.languageId === undefined) ? sql`language_id` : typed[21](request.values.languageId) } , rental_duration = ${ (request.values === undefined || request.values.rentalDuration === undefined) ? sql`rental_duration` : typed[21](request.values.rentalDuration) } , rental_rate = ${ (request.values === undefined || request.values.rentalRate === undefined) ? sql`rental_rate` : typed[1700](request.values.rentalRate) } , length = ${ (request.values === undefined || request.values.length === undefined) ? sql`length` : typed[21](request.values.length) } , replacement_cost = ${ (request.values === undefined || request.values.replacementCost === undefined) ? sql`replacement_cost` : typed[1700](request.values.replacementCost) } , rating = ${ (request.values === undefined || request.values.rating === undefined) ? sql`rating` : typed[50886](request.values.rating) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } , special_features = ${ (request.values === undefined || request.values.specialFeatures === undefined) ? sql`special_features` : typed[1009](request.values.specialFeatures) } , fulltext = ${ (request.values === undefined || request.values.fulltext === undefined) ? sql`fulltext` : typed[3614](request.values.fulltext) } 
+      film_id = ${ (request.values === undefined || request.values.filmId === undefined) ? sql`film_id` : typed[23](request.values.filmId) } , title = ${ (request.values === undefined || request.values.title === undefined) ? sql`title` : typed[1043](request.values.title) } , description = ${ (request.values === undefined || request.values.description === undefined) ? sql`description` : typed[25](request.values.description) } , release_year = ${ (request.values === undefined || request.values.releaseYear === undefined) ? sql`release_year` : typed[81536](request.values.releaseYear) } , language_id = ${ (request.values === undefined || request.values.languageId === undefined) ? sql`language_id` : typed[21](request.values.languageId) } , rental_duration = ${ (request.values === undefined || request.values.rentalDuration === undefined) ? sql`rental_duration` : typed[21](request.values.rentalDuration) } , rental_rate = ${ (request.values === undefined || request.values.rentalRate === undefined) ? sql`rental_rate` : typed[1700](request.values.rentalRate) } , length = ${ (request.values === undefined || request.values.length === undefined) ? sql`length` : typed[21](request.values.length) } , replacement_cost = ${ (request.values === undefined || request.values.replacementCost === undefined) ? sql`replacement_cost` : typed[1700](request.values.replacementCost) } , rating = ${ (request.values === undefined || request.values.rating === undefined) ? sql`rating` : typed[81524](request.values.rating) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } , special_features = ${ (request.values === undefined || request.values.specialFeatures === undefined) ? sql`special_features` : typed[1009](request.values.specialFeatures) } , fulltext = ${ (request.values === undefined || request.values.fulltext === undefined) ? sql`fulltext` : typed[3614](request.values.fulltext) } 
     WHERE
       film_id = ${ (request.parameters === undefined || request.parameters.filmId === undefined) ? sql`DEFAULT` : typed[23](request.parameters.filmId) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, {parameters, values, options});
@@ -4894,7 +4894,7 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.film 
     SET
-      film_id = ${ (request.values === undefined || request.values.filmId === undefined) ? sql`film_id` : typed[23](request.values.filmId) } , title = ${ (request.values === undefined || request.values.title === undefined) ? sql`title` : typed[1043](request.values.title) } , description = ${ (request.values === undefined || request.values.description === undefined) ? sql`description` : typed[25](request.values.description) } , release_year = ${ (request.values === undefined || request.values.releaseYear === undefined) ? sql`release_year` : typed[50898](request.values.releaseYear) } , language_id = ${ (request.values === undefined || request.values.languageId === undefined) ? sql`language_id` : typed[21](request.values.languageId) } , rental_duration = ${ (request.values === undefined || request.values.rentalDuration === undefined) ? sql`rental_duration` : typed[21](request.values.rentalDuration) } , rental_rate = ${ (request.values === undefined || request.values.rentalRate === undefined) ? sql`rental_rate` : typed[1700](request.values.rentalRate) } , length = ${ (request.values === undefined || request.values.length === undefined) ? sql`length` : typed[21](request.values.length) } , replacement_cost = ${ (request.values === undefined || request.values.replacementCost === undefined) ? sql`replacement_cost` : typed[1700](request.values.replacementCost) } , rating = ${ (request.values === undefined || request.values.rating === undefined) ? sql`rating` : typed[50886](request.values.rating) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } , special_features = ${ (request.values === undefined || request.values.specialFeatures === undefined) ? sql`special_features` : typed[1009](request.values.specialFeatures) } , fulltext = ${ (request.values === undefined || request.values.fulltext === undefined) ? sql`fulltext` : typed[3614](request.values.fulltext) } 
+      film_id = ${ (request.values === undefined || request.values.filmId === undefined) ? sql`film_id` : typed[23](request.values.filmId) } , title = ${ (request.values === undefined || request.values.title === undefined) ? sql`title` : typed[1043](request.values.title) } , description = ${ (request.values === undefined || request.values.description === undefined) ? sql`description` : typed[25](request.values.description) } , release_year = ${ (request.values === undefined || request.values.releaseYear === undefined) ? sql`release_year` : typed[81536](request.values.releaseYear) } , language_id = ${ (request.values === undefined || request.values.languageId === undefined) ? sql`language_id` : typed[21](request.values.languageId) } , rental_duration = ${ (request.values === undefined || request.values.rentalDuration === undefined) ? sql`rental_duration` : typed[21](request.values.rentalDuration) } , rental_rate = ${ (request.values === undefined || request.values.rentalRate === undefined) ? sql`rental_rate` : typed[1700](request.values.rentalRate) } , length = ${ (request.values === undefined || request.values.length === undefined) ? sql`length` : typed[21](request.values.length) } , replacement_cost = ${ (request.values === undefined || request.values.replacementCost === undefined) ? sql`replacement_cost` : typed[1700](request.values.replacementCost) } , rating = ${ (request.values === undefined || request.values.rating === undefined) ? sql`rating` : typed[81524](request.values.rating) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } , special_features = ${ (request.values === undefined || request.values.specialFeatures === undefined) ? sql`special_features` : typed[1009](request.values.specialFeatures) } , fulltext = ${ (request.values === undefined || request.values.fulltext === undefined) ? sql`fulltext` : typed[3614](request.values.fulltext) } 
     WHERE
       fulltext @@ ${sql.unsafe(`${request.options?.fulltext?.queryParser ?? "to_tsquery"}`)}(${request.options?.fulltext?.configuration ?? this.database.settings.defaultTextSearchConfig}, ${ (request.parameters === undefined || request.parameters.fulltext === undefined) ? sql`DEFAULT` : typed[3614](request.parameters.fulltext) })
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, {parameters, values, options});
@@ -4956,7 +4956,7 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.film 
     SET
-      film_id = ${ (request.values === undefined || request.values.filmId === undefined) ? sql`film_id` : typed[23](request.values.filmId) } , title = ${ (request.values === undefined || request.values.title === undefined) ? sql`title` : typed[1043](request.values.title) } , description = ${ (request.values === undefined || request.values.description === undefined) ? sql`description` : typed[25](request.values.description) } , release_year = ${ (request.values === undefined || request.values.releaseYear === undefined) ? sql`release_year` : typed[50898](request.values.releaseYear) } , language_id = ${ (request.values === undefined || request.values.languageId === undefined) ? sql`language_id` : typed[21](request.values.languageId) } , rental_duration = ${ (request.values === undefined || request.values.rentalDuration === undefined) ? sql`rental_duration` : typed[21](request.values.rentalDuration) } , rental_rate = ${ (request.values === undefined || request.values.rentalRate === undefined) ? sql`rental_rate` : typed[1700](request.values.rentalRate) } , length = ${ (request.values === undefined || request.values.length === undefined) ? sql`length` : typed[21](request.values.length) } , replacement_cost = ${ (request.values === undefined || request.values.replacementCost === undefined) ? sql`replacement_cost` : typed[1700](request.values.replacementCost) } , rating = ${ (request.values === undefined || request.values.rating === undefined) ? sql`rating` : typed[50886](request.values.rating) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } , special_features = ${ (request.values === undefined || request.values.specialFeatures === undefined) ? sql`special_features` : typed[1009](request.values.specialFeatures) } , fulltext = ${ (request.values === undefined || request.values.fulltext === undefined) ? sql`fulltext` : typed[3614](request.values.fulltext) } 
+      film_id = ${ (request.values === undefined || request.values.filmId === undefined) ? sql`film_id` : typed[23](request.values.filmId) } , title = ${ (request.values === undefined || request.values.title === undefined) ? sql`title` : typed[1043](request.values.title) } , description = ${ (request.values === undefined || request.values.description === undefined) ? sql`description` : typed[25](request.values.description) } , release_year = ${ (request.values === undefined || request.values.releaseYear === undefined) ? sql`release_year` : typed[81536](request.values.releaseYear) } , language_id = ${ (request.values === undefined || request.values.languageId === undefined) ? sql`language_id` : typed[21](request.values.languageId) } , rental_duration = ${ (request.values === undefined || request.values.rentalDuration === undefined) ? sql`rental_duration` : typed[21](request.values.rentalDuration) } , rental_rate = ${ (request.values === undefined || request.values.rentalRate === undefined) ? sql`rental_rate` : typed[1700](request.values.rentalRate) } , length = ${ (request.values === undefined || request.values.length === undefined) ? sql`length` : typed[21](request.values.length) } , replacement_cost = ${ (request.values === undefined || request.values.replacementCost === undefined) ? sql`replacement_cost` : typed[1700](request.values.replacementCost) } , rating = ${ (request.values === undefined || request.values.rating === undefined) ? sql`rating` : typed[81524](request.values.rating) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } , special_features = ${ (request.values === undefined || request.values.specialFeatures === undefined) ? sql`special_features` : typed[1009](request.values.specialFeatures) } , fulltext = ${ (request.values === undefined || request.values.fulltext === undefined) ? sql`fulltext` : typed[3614](request.values.fulltext) } 
     WHERE
       language_id = ${ (request.parameters === undefined || request.parameters.languageId === undefined) ? sql`DEFAULT` : typed[21](request.parameters.languageId) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, {parameters, values, options});
@@ -5018,7 +5018,7 @@ const response = await this.database.invoke( (sql, request) => sql`
     UPDATE 
       public.film 
     SET
-      film_id = ${ (request.values === undefined || request.values.filmId === undefined) ? sql`film_id` : typed[23](request.values.filmId) } , title = ${ (request.values === undefined || request.values.title === undefined) ? sql`title` : typed[1043](request.values.title) } , description = ${ (request.values === undefined || request.values.description === undefined) ? sql`description` : typed[25](request.values.description) } , release_year = ${ (request.values === undefined || request.values.releaseYear === undefined) ? sql`release_year` : typed[50898](request.values.releaseYear) } , language_id = ${ (request.values === undefined || request.values.languageId === undefined) ? sql`language_id` : typed[21](request.values.languageId) } , rental_duration = ${ (request.values === undefined || request.values.rentalDuration === undefined) ? sql`rental_duration` : typed[21](request.values.rentalDuration) } , rental_rate = ${ (request.values === undefined || request.values.rentalRate === undefined) ? sql`rental_rate` : typed[1700](request.values.rentalRate) } , length = ${ (request.values === undefined || request.values.length === undefined) ? sql`length` : typed[21](request.values.length) } , replacement_cost = ${ (request.values === undefined || request.values.replacementCost === undefined) ? sql`replacement_cost` : typed[1700](request.values.replacementCost) } , rating = ${ (request.values === undefined || request.values.rating === undefined) ? sql`rating` : typed[50886](request.values.rating) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } , special_features = ${ (request.values === undefined || request.values.specialFeatures === undefined) ? sql`special_features` : typed[1009](request.values.specialFeatures) } , fulltext = ${ (request.values === undefined || request.values.fulltext === undefined) ? sql`fulltext` : typed[3614](request.values.fulltext) } 
+      film_id = ${ (request.values === undefined || request.values.filmId === undefined) ? sql`film_id` : typed[23](request.values.filmId) } , title = ${ (request.values === undefined || request.values.title === undefined) ? sql`title` : typed[1043](request.values.title) } , description = ${ (request.values === undefined || request.values.description === undefined) ? sql`description` : typed[25](request.values.description) } , release_year = ${ (request.values === undefined || request.values.releaseYear === undefined) ? sql`release_year` : typed[81536](request.values.releaseYear) } , language_id = ${ (request.values === undefined || request.values.languageId === undefined) ? sql`language_id` : typed[21](request.values.languageId) } , rental_duration = ${ (request.values === undefined || request.values.rentalDuration === undefined) ? sql`rental_duration` : typed[21](request.values.rentalDuration) } , rental_rate = ${ (request.values === undefined || request.values.rentalRate === undefined) ? sql`rental_rate` : typed[1700](request.values.rentalRate) } , length = ${ (request.values === undefined || request.values.length === undefined) ? sql`length` : typed[21](request.values.length) } , replacement_cost = ${ (request.values === undefined || request.values.replacementCost === undefined) ? sql`replacement_cost` : typed[1700](request.values.replacementCost) } , rating = ${ (request.values === undefined || request.values.rating === undefined) ? sql`rating` : typed[81524](request.values.rating) } , last_update = ${ (request.values === undefined || request.values.lastUpdate === undefined) ? sql`last_update` : typed[1114](request.values.lastUpdate) } , special_features = ${ (request.values === undefined || request.values.specialFeatures === undefined) ? sql`special_features` : typed[1009](request.values.specialFeatures) } , fulltext = ${ (request.values === undefined || request.values.fulltext === undefined) ? sql`fulltext` : typed[3614](request.values.fulltext) } 
     WHERE
       title = ${ (request.parameters === undefined || request.parameters.title === undefined) ? sql`DEFAULT` : typed[1043](request.parameters.title) }
     RETURNING film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,last_update,special_features,fulltext`, {parameters, values, options});
@@ -16230,12 +16230,12 @@ export type PrimaryKey = Public.Types.FilmPkey;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_50931Index = {
+export type PgToast_81569Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_51017Index = {
+export type PgToast_81655Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -30024,11 +30024,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_50931Index {
+export namespace PgToast_81569Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_50931Index.is(from)) {
+if (PgToast.Types.PgToast_81569Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -30039,11 +30039,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_51017Index {
+export namespace PgToast_81655Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_51017Index.is(from)) {
+if (PgToast.Types.PgToast_81655Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -36651,16 +36651,16 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_50931Index {
-export function is(value: any) : value is PgToast.Types.PgToast_50931Index {
+export namespace PgToast_81569Index {
+export function is(value: any) : value is PgToast.Types.PgToast_81569Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_51017Index {
-export function is(value: any) : value is PgToast.Types.PgToast_51017Index {
+export namespace PgToast_81655Index {
+export function is(value: any) : value is PgToast.Types.PgToast_81655Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -41366,13 +41366,13 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_50931Index {
- export function equals(l: PgToast.Types.PgToast_50931Index|undefined, r: unknown) {
+export namespace PgToast_81569Index {
+ export function equals(l: PgToast.Types.PgToast_81569Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_51017Index {
- export function equals(l: PgToast.Types.PgToast_51017Index|undefined, r: unknown) {
+export namespace PgToast_81655Index {
+ export function equals(l: PgToast.Types.PgToast_81655Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -59428,7 +59428,7 @@ export namespace Film {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_50931Index {
+export namespace PgToast_81569Index {
 export namespace ChunkId {
 
       export type Options = InvokeQueryOptions;
@@ -59444,7 +59444,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_51017Index {
+export namespace PgToast_81655Index {
 export namespace ChunkId {
 
       export type Options = InvokeQueryOptions;
