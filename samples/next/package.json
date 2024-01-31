@@ -1,6 +1,6 @@
 {
   "name": "@embracesql/next-project",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "scripts": {
     "generate": "bin/generate",
@@ -10,8 +10,8 @@
     "check": "tsc --noEmit"
   },
   "dependencies": {
-    "@embracesql/react": "^0.1.2",
-    "@embracesql/shared": "^0.1.2",
+    "@embracesql/react": "^0.1.3",
+    "@embracesql/shared": "^0.1.3",
     "next": "^14",
     "react": "^18",
     "react-dom": "^18"

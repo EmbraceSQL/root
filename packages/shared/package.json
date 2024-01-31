@@ -1,6 +1,6 @@
 {
   "name": "@embracesql/shared",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "EmbraceSQL shared types between browser and node.",
   "type": "module",
   "main": "./src/index.ts",
