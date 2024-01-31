@@ -2,6 +2,7 @@ import {
   EmbraceSQLRequest,
   EmbraceSQLResponse,
   InvokeQueryOptions,
+  sleep,
 } from "@embracesql/shared";
 
 export * from "./typescript/generateClient";
@@ -63,11 +64,11 @@ export class EmbraceSQLClient implements _HasClient {
       headers,
     };
 
-    // actual trip to the network happens here
     let finalError: Error | undefined = undefined;
 
-    for (let retry = 0; retry < (request?.options?.retries ?? 1); retry += 1) {
+    for (let retry = 0; retry <= (request?.options?.retries ?? 0); retry += 1) {
       try {
+        // actual trip to the network happens here
         const response = await fetch(this.props.url, {
           ...props,
           method: "POST",
@@ -93,6 +94,10 @@ export class EmbraceSQLClient implements _HasClient {
         >;
       } catch (e) {
         finalError = e as Error;
+        // this is the exponential backoff part
+        if (retry > 0) {
+          await sleep(100 * 2 ** retry);
+        }
       }
     }
 

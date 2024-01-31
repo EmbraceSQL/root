@@ -329,3 +329,8 @@ export interface Column {
    */
   type: string;
 }
+
+/**
+ * The classic. 😴
+ */
+export const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));

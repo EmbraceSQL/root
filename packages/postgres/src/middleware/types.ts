@@ -5,7 +5,15 @@ import { EmbraceSQLInvocation, InvokeQueryOptions } from "@embracesql/shared";
  * The default middleware context type.
  */
 export type MiddlewareContext = Context & {
+  /**
+   * Request for a query. Modify this with the middleware chain and
+   * the final modified version will be used to invoke your actual query.
+   */
   request?: EmbraceSQLInvocation<object, object, InvokeQueryOptions>;
+  /**
+   * Current retry with 0 indicating we haven't retried ... yet.
+   */
+  retry: number;
 };
 
 /**

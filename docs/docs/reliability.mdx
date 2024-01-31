@@ -1,3 +1,6 @@
+import CodeBlock from "@theme/CodeBlock";
+import TestSource from "!!raw-loader!../../packages/test-generation/test/reliability/sql.test.ts";
+
 # Reliability
 
 Stuff breaks 💔. EmbraceSQL tries to make this less painful.
@@ -17,3 +20,21 @@ EmbraceSQL provides a `retries` option, which can be set that will automatically
 retry calls - both client and server - with exponential backoff.
 
 You can set this overall on [EmbraceSQLClient](./React/Cookbook/client_retry).
+
+## Pooling
+
+EmbraceSQL uses a connection pool, but by default only leaves connections
+in the pool for 30 seconds. This resists 'torn' or 'dead' connections clogging
+up the pool that can result from:
+* network transients 
+* database restarts, particularly in a serveless setup
+* database providers (or DBAs 😏) that kill connections
+
+## Testing
+
+Here is an example test from the source -- you can see EmbraceSQL can live through
+even a pathological query that occasionally kills itself.
+
+<CodeBlock language="typescript" >
+  {TestSource}
+</CodeBlock>

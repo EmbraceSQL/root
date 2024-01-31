@@ -425,12 +425,12 @@ return response.results ? nullIsUndefined(Public.Types.Cube.parse(response.resul
 }
 }(this)
 
-          public CubeF883 = new class extends HasClient {
+          public Cube_5487 = new class extends HasClient {
         
 
-          public async call(parameters: Public.Procedures.CubeF883.Parameters, options?: Public.Procedures.CubeF883.Parameters.Options) : Promise<Public.Types.Cube | undefined> {
-            const response = await this.client.invoke<Public.Procedures.CubeF883.Parameters, never, Public.Types.Cube | undefined, Public.Procedures.CubeF883.Parameters.Options>({
-              operation: "Public.Procedures.CubeF883.call",
+          public async call(parameters: Public.Procedures.Cube_5487.Parameters, options?: Public.Procedures.Cube_5487.Parameters.Options) : Promise<Public.Types.Cube | undefined> {
+            const response = await this.client.invoke<Public.Procedures.Cube_5487.Parameters, never, Public.Types.Cube | undefined, Public.Procedures.Cube_5487.Parameters.Options>({
+              operation: "Public.Procedures.Cube_5487.call",
               parameters,
               options
             });
@@ -439,12 +439,12 @@ return response.results ? nullIsUndefined(Public.Types.Cube.parse(response.resul
 }
 }(this)
 
-          public Cube_0da4 = new class extends HasClient {
+          public Cube_868a = new class extends HasClient {
         
 
-          public async call(parameters: Public.Procedures.Cube_0da4.Parameters, options?: Public.Procedures.Cube_0da4.Parameters.Options) : Promise<Public.Types.Cube | undefined> {
-            const response = await this.client.invoke<Public.Procedures.Cube_0da4.Parameters, never, Public.Types.Cube | undefined, Public.Procedures.Cube_0da4.Parameters.Options>({
-              operation: "Public.Procedures.Cube_0da4.call",
+          public async call(parameters: Public.Procedures.Cube_868a.Parameters, options?: Public.Procedures.Cube_868a.Parameters.Options) : Promise<Public.Types.Cube | undefined> {
+            const response = await this.client.invoke<Public.Procedures.Cube_868a.Parameters, never, Public.Types.Cube | undefined, Public.Procedures.Cube_868a.Parameters.Options>({
+              operation: "Public.Procedures.Cube_868a.call",
               parameters,
               options
             });
@@ -11904,7 +11904,7 @@ argument_0: Nullable<PgCatalog.Types.Float8>;
 argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace CubeF883 {
+export namespace Cube_5487 {
 
 
 export type Parameters = {
@@ -11912,7 +11912,7 @@ argument_0: Nullable<Public.Types.Cube>;
 argument_1: Nullable<PgCatalog.Types.Float8>;
 }
 }
-export namespace Cube_0da4 {
+export namespace Cube_868a {
 
 
 export type Parameters = {
@@ -12857,22 +12857,22 @@ export type PrimaryKey = Api.Types.CirclesPkey;
 export namespace PgToast {
 export namespace Types {
 
-export type PgToast_82032Index = {
+export type PgToast_57028Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_82038Index = {
+export type PgToast_57034Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_82069Index = {
+export type PgToast_57065Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
 
-export type PgToast_82077Index = {
+export type PgToast_57073Index = {
 chunkId: Nullable<PgCatalog.Types.Oid>;
 chunkSeq: Nullable<PgCatalog.Types.Int4>;
 }
@@ -25650,14 +25650,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace CubeF883 {
+export namespace Cube_5487 {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.CubeF883.Parameters.is(from)) {
+if (Public.Procedures.Cube_5487.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Cube.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -25669,14 +25669,14 @@ throw new Error(JSON.stringify(from))
 
 }
 }
-export namespace Cube_0da4 {
+export namespace Cube_868a {
 export namespace Results {
 }
 export namespace Parameters {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (Public.Procedures.Cube_0da4.Parameters.is(from)) {
+if (Public.Procedures.Cube_868a.Parameters.is(from)) {
   return {
 argument_0: Public.Types.Cube.parse(from.argument_0),
 argument_1: PgCatalog.Types.Float8.parse(from.argument_1),
@@ -27173,11 +27173,11 @@ export namespace Create {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_82032Index {
+export namespace PgToast_57028Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_82032Index.is(from)) {
+if (PgToast.Types.PgToast_57028Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -27188,11 +27188,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_82038Index {
+export namespace PgToast_57034Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_82038Index.is(from)) {
+if (PgToast.Types.PgToast_57034Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -27203,11 +27203,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_82069Index {
+export namespace PgToast_57065Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_82069Index.is(from)) {
+if (PgToast.Types.PgToast_57065Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -27218,11 +27218,11 @@ throw new Error(JSON.stringify(from))
 
 
 }
-export namespace PgToast_82077Index {
+export namespace PgToast_57073Index {
 export function parse(from: unknown) {
 // CompositeType
 if (from === null || from === undefined) return null;
-if (PgToast.Types.PgToast_82077Index.is(from)) {
+if (PgToast.Types.PgToast_57073Index.is(from)) {
   return {
 chunkId: PgCatalog.Types.Oid.parse(from.chunkId),
 chunkSeq: PgCatalog.Types.Int4.parse(from.chunkSeq),
@@ -33176,9 +33176,9 @@ return false;
 }
 }
 }
-export namespace CubeF883 {
+export namespace Cube_5487 {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.CubeF883.Parameters {
+export function is(value: any) : value is Public.Procedures.Cube_5487.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined)
 ) return true;
@@ -33186,9 +33186,9 @@ return false;
 }
 }
 }
-export namespace Cube_0da4 {
+export namespace Cube_868a {
 export namespace Parameters {
-export function is(value: any) : value is Public.Procedures.Cube_0da4.Parameters {
+export function is(value: any) : value is Public.Procedures.Cube_868a.Parameters {
 if (
 (value.argument_0 !== undefined) && (value.argument_1 !== undefined) && (value.argument_2 !== undefined)
 ) return true;
@@ -33888,32 +33888,32 @@ export namespace Circles {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_82032Index {
-export function is(value: any) : value is PgToast.Types.PgToast_82032Index {
+export namespace PgToast_57028Index {
+export function is(value: any) : value is PgToast.Types.PgToast_57028Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_82038Index {
-export function is(value: any) : value is PgToast.Types.PgToast_82038Index {
+export namespace PgToast_57034Index {
+export function is(value: any) : value is PgToast.Types.PgToast_57034Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_82069Index {
-export function is(value: any) : value is PgToast.Types.PgToast_82069Index {
+export namespace PgToast_57065Index {
+export function is(value: any) : value is PgToast.Types.PgToast_57065Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
 return false;
 }
 }
-export namespace PgToast_82077Index {
-export function is(value: any) : value is PgToast.Types.PgToast_82077Index {
+export namespace PgToast_57073Index {
+export function is(value: any) : value is PgToast.Types.PgToast_57073Index {
 if (
 (value.chunkId !== undefined) && (value.chunkSeq !== undefined)
 ) return true;
@@ -38293,16 +38293,16 @@ export namespace Parameters {
  }
 }
 }
-export namespace CubeF883 {
+export namespace Cube_5487 {
 export namespace Parameters {
- export function equals(l: Public.Procedures.CubeF883.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.Cube_5487.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
 }
-export namespace Cube_0da4 {
+export namespace Cube_868a {
 export namespace Parameters {
- export function equals(l: Public.Procedures.Cube_0da4.Parameters|undefined, r: unknown) {
+ export function equals(l: Public.Procedures.Cube_868a.Parameters|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -38854,23 +38854,23 @@ export namespace Circles {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_82032Index {
- export function equals(l: PgToast.Types.PgToast_82032Index|undefined, r: unknown) {
+export namespace PgToast_57028Index {
+ export function equals(l: PgToast.Types.PgToast_57028Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_82038Index {
- export function equals(l: PgToast.Types.PgToast_82038Index|undefined, r: unknown) {
+export namespace PgToast_57034Index {
+ export function equals(l: PgToast.Types.PgToast_57034Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_82069Index {
- export function equals(l: PgToast.Types.PgToast_82069Index|undefined, r: unknown) {
+export namespace PgToast_57065Index {
+ export function equals(l: PgToast.Types.PgToast_57065Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
-export namespace PgToast_82077Index {
- export function equals(l: PgToast.Types.PgToast_82077Index|undefined, r: unknown) {
+export namespace PgToast_57073Index {
+ export function equals(l: PgToast.Types.PgToast_57073Index|undefined, r: unknown) {
   return JSON.stringify(l) === JSON.stringify(r);
  }
 }
@@ -55910,7 +55910,7 @@ argument_1?: PgCatalog.Types.Float8.Options
 }
 }
 }
-export namespace CubeF883 {
+export namespace Cube_5487 {
 export namespace Parameters {
 export namespace Argument_0 {
 
@@ -55928,7 +55928,7 @@ argument_1?: PgCatalog.Types.Float8.Options
 }
 }
 }
-export namespace Cube_0da4 {
+export namespace Cube_868a {
 export namespace Parameters {
 export namespace Argument_0 {
 
@@ -57285,7 +57285,7 @@ export namespace Circles {
 }
 export namespace PgToast {
 export namespace Types {
-export namespace PgToast_82032Index {
+export namespace PgToast_57028Index {
 export namespace ChunkId {
 
       export type Options = InvokeQueryOptions;
@@ -57301,7 +57301,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_82038Index {
+export namespace PgToast_57034Index {
 export namespace ChunkId {
 
       export type Options = InvokeQueryOptions;
@@ -57317,7 +57317,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_82069Index {
+export namespace PgToast_57065Index {
 export namespace ChunkId {
 
       export type Options = InvokeQueryOptions;
@@ -57333,7 +57333,7 @@ export type Options = InvokeQueryOptions & {
 chunkSeq?: PgCatalog.Types.Int4.Options
 }
 }
-export namespace PgToast_82077Index {
+export namespace PgToast_57073Index {
 export namespace ChunkId {
 
       export type Options = InvokeQueryOptions;
@@ -58421,9 +58421,9 @@ get Procedures()   {
 {
  name: "cube_0aec"},
 {
- name: "cube_f883"},
+ name: "cube_5487"},
 {
- name: "cube_0da4"},
+ name: "cube_868a"},
 {
  name: "cube_is_point"},
 {

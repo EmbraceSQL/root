@@ -305,6 +305,12 @@ export const initializeContext = async (
     prepare: false,
     target_session_attrs: "read-write",
     transform: { undefined: null },
+    // let's be nearly stateless on connections and not leave
+    // them in the pool for long by default -- this better deals
+    // with transient network errors -- avoids 'torn' connections in the pool
+    idle_timeout: 30,
+    max_lifetime: 30,
+    ...(props ?? {}),
   });
 
   return {

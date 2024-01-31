@@ -1,7 +1,12 @@
 import { Context } from "./context";
 import databaseRole from "./middleware/role";
 import { MiddlewareContext, MiddlewareDispatcher } from "./middleware/types";
-import { EmbraceSQLInvocation, EmbraceSQLOptions } from "@embracesql/shared";
+import {
+  EmbraceSQLInvocation,
+  EmbraceSQLOptions,
+  InvokeQueryOptions,
+  sleep,
+} from "@embracesql/shared";
 import postgres from "postgres";
 
 export { initializeContext } from "./context";
@@ -20,7 +25,9 @@ type InvokeQuery<
 > = (sql: postgres.Sql, request: EmbraceSQLInvocation<P, V, O>) => Promise<R>;
 
 /**
- * A single postgres database. Inherit from this in generated code.
+ * A single postgres database.
+ *
+ * Code generation extends this class, making it specific to your database.
  */
 export abstract class PostgresDatabase<
   TTypecast,
@@ -32,19 +39,15 @@ export abstract class PostgresDatabase<
   }
 
   /**
-   * Clean up the connection.
+   * Call when you are all finished talking to the database.
    */
   public async disconnect() {
-    await this.context.sql.end();
+    await this.context.sql.end({ timeout: 1 });
   }
 
-  get cls(): ConstructorOf<this> {
+  private get cls(): ConstructorOf<this> {
     const current = Object.getPrototypeOf(this).constructor;
     return current;
-  }
-
-  get self(): this {
-    return this;
   }
 
   get typed(): TTypecast {
@@ -56,7 +59,8 @@ export abstract class PostgresDatabase<
    * You must explicitly call `rollback` or `commit`.
    */
   async beginTransaction() {
-    const myself = this.self;
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
+    const myself = this;
     const CurrentSubclass = this.cls;
     return await new Promise<{
       database: typeof myself;
@@ -64,17 +68,23 @@ export abstract class PostgresDatabase<
       rollback: (message?: string) => void;
     }>((resolveReady) => {
       const complete = new Promise((resolve, reject) => {
-        this.context.sql
-          .begin(async (sql) => {
-            resolveReady({
-              // this is 'the change' -- adding in a new sql that is in transaction
-              database: new CurrentSubclass({ ...this.context, sql }),
-              commit: () => resolve(true),
-              rollback: (message?: string) => reject(message),
-            });
-            await complete;
-          })
-          .catch((reason) => reason);
+        // postgres doesn't really have 'nested' transactions -- it has savepoints
+        // so check if we are 'in' a transaction
+        const begin =
+          this.context.sql.begin?.bind(this.context.sql) ??
+          (this.context.sql as postgres.TransactionSql).savepoint.bind(
+            this.context.sql,
+          );
+
+        begin(async (sql) => {
+          resolveReady({
+            // this is 'the change' -- adding in a new sql that is in transaction
+            database: new CurrentSubclass({ ...this.context, sql }),
+            commit: () => resolve(true),
+            rollback: (message?: string) => reject(message),
+          });
+          await complete;
+        }).catch((reason) => reason);
       });
     });
   }
@@ -86,20 +96,24 @@ export abstract class PostgresDatabase<
    * An escaping exception is a rollback.
    */
   async withTransaction<T>(body: (database: this) => Promise<T>) {
-    const CurrentSubclass = this.cls;
-    if (this.context.sql.begin !== undefined) {
-      // root transaction
-      return await this.context.sql.begin(
-        async (sql) =>
-          await body(new CurrentSubclass({ ...this.context, sql })),
-      );
-    } else {
-      // nested transaction
-      const nested = this.context.sql as postgres.TransactionSql;
-      return await nested.savepoint(
-        async (sql) =>
-          await body(new CurrentSubclass({ ...this.context, sql })),
-      );
+    const { database, commit, rollback } = await this.beginTransaction();
+    try {
+      const ret = await body(database);
+      commit();
+      return ret;
+    } catch (e) {
+      // the postgres driver has a flaw - if you encounter a fatal connection
+      // error inside a transaction, such that `rollback` cannot be run
+      // because the connection is dead -- the driver hangs awaiting a `rollback`
+      // that simply cannot happen
+      if ((e as postgres.PostgresError)?.severity === "FATAL") {
+        // the error is the return value -- yeah a little odd
+        // but this gets us past the rollback that won't roll back
+        throw e;
+      } else {
+        rollback();
+        throw e;
+      }
     }
   }
 
@@ -117,14 +131,16 @@ export abstract class PostgresDatabase<
     R,
     P,
     V = never,
-    O extends EmbraceSQLOptions = EmbraceSQLOptions,
+    O extends InvokeQueryOptions = InvokeQueryOptions,
   >(
     queryCallback: InvokeQuery<R, P, V, O>,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     request: EmbraceSQLInvocation<P, V, O>,
   ): Promise<R> {
+    // if retries are not specific -- now is the time
+
     // here is the middleware run stack
-    const runStack = async (database: this) => {
+    const runStack = async (database: this, retry: number) => {
       // pick up the headers
       // first the middleware
       await this.dispatch({
@@ -135,21 +151,37 @@ export abstract class PostgresDatabase<
           object,
           EmbraceSQLOptions
         >,
+        retry,
       });
       return queryCallback(database.context.sql, request);
     };
 
-    // need a reserved or single connection throughout
-    // so that all effects are applied to the same session
-    if (this.context.sql.begin !== undefined) {
-      return this.withTransaction(async (database) => {
-        return runStack(database);
-      }) as R;
-    } else {
-      // if we are in a transaction, there won't be an option to reserve
-      // but the good news is the driver has already reserved a connection
-      // for the scope of the transaction
-      return runStack(this);
+    let finalError: Error | undefined = undefined;
+    for (let retry = 0; retry <= (request?.options?.retries ?? 0); retry += 1) {
+      try {
+        // need a reserved or single connection throughout
+        // so that all effects are applied to the same session
+        if (this.context.sql.begin !== undefined) {
+          // make sure to await here -- need to catch what might be thrown
+          return (await this.withTransaction(async (database) => {
+            return await runStack(database, retry);
+          })) as R;
+        } else {
+          // if we are in a transaction, there won't be an option to reserve
+          // but the good news is the driver has already reserved a connection
+          // for the scope of the transaction
+          return await runStack(this, retry);
+        }
+      } catch (e) {
+        finalError = e as Error;
+        // this is the exponential backoff part
+        if (retry > 0) {
+          await sleep(100 * 2 ** retry);
+        }
+      }
     }
+
+    // if we got here, we're past all the retries and it is time to throw
+    throw finalError;
   }
 }
